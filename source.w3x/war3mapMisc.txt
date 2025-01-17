@@ -1,0 +1,4 @@
+[Misc]
+GuardDistance=99999.0
+MaxGuardDistance=
+
