@@ -1,10 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using WCSharp.Api;
-using WCSharp.Shared.Data;
 
 namespace Source.Extensions
 {

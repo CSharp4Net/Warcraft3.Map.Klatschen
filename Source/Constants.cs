@@ -18,6 +18,13 @@ public static class Constants
 	public const int UNIT_BAUM_DES_LEBENS_ELF = 1697656880;
 	public const int UNIT_BAUM_DES_ALTERS_ELF = 1697656881;
 	public const int UNIT_BAUM_DER_EWIGKEIT_ELF = 1697656882;
+	public const int UNIT_WACHTURM_HUMAN = 1747988532;
+	public const int UNIT_ARKANER_TURM_HUMAN = 1747988533;
+	public const int UNIT_WACHTURM_ORC = 1865429043;
+	public const int UNIT_ENERGIEGENERATOR_ORC = 1848651825;
+	public const int UNIT_URTUMBESCH_TZER_ELF = 1697656883;
+	public const int UNIT_VERDERBTER_URTUMBESCH_TZER_ELF = 1848651826;
+	public const int UNIT_KILLSOLDIER = 1747988534;
 	public const int ORDER_OFFSET = 851970;
 	public const int ORDER_WAND_ILLUSION = 852274;
 	public const int ORDER_ABSORB = 852529;

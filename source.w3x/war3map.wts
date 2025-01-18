@@ -159,3 +159,45 @@ STRING 37
 (Elf)
 }
 
+STRING 38
+// Units: h004 (Wachturm), EditorSuffix (Name - Editor Suffix)
+{
+(Human)
+}
+
+STRING 39
+// Units: h005 (Arkaner Turm), EditorSuffix (Name - Editor Suffix)
+{
+(Human)
+}
+
+STRING 40
+// Units: o003 (Wachturm), EditorSuffix (Name - Editor Suffix)
+{
+(Orc)
+}
+
+STRING 41
+// Units: n001 (Energiegenerator), EditorSuffix (Name - Editor Suffix)
+{
+(Orc)
+}
+
+STRING 42
+// Units: e003 (Urtumbeschützer), EditorSuffix (Name - Editor Suffix)
+{
+(Elf)
+}
+
+STRING 43
+// Units: n002 (Verderbter Urtumbeschützer), EditorSuffix (Name - Editor Suffix)
+{
+(Elf)
+}
+
+STRING 44
+// Units: h006 (KillSoldier), Name (Name)
+{
+KillSoldier
+}
+

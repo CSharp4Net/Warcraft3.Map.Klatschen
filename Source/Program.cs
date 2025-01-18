@@ -55,6 +55,8 @@ namespace Source
 #if DEBUG
         timer timer = CreateTimer();
         timer.Start(5f, true, CreateFootmans);
+
+        CreateUnitInRegion(Player(0), Constants.UNIT_KILLSOLDIER, Regions.WestSpawnMiddle, 0f);
 #endif
 
         Regions.Center.Region.RegisterOnEnter(CenterRegion.OnEnter);
@@ -79,7 +81,7 @@ namespace Source
       unit unit = GetTriggerUnit();
       player player = GetOwningPlayer(unit);
 
-      Console.WriteLine($"Einheit {unit.Name} starb!");
+      Console.WriteLine($"Einheit {unit.Name} starb! {unit.UnitType},{Constants.UNIT_TESTSOLDIER}");
 
       if (player.Controller == mapcontrol.User)
         // TODO : Wenn die Einheit (Held) eines Spielers stirbt, wird diese nicht entfernt, sondern wiedergeboren
@@ -90,6 +92,30 @@ namespace Source
         // TODO : Bei manchen Gebäude müssen spezielle Auslöser getriggert werden, wenn sie zerstört werden
         // - Wenn Hauptgebäude zerstört wird -> Verlieren alle Spieler im Team
         // - Wenn 2 Hauptgebäude zerstört wurden -> Gewinnen alle Spiele im verbliebenen Team
+        if (player.Id == WesternForces.Id)
+        {
+          if (unit.UnitType == Constants.UNIT_RATHAUS_HUMAN || unit.UnitType == Constants.UNIT_BURG_HUMAN || unit.UnitType == Constants.UNIT_SCHLOSS_HUMAN)
+          {
+            // Hauptgebäude wurde zerstört!
+            int teamId = GetPlayerTeam(unit.Owner);
+
+            Blizzard.MeleeDoDefeat(WesternForces);
+            //WesternForces.Remove();
+
+
+            group group = Blizzard.GetUnitsSelectedAll(WesternForces);
+
+            group.ForEach(() =>  GetEnumUnit().Kill());
+          }
+        }
+        else if (player.Id == EasternForces.Id)
+        {
+
+        }
+        else if (player.Id == SouthernForces.Id)
+        {
+
+        }
       }
 
       // Verstorbene Einheit nach kurzer Zeit aus Spiel entfernen um RAM zu sparen
