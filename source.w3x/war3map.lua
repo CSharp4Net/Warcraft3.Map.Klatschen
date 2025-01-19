@@ -1,3 +1,4 @@
+gg_rct_Center = nil
 gg_rct_EastBase = nil
 gg_rct_EastSpawnBottom = nil
 gg_rct_EastSpawnMiddle = nil
@@ -10,7 +11,6 @@ gg_rct_WestBase = nil
 gg_rct_WestSpawnBottom = nil
 gg_rct_WestSpawnMiddle = nil
 gg_rct_WestSpawnTop = nil
-gg_rct_Center = nil
 gg_trg_Melee_Initialization = nil
 function InitGlobals()
 end
@@ -22,7 +22,9 @@ local unitID
 local t
 local life
 
-u = BlzCreateUnitWithSkin(p, FourCC("h006"), -13834.3, 7167.3, 355.386, FourCC("h006"))
+u = BlzCreateUnitWithSkin(p, FourCC("h006"), 496.0, -18652.4, 355.386, FourCC("h006"))
+u = BlzCreateUnitWithSkin(p, FourCC("h006"), 15610.9, 7431.1, 355.386, FourCC("h006"))
+u = BlzCreateUnitWithSkin(p, FourCC("h006"), -15698.3, 7204.1, 355.386, FourCC("h006"))
 end
 
 function CreateBuildingsForPlayer3()

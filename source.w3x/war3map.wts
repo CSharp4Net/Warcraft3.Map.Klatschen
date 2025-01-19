@@ -75,36 +75,6 @@ STRING 18
 Player 11
 }
 
-STRING 23
-{
-Western Force
-}
-
-STRING 24
-{
-Eastern force
-}
-
-STRING 25
-{
-Southern force
-}
-
-STRING 26
-{
-Western army
-}
-
-STRING 27
-{
-Eastern army
-}
-
-STRING 28
-{
-Southern army
-}
-
 STRING 29
 // Units: h001 (Rathaus), EditorSuffix (Name - Editor Suffix)
 {
@@ -199,5 +169,53 @@ STRING 44
 // Units: h006 (KillSoldier), Name (Name)
 {
 KillSoldier
+}
+
+STRING 45
+// Units: h007 (Kaserne), EditorSuffix (Name - Editor Suffix)
+{
+(Human)
+}
+
+STRING 46
+// Units: o004 (Kaserne), EditorSuffix (Name - Editor Suffix)
+{
+(Orc)
+}
+
+STRING 47
+// Units: e004 (Urtum des Krieges), EditorSuffix (Name - Editor Suffix)
+{
+(Elf)
+}
+
+STRING 48
+{
+Menschen
+}
+
+STRING 49
+{
+Orks
+}
+
+STRING 50
+{
+Elfen
+}
+
+STRING 51
+{
+Allianz
+}
+
+STRING 52
+{
+Horde
+}
+
+STRING 53
+{
+Naturgeister
 }
 

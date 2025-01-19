@@ -1,5 +1,4 @@
 ﻿using Source.Extensions;
-using System;
 using WCSharp.Api;
 
 namespace Source.RegionEvents
@@ -9,17 +8,16 @@ namespace Source.RegionEvents
     internal static void OnEnter()
     {
       unit unit = Common.GetTriggerUnit();
-      player player = Common.GetOwningPlayer(unit);
 
-      if (player.Controller != mapcontrol.Computer)
+      if (unit.IsABuilding || unit.Owner.Controller != mapcontrol.Computer)
         return;
 
       // Feindliche Einheit zur Basis des anderen Spielers schicken
-      if (player.Id == Program.HumanTeam.Computer.Player.Id)
+      if (unit.Owner.Id == Program.Humans.Computer.Player.Id)
       {
         unit.AttackMove(Regions.SouthBase);
       }
-      else if (player.Id == Program.SouthernForces.Computer.Player.Id)
+      else if (unit.Owner.Id == Program.Elves.Computer.Player.Id)
       {
         unit.AttackMove(Regions.WestBase);
       }

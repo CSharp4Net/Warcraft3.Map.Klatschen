@@ -12,13 +12,12 @@ namespace Source.RegionEvents
     internal static void OnEnter()
     {
       unit unit = Common.GetTriggerUnit();
-      player player = Common.GetOwningPlayer(unit);
 
-      if (player.Controller != mapcontrol.Computer)
+      if (unit.Owner.Controller != mapcontrol.Computer)
         return;
 
       // Computer-Einheit im Uhrzeigersinn oder entgegen gesetzt weiter schicken
-      if (player.Id == Program.HumanTeam.Computer.Player.Id)
+      if (unit.Owner.Id == Program.Humans.Computer.Player.Id)
       {
         if (lastTargetOfWesternUnitWasClockwise)
           unit.AttackMove(Regions.SouthBase);
@@ -27,7 +26,7 @@ namespace Source.RegionEvents
 
         lastTargetOfWesternUnitWasClockwise = !lastTargetOfWesternUnitWasClockwise;
       }
-      else if (player.Id == Program.EasternForces.Computer.Player.Id)
+      else if (unit.Owner.Id == Program.Orcs.Computer.Player.Id)
       {
         if (lastTargetOfEasternUnitWasClockwise)
           unit.AttackMove(Regions.WestBase);

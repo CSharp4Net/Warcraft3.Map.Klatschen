@@ -25,6 +25,9 @@ public static class Constants
 	public const int UNIT_URTUMBESCH_TZER_ELF = 1697656883;
 	public const int UNIT_VERDERBTER_URTUMBESCH_TZER_ELF = 1848651826;
 	public const int UNIT_KILLSOLDIER = 1747988534;
+	public const int UNIT_KASERNE_HUMAN = 1747988535;
+	public const int UNIT_KASERNE_ORC = 1865429044;
+	public const int UNIT_URTUM_DES_KRIEGES_ELF = 1697656884;
 	public const int ORDER_OFFSET = 851970;
 	public const int ORDER_WAND_ILLUSION = 852274;
 	public const int ORDER_ABSORB = 852529;
