@@ -1,12 +1,11 @@
 ﻿using Source.Extensions;
+using Source.Models;
 using Source.RegionEvents;
 using System;
 using WCSharp.Api;
 using WCSharp.Events;
 using WCSharp.Shared;
-using WCSharp.Shared.Data;
 using WCSharp.Sync;
-using static WCSharp.Api.Common;
 
 namespace Source
 {
@@ -14,17 +13,17 @@ namespace Source
   {
     public static bool Debug { get; private set; } = false;
 
-    public static player WesternForces;
-    public static player EasternForces;
-    public static player SouthernForces;
+    public static Team HumanTeam;
+    public static Team EasternForces;
+    public static Team SouthernForces;
 
     public static void Main()
     {
       // Delay a little since some stuff can break otherwise
-      var timer = CreateTimer();
-      TimerStart(timer, 0.01f, false, () =>
+      var timer = Common.CreateTimer();
+      Common.TimerStart(timer, 0.01f, false, () =>
       {
-        DestroyTimer(timer);
+        Common.DestroyTimer(timer);
         Start();
       });
     }
@@ -45,25 +44,31 @@ namespace Source
         Delay.EnableDebug();
 #endif
 
-        WesternForces = Player(3);
-        EasternForces = Player(7);
-        SouthernForces = Player(11);
+        // Teams initialisieren
+        HumanTeam = new Team(Common.Player(3));
+        EasternForces = new Team(Common.Player(7));
+        SouthernForces = new Team(Common.Player(11));
 
-        FogEnable(false);
-        FogMaskEnable(false);
+        // TODO: Aktive Spieler zu Teams hinzufügen
+
+        // TODO: Trigger-Gebäude für Computer-Spieler ersteöllen
+        HumanTeam.Computer.CreateBuilding(Constants.UNIT_SCHLOSS_HUMAN, Areas.WestBase);
 
 #if DEBUG
-        timer timer = CreateTimer();
-        timer.Start(5f, true, CreateFootmans);
+        Common.FogEnable(false);
+        Common.FogMaskEnable(false);
 
-        CreateUnitInRegion(Player(0), Constants.UNIT_KILLSOLDIER, Regions.WestSpawnMiddle, 0f);
+        timer timer = Common.CreateTimer();
+        timer.Start(5f, true, CreateFootmans);
 #endif
 
+        // Regions-Ereignisse registriere für automatische Einheitenbewegungen
         Regions.Center.Region.RegisterOnEnter(CenterRegion.OnEnter);
         Regions.WestBase.Region.RegisterOnEnter(WestBaseRegion.OnEnter);
         Regions.EastBase.Region.RegisterOnEnter(EastBaseRegion.OnEnter);
         Regions.SouthBase.Region.RegisterOnEnter(SouthBaseRegion.OnEnter);
 
+        // TODO: Weitere Events registrieren
         PlayerUnitEvents.Register(UnitTypeEvent.FinishesResearch, OnResearchFinished);
 
         PlayerUnitEvents.Register(UnitTypeEvent.Dies, OnUnitDies);
@@ -72,16 +77,16 @@ namespace Source
       }
       catch (Exception ex)
       {
-        DisplayTextToPlayer(GetLocalPlayer(), 0, 0, ex.Message);
+        Common.DisplayTextToPlayer(Common.GetLocalPlayer(), 0, 0, ex.Message);
       }
     }
 
     static void OnUnitDies()
     {
-      unit unit = GetTriggerUnit();
-      player player = GetOwningPlayer(unit);
+      unit unit = Common.GetTriggerUnit();
+      player player = Common.GetOwningPlayer(unit);
 
-      Console.WriteLine($"Einheit {unit.Name} starb! {unit.UnitType},{Constants.UNIT_TESTSOLDIER}");
+      //Console.WriteLine($"Einheit {unit.Name} starb! {unit.UnitType},{Constants.UNIT_TESTSOLDIER}");
 
       if (player.Controller == mapcontrol.User)
         // TODO : Wenn die Einheit (Held) eines Spielers stirbt, wird diese nicht entfernt, sondern wiedergeboren
@@ -92,38 +97,46 @@ namespace Source
         // TODO : Bei manchen Gebäude müssen spezielle Auslöser getriggert werden, wenn sie zerstört werden
         // - Wenn Hauptgebäude zerstört wird -> Verlieren alle Spieler im Team
         // - Wenn 2 Hauptgebäude zerstört wurden -> Gewinnen alle Spiele im verbliebenen Team
-        if (player.Id == WesternForces.Id)
+        if (player.Id == HumanTeam.Computer.Player.Id)
         {
           if (unit.UnitType == Constants.UNIT_RATHAUS_HUMAN || unit.UnitType == Constants.UNIT_BURG_HUMAN || unit.UnitType == Constants.UNIT_SCHLOSS_HUMAN)
           {
             // Hauptgebäude wurde zerstört!
-            int teamId = GetPlayerTeam(unit.Owner);
+            //Console.WriteLine("");
+            //int teamId = Common.GetPlayerTeam(unit.Owner);
 
-            Blizzard.MeleeDoDefeat(WesternForces);
-            //WesternForces.Remove();
+            //Blizzard.Defeat
+            //WesternForces.Remove(playergameresult.Defeat);
 
+            //var timer2 = CreateTimer();
+            //TimerStart(timer2, 5f, false, () =>
+            //{
+            //  DestroyTimer(timer2);
+            //  Player(1).Remove(playergameresult.Defeat);
+            //  Player(0).Remove(playergameresult.Defeat);
+            //});
 
-            group group = Blizzard.GetUnitsSelectedAll(WesternForces);
+            //group group = Blizzard.GetUnitsSelectedAll(WesternForces);
 
-            group.ForEach(() =>  GetEnumUnit().Kill());
+            //group.ForEach(() =>  GetEnumUnit().Kill());
           }
         }
-        else if (player.Id == EasternForces.Id)
+        else if (player.Id == EasternForces.Computer.Player.Id)
         {
 
         }
-        else if (player.Id == SouthernForces.Id)
+        else if (player.Id == SouthernForces.Computer.Player.Id)
         {
 
         }
       }
 
       // Verstorbene Einheit nach kurzer Zeit aus Spiel entfernen um RAM zu sparen
-      var timer = CreateTimer();
-      TimerStart(timer, 10f, false, () =>
+      var timer = Common.CreateTimer();
+      Common.TimerStart(timer, 10f, false, () =>
       {
-        DestroyTimer(timer);
-        RemoveUnit(unit);
+        Common.DestroyTimer(timer);
+        Common.RemoveUnit(unit);
         // Sicherheitshalber Verweis auf Einheit für GC freigeben
         unit.Dispose();
         unit = null;
@@ -134,35 +147,29 @@ namespace Source
     {
       try
       {
-        CreateUnitInRegion(WesternForces, Constants.UNIT_TESTSOLDIER, Regions.WestSpawnTop, 0f).AttackMove(Regions.EastBase);
-        CreateUnitInRegion(WesternForces, Constants.UNIT_TESTSOLDIER, Regions.WestSpawnMiddle, 0f).AttackMove(Regions.Center);
-        CreateUnitInRegion(WesternForces, Constants.UNIT_TESTSOLDIER, Regions.WestSpawnBottom, 0f).AttackMove(Regions.SouthBase);
+        HumanTeam.Computer.CreateUnit(Constants.UNIT_TESTSOLDIER, Areas.WestSpawnTop, 0f).AttackMove(Regions.EastBase);
+        HumanTeam.Computer.CreateUnit(Constants.UNIT_TESTSOLDIER, Areas.WestSpawnMiddle, 0f).AttackMove(Regions.Center);
+        HumanTeam.Computer.CreateUnit(Constants.UNIT_TESTSOLDIER, Areas.WestSpawnBottom, 0f).AttackMove(Regions.SouthBase);
 
-        CreateUnitInRegion(EasternForces, Constants.UNIT_TESTSOLDIER, Regions.EastSpawnTop, 90f).AttackMove(Regions.WestBase);
-        CreateUnitInRegion(EasternForces, Constants.UNIT_TESTSOLDIER, Regions.EastSpawnMiddle, 90f).AttackMove(Regions.Center);
-        CreateUnitInRegion(EasternForces, Constants.UNIT_TESTSOLDIER, Regions.EastSpawnBottom, 90f).AttackMove(Regions.SouthBase);
+        EasternForces.Computer.CreateUnit(Constants.UNIT_TESTSOLDIER, Areas.EastSpawnTop, 90f).AttackMove(Regions.WestBase);
+        EasternForces.Computer.CreateUnit(Constants.UNIT_TESTSOLDIER, Areas.EastSpawnMiddle, 90f).AttackMove(Regions.Center);
+        EasternForces.Computer.CreateUnit(Constants.UNIT_TESTSOLDIER, Areas.EastSpawnBottom, 90f).AttackMove(Regions.SouthBase);
 
-        CreateUnitInRegion(SouthernForces, Constants.UNIT_TESTSOLDIER, Regions.SouthSpawnLeft, 45f).AttackMove(Regions.WestBase);
-        CreateUnitInRegion(SouthernForces, Constants.UNIT_TESTSOLDIER, Regions.SouthSpawnMiddle, 45f).AttackMove(Regions.Center);
-        CreateUnitInRegion(SouthernForces, Constants.UNIT_TESTSOLDIER, Regions.SouthSpawnRight, 45f).AttackMove(Regions.EastBase);
+        SouthernForces.Computer.CreateUnit(Constants.UNIT_TESTSOLDIER, Areas.SouthSpawnLeft, 45f).AttackMove(Regions.WestBase);
+        SouthernForces.Computer.CreateUnit(Constants.UNIT_TESTSOLDIER, Areas.SouthSpawnMiddle, 45f).AttackMove(Regions.Center);
+        SouthernForces.Computer.CreateUnit(Constants.UNIT_TESTSOLDIER, Areas.SouthSpawnRight, 45f).AttackMove(Regions.EastBase);
       }
       catch (Exception ex)
       {
-        DisplayTextToPlayer(GetLocalPlayer(), 0, 0, ex.Message);
+        Common.DisplayTextToPlayer(Common.GetLocalPlayer(), 0, 0, ex.Message);
       }
-    }
-
-    static unit CreateUnitInRegion(player player, int unitId, Rectangle regionRectangle, float face)
-    {
-      location location = Location(regionRectangle.Center.X, regionRectangle.Center.Y);
-      return CreateUnitAtLoc(player, Constants.UNIT_TESTSOLDIER, location, face);
     }
 
     static void OnResearchFinished()
     {
       Console.WriteLine("Forschung abgeschlossen!");
-      unit unit = GetResearchingUnit();
-      int researchedTechId = GetResearched();
+      unit unit = Common.GetResearchingUnit();
+      int researchedTechId = Common.GetResearched();
     }
   }
 }

@@ -15,11 +15,11 @@ namespace Source.RegionEvents
         return;
 
       // Feindliche Einheit zur Basis des anderen Spielers schicken
-      if (player.Id == Program.EasternForces.Id)
+      if (player.Id == Program.EasternForces.Computer.Player.Id)
       {
         unit.AttackMove(Regions.SouthBase);
       }
-      else if (player.Id == Program.SouthernForces.Id)
+      else if (player.Id == Program.SouthernForces.Computer.Player.Id)
       {
         unit.AttackMove(Regions.EastBase);
       }

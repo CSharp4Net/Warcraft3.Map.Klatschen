@@ -15,6 +15,16 @@ gg_trg_Melee_Initialization = nil
 function InitGlobals()
 end
 
+function CreateUnitsForPlayer0()
+local p = Player(0)
+local u
+local unitID
+local t
+local life
+
+u = BlzCreateUnitWithSkin(p, FourCC("h006"), -13834.3, 7167.3, 355.386, FourCC("h006"))
+end
+
 function CreateBuildingsForPlayer3()
 local p = Player(3)
 local u
@@ -22,7 +32,6 @@ local unitID
 local t
 local life
 
-u = BlzCreateUnitWithSkin(p, FourCC("h001"), -14336.0, 6656.0, 270.000, FourCC("h001"))
 u = BlzCreateUnitWithSkin(p, FourCC("h005"), -13824.0, 5632.0, 270.000, FourCC("h005"))
 u = BlzCreateUnitWithSkin(p, FourCC("h005"), -13312.0, 6144.0, 270.000, FourCC("h005"))
 u = BlzCreateUnitWithSkin(p, FourCC("h005"), -13312.0, 7168.0, 270.000, FourCC("h005"))
@@ -48,7 +57,6 @@ local unitID
 local t
 local life
 
-u = BlzCreateUnitWithSkin(p, FourCC("o000"), 14336.0, 6656.0, 270.000, FourCC("o000"))
 u = BlzCreateUnitWithSkin(p, FourCC("n001"), 13312.0, 6144.0, 270.000, FourCC("n001"))
 u = BlzCreateUnitWithSkin(p, FourCC("n001"), 13824.0, 5632.0, 270.000, FourCC("n001"))
 u = BlzCreateUnitWithSkin(p, FourCC("n001"), 13312.0, 7168.0, 270.000, FourCC("n001"))
@@ -74,7 +82,6 @@ local unitID
 local t
 local life
 
-u = BlzCreateUnitWithSkin(p, FourCC("e000"), 0.0, -17408.0, 270.000, FourCC("e000"))
 u = BlzCreateUnitWithSkin(p, FourCC("n002"), -480.0, -16352.0, 270.000, FourCC("n002"))
 u = BlzCreateUnitWithSkin(p, FourCC("n002"), 480.0, -16352.0, 270.000, FourCC("n002"))
 u = BlzCreateUnitWithSkin(p, FourCC("n002"), 1568.0, -16352.0, 270.000, FourCC("n002"))
@@ -100,6 +107,7 @@ CreateBuildingsForPlayer11()
 end
 
 function CreatePlayerUnits()
+CreateUnitsForPlayer0()
 end
 
 function CreateAllUnits()
@@ -110,6 +118,7 @@ end
 function CreateRegions()
 local we
 
+gg_rct_Center = Rect(-128.0, -1536.0, 128.0, -1280.0)
 gg_rct_EastBase = Rect(14272.0, 6592.0, 14400.0, 6720.0)
 gg_rct_EastSpawnBottom = Rect(14336.0, 6144.0, 14464.0, 6272.0)
 gg_rct_EastSpawnMiddle = Rect(13952.0, 6272.0, 14080.0, 6400.0)
@@ -122,7 +131,6 @@ gg_rct_WestBase = Rect(-14400.0, 6592.0, -14272.0, 6720.0)
 gg_rct_WestSpawnBottom = Rect(-14464.0, 6144.0, -14336.0, 6272.0)
 gg_rct_WestSpawnMiddle = Rect(-14080.0, 6272.0, -13952.0, 6400.0)
 gg_rct_WestSpawnTop = Rect(-13824.0, 6656.0, -13696.0, 6784.0)
-gg_rct_Center = Rect(-128.0, -1536.0, 128.0, -1280.0)
 end
 
 function Trig_Melee_Initialization_Actions()

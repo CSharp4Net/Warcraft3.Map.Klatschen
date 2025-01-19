@@ -14,11 +14,11 @@ namespace Source.RegionEvents
         return;
 
       // Feindliche Einheit zur Basis des anderen Spielers schicken
-      if (player.Id == Program.WesternForces.Id)
+      if (player.Id == Program.HumanTeam.Computer.Player.Id)
       {
         unit.AttackMove(Regions.EastBase);
       }
-      else if (player.Id == Program.EasternForces.Id)
+      else if (player.Id == Program.EasternForces.Computer.Player.Id)
       {
         unit.AttackMove(Regions.WestBase);
       }

@@ -23,6 +23,7 @@
 		<PackageReference Include="WCSharp.W3MMD" Version="3.0.0" />
 	</ItemGroup>
 	<ItemGroup>
-	  <Folder Include="UnitEvents\" />
+	  <Folder Include="Players\" />
+	  <Folder Include="SpecificUnitEvents\" />
 	</ItemGroup>
 </Project>
