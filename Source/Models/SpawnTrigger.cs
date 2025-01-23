@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using WCSharp.Api;
 
@@ -6,15 +7,18 @@ namespace Source.Models
 {
   public sealed class SpawnTrigger
   {
-    public SpawnTrigger(ComputerPlayer player, float interval, Area spawnArea, params int[] unitIds)
+    public SpawnTrigger(ComputerPlayer player, float interval, Area spawnArea, Building building = null, params int[] unitIds)
     {
       Player = player;
       Interval = interval;
       SpawnArea = spawnArea;
+      Building = building;
       UnitIds = unitIds.ToList();
     }
 
     public ComputerPlayer Player { get; init; }
+
+    public Building Building { get; init; }
 
     public float Interval { get; init; }
 
@@ -32,9 +36,16 @@ namespace Source.Models
 
     public void Elapsed()
     {
-      foreach (int unitId in UnitIds)
+      try
       {
-        Player.CreateUnit(unitId, SpawnArea);
+        foreach (int unitId in UnitIds)
+        {
+          Player.CreateUnit(unitId, SpawnArea);
+        }
+      }
+      catch (Exception ex)
+      {
+        Console.WriteLine(ex.Message);
       }
     }
 

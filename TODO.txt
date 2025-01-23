@@ -1,0 +1,13 @@
+TODO - Liste
+============
+
+Computer-Spieler
+- Bei Spielstart Hero-Selector für jeden aktiven Menschen-Player
+- Heldenauswahl-Bereich gestalten
+- Helden erstellen (min. 3)
+- Heldenauswahl-Event implementieren (Hero-Selector stirbt, Held wird in Base erstellt)
+- Helden Sterbe-Event mit Wiedergeburt-Timer (Dialog von Timer-Objekt)
+- Goldverteilung der Computer-Player bei erreichen von Limit an alle aktiven Menschen-Player im Team
+- Forschungsgebäude erstellen (min. 1)
+- Forschung-Event implementieren (Verbesserung der Einheiten und Zukauf von Spawns, Forschung wird für alle Team-Player gemacht)
+- Galgen-Events im Zentrum, Unit-Spawner für zerstörenden Spieler

@@ -1,13 +1,31 @@
 gg_rct_Center = nil
+gg_rct_EastBarracksBottom = nil
+gg_rct_EastBarracksMiddle = nil
+gg_rct_EastBarracksTop = nil
 gg_rct_EastBase = nil
+gg_rct_EastSpawnBarracksBottom = nil
+gg_rct_EastSpawnBarracksMiddle = nil
+gg_rct_EastSpawnBarracksTop = nil
 gg_rct_EastSpawnBottom = nil
 gg_rct_EastSpawnMiddle = nil
 gg_rct_EastSpawnTop = nil
+gg_rct_SouthBarracksLeft = nil
+gg_rct_SouthBarracksMiddle = nil
+gg_rct_SouthBarracksRight = nil
 gg_rct_SouthBase = nil
+gg_rct_SouthSpawnBarracksLeft = nil
+gg_rct_SouthSpawnBarracksMiddle = nil
+gg_rct_SouthSpawnBarracksRight = nil
 gg_rct_SouthSpawnLeft = nil
 gg_rct_SouthSpawnMiddle = nil
 gg_rct_SouthSpawnRight = nil
+gg_rct_WestBarracksBottom = nil
+gg_rct_WestBarracksMiddle = nil
+gg_rct_WestBarracksTop = nil
 gg_rct_WestBase = nil
+gg_rct_WestSpawnBarracksBottom = nil
+gg_rct_WestSpawnBarracksMiddle = nil
+gg_rct_WestSpawnBarracksTop = nil
 gg_rct_WestSpawnBottom = nil
 gg_rct_WestSpawnMiddle = nil
 gg_rct_WestSpawnTop = nil
@@ -121,18 +139,36 @@ function CreateRegions()
 local we
 
 gg_rct_Center = Rect(-128.0, -1536.0, 128.0, -1280.0)
+gg_rct_EastBarracksBottom = Rect(13056.0, 4096.0, 13184.0, 4224.0)
+gg_rct_EastBarracksMiddle = Rect(12032.0, 4992.0, 12160.0, 5120.0)
+gg_rct_EastBarracksTop = Rect(11776.0, 6528.0, 11904.0, 6656.0)
 gg_rct_EastBase = Rect(14272.0, 6592.0, 14400.0, 6720.0)
-gg_rct_EastSpawnBottom = Rect(14336.0, 6144.0, 14464.0, 6272.0)
-gg_rct_EastSpawnMiddle = Rect(13952.0, 6272.0, 14080.0, 6400.0)
-gg_rct_EastSpawnTop = Rect(13824.0, 6656.0, 13952.0, 6784.0)
+gg_rct_EastSpawnBarracksBottom = Rect(12928.0, 3968.0, 13056.0, 4096.0)
+gg_rct_EastSpawnBarracksMiddle = Rect(11904.0, 4864.0, 12032.0, 4992.0)
+gg_rct_EastSpawnBarracksTop = Rect(11584.0, 6528.0, 11712.0, 6656.0)
+gg_rct_EastSpawnBottom = Rect(14336.0, 6400.0, 14464.0, 6528.0)
+gg_rct_EastSpawnMiddle = Rect(14080.0, 6400.0, 14208.0, 6528.0)
+gg_rct_EastSpawnTop = Rect(14080.0, 6656.0, 14208.0, 6784.0)
+gg_rct_SouthBarracksLeft = Rect(-1792.0, -14848.0, -1664.0, -14720.0)
+gg_rct_SouthBarracksMiddle = Rect(448.0, -14592.0, 576.0, -14464.0)
+gg_rct_SouthBarracksRight = Rect(2304.0, -14848.0, 2432.0, -14720.0)
 gg_rct_SouthBase = Rect(-64.0, -17472.0, 64.0, -17344.0)
-gg_rct_SouthSpawnLeft = Rect(-448.0, -17280.0, -320.0, -17152.0)
-gg_rct_SouthSpawnMiddle = Rect(-64.0, -17024.0, 64.0, -16896.0)
-gg_rct_SouthSpawnRight = Rect(320.0, -17280.0, 448.0, -17152.0)
+gg_rct_SouthSpawnBarracksLeft = Rect(-1920.0, -14720.0, -1792.0, -14592.0)
+gg_rct_SouthSpawnBarracksMiddle = Rect(448.0, -14400.0, 576.0, -14272.0)
+gg_rct_SouthSpawnBarracksRight = Rect(2432.0, -14720.0, 2560.0, -14592.0)
+gg_rct_SouthSpawnLeft = Rect(-256.0, -17408.0, -128.0, -17280.0)
+gg_rct_SouthSpawnMiddle = Rect(-64.0, -17280.0, 64.0, -17152.0)
+gg_rct_SouthSpawnRight = Rect(128.0, -17408.0, 256.0, -17280.0)
+gg_rct_WestBarracksBottom = Rect(-13056.0, 4096.0, -12928.0, 4224.0)
+gg_rct_WestBarracksMiddle = Rect(-12032.0, 4928.0, -11904.0, 5056.0)
+gg_rct_WestBarracksTop = Rect(-11456.0, 6592.0, -11328.0, 6720.0)
 gg_rct_WestBase = Rect(-14400.0, 6592.0, -14272.0, 6720.0)
-gg_rct_WestSpawnBottom = Rect(-14464.0, 6144.0, -14336.0, 6272.0)
-gg_rct_WestSpawnMiddle = Rect(-14080.0, 6272.0, -13952.0, 6400.0)
-gg_rct_WestSpawnTop = Rect(-13824.0, 6656.0, -13696.0, 6784.0)
+gg_rct_WestSpawnBarracksBottom = Rect(-12928.0, 3968.0, -12800.0, 4096.0)
+gg_rct_WestSpawnBarracksMiddle = Rect(-11904.0, 4800.0, -11776.0, 4928.0)
+gg_rct_WestSpawnBarracksTop = Rect(-11264.0, 6592.0, -11136.0, 6720.0)
+gg_rct_WestSpawnBottom = Rect(-14464.0, 6400.0, -14336.0, 6528.0)
+gg_rct_WestSpawnMiddle = Rect(-14208.0, 6400.0, -14080.0, 6528.0)
+gg_rct_WestSpawnTop = Rect(-14208.0, 6656.0, -14080.0, 6784.0)
 end
 
 function Trig_Melee_Initialization_Actions()
@@ -328,19 +364,15 @@ SetPlayerAllianceStateVisionBJ(Player(11), Player(10), true)
 end
 
 function InitAllyPriorities()
-SetStartLocPrioCount(0, 8)
+SetStartLocPrioCount(0, 2)
 SetStartLocPrio(0, 0, 1, MAP_LOC_PRIO_HIGH)
 SetStartLocPrio(0, 1, 2, MAP_LOC_PRIO_HIGH)
-SetStartLocPrio(0, 2, 4, MAP_LOC_PRIO_HIGH)
-SetStartLocPrio(0, 3, 5, MAP_LOC_PRIO_HIGH)
-SetStartLocPrio(0, 4, 6, MAP_LOC_PRIO_HIGH)
-SetStartLocPrio(0, 5, 8, MAP_LOC_PRIO_HIGH)
-SetStartLocPrio(0, 6, 9, MAP_LOC_PRIO_HIGH)
-SetStartLocPrio(0, 7, 10, MAP_LOC_PRIO_HIGH)
-SetStartLocPrioCount(1, 1)
-SetStartLocPrio(1, 0, 2, MAP_LOC_PRIO_HIGH)
-SetStartLocPrioCount(2, 1)
-SetStartLocPrio(2, 0, 1, MAP_LOC_PRIO_HIGH)
+SetStartLocPrioCount(1, 2)
+SetStartLocPrio(1, 0, 0, MAP_LOC_PRIO_HIGH)
+SetStartLocPrio(1, 1, 2, MAP_LOC_PRIO_HIGH)
+SetStartLocPrioCount(2, 2)
+SetStartLocPrio(2, 0, 0, MAP_LOC_PRIO_HIGH)
+SetStartLocPrio(2, 1, 1, MAP_LOC_PRIO_HIGH)
 SetStartLocPrioCount(3, 11)
 SetStartLocPrio(3, 0, 0, MAP_LOC_PRIO_LOW)
 SetStartLocPrio(3, 1, 1, MAP_LOC_PRIO_HIGH)
@@ -413,17 +445,17 @@ SetMapDescription("TRIGSTR_003")
 SetPlayers(12)
 SetTeams(12)
 SetGamePlacement(MAP_PLACEMENT_TEAMS_TOGETHER)
-DefineStartLocation(0, -14336.0, 6656.0)
-DefineStartLocation(1, 0.0, -64.0)
-DefineStartLocation(2, 0.0, -64.0)
+DefineStartLocation(0, -1536.0, -896.0)
+DefineStartLocation(1, -1536.0, -896.0)
+DefineStartLocation(2, -1536.0, -896.0)
 DefineStartLocation(3, -14336.0, 6656.0)
-DefineStartLocation(4, 0.0, -576.0)
-DefineStartLocation(5, 0.0, -576.0)
-DefineStartLocation(6, 0.0, -576.0)
+DefineStartLocation(4, 1344.0, -768.0)
+DefineStartLocation(5, 1344.0, -768.0)
+DefineStartLocation(6, 1344.0, -768.0)
 DefineStartLocation(7, 14336.0, 6656.0)
-DefineStartLocation(8, 0.0, -1088.0)
-DefineStartLocation(9, 0.0, -1088.0)
-DefineStartLocation(10, 0.0, -1088.0)
+DefineStartLocation(8, 128.0, -2880.0)
+DefineStartLocation(9, 128.0, -2880.0)
+DefineStartLocation(10, 128.0, -2880.0)
 DefineStartLocation(11, 0.0, -17408.0)
 InitCustomPlayerSlots()
 InitCustomTeams()

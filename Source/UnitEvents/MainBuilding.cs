@@ -7,32 +7,41 @@ namespace Source.UnitEvents
   {
     internal static void OnDies()
     {
-      unit unit = Common.GetTriggerUnit();
+      try
+      {
+        unit unit = Common.GetTriggerUnit();
 
-      if (unit.Owner.Id == Program.Humans.Computer.Player.Id)
-      {
-        Program.Humans.Defeat();
-      }
-      else if (unit.Owner.Id == Program.Orcs.Computer.Player.Id)
-      {
-        Program.Orcs.Defeat();
-      }
-      else if (unit.Owner.Id == Program.Elves.Computer.Player.Id)
-      {
-        Program.Elves.Defeat();
-      }
+        // Besiege alle Spieler im Team des Hauptgebäudes
+        if (unit.Owner.Id == Program.Humans.Computer.Player.Id)
+        {
+          Program.Humans.Defeat();
+        }
+        else if (unit.Owner.Id == Program.Orcs.Computer.Player.Id)
+        {
+          Program.Orcs.Defeat();
+        }
+        else if (unit.Owner.Id == Program.Elves.Computer.Player.Id)
+        {
+          Program.Elves.Defeat();
+        }
 
-      if (Program.Humans.Defeated && Program.Orcs.Defeated)
-      {
-        Program.Elves.Win();
+        // Ist nur noch ein Team übrig, gewinnen alle Spieler im Team
+        if (Program.Humans.Defeated && Program.Orcs.Defeated)
+        {
+          Program.Elves.Win();
+        }
+        else if (Program.Humans.Defeated && Program.Elves.Defeated)
+        {
+          Program.Orcs.Win();
+        }
+        else if (Program.Orcs.Defeated && Program.Elves.Defeated)
+        {
+          Program.Humans.Win();
+        }
       }
-      else if (Program.Humans.Defeated && Program.Elves.Defeated)
+      catch (Exception ex)
       {
-        Program.Orcs.Win();
-      }
-      else if (Program.Orcs.Defeated && Program.Elves.Defeated)
-      {
-        Program.Humans.Win();
+        Console.WriteLine(ex.Message);
       }
     }
   }

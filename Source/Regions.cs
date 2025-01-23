@@ -6,17 +6,35 @@ using WCSharp.Shared.Data;
 public static class Regions
 {
 	public static Rectangle Center { get; set; } = new Rectangle(-128f, -1536f, 128f, -1280f);
+	public static Rectangle EastBarracksBottom { get; set; } = new Rectangle(13056f, 4096f, 13184f, 4224f);
+	public static Rectangle EastBarracksMiddle { get; set; } = new Rectangle(12032f, 4992f, 12160f, 5120f);
+	public static Rectangle EastBarracksTop { get; set; } = new Rectangle(11776f, 6528f, 11904f, 6656f);
 	public static Rectangle EastBase { get; set; } = new Rectangle(14272f, 6592f, 14400f, 6720f);
-	public static Rectangle EastSpawnBottom { get; set; } = new Rectangle(14336f, 6144f, 14464f, 6272f);
-	public static Rectangle EastSpawnMiddle { get; set; } = new Rectangle(13952f, 6272f, 14080f, 6400f);
-	public static Rectangle EastSpawnTop { get; set; } = new Rectangle(13824f, 6656f, 13952f, 6784f);
+	public static Rectangle EastSpawnBarracksBottom { get; set; } = new Rectangle(12928f, 3968f, 13056f, 4096f);
+	public static Rectangle EastSpawnBarracksMiddle { get; set; } = new Rectangle(11904f, 4864f, 12032f, 4992f);
+	public static Rectangle EastSpawnBarracksTop { get; set; } = new Rectangle(11584f, 6528f, 11712f, 6656f);
+	public static Rectangle EastSpawnBottom { get; set; } = new Rectangle(14336f, 6400f, 14464f, 6528f);
+	public static Rectangle EastSpawnMiddle { get; set; } = new Rectangle(14080f, 6400f, 14208f, 6528f);
+	public static Rectangle EastSpawnTop { get; set; } = new Rectangle(14080f, 6656f, 14208f, 6784f);
+	public static Rectangle SouthBarracksLeft { get; set; } = new Rectangle(-1792f, -14848f, -1664f, -14720f);
+	public static Rectangle SouthBarracksMiddle { get; set; } = new Rectangle(448f, -14592f, 576f, -14464f);
+	public static Rectangle SouthBarracksRight { get; set; } = new Rectangle(2304f, -14848f, 2432f, -14720f);
 	public static Rectangle SouthBase { get; set; } = new Rectangle(-64f, -17472f, 64f, -17344f);
-	public static Rectangle SouthSpawnLeft { get; set; } = new Rectangle(-448f, -17280f, -320f, -17152f);
-	public static Rectangle SouthSpawnMiddle { get; set; } = new Rectangle(-64f, -17024f, 64f, -16896f);
-	public static Rectangle SouthSpawnRight { get; set; } = new Rectangle(320f, -17280f, 448f, -17152f);
+	public static Rectangle SouthSpawnBarracksLeft { get; set; } = new Rectangle(-1920f, -14720f, -1792f, -14592f);
+	public static Rectangle SouthSpawnBarracksMiddle { get; set; } = new Rectangle(448f, -14400f, 576f, -14272f);
+	public static Rectangle SouthSpawnBarracksRight { get; set; } = new Rectangle(2432f, -14720f, 2560f, -14592f);
+	public static Rectangle SouthSpawnLeft { get; set; } = new Rectangle(-256f, -17408f, -128f, -17280f);
+	public static Rectangle SouthSpawnMiddle { get; set; } = new Rectangle(-64f, -17280f, 64f, -17152f);
+	public static Rectangle SouthSpawnRight { get; set; } = new Rectangle(128f, -17408f, 256f, -17280f);
+	public static Rectangle WestBarracksBottom { get; set; } = new Rectangle(-13056f, 4096f, -12928f, 4224f);
+	public static Rectangle WestBarracksMiddle { get; set; } = new Rectangle(-12032f, 4928f, -11904f, 5056f);
+	public static Rectangle WestBarracksTop { get; set; } = new Rectangle(-11456f, 6592f, -11328f, 6720f);
 	public static Rectangle WestBase { get; set; } = new Rectangle(-14400f, 6592f, -14272f, 6720f);
-	public static Rectangle WestSpawnBottom { get; set; } = new Rectangle(-14464f, 6144f, -14336f, 6272f);
-	public static Rectangle WestSpawnMiddle { get; set; } = new Rectangle(-14080f, 6272f, -13952f, 6400f);
-	public static Rectangle WestSpawnTop { get; set; } = new Rectangle(-13824f, 6656f, -13696f, 6784f);
+	public static Rectangle WestSpawnBarracksBottom { get; set; } = new Rectangle(-12928f, 3968f, -12800f, 4096f);
+	public static Rectangle WestSpawnBarracksMiddle { get; set; } = new Rectangle(-11904f, 4800f, -11776f, 4928f);
+	public static Rectangle WestSpawnBarracksTop { get; set; } = new Rectangle(-11264f, 6592f, -11136f, 6720f);
+	public static Rectangle WestSpawnBottom { get; set; } = new Rectangle(-14464f, 6400f, -14336f, 6528f);
+	public static Rectangle WestSpawnMiddle { get; set; } = new Rectangle(-14208f, 6400f, -14080f, 6528f);
+	public static Rectangle WestSpawnTop { get; set; } = new Rectangle(-14208f, 6656f, -14080f, 6784f);
 
 }

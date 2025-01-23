@@ -1,4 +1,6 @@
 ﻿using Source.Abstracts;
+using Source.Extensions;
+using System;
 using System.Collections.Generic;
 using WCSharp.Api;
 
@@ -14,35 +16,36 @@ namespace Source.Models
 
     public Team Team { get; init; }
 
-    public List<unit> Buildings { get; init; } = new List<unit>();
+    public List<Building> Buildings { get; init; } = new List<Building>();
 
-    private List<SpawnTrigger> SpawnTriggers { get; init; } = new List<SpawnTrigger>();
+    //private List<SpawnTrigger> SpawnTriggers { get; init; } = new List<SpawnTrigger>();
 
-    public unit CreateBuilding(int unitTypeId, Area area, float face = 0f)
+    public Building CreateBuilding(int unitTypeId, Area area, float face = 0f)
     {
       // Ort anhand Zentrum einer Region erstellen
-      unit unit = Common.CreateUnitAtLoc(Player, unitTypeId, area.CenterLocation, face);
-      Buildings.Add(unit);
-      return unit;
+      Building building = new Building(this, unitTypeId, area, face);
+      Buildings.Add(building);
+      return building;
     }
 
-    public void AddSpawnTrigger(float interval, Area spawnArea, params int[] unitIds)
-    {
-      SpawnTrigger trigger = new SpawnTrigger(this, interval, spawnArea, unitIds);
-      SpawnTriggers.Add(trigger);
-      trigger.Run();
-    }
+    //public void AddSpawnTrigger(float interval, Area spawnArea, unit spawningBuilding, params int[] unitIds)
+    //{
+    //  SpawnTrigger trigger = new SpawnTrigger(this, interval, spawnArea, unitIds);
+    //  SpawnTriggers.Add(trigger);
+    //  trigger.Run();
+    //}
 
     public override void Defeat()
     {
-      foreach (unit unit in Buildings)
-      {
-        unit.Kill();
-      }
+      //foreach (SpawnTrigger trigger in SpawnTriggers)
+      //{
+      //  trigger.Stop();
+      //}
 
-      foreach (SpawnTrigger trigger in SpawnTriggers)
+      Console.WriteLine($"Destroy buildings");
+      foreach (Building building in Buildings)
       {
-        trigger.Stop();
+        building.Destroy();
       }
 
       base.Defeat();
