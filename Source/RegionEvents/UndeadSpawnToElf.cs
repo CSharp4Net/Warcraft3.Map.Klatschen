@@ -4,7 +4,7 @@ using WCSharp.Api;
 
 namespace Source.RegionEvents
 {
-  internal static class WestSpawnMiddleRegion
+  internal static class UndeadSpawnToElf
   {
     internal static void OnEnter()
     {
@@ -16,9 +16,9 @@ namespace Source.RegionEvents
           return;
 
         // Feindliche Einheit zur Basis des anderen Spielers schicken
-        if (unit.Owner.Id == Program.Humans.Computer.Wc3Player.Id)
+        if (unit.Owner.Id == Program.Undeads.Computer.Wc3Player.Id)
         {
-          unit.AttackMove(Regions.Center);
+          unit.AttackMove(Regions.ElfBase);
         }
       }
       catch (Exception ex)

@@ -10,9 +10,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Launcher", "Launcher\Launcher.csproj", "{4F1BE747-D911-42B6-A540-4A96E023A865}"
-	ProjectSection(ProjectDependencies) = postProject
-		{F8A8DD28-974D-46AC-91A8-324E2BD1FAE6} = {F8A8DD28-974D-46AC-91A8-324E2BD1FAE6}
-	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Source", "Source\Source.csproj", "{F8A8DD28-974D-46AC-91A8-324E2BD1FAE6}"
 EndProject

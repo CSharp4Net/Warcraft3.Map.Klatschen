@@ -4,7 +4,7 @@ using WCSharp.Api;
 
 namespace Source.RegionEvents
 {
-  internal static class WestBarracksRegions
+  internal static class HumanSpawnToCenter
   {
     internal static void OnEnter()
     {
@@ -15,10 +15,10 @@ namespace Source.RegionEvents
         if (unit.IsABuilding || unit.Owner.Controller != mapcontrol.Computer)
           return;
 
-        // Feindliche Einheit zur Basis des Computer-Spielers schicken
-        if (unit.Owner.Id != Program.Humans.Computer.Wc3Player.Id)
+        // Feindliche Einheit zur Basis des anderen Spielers schicken
+        if (unit.Owner.Id == Program.Humans.Computer.Wc3Player.Id)
         {
-          unit.AttackMove(Regions.WestBase);
+          unit.AttackMove(Regions.Center);
         }
       }
       catch (Exception ex)

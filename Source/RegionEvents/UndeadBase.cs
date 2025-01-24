@@ -3,7 +3,7 @@ using WCSharp.Api;
 
 namespace Source.RegionEvents
 {
-  internal static class EastBaseRegion
+  internal static class UndeadBase
   {
     internal static void OnEnter()
     {
@@ -15,11 +15,15 @@ namespace Source.RegionEvents
       // Feindliche Einheit zur Basis des anderen Spielers schicken
       if (unit.Owner.Id == Program.Humans.Computer.Wc3Player.Id)
       {
-        unit.AttackMove(Regions.SouthBase);
+        unit.AttackMove(Regions.Center);
+      }
+      else if (unit.Owner.Id == Program.Orcs.Computer.Wc3Player.Id)
+      {
+        unit.AttackMove(Regions.ElfBase);
       }
       else if (unit.Owner.Id == Program.Elves.Computer.Wc3Player.Id)
       {
-        unit.AttackMove(Regions.WestBase);
+        unit.AttackMove(Regions.OrcBase);
       }
     }
   }
