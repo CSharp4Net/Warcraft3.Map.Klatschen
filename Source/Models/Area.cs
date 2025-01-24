@@ -6,20 +6,20 @@ namespace Source.Models
 {
   public sealed class Area
   {
-    public Area(Rectangle rectangle)
+    public Area(Rectangle wc3Rectangle)
     {
-      Rectangle = rectangle;
-      CenterLocation = Common.Location(rectangle.Center.X, rectangle.Center.Y);
+      Wc3Rectangle = wc3Rectangle;
+      Wc3CenterLocation = Common.Location(wc3Rectangle.Center.X, wc3Rectangle.Center.Y);
     }
 
-    public Rectangle Rectangle { get; init; }
-    public region Region => Rectangle.Region;
-    public location CenterLocation { get; init; }
+    public Rectangle Wc3Rectangle { get; init; }
+    public region Wc3Region => Wc3Rectangle.Region;
+    public location Wc3CenterLocation { get; init; }
 
     public void RegisterOnEnter(Action eventHandler)
     {
       trigger trigger = trigger.Create();
-      trigger.RegisterEnterRegion(Region);
+      trigger.RegisterEnterRegion(Wc3Region);
       trigger.AddAction(eventHandler);
     }
   }

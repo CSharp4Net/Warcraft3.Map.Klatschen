@@ -1,5 +1,4 @@
 ﻿using Source.Models;
-using System;
 using System.Collections.Generic;
 using WCSharp.Api;
 
@@ -7,12 +6,16 @@ namespace Source.Abstracts
 {
   public abstract class PlayerBase
   {
-    public PlayerBase(player player)
+    public PlayerBase(player wc3Player)
     {
-      Player = player;
+      Wc3Player = wc3Player;
     }
 
-    public player Player { get; init; }
+    /// <summary>
+    /// WC3-Spielerobjekt
+    /// </summary>
+    public player Wc3Player { get; init; }
+
     /// <summary>
     /// Auflistung alle Einheiten dieses Spielers
     /// </summary>
@@ -28,7 +31,7 @@ namespace Source.Abstracts
     public unit CreateUnit(int unitTypeId, Area area, float face = 0f)
     {
       // Ort anhand Zentrum einer Region erstellen
-      unit unit = Common.CreateUnitAtLoc(Player, unitTypeId, area.CenterLocation, face);
+      unit unit = Common.CreateUnitAtLoc(Wc3Player, unitTypeId, area.Wc3CenterLocation, face);
       Units.Add(unit);
       return unit;
     }
@@ -40,7 +43,7 @@ namespace Source.Abstracts
         unit.Kill();
       }
 
-      Blizzard.MeleeDoDefeat(Player);
+      Blizzard.MeleeDoDefeat(Wc3Player);
     }
 
     public virtual void Win()
@@ -52,7 +55,18 @@ namespace Source.Abstracts
         unit.Dispose();
       }
 
-      Blizzard.MeleeVictoryDialogBJ(Player, true);
+      Blizzard.MeleeVictoryDialogBJ(Wc3Player, true);
+    }
+
+    public bool IsOwnerOfUnit(unit wc3Unit)
+    {
+      foreach (unit unit in Units)
+      {
+        if (unit == wc3Unit)        
+          return true;        
+      }
+
+      return false;
     }
   }
 }

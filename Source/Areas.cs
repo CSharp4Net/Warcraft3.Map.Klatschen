@@ -16,6 +16,7 @@ internal static class Areas
   public static Area EastSpawnBottom { get; set; } = new Area(Regions.EastSpawnBottom);
   public static Area EastSpawnMiddle { get; set; } = new Area(Regions.EastSpawnMiddle);
   public static Area EastSpawnTop { get; set; } = new Area(Regions.EastSpawnTop);
+  public static Area HeroSelectorSpawn { get; set; } = new Area(Regions.HeroSelectorSpawn);
   public static Area SouthBarracksLeft { get; set; } = new Area(Regions.SouthBarracksLeft);
   public static Area SouthBarracksMiddle { get; set; } = new Area(Regions.SouthBarracksMiddle);
   public static Area SouthBarracksRight { get; set; } = new Area(Regions.SouthBarracksRight);

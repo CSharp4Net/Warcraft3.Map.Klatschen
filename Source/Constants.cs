@@ -28,6 +28,7 @@ public static class Constants
 	public const int UNIT_KASERNE_HUMAN = 1747988535;
 	public const int UNIT_KASERNE_ORC = 1865429044;
 	public const int UNIT_URTUM_DES_KRIEGES_ELF = 1697656884;
+	public const int UNIT_TAVERNE_HERO = 1848651827;
 	public const int ORDER_OFFSET = 851970;
 	public const int ORDER_WAND_ILLUSION = 852274;
 	public const int ORDER_ABSORB = 852529;

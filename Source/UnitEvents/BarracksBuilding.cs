@@ -12,47 +12,26 @@ namespace Source.UnitEvents
       {
         unit unit = Common.GetTriggerUnit();
 
-        if (unit.Owner.Id == Program.Humans.Computer.Player.Id)
+        if (Program.Humans.Computer.IsOwnerOfBuilding(unit, out SpawnedBuilding building))
         {
-          foreach (Building building in Program.Humans.Computer.Buildings)
-          {
-            if (building.Unit == unit)
-            {
-              building.Destroy();
-              Console.WriteLine("Die Menschen haben eine ihrer Kasernen verloren!");
+          building.Destroy();
+          Console.WriteLine("Die Menschen haben eine ihrer Kasernen verloren!");
 
-              Program.Humans.Computer.Buildings.Remove(building);
-              break;
-            }
-          }
+          Program.Humans.Computer.RemoveBuilding(building);
         }
-        else if (unit.Owner.Id == Program.Orcs.Computer.Player.Id)
+        else if (Program.Orcs.Computer.IsOwnerOfBuilding(unit, out building))
         {
-          foreach (Building building in Program.Orcs.Computer.Buildings)
-          {
-            if (building.Unit == unit)
-            {
-              building.Destroy();
-              Console.WriteLine("Die Orks haben eine ihrer Kasernen verloren!");
+          building.Destroy();
+          Console.WriteLine("Die Orks haben eine ihrer Kasernen verloren!");
 
-              Program.Orcs.Computer.Buildings.Remove(building);
-              break;
-            }
-          }
+          Program.Orcs.Computer.RemoveBuilding(building);
         }
-        else if (unit.Owner.Id == Program.Elves.Computer.Player.Id)
+        else if (Program.Elves.Computer.IsOwnerOfBuilding(unit, out building))
         {
-          foreach (Building building in Program.Elves.Computer.Buildings)
-          {
-            if (building.Unit == unit)
-            {
-              building.Destroy();
-              Console.WriteLine("Die Elfen haben eine ihrer Kasernen verloren!");
+          building.Destroy();
+          Console.WriteLine("Die Elfen haben eine ihrer Kasernen verloren!");
 
-              Program.Elves.Computer.Buildings.Remove(building);
-              break;
-            }
-          }
+          Program.Elves.Computer.RemoveBuilding(building);
         }
       }
       catch (Exception ex)

@@ -3,9 +3,9 @@ using WCSharp.Api;
 
 namespace Source.Models
 {
-  public sealed class RealPlayer : PlayerBase
+  public sealed class UserPlayer : PlayerBase
   {
-    public RealPlayer(player player, Team team)
+    public UserPlayer(player player, Team team)
       : base(player)
     {
       Team = team;

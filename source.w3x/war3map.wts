@@ -1,6 +1,6 @@
 ﻿STRING 1
 {
-KLATSCHEN
+KLATSCHEN-2
 }
 
 STRING 2
@@ -10,7 +10,7 @@ All you can eat.
 
 STRING 3
 {
-Nondescript
+...Under construction...
 }
 
 STRING 4
@@ -204,18 +204,64 @@ STRING 50
 Elfen
 }
 
-STRING 51
+STRING 54
+// Units: n003 (Taverne), EditorSuffix (Name - Editor Suffix)
 {
-Allianz
+(Hero)
 }
 
-STRING 52
+STRING 55
 {
-Horde
+Allianz der Menschen
 }
 
-STRING 53
+STRING 56
 {
-Naturgeister
+Wilde Horde
+}
+
+STRING 57
+{
+Liga der Elfen
+}
+
+STRING 58
+{
+Player 13
+}
+
+STRING 59
+{
+Player 14
+}
+
+STRING 60
+{
+Player 15
+}
+
+STRING 61
+{
+Untote Seuche
+}
+
+STRING 62
+{
+Untote
+}
+
+STRING 63
+{
+Klatschen
+}
+
+STRING 64
+{
+is back!
+}
+
+STRING 65
+{
+...Under construction...
 }
 

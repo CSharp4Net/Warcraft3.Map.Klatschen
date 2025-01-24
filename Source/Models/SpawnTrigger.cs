@@ -7,7 +7,7 @@ namespace Source.Models
 {
   public sealed class SpawnTrigger
   {
-    public SpawnTrigger(ComputerPlayer player, float interval, Area spawnArea, Building building = null, params int[] unitIds)
+    public SpawnTrigger(ComputerPlayer player, float interval, Area spawnArea, SpawnedBuilding building = null, params int[] unitIds)
     {
       Player = player;
       Interval = interval;
@@ -18,7 +18,7 @@ namespace Source.Models
 
     public ComputerPlayer Player { get; init; }
 
-    public Building Building { get; init; }
+    public SpawnedBuilding Building { get; init; }
 
     public float Interval { get; init; }
 

@@ -16,11 +16,11 @@ namespace Source.RegionEvents
           return;
 
         // Feindliche Einheit zur Basis des anderen Spielers schicken
-        if (unit.Owner.Id == Program.Orcs.Computer.Player.Id)
+        if (unit.Owner.Id == Program.Orcs.Computer.Wc3Player.Id)
         {
           unit.AttackMove(Regions.SouthBase);
         }
-        else if (unit.Owner.Id == Program.Elves.Computer.Player.Id)
+        else if (unit.Owner.Id == Program.Elves.Computer.Wc3Player.Id)
         {
           unit.AttackMove(Regions.EastBase);
         }

@@ -16,7 +16,7 @@ namespace Source.RegionEvents
           return;
 
         // Feindliche Einheit zur Basis des anderen Spielers schicken
-        if (unit.Owner.Id == Program.Humans.Computer.Player.Id)
+        if (unit.Owner.Id == Program.Humans.Computer.Wc3Player.Id)
         {
           unit.AttackMove(Regions.Center);
         }

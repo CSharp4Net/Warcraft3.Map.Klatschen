@@ -18,6 +18,7 @@ namespace Source
     public static Team Humans;
     public static Team Orcs;
     public static Team Elves;
+    public static Team Undeads;
 
     public static void Main()
     {
@@ -50,11 +51,7 @@ namespace Source
         Humans = new Team(Common.Player(3));
         Orcs = new Team(Common.Player(7));
         Elves = new Team(Common.Player(11));
-
-#if DEBUG
-        Common.FogEnable(false);
-        Common.FogMaskEnable(false);
-#endif
+        Undeads = new Team(Common.Player(15));
 
         // Regions-Ereignisse registrieren für automatische Einheitenbewegungen
         Areas.Center.RegisterOnEnter(CenterRegion.OnEnter);
@@ -75,6 +72,20 @@ namespace Source
 
         // Spezifische Events registrieren
         Console.WriteLine("Kämpft bis zum Tod!");
+
+#if DEBUG
+        Common.FogEnable(false);
+        Common.FogMaskEnable(false);
+#endif
+
+        // Alle Spieler der Streitmacht vom Computer-Spiler abrufen
+        force force = Blizzard.GetPlayersByMapControl(mapcontrol.User);
+        force.ForEach(() =>
+        {
+          player player = Common.GetEnumPlayer();
+
+          // TODO
+        });
       }
       catch (Exception ex)
       {
@@ -130,7 +141,7 @@ namespace Source
     private static void ConstructHumanBuildingAndTrigger()
     {
       // Hauptgebäude
-      Building building = Humans.Computer.CreateBuilding(Constants.UNIT_RATHAUS_HUMAN, Areas.WestBase);
+      SpawnedBuilding building = Humans.Computer.CreateBuilding(Constants.UNIT_RATHAUS_HUMAN, Areas.WestBase);
       building.RegisterOnDies(MainBuilding.OnDies);
       building.AddSpawnTrigger(15, Areas.WestSpawnBottom, Constants.UNIT_TESTSOLDIER);
       building.AddSpawnTrigger(15, Areas.WestSpawnMiddle, Constants.UNIT_TESTSOLDIER);
@@ -153,7 +164,7 @@ namespace Source
     private static void ConstructOrcBuildingAndTrigger()
     {
       // Hauptgebäude
-      Building building = Orcs.Computer.CreateBuilding(Constants.UNIT_HAUPTHAUS_ORC, Areas.EastBase);
+      SpawnedBuilding building = Orcs.Computer.CreateBuilding(Constants.UNIT_HAUPTHAUS_ORC, Areas.EastBase);
       building.RegisterOnDies(MainBuilding.OnDies);
       building.AddSpawnTrigger(15, Areas.EastSpawnBottom, Constants.UNIT_TESTSOLDIER);
       building.AddSpawnTrigger(15, Areas.EastSpawnMiddle, Constants.UNIT_TESTSOLDIER);
@@ -176,7 +187,7 @@ namespace Source
     private static void ConstructElfBuildingAndTrigger()
     {
       // Hauptgebäude
-      Building building = Elves.Computer.CreateBuilding(Constants.UNIT_BAUM_DES_LEBENS_ELF, Areas.SouthBase);
+      SpawnedBuilding building = Elves.Computer.CreateBuilding(Constants.UNIT_BAUM_DES_LEBENS_ELF, Areas.SouthBase);
       building.RegisterOnDies(MainBuilding.OnDies);
       building.AddSpawnTrigger(15, Areas.SouthSpawnLeft, Constants.UNIT_TESTSOLDIER);
       building.AddSpawnTrigger(15, Areas.SouthSpawnMiddle, Constants.UNIT_TESTSOLDIER);

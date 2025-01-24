@@ -11,3 +11,6 @@ Computer-Spieler
 - Forschungsgebäude erstellen (min. 1)
 - Forschung-Event implementieren (Verbesserung der Einheiten und Zukauf von Spawns, Forschung wird für alle Team-Player gemacht)
 - Galgen-Events im Zentrum, Unit-Spawner für zerstörenden Spieler
+- Spawn-Einheiten definieren für jedes Team
+- Basic-Spawn-Collections mit echten Einheiten versehen
+- Gebäude-Einheiten (Türm, MainBuilding, Kaserne) ausarbeiten

@@ -17,7 +17,7 @@ namespace Source.RegionEvents
         return;
 
       // Computer-Einheit im Uhrzeigersinn oder entgegen gesetzt weiter schicken
-      if (unit.Owner.Id == Program.Humans.Computer.Player.Id)
+      if (unit.Owner.Id == Program.Humans.Computer.Wc3Player.Id)
       {
         if (lastTargetOfWesternUnitWasClockwise)
           unit.AttackMove(Regions.SouthBase);
@@ -26,7 +26,7 @@ namespace Source.RegionEvents
 
         lastTargetOfWesternUnitWasClockwise = !lastTargetOfWesternUnitWasClockwise;
       }
-      else if (unit.Owner.Id == Program.Orcs.Computer.Player.Id)
+      else if (unit.Owner.Id == Program.Orcs.Computer.Wc3Player.Id)
       {
         if (lastTargetOfEasternUnitWasClockwise)
           unit.AttackMove(Regions.WestBase);
