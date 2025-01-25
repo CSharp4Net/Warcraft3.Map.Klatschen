@@ -1,14 +1,14 @@
-﻿using System;
+﻿using Source.Models;
+using System;
 using WCSharp.Api;
-using WCSharp.Shared.Data;
 
 namespace Source.Extensions
 {
   internal static class unitX
   {
-    internal static void AttackMove(this unit unit, Rectangle region)
+    internal static void AttackMove(this unit unit, Area targetArea)
     {
-      unit.IssueOrder(Constants.ORDER_ATTACK, region.Center.X, region.Center.Y);
+      unit.IssueOrder(Constants.ORDER_ATTACK, targetArea.Wc3Rectangle.Center.X, targetArea.Wc3Rectangle.Center.Y);
     }
 
     internal static void RegisterOnDies(this unit unit, Action eventHandler)

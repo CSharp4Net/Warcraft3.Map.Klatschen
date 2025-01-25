@@ -265,3 +265,39 @@ STRING 65
 ...Under construction...
 }
 
+STRING 66
+// Units: u000 (Nekropole), EditorSuffix (Name - Editor Suffix)
+{
+(Undead)
+}
+
+STRING 67
+// Units: u001 (Halle der Toten), EditorSuffix (Name - Editor Suffix)
+{
+(Undead)
+}
+
+STRING 68
+// Units: u002 (Schwarze Zitadelle), EditorSuffix (Name - Editor Suffix)
+{
+(Undead)
+}
+
+STRING 69
+// Units: u003 (Geisterturm), EditorSuffix (Name - Editor Suffix)
+{
+(Undead)
+}
+
+STRING 70
+// Units: u004 (Neruberturm), EditorSuffix (Name - Editor Suffix)
+{
+(Undead)
+}
+
+STRING 71
+// Units: u005 (Gruft), EditorSuffix (Name - Editor Suffix)
+{
+(Undead)
+}
+

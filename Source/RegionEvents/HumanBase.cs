@@ -8,30 +8,44 @@ namespace Source.RegionEvents
   {
     internal static void OnEnter()
     {
-      try
+      unit unit = Common.GetTriggerUnit();
+
+      if (unit.IsABuilding || unit.Owner.Controller != mapcontrol.Computer)
+        return;
+
+      // Feindliche Einheit zur Basis des anderen Spielers schicken
+      if (unit.Owner.Id == Program.Orcs.Computer.Wc3Player.Id)
       {
-        unit unit = Common.GetTriggerUnit();
-
-        if (unit.IsABuilding || unit.Owner.Controller != mapcontrol.Computer)
-          return;
-
-        // Feindliche Einheit zur Basis des anderen Spielers schicken
-        if (unit.Owner.Id == Program.Orcs.Computer.Wc3Player.Id)
+        if (!Program.Undeads.Defeated)
         {
-          unit.AttackMove(Regions.ElfBase);
+          unit.AttackMove(Areas.UndeadBase);
         }
-        else if (unit.Owner.Id == Program.Elves.Computer.Wc3Player.Id)
+        else
         {
-          unit.AttackMove(Regions.OrcBase);
-        }
-        else if (unit.Owner.Id == Program.Undeads.Computer.Wc3Player.Id)
-        {
-          unit.AttackMove(Regions.Center);
+          unit.AttackMove(Areas.ElfBase);
         }
       }
-      catch (Exception ex)
+      else if (unit.Owner.Id == Program.Undeads.Computer.Wc3Player.Id)
       {
-        Console.WriteLine(ex.Message);
+        if (!Program.Elves.Defeated)
+        {
+          unit.AttackMove(Areas.ElfBase);
+        }
+        else
+        {
+          unit.AttackMove(Areas.OrcBase);
+        }
+      }
+      else if (unit.Owner.Id == Program.Elves.Computer.Wc3Player.Id)
+      {
+        if (!Program.Humans.Defeated)
+        {
+          unit.AttackMove(Areas.HumanBase);
+        }
+        else
+        {
+          unit.AttackMove(Areas.UndeadBase);
+        }
       }
     }
   }

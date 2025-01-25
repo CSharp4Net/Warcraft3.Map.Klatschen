@@ -12,18 +12,39 @@ namespace Source.RegionEvents
       if (unit.IsABuilding || unit.Owner.Controller != mapcontrol.Computer)
         return;
 
-      // Feindliche Einheit zur Basis des anderen Spielers schicken
+      // Feindliche Einheit zur Basis eines anderen Spielers schicken
       if (unit.Owner.Id == Program.Humans.Computer.Wc3Player.Id)
       {
-        unit.AttackMove(Regions.UndeadBase);
+        if (!Program.Orcs.Defeated)
+        {
+          unit.AttackMove(Areas.OrcBase);
+        }
+        else
+        {
+          unit.AttackMove(Areas.UndeadBase);
+        }
       }
       else if (unit.Owner.Id == Program.Orcs.Computer.Wc3Player.Id)
       {
-        unit.AttackMove(Regions.Center);
+        if (!Program.Undeads.Defeated)
+        {
+          unit.AttackMove(Areas.UndeadBase);
+        }
+        else
+        {
+          unit.AttackMove(Areas.HumanBase);
+        }
       }
       else if (unit.Owner.Id == Program.Undeads.Computer.Wc3Player.Id)
       {
-        unit.AttackMove(Regions.HumanBase);
+        if (!Program.Orcs.Defeated)
+        {
+          unit.AttackMove(Areas.OrcBase);
+        }
+        else
+        {
+          unit.AttackMove(Areas.HumanBase);
+        }
       }
     }
   }

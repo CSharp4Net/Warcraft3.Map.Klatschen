@@ -18,7 +18,7 @@ namespace Source.RegionEvents
         // Feindliche Einheit zur Basis des anderen Spielers schicken
         if (unit.Owner.Id == Program.Humans.Computer.Wc3Player.Id)
         {
-          unit.AttackMove(Regions.OrcBase);
+          unit.AttackMove(Areas.OrcBase);
         }
       }
       catch (Exception ex)

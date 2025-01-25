@@ -19760,47 +19760,47 @@ System.namespace("", function (namespace)
     local static
     static = function (this)
       this.Center = SourceModels.Area(Regions.Center)
-      this.EastBarracksCenter = SourceModels.Area(Regions.EastBarracksCenter)
-      this.EastBarracksRight = SourceModels.Area(Regions.EastBarracksRight)
-      this.EastBarracksTop = SourceModels.Area(Regions.EastBarracksTop)
-      this.EastBase = SourceModels.Area(Regions.EastBase)
-      this.EastSpawnBarracksCenter = SourceModels.Area(Regions.EastSpawnBarracksCenter)
-      this.EastSpawnBarracksRight = SourceModels.Area(Regions.EastSpawnBarracksRight)
-      this.EastSpawnBarracksTop = SourceModels.Area(Regions.EastSpawnBarracksTop)
-      this.EastSpawnCenter = SourceModels.Area(Regions.EastSpawnCenter)
-      this.EastSpawnRight = SourceModels.Area(Regions.EastSpawnRight)
-      this.EastSpawnTop = SourceModels.Area(Regions.EastSpawnTop)
+      this.ElfBarracksToCenter = SourceModels.Area(Regions.ElfBarracksToCenter)
+      this.ElfBarracksToCenterSpawn = SourceModels.Area(Regions.ElfBarracksToCenterSpawn)
+      this.ElfBarracksToHuman = SourceModels.Area(Regions.ElfBarracksToHuman)
+      this.ElfBarracksToHumanSpawn = SourceModels.Area(Regions.ElfBarracksToHumanSpawn)
+      this.ElfBarracksToUndead = SourceModels.Area(Regions.ElfBarracksToUndead)
+      this.ElfBarracksToUndeadSpawn = SourceModels.Area(Regions.ElfBarracksToUndeadSpawn)
+      this.ElfBase = SourceModels.Area(Regions.ElfBase)
+      this.ElfBaseToCenterSpawn = SourceModels.Area(Regions.ElfBaseToCenterSpawn)
+      this.ElfBaseToHumanSpawn = SourceModels.Area(Regions.ElfBaseToHumanSpawn)
+      this.ElfBaseToUndeadSpawn = SourceModels.Area(Regions.ElfBaseToUndeadSpawn)
       this.HeroSelectorSpawn = SourceModels.Area(Regions.HeroSelectorSpawn)
-      this.SouthBarracksBottom = SourceModels.Area(Regions.SouthBarracksBottom)
-      this.SouthBarracksCenter = SourceModels.Area(Regions.SouthBarracksCenter)
-      this.SouthBarracksLeft = SourceModels.Area(Regions.SouthBarracksLeft)
-      this.SouthBase = SourceModels.Area(Regions.SouthBase)
-      this.SouthSpawnBarracksBottom = SourceModels.Area(Regions.SouthSpawnBarracksBottom)
-      this.SouthSpawnBarracksCenter = SourceModels.Area(Regions.SouthSpawnBarracksCenter)
-      this.SouthSpawnBarracksLeft = SourceModels.Area(Regions.SouthSpawnBarracksLeft)
-      this.SouthSpawnBottom = SourceModels.Area(Regions.SouthSpawnBottom)
-      this.SouthSpawnCenter = SourceModels.Area(Regions.SouthSpawnCenter)
-      this.SouthSpawnLeft = SourceModels.Area(Regions.SouthSpawnLeft)
-      this.UndeadBarracksBottom = SourceModels.Area(Regions.UndeadBarracksBottom)
-      this.UndeadBarracksCenter = SourceModels.Area(Regions.UndeadBarracksCenter)
-      this.UndeadBarracksRight = SourceModels.Area(Regions.UndeadBarracksRight)
-      this.UndeadBase = SourceModels.Area(Regions.UndeadBase)
-      this.UndeadSpawnBarracksBottom = SourceModels.Area(Regions.UndeadSpawnBarracksBottom)
-      this.UndeadSpawnBarracksCenter = SourceModels.Area(Regions.UndeadSpawnBarracksCenter)
-      this.UndeadSpawnBarracksRight = SourceModels.Area(Regions.UndeadSpawnBarracksRight)
-      this.UndeadSpawnBottom = SourceModels.Area(Regions.UndeadSpawnBottom)
-      this.UndeadSpawnCenter = SourceModels.Area(Regions.UndeadSpawnCenter)
-      this.UndeadSpawnRight = SourceModels.Area(Regions.UndeadSpawnRight)
       this.HumanBarracksToCenter = SourceModels.Area(Regions.HumanBarracksToCenter)
-      this.HumanBarracksToElves = SourceModels.Area(Regions.HumanBarracksToElves)
+      this.HumanBarracksToCenterSpawn = SourceModels.Area(Regions.HumanBarracksToCenterSpawn)
+      this.HumanBarracksToElf = SourceModels.Area(Regions.HumanBarracksToElf)
+      this.HumanBarracksToElfSpawn = SourceModels.Area(Regions.HumanBarracksToElfSpawn)
       this.HumanBarracksToOrcs = SourceModels.Area(Regions.HumanBarracksToOrcs)
+      this.HumanBarracksToOrcsSpawn = SourceModels.Area(Regions.HumanBarracksToOrcsSpawn)
       this.HumanBase = SourceModels.Area(Regions.HumanBase)
-      this.WestSpawnBarracksCenter = SourceModels.Area(Regions.WestSpawnBarracksCenter)
-      this.WestSpawnBarracksLeft = SourceModels.Area(Regions.WestSpawnBarracksLeft)
-      this.WestSpawnBarracksTop = SourceModels.Area(Regions.WestSpawnBarracksTop)
-      this.WestSpawnCenter = SourceModels.Area(Regions.WestSpawnCenter)
-      this.WestSpawnLeft = SourceModels.Area(Regions.WestSpawnLeft)
-      this.WestSpawnTop = SourceModels.Area(Regions.WestSpawnTop)
+      this.HumanBaseToCenterSpawn = SourceModels.Area(Regions.HumanBaseToCenterSpawn)
+      this.HumanBaseToElfSpawn = SourceModels.Area(Regions.HumanBaseToElfSpawn)
+      this.HumanBaseToOrcsSpawn = SourceModels.Area(Regions.HumanBaseToOrcsSpawn)
+      this.OrcBarracksToCenter = SourceModels.Area(Regions.OrcBarracksToCenter)
+      this.OrcBarracksToCenterSpawn = SourceModels.Area(Regions.OrcBarracksToCenterSpawn)
+      this.OrcBarracksToHuman = SourceModels.Area(Regions.OrcBarracksToHuman)
+      this.OrcBarracksToHumanSpawn = SourceModels.Area(Regions.OrcBarracksToHumanSpawn)
+      this.OrcBarracksToUndead = SourceModels.Area(Regions.OrcBarracksToUndead)
+      this.OrcBarracksToUndeadSpawn = SourceModels.Area(Regions.OrcBarracksToUndeadSpawn)
+      this.OrcBase = SourceModels.Area(Regions.OrcBase)
+      this.OrcBaseToCenterSpawn = SourceModels.Area(Regions.OrcBaseToCenterSpawn)
+      this.OrcBaseToHumanSpawn = SourceModels.Area(Regions.OrcBaseToHumanSpawn)
+      this.OrcBaseToUndeadSpawn = SourceModels.Area(Regions.OrcBaseToUndeadSpawn)
+      this.UndeadBarracksToCenter = SourceModels.Area(Regions.UndeadBarracksToCenter)
+      this.UndeadBarracksToCenterSpawn = SourceModels.Area(Regions.UndeadBarracksToCenterSpawn)
+      this.UndeadBarracksToElf = SourceModels.Area(Regions.UndeadBarracksToElf)
+      this.UndeadBarracksToElfSpawn = SourceModels.Area(Regions.UndeadBarracksToElfSpawn)
+      this.UndeadBarracksToOrcs = SourceModels.Area(Regions.UndeadBarracksToOrcs)
+      this.UndeadBarracksToOrcsSpawn = SourceModels.Area(Regions.UndeadBarracksToOrcsSpawn)
+      this.UndeadBase = SourceModels.Area(Regions.UndeadBase)
+      this.UndeadBaseToCenterSpawn = SourceModels.Area(Regions.UndeadBaseToCenterSpawn)
+      this.UndeadBaseToElfSpawn = SourceModels.Area(Regions.UndeadBaseToElfSpawn)
+      this.UndeadBaseToOrcsSpawn = SourceModels.Area(Regions.UndeadBaseToOrcsSpawn)
     end
     return {
       static = static,
@@ -19808,47 +19808,47 @@ System.namespace("", function (namespace)
         return {
           properties = {
             { "Center", 0xE, out.Source.Models.Area },
-            { "EastBarracksCenter", 0xE, out.Source.Models.Area },
-            { "EastBarracksRight", 0xE, out.Source.Models.Area },
-            { "EastBarracksTop", 0xE, out.Source.Models.Area },
-            { "EastBase", 0xE, out.Source.Models.Area },
-            { "EastSpawnBarracksCenter", 0xE, out.Source.Models.Area },
-            { "EastSpawnBarracksRight", 0xE, out.Source.Models.Area },
-            { "EastSpawnBarracksTop", 0xE, out.Source.Models.Area },
-            { "EastSpawnCenter", 0xE, out.Source.Models.Area },
-            { "EastSpawnRight", 0xE, out.Source.Models.Area },
-            { "EastSpawnTop", 0xE, out.Source.Models.Area },
+            { "ElfBarracksToCenter", 0xE, out.Source.Models.Area },
+            { "ElfBarracksToCenterSpawn", 0xE, out.Source.Models.Area },
+            { "ElfBarracksToHuman", 0xE, out.Source.Models.Area },
+            { "ElfBarracksToHumanSpawn", 0xE, out.Source.Models.Area },
+            { "ElfBarracksToUndead", 0xE, out.Source.Models.Area },
+            { "ElfBarracksToUndeadSpawn", 0xE, out.Source.Models.Area },
+            { "ElfBase", 0xE, out.Source.Models.Area },
+            { "ElfBaseToCenterSpawn", 0xE, out.Source.Models.Area },
+            { "ElfBaseToHumanSpawn", 0xE, out.Source.Models.Area },
+            { "ElfBaseToUndeadSpawn", 0xE, out.Source.Models.Area },
             { "HeroSelectorSpawn", 0xE, out.Source.Models.Area },
-            { "SouthBarracksBottom", 0xE, out.Source.Models.Area },
-            { "SouthBarracksCenter", 0xE, out.Source.Models.Area },
-            { "SouthBarracksLeft", 0xE, out.Source.Models.Area },
-            { "SouthBase", 0xE, out.Source.Models.Area },
-            { "SouthSpawnBarracksBottom", 0xE, out.Source.Models.Area },
-            { "SouthSpawnBarracksCenter", 0xE, out.Source.Models.Area },
-            { "SouthSpawnBarracksLeft", 0xE, out.Source.Models.Area },
-            { "SouthSpawnBottom", 0xE, out.Source.Models.Area },
-            { "SouthSpawnCenter", 0xE, out.Source.Models.Area },
-            { "SouthSpawnLeft", 0xE, out.Source.Models.Area },
-            { "UndeadBarracksBottom", 0xE, out.Source.Models.Area },
-            { "UndeadBarracksCenter", 0xE, out.Source.Models.Area },
-            { "UndeadBarracksRight", 0xE, out.Source.Models.Area },
-            { "UndeadBase", 0xE, out.Source.Models.Area },
-            { "UndeadSpawnBarracksBottom", 0xE, out.Source.Models.Area },
-            { "UndeadSpawnBarracksCenter", 0xE, out.Source.Models.Area },
-            { "UndeadSpawnBarracksRight", 0xE, out.Source.Models.Area },
-            { "UndeadSpawnBottom", 0xE, out.Source.Models.Area },
-            { "UndeadSpawnCenter", 0xE, out.Source.Models.Area },
-            { "UndeadSpawnRight", 0xE, out.Source.Models.Area },
             { "HumanBarracksToCenter", 0xE, out.Source.Models.Area },
-            { "HumanBarracksToElves", 0xE, out.Source.Models.Area },
+            { "HumanBarracksToCenterSpawn", 0xE, out.Source.Models.Area },
+            { "HumanBarracksToElf", 0xE, out.Source.Models.Area },
+            { "HumanBarracksToElfSpawn", 0xE, out.Source.Models.Area },
             { "HumanBarracksToOrcs", 0xE, out.Source.Models.Area },
+            { "HumanBarracksToOrcsSpawn", 0xE, out.Source.Models.Area },
             { "HumanBase", 0xE, out.Source.Models.Area },
-            { "WestSpawnBarracksCenter", 0xE, out.Source.Models.Area },
-            { "WestSpawnBarracksLeft", 0xE, out.Source.Models.Area },
-            { "WestSpawnBarracksTop", 0xE, out.Source.Models.Area },
-            { "WestSpawnCenter", 0xE, out.Source.Models.Area },
-            { "WestSpawnLeft", 0xE, out.Source.Models.Area },
-            { "WestSpawnTop", 0xE, out.Source.Models.Area }
+            { "HumanBaseToCenterSpawn", 0xE, out.Source.Models.Area },
+            { "HumanBaseToElfSpawn", 0xE, out.Source.Models.Area },
+            { "HumanBaseToOrcsSpawn", 0xE, out.Source.Models.Area },
+            { "OrcBarracksToCenter", 0xE, out.Source.Models.Area },
+            { "OrcBarracksToCenterSpawn", 0xE, out.Source.Models.Area },
+            { "OrcBarracksToHuman", 0xE, out.Source.Models.Area },
+            { "OrcBarracksToHumanSpawn", 0xE, out.Source.Models.Area },
+            { "OrcBarracksToUndead", 0xE, out.Source.Models.Area },
+            { "OrcBarracksToUndeadSpawn", 0xE, out.Source.Models.Area },
+            { "OrcBase", 0xE, out.Source.Models.Area },
+            { "OrcBaseToCenterSpawn", 0xE, out.Source.Models.Area },
+            { "OrcBaseToHumanSpawn", 0xE, out.Source.Models.Area },
+            { "OrcBaseToUndeadSpawn", 0xE, out.Source.Models.Area },
+            { "UndeadBarracksToCenter", 0xE, out.Source.Models.Area },
+            { "UndeadBarracksToCenterSpawn", 0xE, out.Source.Models.Area },
+            { "UndeadBarracksToElf", 0xE, out.Source.Models.Area },
+            { "UndeadBarracksToElfSpawn", 0xE, out.Source.Models.Area },
+            { "UndeadBarracksToOrcs", 0xE, out.Source.Models.Area },
+            { "UndeadBarracksToOrcsSpawn", 0xE, out.Source.Models.Area },
+            { "UndeadBase", 0xE, out.Source.Models.Area },
+            { "UndeadBaseToCenterSpawn", 0xE, out.Source.Models.Area },
+            { "UndeadBaseToElfSpawn", 0xE, out.Source.Models.Area },
+            { "UndeadBaseToOrcsSpawn", 0xE, out.Source.Models.Area }
           },
           class = { "Areas", 0x3C }
         }
@@ -19901,8 +19901,8 @@ System.import(function (out)
 end)
 System.namespace("Source", function (namespace)
   namespace.class("Program", function (namespace)
-    local Main, Start, RegisterRegionTriggerWestBase, RegisterRegionTriggerEastBase, RegisterRegionTriggerSouthBase, ConstructHumanBuildingAndTrigger, ConstructOrcBuildingAndTrigger, ConstructElfBuildingAndTrigger, 
-    OnResearchFinished, class
+    local Main, Start, RegisterRegionTriggersInHumanArea, RegisterRegionTriggerInOrcArea, RegisterRegionTriggerInElfArea, RegisterRegionTriggerInUndeadArea, ConstructHumanBuildingAndTrigger, ConstructOrcBuildingAndTrigger, 
+    ConstructElfBuildingAndTrigger, ConstructUndeadBuildingAndTrigger, OnResearchFinished, class
     Main = function ()
       -- Delay a little since some stuff can break otherwise
       local timer = CreateTimer()
@@ -19933,9 +19933,10 @@ System.namespace("Source", function (namespace)
         -- Regions-Ereignisse registrieren für automatische Einheitenbewegungen
         Areas.Center:RegisterOnEnter(SourceRegionEvents.CenterRegion.OnEnter)
 
-        RegisterRegionTriggerWestBase()
-        RegisterRegionTriggerEastBase()
-        RegisterRegionTriggerSouthBase()
+        RegisterRegionTriggersInHumanArea()
+        RegisterRegionTriggerInOrcArea()
+        RegisterRegionTriggerInElfArea()
+        RegisterRegionTriggerInUndeadArea()
 
         -- Allgemeine Events registrieren
         WCSharpEvents.PlayerUnitEvents.Register14(818 --[[UnitTypeEvent.FinishesResearch]], OnResearchFinished)
@@ -19946,6 +19947,7 @@ System.namespace("Source", function (namespace)
         ConstructHumanBuildingAndTrigger()
         ConstructOrcBuildingAndTrigger()
         ConstructElfBuildingAndTrigger()
+        ConstructUndeadBuildingAndTrigger()
 
         -- Spezifische Events registrieren
         System.Console.WriteLine("Kämpft bis zum Tod!")
@@ -19967,107 +19969,149 @@ System.namespace("Source", function (namespace)
         DisplayTextToPlayer(GetLocalPlayer(), 0, 0, ex:getMessage())
       end)
     end
-    RegisterRegionTriggerWestBase = function ()
-      Areas.HumanBase:RegisterOnEnter(SourceRegionEvents.WestBaseRegion.OnEnter)
-      Areas.HumanBarracksToCenter:RegisterOnEnter(SourceRegionEvents.WestBarracksRegions.OnEnter)
-      Areas.HumanBarracksToElves:RegisterOnEnter(SourceRegionEvents.WestBarracksRegions.OnEnter)
-      Areas.HumanBarracksToOrcs:RegisterOnEnter(SourceRegionEvents.WestBarracksRegions.OnEnter)
+    RegisterRegionTriggersInHumanArea = function ()
+      -- Wenn feindliche Einheiten in die Regionen treten, welche von zerstörten Gebäuden freigegeben werden
+      Areas.HumanBase:RegisterOnEnter(SourceRegionEvents.HumanBase.OnEnter)
+      Areas.HumanBarracksToCenter:RegisterOnEnter(SourceRegionEvents.HumanBarracksRegions.OnEnter)
+      Areas.HumanBarracksToElf:RegisterOnEnter(SourceRegionEvents.HumanBarracksRegions.OnEnter)
+      Areas.HumanBarracksToOrcs:RegisterOnEnter(SourceRegionEvents.HumanBarracksRegions.OnEnter)
 
-      Areas.WestSpawnLeft:RegisterOnEnter(SourceRegionEvents.WestSpawnBottomRegion.OnEnter)
-      Areas.WestSpawnBarracksLeft:RegisterOnEnter(SourceRegionEvents.WestSpawnBottomRegion.OnEnter)
-      Areas.WestSpawnCenter:RegisterOnEnter(SourceRegionEvents.WestSpawnMiddleRegion.OnEnter)
-      Areas.WestSpawnBarracksCenter:RegisterOnEnter(SourceRegionEvents.WestSpawnMiddleRegion.OnEnter)
-      Areas.WestSpawnTop:RegisterOnEnter(SourceRegionEvents.WestSpawnTopRegion.OnEnter)
-      Areas.WestSpawnBarracksTop:RegisterOnEnter(SourceRegionEvents.WestSpawnTopRegion.OnEnter)
+      -- Wenn freundliche Einheiten in die Regionen treten/gespawnt werden
+      Areas.HumanBaseToCenterSpawn:RegisterOnEnter(SourceRegionEvents.HumanSpawnToCenter.OnEnter)
+      Areas.HumanBarracksToCenterSpawn:RegisterOnEnter(SourceRegionEvents.HumanSpawnToCenter.OnEnter)
+      Areas.HumanBaseToElfSpawn:RegisterOnEnter(SourceRegionEvents.HumanSpawnToElf.OnEnter)
+      Areas.HumanBarracksToElfSpawn:RegisterOnEnter(SourceRegionEvents.HumanSpawnToElf.OnEnter)
+      Areas.HumanBaseToOrcsSpawn:RegisterOnEnter(SourceRegionEvents.HumanSpawnToOrc.OnEnter)
+      Areas.HumanBarracksToOrcsSpawn:RegisterOnEnter(SourceRegionEvents.HumanSpawnToOrc.OnEnter)
     end
-    RegisterRegionTriggerEastBase = function ()
-      Areas.EastBase:RegisterOnEnter(SourceRegionEvents.EastBaseRegion.OnEnter)
-      Areas.EastBarracksCenter:RegisterOnEnter(SourceRegionEvents.EastBarracksRegions.OnEnter)
-      Areas.EastBarracksRight:RegisterOnEnter(SourceRegionEvents.EastBarracksRegions.OnEnter)
-      Areas.EastBarracksTop:RegisterOnEnter(SourceRegionEvents.EastBarracksRegions.OnEnter)
+    RegisterRegionTriggerInOrcArea = function ()
+      -- Wenn feindliche Einheiten in die Regionen treten, welche von zerstörten Gebäuden freigegeben werden
+      Areas.OrcBase:RegisterOnEnter(SourceRegionEvents.OrcBase.OnEnter)
+      Areas.OrcBarracksToCenter:RegisterOnEnter(SourceRegionEvents.OrcBarracks.OnEnter)
+      Areas.OrcBarracksToHuman:RegisterOnEnter(SourceRegionEvents.OrcBarracks.OnEnter)
+      Areas.OrcBarracksToUndead:RegisterOnEnter(SourceRegionEvents.OrcBarracks.OnEnter)
 
-      Areas.EastSpawnRight:RegisterOnEnter(SourceRegionEvents.EastSpawnBottomRegion.OnEnter)
-      Areas.EastSpawnBarracksRight:RegisterOnEnter(SourceRegionEvents.EastSpawnBottomRegion.OnEnter)
-      Areas.EastSpawnCenter:RegisterOnEnter(SourceRegionEvents.EastSpawnMiddleRegion.OnEnter)
-      Areas.EastSpawnBarracksCenter:RegisterOnEnter(SourceRegionEvents.EastSpawnMiddleRegion.OnEnter)
-      Areas.EastSpawnTop:RegisterOnEnter(SourceRegionEvents.EastSpawnTopRegion.OnEnter)
-      Areas.EastSpawnBarracksTop:RegisterOnEnter(SourceRegionEvents.EastSpawnTopRegion.OnEnter)
+      -- Wenn freundliche Einheiten in die Regionen treten/gespawnt werden
+      Areas.OrcBaseToCenterSpawn:RegisterOnEnter(SourceRegionEvents.OrcSpawnToCenter.OnEnter)
+      Areas.OrcBarracksToCenterSpawn:RegisterOnEnter(SourceRegionEvents.OrcSpawnToCenter.OnEnter)
+      Areas.OrcBaseToHumanSpawn:RegisterOnEnter(SourceRegionEvents.OrcSpawnToHuman.OnEnter)
+      Areas.OrcBarracksToHumanSpawn:RegisterOnEnter(SourceRegionEvents.OrcSpawnToHuman.OnEnter)
+      Areas.OrcBaseToUndeadSpawn:RegisterOnEnter(SourceRegionEvents.OrcSpawnToUndead.OnEnter)
+      Areas.OrcBarracksToUndeadSpawn:RegisterOnEnter(SourceRegionEvents.OrcSpawnToUndead.OnEnter)
     end
-    RegisterRegionTriggerSouthBase = function ()
-      Areas.SouthBase:RegisterOnEnter(SourceRegionEvents.SouthBaseRegion.OnEnter)
-      Areas.SouthBarracksCenter:RegisterOnEnter(SourceRegionEvents.SouthBarracksRegions.OnEnter)
-      Areas.SouthBarracksBottom:RegisterOnEnter(SourceRegionEvents.SouthBarracksRegions.OnEnter)
-      Areas.SouthBarracksLeft:RegisterOnEnter(SourceRegionEvents.SouthBarracksRegions.OnEnter)
+    RegisterRegionTriggerInElfArea = function ()
+      -- Wenn feindliche Einheiten in die Regionen treten, welche von zerstörten Gebäuden freigegeben werden
+      Areas.ElfBase:RegisterOnEnter(SourceRegionEvents.ElfBase.OnEnter)
+      Areas.ElfBarracksToCenter:RegisterOnEnter(SourceRegionEvents.ElfBarracks.OnEnter)
+      Areas.ElfBarracksToHuman:RegisterOnEnter(SourceRegionEvents.ElfBarracks.OnEnter)
+      Areas.ElfBarracksToUndead:RegisterOnEnter(SourceRegionEvents.ElfBarracks.OnEnter)
 
-      Areas.SouthSpawnLeft:RegisterOnEnter(SourceRegionEvents.SouthSpawnLeftRegion.OnEnter)
-      Areas.SouthSpawnBarracksLeft:RegisterOnEnter(SourceRegionEvents.SouthSpawnLeftRegion.OnEnter)
-      Areas.SouthSpawnCenter:RegisterOnEnter(SourceRegionEvents.SouthSpawnMiddleRegion.OnEnter)
-      Areas.SouthSpawnBarracksCenter:RegisterOnEnter(SourceRegionEvents.SouthSpawnMiddleRegion.OnEnter)
-      Areas.SouthSpawnBottom:RegisterOnEnter(SourceRegionEvents.SouthSpawnRightRegion.OnEnter)
-      Areas.SouthSpawnBarracksBottom:RegisterOnEnter(SourceRegionEvents.SouthSpawnRightRegion.OnEnter)
+      -- Wenn freundliche Einheiten in die Regionen treten / gespawnt werden
+      Areas.ElfBaseToCenterSpawn:RegisterOnEnter(SourceRegionEvents.ElfSpawnToCenter.OnEnter)
+      Areas.ElfBarracksToCenterSpawn:RegisterOnEnter(SourceRegionEvents.ElfSpawnToCenter.OnEnter)
+      Areas.ElfBaseToHumanSpawn:RegisterOnEnter(SourceRegionEvents.ElfSpawnToHuman.OnEnter)
+      Areas.ElfBarracksToHumanSpawn:RegisterOnEnter(SourceRegionEvents.ElfSpawnToHuman.OnEnter)
+      Areas.ElfBaseToUndeadSpawn:RegisterOnEnter(SourceRegionEvents.ElfSpawnToUndead.OnEnter)
+      Areas.ElfBarracksToUndeadSpawn:RegisterOnEnter(SourceRegionEvents.ElfSpawnToUndead.OnEnter)
+    end
+    RegisterRegionTriggerInUndeadArea = function ()
+      -- Wenn feindliche Einheiten in die Regionen treten, welche von zerstörten Gebäuden freigegeben werden
+      Areas.UndeadBase:RegisterOnEnter(SourceRegionEvents.UndeadBase.OnEnter)
+      Areas.UndeadBarracksToCenter:RegisterOnEnter(SourceRegionEvents.UndeadBarracks.OnEnter)
+      Areas.UndeadBarracksToElf:RegisterOnEnter(SourceRegionEvents.UndeadBarracks.OnEnter)
+      Areas.UndeadBarracksToOrcs:RegisterOnEnter(SourceRegionEvents.UndeadBarracks.OnEnter)
+
+      -- Wenn freundliche Einheiten in die Regionen treten/gespawnt werden
+      Areas.UndeadBaseToCenterSpawn:RegisterOnEnter(SourceRegionEvents.UndeadSpawnToCenter.OnEnter)
+      Areas.UndeadBarracksToCenterSpawn:RegisterOnEnter(SourceRegionEvents.UndeadSpawnToCenter.OnEnter)
+      Areas.UndeadBaseToElfSpawn:RegisterOnEnter(SourceRegionEvents.UndeadSpawnToElf.OnEnter)
+      Areas.UndeadBarracksToElfSpawn:RegisterOnEnter(SourceRegionEvents.UndeadSpawnToElf.OnEnter)
+      Areas.UndeadBaseToOrcsSpawn:RegisterOnEnter(SourceRegionEvents.UndeadSpawnToOrc.OnEnter)
+      Areas.UndeadBarracksToOrcsSpawn:RegisterOnEnter(SourceRegionEvents.UndeadSpawnToOrc.OnEnter)
     end
     ConstructHumanBuildingAndTrigger = function ()
       -- Hauptgebäude
       local building = class.Humans.Computer:CreateBuilding(1747988529 --[[Constants.UNIT_RATHAUS_HUMAN]], Areas.HumanBase, 0)
       building:RegisterOnDies(SourceUnitEvents.MainBuilding.OnDies)
-      building:AddSpawnTrigger(15, Areas.WestSpawnCenter, System.Array(System.Int32) { 1747988528 --[[Constants.UNIT_TESTSOLDIER]] })
-      building:AddSpawnTrigger(15, Areas.WestSpawnLeft, System.Array(System.Int32) { 1747988528 --[[Constants.UNIT_TESTSOLDIER]] })
-      building:AddSpawnTrigger(15, Areas.WestSpawnTop, System.Array(System.Int32) { 1747988528 --[[Constants.UNIT_TESTSOLDIER]] })
+      building:AddSpawnTrigger(20, Areas.HumanBaseToCenterSpawn, System.Array(System.Int32) { 1747988528 --[[Constants.UNIT_TESTSOLDIER]] })
+      building:AddSpawnTrigger(20, Areas.HumanBaseToElfSpawn, System.Array(System.Int32) { 1747988528 --[[Constants.UNIT_TESTSOLDIER]] })
+      building:AddSpawnTrigger(20, Areas.HumanBaseToOrcsSpawn, System.Array(System.Int32) { 1747988528 --[[Constants.UNIT_TESTSOLDIER]] })
 
       -- Kasernen
       building = class.Humans.Computer:CreateBuilding(1747988535 --[[Constants.UNIT_KASERNE_HUMAN]], Areas.HumanBarracksToCenter, 0)
       building:RegisterOnDies(SourceUnitEvents.BarracksBuilding.OnDies)
-      building:AddSpawnTrigger(10, Areas.WestSpawnBarracksCenter, System.Array(System.Int32) { 1747988528 --[[Constants.UNIT_TESTSOLDIER]] })
+      building:AddSpawnTrigger(10, Areas.HumanBarracksToCenterSpawn, System.Array(System.Int32) { 1747988528 --[[Constants.UNIT_TESTSOLDIER]] })
 
-      building = class.Humans.Computer:CreateBuilding(1747988535 --[[Constants.UNIT_KASERNE_HUMAN]], Areas.HumanBarracksToElves, 0)
+      building = class.Humans.Computer:CreateBuilding(1747988535 --[[Constants.UNIT_KASERNE_HUMAN]], Areas.HumanBarracksToElf, 0)
       building:RegisterOnDies(SourceUnitEvents.BarracksBuilding.OnDies)
-      building:AddSpawnTrigger(10, Areas.WestSpawnBarracksLeft, System.Array(System.Int32) { 1747988528 --[[Constants.UNIT_TESTSOLDIER]] })
+      building:AddSpawnTrigger(10, Areas.HumanBarracksToElfSpawn, System.Array(System.Int32) { 1747988528 --[[Constants.UNIT_TESTSOLDIER]] })
 
       building = class.Humans.Computer:CreateBuilding(1747988535 --[[Constants.UNIT_KASERNE_HUMAN]], Areas.HumanBarracksToOrcs, 0)
       building:RegisterOnDies(SourceUnitEvents.BarracksBuilding.OnDies)
-      building:AddSpawnTrigger(10, Areas.WestSpawnBarracksTop, System.Array(System.Int32) { 1747988528 --[[Constants.UNIT_TESTSOLDIER]] })
+      building:AddSpawnTrigger(10, Areas.HumanBarracksToOrcsSpawn, System.Array(System.Int32) { 1747988528 --[[Constants.UNIT_TESTSOLDIER]] })
     end
     ConstructOrcBuildingAndTrigger = function ()
       -- Hauptgebäude
-      local building = class.Orcs.Computer:CreateBuilding(1865429040 --[[Constants.UNIT_HAUPTHAUS_ORC]], Areas.EastBase, 0)
+      local building = class.Orcs.Computer:CreateBuilding(1865429040 --[[Constants.UNIT_HAUPTHAUS_ORC]], Areas.OrcBase, 0)
       building:RegisterOnDies(SourceUnitEvents.MainBuilding.OnDies)
-      building:AddSpawnTrigger(15, Areas.EastSpawnCenter, System.Array(System.Int32) { 1747988528 --[[Constants.UNIT_TESTSOLDIER]] })
-      building:AddSpawnTrigger(15, Areas.EastSpawnRight, System.Array(System.Int32) { 1747988528 --[[Constants.UNIT_TESTSOLDIER]] })
-      building:AddSpawnTrigger(15, Areas.EastSpawnTop, System.Array(System.Int32) { 1747988528 --[[Constants.UNIT_TESTSOLDIER]] })
+      building:AddSpawnTrigger(20, Areas.OrcBaseToCenterSpawn, System.Array(System.Int32) { 1747988528 --[[Constants.UNIT_TESTSOLDIER]] })
+      building:AddSpawnTrigger(20, Areas.OrcBaseToHumanSpawn, System.Array(System.Int32) { 1747988528 --[[Constants.UNIT_TESTSOLDIER]] })
+      building:AddSpawnTrigger(20, Areas.OrcBaseToUndeadSpawn, System.Array(System.Int32) { 1747988528 --[[Constants.UNIT_TESTSOLDIER]] })
 
       -- Kasernen
-      building = class.Orcs.Computer:CreateBuilding(1865429044 --[[Constants.UNIT_KASERNE_ORC]], Areas.EastBarracksCenter, 0)
+      building = class.Orcs.Computer:CreateBuilding(1865429044 --[[Constants.UNIT_KASERNE_ORC]], Areas.OrcBarracksToCenter, 0)
       building:RegisterOnDies(SourceUnitEvents.BarracksBuilding.OnDies)
-      building:AddSpawnTrigger(10, Areas.EastSpawnBarracksCenter, System.Array(System.Int32) { 1747988528 --[[Constants.UNIT_TESTSOLDIER]] })
+      building:AddSpawnTrigger(10, Areas.OrcBarracksToCenterSpawn, System.Array(System.Int32) { 1747988528 --[[Constants.UNIT_TESTSOLDIER]] })
 
-      building = class.Orcs.Computer:CreateBuilding(1865429044 --[[Constants.UNIT_KASERNE_ORC]], Areas.EastBarracksRight, 0)
+      building = class.Orcs.Computer:CreateBuilding(1865429044 --[[Constants.UNIT_KASERNE_ORC]], Areas.OrcBarracksToHuman, 0)
       building:RegisterOnDies(SourceUnitEvents.BarracksBuilding.OnDies)
-      building:AddSpawnTrigger(10, Areas.EastSpawnBarracksRight, System.Array(System.Int32) { 1747988528 --[[Constants.UNIT_TESTSOLDIER]] })
+      building:AddSpawnTrigger(10, Areas.OrcBarracksToHumanSpawn, System.Array(System.Int32) { 1747988528 --[[Constants.UNIT_TESTSOLDIER]] })
 
-      building = class.Orcs.Computer:CreateBuilding(1865429044 --[[Constants.UNIT_KASERNE_ORC]], Areas.EastBarracksTop, 0)
+      building = class.Orcs.Computer:CreateBuilding(1865429044 --[[Constants.UNIT_KASERNE_ORC]], Areas.OrcBarracksToUndead, 0)
       building:RegisterOnDies(SourceUnitEvents.BarracksBuilding.OnDies)
-      building:AddSpawnTrigger(10, Areas.EastSpawnBarracksTop, System.Array(System.Int32) { 1747988528 --[[Constants.UNIT_TESTSOLDIER]] })
+      building:AddSpawnTrigger(10, Areas.OrcBarracksToUndeadSpawn, System.Array(System.Int32) { 1747988528 --[[Constants.UNIT_TESTSOLDIER]] })
     end
     ConstructElfBuildingAndTrigger = function ()
       -- Hauptgebäude
-      local building = class.Elves.Computer:CreateBuilding(1697656880 --[[Constants.UNIT_BAUM_DES_LEBENS_ELF]], Areas.SouthBase, 0)
+      local building = class.Elves.Computer:CreateBuilding(1697656880 --[[Constants.UNIT_BAUM_DES_LEBENS_ELF]], Areas.ElfBase, 0)
       building:RegisterOnDies(SourceUnitEvents.MainBuilding.OnDies)
-      building:AddSpawnTrigger(15, Areas.SouthSpawnBottom, System.Array(System.Int32) { 1747988528 --[[Constants.UNIT_TESTSOLDIER]] })
-      building:AddSpawnTrigger(15, Areas.SouthSpawnCenter, System.Array(System.Int32) { 1747988528 --[[Constants.UNIT_TESTSOLDIER]] })
-      building:AddSpawnTrigger(15, Areas.SouthSpawnLeft, System.Array(System.Int32) { 1747988528 --[[Constants.UNIT_TESTSOLDIER]] })
+      building:AddSpawnTrigger(20, Areas.ElfBaseToCenterSpawn, System.Array(System.Int32) { 1747988528 --[[Constants.UNIT_TESTSOLDIER]] })
+      building:AddSpawnTrigger(20, Areas.ElfBaseToHumanSpawn, System.Array(System.Int32) { 1747988528 --[[Constants.UNIT_TESTSOLDIER]] })
+      building:AddSpawnTrigger(20, Areas.ElfBaseToUndeadSpawn, System.Array(System.Int32) { 1747988528 --[[Constants.UNIT_TESTSOLDIER]] })
 
       -- Kasernen
-      building = class.Elves.Computer:CreateBuilding(1697656884 --[[Constants.UNIT_URTUM_DES_KRIEGES_ELF]], Areas.SouthBarracksBottom, 0)
+      building = class.Elves.Computer:CreateBuilding(1697656884 --[[Constants.UNIT_URTUM_DES_KRIEGES_ELF]], Areas.ElfBarracksToCenter, 0)
       building:RegisterOnDies(SourceUnitEvents.BarracksBuilding.OnDies)
-      building:AddSpawnTrigger(10, Areas.SouthSpawnBarracksBottom, System.Array(System.Int32) { 1747988528 --[[Constants.UNIT_TESTSOLDIER]] })
+      building:AddSpawnTrigger(10, Areas.ElfBarracksToCenterSpawn, System.Array(System.Int32) { 1747988528 --[[Constants.UNIT_TESTSOLDIER]] })
 
-      building = class.Elves.Computer:CreateBuilding(1697656884 --[[Constants.UNIT_URTUM_DES_KRIEGES_ELF]], Areas.SouthBarracksCenter, 0)
+      building = class.Elves.Computer:CreateBuilding(1697656884 --[[Constants.UNIT_URTUM_DES_KRIEGES_ELF]], Areas.ElfBarracksToHuman, 0)
       building:RegisterOnDies(SourceUnitEvents.BarracksBuilding.OnDies)
-      building:AddSpawnTrigger(10, Areas.SouthSpawnBarracksCenter, System.Array(System.Int32) { 1747988528 --[[Constants.UNIT_TESTSOLDIER]] })
+      building:AddSpawnTrigger(10, Areas.ElfBarracksToHumanSpawn, System.Array(System.Int32) { 1747988528 --[[Constants.UNIT_TESTSOLDIER]] })
 
-      building = class.Elves.Computer:CreateBuilding(1697656884 --[[Constants.UNIT_URTUM_DES_KRIEGES_ELF]], Areas.SouthBarracksLeft, 0)
+      building = class.Elves.Computer:CreateBuilding(1697656884 --[[Constants.UNIT_URTUM_DES_KRIEGES_ELF]], Areas.ElfBarracksToUndead, 0)
       building:RegisterOnDies(SourceUnitEvents.BarracksBuilding.OnDies)
-      building:AddSpawnTrigger(10, Areas.SouthSpawnBarracksLeft, System.Array(System.Int32) { 1747988528 --[[Constants.UNIT_TESTSOLDIER]] })
+      building:AddSpawnTrigger(10, Areas.ElfBarracksToUndeadSpawn, System.Array(System.Int32) { 1747988528 --[[Constants.UNIT_TESTSOLDIER]] })
+    end
+    ConstructUndeadBuildingAndTrigger = function ()
+      -- Hauptgebäude
+      local building = class.Undeads.Computer:CreateBuilding(1966092336 --[[Constants.UNIT_NEKROPOLE_UNDEAD]], Areas.UndeadBase, 0)
+      building:RegisterOnDies(SourceUnitEvents.MainBuilding.OnDies)
+      building:AddSpawnTrigger(20, Areas.UndeadBaseToCenterSpawn, System.Array(System.Int32) { 1747988528 --[[Constants.UNIT_TESTSOLDIER]] })
+      building:AddSpawnTrigger(20, Areas.UndeadBaseToElfSpawn, System.Array(System.Int32) { 1747988528 --[[Constants.UNIT_TESTSOLDIER]] })
+      building:AddSpawnTrigger(20, Areas.UndeadBaseToOrcsSpawn, System.Array(System.Int32) { 1747988528 --[[Constants.UNIT_TESTSOLDIER]] })
+
+      -- Kasernen
+      building = class.Undeads.Computer:CreateBuilding(1966092341 --[[Constants.UNIT_GRUFT_UNDEAD]], Areas.UndeadBarracksToCenter, 0)
+      building:RegisterOnDies(SourceUnitEvents.BarracksBuilding.OnDies)
+      building:AddSpawnTrigger(10, Areas.UndeadBarracksToCenterSpawn, System.Array(System.Int32) { 1747988528 --[[Constants.UNIT_TESTSOLDIER]] })
+
+      building = class.Undeads.Computer:CreateBuilding(1966092341 --[[Constants.UNIT_GRUFT_UNDEAD]], Areas.UndeadBarracksToElf, 0)
+      building:RegisterOnDies(SourceUnitEvents.BarracksBuilding.OnDies)
+      building:AddSpawnTrigger(10, Areas.UndeadBarracksToElfSpawn, System.Array(System.Int32) { 1747988528 --[[Constants.UNIT_TESTSOLDIER]] })
+
+      building = class.Undeads.Computer:CreateBuilding(1966092341 --[[Constants.UNIT_GRUFT_UNDEAD]], Areas.UndeadBarracksToOrcs, 0)
+      building:RegisterOnDies(SourceUnitEvents.BarracksBuilding.OnDies)
+      building:AddSpawnTrigger(10, Areas.UndeadBarracksToOrcsSpawn, System.Array(System.Int32) { 1747988528 --[[Constants.UNIT_TESTSOLDIER]] })
     end
     OnResearchFinished = function ()
       System.Console.WriteLine("Forschung abgeschlossen!")
@@ -20092,11 +20136,13 @@ System.namespace("Source", function (namespace)
             { "ConstructElfBuildingAndTrigger", 0x9, ConstructElfBuildingAndTrigger },
             { "ConstructHumanBuildingAndTrigger", 0x9, ConstructHumanBuildingAndTrigger },
             { "ConstructOrcBuildingAndTrigger", 0x9, ConstructOrcBuildingAndTrigger },
+            { "ConstructUndeadBuildingAndTrigger", 0x9, ConstructUndeadBuildingAndTrigger },
             { "Main", 0xE, Main },
             { "OnResearchFinished", 0x9, OnResearchFinished },
-            { "RegisterRegionTriggerEastBase", 0x9, RegisterRegionTriggerEastBase },
-            { "RegisterRegionTriggerSouthBase", 0x9, RegisterRegionTriggerSouthBase },
-            { "RegisterRegionTriggerWestBase", 0x9, RegisterRegionTriggerWestBase },
+            { "RegisterRegionTriggerInElfArea", 0x9, RegisterRegionTriggerInElfArea },
+            { "RegisterRegionTriggerInOrcArea", 0x9, RegisterRegionTriggerInOrcArea },
+            { "RegisterRegionTriggerInUndeadArea", 0x9, RegisterRegionTriggerInUndeadArea },
+            { "RegisterRegionTriggersInHumanArea", 0x9, RegisterRegionTriggersInHumanArea },
             { "Start", 0x9, Start }
           },
           class = { "Program", 0x3E }
@@ -20122,47 +20168,47 @@ System.namespace("", function (namespace)
     local static
     static = function (this)
       this.Center = System.new(WCSharpSharedData.Rectangle, 2, -128, -2176, 128, -1920)
-      this.EastBarracksCenter = System.new(WCSharpSharedData.Rectangle, 2, 14464, 12416, 14592, 12544)
-      this.EastBarracksRight = System.new(WCSharpSharedData.Rectangle, 2, 15296, 12352, 15424, 12480)
-      this.EastBarracksTop = System.new(WCSharpSharedData.Rectangle, 2, 14400, 13248, 14528, 13376)
-      this.EastBase = System.new(WCSharpSharedData.Rectangle, 2, 15296, 13248, 15424, 13376)
-      this.EastSpawnBarracksCenter = System.new(WCSharpSharedData.Rectangle, 2, 14272, 12224, 14400, 12352)
-      this.EastSpawnBarracksRight = System.new(WCSharpSharedData.Rectangle, 2, 15296, 12096, 15424, 12224)
-      this.EastSpawnBarracksTop = System.new(WCSharpSharedData.Rectangle, 2, 14144, 13248, 14272, 13376)
-      this.EastSpawnCenter = System.new(WCSharpSharedData.Rectangle, 2, 14848, 12800, 14976, 12928)
-      this.EastSpawnRight = System.new(WCSharpSharedData.Rectangle, 2, 15296, 12800, 15424, 12928)
-      this.EastSpawnTop = System.new(WCSharpSharedData.Rectangle, 2, 14848, 13248, 14976, 13376)
+      this.ElfBarracksToCenter = System.new(WCSharpSharedData.Rectangle, 2, -14592, -16640, -14464, -16512)
+      this.ElfBarracksToCenterSpawn = System.new(WCSharpSharedData.Rectangle, 2, -14400, -16448, -14272, -16320)
+      this.ElfBarracksToHuman = System.new(WCSharpSharedData.Rectangle, 2, -15424, -16576, -15296, -16448)
+      this.ElfBarracksToHumanSpawn = System.new(WCSharpSharedData.Rectangle, 2, -15424, -16320, -15296, -16192)
+      this.ElfBarracksToUndead = System.new(WCSharpSharedData.Rectangle, 2, -14528, -17472, -14400, -17344)
+      this.ElfBarracksToUndeadSpawn = System.new(WCSharpSharedData.Rectangle, 2, -14272, -17472, -14144, -17344)
+      this.ElfBase = System.new(WCSharpSharedData.Rectangle, 2, -15424, -17472, -15296, -17344)
+      this.ElfBaseToCenterSpawn = System.new(WCSharpSharedData.Rectangle, 2, -14976, -17024, -14848, -16896)
+      this.ElfBaseToHumanSpawn = System.new(WCSharpSharedData.Rectangle, 2, -15424, -17024, -15296, -16896)
+      this.ElfBaseToUndeadSpawn = System.new(WCSharpSharedData.Rectangle, 2, -14976, -17472, -14848, -17344)
       this.HeroSelectorSpawn = System.new(WCSharpSharedData.Rectangle, 2, -18176, 18048, -18048, 18176)
-      this.SouthBarracksBottom = System.new(WCSharpSharedData.Rectangle, 2, -14528, -17472, -14400, -17344)
-      this.SouthBarracksCenter = System.new(WCSharpSharedData.Rectangle, 2, -14592, -16640, -14464, -16512)
-      this.SouthBarracksLeft = System.new(WCSharpSharedData.Rectangle, 2, -15424, -16576, -15296, -16448)
-      this.SouthBase = System.new(WCSharpSharedData.Rectangle, 2, -15424, -17472, -15296, -17344)
-      this.SouthSpawnBarracksBottom = System.new(WCSharpSharedData.Rectangle, 2, -14272, -17472, -14144, -17344)
-      this.SouthSpawnBarracksCenter = System.new(WCSharpSharedData.Rectangle, 2, -14400, -16448, -14272, -16320)
-      this.SouthSpawnBarracksLeft = System.new(WCSharpSharedData.Rectangle, 2, -15424, -16320, -15296, -16192)
-      this.SouthSpawnBottom = System.new(WCSharpSharedData.Rectangle, 2, -14976, -17472, -14848, -17344)
-      this.SouthSpawnCenter = System.new(WCSharpSharedData.Rectangle, 2, -14976, -17024, -14848, -16896)
-      this.SouthSpawnLeft = System.new(WCSharpSharedData.Rectangle, 2, -15424, -17024, -15296, -16896)
-      this.UndeadBarracksBottom = System.new(WCSharpSharedData.Rectangle, 2, 14400, -17472, 14528, -17344)
-      this.UndeadBarracksCenter = System.new(WCSharpSharedData.Rectangle, 2, 14464, -16640, 14592, -16512)
-      this.UndeadBarracksRight = System.new(WCSharpSharedData.Rectangle, 2, 15296, -16576, 15424, -16448)
-      this.UndeadBase = System.new(WCSharpSharedData.Rectangle, 2, 15296, -17472, 15424, -17344)
-      this.UndeadSpawnBarracksBottom = System.new(WCSharpSharedData.Rectangle, 2, 14144, -17472, 14272, -17344)
-      this.UndeadSpawnBarracksCenter = System.new(WCSharpSharedData.Rectangle, 2, 14272, -16448, 14400, -16320)
-      this.UndeadSpawnBarracksRight = System.new(WCSharpSharedData.Rectangle, 2, 15296, -16320, 15424, -16192)
-      this.UndeadSpawnBottom = System.new(WCSharpSharedData.Rectangle, 2, 14848, -17472, 14976, -17344)
-      this.UndeadSpawnCenter = System.new(WCSharpSharedData.Rectangle, 2, 14848, -17024, 14976, -16896)
-      this.UndeadSpawnRight = System.new(WCSharpSharedData.Rectangle, 2, 15296, -17024, 15424, -16896)
       this.HumanBarracksToCenter = System.new(WCSharpSharedData.Rectangle, 2, -14592, 12416, -14464, 12544)
-      this.HumanBarracksToElves = System.new(WCSharpSharedData.Rectangle, 2, -15424, 12352, -15296, 12480)
+      this.HumanBarracksToCenterSpawn = System.new(WCSharpSharedData.Rectangle, 2, -14400, 12224, -14272, 12352)
+      this.HumanBarracksToElf = System.new(WCSharpSharedData.Rectangle, 2, -15424, 8192, -15296, 8320)
+      this.HumanBarracksToElfSpawn = System.new(WCSharpSharedData.Rectangle, 2, -15424, 7936, -15296, 8064)
       this.HumanBarracksToOrcs = System.new(WCSharpSharedData.Rectangle, 2, -14528, 13248, -14400, 13376)
+      this.HumanBarracksToOrcsSpawn = System.new(WCSharpSharedData.Rectangle, 2, -14272, 13248, -14144, 13376)
       this.HumanBase = System.new(WCSharpSharedData.Rectangle, 2, -15424, 13248, -15296, 13376)
-      this.WestSpawnBarracksCenter = System.new(WCSharpSharedData.Rectangle, 2, -14400, 12224, -14272, 12352)
-      this.WestSpawnBarracksLeft = System.new(WCSharpSharedData.Rectangle, 2, -15424, 12096, -15296, 12224)
-      this.WestSpawnBarracksTop = System.new(WCSharpSharedData.Rectangle, 2, -14272, 13248, -14144, 13376)
-      this.WestSpawnCenter = System.new(WCSharpSharedData.Rectangle, 2, -14976, 12800, -14848, 12928)
-      this.WestSpawnLeft = System.new(WCSharpSharedData.Rectangle, 2, -15424, 12800, -15296, 12928)
-      this.WestSpawnTop = System.new(WCSharpSharedData.Rectangle, 2, -14976, 13248, -14848, 13376)
+      this.HumanBaseToCenterSpawn = System.new(WCSharpSharedData.Rectangle, 2, -14976, 12800, -14848, 12928)
+      this.HumanBaseToElfSpawn = System.new(WCSharpSharedData.Rectangle, 2, -15424, 12800, -15296, 12928)
+      this.HumanBaseToOrcsSpawn = System.new(WCSharpSharedData.Rectangle, 2, -14976, 13248, -14848, 13376)
+      this.OrcBarracksToCenter = System.new(WCSharpSharedData.Rectangle, 2, 14464, 12416, 14592, 12544)
+      this.OrcBarracksToCenterSpawn = System.new(WCSharpSharedData.Rectangle, 2, 14272, 12224, 14400, 12352)
+      this.OrcBarracksToHuman = System.new(WCSharpSharedData.Rectangle, 2, 14400, 13248, 14528, 13376)
+      this.OrcBarracksToHumanSpawn = System.new(WCSharpSharedData.Rectangle, 2, 14144, 13248, 14272, 13376)
+      this.OrcBarracksToUndead = System.new(WCSharpSharedData.Rectangle, 2, 15296, 12352, 15424, 12480)
+      this.OrcBarracksToUndeadSpawn = System.new(WCSharpSharedData.Rectangle, 2, 15296, 12096, 15424, 12224)
+      this.OrcBase = System.new(WCSharpSharedData.Rectangle, 2, 15296, 13248, 15424, 13376)
+      this.OrcBaseToCenterSpawn = System.new(WCSharpSharedData.Rectangle, 2, 14848, 12800, 14976, 12928)
+      this.OrcBaseToHumanSpawn = System.new(WCSharpSharedData.Rectangle, 2, 14848, 13248, 14976, 13376)
+      this.OrcBaseToUndeadSpawn = System.new(WCSharpSharedData.Rectangle, 2, 15296, 12800, 15424, 12928)
+      this.UndeadBarracksToCenter = System.new(WCSharpSharedData.Rectangle, 2, 14464, -16640, 14592, -16512)
+      this.UndeadBarracksToCenterSpawn = System.new(WCSharpSharedData.Rectangle, 2, 14272, -16448, 14400, -16320)
+      this.UndeadBarracksToElf = System.new(WCSharpSharedData.Rectangle, 2, 14400, -17472, 14528, -17344)
+      this.UndeadBarracksToElfSpawn = System.new(WCSharpSharedData.Rectangle, 2, 14144, -17472, 14272, -17344)
+      this.UndeadBarracksToOrcs = System.new(WCSharpSharedData.Rectangle, 2, 15296, -16576, 15424, -16448)
+      this.UndeadBarracksToOrcsSpawn = System.new(WCSharpSharedData.Rectangle, 2, 15296, -16320, 15424, -16192)
+      this.UndeadBase = System.new(WCSharpSharedData.Rectangle, 2, 15296, -17472, 15424, -17344)
+      this.UndeadBaseToCenterSpawn = System.new(WCSharpSharedData.Rectangle, 2, 14848, -17024, 14976, -16896)
+      this.UndeadBaseToElfSpawn = System.new(WCSharpSharedData.Rectangle, 2, 14848, -17472, 14976, -17344)
+      this.UndeadBaseToOrcsSpawn = System.new(WCSharpSharedData.Rectangle, 2, 15296, -17024, 15424, -16896)
     end
     return {
       static = static,
@@ -20170,47 +20216,47 @@ System.namespace("", function (namespace)
         return {
           properties = {
             { "Center", 0xE, out.WCSharp.Shared.Data.Rectangle },
-            { "EastBarracksCenter", 0xE, out.WCSharp.Shared.Data.Rectangle },
-            { "EastBarracksRight", 0xE, out.WCSharp.Shared.Data.Rectangle },
-            { "EastBarracksTop", 0xE, out.WCSharp.Shared.Data.Rectangle },
-            { "EastBase", 0xE, out.WCSharp.Shared.Data.Rectangle },
-            { "EastSpawnBarracksCenter", 0xE, out.WCSharp.Shared.Data.Rectangle },
-            { "EastSpawnBarracksRight", 0xE, out.WCSharp.Shared.Data.Rectangle },
-            { "EastSpawnBarracksTop", 0xE, out.WCSharp.Shared.Data.Rectangle },
-            { "EastSpawnCenter", 0xE, out.WCSharp.Shared.Data.Rectangle },
-            { "EastSpawnRight", 0xE, out.WCSharp.Shared.Data.Rectangle },
-            { "EastSpawnTop", 0xE, out.WCSharp.Shared.Data.Rectangle },
+            { "ElfBarracksToCenter", 0xE, out.WCSharp.Shared.Data.Rectangle },
+            { "ElfBarracksToCenterSpawn", 0xE, out.WCSharp.Shared.Data.Rectangle },
+            { "ElfBarracksToHuman", 0xE, out.WCSharp.Shared.Data.Rectangle },
+            { "ElfBarracksToHumanSpawn", 0xE, out.WCSharp.Shared.Data.Rectangle },
+            { "ElfBarracksToUndead", 0xE, out.WCSharp.Shared.Data.Rectangle },
+            { "ElfBarracksToUndeadSpawn", 0xE, out.WCSharp.Shared.Data.Rectangle },
+            { "ElfBase", 0xE, out.WCSharp.Shared.Data.Rectangle },
+            { "ElfBaseToCenterSpawn", 0xE, out.WCSharp.Shared.Data.Rectangle },
+            { "ElfBaseToHumanSpawn", 0xE, out.WCSharp.Shared.Data.Rectangle },
+            { "ElfBaseToUndeadSpawn", 0xE, out.WCSharp.Shared.Data.Rectangle },
             { "HeroSelectorSpawn", 0xE, out.WCSharp.Shared.Data.Rectangle },
-            { "SouthBarracksBottom", 0xE, out.WCSharp.Shared.Data.Rectangle },
-            { "SouthBarracksCenter", 0xE, out.WCSharp.Shared.Data.Rectangle },
-            { "SouthBarracksLeft", 0xE, out.WCSharp.Shared.Data.Rectangle },
-            { "SouthBase", 0xE, out.WCSharp.Shared.Data.Rectangle },
-            { "SouthSpawnBarracksBottom", 0xE, out.WCSharp.Shared.Data.Rectangle },
-            { "SouthSpawnBarracksCenter", 0xE, out.WCSharp.Shared.Data.Rectangle },
-            { "SouthSpawnBarracksLeft", 0xE, out.WCSharp.Shared.Data.Rectangle },
-            { "SouthSpawnBottom", 0xE, out.WCSharp.Shared.Data.Rectangle },
-            { "SouthSpawnCenter", 0xE, out.WCSharp.Shared.Data.Rectangle },
-            { "SouthSpawnLeft", 0xE, out.WCSharp.Shared.Data.Rectangle },
-            { "UndeadBarracksBottom", 0xE, out.WCSharp.Shared.Data.Rectangle },
-            { "UndeadBarracksCenter", 0xE, out.WCSharp.Shared.Data.Rectangle },
-            { "UndeadBarracksRight", 0xE, out.WCSharp.Shared.Data.Rectangle },
-            { "UndeadBase", 0xE, out.WCSharp.Shared.Data.Rectangle },
-            { "UndeadSpawnBarracksBottom", 0xE, out.WCSharp.Shared.Data.Rectangle },
-            { "UndeadSpawnBarracksCenter", 0xE, out.WCSharp.Shared.Data.Rectangle },
-            { "UndeadSpawnBarracksRight", 0xE, out.WCSharp.Shared.Data.Rectangle },
-            { "UndeadSpawnBottom", 0xE, out.WCSharp.Shared.Data.Rectangle },
-            { "UndeadSpawnCenter", 0xE, out.WCSharp.Shared.Data.Rectangle },
-            { "UndeadSpawnRight", 0xE, out.WCSharp.Shared.Data.Rectangle },
             { "HumanBarracksToCenter", 0xE, out.WCSharp.Shared.Data.Rectangle },
-            { "HumanBarracksToElves", 0xE, out.WCSharp.Shared.Data.Rectangle },
+            { "HumanBarracksToCenterSpawn", 0xE, out.WCSharp.Shared.Data.Rectangle },
+            { "HumanBarracksToElf", 0xE, out.WCSharp.Shared.Data.Rectangle },
+            { "HumanBarracksToElfSpawn", 0xE, out.WCSharp.Shared.Data.Rectangle },
             { "HumanBarracksToOrcs", 0xE, out.WCSharp.Shared.Data.Rectangle },
+            { "HumanBarracksToOrcsSpawn", 0xE, out.WCSharp.Shared.Data.Rectangle },
             { "HumanBase", 0xE, out.WCSharp.Shared.Data.Rectangle },
-            { "WestSpawnBarracksCenter", 0xE, out.WCSharp.Shared.Data.Rectangle },
-            { "WestSpawnBarracksLeft", 0xE, out.WCSharp.Shared.Data.Rectangle },
-            { "WestSpawnBarracksTop", 0xE, out.WCSharp.Shared.Data.Rectangle },
-            { "WestSpawnCenter", 0xE, out.WCSharp.Shared.Data.Rectangle },
-            { "WestSpawnLeft", 0xE, out.WCSharp.Shared.Data.Rectangle },
-            { "WestSpawnTop", 0xE, out.WCSharp.Shared.Data.Rectangle }
+            { "HumanBaseToCenterSpawn", 0xE, out.WCSharp.Shared.Data.Rectangle },
+            { "HumanBaseToElfSpawn", 0xE, out.WCSharp.Shared.Data.Rectangle },
+            { "HumanBaseToOrcsSpawn", 0xE, out.WCSharp.Shared.Data.Rectangle },
+            { "OrcBarracksToCenter", 0xE, out.WCSharp.Shared.Data.Rectangle },
+            { "OrcBarracksToCenterSpawn", 0xE, out.WCSharp.Shared.Data.Rectangle },
+            { "OrcBarracksToHuman", 0xE, out.WCSharp.Shared.Data.Rectangle },
+            { "OrcBarracksToHumanSpawn", 0xE, out.WCSharp.Shared.Data.Rectangle },
+            { "OrcBarracksToUndead", 0xE, out.WCSharp.Shared.Data.Rectangle },
+            { "OrcBarracksToUndeadSpawn", 0xE, out.WCSharp.Shared.Data.Rectangle },
+            { "OrcBase", 0xE, out.WCSharp.Shared.Data.Rectangle },
+            { "OrcBaseToCenterSpawn", 0xE, out.WCSharp.Shared.Data.Rectangle },
+            { "OrcBaseToHumanSpawn", 0xE, out.WCSharp.Shared.Data.Rectangle },
+            { "OrcBaseToUndeadSpawn", 0xE, out.WCSharp.Shared.Data.Rectangle },
+            { "UndeadBarracksToCenter", 0xE, out.WCSharp.Shared.Data.Rectangle },
+            { "UndeadBarracksToCenterSpawn", 0xE, out.WCSharp.Shared.Data.Rectangle },
+            { "UndeadBarracksToElf", 0xE, out.WCSharp.Shared.Data.Rectangle },
+            { "UndeadBarracksToElfSpawn", 0xE, out.WCSharp.Shared.Data.Rectangle },
+            { "UndeadBarracksToOrcs", 0xE, out.WCSharp.Shared.Data.Rectangle },
+            { "UndeadBarracksToOrcsSpawn", 0xE, out.WCSharp.Shared.Data.Rectangle },
+            { "UndeadBase", 0xE, out.WCSharp.Shared.Data.Rectangle },
+            { "UndeadBaseToCenterSpawn", 0xE, out.WCSharp.Shared.Data.Rectangle },
+            { "UndeadBaseToElfSpawn", 0xE, out.WCSharp.Shared.Data.Rectangle },
+            { "UndeadBaseToOrcsSpawn", 0xE, out.WCSharp.Shared.Data.Rectangle }
           },
           class = { "Regions", 0x3E }
         }
@@ -20302,8 +20348,8 @@ local WCSharpApi = WCSharp.Api
 System.namespace("Source.Extensions", function (namespace)
   namespace.class("unitX", function (namespace)
     local AttackMove, RegisterOnDies
-    AttackMove = function (unit, region)
-      IssuePointOrderById(unit, 851983 --[[Constants.ORDER_ATTACK]], region:getCenter().X, region:getCenter().Y)
+    AttackMove = function (unit, targetArea)
+      IssuePointOrderById(unit, 851983 --[[Constants.ORDER_ATTACK]], targetArea.Wc3Rectangle:getCenter().X, targetArea.Wc3Rectangle:getCenter().Y)
     end
     RegisterOnDies = function (unit, eventHandler)
       local trigger = CreateTrigger()
@@ -20316,7 +20362,7 @@ System.namespace("Source.Extensions", function (namespace)
       __metadata__ = function (out)
         return {
           methods = {
-            { "AttackMove", 0x20C, AttackMove, out.WCSharp.Api.unit, out.WCSharp.Shared.Data.Rectangle },
+            { "AttackMove", 0x20C, AttackMove, out.WCSharp.Api.unit, out.Source.Models.Area },
             { "RegisterOnDies", 0x20C, RegisterOnDies, out.WCSharp.Api.unit, System.Delegate }
           },
           class = { "unitX", 0x3C }
@@ -20404,13 +20450,11 @@ System.namespace("Source.Models", function (namespace)
       this.Buildings:Remove(building)
     end
     Defeat = function (this)
-      System.Console.WriteLine("Destroy buildings of player " .. System.toString(GetPlayerName(this.Wc3Player)))
       -- Alle gespawnten Gebäude zerstören
       for _, building in System.each(this.Buildings) do
         building:Destroy()
       end
 
-      System.Console.WriteLine("Defeat player " .. System.toString(GetPlayerName(this.Wc3Player)) .. " completed")
       System.base(this).Defeat(this)
     end
     return {
@@ -20622,17 +20666,14 @@ System.namespace("Source.Models", function (namespace)
     -- Löst für alle Spieler dieser Streitmacht die Niederlage aus.
     -- </summary>
     Defeat = function (this)
-      System.Console.WriteLine("Defeat computer team")
       -- Töte alle Computer-Einheiten
       this.Computer:Defeat()
 
-      System.Console.WriteLine("Defeat users in team")
       -- Alle echten Spieler durchlaufen
       for _, player in System.each(this.Users) do
         player:Defeat()
       end
 
-      System.Console.WriteLine("Defeat completed")
       this.Defeated = true
     end
     -- <summary>
@@ -20767,10 +20808,7 @@ System.import(function (out)
 end)
 System.namespace("Source.RegionEvents", function (namespace)
   namespace.class("CenterRegion", function (namespace)
-    local lastTargetOfWesternUnitWasClockwise, lastTargetOfEasternUnitWasClockwise, lastTargetOfSouthernUnitWasClockwise, OnEnter
-    lastTargetOfWesternUnitWasClockwise = false
-    lastTargetOfEasternUnitWasClockwise = false
-    lastTargetOfSouthernUnitWasClockwise = false
+    local OnEnter
     OnEnter = function ()
       local unit = GetTriggerUnit()
 
@@ -20780,40 +20818,43 @@ System.namespace("Source.RegionEvents", function (namespace)
 
       -- Computer-Einheit im Uhrzeigersinn oder entgegen gesetzt weiter schicken
       if GetPlayerId(GetOwningPlayer(unit)) == GetPlayerId(Source.Program.Humans.Computer.Wc3Player) then
-        if lastTargetOfWesternUnitWasClockwise then
-          SourceExtensions.unitX.AttackMove(unit, Regions.SouthBase)
+        if not Source.Program.Orcs.Defeated then
+          SourceExtensions.unitX.AttackMove(unit, Areas.OrcBase)
+        elseif not Source.Program.Elves.Defeated then
+          SourceExtensions.unitX.AttackMove(unit, Areas.ElfBase)
         else
-          SourceExtensions.unitX.AttackMove(unit, Regions.EastBase)
+          SourceExtensions.unitX.AttackMove(unit, Areas.UndeadBase)
         end
-
-        lastTargetOfWesternUnitWasClockwise = not lastTargetOfWesternUnitWasClockwise
       elseif GetPlayerId(GetOwningPlayer(unit)) == GetPlayerId(Source.Program.Orcs.Computer.Wc3Player) then
-        if lastTargetOfEasternUnitWasClockwise then
-          SourceExtensions.unitX.AttackMove(unit, Regions.HumanBase)
+        if not Source.Program.Undeads.Defeated then
+          SourceExtensions.unitX.AttackMove(unit, Areas.UndeadBase)
+        elseif not Source.Program.Humans.Defeated then
+          SourceExtensions.unitX.AttackMove(unit, Areas.HumanBase)
         else
-          SourceExtensions.unitX.AttackMove(unit, Regions.SouthBase)
+          SourceExtensions.unitX.AttackMove(unit, Areas.ElfBase)
         end
-
-        lastTargetOfEasternUnitWasClockwise = not lastTargetOfEasternUnitWasClockwise
+      elseif GetPlayerId(GetOwningPlayer(unit)) == GetPlayerId(Source.Program.Undeads.Computer.Wc3Player) then
+        if not Source.Program.Elves.Defeated then
+          SourceExtensions.unitX.AttackMove(unit, Areas.ElfBase)
+        elseif not Source.Program.Orcs.Defeated then
+          SourceExtensions.unitX.AttackMove(unit, Areas.OrcBase)
+        else
+          SourceExtensions.unitX.AttackMove(unit, Areas.HumanBase)
+        end
       else
-        if lastTargetOfSouthernUnitWasClockwise then
-          SourceExtensions.unitX.AttackMove(unit, Regions.HumanBase)
+        if not Source.Program.Humans.Defeated then
+          SourceExtensions.unitX.AttackMove(unit, Areas.HumanBase)
+        elseif not Source.Program.Undeads.Defeated then
+          SourceExtensions.unitX.AttackMove(unit, Areas.UndeadBase)
         else
-          SourceExtensions.unitX.AttackMove(unit, Regions.EastBase)
+          SourceExtensions.unitX.AttackMove(unit, Areas.OrcBase)
         end
-
-        lastTargetOfSouthernUnitWasClockwise = not lastTargetOfSouthernUnitWasClockwise
       end
     end
     return {
       OnEnter = OnEnter,
       __metadata__ = function (out)
         return {
-          fields = {
-            { "lastTargetOfEasternUnitWasClockwise", 0x9, System.Boolean },
-            { "lastTargetOfSouthernUnitWasClockwise", 0x9, System.Boolean },
-            { "lastTargetOfWesternUnitWasClockwise", 0x9, System.Boolean }
-          },
           methods = {
             { "OnEnter", 0xC, OnEnter }
           },
@@ -20835,7 +20876,7 @@ System.import(function (out)
   SourceExtensions = Source.Extensions
 end)
 System.namespace("Source.RegionEvents", function (namespace)
-  namespace.class("EastBarracksRegions", function (namespace)
+  namespace.class("ElfBarracks", function (namespace)
     local OnEnter
     OnEnter = function ()
       local default = System.try(function ()
@@ -20846,8 +20887,8 @@ System.namespace("Source.RegionEvents", function (namespace)
         end
 
         -- Feindliche Einheit zur Basis des Computer-Spielers schicken
-        if GetPlayerId(GetOwningPlayer(unit)) ~= GetPlayerId(Source.Program.Orcs.Computer.Wc3Player) then
-          SourceExtensions.unitX.AttackMove(unit, Regions.EastBase)
+        if not Source.Program.Elves.Defeated and GetPlayerId(GetOwningPlayer(unit)) ~= GetPlayerId(Source.Program.Elves.Computer.Wc3Player) then
+          SourceExtensions.unitX.AttackMove(unit, Areas.ElfBase)
         end
       end, function (default)
         local ex = default
@@ -20864,7 +20905,7 @@ System.namespace("Source.RegionEvents", function (namespace)
           methods = {
             { "OnEnter", 0xC, OnEnter }
           },
-          class = { "EastBarracksRegions", 0x3C }
+          class = { "ElfBarracks", 0x3C }
         }
       end
     }
@@ -20882,7 +20923,7 @@ System.import(function (out)
   SourceExtensions = Source.Extensions
 end)
 System.namespace("Source.RegionEvents", function (namespace)
-  namespace.class("EastBaseRegion", function (namespace)
+  namespace.class("ElfBase", function (namespace)
     local OnEnter
     OnEnter = function ()
       local unit = GetTriggerUnit()
@@ -20891,240 +20932,25 @@ System.namespace("Source.RegionEvents", function (namespace)
         return
       end
 
-      -- Feindliche Einheit zur Basis des anderen Spielers schicken
+      -- Feindliche Einheit zur Basis eines anderen Spielers schicken
       if GetPlayerId(GetOwningPlayer(unit)) == GetPlayerId(Source.Program.Humans.Computer.Wc3Player) then
-        SourceExtensions.unitX.AttackMove(unit, Regions.SouthBase)
-      elseif GetPlayerId(GetOwningPlayer(unit)) == GetPlayerId(Source.Program.Elves.Computer.Wc3Player) then
-        SourceExtensions.unitX.AttackMove(unit, Regions.HumanBase)
-      end
-    end
-    return {
-      OnEnter = OnEnter,
-      __metadata__ = function (out)
-        return {
-          methods = {
-            { "OnEnter", 0xC, OnEnter }
-          },
-          class = { "EastBaseRegion", 0x3C }
-        }
-      end
-    }
-  end)
-end)
-
-end
-do
-local System = System
-local WCSharpApi = WCSharp.Api
-local Source
-local SourceExtensions
-System.import(function (out)
-  Source = out.Source
-  SourceExtensions = Source.Extensions
-end)
-System.namespace("Source.RegionEvents", function (namespace)
-  namespace.class("EastSpawnBottomRegion", function (namespace)
-    local OnEnter
-    OnEnter = function ()
-      local default = System.try(function ()
-        local unit = GetTriggerUnit()
-
-        if BlzGetUnitBooleanField(unit, UNIT_BF_IS_A_BUILDING) or GetPlayerController(GetOwningPlayer(unit)) ~= MAP_CONTROL_COMPUTER then
-          return true
+        if not Source.Program.Orcs.Defeated then
+          SourceExtensions.unitX.AttackMove(unit, Areas.OrcBase)
+        else
+          SourceExtensions.unitX.AttackMove(unit, Areas.UndeadBase)
         end
-
-        -- Feindliche Einheit zur Basis des anderen Spielers schicken
-        if GetPlayerId(GetOwningPlayer(unit)) == GetPlayerId(Source.Program.Orcs.Computer.Wc3Player) then
-          SourceExtensions.unitX.AttackMove(unit, Regions.SouthBase)
-        end
-      end, function (default)
-        local ex = default
-        System.Console.WriteLine(ex:getMessage())
-      end)
-      if default then
-        return
-      end
-    end
-    return {
-      OnEnter = OnEnter,
-      __metadata__ = function (out)
-        return {
-          methods = {
-            { "OnEnter", 0xC, OnEnter }
-          },
-          class = { "EastSpawnBottomRegion", 0x3C }
-        }
-      end
-    }
-  end)
-end)
-
-end
-do
-local System = System
-local WCSharpApi = WCSharp.Api
-local Source
-local SourceExtensions
-System.import(function (out)
-  Source = out.Source
-  SourceExtensions = Source.Extensions
-end)
-System.namespace("Source.RegionEvents", function (namespace)
-  namespace.class("EastSpawnMiddleRegion", function (namespace)
-    local OnEnter
-    OnEnter = function ()
-      local default = System.try(function ()
-        local unit = GetTriggerUnit()
-
-        if BlzGetUnitBooleanField(unit, UNIT_BF_IS_A_BUILDING) or GetPlayerController(GetOwningPlayer(unit)) ~= MAP_CONTROL_COMPUTER then
-          return true
-        end
-
-        -- Feindliche Einheit zur Basis des anderen Spielers schicken
-        if GetPlayerId(GetOwningPlayer(unit)) == GetPlayerId(Source.Program.Orcs.Computer.Wc3Player) then
-          SourceExtensions.unitX.AttackMove(unit, Regions.Center)
-        end
-      end, function (default)
-        local ex = default
-        System.Console.WriteLine(ex:getMessage())
-      end)
-      if default then
-        return
-      end
-    end
-    return {
-      OnEnter = OnEnter,
-      __metadata__ = function (out)
-        return {
-          methods = {
-            { "OnEnter", 0xC, OnEnter }
-          },
-          class = { "EastSpawnMiddleRegion", 0x3C }
-        }
-      end
-    }
-  end)
-end)
-
-end
-do
-local System = System
-local WCSharpApi = WCSharp.Api
-local Source
-local SourceExtensions
-System.import(function (out)
-  Source = out.Source
-  SourceExtensions = Source.Extensions
-end)
-System.namespace("Source.RegionEvents", function (namespace)
-  namespace.class("EastSpawnTopRegion", function (namespace)
-    local OnEnter
-    OnEnter = function ()
-      local default = System.try(function ()
-        local unit = GetTriggerUnit()
-
-        if BlzGetUnitBooleanField(unit, UNIT_BF_IS_A_BUILDING) or GetPlayerController(GetOwningPlayer(unit)) ~= MAP_CONTROL_COMPUTER then
-          return true
-        end
-
-        -- Feindliche Einheit zur Basis des anderen Spielers schicken
-        if GetPlayerId(GetOwningPlayer(unit)) == GetPlayerId(Source.Program.Orcs.Computer.Wc3Player) then
-          SourceExtensions.unitX.AttackMove(unit, Regions.HumanBase)
-        end
-      end, function (default)
-        local ex = default
-        System.Console.WriteLine(ex:getMessage())
-      end)
-      if default then
-        return
-      end
-    end
-    return {
-      OnEnter = OnEnter,
-      __metadata__ = function (out)
-        return {
-          methods = {
-            { "OnEnter", 0xC, OnEnter }
-          },
-          class = { "EastSpawnTopRegion", 0x3C }
-        }
-      end
-    }
-  end)
-end)
-
-end
-do
-local System = System
-local WCSharpApi = WCSharp.Api
-local Source
-local SourceExtensions
-System.import(function (out)
-  Source = out.Source
-  SourceExtensions = Source.Extensions
-end)
-System.namespace("Source.RegionEvents", function (namespace)
-  namespace.class("SouthBarracksRegions", function (namespace)
-    local OnEnter
-    OnEnter = function ()
-      local default = System.try(function ()
-        local unit = GetTriggerUnit()
-
-        if BlzGetUnitBooleanField(unit, UNIT_BF_IS_A_BUILDING) or GetPlayerController(GetOwningPlayer(unit)) ~= MAP_CONTROL_COMPUTER then
-          return true
-        end
-
-        -- Feindliche Einheit zur Basis des Computer-Spielers schicken
-        if GetPlayerId(GetOwningPlayer(unit)) ~= GetPlayerId(Source.Program.Elves.Computer.Wc3Player) then
-          SourceExtensions.unitX.AttackMove(unit, Regions.SouthBase)
-        end
-      end, function (default)
-        local ex = default
-        System.Console.WriteLine(ex:getMessage())
-      end)
-      if default then
-        return
-      end
-    end
-    return {
-      OnEnter = OnEnter,
-      __metadata__ = function (out)
-        return {
-          methods = {
-            { "OnEnter", 0xC, OnEnter }
-          },
-          class = { "SouthBarracksRegions", 0x3C }
-        }
-      end
-    }
-  end)
-end)
-
-end
-do
-local System = System
-local WCSharpApi = WCSharp.Api
-local Source
-local SourceExtensions
-System.import(function (out)
-  Source = out.Source
-  SourceExtensions = Source.Extensions
-end)
-System.namespace("Source.RegionEvents", function (namespace)
-  namespace.class("SouthBaseRegion", function (namespace)
-    local OnEnter
-    OnEnter = function ()
-      local unit = GetTriggerUnit()
-
-      if BlzGetUnitBooleanField(unit, UNIT_BF_IS_A_BUILDING) or GetPlayerController(GetOwningPlayer(unit)) ~= MAP_CONTROL_COMPUTER then
-        return
-      end
-
-      -- Feindliche Einheit zur Basis des anderen Spielers schicken
-      if GetPlayerId(GetOwningPlayer(unit)) == GetPlayerId(Source.Program.Humans.Computer.Wc3Player) then
-        SourceExtensions.unitX.AttackMove(unit, Regions.EastBase)
       elseif GetPlayerId(GetOwningPlayer(unit)) == GetPlayerId(Source.Program.Orcs.Computer.Wc3Player) then
-        SourceExtensions.unitX.AttackMove(unit, Regions.HumanBase)
+        if not Source.Program.Undeads.Defeated then
+          SourceExtensions.unitX.AttackMove(unit, Areas.UndeadBase)
+        else
+          SourceExtensions.unitX.AttackMove(unit, Areas.HumanBase)
+        end
+      elseif GetPlayerId(GetOwningPlayer(unit)) == GetPlayerId(Source.Program.Undeads.Computer.Wc3Player) then
+        if not Source.Program.Orcs.Defeated then
+          SourceExtensions.unitX.AttackMove(unit, Areas.OrcBase)
+        else
+          SourceExtensions.unitX.AttackMove(unit, Areas.HumanBase)
+        end
       end
     end
     return {
@@ -21134,7 +20960,7 @@ System.namespace("Source.RegionEvents", function (namespace)
           methods = {
             { "OnEnter", 0xC, OnEnter }
           },
-          class = { "SouthBaseRegion", 0x3C }
+          class = { "ElfBase", 0x3C }
         }
       end
     }
@@ -21152,7 +20978,7 @@ System.import(function (out)
   SourceExtensions = Source.Extensions
 end)
 System.namespace("Source.RegionEvents", function (namespace)
-  namespace.class("SouthSpawnLeftRegion", function (namespace)
+  namespace.class("ElfSpawnToCenter", function (namespace)
     local OnEnter
     OnEnter = function ()
       local default = System.try(function ()
@@ -21164,7 +20990,7 @@ System.namespace("Source.RegionEvents", function (namespace)
 
         -- Feindliche Einheit zur Basis des anderen Spielers schicken
         if GetPlayerId(GetOwningPlayer(unit)) == GetPlayerId(Source.Program.Elves.Computer.Wc3Player) then
-          SourceExtensions.unitX.AttackMove(unit, Regions.HumanBase)
+          SourceExtensions.unitX.AttackMove(unit, Areas.Center)
         end
       end, function (default)
         local ex = default
@@ -21181,7 +21007,7 @@ System.namespace("Source.RegionEvents", function (namespace)
           methods = {
             { "OnEnter", 0xC, OnEnter }
           },
-          class = { "SouthSpawnLeftRegion", 0x3C }
+          class = { "ElfSpawnToCenter", 0x3C }
         }
       end
     }
@@ -21199,7 +21025,7 @@ System.import(function (out)
   SourceExtensions = Source.Extensions
 end)
 System.namespace("Source.RegionEvents", function (namespace)
-  namespace.class("SouthSpawnMiddleRegion", function (namespace)
+  namespace.class("ElfSpawnToHuman", function (namespace)
     local OnEnter
     OnEnter = function ()
       local default = System.try(function ()
@@ -21211,7 +21037,7 @@ System.namespace("Source.RegionEvents", function (namespace)
 
         -- Feindliche Einheit zur Basis des anderen Spielers schicken
         if GetPlayerId(GetOwningPlayer(unit)) == GetPlayerId(Source.Program.Elves.Computer.Wc3Player) then
-          SourceExtensions.unitX.AttackMove(unit, Regions.Center)
+          SourceExtensions.unitX.AttackMove(unit, Areas.HumanBase)
         end
       end, function (default)
         local ex = default
@@ -21228,7 +21054,7 @@ System.namespace("Source.RegionEvents", function (namespace)
           methods = {
             { "OnEnter", 0xC, OnEnter }
           },
-          class = { "SouthSpawnMiddleRegion", 0x3C }
+          class = { "ElfSpawnToHuman", 0x3C }
         }
       end
     }
@@ -21246,7 +21072,7 @@ System.import(function (out)
   SourceExtensions = Source.Extensions
 end)
 System.namespace("Source.RegionEvents", function (namespace)
-  namespace.class("SouthSpawnRightRegion", function (namespace)
+  namespace.class("ElfSpawnToUndead", function (namespace)
     local OnEnter
     OnEnter = function ()
       local default = System.try(function ()
@@ -21258,7 +21084,7 @@ System.namespace("Source.RegionEvents", function (namespace)
 
         -- Feindliche Einheit zur Basis des anderen Spielers schicken
         if GetPlayerId(GetOwningPlayer(unit)) == GetPlayerId(Source.Program.Elves.Computer.Wc3Player) then
-          SourceExtensions.unitX.AttackMove(unit, Regions.EastBase)
+          SourceExtensions.unitX.AttackMove(unit, Areas.UndeadBase)
         end
       end, function (default)
         local ex = default
@@ -21275,7 +21101,7 @@ System.namespace("Source.RegionEvents", function (namespace)
           methods = {
             { "OnEnter", 0xC, OnEnter }
           },
-          class = { "SouthSpawnRightRegion", 0x3C }
+          class = { "ElfSpawnToUndead", 0x3C }
         }
       end
     }
@@ -21293,7 +21119,7 @@ System.import(function (out)
   SourceExtensions = Source.Extensions
 end)
 System.namespace("Source.RegionEvents", function (namespace)
-  namespace.class("WestBarracksRegions", function (namespace)
+  namespace.class("HumanBarracksRegions", function (namespace)
     local OnEnter
     OnEnter = function ()
       local default = System.try(function ()
@@ -21304,8 +21130,8 @@ System.namespace("Source.RegionEvents", function (namespace)
         end
 
         -- Feindliche Einheit zur Basis des Computer-Spielers schicken
-        if GetPlayerId(GetOwningPlayer(unit)) ~= GetPlayerId(Source.Program.Humans.Computer.Wc3Player) then
-          SourceExtensions.unitX.AttackMove(unit, Regions.HumanBase)
+        if not Source.Program.Humans.Defeated and GetPlayerId(GetOwningPlayer(unit)) ~= GetPlayerId(Source.Program.Humans.Computer.Wc3Player) then
+          SourceExtensions.unitX.AttackMove(unit, Areas.HumanBase)
         end
       end, function (default)
         local ex = default
@@ -21322,7 +21148,7 @@ System.namespace("Source.RegionEvents", function (namespace)
           methods = {
             { "OnEnter", 0xC, OnEnter }
           },
-          class = { "WestBarracksRegions", 0x3C }
+          class = { "HumanBarracksRegions", 0x3C }
         }
       end
     }
@@ -21340,7 +21166,305 @@ System.import(function (out)
   SourceExtensions = Source.Extensions
 end)
 System.namespace("Source.RegionEvents", function (namespace)
-  namespace.class("WestBaseRegion", function (namespace)
+  namespace.class("HumanBase", function (namespace)
+    local OnEnter
+    OnEnter = function ()
+      local unit = GetTriggerUnit()
+
+      if BlzGetUnitBooleanField(unit, UNIT_BF_IS_A_BUILDING) or GetPlayerController(GetOwningPlayer(unit)) ~= MAP_CONTROL_COMPUTER then
+        return
+      end
+
+      -- Feindliche Einheit zur Basis des anderen Spielers schicken
+      if GetPlayerId(GetOwningPlayer(unit)) == GetPlayerId(Source.Program.Orcs.Computer.Wc3Player) then
+        if not Source.Program.Undeads.Defeated then
+          SourceExtensions.unitX.AttackMove(unit, Areas.UndeadBase)
+        else
+          SourceExtensions.unitX.AttackMove(unit, Areas.ElfBase)
+        end
+      elseif GetPlayerId(GetOwningPlayer(unit)) == GetPlayerId(Source.Program.Undeads.Computer.Wc3Player) then
+        if not Source.Program.Elves.Defeated then
+          SourceExtensions.unitX.AttackMove(unit, Areas.ElfBase)
+        else
+          SourceExtensions.unitX.AttackMove(unit, Areas.OrcBase)
+        end
+      elseif GetPlayerId(GetOwningPlayer(unit)) == GetPlayerId(Source.Program.Elves.Computer.Wc3Player) then
+        if not Source.Program.Humans.Defeated then
+          SourceExtensions.unitX.AttackMove(unit, Areas.HumanBase)
+        else
+          SourceExtensions.unitX.AttackMove(unit, Areas.UndeadBase)
+        end
+      end
+    end
+    return {
+      OnEnter = OnEnter,
+      __metadata__ = function (out)
+        return {
+          methods = {
+            { "OnEnter", 0xC, OnEnter }
+          },
+          class = { "HumanBase", 0x3C }
+        }
+      end
+    }
+  end)
+end)
+
+end
+do
+local System = System
+local WCSharpApi = WCSharp.Api
+local Source
+local SourceExtensions
+System.import(function (out)
+  Source = out.Source
+  SourceExtensions = Source.Extensions
+end)
+System.namespace("Source.RegionEvents", function (namespace)
+  namespace.class("HumanSpawnToCenter", function (namespace)
+    local OnEnter
+    OnEnter = function ()
+      local default = System.try(function ()
+        local unit = GetTriggerUnit()
+
+        if BlzGetUnitBooleanField(unit, UNIT_BF_IS_A_BUILDING) or GetPlayerController(GetOwningPlayer(unit)) ~= MAP_CONTROL_COMPUTER then
+          return true
+        end
+
+        -- Feindliche Einheit zur Basis des anderen Spielers schicken
+        if GetPlayerId(GetOwningPlayer(unit)) == GetPlayerId(Source.Program.Humans.Computer.Wc3Player) then
+          SourceExtensions.unitX.AttackMove(unit, Areas.Center)
+        end
+      end, function (default)
+        local ex = default
+        System.Console.WriteLine(ex:getMessage())
+      end)
+      if default then
+        return
+      end
+    end
+    return {
+      OnEnter = OnEnter,
+      __metadata__ = function (out)
+        return {
+          methods = {
+            { "OnEnter", 0xC, OnEnter }
+          },
+          class = { "HumanSpawnToCenter", 0x3C }
+        }
+      end
+    }
+  end)
+end)
+
+end
+do
+local System = System
+local WCSharpApi = WCSharp.Api
+local Source
+local SourceExtensions
+System.import(function (out)
+  Source = out.Source
+  SourceExtensions = Source.Extensions
+end)
+System.namespace("Source.RegionEvents", function (namespace)
+  namespace.class("HumanSpawnToElf", function (namespace)
+    local OnEnter
+    OnEnter = function ()
+      local default = System.try(function ()
+        local unit = GetTriggerUnit()
+
+        if BlzGetUnitBooleanField(unit, UNIT_BF_IS_A_BUILDING) or GetPlayerController(GetOwningPlayer(unit)) ~= MAP_CONTROL_COMPUTER then
+          return true
+        end
+
+        -- Feindliche Einheit zur Basis des anderen Spielers schicken
+        if GetPlayerId(GetOwningPlayer(unit)) == GetPlayerId(Source.Program.Humans.Computer.Wc3Player) then
+          SourceExtensions.unitX.AttackMove(unit, Areas.ElfBase)
+        end
+      end, function (default)
+        local ex = default
+        System.Console.WriteLine(ex:getMessage())
+      end)
+      if default then
+        return
+      end
+    end
+    return {
+      OnEnter = OnEnter,
+      __metadata__ = function (out)
+        return {
+          methods = {
+            { "OnEnter", 0xC, OnEnter }
+          },
+          class = { "HumanSpawnToElf", 0x3C }
+        }
+      end
+    }
+  end)
+end)
+
+end
+do
+local System = System
+local WCSharpApi = WCSharp.Api
+local Source
+local SourceExtensions
+System.import(function (out)
+  Source = out.Source
+  SourceExtensions = Source.Extensions
+end)
+System.namespace("Source.RegionEvents", function (namespace)
+  namespace.class("HumanSpawnToOrc", function (namespace)
+    local OnEnter
+    OnEnter = function ()
+      local default = System.try(function ()
+        local unit = GetTriggerUnit()
+
+        if BlzGetUnitBooleanField(unit, UNIT_BF_IS_A_BUILDING) or GetPlayerController(GetOwningPlayer(unit)) ~= MAP_CONTROL_COMPUTER then
+          return true
+        end
+
+        -- Feindliche Einheit zur Basis des anderen Spielers schicken
+        if GetPlayerId(GetOwningPlayer(unit)) == GetPlayerId(Source.Program.Humans.Computer.Wc3Player) then
+          SourceExtensions.unitX.AttackMove(unit, Areas.OrcBase)
+        end
+      end, function (default)
+        local ex = default
+        System.Console.WriteLine(ex:getMessage())
+      end)
+      if default then
+        return
+      end
+    end
+    return {
+      OnEnter = OnEnter,
+      __metadata__ = function (out)
+        return {
+          methods = {
+            { "OnEnter", 0xC, OnEnter }
+          },
+          class = { "HumanSpawnToOrc", 0x3C }
+        }
+      end
+    }
+  end)
+end)
+
+end
+do
+local System = System
+local WCSharpApi = WCSharp.Api
+local Source
+local SourceExtensions
+System.import(function (out)
+  Source = out.Source
+  SourceExtensions = Source.Extensions
+end)
+System.namespace("Source.RegionEvents", function (namespace)
+  namespace.class("OrcBarracks", function (namespace)
+    local OnEnter
+    OnEnter = function ()
+      local default = System.try(function ()
+        local unit = GetTriggerUnit()
+
+        if BlzGetUnitBooleanField(unit, UNIT_BF_IS_A_BUILDING) or GetPlayerController(GetOwningPlayer(unit)) ~= MAP_CONTROL_COMPUTER then
+          return true
+        end
+
+        -- Feindliche Einheit zur Basis des Computer-Spielers schicken
+        if not Source.Program.Orcs.Defeated and GetPlayerId(GetOwningPlayer(unit)) ~= GetPlayerId(Source.Program.Orcs.Computer.Wc3Player) then
+          SourceExtensions.unitX.AttackMove(unit, Areas.OrcBase)
+        end
+      end, function (default)
+        local ex = default
+        System.Console.WriteLine(ex:getMessage())
+      end)
+      if default then
+        return
+      end
+    end
+    return {
+      OnEnter = OnEnter,
+      __metadata__ = function (out)
+        return {
+          methods = {
+            { "OnEnter", 0xC, OnEnter }
+          },
+          class = { "OrcBarracks", 0x3C }
+        }
+      end
+    }
+  end)
+end)
+
+end
+do
+local System = System
+local WCSharpApi = WCSharp.Api
+local Source
+local SourceExtensions
+System.import(function (out)
+  Source = out.Source
+  SourceExtensions = Source.Extensions
+end)
+System.namespace("Source.RegionEvents", function (namespace)
+  namespace.class("OrcBase", function (namespace)
+    local OnEnter
+    OnEnter = function ()
+      local unit = GetTriggerUnit()
+
+      if BlzGetUnitBooleanField(unit, UNIT_BF_IS_A_BUILDING) or GetPlayerController(GetOwningPlayer(unit)) ~= MAP_CONTROL_COMPUTER then
+        return
+      end
+
+      -- Feindliche Einheit zur Basis des anderen Spielers schicken
+      if GetPlayerId(GetOwningPlayer(unit)) == GetPlayerId(Source.Program.Humans.Computer.Wc3Player) then
+        if not Source.Program.Elves.Defeated then
+          SourceExtensions.unitX.AttackMove(unit, Areas.ElfBase)
+        else
+          SourceExtensions.unitX.AttackMove(unit, Areas.UndeadBase)
+        end
+      elseif GetPlayerId(GetOwningPlayer(unit)) == GetPlayerId(Source.Program.Undeads.Computer.Wc3Player) then
+        if not Source.Program.Elves.Defeated then
+          SourceExtensions.unitX.AttackMove(unit, Areas.ElfBase)
+        else
+          SourceExtensions.unitX.AttackMove(unit, Areas.HumanBase)
+        end
+      elseif GetPlayerId(GetOwningPlayer(unit)) == GetPlayerId(Source.Program.Elves.Computer.Wc3Player) then
+        if not Source.Program.Humans.Defeated then
+          SourceExtensions.unitX.AttackMove(unit, Areas.HumanBase)
+        else
+          SourceExtensions.unitX.AttackMove(unit, Areas.UndeadBase)
+        end
+      end
+    end
+    return {
+      OnEnter = OnEnter,
+      __metadata__ = function (out)
+        return {
+          methods = {
+            { "OnEnter", 0xC, OnEnter }
+          },
+          class = { "OrcBase", 0x3C }
+        }
+      end
+    }
+  end)
+end)
+
+end
+do
+local System = System
+local WCSharpApi = WCSharp.Api
+local Source
+local SourceExtensions
+System.import(function (out)
+  Source = out.Source
+  SourceExtensions = Source.Extensions
+end)
+System.namespace("Source.RegionEvents", function (namespace)
+  namespace.class("OrcSpawnToCenter", function (namespace)
     local OnEnter
     OnEnter = function ()
       local default = System.try(function ()
@@ -21352,9 +21476,7 @@ System.namespace("Source.RegionEvents", function (namespace)
 
         -- Feindliche Einheit zur Basis des anderen Spielers schicken
         if GetPlayerId(GetOwningPlayer(unit)) == GetPlayerId(Source.Program.Orcs.Computer.Wc3Player) then
-          SourceExtensions.unitX.AttackMove(unit, Regions.SouthBase)
-        elseif GetPlayerId(GetOwningPlayer(unit)) == GetPlayerId(Source.Program.Elves.Computer.Wc3Player) then
-          SourceExtensions.unitX.AttackMove(unit, Regions.EastBase)
+          SourceExtensions.unitX.AttackMove(unit, Areas.Center)
         end
       end, function (default)
         local ex = default
@@ -21371,7 +21493,7 @@ System.namespace("Source.RegionEvents", function (namespace)
           methods = {
             { "OnEnter", 0xC, OnEnter }
           },
-          class = { "WestBaseRegion", 0x3C }
+          class = { "OrcSpawnToCenter", 0x3C }
         }
       end
     }
@@ -21389,7 +21511,7 @@ System.import(function (out)
   SourceExtensions = Source.Extensions
 end)
 System.namespace("Source.RegionEvents", function (namespace)
-  namespace.class("WestSpawnBottomRegion", function (namespace)
+  namespace.class("OrcSpawnToHuman", function (namespace)
     local OnEnter
     OnEnter = function ()
       local default = System.try(function ()
@@ -21400,8 +21522,8 @@ System.namespace("Source.RegionEvents", function (namespace)
         end
 
         -- Feindliche Einheit zur Basis des anderen Spielers schicken
-        if GetPlayerId(GetOwningPlayer(unit)) == GetPlayerId(Source.Program.Humans.Computer.Wc3Player) then
-          SourceExtensions.unitX.AttackMove(unit, Regions.SouthBase)
+        if GetPlayerId(GetOwningPlayer(unit)) == GetPlayerId(Source.Program.Orcs.Computer.Wc3Player) then
+          SourceExtensions.unitX.AttackMove(unit, Areas.HumanBase)
         end
       end, function (default)
         local ex = default
@@ -21418,7 +21540,7 @@ System.namespace("Source.RegionEvents", function (namespace)
           methods = {
             { "OnEnter", 0xC, OnEnter }
           },
-          class = { "WestSpawnBottomRegion", 0x3C }
+          class = { "OrcSpawnToHuman", 0x3C }
         }
       end
     }
@@ -21436,7 +21558,7 @@ System.import(function (out)
   SourceExtensions = Source.Extensions
 end)
 System.namespace("Source.RegionEvents", function (namespace)
-  namespace.class("WestSpawnMiddleRegion", function (namespace)
+  namespace.class("OrcSpawnToUndead", function (namespace)
     local OnEnter
     OnEnter = function ()
       local default = System.try(function ()
@@ -21447,8 +21569,8 @@ System.namespace("Source.RegionEvents", function (namespace)
         end
 
         -- Feindliche Einheit zur Basis des anderen Spielers schicken
-        if GetPlayerId(GetOwningPlayer(unit)) == GetPlayerId(Source.Program.Humans.Computer.Wc3Player) then
-          SourceExtensions.unitX.AttackMove(unit, Regions.Center)
+        if GetPlayerId(GetOwningPlayer(unit)) == GetPlayerId(Source.Program.Orcs.Computer.Wc3Player) then
+          SourceExtensions.unitX.AttackMove(unit, Areas.UndeadBase)
         end
       end, function (default)
         local ex = default
@@ -21465,7 +21587,7 @@ System.namespace("Source.RegionEvents", function (namespace)
           methods = {
             { "OnEnter", 0xC, OnEnter }
           },
-          class = { "WestSpawnMiddleRegion", 0x3C }
+          class = { "OrcSpawnToUndead", 0x3C }
         }
       end
     }
@@ -21483,7 +21605,7 @@ System.import(function (out)
   SourceExtensions = Source.Extensions
 end)
 System.namespace("Source.RegionEvents", function (namespace)
-  namespace.class("WestSpawnTopRegion", function (namespace)
+  namespace.class("UndeadBarracks", function (namespace)
     local OnEnter
     OnEnter = function ()
       local default = System.try(function ()
@@ -21493,9 +21615,9 @@ System.namespace("Source.RegionEvents", function (namespace)
           return true
         end
 
-        -- Feindliche Einheit zur Basis des anderen Spielers schicken
-        if GetPlayerId(GetOwningPlayer(unit)) == GetPlayerId(Source.Program.Humans.Computer.Wc3Player) then
-          SourceExtensions.unitX.AttackMove(unit, Regions.EastBase)
+        -- Feindliche Einheit zur Basis des Computer-Spielers schicken
+        if not Source.Program.Undeads.Defeated and GetPlayerId(GetOwningPlayer(unit)) ~= GetPlayerId(Source.Program.Undeads.Computer.Wc3Player) then
+          SourceExtensions.unitX.AttackMove(unit, Areas.UndeadBase)
         end
       end, function (default)
         local ex = default
@@ -21512,7 +21634,203 @@ System.namespace("Source.RegionEvents", function (namespace)
           methods = {
             { "OnEnter", 0xC, OnEnter }
           },
-          class = { "WestSpawnTopRegion", 0x3C }
+          class = { "UndeadBarracks", 0x3C }
+        }
+      end
+    }
+  end)
+end)
+
+end
+do
+local System = System
+local WCSharpApi = WCSharp.Api
+local Source
+local SourceExtensions
+System.import(function (out)
+  Source = out.Source
+  SourceExtensions = Source.Extensions
+end)
+System.namespace("Source.RegionEvents", function (namespace)
+  namespace.class("UndeadBase", function (namespace)
+    local OnEnter
+    OnEnter = function ()
+      local unit = GetTriggerUnit()
+
+      if BlzGetUnitBooleanField(unit, UNIT_BF_IS_A_BUILDING) or GetPlayerController(GetOwningPlayer(unit)) ~= MAP_CONTROL_COMPUTER then
+        return
+      end
+
+      -- Feindliche Einheit zur Basis des anderen Spielers schicken
+      if GetPlayerId(GetOwningPlayer(unit)) == GetPlayerId(Source.Program.Humans.Computer.Wc3Player) then
+        if not Source.Program.Orcs.Defeated then
+          SourceExtensions.unitX.AttackMove(unit, Areas.OrcBase)
+        else
+          SourceExtensions.unitX.AttackMove(unit, Areas.ElfBase)
+        end
+      elseif GetPlayerId(GetOwningPlayer(unit)) == GetPlayerId(Source.Program.Orcs.Computer.Wc3Player) then
+        if not Source.Program.Humans.Defeated then
+          SourceExtensions.unitX.AttackMove(unit, Areas.HumanBase)
+        else
+          SourceExtensions.unitX.AttackMove(unit, Areas.ElfBase)
+        end
+      elseif GetPlayerId(GetOwningPlayer(unit)) == GetPlayerId(Source.Program.Elves.Computer.Wc3Player) then
+        if not Source.Program.Humans.Defeated then
+          SourceExtensions.unitX.AttackMove(unit, Areas.HumanBase)
+        else
+          SourceExtensions.unitX.AttackMove(unit, Areas.OrcBase)
+        end
+      end
+    end
+    return {
+      OnEnter = OnEnter,
+      __metadata__ = function (out)
+        return {
+          methods = {
+            { "OnEnter", 0xC, OnEnter }
+          },
+          class = { "UndeadBase", 0x3C }
+        }
+      end
+    }
+  end)
+end)
+
+end
+do
+local System = System
+local WCSharpApi = WCSharp.Api
+local Source
+local SourceExtensions
+System.import(function (out)
+  Source = out.Source
+  SourceExtensions = Source.Extensions
+end)
+System.namespace("Source.RegionEvents", function (namespace)
+  namespace.class("UndeadSpawnToCenter", function (namespace)
+    local OnEnter
+    OnEnter = function ()
+      local default = System.try(function ()
+        local unit = GetTriggerUnit()
+
+        if BlzGetUnitBooleanField(unit, UNIT_BF_IS_A_BUILDING) or GetPlayerController(GetOwningPlayer(unit)) ~= MAP_CONTROL_COMPUTER then
+          return true
+        end
+
+        -- Feindliche Einheit zur Basis des anderen Spielers schicken
+        if GetPlayerId(GetOwningPlayer(unit)) == GetPlayerId(Source.Program.Undeads.Computer.Wc3Player) then
+          SourceExtensions.unitX.AttackMove(unit, Areas.Center)
+        end
+      end, function (default)
+        local ex = default
+        System.Console.WriteLine(ex:getMessage())
+      end)
+      if default then
+        return
+      end
+    end
+    return {
+      OnEnter = OnEnter,
+      __metadata__ = function (out)
+        return {
+          methods = {
+            { "OnEnter", 0xC, OnEnter }
+          },
+          class = { "UndeadSpawnToCenter", 0x3C }
+        }
+      end
+    }
+  end)
+end)
+
+end
+do
+local System = System
+local WCSharpApi = WCSharp.Api
+local Source
+local SourceExtensions
+System.import(function (out)
+  Source = out.Source
+  SourceExtensions = Source.Extensions
+end)
+System.namespace("Source.RegionEvents", function (namespace)
+  namespace.class("UndeadSpawnToElf", function (namespace)
+    local OnEnter
+    OnEnter = function ()
+      local default = System.try(function ()
+        local unit = GetTriggerUnit()
+
+        if BlzGetUnitBooleanField(unit, UNIT_BF_IS_A_BUILDING) or GetPlayerController(GetOwningPlayer(unit)) ~= MAP_CONTROL_COMPUTER then
+          return true
+        end
+
+        -- Feindliche Einheit zur Basis des anderen Spielers schicken
+        if GetPlayerId(GetOwningPlayer(unit)) == GetPlayerId(Source.Program.Undeads.Computer.Wc3Player) then
+          SourceExtensions.unitX.AttackMove(unit, Areas.ElfBase)
+        end
+      end, function (default)
+        local ex = default
+        System.Console.WriteLine(ex:getMessage())
+      end)
+      if default then
+        return
+      end
+    end
+    return {
+      OnEnter = OnEnter,
+      __metadata__ = function (out)
+        return {
+          methods = {
+            { "OnEnter", 0xC, OnEnter }
+          },
+          class = { "UndeadSpawnToElf", 0x3C }
+        }
+      end
+    }
+  end)
+end)
+
+end
+do
+local System = System
+local WCSharpApi = WCSharp.Api
+local Source
+local SourceExtensions
+System.import(function (out)
+  Source = out.Source
+  SourceExtensions = Source.Extensions
+end)
+System.namespace("Source.RegionEvents", function (namespace)
+  namespace.class("UndeadSpawnToOrc", function (namespace)
+    local OnEnter
+    OnEnter = function ()
+      local default = System.try(function ()
+        local unit = GetTriggerUnit()
+
+        if BlzGetUnitBooleanField(unit, UNIT_BF_IS_A_BUILDING) or GetPlayerController(GetOwningPlayer(unit)) ~= MAP_CONTROL_COMPUTER then
+          return true
+        end
+
+        -- Feindliche Einheit zur Basis des anderen Spielers schicken
+        if GetPlayerId(GetOwningPlayer(unit)) == GetPlayerId(Source.Program.Undeads.Computer.Wc3Player) then
+          SourceExtensions.unitX.AttackMove(unit, Areas.OrcBase)
+        end
+      end, function (default)
+        local ex = default
+        System.Console.WriteLine(ex:getMessage())
+      end)
+      if default then
+        return
+      end
+    end
+    return {
+      OnEnter = OnEnter,
+      __metadata__ = function (out)
+        return {
+          methods = {
+            { "OnEnter", 0xC, OnEnter }
+          },
+          class = { "UndeadSpawnToOrc", 0x3C }
         }
       end
     }
@@ -21644,15 +21962,19 @@ System.namespace("Source.UnitEvents", function (namespace)
           Source.Program.Orcs:Defeat()
         elseif GetPlayerId(GetOwningPlayer(unit)) == GetPlayerId(Source.Program.Elves.Computer.Wc3Player) then
           Source.Program.Elves:Defeat()
+        elseif GetPlayerId(GetOwningPlayer(unit)) == GetPlayerId(Source.Program.Undeads.Computer.Wc3Player) then
+          Source.Program.Undeads:Defeat()
         end
 
         -- Ist nur noch ein Team übrig, gewinnen alle Spieler im Team
-        if Source.Program.Humans.Defeated and Source.Program.Orcs.Defeated then
-          Source.Program.Elves:Win()
-        elseif Source.Program.Humans.Defeated and Source.Program.Elves.Defeated then
-          Source.Program.Orcs:Win()
-        elseif Source.Program.Orcs.Defeated and Source.Program.Elves.Defeated then
+        if Source.Program.Elves.Defeated and Source.Program.Orcs.Defeated and Source.Program.Undeads.Defeated then
           Source.Program.Humans:Win()
+        elseif Source.Program.Humans.Defeated and Source.Program.Elves.Defeated and Source.Program.Undeads.Defeated then
+          Source.Program.Orcs:Win()
+        elseif Source.Program.Orcs.Defeated and Source.Program.Humans.Defeated and Source.Program.Undeads.Defeated then
+          Source.Program.Elves:Win()
+        elseif Source.Program.Orcs.Defeated and Source.Program.Elves.Defeated and Source.Program.Humans.Defeated then
+          Source.Program.Undeads:Win()
         end
       end, function (default)
         local ex = default
@@ -33016,8 +33338,8 @@ local InitCSharp = function ()
       "WCSharp.Missiles.HomingMissile",
       "WCSharp.Missiles.MomentumMissile",
       "WCSharp.Missiles.OrbitalMissile",
-      "WCSharp.SaveLoad.SaveLoadedMessage_1",
       "WCSharp.SaveLoad.Save_1",
+      "WCSharp.SaveLoad.SaveLoadedMessage_1",
       "WCSharp.W3MMD.IW3MmdVar",
       "Areas",
       "Constants",
@@ -33032,21 +33354,26 @@ local InitCSharp = function ()
       "Source.PermanentEvents.GoldIncome",
       "Source.Program",
       "Source.RegionEvents.CenterRegion",
-      "Source.RegionEvents.EastBarracksRegions",
-      "Source.RegionEvents.EastBaseRegion",
-      "Source.RegionEvents.EastSpawnBottomRegion",
-      "Source.RegionEvents.EastSpawnMiddleRegion",
-      "Source.RegionEvents.EastSpawnTopRegion",
-      "Source.RegionEvents.SouthBarracksRegions",
-      "Source.RegionEvents.SouthBaseRegion",
-      "Source.RegionEvents.SouthSpawnLeftRegion",
-      "Source.RegionEvents.SouthSpawnMiddleRegion",
-      "Source.RegionEvents.SouthSpawnRightRegion",
-      "Source.RegionEvents.WestBarracksRegions",
-      "Source.RegionEvents.WestBaseRegion",
-      "Source.RegionEvents.WestSpawnBottomRegion",
-      "Source.RegionEvents.WestSpawnMiddleRegion",
-      "Source.RegionEvents.WestSpawnTopRegion",
+      "Source.RegionEvents.ElfBarracks",
+      "Source.RegionEvents.ElfBase",
+      "Source.RegionEvents.ElfSpawnToCenter",
+      "Source.RegionEvents.ElfSpawnToHuman",
+      "Source.RegionEvents.ElfSpawnToUndead",
+      "Source.RegionEvents.HumanBarracksRegions",
+      "Source.RegionEvents.HumanBase",
+      "Source.RegionEvents.HumanSpawnToCenter",
+      "Source.RegionEvents.HumanSpawnToElf",
+      "Source.RegionEvents.HumanSpawnToOrc",
+      "Source.RegionEvents.OrcBarracks",
+      "Source.RegionEvents.OrcBase",
+      "Source.RegionEvents.OrcSpawnToCenter",
+      "Source.RegionEvents.OrcSpawnToHuman",
+      "Source.RegionEvents.OrcSpawnToUndead",
+      "Source.RegionEvents.UndeadBarracks",
+      "Source.RegionEvents.UndeadBase",
+      "Source.RegionEvents.UndeadSpawnToCenter",
+      "Source.RegionEvents.UndeadSpawnToElf",
+      "Source.RegionEvents.UndeadSpawnToOrc",
       "Source.UnitEvents.BarracksBuilding",
       "Source.UnitEvents.GenericUnit",
       "Source.UnitEvents.MainBuilding",
@@ -33148,47 +33475,47 @@ local InitCSharp = function ()
 end
 
 gg_rct_Center = nil
-gg_rct_EastBarracksCenter = nil
-gg_rct_EastBarracksRight = nil
-gg_rct_EastBarracksTop = nil
-gg_rct_EastBase = nil
-gg_rct_EastSpawnBarracksCenter = nil
-gg_rct_EastSpawnBarracksRight = nil
-gg_rct_EastSpawnBarracksTop = nil
-gg_rct_EastSpawnCenter = nil
-gg_rct_EastSpawnRight = nil
-gg_rct_EastSpawnTop = nil
+gg_rct_ElfBarracksToCenter = nil
+gg_rct_ElfBarracksToCenterSpawn = nil
+gg_rct_ElfBarracksToHuman = nil
+gg_rct_ElfBarracksToHumanSpawn = nil
+gg_rct_ElfBarracksToUndead = nil
+gg_rct_ElfBarracksToUndeadSpawn = nil
+gg_rct_ElfBase = nil
+gg_rct_ElfBaseToCenterSpawn = nil
+gg_rct_ElfBaseToHumanSpawn = nil
+gg_rct_ElfBaseToUndeadSpawn = nil
 gg_rct_HeroSelectorSpawn = nil
-gg_rct_SouthBarracksBottom = nil
-gg_rct_SouthBarracksCenter = nil
-gg_rct_SouthBarracksLeft = nil
-gg_rct_SouthBase = nil
-gg_rct_SouthSpawnBarracksBottom = nil
-gg_rct_SouthSpawnBarracksCenter = nil
-gg_rct_SouthSpawnBarracksLeft = nil
-gg_rct_SouthSpawnBottom = nil
-gg_rct_SouthSpawnCenter = nil
-gg_rct_SouthSpawnLeft = nil
-gg_rct_UndeadBarracksBottom = nil
-gg_rct_UndeadBarracksCenter = nil
-gg_rct_UndeadBarracksRight = nil
+gg_rct_HumanBarracksToCenter = nil
+gg_rct_HumanBarracksToCenterSpawn = nil
+gg_rct_HumanBarracksToElf = nil
+gg_rct_HumanBarracksToElfSpawn = nil
+gg_rct_HumanBarracksToOrcs = nil
+gg_rct_HumanBarracksToOrcsSpawn = nil
+gg_rct_HumanBase = nil
+gg_rct_HumanBaseToCenterSpawn = nil
+gg_rct_HumanBaseToElfSpawn = nil
+gg_rct_HumanBaseToOrcsSpawn = nil
+gg_rct_OrcBarracksToCenter = nil
+gg_rct_OrcBarracksToCenterSpawn = nil
+gg_rct_OrcBarracksToHuman = nil
+gg_rct_OrcBarracksToHumanSpawn = nil
+gg_rct_OrcBarracksToUndead = nil
+gg_rct_OrcBarracksToUndeadSpawn = nil
+gg_rct_OrcBase = nil
+gg_rct_OrcBaseToCenterSpawn = nil
+gg_rct_OrcBaseToHumanSpawn = nil
+gg_rct_OrcBaseToUndeadSpawn = nil
+gg_rct_UndeadBarracksToCenter = nil
+gg_rct_UndeadBarracksToCenterSpawn = nil
+gg_rct_UndeadBarracksToElf = nil
+gg_rct_UndeadBarracksToElfSpawn = nil
+gg_rct_UndeadBarracksToOrcs = nil
+gg_rct_UndeadBarracksToOrcsSpawn = nil
 gg_rct_UndeadBase = nil
-gg_rct_UndeadSpawnBarracksBottom = nil
-gg_rct_UndeadSpawnBarracksCenter = nil
-gg_rct_UndeadSpawnBarracksRight = nil
-gg_rct_UndeadSpawnBottom = nil
-gg_rct_UndeadSpawnCenter = nil
-gg_rct_UndeadSpawnRight = nil
-gg_rct_WestBarracksCenter = nil
-gg_rct_WestBarracksLeft = nil
-gg_rct_WestBarracksTop = nil
-gg_rct_WestBase = nil
-gg_rct_WestSpawnBarracksCenter = nil
-gg_rct_WestSpawnBarracksLeft = nil
-gg_rct_WestSpawnBarracksTop = nil
-gg_rct_WestSpawnCenter = nil
-gg_rct_WestSpawnLeft = nil
-gg_rct_WestSpawnTop = nil
+gg_rct_UndeadBaseToCenterSpawn = nil
+gg_rct_UndeadBaseToElfSpawn = nil
+gg_rct_UndeadBaseToOrcsSpawn = nil
 gg_trg_Melee_Initialization = nil
 gg_unit_o001_0074 = nil
 gg_unit_o003_0044 = nil
@@ -33280,47 +33607,47 @@ end
 
 function CreateRegions()
     gg_rct_Center = Rect(-128.0, -2176.0, 128.0, -1920.0)
-    gg_rct_EastBarracksCenter = Rect(14464.0, 12416.0, 14592.0, 12544.0)
-    gg_rct_EastBarracksRight = Rect(15296.0, 12352.0, 15424.0, 12480.0)
-    gg_rct_EastBarracksTop = Rect(14400.0, 13248.0, 14528.0, 13376.0)
-    gg_rct_EastBase = Rect(15296.0, 13248.0, 15424.0, 13376.0)
-    gg_rct_EastSpawnBarracksCenter = Rect(14272.0, 12224.0, 14400.0, 12352.0)
-    gg_rct_EastSpawnBarracksRight = Rect(15296.0, 12096.0, 15424.0, 12224.0)
-    gg_rct_EastSpawnBarracksTop = Rect(14144.0, 13248.0, 14272.0, 13376.0)
-    gg_rct_EastSpawnCenter = Rect(14848.0, 12800.0, 14976.0, 12928.0)
-    gg_rct_EastSpawnRight = Rect(15296.0, 12800.0, 15424.0, 12928.0)
-    gg_rct_EastSpawnTop = Rect(14848.0, 13248.0, 14976.0, 13376.0)
+    gg_rct_ElfBarracksToCenter = Rect(-14592.0, -16640.0, -14464.0, -16512.0)
+    gg_rct_ElfBarracksToCenterSpawn = Rect(-14400.0, -16448.0, -14272.0, -16320.0)
+    gg_rct_ElfBarracksToHuman = Rect(-15424.0, -16576.0, -15296.0, -16448.0)
+    gg_rct_ElfBarracksToHumanSpawn = Rect(-15424.0, -16320.0, -15296.0, -16192.0)
+    gg_rct_ElfBarracksToUndead = Rect(-14528.0, -17472.0, -14400.0, -17344.0)
+    gg_rct_ElfBarracksToUndeadSpawn = Rect(-14272.0, -17472.0, -14144.0, -17344.0)
+    gg_rct_ElfBase = Rect(-15424.0, -17472.0, -15296.0, -17344.0)
+    gg_rct_ElfBaseToCenterSpawn = Rect(-14976.0, -17024.0, -14848.0, -16896.0)
+    gg_rct_ElfBaseToHumanSpawn = Rect(-15424.0, -17024.0, -15296.0, -16896.0)
+    gg_rct_ElfBaseToUndeadSpawn = Rect(-14976.0, -17472.0, -14848.0, -17344.0)
     gg_rct_HeroSelectorSpawn = Rect(-18176.0, 18048.0, -18048.0, 18176.0)
-    gg_rct_SouthBarracksBottom = Rect(-14528.0, -17472.0, -14400.0, -17344.0)
-    gg_rct_SouthBarracksCenter = Rect(-14592.0, -16640.0, -14464.0, -16512.0)
-    gg_rct_SouthBarracksLeft = Rect(-15424.0, -16576.0, -15296.0, -16448.0)
-    gg_rct_SouthBase = Rect(-15424.0, -17472.0, -15296.0, -17344.0)
-    gg_rct_SouthSpawnBarracksBottom = Rect(-14272.0, -17472.0, -14144.0, -17344.0)
-    gg_rct_SouthSpawnBarracksCenter = Rect(-14400.0, -16448.0, -14272.0, -16320.0)
-    gg_rct_SouthSpawnBarracksLeft = Rect(-15424.0, -16320.0, -15296.0, -16192.0)
-    gg_rct_SouthSpawnBottom = Rect(-14976.0, -17472.0, -14848.0, -17344.0)
-    gg_rct_SouthSpawnCenter = Rect(-14976.0, -17024.0, -14848.0, -16896.0)
-    gg_rct_SouthSpawnLeft = Rect(-15424.0, -17024.0, -15296.0, -16896.0)
-    gg_rct_UndeadBarracksBottom = Rect(14400.0, -17472.0, 14528.0, -17344.0)
-    gg_rct_UndeadBarracksCenter = Rect(14464.0, -16640.0, 14592.0, -16512.0)
-    gg_rct_UndeadBarracksRight = Rect(15296.0, -16576.0, 15424.0, -16448.0)
+    gg_rct_HumanBarracksToCenter = Rect(-14592.0, 12416.0, -14464.0, 12544.0)
+    gg_rct_HumanBarracksToCenterSpawn = Rect(-14400.0, 12224.0, -14272.0, 12352.0)
+    gg_rct_HumanBarracksToElf = Rect(-15424.0, 8192.0, -15296.0, 8320.0)
+    gg_rct_HumanBarracksToElfSpawn = Rect(-15424.0, 7936.0, -15296.0, 8064.0)
+    gg_rct_HumanBarracksToOrcs = Rect(-14528.0, 13248.0, -14400.0, 13376.0)
+    gg_rct_HumanBarracksToOrcsSpawn = Rect(-14272.0, 13248.0, -14144.0, 13376.0)
+    gg_rct_HumanBase = Rect(-15424.0, 13248.0, -15296.0, 13376.0)
+    gg_rct_HumanBaseToCenterSpawn = Rect(-14976.0, 12800.0, -14848.0, 12928.0)
+    gg_rct_HumanBaseToElfSpawn = Rect(-15424.0, 12800.0, -15296.0, 12928.0)
+    gg_rct_HumanBaseToOrcsSpawn = Rect(-14976.0, 13248.0, -14848.0, 13376.0)
+    gg_rct_OrcBarracksToCenter = Rect(14464.0, 12416.0, 14592.0, 12544.0)
+    gg_rct_OrcBarracksToCenterSpawn = Rect(14272.0, 12224.0, 14400.0, 12352.0)
+    gg_rct_OrcBarracksToHuman = Rect(14400.0, 13248.0, 14528.0, 13376.0)
+    gg_rct_OrcBarracksToHumanSpawn = Rect(14144.0, 13248.0, 14272.0, 13376.0)
+    gg_rct_OrcBarracksToUndead = Rect(15296.0, 12352.0, 15424.0, 12480.0)
+    gg_rct_OrcBarracksToUndeadSpawn = Rect(15296.0, 12096.0, 15424.0, 12224.0)
+    gg_rct_OrcBase = Rect(15296.0, 13248.0, 15424.0, 13376.0)
+    gg_rct_OrcBaseToCenterSpawn = Rect(14848.0, 12800.0, 14976.0, 12928.0)
+    gg_rct_OrcBaseToHumanSpawn = Rect(14848.0, 13248.0, 14976.0, 13376.0)
+    gg_rct_OrcBaseToUndeadSpawn = Rect(15296.0, 12800.0, 15424.0, 12928.0)
+    gg_rct_UndeadBarracksToCenter = Rect(14464.0, -16640.0, 14592.0, -16512.0)
+    gg_rct_UndeadBarracksToCenterSpawn = Rect(14272.0, -16448.0, 14400.0, -16320.0)
+    gg_rct_UndeadBarracksToElf = Rect(14400.0, -17472.0, 14528.0, -17344.0)
+    gg_rct_UndeadBarracksToElfSpawn = Rect(14144.0, -17472.0, 14272.0, -17344.0)
+    gg_rct_UndeadBarracksToOrcs = Rect(15296.0, -16576.0, 15424.0, -16448.0)
+    gg_rct_UndeadBarracksToOrcsSpawn = Rect(15296.0, -16320.0, 15424.0, -16192.0)
     gg_rct_UndeadBase = Rect(15296.0, -17472.0, 15424.0, -17344.0)
-    gg_rct_UndeadSpawnBarracksBottom = Rect(14144.0, -17472.0, 14272.0, -17344.0)
-    gg_rct_UndeadSpawnBarracksCenter = Rect(14272.0, -16448.0, 14400.0, -16320.0)
-    gg_rct_UndeadSpawnBarracksRight = Rect(15296.0, -16320.0, 15424.0, -16192.0)
-    gg_rct_UndeadSpawnBottom = Rect(14848.0, -17472.0, 14976.0, -17344.0)
-    gg_rct_UndeadSpawnCenter = Rect(14848.0, -17024.0, 14976.0, -16896.0)
-    gg_rct_UndeadSpawnRight = Rect(15296.0, -17024.0, 15424.0, -16896.0)
-    gg_rct_WestBarracksCenter = Rect(-14592.0, 12416.0, -14464.0, 12544.0)
-    gg_rct_WestBarracksLeft = Rect(-15424.0, 12352.0, -15296.0, 12480.0)
-    gg_rct_WestBarracksTop = Rect(-14528.0, 13248.0, -14400.0, 13376.0)
-    gg_rct_WestBase = Rect(-15424.0, 13248.0, -15296.0, 13376.0)
-    gg_rct_WestSpawnBarracksCenter = Rect(-14400.0, 12224.0, -14272.0, 12352.0)
-    gg_rct_WestSpawnBarracksLeft = Rect(-15424.0, 12096.0, -15296.0, 12224.0)
-    gg_rct_WestSpawnBarracksTop = Rect(-14272.0, 13248.0, -14144.0, 13376.0)
-    gg_rct_WestSpawnCenter = Rect(-14976.0, 12800.0, -14848.0, 12928.0)
-    gg_rct_WestSpawnLeft = Rect(-15424.0, 12800.0, -15296.0, 12928.0)
-    gg_rct_WestSpawnTop = Rect(-14976.0, 13248.0, -14848.0, 13376.0)
+    gg_rct_UndeadBaseToCenterSpawn = Rect(14848.0, -17024.0, 14976.0, -16896.0)
+    gg_rct_UndeadBaseToElfSpawn = Rect(14848.0, -17472.0, 14976.0, -17344.0)
+    gg_rct_UndeadBaseToOrcsSpawn = Rect(15296.0, -17024.0, 15424.0, -16896.0)
 end
 
 function InitTrig_Melee_Initialization()

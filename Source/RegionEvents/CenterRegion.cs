@@ -5,10 +5,6 @@ namespace Source.RegionEvents
 {
   internal static class CenterRegion
   {
-    //private static bool lastTargetOfWesternUnitWasClockwise;
-    //private static bool lastTargetOfEasternUnitWasClockwise;
-    //private static bool lastTargetOfSouthernUnitWasClockwise;
-
     internal static void OnEnter()
     {
       unit unit = Common.GetTriggerUnit();
@@ -16,34 +12,67 @@ namespace Source.RegionEvents
       if (unit.Owner.Controller != mapcontrol.Computer)
         return;
 
-      //// Computer-Einheit im Uhrzeigersinn oder entgegen gesetzt weiter schicken
-      //if (unit.Owner.Id == Program.Humans.Computer.Wc3Player.Id)
-      //{
-      //  if (lastTargetOfWesternUnitWasClockwise)
-      //    unit.AttackMove(Regions.SouthBase);
-      //  else
-      //    unit.AttackMove(Regions.EastBase);
-
-      //  lastTargetOfWesternUnitWasClockwise = !lastTargetOfWesternUnitWasClockwise;
-      //}
-      //else if (unit.Owner.Id == Program.Orcs.Computer.Wc3Player.Id)
-      //{
-      //  if (lastTargetOfEasternUnitWasClockwise)
-      //    unit.AttackMove(Regions.HumanBase);
-      //  else
-      //    unit.AttackMove(Regions.SouthBase);
-
-      //  lastTargetOfEasternUnitWasClockwise = !lastTargetOfEasternUnitWasClockwise;
-      //}
-      //else // SouthernForces
-      //{
-      //  if (lastTargetOfSouthernUnitWasClockwise)
-      //    unit.AttackMove(Regions.HumanBase);
-      //  else
-      //    unit.AttackMove(Regions.EastBase);
-
-      //  lastTargetOfSouthernUnitWasClockwise = !lastTargetOfSouthernUnitWasClockwise;
-      //}
+      // Computer-Einheit im Uhrzeigersinn oder entgegen gesetzt weiter schicken
+      if (unit.Owner.Id == Program.Humans.Computer.Wc3Player.Id)
+      {
+        if (!Program.Orcs.Defeated)
+        {
+          unit.AttackMove(Areas.OrcBase);
+        }
+        else if (!Program.Elves.Defeated)
+        {
+          unit.AttackMove(Areas.ElfBase);
+        }
+        else
+        {
+          unit.AttackMove(Areas.UndeadBase);
+        }
+      }
+      else if (unit.Owner.Id == Program.Orcs.Computer.Wc3Player.Id)
+      {
+        if (!Program.Undeads.Defeated)
+        {
+          unit.AttackMove(Areas.UndeadBase);
+        }
+        else if (!Program.Humans.Defeated)
+        {
+          unit.AttackMove(Areas.HumanBase);
+        }
+        else
+        {
+          unit.AttackMove(Areas.ElfBase);
+        }
+      }
+      else if (unit.Owner.Id == Program.Undeads.Computer.Wc3Player.Id)
+      {
+        if (!Program.Elves.Defeated)
+        {
+          unit.AttackMove(Areas.ElfBase);
+        }
+        else if (!Program.Orcs.Defeated)
+        {
+          unit.AttackMove(Areas.OrcBase);
+        }
+        else
+        {
+          unit.AttackMove(Areas.HumanBase);
+        }
+      }
+      else // Elves
+      {
+        if (!Program.Humans.Defeated)
+        {
+          unit.AttackMove(Areas.HumanBase);
+        }
+        else if (!Program.Undeads.Defeated)
+        {
+          unit.AttackMove(Areas.UndeadBase);
+        }
+        else
+        {
+          unit.AttackMove(Areas.OrcBase);
+        }
+      }
     }
   }
 }

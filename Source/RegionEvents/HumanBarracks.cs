@@ -16,9 +16,9 @@ namespace Source.RegionEvents
           return;
 
         // Feindliche Einheit zur Basis des Computer-Spielers schicken
-        if (unit.Owner.Id != Program.Humans.Computer.Wc3Player.Id)
+        if (!Program.Humans.Defeated && unit.Owner.Id != Program.Humans.Computer.Wc3Player.Id)
         {
-          unit.AttackMove(Regions.HumanBase);
+          unit.AttackMove(Areas.HumanBase);
         }
       }
       catch (Exception ex)

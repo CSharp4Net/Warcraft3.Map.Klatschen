@@ -24,19 +24,27 @@ namespace Source.UnitEvents
         {
           Program.Elves.Defeat();
         }
+        else if (unit.Owner.Id == Program.Undeads.Computer.Wc3Player.Id)
+        {
+          Program.Undeads.Defeat();
+        }
 
         // Ist nur noch ein Team übrig, gewinnen alle Spieler im Team
-        if (Program.Humans.Defeated && Program.Orcs.Defeated)
+        if (Program.Elves.Defeated && Program.Orcs.Defeated && Program.Undeads.Defeated)
         {
-          Program.Elves.Win();
+          Program.Humans.Win();
         }
-        else if (Program.Humans.Defeated && Program.Elves.Defeated)
+        else if (Program.Humans.Defeated && Program.Elves.Defeated && Program.Undeads.Defeated)
         {
           Program.Orcs.Win();
         }
-        else if (Program.Orcs.Defeated && Program.Elves.Defeated)
+        else if (Program.Orcs.Defeated && Program.Humans.Defeated && Program.Undeads.Defeated)
         {
-          Program.Humans.Win();
+          Program.Elves.Win();
+        }
+        else if (Program.Orcs.Defeated && Program.Elves.Defeated && Program.Humans.Defeated)
+        {
+          Program.Undeads.Win();
         }
       }
       catch (Exception ex)

@@ -29,6 +29,12 @@ public static class Constants
 	public const int UNIT_KASERNE_ORC = 1865429044;
 	public const int UNIT_URTUM_DES_KRIEGES_ELF = 1697656884;
 	public const int UNIT_TAVERNE_HERO = 1848651827;
+	public const int UNIT_NEKROPOLE_UNDEAD = 1966092336;
+	public const int UNIT_HALLE_DER_TOTEN_UNDEAD = 1966092337;
+	public const int UNIT_SCHWARZE_ZITADELLE_UNDEAD = 1966092338;
+	public const int UNIT_GEISTERTURM_UNDEAD = 1966092339;
+	public const int UNIT_NERUBERTURM_UNDEAD = 1966092340;
+	public const int UNIT_GRUFT_UNDEAD = 1966092341;
 	public const int ORDER_OFFSET = 851970;
 	public const int ORDER_WAND_ILLUSION = 852274;
 	public const int ORDER_ABSORB = 852529;

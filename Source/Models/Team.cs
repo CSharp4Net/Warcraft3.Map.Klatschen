@@ -43,18 +43,15 @@ namespace Source.Models
     /// </summary>
     public void Defeat()
     {
-      Console.WriteLine("Defeat computer team");
       // Töte alle Computer-Einheiten
       Computer.Defeat();
 
-      Console.WriteLine("Defeat users in team");
       // Alle echten Spieler durchlaufen
       foreach (UserPlayer player in Users)
       {
         player.Defeat();
       }
 
-      Console.WriteLine("Defeat completed");
       Defeated = true;
     }
 

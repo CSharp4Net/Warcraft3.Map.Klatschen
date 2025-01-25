@@ -18,7 +18,7 @@ namespace Source.RegionEvents
         // Feindliche Einheit zur Basis des anderen Spielers schicken
         if (unit.Owner.Id == Program.Elves.Computer.Wc3Player.Id)
         {
-          unit.AttackMove(Regions.UndeadBase);
+          unit.AttackMove(Areas.UndeadBase);
         }
       }
       catch (Exception ex)

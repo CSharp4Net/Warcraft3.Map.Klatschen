@@ -48,14 +48,12 @@ namespace Source.Models
 
     public override void Defeat()
     {
-      Console.WriteLine($"Destroy buildings of player {Wc3Player.Name}");
       // Alle gespawnten Gebäude zerstören
       foreach (SpawnedBuilding building in Buildings)
       {
         building.Destroy();
       }
 
-      Console.WriteLine($"Defeat player {Wc3Player.Name} completed");
       base.Defeat();
     }
   }

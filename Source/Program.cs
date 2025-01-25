@@ -70,6 +70,7 @@ namespace Source
         ConstructHumanBuildingAndTrigger();
         ConstructOrcBuildingAndTrigger();
         ConstructElfBuildingAndTrigger();
+        ConstructUndeadBuildingAndTrigger();
 
         // Spezifische Events registrieren
         Console.WriteLine("Kämpft bis zum Tod!");
@@ -135,7 +136,7 @@ namespace Source
       Areas.ElfBarracksToHuman.RegisterOnEnter(ElfBarracks.OnEnter);
       Areas.ElfBarracksToUndead.RegisterOnEnter(ElfBarracks.OnEnter);
 
-      // Wenn freundliche Einheiten in die Regionen treten/gespawnt werden
+      // Wenn freundliche Einheiten in die Regionen treten / gespawnt werden
       Areas.ElfBaseToCenterSpawn.RegisterOnEnter(ElfSpawnToCenter.OnEnter);
       Areas.ElfBarracksToCenterSpawn.RegisterOnEnter(ElfSpawnToCenter.OnEnter);
       Areas.ElfBaseToHumanSpawn.RegisterOnEnter(ElfSpawnToHuman.OnEnter);
@@ -162,71 +163,94 @@ namespace Source
 
     private static void ConstructHumanBuildingAndTrigger()
     {
-      //// Hauptgebäude
-      //SpawnedBuilding building = Humans.Computer.CreateBuilding(Constants.UNIT_RATHAUS_HUMAN, Areas.HumanBase);
-      //building.RegisterOnDies(MainBuilding.OnDies);
-      //building.AddSpawnTrigger(15, Areas.WestSpawnCenter, Constants.UNIT_TESTSOLDIER);
-      //building.AddSpawnTrigger(15, Areas.WestSpawnLeft, Constants.UNIT_TESTSOLDIER);
-      //building.AddSpawnTrigger(15, Areas.WestSpawnTop, Constants.UNIT_TESTSOLDIER);
+      // Hauptgebäude
+      SpawnedBuilding building = Humans.Computer.CreateBuilding(Constants.UNIT_RATHAUS_HUMAN, Areas.HumanBase);
+      building.RegisterOnDies(MainBuilding.OnDies);
+      building.AddSpawnTrigger(20, Areas.HumanBaseToCenterSpawn, Constants.UNIT_TESTSOLDIER);
+      building.AddSpawnTrigger(20, Areas.HumanBaseToElfSpawn, Constants.UNIT_TESTSOLDIER);
+      building.AddSpawnTrigger(20, Areas.HumanBaseToOrcsSpawn, Constants.UNIT_TESTSOLDIER);
 
-      //// Kasernen
-      //building = Humans.Computer.CreateBuilding(Constants.UNIT_KASERNE_HUMAN, Areas.HumanBarracksToCenter);
-      //building.RegisterOnDies(BarracksBuilding.OnDies);
-      //building.AddSpawnTrigger(10, Areas.WestSpawnBarracksCenter, Constants.UNIT_TESTSOLDIER);
+      // Kasernen
+      building = Humans.Computer.CreateBuilding(Constants.UNIT_KASERNE_HUMAN, Areas.HumanBarracksToCenter);
+      building.RegisterOnDies(BarracksBuilding.OnDies);
+      building.AddSpawnTrigger(10, Areas.HumanBarracksToCenterSpawn, Constants.UNIT_TESTSOLDIER);
 
-      //building = Humans.Computer.CreateBuilding(Constants.UNIT_KASERNE_HUMAN, Areas.HumanBarracksToElves);
-      //building.RegisterOnDies(BarracksBuilding.OnDies);
-      //building.AddSpawnTrigger(10, Areas.WestSpawnBarracksLeft, Constants.UNIT_TESTSOLDIER);
+      building = Humans.Computer.CreateBuilding(Constants.UNIT_KASERNE_HUMAN, Areas.HumanBarracksToElf);
+      building.RegisterOnDies(BarracksBuilding.OnDies);
+      building.AddSpawnTrigger(10, Areas.HumanBarracksToElfSpawn, Constants.UNIT_TESTSOLDIER);
 
-      //building = Humans.Computer.CreateBuilding(Constants.UNIT_KASERNE_HUMAN, Areas.HumanBarracksToOrcs);
-      //building.RegisterOnDies(BarracksBuilding.OnDies);
-      //building.AddSpawnTrigger(10, Areas.WestSpawnBarracksTop, Constants.UNIT_TESTSOLDIER);
+      building = Humans.Computer.CreateBuilding(Constants.UNIT_KASERNE_HUMAN, Areas.HumanBarracksToOrcs);
+      building.RegisterOnDies(BarracksBuilding.OnDies);
+      building.AddSpawnTrigger(10, Areas.HumanBarracksToOrcsSpawn, Constants.UNIT_TESTSOLDIER);
     }
 
     private static void ConstructOrcBuildingAndTrigger()
     {
-      //// Hauptgebäude
-      //SpawnedBuilding building = Orcs.Computer.CreateBuilding(Constants.UNIT_HAUPTHAUS_ORC, Areas.EastBase);
-      //building.RegisterOnDies(MainBuilding.OnDies);
-      //building.AddSpawnTrigger(15, Areas.EastSpawnCenter, Constants.UNIT_TESTSOLDIER);
-      //building.AddSpawnTrigger(15, Areas.EastSpawnRight, Constants.UNIT_TESTSOLDIER);
-      //building.AddSpawnTrigger(15, Areas.EastSpawnTop, Constants.UNIT_TESTSOLDIER);
+      // Hauptgebäude
+      SpawnedBuilding building = Orcs.Computer.CreateBuilding(Constants.UNIT_HAUPTHAUS_ORC, Areas.OrcBase);
+      building.RegisterOnDies(MainBuilding.OnDies);
+      building.AddSpawnTrigger(20, Areas.OrcBaseToCenterSpawn, Constants.UNIT_TESTSOLDIER);
+      building.AddSpawnTrigger(20, Areas.OrcBaseToHumanSpawn, Constants.UNIT_TESTSOLDIER);
+      building.AddSpawnTrigger(20, Areas.OrcBaseToUndeadSpawn, Constants.UNIT_TESTSOLDIER);
 
-      //// Kasernen
-      //building = Orcs.Computer.CreateBuilding(Constants.UNIT_KASERNE_ORC, Areas.EastBarracksCenter);
-      //building.RegisterOnDies(BarracksBuilding.OnDies);
-      //building.AddSpawnTrigger(10, Areas.EastSpawnBarracksCenter, Constants.UNIT_TESTSOLDIER);
+      // Kasernen
+      building = Orcs.Computer.CreateBuilding(Constants.UNIT_KASERNE_ORC, Areas.OrcBarracksToCenter);
+      building.RegisterOnDies(BarracksBuilding.OnDies);
+      building.AddSpawnTrigger(10, Areas.OrcBarracksToCenterSpawn, Constants.UNIT_TESTSOLDIER);
 
-      //building = Orcs.Computer.CreateBuilding(Constants.UNIT_KASERNE_ORC, Areas.EastBarracksRight);
-      //building.RegisterOnDies(BarracksBuilding.OnDies);
-      //building.AddSpawnTrigger(10, Areas.EastSpawnBarracksRight, Constants.UNIT_TESTSOLDIER);
+      building = Orcs.Computer.CreateBuilding(Constants.UNIT_KASERNE_ORC, Areas.OrcBarracksToHuman);
+      building.RegisterOnDies(BarracksBuilding.OnDies);
+      building.AddSpawnTrigger(10, Areas.OrcBarracksToHumanSpawn, Constants.UNIT_TESTSOLDIER);
 
-      //building = Orcs.Computer.CreateBuilding(Constants.UNIT_KASERNE_ORC, Areas.EastBarracksTop);
-      //building.RegisterOnDies(BarracksBuilding.OnDies);
-      //building.AddSpawnTrigger(10, Areas.EastSpawnBarracksTop, Constants.UNIT_TESTSOLDIER);
+      building = Orcs.Computer.CreateBuilding(Constants.UNIT_KASERNE_ORC, Areas.OrcBarracksToUndead);
+      building.RegisterOnDies(BarracksBuilding.OnDies);
+      building.AddSpawnTrigger(10, Areas.OrcBarracksToUndeadSpawn, Constants.UNIT_TESTSOLDIER);
     }
 
     private static void ConstructElfBuildingAndTrigger()
     {
-      //// Hauptgebäude
-      //SpawnedBuilding building = Elves.Computer.CreateBuilding(Constants.UNIT_BAUM_DES_LEBENS_ELF, Areas.SouthBase);
-      //building.RegisterOnDies(MainBuilding.OnDies);
-      //building.AddSpawnTrigger(15, Areas.SouthSpawnBottom, Constants.UNIT_TESTSOLDIER);
-      //building.AddSpawnTrigger(15, Areas.SouthSpawnCenter, Constants.UNIT_TESTSOLDIER);
-      //building.AddSpawnTrigger(15, Areas.SouthSpawnLeft, Constants.UNIT_TESTSOLDIER);
+      // Hauptgebäude
+      SpawnedBuilding building = Elves.Computer.CreateBuilding(Constants.UNIT_BAUM_DES_LEBENS_ELF, Areas.ElfBase);
+      building.RegisterOnDies(MainBuilding.OnDies);
+      building.AddSpawnTrigger(20, Areas.ElfBaseToCenterSpawn, Constants.UNIT_TESTSOLDIER);
+      building.AddSpawnTrigger(20, Areas.ElfBaseToHumanSpawn, Constants.UNIT_TESTSOLDIER);
+      building.AddSpawnTrigger(20, Areas.ElfBaseToUndeadSpawn, Constants.UNIT_TESTSOLDIER);
 
-      //// Kasernen
-      //building = Elves.Computer.CreateBuilding(Constants.UNIT_URTUM_DES_KRIEGES_ELF, Areas.SouthBarracksBottom);
-      //building.RegisterOnDies(BarracksBuilding.OnDies);
-      //building.AddSpawnTrigger(10, Areas.SouthSpawnBarracksBottom, Constants.UNIT_TESTSOLDIER);
+      // Kasernen
+      building = Elves.Computer.CreateBuilding(Constants.UNIT_URTUM_DES_KRIEGES_ELF, Areas.ElfBarracksToCenter);
+      building.RegisterOnDies(BarracksBuilding.OnDies);
+      building.AddSpawnTrigger(10, Areas.ElfBarracksToCenterSpawn, Constants.UNIT_TESTSOLDIER);
 
-      //building = Elves.Computer.CreateBuilding(Constants.UNIT_URTUM_DES_KRIEGES_ELF, Areas.SouthBarracksCenter);
-      //building.RegisterOnDies(BarracksBuilding.OnDies);
-      //building.AddSpawnTrigger(10, Areas.SouthSpawnBarracksCenter, Constants.UNIT_TESTSOLDIER);
+      building = Elves.Computer.CreateBuilding(Constants.UNIT_URTUM_DES_KRIEGES_ELF, Areas.ElfBarracksToHuman);
+      building.RegisterOnDies(BarracksBuilding.OnDies);
+      building.AddSpawnTrigger(10, Areas.ElfBarracksToHumanSpawn, Constants.UNIT_TESTSOLDIER);
 
-      //building = Elves.Computer.CreateBuilding(Constants.UNIT_URTUM_DES_KRIEGES_ELF, Areas.SouthBarracksLeft);
-      //building.RegisterOnDies(BarracksBuilding.OnDies);
-      //building.AddSpawnTrigger(10, Areas.SouthSpawnBarracksLeft, Constants.UNIT_TESTSOLDIER);
+      building = Elves.Computer.CreateBuilding(Constants.UNIT_URTUM_DES_KRIEGES_ELF, Areas.ElfBarracksToUndead);
+      building.RegisterOnDies(BarracksBuilding.OnDies);
+      building.AddSpawnTrigger(10, Areas.ElfBarracksToUndeadSpawn, Constants.UNIT_TESTSOLDIER);
+    }
+
+    private static void ConstructUndeadBuildingAndTrigger()
+    {
+      // Hauptgebäude
+      SpawnedBuilding building = Undeads.Computer.CreateBuilding(Constants.UNIT_NEKROPOLE_UNDEAD, Areas.UndeadBase);
+      building.RegisterOnDies(MainBuilding.OnDies);
+      building.AddSpawnTrigger(20, Areas.UndeadBaseToCenterSpawn, Constants.UNIT_TESTSOLDIER);
+      building.AddSpawnTrigger(20, Areas.UndeadBaseToElfSpawn, Constants.UNIT_TESTSOLDIER);
+      building.AddSpawnTrigger(20, Areas.UndeadBaseToOrcsSpawn, Constants.UNIT_TESTSOLDIER);
+
+      // Kasernen
+      building = Undeads.Computer.CreateBuilding(Constants.UNIT_GRUFT_UNDEAD, Areas.UndeadBarracksToCenter);
+      building.RegisterOnDies(BarracksBuilding.OnDies);
+      building.AddSpawnTrigger(10, Areas.UndeadBarracksToCenterSpawn, Constants.UNIT_TESTSOLDIER);
+
+      building = Undeads.Computer.CreateBuilding(Constants.UNIT_GRUFT_UNDEAD, Areas.UndeadBarracksToElf);
+      building.RegisterOnDies(BarracksBuilding.OnDies);
+      building.AddSpawnTrigger(10, Areas.UndeadBarracksToElfSpawn, Constants.UNIT_TESTSOLDIER);
+
+      building = Undeads.Computer.CreateBuilding(Constants.UNIT_GRUFT_UNDEAD, Areas.UndeadBarracksToOrcs);
+      building.RegisterOnDies(BarracksBuilding.OnDies);
+      building.AddSpawnTrigger(10, Areas.UndeadBarracksToOrcsSpawn, Constants.UNIT_TESTSOLDIER);
     }
 
     static void OnResearchFinished()
