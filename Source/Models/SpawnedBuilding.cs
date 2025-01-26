@@ -30,10 +30,8 @@ namespace Source.Models
 
     internal void Destroy()
     {
-      Console.WriteLine($"Deregister Death-Event of {Wc3Unit.Name}");
       DeRegisterOnDies();
 
-      Console.WriteLine($"Stop spawn triggers of {Wc3Unit.Name}");
       foreach (SpawnTrigger trigger in SpawnTriggers)
       {
         trigger.Stop();
@@ -46,8 +44,6 @@ namespace Source.Models
         // töte Gebäude bei Bedarf, d.h. wenn Team verliert und Spieler entfernt werden.
         Wc3Unit.Kill();
       }
-
-      Console.WriteLine($"Destroy completed {Wc3Unit.Name}");
     }
 
     public void RegisterOnDies(Action eventHandler)

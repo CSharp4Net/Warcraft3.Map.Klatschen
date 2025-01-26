@@ -20168,43 +20168,43 @@ System.namespace("", function (namespace)
     local static
     static = function (this)
       this.Center = System.new(WCSharpSharedData.Rectangle, 2, -128, -2176, 128, -1920)
-      this.ElfBarracksToCenter = System.new(WCSharpSharedData.Rectangle, 2, -14592, -16640, -14464, -16512)
-      this.ElfBarracksToCenterSpawn = System.new(WCSharpSharedData.Rectangle, 2, -14400, -16448, -14272, -16320)
-      this.ElfBarracksToHuman = System.new(WCSharpSharedData.Rectangle, 2, -15424, -16576, -15296, -16448)
-      this.ElfBarracksToHumanSpawn = System.new(WCSharpSharedData.Rectangle, 2, -15424, -16320, -15296, -16192)
-      this.ElfBarracksToUndead = System.new(WCSharpSharedData.Rectangle, 2, -14528, -17472, -14400, -17344)
-      this.ElfBarracksToUndeadSpawn = System.new(WCSharpSharedData.Rectangle, 2, -14272, -17472, -14144, -17344)
+      this.ElfBarracksToCenter = System.new(WCSharpSharedData.Rectangle, 2, -11328, -13888, -11200, -13760)
+      this.ElfBarracksToCenterSpawn = System.new(WCSharpSharedData.Rectangle, 2, -11072, -13888, -10944, -13760)
+      this.ElfBarracksToHuman = System.new(WCSharpSharedData.Rectangle, 2, -15424, -12288, -15296, -12160)
+      this.ElfBarracksToHumanSpawn = System.new(WCSharpSharedData.Rectangle, 2, -15424, -12032, -15296, -11904)
+      this.ElfBarracksToUndead = System.new(WCSharpSharedData.Rectangle, 2, -10240, -17472, -10112, -17344)
+      this.ElfBarracksToUndeadSpawn = System.new(WCSharpSharedData.Rectangle, 2, -9984, -17472, -9856, -17344)
       this.ElfBase = System.new(WCSharpSharedData.Rectangle, 2, -15424, -17472, -15296, -17344)
       this.ElfBaseToCenterSpawn = System.new(WCSharpSharedData.Rectangle, 2, -14976, -17024, -14848, -16896)
       this.ElfBaseToHumanSpawn = System.new(WCSharpSharedData.Rectangle, 2, -15424, -17024, -15296, -16896)
       this.ElfBaseToUndeadSpawn = System.new(WCSharpSharedData.Rectangle, 2, -14976, -17472, -14848, -17344)
       this.HeroSelectorSpawn = System.new(WCSharpSharedData.Rectangle, 2, -18176, 18048, -18048, 18176)
-      this.HumanBarracksToCenter = System.new(WCSharpSharedData.Rectangle, 2, -14592, 12416, -14464, 12544)
-      this.HumanBarracksToCenterSpawn = System.new(WCSharpSharedData.Rectangle, 2, -14400, 12224, -14272, 12352)
-      this.HumanBarracksToElf = System.new(WCSharpSharedData.Rectangle, 2, -15424, 8192, -15296, 8320)
-      this.HumanBarracksToElfSpawn = System.new(WCSharpSharedData.Rectangle, 2, -15424, 7936, -15296, 8064)
-      this.HumanBarracksToOrcs = System.new(WCSharpSharedData.Rectangle, 2, -14528, 13248, -14400, 13376)
-      this.HumanBarracksToOrcsSpawn = System.new(WCSharpSharedData.Rectangle, 2, -14272, 13248, -14144, 13376)
+      this.HumanBarracksToCenter = System.new(WCSharpSharedData.Rectangle, 2, -11328, 9664, -11200, 9792)
+      this.HumanBarracksToCenterSpawn = System.new(WCSharpSharedData.Rectangle, 2, -11072, 9664, -10944, 9792)
+      this.HumanBarracksToElf = System.new(WCSharpSharedData.Rectangle, 2, -15424, 8064, -15296, 8192)
+      this.HumanBarracksToElfSpawn = System.new(WCSharpSharedData.Rectangle, 2, -15424, 7808, -15296, 7936)
+      this.HumanBarracksToOrcs = System.new(WCSharpSharedData.Rectangle, 2, -10240, 13248, -10112, 13376)
+      this.HumanBarracksToOrcsSpawn = System.new(WCSharpSharedData.Rectangle, 2, -9984, 13248, -9856, 13376)
       this.HumanBase = System.new(WCSharpSharedData.Rectangle, 2, -15424, 13248, -15296, 13376)
       this.HumanBaseToCenterSpawn = System.new(WCSharpSharedData.Rectangle, 2, -14976, 12800, -14848, 12928)
       this.HumanBaseToElfSpawn = System.new(WCSharpSharedData.Rectangle, 2, -15424, 12800, -15296, 12928)
       this.HumanBaseToOrcsSpawn = System.new(WCSharpSharedData.Rectangle, 2, -14976, 13248, -14848, 13376)
-      this.OrcBarracksToCenter = System.new(WCSharpSharedData.Rectangle, 2, 14464, 12416, 14592, 12544)
-      this.OrcBarracksToCenterSpawn = System.new(WCSharpSharedData.Rectangle, 2, 14272, 12224, 14400, 12352)
-      this.OrcBarracksToHuman = System.new(WCSharpSharedData.Rectangle, 2, 14400, 13248, 14528, 13376)
-      this.OrcBarracksToHumanSpawn = System.new(WCSharpSharedData.Rectangle, 2, 14144, 13248, 14272, 13376)
-      this.OrcBarracksToUndead = System.new(WCSharpSharedData.Rectangle, 2, 15296, 12352, 15424, 12480)
-      this.OrcBarracksToUndeadSpawn = System.new(WCSharpSharedData.Rectangle, 2, 15296, 12096, 15424, 12224)
+      this.OrcBarracksToCenter = System.new(WCSharpSharedData.Rectangle, 2, 11200, 9664, 11328, 9792)
+      this.OrcBarracksToCenterSpawn = System.new(WCSharpSharedData.Rectangle, 2, 10944, 9664, 11072, 9792)
+      this.OrcBarracksToHuman = System.new(WCSharpSharedData.Rectangle, 2, 10112, 13248, 10240, 13376)
+      this.OrcBarracksToHumanSpawn = System.new(WCSharpSharedData.Rectangle, 2, 9856, 13248, 9984, 13376)
+      this.OrcBarracksToUndead = System.new(WCSharpSharedData.Rectangle, 2, 15296, 8064, 15424, 8192)
+      this.OrcBarracksToUndeadSpawn = System.new(WCSharpSharedData.Rectangle, 2, 15296, 7808, 15424, 7936)
       this.OrcBase = System.new(WCSharpSharedData.Rectangle, 2, 15296, 13248, 15424, 13376)
       this.OrcBaseToCenterSpawn = System.new(WCSharpSharedData.Rectangle, 2, 14848, 12800, 14976, 12928)
       this.OrcBaseToHumanSpawn = System.new(WCSharpSharedData.Rectangle, 2, 14848, 13248, 14976, 13376)
       this.OrcBaseToUndeadSpawn = System.new(WCSharpSharedData.Rectangle, 2, 15296, 12800, 15424, 12928)
-      this.UndeadBarracksToCenter = System.new(WCSharpSharedData.Rectangle, 2, 14464, -16640, 14592, -16512)
-      this.UndeadBarracksToCenterSpawn = System.new(WCSharpSharedData.Rectangle, 2, 14272, -16448, 14400, -16320)
-      this.UndeadBarracksToElf = System.new(WCSharpSharedData.Rectangle, 2, 14400, -17472, 14528, -17344)
-      this.UndeadBarracksToElfSpawn = System.new(WCSharpSharedData.Rectangle, 2, 14144, -17472, 14272, -17344)
-      this.UndeadBarracksToOrcs = System.new(WCSharpSharedData.Rectangle, 2, 15296, -16576, 15424, -16448)
-      this.UndeadBarracksToOrcsSpawn = System.new(WCSharpSharedData.Rectangle, 2, 15296, -16320, 15424, -16192)
+      this.UndeadBarracksToCenter = System.new(WCSharpSharedData.Rectangle, 2, 11200, -13888, 11328, -13760)
+      this.UndeadBarracksToCenterSpawn = System.new(WCSharpSharedData.Rectangle, 2, 10944, -13888, 11072, -13760)
+      this.UndeadBarracksToElf = System.new(WCSharpSharedData.Rectangle, 2, 10112, -17472, 10240, -17344)
+      this.UndeadBarracksToElfSpawn = System.new(WCSharpSharedData.Rectangle, 2, 9856, -17472, 9984, -17344)
+      this.UndeadBarracksToOrcs = System.new(WCSharpSharedData.Rectangle, 2, 15296, -12288, 15424, -12160)
+      this.UndeadBarracksToOrcsSpawn = System.new(WCSharpSharedData.Rectangle, 2, 15296, -12032, 15424, -11904)
       this.UndeadBase = System.new(WCSharpSharedData.Rectangle, 2, 15296, -17472, 15424, -17344)
       this.UndeadBaseToCenterSpawn = System.new(WCSharpSharedData.Rectangle, 2, 14848, -17024, 14976, -16896)
       this.UndeadBaseToElfSpawn = System.new(WCSharpSharedData.Rectangle, 2, 14848, -17472, 14976, -17344)
@@ -20513,10 +20513,8 @@ System.namespace("Source.Models", function (namespace)
       return trigger
     end
     Destroy = function (this)
-      System.Console.WriteLine("Deregister Death-Event of " .. System.toString(GetUnitName(this.Wc3Unit)))
       DeRegisterOnDies(this)
 
-      System.Console.WriteLine("Stop spawn triggers of " .. System.toString(GetUnitName(this.Wc3Unit)))
       for _, trigger in System.each(this.SpawnTriggers) do
         trigger:Stop()
       end
@@ -20527,8 +20525,6 @@ System.namespace("Source.Models", function (namespace)
         -- töte Gebäude bei Bedarf, d.h. wenn Team verliert und Spieler entfernt werden.
         KillUnit(this.Wc3Unit)
       end
-
-      System.Console.WriteLine("Destroy completed " .. System.toString(GetUnitName(this.Wc3Unit)))
     end
     RegisterOnDies = function (this, eventHandler)
       this.Wc3Trigger = CreateTrigger()
@@ -33338,8 +33334,8 @@ local InitCSharp = function ()
       "WCSharp.Missiles.HomingMissile",
       "WCSharp.Missiles.MomentumMissile",
       "WCSharp.Missiles.OrbitalMissile",
-      "WCSharp.SaveLoad.Save_1",
       "WCSharp.SaveLoad.SaveLoadedMessage_1",
+      "WCSharp.SaveLoad.Save_1",
       "WCSharp.W3MMD.IW3MmdVar",
       "Areas",
       "Constants",
@@ -33542,6 +33538,83 @@ gg_unit_e003_0076 = nil
 gg_unit_o002_0075 = nil
 gg_unit_h004_0069 = nil
 gg_unit_o003_0063 = nil
+gg_unit_u003_0011 = nil
+gg_unit_u004_0013 = nil
+gg_unit_u000_0015 = nil
+gg_unit_u001_0016 = nil
+gg_unit_u002_0019 = nil
+gg_unit_u005_0020 = nil
+gg_unit_u004_0022 = nil
+gg_unit_u003_0023 = nil
+gg_unit_h005_0024 = nil
+gg_unit_h005_0025 = nil
+gg_unit_h005_0027 = nil
+gg_unit_h005_0028 = nil
+gg_unit_h005_0029 = nil
+gg_unit_h005_0030 = nil
+gg_unit_h005_0032 = nil
+gg_unit_h004_0033 = nil
+gg_unit_h004_0034 = nil
+gg_unit_h004_0035 = nil
+gg_unit_h004_0036 = nil
+gg_unit_h004_0037 = nil
+gg_unit_h004_0038 = nil
+gg_unit_h004_0039 = nil
+gg_unit_h004_0040 = nil
+gg_unit_h004_0041 = nil
+gg_unit_n001_0042 = nil
+gg_unit_n001_0043 = nil
+gg_unit_n001_0045 = nil
+gg_unit_n001_0046 = nil
+gg_unit_n001_0047 = nil
+gg_unit_n001_0048 = nil
+gg_unit_n001_0049 = nil
+gg_unit_o003_0050 = nil
+gg_unit_o003_0051 = nil
+gg_unit_o003_0052 = nil
+gg_unit_o003_0053 = nil
+gg_unit_o003_0054 = nil
+gg_unit_o003_0055 = nil
+gg_unit_o003_0057 = nil
+gg_unit_o003_0058 = nil
+gg_unit_o003_0059 = nil
+gg_unit_o003_0060 = nil
+gg_unit_n002_0061 = nil
+gg_unit_n002_0062 = nil
+gg_unit_n002_0064 = nil
+gg_unit_n002_0085 = nil
+gg_unit_n002_0086 = nil
+gg_unit_e003_0087 = nil
+gg_unit_e003_0088 = nil
+gg_unit_e003_0089 = nil
+gg_unit_e003_0090 = nil
+gg_unit_e003_0091 = nil
+gg_unit_e003_0092 = nil
+gg_unit_e003_0093 = nil
+gg_unit_e003_0094 = nil
+gg_unit_e003_0095 = nil
+gg_unit_o003_0096 = nil
+gg_unit_o003_0097 = nil
+gg_unit_o003_0098 = nil
+gg_unit_o003_0099 = nil
+gg_unit_o003_0100 = nil
+gg_unit_h004_0101 = nil
+gg_unit_h004_0102 = nil
+gg_unit_h004_0103 = nil
+gg_unit_h004_0104 = nil
+gg_unit_h004_0105 = nil
+gg_unit_e003_0106 = nil
+gg_unit_e003_0107 = nil
+gg_unit_e003_0108 = nil
+gg_unit_e003_0109 = nil
+gg_unit_e003_0110 = nil
+gg_unit_u004_0111 = nil
+gg_unit_u004_0112 = nil
+gg_unit_u004_0113 = nil
+gg_unit_u003_0114 = nil
+gg_unit_u003_0115 = nil
+gg_unit_u003_0116 = nil
+gg_unit_u003_0117 = nil
 function InitGlobals()
 end
 
@@ -33549,36 +33622,119 @@ function CreateBuildingsForPlayer3()
     local p = Player(3)
     local unitID = nil
     local t = nil
-    gg_unit_h005_0017 = CreateUnit(p, 1747988533, -16064.0, 13376.0, 270.000)
-    gg_unit_h004_0056 = CreateUnit(p, 1747988532, -15872.0, 13376.0, 270.000)
+    gg_unit_h005_0017 = CreateUnit(p, 1747988533, -13568.0, 13760.0, 270.000)
+    gg_unit_h005_0024 = CreateUnit(p, 1747988533, -13568.0, 12864.0, 270.000)
+    gg_unit_h005_0025 = CreateUnit(p, 1747988533, -15808.0, 11520.0, 270.000)
+    gg_unit_h005_0027 = CreateUnit(p, 1747988533, -14912.0, 11520.0, 270.000)
+    gg_unit_h005_0028 = CreateUnit(p, 1747988533, -14144.0, 11584.0, 270.000)
+    gg_unit_h005_0029 = CreateUnit(p, 1747988533, -13632.0, 12096.0, 270.000)
+    gg_unit_h005_0030 = CreateUnit(p, 1747988533, -15872.0, 12800.0, 270.000)
+    gg_unit_h005_0032 = CreateUnit(p, 1747988533, -14848.0, 13824.0, 270.000)
+    gg_unit_h004_0033 = CreateUnit(p, 1747988532, -8960.0, 13760.0, 270.000)
+    gg_unit_h004_0034 = CreateUnit(p, 1747988532, -8960.0, 12864.0, 270.000)
+    gg_unit_h004_0035 = CreateUnit(p, 1747988532, -11008.0, 12864.0, 270.000)
+    gg_unit_h004_0036 = CreateUnit(p, 1747988532, -6912.0, 13312.0, 270.000)
+    gg_unit_h004_0037 = CreateUnit(p, 1747988532, -15808.0, 8960.0, 270.000)
+    gg_unit_h004_0038 = CreateUnit(p, 1747988532, -14912.0, 8960.0, 270.000)
+    gg_unit_h004_0039 = CreateUnit(p, 1747988532, -15808.0, 6912.0, 270.000)
+    gg_unit_h004_0040 = CreateUnit(p, 1747988532, -14912.0, 6912.0, 270.000)
+    gg_unit_h004_0041 = CreateUnit(p, 1747988532, -15360.0, 4864.0, 270.000)
+    gg_unit_h004_0056 = CreateUnit(p, 1747988532, -11008.0, 13760.0, 270.000)
+    gg_unit_h004_0101 = CreateUnit(p, 1747988532, -11520.0, 10176.0, 270.000)
+    gg_unit_h004_0102 = CreateUnit(p, 1747988532, -11520.0, 9280.0, 270.000)
+    gg_unit_h004_0103 = CreateUnit(p, 1747988532, -9984.0, 9280.0, 270.000)
+    gg_unit_h004_0104 = CreateUnit(p, 1747988532, -9984.0, 10176.0, 270.000)
+    gg_unit_h004_0105 = CreateUnit(p, 1747988532, -7936.0, 9728.0, 270.000)
 end
 
 function CreateBuildingsForPlayer7()
     local p = Player(7)
     local unitID = nil
     local t = nil
-    gg_unit_n001_0021 = CreateUnit(p, 1848651825, 16000.0, 13440.0, 270.000)
-    gg_unit_o003_0044 = CreateUnit(p, 1865429043, 16000.0, 13184.0, 270.000)
+    gg_unit_n001_0021 = CreateUnit(p, 1848651825, 14848.0, 13824.0, 270.000)
+    gg_unit_n001_0042 = CreateUnit(p, 1848651825, 15872.0, 12800.0, 270.000)
+    gg_unit_n001_0043 = CreateUnit(p, 1848651825, 13568.0, 12864.0, 270.000)
+    gg_unit_o003_0044 = CreateUnit(p, 1865429043, 16320.0, 14080.0, 270.000)
+    gg_unit_n001_0045 = CreateUnit(p, 1848651825, 13568.0, 13760.0, 270.000)
+    gg_unit_n001_0046 = CreateUnit(p, 1848651825, 13632.0, 12096.0, 270.000)
+    gg_unit_n001_0047 = CreateUnit(p, 1848651825, 14144.0, 11584.0, 270.000)
+    gg_unit_n001_0048 = CreateUnit(p, 1848651825, 14976.0, 11520.0, 270.000)
+    gg_unit_n001_0049 = CreateUnit(p, 1848651825, 15808.0, 11520.0, 270.000)
+    gg_unit_o003_0050 = CreateUnit(p, 1865429043, 8960.0, 13760.0, 270.000)
+    gg_unit_o003_0051 = CreateUnit(p, 1865429043, 8960.0, 12864.0, 270.000)
+    gg_unit_o003_0052 = CreateUnit(p, 1865429043, 11008.0, 12864.0, 270.000)
+    gg_unit_o003_0053 = CreateUnit(p, 1865429043, 11008.0, 13760.0, 270.000)
+    gg_unit_o003_0054 = CreateUnit(p, 1865429043, 6912.0, 13312.0, 270.000)
+    gg_unit_o003_0055 = CreateUnit(p, 1865429043, 14912.0, 6912.0, 270.000)
+    gg_unit_o003_0057 = CreateUnit(p, 1865429043, 15808.0, 6912.0, 270.000)
+    gg_unit_o003_0058 = CreateUnit(p, 1865429043, 14912.0, 8960.0, 270.000)
+    gg_unit_o003_0059 = CreateUnit(p, 1865429043, 15808.0, 8960.0, 270.000)
+    gg_unit_o003_0060 = CreateUnit(p, 1865429043, 15360.0, 4864.0, 270.000)
     gg_unit_o003_0063 = CreateUnit(p, 1865429043, 16640.0, 18176.0, 270.000)
     gg_unit_n001_0071 = CreateUnit(p, 1848651825, 17152.0, 18176.0, 270.000)
     gg_unit_o004_0072 = CreateUnit(p, 1865429044, 17664.0, 18176.0, 270.000)
     gg_unit_o000_0073 = CreateUnit(p, 1865429040, 18176.0, 18176.0, 270.000)
     gg_unit_o001_0074 = CreateUnit(p, 1865429041, 18688.0, 18176.0, 270.000)
     gg_unit_o002_0075 = CreateUnit(p, 1865429042, 19200.0, 18176.0, 270.000)
+    gg_unit_o003_0096 = CreateUnit(p, 1865429043, 11520.0, 9280.0, 270.000)
+    gg_unit_o003_0097 = CreateUnit(p, 1865429043, 11520.0, 10176.0, 270.000)
+    gg_unit_o003_0098 = CreateUnit(p, 1865429043, 9984.0, 10176.0, 270.000)
+    gg_unit_o003_0099 = CreateUnit(p, 1865429043, 9984.0, 9280.0, 270.000)
+    gg_unit_o003_0100 = CreateUnit(p, 1865429043, 7936.0, 9728.0, 270.000)
 end
 
 function CreateBuildingsForPlayer11()
     local p = Player(11)
     local unitID = nil
     local t = nil
-    gg_unit_n002_0026 = CreateUnit(p, 1848651826, -15136.0, -18336.0, 270.000)
-    gg_unit_e003_0031 = CreateUnit(p, 1697656883, -15520.0, -18272.0, 270.000)
-    gg_unit_e003_0076 = CreateUnit(p, 1697656883, 16672.0, 17696.0, 270.000)
-    gg_unit_n002_0077 = CreateUnit(p, 1848651826, 17120.0, 17696.0, 270.000)
+    gg_unit_n002_0026 = CreateUnit(p, 1848651826, -13536.0, -17824.0, 270.000)
+    gg_unit_e003_0031 = CreateUnit(p, 1697656883, -10976.0, -16992.0, 270.000)
+    gg_unit_n002_0061 = CreateUnit(p, 1848651826, -13536.0, -16992.0, 270.000)
+    gg_unit_n002_0062 = CreateUnit(p, 1848651826, -15776.0, -15584.0, 270.000)
+    gg_unit_n002_0064 = CreateUnit(p, 1848651826, -14944.0, -15584.0, 270.000)
+    gg_unit_e003_0076 = CreateUnit(p, 1697656883, 16672.0, 17632.0, 270.000)
+    gg_unit_n002_0077 = CreateUnit(p, 1848651826, 17184.0, 17632.0, 270.000)
     gg_unit_e000_0078 = CreateUnit(p, 1697656880, 18176.0, 17664.0, 270.000)
     gg_unit_e001_0079 = CreateUnit(p, 1697656881, 18688.0, 17664.0, 270.000)
     gg_unit_e002_0080 = CreateUnit(p, 1697656882, 19200.0, 17664.0, 270.000)
     gg_unit_e004_0081 = CreateUnit(p, 1697656884, 17664.0, 17664.0, 270.000)
+    gg_unit_n002_0085 = CreateUnit(p, 1848651826, -14112.0, -15712.0, 270.000)
+    gg_unit_n002_0086 = CreateUnit(p, 1848651826, -13664.0, -16160.0, 270.000)
+    gg_unit_e003_0087 = CreateUnit(p, 1697656883, -10976.0, -17824.0, 270.000)
+    gg_unit_e003_0088 = CreateUnit(p, 1697656883, -8928.0, -16992.0, 270.000)
+    gg_unit_e003_0089 = CreateUnit(p, 1697656883, -8928.0, -17824.0, 270.000)
+    gg_unit_e003_0090 = CreateUnit(p, 1697656883, -6880.0, -17376.0, 270.000)
+    gg_unit_e003_0091 = CreateUnit(p, 1697656883, -15776.0, -13088.0, 270.000)
+    gg_unit_e003_0092 = CreateUnit(p, 1697656883, -14944.0, -13088.0, 270.000)
+    gg_unit_e003_0093 = CreateUnit(p, 1697656883, -14944.0, -10976.0, 270.000)
+    gg_unit_e003_0094 = CreateUnit(p, 1697656883, -15776.0, -10976.0, 270.000)
+    gg_unit_e003_0095 = CreateUnit(p, 1697656883, -15392.0, -8928.0, 270.000)
+    gg_unit_e003_0106 = CreateUnit(p, 1697656883, -11488.0, -14240.0, 270.000)
+    gg_unit_e003_0107 = CreateUnit(p, 1697656883, -11488.0, -13408.0, 270.000)
+    gg_unit_e003_0108 = CreateUnit(p, 1697656883, -9952.0, -13408.0, 270.000)
+    gg_unit_e003_0109 = CreateUnit(p, 1697656883, -9952.0, -14240.0, 270.000)
+    gg_unit_e003_0110 = CreateUnit(p, 1697656883, -7904.0, -13856.0, 270.000)
+end
+
+function CreateBuildingsForPlayer15()
+    local p = Player(15)
+    local unitID = nil
+    local t = nil
+    gg_unit_u003_0011 = CreateUnit(p, 1966092339, 10976.0, -16992.0, 270.000)
+    gg_unit_u004_0013 = CreateUnit(p, 1966092340, 13536.0, -17824.0, 270.000)
+    gg_unit_u000_0015 = CreateUnit(p, 1966092336, 18176.0, 17152.0, 270.000)
+    gg_unit_u001_0016 = CreateUnit(p, 1966092337, 18688.0, 17152.0, 270.000)
+    gg_unit_u002_0019 = CreateUnit(p, 1966092338, 19200.0, 17152.0, 270.000)
+    gg_unit_u005_0020 = CreateUnit(p, 1966092341, 17664.0, 17152.0, 270.000)
+    gg_unit_u004_0022 = CreateUnit(p, 1966092340, 17184.0, 17120.0, 270.000)
+    gg_unit_u003_0023 = CreateUnit(p, 1966092339, 16672.0, 17120.0, 270.000)
+    gg_unit_u004_0111 = CreateUnit(p, 1966092340, 13536.0, -17056.0, 270.000)
+    gg_unit_u004_0112 = CreateUnit(p, 1966092340, 14880.0, -17952.0, 270.000)
+    gg_unit_u004_0113 = CreateUnit(p, 1966092340, 15904.0, -16928.0, 270.000)
+    gg_unit_u003_0114 = CreateUnit(p, 1966092339, 10976.0, -17824.0, 270.000)
+    gg_unit_u003_0115 = CreateUnit(p, 1966092339, 8864.0, -17824.0, 270.000)
+    gg_unit_u003_0116 = CreateUnit(p, 1966092339, 8928.0, -16992.0, 270.000)
+    gg_unit_u003_0117 = CreateUnit(p, 1966092339, 6880.0, -17376.0, 270.000)
 end
 
 function CreateNeutralPassiveBuildings()
@@ -33598,6 +33754,7 @@ function CreatePlayerBuildings()
     CreateBuildingsForPlayer3()
     CreateBuildingsForPlayer7()
     CreateBuildingsForPlayer11()
+    CreateBuildingsForPlayer15()
 end
 
 function CreateAllUnits()
@@ -33607,43 +33764,43 @@ end
 
 function CreateRegions()
     gg_rct_Center = Rect(-128.0, -2176.0, 128.0, -1920.0)
-    gg_rct_ElfBarracksToCenter = Rect(-14592.0, -16640.0, -14464.0, -16512.0)
-    gg_rct_ElfBarracksToCenterSpawn = Rect(-14400.0, -16448.0, -14272.0, -16320.0)
-    gg_rct_ElfBarracksToHuman = Rect(-15424.0, -16576.0, -15296.0, -16448.0)
-    gg_rct_ElfBarracksToHumanSpawn = Rect(-15424.0, -16320.0, -15296.0, -16192.0)
-    gg_rct_ElfBarracksToUndead = Rect(-14528.0, -17472.0, -14400.0, -17344.0)
-    gg_rct_ElfBarracksToUndeadSpawn = Rect(-14272.0, -17472.0, -14144.0, -17344.0)
+    gg_rct_ElfBarracksToCenter = Rect(-11328.0, -13888.0, -11200.0, -13760.0)
+    gg_rct_ElfBarracksToCenterSpawn = Rect(-11072.0, -13888.0, -10944.0, -13760.0)
+    gg_rct_ElfBarracksToHuman = Rect(-15424.0, -12288.0, -15296.0, -12160.0)
+    gg_rct_ElfBarracksToHumanSpawn = Rect(-15424.0, -12032.0, -15296.0, -11904.0)
+    gg_rct_ElfBarracksToUndead = Rect(-10240.0, -17472.0, -10112.0, -17344.0)
+    gg_rct_ElfBarracksToUndeadSpawn = Rect(-9984.0, -17472.0, -9856.0, -17344.0)
     gg_rct_ElfBase = Rect(-15424.0, -17472.0, -15296.0, -17344.0)
     gg_rct_ElfBaseToCenterSpawn = Rect(-14976.0, -17024.0, -14848.0, -16896.0)
     gg_rct_ElfBaseToHumanSpawn = Rect(-15424.0, -17024.0, -15296.0, -16896.0)
     gg_rct_ElfBaseToUndeadSpawn = Rect(-14976.0, -17472.0, -14848.0, -17344.0)
     gg_rct_HeroSelectorSpawn = Rect(-18176.0, 18048.0, -18048.0, 18176.0)
-    gg_rct_HumanBarracksToCenter = Rect(-14592.0, 12416.0, -14464.0, 12544.0)
-    gg_rct_HumanBarracksToCenterSpawn = Rect(-14400.0, 12224.0, -14272.0, 12352.0)
-    gg_rct_HumanBarracksToElf = Rect(-15424.0, 8192.0, -15296.0, 8320.0)
-    gg_rct_HumanBarracksToElfSpawn = Rect(-15424.0, 7936.0, -15296.0, 8064.0)
-    gg_rct_HumanBarracksToOrcs = Rect(-14528.0, 13248.0, -14400.0, 13376.0)
-    gg_rct_HumanBarracksToOrcsSpawn = Rect(-14272.0, 13248.0, -14144.0, 13376.0)
+    gg_rct_HumanBarracksToCenter = Rect(-11328.0, 9664.0, -11200.0, 9792.0)
+    gg_rct_HumanBarracksToCenterSpawn = Rect(-11072.0, 9664.0, -10944.0, 9792.0)
+    gg_rct_HumanBarracksToElf = Rect(-15424.0, 8064.0, -15296.0, 8192.0)
+    gg_rct_HumanBarracksToElfSpawn = Rect(-15424.0, 7808.0, -15296.0, 7936.0)
+    gg_rct_HumanBarracksToOrcs = Rect(-10240.0, 13248.0, -10112.0, 13376.0)
+    gg_rct_HumanBarracksToOrcsSpawn = Rect(-9984.0, 13248.0, -9856.0, 13376.0)
     gg_rct_HumanBase = Rect(-15424.0, 13248.0, -15296.0, 13376.0)
     gg_rct_HumanBaseToCenterSpawn = Rect(-14976.0, 12800.0, -14848.0, 12928.0)
     gg_rct_HumanBaseToElfSpawn = Rect(-15424.0, 12800.0, -15296.0, 12928.0)
     gg_rct_HumanBaseToOrcsSpawn = Rect(-14976.0, 13248.0, -14848.0, 13376.0)
-    gg_rct_OrcBarracksToCenter = Rect(14464.0, 12416.0, 14592.0, 12544.0)
-    gg_rct_OrcBarracksToCenterSpawn = Rect(14272.0, 12224.0, 14400.0, 12352.0)
-    gg_rct_OrcBarracksToHuman = Rect(14400.0, 13248.0, 14528.0, 13376.0)
-    gg_rct_OrcBarracksToHumanSpawn = Rect(14144.0, 13248.0, 14272.0, 13376.0)
-    gg_rct_OrcBarracksToUndead = Rect(15296.0, 12352.0, 15424.0, 12480.0)
-    gg_rct_OrcBarracksToUndeadSpawn = Rect(15296.0, 12096.0, 15424.0, 12224.0)
+    gg_rct_OrcBarracksToCenter = Rect(11200.0, 9664.0, 11328.0, 9792.0)
+    gg_rct_OrcBarracksToCenterSpawn = Rect(10944.0, 9664.0, 11072.0, 9792.0)
+    gg_rct_OrcBarracksToHuman = Rect(10112.0, 13248.0, 10240.0, 13376.0)
+    gg_rct_OrcBarracksToHumanSpawn = Rect(9856.0, 13248.0, 9984.0, 13376.0)
+    gg_rct_OrcBarracksToUndead = Rect(15296.0, 8064.0, 15424.0, 8192.0)
+    gg_rct_OrcBarracksToUndeadSpawn = Rect(15296.0, 7808.0, 15424.0, 7936.0)
     gg_rct_OrcBase = Rect(15296.0, 13248.0, 15424.0, 13376.0)
     gg_rct_OrcBaseToCenterSpawn = Rect(14848.0, 12800.0, 14976.0, 12928.0)
     gg_rct_OrcBaseToHumanSpawn = Rect(14848.0, 13248.0, 14976.0, 13376.0)
     gg_rct_OrcBaseToUndeadSpawn = Rect(15296.0, 12800.0, 15424.0, 12928.0)
-    gg_rct_UndeadBarracksToCenter = Rect(14464.0, -16640.0, 14592.0, -16512.0)
-    gg_rct_UndeadBarracksToCenterSpawn = Rect(14272.0, -16448.0, 14400.0, -16320.0)
-    gg_rct_UndeadBarracksToElf = Rect(14400.0, -17472.0, 14528.0, -17344.0)
-    gg_rct_UndeadBarracksToElfSpawn = Rect(14144.0, -17472.0, 14272.0, -17344.0)
-    gg_rct_UndeadBarracksToOrcs = Rect(15296.0, -16576.0, 15424.0, -16448.0)
-    gg_rct_UndeadBarracksToOrcsSpawn = Rect(15296.0, -16320.0, 15424.0, -16192.0)
+    gg_rct_UndeadBarracksToCenter = Rect(11200.0, -13888.0, 11328.0, -13760.0)
+    gg_rct_UndeadBarracksToCenterSpawn = Rect(10944.0, -13888.0, 11072.0, -13760.0)
+    gg_rct_UndeadBarracksToElf = Rect(10112.0, -17472.0, 10240.0, -17344.0)
+    gg_rct_UndeadBarracksToElfSpawn = Rect(9856.0, -17472.0, 9984.0, -17344.0)
+    gg_rct_UndeadBarracksToOrcs = Rect(15296.0, -12288.0, 15424.0, -12160.0)
+    gg_rct_UndeadBarracksToOrcsSpawn = Rect(15296.0, -12032.0, 15424.0, -11904.0)
     gg_rct_UndeadBase = Rect(15296.0, -17472.0, 15424.0, -17344.0)
     gg_rct_UndeadBaseToCenterSpawn = Rect(14848.0, -17024.0, 14976.0, -16896.0)
     gg_rct_UndeadBaseToElfSpawn = Rect(14848.0, -17472.0, 14976.0, -17344.0)
@@ -34069,9 +34226,9 @@ function config()
     DefineStartLocation(9, -14848.0, -17920.0)
     DefineStartLocation(10, -14848.0, -17920.0)
     DefineStartLocation(11, -15360.0, -17408.0)
-    DefineStartLocation(12, 14848.0, -17920.0)
-    DefineStartLocation(13, 14848.0, -17920.0)
-    DefineStartLocation(14, 14848.0, -17920.0)
+    DefineStartLocation(12, 15872.0, -17920.0)
+    DefineStartLocation(13, 15872.0, -17920.0)
+    DefineStartLocation(14, 15872.0, -17920.0)
     DefineStartLocation(15, 15360.0, -17408.0)
     InitCustomPlayerSlots()
     InitCustomTeams()
