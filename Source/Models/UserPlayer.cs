@@ -1,4 +1,5 @@
 ﻿using Source.Abstracts;
+using System;
 using WCSharp.Api;
 
 namespace Source.Models

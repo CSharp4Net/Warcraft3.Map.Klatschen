@@ -7,6 +7,8 @@
 /// </summary>
 public static class Constants
 {
+	public const int ABILITY_TREFFERPUNKTREGENERATIONSAURA_RESTORE = 1093677104;
+	public const int ABILITY_MANAREGENERATION_RESTORE = 1093677105;
 	public const int UNIT_DUMMY = 1848651824;
 	public const int UNIT_TESTSOLDIER = 1747988528;
 	public const int UNIT_RATHAUS_HUMAN = 1747988529;
@@ -28,7 +30,7 @@ public static class Constants
 	public const int UNIT_KASERNE_HUMAN = 1747988535;
 	public const int UNIT_KASERNE_ORC = 1865429044;
 	public const int UNIT_URTUM_DES_KRIEGES_ELF = 1697656884;
-	public const int UNIT_TAVERNE_HERO = 1848651827;
+	public const int UNIT_FEUERLORD_HERO = 1311780916;
 	public const int UNIT_NEKROPOLE_UNDEAD = 1966092336;
 	public const int UNIT_HALLE_DER_TOTEN_UNDEAD = 1966092337;
 	public const int UNIT_SCHWARZE_ZITADELLE_UNDEAD = 1966092338;
@@ -36,6 +38,8 @@ public static class Constants
 	public const int UNIT_NERUBERTURM_UNDEAD = 1966092340;
 	public const int UNIT_GRUFT_UNDEAD = 1966092341;
 	public const int UNIT_HELDENSEELE_HERO_SELECTOR = 1966092342;
+	public const int UNIT_TAVERNE_HERO_SELECTOR = 1848651827;
+	public const int UNIT_BRUNNEN_DER_WIEDERHERSTELLUNG_RESTORE = 1848651829;
 	public const int ORDER_OFFSET = 851970;
 	public const int ORDER_WAND_ILLUSION = 852274;
 	public const int ORDER_ABSORB = 852529;

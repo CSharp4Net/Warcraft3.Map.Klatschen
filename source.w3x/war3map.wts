@@ -205,7 +205,7 @@ Elfen
 }
 
 STRING 54
-// Units: n003 (Taverne), EditorSuffix (Name - Editor Suffix)
+// Units: N004 (Feuerlord), EditorSuffix (Name - Editor Suffix)
 {
 (Hero)
 }
@@ -308,8 +308,38 @@ Heldenseele
 }
 
 STRING 73
+// Units: n003 (Taverne), EditorSuffix (Name - Editor Suffix)
+{
+(Hero Selector)
+}
+
+STRING 74
 // Units: u006 (Heldenseele), EditorSuffix (Name - Editor Suffix)
 {
 (Hero Selector)
+}
+
+STRING 75
+// Units: n005 (Brunnen der Wiederherstellung), EditorSuffix (Name - Editor Suffix)
+{
+(Restore)
+}
+
+STRING 76
+// Units: n005 (Brunnen der Wiederherstellung), Name (Name)
+{
+Brunnen der Wiederherstellung
+}
+
+STRING 77
+// Abilities: A000 (Trefferpunktregenerationsaura), EditorSuffix (Editor Suffix)
+{
+(Restore)
+}
+
+STRING 78
+// Abilities: A001 (Manaregeneration), EditorSuffix (Editor Suffix)
+{
+(Restore)
 }
 

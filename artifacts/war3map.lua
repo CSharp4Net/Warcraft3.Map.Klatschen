@@ -19767,6 +19767,8 @@ System.namespace("", function (namespace)
       this.ElfBarracksToUndead = SourceModels.Area(Regions.ElfBarracksToUndead)
       this.ElfBarracksToUndeadSpawn = SourceModels.Area(Regions.ElfBarracksToUndeadSpawn)
       this.ElfBase = SourceModels.Area(Regions.ElfBase)
+      this.ElfBaseHeroRespawn = SourceModels.Area(Regions.ElfBaseHeroRespawn)
+      this.ElfBaseHeroSpawn = SourceModels.Area(Regions.ElfBaseHeroSpawn)
       this.ElfBaseToCenterSpawn = SourceModels.Area(Regions.ElfBaseToCenterSpawn)
       this.ElfBaseToHumanSpawn = SourceModels.Area(Regions.ElfBaseToHumanSpawn)
       this.ElfBaseToUndeadSpawn = SourceModels.Area(Regions.ElfBaseToUndeadSpawn)
@@ -19778,6 +19780,8 @@ System.namespace("", function (namespace)
       this.HumanBarracksToOrcs = SourceModels.Area(Regions.HumanBarracksToOrcs)
       this.HumanBarracksToOrcsSpawn = SourceModels.Area(Regions.HumanBarracksToOrcsSpawn)
       this.HumanBase = SourceModels.Area(Regions.HumanBase)
+      this.HumanBaseHeroRespawn = SourceModels.Area(Regions.HumanBaseHeroRespawn)
+      this.HumanBaseHeroSpawn = SourceModels.Area(Regions.HumanBaseHeroSpawn)
       this.HumanBaseToCenterSpawn = SourceModels.Area(Regions.HumanBaseToCenterSpawn)
       this.HumanBaseToElfSpawn = SourceModels.Area(Regions.HumanBaseToElfSpawn)
       this.HumanBaseToOrcsSpawn = SourceModels.Area(Regions.HumanBaseToOrcsSpawn)
@@ -19788,6 +19792,8 @@ System.namespace("", function (namespace)
       this.OrcBarracksToUndead = SourceModels.Area(Regions.OrcBarracksToUndead)
       this.OrcBarracksToUndeadSpawn = SourceModels.Area(Regions.OrcBarracksToUndeadSpawn)
       this.OrcBase = SourceModels.Area(Regions.OrcBase)
+      this.OrcBaseHeroRespawn = SourceModels.Area(Regions.OrcBaseHeroRespawn)
+      this.OrcBaseHeroSpawn = SourceModels.Area(Regions.OrcBaseHeroSpawn)
       this.OrcBaseToCenterSpawn = SourceModels.Area(Regions.OrcBaseToCenterSpawn)
       this.OrcBaseToHumanSpawn = SourceModels.Area(Regions.OrcBaseToHumanSpawn)
       this.OrcBaseToUndeadSpawn = SourceModels.Area(Regions.OrcBaseToUndeadSpawn)
@@ -19798,6 +19804,8 @@ System.namespace("", function (namespace)
       this.UndeadBarracksToOrcs = SourceModels.Area(Regions.UndeadBarracksToOrcs)
       this.UndeadBarracksToOrcsSpawn = SourceModels.Area(Regions.UndeadBarracksToOrcsSpawn)
       this.UndeadBase = SourceModels.Area(Regions.UndeadBase)
+      this.UndeadBaseHeroRespawn = SourceModels.Area(Regions.UndeadBaseHeroRespawn)
+      this.UndeadBaseHeroSpawn = SourceModels.Area(Regions.UndeadBaseHeroSpawn)
       this.UndeadBaseToCenterSpawn = SourceModels.Area(Regions.UndeadBaseToCenterSpawn)
       this.UndeadBaseToElfSpawn = SourceModels.Area(Regions.UndeadBaseToElfSpawn)
       this.UndeadBaseToOrcsSpawn = SourceModels.Area(Regions.UndeadBaseToOrcsSpawn)
@@ -19815,6 +19823,8 @@ System.namespace("", function (namespace)
             { "ElfBarracksToUndead", 0xE, out.Source.Models.Area },
             { "ElfBarracksToUndeadSpawn", 0xE, out.Source.Models.Area },
             { "ElfBase", 0xE, out.Source.Models.Area },
+            { "ElfBaseHeroRespawn", 0xE, out.Source.Models.Area },
+            { "ElfBaseHeroSpawn", 0xE, out.Source.Models.Area },
             { "ElfBaseToCenterSpawn", 0xE, out.Source.Models.Area },
             { "ElfBaseToHumanSpawn", 0xE, out.Source.Models.Area },
             { "ElfBaseToUndeadSpawn", 0xE, out.Source.Models.Area },
@@ -19826,6 +19836,8 @@ System.namespace("", function (namespace)
             { "HumanBarracksToOrcs", 0xE, out.Source.Models.Area },
             { "HumanBarracksToOrcsSpawn", 0xE, out.Source.Models.Area },
             { "HumanBase", 0xE, out.Source.Models.Area },
+            { "HumanBaseHeroRespawn", 0xE, out.Source.Models.Area },
+            { "HumanBaseHeroSpawn", 0xE, out.Source.Models.Area },
             { "HumanBaseToCenterSpawn", 0xE, out.Source.Models.Area },
             { "HumanBaseToElfSpawn", 0xE, out.Source.Models.Area },
             { "HumanBaseToOrcsSpawn", 0xE, out.Source.Models.Area },
@@ -19836,6 +19848,8 @@ System.namespace("", function (namespace)
             { "OrcBarracksToUndead", 0xE, out.Source.Models.Area },
             { "OrcBarracksToUndeadSpawn", 0xE, out.Source.Models.Area },
             { "OrcBase", 0xE, out.Source.Models.Area },
+            { "OrcBaseHeroRespawn", 0xE, out.Source.Models.Area },
+            { "OrcBaseHeroSpawn", 0xE, out.Source.Models.Area },
             { "OrcBaseToCenterSpawn", 0xE, out.Source.Models.Area },
             { "OrcBaseToHumanSpawn", 0xE, out.Source.Models.Area },
             { "OrcBaseToUndeadSpawn", 0xE, out.Source.Models.Area },
@@ -19846,6 +19860,8 @@ System.namespace("", function (namespace)
             { "UndeadBarracksToOrcs", 0xE, out.Source.Models.Area },
             { "UndeadBarracksToOrcsSpawn", 0xE, out.Source.Models.Area },
             { "UndeadBase", 0xE, out.Source.Models.Area },
+            { "UndeadBaseHeroRespawn", 0xE, out.Source.Models.Area },
+            { "UndeadBaseHeroSpawn", 0xE, out.Source.Models.Area },
             { "UndeadBaseToCenterSpawn", 0xE, out.Source.Models.Area },
             { "UndeadBaseToElfSpawn", 0xE, out.Source.Models.Area },
             { "UndeadBaseToOrcsSpawn", 0xE, out.Source.Models.Area }
@@ -19939,6 +19955,7 @@ System.namespace("Source", function (namespace)
         RegisterRegionTriggerInUndeadArea()
 
         -- Allgemeine Events registrieren
+        WCSharpEvents.PlayerUnitEvents.Register14(802 --[[UnitTypeEvent.BuysUnit]], SourceUnitEvents.UserHero.OnBuys)
         WCSharpEvents.PlayerUnitEvents.Register14(818 --[[UnitTypeEvent.FinishesResearch]], OnResearchFinished)
         WCSharpEvents.PlayerUnitEvents.Register14(813 --[[UnitTypeEvent.Dies]], SourceUnitEvents.GenericUnit.OnUnitDies)
         WCSharpEvents.PeriodicEvents.AddPeriodicEvent(SourcePermanentEvents.GoldIncome.OnElapsed, 5)
@@ -19952,12 +19969,7 @@ System.namespace("Source", function (namespace)
         -- Spezifische Events registrieren
         System.Console.WriteLine("Kämpft bis zum Tod!")
 
-
-        FogEnable(false)
-        FogMaskEnable(false)
-
-
-        -- Alle Spieler der Streitmacht vom Computer-Spiler abrufen
+        -- Für alle Benutzer-Spieler einen Hero-Selector generieren
         local force = GetPlayersByMapControl(MAP_CONTROL_USER)
         ForForce(force, function ()
           local player = GetEnumPlayer()
@@ -19989,6 +20001,10 @@ System.namespace("Source", function (namespace)
             end
           end
         end)
+
+
+        FogEnable(false)
+        FogMaskEnable(false)
       end, function (default)
         local ex = default
         DisplayTextToPlayer(GetLocalPlayer(), 0, 0, ex:getMessage())
@@ -20205,6 +20221,8 @@ System.namespace("", function (namespace)
       this.ElfBarracksToUndead = System.new(WCSharpSharedData.Rectangle, 2, -10240, -17472, -10112, -17344)
       this.ElfBarracksToUndeadSpawn = System.new(WCSharpSharedData.Rectangle, 2, -9984, -17472, -9856, -17344)
       this.ElfBase = System.new(WCSharpSharedData.Rectangle, 2, -15424, -17472, -15296, -17344)
+      this.ElfBaseHeroRespawn = System.new(WCSharpSharedData.Rectangle, 2, -16512, -18560, -16384, -18432)
+      this.ElfBaseHeroSpawn = System.new(WCSharpSharedData.Rectangle, 2, -15168, -17216, -15040, -17088)
       this.ElfBaseToCenterSpawn = System.new(WCSharpSharedData.Rectangle, 2, -14976, -17024, -14848, -16896)
       this.ElfBaseToHumanSpawn = System.new(WCSharpSharedData.Rectangle, 2, -15424, -17024, -15296, -16896)
       this.ElfBaseToUndeadSpawn = System.new(WCSharpSharedData.Rectangle, 2, -14976, -17472, -14848, -17344)
@@ -20216,6 +20234,8 @@ System.namespace("", function (namespace)
       this.HumanBarracksToOrcs = System.new(WCSharpSharedData.Rectangle, 2, -10240, 13248, -10112, 13376)
       this.HumanBarracksToOrcsSpawn = System.new(WCSharpSharedData.Rectangle, 2, -9984, 13248, -9856, 13376)
       this.HumanBase = System.new(WCSharpSharedData.Rectangle, 2, -15424, 13248, -15296, 13376)
+      this.HumanBaseHeroRespawn = System.new(WCSharpSharedData.Rectangle, 2, -16512, 14336, -16384, 14464)
+      this.HumanBaseHeroSpawn = System.new(WCSharpSharedData.Rectangle, 2, -15168, 12992, -15040, 13120)
       this.HumanBaseToCenterSpawn = System.new(WCSharpSharedData.Rectangle, 2, -14976, 12800, -14848, 12928)
       this.HumanBaseToElfSpawn = System.new(WCSharpSharedData.Rectangle, 2, -15424, 12800, -15296, 12928)
       this.HumanBaseToOrcsSpawn = System.new(WCSharpSharedData.Rectangle, 2, -14976, 13248, -14848, 13376)
@@ -20226,6 +20246,8 @@ System.namespace("", function (namespace)
       this.OrcBarracksToUndead = System.new(WCSharpSharedData.Rectangle, 2, 15296, 8064, 15424, 8192)
       this.OrcBarracksToUndeadSpawn = System.new(WCSharpSharedData.Rectangle, 2, 15296, 7808, 15424, 7936)
       this.OrcBase = System.new(WCSharpSharedData.Rectangle, 2, 15296, 13248, 15424, 13376)
+      this.OrcBaseHeroRespawn = System.new(WCSharpSharedData.Rectangle, 2, 16384, 14336, 16512, 14464)
+      this.OrcBaseHeroSpawn = System.new(WCSharpSharedData.Rectangle, 2, 15040, 12992, 15168, 13120)
       this.OrcBaseToCenterSpawn = System.new(WCSharpSharedData.Rectangle, 2, 14848, 12800, 14976, 12928)
       this.OrcBaseToHumanSpawn = System.new(WCSharpSharedData.Rectangle, 2, 14848, 13248, 14976, 13376)
       this.OrcBaseToUndeadSpawn = System.new(WCSharpSharedData.Rectangle, 2, 15296, 12800, 15424, 12928)
@@ -20236,6 +20258,8 @@ System.namespace("", function (namespace)
       this.UndeadBarracksToOrcs = System.new(WCSharpSharedData.Rectangle, 2, 15296, -12288, 15424, -12160)
       this.UndeadBarracksToOrcsSpawn = System.new(WCSharpSharedData.Rectangle, 2, 15296, -12032, 15424, -11904)
       this.UndeadBase = System.new(WCSharpSharedData.Rectangle, 2, 15296, -17472, 15424, -17344)
+      this.UndeadBaseHeroRespawn = System.new(WCSharpSharedData.Rectangle, 2, 16384, -18560, 16512, -18432)
+      this.UndeadBaseHeroSpawn = System.new(WCSharpSharedData.Rectangle, 2, 15040, -17216, 15168, -17088)
       this.UndeadBaseToCenterSpawn = System.new(WCSharpSharedData.Rectangle, 2, 14848, -17024, 14976, -16896)
       this.UndeadBaseToElfSpawn = System.new(WCSharpSharedData.Rectangle, 2, 14848, -17472, 14976, -17344)
       this.UndeadBaseToOrcsSpawn = System.new(WCSharpSharedData.Rectangle, 2, 15296, -17024, 15424, -16896)
@@ -20253,6 +20277,8 @@ System.namespace("", function (namespace)
             { "ElfBarracksToUndead", 0xE, out.WCSharp.Shared.Data.Rectangle },
             { "ElfBarracksToUndeadSpawn", 0xE, out.WCSharp.Shared.Data.Rectangle },
             { "ElfBase", 0xE, out.WCSharp.Shared.Data.Rectangle },
+            { "ElfBaseHeroRespawn", 0xE, out.WCSharp.Shared.Data.Rectangle },
+            { "ElfBaseHeroSpawn", 0xE, out.WCSharp.Shared.Data.Rectangle },
             { "ElfBaseToCenterSpawn", 0xE, out.WCSharp.Shared.Data.Rectangle },
             { "ElfBaseToHumanSpawn", 0xE, out.WCSharp.Shared.Data.Rectangle },
             { "ElfBaseToUndeadSpawn", 0xE, out.WCSharp.Shared.Data.Rectangle },
@@ -20264,6 +20290,8 @@ System.namespace("", function (namespace)
             { "HumanBarracksToOrcs", 0xE, out.WCSharp.Shared.Data.Rectangle },
             { "HumanBarracksToOrcsSpawn", 0xE, out.WCSharp.Shared.Data.Rectangle },
             { "HumanBase", 0xE, out.WCSharp.Shared.Data.Rectangle },
+            { "HumanBaseHeroRespawn", 0xE, out.WCSharp.Shared.Data.Rectangle },
+            { "HumanBaseHeroSpawn", 0xE, out.WCSharp.Shared.Data.Rectangle },
             { "HumanBaseToCenterSpawn", 0xE, out.WCSharp.Shared.Data.Rectangle },
             { "HumanBaseToElfSpawn", 0xE, out.WCSharp.Shared.Data.Rectangle },
             { "HumanBaseToOrcsSpawn", 0xE, out.WCSharp.Shared.Data.Rectangle },
@@ -20274,6 +20302,8 @@ System.namespace("", function (namespace)
             { "OrcBarracksToUndead", 0xE, out.WCSharp.Shared.Data.Rectangle },
             { "OrcBarracksToUndeadSpawn", 0xE, out.WCSharp.Shared.Data.Rectangle },
             { "OrcBase", 0xE, out.WCSharp.Shared.Data.Rectangle },
+            { "OrcBaseHeroRespawn", 0xE, out.WCSharp.Shared.Data.Rectangle },
+            { "OrcBaseHeroSpawn", 0xE, out.WCSharp.Shared.Data.Rectangle },
             { "OrcBaseToCenterSpawn", 0xE, out.WCSharp.Shared.Data.Rectangle },
             { "OrcBaseToHumanSpawn", 0xE, out.WCSharp.Shared.Data.Rectangle },
             { "OrcBaseToUndeadSpawn", 0xE, out.WCSharp.Shared.Data.Rectangle },
@@ -20284,6 +20314,8 @@ System.namespace("", function (namespace)
             { "UndeadBarracksToOrcs", 0xE, out.WCSharp.Shared.Data.Rectangle },
             { "UndeadBarracksToOrcsSpawn", 0xE, out.WCSharp.Shared.Data.Rectangle },
             { "UndeadBase", 0xE, out.WCSharp.Shared.Data.Rectangle },
+            { "UndeadBaseHeroRespawn", 0xE, out.WCSharp.Shared.Data.Rectangle },
+            { "UndeadBaseHeroSpawn", 0xE, out.WCSharp.Shared.Data.Rectangle },
             { "UndeadBaseToCenterSpawn", 0xE, out.WCSharp.Shared.Data.Rectangle },
             { "UndeadBaseToElfSpawn", 0xE, out.WCSharp.Shared.Data.Rectangle },
             { "UndeadBaseToOrcsSpawn", 0xE, out.WCSharp.Shared.Data.Rectangle }
@@ -20302,7 +20334,7 @@ local WCSharpApi = WCSharp.Api
 local Listunit = System.List(WCSharpApi.unit)
 System.namespace("Source.Abstracts", function (namespace)
   namespace.class("PlayerBase", function (namespace)
-    local CreateUnit, Defeat, Win, IsOwnerOfUnit, __ctor__
+    local CreateUnit, Defeat, Win, IsOwnerOfUnit, RemoveUnit, __ctor__
     __ctor__ = function (this, wc3Player)
       this.Units = Listunit()
       this.Wc3Player = wc3Player
@@ -20345,11 +20377,15 @@ System.namespace("Source.Abstracts", function (namespace)
 
       return false
     end
+    RemoveUnit = function (this, unit)
+      this.Units:Remove(unit)
+    end
     return {
       CreateUnit = CreateUnit,
       Defeat = Defeat,
       Win = Win,
       IsOwnerOfUnit = IsOwnerOfUnit,
+      RemoveUnit = RemoveUnit,
       __ctor__ = __ctor__,
       __metadata__ = function (out)
         return {
@@ -20358,10 +20394,11 @@ System.namespace("Source.Abstracts", function (namespace)
             { "CreateUnit", 0x386, CreateUnit, System.Int32, out.Source.Models.Area, System.Single, out.WCSharp.Api.unit },
             { "Defeat", 0x6, Defeat },
             { "IsOwnerOfUnit", 0x186, IsOwnerOfUnit, out.WCSharp.Api.unit, System.Boolean },
+            { "RemoveUnit", 0x106, RemoveUnit, out.WCSharp.Api.unit },
             { "Win", 0x6, Win }
           },
           properties = {
-            { "Units", 0x6, System.List(out.WCSharp.Api.unit) },
+            { "Units", 0x1, System.List(out.WCSharp.Api.unit) },
             { "Wc3Player", 0x6, out.WCSharp.Api.player }
           },
           class = { "PlayerBase", 0x16 }
@@ -20723,7 +20760,6 @@ System.namespace("Source.Models", function (namespace)
     ContainsUser = function (this, wc3Player, foundUser)
       for _, user in System.each(this.Users) do
         if GetPlayerId(user.Wc3Player) == GetPlayerId(wc3Player) then
-          System.Console.WriteLine("Player " .. GetPlayerId(wc3Player) .. " found!")
           foundUser = user
           return true, foundUser
         end
@@ -21934,6 +21970,12 @@ end)
 end
 do
 local System = System
+local Source
+local SourceUnitEvents
+System.import(function (out)
+  Source = out.Source
+  SourceUnitEvents = Source.UnitEvents
+end)
 System.namespace("Source.UnitEvents", function (namespace)
   namespace.class("GenericUnit", function (namespace)
     local OnUnitDies
@@ -21942,7 +21984,21 @@ System.namespace("Source.UnitEvents", function (namespace)
         local unit = GetTriggerUnit()
 
         if IsHeroUnitId(GetUnitTypeId(unit)) then
+          SourceUnitEvents.UserHero.OnDies(unit)
           return true
+        end
+
+        local owner = GetOwningPlayer(unit)
+
+        -- Getötete Einheit von Spieler entfernen
+        if Source.Program.Humans.Computer:IsOwnerOfUnit(unit) then
+          Source.Program.Humans.Computer:RemoveUnit(unit)
+        elseif Source.Program.Orcs.Computer:IsOwnerOfUnit(unit) then
+          Source.Program.Orcs.Computer:RemoveUnit(unit)
+        elseif Source.Program.Elves.Computer:IsOwnerOfUnit(unit) then
+          Source.Program.Elves.Computer:RemoveUnit(unit)
+        elseif Source.Program.Undeads.Computer:IsOwnerOfUnit(unit) then
+          Source.Program.Undeads.Computer:RemoveUnit(unit)
         end
 
         -- Verstorbene Einheit nach kurzer Zeit aus Spiel entfernen um RAM zu sparen
@@ -22024,6 +22080,144 @@ System.namespace("Source.UnitEvents", function (namespace)
             { "OnDies", 0xC, OnDies }
           },
           class = { "MainBuilding", 0x3C }
+        }
+      end
+    }
+  end)
+end)
+
+end
+do
+local System = System
+local Source
+System.import(function (out)
+  Source = out.Source
+end)
+System.namespace("Source.UnitEvents", function (namespace)
+  namespace.class("UserHero", function (namespace)
+    local OnBuys, OnDies
+    OnBuys = function ()
+      local default = System.try(function ()
+        local buyingUnit = GetBuyingUnit()
+        local soldUnit = GetSoldUnit()
+
+        -- Nur auf Hero-Selector reagieren!
+        if GetUnitTypeId(buyingUnit) ~= 1966092342 --[[Constants.UNIT_HELDENSEELE_HERO_SELECTOR]] then
+          System.Console.WriteLine("Falsche Event-Registrierung 'BuysUnit' fpr " .. System.toString(GetUnitName(buyingUnit)) .. "!")
+          return true
+        end
+
+        -- Käufer ermitteln
+        local buyingPlayer = GetOwningPlayer(buyingUnit)
+
+        -- Käufer-Einheit töten
+        KillUnit(buyingUnit)
+
+        -- Gekaufte Einheit sofort wieder entfernen und in Player-Base neu erstelleN!
+        local unitId = GetUnitTypeId(soldUnit)
+        RemoveUnit(soldUnit)
+        -- Sicherheitshalber Verweis auf Einheit für GC freigeben
+        RemoveUnit(soldUnit)
+        soldUnit = nil
+
+        local default, user = Source.Program.Humans:ContainsUser(buyingPlayer)
+        if default then
+          soldUnit = user:CreateUnit(unitId, Areas.Center, 0)
+          user:ApplyCamera(Areas.Center)
+        else
+          local extern
+          extern, user = Source.Program.Orcs:ContainsUser(buyingPlayer)
+          if extern then
+            soldUnit = user:CreateUnit(unitId, Areas.OrcBaseHeroSpawn, 0)
+            user:ApplyCamera(Areas.OrcBaseHeroSpawn)
+          else
+            local extern
+            extern, user = Source.Program.Elves:ContainsUser(buyingPlayer)
+            if extern then
+              soldUnit = user:CreateUnit(unitId, Areas.ElfBaseHeroSpawn, 0)
+              user:ApplyCamera(Areas.ElfBaseHeroSpawn)
+            else
+              local extern
+              extern, user = Source.Program.Undeads:ContainsUser(buyingPlayer)
+              if extern then
+                soldUnit = user:CreateUnit(unitId, Areas.UndeadBaseHeroSpawn, 0)
+                user:ApplyCamera(Areas.UndeadBaseHeroSpawn)
+              end
+            end
+          end
+        end
+
+        -- Einheit automatisch auswählen
+        SelectUnitForPlayerSingle(soldUnit, user.Wc3Player)
+      end, function (default)
+        local ex = default
+        System.Console.WriteLine(ex:getMessage())
+      end)
+      if default then
+        return
+      end
+    end
+    OnDies = function (unit)
+      -- Verstorbenen Held nach gegebener Zeit wieder belegen, derweil Timer anzeigen
+      local timer = CreateTimer()
+      local timerdialog = CreateTimerDialog(timer)
+      TimerDialogSetTitle(timerdialog, System.toString(GetUnitName(unit)) .. " erscheint erneut...")
+      TimerDialogDisplay(timerdialog, true)
+      TimerStart(timer, GetHeroLevel(unit) + 2, false, function ()
+        DestroyTimer(timer)
+        DestroyTimer(timer)
+        timer = nil
+
+        DestroyTimerDialog(timerdialog)
+        timerdialog = nil
+
+        local owner = GetOwningPlayer(unit)
+        local default, user = Source.Program.Humans:ContainsUser(owner)
+        if default then
+          --Common.ReviveHero(unit, Areas.Center.Wc3CenterLocation.X, Areas.Center.Wc3CenterLocation.Y, true);
+          --user.ApplyCamera(Areas.Center);
+
+          ReviveHero(unit, GetLocationX(Areas.HumanBaseHeroRespawn.Wc3CenterLocation), GetLocationY(Areas.HumanBaseHeroRespawn.Wc3CenterLocation), true)
+          user:ApplyCamera(Areas.HumanBaseHeroRespawn)
+        else
+          local extern
+          extern, user = Source.Program.Orcs:ContainsUser(owner)
+          if extern then
+            ReviveHero(unit, GetLocationX(Areas.OrcBaseHeroRespawn.Wc3CenterLocation), GetLocationY(Areas.OrcBaseHeroRespawn.Wc3CenterLocation), true)
+            user:ApplyCamera(Areas.OrcBaseHeroRespawn)
+          else
+            local extern
+            extern, user = Source.Program.Elves:ContainsUser(owner)
+            if extern then
+              ReviveHero(unit, GetLocationX(Areas.ElfBaseHeroRespawn.Wc3CenterLocation), GetLocationY(Areas.ElfBaseHeroRespawn.Wc3CenterLocation), true)
+              user:ApplyCamera(Areas.ElfBaseHeroRespawn)
+            else
+              local extern
+              extern, user = Source.Program.Undeads:ContainsUser(owner)
+              if extern then
+                ReviveHero(unit, GetLocationX(Areas.UndeadBaseHeroRespawn.Wc3CenterLocation), GetLocationY(Areas.UndeadBaseHeroRespawn.Wc3CenterLocation), true)
+                user:ApplyCamera(Areas.UndeadBaseHeroRespawn)
+              end
+            end
+          end
+        end
+
+        -- Einheit automatisch auswählen
+        SelectUnitForPlayerSingle(unit, user.Wc3Player)
+
+        -- TODO : Was ist mit Computer-Heros??
+      end)
+    end
+    return {
+      OnBuys = OnBuys,
+      OnDies = OnDies,
+      __metadata__ = function (out)
+        return {
+          methods = {
+            { "OnBuys", 0xE, OnBuys },
+            { "OnDies", 0x10E, OnDies, out.WCSharp.Api.unit }
+          },
+          class = { "UserHero", 0x3C }
         }
       end
     }
@@ -33373,8 +33567,8 @@ local InitCSharp = function ()
       "WCSharp.Missiles.HomingMissile",
       "WCSharp.Missiles.MomentumMissile",
       "WCSharp.Missiles.OrbitalMissile",
-      "WCSharp.SaveLoad.SaveLoadedMessage_1",
       "WCSharp.SaveLoad.Save_1",
+      "WCSharp.SaveLoad.SaveLoadedMessage_1",
       "WCSharp.W3MMD.IW3MmdVar",
       "Areas",
       "Constants",
@@ -33412,6 +33606,7 @@ local InitCSharp = function ()
       "Source.UnitEvents.BarracksBuilding",
       "Source.UnitEvents.GenericUnit",
       "Source.UnitEvents.MainBuilding",
+      "Source.UnitEvents.UserHero",
       "WCSharp.Api.Enums.TargetsAllowed",
       "WCSharp.Buffs.Aura_1",
       "WCSharp.Buffs.AuraBoundBuff",
@@ -33517,6 +33712,8 @@ gg_rct_ElfBarracksToHumanSpawn = nil
 gg_rct_ElfBarracksToUndead = nil
 gg_rct_ElfBarracksToUndeadSpawn = nil
 gg_rct_ElfBase = nil
+gg_rct_ElfBaseHeroRespawn = nil
+gg_rct_ElfBaseHeroSpawn = nil
 gg_rct_ElfBaseToCenterSpawn = nil
 gg_rct_ElfBaseToHumanSpawn = nil
 gg_rct_ElfBaseToUndeadSpawn = nil
@@ -33528,6 +33725,8 @@ gg_rct_HumanBarracksToElfSpawn = nil
 gg_rct_HumanBarracksToOrcs = nil
 gg_rct_HumanBarracksToOrcsSpawn = nil
 gg_rct_HumanBase = nil
+gg_rct_HumanBaseHeroRespawn = nil
+gg_rct_HumanBaseHeroSpawn = nil
 gg_rct_HumanBaseToCenterSpawn = nil
 gg_rct_HumanBaseToElfSpawn = nil
 gg_rct_HumanBaseToOrcsSpawn = nil
@@ -33538,6 +33737,8 @@ gg_rct_OrcBarracksToHumanSpawn = nil
 gg_rct_OrcBarracksToUndead = nil
 gg_rct_OrcBarracksToUndeadSpawn = nil
 gg_rct_OrcBase = nil
+gg_rct_OrcBaseHeroRespawn = nil
+gg_rct_OrcBaseHeroSpawn = nil
 gg_rct_OrcBaseToCenterSpawn = nil
 gg_rct_OrcBaseToHumanSpawn = nil
 gg_rct_OrcBaseToUndeadSpawn = nil
@@ -33548,12 +33749,14 @@ gg_rct_UndeadBarracksToElfSpawn = nil
 gg_rct_UndeadBarracksToOrcs = nil
 gg_rct_UndeadBarracksToOrcsSpawn = nil
 gg_rct_UndeadBase = nil
+gg_rct_UndeadBaseHeroRespawn = nil
+gg_rct_UndeadBaseHeroSpawn = nil
 gg_rct_UndeadBaseToCenterSpawn = nil
 gg_rct_UndeadBaseToElfSpawn = nil
 gg_rct_UndeadBaseToOrcsSpawn = nil
 gg_trg_Melee_Initialization = nil
 gg_unit_o001_0074 = nil
-gg_unit_o003_0044 = nil
+gg_unit_n002_0133 = nil
 gg_unit_n001_0071 = nil
 gg_unit_o000_0073 = nil
 gg_unit_o004_0072 = nil
@@ -33669,7 +33872,10 @@ gg_unit_u003_0129 = nil
 gg_unit_u003_0130 = nil
 gg_unit_u003_0131 = nil
 gg_unit_n002_0132 = nil
-gg_unit_n002_0133 = nil
+gg_unit_n005_0044 = nil
+gg_unit_n005_0134 = nil
+gg_unit_n005_0135 = nil
+gg_unit_n005_0136 = nil
 gg_dest_HEch_0019 = nil
 gg_dest_HEch_0017 = nil
 gg_dest_YObb_0002 = nil
@@ -33728,7 +33934,6 @@ function CreateBuildingsForPlayer7()
     gg_unit_n001_0021 = CreateUnit(p, 1848651825, 14848.0, 13824.0, 270.000)
     gg_unit_n001_0042 = CreateUnit(p, 1848651825, 15872.0, 12800.0, 270.000)
     gg_unit_n001_0043 = CreateUnit(p, 1848651825, 13568.0, 12864.0, 270.000)
-    gg_unit_o003_0044 = CreateUnit(p, 1865429043, 16320.0, 14080.0, 270.000)
     gg_unit_n001_0045 = CreateUnit(p, 1848651825, 13568.0, 13760.0, 270.000)
     gg_unit_n001_0046 = CreateUnit(p, 1848651825, 13632.0, 12096.0, 270.000)
     gg_unit_n001_0047 = CreateUnit(p, 1848651825, 14144.0, 11584.0, 270.000)
@@ -33820,6 +34025,7 @@ function CreateNeutralPassiveBuildings()
     gg_unit_u005_0020 = CreateUnit(p, 1966092341, 17664.0, 17152.0, 270.000)
     gg_unit_u004_0022 = CreateUnit(p, 1966092340, 17184.0, 17120.0, 270.000)
     gg_unit_u003_0023 = CreateUnit(p, 1966092339, 16672.0, 17120.0, 270.000)
+    gg_unit_n005_0044 = CreateUnit(p, 1848651829, -16640.0, 14592.0, 270.000)
     gg_unit_o003_0063 = CreateUnit(p, 1865429043, 16640.0, 18176.0, 270.000)
     gg_unit_h001_0065 = CreateUnit(p, 1747988529, 18176.0, 18688.0, 270.000)
     gg_unit_h002_0066 = CreateUnit(p, 1747988530, 18688.0, 18688.0, 270.000)
@@ -33838,6 +34044,9 @@ function CreateNeutralPassiveBuildings()
     gg_unit_e001_0079 = CreateUnit(p, 1697656881, 18688.0, 17664.0, 270.000)
     gg_unit_e002_0080 = CreateUnit(p, 1697656882, 19200.0, 17664.0, 270.000)
     gg_unit_e004_0081 = CreateUnit(p, 1697656884, 17664.0, 17664.0, 270.000)
+    gg_unit_n005_0134 = CreateUnit(p, 1848651829, 16640.0, 14592.0, 270.000)
+    gg_unit_n005_0135 = CreateUnit(p, 1848651829, -16640.0, -18688.0, 270.000)
+    gg_unit_n005_0136 = CreateUnit(p, 1848651829, 16640.0, -18688.0, 270.000)
 end
 
 function CreatePlayerBuildings()
@@ -33861,6 +34070,8 @@ function CreateRegions()
     gg_rct_ElfBarracksToUndead = Rect(-10240.0, -17472.0, -10112.0, -17344.0)
     gg_rct_ElfBarracksToUndeadSpawn = Rect(-9984.0, -17472.0, -9856.0, -17344.0)
     gg_rct_ElfBase = Rect(-15424.0, -17472.0, -15296.0, -17344.0)
+    gg_rct_ElfBaseHeroRespawn = Rect(-16512.0, -18560.0, -16384.0, -18432.0)
+    gg_rct_ElfBaseHeroSpawn = Rect(-15168.0, -17216.0, -15040.0, -17088.0)
     gg_rct_ElfBaseToCenterSpawn = Rect(-14976.0, -17024.0, -14848.0, -16896.0)
     gg_rct_ElfBaseToHumanSpawn = Rect(-15424.0, -17024.0, -15296.0, -16896.0)
     gg_rct_ElfBaseToUndeadSpawn = Rect(-14976.0, -17472.0, -14848.0, -17344.0)
@@ -33872,6 +34083,8 @@ function CreateRegions()
     gg_rct_HumanBarracksToOrcs = Rect(-10240.0, 13248.0, -10112.0, 13376.0)
     gg_rct_HumanBarracksToOrcsSpawn = Rect(-9984.0, 13248.0, -9856.0, 13376.0)
     gg_rct_HumanBase = Rect(-15424.0, 13248.0, -15296.0, 13376.0)
+    gg_rct_HumanBaseHeroRespawn = Rect(-16512.0, 14336.0, -16384.0, 14464.0)
+    gg_rct_HumanBaseHeroSpawn = Rect(-15168.0, 12992.0, -15040.0, 13120.0)
     gg_rct_HumanBaseToCenterSpawn = Rect(-14976.0, 12800.0, -14848.0, 12928.0)
     gg_rct_HumanBaseToElfSpawn = Rect(-15424.0, 12800.0, -15296.0, 12928.0)
     gg_rct_HumanBaseToOrcsSpawn = Rect(-14976.0, 13248.0, -14848.0, 13376.0)
@@ -33882,6 +34095,8 @@ function CreateRegions()
     gg_rct_OrcBarracksToUndead = Rect(15296.0, 8064.0, 15424.0, 8192.0)
     gg_rct_OrcBarracksToUndeadSpawn = Rect(15296.0, 7808.0, 15424.0, 7936.0)
     gg_rct_OrcBase = Rect(15296.0, 13248.0, 15424.0, 13376.0)
+    gg_rct_OrcBaseHeroRespawn = Rect(16384.0, 14336.0, 16512.0, 14464.0)
+    gg_rct_OrcBaseHeroSpawn = Rect(15040.0, 12992.0, 15168.0, 13120.0)
     gg_rct_OrcBaseToCenterSpawn = Rect(14848.0, 12800.0, 14976.0, 12928.0)
     gg_rct_OrcBaseToHumanSpawn = Rect(14848.0, 13248.0, 14976.0, 13376.0)
     gg_rct_OrcBaseToUndeadSpawn = Rect(15296.0, 12800.0, 15424.0, 12928.0)
@@ -33892,6 +34107,8 @@ function CreateRegions()
     gg_rct_UndeadBarracksToOrcs = Rect(15296.0, -12288.0, 15424.0, -12160.0)
     gg_rct_UndeadBarracksToOrcsSpawn = Rect(15296.0, -12032.0, 15424.0, -11904.0)
     gg_rct_UndeadBase = Rect(15296.0, -17472.0, 15424.0, -17344.0)
+    gg_rct_UndeadBaseHeroRespawn = Rect(16384.0, -18560.0, 16512.0, -18432.0)
+    gg_rct_UndeadBaseHeroSpawn = Rect(15040.0, -17216.0, 15168.0, -17088.0)
     gg_rct_UndeadBaseToCenterSpawn = Rect(14848.0, -17024.0, 14976.0, -16896.0)
     gg_rct_UndeadBaseToElfSpawn = Rect(14848.0, -17472.0, 14976.0, -17344.0)
     gg_rct_UndeadBaseToOrcsSpawn = Rect(15296.0, -17024.0, 15424.0, -16896.0)
@@ -34136,14 +34353,15 @@ function InitCustomTeams()
 end
 
 function InitAllyPriorities()
-    SetStartLocPrioCount(0, 3)
-    SetStartLocPrio(0, 0, 12, MAP_LOC_PRIO_HIGH)
-    SetStartLocPrio(0, 1, 13, MAP_LOC_PRIO_HIGH)
-    SetStartLocPrio(0, 2, 14, MAP_LOC_PRIO_HIGH)
-    SetStartLocPrioCount(1, 1)
-    SetStartLocPrio(1, 0, 2, MAP_LOC_PRIO_HIGH)
-    SetStartLocPrioCount(2, 1)
-    SetStartLocPrio(2, 0, 1, MAP_LOC_PRIO_HIGH)
+    SetStartLocPrioCount(0, 2)
+    SetStartLocPrio(0, 0, 1, MAP_LOC_PRIO_HIGH)
+    SetStartLocPrio(0, 1, 2, MAP_LOC_PRIO_HIGH)
+    SetStartLocPrioCount(1, 2)
+    SetStartLocPrio(1, 0, 0, MAP_LOC_PRIO_HIGH)
+    SetStartLocPrio(1, 1, 2, MAP_LOC_PRIO_HIGH)
+    SetStartLocPrioCount(2, 2)
+    SetStartLocPrio(2, 0, 0, MAP_LOC_PRIO_HIGH)
+    SetStartLocPrio(2, 1, 1, MAP_LOC_PRIO_HIGH)
     SetStartLocPrioCount(3, 17)
     SetStartLocPrio(3, 0, 0, MAP_LOC_PRIO_HIGH)
     SetStartLocPrio(3, 1, 1, MAP_LOC_PRIO_HIGH)
@@ -34304,7 +34522,7 @@ function config()
     SetPlayers(16)
     SetTeams(16)
     SetGamePlacement(MAP_PLACEMENT_TEAMS_TOGETHER)
-    DefineStartLocation(0, 16448.0, -17472.0)
+    DefineStartLocation(0, -15872.0, 13824.0)
     DefineStartLocation(1, -15872.0, 13824.0)
     DefineStartLocation(2, -15872.0, 13824.0)
     DefineStartLocation(3, -15360.0, 13312.0)

@@ -63,6 +63,7 @@ namespace Source
         RegisterRegionTriggerInUndeadArea();
 
         // Allgemeine Events registrieren
+        PlayerUnitEvents.Register(UnitTypeEvent.BuysUnit, UserHero.OnBuys);
         PlayerUnitEvents.Register(UnitTypeEvent.FinishesResearch, OnResearchFinished);
         PlayerUnitEvents.Register(UnitTypeEvent.Dies, GenericUnit.OnUnitDies);
         PeriodicEvents.AddPeriodicEvent(GoldIncome.OnElapsed, 5f);
@@ -104,8 +105,6 @@ namespace Source
             }
           }
         });
-
-
 
 #if DEBUG
         Common.FogEnable(false);

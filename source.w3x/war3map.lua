@@ -41,6 +41,14 @@ gg_rct_UndeadBaseToCenterSpawn = nil
 gg_rct_UndeadBaseToElfSpawn = nil
 gg_rct_UndeadBaseToOrcsSpawn = nil
 gg_trg_Melee_Initialization = nil
+gg_rct_HumanBaseHeroSpawn = nil
+gg_rct_OrcBaseHeroSpawn = nil
+gg_rct_ElfBaseHeroSpawn = nil
+gg_rct_UndeadBaseHeroSpawn = nil
+gg_rct_UndeadBaseHeroRespawn = nil
+gg_rct_ElfBaseHeroRespawn = nil
+gg_rct_HumanBaseHeroRespawn = nil
+gg_rct_OrcBaseHeroRespawn = nil
 function InitGlobals()
 end
 
@@ -86,7 +94,6 @@ local life
 u = BlzCreateUnitWithSkin(p, FourCC("n001"), 14848.0, 13824.0, 270.000, FourCC("n001"))
 u = BlzCreateUnitWithSkin(p, FourCC("n001"), 15872.0, 12800.0, 270.000, FourCC("n001"))
 u = BlzCreateUnitWithSkin(p, FourCC("n001"), 13568.0, 12864.0, 270.000, FourCC("n001"))
-u = BlzCreateUnitWithSkin(p, FourCC("o003"), 16320.0, 14080.0, 270.000, FourCC("o003"))
 u = BlzCreateUnitWithSkin(p, FourCC("n001"), 13568.0, 13760.0, 270.000, FourCC("n001"))
 u = BlzCreateUnitWithSkin(p, FourCC("n001"), 13632.0, 12096.0, 270.000, FourCC("n001"))
 u = BlzCreateUnitWithSkin(p, FourCC("n001"), 14144.0, 11584.0, 270.000, FourCC("n001"))
@@ -188,6 +195,7 @@ u = BlzCreateUnitWithSkin(p, FourCC("u002"), 19200.0, 17152.0, 270.000, FourCC("
 u = BlzCreateUnitWithSkin(p, FourCC("u005"), 17664.0, 17152.0, 270.000, FourCC("u005"))
 u = BlzCreateUnitWithSkin(p, FourCC("u004"), 17184.0, 17120.0, 270.000, FourCC("u004"))
 u = BlzCreateUnitWithSkin(p, FourCC("u003"), 16672.0, 17120.0, 270.000, FourCC("u003"))
+u = BlzCreateUnitWithSkin(p, FourCC("n005"), -16640.0, 14592.0, 270.000, FourCC("n005"))
 u = BlzCreateUnitWithSkin(p, FourCC("o003"), 16640.0, 18176.0, 270.000, FourCC("o003"))
 u = BlzCreateUnitWithSkin(p, FourCC("h001"), 18176.0, 18688.0, 270.000, FourCC("h001"))
 u = BlzCreateUnitWithSkin(p, FourCC("h002"), 18688.0, 18688.0, 270.000, FourCC("h002"))
@@ -206,6 +214,9 @@ u = BlzCreateUnitWithSkin(p, FourCC("e000"), 18176.0, 17664.0, 270.000, FourCC("
 u = BlzCreateUnitWithSkin(p, FourCC("e001"), 18688.0, 17664.0, 270.000, FourCC("e001"))
 u = BlzCreateUnitWithSkin(p, FourCC("e002"), 19200.0, 17664.0, 270.000, FourCC("e002"))
 u = BlzCreateUnitWithSkin(p, FourCC("e004"), 17664.0, 17664.0, 270.000, FourCC("e004"))
+u = BlzCreateUnitWithSkin(p, FourCC("n005"), 16640.0, 14592.0, 270.000, FourCC("n005"))
+u = BlzCreateUnitWithSkin(p, FourCC("n005"), -16640.0, -18688.0, 270.000, FourCC("n005"))
+u = BlzCreateUnitWithSkin(p, FourCC("n005"), 16640.0, -18688.0, 270.000, FourCC("n005"))
 end
 
 function CreatePlayerBuildings()
@@ -235,6 +246,8 @@ gg_rct_ElfBarracksToHumanSpawn = Rect(-15424.0, -12032.0, -15296.0, -11904.0)
 gg_rct_ElfBarracksToUndead = Rect(-10240.0, -17472.0, -10112.0, -17344.0)
 gg_rct_ElfBarracksToUndeadSpawn = Rect(-9984.0, -17472.0, -9856.0, -17344.0)
 gg_rct_ElfBase = Rect(-15424.0, -17472.0, -15296.0, -17344.0)
+gg_rct_ElfBaseHeroRespawn = Rect(-16512.0, -18560.0, -16384.0, -18432.0)
+gg_rct_ElfBaseHeroSpawn = Rect(-15168.0, -17216.0, -15040.0, -17088.0)
 gg_rct_ElfBaseToCenterSpawn = Rect(-14976.0, -17024.0, -14848.0, -16896.0)
 gg_rct_ElfBaseToHumanSpawn = Rect(-15424.0, -17024.0, -15296.0, -16896.0)
 gg_rct_ElfBaseToUndeadSpawn = Rect(-14976.0, -17472.0, -14848.0, -17344.0)
@@ -246,6 +259,8 @@ gg_rct_HumanBarracksToElfSpawn = Rect(-15424.0, 7808.0, -15296.0, 7936.0)
 gg_rct_HumanBarracksToOrcs = Rect(-10240.0, 13248.0, -10112.0, 13376.0)
 gg_rct_HumanBarracksToOrcsSpawn = Rect(-9984.0, 13248.0, -9856.0, 13376.0)
 gg_rct_HumanBase = Rect(-15424.0, 13248.0, -15296.0, 13376.0)
+gg_rct_HumanBaseHeroRespawn = Rect(-16512.0, 14336.0, -16384.0, 14464.0)
+gg_rct_HumanBaseHeroSpawn = Rect(-15168.0, 12992.0, -15040.0, 13120.0)
 gg_rct_HumanBaseToCenterSpawn = Rect(-14976.0, 12800.0, -14848.0, 12928.0)
 gg_rct_HumanBaseToElfSpawn = Rect(-15424.0, 12800.0, -15296.0, 12928.0)
 gg_rct_HumanBaseToOrcsSpawn = Rect(-14976.0, 13248.0, -14848.0, 13376.0)
@@ -256,6 +271,8 @@ gg_rct_OrcBarracksToHumanSpawn = Rect(9856.0, 13248.0, 9984.0, 13376.0)
 gg_rct_OrcBarracksToUndead = Rect(15296.0, 8064.0, 15424.0, 8192.0)
 gg_rct_OrcBarracksToUndeadSpawn = Rect(15296.0, 7808.0, 15424.0, 7936.0)
 gg_rct_OrcBase = Rect(15296.0, 13248.0, 15424.0, 13376.0)
+gg_rct_OrcBaseHeroRespawn = Rect(16384.0, 14336.0, 16512.0, 14464.0)
+gg_rct_OrcBaseHeroSpawn = Rect(15040.0, 12992.0, 15168.0, 13120.0)
 gg_rct_OrcBaseToCenterSpawn = Rect(14848.0, 12800.0, 14976.0, 12928.0)
 gg_rct_OrcBaseToHumanSpawn = Rect(14848.0, 13248.0, 14976.0, 13376.0)
 gg_rct_OrcBaseToUndeadSpawn = Rect(15296.0, 12800.0, 15424.0, 12928.0)
@@ -266,6 +283,8 @@ gg_rct_UndeadBarracksToElfSpawn = Rect(9856.0, -17472.0, 9984.0, -17344.0)
 gg_rct_UndeadBarracksToOrcs = Rect(15296.0, -12288.0, 15424.0, -12160.0)
 gg_rct_UndeadBarracksToOrcsSpawn = Rect(15296.0, -12032.0, 15424.0, -11904.0)
 gg_rct_UndeadBase = Rect(15296.0, -17472.0, 15424.0, -17344.0)
+gg_rct_UndeadBaseHeroRespawn = Rect(16384.0, -18560.0, 16512.0, -18432.0)
+gg_rct_UndeadBaseHeroSpawn = Rect(15040.0, -17216.0, 15168.0, -17088.0)
 gg_rct_UndeadBaseToCenterSpawn = Rect(14848.0, -17024.0, 14976.0, -16896.0)
 gg_rct_UndeadBaseToElfSpawn = Rect(14848.0, -17472.0, 14976.0, -17344.0)
 gg_rct_UndeadBaseToOrcsSpawn = Rect(15296.0, -17024.0, 15424.0, -16896.0)

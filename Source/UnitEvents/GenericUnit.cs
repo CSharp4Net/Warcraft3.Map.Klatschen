@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Source.Models;
+using System;
 using WCSharp.Api;
 
 namespace Source.UnitEvents
@@ -12,8 +13,30 @@ namespace Source.UnitEvents
         unit unit = Common.GetTriggerUnit();
 
         if (Common.IsHeroUnitId(Common.GetUnitTypeId(unit)))
-          // TODO : Wenn die Einheit (Held) eines Spielers stirbt, wird diese nicht entfernt, sondern wiedergeboren!
+        {
+          UserHero.OnDies(unit);
           return;
+        }
+
+        player owner = unit.Owner;
+
+        // Getötete Einheit von Spieler entfernen
+        if (Program.Humans.Computer.IsOwnerOfUnit(unit))
+        {
+          Program.Humans.Computer.RemoveUnit(unit);
+        }
+        else if (Program.Orcs.Computer.IsOwnerOfUnit(unit))
+        {
+          Program.Orcs.Computer.RemoveUnit(unit);
+        }
+        else if (Program.Elves.Computer.IsOwnerOfUnit(unit))
+        {
+          Program.Elves.Computer.RemoveUnit(unit);
+        }
+        else if (Program.Undeads.Computer.IsOwnerOfUnit(unit))
+        {
+          Program.Undeads.Computer.RemoveUnit(unit);
+        }
 
         // Verstorbene Einheit nach kurzer Zeit aus Spiel entfernen um RAM zu sparen
         var timer = Common.CreateTimer();

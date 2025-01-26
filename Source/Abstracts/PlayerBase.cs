@@ -1,4 +1,5 @@
 ﻿using Source.Models;
+using System;
 using System.Collections.Generic;
 using WCSharp.Api;
 
@@ -19,7 +20,7 @@ namespace Source.Abstracts
     /// <summary>
     /// Auflistung alle Einheiten dieses Spielers
     /// </summary>
-    public List<unit> Units { get; init; } = new List<unit>();
+    private List<unit> Units { get; init; } = new List<unit>();
 
     /// <summary>
     /// Erstellt eine Einheit in einem Bereich und fügt sie der Auflist <see cref="Units"/> hinzu.
@@ -67,6 +68,11 @@ namespace Source.Abstracts
       }
 
       return false;
+    }
+
+    public void RemoveUnit(unit unit)
+    {
+      Units.Remove(unit);
     }
   }
 }

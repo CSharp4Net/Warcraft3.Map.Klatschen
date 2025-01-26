@@ -82,7 +82,6 @@ namespace Source.Models
       {
         if (user.Wc3Player.Id == wc3Player.Id)
         {
-          Console.WriteLine($"Player {wc3Player.Id} found!");
           foundUser = user;
           return true;
         }
