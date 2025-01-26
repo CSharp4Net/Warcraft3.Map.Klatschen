@@ -12,5 +12,14 @@ namespace Source.Models
     }
 
     public Team Team { get; init; }
+
+    public void ApplyCamera(Area targetArea)
+    {
+      camerasetup setup = Common.CreateCameraSetup();
+
+      setup.SetPosition(targetArea.Wc3CenterLocation.X, targetArea.Wc3CenterLocation.Y);
+
+      Blizzard.CameraSetupApplyForPlayer(true, setup, Wc3Player, 0.0f);
+    }
   }
 }

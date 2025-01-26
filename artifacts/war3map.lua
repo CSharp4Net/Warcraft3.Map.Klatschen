@@ -19902,7 +19902,7 @@ end)
 System.namespace("Source", function (namespace)
   namespace.class("Program", function (namespace)
     local Main, Start, RegisterRegionTriggersInHumanArea, RegisterRegionTriggerInOrcArea, RegisterRegionTriggerInElfArea, RegisterRegionTriggerInUndeadArea, ConstructHumanBuildingAndTrigger, ConstructOrcBuildingAndTrigger, 
-    ConstructElfBuildingAndTrigger, ConstructUndeadBuildingAndTrigger, OnResearchFinished, class
+    ConstructElfBuildingAndTrigger, ConstructUndeadBuildingAndTrigger, CreateHeroSelectorForPlayerAndAdjustCamera, OnResearchFinished, class
     Main = function ()
       -- Delay a little since some stuff can break otherwise
       local timer = CreateTimer()
@@ -19967,36 +19967,25 @@ System.namespace("Source", function (namespace)
             -- daher redundant hier den selben Command für das User-Objekt aufrufen
             local default, user = class.Humans:ContainsUser(player)
             if default then
-              user:CreateUnit(1966092342 --[[Constants.UNIT_HELDENSEELE_HERO_SELECTOR]], Areas.HeroSelectorSpawn, 0)
+              CreateHeroSelectorForPlayerAndAdjustCamera(user)
             else
               local extern
               extern, user = class.Orcs:ContainsUser(player)
               if extern then
-                user:CreateUnit(1966092342 --[[Constants.UNIT_HELDENSEELE_HERO_SELECTOR]], Areas.HeroSelectorSpawn, 0)
+                CreateHeroSelectorForPlayerAndAdjustCamera(user)
               else
                 local extern
                 extern, user = class.Elves:ContainsUser(player)
                 if extern then
-                  user:CreateUnit(1966092342 --[[Constants.UNIT_HELDENSEELE_HERO_SELECTOR]], Areas.HeroSelectorSpawn, 0)
+                  CreateHeroSelectorForPlayerAndAdjustCamera(user)
                 else
                   local extern
                   extern, user = class.Undeads:ContainsUser(player)
                   if extern then
-                    user:CreateUnit(1966092342 --[[Constants.UNIT_HELDENSEELE_HERO_SELECTOR]], Areas.HeroSelectorSpawn, 0)
+                    CreateHeroSelectorForPlayerAndAdjustCamera(user)
                   end
                 end
               end
-            end
-
-            -- Wenn User gefunden wurde, dann Kamera auf Hero-Selector-Einheit ausrichten
-            if user ~= nil then
-              local setup = CreateCameraSetup()
-
-              CameraSetupSetDestPosition(setup, GetLocationX(Areas.HeroSelectorSpawn.Wc3CenterLocation), GetLocationY(Areas.HeroSelectorSpawn.Wc3CenterLocation), 0)
-              SetCameraField(4, CAMERA_FIELD_TARGET_DISTANCE)
-              BlzCameraSetupSetLabel(setup, "TEST")
-
-              CameraSetupApplyForPlayer(false, setup, user.Wc3Player, 0)
             end
           end
         end)
@@ -20149,6 +20138,10 @@ System.namespace("Source", function (namespace)
       building:RegisterOnDies(SourceUnitEvents.BarracksBuilding.OnDies)
       building:AddSpawnTrigger(10, Areas.UndeadBarracksToOrcsSpawn, System.Array(System.Int32) { 1747988528 --[[Constants.UNIT_TESTSOLDIER]] })
     end
+    CreateHeroSelectorForPlayerAndAdjustCamera = function (user)
+      user:CreateUnit(1966092342 --[[Constants.UNIT_HELDENSEELE_HERO_SELECTOR]], Areas.HeroSelectorSpawn, 0)
+      user:ApplyCamera(Areas.HeroSelectorSpawn)
+    end
     OnResearchFinished = function ()
       System.Console.WriteLine("Forschung abgeschlossen!")
       local unit = GetResearchingUnit()
@@ -20173,6 +20166,7 @@ System.namespace("Source", function (namespace)
             { "ConstructHumanBuildingAndTrigger", 0x9, ConstructHumanBuildingAndTrigger },
             { "ConstructOrcBuildingAndTrigger", 0x9, ConstructOrcBuildingAndTrigger },
             { "ConstructUndeadBuildingAndTrigger", 0x9, ConstructUndeadBuildingAndTrigger },
+            { "CreateHeroSelectorForPlayerAndAdjustCamera", 0x109, CreateHeroSelectorForPlayerAndAdjustCamera, out.Source.Models.UserPlayer },
             { "Main", 0xE, Main },
             { "OnResearchFinished", 0x9, OnResearchFinished },
             { "RegisterRegionTriggerInElfArea", 0x9, RegisterRegionTriggerInElfArea },
@@ -20769,10 +20763,17 @@ do
 local System = System
 System.namespace("Source.Models", function (namespace)
   namespace.class("UserPlayer", function (namespace)
-    local __ctor__
+    local ApplyCamera, __ctor__
     __ctor__ = function (this, player, team)
       System.base(this).__ctor__(this, player)
       this.Team = team
+    end
+    ApplyCamera = function (this, targetArea)
+      local setup = CreateCameraSetup()
+
+      CameraSetupSetDestPosition(setup, GetLocationX(targetArea.Wc3CenterLocation), GetLocationY(targetArea.Wc3CenterLocation), 0)
+
+      CameraSetupApplyForPlayer(true, setup, this.Wc3Player, 0.0)
     end
     return {
       base = function (out)
@@ -20780,11 +20781,13 @@ System.namespace("Source.Models", function (namespace)
           out.Source.Abstracts.PlayerBase
         }
       end,
+      ApplyCamera = ApplyCamera,
       __ctor__ = __ctor__,
       __metadata__ = function (out)
         return {
           methods = {
-            { ".ctor", 0x206, nil, out.WCSharp.Api.player, out.Source.Models.Team }
+            { ".ctor", 0x206, nil, out.WCSharp.Api.player, out.Source.Models.Team },
+            { "ApplyCamera", 0x106, ApplyCamera, out.Source.Models.Area }
           },
           properties = {
             { "Team", 0x6, out.Source.Models.Team }
@@ -34133,15 +34136,14 @@ function InitCustomTeams()
 end
 
 function InitAllyPriorities()
-    SetStartLocPrioCount(0, 2)
-    SetStartLocPrio(0, 0, 1, MAP_LOC_PRIO_HIGH)
-    SetStartLocPrio(0, 1, 2, MAP_LOC_PRIO_HIGH)
-    SetStartLocPrioCount(1, 2)
-    SetStartLocPrio(1, 0, 0, MAP_LOC_PRIO_HIGH)
-    SetStartLocPrio(1, 1, 2, MAP_LOC_PRIO_HIGH)
-    SetStartLocPrioCount(2, 2)
-    SetStartLocPrio(2, 0, 0, MAP_LOC_PRIO_HIGH)
-    SetStartLocPrio(2, 1, 1, MAP_LOC_PRIO_HIGH)
+    SetStartLocPrioCount(0, 3)
+    SetStartLocPrio(0, 0, 12, MAP_LOC_PRIO_HIGH)
+    SetStartLocPrio(0, 1, 13, MAP_LOC_PRIO_HIGH)
+    SetStartLocPrio(0, 2, 14, MAP_LOC_PRIO_HIGH)
+    SetStartLocPrioCount(1, 1)
+    SetStartLocPrio(1, 0, 2, MAP_LOC_PRIO_HIGH)
+    SetStartLocPrioCount(2, 1)
+    SetStartLocPrio(2, 0, 1, MAP_LOC_PRIO_HIGH)
     SetStartLocPrioCount(3, 17)
     SetStartLocPrio(3, 0, 0, MAP_LOC_PRIO_HIGH)
     SetStartLocPrio(3, 1, 1, MAP_LOC_PRIO_HIGH)
@@ -34302,7 +34304,7 @@ function config()
     SetPlayers(16)
     SetTeams(16)
     SetGamePlacement(MAP_PLACEMENT_TEAMS_TOGETHER)
-    DefineStartLocation(0, -15872.0, 13824.0)
+    DefineStartLocation(0, 16448.0, -17472.0)
     DefineStartLocation(1, -15872.0, 13824.0)
     DefineStartLocation(2, -15872.0, 13824.0)
     DefineStartLocation(3, -15360.0, 13312.0)

@@ -76,12 +76,7 @@ namespace Source
         // Spezifische Events registrieren
         Console.WriteLine("Kämpft bis zum Tod!");
 
-#if DEBUG
-        Common.FogEnable(false);
-        Common.FogMaskEnable(false);
-#endif
-
-        // Alle Spieler der Streitmacht vom Computer-Spiler abrufen
+        // Für alle Benutzer-Spieler einen Hero-Selector generieren
         force force = Blizzard.GetPlayersByMapControl(mapcontrol.User);
         force.ForEach(() =>
         {
@@ -93,35 +88,29 @@ namespace Source
             // daher redundant hier den selben Command für das User-Objekt aufrufen
             if (Humans.ContainsUser(player, out UserPlayer user))
             {
-              user.CreateUnit(Constants.UNIT_HELDENSEELE_HERO_SELECTOR, Areas.HeroSelectorSpawn);
+              CreateHeroSelectorForPlayerAndAdjustCamera(user);
             }
             else if (Orcs.ContainsUser(player, out user))
             {
-              user.CreateUnit(Constants.UNIT_HELDENSEELE_HERO_SELECTOR, Areas.HeroSelectorSpawn);
+              CreateHeroSelectorForPlayerAndAdjustCamera(user);
             }
             else if (Elves.ContainsUser(player, out user))
             {
-              user.CreateUnit(Constants.UNIT_HELDENSEELE_HERO_SELECTOR, Areas.HeroSelectorSpawn);
+              CreateHeroSelectorForPlayerAndAdjustCamera(user);
             }
             else if (Undeads.ContainsUser(player, out user))
             {
-              user.CreateUnit(Constants.UNIT_HELDENSEELE_HERO_SELECTOR, Areas.HeroSelectorSpawn);
-            }
-
-            // Wenn User gefunden wurde, dann Kamera auf Hero-Selector-Einheit ausrichten
-            if (user != null)
-            {
-              camerasetup setup = Common.CreateCameraSetup();
-
-              setup.SetPosition(Areas.HeroSelectorSpawn.Wc3CenterLocation.X, Areas.HeroSelectorSpawn.Wc3CenterLocation.Y);
-              setup.TargetDistance = 4f;
-              setup.Label = "TEST";
-           
-              Blizzard.CameraSetupApplyForPlayer(false, setup, user.Wc3Player, 0f);
-              Blizzard.
+              CreateHeroSelectorForPlayerAndAdjustCamera(user);
             }
           }
         });
+
+
+
+#if DEBUG
+        Common.FogEnable(false);
+        Common.FogMaskEnable(false);
+#endif
       }
       catch (Exception ex)
       {
@@ -285,6 +274,12 @@ namespace Source
       building = Undeads.Computer.CreateBuilding(Constants.UNIT_GRUFT_UNDEAD, Areas.UndeadBarracksToOrcs);
       building.RegisterOnDies(BarracksBuilding.OnDies);
       building.AddSpawnTrigger(10, Areas.UndeadBarracksToOrcsSpawn, Constants.UNIT_TESTSOLDIER);
+    }
+
+    private static void CreateHeroSelectorForPlayerAndAdjustCamera(UserPlayer user)
+    {
+      user.CreateUnit(Constants.UNIT_HELDENSEELE_HERO_SELECTOR, Areas.HeroSelectorSpawn);
+      user.ApplyCamera(Areas.HeroSelectorSpawn);
     }
 
     static void OnResearchFinished()
