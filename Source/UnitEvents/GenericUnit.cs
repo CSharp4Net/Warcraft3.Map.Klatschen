@@ -11,8 +11,8 @@ namespace Source.UnitEvents
       {
         unit unit = Common.GetTriggerUnit();
 
-        if (unit.Owner.Controller == mapcontrol.User)
-          // TODO : Wenn die Einheit (Held) eines Spielers stirbt, wird diese nicht entfernt, sondern wiedergeboren
+        if (Common.IsHeroUnitId(Common.GetUnitTypeId(unit)))
+          // TODO : Wenn die Einheit (Held) eines Spielers stirbt, wird diese nicht entfernt, sondern wiedergeboren!
           return;
 
         // Verstorbene Einheit nach kurzer Zeit aus Spiel entfernen um RAM zu sparen

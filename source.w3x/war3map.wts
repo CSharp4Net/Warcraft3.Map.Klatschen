@@ -301,3 +301,15 @@ STRING 71
 (Undead)
 }
 
+STRING 72
+// Units: u006 (Heldenseele), Name (Name)
+{
+Heldenseele
+}
+
+STRING 73
+// Units: u006 (Heldenseele), EditorSuffix (Name - Editor Suffix)
+{
+(Hero Selector)
+}
+

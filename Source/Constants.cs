@@ -35,6 +35,7 @@ public static class Constants
 	public const int UNIT_GEISTERTURM_UNDEAD = 1966092339;
 	public const int UNIT_NERUBERTURM_UNDEAD = 1966092340;
 	public const int UNIT_GRUFT_UNDEAD = 1966092341;
+	public const int UNIT_HELDENSEELE_HERO_SELECTOR = 1966092342;
 	public const int ORDER_OFFSET = 851970;
 	public const int ORDER_WAND_ILLUSION = 852274;
 	public const int ORDER_ABSORB = 852529;

@@ -4,6 +4,7 @@ using Source.PermanentEvents;
 using Source.RegionEvents;
 using Source.UnitEvents;
 using System;
+using System.Dynamic;
 using WCSharp.Api;
 using WCSharp.Events;
 using WCSharp.Shared;
@@ -86,7 +87,40 @@ namespace Source
         {
           player player = Common.GetEnumPlayer();
 
-          // TODO
+          if (player.SlotState == playerslotstate.Playing)
+          {
+            // Leider funktioniert die Verknüpfung via || Operator nicht,
+            // daher redundant hier den selben Command für das User-Objekt aufrufen
+            if (Humans.ContainsUser(player, out UserPlayer user))
+            {
+              user.CreateUnit(Constants.UNIT_HELDENSEELE_HERO_SELECTOR, Areas.HeroSelectorSpawn);
+            }
+            else if (Orcs.ContainsUser(player, out user))
+            {
+              user.CreateUnit(Constants.UNIT_HELDENSEELE_HERO_SELECTOR, Areas.HeroSelectorSpawn);
+            }
+            else if (Elves.ContainsUser(player, out user))
+            {
+              user.CreateUnit(Constants.UNIT_HELDENSEELE_HERO_SELECTOR, Areas.HeroSelectorSpawn);
+            }
+            else if (Undeads.ContainsUser(player, out user))
+            {
+              user.CreateUnit(Constants.UNIT_HELDENSEELE_HERO_SELECTOR, Areas.HeroSelectorSpawn);
+            }
+
+            // Wenn User gefunden wurde, dann Kamera auf Hero-Selector-Einheit ausrichten
+            if (user != null)
+            {
+              camerasetup setup = Common.CreateCameraSetup();
+
+              setup.SetPosition(Areas.HeroSelectorSpawn.Wc3CenterLocation.X, Areas.HeroSelectorSpawn.Wc3CenterLocation.Y);
+              setup.TargetDistance = 4f;
+              setup.Label = "TEST";
+           
+              Blizzard.CameraSetupApplyForPlayer(false, setup, user.Wc3Player, 0f);
+              Blizzard.
+            }
+          }
         });
       }
       catch (Exception ex)

@@ -19962,7 +19962,43 @@ System.namespace("Source", function (namespace)
         ForForce(force, function ()
           local player = GetEnumPlayer()
 
-          -- TODO
+          if GetPlayerSlotState(player) == PLAYER_SLOT_STATE_PLAYING then
+            -- Leider funktioniert die Verknüpfung via || Operator nicht,
+            -- daher redundant hier den selben Command für das User-Objekt aufrufen
+            local default, user = class.Humans:ContainsUser(player)
+            if default then
+              user:CreateUnit(1966092342 --[[Constants.UNIT_HELDENSEELE_HERO_SELECTOR]], Areas.HeroSelectorSpawn, 0)
+            else
+              local extern
+              extern, user = class.Orcs:ContainsUser(player)
+              if extern then
+                user:CreateUnit(1966092342 --[[Constants.UNIT_HELDENSEELE_HERO_SELECTOR]], Areas.HeroSelectorSpawn, 0)
+              else
+                local extern
+                extern, user = class.Elves:ContainsUser(player)
+                if extern then
+                  user:CreateUnit(1966092342 --[[Constants.UNIT_HELDENSEELE_HERO_SELECTOR]], Areas.HeroSelectorSpawn, 0)
+                else
+                  local extern
+                  extern, user = class.Undeads:ContainsUser(player)
+                  if extern then
+                    user:CreateUnit(1966092342 --[[Constants.UNIT_HELDENSEELE_HERO_SELECTOR]], Areas.HeroSelectorSpawn, 0)
+                  end
+                end
+              end
+            end
+
+            -- Wenn User gefunden wurde, dann Kamera auf Hero-Selector-Einheit ausrichten
+            if user ~= nil then
+              local setup = CreateCameraSetup()
+
+              CameraSetupSetDestPosition(setup, GetLocationX(Areas.HeroSelectorSpawn.Wc3CenterLocation), GetLocationY(Areas.HeroSelectorSpawn.Wc3CenterLocation), 0)
+              SetCameraField(4, CAMERA_FIELD_TARGET_DISTANCE)
+              BlzCameraSetupSetLabel(setup, "TEST")
+
+              CameraSetupApplyForPlayer(false, setup, user.Wc3Player, 0)
+            end
+          end
         end)
       end, function (default)
         local ex = default
@@ -20693,6 +20729,7 @@ System.namespace("Source.Models", function (namespace)
     ContainsUser = function (this, wc3Player, foundUser)
       for _, user in System.each(this.Users) do
         if GetPlayerId(user.Wc3Player) == GetPlayerId(wc3Player) then
+          System.Console.WriteLine("Player " .. GetPlayerId(wc3Player) .. " found!")
           foundUser = user
           return true, foundUser
         end
@@ -21894,7 +21931,6 @@ end)
 end
 do
 local System = System
-local WCSharpApi = WCSharp.Api
 System.namespace("Source.UnitEvents", function (namespace)
   namespace.class("GenericUnit", function (namespace)
     local OnUnitDies
@@ -21902,7 +21938,7 @@ System.namespace("Source.UnitEvents", function (namespace)
       local default = System.try(function ()
         local unit = GetTriggerUnit()
 
-        if GetPlayerController(GetOwningPlayer(unit)) == MAP_CONTROL_USER then
+        if IsHeroUnitId(GetUnitTypeId(unit)) then
           return true
         end
 
@@ -33615,7 +33651,42 @@ gg_unit_u003_0114 = nil
 gg_unit_u003_0115 = nil
 gg_unit_u003_0116 = nil
 gg_unit_u003_0117 = nil
+gg_unit_u003_0118 = nil
+gg_unit_u003_0119 = nil
+gg_unit_u003_0120 = nil
+gg_unit_u003_0121 = nil
+gg_unit_u003_0122 = nil
+gg_unit_u004_0123 = nil
+gg_unit_u004_0124 = nil
+gg_unit_u004_0125 = nil
+gg_unit_u004_0126 = nil
+gg_unit_u003_0127 = nil
+gg_unit_u003_0128 = nil
+gg_unit_u003_0129 = nil
+gg_unit_u003_0130 = nil
+gg_unit_u003_0131 = nil
+gg_unit_n002_0132 = nil
+gg_unit_n002_0133 = nil
+gg_dest_HEch_0019 = nil
+gg_dest_HEch_0017 = nil
+gg_dest_YObb_0002 = nil
+gg_dest_YObb_0003 = nil
+gg_dest_HEch_0016 = nil
 function InitGlobals()
+end
+
+function CreateAllDestructables()
+    local t = nil
+    gg_dest_HEch_0019 = CreateDestructable(1212506984, -13824.0, -16704.0, 117.000, 0.826, 0)
+    SetDestructableLife(gg_dest_HEch_0019, 2.55 * GetDestructableLife(gg_dest_HEch_0019))
+    gg_dest_HEch_0017 = CreateDestructable(1212506984, -14912.0, -3264.0, 271.000, 1.053, 0)
+    SetDestructableLife(gg_dest_HEch_0017, 2.55 * GetDestructableLife(gg_dest_HEch_0017))
+    gg_dest_YObb_0002 = CreateDestructable(1498374754, -15816.9, -833.4, 80.000, 1.149, 0)
+    SetDestructableLife(gg_dest_YObb_0002, 2.55 * GetDestructableLife(gg_dest_YObb_0002))
+    gg_dest_YObb_0003 = CreateDestructable(1498374754, -14906.8, -833.4, 152.000, 1.421, 0)
+    SetDestructableLife(gg_dest_YObb_0003, 2.55 * GetDestructableLife(gg_dest_YObb_0003))
+    gg_dest_HEch_0016 = CreateDestructable(1212506984, -15808.0, -3264.0, 247.000, 0.960, 0)
+    SetDestructableLife(gg_dest_HEch_0016, 2.55 * GetDestructableLife(gg_dest_HEch_0016))
 end
 
 function CreateBuildingsForPlayer3()
@@ -33670,12 +33741,6 @@ function CreateBuildingsForPlayer7()
     gg_unit_o003_0058 = CreateUnit(p, 1865429043, 14912.0, 8960.0, 270.000)
     gg_unit_o003_0059 = CreateUnit(p, 1865429043, 15808.0, 8960.0, 270.000)
     gg_unit_o003_0060 = CreateUnit(p, 1865429043, 15360.0, 4864.0, 270.000)
-    gg_unit_o003_0063 = CreateUnit(p, 1865429043, 16640.0, 18176.0, 270.000)
-    gg_unit_n001_0071 = CreateUnit(p, 1848651825, 17152.0, 18176.0, 270.000)
-    gg_unit_o004_0072 = CreateUnit(p, 1865429044, 17664.0, 18176.0, 270.000)
-    gg_unit_o000_0073 = CreateUnit(p, 1865429040, 18176.0, 18176.0, 270.000)
-    gg_unit_o001_0074 = CreateUnit(p, 1865429041, 18688.0, 18176.0, 270.000)
-    gg_unit_o002_0075 = CreateUnit(p, 1865429042, 19200.0, 18176.0, 270.000)
     gg_unit_o003_0096 = CreateUnit(p, 1865429043, 11520.0, 9280.0, 270.000)
     gg_unit_o003_0097 = CreateUnit(p, 1865429043, 11520.0, 10176.0, 270.000)
     gg_unit_o003_0098 = CreateUnit(p, 1865429043, 9984.0, 10176.0, 270.000)
@@ -33692,12 +33757,6 @@ function CreateBuildingsForPlayer11()
     gg_unit_n002_0061 = CreateUnit(p, 1848651826, -13536.0, -16992.0, 270.000)
     gg_unit_n002_0062 = CreateUnit(p, 1848651826, -15776.0, -15584.0, 270.000)
     gg_unit_n002_0064 = CreateUnit(p, 1848651826, -14944.0, -15584.0, 270.000)
-    gg_unit_e003_0076 = CreateUnit(p, 1697656883, 16672.0, 17632.0, 270.000)
-    gg_unit_n002_0077 = CreateUnit(p, 1848651826, 17184.0, 17632.0, 270.000)
-    gg_unit_e000_0078 = CreateUnit(p, 1697656880, 18176.0, 17664.0, 270.000)
-    gg_unit_e001_0079 = CreateUnit(p, 1697656881, 18688.0, 17664.0, 270.000)
-    gg_unit_e002_0080 = CreateUnit(p, 1697656882, 19200.0, 17664.0, 270.000)
-    gg_unit_e004_0081 = CreateUnit(p, 1697656884, 17664.0, 17664.0, 270.000)
     gg_unit_n002_0085 = CreateUnit(p, 1848651826, -14112.0, -15712.0, 270.000)
     gg_unit_n002_0086 = CreateUnit(p, 1848651826, -13664.0, -16160.0, 270.000)
     gg_unit_e003_0087 = CreateUnit(p, 1697656883, -10976.0, -17824.0, 270.000)
@@ -33714,6 +33773,8 @@ function CreateBuildingsForPlayer11()
     gg_unit_e003_0108 = CreateUnit(p, 1697656883, -9952.0, -13408.0, 270.000)
     gg_unit_e003_0109 = CreateUnit(p, 1697656883, -9952.0, -14240.0, 270.000)
     gg_unit_e003_0110 = CreateUnit(p, 1697656883, -7904.0, -13856.0, 270.000)
+    gg_unit_n002_0132 = CreateUnit(p, 1848651826, -14880.0, -17888.0, 270.000)
+    gg_unit_n002_0133 = CreateUnit(p, 1848651826, -15840.0, -16928.0, 270.000)
 end
 
 function CreateBuildingsForPlayer15()
@@ -33722,12 +33783,6 @@ function CreateBuildingsForPlayer15()
     local t = nil
     gg_unit_u003_0011 = CreateUnit(p, 1966092339, 10976.0, -16992.0, 270.000)
     gg_unit_u004_0013 = CreateUnit(p, 1966092340, 13536.0, -17824.0, 270.000)
-    gg_unit_u000_0015 = CreateUnit(p, 1966092336, 18176.0, 17152.0, 270.000)
-    gg_unit_u001_0016 = CreateUnit(p, 1966092337, 18688.0, 17152.0, 270.000)
-    gg_unit_u002_0019 = CreateUnit(p, 1966092338, 19200.0, 17152.0, 270.000)
-    gg_unit_u005_0020 = CreateUnit(p, 1966092341, 17664.0, 17152.0, 270.000)
-    gg_unit_u004_0022 = CreateUnit(p, 1966092340, 17184.0, 17120.0, 270.000)
-    gg_unit_u003_0023 = CreateUnit(p, 1966092339, 16672.0, 17120.0, 270.000)
     gg_unit_u004_0111 = CreateUnit(p, 1966092340, 13536.0, -17056.0, 270.000)
     gg_unit_u004_0112 = CreateUnit(p, 1966092340, 14880.0, -17952.0, 270.000)
     gg_unit_u004_0113 = CreateUnit(p, 1966092340, 15904.0, -16928.0, 270.000)
@@ -33735,6 +33790,20 @@ function CreateBuildingsForPlayer15()
     gg_unit_u003_0115 = CreateUnit(p, 1966092339, 8864.0, -17824.0, 270.000)
     gg_unit_u003_0116 = CreateUnit(p, 1966092339, 8928.0, -16992.0, 270.000)
     gg_unit_u003_0117 = CreateUnit(p, 1966092339, 6880.0, -17376.0, 270.000)
+    gg_unit_u003_0118 = CreateUnit(p, 1966092339, 11424.0, -14240.0, 270.000)
+    gg_unit_u003_0119 = CreateUnit(p, 1966092339, 11424.0, -13408.0, 270.000)
+    gg_unit_u003_0120 = CreateUnit(p, 1966092339, 9888.0, -13408.0, 270.000)
+    gg_unit_u003_0121 = CreateUnit(p, 1966092339, 9888.0, -14240.0, 270.000)
+    gg_unit_u003_0122 = CreateUnit(p, 1966092339, 7904.0, -13856.0, 270.000)
+    gg_unit_u004_0123 = CreateUnit(p, 1966092340, 13664.0, -16160.0, 270.000)
+    gg_unit_u004_0124 = CreateUnit(p, 1966092340, 14112.0, -15776.0, 270.000)
+    gg_unit_u004_0125 = CreateUnit(p, 1966092340, 14944.0, -15520.0, 270.000)
+    gg_unit_u004_0126 = CreateUnit(p, 1966092340, 15776.0, -15520.0, 270.000)
+    gg_unit_u003_0127 = CreateUnit(p, 1966092339, 14944.0, -13024.0, 270.000)
+    gg_unit_u003_0128 = CreateUnit(p, 1966092339, 15776.0, -13024.0, 270.000)
+    gg_unit_u003_0129 = CreateUnit(p, 1966092339, 15776.0, -10912.0, 270.000)
+    gg_unit_u003_0130 = CreateUnit(p, 1966092339, 14944.0, -10912.0, 270.000)
+    gg_unit_u003_0131 = CreateUnit(p, 1966092339, 15328.0, -8928.0, 270.000)
 end
 
 function CreateNeutralPassiveBuildings()
@@ -33742,12 +33811,30 @@ function CreateNeutralPassiveBuildings()
     local unitID = nil
     local t = nil
     gg_unit_n003_0010 = CreateUnit(p, 1848651827, -18432.0, 18176.0, 270.000)
+    gg_unit_u000_0015 = CreateUnit(p, 1966092336, 18176.0, 17152.0, 270.000)
+    gg_unit_u001_0016 = CreateUnit(p, 1966092337, 18688.0, 17152.0, 270.000)
+    gg_unit_u002_0019 = CreateUnit(p, 1966092338, 19200.0, 17152.0, 270.000)
+    gg_unit_u005_0020 = CreateUnit(p, 1966092341, 17664.0, 17152.0, 270.000)
+    gg_unit_u004_0022 = CreateUnit(p, 1966092340, 17184.0, 17120.0, 270.000)
+    gg_unit_u003_0023 = CreateUnit(p, 1966092339, 16672.0, 17120.0, 270.000)
+    gg_unit_o003_0063 = CreateUnit(p, 1865429043, 16640.0, 18176.0, 270.000)
     gg_unit_h001_0065 = CreateUnit(p, 1747988529, 18176.0, 18688.0, 270.000)
     gg_unit_h002_0066 = CreateUnit(p, 1747988530, 18688.0, 18688.0, 270.000)
     gg_unit_h003_0067 = CreateUnit(p, 1747988531, 19200.0, 18688.0, 270.000)
     gg_unit_h007_0068 = CreateUnit(p, 1747988535, 17664.0, 18688.0, 270.000)
     gg_unit_h004_0069 = CreateUnit(p, 1747988532, 16640.0, 18688.0, 270.000)
     gg_unit_h005_0070 = CreateUnit(p, 1747988533, 17152.0, 18688.0, 270.000)
+    gg_unit_n001_0071 = CreateUnit(p, 1848651825, 17152.0, 18176.0, 270.000)
+    gg_unit_o004_0072 = CreateUnit(p, 1865429044, 17664.0, 18176.0, 270.000)
+    gg_unit_o000_0073 = CreateUnit(p, 1865429040, 18176.0, 18176.0, 270.000)
+    gg_unit_o001_0074 = CreateUnit(p, 1865429041, 18688.0, 18176.0, 270.000)
+    gg_unit_o002_0075 = CreateUnit(p, 1865429042, 19200.0, 18176.0, 270.000)
+    gg_unit_e003_0076 = CreateUnit(p, 1697656883, 16672.0, 17632.0, 270.000)
+    gg_unit_n002_0077 = CreateUnit(p, 1848651826, 17184.0, 17632.0, 270.000)
+    gg_unit_e000_0078 = CreateUnit(p, 1697656880, 18176.0, 17664.0, 270.000)
+    gg_unit_e001_0079 = CreateUnit(p, 1697656881, 18688.0, 17664.0, 270.000)
+    gg_unit_e002_0080 = CreateUnit(p, 1697656882, 19200.0, 17664.0, 270.000)
+    gg_unit_e004_0081 = CreateUnit(p, 1697656884, 17664.0, 17664.0, 270.000)
 end
 
 function CreatePlayerBuildings()
@@ -34200,6 +34287,7 @@ function main()
     SetAmbientNightSound("LordaeronSummerNight")
     SetMapMusic("Music", true, 0)
     CreateRegions()
+    CreateAllDestructables()
     CreateAllUnits()
     InitBlizzard()
     InitGlobals()
@@ -34222,9 +34310,9 @@ function config()
     DefineStartLocation(5, 15872.0, 13824.0)
     DefineStartLocation(6, 15872.0, 13824.0)
     DefineStartLocation(7, 15360.0, 13312.0)
-    DefineStartLocation(8, -14848.0, -17920.0)
-    DefineStartLocation(9, -14848.0, -17920.0)
-    DefineStartLocation(10, -14848.0, -17920.0)
+    DefineStartLocation(8, -15872.0, -17920.0)
+    DefineStartLocation(9, -15872.0, -17920.0)
+    DefineStartLocation(10, -15872.0, -17920.0)
     DefineStartLocation(11, -15360.0, -17408.0)
     DefineStartLocation(12, 15872.0, -17920.0)
     DefineStartLocation(13, 15872.0, -17920.0)
