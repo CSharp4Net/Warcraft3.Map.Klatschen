@@ -39,7 +39,7 @@ namespace Source.Models
 
       if (Wc3Unit.Alive)
       {
-        Console.WriteLine($"Kill unit {Wc3Unit.Name}");
+        Program.ShowDebugMessage("SpawnedBuilding.Destroy", $"Kill building {Wc3Unit.Name}");
         // Da diese Funktion auch beim Tod des Gebäudes ausgelöst werden kann,
         // töte Gebäude bei Bedarf, d.h. wenn Team verliert und Spieler entfernt werden.
         Wc3Unit.Kill();

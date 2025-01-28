@@ -29,12 +29,6 @@ STRING 7
 Dummy
 }
 
-STRING 8
-// Units: h000 (TestSoldier), Name (Name)
-{
-TestSoldier
-}
-
 STRING 9
 {
 Player 2
@@ -76,117 +70,39 @@ Player 11
 }
 
 STRING 29
-// Units: h001 (Rathaus), EditorSuffix (Name - Editor Suffix)
-{
-(Human)
-}
-
-STRING 30
-// Units: h002 (Burg), EditorSuffix (Name - Editor Suffix)
-{
-(Human)
-}
-
-STRING 31
 // Units: h003 (Schloss), EditorSuffix (Name - Editor Suffix)
 {
 (Human)
 }
 
-STRING 32
-// Units: o000 (Haupthaus), EditorSuffix (Name - Editor Suffix)
-{
-(Orc)
-}
-
-STRING 33
-// Units: o001 (Hochburg), EditorSuffix (Name - Editor Suffix)
-{
-(Orc)
-}
-
-STRING 34
-// Units: o002 (Festung), EditorSuffix (Name - Editor Suffix)
-{
-(Orc)
-}
-
-STRING 35
-// Units: e000 (Baum des Lebens), EditorSuffix (Name - Editor Suffix)
-{
-(Elf)
-}
-
-STRING 36
-// Units: e001 (Baum des Alters), EditorSuffix (Name - Editor Suffix)
-{
-(Elf)
-}
-
-STRING 37
-// Units: e002 (Baum der Ewigkeit), EditorSuffix (Name - Editor Suffix)
-{
-(Elf)
-}
-
-STRING 38
+STRING 30
 // Units: h004 (Wachturm), EditorSuffix (Name - Editor Suffix)
 {
 (Human)
 }
 
-STRING 39
+STRING 31
 // Units: h005 (Arkaner Turm), EditorSuffix (Name - Editor Suffix)
 {
 (Human)
 }
 
-STRING 40
-// Units: o003 (Wachturm), EditorSuffix (Name - Editor Suffix)
-{
-(Orc)
-}
-
-STRING 41
-// Units: n001 (Energiegenerator), EditorSuffix (Name - Editor Suffix)
-{
-(Orc)
-}
-
-STRING 42
-// Units: e003 (Urtumbeschützer), EditorSuffix (Name - Editor Suffix)
-{
-(Elf)
-}
-
-STRING 43
-// Units: n002 (Verderbter Urtumbeschützer), EditorSuffix (Name - Editor Suffix)
-{
-(Elf)
-}
-
-STRING 44
-// Units: h006 (KillSoldier), Name (Name)
-{
-KillSoldier
-}
-
-STRING 45
+STRING 38
 // Units: h007 (Kaserne), EditorSuffix (Name - Editor Suffix)
 {
 (Human)
 }
 
-STRING 46
-// Units: o004 (Kaserne), EditorSuffix (Name - Editor Suffix)
+STRING 39
+// Units: h001 (Fußsoldat), EditorSuffix (Name - Editor Suffix)
 {
-(Orc)
+(Human)
 }
 
-STRING 47
-// Units: e004 (Urtum des Krieges), EditorSuffix (Name - Editor Suffix)
+STRING 45
+// Units: h002 (Scharfschütze), EditorSuffix (Name - Editor Suffix)
 {
-(Elf)
+(Human)
 }
 
 STRING 48
@@ -265,42 +181,6 @@ STRING 65
 ...Under construction...
 }
 
-STRING 66
-// Units: u000 (Nekropole), EditorSuffix (Name - Editor Suffix)
-{
-(Undead)
-}
-
-STRING 67
-// Units: u001 (Halle der Toten), EditorSuffix (Name - Editor Suffix)
-{
-(Undead)
-}
-
-STRING 68
-// Units: u002 (Schwarze Zitadelle), EditorSuffix (Name - Editor Suffix)
-{
-(Undead)
-}
-
-STRING 69
-// Units: u003 (Geisterturm), EditorSuffix (Name - Editor Suffix)
-{
-(Undead)
-}
-
-STRING 70
-// Units: u004 (Neruberturm), EditorSuffix (Name - Editor Suffix)
-{
-(Undead)
-}
-
-STRING 71
-// Units: u005 (Gruft), EditorSuffix (Name - Editor Suffix)
-{
-(Undead)
-}
-
 STRING 72
 // Units: u006 (Heldenseele), Name (Name)
 {
@@ -341,5 +221,35 @@ STRING 78
 // Abilities: A001 (Manaregeneration), EditorSuffix (Editor Suffix)
 {
 (Restore)
+}
+
+STRING 79
+// Units: h000 (Opfer), Name (Name)
+{
+Opfer
+}
+
+STRING 80
+// Units: h000 (Opfer), EditorSuffix (Name - Editor Suffix)
+{
+(Test)
+}
+
+STRING 81
+// Units: h006 (Täter), Name (Name)
+{
+Täter
+}
+
+STRING 82
+// Units: h006 (Täter), EditorSuffix (Name - Editor Suffix)
+{
+(Test)
+}
+
+STRING 83
+// Units: h008 (Priester), EditorSuffix (Name - Editor Suffix)
+{
+(Human)
 }
 

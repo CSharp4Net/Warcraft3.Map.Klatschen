@@ -49,7 +49,7 @@ namespace Source.UnitEvents
       }
       catch (Exception ex)
       {
-        Console.WriteLine(ex.Message);
+        Program.ShowDebugMessage("MainBuilding.OnDies", ex.ToString());
       }
     }
   }

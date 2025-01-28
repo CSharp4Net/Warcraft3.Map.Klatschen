@@ -36,7 +36,7 @@ namespace Source.UnitEvents
       }
       catch (Exception ex)
       {
-        Console.WriteLine(ex.Message);
+        Program.ShowDebugMessage("BarracksBuilding.OnDies", ex.ToString());
       }
     }
   }

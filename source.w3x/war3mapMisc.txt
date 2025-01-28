@@ -1,7 +1,6 @@
 [Misc]
 GrantHeroXP=100
 GuardDistance=99999.0
-HeroFactorXP=
 HeroMaxAwakenCostGold=0
 HeroMaxAwakenCostLumber=0
 HeroMaxReviveCostGold=0

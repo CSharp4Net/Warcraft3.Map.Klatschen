@@ -1,5 +1,4 @@
-﻿using Source.Models;
-using System;
+﻿using System;
 using WCSharp.Api;
 
 namespace Source.UnitEvents
@@ -11,6 +10,11 @@ namespace Source.UnitEvents
       try
       {
         unit unit = Common.GetTriggerUnit();
+
+        if (unit.IsABuilding)
+        {
+          return;
+        }
 
         if (Common.IsHeroUnitId(Common.GetUnitTypeId(unit)))
         {
@@ -51,7 +55,7 @@ namespace Source.UnitEvents
       }
       catch (Exception ex)
       {
-        Console.WriteLine(ex.Message);
+        Program.ShowDebugMessage("GenericUnit.OnUnitDies", ex.ToString());
       }
     }
   }

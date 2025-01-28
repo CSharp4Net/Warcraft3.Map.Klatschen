@@ -19917,8 +19917,8 @@ System.import(function (out)
 end)
 System.namespace("Source", function (namespace)
   namespace.class("Program", function (namespace)
-    local Main, Start, RegisterRegionTriggersInHumanArea, RegisterRegionTriggerInOrcArea, RegisterRegionTriggerInElfArea, RegisterRegionTriggerInUndeadArea, ConstructHumanBuildingAndTrigger, ConstructOrcBuildingAndTrigger, 
-    ConstructElfBuildingAndTrigger, ConstructUndeadBuildingAndTrigger, CreateHeroSelectorForPlayerAndAdjustCamera, OnResearchFinished, class
+    local Main, ShowDebugMessage, Start, RegisterRegionTriggersInHumanArea, RegisterRegionTriggerInOrcArea, RegisterRegionTriggerInElfArea, RegisterRegionTriggerInUndeadArea, ConstructHumanBuildingAndTrigger, 
+    ConstructOrcBuildingAndTrigger, ConstructElfBuildingAndTrigger, ConstructUndeadBuildingAndTrigger, CreateHeroSelectorForPlayerAndAdjustCamera, OnResearchFinished, class
     Main = function ()
       -- Delay a little since some stuff can break otherwise
       local timer = CreateTimer()
@@ -19927,11 +19927,15 @@ System.namespace("Source", function (namespace)
         Start()
       end)
     end
+    ShowDebugMessage = function (sender, message)
+      System.Console.WriteLine(System.toString(sender) .. ": " .. System.toString(message))
+    end
     Start = function ()
       System.try(function ()
         -- This part of the code will only run if the map is compiled in Debug mode
         class.Debug = true
-        System.Console.WriteLine("This map is in debug mode. The map may not function as expected.")
+        ShowDebugMessage("Start", "Running in debug mode...")
+
         -- By calling these methods, whenever these systems call external code (i.e. your code),
         -- they will wrap the call in a try-catch and output any errors to the chat for easier debugging
         WCSharpEvents.PeriodicEvents.EnableDebug()
@@ -20007,7 +20011,7 @@ System.namespace("Source", function (namespace)
         FogMaskEnable(false)
       end, function (default)
         local ex = default
-        DisplayTextToPlayer(GetLocalPlayer(), 0, 0, ex:getMessage())
+        ShowDebugMessage("Start.Exception", ex:ToString())
       end)
     end
     RegisterRegionTriggersInHumanArea = function ()
@@ -20072,87 +20076,87 @@ System.namespace("Source", function (namespace)
     end
     ConstructHumanBuildingAndTrigger = function ()
       -- Hauptgebäude
-      local building = class.Humans.Computer:CreateBuilding(1747988529 --[[Constants.UNIT_RATHAUS_HUMAN]], Areas.HumanBase, 0)
+      local building = class.Humans.Computer:CreateBuilding(1747988531 --[[Constants.UNIT_SCHLOSS_HUMAN]], Areas.HumanBase, 0)
       building:RegisterOnDies(SourceUnitEvents.MainBuilding.OnDies)
-      building:AddSpawnTrigger(20, Areas.HumanBaseToCenterSpawn, System.Array(System.Int32) { 1747988528 --[[Constants.UNIT_TESTSOLDIER]] })
-      building:AddSpawnTrigger(20, Areas.HumanBaseToElfSpawn, System.Array(System.Int32) { 1747988528 --[[Constants.UNIT_TESTSOLDIER]] })
-      building:AddSpawnTrigger(20, Areas.HumanBaseToOrcsSpawn, System.Array(System.Int32) { 1747988528 --[[Constants.UNIT_TESTSOLDIER]] })
+      building:AddSpawnTrigger(30 --[[Program.mainBuildingSpawnTime]], Areas.HumanBaseToCenterSpawn, System.Array(System.Int32) { 1747988536 --[[Constants.UNIT_PRIESTER_HUMAN]] })
+      building:AddSpawnTrigger(30 --[[Program.mainBuildingSpawnTime]], Areas.HumanBaseToElfSpawn, System.Array(System.Int32) { 1747988536 --[[Constants.UNIT_PRIESTER_HUMAN]] })
+      building:AddSpawnTrigger(30 --[[Program.mainBuildingSpawnTime]], Areas.HumanBaseToOrcsSpawn, System.Array(System.Int32) { 1747988536 --[[Constants.UNIT_PRIESTER_HUMAN]] })
 
       -- Kasernen
       building = class.Humans.Computer:CreateBuilding(1747988535 --[[Constants.UNIT_KASERNE_HUMAN]], Areas.HumanBarracksToCenter, 0)
       building:RegisterOnDies(SourceUnitEvents.BarracksBuilding.OnDies)
-      building:AddSpawnTrigger(10, Areas.HumanBarracksToCenterSpawn, System.Array(System.Int32) { 1747988528 --[[Constants.UNIT_TESTSOLDIER]] })
+      building:AddSpawnTrigger(15 --[[Program.barracksSpawnTime]], Areas.HumanBarracksToCenterSpawn, System.Array(System.Int32) { 1747988529 --[[Constants.UNIT_FU_SOLDAT_HUMAN]], 1747988529 --[[Constants.UNIT_FU_SOLDAT_HUMAN]], 1747988530 --[[Constants.UNIT_SCHARFSCH_TZE_HUMAN]] })
 
       building = class.Humans.Computer:CreateBuilding(1747988535 --[[Constants.UNIT_KASERNE_HUMAN]], Areas.HumanBarracksToElf, 0)
       building:RegisterOnDies(SourceUnitEvents.BarracksBuilding.OnDies)
-      building:AddSpawnTrigger(10, Areas.HumanBarracksToElfSpawn, System.Array(System.Int32) { 1747988528 --[[Constants.UNIT_TESTSOLDIER]] })
+      building:AddSpawnTrigger(15 --[[Program.barracksSpawnTime]], Areas.HumanBarracksToElfSpawn, System.Array(System.Int32) { 1747988529 --[[Constants.UNIT_FU_SOLDAT_HUMAN]], 1747988529 --[[Constants.UNIT_FU_SOLDAT_HUMAN]], 1747988530 --[[Constants.UNIT_SCHARFSCH_TZE_HUMAN]] })
 
       building = class.Humans.Computer:CreateBuilding(1747988535 --[[Constants.UNIT_KASERNE_HUMAN]], Areas.HumanBarracksToOrcs, 0)
       building:RegisterOnDies(SourceUnitEvents.BarracksBuilding.OnDies)
-      building:AddSpawnTrigger(10, Areas.HumanBarracksToOrcsSpawn, System.Array(System.Int32) { 1747988528 --[[Constants.UNIT_TESTSOLDIER]] })
+      building:AddSpawnTrigger(15 --[[Program.barracksSpawnTime]], Areas.HumanBarracksToOrcsSpawn, System.Array(System.Int32) { 1747988529 --[[Constants.UNIT_FU_SOLDAT_HUMAN]], 1747988529 --[[Constants.UNIT_FU_SOLDAT_HUMAN]], 1747988530 --[[Constants.UNIT_SCHARFSCH_TZE_HUMAN]] })
     end
     ConstructOrcBuildingAndTrigger = function ()
       -- Hauptgebäude
-      local building = class.Orcs.Computer:CreateBuilding(1865429040 --[[Constants.UNIT_HAUPTHAUS_ORC]], Areas.OrcBase, 0)
+      local building = class.Orcs.Computer:CreateBuilding(1747988531 --[[Constants.UNIT_SCHLOSS_HUMAN]], Areas.OrcBase, 0)
       building:RegisterOnDies(SourceUnitEvents.MainBuilding.OnDies)
-      building:AddSpawnTrigger(20, Areas.OrcBaseToCenterSpawn, System.Array(System.Int32) { 1747988528 --[[Constants.UNIT_TESTSOLDIER]] })
-      building:AddSpawnTrigger(20, Areas.OrcBaseToHumanSpawn, System.Array(System.Int32) { 1747988528 --[[Constants.UNIT_TESTSOLDIER]] })
-      building:AddSpawnTrigger(20, Areas.OrcBaseToUndeadSpawn, System.Array(System.Int32) { 1747988528 --[[Constants.UNIT_TESTSOLDIER]] })
+      building:AddSpawnTrigger(30 --[[Program.mainBuildingSpawnTime]], Areas.OrcBaseToCenterSpawn, System.Array(System.Int32) { 1747988536 --[[Constants.UNIT_PRIESTER_HUMAN]] })
+      building:AddSpawnTrigger(30 --[[Program.mainBuildingSpawnTime]], Areas.OrcBaseToHumanSpawn, System.Array(System.Int32) { 1747988536 --[[Constants.UNIT_PRIESTER_HUMAN]] })
+      building:AddSpawnTrigger(30 --[[Program.mainBuildingSpawnTime]], Areas.OrcBaseToUndeadSpawn, System.Array(System.Int32) { 1747988536 --[[Constants.UNIT_PRIESTER_HUMAN]] })
 
       -- Kasernen
-      building = class.Orcs.Computer:CreateBuilding(1865429044 --[[Constants.UNIT_KASERNE_ORC]], Areas.OrcBarracksToCenter, 0)
+      building = class.Orcs.Computer:CreateBuilding(1747988535 --[[Constants.UNIT_KASERNE_HUMAN]], Areas.OrcBarracksToCenter, 0)
       building:RegisterOnDies(SourceUnitEvents.BarracksBuilding.OnDies)
-      building:AddSpawnTrigger(10, Areas.OrcBarracksToCenterSpawn, System.Array(System.Int32) { 1747988528 --[[Constants.UNIT_TESTSOLDIER]] })
+      building:AddSpawnTrigger(15 --[[Program.barracksSpawnTime]], Areas.OrcBarracksToCenterSpawn, System.Array(System.Int32) { 1747988529 --[[Constants.UNIT_FU_SOLDAT_HUMAN]], 1747988529 --[[Constants.UNIT_FU_SOLDAT_HUMAN]], 1747988530 --[[Constants.UNIT_SCHARFSCH_TZE_HUMAN]] })
 
-      building = class.Orcs.Computer:CreateBuilding(1865429044 --[[Constants.UNIT_KASERNE_ORC]], Areas.OrcBarracksToHuman, 0)
+      building = class.Orcs.Computer:CreateBuilding(1747988535 --[[Constants.UNIT_KASERNE_HUMAN]], Areas.OrcBarracksToHuman, 0)
       building:RegisterOnDies(SourceUnitEvents.BarracksBuilding.OnDies)
-      building:AddSpawnTrigger(10, Areas.OrcBarracksToHumanSpawn, System.Array(System.Int32) { 1747988528 --[[Constants.UNIT_TESTSOLDIER]] })
+      building:AddSpawnTrigger(15 --[[Program.barracksSpawnTime]], Areas.OrcBarracksToHumanSpawn, System.Array(System.Int32) { 1747988529 --[[Constants.UNIT_FU_SOLDAT_HUMAN]], 1747988529 --[[Constants.UNIT_FU_SOLDAT_HUMAN]], 1747988530 --[[Constants.UNIT_SCHARFSCH_TZE_HUMAN]] })
 
-      building = class.Orcs.Computer:CreateBuilding(1865429044 --[[Constants.UNIT_KASERNE_ORC]], Areas.OrcBarracksToUndead, 0)
+      building = class.Orcs.Computer:CreateBuilding(1747988535 --[[Constants.UNIT_KASERNE_HUMAN]], Areas.OrcBarracksToUndead, 0)
       building:RegisterOnDies(SourceUnitEvents.BarracksBuilding.OnDies)
-      building:AddSpawnTrigger(10, Areas.OrcBarracksToUndeadSpawn, System.Array(System.Int32) { 1747988528 --[[Constants.UNIT_TESTSOLDIER]] })
+      building:AddSpawnTrigger(15 --[[Program.barracksSpawnTime]], Areas.OrcBarracksToUndeadSpawn, System.Array(System.Int32) { 1747988529 --[[Constants.UNIT_FU_SOLDAT_HUMAN]], 1747988529 --[[Constants.UNIT_FU_SOLDAT_HUMAN]], 1747988530 --[[Constants.UNIT_SCHARFSCH_TZE_HUMAN]] })
     end
     ConstructElfBuildingAndTrigger = function ()
       -- Hauptgebäude
-      local building = class.Elves.Computer:CreateBuilding(1697656880 --[[Constants.UNIT_BAUM_DES_LEBENS_ELF]], Areas.ElfBase, 0)
+      local building = class.Elves.Computer:CreateBuilding(1747988531 --[[Constants.UNIT_SCHLOSS_HUMAN]], Areas.ElfBase, 0)
       building:RegisterOnDies(SourceUnitEvents.MainBuilding.OnDies)
-      building:AddSpawnTrigger(20, Areas.ElfBaseToCenterSpawn, System.Array(System.Int32) { 1747988528 --[[Constants.UNIT_TESTSOLDIER]] })
-      building:AddSpawnTrigger(20, Areas.ElfBaseToHumanSpawn, System.Array(System.Int32) { 1747988528 --[[Constants.UNIT_TESTSOLDIER]] })
-      building:AddSpawnTrigger(20, Areas.ElfBaseToUndeadSpawn, System.Array(System.Int32) { 1747988528 --[[Constants.UNIT_TESTSOLDIER]] })
+      building:AddSpawnTrigger(30 --[[Program.mainBuildingSpawnTime]], Areas.ElfBaseToCenterSpawn, System.Array(System.Int32) { 1747988536 --[[Constants.UNIT_PRIESTER_HUMAN]] })
+      building:AddSpawnTrigger(30 --[[Program.mainBuildingSpawnTime]], Areas.ElfBaseToHumanSpawn, System.Array(System.Int32) { 1747988536 --[[Constants.UNIT_PRIESTER_HUMAN]] })
+      building:AddSpawnTrigger(30 --[[Program.mainBuildingSpawnTime]], Areas.ElfBaseToUndeadSpawn, System.Array(System.Int32) { 1747988536 --[[Constants.UNIT_PRIESTER_HUMAN]] })
 
       -- Kasernen
-      building = class.Elves.Computer:CreateBuilding(1697656884 --[[Constants.UNIT_URTUM_DES_KRIEGES_ELF]], Areas.ElfBarracksToCenter, 0)
+      building = class.Elves.Computer:CreateBuilding(1747988535 --[[Constants.UNIT_KASERNE_HUMAN]], Areas.ElfBarracksToCenter, 0)
       building:RegisterOnDies(SourceUnitEvents.BarracksBuilding.OnDies)
-      building:AddSpawnTrigger(10, Areas.ElfBarracksToCenterSpawn, System.Array(System.Int32) { 1747988528 --[[Constants.UNIT_TESTSOLDIER]] })
+      building:AddSpawnTrigger(15 --[[Program.barracksSpawnTime]], Areas.ElfBarracksToCenterSpawn, System.Array(System.Int32) { 1747988529 --[[Constants.UNIT_FU_SOLDAT_HUMAN]], 1747988529 --[[Constants.UNIT_FU_SOLDAT_HUMAN]], 1747988530 --[[Constants.UNIT_SCHARFSCH_TZE_HUMAN]] })
 
-      building = class.Elves.Computer:CreateBuilding(1697656884 --[[Constants.UNIT_URTUM_DES_KRIEGES_ELF]], Areas.ElfBarracksToHuman, 0)
+      building = class.Elves.Computer:CreateBuilding(1747988535 --[[Constants.UNIT_KASERNE_HUMAN]], Areas.ElfBarracksToHuman, 0)
       building:RegisterOnDies(SourceUnitEvents.BarracksBuilding.OnDies)
-      building:AddSpawnTrigger(10, Areas.ElfBarracksToHumanSpawn, System.Array(System.Int32) { 1747988528 --[[Constants.UNIT_TESTSOLDIER]] })
+      building:AddSpawnTrigger(15 --[[Program.barracksSpawnTime]], Areas.ElfBarracksToHumanSpawn, System.Array(System.Int32) { 1747988529 --[[Constants.UNIT_FU_SOLDAT_HUMAN]], 1747988529 --[[Constants.UNIT_FU_SOLDAT_HUMAN]], 1747988530 --[[Constants.UNIT_SCHARFSCH_TZE_HUMAN]] })
 
-      building = class.Elves.Computer:CreateBuilding(1697656884 --[[Constants.UNIT_URTUM_DES_KRIEGES_ELF]], Areas.ElfBarracksToUndead, 0)
+      building = class.Elves.Computer:CreateBuilding(1747988535 --[[Constants.UNIT_KASERNE_HUMAN]], Areas.ElfBarracksToUndead, 0)
       building:RegisterOnDies(SourceUnitEvents.BarracksBuilding.OnDies)
-      building:AddSpawnTrigger(10, Areas.ElfBarracksToUndeadSpawn, System.Array(System.Int32) { 1747988528 --[[Constants.UNIT_TESTSOLDIER]] })
+      building:AddSpawnTrigger(15 --[[Program.barracksSpawnTime]], Areas.ElfBarracksToUndeadSpawn, System.Array(System.Int32) { 1747988529 --[[Constants.UNIT_FU_SOLDAT_HUMAN]], 1747988529 --[[Constants.UNIT_FU_SOLDAT_HUMAN]], 1747988530 --[[Constants.UNIT_SCHARFSCH_TZE_HUMAN]] })
     end
     ConstructUndeadBuildingAndTrigger = function ()
       -- Hauptgebäude
-      local building = class.Undeads.Computer:CreateBuilding(1966092336 --[[Constants.UNIT_NEKROPOLE_UNDEAD]], Areas.UndeadBase, 0)
+      local building = class.Undeads.Computer:CreateBuilding(1747988531 --[[Constants.UNIT_SCHLOSS_HUMAN]], Areas.UndeadBase, 0)
       building:RegisterOnDies(SourceUnitEvents.MainBuilding.OnDies)
-      building:AddSpawnTrigger(20, Areas.UndeadBaseToCenterSpawn, System.Array(System.Int32) { 1747988528 --[[Constants.UNIT_TESTSOLDIER]] })
-      building:AddSpawnTrigger(20, Areas.UndeadBaseToElfSpawn, System.Array(System.Int32) { 1747988528 --[[Constants.UNIT_TESTSOLDIER]] })
-      building:AddSpawnTrigger(20, Areas.UndeadBaseToOrcsSpawn, System.Array(System.Int32) { 1747988528 --[[Constants.UNIT_TESTSOLDIER]] })
+      building:AddSpawnTrigger(30 --[[Program.mainBuildingSpawnTime]], Areas.UndeadBaseToCenterSpawn, System.Array(System.Int32) { 1747988536 --[[Constants.UNIT_PRIESTER_HUMAN]] })
+      building:AddSpawnTrigger(30 --[[Program.mainBuildingSpawnTime]], Areas.UndeadBaseToElfSpawn, System.Array(System.Int32) { 1747988536 --[[Constants.UNIT_PRIESTER_HUMAN]] })
+      building:AddSpawnTrigger(30 --[[Program.mainBuildingSpawnTime]], Areas.UndeadBaseToOrcsSpawn, System.Array(System.Int32) { 1747988536 --[[Constants.UNIT_PRIESTER_HUMAN]] })
 
       -- Kasernen
-      building = class.Undeads.Computer:CreateBuilding(1966092341 --[[Constants.UNIT_GRUFT_UNDEAD]], Areas.UndeadBarracksToCenter, 0)
+      building = class.Undeads.Computer:CreateBuilding(1747988535 --[[Constants.UNIT_KASERNE_HUMAN]], Areas.UndeadBarracksToCenter, 0)
       building:RegisterOnDies(SourceUnitEvents.BarracksBuilding.OnDies)
-      building:AddSpawnTrigger(10, Areas.UndeadBarracksToCenterSpawn, System.Array(System.Int32) { 1747988528 --[[Constants.UNIT_TESTSOLDIER]] })
+      building:AddSpawnTrigger(15 --[[Program.barracksSpawnTime]], Areas.UndeadBarracksToCenterSpawn, System.Array(System.Int32) { 1747988529 --[[Constants.UNIT_FU_SOLDAT_HUMAN]], 1747988529 --[[Constants.UNIT_FU_SOLDAT_HUMAN]], 1747988530 --[[Constants.UNIT_SCHARFSCH_TZE_HUMAN]] })
 
-      building = class.Undeads.Computer:CreateBuilding(1966092341 --[[Constants.UNIT_GRUFT_UNDEAD]], Areas.UndeadBarracksToElf, 0)
+      building = class.Undeads.Computer:CreateBuilding(1747988535 --[[Constants.UNIT_KASERNE_HUMAN]], Areas.UndeadBarracksToElf, 0)
       building:RegisterOnDies(SourceUnitEvents.BarracksBuilding.OnDies)
-      building:AddSpawnTrigger(10, Areas.UndeadBarracksToElfSpawn, System.Array(System.Int32) { 1747988528 --[[Constants.UNIT_TESTSOLDIER]] })
+      building:AddSpawnTrigger(15 --[[Program.barracksSpawnTime]], Areas.UndeadBarracksToElfSpawn, System.Array(System.Int32) { 1747988529 --[[Constants.UNIT_FU_SOLDAT_HUMAN]], 1747988529 --[[Constants.UNIT_FU_SOLDAT_HUMAN]], 1747988530 --[[Constants.UNIT_SCHARFSCH_TZE_HUMAN]] })
 
-      building = class.Undeads.Computer:CreateBuilding(1966092341 --[[Constants.UNIT_GRUFT_UNDEAD]], Areas.UndeadBarracksToOrcs, 0)
+      building = class.Undeads.Computer:CreateBuilding(1747988535 --[[Constants.UNIT_KASERNE_HUMAN]], Areas.UndeadBarracksToOrcs, 0)
       building:RegisterOnDies(SourceUnitEvents.BarracksBuilding.OnDies)
-      building:AddSpawnTrigger(10, Areas.UndeadBarracksToOrcsSpawn, System.Array(System.Int32) { 1747988528 --[[Constants.UNIT_TESTSOLDIER]] })
+      building:AddSpawnTrigger(15 --[[Program.barracksSpawnTime]], Areas.UndeadBarracksToOrcsSpawn, System.Array(System.Int32) { 1747988529 --[[Constants.UNIT_FU_SOLDAT_HUMAN]], 1747988529 --[[Constants.UNIT_FU_SOLDAT_HUMAN]], 1747988530 --[[Constants.UNIT_SCHARFSCH_TZE_HUMAN]] })
     end
     CreateHeroSelectorForPlayerAndAdjustCamera = function (user)
       user:CreateUnit(1966092342 --[[Constants.UNIT_HELDENSEELE_HERO_SELECTOR]], Areas.HeroSelectorSpawn, 0)
@@ -20166,6 +20170,7 @@ System.namespace("Source", function (namespace)
     class = {
       Debug = false,
       Main = Main,
+      ShowDebugMessage = ShowDebugMessage,
       __metadata__ = function (out)
         return {
           properties = {
@@ -20189,6 +20194,7 @@ System.namespace("Source", function (namespace)
             { "RegisterRegionTriggerInOrcArea", 0x9, RegisterRegionTriggerInOrcArea },
             { "RegisterRegionTriggerInUndeadArea", 0x9, RegisterRegionTriggerInUndeadArea },
             { "RegisterRegionTriggersInHumanArea", 0x9, RegisterRegionTriggersInHumanArea },
+            { "ShowDebugMessage", 0x20E, ShowDebugMessage, System.String, System.String },
             { "Start", 0x9, Start }
           },
           class = { "Program", 0x3E }
@@ -20482,9 +20488,11 @@ end)
 end
 do
 local System = System
+local Source
 local SourceModels
 local ListSpawnedBuilding
 System.import(function (out)
+  Source = out.Source
   SourceModels = Source.Models
   ListSpawnedBuilding = System.List(SourceModels.SpawnedBuilding)
 end)
@@ -20514,11 +20522,13 @@ System.namespace("Source.Models", function (namespace)
       return false, foundBuilding
     end
     RemoveBuilding = function (this, building)
+      Source.Program.ShowDebugMessage("ComputerPlayer.RemoveBuilding", "Remove building " .. System.toString(GetUnitName(building.Wc3Unit)))
       this.Buildings:Remove(building)
     end
     Defeat = function (this)
       -- Alle gespawnten Gebäude zerstören
       for _, building in System.each(this.Buildings) do
+        Source.Program.ShowDebugMessage("ComputerPlayer.Defeat", "Destroy building " .. System.toString(GetUnitName(building.Wc3Unit)))
         building:Destroy()
       end
 
@@ -20559,9 +20569,11 @@ end
 do
 local System = System
 local WCSharpApi = WCSharp.Api
+local Source
 local SourceModels
 local ListSpawnTrigger
 System.import(function (out)
+  Source = out.Source
   SourceModels = Source.Models
   ListSpawnTrigger = System.List(SourceModels.SpawnTrigger)
 end)
@@ -20587,7 +20599,7 @@ System.namespace("Source.Models", function (namespace)
       end
 
       if UnitAlive(this.Wc3Unit) then
-        System.Console.WriteLine("Kill unit " .. System.toString(GetUnitName(this.Wc3Unit)))
+        Source.Program.ShowDebugMessage("SpawnedBuilding.Destroy", "Kill building " .. System.toString(GetUnitName(this.Wc3Unit)))
         -- Da diese Funktion auch beim Tod des Gebäudes ausgelöst werden kann,
         -- töte Gebäude bei Bedarf, d.h. wenn Team verliert und Spieler entfernt werden.
         KillUnit(this.Wc3Unit)
@@ -21950,7 +21962,7 @@ System.namespace("Source.UnitEvents", function (namespace)
         end
       end, function (default)
         local ex = default
-        System.Console.WriteLine(ex:getMessage())
+        Source.Program.ShowDebugMessage("BarracksBuilding.OnDies", ex:ToString())
       end)
     end
     return {
@@ -21983,6 +21995,10 @@ System.namespace("Source.UnitEvents", function (namespace)
       local default = System.try(function ()
         local unit = GetTriggerUnit()
 
+        if BlzGetUnitBooleanField(unit, UNIT_BF_IS_A_BUILDING) then
+          return true
+        end
+
         if IsHeroUnitId(GetUnitTypeId(unit)) then
           SourceUnitEvents.UserHero.OnDies(unit)
           return true
@@ -22012,7 +22028,7 @@ System.namespace("Source.UnitEvents", function (namespace)
         end)
       end, function (default)
         local ex = default
-        System.Console.WriteLine(ex:getMessage())
+        Source.Program.ShowDebugMessage("GenericUnit.OnUnitDies", ex:ToString())
       end)
       if default then
         return
@@ -22069,7 +22085,7 @@ System.namespace("Source.UnitEvents", function (namespace)
         end
       end, function (default)
         local ex = default
-        System.Console.WriteLine(ex:getMessage())
+        Source.Program.ShowDebugMessage("MainBuilding.OnDies", ex:ToString())
       end)
     end
     return {
@@ -33567,8 +33583,8 @@ local InitCSharp = function ()
       "WCSharp.Missiles.HomingMissile",
       "WCSharp.Missiles.MomentumMissile",
       "WCSharp.Missiles.OrbitalMissile",
-      "WCSharp.SaveLoad.Save_1",
       "WCSharp.SaveLoad.SaveLoadedMessage_1",
+      "WCSharp.SaveLoad.Save_1",
       "WCSharp.W3MMD.IW3MmdVar",
       "Areas",
       "Constants",
@@ -33755,127 +33771,57 @@ gg_rct_UndeadBaseToCenterSpawn = nil
 gg_rct_UndeadBaseToElfSpawn = nil
 gg_rct_UndeadBaseToOrcsSpawn = nil
 gg_trg_Melee_Initialization = nil
-gg_unit_o001_0074 = nil
-gg_unit_n002_0133 = nil
-gg_unit_n001_0071 = nil
-gg_unit_o000_0073 = nil
-gg_unit_o004_0072 = nil
+gg_unit_h004_0035 = nil
+gg_unit_n005_0044 = nil
+gg_unit_h004_0102 = nil
+gg_unit_h004_0037 = nil
+gg_unit_h005_0028 = nil
 gg_unit_h005_0017 = nil
-gg_unit_e004_0081 = nil
+gg_unit_h004_0040 = nil
 gg_unit_h004_0056 = nil
 gg_unit_h003_0067 = nil
-gg_unit_n001_0021 = nil
+gg_unit_h004_0101 = nil
 gg_unit_h007_0068 = nil
 gg_unit_n003_0010 = nil
 gg_unit_h005_0070 = nil
-gg_unit_h001_0065 = nil
-gg_unit_n002_0026 = nil
-gg_unit_h002_0066 = nil
-gg_unit_e003_0031 = nil
-gg_unit_e002_0080 = nil
-gg_unit_e001_0079 = nil
-gg_unit_e000_0078 = nil
-gg_unit_n002_0077 = nil
-gg_unit_e003_0076 = nil
-gg_unit_o002_0075 = nil
-gg_unit_h004_0069 = nil
-gg_unit_o003_0063 = nil
-gg_unit_u003_0011 = nil
-gg_unit_u004_0013 = nil
-gg_unit_u000_0015 = nil
-gg_unit_u001_0016 = nil
-gg_unit_u002_0019 = nil
-gg_unit_u005_0020 = nil
-gg_unit_u004_0022 = nil
-gg_unit_u003_0023 = nil
+gg_unit_h004_0038 = nil
+gg_unit_n005_0134 = nil
+gg_unit_h004_0036 = nil
+gg_unit_n005_0135 = nil
 gg_unit_h005_0024 = nil
-gg_unit_h005_0025 = nil
-gg_unit_h005_0027 = nil
-gg_unit_h005_0028 = nil
-gg_unit_h005_0029 = nil
 gg_unit_h005_0030 = nil
 gg_unit_h005_0032 = nil
-gg_unit_h004_0033 = nil
-gg_unit_h004_0034 = nil
-gg_unit_h004_0035 = nil
-gg_unit_h004_0036 = nil
-gg_unit_h004_0037 = nil
-gg_unit_h004_0038 = nil
 gg_unit_h004_0039 = nil
-gg_unit_h004_0040 = nil
-gg_unit_h004_0041 = nil
-gg_unit_n001_0042 = nil
-gg_unit_n001_0043 = nil
-gg_unit_n001_0045 = nil
-gg_unit_n001_0046 = nil
-gg_unit_n001_0047 = nil
-gg_unit_n001_0048 = nil
-gg_unit_n001_0049 = nil
-gg_unit_o003_0050 = nil
-gg_unit_o003_0051 = nil
-gg_unit_o003_0052 = nil
-gg_unit_o003_0053 = nil
-gg_unit_o003_0054 = nil
-gg_unit_o003_0055 = nil
-gg_unit_o003_0057 = nil
-gg_unit_o003_0058 = nil
-gg_unit_o003_0059 = nil
-gg_unit_o003_0060 = nil
-gg_unit_n002_0061 = nil
-gg_unit_n002_0062 = nil
-gg_unit_n002_0064 = nil
-gg_unit_n002_0085 = nil
-gg_unit_n002_0086 = nil
-gg_unit_e003_0087 = nil
-gg_unit_e003_0088 = nil
-gg_unit_e003_0089 = nil
-gg_unit_e003_0090 = nil
-gg_unit_e003_0091 = nil
-gg_unit_e003_0092 = nil
-gg_unit_e003_0093 = nil
-gg_unit_e003_0094 = nil
-gg_unit_e003_0095 = nil
-gg_unit_o003_0096 = nil
-gg_unit_o003_0097 = nil
-gg_unit_o003_0098 = nil
-gg_unit_o003_0099 = nil
-gg_unit_o003_0100 = nil
-gg_unit_h004_0101 = nil
-gg_unit_h004_0102 = nil
-gg_unit_h004_0103 = nil
-gg_unit_h004_0104 = nil
 gg_unit_h004_0105 = nil
-gg_unit_e003_0106 = nil
-gg_unit_e003_0107 = nil
-gg_unit_e003_0108 = nil
-gg_unit_e003_0109 = nil
-gg_unit_e003_0110 = nil
-gg_unit_u004_0111 = nil
-gg_unit_u004_0112 = nil
-gg_unit_u004_0113 = nil
-gg_unit_u003_0114 = nil
-gg_unit_u003_0115 = nil
-gg_unit_u003_0116 = nil
-gg_unit_u003_0117 = nil
-gg_unit_u003_0118 = nil
-gg_unit_u003_0119 = nil
-gg_unit_u003_0120 = nil
-gg_unit_u003_0121 = nil
-gg_unit_u003_0122 = nil
-gg_unit_u004_0123 = nil
-gg_unit_u004_0124 = nil
-gg_unit_u004_0125 = nil
-gg_unit_u004_0126 = nil
-gg_unit_u003_0127 = nil
-gg_unit_u003_0128 = nil
-gg_unit_u003_0129 = nil
-gg_unit_u003_0130 = nil
-gg_unit_u003_0131 = nil
-gg_unit_n002_0132 = nil
-gg_unit_n005_0044 = nil
-gg_unit_n005_0134 = nil
-gg_unit_n005_0135 = nil
+gg_unit_h005_0029 = nil
+gg_unit_h004_0069 = nil
 gg_unit_n005_0136 = nil
+gg_unit_h004_0104 = nil
+gg_unit_h004_0103 = nil
+gg_unit_h004_0034 = nil
+gg_unit_h004_0033 = nil
+gg_unit_h005_0027 = nil
+gg_unit_h005_0025 = nil
+gg_unit_h004_0041 = nil
+gg_unit_h004_0011 = nil
+gg_unit_h004_0013 = nil
+gg_unit_h005_0015 = nil
+gg_unit_h006_0016 = nil
+gg_unit_h006_0019 = nil
+gg_unit_h006_0020 = nil
+gg_unit_h004_0021 = nil
+gg_unit_h004_0022 = nil
+gg_unit_h004_0023 = nil
+gg_unit_h005_0026 = nil
+gg_unit_h005_0031 = nil
+gg_unit_h005_0042 = nil
+gg_unit_h005_0043 = nil
+gg_unit_h005_0045 = nil
+gg_unit_h004_0046 = nil
+gg_unit_h004_0047 = nil
+gg_unit_h004_0048 = nil
+gg_unit_h004_0049 = nil
+gg_unit_h004_0050 = nil
 gg_dest_HEch_0019 = nil
 gg_dest_HEch_0017 = nil
 gg_dest_YObb_0002 = nil
@@ -33896,6 +33842,15 @@ function CreateAllDestructables()
     SetDestructableLife(gg_dest_YObb_0003, 2.55 * GetDestructableLife(gg_dest_YObb_0003))
     gg_dest_HEch_0016 = CreateDestructable(1212506984, -15808.0, -3264.0, 247.000, 0.960, 0)
     SetDestructableLife(gg_dest_HEch_0016, 2.55 * GetDestructableLife(gg_dest_HEch_0016))
+end
+
+function CreateUnitsForPlayer0()
+    local p = Player(0)
+    local unitID = nil
+    local t = nil
+    gg_unit_h006_0016 = CreateUnit(p, 1747988534, -16439.7, -18887.3, 78.796)
+    gg_unit_h006_0019 = CreateUnit(p, 1747988534, 16840.3, -18489.2, 215.602)
+    gg_unit_h006_0020 = CreateUnit(p, 1747988534, 16801.1, 14399.5, 303.056)
 end
 
 function CreateBuildingsForPlayer3()
@@ -33931,87 +33886,22 @@ function CreateBuildingsForPlayer7()
     local p = Player(7)
     local unitID = nil
     local t = nil
-    gg_unit_n001_0021 = CreateUnit(p, 1848651825, 14848.0, 13824.0, 270.000)
-    gg_unit_n001_0042 = CreateUnit(p, 1848651825, 15872.0, 12800.0, 270.000)
-    gg_unit_n001_0043 = CreateUnit(p, 1848651825, 13568.0, 12864.0, 270.000)
-    gg_unit_n001_0045 = CreateUnit(p, 1848651825, 13568.0, 13760.0, 270.000)
-    gg_unit_n001_0046 = CreateUnit(p, 1848651825, 13632.0, 12096.0, 270.000)
-    gg_unit_n001_0047 = CreateUnit(p, 1848651825, 14144.0, 11584.0, 270.000)
-    gg_unit_n001_0048 = CreateUnit(p, 1848651825, 14976.0, 11520.0, 270.000)
-    gg_unit_n001_0049 = CreateUnit(p, 1848651825, 15808.0, 11520.0, 270.000)
-    gg_unit_o003_0050 = CreateUnit(p, 1865429043, 8960.0, 13760.0, 270.000)
-    gg_unit_o003_0051 = CreateUnit(p, 1865429043, 8960.0, 12864.0, 270.000)
-    gg_unit_o003_0052 = CreateUnit(p, 1865429043, 11008.0, 12864.0, 270.000)
-    gg_unit_o003_0053 = CreateUnit(p, 1865429043, 11008.0, 13760.0, 270.000)
-    gg_unit_o003_0054 = CreateUnit(p, 1865429043, 6912.0, 13312.0, 270.000)
-    gg_unit_o003_0055 = CreateUnit(p, 1865429043, 14912.0, 6912.0, 270.000)
-    gg_unit_o003_0057 = CreateUnit(p, 1865429043, 15808.0, 6912.0, 270.000)
-    gg_unit_o003_0058 = CreateUnit(p, 1865429043, 14912.0, 8960.0, 270.000)
-    gg_unit_o003_0059 = CreateUnit(p, 1865429043, 15808.0, 8960.0, 270.000)
-    gg_unit_o003_0060 = CreateUnit(p, 1865429043, 15360.0, 4864.0, 270.000)
-    gg_unit_o003_0096 = CreateUnit(p, 1865429043, 11520.0, 9280.0, 270.000)
-    gg_unit_o003_0097 = CreateUnit(p, 1865429043, 11520.0, 10176.0, 270.000)
-    gg_unit_o003_0098 = CreateUnit(p, 1865429043, 9984.0, 10176.0, 270.000)
-    gg_unit_o003_0099 = CreateUnit(p, 1865429043, 9984.0, 9280.0, 270.000)
-    gg_unit_o003_0100 = CreateUnit(p, 1865429043, 7936.0, 9728.0, 270.000)
-end
-
-function CreateBuildingsForPlayer11()
-    local p = Player(11)
-    local unitID = nil
-    local t = nil
-    gg_unit_n002_0026 = CreateUnit(p, 1848651826, -13536.0, -17824.0, 270.000)
-    gg_unit_e003_0031 = CreateUnit(p, 1697656883, -10976.0, -16992.0, 270.000)
-    gg_unit_n002_0061 = CreateUnit(p, 1848651826, -13536.0, -16992.0, 270.000)
-    gg_unit_n002_0062 = CreateUnit(p, 1848651826, -15776.0, -15584.0, 270.000)
-    gg_unit_n002_0064 = CreateUnit(p, 1848651826, -14944.0, -15584.0, 270.000)
-    gg_unit_n002_0085 = CreateUnit(p, 1848651826, -14112.0, -15712.0, 270.000)
-    gg_unit_n002_0086 = CreateUnit(p, 1848651826, -13664.0, -16160.0, 270.000)
-    gg_unit_e003_0087 = CreateUnit(p, 1697656883, -10976.0, -17824.0, 270.000)
-    gg_unit_e003_0088 = CreateUnit(p, 1697656883, -8928.0, -16992.0, 270.000)
-    gg_unit_e003_0089 = CreateUnit(p, 1697656883, -8928.0, -17824.0, 270.000)
-    gg_unit_e003_0090 = CreateUnit(p, 1697656883, -6880.0, -17376.0, 270.000)
-    gg_unit_e003_0091 = CreateUnit(p, 1697656883, -15776.0, -13088.0, 270.000)
-    gg_unit_e003_0092 = CreateUnit(p, 1697656883, -14944.0, -13088.0, 270.000)
-    gg_unit_e003_0093 = CreateUnit(p, 1697656883, -14944.0, -10976.0, 270.000)
-    gg_unit_e003_0094 = CreateUnit(p, 1697656883, -15776.0, -10976.0, 270.000)
-    gg_unit_e003_0095 = CreateUnit(p, 1697656883, -15392.0, -8928.0, 270.000)
-    gg_unit_e003_0106 = CreateUnit(p, 1697656883, -11488.0, -14240.0, 270.000)
-    gg_unit_e003_0107 = CreateUnit(p, 1697656883, -11488.0, -13408.0, 270.000)
-    gg_unit_e003_0108 = CreateUnit(p, 1697656883, -9952.0, -13408.0, 270.000)
-    gg_unit_e003_0109 = CreateUnit(p, 1697656883, -9952.0, -14240.0, 270.000)
-    gg_unit_e003_0110 = CreateUnit(p, 1697656883, -7904.0, -13856.0, 270.000)
-    gg_unit_n002_0132 = CreateUnit(p, 1848651826, -14880.0, -17888.0, 270.000)
-    gg_unit_n002_0133 = CreateUnit(p, 1848651826, -15840.0, -16928.0, 270.000)
-end
-
-function CreateBuildingsForPlayer15()
-    local p = Player(15)
-    local unitID = nil
-    local t = nil
-    gg_unit_u003_0011 = CreateUnit(p, 1966092339, 10976.0, -16992.0, 270.000)
-    gg_unit_u004_0013 = CreateUnit(p, 1966092340, 13536.0, -17824.0, 270.000)
-    gg_unit_u004_0111 = CreateUnit(p, 1966092340, 13536.0, -17056.0, 270.000)
-    gg_unit_u004_0112 = CreateUnit(p, 1966092340, 14880.0, -17952.0, 270.000)
-    gg_unit_u004_0113 = CreateUnit(p, 1966092340, 15904.0, -16928.0, 270.000)
-    gg_unit_u003_0114 = CreateUnit(p, 1966092339, 10976.0, -17824.0, 270.000)
-    gg_unit_u003_0115 = CreateUnit(p, 1966092339, 8864.0, -17824.0, 270.000)
-    gg_unit_u003_0116 = CreateUnit(p, 1966092339, 8928.0, -16992.0, 270.000)
-    gg_unit_u003_0117 = CreateUnit(p, 1966092339, 6880.0, -17376.0, 270.000)
-    gg_unit_u003_0118 = CreateUnit(p, 1966092339, 11424.0, -14240.0, 270.000)
-    gg_unit_u003_0119 = CreateUnit(p, 1966092339, 11424.0, -13408.0, 270.000)
-    gg_unit_u003_0120 = CreateUnit(p, 1966092339, 9888.0, -13408.0, 270.000)
-    gg_unit_u003_0121 = CreateUnit(p, 1966092339, 9888.0, -14240.0, 270.000)
-    gg_unit_u003_0122 = CreateUnit(p, 1966092339, 7904.0, -13856.0, 270.000)
-    gg_unit_u004_0123 = CreateUnit(p, 1966092340, 13664.0, -16160.0, 270.000)
-    gg_unit_u004_0124 = CreateUnit(p, 1966092340, 14112.0, -15776.0, 270.000)
-    gg_unit_u004_0125 = CreateUnit(p, 1966092340, 14944.0, -15520.0, 270.000)
-    gg_unit_u004_0126 = CreateUnit(p, 1966092340, 15776.0, -15520.0, 270.000)
-    gg_unit_u003_0127 = CreateUnit(p, 1966092339, 14944.0, -13024.0, 270.000)
-    gg_unit_u003_0128 = CreateUnit(p, 1966092339, 15776.0, -13024.0, 270.000)
-    gg_unit_u003_0129 = CreateUnit(p, 1966092339, 15776.0, -10912.0, 270.000)
-    gg_unit_u003_0130 = CreateUnit(p, 1966092339, 14944.0, -10912.0, 270.000)
-    gg_unit_u003_0131 = CreateUnit(p, 1966092339, 15328.0, -8928.0, 270.000)
+    gg_unit_h004_0011 = CreateUnit(p, 1747988532, 8960.0, 13760.0, 270.000)
+    gg_unit_h004_0013 = CreateUnit(p, 1747988532, 11008.0, 13760.0, 270.000)
+    gg_unit_h005_0015 = CreateUnit(p, 1747988533, 13568.0, 13760.0, 270.000)
+    gg_unit_h004_0021 = CreateUnit(p, 1747988532, 8960.0, 12864.0, 270.000)
+    gg_unit_h004_0022 = CreateUnit(p, 1747988532, 11008.0, 12864.0, 270.000)
+    gg_unit_h004_0023 = CreateUnit(p, 1747988532, 6912.0, 13312.0, 270.000)
+    gg_unit_h005_0026 = CreateUnit(p, 1747988533, 13568.0, 12864.0, 270.000)
+    gg_unit_h005_0031 = CreateUnit(p, 1747988533, 14912.0, 11520.0, 270.000)
+    gg_unit_h005_0042 = CreateUnit(p, 1747988533, 15808.0, 11520.0, 270.000)
+    gg_unit_h005_0043 = CreateUnit(p, 1747988533, 14144.0, 11584.0, 270.000)
+    gg_unit_h005_0045 = CreateUnit(p, 1747988533, 13632.0, 12096.0, 270.000)
+    gg_unit_h004_0046 = CreateUnit(p, 1747988532, 14912.0, 8960.0, 270.000)
+    gg_unit_h004_0047 = CreateUnit(p, 1747988532, 15808.0, 8960.0, 270.000)
+    gg_unit_h004_0048 = CreateUnit(p, 1747988532, 14912.0, 6912.0, 270.000)
+    gg_unit_h004_0049 = CreateUnit(p, 1747988532, 15808.0, 6912.0, 270.000)
+    gg_unit_h004_0050 = CreateUnit(p, 1747988532, 15360.0, 4864.0, 270.000)
 end
 
 function CreateNeutralPassiveBuildings()
@@ -34019,31 +33909,11 @@ function CreateNeutralPassiveBuildings()
     local unitID = nil
     local t = nil
     gg_unit_n003_0010 = CreateUnit(p, 1848651827, -18432.0, 18176.0, 270.000)
-    gg_unit_u000_0015 = CreateUnit(p, 1966092336, 18176.0, 17152.0, 270.000)
-    gg_unit_u001_0016 = CreateUnit(p, 1966092337, 18688.0, 17152.0, 270.000)
-    gg_unit_u002_0019 = CreateUnit(p, 1966092338, 19200.0, 17152.0, 270.000)
-    gg_unit_u005_0020 = CreateUnit(p, 1966092341, 17664.0, 17152.0, 270.000)
-    gg_unit_u004_0022 = CreateUnit(p, 1966092340, 17184.0, 17120.0, 270.000)
-    gg_unit_u003_0023 = CreateUnit(p, 1966092339, 16672.0, 17120.0, 270.000)
     gg_unit_n005_0044 = CreateUnit(p, 1848651829, -16640.0, 14592.0, 270.000)
-    gg_unit_o003_0063 = CreateUnit(p, 1865429043, 16640.0, 18176.0, 270.000)
-    gg_unit_h001_0065 = CreateUnit(p, 1747988529, 18176.0, 18688.0, 270.000)
-    gg_unit_h002_0066 = CreateUnit(p, 1747988530, 18688.0, 18688.0, 270.000)
     gg_unit_h003_0067 = CreateUnit(p, 1747988531, 19200.0, 18688.0, 270.000)
     gg_unit_h007_0068 = CreateUnit(p, 1747988535, 17664.0, 18688.0, 270.000)
     gg_unit_h004_0069 = CreateUnit(p, 1747988532, 16640.0, 18688.0, 270.000)
     gg_unit_h005_0070 = CreateUnit(p, 1747988533, 17152.0, 18688.0, 270.000)
-    gg_unit_n001_0071 = CreateUnit(p, 1848651825, 17152.0, 18176.0, 270.000)
-    gg_unit_o004_0072 = CreateUnit(p, 1865429044, 17664.0, 18176.0, 270.000)
-    gg_unit_o000_0073 = CreateUnit(p, 1865429040, 18176.0, 18176.0, 270.000)
-    gg_unit_o001_0074 = CreateUnit(p, 1865429041, 18688.0, 18176.0, 270.000)
-    gg_unit_o002_0075 = CreateUnit(p, 1865429042, 19200.0, 18176.0, 270.000)
-    gg_unit_e003_0076 = CreateUnit(p, 1697656883, 16672.0, 17632.0, 270.000)
-    gg_unit_n002_0077 = CreateUnit(p, 1848651826, 17184.0, 17632.0, 270.000)
-    gg_unit_e000_0078 = CreateUnit(p, 1697656880, 18176.0, 17664.0, 270.000)
-    gg_unit_e001_0079 = CreateUnit(p, 1697656881, 18688.0, 17664.0, 270.000)
-    gg_unit_e002_0080 = CreateUnit(p, 1697656882, 19200.0, 17664.0, 270.000)
-    gg_unit_e004_0081 = CreateUnit(p, 1697656884, 17664.0, 17664.0, 270.000)
     gg_unit_n005_0134 = CreateUnit(p, 1848651829, 16640.0, 14592.0, 270.000)
     gg_unit_n005_0135 = CreateUnit(p, 1848651829, -16640.0, -18688.0, 270.000)
     gg_unit_n005_0136 = CreateUnit(p, 1848651829, 16640.0, -18688.0, 270.000)
@@ -34052,13 +33922,16 @@ end
 function CreatePlayerBuildings()
     CreateBuildingsForPlayer3()
     CreateBuildingsForPlayer7()
-    CreateBuildingsForPlayer11()
-    CreateBuildingsForPlayer15()
+end
+
+function CreatePlayerUnits()
+    CreateUnitsForPlayer0()
 end
 
 function CreateAllUnits()
     CreateNeutralPassiveBuildings()
     CreatePlayerBuildings()
+    CreatePlayerUnits()
 end
 
 function CreateRegions()

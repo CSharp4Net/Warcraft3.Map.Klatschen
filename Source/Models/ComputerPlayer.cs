@@ -43,6 +43,7 @@ namespace Source.Models
 
     public void RemoveBuilding(SpawnedBuilding building)
     {
+      Program.ShowDebugMessage("ComputerPlayer.RemoveBuilding", $"Remove building {building.Wc3Unit.Name}");
       Buildings.Remove(building);
     }
 
@@ -51,6 +52,7 @@ namespace Source.Models
       // Alle gespawnten Gebäude zerstören
       foreach (SpawnedBuilding building in Buildings)
       {
+        Program.ShowDebugMessage("ComputerPlayer.Defeat", $"Destroy building {building.Wc3Unit.Name}");
         building.Destroy();
       }
 
