@@ -16,21 +16,18 @@ namespace Source.UnitEvents
         {
           building.Destroy();
           Console.WriteLine("Die Menschen haben eine ihrer Kasernen verloren!");
-
           Program.Humans.Computer.RemoveBuilding(building);
         }
         else if (Program.Orcs.Computer.IsOwnerOfBuilding(unit, out building))
         {
           building.Destroy();
           Console.WriteLine("Die Orks haben eine ihrer Kasernen verloren!");
-
           Program.Orcs.Computer.RemoveBuilding(building);
         }
         else if (Program.Elves.Computer.IsOwnerOfBuilding(unit, out building))
         {
           building.Destroy();
           Console.WriteLine("Die Elfen haben eine ihrer Kasernen verloren!");
-
           Program.Elves.Computer.RemoveBuilding(building);
         }
       }

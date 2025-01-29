@@ -15,11 +15,27 @@ namespace Source.Models
     }
 
     public unit Wc3Unit { get; init; }
-    public trigger Wc3Trigger { get; private set; }
+    /// <summary>
+    /// WC3-Trigger für das Sterbe-Event.
+    /// </summary>
+    private trigger Wc3Trigger { get; set; }
 
-    public ComputerPlayer Computer { get; init; }
-    public List<SpawnTrigger> SpawnTriggers { get; init; }
+    /// <summary>
+    /// Der Computer-Spieler, dem dieses Gebäude gehört.
+    /// </summary>
+    private ComputerPlayer Computer { get; init; }
+    /// <summary>
+    /// Auflistung von Spawn-Triggers.
+    /// </summary>
+    private List<SpawnTrigger> SpawnTriggers { get; init; }
 
+    /// <summary>
+    /// Fügt dem Gebäude einen Spawn-Trigger hinzu, welche solange aktiv ist, wie das Gebäude lebt.
+    /// </summary>
+    /// <param name="interval">Sekunden</param>
+    /// <param name="spawnArea">Spawn-Gebiet</param>
+    /// <param name="unitIds">Auflistung an Einheiten-Ids</param>
+    /// <returns></returns>
     public SpawnTrigger AddSpawnTrigger(float interval, Area spawnArea, params int[] unitIds)
     {
       SpawnTrigger trigger = new SpawnTrigger(Computer, interval, spawnArea, this, unitIds);
@@ -28,10 +44,15 @@ namespace Source.Models
       return trigger;
     }
 
-    internal void Destroy()
+    /// <summary>
+    /// Deregistriert das Sterbe-Event, stoppt alle Spawn-Trigger und tötet (falls noch nötig) die WC3-Einheit.
+    /// </summary>
+    public void Destroy()
     {
+      Program.ShowDebugMessage("SpawnedBuilding.Destroy", $"DeRegisterOnDies");
       DeRegisterOnDies();
 
+      Program.ShowDebugMessage("SpawnedBuilding.Destroy", $"Stop SpawnTriggers");
       foreach (SpawnTrigger trigger in SpawnTriggers)
       {
         trigger.Stop();
@@ -43,9 +64,14 @@ namespace Source.Models
         // Da diese Funktion auch beim Tod des Gebäudes ausgelöst werden kann,
         // töte Gebäude bei Bedarf, d.h. wenn Team verliert und Spieler entfernt werden.
         Wc3Unit.Kill();
+        Program.ShowDebugMessage("SpawnedBuilding.Destroy", $"Building killed.");
       }
     }
 
+    /// <summary>
+    /// Registriert das Sterbe-Event.
+    /// </summary>
+    /// <param name="eventHandler"></param>
     public void RegisterOnDies(Action eventHandler)
     {
       Wc3Trigger = trigger.Create();
@@ -53,7 +79,10 @@ namespace Source.Models
       Wc3Trigger.AddAction(eventHandler);
     }
 
-    public void DeRegisterOnDies()
+    /// <summary>
+    /// Deregistriert das Sterbe-Event.
+    /// </summary>
+    private void DeRegisterOnDies()
     {
       if (Wc3Trigger == null)
         return;

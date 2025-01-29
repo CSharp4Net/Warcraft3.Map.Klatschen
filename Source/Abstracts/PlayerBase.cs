@@ -1,6 +1,7 @@
 ﻿using Source.Models;
 using System;
 using System.Collections.Generic;
+using System.Runtime.ExceptionServices;
 using WCSharp.Api;
 
 namespace Source.Abstracts
@@ -18,7 +19,7 @@ namespace Source.Abstracts
     public player Wc3Player { get; init; }
 
     /// <summary>
-    /// Auflistung alle Einheiten dieses Spielers
+    /// Auflistung aller Einheiten dieses Spielers
     /// </summary>
     private List<unit> Units { get; init; } = new List<unit>();
 
@@ -37,39 +38,50 @@ namespace Source.Abstracts
       return unit;
     }
 
+    /// <summary>
+    /// Tötet alle Einheiten des Spielers und setzt diesen auf "Besiegt"
+    /// </summary>
     public virtual void Defeat()
     {
-      foreach (unit unit in Units)
+      Program.ShowDebugMessage("PlayerBase.Defeat", $"Kill units in list...");
+      for (int i = Units.Count - 1; i >= 0; i--)
       {
-        unit.Kill();
+        Units[i].Kill();
       }
 
+      Program.ShowDebugMessage("PlayerBase.Defeat", $"Defeat WC3 player");
       Blizzard.MeleeDoDefeat(Wc3Player);
     }
 
+    /// <summary>
+    /// Setzt den Spieler auf "Gewonnen"
+    /// </summary>
     public virtual void Win()
     {
-      foreach (unit unit in Units)
-      {
-        unit.ForceStopOrder();
-        Common.RemoveUnit(unit);        
-        unit.Dispose();
-      }
-
+      Program.ShowDebugMessage("PlayerBase.Defeat", $"Win WC3 player");
       Blizzard.MeleeVictoryDialogBJ(Wc3Player, true);
     }
 
+    /// <summary>
+    /// Gibt True zurück, wenn die übergebene Einheit in der Auflistung aller Einheiten enthalten ist
+    /// </summary>
+    /// <param name="wc3Unit"></param>
+    /// <returns></returns>
     public bool IsOwnerOfUnit(unit wc3Unit)
     {
       foreach (unit unit in Units)
       {
-        if (unit == wc3Unit)        
-          return true;        
+        if (unit == wc3Unit)
+          return true;
       }
 
       return false;
     }
 
+    /// <summary>
+    /// Entfernt eine Einhaut aus der Auflistung aller Einheiten.
+    /// </summary>
+    /// <param name="unit"></param>
     public void RemoveUnit(unit unit)
     {
       Units.Remove(unit);

@@ -43,9 +43,11 @@ namespace Source.Models
     /// </summary>
     public void Defeat()
     {
+      Program.ShowDebugMessage("Team.Defeat", $"Defeat computer");
       // Töte alle Computer-Einheiten
       Computer.Defeat();
 
+      Program.ShowDebugMessage("Team.Defeat", $"Defeat players");
       // Alle echten Spieler durchlaufen
       foreach (UserPlayer player in Users)
       {

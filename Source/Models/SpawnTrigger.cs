@@ -16,24 +16,30 @@ namespace Source.Models
       UnitIds = unitIds.ToList();
     }
 
-    public ComputerPlayer Player { get; init; }
+    private ComputerPlayer Player { get; init; }
 
-    public SpawnedBuilding Building { get; init; }
+    private SpawnedBuilding Building { get; init; }
 
-    public float Interval { get; init; }
+    private float Interval { get; init; }
 
-    public Area SpawnArea { get; init; }
+    private Area SpawnArea { get; init; }
 
-    public List<int> UnitIds { get; init; }
+    private List<int> UnitIds { get; init; }
 
-    public timer Timer { get; private set; }
+    private timer Timer { get; set; }
 
+    /// <summary>
+    /// Startet den Trigger im angegebenen Interval
+    /// </summary>
     public void Run()
     {
       Timer = timer.Create();
       Timer.Start(Interval, true, Elapsed);
     }
 
+    /// <summary>
+    /// Wird vom Trigger im angegeben Interval abgearbeitet.
+    /// </summary>
     public void Elapsed()
     {
       try
@@ -49,6 +55,9 @@ namespace Source.Models
       }
     }
 
+    /// <summary>
+    /// Stoppt den Trigger und zerstört ihn für den GC.
+    /// </summary>
     public void Stop()
     {
       Timer.Pause();
