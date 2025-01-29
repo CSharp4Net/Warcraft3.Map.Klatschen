@@ -43,13 +43,13 @@ namespace Source.Abstracts
     /// </summary>
     public virtual void Defeat()
     {
-      Program.ShowDebugMessage("PlayerBase.Defeat", $"Kill units in list...");
+      //Program.ShowDebugMessage("PlayerBase.Defeat", $"Kill units in list...");
       for (int i = Units.Count - 1; i >= 0; i--)
       {
         Units[i].Kill();
       }
 
-      Program.ShowDebugMessage("PlayerBase.Defeat", $"Defeat WC3 player");
+      //Program.ShowDebugMessage("PlayerBase.Defeat", $"Defeat WC3 player");
       Blizzard.MeleeDoDefeat(Wc3Player);
     }
 
@@ -58,7 +58,7 @@ namespace Source.Abstracts
     /// </summary>
     public virtual void Win()
     {
-      Program.ShowDebugMessage("PlayerBase.Defeat", $"Win WC3 player");
+      //Program.ShowDebugMessage("PlayerBase.Defeat", $"Win WC3 player");
       Blizzard.MeleeVictoryDialogBJ(Wc3Player, true);
     }
 

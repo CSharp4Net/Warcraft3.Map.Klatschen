@@ -14,6 +14,9 @@ namespace Source.Models
       SpawnTriggers = new List<SpawnTrigger>();
     }
 
+    /// <summary>
+    /// WC3-Einheit zu diesem Gebäude.
+    /// </summary>
     public unit Wc3Unit { get; init; }
     /// <summary>
     /// WC3-Trigger für das Sterbe-Event.
@@ -30,7 +33,7 @@ namespace Source.Models
     private List<SpawnTrigger> SpawnTriggers { get; init; }
 
     /// <summary>
-    /// Fügt dem Gebäude einen Spawn-Trigger hinzu, welche solange aktiv ist, wie das Gebäude lebt.
+    /// Fügt dem Gebäude einen Spawn-Trigger hinzu, welcher solange existiert ist, bis das Gebäude via <see cref="Destroy"/> zerstört wird.
     /// </summary>
     /// <param name="interval">Sekunden</param>
     /// <param name="spawnArea">Spawn-Gebiet</param>
@@ -40,7 +43,6 @@ namespace Source.Models
     {
       SpawnTrigger trigger = new SpawnTrigger(Computer, interval, spawnArea, this, unitIds);
       SpawnTriggers.Add(trigger);
-      trigger.Run();
       return trigger;
     }
 
@@ -49,10 +51,8 @@ namespace Source.Models
     /// </summary>
     public void Destroy()
     {
-      Program.ShowDebugMessage("SpawnedBuilding.Destroy", $"DeRegisterOnDies");
       DeRegisterOnDies();
 
-      Program.ShowDebugMessage("SpawnedBuilding.Destroy", $"Stop SpawnTriggers");
       foreach (SpawnTrigger trigger in SpawnTriggers)
       {
         trigger.Stop();
@@ -60,11 +60,9 @@ namespace Source.Models
 
       if (Wc3Unit.Alive)
       {
-        Program.ShowDebugMessage("SpawnedBuilding.Destroy", $"Kill building {Wc3Unit.Name}");
         // Da diese Funktion auch beim Tod des Gebäudes ausgelöst werden kann,
         // töte Gebäude bei Bedarf, d.h. wenn Team verliert und Spieler entfernt werden.
         Wc3Unit.Kill();
-        Program.ShowDebugMessage("SpawnedBuilding.Destroy", $"Building killed.");
       }
     }
 

@@ -44,7 +44,7 @@ namespace Source.Models
     /// <returns></returns>
     public bool IsOwnerOfBuilding(unit wc3Unit, out SpawnedBuilding foundBuilding)
     {
-      Program.ShowDebugMessage("ComputerPlayer.IsOwnerOfBuilding", $"Find building in list...");
+      //Program.ShowDebugMessage("ComputerPlayer.IsOwnerOfBuilding", $"Find building in list...");
       foreach (SpawnedBuilding building in Buildings)
       {
         if (building.Wc3Unit == wc3Unit)
@@ -64,7 +64,7 @@ namespace Source.Models
     /// <param name="building"></param>
     public void RemoveBuilding(SpawnedBuilding building)
     {
-      Program.ShowDebugMessage("ComputerPlayer.RemoveBuilding", $"Remove building {building.Wc3Unit.Name}");
+      //Program.ShowDebugMessage("ComputerPlayer.RemoveBuilding", $"Remove building {building.Wc3Unit.Name}");
       Buildings.Remove(building);
     }
 
@@ -77,9 +77,9 @@ namespace Source.Models
       for (int i = Buildings.Count - 1; i >= 0; i--) 
       {
         SpawnedBuilding building = Buildings[i];
-        Program.ShowDebugMessage("ComputerPlayer.Defeat", $"Destroy building {building.Wc3Unit.Name}");
+        //Program.ShowDebugMessage("ComputerPlayer.Defeat", $"Destroy building {building.Wc3Unit.Name}");
         building.Destroy();
-        Program.ShowDebugMessage("ComputerPlayer.Defeat", $"Building destroyed.");
+        //Program.ShowDebugMessage("ComputerPlayer.Defeat", $"Building destroyed.");
         RemoveBuilding(building);
 
       }

@@ -55,7 +55,7 @@ namespace Source.UnitEvents
       }
       catch (Exception ex)
       {
-        Program.ShowDebugMessage("GenericUnit.OnUnitDies", ex.ToString());
+        Program.ShowDebugMessage("GenericUnit.OnUnitDies", ex);
       }
     }
   }

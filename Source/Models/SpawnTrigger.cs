@@ -7,7 +7,7 @@ namespace Source.Models
 {
   public sealed class SpawnTrigger
   {
-    public SpawnTrigger(ComputerPlayer player, float interval, Area spawnArea, SpawnedBuilding building = null, params int[] unitIds)
+    public SpawnTrigger(ComputerPlayer player, float interval, Area spawnArea, SpawnedBuilding building, params int[] unitIds)
     {
       Player = player;
       Interval = interval;
@@ -31,7 +31,18 @@ namespace Source.Models
     /// <summary>
     /// Startet den Trigger im angegebenen Interval
     /// </summary>
-    public void Run()
+    public void Run(float delay = 0f)
+    {
+      // Delay a little since some stuff can break otherwise
+      timer timer = Common.CreateTimer();
+      Common.TimerStart(timer, delay, false, () =>
+      {
+        Common.DestroyTimer(timer);
+        Start();
+      });
+    }
+
+    private void Start()
     {
       Timer = timer.Create();
       Timer.Start(Interval, true, Elapsed);
@@ -40,7 +51,7 @@ namespace Source.Models
     /// <summary>
     /// Wird vom Trigger im angegeben Interval abgearbeitet.
     /// </summary>
-    public void Elapsed()
+    private void Elapsed()
     {
       try
       {
