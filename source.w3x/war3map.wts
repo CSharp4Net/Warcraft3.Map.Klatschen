@@ -18,55 +18,10 @@ STRING 4
 NozzNazz
 }
 
-STRING 5
-{
-Player 1
-}
-
 STRING 7
 // Units: n000 (Dummy), Name (Name)
 {
 Dummy
-}
-
-STRING 9
-{
-Player 2
-}
-
-STRING 10
-{
-Player 3
-}
-
-STRING 12
-{
-Player 5
-}
-
-STRING 13
-{
-Player 6
-}
-
-STRING 14
-{
-Player 7
-}
-
-STRING 16
-{
-Player 9
-}
-
-STRING 17
-{
-Player 10
-}
-
-STRING 18
-{
-Player 11
 }
 
 STRING 29
@@ -139,21 +94,6 @@ Wilde Horde
 STRING 57
 {
 Liga der Elfen
-}
-
-STRING 58
-{
-Player 13
-}
-
-STRING 59
-{
-Player 14
-}
-
-STRING 60
-{
-Player 15
 }
 
 STRING 61
@@ -251,5 +191,65 @@ STRING 83
 // Units: h008 (Priester), EditorSuffix (Name - Editor Suffix)
 {
 (Human)
+}
+
+STRING 85
+{
+Human 1
+}
+
+STRING 86
+{
+Human 2
+}
+
+STRING 87
+{
+Human 3
+}
+
+STRING 88
+{
+Orc 1
+}
+
+STRING 89
+{
+Orc 2
+}
+
+STRING 90
+{
+Orc 3
+}
+
+STRING 91
+{
+Elf 1
+}
+
+STRING 92
+{
+Elf 2
+}
+
+STRING 93
+{
+Elf 3
+}
+
+STRING 94
+{
+Undead 1
+}
+
+STRING 95
+{
+Undead 2
+}
+
+STRING 96
+{
+Undead 3
 }
 

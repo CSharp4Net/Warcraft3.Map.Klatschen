@@ -66,10 +66,10 @@ namespace Source
 #endif
 
         // Teams initialisieren
-        Humans = new Team(Common.Player(3));
-        Orcs = new Team(Common.Player(7));
-        Elves = new Team(Common.Player(11));
-        Undeads = new Team(Common.Player(15));
+        Humans = new Team(Common.Player(0));
+        Orcs = new Team(Common.Player(4));
+        Elves = new Team(Common.Player(8));
+        Undeads = new Team(Common.Player(12));
 
         // Regions-Ereignisse registrieren für automatische Einheitenbewegungen
         Areas.Center.RegisterOnEnter(CenterRegion.OnEnter);
