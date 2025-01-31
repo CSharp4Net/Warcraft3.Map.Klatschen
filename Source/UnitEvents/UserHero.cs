@@ -34,27 +34,27 @@ namespace Source.UnitEvents
         soldUnit.Dispose();
         soldUnit = null;
 
-        if (Program.Humans.ContainsUser(buyingPlayer, out UserPlayer user))
+        if (Program.Humans.ContainsPlayer(buyingPlayer, out UserPlayer user))
         {
 #if DEBUG
-          soldUnit = user.CreateUnit(unitId, Areas.Center);
-          user.ApplyCamera(Areas.Center);
+          soldUnit = user.CreateUnit(unitId, Areas.HumanBaseHeroSpawn); // Center);
+          user.ApplyCamera(Areas.HumanBaseHeroSpawn); // Center);
 #else
           soldUnit = user.CreateUnit(unitId, Areas.HumanBaseHeroSpawn);
           user.ApplyCamera(Areas.HumanBaseHeroSpawn);
 #endif
         }
-        else if (Program.Orcs.ContainsUser(buyingPlayer, out user))
+        else if (Program.Orcs.ContainsPlayer(buyingPlayer, out user))
         {
           soldUnit = user.CreateUnit(unitId, Areas.OrcBaseHeroSpawn);
           user.ApplyCamera(Areas.OrcBaseHeroSpawn);
         }
-        else if (Program.Elves.ContainsUser(buyingPlayer, out user))
+        else if (Program.Elves.ContainsPlayer(buyingPlayer, out user))
         {
           soldUnit = user.CreateUnit(unitId, Areas.ElfBaseHeroSpawn);
           user.ApplyCamera(Areas.ElfBaseHeroSpawn);
         }
-        else if (Program.Undeads.ContainsUser(buyingPlayer, out user))
+        else if (Program.Undeads.ContainsPlayer(buyingPlayer, out user))
         {
           soldUnit = user.CreateUnit(unitId, Areas.UndeadBaseHeroSpawn);
           user.ApplyCamera(Areas.UndeadBaseHeroSpawn);
@@ -86,7 +86,7 @@ namespace Source.UnitEvents
         timerdialog = null;
 
         player owner = unit.Owner;
-        if (Program.Humans.ContainsUser(owner, out UserPlayer user))
+        if (Program.Humans.ContainsPlayer(owner, out UserPlayer user))
         {
 #if DEBUG
           //Common.ReviveHero(unit, Areas.Center.Wc3CenterLocation.X, Areas.Center.Wc3CenterLocation.Y, true);
@@ -99,17 +99,17 @@ namespace Source.UnitEvents
           user.ApplyCamera(Areas.HumanBaseHeroRespawn);
 #endif
         }
-        else if (Program.Orcs.ContainsUser(owner, out user))
+        else if (Program.Orcs.ContainsPlayer(owner, out user))
         {
           Common.ReviveHero(unit, Areas.OrcBaseHeroRespawn.Wc3CenterLocation.X, Areas.OrcBaseHeroRespawn.Wc3CenterLocation.Y, true);
           user.ApplyCamera(Areas.OrcBaseHeroRespawn);
         }
-        else if (Program.Elves.ContainsUser(owner, out user))
+        else if (Program.Elves.ContainsPlayer(owner, out user))
         {
           Common.ReviveHero(unit, Areas.ElfBaseHeroRespawn.Wc3CenterLocation.X, Areas.ElfBaseHeroRespawn.Wc3CenterLocation.Y, true);
           user.ApplyCamera(Areas.ElfBaseHeroRespawn);
         }
-        else if (Program.Undeads.ContainsUser(owner, out user))
+        else if (Program.Undeads.ContainsPlayer(owner, out user))
         {
           Common.ReviveHero(unit, Areas.UndeadBaseHeroRespawn.Wc3CenterLocation.X, Areas.UndeadBaseHeroRespawn.Wc3CenterLocation.Y, true);
           user.ApplyCamera(Areas.UndeadBaseHeroRespawn);

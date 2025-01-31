@@ -82,6 +82,7 @@ namespace Source
         // Allgemeine Events registrieren
         PlayerUnitEvents.Register(UnitTypeEvent.BuysUnit, UserHero.OnBuys);
         PlayerUnitEvents.Register(UnitTypeEvent.FinishesResearch, OnResearchFinished);
+        PlayerUnitEvents.Register(UnitTypeEvent.SellsItem, OnItemSellsFinished);
         PlayerUnitEvents.Register(UnitTypeEvent.Dies, GenericUnit.OnUnitDies);
         PeriodicEvents.AddPeriodicEvent(GoldIncome.OnElapsed, 5f);
 
@@ -104,19 +105,19 @@ namespace Source
           {
             // Leider funktioniert die Verknüpfung via || Operator nicht,
             // daher redundant hier den selben Command für das User-Objekt aufrufen
-            if (Humans.ContainsUser(player, out UserPlayer user))
+            if (Humans.ContainsPlayer(player, out UserPlayer user))
             {
               CreateHeroSelectorForPlayerAndAdjustCamera(user);
             }
-            else if (Orcs.ContainsUser(player, out user))
+            else if (Orcs.ContainsPlayer(player, out user))
             {
               CreateHeroSelectorForPlayerAndAdjustCamera(user);
             }
-            else if (Elves.ContainsUser(player, out user))
+            else if (Elves.ContainsPlayer(player, out user))
             {
               CreateHeroSelectorForPlayerAndAdjustCamera(user);
             }
-            else if (Undeads.ContainsUser(player, out user))
+            else if (Undeads.ContainsPlayer(player, out user))
             {
               CreateHeroSelectorForPlayerAndAdjustCamera(user);
             }
@@ -312,9 +313,42 @@ namespace Source
 
     static void OnResearchFinished()
     {
-      Console.WriteLine("Forschung abgeschlossen!");
       unit unit = Common.GetResearchingUnit();
       int researchedTechId = Common.GetResearched();
+      int researchedTechIdCount = Common.GetPlayerTechCount(unit.Owner, researchedTechId, true);
+
+      Console.WriteLine($"Forschung {researchedTechId} (Stufe {researchedTechIdCount}) abgeschlossen von {unit.Owner.Name}!");
+
+      player owner = unit.Owner;
+
+      if (Humans.ContainsPlayer(unit.Owner, out UserPlayer foundUser))
+      {
+        Humans.IncreaseTechForAllPlayers(researchedTechId, researchedTechIdCount);
+      }
+      else if (Orcs.ContainsPlayer(unit.Owner, out foundUser))
+      {
+        Orcs.IncreaseTechForAllPlayers(researchedTechId, researchedTechIdCount);
+      }
+      else if (Elves.ContainsPlayer(unit.Owner, out foundUser))
+      {
+        Elves.IncreaseTechForAllPlayers(researchedTechId, researchedTechIdCount);
+      }
+      else if (Undeads.ContainsPlayer(unit.Owner, out foundUser))
+      {
+        Undeads.IncreaseTechForAllPlayers(researchedTechId, researchedTechIdCount);
+      }
+    }
+    static void OnItemSellsFinished()
+    {
+      unit unit = Common.GetBuyingUnit();
+      item item = Common.GetSoldItem();
+
+      Console.WriteLine($"Item {item.Name} verkauft an {unit.Owner.Name}!");
+
+      if (Common.GetItemTypeId(item) == Constants.ITEM_GLYPHE_DER_BAUKUNST)
+      {
+        Console.WriteLine("BAUKUNST");
+      }
     }
   }
 }

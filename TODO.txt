@@ -1,15 +1,14 @@
-TODO - Liste
-============
+TODO'S
+======
 
-Computer-Spieler
-- Spawn-Einheiten definieren für erstes Team
-- Gebäude-Einheiten (Türm, MainBuilding, Kaserne) definieren für erstes Team
-- Basic-Spawn-Collections mit echten Einheiten versehen
+Must have:
+- Einheint
 - Heldenauswahl-Bereich gestalten
 - Helden erstellen (min. 3)
 - Goldverteilung der Computer-Player bei erreichen von Limit an alle aktiven Menschen-Player im Team
-- Forschungsgebäude erstellen (min. 1)
-- Forschung-Event implementieren (Verbesserung der Einheiten und Zukauf von Spawns, Forschung wird für alle Team-Player gemacht)
 - Spawn-Einheiten kopieren für andere Teams
 - Gebäude-Einheiten (Türm, MainBuilding, Kaserne) kopieren für andere Teams
+- Forschungen kopieren für andere Teams
+
+Nice to have:
 - Galgen-Events im Zentrum, Unit-Spawner für zerstörenden Spieler

@@ -19918,7 +19918,7 @@ end)
 System.namespace("Source", function (namespace)
   namespace.class("Program", function (namespace)
     local Main, ShowDebugMessage, ShowDebugMessage1, Start, RegisterRegionTriggersInHumanArea, RegisterRegionTriggerInOrcArea, RegisterRegionTriggerInElfArea, RegisterRegionTriggerInUndeadArea, 
-    ConstructHumanBuildingAndTrigger, ConstructOrcBuildingAndTrigger, ConstructElfBuildingAndTrigger, ConstructUndeadBuildingAndTrigger, CreateHeroSelectorForPlayerAndAdjustCamera, OnResearchFinished, class
+    ConstructHumanBuildingAndTrigger, ConstructOrcBuildingAndTrigger, ConstructElfBuildingAndTrigger, ConstructUndeadBuildingAndTrigger, CreateHeroSelectorForPlayerAndAdjustCamera, OnResearchFinished, OnItemSellsFinished, class
     Main = function ()
       -- Delay a little since some stuff can break otherwise
       local timer = CreateTimer()
@@ -19964,6 +19964,7 @@ System.namespace("Source", function (namespace)
         -- Allgemeine Events registrieren
         WCSharpEvents.PlayerUnitEvents.Register14(802 --[[UnitTypeEvent.BuysUnit]], SourceUnitEvents.UserHero.OnBuys)
         WCSharpEvents.PlayerUnitEvents.Register14(818 --[[UnitTypeEvent.FinishesResearch]], OnResearchFinished)
+        WCSharpEvents.PlayerUnitEvents.Register14(842 --[[UnitTypeEvent.SellsItem]], OnItemSellsFinished)
         WCSharpEvents.PlayerUnitEvents.Register14(813 --[[UnitTypeEvent.Dies]], SourceUnitEvents.GenericUnit.OnUnitDies)
         WCSharpEvents.PeriodicEvents.AddPeriodicEvent(SourcePermanentEvents.GoldIncome.OnElapsed, 5)
 
@@ -19984,22 +19985,22 @@ System.namespace("Source", function (namespace)
           if GetPlayerSlotState(player) == PLAYER_SLOT_STATE_PLAYING then
             -- Leider funktioniert die Verknüpfung via || Operator nicht,
             -- daher redundant hier den selben Command für das User-Objekt aufrufen
-            local default, user = class.Humans:ContainsUser(player)
+            local default, user = class.Humans:ContainsPlayer(player)
             if default then
               CreateHeroSelectorForPlayerAndAdjustCamera(user)
             else
               local extern
-              extern, user = class.Orcs:ContainsUser(player)
+              extern, user = class.Orcs:ContainsPlayer(player)
               if extern then
                 CreateHeroSelectorForPlayerAndAdjustCamera(user)
               else
                 local extern
-                extern, user = class.Elves:ContainsUser(player)
+                extern, user = class.Elves:ContainsPlayer(player)
                 if extern then
                   CreateHeroSelectorForPlayerAndAdjustCamera(user)
                 else
                   local extern
-                  extern, user = class.Undeads:ContainsUser(player)
+                  extern, user = class.Undeads:ContainsPlayer(player)
                   if extern then
                     CreateHeroSelectorForPlayerAndAdjustCamera(user)
                   end
@@ -20178,9 +20179,46 @@ System.namespace("Source", function (namespace)
       user:ApplyCamera(Areas.HeroSelectorSpawn)
     end
     OnResearchFinished = function ()
-      System.Console.WriteLine("Forschung abgeschlossen!")
       local unit = GetResearchingUnit()
       local researchedTechId = GetResearched()
+      local researchedTechIdCount = GetPlayerTechCount(GetOwningPlayer(unit), researchedTechId, true)
+
+      System.Console.WriteLine("Forschung " .. researchedTechId .. " (Stufe " .. researchedTechIdCount .. ") abgeschlossen von " .. System.toString(GetPlayerName(GetOwningPlayer(unit))) .. "!")
+
+      local owner = GetOwningPlayer(unit)
+
+      local default, foundUser = class.Humans:ContainsPlayer(GetOwningPlayer(unit))
+      if default then
+        class.Humans:IncreaseTechForAllPlayers(researchedTechId, researchedTechIdCount)
+      else
+        local extern
+        extern, foundUser = class.Orcs:ContainsPlayer(GetOwningPlayer(unit))
+        if extern then
+          class.Orcs:IncreaseTechForAllPlayers(researchedTechId, researchedTechIdCount)
+        else
+          local extern
+          extern, foundUser = class.Elves:ContainsPlayer(GetOwningPlayer(unit))
+          if extern then
+            class.Elves:IncreaseTechForAllPlayers(researchedTechId, researchedTechIdCount)
+          else
+            local extern
+            extern, foundUser = class.Undeads:ContainsPlayer(GetOwningPlayer(unit))
+            if extern then
+              class.Undeads:IncreaseTechForAllPlayers(researchedTechId, researchedTechIdCount)
+            end
+          end
+        end
+      end
+    end
+    OnItemSellsFinished = function ()
+      local unit = GetBuyingUnit()
+      local item = GetSoldItem()
+
+      System.Console.WriteLine("Item " .. System.toString(GetItemName(item)) .. " verkauft an " .. System.toString(GetPlayerName(GetOwningPlayer(unit))) .. "!")
+
+      if GetItemTypeId(item) == 1227894832 --[[Constants.ITEM_GLYPHE_DER_BAUKUNST]] then
+        System.Console.WriteLine("BAUKUNST")
+      end
     end
     class = {
       Debug = false,
@@ -20205,6 +20243,7 @@ System.namespace("Source", function (namespace)
             { "ConstructUndeadBuildingAndTrigger", 0x9, ConstructUndeadBuildingAndTrigger },
             { "CreateHeroSelectorForPlayerAndAdjustCamera", 0x109, CreateHeroSelectorForPlayerAndAdjustCamera, out.Source.Models.UserPlayer },
             { "Main", 0xE, Main },
+            { "OnItemSellsFinished", 0x9, OnItemSellsFinished },
             { "OnResearchFinished", 0x9, OnResearchFinished },
             { "RegisterRegionTriggerInElfArea", 0x9, RegisterRegionTriggerInElfArea },
             { "RegisterRegionTriggerInOrcArea", 0x9, RegisterRegionTriggerInOrcArea },
@@ -20801,7 +20840,7 @@ System.import(function (out)
 end)
 System.namespace("Source.Models", function (namespace)
   namespace.class("Team", function (namespace)
-    local Defeat, Win, ContainsUser, __ctor__
+    local Defeat, Win, ContainsPlayer, IncreaseTechForAllPlayers, __ctor__
     __ctor__ = function (this, wc3ComputerPlayer)
       this.Computer = SourceModels.ComputerPlayer(wc3ComputerPlayer, this)
       this.Users = ListUserPlayer()
@@ -20849,31 +20888,47 @@ System.namespace("Source.Models", function (namespace)
     -- Gibt True zurück, wenn der <paramref name="wc3Player"/> zu einem menschlichen Spieler in diesem Team gehört.
     -- </summary>
     -- <param name="wc3Player">Wacraft-Spieler</param>
-    -- <param name="foundUser">Gefundener Benutzer</param>
+    -- <param name="userOfPlayer">Gefundener Benutzer</param>
     -- <returns></returns>
-    ContainsUser = function (this, wc3Player, foundUser)
+    ContainsPlayer = function (this, wc3Player, userOfPlayer)
       for _, user in System.each(this.Users) do
         if GetPlayerId(user.Wc3Player) == GetPlayerId(wc3Player) then
-          foundUser = user
-          return true, foundUser
+          userOfPlayer = user
+          return true, userOfPlayer
         end
       end
 
-      foundUser = nil
-      return false, foundUser
+      userOfPlayer = nil
+      return false, userOfPlayer
+    end
+    -- <summary>
+    -- Erhöht die Stufe einer Forschung für alle Spieler im Team.
+    -- </summary>
+    -- <param name="techId">Forschung-Id</param>
+    -- <param name="techLevel">Forschung-Stufe</param>
+    IncreaseTechForAllPlayers = function (this, techId, techLevel)
+      SetPlayerTechResearched(this.Computer.Wc3Player, techId, techLevel)
+
+      for _, user in System.each(this.Users) do
+        if GetPlayerSlotState(user.Wc3Player) == PLAYER_SLOT_STATE_PLAYING then
+          SetPlayerTechResearched(user.Wc3Player, techId, techLevel)
+        end
+      end
     end
     return {
       Defeated = false,
       Defeat = Defeat,
       Win = Win,
-      ContainsUser = ContainsUser,
+      ContainsPlayer = ContainsPlayer,
+      IncreaseTechForAllPlayers = IncreaseTechForAllPlayers,
       __ctor__ = __ctor__,
       __metadata__ = function (out)
         return {
           methods = {
             { ".ctor", 0x106, nil, out.WCSharp.Api.player },
-            { "ContainsUser", 0x286, ContainsUser, out.WCSharp.Api.player, out.Source.Models.UserPlayer, System.Boolean },
+            { "ContainsPlayer", 0x286, ContainsPlayer, out.WCSharp.Api.player, out.Source.Models.UserPlayer, System.Boolean },
             { "Defeat", 0x6, Defeat },
+            { "IncreaseTechForAllPlayers", 0x206, IncreaseTechForAllPlayers, System.Int32, System.Int32 },
             { "Win", 0x6, Win }
           },
           properties = {
@@ -22219,25 +22274,27 @@ System.namespace("Source.UnitEvents", function (namespace)
         RemoveUnit(soldUnit)
         soldUnit = nil
 
-        local default, user = Source.Program.Humans:ContainsUser(buyingPlayer)
+        local default, user = Source.Program.Humans:ContainsPlayer(buyingPlayer)
         if default then
-          soldUnit = user:CreateUnit(unitId, Areas.Center, 0)
-          user:ApplyCamera(Areas.Center)
+          soldUnit = user:CreateUnit(unitId, Areas.HumanBaseHeroSpawn, 0)
+          -- Center);
+          user:ApplyCamera(Areas.HumanBaseHeroSpawn)
+          -- Center);
         else
           local extern
-          extern, user = Source.Program.Orcs:ContainsUser(buyingPlayer)
+          extern, user = Source.Program.Orcs:ContainsPlayer(buyingPlayer)
           if extern then
             soldUnit = user:CreateUnit(unitId, Areas.OrcBaseHeroSpawn, 0)
             user:ApplyCamera(Areas.OrcBaseHeroSpawn)
           else
             local extern
-            extern, user = Source.Program.Elves:ContainsUser(buyingPlayer)
+            extern, user = Source.Program.Elves:ContainsPlayer(buyingPlayer)
             if extern then
               soldUnit = user:CreateUnit(unitId, Areas.ElfBaseHeroSpawn, 0)
               user:ApplyCamera(Areas.ElfBaseHeroSpawn)
             else
               local extern
-              extern, user = Source.Program.Undeads:ContainsUser(buyingPlayer)
+              extern, user = Source.Program.Undeads:ContainsPlayer(buyingPlayer)
               if extern then
                 soldUnit = user:CreateUnit(unitId, Areas.UndeadBaseHeroSpawn, 0)
                 user:ApplyCamera(Areas.UndeadBaseHeroSpawn)
@@ -22271,7 +22328,7 @@ System.namespace("Source.UnitEvents", function (namespace)
         timerdialog = nil
 
         local owner = GetOwningPlayer(unit)
-        local default, user = Source.Program.Humans:ContainsUser(owner)
+        local default, user = Source.Program.Humans:ContainsPlayer(owner)
         if default then
           --Common.ReviveHero(unit, Areas.Center.Wc3CenterLocation.X, Areas.Center.Wc3CenterLocation.Y, true);
           --user.ApplyCamera(Areas.Center);
@@ -22280,19 +22337,19 @@ System.namespace("Source.UnitEvents", function (namespace)
           user:ApplyCamera(Areas.HumanBaseHeroRespawn)
         else
           local extern
-          extern, user = Source.Program.Orcs:ContainsUser(owner)
+          extern, user = Source.Program.Orcs:ContainsPlayer(owner)
           if extern then
             ReviveHero(unit, GetLocationX(Areas.OrcBaseHeroRespawn.Wc3CenterLocation), GetLocationY(Areas.OrcBaseHeroRespawn.Wc3CenterLocation), true)
             user:ApplyCamera(Areas.OrcBaseHeroRespawn)
           else
             local extern
-            extern, user = Source.Program.Elves:ContainsUser(owner)
+            extern, user = Source.Program.Elves:ContainsPlayer(owner)
             if extern then
               ReviveHero(unit, GetLocationX(Areas.ElfBaseHeroRespawn.Wc3CenterLocation), GetLocationY(Areas.ElfBaseHeroRespawn.Wc3CenterLocation), true)
               user:ApplyCamera(Areas.ElfBaseHeroRespawn)
             else
               local extern
-              extern, user = Source.Program.Undeads:ContainsUser(owner)
+              extern, user = Source.Program.Undeads:ContainsPlayer(owner)
               if extern then
                 ReviveHero(unit, GetLocationX(Areas.UndeadBaseHeroRespawn.Wc3CenterLocation), GetLocationY(Areas.UndeadBaseHeroRespawn.Wc3CenterLocation), true)
                 user:ApplyCamera(Areas.UndeadBaseHeroRespawn)
@@ -33856,12 +33913,12 @@ gg_rct_UndeadBaseToOrcsSpawn = nil
 gg_trg_Melee_Initialization = nil
 gg_unit_h004_0069 = nil
 gg_unit_n005_0135 = nil
-gg_unit_h005_0015 = nil
+gg_unit_h004_0050 = nil
 gg_unit_n005_0044 = nil
 gg_unit_h004_0013 = nil
-gg_unit_h004_0037 = nil
+gg_unit_h005_0039 = nil
 gg_unit_n005_0136 = nil
-gg_unit_h005_0017 = nil
+gg_unit_h005_0040 = nil
 gg_unit_h006_0020 = nil
 gg_unit_h003_0067 = nil
 gg_unit_h006_0019 = nil
@@ -33874,6 +33931,27 @@ gg_unit_h005_0023 = nil
 gg_unit_h004_0024 = nil
 gg_unit_h005_0025 = nil
 gg_unit_h004_0026 = nil
+gg_unit_h009_0008 = nil
+gg_unit_h00A_0028 = nil
+gg_unit_h00A_0029 = nil
+gg_unit_h00A_0030 = nil
+gg_unit_h005_0031 = nil
+gg_unit_h005_0032 = nil
+gg_unit_h005_0033 = nil
+gg_unit_h004_0034 = nil
+gg_unit_h004_0035 = nil
+gg_unit_h004_0036 = nil
+gg_unit_h005_0038 = nil
+gg_unit_h005_0017 = nil
+gg_unit_h005_0037 = nil
+gg_unit_h005_0041 = nil
+gg_unit_h005_0042 = nil
+gg_unit_h005_0043 = nil
+gg_unit_h005_0045 = nil
+gg_unit_h004_0046 = nil
+gg_unit_h004_0047 = nil
+gg_unit_h004_0048 = nil
+gg_unit_h004_0049 = nil
 gg_dest_HEch_0019 = nil
 gg_dest_HEch_0017 = nil
 gg_dest_HEch_0016 = nil
@@ -33894,25 +33972,64 @@ function CreateBuildingsForPlayer0()
     local p = Player(0)
     local unitID = nil
     local t = nil
-    gg_unit_h005_0017 = CreateUnit(p, 1747988533, -9728.0, 13824.0, 270.000)
-    gg_unit_h004_0037 = CreateUnit(p, 1747988532, -10752.0, 12800.0, 270.000)
+    gg_unit_h009_0008 = CreateUnit(p, 1747988537, -11584.0, 13824.0, 270.000)
+    gg_unit_h005_0031 = CreateUnit(p, 1747988533, -8448.0, 13760.0, 270.000)
+    gg_unit_h005_0032 = CreateUnit(p, 1747988533, -8448.0, 12864.0, 270.000)
+    gg_unit_h005_0033 = CreateUnit(p, 1747988533, -7168.0, 13312.0, 270.000)
+    gg_unit_h004_0034 = CreateUnit(p, 1747988532, -3840.0, 13760.0, 270.000)
+    gg_unit_h004_0035 = CreateUnit(p, 1747988532, -3840.0, 12864.0, 270.000)
+    gg_unit_h004_0036 = CreateUnit(p, 1747988532, -2560.0, 13312.0, 270.000)
+    gg_unit_h005_0038 = CreateUnit(p, 1747988533, -9792.0, 11520.0, 270.000)
+    gg_unit_h005_0039 = CreateUnit(p, 1747988533, -10688.0, 11520.0, 270.000)
+    gg_unit_h005_0040 = CreateUnit(p, 1747988533, -10240.0, 10240.0, 270.000)
 end
 
-function CreateUnitsForPlayer0()
-    local p = Player(0)
+function CreateBuildingsForPlayer1()
+    local p = Player(1)
     local unitID = nil
     local t = nil
-    gg_unit_h006_0016 = CreateUnit(p, 1747988534, -11703.3, -8642.4, 78.796)
-    gg_unit_h006_0019 = CreateUnit(p, 1747988534, 11698.8, -8637.9, 215.602)
-    gg_unit_h006_0020 = CreateUnit(p, 1747988534, 11708.1, 14781.1, 303.056)
+    gg_unit_h00A_0028 = CreateUnit(p, 1747988545, -10752.0, 14656.0, 270.000)
+end
+
+function CreateUnitsForPlayer1()
+    local p = Player(1)
+    local unitID = nil
+    local t = nil
+    gg_unit_h006_0016 = CreateUnit(p, 1747988534, -11703.3, -8642.4, 78.800)
+    gg_unit_h006_0019 = CreateUnit(p, 1747988534, 11698.8, -8637.9, 215.600)
+    gg_unit_h006_0020 = CreateUnit(p, 1747988534, 11708.1, 14781.1, 303.060)
+end
+
+function CreateBuildingsForPlayer2()
+    local p = Player(2)
+    local unitID = nil
+    local t = nil
+    gg_unit_h00A_0029 = CreateUnit(p, 1747988545, -10240.0, 14656.0, 270.000)
+end
+
+function CreateBuildingsForPlayer3()
+    local p = Player(3)
+    local unitID = nil
+    local t = nil
+    gg_unit_h00A_0030 = CreateUnit(p, 1747988545, -9728.0, 14656.0, 270.000)
 end
 
 function CreateBuildingsForPlayer4()
     local p = Player(4)
     local unitID = nil
     local t = nil
-    gg_unit_h004_0013 = CreateUnit(p, 1747988532, 10752.0, 12800.0, 270.000)
-    gg_unit_h005_0015 = CreateUnit(p, 1747988533, 9728.0, 13824.0, 270.000)
+    gg_unit_h004_0013 = CreateUnit(p, 1747988532, 3840.0, 12928.0, 270.000)
+    gg_unit_h005_0017 = CreateUnit(p, 1747988533, 8448.0, 13696.0, 270.000)
+    gg_unit_h005_0037 = CreateUnit(p, 1747988533, 8448.0, 12928.0, 270.000)
+    gg_unit_h005_0041 = CreateUnit(p, 1747988533, 9856.0, 11520.0, 270.000)
+    gg_unit_h005_0042 = CreateUnit(p, 1747988533, 10624.0, 11520.0, 270.000)
+    gg_unit_h005_0043 = CreateUnit(p, 1747988533, 7168.0, 13312.0, 270.000)
+    gg_unit_h005_0045 = CreateUnit(p, 1747988533, 10240.0, 10240.0, 270.000)
+    gg_unit_h004_0046 = CreateUnit(p, 1747988532, 3840.0, 13696.0, 270.000)
+    gg_unit_h004_0047 = CreateUnit(p, 1747988532, 2560.0, 13312.0, 270.000)
+    gg_unit_h004_0048 = CreateUnit(p, 1747988532, 9792.0, 6912.0, 270.000)
+    gg_unit_h004_0049 = CreateUnit(p, 1747988532, 10688.0, 6912.0, 270.000)
+    gg_unit_h004_0050 = CreateUnit(p, 1747988532, 10240.0, 5632.0, 270.000)
 end
 
 function CreateBuildingsForPlayer8()
@@ -33948,13 +34065,16 @@ end
 
 function CreatePlayerBuildings()
     CreateBuildingsForPlayer0()
+    CreateBuildingsForPlayer1()
+    CreateBuildingsForPlayer2()
+    CreateBuildingsForPlayer3()
     CreateBuildingsForPlayer4()
     CreateBuildingsForPlayer8()
     CreateBuildingsForPlayer12()
 end
 
 function CreatePlayerUnits()
-    CreateUnitsForPlayer0()
+    CreateUnitsForPlayer1()
 end
 
 function CreateAllUnits()

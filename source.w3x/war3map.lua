@@ -59,20 +59,58 @@ local unitID
 local t
 local life
 
-u = BlzCreateUnitWithSkin(p, FourCC("h005"), -9728.0, 13824.0, 270.000, FourCC("h005"))
-u = BlzCreateUnitWithSkin(p, FourCC("h004"), -10752.0, 12800.0, 270.000, FourCC("h004"))
+u = BlzCreateUnitWithSkin(p, FourCC("h009"), -11584.0, 13824.0, 270.000, FourCC("h009"))
+u = BlzCreateUnitWithSkin(p, FourCC("h005"), -8448.0, 13760.0, 270.000, FourCC("h005"))
+u = BlzCreateUnitWithSkin(p, FourCC("h005"), -8448.0, 12864.0, 270.000, FourCC("h005"))
+u = BlzCreateUnitWithSkin(p, FourCC("h005"), -7168.0, 13312.0, 270.000, FourCC("h005"))
+u = BlzCreateUnitWithSkin(p, FourCC("h004"), -3840.0, 13760.0, 270.000, FourCC("h004"))
+u = BlzCreateUnitWithSkin(p, FourCC("h004"), -3840.0, 12864.0, 270.000, FourCC("h004"))
+u = BlzCreateUnitWithSkin(p, FourCC("h004"), -2560.0, 13312.0, 270.000, FourCC("h004"))
+u = BlzCreateUnitWithSkin(p, FourCC("h005"), -9792.0, 11520.0, 270.000, FourCC("h005"))
+u = BlzCreateUnitWithSkin(p, FourCC("h005"), -10688.0, 11520.0, 270.000, FourCC("h005"))
+u = BlzCreateUnitWithSkin(p, FourCC("h005"), -10240.0, 10240.0, 270.000, FourCC("h005"))
 end
 
-function CreateUnitsForPlayer0()
-local p = Player(0)
+function CreateBuildingsForPlayer1()
+local p = Player(1)
 local u
 local unitID
 local t
 local life
 
-u = BlzCreateUnitWithSkin(p, FourCC("h006"), -11703.3, -8642.4, 78.796, FourCC("h006"))
-u = BlzCreateUnitWithSkin(p, FourCC("h006"), 11698.8, -8637.9, 215.602, FourCC("h006"))
-u = BlzCreateUnitWithSkin(p, FourCC("h006"), 11708.1, 14781.1, 303.056, FourCC("h006"))
+u = BlzCreateUnitWithSkin(p, FourCC("h00A"), -10752.0, 14656.0, 270.000, FourCC("h00A"))
+end
+
+function CreateUnitsForPlayer1()
+local p = Player(1)
+local u
+local unitID
+local t
+local life
+
+u = BlzCreateUnitWithSkin(p, FourCC("h006"), -11703.3, -8642.4, 78.800, FourCC("h006"))
+u = BlzCreateUnitWithSkin(p, FourCC("h006"), 11698.8, -8637.9, 215.600, FourCC("h006"))
+u = BlzCreateUnitWithSkin(p, FourCC("h006"), 11708.1, 14781.1, 303.060, FourCC("h006"))
+end
+
+function CreateBuildingsForPlayer2()
+local p = Player(2)
+local u
+local unitID
+local t
+local life
+
+u = BlzCreateUnitWithSkin(p, FourCC("h00A"), -10240.0, 14656.0, 270.000, FourCC("h00A"))
+end
+
+function CreateBuildingsForPlayer3()
+local p = Player(3)
+local u
+local unitID
+local t
+local life
+
+u = BlzCreateUnitWithSkin(p, FourCC("h00A"), -9728.0, 14656.0, 270.000, FourCC("h00A"))
 end
 
 function CreateBuildingsForPlayer4()
@@ -82,8 +120,18 @@ local unitID
 local t
 local life
 
-u = BlzCreateUnitWithSkin(p, FourCC("h004"), 10752.0, 12800.0, 270.000, FourCC("h004"))
-u = BlzCreateUnitWithSkin(p, FourCC("h005"), 9728.0, 13824.0, 270.000, FourCC("h005"))
+u = BlzCreateUnitWithSkin(p, FourCC("h004"), 3840.0, 12928.0, 270.000, FourCC("h004"))
+u = BlzCreateUnitWithSkin(p, FourCC("h005"), 8448.0, 13696.0, 270.000, FourCC("h005"))
+u = BlzCreateUnitWithSkin(p, FourCC("h005"), 8448.0, 12928.0, 270.000, FourCC("h005"))
+u = BlzCreateUnitWithSkin(p, FourCC("h005"), 9856.0, 11520.0, 270.000, FourCC("h005"))
+u = BlzCreateUnitWithSkin(p, FourCC("h005"), 10624.0, 11520.0, 270.000, FourCC("h005"))
+u = BlzCreateUnitWithSkin(p, FourCC("h005"), 7168.0, 13312.0, 270.000, FourCC("h005"))
+u = BlzCreateUnitWithSkin(p, FourCC("h005"), 10240.0, 10240.0, 270.000, FourCC("h005"))
+u = BlzCreateUnitWithSkin(p, FourCC("h004"), 3840.0, 13696.0, 270.000, FourCC("h004"))
+u = BlzCreateUnitWithSkin(p, FourCC("h004"), 2560.0, 13312.0, 270.000, FourCC("h004"))
+u = BlzCreateUnitWithSkin(p, FourCC("h004"), 9792.0, 6912.0, 270.000, FourCC("h004"))
+u = BlzCreateUnitWithSkin(p, FourCC("h004"), 10688.0, 6912.0, 270.000, FourCC("h004"))
+u = BlzCreateUnitWithSkin(p, FourCC("h004"), 10240.0, 5632.0, 270.000, FourCC("h004"))
 end
 
 function CreateBuildingsForPlayer8()
@@ -129,13 +177,16 @@ end
 
 function CreatePlayerBuildings()
 CreateBuildingsForPlayer0()
+CreateBuildingsForPlayer1()
+CreateBuildingsForPlayer2()
+CreateBuildingsForPlayer3()
 CreateBuildingsForPlayer4()
 CreateBuildingsForPlayer8()
 CreateBuildingsForPlayer12()
 end
 
 function CreatePlayerUnits()
-CreateUnitsForPlayer0()
+CreateUnitsForPlayer1()
 end
 
 function CreateAllUnits()
