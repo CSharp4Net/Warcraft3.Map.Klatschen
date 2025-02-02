@@ -86,5 +86,19 @@ namespace Source.Models
 
       base.Defeat();
     }
+
+    /// <summary>
+    /// Fügt dem Gebäude eine zusätzliche Einheit hinzu, welche im Intervall erstellt wird.
+    /// </summary>
+    /// <param name="wc3UnitIdOfSpawnBuilding">Gebäude-Id vom Spawn-Gebäude</param>
+    /// <param name="researchedUnitId">Einheit-Id von der Einheit</param>
+    public void AddSpawnUnit(int wc3UnitIdOfSpawnBuilding, int researchedUnitId)
+    {
+      foreach (SpawnedBuilding building in Buildings)
+      {
+        if (building.Wc3Unit.UnitType == wc3UnitIdOfSpawnBuilding)
+          building.AddUnitSpawn(researchedUnitId);
+      }
+    }
   }
 }

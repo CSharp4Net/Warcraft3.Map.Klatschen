@@ -2,7 +2,7 @@
 using System;
 using WCSharp.Api;
 
-namespace Source.UnitEvents
+namespace Source.Handler.Specific
 {
   internal static class BarracksBuilding
   {

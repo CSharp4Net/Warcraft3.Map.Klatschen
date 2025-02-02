@@ -2,9 +2,9 @@
 using System;
 using WCSharp.Api;
 
-namespace Source.RegionEvents
+namespace Source.Handler.Region
 {
-  internal static class OrcSpawnToUndead
+  internal static class ElfSpawnToUndead
   {
     internal static void OnEnter()
     {
@@ -16,7 +16,7 @@ namespace Source.RegionEvents
           return;
 
         // Feindliche Einheit zur Basis des anderen Spielers schicken
-        if (unit.Owner.Id == Program.Orcs.Computer.Wc3Player.Id)
+        if (unit.Owner.Id == Program.Elves.Computer.Wc3Player.Id)
         {
           unit.AttackMove(Areas.UndeadBase);
         }

@@ -2,9 +2,9 @@
 using System;
 using WCSharp.Api;
 
-namespace Source.RegionEvents
+namespace Source.Handler.Region
 {
-  internal static class ElfBarracks
+  internal static class HumanSpawnToOrc
   {
     internal static void OnEnter()
     {
@@ -15,10 +15,10 @@ namespace Source.RegionEvents
         if (unit.IsABuilding || unit.Owner.Controller != mapcontrol.Computer)
           return;
 
-        // Feindliche Einheit zur Basis des Computer-Spielers schicken
-        if (!Program.Elves.Defeated && unit.Owner.Id != Program.Elves.Computer.Wc3Player.Id)
+        // Feindliche Einheit zur Basis des anderen Spielers schicken
+        if (unit.Owner.Id == Program.Humans.Computer.Wc3Player.Id)
         {
-          unit.AttackMove(Areas.ElfBase);
+          unit.AttackMove(Areas.OrcBase);
         }
       }
       catch (Exception ex)

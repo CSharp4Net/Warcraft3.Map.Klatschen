@@ -89,5 +89,17 @@ namespace Source.Models
       Wc3Trigger.Dispose();
       Wc3Trigger = null;
     }
+
+    /// <summary>
+    /// Fügt allen Spawn-Triggern von diesem Gebäude die Einheit hinzu.
+    /// </summary>
+    /// <param name="unitId"></param>
+    public void AddUnitSpawn(int unitId)
+    {
+      foreach (SpawnTrigger trigger in SpawnTriggers)
+      {
+        trigger.Add(unitId);
+      }
+    }
   }
 }

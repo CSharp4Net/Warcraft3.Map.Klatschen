@@ -2,9 +2,9 @@
 using System;
 using WCSharp.Api;
 
-namespace Source.RegionEvents
+namespace Source.Handler.Region
 {
-  internal static class UndeadSpawnToCenter
+  internal static class UndeadBarracks
   {
     internal static void OnEnter()
     {
@@ -15,10 +15,10 @@ namespace Source.RegionEvents
         if (unit.IsABuilding || unit.Owner.Controller != mapcontrol.Computer)
           return;
 
-        // Feindliche Einheit zur Basis des anderen Spielers schicken
-        if (unit.Owner.Id == Program.Undeads.Computer.Wc3Player.Id)
+        // Feindliche Einheit zur Basis des Computer-Spielers schicken
+        if (!Program.Undeads.Defeated && unit.Owner.Id != Program.Undeads.Computer.Wc3Player.Id)
         {
-          unit.AttackMove(Areas.Center);
+          unit.AttackMove(Areas.UndeadBase);
         }
       }
       catch (Exception ex)

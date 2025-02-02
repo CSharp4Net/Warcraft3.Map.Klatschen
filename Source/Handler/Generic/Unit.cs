@@ -1,11 +1,12 @@
-﻿using System;
+﻿using Source.Handler.Specific;
+using System;
 using WCSharp.Api;
 
-namespace Source.UnitEvents
+namespace Source.Handler.GenericEvents
 {
-  internal static class GenericUnit
+  internal static class Unit
   {
-    internal static void OnUnitDies()
+    internal static void OnDies()
     {
       try
       {
@@ -16,7 +17,7 @@ namespace Source.UnitEvents
           return;
         }
 
-        if (Common.IsHeroUnitId(Common.GetUnitTypeId(unit)))
+        if (unit.IsUnitType(unittype.Hero))
         {
           UserHero.OnDies(unit);
           return;

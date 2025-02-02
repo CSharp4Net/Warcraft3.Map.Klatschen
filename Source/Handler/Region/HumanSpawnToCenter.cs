@@ -2,7 +2,7 @@
 using System;
 using WCSharp.Api;
 
-namespace Source.RegionEvents
+namespace Source.Handler.Region
 {
   internal static class HumanSpawnToCenter
   {

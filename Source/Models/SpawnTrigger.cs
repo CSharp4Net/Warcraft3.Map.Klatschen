@@ -75,5 +75,14 @@ namespace Source.Models
       Timer.Dispose();
       Timer = null;
     }
+
+    /// <summary>
+    /// Fügt der Einheiten-Liste eine nEintrag hinzu.
+    /// </summary>
+    /// <param name="unitId"></param>
+    public void Add(int unitId)
+    {
+      UnitIds.Add(unitId);
+    }
   }
 }

@@ -20186,24 +20186,36 @@ System.namespace("Source", function (namespace)
       System.Console.WriteLine("Forschung " .. researchedTechId .. " (Stufe " .. researchedTechIdCount .. ") abgeschlossen von " .. System.toString(GetPlayerName(GetOwningPlayer(unit))) .. "!")
 
       local owner = GetOwningPlayer(unit)
+      local researchedUnitId = 0
+      local researchedUnitSpawnInterval = 0
 
-      local default, foundUser = class.Humans:ContainsPlayer(GetOwningPlayer(unit))
-      if default then
+      repeat
+        local default = researchedTechId
+        if default == 1378889780 --[[Constants.UPGRADE_RITTER_HUMAN]] then
+          researchedUnitId = 1747988546 --[[Constants.UNIT_RITTER_HUMAN]]
+          researchedUnitSpawnInterval = 30 --[[Program.mainBuildingSpawnTime]]
+          break
+        end
+      until 1
+
+      local extern, foundUser = class.Humans:ContainsPlayer(GetOwningPlayer(unit))
+      if extern then
         class.Humans:IncreaseTechForAllPlayers(researchedTechId, researchedTechIdCount)
+        class.Humans.Computer:AddSpawnUnit(1747988531 --[[Constants.UNIT_SCHLOSS_HUMAN]], researchedUnitId)
       else
-        local extern
-        extern, foundUser = class.Orcs:ContainsPlayer(GetOwningPlayer(unit))
-        if extern then
+        local ref
+        ref, foundUser = class.Orcs:ContainsPlayer(GetOwningPlayer(unit))
+        if ref then
           class.Orcs:IncreaseTechForAllPlayers(researchedTechId, researchedTechIdCount)
         else
-          local extern
-          extern, foundUser = class.Elves:ContainsPlayer(GetOwningPlayer(unit))
-          if extern then
+          local ref
+          ref, foundUser = class.Elves:ContainsPlayer(GetOwningPlayer(unit))
+          if ref then
             class.Elves:IncreaseTechForAllPlayers(researchedTechId, researchedTechIdCount)
           else
-            local extern
-            extern, foundUser = class.Undeads:ContainsPlayer(GetOwningPlayer(unit))
-            if extern then
+            local ref
+            ref, foundUser = class.Undeads:ContainsPlayer(GetOwningPlayer(unit))
+            if ref then
               class.Undeads:IncreaseTechForAllPlayers(researchedTechId, researchedTechIdCount)
             end
           end
@@ -20564,7 +20576,7 @@ System.import(function (out)
 end)
 System.namespace("Source.Models", function (namespace)
   namespace.class("ComputerPlayer", function (namespace)
-    local CreateBuilding, IsOwnerOfBuilding, RemoveBuilding, Defeat, __ctor__
+    local CreateBuilding, IsOwnerOfBuilding, RemoveBuilding, Defeat, AddSpawnUnit, __ctor__
     __ctor__ = function (this, player, team)
       this.Buildings = ListSpawnedBuilding()
       System.base(this).__ctor__(this, player)
@@ -20624,6 +20636,13 @@ System.namespace("Source.Models", function (namespace)
 
       System.base(this).Defeat(this)
     end
+    AddSpawnUnit = function (this, wc3UnitIdOfSpawnBuilding, researchedUnitId)
+      for _, building in System.each(this.Buildings) do
+        if GetUnitTypeId(building.Wc3Unit) == wc3UnitIdOfSpawnBuilding then
+          building:AddUnitSpawn(researchedUnitId)
+        end
+      end
+    end
     return {
       base = function (out)
         return {
@@ -20634,11 +20653,13 @@ System.namespace("Source.Models", function (namespace)
       IsOwnerOfBuilding = IsOwnerOfBuilding,
       RemoveBuilding = RemoveBuilding,
       Defeat = Defeat,
+      AddSpawnUnit = AddSpawnUnit,
       __ctor__ = __ctor__,
       __metadata__ = function (out)
         return {
           methods = {
             { ".ctor", 0x206, nil, out.WCSharp.Api.player, out.Source.Models.Team },
+            { "AddSpawnUnit", 0x206, AddSpawnUnit, System.Int32, System.Int32 },
             { "CreateBuilding", 0x386, CreateBuilding, System.Int32, out.Source.Models.Area, System.Single, out.Source.Models.SpawnedBuilding },
             { "Defeat", 0x6, Defeat },
             { "IsOwnerOfBuilding", 0x286, IsOwnerOfBuilding, out.WCSharp.Api.unit, out.Source.Models.SpawnedBuilding, System.Boolean },
@@ -20667,7 +20688,7 @@ System.import(function (out)
 end)
 System.namespace("Source.Models", function (namespace)
   namespace.class("SpawnedBuilding", function (namespace)
-    local AddSpawnTrigger, Destroy, RegisterOnDies, DeRegisterOnDies, __ctor__
+    local AddSpawnTrigger, Destroy, RegisterOnDies, DeRegisterOnDies, AddUnitSpawn, __ctor__
     __ctor__ = function (this, computer, unitTypeId, creationArea, face)
       this.Wc3Unit = CreateUnitAtLoc(computer.Wc3Player, unitTypeId, creationArea.Wc3CenterLocation, face)
       this.Computer = computer
@@ -20722,16 +20743,23 @@ System.namespace("Source.Models", function (namespace)
       DestroyTrigger(this.Wc3Trigger)
       this.Wc3Trigger = nil
     end
+    AddUnitSpawn = function (this, unitId)
+      for _, trigger in System.each(this.SpawnTriggers) do
+        trigger:Add(unitId)
+      end
+    end
     return {
       AddSpawnTrigger = AddSpawnTrigger,
       Destroy = Destroy,
       RegisterOnDies = RegisterOnDies,
+      AddUnitSpawn = AddUnitSpawn,
       __ctor__ = __ctor__,
       __metadata__ = function (out)
         return {
           methods = {
             { ".ctor", 0x406, nil, out.Source.Models.ComputerPlayer, System.Int32, out.Source.Models.Area, System.Single },
             { "AddSpawnTrigger", 0x386, AddSpawnTrigger, System.Single, out.Source.Models.Area, System.Array(System.Int32), out.Source.Models.SpawnTrigger },
+            { "AddUnitSpawn", 0x106, AddUnitSpawn, System.Int32 },
             { "DeRegisterOnDies", 0x1, DeRegisterOnDies },
             { "Destroy", 0x6, Destroy },
             { "RegisterOnDies", 0x106, RegisterOnDies, System.Delegate }
@@ -20755,7 +20783,7 @@ local System = System
 local Linq = System.Linq.Enumerable
 System.namespace("Source.Models", function (namespace)
   namespace.class("SpawnTrigger", function (namespace)
-    local Run, Start, Elapsed, Stop, __ctor__
+    local Run, Start, Elapsed, Stop, Add, __ctor__
     __ctor__ = function (this, player, interval, spawnArea, building, unitIds)
       this.Player = player
       this.Interval = interval
@@ -20799,15 +20827,20 @@ System.namespace("Source.Models", function (namespace)
       DestroyTimer(this.Timer)
       this.Timer = nil
     end
+    Add = function (this, unitId)
+      this.UnitIds:Add(unitId)
+    end
     return {
       Interval = 0,
       Run = Run,
       Stop = Stop,
+      Add = Add,
       __ctor__ = __ctor__,
       __metadata__ = function (out)
         return {
           methods = {
             { ".ctor", 0x506, nil, out.Source.Models.ComputerPlayer, System.Single, out.Source.Models.Area, out.Source.Models.SpawnedBuilding, System.Array(System.Int32) },
+            { "Add", 0x106, Add, System.Int32 },
             { "Elapsed", 0x1, Elapsed },
             { "Run", 0x106, Run, System.Single },
             { "Start", 0x1, Start },
@@ -22116,6 +22149,7 @@ end)
 end
 do
 local System = System
+local WCSharpApi = WCSharp.Api
 local Source
 local SourceUnitEvents
 System.import(function (out)
@@ -22133,7 +22167,7 @@ System.namespace("Source.UnitEvents", function (namespace)
           return true
         end
 
-        if IsHeroUnitId(GetUnitTypeId(unit)) then
+        if IsUnitType(unit, UNIT_TYPE_HERO) then
           SourceUnitEvents.UserHero.OnDies(unit)
           return true
         end
@@ -33723,8 +33757,8 @@ local InitCSharp = function ()
       "WCSharp.Missiles.HomingMissile",
       "WCSharp.Missiles.MomentumMissile",
       "WCSharp.Missiles.OrbitalMissile",
-      "WCSharp.SaveLoad.Save_1",
       "WCSharp.SaveLoad.SaveLoadedMessage_1",
+      "WCSharp.SaveLoad.Save_1",
       "WCSharp.W3MMD.IW3MmdVar",
       "Areas",
       "Constants",

@@ -1,9 +1,8 @@
-﻿using Source.Extensions;
-using Source.Models;
+﻿using Source.Models;
 using System;
 using WCSharp.Api;
 
-namespace Source.UnitEvents
+namespace Source.Handler.Specific
 {
   internal static class UserHero
   {

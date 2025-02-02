@@ -2,7 +2,6 @@ TODO'S
 ======
 
 Must have:
-- Einheint
 - Heldenauswahl-Bereich gestalten
 - Helden erstellen (min. 3)
 - Goldverteilung der Computer-Player bei erreichen von Limit an alle aktiven Menschen-Player im Team
@@ -12,3 +11,6 @@ Must have:
 
 Nice to have:
 - Galgen-Events im Zentrum, Unit-Spawner für zerstörenden Spieler
+- Port-Events für Arenen
+- Beschwörungsgebiete für Boss-Calls
+- Dungeon für besondere Belohnungen

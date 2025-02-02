@@ -2,9 +2,9 @@
 using System;
 using WCSharp.Api;
 
-namespace Source.RegionEvents
+namespace Source.Handler.Region
 {
-  internal static class HumanSpawnToElf
+  internal static class OrcSpawnToCenter
   {
     internal static void OnEnter()
     {
@@ -16,9 +16,9 @@ namespace Source.RegionEvents
           return;
 
         // Feindliche Einheit zur Basis des anderen Spielers schicken
-        if (unit.Owner.Id == Program.Humans.Computer.Wc3Player.Id)
+        if (unit.Owner.Id == Program.Orcs.Computer.Wc3Player.Id)
         {
-          unit.AttackMove(Areas.ElfBase);
+          unit.AttackMove(Areas.Center);
         }
       }
       catch (Exception ex)

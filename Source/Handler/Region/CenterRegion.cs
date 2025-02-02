@@ -1,7 +1,7 @@
 ﻿using Source.Extensions;
 using WCSharp.Api;
 
-namespace Source.RegionEvents
+namespace Source.Handler.Region
 {
   internal static class CenterRegion
   {
