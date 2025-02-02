@@ -1,13 +1,12 @@
-﻿using Source.Extensions;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using WCSharp.Api;
 
 namespace Source.Models
 {
-  public sealed class SpawnedBuilding
+  public sealed class SpawnBuilding
   {
-    public SpawnedBuilding(ComputerPlayer computer, int unitTypeId, Area creationArea, float face = 0f)
+    public SpawnBuilding(ComputerPlayer computer, int unitTypeId, Area creationArea, float face = 0f)
     {
       Wc3Unit = Common.CreateUnitAtLoc(computer.Wc3Player, unitTypeId, creationArea.Wc3CenterLocation, face);
       Computer = computer;
@@ -39,9 +38,9 @@ namespace Source.Models
     /// <param name="spawnArea">Spawn-Gebiet</param>
     /// <param name="unitIds">Auflistung an Einheiten-Ids</param>
     /// <returns></returns>
-    public SpawnTrigger AddSpawnTrigger(float interval, Area spawnArea, params int[] unitIds)
+    public SpawnTrigger AddSpawnTrigger(float interval, Area spawnArea, Enums.UnitSpawnType unitSpawnType, params int[] unitIds)
     {
-      SpawnTrigger trigger = new SpawnTrigger(Computer, interval, spawnArea, this, unitIds);
+      SpawnTrigger trigger = new SpawnTrigger(Computer, interval, spawnArea, unitSpawnType, this, unitIds);
       SpawnTriggers.Add(trigger);
       return trigger;
     }
@@ -91,14 +90,28 @@ namespace Source.Models
     }
 
     /// <summary>
-    /// Fügt allen Spawn-Triggern von diesem Gebäude die Einheit hinzu.
+    /// Fügt passenden Spawn-Triggern von diesem Gebäude eine neue Einheit hinzu.
     /// </summary>
-    /// <param name="unitId"></param>
-    public void AddUnitSpawn(int unitId)
+    /// <param name="spawnCommand"></param>
+    public void AddUnitSpawn(SpawnUnitCommand spawnCommand)
     {
       foreach (SpawnTrigger trigger in SpawnTriggers)
       {
-        trigger.Add(unitId);
+        if (trigger.UnitSpawnType == spawnCommand.UnitSpawnType)
+        trigger.Add(spawnCommand);
+      }
+    }
+
+    /// <summary>
+    /// Überschreibt eine bestehende Einheit in passenden Spawn-Triggern.
+    /// </summary>
+    /// <param name="spawnCommand"></param>
+    public void UpgradeUnitSpawn(SpawnUnitCommand spawnCommand)
+    {
+      foreach (SpawnTrigger trigger in SpawnTriggers)
+      {
+        if (trigger.UnitSpawnType == spawnCommand.UnitSpawnType)
+          trigger.Upgrade(spawnCommand);
       }
     }
   }

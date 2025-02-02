@@ -19,7 +19,7 @@ namespace Source.Models
     /// </summary>
     private Team Team { get; init; }
 
-    private List<SpawnedBuilding> Buildings { get; init; } = new List<SpawnedBuilding>();
+    private List<SpawnBuilding> Buildings { get; init; } = new List<SpawnBuilding>();
 
     /// <summary>
     /// Erzeugt ein Gebäude für den Spieler und fügt es der Auflistung aller Gebäude hinzu.
@@ -28,10 +28,10 @@ namespace Source.Models
     /// <param name="creationArea"></param>
     /// <param name="face"></param>
     /// <returns></returns>
-    public SpawnedBuilding CreateBuilding(int unitTypeId, Area creationArea, float face = 0f)
+    public SpawnBuilding CreateBuilding(int unitTypeId, Area creationArea, float face = 0f)
     {
       // Ort anhand Zentrum einer Region erstellen
-      SpawnedBuilding building = new SpawnedBuilding(this, unitTypeId, creationArea, face);
+      SpawnBuilding building = new SpawnBuilding(this, unitTypeId, creationArea, face);
       Buildings.Add(building);
       return building;
     }
@@ -42,10 +42,10 @@ namespace Source.Models
     /// <param name="wc3Unit">WC3-Einheit</param>
     /// <param name="foundBuilding">Wird gesetzt, wenn True zurück gegeben wurde.</param>
     /// <returns></returns>
-    public bool IsOwnerOfBuilding(unit wc3Unit, out SpawnedBuilding foundBuilding)
+    public bool IsOwnerOfBuilding(unit wc3Unit, out SpawnBuilding foundBuilding)
     {
       //Program.ShowDebugMessage("ComputerPlayer.IsOwnerOfBuilding", $"Find building in list...");
-      foreach (SpawnedBuilding building in Buildings)
+      foreach (SpawnBuilding building in Buildings)
       {
         if (building.Wc3Unit == wc3Unit)
         {
@@ -62,7 +62,7 @@ namespace Source.Models
     /// Entfernt ein Gebäude aus der Auflistung aller Gebäude.
     /// </summary>
     /// <param name="building"></param>
-    public void RemoveBuilding(SpawnedBuilding building)
+    public void RemoveBuilding(SpawnBuilding building)
     {
       //Program.ShowDebugMessage("ComputerPlayer.RemoveBuilding", $"Remove building {building.Wc3Unit.Name}");
       Buildings.Remove(building);
@@ -76,7 +76,7 @@ namespace Source.Models
       // Alle gespawnten Gebäude zerstören
       for (int i = Buildings.Count - 1; i >= 0; i--) 
       {
-        SpawnedBuilding building = Buildings[i];
+        SpawnBuilding building = Buildings[i];
         //Program.ShowDebugMessage("ComputerPlayer.Defeat", $"Destroy building {building.Wc3Unit.Name}");
         building.Destroy();
         //Program.ShowDebugMessage("ComputerPlayer.Defeat", $"Building destroyed.");
@@ -86,18 +86,22 @@ namespace Source.Models
 
       base.Defeat();
     }
-
-    /// <summary>
-    /// Fügt dem Gebäude eine zusätzliche Einheit hinzu, welche im Intervall erstellt wird.
-    /// </summary>
-    /// <param name="wc3UnitIdOfSpawnBuilding">Gebäude-Id vom Spawn-Gebäude</param>
-    /// <param name="researchedUnitId">Einheit-Id von der Einheit</param>
-    public void AddSpawnUnit(int wc3UnitIdOfSpawnBuilding, int researchedUnitId)
+        
+    public void AddSpawnUnit(SpawnUnitCommand spawnCommand)
     {
-      foreach (SpawnedBuilding building in Buildings)
+      foreach (SpawnBuilding building in Buildings)
       {
-        if (building.Wc3Unit.UnitType == wc3UnitIdOfSpawnBuilding)
-          building.AddUnitSpawn(researchedUnitId);
+        if (building.Wc3Unit.UnitType == spawnCommand.UnitIdOfBuilding)
+          building.AddUnitSpawn(spawnCommand);
+      }
+    }
+
+    public void UpgradeSpawnUnit(SpawnUnitCommand spawnCommand)
+    {
+      foreach (SpawnBuilding building in Buildings)
+      {
+        if (building.Wc3Unit.UnitType == spawnCommand.UnitIdOfBuilding)
+          building.UpgradeUnitSpawn(spawnCommand);
       }
     }
   }

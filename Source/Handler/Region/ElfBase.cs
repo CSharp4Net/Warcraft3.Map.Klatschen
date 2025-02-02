@@ -15,13 +15,13 @@ namespace Source.Handler.Region
       // Feindliche Einheit zur Basis eines anderen Spielers schicken
       if (unit.Owner.Id == Program.Humans.Computer.Wc3Player.Id)
       {
-        if (!Program.Orcs.Defeated)
+        if (Program.Undeads.Defeated)
         {
-          unit.AttackMove(Areas.OrcBase);
+          unit.AttackMove(Areas.UndeadBase);
         }
         else
         {
-          unit.AttackMove(Areas.UndeadBase);
+          unit.AttackMove(Areas.OrcBase);
         }
       }
       else if (unit.Owner.Id == Program.Orcs.Computer.Wc3Player.Id)
@@ -37,13 +37,13 @@ namespace Source.Handler.Region
       }
       else if (unit.Owner.Id == Program.Undeads.Computer.Wc3Player.Id)
       {
-        if (!Program.Orcs.Defeated)
+        if (!Program.Humans.Defeated)
         {
-          unit.AttackMove(Areas.OrcBase);
+          unit.AttackMove(Areas.HumanBase);
         }
         else
         {
-          unit.AttackMove(Areas.HumanBase);
+          unit.AttackMove(Areas.OrcBase);
         }
       }
     }

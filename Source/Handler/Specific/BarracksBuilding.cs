@@ -12,7 +12,7 @@ namespace Source.Handler.Specific
       {
         unit unit = Common.GetTriggerUnit();
 
-        if (Program.Humans.Computer.IsOwnerOfBuilding(unit, out SpawnedBuilding building))
+        if (Program.Humans.Computer.IsOwnerOfBuilding(unit, out SpawnBuilding building))
         {
           building.Destroy();
           Console.WriteLine("Die Menschen haben eine ihrer Kasernen verloren!");

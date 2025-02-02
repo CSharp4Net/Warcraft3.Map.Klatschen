@@ -26,24 +26,24 @@ namespace Source.Handler.Region
       }
       else if (unit.Owner.Id == Program.Orcs.Computer.Wc3Player.Id)
       {
-        if (!Program.Humans.Defeated)
+        if (!Program.Elves.Defeated)
         {
-          unit.AttackMove(Areas.HumanBase);
+          unit.AttackMove(Areas.ElfBase);
         }
         else
         {
-          unit.AttackMove(Areas.ElfBase);
+          unit.AttackMove(Areas.HumanBase);
         }
       }
       else if (unit.Owner.Id == Program.Elves.Computer.Wc3Player.Id)
       {
-        if (!Program.Humans.Defeated)
+        if (!Program.Orcs.Defeated)
         {
-          unit.AttackMove(Areas.HumanBase);
+          unit.AttackMove(Areas.OrcBase);
         }
         else
         {
-          unit.AttackMove(Areas.OrcBase);
+          unit.AttackMove(Areas.HumanBase);
         }
       }
     }

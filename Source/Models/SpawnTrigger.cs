@@ -2,23 +2,25 @@
 using System.Collections.Generic;
 using System.Linq;
 using WCSharp.Api;
+using static Source.Models.Enums;
 
 namespace Source.Models
 {
   public sealed class SpawnTrigger
   {
-    public SpawnTrigger(ComputerPlayer player, float interval, Area spawnArea, SpawnedBuilding building, params int[] unitIds)
+    public SpawnTrigger(ComputerPlayer player, float interval, Area spawnArea, UnitSpawnType unitSpawnType, SpawnBuilding building, params int[] unitIds)
     {
       Player = player;
       Interval = interval;
       SpawnArea = spawnArea;
       Building = building;
+      UnitSpawnType = unitSpawnType;
       UnitIds = unitIds.ToList();
     }
 
     private ComputerPlayer Player { get; init; }
 
-    private SpawnedBuilding Building { get; init; }
+    private SpawnBuilding Building { get; init; }
 
     private float Interval { get; init; }
 
@@ -27,6 +29,11 @@ namespace Source.Models
     private List<int> UnitIds { get; init; }
 
     private timer Timer { get; set; }
+
+    /// <summary>
+    /// Typ der erstellenden Einheiten.
+    /// </summary>
+    public Enums.UnitSpawnType UnitSpawnType { get; init; }
 
     /// <summary>
     /// Startet den Trigger im angegebenen Interval
@@ -76,13 +83,18 @@ namespace Source.Models
       Timer = null;
     }
 
-    /// <summary>
-    /// Fügt der Einheiten-Liste eine nEintrag hinzu.
-    /// </summary>
-    /// <param name="unitId"></param>
-    public void Add(int unitId)
+    public void Add(SpawnUnitCommand spawnCommand)
     {
-      UnitIds.Add(unitId);
+      UnitIds.Add(spawnCommand.UnitId);
+    }
+
+    public void Upgrade(SpawnUnitCommand spawnCommand)
+    {
+      for (int i = 0; i < UnitIds.Count; i++)
+      {
+        if (UnitIds[i] == spawnCommand.UnitIdToUpgrade)
+          UnitIds[i] = spawnCommand.UnitId;
+      }
     }
   }
 }

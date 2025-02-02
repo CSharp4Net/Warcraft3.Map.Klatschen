@@ -55,7 +55,7 @@ STRING 39
 }
 
 STRING 45
-// Units: h002 (Scharfschütze), EditorSuffix (Name - Editor Suffix)
+// Units: h002 (Scharfschuetze), EditorSuffix (Name - Editor Suffix)
 {
 (Human)
 }
@@ -271,60 +271,6 @@ STRING 99
 Glyphe der Baukunst kaufen
 }
 
-STRING 100
-// Upgrades: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Name (Name)
-{
-Verbesserte Baukunst - Stufe 1
-}
-
-STRING 101
-// Upgrades: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Name (Name)
-{
-Verbesserte Baukunst - Stufe 2
-}
-
-STRING 102
-// Upgrades: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Name (Name)
-{
-Verbesserte Baukunst - Stufe 3
-}
-
-STRING 103
-// Upgrades: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Name (Name)
-{
-Verbesserte Baukunst - Stufe 4
-}
-
-STRING 104
-// Upgrades: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Name (Name)
-{
-Verbesserte Baukunst - Stufe 5
-}
-
-STRING 105
-// Upgrades: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Tip (Tooltip)
-{
-Verbesserte Baukunst erforschen
-}
-
-STRING 106
-// Upgrades: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Tip (Tooltip)
-{
-Verbesserte Baukunst erforschen
-}
-
-STRING 107
-// Upgrades: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Tip (Tooltip)
-{
-Verbesserte Baukunst erforschen
-}
-
-STRING 108
-// Upgrades: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Tip (Tooltip)
-{
-Verbesserte Baukunst erforschen
-}
-
 STRING 113
 // Upgrades: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Hotkey (Hotkey)
 {
@@ -338,31 +284,31 @@ K
 }
 
 STRING 115
-// Units: h00A (Werkstatt), EditorSuffix (Name - Editor Suffix)
-{
-(Human)
-}
-
-STRING 116
 // Units: h00B (Ritter), EditorSuffix (Name - Editor Suffix)
 {
 (Human)
 }
 
-STRING 117
+STRING 116
 // Units: h00C (Hauptmann), EditorSuffix (Name - Editor Suffix)
 {
 (Human)
 }
 
+STRING 117
+// Units: h00D (Trainingslager), EditorSuffix (Name - Editor Suffix)
+{
+(Human)
+}
+
 STRING 118
-// Upgrades: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), EditorSuffix (Editor Suffix)
+// Units: h00A (Schmiede), EditorSuffix (Name - Editor Suffix)
 {
 (Human)
 }
 
 STRING 119
-// Upgrades: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), EditorSuffix (Editor Suffix)
+// Units: h00E (Belagerungsmaschine), EditorSuffix (Name - Editor Suffix)
 {
 (Human)
 }
@@ -386,13 +332,13 @@ STRING 123
 }
 
 STRING 124
-// Upgrades: R001 (Langflinten), EditorSuffix (Editor Suffix)
+// Upgrades: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), EditorSuffix (Editor Suffix)
 {
 (Human)
 }
 
 STRING 125
-// Upgrades: R001 (Langflinten), EditorSuffix (Editor Suffix)
+// Upgrades: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), EditorSuffix (Editor Suffix)
 {
 (Human)
 }
@@ -427,66 +373,6 @@ STRING 130
 L
 }
 
-STRING 135
-// Upgrades: R001 (Langflinten), Tip (Tooltip)
-{
-Verbesserte Reichweite erforschen
-}
-
-STRING 136
-// Upgrades: R001 (Langflinten), Tip (Tooltip)
-{
-Verbesserte Reichweite erforschen
-}
-
-STRING 137
-// Upgrades: R001 (Langflinten), Tip (Tooltip)
-{
-Verbesserte Reichweite erforschen
-}
-
-STRING 138
-// Upgrades: R001 (Langflinten), Tip (Tooltip)
-{
-Verbesserte Reichweite erforschen
-}
-
-STRING 139
-// Upgrades: R001 (Langflinten), Tip (Tooltip)
-{
-Verbesserte Reichweite erforschen
-}
-
-STRING 145
-// Upgrades: R001 (Langflinten), Name (Name)
-{
-Verbesserte Reichweite - Stufe 1
-}
-
-STRING 146
-// Upgrades: R001 (Langflinten), Name (Name)
-{
-Verbesserte Reichweite - Stufe 2
-}
-
-STRING 147
-// Upgrades: R001 (Langflinten), Name (Name)
-{
-Verbesserte Reichweite - Stufe 3
-}
-
-STRING 148
-// Upgrades: R001 (Langflinten), Name (Name)
-{
-Verbesserte Reichweite - Stufe 4
-}
-
-STRING 149
-// Upgrades: R001 (Langflinten), Name (Name)
-{
-Verbesserte Reichweite - Stufe 5
-}
-
 STRING 150
 // Upgrades: R002 (Eisenschwerter,Stahlschwerter,Mithrilschwerter), effect1 (Effect 1)
 {
@@ -505,66 +391,6 @@ STRING 152
 S
 }
 
-STRING 153
-// Upgrades: R002 (Eisenschwerter,Stahlschwerter,Mithrilschwerter), Name (Name)
-{
-Verbesserte Schmiedetechnik - Stufe 5
-}
-
-STRING 154
-// Upgrades: R002 (Eisenschwerter,Stahlschwerter,Mithrilschwerter), Name (Name)
-{
-Verbesserte Schmiedetechnik - Stufe 4
-}
-
-STRING 155
-// Upgrades: R002 (Eisenschwerter,Stahlschwerter,Mithrilschwerter), Name (Name)
-{
-Verbesserte Schmiedetechnik - Stufe 3
-}
-
-STRING 156
-// Upgrades: R002 (Eisenschwerter,Stahlschwerter,Mithrilschwerter), Name (Name)
-{
-Verbesserte Schmiedetechnik - Stufe 2
-}
-
-STRING 157
-// Upgrades: R002 (Eisenschwerter,Stahlschwerter,Mithrilschwerter), Tip (Tooltip)
-{
-Schmiedetechnik erforschen
-}
-
-STRING 158
-// Upgrades: R002 (Eisenschwerter,Stahlschwerter,Mithrilschwerter), Tip (Tooltip)
-{
-Schmiedetechnik erforschen
-}
-
-STRING 159
-// Upgrades: R002 (Eisenschwerter,Stahlschwerter,Mithrilschwerter), Tip (Tooltip)
-{
-Schmiedetechnik erforschen
-}
-
-STRING 160
-// Upgrades: R002 (Eisenschwerter,Stahlschwerter,Mithrilschwerter), Tip (Tooltip)
-{
-Schmiedetechnik erforschen
-}
-
-STRING 161
-// Upgrades: R002 (Eisenschwerter,Stahlschwerter,Mithrilschwerter), Tip (Tooltip)
-{
-Schmiedetechnik erforschen
-}
-
-STRING 162
-// Upgrades: R002 (Eisenschwerter,Stahlschwerter,Mithrilschwerter), Name (Name)
-{
-Verbesserte Schmiedetechnik - Stufe 1
-}
-
 STRING 168
 // Upgrades: R001 (Langflinten), EditorSuffix (Editor Suffix)
 {
@@ -578,13 +404,13 @@ STRING 169
 }
 
 STRING 170
-// Upgrades: R002 (Eisenschwerter,Stahlschwerter,Mithrilschwerter), EditorSuffix (Editor Suffix)
+// Upgrades: R001 (Langflinten), EditorSuffix (Editor Suffix)
 {
 (Human)
 }
 
 STRING 171
-// Upgrades: R002 (Eisenschwerter,Stahlschwerter,Mithrilschwerter), EditorSuffix (Editor Suffix)
+// Upgrades: R001 (Langflinten), EditorSuffix (Editor Suffix)
 {
 (Human)
 }
@@ -607,66 +433,6 @@ STRING 174
 V
 }
 
-STRING 175
-// Upgrades: R003 (Schwarzes Schießpulver,Angereichertes Schießpulver,Magisches Schießpulver), Name (Name)
-{
-Verbessertes Schießpulver - Stufe 1
-}
-
-STRING 176
-// Upgrades: R003 (Schwarzes Schießpulver,Angereichertes Schießpulver,Magisches Schießpulver), Name (Name)
-{
-Verbessertes Schießpulver - Stufe 2
-}
-
-STRING 177
-// Upgrades: R003 (Schwarzes Schießpulver,Angereichertes Schießpulver,Magisches Schießpulver), Name (Name)
-{
-Verbessertes Schießpulver - Stufe 3
-}
-
-STRING 178
-// Upgrades: R003 (Schwarzes Schießpulver,Angereichertes Schießpulver,Magisches Schießpulver), Name (Name)
-{
-Verbessertes Schießpulver - Stufe 4
-}
-
-STRING 179
-// Upgrades: R003 (Schwarzes Schießpulver,Angereichertes Schießpulver,Magisches Schießpulver), Name (Name)
-{
-Verbessertes Schießpulver - Stufe 5
-}
-
-STRING 185
-// Upgrades: R003 (Schwarzes Schießpulver,Angereichertes Schießpulver,Magisches Schießpulver), Tip (Tooltip)
-{
-Schießpulver erforschen
-}
-
-STRING 186
-// Upgrades: R003 (Schwarzes Schießpulver,Angereichertes Schießpulver,Magisches Schießpulver), Tip (Tooltip)
-{
-Schießpulver erforschen
-}
-
-STRING 187
-// Upgrades: R003 (Schwarzes Schießpulver,Angereichertes Schießpulver,Magisches Schießpulver), Tip (Tooltip)
-{
-Schießpulver erforschen
-}
-
-STRING 188
-// Upgrades: R003 (Schwarzes Schießpulver,Angereichertes Schießpulver,Magisches Schießpulver), Tip (Tooltip)
-{
-Schießpulver erforschen
-}
-
-STRING 189
-// Upgrades: R003 (Schwarzes Schießpulver,Angereichertes Schießpulver,Magisches Schießpulver), Tip (Tooltip)
-{
-Schießpulver erforschen
-}
-
 STRING 190
 // Upgrades: R002 (Eisenschwerter,Stahlschwerter,Mithrilschwerter), EditorSuffix (Editor Suffix)
 {
@@ -680,13 +446,13 @@ STRING 191
 }
 
 STRING 192
-// Upgrades: R003 (Schwarzes Schießpulver,Angereichertes Schießpulver,Magisches Schießpulver), EditorSuffix (Editor Suffix)
+// Upgrades: R002 (Eisenschwerter,Stahlschwerter,Mithrilschwerter), EditorSuffix (Editor Suffix)
 {
 (Human)
 }
 
 STRING 193
-// Upgrades: R003 (Schwarzes Schießpulver,Angereichertes Schießpulver,Magisches Schießpulver), EditorSuffix (Editor Suffix)
+// Upgrades: R002 (Eisenschwerter,Stahlschwerter,Mithrilschwerter), EditorSuffix (Editor Suffix)
 {
 (Human)
 }
@@ -709,126 +475,6 @@ STRING 196
 (Human)
 }
 
-STRING 197
-// Upgrades: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltip - Extended)
-{
-Erhöht die Rüstung und Trefferpunkte von Menschengebäuden um 10%.
-}
-
-STRING 198
-// Upgrades: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltip - Extended)
-{
-Erhöht die Rüstung und Trefferpunkte von Menschengebäuden um 10%.
-}
-
-STRING 199
-// Upgrades: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltip - Extended)
-{
-Erhöht die Rüstung und Trefferpunkte von Menschengebäuden um 10%.
-}
-
-STRING 200
-// Upgrades: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltip - Extended)
-{
-Erhöht die Rüstung und Trefferpunkte von Menschengebäuden um 10%.
-}
-
-STRING 201
-// Upgrades: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltip - Extended)
-{
-Erhöht die Rüstung und Trefferpunkte von Menschengebäuden um 20%.
-}
-
-STRING 202
-// Upgrades: R001 (Langflinten), Ubertip (Tooltip - Extended)
-{
-Erhöht die Reichweite von Gebäuden und Fernkampfeinheiten um 50.
-}
-
-STRING 203
-// Upgrades: R001 (Langflinten), Ubertip (Tooltip - Extended)
-{
-Erhöht die Reichweite von Gebäuden und Fernkampfeinheiten um 25.
-}
-
-STRING 204
-// Upgrades: R001 (Langflinten), Ubertip (Tooltip - Extended)
-{
-Erhöht die Reichweite von Gebäuden und Fernkampfeinheiten um 25.
-}
-
-STRING 205
-// Upgrades: R001 (Langflinten), Ubertip (Tooltip - Extended)
-{
-Erhöht die Reichweite von Gebäuden und Fernkampfeinheiten um 25.
-}
-
-STRING 206
-// Upgrades: R001 (Langflinten), Ubertip (Tooltip - Extended)
-{
-Erhöht die Reichweite von Gebäuden und Fernkampfeinheiten um 25.
-}
-
-STRING 207
-// Upgrades: R002 (Eisenschwerter,Stahlschwerter,Mithrilschwerter), Ubertip (Tooltip - Extended)
-{
-Erhöht den Angriffsschaden aller Nahkampfeinheiten um 10.
-}
-
-STRING 208
-// Upgrades: R002 (Eisenschwerter,Stahlschwerter,Mithrilschwerter), Ubertip (Tooltip - Extended)
-{
-Erhöht den Angriffsschaden aller Nahkampfeinheiten um 10.
-}
-
-STRING 209
-// Upgrades: R002 (Eisenschwerter,Stahlschwerter,Mithrilschwerter), Ubertip (Tooltip - Extended)
-{
-Erhöht den Angriffsschaden aller Nahkampfeinheiten um 10.
-}
-
-STRING 210
-// Upgrades: R002 (Eisenschwerter,Stahlschwerter,Mithrilschwerter), Ubertip (Tooltip - Extended)
-{
-Erhöht den Angriffsschaden aller Nahkampfeinheiten um 10.
-}
-
-STRING 211
-// Upgrades: R002 (Eisenschwerter,Stahlschwerter,Mithrilschwerter), Ubertip (Tooltip - Extended)
-{
-Erhöht den Angriffsschaden aller Nahkampfeinheiten um 20.
-}
-
-STRING 212
-// Upgrades: R003 (Schwarzes Schießpulver,Angereichertes Schießpulver,Magisches Schießpulver), Ubertip (Tooltip - Extended)
-{
-Erhöht den Fernkampfschaden aller Einheiten um 20.
-}
-
-STRING 213
-// Upgrades: R003 (Schwarzes Schießpulver,Angereichertes Schießpulver,Magisches Schießpulver), Ubertip (Tooltip - Extended)
-{
-Erhöht den Fernkampfschaden aller Einheiten um 10.
-}
-
-STRING 214
-// Upgrades: R003 (Schwarzes Schießpulver,Angereichertes Schießpulver,Magisches Schießpulver), Ubertip (Tooltip - Extended)
-{
-Erhöht den Fernkampfschaden aller Einheiten um 10.
-}
-
-STRING 215
-// Upgrades: R003 (Schwarzes Schießpulver,Angereichertes Schießpulver,Magisches Schießpulver), Ubertip (Tooltip - Extended)
-{
-Erhöht den Fernkampfschaden aller Einheiten um 10.
-}
-
-STRING 216
-// Upgrades: R003 (Schwarzes Schießpulver,Angereichertes Schießpulver,Magisches Schießpulver), Ubertip (Tooltip - Extended)
-{
-Erhöht den Fernkampfschaden aller Einheiten um 10.
-}
-
 STRING 221
 // Upgrades: R003 (Schwarzes Schießpulver,Angereichertes Schießpulver,Magisches Schießpulver), EditorSuffix (Editor Suffix)
 {
@@ -848,50 +494,776 @@ H
 }
 
 STRING 224
+// Upgrades: R003 (Schwarzes Schießpulver,Angereichertes Schießpulver,Magisches Schießpulver), EditorSuffix (Editor Suffix)
+{
+(Human)
+}
+
+STRING 231
+// Upgrades: R003 (Schwarzes Schießpulver,Angereichertes Schießpulver,Magisches Schießpulver), EditorSuffix (Editor Suffix)
+{
+(Human)
+}
+
+STRING 232
+// Units: h002 (Scharfschuetze), Name (Name)
+{
+Scharfschuetze
+}
+
+STRING 250
+// Upgrades: R001 (Langflinten), class (Class)
+{
+ranged
+}
+
+STRING 263
+// Upgrades: R004 (Kampftierausbildung), Ubertip (Tooltip - Extended)
+{
+Wertet eure Hauptmänner zu |cff808000Rittern |rauf, welche mehr Schaden austeilen und einstecken können.
+}
+
+STRING 264
+// Upgrades: R004 (Kampftierausbildung), class (Class)
+{
+melee
+}
+
+STRING 267
+// Upgrades: R005 (Kampftierausbildung), Ubertip (Tooltip - Extended)
+{
+Wertet eure Soldaten zu |cff808000Hauptmännern |rauf, welche mehr Schaden austeilen und einstecken können.
+}
+
+STRING 268
+// Upgrades: R005 (Kampftierausbildung), class (Class)
+{
+melee
+}
+
+STRING 270
 // Upgrades: R004 (Kampftierausbildung), EditorSuffix (Editor Suffix)
 {
 (Human)
 }
 
-STRING 225
-// Upgrades: R004 (Kampftierausbildung), Name (Name)
+STRING 271
+// Upgrades: R006 (Leuchtfeuer), effect1 (Effect 1)
 {
-Nahkampf-Training 2
+ratx
 }
 
-STRING 226
-// Upgrades: R004 (Kampftierausbildung), Tip (Tooltip)
+STRING 281
+// Upgrades: R006 (Leuchtfeuer), Hotkey (Hotkey)
 {
-Nahkämpfer trainieren
+R
 }
 
-STRING 227
-// Upgrades: R004 (Kampftierausbildung), Ubertip (Tooltip - Extended)
+STRING 282
+// Upgrades: R006 (Leuchtfeuer), Hotkey (Hotkey)
 {
-Wertet eure Hauptmänner zu Rittern auf und erhöht deren Truppenstärke um 1.
+R
 }
 
-STRING 228
-// Upgrades: R005 (Kampftierausbildung), Name (Name)
+STRING 283
+// Upgrades: R006 (Leuchtfeuer), Hotkey (Hotkey)
 {
-Nahkampf-Training 1
+R
 }
 
-STRING 229
-// Upgrades: R005 (Kampftierausbildung), Tip (Tooltip)
+STRING 284
+// Upgrades: R006 (Leuchtfeuer), Hotkey (Hotkey)
 {
-Nahkämpfer trainieren
+R
 }
 
-STRING 230
-// Upgrades: R005 (Kampftierausbildung), Ubertip (Tooltip - Extended)
-{
-Wertet eure Soldaten zu Hauptmännern auf und erhöht deren Truppenstärke um 1.
-}
-
-STRING 231
+STRING 285
 // Upgrades: R005 (Kampftierausbildung), EditorSuffix (Editor Suffix)
 {
 (Human)
+}
+
+STRING 286
+// Upgrades: R006 (Leuchtfeuer), EditorSuffix (Editor Suffix)
+{
+(Human)
+}
+
+STRING 287
+// Upgrades: R006 (Leuchtfeuer), EditorSuffix (Editor Suffix)
+{
+(Human)
+}
+
+STRING 288
+// Upgrades: R006 (Leuchtfeuer), EditorSuffix (Editor Suffix)
+{
+(Human)
+}
+
+STRING 289
+// Upgrades: R006 (Leuchtfeuer), class (Class)
+{
+ranged
+}
+
+STRING 290
+// Upgrades: R006 (Leuchtfeuer), effect2 (Effect 2)
+{
+ratr
+}
+
+STRING 296
+// Units: h00D (Trainingslager), Name (Name)
+{
+Trainingslager
+}
+
+STRING 297
+// Upgrades: R006 (Leuchtfeuer), EditorSuffix (Editor Suffix)
+{
+(Human)
+}
+
+STRING 298
+// Upgrades: R007 (Eisenrüstung,Stahlrüstung,Mithrilrüstung), Hotkey (Hotkey)
+{
+R
+}
+
+STRING 299
+// Upgrades: R007 (Eisenrüstung,Stahlrüstung,Mithrilrüstung), Hotkey (Hotkey)
+{
+R
+}
+
+STRING 315
+// Upgrades: R006 (Leuchtfeuer), EditorSuffix (Editor Suffix)
+{
+(Human)
+}
+
+STRING 316
+// Upgrades: R007 (Eisenrüstung,Stahlrüstung,Mithrilrüstung), EditorSuffix (Editor Suffix)
+{
+(Human)
+}
+
+STRING 317
+// Upgrades: R007 (Eisenrüstung,Stahlrüstung,Mithrilrüstung), EditorSuffix (Editor Suffix)
+{
+(Human)
+}
+
+STRING 318
+// Upgrades: R007 (Eisenrüstung,Stahlrüstung,Mithrilrüstung), EditorSuffix (Editor Suffix)
+{
+(Human)
+}
+
+STRING 319
+// Upgrades: R007 (Eisenrüstung,Stahlrüstung,Mithrilrüstung), EditorSuffix (Editor Suffix)
+{
+(Human)
+}
+
+STRING 323
+// Upgrades: R007 (Eisenrüstung,Stahlrüstung,Mithrilrüstung), EditorSuffix (Editor Suffix)
+{
+(Human)
+}
+
+STRING 324
+// Upgrades: R008 (Kampftierausbildung), class (Class)
+{
+melee
+}
+
+STRING 328
+// Upgrades: R008 (Kampftierausbildung), Ubertip (Tooltip - Extended)
+{
+Fügt eurer Streitmacht Belagerungsmaschinen hinzu, welche die Gebäude der Gegener in Schutt und Asche legen.
+}
+
+STRING 329
+// Upgrades: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Name (Name)
+{
+Mauern verstärken - Stufe 1
+}
+
+STRING 330
+// Upgrades: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Name (Name)
+{
+Mauern verstärken - Stufe 2
+}
+
+STRING 331
+// Upgrades: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Name (Name)
+{
+Mauern verstärken - Stufe 3
+}
+
+STRING 332
+// Upgrades: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Name (Name)
+{
+Mauern verstärken - Stufe 4
+}
+
+STRING 333
+// Upgrades: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Name (Name)
+{
+Mauern verstärken - Stufe 5
+}
+
+STRING 339
+// Upgrades: R002 (Eisenschwerter,Stahlschwerter,Mithrilschwerter), Name (Name)
+{
+Waffen härten - Stufe 5
+}
+
+STRING 340
+// Upgrades: R002 (Eisenschwerter,Stahlschwerter,Mithrilschwerter), Name (Name)
+{
+Waffen härten - Stufe 4
+}
+
+STRING 341
+// Upgrades: R002 (Eisenschwerter,Stahlschwerter,Mithrilschwerter), Name (Name)
+{
+Waffen härten - Stufe 3
+}
+
+STRING 342
+// Upgrades: R002 (Eisenschwerter,Stahlschwerter,Mithrilschwerter), Name (Name)
+{
+Waffen härten - Stufe 2
+}
+
+STRING 348
+// Upgrades: R002 (Eisenschwerter,Stahlschwerter,Mithrilschwerter), Tip (Tooltip)
+{
+Waffen härten - Stufe 1
+}
+
+STRING 349
+// Upgrades: R004 (Kampftierausbildung), Name (Name)
+{
+Ritter rekrutieren
+}
+
+STRING 350
+// Upgrades: R005 (Kampftierausbildung), Name (Name)
+{
+Veteranen rekrutieren
+}
+
+STRING 352
+// Upgrades: R007 (Eisenrüstung,Stahlrüstung,Mithrilrüstung), Name (Name)
+{
+Rüstung härten - Stufe 1
+}
+
+STRING 353
+// Upgrades: R007 (Eisenrüstung,Stahlrüstung,Mithrilrüstung), Name (Name)
+{
+Rüstung härten - Stufe 2
+}
+
+STRING 354
+// Upgrades: R007 (Eisenrüstung,Stahlrüstung,Mithrilrüstung), Name (Name)
+{
+Rüstung härten - Stufe 3
+}
+
+STRING 355
+// Upgrades: R007 (Eisenrüstung,Stahlrüstung,Mithrilrüstung), Name (Name)
+{
+Rüstung härten - Stufe 4
+}
+
+STRING 356
+// Upgrades: R007 (Eisenrüstung,Stahlrüstung,Mithrilrüstung), Name (Name)
+{
+Rüstung härten - Stufe 5
+}
+
+STRING 357
+// Upgrades: R008 (Kampftierausbildung), Name (Name)
+{
+Belagerungsmaschinen rekrutieren
+}
+
+STRING 358
+// Upgrades: R008 (Kampftierausbildung), Tip (Tooltip)
+{
+Belagerungsmaschinen rekrutieren
+}
+
+STRING 369
+// Upgrades: R008 (Kampftierausbildung), EditorSuffix (Editor Suffix)
+{
+(Human)
+}
+
+STRING 370
+// Upgrades: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Tip (Tooltip)
+{
+Mauern verstärken - Stufe 2
+}
+
+STRING 371
+// Upgrades: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Tip (Tooltip)
+{
+Mauern verstärken - Stufe 3
+}
+
+STRING 372
+// Upgrades: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Tip (Tooltip)
+{
+Mauern verstärken - Stufe 4
+}
+
+STRING 373
+// Upgrades: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Tip (Tooltip)
+{
+Mauern verstärken - Stufe 5
+}
+
+STRING 374
+// Upgrades: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltip - Extended)
+{
+Erhöht die Rüstung und Trefferpunkte von Gebäuden um |cffff000010%|r.
+}
+
+STRING 375
+// Upgrades: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltip - Extended)
+{
+Erhöht die Rüstung und Trefferpunkte von Gebäuden um |cffff000010%|r.
+}
+
+STRING 376
+// Upgrades: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltip - Extended)
+{
+Erhöht die Rüstung und Trefferpunkte von Gebäuden um |cffff000010%|r.
+}
+
+STRING 377
+// Upgrades: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltip - Extended)
+{
+Erhöht die Rüstung und Trefferpunkte von Gebäuden um |cffff000010%|r.
+}
+
+STRING 378
+// Upgrades: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Ubertip (Tooltip - Extended)
+{
+Erhöht die Rüstung und Trefferpunkte von Gebäuden um |cffff000020%|r.
+}
+
+STRING 379
+// Upgrades: R000 (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), Tip (Tooltip)
+{
+Mauern verstärken - Stufe 1
+}
+
+STRING 380
+// Upgrades: R001 (Langflinten), Name (Name)
+{
+Waffenläufe verbessern - Stufe 1
+}
+
+STRING 381
+// Upgrades: R001 (Langflinten), Name (Name)
+{
+Waffenläufe verbessern - Stufe 2
+}
+
+STRING 382
+// Upgrades: R001 (Langflinten), Name (Name)
+{
+Waffenläufe verbessern - Stufe 3
+}
+
+STRING 383
+// Upgrades: R001 (Langflinten), Name (Name)
+{
+Waffenläufe verbessern - Stufe 4
+}
+
+STRING 384
+// Upgrades: R001 (Langflinten), Name (Name)
+{
+Waffenläufe verbessern - Stufe 5
+}
+
+STRING 385
+// Upgrades: R001 (Langflinten), Tip (Tooltip)
+{
+Waffenläufe verbessern - Stufe 1
+}
+
+STRING 386
+// Upgrades: R001 (Langflinten), Tip (Tooltip)
+{
+Waffenläufe verbessern - Stufe 2
+}
+
+STRING 387
+// Upgrades: R001 (Langflinten), Tip (Tooltip)
+{
+Waffenläufe verbessern - Stufe 3
+}
+
+STRING 388
+// Upgrades: R001 (Langflinten), Tip (Tooltip)
+{
+Waffenläufe verbessern - Stufe 4
+}
+
+STRING 389
+// Upgrades: R001 (Langflinten), Tip (Tooltip)
+{
+Waffenläufe verbessern - Stufe 5
+}
+
+STRING 390
+// Upgrades: R001 (Langflinten), Ubertip (Tooltip - Extended)
+{
+Erhöht die Reichweite von mobilen Fernkampfeinheiten (außer Belagerungseinheiten) um |cffff000050|r.
+}
+
+STRING 391
+// Upgrades: R001 (Langflinten), Ubertip (Tooltip - Extended)
+{
+Erhöht die Reichweite von mobilen Fernkampfeinheiten (außer Belagerungseinheiten) um |cffff000025|r.
+}
+
+STRING 392
+// Upgrades: R001 (Langflinten), Ubertip (Tooltip - Extended)
+{
+Erhöht die Reichweite von mobilen Fernkampfeinheiten (außer Belagerungseinheiten) um |cffff000025|r.
+}
+
+STRING 393
+// Upgrades: R001 (Langflinten), Ubertip (Tooltip - Extended)
+{
+Erhöht die Reichweite von mobilen Fernkampfeinheiten (außer Belagerungseinheiten) um |cffff000025|r.
+}
+
+STRING 394
+// Upgrades: R001 (Langflinten), Ubertip (Tooltip - Extended)
+{
+Erhöht die Reichweite von mobilen Fernkampfeinheiten (außer Belagerungseinheiten) um |cffff000025|r.
+}
+
+STRING 395
+// Upgrades: R002 (Eisenschwerter,Stahlschwerter,Mithrilschwerter), Tip (Tooltip)
+{
+Waffen härten - Stufe 2
+}
+
+STRING 396
+// Upgrades: R002 (Eisenschwerter,Stahlschwerter,Mithrilschwerter), Tip (Tooltip)
+{
+Waffen härten - Stufe 3
+}
+
+STRING 397
+// Upgrades: R002 (Eisenschwerter,Stahlschwerter,Mithrilschwerter), Tip (Tooltip)
+{
+Waffen härten - Stufe 4
+}
+
+STRING 398
+// Upgrades: R002 (Eisenschwerter,Stahlschwerter,Mithrilschwerter), Tip (Tooltip)
+{
+Waffen härten - Stufe 5
+}
+
+STRING 399
+// Upgrades: R002 (Eisenschwerter,Stahlschwerter,Mithrilschwerter), Name (Name)
+{
+Waffen härten - Stufe 1
+}
+
+STRING 400
+// Upgrades: R002 (Eisenschwerter,Stahlschwerter,Mithrilschwerter), Ubertip (Tooltip - Extended)
+{
+Erhöht den Angriffsschaden aller mobilen Nahkampfeinheiten um |cffff000010|r.
+}
+
+STRING 401
+// Upgrades: R002 (Eisenschwerter,Stahlschwerter,Mithrilschwerter), Ubertip (Tooltip - Extended)
+{
+Erhöht den Angriffsschaden aller mobilen Nahkampfeinheiten um |cffff000010|r.
+}
+
+STRING 402
+// Upgrades: R002 (Eisenschwerter,Stahlschwerter,Mithrilschwerter), Ubertip (Tooltip - Extended)
+{
+Erhöht den Angriffsschaden aller mobilen Nahkampfeinheiten um |cffff000010|r.
+}
+
+STRING 403
+// Upgrades: R002 (Eisenschwerter,Stahlschwerter,Mithrilschwerter), Ubertip (Tooltip - Extended)
+{
+Erhöht den Angriffsschaden aller mobilen Nahkampfeinheiten um |cffff000010|r.
+}
+
+STRING 404
+// Upgrades: R002 (Eisenschwerter,Stahlschwerter,Mithrilschwerter), Ubertip (Tooltip - Extended)
+{
+Erhöht den Angriffsschaden aller mobilen Nahkampfeinheiten um |cffff000020|r.
+}
+
+STRING 405
+// Upgrades: R003 (Schwarzes Schießpulver,Angereichertes Schießpulver,Magisches Schießpulver), Name (Name)
+{
+Handfeuerwaffen verbessern - Stufe 1
+}
+
+STRING 406
+// Upgrades: R003 (Schwarzes Schießpulver,Angereichertes Schießpulver,Magisches Schießpulver), Name (Name)
+{
+Handfeuerwaffen verbessern - Stufe 2
+}
+
+STRING 407
+// Upgrades: R003 (Schwarzes Schießpulver,Angereichertes Schießpulver,Magisches Schießpulver), Name (Name)
+{
+Handfeuerwaffen verbessern - Stufe 3
+}
+
+STRING 408
+// Upgrades: R003 (Schwarzes Schießpulver,Angereichertes Schießpulver,Magisches Schießpulver), Name (Name)
+{
+Handfeuerwaffen verbessern - Stufe 4
+}
+
+STRING 409
+// Upgrades: R003 (Schwarzes Schießpulver,Angereichertes Schießpulver,Magisches Schießpulver), Name (Name)
+{
+Handfeuerwaffen verbessern - Stufe 5
+}
+
+STRING 410
+// Upgrades: R003 (Schwarzes Schießpulver,Angereichertes Schießpulver,Magisches Schießpulver), Ubertip (Tooltip - Extended)
+{
+Erhöht den Schaden aller mobilen Fernkampfeinheiten (außer Belagerungseinheiten) um |cffff000020|r.
+}
+
+STRING 411
+// Upgrades: R003 (Schwarzes Schießpulver,Angereichertes Schießpulver,Magisches Schießpulver), Ubertip (Tooltip - Extended)
+{
+Erhöht den Schaden aller mobilen Fernkampfeinheiten (außer Belagerungseinheiten) um |cffff000010|r.
+}
+
+STRING 412
+// Upgrades: R003 (Schwarzes Schießpulver,Angereichertes Schießpulver,Magisches Schießpulver), Ubertip (Tooltip - Extended)
+{
+Erhöht den Schaden aller mobilen Fernkampfeinheiten (außer Belagerungseinheiten) um |cffff000010|r.
+}
+
+STRING 413
+// Upgrades: R003 (Schwarzes Schießpulver,Angereichertes Schießpulver,Magisches Schießpulver), Ubertip (Tooltip - Extended)
+{
+Erhöht den Schaden aller mobilen Fernkampfeinheiten (außer Belagerungseinheiten) um |cffff000010|r.
+}
+
+STRING 414
+// Upgrades: R003 (Schwarzes Schießpulver,Angereichertes Schießpulver,Magisches Schießpulver), Ubertip (Tooltip - Extended)
+{
+Erhöht den Schaden aller mobilen Fernkampfeinheiten (außer Belagerungseinheiten) um |cffff000010|r.
+}
+
+STRING 415
+// Upgrades: R003 (Schwarzes Schießpulver,Angereichertes Schießpulver,Magisches Schießpulver), Tip (Tooltip)
+{
+Handfeuerwaffen verbessern - Stufe 5
+}
+
+STRING 416
+// Upgrades: R003 (Schwarzes Schießpulver,Angereichertes Schießpulver,Magisches Schießpulver), Tip (Tooltip)
+{
+Handfeuerwaffen verbessern - Stufe 4
+}
+
+STRING 417
+// Upgrades: R003 (Schwarzes Schießpulver,Angereichertes Schießpulver,Magisches Schießpulver), Tip (Tooltip)
+{
+Handfeuerwaffen verbessern - Stufe 3
+}
+
+STRING 418
+// Upgrades: R003 (Schwarzes Schießpulver,Angereichertes Schießpulver,Magisches Schießpulver), Tip (Tooltip)
+{
+Handfeuerwaffen verbessern - Stufe 2
+}
+
+STRING 419
+// Upgrades: R003 (Schwarzes Schießpulver,Angereichertes Schießpulver,Magisches Schießpulver), Tip (Tooltip)
+{
+Handfeuerwaffen verbessern - Stufe 1
+}
+
+STRING 420
+// Upgrades: R004 (Kampftierausbildung), Tip (Tooltip)
+{
+Ritter rekrutieren
+}
+
+STRING 421
+// Upgrades: R005 (Kampftierausbildung), Tip (Tooltip)
+{
+Veteranen rekrutieren
+}
+
+STRING 422
+// Upgrades: R006 (Leuchtfeuer), Name (Name)
+{
+Artillerie verbessern - Stufe 1
+}
+
+STRING 423
+// Upgrades: R006 (Leuchtfeuer), Name (Name)
+{
+Artillerie verbessern - Stufe 2
+}
+
+STRING 424
+// Upgrades: R006 (Leuchtfeuer), Name (Name)
+{
+Artillerie verbessern - Stufe 3
+}
+
+STRING 425
+// Upgrades: R006 (Leuchtfeuer), Name (Name)
+{
+Artillerie verbessern - Stufe 4
+}
+
+STRING 426
+// Upgrades: R006 (Leuchtfeuer), Name (Name)
+{
+Artillerie verbessern - Stufe 5
+}
+
+STRING 427
+// Upgrades: R006 (Leuchtfeuer), Tip (Tooltip)
+{
+Artillerie verbessern - Stufe 1
+}
+
+STRING 428
+// Upgrades: R006 (Leuchtfeuer), Tip (Tooltip)
+{
+Artillerie verbessern - Stufe 2
+}
+
+STRING 429
+// Upgrades: R006 (Leuchtfeuer), Tip (Tooltip)
+{
+Artillerie verbessern - Stufe 3
+}
+
+STRING 430
+// Upgrades: R006 (Leuchtfeuer), Tip (Tooltip)
+{
+Artillerie verbessern - Stufe 4
+}
+
+STRING 431
+// Upgrades: R006 (Leuchtfeuer), Tip (Tooltip)
+{
+Artillerie verbessern - Stufe 5
+}
+
+STRING 432
+// Upgrades: R006 (Leuchtfeuer), Ubertip (Tooltip - Extended)
+{
+Erhöht die Reichweite und den Schaden von Gebäuden und Belagerungseinheiten um |cffff000050|r.
+}
+
+STRING 433
+// Upgrades: R006 (Leuchtfeuer), Ubertip (Tooltip - Extended)
+{
+Erhöht die Reichweite und den Schaden von Gebäuden und Belagerungseinheiten um |cffff000025|r.
+}
+
+STRING 434
+// Upgrades: R006 (Leuchtfeuer), Ubertip (Tooltip - Extended)
+{
+Erhöht die Reichweite und den Schaden von Gebäuden und Belagerungseinheiten um |cffff000025|r.
+}
+
+STRING 435
+// Upgrades: R006 (Leuchtfeuer), Ubertip (Tooltip - Extended)
+{
+Erhöht die Reichweite und den Schaden von Gebäuden und Belagerungseinheiten um |cffff000025|r.
+}
+
+STRING 436
+// Upgrades: R006 (Leuchtfeuer), Ubertip (Tooltip - Extended)
+{
+Erhöht die Reichweite und den Schaden von Gebäuden und Belagerungseinheiten um |cffff000025|r.
+}
+
+STRING 437
+// Upgrades: R007 (Eisenrüstung,Stahlrüstung,Mithrilrüstung), Tip (Tooltip)
+{
+Rüstung härten - Stufe 1
+}
+
+STRING 438
+// Upgrades: R007 (Eisenrüstung,Stahlrüstung,Mithrilrüstung), Tip (Tooltip)
+{
+Rüstung härten - Stufe 2
+}
+
+STRING 439
+// Upgrades: R007 (Eisenrüstung,Stahlrüstung,Mithrilrüstung), Tip (Tooltip)
+{
+Rüstung härten - Stufe 3
+}
+
+STRING 440
+// Upgrades: R007 (Eisenrüstung,Stahlrüstung,Mithrilrüstung), Tip (Tooltip)
+{
+Rüstung härten - Stufe 4
+}
+
+STRING 441
+// Upgrades: R007 (Eisenrüstung,Stahlrüstung,Mithrilrüstung), Tip (Tooltip)
+{
+Rüstung härten - Stufe 5
+}
+
+STRING 442
+// Upgrades: R007 (Eisenrüstung,Stahlrüstung,Mithrilrüstung), Ubertip (Tooltip - Extended)
+{
+Erhöht die Rüstung aller mobilen Einheiten (außer von Belagerungseinheiten).
+}
+
+STRING 443
+// Upgrades: R007 (Eisenrüstung,Stahlrüstung,Mithrilrüstung), Ubertip (Tooltip - Extended)
+{
+Erhöht die Rüstung aller mobilen Einheiten (außer von Belagerungseinheiten).
+}
+
+STRING 444
+// Upgrades: R007 (Eisenrüstung,Stahlrüstung,Mithrilrüstung), Ubertip (Tooltip - Extended)
+{
+Erhöht die Rüstung aller mobilen Einheiten (außer von Belagerungseinheiten).
+}
+
+STRING 445
+// Upgrades: R007 (Eisenrüstung,Stahlrüstung,Mithrilrüstung), Ubertip (Tooltip - Extended)
+{
+Erhöht die Rüstung aller mobilen Einheiten (außer von Belagerungseinheiten).
+}
+
+STRING 446
+// Upgrades: R007 (Eisenrüstung,Stahlrüstung,Mithrilrüstung), Ubertip (Tooltip - Extended)
+{
+Erhöht die Rüstung aller mobilen Einheiten (außer von Belagerungseinheiten).
 }
 

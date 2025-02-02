@@ -56,7 +56,7 @@ namespace Source.Handler.GenericEvents
       }
       catch (Exception ex)
       {
-        Program.ShowDebugMessage("GenericUnit.OnUnitDies", ex);
+        Program.ShowDebugMessage("Unit.OnDies", ex);
       }
     }
   }

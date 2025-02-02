@@ -204,105 +204,105 @@ namespace Source
     private static void ConstructHumanBuildingAndTrigger()
     {
       // Hauptgebäude
-      SpawnedBuilding building = Humans.Computer.CreateBuilding(Constants.UNIT_SCHLOSS_HUMAN, Areas.HumanBase);
+      SpawnBuilding building = Humans.Computer.CreateBuilding(Constants.UNIT_SCHLOSS_HUMAN, Areas.HumanBase);
       building.RegisterOnDies(MainBuilding.OnDies);
-      building.AddSpawnTrigger(MainBuildingSpawnTime, Areas.HumanBaseToCenterSpawn, Constants.UNIT_PRIESTER_HUMAN).Run(5.5f);
-      building.AddSpawnTrigger(MainBuildingSpawnTime, Areas.HumanBaseToElfSpawn, Constants.UNIT_PRIESTER_HUMAN).Run(5.5f);
-      building.AddSpawnTrigger(MainBuildingSpawnTime, Areas.HumanBaseToOrcsSpawn, Constants.UNIT_PRIESTER_HUMAN).Run(5.5f);
+      building.AddSpawnTrigger(MainBuildingSpawnTime, Areas.HumanBaseToCenterSpawn, Enums.UnitSpawnType.Distance, Constants.UNIT_PRIESTER_HUMAN).Run(5.5f);
+      building.AddSpawnTrigger(MainBuildingSpawnTime, Areas.HumanBaseToElfSpawn, Enums.UnitSpawnType.Distance, Constants.UNIT_PRIESTER_HUMAN).Run(5.5f);
+      building.AddSpawnTrigger(MainBuildingSpawnTime, Areas.HumanBaseToOrcsSpawn, Enums.UnitSpawnType.Distance, Constants.UNIT_PRIESTER_HUMAN).Run(5.5f);
 
       // Kasernen
       building = Humans.Computer.CreateBuilding(Constants.UNIT_KASERNE_HUMAN, Areas.HumanBarracksToCenter);
       building.RegisterOnDies(BarracksBuilding.OnDies);
-      building.AddSpawnTrigger(BarracksSpawnTime, Areas.HumanBarracksToCenterSpawn, Constants.UNIT_FU_SOLDAT_HUMAN, Constants.UNIT_FU_SOLDAT_HUMAN).Run();
-      building.AddSpawnTrigger(BarracksSpawnTime, Areas.HumanBarracksToCenterSpawn, Constants.UNIT_SCHARFSCH_TZE_HUMAN).Run(1f);
+      building.AddSpawnTrigger(BarracksSpawnTime, Areas.HumanBarracksToCenterSpawn, Enums.UnitSpawnType.Meelee, Constants.UNIT_SOLDAT_HUMAN, Constants.UNIT_SOLDAT_HUMAN).Run();
+      building.AddSpawnTrigger(BarracksSpawnTime, Areas.HumanBarracksToCenterSpawn, Enums.UnitSpawnType.Distance, Constants.UNIT_SCHARFSCHUETZE_HUMAN).Run(1f);
 
       building = Humans.Computer.CreateBuilding(Constants.UNIT_KASERNE_HUMAN, Areas.HumanBarracksToElf);
       building.RegisterOnDies(BarracksBuilding.OnDies);
-      building.AddSpawnTrigger(BarracksSpawnTime, Areas.HumanBarracksToElfSpawn, Constants.UNIT_FU_SOLDAT_HUMAN, Constants.UNIT_FU_SOLDAT_HUMAN).Run();
-      building.AddSpawnTrigger(BarracksSpawnTime, Areas.HumanBarracksToElfSpawn, Constants.UNIT_SCHARFSCH_TZE_HUMAN).Run(1f);
+      building.AddSpawnTrigger(BarracksSpawnTime, Areas.HumanBarracksToElfSpawn, Enums.UnitSpawnType.Meelee, Constants.UNIT_SOLDAT_HUMAN, Constants.UNIT_SOLDAT_HUMAN).Run();
+      building.AddSpawnTrigger(BarracksSpawnTime, Areas.HumanBarracksToElfSpawn, Enums.UnitSpawnType.Distance, Constants.UNIT_SCHARFSCHUETZE_HUMAN).Run(1f);
 
       building = Humans.Computer.CreateBuilding(Constants.UNIT_KASERNE_HUMAN, Areas.HumanBarracksToOrcs);
       building.RegisterOnDies(BarracksBuilding.OnDies);
-      building.AddSpawnTrigger(BarracksSpawnTime, Areas.HumanBarracksToOrcsSpawn, Constants.UNIT_FU_SOLDAT_HUMAN, Constants.UNIT_FU_SOLDAT_HUMAN).Run();
-      building.AddSpawnTrigger(BarracksSpawnTime, Areas.HumanBarracksToOrcsSpawn, Constants.UNIT_SCHARFSCH_TZE_HUMAN).Run(1f);
+      building.AddSpawnTrigger(BarracksSpawnTime, Areas.HumanBarracksToOrcsSpawn, Enums.UnitSpawnType.Meelee, Constants.UNIT_SOLDAT_HUMAN, Constants.UNIT_SOLDAT_HUMAN).Run();
+      building.AddSpawnTrigger(BarracksSpawnTime, Areas.HumanBarracksToOrcsSpawn, Enums.UnitSpawnType.Distance, Constants.UNIT_SCHARFSCHUETZE_HUMAN).Run(1f);
     }
 
     private static void ConstructOrcBuildingAndTrigger()
     {
       // Hauptgebäude
-      SpawnedBuilding building = Orcs.Computer.CreateBuilding(Constants.UNIT_SCHLOSS_HUMAN, Areas.OrcBase);
+      SpawnBuilding building = Orcs.Computer.CreateBuilding(Constants.UNIT_SCHLOSS_HUMAN, Areas.OrcBase);
       building.RegisterOnDies(MainBuilding.OnDies);
-      building.AddSpawnTrigger(MainBuildingSpawnTime, Areas.OrcBaseToCenterSpawn, Constants.UNIT_PRIESTER_HUMAN).Run(5.5f);
-      building.AddSpawnTrigger(MainBuildingSpawnTime, Areas.OrcBaseToHumanSpawn, Constants.UNIT_PRIESTER_HUMAN).Run(5.5f);
-      building.AddSpawnTrigger(MainBuildingSpawnTime, Areas.OrcBaseToUndeadSpawn, Constants.UNIT_PRIESTER_HUMAN).Run(5.5f);
+      building.AddSpawnTrigger(MainBuildingSpawnTime, Areas.OrcBaseToCenterSpawn, Enums.UnitSpawnType.Distance, Constants.UNIT_PRIESTER_HUMAN).Run(5.5f);
+      building.AddSpawnTrigger(MainBuildingSpawnTime, Areas.OrcBaseToHumanSpawn, Enums.UnitSpawnType.Distance, Constants.UNIT_PRIESTER_HUMAN).Run(5.5f);
+      building.AddSpawnTrigger(MainBuildingSpawnTime, Areas.OrcBaseToUndeadSpawn, Enums.UnitSpawnType.Distance, Constants.UNIT_PRIESTER_HUMAN).Run(5.5f);
 
       // Kasernen
       building = Orcs.Computer.CreateBuilding(Constants.UNIT_KASERNE_HUMAN, Areas.OrcBarracksToCenter);
       building.RegisterOnDies(BarracksBuilding.OnDies);
-      building.AddSpawnTrigger(BarracksSpawnTime, Areas.OrcBarracksToCenterSpawn, Constants.UNIT_FU_SOLDAT_HUMAN, Constants.UNIT_FU_SOLDAT_HUMAN).Run();
-      building.AddSpawnTrigger(BarracksSpawnTime, Areas.OrcBarracksToCenterSpawn, Constants.UNIT_SCHARFSCH_TZE_HUMAN).Run(0.5f);
+      building.AddSpawnTrigger(BarracksSpawnTime, Areas.OrcBarracksToCenterSpawn, Enums.UnitSpawnType.Meelee, Constants.UNIT_SOLDAT_HUMAN, Constants.UNIT_SOLDAT_HUMAN).Run();
+      building.AddSpawnTrigger(BarracksSpawnTime, Areas.OrcBarracksToCenterSpawn, Enums.UnitSpawnType.Distance, Constants.UNIT_SCHARFSCHUETZE_HUMAN).Run(0.5f);
 
       building = Orcs.Computer.CreateBuilding(Constants.UNIT_KASERNE_HUMAN, Areas.OrcBarracksToHuman);
       building.RegisterOnDies(BarracksBuilding.OnDies);
-      building.AddSpawnTrigger(BarracksSpawnTime, Areas.OrcBarracksToHumanSpawn, Constants.UNIT_FU_SOLDAT_HUMAN, Constants.UNIT_FU_SOLDAT_HUMAN).Run();
-      building.AddSpawnTrigger(BarracksSpawnTime, Areas.OrcBarracksToHumanSpawn, Constants.UNIT_SCHARFSCH_TZE_HUMAN).Run(0.5f);
+      building.AddSpawnTrigger(BarracksSpawnTime, Areas.OrcBarracksToHumanSpawn, Enums.UnitSpawnType.Meelee, Constants.UNIT_SOLDAT_HUMAN, Constants.UNIT_SOLDAT_HUMAN).Run();
+      building.AddSpawnTrigger(BarracksSpawnTime, Areas.OrcBarracksToHumanSpawn, Enums.UnitSpawnType.Distance, Constants.UNIT_SCHARFSCHUETZE_HUMAN).Run(0.5f);
 
       building = Orcs.Computer.CreateBuilding(Constants.UNIT_KASERNE_HUMAN, Areas.OrcBarracksToUndead);
       building.RegisterOnDies(BarracksBuilding.OnDies);
-      building.AddSpawnTrigger(BarracksSpawnTime, Areas.OrcBarracksToUndeadSpawn, Constants.UNIT_FU_SOLDAT_HUMAN, Constants.UNIT_FU_SOLDAT_HUMAN).Run();
-      building.AddSpawnTrigger(BarracksSpawnTime, Areas.OrcBarracksToUndeadSpawn, Constants.UNIT_SCHARFSCH_TZE_HUMAN).Run(0.5f);
+      building.AddSpawnTrigger(BarracksSpawnTime, Areas.OrcBarracksToUndeadSpawn, Enums.UnitSpawnType.Meelee, Constants.UNIT_SOLDAT_HUMAN, Constants.UNIT_SOLDAT_HUMAN).Run();
+      building.AddSpawnTrigger(BarracksSpawnTime, Areas.OrcBarracksToUndeadSpawn, Enums.UnitSpawnType.Distance, Constants.UNIT_SCHARFSCHUETZE_HUMAN).Run(0.5f);
     }
 
     private static void ConstructElfBuildingAndTrigger()
     {
       // Hauptgebäude
-      SpawnedBuilding building = Elves.Computer.CreateBuilding(Constants.UNIT_SCHLOSS_HUMAN, Areas.ElfBase);
+      SpawnBuilding building = Elves.Computer.CreateBuilding(Constants.UNIT_SCHLOSS_HUMAN, Areas.ElfBase);
       building.RegisterOnDies(MainBuilding.OnDies);
-      building.AddSpawnTrigger(MainBuildingSpawnTime, Areas.ElfBaseToCenterSpawn, Constants.UNIT_PRIESTER_HUMAN).Run(5.5f);
-      building.AddSpawnTrigger(MainBuildingSpawnTime, Areas.ElfBaseToHumanSpawn, Constants.UNIT_PRIESTER_HUMAN).Run(5.5f);
-      building.AddSpawnTrigger(MainBuildingSpawnTime, Areas.ElfBaseToUndeadSpawn, Constants.UNIT_PRIESTER_HUMAN).Run(5.5f);
+      building.AddSpawnTrigger(MainBuildingSpawnTime, Areas.ElfBaseToCenterSpawn, Enums.UnitSpawnType.Distance, Constants.UNIT_PRIESTER_HUMAN).Run(5.5f);
+      building.AddSpawnTrigger(MainBuildingSpawnTime, Areas.ElfBaseToHumanSpawn, Enums.UnitSpawnType.Distance, Constants.UNIT_PRIESTER_HUMAN).Run(5.5f);
+      building.AddSpawnTrigger(MainBuildingSpawnTime, Areas.ElfBaseToUndeadSpawn, Enums.UnitSpawnType.Distance, Constants.UNIT_PRIESTER_HUMAN).Run(5.5f);
 
       // Kasernen
       building = Elves.Computer.CreateBuilding(Constants.UNIT_KASERNE_HUMAN, Areas.ElfBarracksToCenter);
       building.RegisterOnDies(BarracksBuilding.OnDies);
-      building.AddSpawnTrigger(BarracksSpawnTime, Areas.ElfBarracksToCenterSpawn, Constants.UNIT_FU_SOLDAT_HUMAN, Constants.UNIT_FU_SOLDAT_HUMAN).Run();
-      building.AddSpawnTrigger(BarracksSpawnTime, Areas.ElfBarracksToCenterSpawn, Constants.UNIT_SCHARFSCH_TZE_HUMAN).Run(0.5f);
+      building.AddSpawnTrigger(BarracksSpawnTime, Areas.ElfBarracksToCenterSpawn, Enums.UnitSpawnType.Meelee, Constants.UNIT_SOLDAT_HUMAN, Constants.UNIT_SOLDAT_HUMAN).Run();
+      building.AddSpawnTrigger(BarracksSpawnTime, Areas.ElfBarracksToCenterSpawn, Enums.UnitSpawnType.Distance, Constants.UNIT_SCHARFSCHUETZE_HUMAN).Run(0.5f);
 
       building = Elves.Computer.CreateBuilding(Constants.UNIT_KASERNE_HUMAN, Areas.ElfBarracksToHuman);
       building.RegisterOnDies(BarracksBuilding.OnDies);
-      building.AddSpawnTrigger(BarracksSpawnTime, Areas.ElfBarracksToHumanSpawn, Constants.UNIT_FU_SOLDAT_HUMAN, Constants.UNIT_FU_SOLDAT_HUMAN).Run();
-      building.AddSpawnTrigger(BarracksSpawnTime, Areas.ElfBarracksToHumanSpawn, Constants.UNIT_SCHARFSCH_TZE_HUMAN).Run(0.5f);
+      building.AddSpawnTrigger(BarracksSpawnTime, Areas.ElfBarracksToHumanSpawn, Enums.UnitSpawnType.Meelee, Constants.UNIT_SOLDAT_HUMAN, Constants.UNIT_SOLDAT_HUMAN).Run();
+      building.AddSpawnTrigger(BarracksSpawnTime, Areas.ElfBarracksToHumanSpawn, Enums.UnitSpawnType.Distance, Constants.UNIT_SCHARFSCHUETZE_HUMAN).Run(0.5f);
 
       building = Elves.Computer.CreateBuilding(Constants.UNIT_KASERNE_HUMAN, Areas.ElfBarracksToUndead);
       building.RegisterOnDies(BarracksBuilding.OnDies);
-      building.AddSpawnTrigger(BarracksSpawnTime, Areas.ElfBarracksToUndeadSpawn, Constants.UNIT_FU_SOLDAT_HUMAN, Constants.UNIT_FU_SOLDAT_HUMAN).Run();
-      building.AddSpawnTrigger(BarracksSpawnTime, Areas.ElfBarracksToUndeadSpawn, Constants.UNIT_SCHARFSCH_TZE_HUMAN).Run(0.5f);
+      building.AddSpawnTrigger(BarracksSpawnTime, Areas.ElfBarracksToUndeadSpawn, Enums.UnitSpawnType.Meelee, Constants.UNIT_SOLDAT_HUMAN, Constants.UNIT_SOLDAT_HUMAN).Run();
+      building.AddSpawnTrigger(BarracksSpawnTime, Areas.ElfBarracksToUndeadSpawn, Enums.UnitSpawnType.Distance, Constants.UNIT_SCHARFSCHUETZE_HUMAN).Run(0.5f);
     }
 
     private static void ConstructUndeadBuildingAndTrigger()
     {
       // Hauptgebäude
-      SpawnedBuilding building = Undeads.Computer.CreateBuilding(Constants.UNIT_SCHLOSS_HUMAN, Areas.UndeadBase);
+      SpawnBuilding building = Undeads.Computer.CreateBuilding(Constants.UNIT_SCHLOSS_HUMAN, Areas.UndeadBase);
       building.RegisterOnDies(MainBuilding.OnDies);
-      building.AddSpawnTrigger(MainBuildingSpawnTime, Areas.UndeadBaseToCenterSpawn, Constants.UNIT_PRIESTER_HUMAN).Run(5.5f);
-      building.AddSpawnTrigger(MainBuildingSpawnTime, Areas.UndeadBaseToElfSpawn, Constants.UNIT_PRIESTER_HUMAN).Run(5.5f);
-      building.AddSpawnTrigger(MainBuildingSpawnTime, Areas.UndeadBaseToOrcsSpawn, Constants.UNIT_PRIESTER_HUMAN).Run(5.5f);
+      building.AddSpawnTrigger(MainBuildingSpawnTime, Areas.UndeadBaseToCenterSpawn, Enums.UnitSpawnType.Distance, Constants.UNIT_PRIESTER_HUMAN).Run(5.5f);
+      building.AddSpawnTrigger(MainBuildingSpawnTime, Areas.UndeadBaseToElfSpawn, Enums.UnitSpawnType.Distance, Constants.UNIT_PRIESTER_HUMAN).Run(5.5f);
+      building.AddSpawnTrigger(MainBuildingSpawnTime, Areas.UndeadBaseToOrcsSpawn, Enums.UnitSpawnType.Distance, Constants.UNIT_PRIESTER_HUMAN).Run(5.5f);
 
       // Kasernen
       building = Undeads.Computer.CreateBuilding(Constants.UNIT_KASERNE_HUMAN, Areas.UndeadBarracksToCenter);
       building.RegisterOnDies(BarracksBuilding.OnDies);
-      building.AddSpawnTrigger(BarracksSpawnTime, Areas.UndeadBarracksToCenterSpawn, Constants.UNIT_FU_SOLDAT_HUMAN, Constants.UNIT_FU_SOLDAT_HUMAN).Run();
-      building.AddSpawnTrigger(BarracksSpawnTime, Areas.UndeadBarracksToCenterSpawn, Constants.UNIT_SCHARFSCH_TZE_HUMAN).Run(0.5f);
+      building.AddSpawnTrigger(BarracksSpawnTime, Areas.UndeadBarracksToCenterSpawn, Enums.UnitSpawnType.Meelee, Constants.UNIT_SOLDAT_HUMAN, Constants.UNIT_SOLDAT_HUMAN).Run();
+      building.AddSpawnTrigger(BarracksSpawnTime, Areas.UndeadBarracksToCenterSpawn, Enums.UnitSpawnType.Distance, Constants.UNIT_SCHARFSCHUETZE_HUMAN).Run(0.5f);
 
       building = Undeads.Computer.CreateBuilding(Constants.UNIT_KASERNE_HUMAN, Areas.UndeadBarracksToElf);
       building.RegisterOnDies(BarracksBuilding.OnDies);
-      building.AddSpawnTrigger(BarracksSpawnTime, Areas.UndeadBarracksToElfSpawn, Constants.UNIT_FU_SOLDAT_HUMAN, Constants.UNIT_FU_SOLDAT_HUMAN).Run();
-      building.AddSpawnTrigger(BarracksSpawnTime, Areas.UndeadBarracksToElfSpawn, Constants.UNIT_SCHARFSCH_TZE_HUMAN).Run(0.5f);
+      building.AddSpawnTrigger(BarracksSpawnTime, Areas.UndeadBarracksToElfSpawn, Enums.UnitSpawnType.Meelee, Constants.UNIT_SOLDAT_HUMAN, Constants.UNIT_SOLDAT_HUMAN).Run();
+      building.AddSpawnTrigger(BarracksSpawnTime, Areas.UndeadBarracksToElfSpawn, Enums.UnitSpawnType.Distance, Constants.UNIT_SCHARFSCHUETZE_HUMAN).Run(0.5f);
 
       building = Undeads.Computer.CreateBuilding(Constants.UNIT_KASERNE_HUMAN, Areas.UndeadBarracksToOrcs);
       building.RegisterOnDies(BarracksBuilding.OnDies);
-      building.AddSpawnTrigger(BarracksSpawnTime, Areas.UndeadBarracksToOrcsSpawn, Constants.UNIT_FU_SOLDAT_HUMAN, Constants.UNIT_FU_SOLDAT_HUMAN).Run();
-      building.AddSpawnTrigger(BarracksSpawnTime, Areas.UndeadBarracksToOrcsSpawn, Constants.UNIT_SCHARFSCH_TZE_HUMAN).Run(0.5f);
+      building.AddSpawnTrigger(BarracksSpawnTime, Areas.UndeadBarracksToOrcsSpawn, Enums.UnitSpawnType.Meelee, Constants.UNIT_SOLDAT_HUMAN, Constants.UNIT_SOLDAT_HUMAN).Run();
+      building.AddSpawnTrigger(BarracksSpawnTime, Areas.UndeadBarracksToOrcsSpawn, Enums.UnitSpawnType.Distance, Constants.UNIT_SCHARFSCHUETZE_HUMAN).Run(0.5f);
     }
 
     private static void CreateHeroSelectorForPlayerAndAdjustCamera(UserPlayer user)

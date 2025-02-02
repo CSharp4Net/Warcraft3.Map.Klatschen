@@ -15,24 +15,24 @@ namespace Source.Handler.Region
       // Feindliche Einheit zur Basis des anderen Spielers schicken
       if (unit.Owner.Id == Program.Humans.Computer.Wc3Player.Id)
       {
-        if (!Program.Elves.Defeated)
+        if (!Program.Undeads.Defeated)
         {
-          unit.AttackMove(Areas.ElfBase);
+          unit.AttackMove(Areas.UndeadBase);
         }
         else
         {
-          unit.AttackMove(Areas.UndeadBase);
+          unit.AttackMove(Areas.ElfBase);
         }
       }
       else if (unit.Owner.Id == Program.Undeads.Computer.Wc3Player.Id)
       {
-        if (!Program.Elves.Defeated)
+        if (!Program.Humans.Defeated)
         {
-          unit.AttackMove(Areas.ElfBase);
+          unit.AttackMove(Areas.HumanBase);
         }
         else
         {
-          unit.AttackMove(Areas.HumanBase);
+          unit.AttackMove(Areas.ElfBase);
         }
       }
       else if (unit.Owner.Id == Program.Elves.Computer.Wc3Player.Id)
