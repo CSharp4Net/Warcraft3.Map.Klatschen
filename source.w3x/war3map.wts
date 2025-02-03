@@ -1267,3 +1267,45 @@ STRING 446
 Erhöht die Rüstung aller mobilen Einheiten (außer von Belagerungseinheiten).
 }
 
+STRING 447
+// Units: N001 (Alchemist), EditorSuffix (Name - Editor Suffix)
+{
+(Hero)
+}
+
+STRING 448
+// Units: N002 (Meerhexe), EditorSuffix (Name - Editor Suffix)
+{
+(Hero)
+}
+
+STRING 449
+// Units: N006 (Bestienmeister), EditorSuffix (Name - Editor Suffix)
+{
+(Hero)
+}
+
+STRING 450
+// Units: N007 (Tüftler), EditorSuffix (Name - Editor Suffix)
+{
+(Hero)
+}
+
+STRING 451
+// Units: N008 (Braumeister), EditorSuffix (Name - Editor Suffix)
+{
+(Hero)
+}
+
+STRING 452
+// Units: N009 (Dunkle Waldläuferin), EditorSuffix (Name - Editor Suffix)
+{
+(Hero)
+}
+
+STRING 453
+// Units: N00A (Grubenlord), EditorSuffix (Name - Editor Suffix)
+{
+(Hero)
+}
+

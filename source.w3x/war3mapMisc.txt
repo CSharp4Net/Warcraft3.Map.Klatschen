@@ -1,6 +1,9 @@
 [Misc]
+GlobalExperience=0
 GrantHeroXP=100
+GrantNormalXP=
 GuardDistance=99999.0
+HeroFactorXP=
 HeroMaxAwakenCostGold=0
 HeroMaxAwakenCostLumber=0
 HeroMaxReviveCostGold=0
@@ -9,4 +12,8 @@ HeroReviveLifeFactor=0.25
 HeroReviveManaFactor=0.25
 HeroReviveManaStart=1
 MaxHeroLevel=100
+MaxLevelHeroesDrainExp=0
+NeedHeroXP=
+NeedHeroXPFormulaB=
+SummonedKillFactor=0.0
 

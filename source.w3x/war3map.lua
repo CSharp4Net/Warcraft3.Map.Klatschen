@@ -159,7 +159,7 @@ local unitID
 local t
 local life
 
-u = BlzCreateUnitWithSkin(p, FourCC("n003"), -18432.0, 18176.0, 270.000, FourCC("n003"))
+u = BlzCreateUnitWithSkin(p, FourCC("n003"), -18432.0, 18560.0, 270.000, FourCC("n003"))
 SetUnitColor(u, ConvertPlayerColor(0))
 u = BlzCreateUnitWithSkin(p, FourCC("n005"), -11264.0, 14336.0, 270.000, FourCC("n005"))
 u = BlzCreateUnitWithSkin(p, FourCC("h003"), 19200.0, 18688.0, 270.000, FourCC("h003"))
@@ -206,7 +206,7 @@ gg_rct_ElfBaseHeroSpawn = Rect(-10816.0, -7744.0, -10688.0, -7616.0)
 gg_rct_ElfBaseToCenterSpawn = Rect(-9984.0, -6912.0, -9728.0, -6656.0)
 gg_rct_ElfBaseToHumanSpawn = Rect(-10368.0, -6912.0, -10112.0, -6656.0)
 gg_rct_ElfBaseToUndeadSpawn = Rect(-9984.0, -7296.0, -9728.0, -7040.0)
-gg_rct_HeroSelectorSpawn = Rect(-18176.0, 18048.0, -18048.0, 18176.0)
+gg_rct_HeroSelectorSpawn = Rect(-18496.0, 18112.0, -18368.0, 18240.0)
 gg_rct_HumanBarracksToCenter = Rect(-6208.0, 9152.0, -6080.0, 9280.0)
 gg_rct_HumanBarracksToCenterSpawn = Rect(-6016.0, 8960.0, -5760.0, 9472.0)
 gg_rct_HumanBarracksToElf = Rect(-10304.0, 8000.0, -10176.0, 8128.0)

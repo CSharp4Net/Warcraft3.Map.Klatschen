@@ -9,6 +9,8 @@ namespace Source.Models
     public Team(player wc3ComputerPlayer)
     {
       Computer = new ComputerPlayer(wc3ComputerPlayer, this);
+      Computer.Wc3Player.SetState(playerstate.GivesBounty, 1);
+
       Users = new List<UserPlayer>();
 
       // Alle Spieler der Streitmacht vom Computer-Spiler abrufen
@@ -19,7 +21,10 @@ namespace Source.Models
 
         // Aktive echte Spieler in die Liste aufnehmen
         if (player.Controller == mapcontrol.User && player.SlotState == playerslotstate.Playing)
+        {
+          player.SetState(playerstate.GivesBounty, 1);
           Users.Add(new UserPlayer(player, this));
+        }
       });
     }
 

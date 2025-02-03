@@ -27,7 +27,7 @@ namespace Source.Handler.GenericEvents
           if (researchType == Enums.ResearchType.AddUnit)
             Program.Humans.Computer.AddSpawnUnit(spawnCommand);
           else if (researchType == Enums.ResearchType.UpgradeUnit)
-            Program.Humans.Computer.UpgradeSpawnUnit(spawnCommand);
+            Program.Humans.Computer.AddSpawnUnit(spawnCommand); // TEST
         }
         else if (Program.Orcs.ContainsPlayer(unit.Owner, out foundUser))
         {
@@ -35,6 +35,8 @@ namespace Source.Handler.GenericEvents
 
           if (researchType == Enums.ResearchType.AddUnit)
             Program.Orcs.Computer.AddSpawnUnit(spawnCommand);
+          else if (researchType == Enums.ResearchType.UpgradeUnit)
+            Program.Orcs.Computer.UpgradeSpawnUnit(spawnCommand);
         }
         else if (Program.Elves.ContainsPlayer(unit.Owner, out foundUser))
         {
@@ -42,6 +44,8 @@ namespace Source.Handler.GenericEvents
 
           if (researchType == Enums.ResearchType.AddUnit)
             Program.Elves.Computer.AddSpawnUnit(spawnCommand);
+          else if (researchType == Enums.ResearchType.UpgradeUnit)
+            Program.Elves.Computer.UpgradeSpawnUnit(spawnCommand);
         }
         else if (Program.Undeads.ContainsPlayer(unit.Owner, out foundUser))
         {
@@ -49,6 +53,8 @@ namespace Source.Handler.GenericEvents
 
           if (researchType == Enums.ResearchType.AddUnit)
             Program.Undeads.Computer.AddSpawnUnit(spawnCommand);
+          else if (researchType == Enums.ResearchType.UpgradeUnit)
+            Program.Undeads.Computer.UpgradeSpawnUnit(spawnCommand);
         }
       }
       catch (Exception ex)

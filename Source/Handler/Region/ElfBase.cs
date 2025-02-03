@@ -15,7 +15,7 @@ namespace Source.Handler.Region
       // Feindliche Einheit zur Basis eines anderen Spielers schicken
       if (unit.Owner.Id == Program.Humans.Computer.Wc3Player.Id)
       {
-        if (Program.Undeads.Defeated)
+        if (!Program.Undeads.Defeated)
         {
           unit.AttackMove(Areas.UndeadBase);
         }

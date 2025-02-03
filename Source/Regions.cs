@@ -18,7 +18,7 @@ public static class Regions
 	public static Rectangle ElfBaseToCenterSpawn { get; set; } = new Rectangle(-9984f, -6912f, -9728f, -6656f);
 	public static Rectangle ElfBaseToHumanSpawn { get; set; } = new Rectangle(-10368f, -6912f, -10112f, -6656f);
 	public static Rectangle ElfBaseToUndeadSpawn { get; set; } = new Rectangle(-9984f, -7296f, -9728f, -7040f);
-	public static Rectangle HeroSelectorSpawn { get; set; } = new Rectangle(-18176f, 18048f, -18048f, 18176f);
+	public static Rectangle HeroSelectorSpawn { get; set; } = new Rectangle(-18496f, 18112f, -18368f, 18240f);
 	public static Rectangle HumanBarracksToCenter { get; set; } = new Rectangle(-6208f, 9152f, -6080f, 9280f);
 	public static Rectangle HumanBarracksToCenterSpawn { get; set; } = new Rectangle(-6016f, 8960f, -5760f, 9472f);
 	public static Rectangle HumanBarracksToElf { get; set; } = new Rectangle(-10304f, 8000f, -10176f, 8128f);
