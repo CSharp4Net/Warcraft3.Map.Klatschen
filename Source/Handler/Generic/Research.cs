@@ -20,41 +20,53 @@ namespace Source.Handler.GenericEvents
         Enums.ResearchType researchType = TryGetSpawnUnitCommandByResearchedTech(researchedTechId,
           out SpawnUnitCommand spawnCommand);
 
-        if (Program.Humans.ContainsPlayer(unit.Owner, out UserPlayer foundUser))
+        //if (Program.Humans.ContainsPlayer(unit.Owner, out UserPlayer foundUser))
         {
           Program.Humans.IncreaseTechForAllPlayers(researchedTechId, researchedTechIdCount);
 
           if (researchType == Enums.ResearchType.AddUnit)
             Program.Humans.Computer.AddSpawnUnit(spawnCommand);
           else if (researchType == Enums.ResearchType.UpgradeUnit)
+          {
+            Program.Humans.Computer.UpgradeSpawnUnit(spawnCommand);
             Program.Humans.Computer.AddSpawnUnit(spawnCommand); // TEST
+          }
         }
-        else if (Program.Orcs.ContainsPlayer(unit.Owner, out foundUser))
+        //else if (Program.Orcs.ContainsPlayer(unit.Owner, out foundUser))
         {
           Program.Orcs.IncreaseTechForAllPlayers(researchedTechId, researchedTechIdCount);
 
           if (researchType == Enums.ResearchType.AddUnit)
             Program.Orcs.Computer.AddSpawnUnit(spawnCommand);
           else if (researchType == Enums.ResearchType.UpgradeUnit)
+          {
             Program.Orcs.Computer.UpgradeSpawnUnit(spawnCommand);
+            Program.Orcs.Computer.AddSpawnUnit(spawnCommand); // TEST
+          }
         }
-        else if (Program.Elves.ContainsPlayer(unit.Owner, out foundUser))
+        //else if (Program.Elves.ContainsPlayer(unit.Owner, out foundUser))
         {
           Program.Elves.IncreaseTechForAllPlayers(researchedTechId, researchedTechIdCount);
 
           if (researchType == Enums.ResearchType.AddUnit)
             Program.Elves.Computer.AddSpawnUnit(spawnCommand);
           else if (researchType == Enums.ResearchType.UpgradeUnit)
+          {
             Program.Elves.Computer.UpgradeSpawnUnit(spawnCommand);
+            Program.Elves.Computer.AddSpawnUnit(spawnCommand); // TEST
+          }
         }
-        else if (Program.Undeads.ContainsPlayer(unit.Owner, out foundUser))
+        //else if (Program.Undeads.ContainsPlayer(unit.Owner, out foundUser))
         {
           Program.Undeads.IncreaseTechForAllPlayers(researchedTechId, researchedTechIdCount);
 
           if (researchType == Enums.ResearchType.AddUnit)
             Program.Undeads.Computer.AddSpawnUnit(spawnCommand);
           else if (researchType == Enums.ResearchType.UpgradeUnit)
+          {
             Program.Undeads.Computer.UpgradeSpawnUnit(spawnCommand);
+            Program.Undeads.Computer.AddSpawnUnit(spawnCommand); // TEST
+          }
         }
       }
       catch (Exception ex)
