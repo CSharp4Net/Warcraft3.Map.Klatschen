@@ -79,30 +79,96 @@ namespace Source.Handler.GenericEvents
     {
       switch (researchedTechId)
       {
-        case Constants.UPGRADE_VETERANEN_REKRUTIEREN_HUMAN:
+        case Constants.UPGRADE_REKRUTIERUNG_SOLDATEN_STUFE_2_HUMAN:
           spawnCommand = new SpawnUnitCommand()
           {
             UnitSpawnType = Enums.UnitSpawnType.Meelee,
             UnitIdOfBuilding = Constants.UNIT_KASERNE_HUMAN,
-            UnitId = Constants.UNIT_HAUPTMANN_HUMAN,
-            UnitIdToUpgrade = Constants.UNIT_SOLDAT_HUMAN
+            UnitId = Constants.UNIT_SOLDAT_STUFE_2_HUMAN,
+            UnitIdToUpgrade = Constants.UNIT_SOLDAT_STUFE_1_HUMAN
           };
           return Enums.ResearchType.UpgradeUnit;
-        case Constants.UPGRADE_RITTER_REKRUTIEREN_HUMAN:
+        case Constants.UPGRADE_REKRUTIERUNG_SOLDATEN_STUFE_3_HUMAN:
           spawnCommand = new SpawnUnitCommand()
           {
             UnitSpawnType = Enums.UnitSpawnType.Meelee,
             UnitIdOfBuilding = Constants.UNIT_KASERNE_HUMAN,
-            UnitId = Constants.UNIT_RITTER_HUMAN,
-            UnitIdToUpgrade = Constants.UNIT_HAUPTMANN_HUMAN
+            UnitId = Constants.UNIT_SOLDAT_STUFE_3_HUMAN,
+            UnitIdToUpgrade = Constants.UNIT_SOLDAT_STUFE_2_HUMAN
           };
           return Enums.ResearchType.UpgradeUnit;
-        case Constants.UPGRADE_BELAGERUNGSMASCHINEN_REKRUTIEREN_HUMAN:
+
+        case Constants.UPGRADE_REKRUTIERUNG_SCH_TZEN_STUFE_2_HUMAN:
+          spawnCommand = new SpawnUnitCommand()
+          {
+            UnitSpawnType = Enums.UnitSpawnType.Distance,
+            UnitIdOfBuilding = Constants.UNIT_KASERNE_HUMAN,
+            UnitId = Constants.UNIT_SCH_TZE_STUFE_2_HUMAN,
+            UnitIdToUpgrade = Constants.UNIT_SCH_TZE_STUFE_1_HUMAN
+          };
+          return Enums.ResearchType.UpgradeUnit;
+        case Constants.UPGRADE_REKRUTIERUNG_SCH_TZEN_STUFE_3_HUMAN:
+          spawnCommand = new SpawnUnitCommand()
+          {
+            UnitSpawnType = Enums.UnitSpawnType.Distance,
+            UnitIdOfBuilding = Constants.UNIT_KASERNE_HUMAN,
+            UnitId = Constants.UNIT_SCH_TZE_STUFE_3_HUMAN,
+            UnitIdToUpgrade = Constants.UNIT_SCH_TZE_STUFE_2_HUMAN
+          };
+          return Enums.ResearchType.UpgradeUnit;
+
+        case Constants.UPGRADE_REKRUTIERUNG_LUFTEINHEIT_STUFE_1_HUMAN:
           spawnCommand = new SpawnUnitCommand()
           {
             UnitSpawnType = Enums.UnitSpawnType.Distance,
             UnitIdOfBuilding = Constants.UNIT_SCHLOSS_HUMAN,
-            UnitId = Constants.UNIT_BELAGERUNGSMASCHINE_HUMAN
+            UnitId = Constants.UNIT_LUFTEINHEIT_STUFE_1_HUMAN
+          };
+          return Enums.ResearchType.AddUnit;
+        case Constants.UPGRADE_REKRUTIERUNG_LUFTEINHEIT_STUFE_2_HUMAN:
+          spawnCommand = new SpawnUnitCommand()
+          {
+            UnitSpawnType = Enums.UnitSpawnType.Distance,
+            UnitIdOfBuilding = Constants.UNIT_SCHLOSS_HUMAN,
+            UnitId = Constants.UNIT_LUFTEINHEIT_STUFE_2_HUMAN,
+            UnitIdToUpgrade = Constants.UNIT_LUFTEINHEIT_STUFE_1_HUMAN
+          };
+          return Enums.ResearchType.UpgradeUnit;
+        case Constants.UPGRADE_REKRUTIERUNG_LUFTEINHEIT_STUFE_3_HUMAN:
+          spawnCommand = new SpawnUnitCommand()
+          {
+            UnitSpawnType = Enums.UnitSpawnType.Distance,
+            UnitIdOfBuilding = Constants.UNIT_SCHLOSS_HUMAN,
+            UnitId = Constants.UNIT_LUFTEINHEIT_STUFE_3_HUMAN,
+            UnitIdToUpgrade = Constants.UNIT_LUFTEINHEIT_STUFE_2_HUMAN
+          };
+          return Enums.ResearchType.UpgradeUnit;
+
+        case Constants.UPGRADE_REKRUTIERUNG_MAGIER_STUFE_2_HUMAN:
+          spawnCommand = new SpawnUnitCommand()
+          {
+            UnitSpawnType = Enums.UnitSpawnType.Distance,
+            UnitIdOfBuilding = Constants.UNIT_SCHLOSS_HUMAN,
+            UnitId = Constants.UNIT_MAGIER_STUFE_2_HUMAN,
+            UnitIdToUpgrade = Constants.UNIT_MAGIER_STUFE_1_HUMAN
+          };
+          return Enums.ResearchType.UpgradeUnit;
+        case Constants.UPGRADE_REKRUTIERUNG_MAGIER_STUFE_3_HUMAN:
+          spawnCommand = new SpawnUnitCommand()
+          {
+            UnitSpawnType = Enums.UnitSpawnType.Distance,
+            UnitIdOfBuilding = Constants.UNIT_SCHLOSS_HUMAN,
+            UnitId = Constants.UNIT_MAGIER_STUFE_3_HUMAN,
+            UnitIdToUpgrade = Constants.UNIT_MAGIER_STUFE_2_HUMAN
+          };
+          return Enums.ResearchType.UpgradeUnit;
+
+        case Constants.UPGRADE_REKRUTIERUNG_BELAGERUNGSMASCHINEN_HUMAN:
+          spawnCommand = new SpawnUnitCommand()
+          {
+            UnitSpawnType = Enums.UnitSpawnType.Distance,
+            UnitIdOfBuilding = Constants.UNIT_SCHLOSS_HUMAN,
+            UnitId = Constants.UNIT_BELAGERUNGSMASCHINE_STUFE_1_HUMAN
           };
           return Enums.ResearchType.AddUnit;
 
