@@ -1,4 +1,5 @@
 ﻿using Source.Handler.Specific;
+using Source.Models;
 using System;
 using WCSharp.Api;
 
@@ -26,21 +27,21 @@ namespace Source.Handler.GenericEvents
         player owner = unit.Owner;
 
         // Getötete Einheit von Spieler entfernen
-        if (Program.Humans.Computer.IsOwnerOfUnit(unit))
+        if (Program.Humans.Computer.IsOwnerOfUnit(unit, out SpawnedUnit spawnedUnit))
         {
-          Program.Humans.Computer.RemoveUnit(unit);
+          Program.Humans.Computer.RemoveUnit(spawnedUnit);
         }
-        else if (Program.Orcs.Computer.IsOwnerOfUnit(unit))
+        else if (Program.Orcs.Computer.IsOwnerOfUnit(unit, out spawnedUnit))
         {
-          Program.Orcs.Computer.RemoveUnit(unit);
+          Program.Orcs.Computer.RemoveUnit(spawnedUnit);
         }
-        else if (Program.Elves.Computer.IsOwnerOfUnit(unit))
+        else if (Program.Elves.Computer.IsOwnerOfUnit(unit, out spawnedUnit))
         {
-          Program.Elves.Computer.RemoveUnit(unit);
+          Program.Elves.Computer.RemoveUnit(spawnedUnit);
         }
-        else if (Program.Undeads.Computer.IsOwnerOfUnit(unit))
+        else if (Program.Undeads.Computer.IsOwnerOfUnit(unit, out spawnedUnit))
         {
-          Program.Undeads.Computer.RemoveUnit(unit);
+          Program.Undeads.Computer.RemoveUnit(spawnedUnit);
         }
 
         // Verstorbene Einheit nach kurzer Zeit aus Spiel entfernen um RAM zu sparen
@@ -56,7 +57,48 @@ namespace Source.Handler.GenericEvents
       }
       catch (Exception ex)
       {
-        Program.ShowDebugMessage("Unit.OnDies", ex);
+        Program.ShowExceptionMessage("Unit.OnDies", ex);
+      }
+    }
+
+    internal static void OnReceivesOrder()
+    {
+      try
+      {
+        unit unit = Common.GetTriggerUnit();
+
+        if (unit.IsABuilding || unit.IsUnitType(unittype.Hero))
+        {
+          return;
+        }
+
+        // Wenn eine gespawnte Einheit ihren Angriffsbefehl verliert, erteilen wir ihr diesen erneut
+        // Befehl 851974 ist die Heimkehr zum Ausgangspunkt und fehlt in der Constants.
+        if (unit.CurrentOrder == 851974 || unit.CurrentOrder == Constants.ORDER_CANCEL ||
+            unit.CurrentOrder == Constants.ORDER_STUNNED || unit.CurrentOrder == Constants.ORDER_STOP)
+        {
+          // Zaubernde Einheit den letzten Angriffsbefehl wiederholen lassen
+          if (Program.Humans.Computer.IsOwnerOfUnit(unit, out SpawnedUnit spawnedUnit))
+          {
+            spawnedUnit.RepeatAttackMove();
+          }
+          else if (Program.Orcs.Computer.IsOwnerOfUnit(unit, out spawnedUnit))
+          {
+            spawnedUnit.RepeatAttackMove();
+          }
+          else if (Program.Elves.Computer.IsOwnerOfUnit(unit, out spawnedUnit))
+          {
+            spawnedUnit.RepeatAttackMove();
+          }
+          else if (Program.Undeads.Computer.IsOwnerOfUnit(unit, out spawnedUnit))
+          {
+            spawnedUnit.RepeatAttackMove();
+          }
+        }
+      }
+      catch (Exception ex)
+      {
+        Program.ShowExceptionMessage("Unit.OnReceivesOrder", ex);
       }
     }
   }

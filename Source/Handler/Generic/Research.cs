@@ -14,7 +14,7 @@ namespace Source.Handler.GenericEvents
         int researchedTechId = Common.GetResearched();
         int researchedTechIdCount = Common.GetPlayerTechCount(unit.Owner, researchedTechId, true);
 
-        Console.WriteLine($"Forschung {researchedTechId} (Stufe {researchedTechIdCount}) abgeschlossen von {unit.Owner.Name}!");
+        //Console.WriteLine($"Forschung {researchedTechId} (Stufe {researchedTechIdCount}) abgeschlossen von {unit.Owner.Name}!");
 
         player owner = unit.Owner;
         Enums.ResearchType researchType = TryGetSpawnUnitCommandByResearchedTech(researchedTechId,
@@ -29,7 +29,7 @@ namespace Source.Handler.GenericEvents
           else if (researchType == Enums.ResearchType.UpgradeUnit)
           {
             Program.Humans.Computer.UpgradeSpawnUnit(spawnCommand);
-            Program.Humans.Computer.AddSpawnUnit(spawnCommand); // TEST
+            //Program.Humans.Computer.AddSpawnUnit(spawnCommand); // TEST
           }
         }
         //else if (Program.Orcs.ContainsPlayer(unit.Owner, out foundUser))
@@ -41,7 +41,7 @@ namespace Source.Handler.GenericEvents
           else if (researchType == Enums.ResearchType.UpgradeUnit)
           {
             Program.Orcs.Computer.UpgradeSpawnUnit(spawnCommand);
-            Program.Orcs.Computer.AddSpawnUnit(spawnCommand); // TEST
+            //Program.Orcs.Computer.AddSpawnUnit(spawnCommand); // TEST
           }
         }
         //else if (Program.Elves.ContainsPlayer(unit.Owner, out foundUser))
@@ -53,7 +53,7 @@ namespace Source.Handler.GenericEvents
           else if (researchType == Enums.ResearchType.UpgradeUnit)
           {
             Program.Elves.Computer.UpgradeSpawnUnit(spawnCommand);
-            Program.Elves.Computer.AddSpawnUnit(spawnCommand); // TEST
+            //Program.Elves.Computer.AddSpawnUnit(spawnCommand); // TEST
           }
         }
         //else if (Program.Undeads.ContainsPlayer(unit.Owner, out foundUser))
@@ -65,13 +65,13 @@ namespace Source.Handler.GenericEvents
           else if (researchType == Enums.ResearchType.UpgradeUnit)
           {
             Program.Undeads.Computer.UpgradeSpawnUnit(spawnCommand);
-            Program.Undeads.Computer.AddSpawnUnit(spawnCommand); // TEST
+            //Program.Undeads.Computer.AddSpawnUnit(spawnCommand); // TEST
           }
         }
       }
       catch (Exception ex)
       {
-        Program.ShowDebugMessage("Research.OnFinished", ex);
+        Program.ShowExceptionMessage("Research.OnFinished", ex);
       }
     }
 

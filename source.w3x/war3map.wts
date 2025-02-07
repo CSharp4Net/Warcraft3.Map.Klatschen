@@ -2288,25 +2288,25 @@ STRING 808
 }
 
 STRING 809
-// Abilities: A008 (Spott), EditorSuffix (Editor Suffix)
-{
-(Unit)
-}
-
-STRING 810
 // Abilities: A009 (Kettenblitz), EditorSuffix (Editor Suffix)
 {
 (Unit)
 }
 
-STRING 811
+STRING 810
 // Abilities: A00A (Kritische Treffer), EditorSuffix (Editor Suffix)
 {
 (Unit)
 }
 
-STRING 812
+STRING 811
 // Abilities: S000 (Ausdaueraura), EditorSuffix (Editor Suffix)
+{
+(Unit)
+}
+
+STRING 812
+// Abilities: A00B (Vampiraura), EditorSuffix (Editor Suffix)
 {
 (Unit)
 }
@@ -2318,13 +2318,13 @@ Wächter
 }
 
 STRING 814
-// Abilities: A00B (Vampiraura), EditorSuffix (Editor Suffix)
+// Abilities: A00C (Reinkarnation), EditorSuffix (Editor Suffix)
 {
 (Unit)
 }
 
 STRING 815
-// Abilities: A00C (Reinkarnation), EditorSuffix (Editor Suffix)
+// Abilities: A00D (Schockwelle), EditorSuffix (Editor Suffix)
 {
 (Unit)
 }
@@ -2333,5 +2333,23 @@ STRING 816
 // Upgrades: R00G (Kampftierausbildung), EditorSuffix (Editor Suffix)
 {
 (Human)
+}
+
+STRING 817
+// Abilities: A008 (Kriegsdonner), EditorSuffix (Editor Suffix)
+{
+(Unit)
+}
+
+STRING 818
+// Abilities: A00D (Schockwelle), Ubertip (Tooltip - Normal - Extended)
+{
+Entfesselt eine Kraftwelle, die Bodeneinheiten in einer Linie <A00D,DataA1> Schaden zufügt.
+}
+
+STRING 819
+// Abilities: A00E (Heilspray), EditorSuffix (Editor Suffix)
+{
+(Hero)
 }
 

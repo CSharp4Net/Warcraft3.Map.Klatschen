@@ -33,7 +33,7 @@ namespace Source.Handler.Specific
       }
       catch (Exception ex)
       {
-        Program.ShowDebugMessage("BarracksBuilding.OnDies", ex);
+        Program.ShowExceptionMessage("BarracksBuilding.OnDies", ex);
       }
     }
   }

@@ -21,7 +21,7 @@ namespace Source.Handler.GenericEvents
       }
       catch (Exception ex)
       {
-        Program.ShowDebugMessage("Item.OnSellsFinished", ex);
+        Program.ShowExceptionMessage("Item.OnSellsFinished", ex);
       }
     }
   }

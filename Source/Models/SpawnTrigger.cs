@@ -8,11 +8,12 @@ namespace Source.Models
 {
   public sealed class SpawnTrigger
   {
-    public SpawnTrigger(ComputerPlayer player, float interval, Area spawnArea, UnitSpawnType unitSpawnType, SpawnBuilding building, params int[] unitIds)
+    public SpawnTrigger(ComputerPlayer player, SpawnBuilding building,  Area spawnArea,  UnitSpawnType unitSpawnType, float interval, Area targetArea, params int[] unitIds)
     {
       Player = player;
       Interval = interval;
       SpawnArea = spawnArea;
+      TargetArea = targetArea;
       Building = building;
       UnitSpawnType = unitSpawnType;
       UnitIds = unitIds.ToList();
@@ -25,6 +26,7 @@ namespace Source.Models
     private float Interval { get; init; }
 
     private Area SpawnArea { get; init; }
+    private Area TargetArea { get; init; }
 
     private List<int> UnitIds { get; init; }
 
@@ -64,7 +66,9 @@ namespace Source.Models
       {
         foreach (int unitId in UnitIds)
         {
-          Player.CreateUnit(unitId, SpawnArea);
+          SpawnedUnit unit =  Player.CreateUnit(unitId, SpawnArea);
+
+          unit.AttackMove(TargetArea);
         }
       }
       catch (Exception ex)

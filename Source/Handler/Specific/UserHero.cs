@@ -35,27 +35,22 @@ namespace Source.Handler.Specific
 
         if (Program.Humans.ContainsPlayer(buyingPlayer, out UserPlayer user))
         {
-#if DEBUG
-          soldUnit = user.CreateUnit(unitId, Areas.HumanBaseHeroSpawn); // Center);
-          user.ApplyCamera(Areas.HumanBaseHeroSpawn); // Center);
-#else
-          soldUnit = user.CreateUnit(unitId, Areas.HumanBaseHeroSpawn);
+          soldUnit = user.CreateUnit(unitId, Areas.HumanBaseHeroSpawn).Wc3Unit;
           user.ApplyCamera(Areas.HumanBaseHeroSpawn);
-#endif
         }
         else if (Program.Orcs.ContainsPlayer(buyingPlayer, out user))
         {
-          soldUnit = user.CreateUnit(unitId, Areas.OrcBaseHeroSpawn);
+          soldUnit = user.CreateUnit(unitId, Areas.OrcBaseHeroSpawn).Wc3Unit;
           user.ApplyCamera(Areas.OrcBaseHeroSpawn);
         }
         else if (Program.Elves.ContainsPlayer(buyingPlayer, out user))
         {
-          soldUnit = user.CreateUnit(unitId, Areas.ElfBaseHeroSpawn);
+          soldUnit = user.CreateUnit(unitId, Areas.ElfBaseHeroSpawn).Wc3Unit;
           user.ApplyCamera(Areas.ElfBaseHeroSpawn);
         }
         else if (Program.Undeads.ContainsPlayer(buyingPlayer, out user))
         {
-          soldUnit = user.CreateUnit(unitId, Areas.UndeadBaseHeroSpawn);
+          soldUnit = user.CreateUnit(unitId, Areas.UndeadBaseHeroSpawn).Wc3Unit;
           user.ApplyCamera(Areas.UndeadBaseHeroSpawn);
         }
 

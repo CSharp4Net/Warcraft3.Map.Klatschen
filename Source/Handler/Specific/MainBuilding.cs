@@ -11,8 +11,6 @@ namespace Source.UnitEvents
       {
         unit unit = Common.GetTriggerUnit();
 
-        //Program.ShowDebugMessage("MainBuilding.OnDies", $"Defeat player {unit.Owner.Name}");
-
         // Besiege alle Spieler im Team des Hauptgebäudes
         if (unit.Owner.Id == Program.Humans.Computer.Wc3Player.Id)
         {
@@ -53,7 +51,7 @@ namespace Source.UnitEvents
       }
       catch (Exception ex)
       {
-        Program.ShowDebugMessage("MainBuilding.OnDies", ex);
+        Program.ShowExceptionMessage("MainBuilding.OnDies", ex);
       }
     }
   }

@@ -1,7 +1,6 @@
 ﻿using Source.Models;
 using System;
 using System.Collections.Generic;
-using System.Runtime.ExceptionServices;
 using WCSharp.Api;
 
 namespace Source.Abstracts
@@ -21,7 +20,7 @@ namespace Source.Abstracts
     /// <summary>
     /// Auflistung aller Einheiten dieses Spielers
     /// </summary>
-    private List<unit> Units { get; init; } = new List<unit>();
+    private List<SpawnedUnit> Units { get; init; } = new List<SpawnedUnit>();
 
     /// <summary>
     /// Erstellt eine Einheit in einem Bereich und fügt sie der Auflist <see cref="Units"/> hinzu.
@@ -30,10 +29,9 @@ namespace Source.Abstracts
     /// <param name="area"></param>
     /// <param name="face"></param>
     /// <returns></returns>
-    public unit CreateUnit(int unitTypeId, Area area, float face = 0f)
+    public SpawnedUnit CreateUnit(int unitTypeId, Area area, float face = 0f)
     {
-      // Ort anhand Zentrum einer Region erstellen
-      unit unit = Common.CreateUnitAtLoc(Wc3Player, unitTypeId, area.Wc3CenterLocation, face);
+      SpawnedUnit unit = new SpawnedUnit(this, unitTypeId, area, face);
       Units.Add(unit);
       return unit;
     }
@@ -67,14 +65,25 @@ namespace Source.Abstracts
     /// </summary>
     /// <param name="wc3Unit"></param>
     /// <returns></returns>
-    public bool IsOwnerOfUnit(unit wc3Unit)
+    public bool IsOwnerOfUnit(unit wc3Unit, out SpawnedUnit unit)
     {
-      foreach (unit unit in Units)
+      if (wc3Unit.Owner.Id != Wc3Player.Id)
       {
-        if (unit == wc3Unit)
-          return true;
+        unit = null;
+        return false;
       }
 
+      foreach (SpawnedUnit spawnedUnit in Units)
+      {
+        if (spawnedUnit.Wc3Unit == wc3Unit)
+        {
+          unit = spawnedUnit;
+          return true;
+        }
+      }
+
+      // Dieser Fall kann eintreten, wenn eine statische Computer-Einheit das Event auslöst
+      unit = null;
       return false;
     }
 
@@ -82,7 +91,7 @@ namespace Source.Abstracts
     /// Entfernt eine Einhaut aus der Auflistung aller Einheiten.
     /// </summary>
     /// <param name="unit"></param>
-    public void RemoveUnit(unit unit)
+    public void RemoveUnit(SpawnedUnit unit)
     {
       Units.Remove(unit);
     }

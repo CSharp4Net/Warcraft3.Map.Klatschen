@@ -1,30 +1,30 @@
-﻿using Source.Extensions;
-using System;
-using WCSharp.Api;
+﻿//using Source.Extensions;
+//using System;
+//using WCSharp.Api;
 
-namespace Source.Handler.Region
-{
-  internal static class OrcSpawnToUndead
-  {
-    internal static void OnEnter()
-    {
-      try
-      {
-        unit unit = Common.GetTriggerUnit();
+//namespace Source.Handler.Region
+//{
+//  internal static class OrcSpawnToUndead
+//  {
+//    internal static void OnEnter()
+//    {
+//      try
+//      {
+//        unit unit = Common.GetTriggerUnit();
 
-        if (unit.IsABuilding || unit.Owner.Controller != mapcontrol.Computer)
-          return;
+//        if (unit.IsABuilding || unit.Owner.Controller != mapcontrol.Computer)
+//          return;
 
-        // Feindliche Einheit zur Basis des anderen Spielers schicken
-        if (unit.Owner.Id == Program.Orcs.Computer.Wc3Player.Id)
-        {
-          unit.AttackMove(Areas.UndeadBase);
-        }
-      }
-      catch (Exception ex)
-      {
-        Console.WriteLine(ex.Message);
-      }
-    }
-  }
-}
+//        // Feindliche Einheit zur Basis des anderen Spielers schicken
+//        if (unit.Owner.Id == Program.Orcs.Computer.Wc3Player.Id)
+//        {
+//          unit.AttackMove(Areas.UndeadBase);
+//        }
+//      }
+//      catch (Exception ex)
+//      {
+//        Console.WriteLine(ex.Message);
+//      }
+//    }
+//  }
+//}
