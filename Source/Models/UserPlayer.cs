@@ -11,6 +11,9 @@ namespace Source.Models
       Team = team;
     }
 
+    /// <summary>
+    /// Team des Benutzers
+    /// </summary>
     public Team Team { get; init; }
 
     public int HeroLevelCounter { get; set; }
@@ -25,6 +28,11 @@ namespace Source.Models
       Blizzard.CameraSetupApplyForPlayer(true, setup, Wc3Player, 0.0f);
     }
 
+    /// <summary>
+    /// Erstellt eine Held für den Benutzer im angegebenen Gebiet.
+    /// </summary>
+    /// <param name="unitId"></param>
+    /// <param name="spawnArea"></param>
     public void CreateHero(int unitId, Area spawnArea)
     {
       Wc3Hero = CreateUnit(unitId, spawnArea).Wc3Unit;
@@ -36,6 +44,10 @@ namespace Source.Models
       Blizzard.SelectUnitForPlayerSingle(Wc3Hero, Wc3Player);
     }
 
+    /// <summary>
+    /// Belebt den toten Held des Benutzers im angegebenen Gebiet wieder.
+    /// </summary>
+    /// <param name="spawnArea"></param>
     public void ReviveHero(Area spawnArea)
     {
       Common.ReviveHero(Wc3Hero, spawnArea.Wc3CenterLocation.X, spawnArea.Wc3CenterLocation.Y, true);

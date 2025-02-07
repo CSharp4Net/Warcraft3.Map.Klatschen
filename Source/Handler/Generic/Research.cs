@@ -14,7 +14,7 @@ namespace Source.Handler.GenericEvents
         int researchedTechId = Common.GetResearched();
         int researchedTechIdCount = Common.GetPlayerTechCount(unit.Owner, researchedTechId, true);
 
-        //Console.WriteLine($"Forschung {researchedTechId} (Stufe {researchedTechIdCount}) abgeschlossen von {unit.Owner.Name}!");
+        Console.WriteLine($"Forschung {researchedTechId} (Stufe {researchedTechIdCount}) abgeschlossen von {unit.Owner.Name}!");
 
         player owner = unit.Owner;
         Enums.ResearchType researchType = TryGetSpawnUnitCommandByResearchedTech(researchedTechId,
