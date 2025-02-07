@@ -29,8 +29,6 @@ namespace Source.UnitEvents
           Program.Undeads.Defeat();
         }
 
-        //Program.ShowDebugMessage("MainBuilding.OnDies", $"Win other players?");
-
         // Ist nur noch ein Team übrig, gewinnen alle Spieler im Team
         if (Program.Elves.Defeated && Program.Orcs.Defeated && Program.Undeads.Defeated)
         {

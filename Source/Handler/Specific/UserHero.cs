@@ -6,7 +6,7 @@ namespace Source.Handler.Specific
 {
   internal static class UserHero
   {
-    public static void OnBuys()
+    public static void OnBuyed()
     {
       try
       {
@@ -16,7 +16,7 @@ namespace Source.Handler.Specific
         // Nur auf Hero-Selector reagieren!
         if (Common.GetUnitTypeId(buyingUnit) != Constants.UNIT_HELDENSEELE_HERO_SELECTOR)
         {
-          Console.WriteLine($"Falsche Event-Registrierung 'BuysUnit' fpr {buyingUnit.Name}!");
+          Console.WriteLine($"Falsche Event-Registrierung 'OnBuyed' für {buyingUnit.Name}!");
           return;
         }
 
@@ -33,29 +33,24 @@ namespace Source.Handler.Specific
         soldUnit.Dispose();
         soldUnit = null;
 
+        Program.ShowDebugMessage("UserHero.OnBuyed", $"Create hero {unitId} for {buyingPlayer.Name}");
+
         if (Program.Humans.ContainsPlayer(buyingPlayer, out UserPlayer user))
         {
-          soldUnit = user.CreateUnit(unitId, Areas.HumanBaseHeroSpawn).Wc3Unit;
-          user.ApplyCamera(Areas.HumanBaseHeroSpawn);
+          user.CreateHero(unitId, Areas.HumanBaseHeroSpawn);
         }
         else if (Program.Orcs.ContainsPlayer(buyingPlayer, out user))
         {
-          soldUnit = user.CreateUnit(unitId, Areas.OrcBaseHeroSpawn).Wc3Unit;
-          user.ApplyCamera(Areas.OrcBaseHeroSpawn);
+          user.CreateUnit(unitId, Areas.OrcBaseHeroSpawn);
         }
         else if (Program.Elves.ContainsPlayer(buyingPlayer, out user))
         {
-          soldUnit = user.CreateUnit(unitId, Areas.ElfBaseHeroSpawn).Wc3Unit;
-          user.ApplyCamera(Areas.ElfBaseHeroSpawn);
+          user.CreateUnit(unitId, Areas.ElfBaseHeroSpawn);
         }
         else if (Program.Undeads.ContainsPlayer(buyingPlayer, out user))
         {
-          soldUnit = user.CreateUnit(unitId, Areas.UndeadBaseHeroSpawn).Wc3Unit;
-          user.ApplyCamera(Areas.UndeadBaseHeroSpawn);
+          user.CreateUnit(unitId, Areas.UndeadBaseHeroSpawn);
         }
-
-        // Einheit automatisch auswählen
-        Blizzard.SelectUnitForPlayerSingle(soldUnit, user.Wc3Player);
       }
       catch (Exception ex)
       {
@@ -65,48 +60,41 @@ namespace Source.Handler.Specific
 
     public static void OnDies(unit unit)
     {
-      // Verstorbenen Held nach gegebener Zeit wieder belegen, derweil Timer anzeigen
+      // Verstorbenen Held nach gegebener Zeit wieder belegen
       timer timer = Common.CreateTimer();
+      // Währenddessen Timer-Dialog anzeigen
       timerdialog timerdialog = timer.CreateDialog();
       timerdialog.SetTitle($"{unit.Name} erscheint erneut...");
       timerdialog.IsDisplayed = true;
+
       Common.TimerStart(timer, unit.HeroLevel + 2, false, () =>
       {
+        // Timer wieder zerstören
         Common.DestroyTimer(timer);
         timer.Dispose();
         timer = null;
 
+        // Timer-Dialog wieder zerstören
         timerdialog.Dispose();
         timerdialog = null;
 
         player owner = unit.Owner;
+
         if (Program.Humans.ContainsPlayer(owner, out UserPlayer user))
         {
-#if DEBUG
-          //Common.ReviveHero(unit, Areas.Center.Wc3CenterLocation.X, Areas.Center.Wc3CenterLocation.Y, true);
-          //user.ApplyCamera(Areas.Center);
-
-          Common.ReviveHero(unit, Areas.HumanBaseHeroRespawn.Wc3CenterLocation.X, Areas.HumanBaseHeroRespawn.Wc3CenterLocation.Y, true);
-          user.ApplyCamera(Areas.HumanBaseHeroRespawn);
-#else
-          Common.ReviveHero(unit, Areas.HumanBaseHeroRespawn.Wc3CenterLocation.X, Areas.HumanBaseHeroRespawn.Wc3CenterLocation.Y, true);
-          user.ApplyCamera(Areas.HumanBaseHeroRespawn);
-#endif
+          user.ReviveHero(Areas.HumanBaseHeroRespawn);
         }
         else if (Program.Orcs.ContainsPlayer(owner, out user))
         {
-          Common.ReviveHero(unit, Areas.OrcBaseHeroRespawn.Wc3CenterLocation.X, Areas.OrcBaseHeroRespawn.Wc3CenterLocation.Y, true);
-          user.ApplyCamera(Areas.OrcBaseHeroRespawn);
+          user.ReviveHero(Areas.OrcBaseHeroRespawn);
         }
         else if (Program.Elves.ContainsPlayer(owner, out user))
         {
-          Common.ReviveHero(unit, Areas.ElfBaseHeroRespawn.Wc3CenterLocation.X, Areas.ElfBaseHeroRespawn.Wc3CenterLocation.Y, true);
-          user.ApplyCamera(Areas.ElfBaseHeroRespawn);
+          user.ReviveHero(Areas.ElfBaseHeroRespawn);
         }
         else if (Program.Undeads.ContainsPlayer(owner, out user))
         {
-          Common.ReviveHero(unit, Areas.UndeadBaseHeroRespawn.Wc3CenterLocation.X, Areas.UndeadBaseHeroRespawn.Wc3CenterLocation.Y, true);
-          user.ApplyCamera(Areas.UndeadBaseHeroRespawn);
+          user.ReviveHero(Areas.UndeadBaseHeroRespawn);
         }
 
         // Einheit automatisch auswählen
@@ -114,6 +102,27 @@ namespace Source.Handler.Specific
 
         // TODO : Was ist mit Computer-Heros??
       });
+    }
+
+    public static void OnLevels()
+    {
+      try
+      {
+        unit wc3Unit = Common.GetLevelingUnit();
+        player wc3Player = wc3Unit.Owner;
+
+        if (Program.TryGetActiveUser(wc3Player.Id, out UserPlayer user))
+        {
+          // Level des Helden bei Aufstieg marken
+          user.HeroLevelCounter++;
+
+          Program.ShowDebugMessage("UserHero.OnLevels", $"Hero level counter of {user.Wc3Player.Name} increased to {user.HeroLevelCounter}");
+        }
+      }
+      catch (Exception ex)
+      {
+        Console.WriteLine(ex.Message);
+      }
     }
   }
 }

@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using WCSharp.Api;
 
 namespace Source.Models
@@ -22,8 +21,12 @@ namespace Source.Models
         // Aktive echte Spieler in die Liste aufnehmen
         if (player.Controller == mapcontrol.User && player.SlotState == playerslotstate.Playing)
         {
+          // Einmalige Eigenschaften aktivieren/setzen
           player.SetState(playerstate.GivesBounty, 1);
-          Users.Add(new UserPlayer(player, this));
+
+          UserPlayer user = new UserPlayer(player, this);
+          Users.Add(user);
+          Program.AllActiveUsers.Add(user);
         }
       });
     }
