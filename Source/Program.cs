@@ -6,6 +6,7 @@ using Source.PermanentEvents;
 using Source.UnitEvents;
 using System;
 using System.Collections.Generic;
+using System.Reflection;
 using WCSharp.Api;
 using WCSharp.Events;
 using WCSharp.Shared;
@@ -41,6 +42,12 @@ namespace Source
       });
     }
 
+    public static void ShowDebugMessage(string message)
+    {
+#if DEBUG
+      Console.WriteLine(message);
+#endif
+    }
     public static void ShowDebugMessage(string sender, string message)
     {
 #if DEBUG
@@ -56,7 +63,7 @@ namespace Source
     {
       for (int i = AllActiveUsers.Count - 1; i >= 0; i--)
       {
-        if (AllActiveUsers[i].Wc3Player.Id == wc3PlayerId)
+        if (AllActiveUsers[i].PlayerId == wc3PlayerId)
         {
           user = AllActiveUsers[i];
           return true;
@@ -128,10 +135,23 @@ namespace Source
         Common.FogEnable(false);
         Common.FogMaskEnable(false);
 #endif
+
+        var timer = Common.CreateTimer();
+        Common.TimerStart(timer, 5f, false, () =>
+        {
+          try
+          {
+            CreateComputerHeros();
+          }
+          catch (Exception ex)
+          {
+            ShowExceptionMessage("Start.CreateComputerHeros", ex);
+          }
+        });        
       }
       catch (Exception ex)
       {
-        ShowExceptionMessage("Start.Exception", ex);
+        ShowExceptionMessage("Start", ex);
       }
     }
 
@@ -300,6 +320,25 @@ namespace Source
       building.RegisterOnDies(BarracksBuilding.OnDies);
       building.AddSpawnTrigger(Areas.UndeadBarracksToOrcsSpawn, Enums.UnitSpawnType.Meelee, BarracksSpawnTime, Areas.OrcBase, Constants.UNIT_SOLDAT_STUFE_1_HUMAN, Constants.UNIT_SOLDAT_STUFE_1_HUMAN).Run();
       building.AddSpawnTrigger(Areas.UndeadBarracksToOrcsSpawn, Enums.UnitSpawnType.Distance, BarracksSpawnTime, Areas.OrcBase, Constants.UNIT_SCH_TZE_STUFE_1_HUMAN).Run(0.5f);
+    }
+
+    private static void CreateComputerHeros()
+    {
+      Humans.Computer.CreateUnit(Constants.UNIT_W_CHTER_HUMAN, Areas.HumanBaseHeroSpawn).AttackMove(Areas.ElfBase);
+      Humans.Computer.CreateUnit(Constants.UNIT_W_CHTER_HUMAN, Areas.HumanBaseHeroSpawn).AttackMove(Areas.UndeadBase);
+      Humans.Computer.CreateUnit(Constants.UNIT_W_CHTER_HUMAN, Areas.HumanBaseHeroSpawn).AttackMove(Areas.OrcBase);
+
+      Orcs.Computer.CreateUnit(Constants.UNIT_W_CHTER_HUMAN, Areas.OrcBaseHeroSpawn).AttackMove(Areas.ElfBase);
+      Orcs.Computer.CreateUnit(Constants.UNIT_W_CHTER_HUMAN, Areas.OrcBaseHeroSpawn).AttackMove(Areas.UndeadBase);
+      Orcs.Computer.CreateUnit(Constants.UNIT_W_CHTER_HUMAN, Areas.OrcBaseHeroSpawn).AttackMove(Areas.HumanBase);
+
+      Elves.Computer.CreateUnit(Constants.UNIT_W_CHTER_HUMAN, Areas.ElfBaseHeroSpawn).AttackMove(Areas.HumanBase);
+      Elves.Computer.CreateUnit(Constants.UNIT_W_CHTER_HUMAN, Areas.ElfBaseHeroSpawn).AttackMove(Areas.UndeadBase);
+      Elves.Computer.CreateUnit(Constants.UNIT_W_CHTER_HUMAN, Areas.ElfBaseHeroSpawn).AttackMove(Areas.OrcBase);
+
+      Undeads.Computer.CreateUnit(Constants.UNIT_W_CHTER_HUMAN, Areas.UndeadBaseHeroSpawn).AttackMove(Areas.ElfBase);
+      Undeads.Computer.CreateUnit(Constants.UNIT_W_CHTER_HUMAN, Areas.UndeadBaseHeroSpawn).AttackMove(Areas.HumanBase);
+      Undeads.Computer.CreateUnit(Constants.UNIT_W_CHTER_HUMAN, Areas.UndeadBaseHeroSpawn).AttackMove(Areas.OrcBase);
     }
 
     private static void CreateHeroSelectorForPlayerAndAdjustCamera(UserPlayer user)

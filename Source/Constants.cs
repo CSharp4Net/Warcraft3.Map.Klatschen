@@ -51,7 +51,7 @@ public static class Constants
 	public const int UNIT_LUFTEINHEIT_STUFE_1_HUMAN = 1747988554;
 	public const int UNIT_LUFTEINHEIT_STUFE_2_HUMAN = 1747988555;
 	public const int UNIT_LUFTEINHEIT_STUFE_3_HUMAN = 1747988556;
-	public const int UNIT_W_CHTER_HUMAN = 1848651842;
+	public const int UNIT_W_CHTER_HUMAN = 1211117645;
 	public const int UNIT_ALCHEMIST_HERO = 1311780913;
 	public const int UNIT_MEERHEXE_HERO = 1311780914;
 	public const int UNIT_T_FTLER_HERO = 1311780919;

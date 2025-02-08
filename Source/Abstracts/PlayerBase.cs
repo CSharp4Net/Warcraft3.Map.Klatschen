@@ -9,8 +9,11 @@ namespace Source.Abstracts
   {
     public PlayerBase(player wc3Player)
     {
+      PlayerId = wc3Player.Id;
       Wc3Player = wc3Player;
     }
+
+    public int PlayerId { get; init; }
 
     /// <summary>
     /// WC3-Spielerobjekt
@@ -67,7 +70,7 @@ namespace Source.Abstracts
     /// <returns></returns>
     public bool IsOwnerOfUnit(unit wc3Unit, out SpawnedUnit unit)
     {
-      if (wc3Unit.Owner.Id != Wc3Player.Id)
+      if (wc3Unit.Owner.Id != PlayerId)
       {
         unit = null;
         return false;

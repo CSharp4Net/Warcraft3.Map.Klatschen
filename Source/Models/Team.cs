@@ -86,11 +86,11 @@ namespace Source.Models
     /// <param name="wc3Player">Wacraft-Spieler</param>
     /// <param name="userOfPlayer">Gefundener Benutzer</param>
     /// <returns></returns>
-    public bool ContainsPlayer(player wc3Player, out UserPlayer userOfPlayer)
+    public bool ContainsPlayer(int playerId, out UserPlayer userOfPlayer)
     {
       foreach (UserPlayer user in Users)
       {
-        if (user.Wc3Player.Id == wc3Player.Id)
+        if (user.PlayerId == playerId)
         {
           userOfPlayer = user;
           return true;

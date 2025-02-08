@@ -9,12 +9,17 @@ namespace Source.Models
     public Area(Rectangle wc3Rectangle)
     {
       Wc3Rectangle = wc3Rectangle;
-      Wc3CenterLocation = Common.Location(wc3Rectangle.Center.X, wc3Rectangle.Center.Y);
+      CenterX = wc3Rectangle.Center.X;
+      CenterY = wc3Rectangle.Center.Y;
+      Wc3CenterLocation = Common.Location(CenterX, CenterY);
     }
 
     public Rectangle Wc3Rectangle { get; init; }
     public region Wc3Region => Wc3Rectangle.Region;
     public location Wc3CenterLocation { get; init; }
+
+    public float CenterX { get; set; }
+    public float CenterY { get; set; }
 
     public void RegisterOnEnter(Action eventHandler)
     {

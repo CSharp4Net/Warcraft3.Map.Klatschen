@@ -1,7 +1,6 @@
 [Misc]
 GlobalExperience=0
 GrantHeroXP=100
-GuardDistance=
 HeroMaxAwakenCostGold=0
 HeroMaxAwakenCostLumber=0
 HeroMaxReviveCostGold=0

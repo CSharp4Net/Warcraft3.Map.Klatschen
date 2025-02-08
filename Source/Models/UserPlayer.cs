@@ -17,13 +17,12 @@ namespace Source.Models
     public Team Team { get; init; }
 
     public int HeroLevelCounter { get; set; }
-    private unit Wc3Hero { get; set; }
 
     public void ApplyCamera(Area targetArea)
     {
       camerasetup setup = Common.CreateCameraSetup();
 
-      setup.SetPosition(targetArea.Wc3CenterLocation.X, targetArea.Wc3CenterLocation.Y);
+      setup.SetPosition(targetArea.CenterX, targetArea.CenterY);
 
       Blizzard.CameraSetupApplyForPlayer(true, setup, Wc3Player, 0.0f);
     }
@@ -35,25 +34,13 @@ namespace Source.Models
     /// <param name="spawnArea"></param>
     public void CreateHero(int unitId, Area spawnArea)
     {
-      Wc3Hero = CreateUnit(unitId, spawnArea).Wc3Unit;
-
+      unit unit = Common.CreateUnitAtLoc(Wc3Player, unitId, spawnArea.Wc3CenterLocation, 0f);
+    
       if (HeroLevelCounter > 0)
-        Wc3Hero.HeroLevel = HeroLevelCounter;
+        unit.HeroLevel = HeroLevelCounter;
 
       ApplyCamera(spawnArea);
-      Blizzard.SelectUnitForPlayerSingle(Wc3Hero, Wc3Player);
-    }
-
-    /// <summary>
-    /// Belebt den toten Held des Benutzers im angegebenen Gebiet wieder.
-    /// </summary>
-    /// <param name="spawnArea"></param>
-    public void ReviveHero(Area spawnArea)
-    {
-      Common.ReviveHero(Wc3Hero, spawnArea.Wc3CenterLocation.X, spawnArea.Wc3CenterLocation.Y, true);
-      
-      ApplyCamera(Areas.UndeadBaseHeroRespawn);
-      Blizzard.SelectUnitForPlayerSingle(Wc3Hero, Wc3Player);
+      Blizzard.SelectUnitForPlayerSingle(unit, Wc3Player);
     }
   }
 }

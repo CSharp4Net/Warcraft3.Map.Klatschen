@@ -22,14 +22,14 @@ namespace Source.Models
     {
       LastAreaTarget = targetArea;
 
-      Wc3Unit.IssueOrder(Constants.ORDER_ATTACK, LastAreaTarget.Wc3Rectangle.Center.X, LastAreaTarget.Wc3Rectangle.Center.Y);
+      Wc3Unit.IssueOrder(Constants.ORDER_ATTACK, LastAreaTarget.CenterX, LastAreaTarget.CenterY);
     }
 
     public void RepeatAttackMove()
     {
       if (LastAreaTarget != null)
       {
-        Wc3Unit.IssueOrder(Constants.ORDER_ATTACK, LastAreaTarget.Wc3Rectangle.Center.X, LastAreaTarget.Wc3Rectangle.Center.Y);
+        Wc3Unit.IssueOrder(Constants.ORDER_ATTACK, LastAreaTarget.CenterX, LastAreaTarget.CenterY);
       }
     }
 

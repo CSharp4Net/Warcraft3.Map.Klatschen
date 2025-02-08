@@ -1,6 +1,7 @@
 ﻿using Source.Handler.Specific;
 using Source.Models;
 using System;
+using System.Reflection.Metadata.Ecma335;
 using WCSharp.Api;
 
 namespace Source.Handler.GenericEvents
@@ -15,12 +16,18 @@ namespace Source.Handler.GenericEvents
 
         if (unit.IsABuilding)
         {
+          // Wenn Gebäude sterben, haben diese wenn überhaupt eigene Trigger - TODO ??
           return;
         }
 
         if (unit.IsUnitType(unittype.Hero))
         {
-          UserHero.OnDies(unit);
+          // Wenn Helden sterben, werden diese abhängig vom SlotStatus gesondert behandelt
+          if (unit.Owner.Controller == mapcontrol.User)
+            UserHero.OnDies(unit);
+          else
+            ComputerHero.OnDies(unit);
+
           return;
         }
 
@@ -67,8 +74,15 @@ namespace Source.Handler.GenericEvents
       {
         unit unit = Common.GetTriggerUnit();
 
-        if (unit.IsABuilding || unit.IsUnitType(unittype.Hero))
+        if (unit.IsABuilding)
         {
+          // Befehle für Gebäude ignorieren
+          return;
+        }
+
+        if (unit.IsUnitType(unittype.Hero) && unit.Owner.Controller == mapcontrol.User)
+        {
+          // Wenn Helden vom Benutzer Befehle erhalten, wird das nicht behandelt
           return;
         }
 

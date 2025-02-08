@@ -380,7 +380,7 @@ STRING 168
 }
 
 STRING 169
-// Units: n00B (Wächter), EditorSuffix (Name - Editor Suffix)
+// Units: H00M (Wächter), EditorSuffix (Name - Editor Suffix)
 {
 (Human)
 }
@@ -2312,7 +2312,7 @@ STRING 812
 }
 
 STRING 813
-// Units: n00B (Wächter), Name (Name)
+// Units: H00M (Wächter), Name (Name)
 {
 Wächter
 }

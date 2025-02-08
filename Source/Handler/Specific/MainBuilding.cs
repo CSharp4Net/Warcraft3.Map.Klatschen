@@ -11,20 +11,22 @@ namespace Source.UnitEvents
       {
         unit unit = Common.GetTriggerUnit();
 
+        int playerId = unit.Owner.Id;
+
         // Besiege alle Spieler im Team des Hauptgebäudes
-        if (unit.Owner.Id == Program.Humans.Computer.Wc3Player.Id)
+        if (playerId == Program.Humans.Computer.PlayerId)
         {
           Program.Humans.Defeat();
         }
-        else if (unit.Owner.Id == Program.Orcs.Computer.Wc3Player.Id)
+        else if (playerId == Program.Orcs.Computer.PlayerId)
         {
           Program.Orcs.Defeat();
         }
-        else if (unit.Owner.Id == Program.Elves.Computer.Wc3Player.Id)
+        else if (playerId == Program.Elves.Computer.PlayerId)
         {
           Program.Elves.Defeat();
         }
-        else if (unit.Owner.Id == Program.Undeads.Computer.Wc3Player.Id)
+        else if (playerId == Program.Undeads.Computer.PlayerId)
         {
           Program.Undeads.Defeat();
         }

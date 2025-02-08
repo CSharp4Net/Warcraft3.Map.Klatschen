@@ -20,37 +20,45 @@ namespace Source.Handler.Specific
           return;
         }
 
-        // Käufer ermitteln
-        player buyingPlayer = Common.GetOwningPlayer(buyingUnit);
+        int unitId = Common.GetUnitTypeId(soldUnit);
+        player player = buyingUnit.Owner;
+        int playerId = player.Id;
 
         // Käufer-Einheit töten
         buyingUnit.Kill();
 
         // Gekaufte Einheit sofort wieder entfernen und in Player-Base neu erstelleN!
-        int unitId = Common.GetUnitTypeId(soldUnit);
         Common.RemoveUnit(soldUnit);
+
         // Sicherheitshalber Verweis auf Einheit für GC freigeben
         soldUnit.Dispose();
         soldUnit = null;
 
-        Program.ShowDebugMessage("UserHero.OnBuyed", $"Create hero {unitId} for {buyingPlayer.Name}");
+        Area spawnArea = null;
 
-        if (Program.Humans.ContainsPlayer(buyingPlayer, out UserPlayer user))
+        if (Program.Humans.ContainsPlayer(playerId, out UserPlayer user))
         {
-          user.CreateHero(unitId, Areas.HumanBaseHeroSpawn);
+          spawnArea = Areas.HumanBaseHeroSpawn;
         }
-        else if (Program.Orcs.ContainsPlayer(buyingPlayer, out user))
+        else if (Program.Orcs.ContainsPlayer(playerId, out user))
         {
-          user.CreateUnit(unitId, Areas.OrcBaseHeroSpawn);
+          spawnArea = Areas.OrcBaseHeroSpawn;
         }
-        else if (Program.Elves.ContainsPlayer(buyingPlayer, out user))
+        else if (Program.Elves.ContainsPlayer(playerId, out user))
         {
-          user.CreateUnit(unitId, Areas.ElfBaseHeroSpawn);
+          spawnArea = Areas.ElfBaseHeroSpawn;
         }
-        else if (Program.Undeads.ContainsPlayer(buyingPlayer, out user))
+        else if (Program.Undeads.ContainsPlayer(playerId, out user))
         {
-          user.CreateUnit(unitId, Areas.UndeadBaseHeroSpawn);
+          spawnArea = Areas.UndeadBaseHeroSpawn;
         }
+        else
+          Program.ShowDebugMessage("UserHero.OnDies", $"Player {player.Name} not found in teams!");
+
+        if (user == null)
+          return;
+
+        user.CreateHero(unitId, spawnArea);
       }
       catch (Exception ex)
       {
@@ -58,7 +66,7 @@ namespace Source.Handler.Specific
       }
     }
 
-    public static void OnDies(unit unit)
+    internal static void OnDies(unit unit)
     {
       // Verstorbenen Held nach gegebener Zeit wieder belegen
       timer timer = Common.CreateTimer();
@@ -67,40 +75,55 @@ namespace Source.Handler.Specific
       timerdialog.SetTitle($"{unit.Name} erscheint erneut...");
       timerdialog.IsDisplayed = true;
 
-      Common.TimerStart(timer, unit.HeroLevel + 2, false, () =>
+      player player = unit.Owner;
+      int playerId = unit.Owner.Id;
+      Area respawnArea = null;
+
+      if (Program.Humans.ContainsPlayer(playerId, out UserPlayer user))
       {
-        // Timer wieder zerstören
-        Common.DestroyTimer(timer);
-        timer.Dispose();
-        timer = null;
+        respawnArea = Areas.HumanBaseHeroRespawn;
+      }
+      else if (Program.Orcs.ContainsPlayer(playerId, out user))
+      {
+        respawnArea = Areas.OrcBaseHeroRespawn;
+      }
+      else if (Program.Elves.ContainsPlayer(playerId, out user))
+      {
+        respawnArea = Areas.ElfBaseHeroRespawn;
+      }
+      else if (Program.Undeads.ContainsPlayer(playerId, out user))
+      {
+        respawnArea = Areas.UndeadBaseHeroRespawn;
+      }
+      else
+        Program.ShowDebugMessage("UserHero.OnDies", $"Player {player.Name} not found in teams!");
 
-        // Timer-Dialog wieder zerstören
-        timerdialog.Dispose();
-        timerdialog = null;
+      if (user == null)
+        return;
 
-        player owner = unit.Owner;
-
-        if (Program.Humans.ContainsPlayer(owner, out UserPlayer user))
+      Common.TimerStart(timer, unit.HeroLevel * 2, false, () =>
+      {
+        try
         {
-          user.ReviveHero(Areas.HumanBaseHeroRespawn);
-        }
-        else if (Program.Orcs.ContainsPlayer(owner, out user))
-        {
-          user.ReviveHero(Areas.OrcBaseHeroRespawn);
-        }
-        else if (Program.Elves.ContainsPlayer(owner, out user))
-        {
-          user.ReviveHero(Areas.ElfBaseHeroRespawn);
-        }
-        else if (Program.Undeads.ContainsPlayer(owner, out user))
-        {
-          user.ReviveHero(Areas.UndeadBaseHeroRespawn);
-        }
+          // Timer wieder zerstören
+          Common.DestroyTimer(timer);
+          timer.Dispose();
+          timer = null;
 
-        // Einheit automatisch auswählen
-        Blizzard.SelectUnitForPlayerSingle(unit, user.Wc3Player);
+          // Timer-Dialog wieder zerstören
+          timerdialog.Dispose();
+          timerdialog = null;
 
-        // TODO : Was ist mit Computer-Heros??
+          Common.ReviveHero(unit, respawnArea.CenterX, respawnArea.CenterY, true);
+
+          user.ApplyCamera(respawnArea);
+
+          Blizzard.SelectUnitForPlayerSingle(unit, unit.Owner);
+        }
+        catch (Exception ex)
+        {
+          Program.ShowExceptionMessage("UserHero.OnDies", ex);
+        }
       });
     }
 
@@ -121,7 +144,7 @@ namespace Source.Handler.Specific
       }
       catch (Exception ex)
       {
-        Console.WriteLine(ex.Message);
+        Program.ShowExceptionMessage("UserHero.OnLevels", ex);
       }
     }
   }
