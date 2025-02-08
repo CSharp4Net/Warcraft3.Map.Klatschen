@@ -30,6 +30,14 @@ namespace Source.Handler.Specific
           Console.WriteLine("Die Elfen haben eine ihrer Kasernen verloren!");
           Program.Elves.Computer.RemoveBuilding(building);
         }
+        else if (Program.Undeads.Computer.IsOwnerOfBuilding(unit, out building))
+        {
+          building.Destroy();
+          Console.WriteLine("Die Elfen haben eine ihrer Kasernen verloren!");
+          Program.Elves.Computer.RemoveBuilding(building);
+        }
+        else
+          Program.ShowDebugMessage("BarracksBuilding.OnDies", $"Building {unit.Name} not found in building lists of computer players!");
       }
       catch (Exception ex)
       {

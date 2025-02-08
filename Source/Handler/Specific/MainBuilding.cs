@@ -30,6 +30,8 @@ namespace Source.UnitEvents
         {
           Program.Undeads.Defeat();
         }
+        else
+          Program.ShowDebugMessage("MainBuilding.OnDies", $"Unit of building {unit.Name} not found in computer players!");
 
         // Ist nur noch ein Team übrig, gewinnen alle Spieler im Team
         if (Program.Elves.Defeated && Program.Orcs.Defeated && Program.Undeads.Defeated)

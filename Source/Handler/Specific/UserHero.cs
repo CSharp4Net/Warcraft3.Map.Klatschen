@@ -53,7 +53,7 @@ namespace Source.Handler.Specific
           spawnArea = Areas.UndeadBaseHeroSpawn;
         }
         else
-          Program.ShowDebugMessage("UserHero.OnDies", $"Player {player.Name} not found in teams!");
+          Program.ShowDebugMessage("UserHero.OnBuyed", $"Player {player.Name} of buying unit not found in teams!");
 
         if (user == null)
           return;
@@ -96,12 +96,12 @@ namespace Source.Handler.Specific
         respawnArea = Areas.UndeadBaseHeroRespawn;
       }
       else
-        Program.ShowDebugMessage("UserHero.OnDies", $"Player {player.Name} not found in teams!");
+        Program.ShowDebugMessage("UserHero.OnDies", $"Player {player.Name} of hero {unit.Name} not found in teams!");
 
       if (user == null)
         return;
 
-      Common.TimerStart(timer, unit.HeroLevel * 2, false, () =>
+      Common.TimerStart(timer, unit.HeroLevel + 2, false, () =>
       {
         try
         {

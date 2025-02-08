@@ -344,13 +344,13 @@ L
 }
 
 STRING 128
-// Upgrades: R00F (Kampftierausbildung), Hotkey (Hotkey)
+// Upgrades: R00C (Kampftierausbildung), Hotkey (Hotkey)
 {
 L
 }
 
 STRING 129
-// Upgrades: R00G (Kampftierausbildung), Hotkey (Hotkey)
+// Upgrades: R00C (Kampftierausbildung), Hotkey (Hotkey)
 {
 L
 }
@@ -368,7 +368,7 @@ S
 }
 
 STRING 152
-// Upgrades: R00B (Kampftierausbildung), Hotkey (Hotkey)
+// Upgrades: R009 (Kampftierausbildung), Hotkey (Hotkey)
 {
 S
 }
@@ -476,13 +476,13 @@ ranged
 }
 
 STRING 264
-// Upgrades: R004 (Kampftierausbildung), class (Class)
+// Upgrades: R005 (Kampftierausbildung), class (Class)
 {
 melee
 }
 
 STRING 268
-// Upgrades: R005 (Kampftierausbildung), class (Class)
+// Upgrades: R008 (Kampftierausbildung), class (Class)
 {
 melee
 }
@@ -572,7 +572,7 @@ STRING 316
 }
 
 STRING 317
-// Upgrades: R004 (Kampftierausbildung), EditorSuffix (Editor Suffix)
+// Upgrades: R005 (Kampftierausbildung), EditorSuffix (Editor Suffix)
 {
 (Human)
 }
@@ -596,7 +596,7 @@ STRING 323
 }
 
 STRING 324
-// Upgrades: R008 (Kampftierausbildung), class (Class)
+// Upgrades: R009 (Kampftierausbildung), class (Class)
 {
 melee
 }
@@ -704,7 +704,7 @@ STRING 456
 }
 
 STRING 457
-// Upgrades: R009 (Kampftierausbildung), class (Class)
+// Upgrades: R00C (Kampftierausbildung), class (Class)
 {
 melee
 }
@@ -764,7 +764,7 @@ STRING 517
 }
 
 STRING 518
-// Upgrades: R00A (Schwarzes Schießpulver,Angereichertes Schießpulver,Magisches Schießpulver), EditorSuffix (Editor Suffix)
+// Upgrades: R009 (Kampftierausbildung), EditorSuffix (Editor Suffix)
 {
 (Human)
 }
@@ -1105,18 +1105,6 @@ STRING 574
 Upgrade - Handfeuerwaffen Stufe 1
 }
 
-STRING 575
-// Upgrades: R004 (Kampftierausbildung), Name (Name)
-{
-Rekrutierung - Soldaten Stufe 3
-}
-
-STRING 576
-// Upgrades: R005 (Kampftierausbildung), Name (Name)
-{
-Rekrutierung - Soldaten Stufe 2
-}
-
 STRING 577
 // Upgrades: R006 (Leuchtfeuer), Name (Name)
 {
@@ -1237,18 +1225,6 @@ STRING 596
 Upgrade - Rüstungen Stufe 5
 }
 
-STRING 597
-// Upgrades: R008 (Kampftierausbildung), Name (Name)
-{
-Rekrutierung - Belagerungsmaschinen
-}
-
-STRING 598
-// Upgrades: R009 (Kampftierausbildung), Name (Name)
-{
-Rekrutierung - Schützen Stufe 2
-}
-
 STRING 599
 // Upgrades: R00A (Schwarzes Schießpulver,Angereichertes Schießpulver,Magisches Schießpulver), Name (Name)
 {
@@ -1310,15 +1286,9 @@ Upgrade - Magiewaffen Stufe 1
 }
 
 STRING 609
-// Upgrades: R00B (Kampftierausbildung), class (Class)
+// Upgrades: R00E (Kampftierausbildung), class (Class)
 {
 melee
-}
-
-STRING 610
-// Upgrades: R00B (Kampftierausbildung), Name (Name)
-{
-Rekrutierung - Schützen Stufe 3
 }
 
 STRING 612
@@ -1328,13 +1298,13 @@ STRING 612
 }
 
 STRING 613
-// Upgrades: R004 (Kampftierausbildung), Tip (Tooltip)
+// Upgrades: R005 (Kampftierausbildung), Name (Name)
 {
 Soldaten aufwerten
 }
 
 STRING 614
-// Upgrades: R004 (Kampftierausbildung), Ubertip (Tooltip - Extended)
+// Upgrades: R005 (Kampftierausbildung), Ubertip (Tooltip - Extended)
 {
 Verbessert die Soldaten eurer Streitmacht, wodurch diese mehr Schaden austeilen und einstecken können.
 }
@@ -1352,7 +1322,7 @@ Verbessert die Soldaten eurer Streitmacht, wodurch diese mehr Schaden austeilen 
 }
 
 STRING 618
-// Upgrades: R009 (Kampftierausbildung), Tip (Tooltip)
+// Upgrades: R009 (Kampftierausbildung), Name (Name)
 {
 Schützen aufwerten
 }
@@ -1364,61 +1334,31 @@ Verbessert die Schützen eurer Streitmacht, wodurch diese mehr Schaden austeilen
 }
 
 STRING 620
-// Upgrades: R00B (Kampftierausbildung), Tip (Tooltip)
+// Upgrades: R009 (Kampftierausbildung), Tip (Tooltip)
 {
 Schützen aufwerten
 }
 
 STRING 621
-// Upgrades: R00B (Kampftierausbildung), Ubertip (Tooltip - Extended)
+// Upgrades: R009 (Kampftierausbildung), Ubertip (Tooltip - Extended)
 {
 Verbessert die Schützen eurer Streitmacht, wodurch diese mehr Schaden austeilen und einstecken können.
 }
 
-STRING 622
-// Upgrades: R00C (Kampftierausbildung), class (Class)
-{
-melee
-}
-
-STRING 623
-// Upgrades: R00C (Kampftierausbildung), Name (Name)
-{
-Rekrutierung - Lufteinheit Stufe 1
-}
-
-STRING 624
-// Upgrades: R00C (Kampftierausbildung), Tip (Tooltip)
-{
-Lufteinheiten rekrutieren
-}
-
 STRING 626
-// Upgrades: R00B (Kampftierausbildung), EditorSuffix (Editor Suffix)
+// Upgrades: R00A (Schwarzes Schießpulver,Angereichertes Schießpulver,Magisches Schießpulver), EditorSuffix (Editor Suffix)
 {
 (Human)
 }
 
-STRING 627
-// Upgrades: R00D (Kampftierausbildung), class (Class)
-{
-melee
-}
-
-STRING 628
-// Upgrades: R00D (Kampftierausbildung), Name (Name)
-{
-Rekrutierung - Magier Stufe 3
-}
-
 STRING 629
-// Upgrades: R00D (Kampftierausbildung), Tip (Tooltip)
+// Upgrades: R00E (Kampftierausbildung), Name (Name)
 {
 Magier aufwerten
 }
 
 STRING 630
-// Upgrades: R00D (Kampftierausbildung), Ubertip (Tooltip - Extended)
+// Upgrades: R00E (Kampftierausbildung), Ubertip (Tooltip - Extended)
 {
 Verbessert die Magier eurer Streitmacht, wodurch diese mehr Schaden austeilen und einstecken können.
 }
@@ -1427,18 +1367,6 @@ STRING 631
 // Upgrades: R00C (Kampftierausbildung), EditorSuffix (Editor Suffix)
 {
 (Human)
-}
-
-STRING 632
-// Upgrades: R00E (Kampftierausbildung), class (Class)
-{
-melee
-}
-
-STRING 633
-// Upgrades: R00E (Kampftierausbildung), Name (Name)
-{
-Rekrutierung - Magier Stufe 2
 }
 
 STRING 634
@@ -1454,55 +1382,19 @@ Verbessert die Magier eurer Streitmacht, wodurch diese mehr Schaden austeilen un
 }
 
 STRING 636
-// Upgrades: R00D (Kampftierausbildung), EditorSuffix (Editor Suffix)
+// Upgrades: R00C (Kampftierausbildung), EditorSuffix (Editor Suffix)
 {
 (Human)
-}
-
-STRING 637
-// Upgrades: R00F (Kampftierausbildung), class (Class)
-{
-melee
-}
-
-STRING 638
-// Upgrades: R00F (Kampftierausbildung), Name (Name)
-{
-Rekrutierung - Lufteinheit Stufe 2
-}
-
-STRING 639
-// Upgrades: R00F (Kampftierausbildung), Tip (Tooltip)
-{
-Lufteinheiten rekrutieren
 }
 
 STRING 641
-// Upgrades: R00E (Kampftierausbildung), EditorSuffix (Editor Suffix)
+// Upgrades: R00C (Kampftierausbildung), EditorSuffix (Editor Suffix)
 {
 (Human)
 }
 
-STRING 642
-// Upgrades: R00G (Kampftierausbildung), class (Class)
-{
-melee
-}
-
-STRING 643
-// Upgrades: R00G (Kampftierausbildung), Name (Name)
-{
-Rekrutierung - Lufteinheit Stufe 3
-}
-
-STRING 644
-// Upgrades: R00G (Kampftierausbildung), Tip (Tooltip)
-{
-Lufteinheiten rekrutieren
-}
-
 STRING 646
-// Upgrades: R00F (Kampftierausbildung), EditorSuffix (Editor Suffix)
+// Upgrades: R00E (Kampftierausbildung), EditorSuffix (Editor Suffix)
 {
 (Human)
 }
@@ -1514,13 +1406,13 @@ Fügt eurer Streitmacht Lufteinheiten hinzu, welche aus sicherer Höhe den Feind
 }
 
 STRING 648
-// Upgrades: R00F (Kampftierausbildung), Ubertip (Tooltip - Extended)
+// Upgrades: R00C (Kampftierausbildung), Ubertip (Tooltip - Extended)
 {
 Verbessert die Lufteinheiten eurer Streitmacht, wodurch diese mehr Schaden austeilen und einstecken können.
 }
 
 STRING 649
-// Upgrades: R00G (Kampftierausbildung), Ubertip (Tooltip - Extended)
+// Upgrades: R00C (Kampftierausbildung), Ubertip (Tooltip - Extended)
 {
 Verbessert die Lufteinheiten eurer Streitmacht, wodurch diese mehr Schaden austeilen und einstecken können.
 }
@@ -1820,7 +1712,7 @@ H
 }
 
 STRING 699
-// Upgrades: R004 (Kampftierausbildung), Hotkey (Hotkey)
+// Upgrades: R005 (Kampftierausbildung), Hotkey (Hotkey)
 {
 O
 }
@@ -1898,7 +1790,7 @@ M
 }
 
 STRING 712
-// Upgrades: R00D (Kampftierausbildung), Hotkey (Hotkey)
+// Upgrades: R00E (Kampftierausbildung), Hotkey (Hotkey)
 {
 M
 }
@@ -2330,7 +2222,7 @@ STRING 815
 }
 
 STRING 816
-// Upgrades: R00G (Kampftierausbildung), EditorSuffix (Editor Suffix)
+// Upgrades: R00E (Kampftierausbildung), EditorSuffix (Editor Suffix)
 {
 (Human)
 }
@@ -2351,5 +2243,83 @@ STRING 819
 // Abilities: A00E (Heilspray), EditorSuffix (Editor Suffix)
 {
 (Hero)
+}
+
+STRING 821
+// Upgrades: R005 (Kampftierausbildung), Name (Name)
+{
+Soldaten aufwerten
+}
+
+STRING 827
+// Upgrades: R005 (Kampftierausbildung), Tip (Tooltip)
+{
+Soldaten aufwerten
+}
+
+STRING 828
+// Upgrades: R009 (Kampftierausbildung), Name (Name)
+{
+Schützen aufwerten
+}
+
+STRING 829
+// Upgrades: R009 (Kampftierausbildung), Tip (Tooltip)
+{
+Schützen aufwerten
+}
+
+STRING 830
+// Upgrades: R00E (Kampftierausbildung), Name (Name)
+{
+Magier aufwerten
+}
+
+STRING 831
+// Upgrades: R00E (Kampftierausbildung), Tip (Tooltip)
+{
+Magier aufwerten
+}
+
+STRING 832
+// Upgrades: R00C (Kampftierausbildung), Name (Name)
+{
+Lufteinheiten aufwerten
+}
+
+STRING 833
+// Upgrades: R00C (Kampftierausbildung), Tip (Tooltip)
+{
+Lufteinheiten aufwerten
+}
+
+STRING 834
+// Upgrades: R00C (Kampftierausbildung), Name (Name)
+{
+Lufteinheiten aufwerten
+}
+
+STRING 835
+// Upgrades: R00C (Kampftierausbildung), Name (Name)
+{
+Lufteinheiten aufwerten
+}
+
+STRING 836
+// Upgrades: R00C (Kampftierausbildung), Tip (Tooltip)
+{
+Lufteinheiten aufwerten
+}
+
+STRING 837
+// Upgrades: R00C (Kampftierausbildung), Tip (Tooltip)
+{
+Lufteinheiten aufwerten
+}
+
+STRING 838
+// Upgrades: R008 (Kampftierausbildung), Name (Name)
+{
+Belagerungsmaschinen
 }
 

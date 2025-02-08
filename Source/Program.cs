@@ -6,7 +6,6 @@ using Source.PermanentEvents;
 using Source.UnitEvents;
 using System;
 using System.Collections.Generic;
-using System.Reflection;
 using WCSharp.Api;
 using WCSharp.Events;
 using WCSharp.Shared;
@@ -159,66 +158,22 @@ namespace Source
     {
       // Wenn feindliche Einheiten in die Regionen treten, welche von zerstörten Gebäuden freigegeben werden
       Areas.HumanBase.RegisterOnEnter(HumanBase.OnEnter);
-      //Areas.HumanBarracksToCenter.RegisterOnEnter(HumanBarracksRegions.OnEnter);
-      //Areas.HumanBarracksToElf.RegisterOnEnter(HumanBarracksRegions.OnEnter);
-      //Areas.HumanBarracksToOrcs.RegisterOnEnter(HumanBarracksRegions.OnEnter);
-
-      // Wenn freundliche Einheiten in die Regionen treten/gespawnt werden
-      //Areas.HumanBaseToCenterSpawn.RegisterOnEnter(HumanSpawnToCenter.OnEnter);
-      //Areas.HumanBarracksToCenterSpawn.RegisterOnEnter(HumanSpawnToCenter.OnEnter);
-      //Areas.HumanBaseToElfSpawn.RegisterOnEnter(HumanSpawnToElf.OnEnter);
-      //Areas.HumanBarracksToElfSpawn.RegisterOnEnter(HumanSpawnToElf.OnEnter);
-      //Areas.HumanBaseToOrcsSpawn.RegisterOnEnter(HumanSpawnToOrc.OnEnter);
-      //Areas.HumanBarracksToOrcsSpawn.RegisterOnEnter(HumanSpawnToOrc.OnEnter);
     }
     private static void RegisterRegionTriggerInOrcArea()
     {
       // Wenn feindliche Einheiten in die Regionen treten, welche von zerstörten Gebäuden freigegeben werden
       Areas.OrcBase.RegisterOnEnter(OrcBase.OnEnter);
-      //Areas.OrcBarracksToCenter.RegisterOnEnter(OrcBarracks.OnEnter);
-      //Areas.OrcBarracksToHuman.RegisterOnEnter(OrcBarracks.OnEnter);
-      //Areas.OrcBarracksToUndead.RegisterOnEnter(OrcBarracks.OnEnter);
-
-      // Wenn freundliche Einheiten in die Regionen treten/gespawnt werden
-      //Areas.OrcBaseToCenterSpawn.RegisterOnEnter(OrcSpawnToCenter.OnEnter);
-      //Areas.OrcBarracksToCenterSpawn.RegisterOnEnter(OrcSpawnToCenter.OnEnter);
-      //Areas.OrcBaseToHumanSpawn.RegisterOnEnter(OrcSpawnToHuman.OnEnter);
-      //Areas.OrcBarracksToHumanSpawn.RegisterOnEnter(OrcSpawnToHuman.OnEnter);
-      //Areas.OrcBaseToUndeadSpawn.RegisterOnEnter(OrcSpawnToUndead.OnEnter);
-      //Areas.OrcBarracksToUndeadSpawn.RegisterOnEnter(OrcSpawnToUndead.OnEnter);
 
     }
     private static void RegisterRegionTriggerInElfArea()
     {
       // Wenn feindliche Einheiten in die Regionen treten, welche von zerstörten Gebäuden freigegeben werden
       Areas.ElfBase.RegisterOnEnter(ElfBase.OnEnter);
-      //Areas.ElfBarracksToCenter.RegisterOnEnter(ElfBarracks.OnEnter);
-      //Areas.ElfBarracksToHuman.RegisterOnEnter(ElfBarracks.OnEnter);
-      //Areas.ElfBarracksToUndead.RegisterOnEnter(ElfBarracks.OnEnter);
-
-      // Wenn freundliche Einheiten in die Regionen treten / gespawnt werden
-      //Areas.ElfBaseToCenterSpawn.RegisterOnEnter(ElfSpawnToCenter.OnEnter);
-      //Areas.ElfBarracksToCenterSpawn.RegisterOnEnter(ElfSpawnToCenter.OnEnter);
-      //Areas.ElfBaseToHumanSpawn.RegisterOnEnter(ElfSpawnToHuman.OnEnter);
-      //Areas.ElfBarracksToHumanSpawn.RegisterOnEnter(ElfSpawnToHuman.OnEnter);
-      //Areas.ElfBaseToUndeadSpawn.RegisterOnEnter(ElfSpawnToUndead.OnEnter);
-      //Areas.ElfBarracksToUndeadSpawn.RegisterOnEnter(ElfSpawnToUndead.OnEnter);
     }
     private static void RegisterRegionTriggerInUndeadArea()
     {
       // Wenn feindliche Einheiten in die Regionen treten, welche von zerstörten Gebäuden freigegeben werden
       Areas.UndeadBase.RegisterOnEnter(UndeadBase.OnEnter);
-      //Areas.UndeadBarracksToCenter.RegisterOnEnter(UndeadBarracks.OnEnter);
-      //Areas.UndeadBarracksToElf.RegisterOnEnter(UndeadBarracks.OnEnter);
-      //Areas.UndeadBarracksToOrcs.RegisterOnEnter(UndeadBarracks.OnEnter);
-
-      // Wenn freundliche Einheiten in die Regionen treten/gespawnt werden
-      //Areas.UndeadBaseToCenterSpawn.RegisterOnEnter(UndeadSpawnToCenter.OnEnter);
-      //Areas.UndeadBarracksToCenterSpawn.RegisterOnEnter(UndeadSpawnToCenter.OnEnter);
-      //Areas.UndeadBaseToElfSpawn.RegisterOnEnter(UndeadSpawnToElf.OnEnter);
-      //Areas.UndeadBarracksToElfSpawn.RegisterOnEnter(UndeadSpawnToElf.OnEnter);
-      //Areas.UndeadBaseToOrcsSpawn.RegisterOnEnter(UndeadSpawnToOrc.OnEnter);
-      //Areas.UndeadBarracksToOrcsSpawn.RegisterOnEnter(UndeadSpawnToOrc.OnEnter);
     }
 
     private static void ConstructHumanBuildingAndTrigger()

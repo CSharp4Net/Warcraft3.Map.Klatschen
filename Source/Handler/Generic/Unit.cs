@@ -1,7 +1,6 @@
 ﻿using Source.Handler.Specific;
 using Source.Models;
 using System;
-using System.Reflection.Metadata.Ecma335;
 using WCSharp.Api;
 
 namespace Source.Handler.GenericEvents
@@ -50,6 +49,8 @@ namespace Source.Handler.GenericEvents
         {
           Program.Undeads.Computer.RemoveUnit(spawnedUnit);
         }
+        else
+          Program.ShowDebugMessage("Unit.OnDies", $"Unit {unit.Name} not found in unit lists of computer players!");
 
         // Verstorbene Einheit nach kurzer Zeit aus Spiel entfernen um RAM zu sparen
         var timer = Common.CreateTimer();

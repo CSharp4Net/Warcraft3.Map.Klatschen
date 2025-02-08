@@ -11,7 +11,7 @@ namespace Source.Handler.Specific
       // Verstorbenen Held nach gegebener Zeit wieder belegen
       timer timer = Common.CreateTimer();
 
-      Common.TimerStart(timer, 10, false, () =>
+      Common.TimerStart(timer, unit.HeroLevel + 2, false, () =>
       {
         try
         {
@@ -39,6 +39,8 @@ namespace Source.Handler.Specific
           {
             respawnArea = Areas.UndeadBaseHeroRespawn;
           }
+          else
+            Program.ShowDebugMessage("ComputerHero.OnDies", $"Unit {unit.Name} not found unit list of computer players!");
 
           if (spawnedUnit != null)
           {

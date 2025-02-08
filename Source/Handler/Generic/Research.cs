@@ -14,13 +14,11 @@ namespace Source.Handler.GenericEvents
         int researchedTechId = Common.GetResearched();
         int researchedTechIdCount = Common.GetPlayerTechCount(unit.Owner, researchedTechId, true);
 
-        Console.WriteLine($"Forschung {researchedTechId} (Stufe {researchedTechIdCount}) abgeschlossen von {unit.Owner.Name}!");
+        player player = unit.Owner;
+        int playerId = player.Id;
+        Enums.ResearchType researchType = GetHumanTechType(researchedTechId, researchedTechIdCount, out SpawnUnitCommand spawnCommand);
 
-        player owner = unit.Owner;
-        Enums.ResearchType researchType = TryGetSpawnUnitCommandByResearchedTech(researchedTechId,
-          out SpawnUnitCommand spawnCommand);
-
-        //if (Program.Humans.ContainsPlayer(unit.Owner, out UserPlayer foundUser))
+        if (Program.Humans.ContainsPlayer(playerId, out UserPlayer foundUser))
         {
           Program.Humans.IncreaseTechForAllPlayers(researchedTechId, researchedTechIdCount);
 
@@ -32,7 +30,7 @@ namespace Source.Handler.GenericEvents
             //Program.Humans.Computer.AddSpawnUnit(spawnCommand); // TEST
           }
         }
-        //else if (Program.Orcs.ContainsPlayer(unit.Owner, out foundUser))
+        else if (Program.Orcs.ContainsPlayer(playerId, out foundUser))
         {
           Program.Orcs.IncreaseTechForAllPlayers(researchedTechId, researchedTechIdCount);
 
@@ -44,7 +42,7 @@ namespace Source.Handler.GenericEvents
             //Program.Orcs.Computer.AddSpawnUnit(spawnCommand); // TEST
           }
         }
-        //else if (Program.Elves.ContainsPlayer(unit.Owner, out foundUser))
+        else if (Program.Elves.ContainsPlayer(playerId, out foundUser))
         {
           Program.Elves.IncreaseTechForAllPlayers(researchedTechId, researchedTechIdCount);
 
@@ -56,7 +54,7 @@ namespace Source.Handler.GenericEvents
             //Program.Elves.Computer.AddSpawnUnit(spawnCommand); // TEST
           }
         }
-        //else if (Program.Undeads.ContainsPlayer(unit.Owner, out foundUser))
+        else if (Program.Undeads.ContainsPlayer(playerId, out foundUser))
         {
           Program.Undeads.IncreaseTechForAllPlayers(researchedTechId, researchedTechIdCount);
 
@@ -75,30 +73,31 @@ namespace Source.Handler.GenericEvents
       }
     }
 
-    private static Enums.ResearchType TryGetSpawnUnitCommandByResearchedTech(int researchedTechId, out SpawnUnitCommand spawnCommand)
+    private static Enums.ResearchType GetHumanTechType(int techId, int techLevel, out SpawnUnitCommand spawnCommand)
     {
-      switch (researchedTechId)
+      switch (techId)
       {
-        case Constants.UPGRADE_REKRUTIERUNG_SOLDATEN_STUFE_2_HUMAN:
+        case Constants.UPGRADE_SOLDATEN_AUFWERTEN_HUMAN:
           spawnCommand = new SpawnUnitCommand()
           {
             UnitSpawnType = Enums.UnitSpawnType.Meelee,
             UnitIdOfBuilding = Constants.UNIT_KASERNE_HUMAN,
-            UnitId = Constants.UNIT_SOLDAT_STUFE_2_HUMAN,
-            UnitIdToUpgrade = Constants.UNIT_SOLDAT_STUFE_1_HUMAN
           };
-          return Enums.ResearchType.UpgradeUnit;
-        case Constants.UPGRADE_REKRUTIERUNG_SOLDATEN_STUFE_3_HUMAN:
-          spawnCommand = new SpawnUnitCommand()
-          {
-            UnitSpawnType = Enums.UnitSpawnType.Meelee,
-            UnitIdOfBuilding = Constants.UNIT_KASERNE_HUMAN,
-            UnitId = Constants.UNIT_SOLDAT_STUFE_3_HUMAN,
-            UnitIdToUpgrade = Constants.UNIT_SOLDAT_STUFE_2_HUMAN
-          };
-          return Enums.ResearchType.UpgradeUnit;
 
-        case Constants.UPGRADE_REKRUTIERUNG_SCH_TZEN_STUFE_2_HUMAN:
+          switch (techLevel)
+          {
+            case 1:
+              spawnCommand.UnitId = Constants.UNIT_SOLDAT_STUFE_2_HUMAN;
+              spawnCommand.UnitIdToUpgrade = Constants.UNIT_SOLDAT_STUFE_1_HUMAN;
+              return Enums.ResearchType.UpgradeUnit;
+
+            default:
+              spawnCommand.UnitId = Constants.UNIT_SOLDAT_STUFE_3_HUMAN;
+              spawnCommand.UnitIdToUpgrade = Constants.UNIT_SOLDAT_STUFE_2_HUMAN;
+              return Enums.ResearchType.UpgradeUnit;
+          }
+
+        case Constants.UPGRADE_SCH_TZEN_AUFWERTEN_HUMAN:
           spawnCommand = new SpawnUnitCommand()
           {
             UnitSpawnType = Enums.UnitSpawnType.Distance,
@@ -106,73 +105,80 @@ namespace Source.Handler.GenericEvents
             UnitId = Constants.UNIT_SCH_TZE_STUFE_2_HUMAN,
             UnitIdToUpgrade = Constants.UNIT_SCH_TZE_STUFE_1_HUMAN
           };
-          return Enums.ResearchType.UpgradeUnit;
-        case Constants.UPGRADE_REKRUTIERUNG_SCH_TZEN_STUFE_3_HUMAN:
-          spawnCommand = new SpawnUnitCommand()
-          {
-            UnitSpawnType = Enums.UnitSpawnType.Distance,
-            UnitIdOfBuilding = Constants.UNIT_KASERNE_HUMAN,
-            UnitId = Constants.UNIT_SCH_TZE_STUFE_3_HUMAN,
-            UnitIdToUpgrade = Constants.UNIT_SCH_TZE_STUFE_2_HUMAN
-          };
-          return Enums.ResearchType.UpgradeUnit;
 
-        case Constants.UPGRADE_REKRUTIERUNG_LUFTEINHEIT_STUFE_1_HUMAN:
+          switch (techLevel)
+          {
+            case 1:
+              spawnCommand.UnitId = Constants.UNIT_SCH_TZE_STUFE_2_HUMAN;
+              spawnCommand.UnitIdToUpgrade = Constants.UNIT_SCH_TZE_STUFE_1_HUMAN;
+              return Enums.ResearchType.UpgradeUnit;
+
+            default:
+              spawnCommand.UnitId = Constants.UNIT_SCH_TZE_STUFE_3_HUMAN;
+              spawnCommand.UnitIdToUpgrade = Constants.UNIT_SCH_TZE_STUFE_2_HUMAN;
+              return Enums.ResearchType.UpgradeUnit;
+          }
+
+        case Constants.UPGRADE_LUFTEINHEITEN_AUFWERTEN_HUMAN:
           spawnCommand = new SpawnUnitCommand()
           {
             UnitSpawnType = Enums.UnitSpawnType.Distance,
             UnitIdOfBuilding = Constants.UNIT_SCHLOSS_HUMAN,
             UnitId = Constants.UNIT_LUFTEINHEIT_STUFE_1_HUMAN
           };
-          return Enums.ResearchType.AddUnit;
-        case Constants.UPGRADE_REKRUTIERUNG_LUFTEINHEIT_STUFE_2_HUMAN:
-          spawnCommand = new SpawnUnitCommand()
-          {
-            UnitSpawnType = Enums.UnitSpawnType.Distance,
-            UnitIdOfBuilding = Constants.UNIT_SCHLOSS_HUMAN,
-            UnitId = Constants.UNIT_LUFTEINHEIT_STUFE_2_HUMAN,
-            UnitIdToUpgrade = Constants.UNIT_LUFTEINHEIT_STUFE_1_HUMAN
-          };
-          return Enums.ResearchType.UpgradeUnit;
-        case Constants.UPGRADE_REKRUTIERUNG_LUFTEINHEIT_STUFE_3_HUMAN:
-          spawnCommand = new SpawnUnitCommand()
-          {
-            UnitSpawnType = Enums.UnitSpawnType.Distance,
-            UnitIdOfBuilding = Constants.UNIT_SCHLOSS_HUMAN,
-            UnitId = Constants.UNIT_LUFTEINHEIT_STUFE_3_HUMAN,
-            UnitIdToUpgrade = Constants.UNIT_LUFTEINHEIT_STUFE_2_HUMAN
-          };
-          return Enums.ResearchType.UpgradeUnit;
 
-        case Constants.UPGRADE_REKRUTIERUNG_MAGIER_STUFE_2_HUMAN:
-          spawnCommand = new SpawnUnitCommand()
+          switch (techLevel)
           {
-            UnitSpawnType = Enums.UnitSpawnType.Distance,
-            UnitIdOfBuilding = Constants.UNIT_SCHLOSS_HUMAN,
-            UnitId = Constants.UNIT_MAGIER_STUFE_2_HUMAN,
-            UnitIdToUpgrade = Constants.UNIT_MAGIER_STUFE_1_HUMAN
-          };
-          return Enums.ResearchType.UpgradeUnit;
-        case Constants.UPGRADE_REKRUTIERUNG_MAGIER_STUFE_3_HUMAN:
-          spawnCommand = new SpawnUnitCommand()
-          {
-            UnitSpawnType = Enums.UnitSpawnType.Distance,
-            UnitIdOfBuilding = Constants.UNIT_SCHLOSS_HUMAN,
-            UnitId = Constants.UNIT_MAGIER_STUFE_3_HUMAN,
-            UnitIdToUpgrade = Constants.UNIT_MAGIER_STUFE_2_HUMAN
-          };
-          return Enums.ResearchType.UpgradeUnit;
+            case 1:
+              spawnCommand.UnitId = Constants.UNIT_LUFTEINHEIT_STUFE_1_HUMAN;
+              return Enums.ResearchType.AddUnit;
+            case 2:
+              spawnCommand.UnitId = Constants.UNIT_LUFTEINHEIT_STUFE_2_HUMAN;
+              spawnCommand.UnitIdToUpgrade = Constants.UNIT_LUFTEINHEIT_STUFE_1_HUMAN;
+              return Enums.ResearchType.UpgradeUnit;
 
-        case Constants.UPGRADE_REKRUTIERUNG_BELAGERUNGSMASCHINEN_HUMAN:
+            default:
+              spawnCommand.UnitId = Constants.UNIT_LUFTEINHEIT_STUFE_3_HUMAN;
+              spawnCommand.UnitIdToUpgrade = Constants.UNIT_LUFTEINHEIT_STUFE_2_HUMAN;
+              return Enums.ResearchType.UpgradeUnit;
+          }
+
+
+        case Constants.UPGRADE_MAGIER_AUFWERTEN_HUMAN:
           spawnCommand = new SpawnUnitCommand()
           {
             UnitSpawnType = Enums.UnitSpawnType.Distance,
-            UnitIdOfBuilding = Constants.UNIT_SCHLOSS_HUMAN,
-            UnitId = Constants.UNIT_BELAGERUNGSMASCHINE_STUFE_1_HUMAN
+            UnitIdOfBuilding = Constants.UNIT_SCHLOSS_HUMAN
           };
-          return Enums.ResearchType.AddUnit;
 
-        // TODO
+          switch (techLevel)
+          {
+            case 1:
+              spawnCommand.UnitId = Constants.UNIT_MAGIER_STUFE_2_HUMAN;
+              spawnCommand.UnitIdToUpgrade = Constants.UNIT_MAGIER_STUFE_1_HUMAN;
+              return Enums.ResearchType.UpgradeUnit;
+
+            default:
+              spawnCommand.UnitId = Constants.UNIT_MAGIER_STUFE_3_HUMAN;
+              spawnCommand.UnitIdToUpgrade = Constants.UNIT_MAGIER_STUFE_2_HUMAN;
+              return Enums.ResearchType.UpgradeUnit;
+          }
+
+        case Constants.UPGRADE_BELAGERUNGSMASCHINEN_HUMAN:
+          spawnCommand = new SpawnUnitCommand()
+          {
+            UnitSpawnType = Enums.UnitSpawnType.Distance,
+            UnitIdOfBuilding = Constants.UNIT_SCHLOSS_HUMAN
+          };
+
+          switch (techLevel)
+          {
+            default:
+              spawnCommand.UnitId = Constants.UNIT_BELAGERUNGSMASCHINE_STUFE_1_HUMAN;
+              return Enums.ResearchType.AddUnit;
+          }
+
+        // TODO : Add more technolgies 
 
         default:
           spawnCommand = null;
