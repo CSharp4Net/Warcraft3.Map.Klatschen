@@ -259,18 +259,6 @@ STRING 97
 (Human)
 }
 
-STRING 98
-// Items: I000 (Glyphe der Baukunst), Name (Name)
-{
-Glyphe der Baukunst
-}
-
-STRING 99
-// Items: I000 (Glyphe der Baukunst), Tip (Tooltip - Basic)
-{
-Glyphe der Baukunst kaufen
-}
-
 STRING 115
 // Units: h00B (Soldat - Stufe 3), EditorSuffix (Name - Editor Suffix)
 {
@@ -2240,7 +2228,7 @@ Entfesselt eine Kraftwelle, die Bodeneinheiten in einer Linie <A00D,DataA1> Scha
 }
 
 STRING 819
-// Abilities: A00E (Heilspray), EditorSuffix (Editor Suffix)
+// Abilities: A00M (Stadtportal), EditorSuffix (Editor Suffix)
 {
 (Hero)
 }
@@ -2321,5 +2309,1559 @@ STRING 838
 // Upgrades: R008 (Kampftierausbildung), Name (Name)
 {
 Belagerungsmaschinen
+}
+
+STRING 839
+// Abilities: A00E (Heilspray), Tip (Tooltip - Normal)
+{
+Heilspray [|cffffcc00Stufe 4|r]
+}
+
+STRING 840
+// Abilities: A00E (Heilspray), Tip (Tooltip - Normal)
+{
+Heilspray [|cffffcc00Stufe 5|r]
+}
+
+STRING 841
+// Abilities: A00E (Heilspray), Tip (Tooltip - Normal)
+{
+Heilspray [|cffffcc00Stufe 6|r]
+}
+
+STRING 842
+// Abilities: A00E (Heilspray), Tip (Tooltip - Normal)
+{
+Heilspray [|cffffcc00Stufe 7|r]
+}
+
+STRING 843
+// Abilities: A00E (Heilspray), Tip (Tooltip - Normal)
+{
+Heilspray [|cffffcc00Stufe 8|r]
+}
+
+STRING 844
+// Abilities: A00E (Heilspray), Tip (Tooltip - Normal)
+{
+Heilspray [|cffffcc00Stufe 9|r]
+}
+
+STRING 845
+// Abilities: A00E (Heilspray), Tip (Tooltip - Normal)
+{
+Heilspray [|cffffcc00Stufe 10|r]
+}
+
+STRING 846
+// Abilities: A00E (Heilspray), Tip (Tooltip - Normal)
+{
+Heilspray [|cffffcc00Stufe 11|r]
+}
+
+STRING 847
+// Abilities: A00E (Heilspray), Tip (Tooltip - Normal)
+{
+Heilspray [|cffffcc00Stufe 12|r]
+}
+
+STRING 848
+// Abilities: A00E (Heilspray), Tip (Tooltip - Normal)
+{
+Heilspray [|cffffcc00Stufe 13|r]
+}
+
+STRING 849
+// Abilities: A00E (Heilspray), Tip (Tooltip - Normal)
+{
+Heilspray [|cffffcc00Stufe 14|r]
+}
+
+STRING 850
+// Abilities: A00E (Heilspray), Tip (Tooltip - Normal)
+{
+Heilspray [|cffffcc00Stufe 15|r]
+}
+
+STRING 851
+// Abilities: A00E (Heilspray), Tip (Tooltip - Normal)
+{
+Heilspray [|cffffcc00Stufe 16|r]
+}
+
+STRING 852
+// Abilities: A00E (Heilspray), Tip (Tooltip - Normal)
+{
+Heilspray [|cffffcc00Stufe 17|r]
+}
+
+STRING 853
+// Abilities: A00E (Heilspray), Tip (Tooltip - Normal)
+{
+Heilspray [|cffffcc00Stufe 18|r]
+}
+
+STRING 854
+// Abilities: A00E (Heilspray), Tip (Tooltip - Normal)
+{
+Heilspray [|cffffcc00Stufe 19|r]
+}
+
+STRING 855
+// Abilities: A00E (Heilspray), Tip (Tooltip - Normal)
+{
+Heilspray [|cffffcc00Stufe 20|r]
+}
+
+STRING 856
+// Abilities: A00E (Heilspray), Ubertip (Tooltip - Normal - Extended)
+{
+Versprüht <A00E,DataF2> Wellen aus Heilnebel. Jede Welle stellt bei allen verbündeten Einheiten in einem Gebiet <A00E,DataA2> Trefferpunkte wieder her.
+}
+
+STRING 857
+// Abilities: A00E (Heilspray), Ubertip (Tooltip - Normal - Extended)
+{
+Versprüht <A00E,DataF2> Wellen aus Heilnebel. Jede Welle stellt bei allen verbündeten Einheiten in einem Gebiet <A00E,DataA2> Trefferpunkte wieder her.
+}
+
+STRING 858
+// Abilities: A00E (Heilspray), Ubertip (Tooltip - Normal - Extended)
+{
+Versprüht <A00E,DataF2> Wellen aus Heilnebel. Jede Welle stellt bei allen verbündeten Einheiten in einem Gebiet <A00E,DataA2> Trefferpunkte wieder her.
+}
+
+STRING 859
+// Abilities: A00E (Heilspray), Ubertip (Tooltip - Normal - Extended)
+{
+Versprüht <A00E,DataF2> Wellen aus Heilnebel. Jede Welle stellt bei allen verbündeten Einheiten in einem Gebiet <A00E,DataA2> Trefferpunkte wieder her.
+}
+
+STRING 860
+// Abilities: A00E (Heilspray), Ubertip (Tooltip - Normal - Extended)
+{
+Versprüht <A00E,DataF2> Wellen aus Heilnebel. Jede Welle stellt bei allen verbündeten Einheiten in einem Gebiet <A00E,DataA2> Trefferpunkte wieder her.
+}
+
+STRING 861
+// Abilities: A00E (Heilspray), Ubertip (Tooltip - Normal - Extended)
+{
+Versprüht <A00E,DataF2> Wellen aus Heilnebel. Jede Welle stellt bei allen verbündeten Einheiten in einem Gebiet <A00E,DataA2> Trefferpunkte wieder her.
+}
+
+STRING 862
+// Abilities: A00E (Heilspray), Ubertip (Tooltip - Normal - Extended)
+{
+Versprüht <A00E,DataF2> Wellen aus Heilnebel. Jede Welle stellt bei allen verbündeten Einheiten in einem Gebiet <A00E,DataA2> Trefferpunkte wieder her.
+}
+
+STRING 863
+// Abilities: A00E (Heilspray), Ubertip (Tooltip - Normal - Extended)
+{
+Versprüht <A00E,DataF2> Wellen aus Heilnebel. Jede Welle stellt bei allen verbündeten Einheiten in einem Gebiet <A00E,DataA2> Trefferpunkte wieder her.
+}
+
+STRING 864
+// Abilities: A00E (Heilspray), Ubertip (Tooltip - Normal - Extended)
+{
+Versprüht <A00E,DataF2> Wellen aus Heilnebel. Jede Welle stellt bei allen verbündeten Einheiten in einem Gebiet <A00E,DataA2> Trefferpunkte wieder her.
+}
+
+STRING 865
+// Abilities: A00E (Heilspray), Ubertip (Tooltip - Normal - Extended)
+{
+Versprüht <A00E,DataF2> Wellen aus Heilnebel. Jede Welle stellt bei allen verbündeten Einheiten in einem Gebiet <A00E,DataA2> Trefferpunkte wieder her.
+}
+
+STRING 866
+// Abilities: A00E (Heilspray), Ubertip (Tooltip - Normal - Extended)
+{
+Versprüht <A00E,DataF2> Wellen aus Heilnebel. Jede Welle stellt bei allen verbündeten Einheiten in einem Gebiet <A00E,DataA2> Trefferpunkte wieder her.
+}
+
+STRING 867
+// Abilities: A00E (Heilspray), Ubertip (Tooltip - Normal - Extended)
+{
+Versprüht <A00E,DataF2> Wellen aus Heilnebel. Jede Welle stellt bei allen verbündeten Einheiten in einem Gebiet <A00E,DataA2> Trefferpunkte wieder her.
+}
+
+STRING 868
+// Abilities: A00E (Heilspray), Ubertip (Tooltip - Normal - Extended)
+{
+Versprüht <A00E,DataF2> Wellen aus Heilnebel. Jede Welle stellt bei allen verbündeten Einheiten in einem Gebiet <A00E,DataA2> Trefferpunkte wieder her.
+}
+
+STRING 869
+// Abilities: A00E (Heilspray), Ubertip (Tooltip - Normal - Extended)
+{
+Versprüht <A00E,DataF2> Wellen aus Heilnebel. Jede Welle stellt bei allen verbündeten Einheiten in einem Gebiet <A00E,DataA2> Trefferpunkte wieder her.
+}
+
+STRING 870
+// Abilities: A00E (Heilspray), Ubertip (Tooltip - Normal - Extended)
+{
+Versprüht <A00E,DataF2> Wellen aus Heilnebel. Jede Welle stellt bei allen verbündeten Einheiten in einem Gebiet <A00E,DataA2> Trefferpunkte wieder her.
+}
+
+STRING 871
+// Abilities: A00E (Heilspray), Ubertip (Tooltip - Normal - Extended)
+{
+Versprüht <A00E,DataF2> Wellen aus Heilnebel. Jede Welle stellt bei allen verbündeten Einheiten in einem Gebiet <A00E,DataA2> Trefferpunkte wieder her.
+}
+
+STRING 872
+// Abilities: A00E (Heilspray), Ubertip (Tooltip - Normal - Extended)
+{
+Versprüht <A00E,DataF2> Wellen aus Heilnebel. Jede Welle stellt bei allen verbündeten Einheiten in einem Gebiet <A00E,DataA2> Trefferpunkte wieder her.
+}
+
+STRING 873
+// Abilities: A00E (Heilspray), Ubertip (Tooltip - Normal - Extended)
+{
+Versprüht <A00E,DataF2> Wellen aus Heilnebel. Jede Welle stellt bei allen verbündeten Einheiten in einem Gebiet <A00E,DataA2> Trefferpunkte wieder her.
+}
+
+STRING 874
+// Abilities: A00E (Heilspray), Ubertip (Tooltip - Normal - Extended)
+{
+Versprüht <A00E,DataF2> Wellen aus Heilnebel. Jede Welle stellt bei allen verbündeten Einheiten in einem Gebiet <A00E,DataA2> Trefferpunkte wieder her.
+}
+
+STRING 875
+// Abilities: A00E (Heilspray), Ubertip (Tooltip - Normal - Extended)
+{
+Versprüht <A00E,DataF2> Wellen aus Heilnebel. Jede Welle stellt bei allen verbündeten Einheiten in einem Gebiet <A00E,DataA2> Trefferpunkte wieder her.
+}
+
+STRING 876
+// Abilities: A00E (Heilspray), Researchubertip (Tooltip - Learn - Extended)
+{
+Versprüht Wellen aus Heilnebel, der Einheiten im Zielgebiet heilt.|n|n|cffffcc00Stufe 1|r - <A00E,DataF1> Wellen, die je <A00E,DataA1> Trefferpunkte heilen.|n|cffffcc00Stufe 2|r - <A00E,DataF2> Wellen, die je <A00E,DataA2> Trefferpunkte heilen.|n|cffffcc00Stufe 3|r - <A00E,DataF3> Wellen, die je <A00E,DataA3> Trefferpunkte heilen.
+}
+
+STRING 878
+// Abilities: A00F (Säurebombe), Ubertip (Tooltip - Normal - Extended)
+{
+Schleudert eine Säureflasche auf ein Ziel, die beim Aufprall zerbricht und nahe gegnerische Einheiten mit starker Säure bespritzt.|n|nDie Säure verringert die Rüstung um <A00F,DataC1>, fügt dem Primärziel <A00F,DataD1> Schaden pro Sekunde und Zielen in der Nähe leicht weniger Schaden zu.|nHält <A00F,Dur1> Sek. lang an.
+}
+
+STRING 879
+// Abilities: A00F (Säurebombe), Ubertip (Tooltip - Normal - Extended)
+{
+Schleudert eine Säureflasche auf ein Ziel, die beim Aufprall zerbricht und nahe gegnerische Einheiten mit starker Säure bespritzt.|n|nDie Säure verringert die Rüstung um <A00F,DataC2>, fügt dem Primärziel <A00F,DataD2> Schaden pro Sekunde und Zielen in der Nähe leicht weniger Schaden zu.|nHält <A00F,Dur2> Sek. lang an.
+}
+
+STRING 880
+// Abilities: A00F (Säurebombe), Ubertip (Tooltip - Normal - Extended)
+{
+Schleudert eine Säureflasche auf ein Ziel, die beim Aufprall zerbricht und nahe gegnerische Einheiten mit starker Säure bespritzt.|n|nDie Säure verringert die Rüstung um <A00F,DataC3>, fügt dem Primärziel <A00F,DataD3> Schaden pro Sekunde und Zielen in der Nähe leicht weniger Schaden zu.|nHält <A00F,Dur3> Sek. lang an.
+}
+
+STRING 881
+// Abilities: A00F (Säurebombe), Ubertip (Tooltip - Normal - Extended)
+{
+Schleudert eine Säureflasche auf ein Ziel, die beim Aufprall zerbricht und nahe gegnerische Einheiten mit starker Säure bespritzt.|n|nDie Säure verringert die Rüstung um <A00F,DataC4>, fügt dem Primärziel <A00F,DataD4> Schaden pro Sekunde und Zielen in der Nähe leicht weniger Schaden zu.|nHält <A00F,Dur4> Sek. lang an.
+}
+
+STRING 882
+// Abilities: A00F (Säurebombe), Ubertip (Tooltip - Normal - Extended)
+{
+Schleudert eine Säureflasche auf ein Ziel, die beim Aufprall zerbricht und nahe gegnerische Einheiten mit starker Säure bespritzt.|n|nDie Säure verringert die Rüstung um <A00F,DataC5>, fügt dem Primärziel <A00F,DataD5> Schaden pro Sekunde und Zielen in der Nähe leicht weniger Schaden zu.|nHält <A00F,Dur5> Sek. lang an.
+}
+
+STRING 883
+// Abilities: A00F (Säurebombe), Ubertip (Tooltip - Normal - Extended)
+{
+Schleudert eine Säureflasche auf ein Ziel, die beim Aufprall zerbricht und nahe gegnerische Einheiten mit starker Säure bespritzt.|n|nDie Säure verringert die Rüstung um <A00F,DataC6>, fügt dem Primärziel <A00F,DataD6> Schaden pro Sekunde und Zielen in der Nähe leicht weniger Schaden zu.|nHält <A00F,Dur6> Sek. lang an.
+}
+
+STRING 884
+// Abilities: A00F (Säurebombe), Ubertip (Tooltip - Normal - Extended)
+{
+Schleudert eine Säureflasche auf ein Ziel, die beim Aufprall zerbricht und nahe gegnerische Einheiten mit starker Säure bespritzt.|n|nDie Säure verringert die Rüstung um <A00F,DataC7>, fügt dem Primärziel <A00F,DataD7> Schaden pro Sekunde und Zielen in der Nähe leicht weniger Schaden zu.|nHält <A00F,Dur7> Sek. lang an.
+}
+
+STRING 885
+// Abilities: A00F (Säurebombe), Ubertip (Tooltip - Normal - Extended)
+{
+Schleudert eine Säureflasche auf ein Ziel, die beim Aufprall zerbricht und nahe gegnerische Einheiten mit starker Säure bespritzt.|n|nDie Säure verringert die Rüstung um <A00F,DataC8>, fügt dem Primärziel <A00F,DataD8> Schaden pro Sekunde und Zielen in der Nähe leicht weniger Schaden zu.|nHält <A00F,Dur8> Sek. lang an.
+}
+
+STRING 886
+// Abilities: A00F (Säurebombe), Ubertip (Tooltip - Normal - Extended)
+{
+Schleudert eine Säureflasche auf ein Ziel, die beim Aufprall zerbricht und nahe gegnerische Einheiten mit starker Säure bespritzt.|n|nDie Säure verringert die Rüstung um <A00F,DataC9>, fügt dem Primärziel <A00F,DataD9> Schaden pro Sekunde und Zielen in der Nähe leicht weniger Schaden zu.|nHält <A00F,Dur9> Sek. lang an.
+}
+
+STRING 887
+// Abilities: A00F (Säurebombe), Ubertip (Tooltip - Normal - Extended)
+{
+Schleudert eine Säureflasche auf ein Ziel, die beim Aufprall zerbricht und nahe gegnerische Einheiten mit starker Säure bespritzt.|n|nDie Säure verringert die Rüstung um <A00F,DataC10>, fügt dem Primärziel <A00F,DataD10> Schaden pro Sekunde und Zielen in der Nähe leicht weniger Schaden zu.|nHält <A00F,Dur10> Sek. lang an.
+}
+
+STRING 888
+// Abilities: A00F (Säurebombe), Ubertip (Tooltip - Normal - Extended)
+{
+Schleudert eine Säureflasche auf ein Ziel, die beim Aufprall zerbricht und nahe gegnerische Einheiten mit starker Säure bespritzt.|n|nDie Säure verringert die Rüstung um <A00F,DataC11>, fügt dem Primärziel <A00F,DataD11> Schaden pro Sekunde und Zielen in der Nähe leicht weniger Schaden zu.|nHält <A00F,Dur11> Sek. lang an.
+}
+
+STRING 889
+// Abilities: A00F (Säurebombe), Ubertip (Tooltip - Normal - Extended)
+{
+Schleudert eine Säureflasche auf ein Ziel, die beim Aufprall zerbricht und nahe gegnerische Einheiten mit starker Säure bespritzt.|n|nDie Säure verringert die Rüstung um <A00F,DataC12>, fügt dem Primärziel <A00F,DataD12> Schaden pro Sekunde und Zielen in der Nähe leicht weniger Schaden zu.|nHält <A00F,Dur12> Sek. lang an.
+}
+
+STRING 890
+// Abilities: A00F (Säurebombe), Ubertip (Tooltip - Normal - Extended)
+{
+Schleudert eine Säureflasche auf ein Ziel, die beim Aufprall zerbricht und nahe gegnerische Einheiten mit starker Säure bespritzt.|n|nDie Säure verringert die Rüstung um <A00F,DataC13>, fügt dem Primärziel <A00F,DataD13> Schaden pro Sekunde und Zielen in der Nähe leicht weniger Schaden zu.|nHält <A00F,Dur13> Sek. lang an.
+}
+
+STRING 891
+// Abilities: A00F (Säurebombe), Ubertip (Tooltip - Normal - Extended)
+{
+Schleudert eine Säureflasche auf ein Ziel, die beim Aufprall zerbricht und nahe gegnerische Einheiten mit starker Säure bespritzt.|n|nDie Säure verringert die Rüstung um <A00F,DataC14>, fügt dem Primärziel <A00F,DataD14> Schaden pro Sekunde und Zielen in der Nähe leicht weniger Schaden zu.|nHält <A00F,Dur14> Sek. lang an.
+}
+
+STRING 892
+// Abilities: A00F (Säurebombe), Ubertip (Tooltip - Normal - Extended)
+{
+Schleudert eine Säureflasche auf ein Ziel, die beim Aufprall zerbricht und nahe gegnerische Einheiten mit starker Säure bespritzt.|n|nDie Säure verringert die Rüstung um <A00F,DataC15>, fügt dem Primärziel <A00F,DataD15> Schaden pro Sekunde und Zielen in der Nähe leicht weniger Schaden zu.|nHält <A00F,Dur15> Sek. lang an.
+}
+
+STRING 893
+// Abilities: A00F (Säurebombe), Ubertip (Tooltip - Normal - Extended)
+{
+Schleudert eine Säureflasche auf ein Ziel, die beim Aufprall zerbricht und nahe gegnerische Einheiten mit starker Säure bespritzt.|n|nDie Säure verringert die Rüstung um <A00F,DataC16>, fügt dem Primärziel <A00F,DataD16> Schaden pro Sekunde und Zielen in der Nähe leicht weniger Schaden zu.|nHält <A00F,Dur16> Sek. lang an.
+}
+
+STRING 894
+// Abilities: A00F (Säurebombe), Ubertip (Tooltip - Normal - Extended)
+{
+Schleudert eine Säureflasche auf ein Ziel, die beim Aufprall zerbricht und nahe gegnerische Einheiten mit starker Säure bespritzt.|n|nDie Säure verringert die Rüstung um <A00F,DataC17>, fügt dem Primärziel <A00F,DataD17> Schaden pro Sekunde und Zielen in der Nähe leicht weniger Schaden zu.|nHält <A00F,Dur17> Sek. lang an.
+}
+
+STRING 895
+// Abilities: A00F (Säurebombe), Ubertip (Tooltip - Normal - Extended)
+{
+Schleudert eine Säureflasche auf ein Ziel, die beim Aufprall zerbricht und nahe gegnerische Einheiten mit starker Säure bespritzt.|n|nDie Säure verringert die Rüstung um <A00F,DataC18>, fügt dem Primärziel <A00F,DataD18> Schaden pro Sekunde und Zielen in der Nähe leicht weniger Schaden zu.|nHält <A00F,Dur18> Sek. lang an.
+}
+
+STRING 896
+// Abilities: A00F (Säurebombe), Ubertip (Tooltip - Normal - Extended)
+{
+Schleudert eine Säureflasche auf ein Ziel, die beim Aufprall zerbricht und nahe gegnerische Einheiten mit starker Säure bespritzt.|n|nDie Säure verringert die Rüstung um <A00F,DataC19>, fügt dem Primärziel <A00F,DataD19> Schaden pro Sekunde und Zielen in der Nähe leicht weniger Schaden zu.|nHält <A00F,Dur19> Sek. lang an.
+}
+
+STRING 897
+// Abilities: A00F (Säurebombe), Ubertip (Tooltip - Normal - Extended)
+{
+Schleudert eine Säureflasche auf ein Ziel, die beim Aufprall zerbricht und nahe gegnerische Einheiten mit starker Säure bespritzt.|n|nDie Säure verringert die Rüstung um <A00F,DataC20>, fügt dem Primärziel <A00F,DataD20> Schaden pro Sekunde und Zielen in der Nähe leicht weniger Schaden zu.|nHält <A00F,Dur20> Sek. lang an.
+}
+
+STRING 898
+// Abilities: A00F (Säurebombe), Tip (Tooltip - Normal)
+{
+Säurebombe [|cffffcc00Stufe 4|r]
+}
+
+STRING 899
+// Abilities: A00F (Säurebombe), Tip (Tooltip - Normal)
+{
+Säurebombe [|cffffcc00Stufe 5|r]
+}
+
+STRING 900
+// Abilities: A00F (Säurebombe), Tip (Tooltip - Normal)
+{
+Säurebombe [|cffffcc00Stufe 6|r]
+}
+
+STRING 901
+// Abilities: A00F (Säurebombe), Tip (Tooltip - Normal)
+{
+Säurebombe [|cffffcc00Stufe 7|r]
+}
+
+STRING 902
+// Abilities: A00F (Säurebombe), Tip (Tooltip - Normal)
+{
+Säurebombe [|cffffcc00Stufe 8|r]
+}
+
+STRING 903
+// Abilities: A00F (Säurebombe), Tip (Tooltip - Normal)
+{
+Säurebombe [|cffffcc00Stufe 9|r]
+}
+
+STRING 904
+// Abilities: A00F (Säurebombe), Tip (Tooltip - Normal)
+{
+Säurebombe [|cffffcc00Stufe 10|r]
+}
+
+STRING 905
+// Abilities: A00F (Säurebombe), Tip (Tooltip - Normal)
+{
+Säurebombe [|cffffcc00Stufe 11|r]
+}
+
+STRING 906
+// Abilities: A00F (Säurebombe), Tip (Tooltip - Normal)
+{
+Säurebombe [|cffffcc00Stufe 12|r]
+}
+
+STRING 907
+// Abilities: A00F (Säurebombe), Tip (Tooltip - Normal)
+{
+Säurebombe [|cffffcc00Stufe 13|r]
+}
+
+STRING 908
+// Abilities: A00F (Säurebombe), Tip (Tooltip - Normal)
+{
+Säurebombe [|cffffcc00Stufe 14|r]
+}
+
+STRING 909
+// Abilities: A00F (Säurebombe), Tip (Tooltip - Normal)
+{
+Säurebombe [|cffffcc00Stufe 15|r]
+}
+
+STRING 910
+// Abilities: A00F (Säurebombe), Tip (Tooltip - Normal)
+{
+Säurebombe [|cffffcc00Stufe 16|r]
+}
+
+STRING 911
+// Abilities: A00F (Säurebombe), Tip (Tooltip - Normal)
+{
+Säurebombe [|cffffcc00Stufe 17|r]
+}
+
+STRING 912
+// Abilities: A00F (Säurebombe), Tip (Tooltip - Normal)
+{
+Säurebombe [|cffffcc00Stufe 18|r]
+}
+
+STRING 913
+// Abilities: A00F (Säurebombe), Tip (Tooltip - Normal)
+{
+Säurebombe [|cffffcc00Stufe 19|r]
+}
+
+STRING 914
+// Abilities: A00F (Säurebombe), Tip (Tooltip - Normal)
+{
+Säurebombe [|cffffcc00Stufe 20|r]
+}
+
+STRING 915
+// Abilities: A00F (Säurebombe), Researchubertip (Tooltip - Learn - Extended)
+{
+Schleudert eine Säureflasche auf ein Ziel, die beim Aufprall zerbricht und nahe gegnerische Einheiten mit starker Säure bespritzt.|n|nDie Säure verringert die Rüstung, fügt dem Primärziel hohen periodischen Schaden und Zielen in der Nähe leicht weniger periodischen Schaden zu.|nHält <A00F,Dur1> Sek. lang an.|n|n|cffffcc00Stufe 1|r - Maximal <A00F,DataD1> Schaden pro Sekunde, verringert die Rüstung um <A00F,DataC1>.|n|cffffcc00Stufe 2|r - Maximal <A00F,DataD2> Schaden pro Sekunde, verringert die Rüstung um <A00F,DataC2>.|n|cffffcc00Stufe 3|r - Maximal <A00F,DataD3> Schaden pro Sekunde, verringert die Rüstung um <A00F,DataC3>.
+}
+
+STRING 917
+// Abilities: A00G (Transmutieren), Tip (Tooltip - Normal)
+{
+Transmutieren
+}
+
+STRING 918
+// Abilities: A00G (Transmutieren), Tip (Tooltip - Normal)
+{
+Transmutieren
+}
+
+STRING 919
+// Abilities: A00G (Transmutieren), Tip (Tooltip - Normal)
+{
+Transmutieren
+}
+
+STRING 920
+// Abilities: A00G (Transmutieren), Tip (Tooltip - Normal)
+{
+Transmutieren
+}
+
+STRING 921
+// Abilities: A00G (Transmutieren), Tip (Tooltip - Normal)
+{
+Transmutieren
+}
+
+STRING 922
+// Abilities: A00G (Transmutieren), Tip (Tooltip - Normal)
+{
+Transmutieren
+}
+
+STRING 923
+// Abilities: A00G (Transmutieren), Tip (Tooltip - Normal)
+{
+Transmutieren
+}
+
+STRING 924
+// Abilities: A00G (Transmutieren), Tip (Tooltip - Normal)
+{
+Transmutieren
+}
+
+STRING 925
+// Abilities: A00G (Transmutieren), Tip (Tooltip - Normal)
+{
+Transmutieren
+}
+
+STRING 926
+// Abilities: A00G (Transmutieren), Ubertip (Tooltip - Normal - Extended)
+{
+Tötet eine Zieleinheit sofort und wandelt sie in Gold um, das zum Gold des Spielers hinzugefügt wird!|nKann nicht gegen Helden eingesetzt werden.
+}
+
+STRING 927
+// Abilities: A00G (Transmutieren), Ubertip (Tooltip - Normal - Extended)
+{
+Tötet eine Zieleinheit sofort und wandelt sie in Gold um, das zum Gold des Spielers hinzugefügt wird!|nKann nicht gegen Helden eingesetzt werden.
+}
+
+STRING 928
+// Abilities: A00G (Transmutieren), Ubertip (Tooltip - Normal - Extended)
+{
+Tötet eine Zieleinheit sofort und wandelt sie in Gold um, das zum Gold des Spielers hinzugefügt wird!|nKann nicht gegen Helden eingesetzt werden.
+}
+
+STRING 929
+// Abilities: A00G (Transmutieren), Ubertip (Tooltip - Normal - Extended)
+{
+Tötet eine Zieleinheit sofort und wandelt sie in Gold um, das zum Gold des Spielers hinzugefügt wird!|nKann nicht gegen Helden eingesetzt werden.
+}
+
+STRING 930
+// Abilities: A00G (Transmutieren), Ubertip (Tooltip - Normal - Extended)
+{
+Tötet eine Zieleinheit sofort und wandelt sie in Gold um, das zum Gold des Spielers hinzugefügt wird!|nKann nicht gegen Helden eingesetzt werden.
+}
+
+STRING 931
+// Abilities: A00G (Transmutieren), Ubertip (Tooltip - Normal - Extended)
+{
+Tötet eine Zieleinheit sofort und wandelt sie in Gold um, das zum Gold des Spielers hinzugefügt wird!|nKann nicht gegen Helden eingesetzt werden.
+}
+
+STRING 932
+// Abilities: A00G (Transmutieren), Ubertip (Tooltip - Normal - Extended)
+{
+Tötet eine Zieleinheit sofort und wandelt sie in Gold um, das zum Gold des Spielers hinzugefügt wird!|nKann nicht gegen Helden eingesetzt werden.
+}
+
+STRING 933
+// Abilities: A00G (Transmutieren), Ubertip (Tooltip - Normal - Extended)
+{
+Tötet eine Zieleinheit sofort und wandelt sie in Gold um, das zum Gold des Spielers hinzugefügt wird!|nKann nicht gegen Helden eingesetzt werden.
+}
+
+STRING 934
+// Abilities: A00G (Transmutieren), Ubertip (Tooltip - Normal - Extended)
+{
+Tötet eine Zieleinheit sofort und wandelt sie in Gold um, das zum Gold des Spielers hinzugefügt wird!|nKann nicht gegen Helden eingesetzt werden.
+}
+
+STRING 935
+// Abilities: A00G (Transmutieren), Ubertip (Tooltip - Normal - Extended)
+{
+Tötet eine Zieleinheit sofort und wandelt sie in Gold um, das zum Gold des Spielers hinzugefügt wird!|nKann nicht gegen Helden eingesetzt werden.
+}
+
+STRING 936
+// Abilities: A00G (Transmutieren), Researchubertip (Tooltip - Learn - Extended)
+{
+Tötet eine Zieleinheit sofort und wandelt sie in Gold um, das zum Gold des Spielers hinzugefügt wird!|nKann nicht gegen Helden eingesetzt werden.
+}
+
+STRING 937
+// Abilities: A002 (Erhöhte Attribute), Tip (Tooltip - Normal)
+{
+Erhöhte Attribute [|cffffcc00Stufe 31|r]
+}
+
+STRING 938
+// Abilities: A002 (Erhöhte Attribute), Tip (Tooltip - Normal)
+{
+Erhöhte Attribute [|cffffcc00Stufe 32|r]
+}
+
+STRING 939
+// Abilities: A002 (Erhöhte Attribute), Tip (Tooltip - Normal)
+{
+Erhöhte Attribute [|cffffcc00Stufe 33|r]
+}
+
+STRING 940
+// Abilities: A002 (Erhöhte Attribute), Tip (Tooltip - Normal)
+{
+Erhöhte Attribute [|cffffcc00Stufe 34|r]
+}
+
+STRING 941
+// Abilities: A002 (Erhöhte Attribute), Tip (Tooltip - Normal)
+{
+Erhöhte Attribute [|cffffcc00Stufe 35|r]
+}
+
+STRING 942
+// Abilities: A002 (Erhöhte Attribute), Tip (Tooltip - Normal)
+{
+Erhöhte Attribute [|cffffcc00Stufe 36|r]
+}
+
+STRING 943
+// Abilities: A002 (Erhöhte Attribute), Tip (Tooltip - Normal)
+{
+Erhöhte Attribute [|cffffcc00Stufe 37|r]
+}
+
+STRING 944
+// Abilities: A002 (Erhöhte Attribute), Tip (Tooltip - Normal)
+{
+Erhöhte Attribute [|cffffcc00Stufe 38|r]
+}
+
+STRING 945
+// Abilities: A002 (Erhöhte Attribute), Tip (Tooltip - Normal)
+{
+Erhöhte Attribute [|cffffcc00Stufe 39|r]
+}
+
+STRING 946
+// Abilities: A002 (Erhöhte Attribute), Tip (Tooltip - Normal)
+{
+Erhöhte Attribute [|cffffcc00Stufe 40|r]
+}
+
+STRING 947
+// Abilities: A002 (Erhöhte Attribute), Tip (Tooltip - Normal)
+{
+Erhöhte Attribute [|cffffcc00Stufe 41|r]
+}
+
+STRING 948
+// Abilities: A002 (Erhöhte Attribute), Tip (Tooltip - Normal)
+{
+Erhöhte Attribute [|cffffcc00Stufe 42|r]
+}
+
+STRING 949
+// Abilities: A002 (Erhöhte Attribute), Tip (Tooltip - Normal)
+{
+Erhöhte Attribute [|cffffcc00Stufe 43|r]
+}
+
+STRING 950
+// Abilities: A002 (Erhöhte Attribute), Tip (Tooltip - Normal)
+{
+Erhöhte Attribute [|cffffcc00Stufe 44|r]
+}
+
+STRING 951
+// Abilities: A002 (Erhöhte Attribute), Tip (Tooltip - Normal)
+{
+Erhöhte Attribute [|cffffcc00Stufe 45|r]
+}
+
+STRING 952
+// Abilities: A002 (Erhöhte Attribute), Tip (Tooltip - Normal)
+{
+Erhöhte Attribute [|cffffcc00Stufe 46|r]
+}
+
+STRING 953
+// Abilities: A002 (Erhöhte Attribute), Tip (Tooltip - Normal)
+{
+Erhöhte Attribute [|cffffcc00Stufe 47|r]
+}
+
+STRING 954
+// Abilities: A002 (Erhöhte Attribute), Tip (Tooltip - Normal)
+{
+Erhöhte Attribute [|cffffcc00Stufe 48|r]
+}
+
+STRING 955
+// Abilities: A002 (Erhöhte Attribute), Tip (Tooltip - Normal)
+{
+Erhöhte Attribute [|cffffcc00Stufe 49|r]
+}
+
+STRING 956
+// Abilities: A002 (Erhöhte Attribute), Tip (Tooltip - Normal)
+{
+Erhöhte Attribute [|cffffcc00Stufe 50|r]
+}
+
+STRING 957
+// Abilities: A002 (Erhöhte Attribute), Ubertip (Tooltip - Normal - Extended)
+{
+Erhöht die Beweglichkeit, Stärke und Intelligenz um insgesamt <A002,DataA31>.
+}
+
+STRING 958
+// Abilities: A002 (Erhöhte Attribute), Ubertip (Tooltip - Normal - Extended)
+{
+Erhöht die Beweglichkeit, Stärke und Intelligenz um insgesamt <A002,DataA32>.
+}
+
+STRING 959
+// Abilities: A002 (Erhöhte Attribute), Ubertip (Tooltip - Normal - Extended)
+{
+Erhöht die Beweglichkeit, Stärke und Intelligenz um insgesamt <A002,DataA33>.
+}
+
+STRING 960
+// Abilities: A002 (Erhöhte Attribute), Ubertip (Tooltip - Normal - Extended)
+{
+Erhöht die Beweglichkeit, Stärke und Intelligenz um insgesamt <A002,DataA34>.
+}
+
+STRING 961
+// Abilities: A002 (Erhöhte Attribute), Ubertip (Tooltip - Normal - Extended)
+{
+Erhöht die Beweglichkeit, Stärke und Intelligenz um insgesamt <A002,DataA35>.
+}
+
+STRING 962
+// Abilities: A002 (Erhöhte Attribute), Ubertip (Tooltip - Normal - Extended)
+{
+Erhöht die Beweglichkeit, Stärke und Intelligenz um insgesamt <A002,DataA36>.
+}
+
+STRING 963
+// Abilities: A002 (Erhöhte Attribute), Ubertip (Tooltip - Normal - Extended)
+{
+Erhöht die Beweglichkeit, Stärke und Intelligenz um insgesamt <A002,DataA37>.
+}
+
+STRING 964
+// Abilities: A002 (Erhöhte Attribute), Ubertip (Tooltip - Normal - Extended)
+{
+Erhöht die Beweglichkeit, Stärke und Intelligenz um insgesamt <A002,DataA38>.
+}
+
+STRING 965
+// Abilities: A002 (Erhöhte Attribute), Ubertip (Tooltip - Normal - Extended)
+{
+Erhöht die Beweglichkeit, Stärke und Intelligenz um insgesamt <A002,DataA39>.
+}
+
+STRING 966
+// Abilities: A002 (Erhöhte Attribute), Ubertip (Tooltip - Normal - Extended)
+{
+Erhöht die Beweglichkeit, Stärke und Intelligenz um insgesamt <A002,DataA40>.
+}
+
+STRING 967
+// Abilities: A002 (Erhöhte Attribute), Ubertip (Tooltip - Normal - Extended)
+{
+Erhöht die Beweglichkeit, Stärke und Intelligenz um insgesamt <A002,DataA41>.
+}
+
+STRING 968
+// Abilities: A002 (Erhöhte Attribute), Ubertip (Tooltip - Normal - Extended)
+{
+Erhöht die Beweglichkeit, Stärke und Intelligenz um insgesamt <A002,DataA42>.
+}
+
+STRING 969
+// Abilities: A002 (Erhöhte Attribute), Ubertip (Tooltip - Normal - Extended)
+{
+Erhöht die Beweglichkeit, Stärke und Intelligenz um insgesamt <A002,DataA43>.
+}
+
+STRING 970
+// Abilities: A002 (Erhöhte Attribute), Ubertip (Tooltip - Normal - Extended)
+{
+Erhöht die Beweglichkeit, Stärke und Intelligenz um insgesamt <A002,DataA44>.
+}
+
+STRING 971
+// Abilities: A002 (Erhöhte Attribute), Ubertip (Tooltip - Normal - Extended)
+{
+Erhöht die Beweglichkeit, Stärke und Intelligenz um insgesamt <A002,DataA45>.
+}
+
+STRING 972
+// Abilities: A002 (Erhöhte Attribute), Ubertip (Tooltip - Normal - Extended)
+{
+Erhöht die Beweglichkeit, Stärke und Intelligenz um insgesamt <A002,DataA46>.
+}
+
+STRING 973
+// Abilities: A002 (Erhöhte Attribute), Ubertip (Tooltip - Normal - Extended)
+{
+Erhöht die Beweglichkeit, Stärke und Intelligenz um insgesamt <A002,DataA47>.
+}
+
+STRING 974
+// Abilities: A002 (Erhöhte Attribute), Ubertip (Tooltip - Normal - Extended)
+{
+Erhöht die Beweglichkeit, Stärke und Intelligenz um insgesamt <A002,DataA48>.
+}
+
+STRING 975
+// Abilities: A002 (Erhöhte Attribute), Ubertip (Tooltip - Normal - Extended)
+{
+Erhöht die Beweglichkeit, Stärke und Intelligenz um insgesamt <A002,DataA49>.
+}
+
+STRING 976
+// Abilities: A002 (Erhöhte Attribute), Ubertip (Tooltip - Normal - Extended)
+{
+Erhöht die Beweglichkeit, Stärke und Intelligenz um insgesamt <A002,DataA50>.
+}
+
+STRING 978
+// Abilities: A00H (Feuerodem), Researchubertip (Tooltip - Learn - Extended)
+{
+Haucht einen Feuerkegel auf gegnerische Einheiten, der Schaden verursacht. Von Fasshieb betroffene Einheiten gehen in Flammen auf und erleiden periodischen Brandschaden.|nHält <A00H,Dur1> Sek. lang an.|n|n|cffffcc00Stufe 1|r - <A00H,DataA1> Direktschaden, <A00H,DataE1> Schaden pro Sekunde.|n|cffffcc00Stufe 2|r - <A00H,DataA2> Direktschaden, <A00H,DataE2> Schaden pro Sekunde.|n|cffffcc00Stufe 3|r - <A00H,DataA3> Direktschaden, <A00H,DataE3> Schaden pro Sekunde.
+}
+
+STRING 979
+// Abilities: A00H (Feuerodem), Tip (Tooltip - Normal)
+{
+Feuerodem [|cffffcc00Stufe 4|r]
+}
+
+STRING 980
+// Abilities: A00H (Feuerodem), Tip (Tooltip - Normal)
+{
+Feuerodem [|cffffcc00Stufe 5|r]
+}
+
+STRING 981
+// Abilities: A00H (Feuerodem), Tip (Tooltip - Normal)
+{
+Feuerodem [|cffffcc00Stufe 6|r]
+}
+
+STRING 982
+// Abilities: A00H (Feuerodem), Tip (Tooltip - Normal)
+{
+Feuerodem [|cffffcc00Stufe 7|r]
+}
+
+STRING 983
+// Abilities: A00H (Feuerodem), Tip (Tooltip - Normal)
+{
+Feuerodem [|cffffcc00Stufe 8|r]
+}
+
+STRING 984
+// Abilities: A00H (Feuerodem), Tip (Tooltip - Normal)
+{
+Feuerodem [|cffffcc00Stufe 9|r]
+}
+
+STRING 985
+// Abilities: A00H (Feuerodem), Tip (Tooltip - Normal)
+{
+Feuerodem [|cffffcc00Stufe 10|r]
+}
+
+STRING 986
+// Abilities: A00H (Feuerodem), Ubertip (Tooltip - Normal - Extended)
+{
+Haucht einen Feuerkegel auf gegnerische Einheiten, der <A00H,DataA1> Direktschaden verursacht. Von Fasshieb betroffene Einheiten gehen in Flammen auf und erleiden <A00H,Dur1> Sek. lang <A00H,DataE1> Schaden pro Sekunde.
+}
+
+STRING 987
+// Abilities: A00H (Feuerodem), Ubertip (Tooltip - Normal - Extended)
+{
+Haucht einen Feuerkegel auf gegnerische Einheiten, der <A00H,DataA2> Direktschaden verursacht. Von Fasshieb betroffene Einheiten gehen in Flammen auf und erleiden <A00H,Dur2> Sek. lang <A00H,DataE2> Schaden pro Sekunde.
+}
+
+STRING 988
+// Abilities: A00H (Feuerodem), Ubertip (Tooltip - Normal - Extended)
+{
+Haucht einen Feuerkegel auf gegnerische Einheiten, der <A00H,DataA3> Direktschaden verursacht. Von Fasshieb betroffene Einheiten gehen in Flammen auf und erleiden <A00H,Dur3> Sek. lang <A00H,DataE3> Schaden pro Sekunde.
+}
+
+STRING 989
+// Abilities: A00H (Feuerodem), Ubertip (Tooltip - Normal - Extended)
+{
+Haucht einen Feuerkegel auf gegnerische Einheiten, der <A00H,DataA4> Direktschaden verursacht. Von Fasshieb betroffene Einheiten gehen in Flammen auf und erleiden <A00H,Dur4> Sek. lang <A00H,DataE4> Schaden pro Sekunde.
+}
+
+STRING 990
+// Abilities: A00H (Feuerodem), Ubertip (Tooltip - Normal - Extended)
+{
+Haucht einen Feuerkegel auf gegnerische Einheiten, der <A00H,DataA5> Direktschaden verursacht. Von Fasshieb betroffene Einheiten gehen in Flammen auf und erleiden <A00H,Dur5> Sek. lang <A00H,DataE5> Schaden pro Sekunde.
+}
+
+STRING 991
+// Abilities: A00H (Feuerodem), Ubertip (Tooltip - Normal - Extended)
+{
+Haucht einen Feuerkegel auf gegnerische Einheiten, der <A00H,DataA6> Direktschaden verursacht. Von Fasshieb betroffene Einheiten gehen in Flammen auf und erleiden <A00H,Dur6> Sek. lang <A00H,DataE6> Schaden pro Sekunde.
+}
+
+STRING 992
+// Abilities: A00H (Feuerodem), Ubertip (Tooltip - Normal - Extended)
+{
+Haucht einen Feuerkegel auf gegnerische Einheiten, der <A00H,DataA7> Direktschaden verursacht. Von Fasshieb betroffene Einheiten gehen in Flammen auf und erleiden <A00H,Dur7> Sek. lang <A00H,DataE7> Schaden pro Sekunde.
+}
+
+STRING 993
+// Abilities: A00H (Feuerodem), Ubertip (Tooltip - Normal - Extended)
+{
+Haucht einen Feuerkegel auf gegnerische Einheiten, der <A00H,DataA8> Direktschaden verursacht. Von Fasshieb betroffene Einheiten gehen in Flammen auf und erleiden <A00H,Dur8> Sek. lang <A00H,DataE8> Schaden pro Sekunde.
+}
+
+STRING 994
+// Abilities: A00H (Feuerodem), Ubertip (Tooltip - Normal - Extended)
+{
+Haucht einen Feuerkegel auf gegnerische Einheiten, der <A00H,DataA9> Direktschaden verursacht. Von Fasshieb betroffene Einheiten gehen in Flammen auf und erleiden <A00H,Dur9> Sek. lang <A00H,DataE9> Schaden pro Sekunde.
+}
+
+STRING 995
+// Abilities: A00H (Feuerodem), Ubertip (Tooltip - Normal - Extended)
+{
+Haucht einen Feuerkegel auf gegnerische Einheiten, der <A00H,DataA10> Direktschaden verursacht. Von Fasshieb betroffene Einheiten gehen in Flammen auf und erleiden <A00H,Dur10> Sek. lang <A00H,DataE10> Schaden pro Sekunde.
+}
+
+STRING 997
+// Abilities: A00I (Gabelblitzschlag), Researchubertip (Tooltip - Learn - Extended)
+{
+Richtet einen Blitzkegel auf Gegner, der ihnen Schaden zufügt.|n|n|cffffcc00Stufe 1|r - <A00I,DataA1> Schaden pro Einheit.|n|cffffcc00Stufe 2|r - <A00I,DataA2> Schaden pro Einheit.|n|cffffcc00Stufe 3|r - <A00I,DataA3> Schaden pro Einheit.
+}
+
+STRING 998
+// Abilities: A00I (Gabelblitzschlag), Tip (Tooltip - Normal)
+{
+Gabelblitzschlag [|cffffcc00Stufe 4|r]
+}
+
+STRING 999
+// Abilities: A00I (Gabelblitzschlag), Tip (Tooltip - Normal)
+{
+Gabelblitzschlag [|cffffcc00Stufe 5|r]
+}
+
+STRING 1000
+// Abilities: A00I (Gabelblitzschlag), Tip (Tooltip - Normal)
+{
+Gabelblitzschlag [|cffffcc00Stufe 6|r]
+}
+
+STRING 1001
+// Abilities: A00I (Gabelblitzschlag), Tip (Tooltip - Normal)
+{
+Gabelblitzschlag [|cffffcc00Stufe 7|r]
+}
+
+STRING 1002
+// Abilities: A00I (Gabelblitzschlag), Tip (Tooltip - Normal)
+{
+Gabelblitzschlag [|cffffcc00Stufe 8|r]
+}
+
+STRING 1003
+// Abilities: A00I (Gabelblitzschlag), Tip (Tooltip - Normal)
+{
+Gabelblitzschlag [|cffffcc00Stufe 9|r]
+}
+
+STRING 1004
+// Abilities: A00I (Gabelblitzschlag), Tip (Tooltip - Normal)
+{
+Gabelblitzschlag [|cffffcc00Stufe 10|r]
+}
+
+STRING 1005
+// Abilities: A00I (Gabelblitzschlag), Ubertip (Tooltip - Normal - Extended)
+{
+Richtet einen Blitzkegel auf Gegner, der bis zu <A00I,DataB2> gegnerische Einheiten trifft und ihnen <A00I,DataA2> Schaden zufügt.
+}
+
+STRING 1006
+// Abilities: A00I (Gabelblitzschlag), Ubertip (Tooltip - Normal - Extended)
+{
+Richtet einen Blitzkegel auf Gegner, der bis zu <A00I,DataB2> gegnerische Einheiten trifft und ihnen <A00I,DataA2> Schaden zufügt.
+}
+
+STRING 1007
+// Abilities: A00I (Gabelblitzschlag), Ubertip (Tooltip - Normal - Extended)
+{
+Richtet einen Blitzkegel auf Gegner, der bis zu <A00I,DataB2> gegnerische Einheiten trifft und ihnen <A00I,DataA2> Schaden zufügt.
+}
+
+STRING 1008
+// Abilities: A00I (Gabelblitzschlag), Ubertip (Tooltip - Normal - Extended)
+{
+Richtet einen Blitzkegel auf Gegner, der bis zu <A00I,DataB2> gegnerische Einheiten trifft und ihnen <A00I,DataA2> Schaden zufügt.
+}
+
+STRING 1009
+// Abilities: A00I (Gabelblitzschlag), Ubertip (Tooltip - Normal - Extended)
+{
+Richtet einen Blitzkegel auf Gegner, der bis zu <A00I,DataB2> gegnerische Einheiten trifft und ihnen <A00I,DataA2> Schaden zufügt.
+}
+
+STRING 1010
+// Abilities: A00I (Gabelblitzschlag), Ubertip (Tooltip - Normal - Extended)
+{
+Richtet einen Blitzkegel auf Gegner, der bis zu <A00I,DataB2> gegnerische Einheiten trifft und ihnen <A00I,DataA2> Schaden zufügt.
+}
+
+STRING 1011
+// Abilities: A00I (Gabelblitzschlag), Ubertip (Tooltip - Normal - Extended)
+{
+Richtet einen Blitzkegel auf Gegner, der bis zu <A00I,DataB2> gegnerische Einheiten trifft und ihnen <A00I,DataA2> Schaden zufügt.
+}
+
+STRING 1012
+// Abilities: A00I (Gabelblitzschlag), Ubertip (Tooltip - Normal - Extended)
+{
+Richtet einen Blitzkegel auf Gegner, der bis zu <A00I,DataB2> gegnerische Einheiten trifft und ihnen <A00I,DataA2> Schaden zufügt.
+}
+
+STRING 1013
+// Abilities: A00I (Gabelblitzschlag), Ubertip (Tooltip - Normal - Extended)
+{
+Richtet einen Blitzkegel auf Gegner, der bis zu <A00I,DataB2> gegnerische Einheiten trifft und ihnen <A00I,DataA2> Schaden zufügt.
+}
+
+STRING 1014
+// Abilities: A00I (Gabelblitzschlag), Ubertip (Tooltip - Normal - Extended)
+{
+Richtet einen Blitzkegel auf Gegner, der bis zu <A00I,DataB2> gegnerische Einheiten trifft und ihnen <A00I,DataA2> Schaden zufügt.
+}
+
+STRING 1015
+// Abilities: A00J (Frostpfeile), Researchubertip (Tooltip - Learn - Extended)
+{
+Verstärkt Angriffe mit Kälteschaden, der die Bewegungs- und Angriffsgeschwindigkeit der gegnerischen Zieleinheit verringert.|n|n|cffffcc00Stufe 1|r - <A00J,DataB1,%>% Angriffsgeschwindigkeit, <A00J,DataC1,%>% Bewegungsgeschwindigkeit, <A00J,DataA1> Bonusschaden.|n|cffffcc00Stufe 2|r - <A00J,DataB2,%>% Angriffsgeschwindigkeit, <A00J,DataC2,%>% Bewegungsgeschwindigkeit, <A00J,DataA2> Bonusschaden.|n|cffffcc00Stufe 3|r - <A00J,DataB3,%>% Angriffsgeschwindigkeit, <A00J,DataC3,%>% Bewegungsgeschwindigkeit, <A00J,DataA3> Bonusschaden.
+}
+
+STRING 1017
+// Abilities: A00J (Frostpfeile), Tip (Tooltip - Normal)
+{
+Frostpfeile [|cffffcc00Stufe 4|r]
+}
+
+STRING 1018
+// Abilities: A00J (Frostpfeile), Tip (Tooltip - Normal)
+{
+Frostpfeile [|cffffcc00Stufe 5|r]
+}
+
+STRING 1019
+// Abilities: A00J (Frostpfeile), Tip (Tooltip - Normal)
+{
+Frostpfeile [|cffffcc00Stufe 6|r]
+}
+
+STRING 1020
+// Abilities: A00J (Frostpfeile), Tip (Tooltip - Normal)
+{
+Frostpfeile [|cffffcc00Stufe 7|r]
+}
+
+STRING 1021
+// Abilities: A00J (Frostpfeile), Tip (Tooltip - Normal)
+{
+Frostpfeile [|cffffcc00Stufe 8|r]
+}
+
+STRING 1022
+// Abilities: A00J (Frostpfeile), Tip (Tooltip - Normal)
+{
+Frostpfeile [|cffffcc00Stufe 9|r]
+}
+
+STRING 1023
+// Abilities: A00J (Frostpfeile), Tip (Tooltip - Normal)
+{
+Frostpfeile [|cffffcc00Stufe 10|r]
+}
+
+STRING 1024
+// Abilities: A00J (Frostpfeile), Ubertip (Tooltip - Normal - Extended)
+{
+Verstärkt Angriffe mit <A00J,DataA1> Kälteschaden, der die Angriffsgeschwindigkeit der gegnerischen Zieleinheit um <A00J,DataB1,%>% und ihre Bewegungsgeschwindigkeit um <A00J,DataC1,%>% verringert. Hält <A00J,Dur1> Sek. lang an.
+}
+
+STRING 1025
+// Abilities: A00J (Frostpfeile), Ubertip (Tooltip - Normal - Extended)
+{
+Verstärkt Angriffe mit <A00J,DataA2> Kälteschaden, der die Angriffsgeschwindigkeit der gegnerischen Zieleinheit um <A00J,DataB2,%>% und ihre Bewegungsgeschwindigkeit um <A00J,DataC2,%>% verringert. Hält <A00J,Dur2> Sek. lang an.
+}
+
+STRING 1026
+// Abilities: A00J (Frostpfeile), Ubertip (Tooltip - Normal - Extended)
+{
+Verstärkt Angriffe mit <A00J,DataA3> Kälteschaden, der die Angriffsgeschwindigkeit der gegnerischen Zieleinheit um <A00J,DataB3,%>% und ihre Bewegungsgeschwindigkeit um <A00J,DataC3,%>% verringert. Hält <A00J,Dur3> Sek. lang an.
+}
+
+STRING 1027
+// Abilities: A00J (Frostpfeile), Ubertip (Tooltip - Normal - Extended)
+{
+Verstärkt Angriffe mit <A00J,DataA4> Kälteschaden, der die Angriffsgeschwindigkeit der gegnerischen Zieleinheit um <A00J,DataB4,%>% und ihre Bewegungsgeschwindigkeit um <A00J,DataC4,%>% verringert. Hält <A00J,Dur4> Sek. lang an.
+}
+
+STRING 1028
+// Abilities: A00J (Frostpfeile), Ubertip (Tooltip - Normal - Extended)
+{
+Verstärkt Angriffe mit <A00J,DataA5> Kälteschaden, der die Angriffsgeschwindigkeit der gegnerischen Zieleinheit um <A00J,DataB5,%>% und ihre Bewegungsgeschwindigkeit um <A00J,DataC5,%>% verringert. Hält <A00J,Dur5> Sek. lang an.
+}
+
+STRING 1029
+// Abilities: A00J (Frostpfeile), Ubertip (Tooltip - Normal - Extended)
+{
+Verstärkt Angriffe mit <A00J,DataA6> Kälteschaden, der die Angriffsgeschwindigkeit der gegnerischen Zieleinheit um <A00J,DataB6,%>% und ihre Bewegungsgeschwindigkeit um <A00J,DataC6,%>% verringert. Hält <A00J,Dur6> Sek. lang an.
+}
+
+STRING 1030
+// Abilities: A00J (Frostpfeile), Ubertip (Tooltip - Normal - Extended)
+{
+Verstärkt Angriffe mit <A00J,DataA7> Kälteschaden, der die Angriffsgeschwindigkeit der gegnerischen Zieleinheit um <A00J,DataB7,%>% und ihre Bewegungsgeschwindigkeit um <A00J,DataC7,%>% verringert. Hält <A00J,Dur7> Sek. lang an.
+}
+
+STRING 1031
+// Abilities: A00J (Frostpfeile), Ubertip (Tooltip - Normal - Extended)
+{
+Verstärkt Angriffe mit <A00J,DataA8> Kälteschaden, der die Angriffsgeschwindigkeit der gegnerischen Zieleinheit um <A00J,DataB8,%>% und ihre Bewegungsgeschwindigkeit um <A00J,DataC8,%>% verringert. Hält <A00J,Dur8> Sek. lang an.
+}
+
+STRING 1032
+// Abilities: A00J (Frostpfeile), Ubertip (Tooltip - Normal - Extended)
+{
+Verstärkt Angriffe mit <A00J,DataA9> Kälteschaden, der die Angriffsgeschwindigkeit der gegnerischen Zieleinheit um <A00J,DataB9,%>% und ihre Bewegungsgeschwindigkeit um <A00J,DataC9,%>% verringert. Hält <A00J,Dur9> Sek. lang an.
+}
+
+STRING 1033
+// Abilities: A00J (Frostpfeile), Ubertip (Tooltip - Normal - Extended)
+{
+Verstärkt Angriffe mit <A00J,DataA10> Kälteschaden, der die Angriffsgeschwindigkeit der gegnerischen Zieleinheit um <A00J,DataB10,%>% und ihre Bewegungsgeschwindigkeit um <A00J,DataC10,%>% verringert. Hält <A00J,Dur10> Sek. lang an.
+}
+
+STRING 1034
+// Abilities: A00J (Frostpfeile), Untip (Tooltip - Turn Off)
+{
+|cffc3dbffAutomatischen Einsatz mit Rechtsklick aktivieren.|r
+}
+
+STRING 1035
+// Abilities: A00J (Frostpfeile), Untip (Tooltip - Turn Off)
+{
+|cffc3dbffAutomatischen Einsatz mit Rechtsklick aktivieren.|r
+}
+
+STRING 1036
+// Abilities: A00J (Frostpfeile), Untip (Tooltip - Turn Off)
+{
+|cffc3dbffAutomatischen Einsatz mit Rechtsklick aktivieren.|r
+}
+
+STRING 1037
+// Abilities: A00J (Frostpfeile), Untip (Tooltip - Turn Off)
+{
+|cffc3dbffAutomatischen Einsatz mit Rechtsklick aktivieren.|r
+}
+
+STRING 1038
+// Abilities: A00J (Frostpfeile), Untip (Tooltip - Turn Off)
+{
+|cffc3dbffAutomatischen Einsatz mit Rechtsklick aktivieren.|r
+}
+
+STRING 1039
+// Abilities: A00J (Frostpfeile), Untip (Tooltip - Turn Off)
+{
+|cffc3dbffAutomatischen Einsatz mit Rechtsklick aktivieren.|r
+}
+
+STRING 1040
+// Abilities: A00J (Frostpfeile), Untip (Tooltip - Turn Off)
+{
+|cffc3dbffAutomatischen Einsatz mit Rechtsklick aktivieren.|r
+}
+
+STRING 1041
+// Abilities: A00J (Frostpfeile), Untip (Tooltip - Turn Off)
+{
+|cffc3dbffAutomatischen Einsatz mit Rechtsklick aktivieren.|r
+}
+
+STRING 1042
+// Abilities: A00J (Frostpfeile), Untip (Tooltip - Turn Off)
+{
+|cffc3dbffAutomatischen Einsatz mit Rechtsklick aktivieren.|r
+}
+
+STRING 1043
+// Abilities: A00J (Frostpfeile), Unubertip (Tooltip - Turn Off - Extended)
+{
+|cffc3dbffAutomatischen Einsatz mit Rechtsklick deaktivieren.|r
+}
+
+STRING 1044
+// Abilities: A00J (Frostpfeile), Unubertip (Tooltip - Turn Off - Extended)
+{
+|cffc3dbffAutomatischen Einsatz mit Rechtsklick deaktivieren.|r
+}
+
+STRING 1045
+// Abilities: A00J (Frostpfeile), Unubertip (Tooltip - Turn Off - Extended)
+{
+|cffc3dbffAutomatischen Einsatz mit Rechtsklick deaktivieren.|r
+}
+
+STRING 1046
+// Abilities: A00J (Frostpfeile), Unubertip (Tooltip - Turn Off - Extended)
+{
+|cffc3dbffAutomatischen Einsatz mit Rechtsklick deaktivieren.|r
+}
+
+STRING 1047
+// Abilities: A00J (Frostpfeile), Unubertip (Tooltip - Turn Off - Extended)
+{
+|cffc3dbffAutomatischen Einsatz mit Rechtsklick deaktivieren.|r
+}
+
+STRING 1048
+// Abilities: A00J (Frostpfeile), Unubertip (Tooltip - Turn Off - Extended)
+{
+|cffc3dbffAutomatischen Einsatz mit Rechtsklick deaktivieren.|r
+}
+
+STRING 1049
+// Abilities: A00J (Frostpfeile), Unubertip (Tooltip - Turn Off - Extended)
+{
+|cffc3dbffAutomatischen Einsatz mit Rechtsklick deaktivieren.|r
+}
+
+STRING 1050
+// Abilities: A00J (Frostpfeile), Unubertip (Tooltip - Turn Off - Extended)
+{
+|cffc3dbffAutomatischen Einsatz mit Rechtsklick deaktivieren.|r
+}
+
+STRING 1051
+// Abilities: A00J (Frostpfeile), Unubertip (Tooltip - Turn Off - Extended)
+{
+|cffc3dbffAutomatischen Einsatz mit Rechtsklick deaktivieren.|r
+}
+
+STRING 1053
+// Abilities: A00K (Manaschild), Researchubertip (Tooltip - Learn - Extended)
+{
+Erschafft einen Schild, der das Mana der Meerhexe verwendet, um Schaden zu absorbieren.|n|n|cffffcc00Stufe 1|r - Absorbiert <A00K,DataA1> Schaden pro Mana.|n|cffffcc00Stufe 2|r - Absorbiert <A00K,DataA2> Schaden pro Mana.|n|cffffcc00Stufe 3|r - Absorbiert <A00K,DataA3> Schaden pro Mana.
+}
+
+STRING 1054
+// Abilities: A00K (Manaschild), Tip (Tooltip - Normal)
+{
+Manaschild [|cffffcc00Stufe 4|r] aktivieren
+}
+
+STRING 1055
+// Abilities: A00K (Manaschild), Tip (Tooltip - Normal)
+{
+Manaschild [|cffffcc00Stufe 5|r] aktivieren
+}
+
+STRING 1056
+// Abilities: A00K (Manaschild), Tip (Tooltip - Normal)
+{
+Manaschild [|cffffcc00Stufe 6|r] aktivieren
+}
+
+STRING 1057
+// Abilities: A00K (Manaschild), Tip (Tooltip - Normal)
+{
+Manaschild [|cffffcc00Stufe 7|r] aktivieren
+}
+
+STRING 1058
+// Abilities: A00K (Manaschild), Tip (Tooltip - Normal)
+{
+Manaschild [|cffffcc00Stufe 8|r] aktivieren
+}
+
+STRING 1059
+// Abilities: A00K (Manaschild), Tip (Tooltip - Normal)
+{
+Manaschild [|cffffcc00Stufe 9|r] aktivieren
+}
+
+STRING 1060
+// Abilities: A00K (Manaschild), Tip (Tooltip - Normal)
+{
+Manaschild [|cffffcc00Stufe 10|r] aktivieren
+}
+
+STRING 1061
+// Abilities: A00K (Manaschild), Ubertip (Tooltip - Normal - Extended)
+{
+Aktiviert einen Schild, der pro Mana <A00K,DataA1> Schaden absorbiert.
+}
+
+STRING 1062
+// Abilities: A00K (Manaschild), Ubertip (Tooltip - Normal - Extended)
+{
+Aktiviert einen Schild, der pro Mana <A00K,DataA2> Schaden absorbiert.
+}
+
+STRING 1063
+// Abilities: A00K (Manaschild), Ubertip (Tooltip - Normal - Extended)
+{
+Aktiviert einen Schild, der pro Mana <A00K,DataA3> Schaden absorbiert.
+}
+
+STRING 1064
+// Abilities: A00K (Manaschild), Ubertip (Tooltip - Normal - Extended)
+{
+Aktiviert einen Schild, der pro Mana <A00K,DataA4> Schaden absorbiert.
+}
+
+STRING 1065
+// Abilities: A00K (Manaschild), Ubertip (Tooltip - Normal - Extended)
+{
+Aktiviert einen Schild, der pro Mana <A00K,DataA5> Schaden absorbiert.
+}
+
+STRING 1066
+// Abilities: A00K (Manaschild), Ubertip (Tooltip - Normal - Extended)
+{
+Aktiviert einen Schild, der pro Mana <A00K,DataA6> Schaden absorbiert.
+}
+
+STRING 1067
+// Abilities: A00K (Manaschild), Ubertip (Tooltip - Normal - Extended)
+{
+Aktiviert einen Schild, der pro Mana <A00K,DataA7> Schaden absorbiert.
+}
+
+STRING 1068
+// Abilities: A00K (Manaschild), Ubertip (Tooltip - Normal - Extended)
+{
+Aktiviert einen Schild, der pro Mana <A00K,DataA8> Schaden absorbiert.
+}
+
+STRING 1069
+// Abilities: A00K (Manaschild), Ubertip (Tooltip - Normal - Extended)
+{
+Aktiviert einen Schild, der pro Mana <A00K,DataA9> Schaden absorbiert.
+}
+
+STRING 1070
+// Abilities: A00K (Manaschild), Ubertip (Tooltip - Normal - Extended)
+{
+Aktiviert einen Schild, der pro Mana <A00K,DataA10> Schaden absorbiert.
+}
+
+STRING 1071
+// Abilities: A00K (Manaschild), Untip (Tooltip - Turn Off)
+{
+Manaschild deaktivieren
+}
+
+STRING 1072
+// Abilities: A00K (Manaschild), Untip (Tooltip - Turn Off)
+{
+Manaschild deaktivieren
+}
+
+STRING 1073
+// Abilities: A00K (Manaschild), Untip (Tooltip - Turn Off)
+{
+Manaschild deaktivieren
+}
+
+STRING 1074
+// Abilities: A00K (Manaschild), Untip (Tooltip - Turn Off)
+{
+Manaschild deaktivieren
+}
+
+STRING 1075
+// Abilities: A00K (Manaschild), Untip (Tooltip - Turn Off)
+{
+Manaschild deaktivieren
+}
+
+STRING 1076
+// Abilities: A00K (Manaschild), Untip (Tooltip - Turn Off)
+{
+Manaschild deaktivieren
+}
+
+STRING 1077
+// Abilities: A00K (Manaschild), Untip (Tooltip - Turn Off)
+{
+Manaschild deaktivieren
+}
+
+STRING 1078
+// Abilities: A00K (Manaschild), Untip (Tooltip - Turn Off)
+{
+Manaschild deaktivieren
+}
+
+STRING 1079
+// Abilities: A00K (Manaschild), Untip (Tooltip - Turn Off)
+{
+Manaschild deaktivieren
+}
+
+STRING 1080
+// Abilities: A00E (Heilspray), EditorSuffix (Editor Suffix)
+{
+(Hero 10)
+}
+
+STRING 1081
+// Abilities: A00F (Säurebombe), EditorSuffix (Editor Suffix)
+{
+(Hero 10)
+}
+
+STRING 1082
+// Abilities: A00G (Transmutieren), EditorSuffix (Editor Suffix)
+{
+(Hero 5)
+}
+
+STRING 1083
+// Abilities: A00H (Feuerodem), EditorSuffix (Editor Suffix)
+{
+(Hero 10)
+}
+
+STRING 1084
+// Abilities: A00I (Gabelblitzschlag), EditorSuffix (Editor Suffix)
+{
+(Hero 10)
+}
+
+STRING 1085
+// Abilities: A00J (Frostpfeile), EditorSuffix (Editor Suffix)
+{
+(Hero 10)
+}
+
+STRING 1086
+// Abilities: A00K (Manaschild), EditorSuffix (Editor Suffix)
+{
+(Hero 10)
+}
+
+STRING 1087
+// Abilities: A00L (Monsun), EditorSuffix (Editor Suffix)
+{
+(Hero 5)
+}
+
+STRING 1088
+// Abilities: A00L (Monsun), Researchubertip (Tooltip - Learn - Extended)
+{
+Ruft einen Blitzsturm herbei, der gegnerischen Einheiten <A00L,DataA1> Schaden zufügt.|nHält <A00L,Dur1> Sek. lang an.|nDas Gebiet wird mit jeder Stufe größer.
+}
+
+STRING 1089
+// Abilities: A00L (Monsun), Tip (Tooltip - Normal)
+{
+Monsun [|cffffcc00Stufe 4|r]
+}
+
+STRING 1090
+// Abilities: A00L (Monsun), Tip (Tooltip - Normal)
+{
+Monsun [|cffffcc00Stufe 5|r]
+}
+
+STRING 1091
+// Abilities: A00L (Monsun), Ubertip (Tooltip - Normal - Extended)
+{
+Ruft einen Blitzsturm herbei, der gegnerischen Einheiten in einem Zielgebiet <A00L,DataA1> Schaden zufügt.|nHält <ANmo,Dur1> Sek. lang an.
+}
+
+STRING 1092
+// Abilities: A00L (Monsun), Ubertip (Tooltip - Normal - Extended)
+{
+Ruft einen Blitzsturm herbei, der gegnerischen Einheiten in einem Zielgebiet <A00L,DataA2> Schaden zufügt.|nHält <ANmo,Dur2> Sek. lang an.
+}
+
+STRING 1093
+// Abilities: A00L (Monsun), Ubertip (Tooltip - Normal - Extended)
+{
+Ruft einen Blitzsturm herbei, der gegnerischen Einheiten in einem Zielgebiet <A00L,DataA3> Schaden zufügt.|nHält <ANmo,Dur3> Sek. lang an.
+}
+
+STRING 1094
+// Abilities: A00L (Monsun), Ubertip (Tooltip - Normal - Extended)
+{
+Ruft einen Blitzsturm herbei, der gegnerischen Einheiten in einem Zielgebiet <A00L,DataA4> Schaden zufügt.|nHält <ANmo,Dur4> Sek. lang an.
+}
+
+STRING 1095
+// Abilities: A00L (Monsun), Ubertip (Tooltip - Normal - Extended)
+{
+Ruft einen Blitzsturm herbei, der gegnerischen Einheiten in einem Zielgebiet <A00L,DataA5> Schaden zufügt.|nHält <ANmo,Dur5> Sek. lang an.
+}
+
+STRING 1096
+// Abilities: A00M (Stadtportal), Name (Name)
+{
+Stadtportal
+}
+
+STRING 1097
+// Abilities: A00M (Stadtportal), Tip (Tooltip - Normal)
+{
+Stadtportal
+}
+
+STRING 1098
+// Abilities: A00M (Stadtportal), Ubertip (Tooltip - Normal - Extended)
+{
+Teleportiert den Helden und alle verbündeten Einheiten in seiner Nähe zu einem ausgewählten verbündeten Rathaus.
+}
+
+STRING 1100
+// Items: I000 (Glyphe der Opferung), Name (Name)
+{
+Glyphe der Opferung
+}
+
+STRING 1101
+// Items: I000 (Glyphe der Opferung), Tip (Tooltip - Basic)
+{
+Glyphe der Opferung kaufen
+}
+
+STRING 1102
+// Items: I000 (Glyphe der Opferung), Ubertip (Tooltip - Extended)
+{
+Opfert den Körper des Helden um seine Seele wieder frei zu geben, diese kann dann einen neuen Körper wählen.
+}
+
+STRING 1103
+// Items: I000 (Glyphe der Opferung), Description (Description)
+{
+Opfert den Körper des Helden um seine Seele wieder frei zu geben, diese kann dann einen neuen Körper wählen.
+}
+
+STRING 1104
+// Abilities: A00M (Stadtportal), Hotkey (Hotkey - Normal)
+{
+P
 }
 

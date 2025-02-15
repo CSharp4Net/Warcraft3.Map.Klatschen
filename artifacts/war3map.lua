@@ -20467,13 +20467,13 @@ System.namespace("Source.Abstracts", function (namespace)
     -- Tötet alle Einheiten des Spielers und setzt diesen auf "Besiegt"
     -- </summary>
     Defeat = function (this)
-      --Program.ShowDebugMessage("PlayerBase.Defeat", $"Kill units in list...");
       for i = #this.Units - 1, 0, -1 do
         this.Units:get(i):Kill()
       end
 
-      --Program.ShowDebugMessage("PlayerBase.Defeat", $"Defeat WC3 player");
       MeleeDoDefeat(this.Wc3Player)
+
+      this.Defeated = true
     end
     -- <summary>
     -- Setzt den Spieler auf "Gewonnen"
@@ -20513,6 +20513,7 @@ System.namespace("Source.Abstracts", function (namespace)
     end
     return {
       PlayerId = 0,
+      Defeated = false,
       CreateUnit = CreateUnit,
       Defeat = Defeat,
       Win = Win,
@@ -20530,6 +20531,7 @@ System.namespace("Source.Abstracts", function (namespace)
             { "Win", 0x6, Win }
           },
           properties = {
+            { "Defeated", 0x6, System.Boolean },
             { "PlayerId", 0x6, System.Int32 },
             { "Units", 0x1, System.List(out.Source.Models.SpawnedUnit) },
             { "Wc3Player", 0x6, out.WCSharp.Api.player }
@@ -20554,12 +20556,17 @@ System.namespace("Source.Handler.GenericEvents", function (namespace)
     OnSellsFinished = function ()
       System.try(function ()
         local unit = GetBuyingUnit()
+
         local item = GetSoldItem()
+        local itemId = GetItemTypeId(item)
 
         System.Console.WriteLine("Item " .. System.toString(GetItemName(item)) .. " verkauft an " .. System.toString(GetPlayerName(GetOwningPlayer(unit))) .. "!")
 
-        if GetItemTypeId(item) == 1227894832 --[[Constants.ITEM_GLYPHE_DER_BAUKUNST]] then
-          System.Console.WriteLine("BAUKUNST")
+        if itemId == 1227894832 --[[Constants.ITEM_GLYPHE_DER_OPFERUNG]] then
+          System.Console.WriteLine("Item " .. itemId .. "... try to explode!")
+          local playerId = GetPlayerId(GetOwningPlayer(unit))
+
+          ExplodeUnitBJ(unit)
         end
       end, function (default)
         local ex = default
@@ -20597,8 +20604,6 @@ System.namespace("Source.Handler.GenericEvents", function (namespace)
         local unit = GetResearchingUnit()
         local researchedTechId = GetResearched()
         local researchedTechIdCount = GetPlayerTechCount(GetOwningPlayer(unit), researchedTechId, true)
-
-        System.Console.WriteLine("Forschung " .. researchedTechId .. " (Stufe " .. researchedTechIdCount .. ") abgeschlossen von " .. System.toString(GetPlayerName(GetOwningPlayer(unit))) .. "!")
 
         local player = GetOwningPlayer(unit)
         local playerId = GetPlayerId(player)
@@ -20741,7 +20746,7 @@ System.namespace("Source.Handler.GenericEvents", function (namespace)
               return 2 --[[ResearchType.UpgradeUnit]], spawnCommand
             end
           until 1
-        elseif default == 1378889784 --[[Constants.UPGRADE_REKRUTIERUNG_BELAGERUNGSMASCHINEN_HUMAN]] then
+        elseif default == 1378889784 --[[Constants.UPGRADE_BELAGERUNGSMASCHINEN_HUMAN]] then
           local extern = SourceModels.SpawnUnitCommand()
           extern.UnitSpawnType = 1 --[[UnitSpawnType.Distance]]
           extern.UnitIdOfBuilding = 1747988531 --[[Constants.UNIT_SCHLOSS_HUMAN]]
@@ -20827,12 +20832,13 @@ System.namespace("Source.Handler.GenericEvents", function (namespace)
               extern, spawnedUnit = Source.Program.Undeads.Computer:IsOwnerOfUnit(unit)
               if extern then
                 Source.Program.Undeads.Computer:RemoveUnit(spawnedUnit)
-              else
-                Source.Program.ShowDebugMessage1("Unit.OnDies", "Unit " .. System.toString(GetUnitName(unit)) .. " not found in unit lists of computer players!")
               end
             end
           end
         end
+        --else
+        --  Bspw. der Tod der Heldenseele bei Kauf löst diesen Fall aus.
+        --  Program.ShowDebugMessage("Unit.OnDies", $"Unit {unit.Name} not found in unit lists of computer players!");
 
         -- Verstorbene Einheit nach kurzer Zeit aus Spiel entfernen um RAM zu sparen
         local timer = CreateTimer()
@@ -20919,19 +20925,21 @@ end)
 end
 do
 local System = System
-local WCSharpApi = WCSharp.Api
+local Source
+System.import(function (out)
+  Source = out.Source
+end)
 System.namespace("Source.PermanentEvents", function (namespace)
   namespace.class("GoldIncome", function (namespace)
     local OnElapsed
     OnElapsed = function ()
-      local force = GetPlayersAll()
-      ForForce(force, function ()
-        local player = GetEnumPlayer()
+      for i = #Source.Program.AllActiveUsers - 1, 0, -1 do
+        local user = Source.Program.AllActiveUsers:get(i)
 
-        if GetPlayerSlotState(player) == PLAYER_SLOT_STATE_PLAYING then
-          SetPlayerState(player, PLAYER_STATE_RESOURCE_GOLD, GetPlayerState(player, PLAYER_STATE_RESOURCE_GOLD) + 1)
+        if not user.Defeated then
+          SetPlayerState(user.Wc3Player, PLAYER_STATE_RESOURCE_GOLD, GetPlayerState(user.Wc3Player, PLAYER_STATE_RESOURCE_GOLD) + 1)
         end
-      end)
+      end
 
       return true
     end
@@ -33605,8 +33613,8 @@ local InitCSharp = function ()
       "WCSharp.Missiles.HomingMissile",
       "WCSharp.Missiles.MomentumMissile",
       "WCSharp.Missiles.OrbitalMissile",
-      "WCSharp.SaveLoad.Save_1",
       "WCSharp.SaveLoad.SaveLoadedMessage_1",
+      "WCSharp.SaveLoad.Save_1",
       "WCSharp.W3MMD.IW3MmdVar",
       "Areas",
       "Constants",

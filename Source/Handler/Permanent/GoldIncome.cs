@@ -1,4 +1,4 @@
-﻿using WCSharp.Api;
+﻿using Source.Models;
 
 namespace Source.PermanentEvents
 {
@@ -6,14 +6,15 @@ namespace Source.PermanentEvents
   {
     public static bool OnElapsed()
     {
-      force force = Blizzard.GetPlayersAll();
-      force.ForEach(() =>
+      for( int i = Program.AllActiveUsers.Count - 1; i>= 0; i --)
       {
-        player player = Common.GetEnumPlayer();
+        UserPlayer user = Program.AllActiveUsers[i];
 
-        if (player.SlotState == playerslotstate.Playing)
-          player.Gold += 1;
-      });
+        if (!user.Defeated)
+        {
+          user.Wc3Player.Gold += 1;
+        }
+      }
 
       return true;
     }

@@ -2,21 +2,51 @@ TODO'S
 ======
 
 Bug's:
+------
 
 
 Must have:
-- Helden-Fähigkeiten auf lvl 20/10 anheben
-- Goldverteilung der Computer-Player bei erreichen von Limit an alle aktiven Menschen-Player im Team
+----------
+- Helden-Fähigkeiten auf lvl 10/5 anheben
+	- Tüftler
+	- Bestienmeister
+	- Braumeister
+	- Dunkle Waldläuferin
+	- Feuerlord
+	- Grubenlord
 - Held ändern ermöglichen + Stufe des alten Heldes übernehmen
 - Neutrale-Lager in den Dreicken zum Erforschen und Assimilieren
-- Spawn-Einheiten kopieren für andere Teams
-- Gebäude-Einheiten (Türm, MainBuilding, Kaserne) kopieren für andere Teams
-- Forschungen kopieren für andere Teams
 - 11 Items ausarbeiten für Shop
 - Arena-Event mit zufälligem Rauskopieren 2er Benutzer-Helden
 - Klatschen-Event
 
 Nice to have:
+-------------
+- Spawn-Einheiten kopieren für andere Teams
+- Gebäude-Einheiten (Türm, MainBuilding, Kaserne) kopieren für andere Teams
+- Forschungen kopieren für andere Teams
 - Galgen-Events im Zentrum, Unit-Spawner für zerstörenden Spieler
 - Beschwörungsgebiete für Boss-Calls
 - 1-3 Dungeon's für besondere Belohnungen
+
+Feature-List:
+=============
+- 4 Teams
+- 3 Lanes
+- Aller 15s Unit-Spawn von Kasernen (1 Kaserne pro Lane). 
+  Wenn Kaserne zerstört, dann kein aller 15s Unit-Spawn mehr für die Lane.
+- Aller 30s Unit-Spawn von Basis für alle Lanes. 
+  Wenn Basis zerstört, dann verlieren alle Spieler des Teams.
+- Computer-Team spawnt eigene Helden, welche automatisch angreifen und Stufen aufsteigen.
+  Sterben diese Helden, kehren diese nach einer Zeit (Heldenstufe + 2) zurück.
+- Benutzer bekommen bei Start Heldenseele für Heldenauswahl in Taverne.
+- Benutzer-Helden kehren bei Tod nach einer Zeit (Heldenstufe + 2) automatisch am Brunnen des Teams zurück.
+- Permanent Upgrades für Unit-Spawn (Stufe 1 bis 3)
+- Permanent Upgrades für Einheiten und Gebäude (Stufe 1 bis 5)
+- Einfaches Gold-Income (1g aller 5s)
+- Helden bis max. Stufe 100
+- Heldenfähigkeiten:
+	- Stadtportal (10m Abklingzeit)
+	- Attribute erhöhen (Stufe 1 bis 30)
+	- Einfache Fähigkeiten (Stufe 1 bis 10)
+	- Spezial Fähigkeit (Stufe 1 bis 5)

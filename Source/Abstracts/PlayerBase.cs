@@ -25,6 +25,8 @@ namespace Source.Abstracts
     /// </summary>
     private List<SpawnedUnit> Units { get; init; } = new List<SpawnedUnit>();
 
+    public bool Defeated { get; private set; }
+
     /// <summary>
     /// Erstellt eine Einheit in einem Bereich und fügt sie der Auflist <see cref="Units"/> hinzu.
     /// </summary>
@@ -44,14 +46,14 @@ namespace Source.Abstracts
     /// </summary>
     public virtual void Defeat()
     {
-      //Program.ShowDebugMessage("PlayerBase.Defeat", $"Kill units in list...");
       for (int i = Units.Count - 1; i >= 0; i--)
       {
         Units[i].Kill();
       }
 
-      //Program.ShowDebugMessage("PlayerBase.Defeat", $"Defeat WC3 player");
       Blizzard.MeleeDoDefeat(Wc3Player);
+
+      Defeated = true;
     }
 
     /// <summary>
