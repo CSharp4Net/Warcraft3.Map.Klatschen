@@ -1952,7 +1952,7 @@ Erhöht die Beweglichkeit, Stärke und Intelligenz dauerhaft.|n|n|cffffcc00Stufe
 }
 
 STRING 771
-// Abilities: A002 (Erhöhte Attribute), EditorSuffix (Editor Suffix)
+// Abilities: A00M (Stadtportal), EditorSuffix (Editor Suffix)
 {
 (Hero)
 }
@@ -2225,12 +2225,6 @@ STRING 818
 // Abilities: A00D (Schockwelle), Ubertip (Tooltip - Normal - Extended)
 {
 Entfesselt eine Kraftwelle, die Bodeneinheiten in einer Linie <A00D,DataA1> Schaden zufügt.
-}
-
-STRING 819
-// Abilities: A00M (Stadtportal), EditorSuffix (Editor Suffix)
-{
-(Hero)
 }
 
 STRING 821
@@ -3863,5 +3857,551 @@ STRING 1104
 // Abilities: A00M (Stadtportal), Hotkey (Hotkey - Normal)
 {
 P
+}
+
+STRING 1105
+// Items: I001 (Foliant des Auftstiegs), Name (Name)
+{
+Foliant des Auftstiegs
+}
+
+STRING 1106
+// Items: I001 (Foliant des Auftstiegs), Tip (Tooltip - Basic)
+{
+Foliant des Aufstiegs kaufen
+}
+
+STRING 1107
+// Items: I001 (Foliant des Auftstiegs), Ubertip (Tooltip - Extended)
+{
+Gewährt dem Helden eine Menge Erfahrungspunkte.
+}
+
+STRING 1108
+// Abilities: A002 (Erhöhte Attribute), EditorSuffix (Editor Suffix)
+{
+(Hero 50)
+}
+
+STRING 1109
+// Abilities: A00N (Schwarmraketen), EditorSuffix (Editor Suffix)
+{
+(Hero 10)
+}
+
+STRING 1110
+// Abilities: A00N (Schwarmraketen), Researchubertip (Tooltip - Learn - Extended)
+{
+Bombardiert ein Gebiet mit Raketen, die gegnerische Bodeneinheiten für <A00N,Dur1> Sek. betäuben und nahen Einheiten Schaden zufügen.
+}
+
+STRING 1111
+// Abilities: A00N (Schwarmraketen), Tip (Tooltip - Normal)
+{
+Schwarmraketen [|cffffcc00Stufe 4|r]
+}
+
+STRING 1112
+// Abilities: A00N (Schwarmraketen), Tip (Tooltip - Normal)
+{
+Schwarmraketen [|cffffcc00Stufe 5|r]
+}
+
+STRING 1113
+// Abilities: A00N (Schwarmraketen), Tip (Tooltip - Normal)
+{
+Schwarmraketen [|cffffcc00Stufe 6|r]
+}
+
+STRING 1114
+// Abilities: A00N (Schwarmraketen), Tip (Tooltip - Normal)
+{
+Schwarmraketen [|cffffcc00Stufe 7|r]
+}
+
+STRING 1115
+// Abilities: A00N (Schwarmraketen), Tip (Tooltip - Normal)
+{
+Schwarmraketen [|cffffcc00Stufe 8|r]
+}
+
+STRING 1116
+// Abilities: A00N (Schwarmraketen), Tip (Tooltip - Normal)
+{
+Schwarmraketen [|cffffcc00Stufe 9|r]
+}
+
+STRING 1117
+// Abilities: A00N (Schwarmraketen), Tip (Tooltip - Normal)
+{
+Schwarmraketen [|cffffcc00Stufe 10|r]
+}
+
+STRING 1118
+// Abilities: A00N (Schwarmraketen), Ubertip (Tooltip - Normal - Extended)
+{
+Bombardiert ein Gebiet mit Raketen, die nahen gegnerischen Bodeneinheiten bis zu <A00N,DataD1> Schaden zufügen und sie für <A00N,Dur1> Sek. betäuben.
+}
+
+STRING 1119
+// Abilities: A00N (Schwarmraketen), Ubertip (Tooltip - Normal - Extended)
+{
+Bombardiert ein Gebiet mit Raketen, die nahen gegnerischen Bodeneinheiten bis zu <A00N,DataD2> Schaden zufügen und sie für <A00N,Dur2> Sek. betäuben.
+}
+
+STRING 1120
+// Abilities: A00N (Schwarmraketen), Ubertip (Tooltip - Normal - Extended)
+{
+Bombardiert ein Gebiet mit Raketen, die nahen gegnerischen Bodeneinheiten bis zu <A00N,DataD3> Schaden zufügen und sie für <A00N,Dur3> Sek. betäuben.
+}
+
+STRING 1121
+// Abilities: A00N (Schwarmraketen), Ubertip (Tooltip - Normal - Extended)
+{
+Bombardiert ein Gebiet mit Raketen, die nahen gegnerischen Bodeneinheiten bis zu <A00N,DataD4> Schaden zufügen und sie für <A00N,Dur4> Sek. betäuben.
+}
+
+STRING 1122
+// Abilities: A00N (Schwarmraketen), Ubertip (Tooltip - Normal - Extended)
+{
+Bombardiert ein Gebiet mit Raketen, die nahen gegnerischen Bodeneinheiten bis zu <A00N,DataD5> Schaden zufügen und sie für <A00N,Dur5> Sek. betäuben.
+}
+
+STRING 1123
+// Abilities: A00N (Schwarmraketen), Ubertip (Tooltip - Normal - Extended)
+{
+Bombardiert ein Gebiet mit Raketen, die nahen gegnerischen Bodeneinheiten bis zu <A00N,DataD6> Schaden zufügen und sie für <A00N,Dur6> Sek. betäuben.
+}
+
+STRING 1124
+// Abilities: A00N (Schwarmraketen), Ubertip (Tooltip - Normal - Extended)
+{
+Bombardiert ein Gebiet mit Raketen, die nahen gegnerischen Bodeneinheiten bis zu <A00N,DataD7> Schaden zufügen und sie für <A00N,Dur7> Sek. betäuben.
+}
+
+STRING 1125
+// Abilities: A00N (Schwarmraketen), Ubertip (Tooltip - Normal - Extended)
+{
+Bombardiert ein Gebiet mit Raketen, die nahen gegnerischen Bodeneinheiten bis zu <A00N,DataD8> Schaden zufügen und sie für <A00N,Dur8> Sek. betäuben.
+}
+
+STRING 1126
+// Abilities: A00N (Schwarmraketen), Ubertip (Tooltip - Normal - Extended)
+{
+Bombardiert ein Gebiet mit Raketen, die nahen gegnerischen Bodeneinheiten bis zu <A00N,DataD9> Schaden zufügen und sie für <A00N,Dur9> Sek. betäuben.
+}
+
+STRING 1127
+// Abilities: A00N (Schwarmraketen), Ubertip (Tooltip - Normal - Extended)
+{
+Bombardiert ein Gebiet mit Raketen, die nahen gegnerischen Bodeneinheiten bis zu <A00N,DataD10> Schaden zufügen und sie für <A00N,Dur10> Sek. betäuben.
+}
+
+STRING 1128
+// Abilities: A00O (Feuerbrand), EditorSuffix (Editor Suffix)
+{
+(Hero 10)
+}
+
+STRING 1129
+// Abilities: A00O (Feuerbrand), Tip (Tooltip - Normal)
+{
+Feuerbrand [|cffffcc00Stufe 4|r] aktivieren
+}
+
+STRING 1130
+// Abilities: A00O (Feuerbrand), Tip (Tooltip - Normal)
+{
+Feuerbrand [|cffffcc00Stufe 5|r] aktivieren
+}
+
+STRING 1131
+// Abilities: A00O (Feuerbrand), Tip (Tooltip - Normal)
+{
+Feuerbrand [|cffffcc00Stufe 6|r] aktivieren
+}
+
+STRING 1132
+// Abilities: A00O (Feuerbrand), Tip (Tooltip - Normal)
+{
+Feuerbrand [|cffffcc00Stufe 7|r] aktivieren
+}
+
+STRING 1133
+// Abilities: A00O (Feuerbrand), Tip (Tooltip - Normal)
+{
+Feuerbrand [|cffffcc00Stufe 8|r] aktivieren
+}
+
+STRING 1134
+// Abilities: A00O (Feuerbrand), Tip (Tooltip - Normal)
+{
+Feuerbrand [|cffffcc00Stufe 9|r] aktivieren
+}
+
+STRING 1135
+// Abilities: A00O (Feuerbrand), Tip (Tooltip - Normal)
+{
+Feuerbrand [|cffffcc00Stufe 10|r] aktivieren
+}
+
+STRING 1136
+// Abilities: A00O (Feuerbrand), Ubertip (Tooltip - Normal - Extended)
+{
+Aktivieren, um diese Einheit in Flammen zu hüllen und nahen gegnerischen Bodeneinheiten <A00O,DataA1> Schaden pro Sekunde zuzufügen.|nVerbraucht Mana bis Abbruch.
+}
+
+STRING 1137
+// Abilities: A00O (Feuerbrand), Ubertip (Tooltip - Normal - Extended)
+{
+Aktivieren, um diese Einheit in Flammen zu hüllen und nahen gegnerischen Bodeneinheiten <A00O,DataA2> Schaden pro Sekunde zuzufügen.|nVerbraucht Mana bis Abbruch.
+}
+
+STRING 1138
+// Abilities: A00O (Feuerbrand), Ubertip (Tooltip - Normal - Extended)
+{
+Aktivieren, um diese Einheit in Flammen zu hüllen und nahen gegnerischen Bodeneinheiten <A00O,DataA3> Schaden pro Sekunde zuzufügen.|nVerbraucht Mana bis Abbruch.
+}
+
+STRING 1139
+// Abilities: A00O (Feuerbrand), Ubertip (Tooltip - Normal - Extended)
+{
+Aktivieren, um diese Einheit in Flammen zu hüllen und nahen gegnerischen Bodeneinheiten <A00O,DataA4> Schaden pro Sekunde zuzufügen.|nVerbraucht Mana bis Abbruch.
+}
+
+STRING 1140
+// Abilities: A00O (Feuerbrand), Ubertip (Tooltip - Normal - Extended)
+{
+Aktivieren, um diese Einheit in Flammen zu hüllen und nahen gegnerischen Bodeneinheiten <A00O,DataA5> Schaden pro Sekunde zuzufügen.|nVerbraucht Mana bis Abbruch.
+}
+
+STRING 1141
+// Abilities: A00O (Feuerbrand), Ubertip (Tooltip - Normal - Extended)
+{
+Aktivieren, um diese Einheit in Flammen zu hüllen und nahen gegnerischen Bodeneinheiten <A00O,DataA6> Schaden pro Sekunde zuzufügen.|nVerbraucht Mana bis Abbruch.
+}
+
+STRING 1142
+// Abilities: A00O (Feuerbrand), Ubertip (Tooltip - Normal - Extended)
+{
+Aktivieren, um diese Einheit in Flammen zu hüllen und nahen gegnerischen Bodeneinheiten <A00O,DataA7> Schaden pro Sekunde zuzufügen.|nVerbraucht Mana bis Abbruch.
+}
+
+STRING 1143
+// Abilities: A00O (Feuerbrand), Ubertip (Tooltip - Normal - Extended)
+{
+Aktivieren, um diese Einheit in Flammen zu hüllen und nahen gegnerischen Bodeneinheiten <A00O,DataA8> Schaden pro Sekunde zuzufügen.|nVerbraucht Mana bis Abbruch.
+}
+
+STRING 1144
+// Abilities: A00O (Feuerbrand), Ubertip (Tooltip - Normal - Extended)
+{
+Aktivieren, um diese Einheit in Flammen zu hüllen und nahen gegnerischen Bodeneinheiten <A00O,DataA9> Schaden pro Sekunde zuzufügen.|nVerbraucht Mana bis Abbruch.
+}
+
+STRING 1145
+// Abilities: A00O (Feuerbrand), Ubertip (Tooltip - Normal - Extended)
+{
+Aktivieren, um diese Einheit in Flammen zu hüllen und nahen gegnerischen Bodeneinheiten <A00O,DataA10> Schaden pro Sekunde zuzufügen.|nVerbraucht Mana bis Abbruch.
+}
+
+STRING 1146
+// Abilities: A00O (Feuerbrand), Untip (Tooltip - Turn Off)
+{
+Feuerbrand deaktivieren
+}
+
+STRING 1147
+// Abilities: A00O (Feuerbrand), Untip (Tooltip - Turn Off)
+{
+Feuerbrand deaktivieren
+}
+
+STRING 1148
+// Abilities: A00O (Feuerbrand), Untip (Tooltip - Turn Off)
+{
+Feuerbrand deaktivieren
+}
+
+STRING 1149
+// Abilities: A00O (Feuerbrand), Untip (Tooltip - Turn Off)
+{
+Feuerbrand deaktivieren
+}
+
+STRING 1150
+// Abilities: A00O (Feuerbrand), Untip (Tooltip - Turn Off)
+{
+Feuerbrand deaktivieren
+}
+
+STRING 1151
+// Abilities: A00O (Feuerbrand), Untip (Tooltip - Turn Off)
+{
+Feuerbrand deaktivieren
+}
+
+STRING 1152
+// Abilities: A00O (Feuerbrand), Untip (Tooltip - Turn Off)
+{
+Feuerbrand deaktivieren
+}
+
+STRING 1153
+// Abilities: A00O (Feuerbrand), Untip (Tooltip - Turn Off)
+{
+Feuerbrand deaktivieren
+}
+
+STRING 1154
+// Abilities: A00O (Feuerbrand), Untip (Tooltip - Turn Off)
+{
+Feuerbrand deaktivieren
+}
+
+STRING 1155
+// Abilities: A00O (Feuerbrand), Unubertip (Tooltip - Turn Off - Extended)
+{
+Deaktivieren, um den Verbrauch von Mana zu stoppen.
+}
+
+STRING 1156
+// Abilities: A00O (Feuerbrand), Unubertip (Tooltip - Turn Off - Extended)
+{
+Deaktivieren, um den Verbrauch von Mana zu stoppen.
+}
+
+STRING 1157
+// Abilities: A00O (Feuerbrand), Unubertip (Tooltip - Turn Off - Extended)
+{
+Deaktivieren, um den Verbrauch von Mana zu stoppen.
+}
+
+STRING 1158
+// Abilities: A00O (Feuerbrand), Unubertip (Tooltip - Turn Off - Extended)
+{
+Deaktivieren, um den Verbrauch von Mana zu stoppen.
+}
+
+STRING 1159
+// Abilities: A00O (Feuerbrand), Unubertip (Tooltip - Turn Off - Extended)
+{
+Deaktivieren, um den Verbrauch von Mana zu stoppen.
+}
+
+STRING 1160
+// Abilities: A00O (Feuerbrand), Unubertip (Tooltip - Turn Off - Extended)
+{
+Deaktivieren, um den Verbrauch von Mana zu stoppen.
+}
+
+STRING 1161
+// Abilities: A00O (Feuerbrand), Unubertip (Tooltip - Turn Off - Extended)
+{
+Deaktivieren, um den Verbrauch von Mana zu stoppen.
+}
+
+STRING 1162
+// Abilities: A00O (Feuerbrand), Unubertip (Tooltip - Turn Off - Extended)
+{
+Deaktivieren, um den Verbrauch von Mana zu stoppen.
+}
+
+STRING 1163
+// Abilities: A00O (Feuerbrand), Unubertip (Tooltip - Turn Off - Extended)
+{
+Deaktivieren, um den Verbrauch von Mana zu stoppen.
+}
+
+STRING 1164
+// Abilities: A00P (Unheilige Aura), EditorSuffix (Editor Suffix)
+{
+(Hero 10)
+}
+
+STRING 1165
+// Abilities: A00P (Unheilige Aura), Researchubertip (Tooltip - Learn - Extended)
+{
+Erhöht die Bewegungsgeschwindigkeit und die Trefferpunktregeneration von verbündeten Einheiten in der Nähe.|n|n|cffffcc00Stufe 1|r - <A00P,DataA1,%>% Bewegungsgeschwindigkeit, leicht erhöhte Regeneration.|n|cffffcc00Stufe 2|r - <A00P,DataA2,%>% Bewegungsgeschwindigkeit, moderat erhöhte Regeneration.|n|cffffcc00Stufe 3|r - <A00P,DataA3,%>% Bewegungsgeschwindigkeit, stark erhöhte Regeneration.
+}
+
+STRING 1166
+// Abilities: A00P (Unheilige Aura), Tip (Tooltip - Normal)
+{
+Unheilige Aura [|cffffcc00Stufe 4|r]
+}
+
+STRING 1167
+// Abilities: A00P (Unheilige Aura), Tip (Tooltip - Normal)
+{
+Unheilige Aura [|cffffcc00Stufe 5|r]
+}
+
+STRING 1168
+// Abilities: A00P (Unheilige Aura), Tip (Tooltip - Normal)
+{
+Unheilige Aura [|cffffcc00Stufe 6|r]
+}
+
+STRING 1169
+// Abilities: A00P (Unheilige Aura), Tip (Tooltip - Normal)
+{
+Unheilige Aura [|cffffcc00Stufe 7|r]
+}
+
+STRING 1170
+// Abilities: A00P (Unheilige Aura), Tip (Tooltip - Normal)
+{
+Unheilige Aura [|cffffcc00Stufe 8|r]
+}
+
+STRING 1171
+// Abilities: A00P (Unheilige Aura), Tip (Tooltip - Normal)
+{
+Unheilige Aura [|cffffcc00Stufe 9|r]
+}
+
+STRING 1172
+// Abilities: A00P (Unheilige Aura), Tip (Tooltip - Normal)
+{
+Unheilige Aura [|cffffcc00Stufe 10|r]
+}
+
+STRING 1173
+// Abilities: A00P (Unheilige Aura), Ubertip (Tooltip - Normal - Extended)
+{
+Erhöht die Bewegungsgeschwindigkeit von verbündeten Einheiten in der Nähe um <A00P,DataA1,%>% und ihre Trefferpunktregeneration.
+}
+
+STRING 1174
+// Abilities: A00P (Unheilige Aura), Ubertip (Tooltip - Normal - Extended)
+{
+Erhöht die Bewegungsgeschwindigkeit von verbündeten Einheiten in der Nähe um <A00P,DataA2,%>% und ihre Trefferpunktregeneration.
+}
+
+STRING 1175
+// Abilities: A00P (Unheilige Aura), Ubertip (Tooltip - Normal - Extended)
+{
+Erhöht die Bewegungsgeschwindigkeit von verbündeten Einheiten in der Nähe um <A00P,DataA3,%>% und ihre Trefferpunktregeneration.
+}
+
+STRING 1176
+// Abilities: A00P (Unheilige Aura), Ubertip (Tooltip - Normal - Extended)
+{
+Erhöht die Bewegungsgeschwindigkeit von verbündeten Einheiten in der Nähe um <A00P,DataA4,%>% und ihre Trefferpunktregeneration.
+}
+
+STRING 1177
+// Abilities: A00P (Unheilige Aura), Ubertip (Tooltip - Normal - Extended)
+{
+Erhöht die Bewegungsgeschwindigkeit von verbündeten Einheiten in der Nähe um <A00P,DataA5,%>% und ihre Trefferpunktregeneration.
+}
+
+STRING 1178
+// Abilities: A00P (Unheilige Aura), Ubertip (Tooltip - Normal - Extended)
+{
+Erhöht die Bewegungsgeschwindigkeit von verbündeten Einheiten in der Nähe um <A00P,DataA6,%>% und ihre Trefferpunktregeneration.
+}
+
+STRING 1179
+// Abilities: A00P (Unheilige Aura), Ubertip (Tooltip - Normal - Extended)
+{
+Erhöht die Bewegungsgeschwindigkeit von verbündeten Einheiten in der Nähe um <A00P,DataA7,%>% und ihre Trefferpunktregeneration.
+}
+
+STRING 1180
+// Abilities: A00P (Unheilige Aura), Ubertip (Tooltip - Normal - Extended)
+{
+Erhöht die Bewegungsgeschwindigkeit von verbündeten Einheiten in der Nähe um <A00P,DataA8,%>% und ihre Trefferpunktregeneration.
+}
+
+STRING 1181
+// Abilities: A00P (Unheilige Aura), Ubertip (Tooltip - Normal - Extended)
+{
+Erhöht die Bewegungsgeschwindigkeit von verbündeten Einheiten in der Nähe um <A00P,DataA9,%>% und ihre Trefferpunktregeneration.
+}
+
+STRING 1182
+// Abilities: A00P (Unheilige Aura), Ubertip (Tooltip - Normal - Extended)
+{
+Erhöht die Bewegungsgeschwindigkeit von verbündeten Einheiten in der Nähe um <A00P,DataA10,%>% und ihre Trefferpunktregeneration.
+}
+
+STRING 1183
+// Abilities: A00Q (Gottesschild), EditorSuffix (Editor Suffix)
+{
+(Hero 5)
+}
+
+STRING 1184
+// Abilities: A00Q (Gottesschild), Researchubertip (Tooltip - Learn - Extended)
+{
+Umgibt den Paladin mit einem undurchdringlichen Schild, der ihn vorübergehend vor jeglichem Schaden und Fähigkeiten schützt.|n|n|cffffcc00Stufe 1|r - Hält <A00Q,Dur1> Sek. lang an.|n|cffffcc00Stufe 2|r - Hält <A00Q,Dur2> Sek. lang an.|n|cffffcc00Stufe 3|r - Hält <A00Q,Dur3> Sek. lang an.
+}
+
+STRING 1185
+// Abilities: A00Q (Gottesschild), Tip (Tooltip - Normal)
+{
+Gottesschild [|cffffcc00Stufe 4|r] aktivieren
+}
+
+STRING 1186
+// Abilities: A00Q (Gottesschild), Tip (Tooltip - Normal)
+{
+Gottesschild [|cffffcc00Stufe 5|r] aktivieren
+}
+
+STRING 1187
+// Abilities: A00Q (Gottesschild), Ubertip (Tooltip - Normal - Extended)
+{
+Umgibt diese Einheit mit einem undurchdringlichen Schild, der sie <A00Q,Dur1> Sek. lang vor jeglichem Schaden und Fähigkeiten schützt.
+}
+
+STRING 1188
+// Abilities: A00Q (Gottesschild), Ubertip (Tooltip - Normal - Extended)
+{
+Umgibt diese Einheit mit einem undurchdringlichen Schild, der sie <A00Q,Dur2> Sek. lang vor jeglichem Schaden und Fähigkeiten schützt.
+}
+
+STRING 1189
+// Abilities: A00Q (Gottesschild), Ubertip (Tooltip - Normal - Extended)
+{
+Umgibt diese Einheit mit einem undurchdringlichen Schild, der sie <A00Q,Dur3> Sek. lang vor jeglichem Schaden und Fähigkeiten schützt.
+}
+
+STRING 1190
+// Abilities: A00Q (Gottesschild), Ubertip (Tooltip - Normal - Extended)
+{
+Umgibt diese Einheit mit einem undurchdringlichen Schild, der sie <A00Q,Dur4> Sek. lang vor jeglichem Schaden und Fähigkeiten schützt.
+}
+
+STRING 1191
+// Abilities: A00Q (Gottesschild), Ubertip (Tooltip - Normal - Extended)
+{
+Umgibt diese Einheit mit einem undurchdringlichen Schild, der sie <A00Q,Dur5> Sek. lang vor jeglichem Schaden und Fähigkeiten schützt.
+}
+
+STRING 1192
+// Abilities: A00Q (Gottesschild), Untip (Tooltip - Turn Off)
+{
+Gottesschild deaktivieren
+}
+
+STRING 1193
+// Abilities: A00Q (Gottesschild), Untip (Tooltip - Turn Off)
+{
+Gottesschild deaktivieren
+}
+
+STRING 1194
+// Abilities: A00Q (Gottesschild), Untip (Tooltip - Turn Off)
+{
+Gottesschild deaktivieren
+}
+
+STRING 1195
+// Abilities: A00Q (Gottesschild), Untip (Tooltip - Turn Off)
+{
+Gottesschild deaktivieren
 }
 

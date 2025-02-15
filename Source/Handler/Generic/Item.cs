@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Source.Models;
+using System;
 using WCSharp.Api;
 
 namespace Source.Handler.GenericEvents
@@ -18,10 +19,17 @@ namespace Source.Handler.GenericEvents
 
         if (itemId == Constants.ITEM_GLYPHE_DER_OPFERUNG)
         {
-          Console.WriteLine($"Item {itemId}... try to explode!");
           int playerId = unit.Owner.Id;
+          if (Program.TryGetActiveUser(playerId, out UserPlayer user))
+          {
+            // Merke Heldenstufe
+            user.HeroLevelCounter = unit.HeroLevel;
+            // Entferne Käufer/Helden aus Spiel
+            Common.RemoveUnit(unit);
 
-          Blizzard.ExplodeUnitBJ(unit);
+            // Heldenseele erstellen und Kamera verschieben
+            Program.CreateHeroSelectorForPlayerAndAdjustCamera(user);
+          }
         }
       }
       catch (Exception ex)

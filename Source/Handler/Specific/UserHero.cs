@@ -126,26 +126,5 @@ namespace Source.Handler.Specific
         }
       });
     }
-
-    public static void OnLevels()
-    {
-      try
-      {
-        unit wc3Unit = Common.GetLevelingUnit();
-        player wc3Player = wc3Unit.Owner;
-
-        if (Program.TryGetActiveUser(wc3Player.Id, out UserPlayer user))
-        {
-          // Level des Helden bei Aufstieg marken
-          user.HeroLevelCounter++;
-
-          Program.ShowDebugMessage("UserHero.OnLevels", $"Hero level counter of {user.Wc3Player.Name} increased to {user.HeroLevelCounter}");
-        }
-      }
-      catch (Exception ex)
-      {
-        Program.ShowExceptionMessage("UserHero.OnLevels", ex);
-      }
-    }
   }
 }

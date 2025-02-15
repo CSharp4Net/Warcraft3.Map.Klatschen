@@ -109,7 +109,6 @@ namespace Source
         PlayerUnitEvents.Register(UnitTypeEvent.SellsItem, Item.OnSellsFinished);
         PlayerUnitEvents.Register(UnitTypeEvent.Dies, Unit.OnDies);
         PlayerUnitEvents.Register(UnitTypeEvent.ReceivesOrder, Unit.OnReceivesOrder);
-        PlayerUnitEvents.Register(HeroTypeEvent.Levels, UserHero.OnLevels);
 
         // Periodische Events registrieren
         PeriodicEvents.AddPeriodicEvent(GoldIncome.OnElapsed, 5f);
@@ -296,7 +295,7 @@ namespace Source
       Undeads.Computer.CreateUnit(Constants.UNIT_W_CHTER_HUMAN, Areas.UndeadBaseHeroSpawn).AttackMove(Areas.OrcBase);
     }
 
-    private static void CreateHeroSelectorForPlayerAndAdjustCamera(UserPlayer user)
+    internal static void CreateHeroSelectorForPlayerAndAdjustCamera(UserPlayer user)
     {
       SpawnedUnit unit = user.CreateUnit(Constants.UNIT_HELDENSEELE_HERO_SELECTOR, Areas.HeroSelectorSpawn);
       user.ApplyCamera(Areas.HeroSelectorSpawn);

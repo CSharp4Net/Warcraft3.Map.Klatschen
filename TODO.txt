@@ -8,7 +8,6 @@ Bug's:
 Must have:
 ----------
 - Helden-Fähigkeiten auf lvl 10/5 anheben
-	- Tüftler
 	- Bestienmeister
 	- Braumeister
 	- Dunkle Waldläuferin
@@ -16,7 +15,7 @@ Must have:
 	- Grubenlord
 - Held ändern ermöglichen + Stufe des alten Heldes übernehmen
 - Neutrale-Lager in den Dreicken zum Erforschen und Assimilieren
-- 11 Items ausarbeiten für Shop
+- 11 sinnvolle ausarbeiten für Item-Shop
 - Arena-Event mit zufälligem Rauskopieren 2er Benutzer-Helden
 - Klatschen-Event
 
@@ -47,6 +46,13 @@ Feature-List:
 - Helden bis max. Stufe 100
 - Heldenfähigkeiten:
 	- Stadtportal (10m Abklingzeit)
-	- Attribute erhöhen (Stufe 1 bis 30)
+	- Attribute erhöhen (Stufe 1 bis 50)
 	- Einfache Fähigkeiten (Stufe 1 bis 10)
 	- Spezial Fähigkeit (Stufe 1 bis 5)
+- Heldenwechsel für nur 1g im Item-Shop
+
+Helden:
+-------
+- Alchemist
+- Meerhexe
+- Tüftler
