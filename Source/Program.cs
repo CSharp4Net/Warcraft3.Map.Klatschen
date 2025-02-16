@@ -109,6 +109,7 @@ namespace Source
         PlayerUnitEvents.Register(UnitTypeEvent.SellsItem, Item.OnSellsFinished);
         PlayerUnitEvents.Register(UnitTypeEvent.Dies, Unit.OnDies);
         PlayerUnitEvents.Register(UnitTypeEvent.ReceivesOrder, Unit.OnReceivesOrder);
+        //PlayerUnitEvents.Register(SpellEvent.Finish, Spell.OnFinished);
 
         // Periodische Events registrieren
         PeriodicEvents.AddPeriodicEvent(GoldIncome.OnElapsed, 5f);
@@ -145,7 +146,7 @@ namespace Source
           {
             ShowExceptionMessage("Start.CreateComputerHeros", ex);
           }
-        });        
+        });
       }
       catch (Exception ex)
       {

@@ -4405,3 +4405,207 @@ STRING 1195
 Gottesschild deaktivieren
 }
 
+STRING 1196
+// Abilities: A00S (Kabumm), EditorSuffix (Editor Suffix)
+{
+(Hero spell - Stufe 2)
+}
+
+STRING 1197
+// Abilities: A00V (Kabumm), EditorSuffix (Editor Suffix)
+{
+(Hero spell - Stufe 4)
+}
+
+STRING 1198
+// Abilities: A00U (Kabumm), EditorSuffix (Editor Suffix)
+{
+(Hero spell - Stufe 3)
+}
+
+STRING 1199
+// Abilities: A00W (Kabumm), EditorSuffix (Editor Suffix)
+{
+(Hero spell - Stufe 5)
+}
+
+STRING 1200
+// Abilities: A00T (Kabumm), EditorSuffix (Editor Suffix)
+{
+(Hero spell - Stufe 1)
+}
+
+STRING 1202
+// Abilities: A00R (Taschenfabrik), EditorSuffix (Editor Suffix)
+{
+(Hero 5)
+}
+
+STRING 1212
+// Abilities: A00R (Taschenfabrik), Tip (Tooltip - Normal)
+{
+Taschenfabrik [|cffffcc00Stufe 4|r]
+}
+
+STRING 1213
+// Abilities: A00R (Taschenfabrik), Tip (Tooltip - Normal)
+{
+Taschenfabrik [|cffffcc00Stufe 5|r]
+}
+
+STRING 1214
+// Abilities: A00R (Taschenfabrik), Ubertip (Tooltip - Normal - Extended)
+{
+Baut eine Fabrik, die automatisch Uhrwerkgoblins herstellt.|n|nUhrwerkgoblins haben wenig Trefferpunkte, verursachen kaum Schaden... aber sie explodieren beim Tod, wodurch sie nahen gegnerischen Einheiten bis zu <A00T,DataB1> Schaden zufügen.|nDie Fabrik bleibt <A00R,Dur1> Sek. lang bestehen.|n|n|cffffcc00Uhrwerkgoblins können nur Bodeneinheiten angreifen.|r
+}
+
+STRING 1215
+// Abilities: A00R (Taschenfabrik), Ubertip (Tooltip - Normal - Extended)
+{
+Baut eine Fabrik, die automatisch Uhrwerkgoblins herstellt.|n|nUhrwerkgoblins haben wenig Trefferpunkte, verursachen kaum Schaden... aber sie explodieren beim Tod, wodurch sie nahen gegnerischen Einheiten bis zu <A00S,DataB2> Schaden zufügen.|nDie Fabrik bleibt <A00R,Dur2> Sek. lang bestehen.|n|n|cffffcc00Uhrwerkgoblins können nur Bodeneinheiten angreifen.|r
+}
+
+STRING 1216
+// Abilities: A00R (Taschenfabrik), Ubertip (Tooltip - Normal - Extended)
+{
+Baut eine Fabrik, die automatisch Uhrwerkgoblins herstellt.|n|nUhrwerkgoblins haben wenig Trefferpunkte, verursachen kaum Schaden... aber sie explodieren beim Tod, wodurch sie nahen gegnerischen Einheiten bis zu <A00U,DataB3> Schaden zufügen.|nDie Fabrik bleibt <A00R,Dur3> Sek. lang bestehen.|n|n|cffffcc00Uhrwerkgoblins können nur Bodeneinheiten angreifen.|r
+}
+
+STRING 1217
+// Abilities: A00R (Taschenfabrik), Ubertip (Tooltip - Normal - Extended)
+{
+Baut eine Fabrik, die automatisch Uhrwerkgoblins herstellt.|n|nUhrwerkgoblins haben wenig Trefferpunkte, verursachen kaum Schaden... aber sie explodieren beim Tod, wodurch sie nahen gegnerischen Einheiten bis zu <A00V,DataB4> Schaden zufügen.|nDie Fabrik bleibt <A00R,Dur4> Sek. lang bestehen.|n|n|cffffcc00Uhrwerkgoblins können nur Bodeneinheiten angreifen.|r
+}
+
+STRING 1218
+// Abilities: A00R (Taschenfabrik), Ubertip (Tooltip - Normal - Extended)
+{
+Baut eine Fabrik, die automatisch Uhrwerkgoblins herstellt.|n|nUhrwerkgoblins haben wenig Trefferpunkte, verursachen kaum Schaden... aber sie explodieren beim Tod, wodurch sie nahen gegnerischen Einheiten bis zu <A00W,DataB5> Schaden zufügen.|nDie Fabrik bleibt <A00R,Dur5> Sek. lang bestehen.|n|n|cffffcc00Uhrwerkgoblins können nur Bodeneinheiten angreifen.|r
+}
+
+STRING 1219
+// Units: n00B (Taschenfabrik - Stufe 2), EditorSuffix (Name - Editor Suffix)
+{
+(Hero spell)
+}
+
+STRING 1220
+// Units: n00B (Taschenfabrik - Stufe 2), Name (Name)
+{
+Taschenfabrik - Stufe 2
+}
+
+STRING 1221
+// Units: n00C (Taschenfabrik - Stufe 4), EditorSuffix (Name - Editor Suffix)
+{
+(Hero spell)
+}
+
+STRING 1222
+// Units: n00C (Taschenfabrik - Stufe 4), Name (Name)
+{
+Taschenfabrik - Stufe 4
+}
+
+STRING 1223
+// Units: n00E (Taschenfabrik - Stufe 3), EditorSuffix (Name - Editor Suffix)
+{
+(Hero spell)
+}
+
+STRING 1224
+// Units: n00E (Taschenfabrik - Stufe 3), Name (Name)
+{
+Taschenfabrik - Stufe 3
+}
+
+STRING 1225
+// Units: n00F (Taschenfabrik - Stufe 5), EditorSuffix (Name - Editor Suffix)
+{
+(Hero spell)
+}
+
+STRING 1226
+// Units: n00F (Taschenfabrik - Stufe 5), Name (Name)
+{
+Taschenfabrik - Stufe 5
+}
+
+STRING 1227
+// Units: n00D (Taschenfabrik - Stufe 1), EditorSuffix (Name - Editor Suffix)
+{
+(Hero spell)
+}
+
+STRING 1228
+// Units: n00D (Taschenfabrik - Stufe 1), Name (Name)
+{
+Taschenfabrik - Stufe 1
+}
+
+STRING 1229
+// Units: n00G (Uhrwerkgoblin - Stufe 1), EditorSuffix (Name - Editor Suffix)
+{
+(Hero spell)
+}
+
+STRING 1230
+// Units: n00G (Uhrwerkgoblin - Stufe 1), Name (Name)
+{
+Uhrwerkgoblin - Stufe 1
+}
+
+STRING 1231
+// Units: n00H (Uhrwerkgoblin - Stufe 2), EditorSuffix (Name - Editor Suffix)
+{
+(Hero spell)
+}
+
+STRING 1232
+// Units: n00H (Uhrwerkgoblin - Stufe 2), Name (Name)
+{
+Uhrwerkgoblin - Stufe 2
+}
+
+STRING 1233
+// Units: n00I (Uhrwerkgoblin - Stufe 3), EditorSuffix (Name - Editor Suffix)
+{
+(Hero spell)
+}
+
+STRING 1234
+// Units: n00I (Uhrwerkgoblin - Stufe 3), Name (Name)
+{
+Uhrwerkgoblin - Stufe 3
+}
+
+STRING 1235
+// Units: n00J (Uhrwerkgoblin - Stufe 4), EditorSuffix (Name - Editor Suffix)
+{
+(Hero spell)
+}
+
+STRING 1236
+// Units: n00J (Uhrwerkgoblin - Stufe 4), Name (Name)
+{
+Uhrwerkgoblin - Stufe 4
+}
+
+STRING 1237
+// Units: n00K (Uhrwerkgoblin - Stufe 5), EditorSuffix (Name - Editor Suffix)
+{
+(Hero spell)
+}
+
+STRING 1238
+// Units: n00K (Uhrwerkgoblin - Stufe 5), Name (Name)
+{
+Uhrwerkgoblin - Stufe 5
+}
+
+STRING 1239
+// Abilities: A00R (Taschenfabrik), Researchubertip (Tooltip - Learn - Extended)
+{
+Baut eine Fabrik, die automatisch Uhrwerkgoblins herstellt. Diese künstlichen Goblins sind starke Angreifer und explodieren beim Tod, wodurch sie nahen gegnerischen Einheiten Schaden zufügen.|n|n|cffffcc00Stufe 1|r - Die Explosion verursacht <A00T,DataB1> Schaden.|n|cffffcc00Stufe 2|r - Die Explosion verursacht <A00S,DataB1> Schaden.|n|cffffcc00Stufe 3|r - Die Explosion verursacht <A00U,DataB1> Schaden.|nDie Fabrik bleibt <A00R,Dur3> Sek. lang bestehen.
+}
+
