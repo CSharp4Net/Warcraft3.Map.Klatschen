@@ -1945,196 +1945,10 @@ STRING 739
 Erhöhte Attribute [|cffffcc00Stufe 30|r]
 }
 
-STRING 770
-// Abilities: A002 (Erhöhte Attribute), Researchubertip (Tooltip - Learn - Extended)
-{
-Erhöht die Beweglichkeit, Stärke und Intelligenz dauerhaft.|n|n|cffffcc00Stufe 1|r - Erhöht alle Werte um 1|n|cffffcc00Stufe 2|r - Erhöht alle Werte um 2|n|cffffcc00Stufe 3|r - Erhöht alle Werte um 3|n|cffffcc00Stufe 4|r - Erhöht alle Werte um 4|n|nusw. ... bis Stufe 30
-}
-
 STRING 771
 // Abilities: A00M (Stadtportal), EditorSuffix (Editor Suffix)
 {
 (Hero)
-}
-
-STRING 772
-// Abilities: A002 (Erhöhte Attribute), Ubertip (Tooltip - Normal - Extended)
-{
-Erhöht die Beweglichkeit, Stärke und Intelligenz um insgesamt <A002,DataA1>.
-}
-
-STRING 774
-// Abilities: A002 (Erhöhte Attribute), Ubertip (Tooltip - Normal - Extended)
-{
-Erhöht die Beweglichkeit, Stärke und Intelligenz um insgesamt <A002,DataA2>.
-}
-
-STRING 776
-// Abilities: A002 (Erhöhte Attribute), Ubertip (Tooltip - Normal - Extended)
-{
-Erhöht die Beweglichkeit, Stärke und Intelligenz um insgesamt <A002,DataA5>.
-}
-
-STRING 777
-// Abilities: A002 (Erhöhte Attribute), Ubertip (Tooltip - Normal - Extended)
-{
-Erhöht die Beweglichkeit, Stärke und Intelligenz um insgesamt <A002,DataA6>.
-}
-
-STRING 778
-// Abilities: A002 (Erhöhte Attribute), Ubertip (Tooltip - Normal - Extended)
-{
-Erhöht die Beweglichkeit, Stärke und Intelligenz um insgesamt <A002,DataA7>.
-}
-
-STRING 779
-// Abilities: A002 (Erhöhte Attribute), Ubertip (Tooltip - Normal - Extended)
-{
-Erhöht die Beweglichkeit, Stärke und Intelligenz um insgesamt <A002,DataA8>.
-}
-
-STRING 780
-// Abilities: A002 (Erhöhte Attribute), Ubertip (Tooltip - Normal - Extended)
-{
-Erhöht die Beweglichkeit, Stärke und Intelligenz um insgesamt <A002,DataA9>.
-}
-
-STRING 781
-// Abilities: A002 (Erhöhte Attribute), Ubertip (Tooltip - Normal - Extended)
-{
-Erhöht die Beweglichkeit, Stärke und Intelligenz um insgesamt <A002,DataA10>.
-}
-
-STRING 782
-// Abilities: A002 (Erhöhte Attribute), Ubertip (Tooltip - Normal - Extended)
-{
-Erhöht die Beweglichkeit, Stärke und Intelligenz um insgesamt <A002,DataA11>.
-}
-
-STRING 783
-// Abilities: A002 (Erhöhte Attribute), Ubertip (Tooltip - Normal - Extended)
-{
-Erhöht die Beweglichkeit, Stärke und Intelligenz um insgesamt <A002,DataA12>.
-}
-
-STRING 784
-// Abilities: A002 (Erhöhte Attribute), Ubertip (Tooltip - Normal - Extended)
-{
-Erhöht die Beweglichkeit, Stärke und Intelligenz um insgesamt <A002,DataA13>.
-}
-
-STRING 785
-// Abilities: A002 (Erhöhte Attribute), Ubertip (Tooltip - Normal - Extended)
-{
-Erhöht die Beweglichkeit, Stärke und Intelligenz um insgesamt <A002,DataA14>.
-}
-
-STRING 786
-// Abilities: A002 (Erhöhte Attribute), Ubertip (Tooltip - Normal - Extended)
-{
-Erhöht die Beweglichkeit, Stärke und Intelligenz um insgesamt <A002,DataA15>.
-}
-
-STRING 787
-// Abilities: A002 (Erhöhte Attribute), Ubertip (Tooltip - Normal - Extended)
-{
-Erhöht die Beweglichkeit, Stärke und Intelligenz um insgesamt <A002,DataA16>.
-}
-
-STRING 788
-// Abilities: A002 (Erhöhte Attribute), Ubertip (Tooltip - Normal - Extended)
-{
-Erhöht die Beweglichkeit, Stärke und Intelligenz um insgesamt <A002,DataA17>.
-}
-
-STRING 789
-// Abilities: A002 (Erhöhte Attribute), Ubertip (Tooltip - Normal - Extended)
-{
-Erhöht die Beweglichkeit, Stärke und Intelligenz um insgesamt <A002,DataA18>.
-}
-
-STRING 790
-// Abilities: A002 (Erhöhte Attribute), Ubertip (Tooltip - Normal - Extended)
-{
-Erhöht die Beweglichkeit, Stärke und Intelligenz um insgesamt <A002,DataA19>.
-}
-
-STRING 791
-// Abilities: A002 (Erhöhte Attribute), Ubertip (Tooltip - Normal - Extended)
-{
-Erhöht die Beweglichkeit, Stärke und Intelligenz um insgesamt <A002,DataA20>.
-}
-
-STRING 792
-// Abilities: A002 (Erhöhte Attribute), Ubertip (Tooltip - Normal - Extended)
-{
-Erhöht die Beweglichkeit, Stärke und Intelligenz um insgesamt <A002,DataA21>.
-}
-
-STRING 793
-// Abilities: A002 (Erhöhte Attribute), Ubertip (Tooltip - Normal - Extended)
-{
-Erhöht die Beweglichkeit, Stärke und Intelligenz um insgesamt <A002,DataA22>.
-}
-
-STRING 794
-// Abilities: A002 (Erhöhte Attribute), Ubertip (Tooltip - Normal - Extended)
-{
-Erhöht die Beweglichkeit, Stärke und Intelligenz um insgesamt <A002,DataA23>.
-}
-
-STRING 795
-// Abilities: A002 (Erhöhte Attribute), Ubertip (Tooltip - Normal - Extended)
-{
-Erhöht die Beweglichkeit, Stärke und Intelligenz um insgesamt <A002,DataA24>.
-}
-
-STRING 796
-// Abilities: A002 (Erhöhte Attribute), Ubertip (Tooltip - Normal - Extended)
-{
-Erhöht die Beweglichkeit, Stärke und Intelligenz um insgesamt <A002,DataA25>.
-}
-
-STRING 797
-// Abilities: A002 (Erhöhte Attribute), Ubertip (Tooltip - Normal - Extended)
-{
-Erhöht die Beweglichkeit, Stärke und Intelligenz um insgesamt <A002,DataA26>.
-}
-
-STRING 798
-// Abilities: A002 (Erhöhte Attribute), Ubertip (Tooltip - Normal - Extended)
-{
-Erhöht die Beweglichkeit, Stärke und Intelligenz um insgesamt <A002,DataA27>.
-}
-
-STRING 799
-// Abilities: A002 (Erhöhte Attribute), Ubertip (Tooltip - Normal - Extended)
-{
-Erhöht die Beweglichkeit, Stärke und Intelligenz um insgesamt <A002,DataA28>.
-}
-
-STRING 800
-// Abilities: A002 (Erhöhte Attribute), Ubertip (Tooltip - Normal - Extended)
-{
-Erhöht die Beweglichkeit, Stärke und Intelligenz um insgesamt <A002,DataA29>.
-}
-
-STRING 801
-// Abilities: A002 (Erhöhte Attribute), Ubertip (Tooltip - Normal - Extended)
-{
-Erhöht die Beweglichkeit, Stärke und Intelligenz um insgesamt <A002,DataA30>.
-}
-
-STRING 802
-// Abilities: A002 (Erhöhte Attribute), Ubertip (Tooltip - Normal - Extended)
-{
-Erhöht die Beweglichkeit, Stärke und Intelligenz um insgesamt <A002,DataA4>.
-}
-
-STRING 803
-// Abilities: A002 (Erhöhte Attribute), Ubertip (Tooltip - Normal - Extended)
-{
-Erhöht die Beweglichkeit, Stärke und Intelligenz um insgesamt <A002,DataA3>.
 }
 
 STRING 804
@@ -2468,60 +2282,6 @@ Versprüht <A00E,DataF2> Wellen aus Heilnebel. Jede Welle stellt bei allen verb�
 }
 
 STRING 866
-// Abilities: A00E (Heilspray), Ubertip (Tooltip - Normal - Extended)
-{
-Versprüht <A00E,DataF2> Wellen aus Heilnebel. Jede Welle stellt bei allen verbündeten Einheiten in einem Gebiet <A00E,DataA2> Trefferpunkte wieder her.
-}
-
-STRING 867
-// Abilities: A00E (Heilspray), Ubertip (Tooltip - Normal - Extended)
-{
-Versprüht <A00E,DataF2> Wellen aus Heilnebel. Jede Welle stellt bei allen verbündeten Einheiten in einem Gebiet <A00E,DataA2> Trefferpunkte wieder her.
-}
-
-STRING 868
-// Abilities: A00E (Heilspray), Ubertip (Tooltip - Normal - Extended)
-{
-Versprüht <A00E,DataF2> Wellen aus Heilnebel. Jede Welle stellt bei allen verbündeten Einheiten in einem Gebiet <A00E,DataA2> Trefferpunkte wieder her.
-}
-
-STRING 869
-// Abilities: A00E (Heilspray), Ubertip (Tooltip - Normal - Extended)
-{
-Versprüht <A00E,DataF2> Wellen aus Heilnebel. Jede Welle stellt bei allen verbündeten Einheiten in einem Gebiet <A00E,DataA2> Trefferpunkte wieder her.
-}
-
-STRING 870
-// Abilities: A00E (Heilspray), Ubertip (Tooltip - Normal - Extended)
-{
-Versprüht <A00E,DataF2> Wellen aus Heilnebel. Jede Welle stellt bei allen verbündeten Einheiten in einem Gebiet <A00E,DataA2> Trefferpunkte wieder her.
-}
-
-STRING 871
-// Abilities: A00E (Heilspray), Ubertip (Tooltip - Normal - Extended)
-{
-Versprüht <A00E,DataF2> Wellen aus Heilnebel. Jede Welle stellt bei allen verbündeten Einheiten in einem Gebiet <A00E,DataA2> Trefferpunkte wieder her.
-}
-
-STRING 872
-// Abilities: A00E (Heilspray), Ubertip (Tooltip - Normal - Extended)
-{
-Versprüht <A00E,DataF2> Wellen aus Heilnebel. Jede Welle stellt bei allen verbündeten Einheiten in einem Gebiet <A00E,DataA2> Trefferpunkte wieder her.
-}
-
-STRING 873
-// Abilities: A00E (Heilspray), Ubertip (Tooltip - Normal - Extended)
-{
-Versprüht <A00E,DataF2> Wellen aus Heilnebel. Jede Welle stellt bei allen verbündeten Einheiten in einem Gebiet <A00E,DataA2> Trefferpunkte wieder her.
-}
-
-STRING 874
-// Abilities: A00E (Heilspray), Ubertip (Tooltip - Normal - Extended)
-{
-Versprüht <A00E,DataF2> Wellen aus Heilnebel. Jede Welle stellt bei allen verbündeten Einheiten in einem Gebiet <A00E,DataA2> Trefferpunkte wieder her.
-}
-
-STRING 875
 // Abilities: A00E (Heilspray), Ubertip (Tooltip - Normal - Extended)
 {
 Versprüht <A00E,DataF2> Wellen aus Heilnebel. Jede Welle stellt bei allen verbündeten Einheiten in einem Gebiet <A00E,DataA2> Trefferpunkte wieder her.
@@ -2995,126 +2755,6 @@ STRING 956
 Erhöhte Attribute [|cffffcc00Stufe 50|r]
 }
 
-STRING 957
-// Abilities: A002 (Erhöhte Attribute), Ubertip (Tooltip - Normal - Extended)
-{
-Erhöht die Beweglichkeit, Stärke und Intelligenz um insgesamt <A002,DataA31>.
-}
-
-STRING 958
-// Abilities: A002 (Erhöhte Attribute), Ubertip (Tooltip - Normal - Extended)
-{
-Erhöht die Beweglichkeit, Stärke und Intelligenz um insgesamt <A002,DataA32>.
-}
-
-STRING 959
-// Abilities: A002 (Erhöhte Attribute), Ubertip (Tooltip - Normal - Extended)
-{
-Erhöht die Beweglichkeit, Stärke und Intelligenz um insgesamt <A002,DataA33>.
-}
-
-STRING 960
-// Abilities: A002 (Erhöhte Attribute), Ubertip (Tooltip - Normal - Extended)
-{
-Erhöht die Beweglichkeit, Stärke und Intelligenz um insgesamt <A002,DataA34>.
-}
-
-STRING 961
-// Abilities: A002 (Erhöhte Attribute), Ubertip (Tooltip - Normal - Extended)
-{
-Erhöht die Beweglichkeit, Stärke und Intelligenz um insgesamt <A002,DataA35>.
-}
-
-STRING 962
-// Abilities: A002 (Erhöhte Attribute), Ubertip (Tooltip - Normal - Extended)
-{
-Erhöht die Beweglichkeit, Stärke und Intelligenz um insgesamt <A002,DataA36>.
-}
-
-STRING 963
-// Abilities: A002 (Erhöhte Attribute), Ubertip (Tooltip - Normal - Extended)
-{
-Erhöht die Beweglichkeit, Stärke und Intelligenz um insgesamt <A002,DataA37>.
-}
-
-STRING 964
-// Abilities: A002 (Erhöhte Attribute), Ubertip (Tooltip - Normal - Extended)
-{
-Erhöht die Beweglichkeit, Stärke und Intelligenz um insgesamt <A002,DataA38>.
-}
-
-STRING 965
-// Abilities: A002 (Erhöhte Attribute), Ubertip (Tooltip - Normal - Extended)
-{
-Erhöht die Beweglichkeit, Stärke und Intelligenz um insgesamt <A002,DataA39>.
-}
-
-STRING 966
-// Abilities: A002 (Erhöhte Attribute), Ubertip (Tooltip - Normal - Extended)
-{
-Erhöht die Beweglichkeit, Stärke und Intelligenz um insgesamt <A002,DataA40>.
-}
-
-STRING 967
-// Abilities: A002 (Erhöhte Attribute), Ubertip (Tooltip - Normal - Extended)
-{
-Erhöht die Beweglichkeit, Stärke und Intelligenz um insgesamt <A002,DataA41>.
-}
-
-STRING 968
-// Abilities: A002 (Erhöhte Attribute), Ubertip (Tooltip - Normal - Extended)
-{
-Erhöht die Beweglichkeit, Stärke und Intelligenz um insgesamt <A002,DataA42>.
-}
-
-STRING 969
-// Abilities: A002 (Erhöhte Attribute), Ubertip (Tooltip - Normal - Extended)
-{
-Erhöht die Beweglichkeit, Stärke und Intelligenz um insgesamt <A002,DataA43>.
-}
-
-STRING 970
-// Abilities: A002 (Erhöhte Attribute), Ubertip (Tooltip - Normal - Extended)
-{
-Erhöht die Beweglichkeit, Stärke und Intelligenz um insgesamt <A002,DataA44>.
-}
-
-STRING 971
-// Abilities: A002 (Erhöhte Attribute), Ubertip (Tooltip - Normal - Extended)
-{
-Erhöht die Beweglichkeit, Stärke und Intelligenz um insgesamt <A002,DataA45>.
-}
-
-STRING 972
-// Abilities: A002 (Erhöhte Attribute), Ubertip (Tooltip - Normal - Extended)
-{
-Erhöht die Beweglichkeit, Stärke und Intelligenz um insgesamt <A002,DataA46>.
-}
-
-STRING 973
-// Abilities: A002 (Erhöhte Attribute), Ubertip (Tooltip - Normal - Extended)
-{
-Erhöht die Beweglichkeit, Stärke und Intelligenz um insgesamt <A002,DataA47>.
-}
-
-STRING 974
-// Abilities: A002 (Erhöhte Attribute), Ubertip (Tooltip - Normal - Extended)
-{
-Erhöht die Beweglichkeit, Stärke und Intelligenz um insgesamt <A002,DataA48>.
-}
-
-STRING 975
-// Abilities: A002 (Erhöhte Attribute), Ubertip (Tooltip - Normal - Extended)
-{
-Erhöht die Beweglichkeit, Stärke und Intelligenz um insgesamt <A002,DataA49>.
-}
-
-STRING 976
-// Abilities: A002 (Erhöhte Attribute), Ubertip (Tooltip - Normal - Extended)
-{
-Erhöht die Beweglichkeit, Stärke und Intelligenz um insgesamt <A002,DataA50>.
-}
-
 STRING 978
 // Abilities: A00H (Feuerodem), Researchubertip (Tooltip - Learn - Extended)
 {
@@ -3272,60 +2912,6 @@ Gabelblitzschlag [|cffffcc00Stufe 10|r]
 }
 
 STRING 1005
-// Abilities: A00I (Gabelblitzschlag), Ubertip (Tooltip - Normal - Extended)
-{
-Richtet einen Blitzkegel auf Gegner, der bis zu <A00I,DataB2> gegnerische Einheiten trifft und ihnen <A00I,DataA2> Schaden zufügt.
-}
-
-STRING 1006
-// Abilities: A00I (Gabelblitzschlag), Ubertip (Tooltip - Normal - Extended)
-{
-Richtet einen Blitzkegel auf Gegner, der bis zu <A00I,DataB2> gegnerische Einheiten trifft und ihnen <A00I,DataA2> Schaden zufügt.
-}
-
-STRING 1007
-// Abilities: A00I (Gabelblitzschlag), Ubertip (Tooltip - Normal - Extended)
-{
-Richtet einen Blitzkegel auf Gegner, der bis zu <A00I,DataB2> gegnerische Einheiten trifft und ihnen <A00I,DataA2> Schaden zufügt.
-}
-
-STRING 1008
-// Abilities: A00I (Gabelblitzschlag), Ubertip (Tooltip - Normal - Extended)
-{
-Richtet einen Blitzkegel auf Gegner, der bis zu <A00I,DataB2> gegnerische Einheiten trifft und ihnen <A00I,DataA2> Schaden zufügt.
-}
-
-STRING 1009
-// Abilities: A00I (Gabelblitzschlag), Ubertip (Tooltip - Normal - Extended)
-{
-Richtet einen Blitzkegel auf Gegner, der bis zu <A00I,DataB2> gegnerische Einheiten trifft und ihnen <A00I,DataA2> Schaden zufügt.
-}
-
-STRING 1010
-// Abilities: A00I (Gabelblitzschlag), Ubertip (Tooltip - Normal - Extended)
-{
-Richtet einen Blitzkegel auf Gegner, der bis zu <A00I,DataB2> gegnerische Einheiten trifft und ihnen <A00I,DataA2> Schaden zufügt.
-}
-
-STRING 1011
-// Abilities: A00I (Gabelblitzschlag), Ubertip (Tooltip - Normal - Extended)
-{
-Richtet einen Blitzkegel auf Gegner, der bis zu <A00I,DataB2> gegnerische Einheiten trifft und ihnen <A00I,DataA2> Schaden zufügt.
-}
-
-STRING 1012
-// Abilities: A00I (Gabelblitzschlag), Ubertip (Tooltip - Normal - Extended)
-{
-Richtet einen Blitzkegel auf Gegner, der bis zu <A00I,DataB2> gegnerische Einheiten trifft und ihnen <A00I,DataA2> Schaden zufügt.
-}
-
-STRING 1013
-// Abilities: A00I (Gabelblitzschlag), Ubertip (Tooltip - Normal - Extended)
-{
-Richtet einen Blitzkegel auf Gegner, der bis zu <A00I,DataB2> gegnerische Einheiten trifft und ihnen <A00I,DataA2> Schaden zufügt.
-}
-
-STRING 1014
 // Abilities: A00I (Gabelblitzschlag), Ubertip (Tooltip - Normal - Extended)
 {
 Richtet einen Blitzkegel auf Gegner, der bis zu <A00I,DataB2> gegnerische Einheiten trifft und ihnen <A00I,DataA2> Schaden zufügt.
@@ -5435,5 +5021,1013 @@ STRING 1379
 // Abilities: A0A0 (Bezauberung), Ubertip (Tooltip - Normal - Extended)
 {
 Übernimmt die Kontrolle über eine gegnerische Zieleinheit.|nKann nicht gegen Helden eingesetzt werden.
+}
+
+STRING 1381
+// Abilities: A00I (Gabelblitzschlag), Ubertip (Tooltip - Normal - Extended)
+{
+Richtet einen Blitzkegel auf Gegner, der bis zu <A00I,DataB1> gegnerische Einheiten trifft und ihnen <A00I,DataA1> Schaden zufügt.
+}
+
+STRING 1382
+// Abilities: A00I (Gabelblitzschlag), Ubertip (Tooltip - Normal - Extended)
+{
+Richtet einen Blitzkegel auf Gegner, der bis zu <A00I,DataB3> gegnerische Einheiten trifft und ihnen <A00I,DataA3> Schaden zufügt.
+}
+
+STRING 1383
+// Abilities: A00I (Gabelblitzschlag), Ubertip (Tooltip - Normal - Extended)
+{
+Richtet einen Blitzkegel auf Gegner, der bis zu <A00I,DataB4> gegnerische Einheiten trifft und ihnen <A00I,DataA4> Schaden zufügt.
+}
+
+STRING 1384
+// Abilities: A00I (Gabelblitzschlag), Ubertip (Tooltip - Normal - Extended)
+{
+Richtet einen Blitzkegel auf Gegner, der bis zu <A00I,DataB5> gegnerische Einheiten trifft und ihnen <A00I,DataA5> Schaden zufügt.
+}
+
+STRING 1385
+// Abilities: A00I (Gabelblitzschlag), Ubertip (Tooltip - Normal - Extended)
+{
+Richtet einen Blitzkegel auf Gegner, der bis zu <A00I,DataB6> gegnerische Einheiten trifft und ihnen <A00I,DataA6> Schaden zufügt.
+}
+
+STRING 1386
+// Abilities: A00I (Gabelblitzschlag), Ubertip (Tooltip - Normal - Extended)
+{
+Richtet einen Blitzkegel auf Gegner, der bis zu <A00I,DataB7> gegnerische Einheiten trifft und ihnen <A00I,DataA7> Schaden zufügt.
+}
+
+STRING 1387
+// Abilities: A00I (Gabelblitzschlag), Ubertip (Tooltip - Normal - Extended)
+{
+Richtet einen Blitzkegel auf Gegner, der bis zu <A00I,DataB8> gegnerische Einheiten trifft und ihnen <A00I,DataA8> Schaden zufügt.
+}
+
+STRING 1388
+// Abilities: A00I (Gabelblitzschlag), Ubertip (Tooltip - Normal - Extended)
+{
+Richtet einen Blitzkegel auf Gegner, der bis zu <A00I,DataB9> gegnerische Einheiten trifft und ihnen <A00I,DataA9> Schaden zufügt.
+}
+
+STRING 1389
+// Abilities: A00I (Gabelblitzschlag), Ubertip (Tooltip - Normal - Extended)
+{
+Richtet einen Blitzkegel auf Gegner, der bis zu <A00I,DataB10> gegnerische Einheiten trifft und ihnen <A00I,DataA10> Schaden zufügt.
+}
+
+STRING 1390
+// Abilities: A00E (Heilspray), Ubertip (Tooltip - Normal - Extended)
+{
+Versprüht <A00E,DataF1> Wellen aus Heilnebel. Jede Welle stellt bei allen verbündeten Einheiten in einem Gebiet <A00E,DataA1> Trefferpunkte wieder her.
+}
+
+STRING 1391
+// Abilities: A00E (Heilspray), Ubertip (Tooltip - Normal - Extended)
+{
+Versprüht <A00E,DataF3> Wellen aus Heilnebel. Jede Welle stellt bei allen verbündeten Einheiten in einem Gebiet <A00E,DataA3> Trefferpunkte wieder her.
+}
+
+STRING 1392
+// Abilities: A00E (Heilspray), Ubertip (Tooltip - Normal - Extended)
+{
+Versprüht <A00E,DataF4> Wellen aus Heilnebel. Jede Welle stellt bei allen verbündeten Einheiten in einem Gebiet <A00E,DataA4> Trefferpunkte wieder her.
+}
+
+STRING 1393
+// Abilities: A00E (Heilspray), Ubertip (Tooltip - Normal - Extended)
+{
+Versprüht <A00E,DataF5> Wellen aus Heilnebel. Jede Welle stellt bei allen verbündeten Einheiten in einem Gebiet <A00E,DataA5> Trefferpunkte wieder her.
+}
+
+STRING 1394
+// Abilities: A00E (Heilspray), Ubertip (Tooltip - Normal - Extended)
+{
+Versprüht <A00E,DataF6> Wellen aus Heilnebel. Jede Welle stellt bei allen verbündeten Einheiten in einem Gebiet <A00E,DataA6> Trefferpunkte wieder her.
+}
+
+STRING 1395
+// Abilities: A00E (Heilspray), Ubertip (Tooltip - Normal - Extended)
+{
+Versprüht <A00E,DataF7> Wellen aus Heilnebel. Jede Welle stellt bei allen verbündeten Einheiten in einem Gebiet <A00E,DataA7> Trefferpunkte wieder her.
+}
+
+STRING 1396
+// Abilities: A00E (Heilspray), Ubertip (Tooltip - Normal - Extended)
+{
+Versprüht <A00E,DataF8> Wellen aus Heilnebel. Jede Welle stellt bei allen verbündeten Einheiten in einem Gebiet <A00E,DataA8> Trefferpunkte wieder her.
+}
+
+STRING 1397
+// Abilities: A00E (Heilspray), Ubertip (Tooltip - Normal - Extended)
+{
+Versprüht <A00E,DataF9> Wellen aus Heilnebel. Jede Welle stellt bei allen verbündeten Einheiten in einem Gebiet <A00E,DataA9> Trefferpunkte wieder her.
+}
+
+STRING 1398
+// Abilities: A00E (Heilspray), Ubertip (Tooltip - Normal - Extended)
+{
+Versprüht <A00E,DataF10> Wellen aus Heilnebel. Jede Welle stellt bei allen verbündeten Einheiten in einem Gebiet <A00E,DataA10> Trefferpunkte wieder her.
+}
+
+STRING 1399
+// Abilities: A002 (Erhöhte Attribute), Ubertip (Tooltip - Normal - Extended)
+{
+Erhöht die Beweglichkeit, Stärke und Intelligenz um 1
+}
+
+STRING 1400
+// Abilities: A002 (Erhöhte Attribute), Ubertip (Tooltip - Normal - Extended)
+{
+Erhöht die Beweglichkeit, Stärke und Intelligenz um 1
+}
+
+STRING 1401
+// Abilities: A002 (Erhöhte Attribute), Ubertip (Tooltip - Normal - Extended)
+{
+Erhöht die Beweglichkeit, Stärke und Intelligenz um 1
+}
+
+STRING 1402
+// Abilities: A002 (Erhöhte Attribute), Ubertip (Tooltip - Normal - Extended)
+{
+Erhöht die Beweglichkeit, Stärke und Intelligenz um 1
+}
+
+STRING 1403
+// Abilities: A002 (Erhöhte Attribute), Ubertip (Tooltip - Normal - Extended)
+{
+Erhöht die Beweglichkeit, Stärke und Intelligenz um 1
+}
+
+STRING 1404
+// Abilities: A002 (Erhöhte Attribute), Ubertip (Tooltip - Normal - Extended)
+{
+Erhöht die Beweglichkeit, Stärke und Intelligenz um 1
+}
+
+STRING 1405
+// Abilities: A002 (Erhöhte Attribute), Ubertip (Tooltip - Normal - Extended)
+{
+Erhöht die Beweglichkeit, Stärke und Intelligenz um 1
+}
+
+STRING 1406
+// Abilities: A002 (Erhöhte Attribute), Ubertip (Tooltip - Normal - Extended)
+{
+Erhöht die Beweglichkeit, Stärke und Intelligenz um 1
+}
+
+STRING 1407
+// Abilities: A002 (Erhöhte Attribute), Ubertip (Tooltip - Normal - Extended)
+{
+Erhöht die Beweglichkeit, Stärke und Intelligenz um 1
+}
+
+STRING 1408
+// Abilities: A002 (Erhöhte Attribute), Ubertip (Tooltip - Normal - Extended)
+{
+Erhöht die Beweglichkeit, Stärke und Intelligenz um 1
+}
+
+STRING 1409
+// Abilities: A002 (Erhöhte Attribute), Ubertip (Tooltip - Normal - Extended)
+{
+Erhöht die Beweglichkeit, Stärke und Intelligenz um 1
+}
+
+STRING 1410
+// Abilities: A002 (Erhöhte Attribute), Ubertip (Tooltip - Normal - Extended)
+{
+Erhöht die Beweglichkeit, Stärke und Intelligenz um 1
+}
+
+STRING 1411
+// Abilities: A002 (Erhöhte Attribute), Ubertip (Tooltip - Normal - Extended)
+{
+Erhöht die Beweglichkeit, Stärke und Intelligenz um 1
+}
+
+STRING 1412
+// Abilities: A002 (Erhöhte Attribute), Ubertip (Tooltip - Normal - Extended)
+{
+Erhöht die Beweglichkeit, Stärke und Intelligenz um 1
+}
+
+STRING 1413
+// Abilities: A002 (Erhöhte Attribute), Ubertip (Tooltip - Normal - Extended)
+{
+Erhöht die Beweglichkeit, Stärke und Intelligenz um 1
+}
+
+STRING 1414
+// Abilities: A002 (Erhöhte Attribute), Ubertip (Tooltip - Normal - Extended)
+{
+Erhöht die Beweglichkeit, Stärke und Intelligenz um 1
+}
+
+STRING 1415
+// Abilities: A002 (Erhöhte Attribute), Ubertip (Tooltip - Normal - Extended)
+{
+Erhöht die Beweglichkeit, Stärke und Intelligenz um 1
+}
+
+STRING 1416
+// Abilities: A002 (Erhöhte Attribute), Ubertip (Tooltip - Normal - Extended)
+{
+Erhöht die Beweglichkeit, Stärke und Intelligenz um 1
+}
+
+STRING 1417
+// Abilities: A002 (Erhöhte Attribute), Ubertip (Tooltip - Normal - Extended)
+{
+Erhöht die Beweglichkeit, Stärke und Intelligenz um 1
+}
+
+STRING 1418
+// Abilities: A002 (Erhöhte Attribute), Ubertip (Tooltip - Normal - Extended)
+{
+Erhöht die Beweglichkeit, Stärke und Intelligenz um 1
+}
+
+STRING 1419
+// Abilities: A002 (Erhöhte Attribute), Ubertip (Tooltip - Normal - Extended)
+{
+Erhöht die Beweglichkeit, Stärke und Intelligenz um 1
+}
+
+STRING 1420
+// Abilities: A002 (Erhöhte Attribute), Ubertip (Tooltip - Normal - Extended)
+{
+Erhöht die Beweglichkeit, Stärke und Intelligenz um 1
+}
+
+STRING 1421
+// Abilities: A002 (Erhöhte Attribute), Ubertip (Tooltip - Normal - Extended)
+{
+Erhöht die Beweglichkeit, Stärke und Intelligenz um 1
+}
+
+STRING 1422
+// Abilities: A002 (Erhöhte Attribute), Ubertip (Tooltip - Normal - Extended)
+{
+Erhöht die Beweglichkeit, Stärke und Intelligenz um 1
+}
+
+STRING 1423
+// Abilities: A002 (Erhöhte Attribute), Ubertip (Tooltip - Normal - Extended)
+{
+Erhöht die Beweglichkeit, Stärke und Intelligenz um 1
+}
+
+STRING 1424
+// Abilities: A002 (Erhöhte Attribute), Ubertip (Tooltip - Normal - Extended)
+{
+Erhöht die Beweglichkeit, Stärke und Intelligenz um 1
+}
+
+STRING 1425
+// Abilities: A002 (Erhöhte Attribute), Ubertip (Tooltip - Normal - Extended)
+{
+Erhöht die Beweglichkeit, Stärke und Intelligenz um 1
+}
+
+STRING 1426
+// Abilities: A002 (Erhöhte Attribute), Ubertip (Tooltip - Normal - Extended)
+{
+Erhöht die Beweglichkeit, Stärke und Intelligenz um 1
+}
+
+STRING 1427
+// Abilities: A002 (Erhöhte Attribute), Ubertip (Tooltip - Normal - Extended)
+{
+Erhöht die Beweglichkeit, Stärke und Intelligenz um 1
+}
+
+STRING 1428
+// Abilities: A002 (Erhöhte Attribute), Ubertip (Tooltip - Normal - Extended)
+{
+Erhöht die Beweglichkeit, Stärke und Intelligenz um 1
+}
+
+STRING 1429
+// Abilities: A002 (Erhöhte Attribute), Ubertip (Tooltip - Normal - Extended)
+{
+Erhöht die Beweglichkeit, Stärke und Intelligenz um 1
+}
+
+STRING 1430
+// Abilities: A002 (Erhöhte Attribute), Ubertip (Tooltip - Normal - Extended)
+{
+Erhöht die Beweglichkeit, Stärke und Intelligenz um 1
+}
+
+STRING 1431
+// Abilities: A002 (Erhöhte Attribute), Ubertip (Tooltip - Normal - Extended)
+{
+Erhöht die Beweglichkeit, Stärke und Intelligenz um 1
+}
+
+STRING 1432
+// Abilities: A002 (Erhöhte Attribute), Ubertip (Tooltip - Normal - Extended)
+{
+Erhöht die Beweglichkeit, Stärke und Intelligenz um 1
+}
+
+STRING 1433
+// Abilities: A002 (Erhöhte Attribute), Ubertip (Tooltip - Normal - Extended)
+{
+Erhöht die Beweglichkeit, Stärke und Intelligenz um 1
+}
+
+STRING 1434
+// Abilities: A002 (Erhöhte Attribute), Ubertip (Tooltip - Normal - Extended)
+{
+Erhöht die Beweglichkeit, Stärke und Intelligenz um 1
+}
+
+STRING 1435
+// Abilities: A002 (Erhöhte Attribute), Ubertip (Tooltip - Normal - Extended)
+{
+Erhöht die Beweglichkeit, Stärke und Intelligenz um 1
+}
+
+STRING 1436
+// Abilities: A002 (Erhöhte Attribute), Ubertip (Tooltip - Normal - Extended)
+{
+Erhöht die Beweglichkeit, Stärke und Intelligenz um 1
+}
+
+STRING 1437
+// Abilities: A002 (Erhöhte Attribute), Ubertip (Tooltip - Normal - Extended)
+{
+Erhöht die Beweglichkeit, Stärke und Intelligenz um 1
+}
+
+STRING 1438
+// Abilities: A002 (Erhöhte Attribute), Ubertip (Tooltip - Normal - Extended)
+{
+Erhöht die Beweglichkeit, Stärke und Intelligenz um 1
+}
+
+STRING 1439
+// Abilities: A002 (Erhöhte Attribute), Ubertip (Tooltip - Normal - Extended)
+{
+Erhöht die Beweglichkeit, Stärke und Intelligenz um 1
+}
+
+STRING 1440
+// Abilities: A002 (Erhöhte Attribute), Ubertip (Tooltip - Normal - Extended)
+{
+Erhöht die Beweglichkeit, Stärke und Intelligenz um 1
+}
+
+STRING 1441
+// Abilities: A002 (Erhöhte Attribute), Ubertip (Tooltip - Normal - Extended)
+{
+Erhöht die Beweglichkeit, Stärke und Intelligenz um 1
+}
+
+STRING 1442
+// Abilities: A002 (Erhöhte Attribute), Ubertip (Tooltip - Normal - Extended)
+{
+Erhöht die Beweglichkeit, Stärke und Intelligenz um 1
+}
+
+STRING 1443
+// Abilities: A002 (Erhöhte Attribute), Ubertip (Tooltip - Normal - Extended)
+{
+Erhöht die Beweglichkeit, Stärke und Intelligenz um 1
+}
+
+STRING 1444
+// Abilities: A002 (Erhöhte Attribute), Ubertip (Tooltip - Normal - Extended)
+{
+Erhöht die Beweglichkeit, Stärke und Intelligenz um 1
+}
+
+STRING 1445
+// Abilities: A002 (Erhöhte Attribute), Ubertip (Tooltip - Normal - Extended)
+{
+Erhöht die Beweglichkeit, Stärke und Intelligenz um 1
+}
+
+STRING 1446
+// Abilities: A002 (Erhöhte Attribute), Ubertip (Tooltip - Normal - Extended)
+{
+Erhöht die Beweglichkeit, Stärke und Intelligenz um 1
+}
+
+STRING 1447
+// Abilities: A002 (Erhöhte Attribute), Ubertip (Tooltip - Normal - Extended)
+{
+Erhöht die Beweglichkeit, Stärke und Intelligenz um 1
+}
+
+STRING 1448
+// Abilities: A002 (Erhöhte Attribute), Ubertip (Tooltip - Normal - Extended)
+{
+Erhöht die Beweglichkeit, Stärke und Intelligenz um 1
+}
+
+STRING 1449
+// Abilities: A002 (Erhöhte Attribute), Researchubertip (Tooltip - Learn - Extended)
+{
+Erhöht die Beweglichkeit, Stärke und Intelligenz dauerhaft.
+}
+
+STRING 1450
+// Abilities: A0EA (Erhöhte Stärke), Tip (Tooltip - Normal)
+{
+Erhöhte Attribute [|cffffcc00Stufe 5|r]
+}
+
+STRING 1451
+// Abilities: A0EA (Erhöhte Stärke), Tip (Tooltip - Normal)
+{
+Erhöhte Attribute [|cffffcc00Stufe 6|r]
+}
+
+STRING 1452
+// Abilities: A0EA (Erhöhte Stärke), Tip (Tooltip - Normal)
+{
+Erhöhte Attribute [|cffffcc00Stufe 7|r]
+}
+
+STRING 1453
+// Abilities: A0EA (Erhöhte Stärke), Tip (Tooltip - Normal)
+{
+Erhöhte Attribute [|cffffcc00Stufe 8|r]
+}
+
+STRING 1454
+// Abilities: A0EA (Erhöhte Stärke), Tip (Tooltip - Normal)
+{
+Erhöhte Attribute [|cffffcc00Stufe 9|r]
+}
+
+STRING 1455
+// Abilities: A0EA (Erhöhte Stärke), Tip (Tooltip - Normal)
+{
+Erhöhte Attribute [|cffffcc00Stufe 10|r]
+}
+
+STRING 1456
+// Abilities: A0EA (Erhöhte Stärke), Tip (Tooltip - Normal)
+{
+Erhöhte Attribute [|cffffcc00Stufe 11|r]
+}
+
+STRING 1457
+// Abilities: A0EA (Erhöhte Stärke), Tip (Tooltip - Normal)
+{
+Erhöhte Attribute [|cffffcc00Stufe 12|r]
+}
+
+STRING 1458
+// Abilities: A0EA (Erhöhte Stärke), Tip (Tooltip - Normal)
+{
+Erhöhte Attribute [|cffffcc00Stufe 13|r]
+}
+
+STRING 1459
+// Abilities: A0EA (Erhöhte Stärke), Tip (Tooltip - Normal)
+{
+Erhöhte Attribute [|cffffcc00Stufe 14|r]
+}
+
+STRING 1460
+// Abilities: A0EA (Erhöhte Stärke), Tip (Tooltip - Normal)
+{
+Erhöhte Attribute [|cffffcc00Stufe 15|r]
+}
+
+STRING 1461
+// Abilities: A0EA (Erhöhte Stärke), Tip (Tooltip - Normal)
+{
+Erhöhte Attribute [|cffffcc00Stufe 16|r]
+}
+
+STRING 1462
+// Abilities: A0EA (Erhöhte Stärke), Tip (Tooltip - Normal)
+{
+Erhöhte Attribute [|cffffcc00Stufe 17|r]
+}
+
+STRING 1463
+// Abilities: A0EA (Erhöhte Stärke), Tip (Tooltip - Normal)
+{
+Erhöhte Attribute [|cffffcc00Stufe 18|r]
+}
+
+STRING 1464
+// Abilities: A0EA (Erhöhte Stärke), Tip (Tooltip - Normal)
+{
+Erhöhte Attribute [|cffffcc00Stufe 19|r]
+}
+
+STRING 1465
+// Abilities: A0EA (Erhöhte Stärke), Tip (Tooltip - Normal)
+{
+Erhöhte Attribute [|cffffcc00Stufe 20|r]
+}
+
+STRING 1466
+// Abilities: A0EA (Erhöhte Stärke), Tip (Tooltip - Normal)
+{
+Erhöhte Attribute [|cffffcc00Stufe 21|r]
+}
+
+STRING 1467
+// Abilities: A0EA (Erhöhte Stärke), Tip (Tooltip - Normal)
+{
+Erhöhte Attribute [|cffffcc00Stufe 22|r]
+}
+
+STRING 1468
+// Abilities: A0EA (Erhöhte Stärke), Tip (Tooltip - Normal)
+{
+Erhöhte Attribute [|cffffcc00Stufe 23|r]
+}
+
+STRING 1469
+// Abilities: A0EA (Erhöhte Stärke), Tip (Tooltip - Normal)
+{
+Erhöhte Attribute [|cffffcc00Stufe 24|r]
+}
+
+STRING 1470
+// Abilities: A0EA (Erhöhte Stärke), Tip (Tooltip - Normal)
+{
+Erhöhte Attribute [|cffffcc00Stufe 25|r]
+}
+
+STRING 1471
+// Abilities: A0EA (Erhöhte Stärke), Tip (Tooltip - Normal)
+{
+Erhöhte Attribute [|cffffcc00Stufe 26|r]
+}
+
+STRING 1472
+// Abilities: A0EA (Erhöhte Stärke), Tip (Tooltip - Normal)
+{
+Erhöhte Attribute [|cffffcc00Stufe 27|r]
+}
+
+STRING 1473
+// Abilities: A0EA (Erhöhte Stärke), Tip (Tooltip - Normal)
+{
+Erhöhte Attribute [|cffffcc00Stufe 28|r]
+}
+
+STRING 1474
+// Abilities: A0EA (Erhöhte Stärke), Tip (Tooltip - Normal)
+{
+Erhöhte Attribute [|cffffcc00Stufe 29|r]
+}
+
+STRING 1475
+// Abilities: A0EA (Erhöhte Stärke), Tip (Tooltip - Normal)
+{
+Erhöhte Attribute [|cffffcc00Stufe 30|r]
+}
+
+STRING 1476
+// Abilities: A0EA (Erhöhte Stärke), Ubertip (Tooltip - Normal - Extended)
+{
+Erhöht die Stärke um insgesamt <A0EA,DataA5> Punkte.
+}
+
+STRING 1477
+// Abilities: A0EA (Erhöhte Stärke), Ubertip (Tooltip - Normal - Extended)
+{
+Erhöht die Stärke um insgesamt <A0EA,DataA6> Punkte.
+}
+
+STRING 1478
+// Abilities: A0EA (Erhöhte Stärke), Ubertip (Tooltip - Normal - Extended)
+{
+Erhöht die Stärke um insgesamt <A0EA,DataA7> Punkte.
+}
+
+STRING 1479
+// Abilities: A0EA (Erhöhte Stärke), Ubertip (Tooltip - Normal - Extended)
+{
+Erhöht die Stärke um insgesamt <A0EA,DataA8> Punkte.
+}
+
+STRING 1480
+// Abilities: A0EA (Erhöhte Stärke), Ubertip (Tooltip - Normal - Extended)
+{
+Erhöht die Stärke um insgesamt <A0EA,DataA9> Punkte.
+}
+
+STRING 1481
+// Abilities: A0EA (Erhöhte Stärke), Ubertip (Tooltip - Normal - Extended)
+{
+Erhöht die Stärke um insgesamt <A0EA,DataA10> Punkte.
+}
+
+STRING 1482
+// Abilities: A0EA (Erhöhte Stärke), Ubertip (Tooltip - Normal - Extended)
+{
+Erhöht die Stärke um insgesamt <A0EA,DataA11> Punkte.
+}
+
+STRING 1483
+// Abilities: A0EA (Erhöhte Stärke), Ubertip (Tooltip - Normal - Extended)
+{
+Erhöht die Stärke um insgesamt <A0EA,DataA12> Punkte.
+}
+
+STRING 1484
+// Abilities: A0EA (Erhöhte Stärke), Ubertip (Tooltip - Normal - Extended)
+{
+Erhöht die Stärke um insgesamt <A0EA,DataA13> Punkte.
+}
+
+STRING 1485
+// Abilities: A0EA (Erhöhte Stärke), Ubertip (Tooltip - Normal - Extended)
+{
+Erhöht die Stärke um insgesamt <A0EA,DataA14> Punkte.
+}
+
+STRING 1486
+// Abilities: A0EA (Erhöhte Stärke), Ubertip (Tooltip - Normal - Extended)
+{
+Erhöht die Stärke um insgesamt <A0EA,DataA15> Punkte.
+}
+
+STRING 1487
+// Abilities: A0EA (Erhöhte Stärke), Ubertip (Tooltip - Normal - Extended)
+{
+Erhöht die Stärke um insgesamt <A0EA,DataA16> Punkte.
+}
+
+STRING 1488
+// Abilities: A0EA (Erhöhte Stärke), Ubertip (Tooltip - Normal - Extended)
+{
+Erhöht die Stärke um insgesamt <A0EA,DataA17> Punkte.
+}
+
+STRING 1489
+// Abilities: A0EA (Erhöhte Stärke), Ubertip (Tooltip - Normal - Extended)
+{
+Erhöht die Stärke um insgesamt <A0EA,DataA18> Punkte.
+}
+
+STRING 1490
+// Abilities: A0EA (Erhöhte Stärke), Ubertip (Tooltip - Normal - Extended)
+{
+Erhöht die Stärke um insgesamt <A0EA,DataA19> Punkte.
+}
+
+STRING 1491
+// Abilities: A0EA (Erhöhte Stärke), Ubertip (Tooltip - Normal - Extended)
+{
+Erhöht die Stärke um insgesamt <A0EA,DataA20> Punkte.
+}
+
+STRING 1492
+// Abilities: A0EA (Erhöhte Stärke), Ubertip (Tooltip - Normal - Extended)
+{
+Erhöht die Stärke um insgesamt <A0EA,DataA21> Punkte.
+}
+
+STRING 1493
+// Abilities: A0EA (Erhöhte Stärke), Ubertip (Tooltip - Normal - Extended)
+{
+Erhöht die Stärke um insgesamt <A0EA,DataA22> Punkte.
+}
+
+STRING 1494
+// Abilities: A0EA (Erhöhte Stärke), Ubertip (Tooltip - Normal - Extended)
+{
+Erhöht die Stärke um insgesamt <A0EA,DataA23> Punkte.
+}
+
+STRING 1495
+// Abilities: A0EA (Erhöhte Stärke), Ubertip (Tooltip - Normal - Extended)
+{
+Erhöht die Stärke um insgesamt <A0EA,DataA24> Punkte.
+}
+
+STRING 1496
+// Abilities: A0EA (Erhöhte Stärke), Ubertip (Tooltip - Normal - Extended)
+{
+Erhöht die Stärke um insgesamt <A0EA,DataA25> Punkte.
+}
+
+STRING 1497
+// Abilities: A0EA (Erhöhte Stärke), Ubertip (Tooltip - Normal - Extended)
+{
+Erhöht die Stärke um insgesamt <A0EA,DataA26> Punkte.
+}
+
+STRING 1498
+// Abilities: A0EA (Erhöhte Stärke), Ubertip (Tooltip - Normal - Extended)
+{
+Erhöht die Stärke um insgesamt <A0EA,DataA27> Punkte.
+}
+
+STRING 1499
+// Abilities: A0EA (Erhöhte Stärke), Ubertip (Tooltip - Normal - Extended)
+{
+Erhöht die Stärke um insgesamt <A0EA,DataA28> Punkte.
+}
+
+STRING 1500
+// Abilities: A0EA (Erhöhte Stärke), Ubertip (Tooltip - Normal - Extended)
+{
+Erhöht die Stärke um insgesamt <A0EA,DataA29> Punkte.
+}
+
+STRING 1501
+// Abilities: A0EA (Erhöhte Stärke), Ubertip (Tooltip - Normal - Extended)
+{
+Erhöht die Stärke um insgesamt <A0EA,DataA30> Punkte.
+}
+
+STRING 1502
+// Abilities: A0EA (Erhöhte Stärke), Ubertip (Tooltip - Normal - Extended)
+{
+Erhöht die Stärke um insgesamt <A0EA,DataA2> Punkte.
+}
+
+STRING 1503
+// Abilities: A0EA (Erhöhte Stärke), Ubertip (Tooltip - Normal - Extended)
+{
+Erhöht die Stärke um insgesamt <A0EA,DataA4> Punkte.
+}
+
+STRING 1504
+// Abilities: A0EA (Erhöhte Stärke), EditorSuffix (Editor Suffix)
+{
+(Hero 50)
+}
+
+STRING 1505
+// Abilities: A0EA (Erhöhte Stärke), Ubertip (Tooltip - Normal - Extended)
+{
+Erhöht die Stärke um insgesamt <A0EA,DataA3> Punkte.
+}
+
+STRING 1506
+// Abilities: A0EA (Erhöhte Stärke), Tip (Tooltip - Normal)
+{
+Erhöhte Attribute [|cffffcc00Stufe 31|r]
+}
+
+STRING 1507
+// Abilities: A0EA (Erhöhte Stärke), Tip (Tooltip - Normal)
+{
+Erhöhte Attribute [|cffffcc00Stufe 32|r]
+}
+
+STRING 1508
+// Abilities: A0EA (Erhöhte Stärke), Tip (Tooltip - Normal)
+{
+Erhöhte Attribute [|cffffcc00Stufe 33|r]
+}
+
+STRING 1509
+// Abilities: A0EA (Erhöhte Stärke), Tip (Tooltip - Normal)
+{
+Erhöhte Attribute [|cffffcc00Stufe 34|r]
+}
+
+STRING 1510
+// Abilities: A0EA (Erhöhte Stärke), Tip (Tooltip - Normal)
+{
+Erhöhte Attribute [|cffffcc00Stufe 35|r]
+}
+
+STRING 1511
+// Abilities: A0EA (Erhöhte Stärke), Tip (Tooltip - Normal)
+{
+Erhöhte Attribute [|cffffcc00Stufe 36|r]
+}
+
+STRING 1512
+// Abilities: A0EA (Erhöhte Stärke), Tip (Tooltip - Normal)
+{
+Erhöhte Attribute [|cffffcc00Stufe 37|r]
+}
+
+STRING 1513
+// Abilities: A0EA (Erhöhte Stärke), Tip (Tooltip - Normal)
+{
+Erhöhte Attribute [|cffffcc00Stufe 38|r]
+}
+
+STRING 1514
+// Abilities: A0EA (Erhöhte Stärke), Tip (Tooltip - Normal)
+{
+Erhöhte Attribute [|cffffcc00Stufe 39|r]
+}
+
+STRING 1515
+// Abilities: A0EA (Erhöhte Stärke), Tip (Tooltip - Normal)
+{
+Erhöhte Attribute [|cffffcc00Stufe 40|r]
+}
+
+STRING 1516
+// Abilities: A0EA (Erhöhte Stärke), Tip (Tooltip - Normal)
+{
+Erhöhte Attribute [|cffffcc00Stufe 41|r]
+}
+
+STRING 1517
+// Abilities: A0EA (Erhöhte Stärke), Tip (Tooltip - Normal)
+{
+Erhöhte Attribute [|cffffcc00Stufe 42|r]
+}
+
+STRING 1518
+// Abilities: A0EA (Erhöhte Stärke), Tip (Tooltip - Normal)
+{
+Erhöhte Attribute [|cffffcc00Stufe 43|r]
+}
+
+STRING 1519
+// Abilities: A0EA (Erhöhte Stärke), Tip (Tooltip - Normal)
+{
+Erhöhte Attribute [|cffffcc00Stufe 44|r]
+}
+
+STRING 1520
+// Abilities: A0EA (Erhöhte Stärke), Tip (Tooltip - Normal)
+{
+Erhöhte Attribute [|cffffcc00Stufe 45|r]
+}
+
+STRING 1521
+// Abilities: A0EA (Erhöhte Stärke), Tip (Tooltip - Normal)
+{
+Erhöhte Attribute [|cffffcc00Stufe 46|r]
+}
+
+STRING 1522
+// Abilities: A0EA (Erhöhte Stärke), Tip (Tooltip - Normal)
+{
+Erhöhte Attribute [|cffffcc00Stufe 47|r]
+}
+
+STRING 1523
+// Abilities: A0EA (Erhöhte Stärke), Tip (Tooltip - Normal)
+{
+Erhöhte Attribute [|cffffcc00Stufe 48|r]
+}
+
+STRING 1524
+// Abilities: A0EA (Erhöhte Stärke), Tip (Tooltip - Normal)
+{
+Erhöhte Attribute [|cffffcc00Stufe 49|r]
+}
+
+STRING 1525
+// Abilities: A0EA (Erhöhte Stärke), Tip (Tooltip - Normal)
+{
+Erhöhte Attribute [|cffffcc00Stufe 50|r]
+}
+
+STRING 1526
+// Abilities: A0EA (Erhöhte Stärke), Ubertip (Tooltip - Normal - Extended)
+{
+Erhöht die Beweglichkeit, Stärke und Intelligenz um 1
+}
+
+STRING 1527
+// Abilities: A0EA (Erhöhte Stärke), Ubertip (Tooltip - Normal - Extended)
+{
+Erhöht die Beweglichkeit, Stärke und Intelligenz um 1
+}
+
+STRING 1528
+// Abilities: A0EA (Erhöhte Stärke), Ubertip (Tooltip - Normal - Extended)
+{
+Erhöht die Beweglichkeit, Stärke und Intelligenz um 1
+}
+
+STRING 1529
+// Abilities: A0EA (Erhöhte Stärke), Ubertip (Tooltip - Normal - Extended)
+{
+Erhöht die Beweglichkeit, Stärke und Intelligenz um 1
+}
+
+STRING 1530
+// Abilities: A0EA (Erhöhte Stärke), Ubertip (Tooltip - Normal - Extended)
+{
+Erhöht die Beweglichkeit, Stärke und Intelligenz um 1
+}
+
+STRING 1531
+// Abilities: A0EA (Erhöhte Stärke), Ubertip (Tooltip - Normal - Extended)
+{
+Erhöht die Beweglichkeit, Stärke und Intelligenz um 1
+}
+
+STRING 1532
+// Abilities: A0EA (Erhöhte Stärke), Ubertip (Tooltip - Normal - Extended)
+{
+Erhöht die Beweglichkeit, Stärke und Intelligenz um 1
+}
+
+STRING 1533
+// Abilities: A0EA (Erhöhte Stärke), Ubertip (Tooltip - Normal - Extended)
+{
+Erhöht die Beweglichkeit, Stärke und Intelligenz um 1
+}
+
+STRING 1534
+// Abilities: A0EA (Erhöhte Stärke), Ubertip (Tooltip - Normal - Extended)
+{
+Erhöht die Beweglichkeit, Stärke und Intelligenz um 1
+}
+
+STRING 1535
+// Abilities: A0EA (Erhöhte Stärke), Ubertip (Tooltip - Normal - Extended)
+{
+Erhöht die Beweglichkeit, Stärke und Intelligenz um 1
+}
+
+STRING 1536
+// Abilities: A0EA (Erhöhte Stärke), Ubertip (Tooltip - Normal - Extended)
+{
+Erhöht die Beweglichkeit, Stärke und Intelligenz um 1
+}
+
+STRING 1537
+// Abilities: A0EA (Erhöhte Stärke), Ubertip (Tooltip - Normal - Extended)
+{
+Erhöht die Beweglichkeit, Stärke und Intelligenz um 1
+}
+
+STRING 1538
+// Abilities: A0EA (Erhöhte Stärke), Ubertip (Tooltip - Normal - Extended)
+{
+Erhöht die Beweglichkeit, Stärke und Intelligenz um 1
+}
+
+STRING 1539
+// Abilities: A0EA (Erhöhte Stärke), Ubertip (Tooltip - Normal - Extended)
+{
+Erhöht die Beweglichkeit, Stärke und Intelligenz um 1
+}
+
+STRING 1540
+// Abilities: A0EA (Erhöhte Stärke), Ubertip (Tooltip - Normal - Extended)
+{
+Erhöht die Beweglichkeit, Stärke und Intelligenz um 1
+}
+
+STRING 1541
+// Abilities: A0EA (Erhöhte Stärke), Ubertip (Tooltip - Normal - Extended)
+{
+Erhöht die Beweglichkeit, Stärke und Intelligenz um 1
+}
+
+STRING 1542
+// Abilities: A0EA (Erhöhte Stärke), Ubertip (Tooltip - Normal - Extended)
+{
+Erhöht die Beweglichkeit, Stärke und Intelligenz um 1
+}
+
+STRING 1543
+// Abilities: A0EA (Erhöhte Stärke), Ubertip (Tooltip - Normal - Extended)
+{
+Erhöht die Beweglichkeit, Stärke und Intelligenz um 1
+}
+
+STRING 1544
+// Abilities: A0EA (Erhöhte Stärke), Ubertip (Tooltip - Normal - Extended)
+{
+Erhöht die Beweglichkeit, Stärke und Intelligenz um 1
+}
+
+STRING 1545
+// Abilities: A0EA (Erhöhte Stärke), Ubertip (Tooltip - Normal - Extended)
+{
+Erhöht die Beweglichkeit, Stärke und Intelligenz um 1
+}
+
+STRING 1546
+// Abilities: A0EA (Erhöhte Stärke), Researchubertip (Tooltip - Learn - Extended)
+{
+Erhöht die Stärke pro Stufe dauerhaft um 3.
+}
+
+STRING 1547
+// Abilities: A0EA (Erhöhte Stärke), Name (Name)
+{
+Erhöhte Stärke
+}
+
+STRING 1548
+// Abilities: A0EA (Erhöhte Stärke), Ubertip (Tooltip - Normal - Extended)
+{
+Erhöht die Stärke um insgesamt <A0EA,DataA1> Punkte.
 }
 
