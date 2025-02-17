@@ -72,8 +72,8 @@ gg_rct_UndeadToHumanInnerLine = nil
 gg_rct_UndeadToHumanOuterLine = nil
 gg_rct_UndeadToOrcInnerLine = nil
 gg_rct_UndeadToOrcOuterLine = nil
-gg_trg_Melee_Initialization = nil
 gg_rct_TestArea = nil
+gg_trg_Melee_Initialization = nil
 function InitGlobals()
 end
 
