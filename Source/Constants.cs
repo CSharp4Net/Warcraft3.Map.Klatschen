@@ -42,7 +42,7 @@ public static class Constants
 	public const int ABILITY_KABUMM_HERO_SPELL_STUFE_1 = 1093677140;
 	public const int ABILITY_TASCHENFABRIK_HERO_5 = 1093677138;
 	public const int ITEM_GLYPHE_DER_OPFERUNG = 1227894832;
-	public const int ITEM_FOLIANT_DES_AUFTSTIEGS = 1227894833;
+	public const int ITEM_FOLIANT_DES_AUFTSTIEGS_F_R_TESTS = 1227894833;
 	public const int UNIT_DUMMY = 1848651824;
 	public const int UNIT_SCHLOSS_HUMAN = 1747988531;
 	public const int UNIT_WACHTURM_HUMAN = 1747988532;

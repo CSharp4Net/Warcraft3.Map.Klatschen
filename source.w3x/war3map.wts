@@ -2875,12 +2875,6 @@ STRING 935
 Tötet eine Zieleinheit sofort und wandelt sie in Gold um, das zum Gold des Spielers hinzugefügt wird!|nKann nicht gegen Helden eingesetzt werden.
 }
 
-STRING 936
-// Abilities: A00G (Transmutieren), Researchubertip (Tooltip - Learn - Extended)
-{
-Tötet eine Zieleinheit sofort und wandelt sie in Gold um, das zum Gold des Spielers hinzugefügt wird!|nKann nicht gegen Helden eingesetzt werden.
-}
-
 STRING 937
 // Abilities: A002 (Erhöhte Attribute), Tip (Tooltip - Normal)
 {
@@ -3859,20 +3853,14 @@ STRING 1104
 P
 }
 
-STRING 1105
-// Items: I001 (Foliant des Auftstiegs), Name (Name)
-{
-Foliant des Auftstiegs
-}
-
 STRING 1106
-// Items: I001 (Foliant des Auftstiegs), Tip (Tooltip - Basic)
+// Items: I001 ( Foliant des Auftstiegs (für Tests)), Tip (Tooltip - Basic)
 {
 Foliant des Aufstiegs kaufen
 }
 
 STRING 1107
-// Items: I001 (Foliant des Auftstiegs), Ubertip (Tooltip - Extended)
+// Items: I001 ( Foliant des Auftstiegs (für Tests)), Ubertip (Tooltip - Extended)
 {
 Gewährt dem Helden eine Menge Erfahrungspunkte.
 }
@@ -4607,5 +4595,17 @@ STRING 1239
 // Abilities: A00R (Taschenfabrik), Researchubertip (Tooltip - Learn - Extended)
 {
 Baut eine Fabrik, die automatisch Uhrwerkgoblins herstellt. Diese künstlichen Goblins sind starke Angreifer und explodieren beim Tod, wodurch sie nahen gegnerischen Einheiten Schaden zufügen.|n|n|cffffcc00Stufe 1|r - Die Explosion verursacht <A00T,DataB1> Schaden.|n|cffffcc00Stufe 2|r - Die Explosion verursacht <A00S,DataB1> Schaden.|n|cffffcc00Stufe 3|r - Die Explosion verursacht <A00U,DataB1> Schaden.|nDie Fabrik bleibt <A00R,Dur3> Sek. lang bestehen.
+}
+
+STRING 1240
+// Abilities: A00G (Transmutieren), Researchubertip (Tooltip - Learn - Extended)
+{
+Tötet eine Zieleinheit sofort und wandelt sie in Gold um, das zum Gold des Spielers hinzugefügt wird!|nKann nicht gegen Helden eingesetzt werden.|n|n|cffffcc00Stufe 1|r - Gewährt dem Spieler <A00G,DataA1,%>% des Goldes.|n|cffffcc00Stufe 2|r - Gewährt dem Spieler <A00G,DataA2,%>% des Goldes.|n|cffffcc00Stufe 3|r - Gewährt dem Spieler <A00G,DataA3,%>% des Goldes... usw.
+}
+
+STRING 1241
+// Items: I001 ( Foliant des Auftstiegs (für Tests)), Name (Name)
+{
+ Foliant des Auftstiegs (für Tests)
 }
 

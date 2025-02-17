@@ -3,7 +3,8 @@ TODO'S
 
 Bug's:
 ------
-
+- Gabelblitzschlag-Schaden steigt nicht mit Stufe?
+- Heilspray-Heilung steigt nicht mit Stufe?
 
 Must have:
 ----------
@@ -21,6 +22,7 @@ Must have:
 
 Nice to have:
 -------------
+- Einheiten-Upgrades auf 5 erhöhen, Belagerungsmaschinen auf 3.
 - Spawn-Einheiten kopieren für andere Teams
 - Gebäude-Einheiten (Türm, MainBuilding, Kaserne) kopieren für andere Teams
 - Forschungen kopieren für andere Teams
