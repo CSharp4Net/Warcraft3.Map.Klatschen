@@ -3,7 +3,7 @@ TODO'S
 
 Bug's:
 ------
-- Gabelblitzschlag-Schaden steigt nicht mit Stufe?
+
 
 Must have:
 ----------

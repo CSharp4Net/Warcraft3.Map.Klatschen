@@ -1,4 +1,5 @@
-﻿using Source.Handler.GenericEvents;
+﻿using Source.Handler.Generic;
+using Source.Handler.GenericEvents;
 using Source.Handler.Region;
 using Source.Handler.Specific;
 using Source.Models;
@@ -109,7 +110,7 @@ namespace Source
         PlayerUnitEvents.Register(UnitTypeEvent.SellsItem, Item.OnSellsFinished);
         PlayerUnitEvents.Register(UnitTypeEvent.Dies, Unit.OnDies);
         PlayerUnitEvents.Register(UnitTypeEvent.ReceivesOrder, Unit.OnReceivesOrder);
-        //PlayerUnitEvents.Register(SpellEvent.Finish, Spell.OnFinished);
+        PlayerUnitEvents.Register(SpellEvent.Cast, Ability.OnFinished);
 
         // Periodische Events registrieren
         PeriodicEvents.AddPeriodicEvent(GoldIncome.OnElapsed, 5f);
