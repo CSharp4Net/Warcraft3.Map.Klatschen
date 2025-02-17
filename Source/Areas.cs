@@ -79,5 +79,6 @@ internal static class Areas
   public static Area UndeadToHumanOuterLine { get; set; } = new Area(Regions.UndeadToHumanOuterLine);
   public static Area UndeadToOrcInnerLine { get; set; } = new Area(Regions.UndeadToOrcInnerLine);
   public static Area UndeadToOrcOuterLine { get; set; } = new Area(Regions.UndeadToOrcOuterLine);
+  public static Area TestArea { get; set; } = new Area(Regions.TestArea);
 
 }

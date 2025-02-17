@@ -79,5 +79,6 @@ public static class Regions
 	public static Rectangle UndeadToHumanOuterLine { get; set; } = new Rectangle(5056f, -2112f, 5184f, -1984f);
 	public static Rectangle UndeadToOrcInnerLine { get; set; } = new Rectangle(10176f, -5184f, 10304f, -5056f);
 	public static Rectangle UndeadToOrcOuterLine { get; set; } = new Rectangle(10176f, -1088f, 10304f, -960f);
+	public static Rectangle TestArea { get; set; } = new Rectangle(17152f, 17152f, 17280f, 17280f);
 
 }

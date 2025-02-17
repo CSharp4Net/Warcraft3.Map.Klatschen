@@ -4609,3 +4609,831 @@ STRING 1241
  Foliant des Auftstiegs (für Tests)
 }
 
+STRING 1242
+// Units: n00L (Feuer - Stufe 1), EditorSuffix (Name - Editor Suffix)
+{
+(Hero Spell)
+}
+
+STRING 1243
+// Units: n00L (Feuer - Stufe 1), Name (Name)
+{
+Feuer - Stufe 1
+}
+
+STRING 1244
+// Units: n00M (Erde - Stufe 1), EditorSuffix (Name - Editor Suffix)
+{
+(Hero Spell)
+}
+
+STRING 1245
+// Units: n00M (Erde - Stufe 1), Name (Name)
+{
+Erde - Stufe 1
+}
+
+STRING 1246
+// Units: n00N (Sturm - Stufe 2), EditorSuffix (Name - Editor Suffix)
+{
+(Hero Spell)
+}
+
+STRING 1247
+// Units: n00N (Sturm - Stufe 2), Name (Name)
+{
+Sturm - Stufe 2
+}
+
+STRING 1248
+// Units: n00O (Erde - Stufe 3), EditorSuffix (Name - Editor Suffix)
+{
+(Hero Spell)
+}
+
+STRING 1249
+// Units: n00O (Erde - Stufe 3), Name (Name)
+{
+Erde - Stufe 3
+}
+
+STRING 1250
+// Units: n00P (Erde - Stufe 2), EditorSuffix (Name - Editor Suffix)
+{
+(Hero Spell)
+}
+
+STRING 1251
+// Units: n00P (Erde - Stufe 2), Name (Name)
+{
+Erde - Stufe 2
+}
+
+STRING 1252
+// Units: n00Q (Erde - Stufe 4), EditorSuffix (Name - Editor Suffix)
+{
+(Hero Spell)
+}
+
+STRING 1253
+// Units: n00Q (Erde - Stufe 4), Name (Name)
+{
+Erde - Stufe 4
+}
+
+STRING 1254
+// Units: n00R (Erde - Stufe 5), EditorSuffix (Name - Editor Suffix)
+{
+(Hero Spell)
+}
+
+STRING 1255
+// Units: n00R (Erde - Stufe 5), Name (Name)
+{
+Erde - Stufe 5
+}
+
+STRING 1256
+// Units: n00S (Feuer - Stufe 5), EditorSuffix (Name - Editor Suffix)
+{
+(Hero Spell)
+}
+
+STRING 1257
+// Units: n00S (Feuer - Stufe 5), Name (Name)
+{
+Feuer - Stufe 5
+}
+
+STRING 1258
+// Units: n00T (Feuer - Stufe 2), EditorSuffix (Name - Editor Suffix)
+{
+(Hero Spell)
+}
+
+STRING 1259
+// Units: n00T (Feuer - Stufe 2), Name (Name)
+{
+Feuer - Stufe 2
+}
+
+STRING 1260
+// Units: n00U (Feuer - Stufe 3), EditorSuffix (Name - Editor Suffix)
+{
+(Hero Spell)
+}
+
+STRING 1261
+// Units: n00U (Feuer - Stufe 3), Name (Name)
+{
+Feuer - Stufe 3
+}
+
+STRING 1262
+// Units: n00V (Feuer - Stufe 4), EditorSuffix (Name - Editor Suffix)
+{
+(Hero Spell)
+}
+
+STRING 1263
+// Units: n00V (Feuer - Stufe 4), Name (Name)
+{
+Feuer - Stufe 4
+}
+
+STRING 1264
+// Units: n00W (Sturm - Stufe 3), EditorSuffix (Name - Editor Suffix)
+{
+(Hero Spell)
+}
+
+STRING 1265
+// Units: n00W (Sturm - Stufe 3), Name (Name)
+{
+Sturm - Stufe 3
+}
+
+STRING 1266
+// Units: n00X (Sturm - Stufe 4), EditorSuffix (Name - Editor Suffix)
+{
+(Hero Spell)
+}
+
+STRING 1267
+// Units: n00X (Sturm - Stufe 4), Name (Name)
+{
+Sturm - Stufe 4
+}
+
+STRING 1268
+// Units: n00Y (Sturm - Stufe 1), EditorSuffix (Name - Editor Suffix)
+{
+(Hero Spell)
+}
+
+STRING 1269
+// Units: n00Y (Sturm - Stufe 1), Name (Name)
+{
+Sturm - Stufe 1
+}
+
+STRING 1270
+// Units: n00Z (Sturm - Stufe 5), EditorSuffix (Name - Editor Suffix)
+{
+(Hero Spell)
+}
+
+STRING 1271
+// Units: n00Z (Sturm - Stufe 5), Name (Name)
+{
+Sturm - Stufe 5
+}
+
+STRING 1272
+// Abilities: A00X (Fasshieb), EditorSuffix (Editor Suffix)
+{
+(Hero 10)
+}
+
+STRING 1273
+// Abilities: A00X (Fasshieb), Researchubertip (Tooltip - Learn - Extended)
+{
+Tränkt gegnerische Einheiten mit einer brennbaren Flüssigkeit, die ihre Bewegungsgeschwindigkeit verringert und ihre Chance, zu verfehlen, erhöht. Wenn getränkte Einheiten von Feuerodem getroffen werden, gehen sie in Flammen auf und erleiden periodischen Brandschaden.|nHält <A00X,Dur1> Sek. lang an.|n|n|cffffcc00Stufe 1|r - <A00X,DataC1,%>% verringerte Bewegungsgeschwindigkeit, <A00X,DataB1,%>% Chance, zu verfehlen.|n|cffffcc00Stufe 2|r - <A00X,DataC2,%>% verringerte Bewegungsgeschwindigkeit, <A00X,DataB2,%>% Chance, zu verfehlen.|n|cffffcc00Stufe 3|r - <A00X,DataC3,%>% verringerte Bewegungsgeschwindigkeit, <A00X,DataB3,%>% Chance, zu verfehlen.
+}
+
+STRING 1274
+// Abilities: A00X (Fasshieb), Tip (Tooltip - Normal)
+{
+Fasshieb [|cffffcc00Stufe 4|r]
+}
+
+STRING 1275
+// Abilities: A00X (Fasshieb), Tip (Tooltip - Normal)
+{
+Fasshieb [|cffffcc00Stufe 5|r]
+}
+
+STRING 1276
+// Abilities: A00X (Fasshieb), Tip (Tooltip - Normal)
+{
+Fasshieb [|cffffcc00Stufe 6|r]
+}
+
+STRING 1277
+// Abilities: A00X (Fasshieb), Tip (Tooltip - Normal)
+{
+Fasshieb [|cffffcc00Stufe 7|r]
+}
+
+STRING 1278
+// Abilities: A00X (Fasshieb), Tip (Tooltip - Normal)
+{
+Fasshieb [|cffffcc00Stufe 8|r]
+}
+
+STRING 1279
+// Abilities: A00X (Fasshieb), Tip (Tooltip - Normal)
+{
+Fasshieb [|cffffcc00Stufe 9|r]
+}
+
+STRING 1280
+// Abilities: A00X (Fasshieb), Tip (Tooltip - Normal)
+{
+Fasshieb [|cffffcc00Stufe 10|r]
+}
+
+STRING 1281
+// Abilities: A00X (Fasshieb), Ubertip (Tooltip - Normal - Extended)
+{
+Tränkt gegnerische Einheiten mit einer brennbaren Flüssigkeit, die ihre Bewegungsgeschwindigkeit um <A00X,DataC1,%>% verringert und ihre Chance, zu verfehlen, um <A00X,DataB1,%>% erhöht. Wenn getränkte Einheiten von Feuerodem getroffen werden, gehen sie in Flammen auf und erleiden periodischen Brandschaden.|nHält <A00X,Dur1> Sek. lang an.
+}
+
+STRING 1282
+// Abilities: A00X (Fasshieb), Ubertip (Tooltip - Normal - Extended)
+{
+Tränkt gegnerische Einheiten mit einer brennbaren Flüssigkeit, die ihre Bewegungsgeschwindigkeit um <A00X,DataC2,%>% verringert und ihre Chance, zu verfehlen, um <A00X,DataB2,%>% erhöht. Wenn getränkte Einheiten von Feuerodem getroffen werden, gehen sie in Flammen auf und erleiden periodischen Brandschaden.|nHält <A00X,Dur2> Sek. lang an.
+}
+
+STRING 1283
+// Abilities: A00X (Fasshieb), Ubertip (Tooltip - Normal - Extended)
+{
+Tränkt gegnerische Einheiten mit einer brennbaren Flüssigkeit, die ihre Bewegungsgeschwindigkeit um <A00X,DataC3,%>% verringert und ihre Chance, zu verfehlen, um <A00X,DataB3,%>% erhöht. Wenn getränkte Einheiten von Feuerodem getroffen werden, gehen sie in Flammen auf und erleiden periodischen Brandschaden.|nHält <A00X,Dur3> Sek. lang an.
+}
+
+STRING 1284
+// Abilities: A00X (Fasshieb), Ubertip (Tooltip - Normal - Extended)
+{
+Tränkt gegnerische Einheiten mit einer brennbaren Flüssigkeit, die ihre Bewegungsgeschwindigkeit um <A00X,DataC4,%>% verringert und ihre Chance, zu verfehlen, um <A00X,DataB4,%>% erhöht. Wenn getränkte Einheiten von Feuerodem getroffen werden, gehen sie in Flammen auf und erleiden periodischen Brandschaden.|nHält <A00X,Dur4> Sek. lang an.
+}
+
+STRING 1285
+// Abilities: A00X (Fasshieb), Ubertip (Tooltip - Normal - Extended)
+{
+Tränkt gegnerische Einheiten mit einer brennbaren Flüssigkeit, die ihre Bewegungsgeschwindigkeit um <A00X,DataC5,%>% verringert und ihre Chance, zu verfehlen, um <A00X,DataB5,%>% erhöht. Wenn getränkte Einheiten von Feuerodem getroffen werden, gehen sie in Flammen auf und erleiden periodischen Brandschaden.|nHält <A00X,Dur5> Sek. lang an.
+}
+
+STRING 1286
+// Abilities: A00X (Fasshieb), Ubertip (Tooltip - Normal - Extended)
+{
+Tränkt gegnerische Einheiten mit einer brennbaren Flüssigkeit, die ihre Bewegungsgeschwindigkeit um <A00X,DataC6,%>% verringert und ihre Chance, zu verfehlen, um <A00X,DataB6,%>% erhöht. Wenn getränkte Einheiten von Feuerodem getroffen werden, gehen sie in Flammen auf und erleiden periodischen Brandschaden.|nHält <A00X,Dur6> Sek. lang an.
+}
+
+STRING 1287
+// Abilities: A00X (Fasshieb), Ubertip (Tooltip - Normal - Extended)
+{
+Tränkt gegnerische Einheiten mit einer brennbaren Flüssigkeit, die ihre Bewegungsgeschwindigkeit um <A00X,DataC7,%>% verringert und ihre Chance, zu verfehlen, um <A00X,DataB7,%>% erhöht. Wenn getränkte Einheiten von Feuerodem getroffen werden, gehen sie in Flammen auf und erleiden periodischen Brandschaden.|nHält <A00X,Dur7> Sek. lang an.
+}
+
+STRING 1288
+// Abilities: A00X (Fasshieb), Ubertip (Tooltip - Normal - Extended)
+{
+Tränkt gegnerische Einheiten mit einer brennbaren Flüssigkeit, die ihre Bewegungsgeschwindigkeit um <A00X,DataC8,%>% verringert und ihre Chance, zu verfehlen, um <A00X,DataB8,%>% erhöht. Wenn getränkte Einheiten von Feuerodem getroffen werden, gehen sie in Flammen auf und erleiden periodischen Brandschaden.|nHält <A00X,Dur8> Sek. lang an.
+}
+
+STRING 1289
+// Abilities: A00X (Fasshieb), Ubertip (Tooltip - Normal - Extended)
+{
+Tränkt gegnerische Einheiten mit einer brennbaren Flüssigkeit, die ihre Bewegungsgeschwindigkeit um <A00X,DataC9,%>% verringert und ihre Chance, zu verfehlen, um <A00X,DataB9,%>% erhöht. Wenn getränkte Einheiten von Feuerodem getroffen werden, gehen sie in Flammen auf und erleiden periodischen Brandschaden.|nHält <A00X,Dur9> Sek. lang an.
+}
+
+STRING 1290
+// Abilities: A00X (Fasshieb), Ubertip (Tooltip - Normal - Extended)
+{
+Tränkt gegnerische Einheiten mit einer brennbaren Flüssigkeit, die ihre Bewegungsgeschwindigkeit um <A00X,DataC10,%>% verringert und ihre Chance, zu verfehlen, um <A00X,DataB10,%>% erhöht. Wenn getränkte Einheiten von Feuerodem getroffen werden, gehen sie in Flammen auf und erleiden periodischen Brandschaden.|nHält <A00X,Dur10> Sek. lang an.
+}
+
+STRING 1291
+// Abilities: A00Y (Flüchtiger Kämpfer), EditorSuffix (Editor Suffix)
+{
+(Hero 10)
+}
+
+STRING 1292
+// Abilities: A00Y (Flüchtiger Kämpfer), Researchubertip (Tooltip - Learn - Extended)
+{
+Gewährt eine Ausweichchance und eine Chance von <A00Y,DataA1>%, mehr Schaden zu verursachen.|n|n|cffffcc00Stufe 1|r - <A00Y,DataD1,%>% Ausweichchance, Chance auf <A00Y,DataB1>-fachen normalen Schaden.|n|cffffcc00Stufe 2|r - <A00Y,DataD2,%>% Ausweichchance, Chance auf <A00Y,DataB2>-fachen normalen Schaden.|n|cffffcc00Stufe 3|r - <A00Y,DataD3,%>% Ausweichchance, Chance auf <A00Y,DataB3>-fachen normalen Schaden.
+}
+
+STRING 1293
+// Abilities: A00Y (Flüchtiger Kämpfer), Tip (Tooltip - Normal)
+{
+Flüchtiger Kämpfer [|cffffcc00Stufe 4|r]
+}
+
+STRING 1294
+// Abilities: A00Y (Flüchtiger Kämpfer), Tip (Tooltip - Normal)
+{
+Flüchtiger Kämpfer [|cffffcc00Stufe 5|r]
+}
+
+STRING 1295
+// Abilities: A00Y (Flüchtiger Kämpfer), Tip (Tooltip - Normal)
+{
+Flüchtiger Kämpfer [|cffffcc00Stufe 6|r]
+}
+
+STRING 1296
+// Abilities: A00Y (Flüchtiger Kämpfer), Tip (Tooltip - Normal)
+{
+Flüchtiger Kämpfer [|cffffcc00Stufe 7|r]
+}
+
+STRING 1297
+// Abilities: A00Y (Flüchtiger Kämpfer), Tip (Tooltip - Normal)
+{
+Flüchtiger Kämpfer [|cffffcc00Stufe 8|r]
+}
+
+STRING 1298
+// Abilities: A00Y (Flüchtiger Kämpfer), Tip (Tooltip - Normal)
+{
+Flüchtiger Kämpfer [|cffffcc00Stufe 9|r]
+}
+
+STRING 1299
+// Abilities: A00Y (Flüchtiger Kämpfer), Tip (Tooltip - Normal)
+{
+Flüchtiger Kämpfer [|cffffcc00Stufe 10|r]
+}
+
+STRING 1300
+// Abilities: A00Y (Flüchtiger Kämpfer), Ubertip (Tooltip - Normal - Extended)
+{
+Gewährt eine Ausweichchance von <A00Y,DataD1,%>% und eine Chance von <A00Y,DataA1>%, das <A00Y,DataB1>-Fache des normalen Schadens zu verursachen.
+}
+
+STRING 1301
+// Abilities: A00Y (Flüchtiger Kämpfer), Ubertip (Tooltip - Normal - Extended)
+{
+Gewährt eine Ausweichchance von <A00Y,DataD2,%>% und eine Chance von <A00Y,DataA2>%, das <A00Y,DataB2>-Fache des normalen Schadens zu verursachen.
+}
+
+STRING 1302
+// Abilities: A00Y (Flüchtiger Kämpfer), Ubertip (Tooltip - Normal - Extended)
+{
+Gewährt eine Ausweichchance von <A00Y,DataD3,%>% und eine Chance von <A00Y,DataA3>%, das <A00Y,DataB3>-Fache des normalen Schadens zu verursachen.
+}
+
+STRING 1303
+// Abilities: A00Y (Flüchtiger Kämpfer), Ubertip (Tooltip - Normal - Extended)
+{
+Gewährt eine Ausweichchance von <A00Y,DataD4,%>% und eine Chance von <A00Y,DataA4>%, das <A00Y,DataB4>-Fache des normalen Schadens zu verursachen.
+}
+
+STRING 1304
+// Abilities: A00Y (Flüchtiger Kämpfer), Ubertip (Tooltip - Normal - Extended)
+{
+Gewährt eine Ausweichchance von <A00Y,DataD5,%>% und eine Chance von <A00Y,DataA5>%, das <A00Y,DataB5>-Fache des normalen Schadens zu verursachen.
+}
+
+STRING 1305
+// Abilities: A00Y (Flüchtiger Kämpfer), Ubertip (Tooltip - Normal - Extended)
+{
+Gewährt eine Ausweichchance von <A00Y,DataD6,%>% und eine Chance von <A00Y,DataA6>%, das <A00Y,DataB6>-Fache des normalen Schadens zu verursachen.
+}
+
+STRING 1306
+// Abilities: A00Y (Flüchtiger Kämpfer), Ubertip (Tooltip - Normal - Extended)
+{
+Gewährt eine Ausweichchance von <A00Y,DataD7,%>% und eine Chance von <A00Y,DataA7>%, das <A00Y,DataB7>-Fache des normalen Schadens zu verursachen.
+}
+
+STRING 1307
+// Abilities: A00Y (Flüchtiger Kämpfer), Ubertip (Tooltip - Normal - Extended)
+{
+Gewährt eine Ausweichchance von <A00Y,DataD8,%>% und eine Chance von <A00Y,DataA8>%, das <A00Y,DataB8>-Fache des normalen Schadens zu verursachen.
+}
+
+STRING 1308
+// Abilities: A00Y (Flüchtiger Kämpfer), Ubertip (Tooltip - Normal - Extended)
+{
+Gewährt eine Ausweichchance von <A00Y,DataD9,%>% und eine Chance von <A00Y,DataA9>%, das <A00Y,DataB9>-Fache des normalen Schadens zu verursachen.
+}
+
+STRING 1309
+// Abilities: A00Y (Flüchtiger Kämpfer), Ubertip (Tooltip - Normal - Extended)
+{
+Gewährt eine Ausweichchance von <A00Y,DataD10,%>% und eine Chance von <A00Y,DataA10>%, das <A00Y,DataB10>-Fache des normalen Schadens zu verursachen.
+}
+
+STRING 1310
+// Abilities: A00Z (Sturm, Erde und Feuer), EditorSuffix (Editor Suffix)
+{
+(Hero 5)
+}
+
+STRING 1311
+// Abilities: A00Z (Sturm, Erde und Feuer), Tip (Tooltip - Normal)
+{
+Sturm, Erde und Feuer
+}
+
+STRING 1312
+// Abilities: A00Z (Sturm, Erde und Feuer), Tip (Tooltip - Normal)
+{
+Sturm, Erde und Feuer
+}
+
+STRING 1313
+// Abilities: A00Z (Sturm, Erde und Feuer), Tip (Tooltip - Normal)
+{
+Sturm, Erde und Feuer
+}
+
+STRING 1314
+// Abilities: A00Z (Sturm, Erde und Feuer), Tip (Tooltip - Normal)
+{
+Sturm, Erde und Feuer
+}
+
+STRING 1315
+// Abilities: A00Z (Sturm, Erde und Feuer), Ubertip (Tooltip - Normal - Extended)
+{
+Teilt den Braumeister in drei spezialisierte Krieger verschiedener Elemente. Wenn mindestens einer bis zum Ende seiner Lebensdauer überlebt, wird der Braumeister wiedergeboren.|nHält <A00Z,HeroDur1> Sek. lang an.
+}
+
+STRING 1316
+// Abilities: A00Z (Sturm, Erde und Feuer), Ubertip (Tooltip - Normal - Extended)
+{
+Teilt den Braumeister in drei spezialisierte Krieger verschiedener Elemente. Wenn mindestens einer bis zum Ende seiner Lebensdauer überlebt, wird der Braumeister wiedergeboren.|nHält <A00Z,HeroDur2> Sek. lang an.
+}
+
+STRING 1317
+// Abilities: A00Z (Sturm, Erde und Feuer), Ubertip (Tooltip - Normal - Extended)
+{
+Teilt den Braumeister in drei spezialisierte Krieger verschiedener Elemente. Wenn mindestens einer bis zum Ende seiner Lebensdauer überlebt, wird der Braumeister wiedergeboren.|nHält <A00Z,HeroDur3> Sek. lang an.
+}
+
+STRING 1318
+// Abilities: A00Z (Sturm, Erde und Feuer), Ubertip (Tooltip - Normal - Extended)
+{
+Teilt den Braumeister in drei spezialisierte Krieger verschiedener Elemente. Wenn mindestens einer bis zum Ende seiner Lebensdauer überlebt, wird der Braumeister wiedergeboren.|nHält <A00Z,HeroDur4> Sek. lang an.
+}
+
+STRING 1319
+// Abilities: A00Z (Sturm, Erde und Feuer), Ubertip (Tooltip - Normal - Extended)
+{
+Teilt den Braumeister in drei spezialisierte Krieger verschiedener Elemente. Wenn mindestens einer bis zum Ende seiner Lebensdauer überlebt, wird der Braumeister wiedergeboren.|nHält <A00Z,HeroDur5> Sek. lang an.
+}
+
+STRING 1320
+// Abilities: A00Z (Sturm, Erde und Feuer), Researchubertip (Tooltip - Learn - Extended)
+{
+Teilt den Braumeister in drei spezialisierte Krieger verschiedener Elemente. Wenn mindestens einer bis zum Ende seiner Lebensdauer überlebt, wird der Braumeister wiedergeboren.|nHält <A00Z,HeroDur1> Sek. lang an.|n|nDie drei Krieger werden mit jeder Stufe stärker.
+}
+
+STRING 1321
+// Abilities: A010 (Stille), EditorSuffix (Editor Suffix)
+{
+(Hero 10)
+}
+
+STRING 1322
+// Abilities: A010 (Stille), Researchubertip (Tooltip - Learn - Extended)
+{
+Hindert alle Gegner im Zielgebiet daran, Fähigkeiten einzusetzen. Wirkungsbereich und Dauer nehmen mit der Stufe zu.|n|n|cffffcc00Stufe 1|r - Hält <A010,Dur1> Sek. lang an.|n|cffffcc00Stufe 2|r - Hält <A010,Dur2> Sek. lang an.|n|cffffcc00Stufe 3|r - Hält <A010,Dur3> Sek. lang an.|n|nDas Gebiet vergrößerrt sich mit jeder Stufe.
+}
+
+STRING 1323
+// Abilities: A010 (Stille), Tip (Tooltip - Normal)
+{
+Stille [|cffffcc00Stufe 4|r]
+}
+
+STRING 1324
+// Abilities: A010 (Stille), Tip (Tooltip - Normal)
+{
+Stille [|cffffcc00Stufe 5|r]
+}
+
+STRING 1325
+// Abilities: A010 (Stille), Tip (Tooltip - Normal)
+{
+Stille [|cffffcc00Stufe 6|r]
+}
+
+STRING 1326
+// Abilities: A010 (Stille), Tip (Tooltip - Normal)
+{
+Stille [|cffffcc00Stufe 7|r]
+}
+
+STRING 1327
+// Abilities: A010 (Stille), Tip (Tooltip - Normal)
+{
+Stille [|cffffcc00Stufe 8|r]
+}
+
+STRING 1328
+// Abilities: A010 (Stille), Tip (Tooltip - Normal)
+{
+Stille [|cffffcc00Stufe 9|r]
+}
+
+STRING 1329
+// Abilities: A010 (Stille), Tip (Tooltip - Normal)
+{
+Stille [|cffffcc00Stufe 10|r]
+}
+
+STRING 1330
+// Abilities: A010 (Stille), Ubertip (Tooltip - Normal - Extended)
+{
+Hindert alle Gegner in einem Zielgebiet <A010,Dur1> Sek. lang daran, Fähigkeiten einzusetzen.
+}
+
+STRING 1331
+// Abilities: A010 (Stille), Ubertip (Tooltip - Normal - Extended)
+{
+Hindert alle Gegner in einem Zielgebiet <A010,Dur2> Sek. lang daran, Fähigkeiten einzusetzen.
+}
+
+STRING 1332
+// Abilities: A010 (Stille), Ubertip (Tooltip - Normal - Extended)
+{
+Hindert alle Gegner in einem Zielgebiet <A010,Dur3> Sek. lang daran, Fähigkeiten einzusetzen.
+}
+
+STRING 1333
+// Abilities: A010 (Stille), Ubertip (Tooltip - Normal - Extended)
+{
+Hindert alle Gegner in einem Zielgebiet <A010,Dur4> Sek. lang daran, Fähigkeiten einzusetzen.
+}
+
+STRING 1334
+// Abilities: A010 (Stille), Ubertip (Tooltip - Normal - Extended)
+{
+Hindert alle Gegner in einem Zielgebiet <A010,Dur5> Sek. lang daran, Fähigkeiten einzusetzen.
+}
+
+STRING 1335
+// Abilities: A010 (Stille), Ubertip (Tooltip - Normal - Extended)
+{
+Hindert alle Gegner in einem Zielgebiet <A010,Dur6> Sek. lang daran, Fähigkeiten einzusetzen.
+}
+
+STRING 1336
+// Abilities: A010 (Stille), Ubertip (Tooltip - Normal - Extended)
+{
+Hindert alle Gegner in einem Zielgebiet <A010,Dur7> Sek. lang daran, Fähigkeiten einzusetzen.
+}
+
+STRING 1337
+// Abilities: A010 (Stille), Ubertip (Tooltip - Normal - Extended)
+{
+Hindert alle Gegner in einem Zielgebiet <A010,Dur8> Sek. lang daran, Fähigkeiten einzusetzen.
+}
+
+STRING 1338
+// Abilities: A010 (Stille), Ubertip (Tooltip - Normal - Extended)
+{
+Hindert alle Gegner in einem Zielgebiet <A010,Dur9> Sek. lang daran, Fähigkeiten einzusetzen.
+}
+
+STRING 1339
+// Abilities: A010 (Stille), Ubertip (Tooltip - Normal - Extended)
+{
+Hindert alle Gegner in einem Zielgebiet <A010,Dur10> Sek. lang daran, Fähigkeiten einzusetzen.
+}
+
+STRING 1340
+// Abilities: A011 (Lebensentzug), EditorSuffix (Editor Suffix)
+{
+(Hero 10)
+}
+
+STRING 1341
+// Abilities: A011 (Lebensentzug), Researchubertip (Tooltip - Learn - Extended)
+{
+Entzieht einer gegnerischen Zieleinheit jede Sekunde Trefferpunkte und überträgt sie auf die Dunkle Waldläuferin.|nHält <A011,Dur1> Sek. lang an.|n|n|cffffcc00Stufe 1|r - Entzieht <A011,DataA1> Trefferpunkte pro Sekunde.|n|cffffcc00Stufe 2|r - Entzieht <A011,DataA2> Trefferpunkte pro Sekunde.|n|cffffcc00Stufe 3|r - Entzieht <A011,DataA3> Trefferpunkte pro Sekunde.
+}
+
+STRING 1342
+// Abilities: A011 (Lebensentzug), Tip (Tooltip - Normal)
+{
+Lebensentzug [|cffffcc00Stufe 4|r]
+}
+
+STRING 1343
+// Abilities: A011 (Lebensentzug), Tip (Tooltip - Normal)
+{
+Lebensentzug [|cffffcc00Stufe 5|r]
+}
+
+STRING 1344
+// Abilities: A011 (Lebensentzug), Tip (Tooltip - Normal)
+{
+Lebensentzug [|cffffcc00Stufe 6|r]
+}
+
+STRING 1345
+// Abilities: A011 (Lebensentzug), Tip (Tooltip - Normal)
+{
+Lebensentzug [|cffffcc00Stufe 7|r]
+}
+
+STRING 1346
+// Abilities: A011 (Lebensentzug), Tip (Tooltip - Normal)
+{
+Lebensentzug [|cffffcc00Stufe 8|r]
+}
+
+STRING 1347
+// Abilities: A011 (Lebensentzug), Tip (Tooltip - Normal)
+{
+Lebensentzug [|cffffcc00Stufe 9|r]
+}
+
+STRING 1348
+// Abilities: A011 (Lebensentzug), Tip (Tooltip - Normal)
+{
+Lebensentzug [|cffffcc00Stufe 10|r]
+}
+
+STRING 1349
+// Abilities: A011 (Lebensentzug), Ubertip (Tooltip - Normal - Extended)
+{
+Entzieht einer gegnerischen Zieleinheit pro Sekunde <A011,DataA1> Trefferpunkte und überträgt sie auf die Dunkle Waldläuferin.|nHält <A011,Dur1> Sek. lang an.
+}
+
+STRING 1350
+// Abilities: A011 (Lebensentzug), Ubertip (Tooltip - Normal - Extended)
+{
+Entzieht einer gegnerischen Zieleinheit pro Sekunde <A011,DataA2> Trefferpunkte und überträgt sie auf die Dunkle Waldläuferin.|nHält <A011,Dur2> Sek. lang an.
+}
+
+STRING 1351
+// Abilities: A011 (Lebensentzug), Ubertip (Tooltip - Normal - Extended)
+{
+Entzieht einer gegnerischen Zieleinheit pro Sekunde <A011,DataA3> Trefferpunkte und überträgt sie auf die Dunkle Waldläuferin.|nHält <A011,Dur3> Sek. lang an.
+}
+
+STRING 1352
+// Abilities: A011 (Lebensentzug), Ubertip (Tooltip - Normal - Extended)
+{
+Entzieht einer gegnerischen Zieleinheit pro Sekunde <A011,DataA4> Trefferpunkte und überträgt sie auf die Dunkle Waldläuferin.|nHält <A011,Dur4> Sek. lang an.
+}
+
+STRING 1353
+// Abilities: A011 (Lebensentzug), Ubertip (Tooltip - Normal - Extended)
+{
+Entzieht einer gegnerischen Zieleinheit pro Sekunde <A011,DataA5> Trefferpunkte und überträgt sie auf die Dunkle Waldläuferin.|nHält <A011,Dur5> Sek. lang an.
+}
+
+STRING 1354
+// Abilities: A011 (Lebensentzug), Ubertip (Tooltip - Normal - Extended)
+{
+Entzieht einer gegnerischen Zieleinheit pro Sekunde <A011,DataA6> Trefferpunkte und überträgt sie auf die Dunkle Waldläuferin.|nHält <A011,Dur6> Sek. lang an.
+}
+
+STRING 1355
+// Abilities: A011 (Lebensentzug), Ubertip (Tooltip - Normal - Extended)
+{
+Entzieht einer gegnerischen Zieleinheit pro Sekunde <A011,DataA7> Trefferpunkte und überträgt sie auf die Dunkle Waldläuferin.|nHält <A011,Dur7> Sek. lang an.
+}
+
+STRING 1356
+// Abilities: A011 (Lebensentzug), Ubertip (Tooltip - Normal - Extended)
+{
+Entzieht einer gegnerischen Zieleinheit pro Sekunde <A011,DataA8> Trefferpunkte und überträgt sie auf die Dunkle Waldläuferin.|nHält <A011,Dur8> Sek. lang an.
+}
+
+STRING 1357
+// Abilities: A011 (Lebensentzug), Ubertip (Tooltip - Normal - Extended)
+{
+Entzieht einer gegnerischen Zieleinheit pro Sekunde <A011,DataA9> Trefferpunkte und überträgt sie auf die Dunkle Waldläuferin.|nHält <A011,Dur9> Sek. lang an.
+}
+
+STRING 1358
+// Abilities: A011 (Lebensentzug), Ubertip (Tooltip - Normal - Extended)
+{
+Entzieht einer gegnerischen Zieleinheit pro Sekunde <A011,DataA10> Trefferpunkte und überträgt sie auf die Dunkle Waldläuferin.|nHält <A011,Dur10> Sek. lang an.
+}
+
+STRING 1359
+// Abilities: A0A0 (Bezauberung), EditorSuffix (Editor Suffix)
+{
+(Hero 10)
+}
+
+STRING 1360
+// Abilities: A0A0 (Bezauberung), Researchubertip (Tooltip - Learn - Extended)
+{
+Übernimmt die Kontrolle über eine gegnerische Zieleinheit.|nKann nicht gegen Helden oder Unholde über Stufe <A0A0,DataA1> eingesetzt werden.
+}
+
+STRING 1361
+// Abilities: A0A0 (Bezauberung), Tip (Tooltip - Normal)
+{
+Bezauberung
+}
+
+STRING 1362
+// Abilities: A0A0 (Bezauberung), Tip (Tooltip - Normal)
+{
+Bezauberung
+}
+
+STRING 1363
+// Abilities: A0A0 (Bezauberung), Tip (Tooltip - Normal)
+{
+Bezauberung
+}
+
+STRING 1364
+// Abilities: A0A0 (Bezauberung), Tip (Tooltip - Normal)
+{
+Bezauberung
+}
+
+STRING 1365
+// Abilities: A0A0 (Bezauberung), Tip (Tooltip - Normal)
+{
+Bezauberung
+}
+
+STRING 1366
+// Abilities: A0A0 (Bezauberung), Tip (Tooltip - Normal)
+{
+Bezauberung
+}
+
+STRING 1367
+// Abilities: A0A0 (Bezauberung), Tip (Tooltip - Normal)
+{
+Bezauberung
+}
+
+STRING 1368
+// Abilities: A0A0 (Bezauberung), Tip (Tooltip - Normal)
+{
+Bezauberung
+}
+
+STRING 1369
+// Abilities: A0A0 (Bezauberung), Tip (Tooltip - Normal)
+{
+Bezauberung
+}
+
+STRING 1370
+// Abilities: A0A0 (Bezauberung), Ubertip (Tooltip - Normal - Extended)
+{
+Übernimmt die Kontrolle über eine gegnerische Zieleinheit.|nKann nicht gegen Helden eingesetzt werden.
+}
+
+STRING 1371
+// Abilities: A0A0 (Bezauberung), Ubertip (Tooltip - Normal - Extended)
+{
+Übernimmt die Kontrolle über eine gegnerische Zieleinheit.|nKann nicht gegen Helden eingesetzt werden.
+}
+
+STRING 1372
+// Abilities: A0A0 (Bezauberung), Ubertip (Tooltip - Normal - Extended)
+{
+Übernimmt die Kontrolle über eine gegnerische Zieleinheit.|nKann nicht gegen Helden eingesetzt werden.
+}
+
+STRING 1373
+// Abilities: A0A0 (Bezauberung), Ubertip (Tooltip - Normal - Extended)
+{
+Übernimmt die Kontrolle über eine gegnerische Zieleinheit.|nKann nicht gegen Helden eingesetzt werden.
+}
+
+STRING 1374
+// Abilities: A0A0 (Bezauberung), Ubertip (Tooltip - Normal - Extended)
+{
+Übernimmt die Kontrolle über eine gegnerische Zieleinheit.|nKann nicht gegen Helden eingesetzt werden.
+}
+
+STRING 1375
+// Abilities: A0A0 (Bezauberung), Ubertip (Tooltip - Normal - Extended)
+{
+Übernimmt die Kontrolle über eine gegnerische Zieleinheit.|nKann nicht gegen Helden eingesetzt werden.
+}
+
+STRING 1376
+// Abilities: A0A0 (Bezauberung), Ubertip (Tooltip - Normal - Extended)
+{
+Übernimmt die Kontrolle über eine gegnerische Zieleinheit.|nKann nicht gegen Helden eingesetzt werden.
+}
+
+STRING 1377
+// Abilities: A0A0 (Bezauberung), Ubertip (Tooltip - Normal - Extended)
+{
+Übernimmt die Kontrolle über eine gegnerische Zieleinheit.|nKann nicht gegen Helden eingesetzt werden.
+}
+
+STRING 1378
+// Abilities: A0A0 (Bezauberung), Ubertip (Tooltip - Normal - Extended)
+{
+Übernimmt die Kontrolle über eine gegnerische Zieleinheit.|nKann nicht gegen Helden eingesetzt werden.
+}
+
+STRING 1379
+// Abilities: A0A0 (Bezauberung), Ubertip (Tooltip - Normal - Extended)
+{
+Übernimmt die Kontrolle über eine gegnerische Zieleinheit.|nKann nicht gegen Helden eingesetzt werden.
+}
+

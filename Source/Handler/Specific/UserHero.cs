@@ -58,6 +58,11 @@ namespace Source.Handler.Specific
         if (user == null)
           return;
 
+#if DEBUG
+        spawnArea = Areas.TestArea;
+        user.HeroLevelCounter = 50;
+#endif
+
         user.CreateHero(unitId, spawnArea);
       }
       catch (Exception ex)

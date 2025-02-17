@@ -4,13 +4,11 @@ TODO'S
 Bug's:
 ------
 - Gabelblitzschlag-Schaden steigt nicht mit Stufe?
-- Heilspray-Heilung steigt nicht mit Stufe?
 
 Must have:
 ----------
 - Helden-Fähigkeiten auf lvl 10/5 anheben
 	- Bestienmeister
-	- Braumeister
 	- Dunkle Waldläuferin
 	- Feuerlord
 	- Grubenlord
@@ -58,3 +56,4 @@ Helden:
 - Alchemist
 - Meerhexe
 - Tüftler
+- Braumeister

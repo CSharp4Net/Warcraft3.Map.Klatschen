@@ -16,7 +16,7 @@ namespace Source.Models
     /// </summary>
     public Team Team { get; init; }
 
-    public int HeroLevelCounter { get; set; } = 50;
+    public int HeroLevelCounter { get; set; } = 0;
 
     public void ApplyCamera(Area targetArea)
     {
