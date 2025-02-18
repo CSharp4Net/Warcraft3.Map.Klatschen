@@ -110,7 +110,7 @@ namespace Source
         PlayerUnitEvents.Register(UnitTypeEvent.SellsItem, Item.OnSellsFinished);
         PlayerUnitEvents.Register(UnitTypeEvent.Dies, Unit.OnDies);
         PlayerUnitEvents.Register(UnitTypeEvent.ReceivesOrder, Unit.OnReceivesOrder);
-        PlayerUnitEvents.Register(SpellEvent.Cast, Ability.OnFinished);
+        PlayerUnitEvents.Register(UnitTypeEvent.SpellEffect, Ability.OnCasted);
 
         // Periodische Events registrieren
         PeriodicEvents.AddPeriodicEvent(GoldIncome.OnElapsed, 5f);

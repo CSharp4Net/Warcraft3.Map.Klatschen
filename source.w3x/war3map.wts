@@ -4903,122 +4903,110 @@ STRING 1359
 (Hero 10)
 }
 
-STRING 1360
-// Abilities: A0A0 (Bezauberung), Researchubertip (Tooltip - Learn - Extended)
-{
-Übernimmt die Kontrolle über eine gegnerische Zieleinheit.|nKann nicht gegen Helden oder Unholde über Stufe <A0A0,DataA1> eingesetzt werden.
-}
-
 STRING 1361
-// Abilities: A0A0 (Bezauberung), Tip (Tooltip - Normal)
+// Abilities: A0AA (Bezauberung), Tip (Tooltip - Normal)
 {
 Bezauberung
 }
 
 STRING 1362
-// Abilities: A0A0 (Bezauberung), Tip (Tooltip - Normal)
+// Abilities: A0AA (Bezauberung), Tip (Tooltip - Normal)
 {
 Bezauberung
 }
 
 STRING 1363
-// Abilities: A0A0 (Bezauberung), Tip (Tooltip - Normal)
+// Abilities: A0AA (Bezauberung), Tip (Tooltip - Normal)
 {
 Bezauberung
 }
 
 STRING 1364
-// Abilities: A0A0 (Bezauberung), Tip (Tooltip - Normal)
+// Abilities: A0AA (Bezauberung), Tip (Tooltip - Normal)
 {
 Bezauberung
 }
 
 STRING 1365
-// Abilities: A0A0 (Bezauberung), Tip (Tooltip - Normal)
+// Abilities: A0AA (Bezauberung), Tip (Tooltip - Normal)
 {
 Bezauberung
 }
 
 STRING 1366
-// Abilities: A0A0 (Bezauberung), Tip (Tooltip - Normal)
+// Abilities: A0AA (Bezauberung), Tip (Tooltip - Normal)
 {
 Bezauberung
 }
 
 STRING 1367
-// Abilities: A0A0 (Bezauberung), Tip (Tooltip - Normal)
+// Abilities: A0AA (Bezauberung), Tip (Tooltip - Normal)
 {
 Bezauberung
 }
 
 STRING 1368
-// Abilities: A0A0 (Bezauberung), Tip (Tooltip - Normal)
+// Abilities: A0AA (Bezauberung), Tip (Tooltip - Normal)
 {
 Bezauberung
 }
 
 STRING 1369
-// Abilities: A0A0 (Bezauberung), Tip (Tooltip - Normal)
+// Abilities: A0AA (Bezauberung), Tip (Tooltip - Normal)
 {
 Bezauberung
 }
 
 STRING 1370
-// Abilities: A0A0 (Bezauberung), Ubertip (Tooltip - Normal - Extended)
+// Abilities: A0AA (Bezauberung), Ubertip (Tooltip - Normal - Extended)
 {
 Übernimmt die Kontrolle über eine gegnerische Zieleinheit.|nKann nicht gegen Helden eingesetzt werden.
 }
 
 STRING 1371
-// Abilities: A0A0 (Bezauberung), Ubertip (Tooltip - Normal - Extended)
+// Abilities: A0AA (Bezauberung), Ubertip (Tooltip - Normal - Extended)
 {
 Übernimmt die Kontrolle über eine gegnerische Zieleinheit.|nKann nicht gegen Helden eingesetzt werden.
 }
 
 STRING 1372
-// Abilities: A0A0 (Bezauberung), Ubertip (Tooltip - Normal - Extended)
+// Abilities: A0AA (Bezauberung), Ubertip (Tooltip - Normal - Extended)
 {
 Übernimmt die Kontrolle über eine gegnerische Zieleinheit.|nKann nicht gegen Helden eingesetzt werden.
 }
 
 STRING 1373
-// Abilities: A0A0 (Bezauberung), Ubertip (Tooltip - Normal - Extended)
+// Abilities: A0AA (Bezauberung), Ubertip (Tooltip - Normal - Extended)
 {
 Übernimmt die Kontrolle über eine gegnerische Zieleinheit.|nKann nicht gegen Helden eingesetzt werden.
 }
 
 STRING 1374
-// Abilities: A0A0 (Bezauberung), Ubertip (Tooltip - Normal - Extended)
+// Abilities: A0AA (Bezauberung), Ubertip (Tooltip - Normal - Extended)
 {
 Übernimmt die Kontrolle über eine gegnerische Zieleinheit.|nKann nicht gegen Helden eingesetzt werden.
 }
 
 STRING 1375
-// Abilities: A0A0 (Bezauberung), Ubertip (Tooltip - Normal - Extended)
+// Abilities: A0AA (Bezauberung), Ubertip (Tooltip - Normal - Extended)
 {
 Übernimmt die Kontrolle über eine gegnerische Zieleinheit.|nKann nicht gegen Helden eingesetzt werden.
 }
 
 STRING 1376
-// Abilities: A0A0 (Bezauberung), Ubertip (Tooltip - Normal - Extended)
+// Abilities: A0AA (Bezauberung), Ubertip (Tooltip - Normal - Extended)
 {
 Übernimmt die Kontrolle über eine gegnerische Zieleinheit.|nKann nicht gegen Helden eingesetzt werden.
 }
 
 STRING 1377
-// Abilities: A0A0 (Bezauberung), Ubertip (Tooltip - Normal - Extended)
+// Abilities: A0AA (Bezauberung), Ubertip (Tooltip - Normal - Extended)
 {
 Übernimmt die Kontrolle über eine gegnerische Zieleinheit.|nKann nicht gegen Helden eingesetzt werden.
 }
 
 STRING 1378
-// Abilities: A0A0 (Bezauberung), Ubertip (Tooltip - Normal - Extended)
-{
-Übernimmt die Kontrolle über eine gegnerische Zieleinheit.|nKann nicht gegen Helden eingesetzt werden.
-}
-
-STRING 1379
-// Abilities: A0A0 (Bezauberung), Ubertip (Tooltip - Normal - Extended)
+// Abilities: A0AA (Bezauberung), Ubertip (Tooltip - Normal - Extended)
 {
 Übernimmt die Kontrolle über eine gegnerische Zieleinheit.|nKann nicht gegen Helden eingesetzt werden.
 }
@@ -5435,5 +5423,305 @@ STRING 1600
 // Abilities: A002 (Erhöhte Attribute), Researchubertip (Tooltip - Learn - Extended)
 {
 Erhöht die Beweglichkeit, Stärke und Intelligenz um drei zusätzliche 3 Punkte pro Stufe.
+}
+
+STRING 1601
+// Abilities: A0AA (Bezauberung), EditorSuffix (Editor Suffix)
+{
+(Dummy)
+}
+
+STRING 1620
+// Abilities: A0A0 (Bezauberung), Tip (Tooltip - Normal)
+{
+Bezauberung [|cffffcc00Stufe 2|r]
+}
+
+STRING 1621
+// Abilities: A0A0 (Bezauberung), Tip (Tooltip - Normal)
+{
+Bezauberung [|cffffcc00Stufe 3|r]
+}
+
+STRING 1622
+// Abilities: A0A0 (Bezauberung), Tip (Tooltip - Normal)
+{
+Bezauberung [|cffffcc00Stufe 4|r]
+}
+
+STRING 1623
+// Abilities: A0A0 (Bezauberung), Tip (Tooltip - Normal)
+{
+Bezauberung [|cffffcc00Stufe 5|r]
+}
+
+STRING 1624
+// Abilities: A0A0 (Bezauberung), Tip (Tooltip - Normal)
+{
+Bezauberung [|cffffcc00Stufe 6|r]
+}
+
+STRING 1625
+// Abilities: A0A0 (Bezauberung), Tip (Tooltip - Normal)
+{
+Bezauberung [|cffffcc00Stufe 7|r]
+}
+
+STRING 1626
+// Abilities: A0A0 (Bezauberung), Tip (Tooltip - Normal)
+{
+Bezauberung [|cffffcc00Stufe 8|r]
+}
+
+STRING 1627
+// Abilities: A0A0 (Bezauberung), Tip (Tooltip - Normal)
+{
+Bezauberung [|cffffcc00Stufe 9|r]
+}
+
+STRING 1628
+// Abilities: A0A0 (Bezauberung), Tip (Tooltip - Normal)
+{
+Bezauberung [|cffffcc00Stufe 10|r]
+}
+
+STRING 1639
+// Abilities: A0A0 (Bezauberung), Tip (Tooltip - Normal)
+{
+Bezauberung [|cffffcc00Stufe 1|r]
+}
+
+STRING 1641
+// Abilities: A0A0 (Bezauberung), Ubertip (Tooltip - Normal - Extended)
+{
+Übernimmt die Kontrolle über eine gegnerische Zieleinheit, sowie über 1 weitere Einheiten in der Nähe. Die maximale Anzahl an Einheiten und die Reichweite steigt mit jeder Stufe.|n|nKann nicht gegen Helden oder Gebäude eingesetzt werden.
+}
+
+STRING 1642
+// Abilities: A0A0 (Bezauberung), Ubertip (Tooltip - Normal - Extended)
+{
+Übernimmt die Kontrolle über eine gegnerische Zieleinheit, sowie über 2 weitere Einheiten in der Nähe. Die maximale Anzahl an Einheiten und die Reichweite steigt mit jeder Stufe.|n|nKann nicht gegen Helden oder Gebäude eingesetzt werden.
+}
+
+STRING 1643
+// Abilities: A0A0 (Bezauberung), Ubertip (Tooltip - Normal - Extended)
+{
+Übernimmt die Kontrolle über eine gegnerische Zieleinheit, sowie über 3 weitere Einheiten in der Nähe. Die maximale Anzahl an Einheiten und die Reichweite steigt mit jeder Stufe.|n|nKann nicht gegen Helden oder Gebäude eingesetzt werden.
+}
+
+STRING 1644
+// Abilities: A0A0 (Bezauberung), Ubertip (Tooltip - Normal - Extended)
+{
+Übernimmt die Kontrolle über eine gegnerische Zieleinheit, sowie über 4 weitere Einheiten in der Nähe. Die maximale Anzahl an Einheiten und die Reichweite steigt mit jeder Stufe.|n|nKann nicht gegen Helden oder Gebäude eingesetzt werden.
+}
+
+STRING 1645
+// Abilities: A0A0 (Bezauberung), Ubertip (Tooltip - Normal - Extended)
+{
+Übernimmt die Kontrolle über eine gegnerische Zieleinheit, sowie über 5 weitere Einheiten in der Nähe. Die maximale Anzahl an Einheiten und die Reichweite steigt mit jeder Stufe.|n|nKann nicht gegen Helden oder Gebäude eingesetzt werden.
+}
+
+STRING 1646
+// Abilities: A0A0 (Bezauberung), Ubertip (Tooltip - Normal - Extended)
+{
+Übernimmt die Kontrolle über eine gegnerische Zieleinheit, sowie über 6 weitere Einheiten in der Nähe. Die maximale Anzahl an Einheiten und die Reichweite steigt mit jeder Stufe.|n|nKann nicht gegen Helden oder Gebäude eingesetzt werden.
+}
+
+STRING 1647
+// Abilities: A0A0 (Bezauberung), Ubertip (Tooltip - Normal - Extended)
+{
+Übernimmt die Kontrolle über eine gegnerische Zieleinheit, sowie über 7 weitere Einheiten in der Nähe. Die maximale Anzahl an Einheiten und die Reichweite steigt mit jeder Stufe.|n|nKann nicht gegen Helden oder Gebäude eingesetzt werden.
+}
+
+STRING 1648
+// Abilities: A0A0 (Bezauberung), Ubertip (Tooltip - Normal - Extended)
+{
+Übernimmt die Kontrolle über eine gegnerische Zieleinheit, sowie über 8 weitere Einheiten in der Nähe. Die maximale Anzahl an Einheiten und die Reichweite steigt mit jeder Stufe.|n|nKann nicht gegen Helden oder Gebäude eingesetzt werden.
+}
+
+STRING 1649
+// Abilities: A0A0 (Bezauberung), Ubertip (Tooltip - Normal - Extended)
+{
+Übernimmt die Kontrolle über eine gegnerische Zieleinheit, sowie über 9 weitere Einheiten in der Nähe. Die maximale Anzahl an Einheiten und die Reichweite steigt mit jeder Stufe.|n|nKann nicht gegen Helden oder Gebäude eingesetzt werden.
+}
+
+STRING 1650
+// Abilities: A0A0 (Bezauberung), Ubertip (Tooltip - Normal - Extended)
+{
+Übernimmt die Kontrolle über eine gegnerische Zieleinheit, sowie über 10 weitere Einheiten in der Nähe. Die maximale Anzahl an Einheiten und die Reichweite steigt mit jeder Stufe.|n|nKann nicht gegen Helden oder Gebäude eingesetzt werden.
+}
+
+STRING 1652
+// Abilities: A00O (Feuerbrand), Researchubertip (Tooltip - Learn - Extended)
+{
+Hüllt den Dämonenjäger in Flammen, die gegnerischen Bodeneinheiten in seiner Nähe Schaden zufügen.|nVerbraucht Mana bis Abbruch.|n|n|cffffcc00Stufe 1|r - <A00O,DataA1> Schaden alle 0,5 Sek.|n|cffffcc00Stufe 2|r - <A00O,DataA2> Schaden alle 0,5 Sek.|n|cffffcc00Stufe 3|r - <A00O,DataA3> Schaden alle 0,5 Sek.
+}
+
+STRING 1654
+// Abilities: A012 (Schwarzer Pfeil), EditorSuffix (Editor Suffix)
+{
+(Hero 5)
+}
+
+STRING 1655
+// Units: n010 (Dunkler Diener - Stufe 1), EditorSuffix (Name - Editor Suffix)
+{
+(Hero spell)
+}
+
+STRING 1656
+// Units: n010 (Dunkler Diener - Stufe 1), Name (Name)
+{
+Dunkler Diener - Stufe 1
+}
+
+STRING 1657
+// Units: n011 (Dunkler Diener - Stufe 2), Name (Name)
+{
+Dunkler Diener - Stufe 2
+}
+
+STRING 1658
+// Units: n011 (Dunkler Diener - Stufe 2), EditorSuffix (Name - Editor Suffix)
+{
+(Hero spell)
+}
+
+STRING 1659
+// Units: n012 (Dunkler Diener - Stufe 3), Name (Name)
+{
+Dunkler Diener - Stufe 3
+}
+
+STRING 1660
+// Units: n012 (Dunkler Diener - Stufe 3), EditorSuffix (Name - Editor Suffix)
+{
+(Hero spell)
+}
+
+STRING 1661
+// Units: n013 (Dunkler Diener - Stufe 4), EditorSuffix (Name - Editor Suffix)
+{
+(Hero spell)
+}
+
+STRING 1662
+// Units: n013 (Dunkler Diener - Stufe 4), Name (Name)
+{
+Dunkler Diener - Stufe 4
+}
+
+STRING 1663
+// Units: n014 (Dunkler Diener - Stufe 5), EditorSuffix (Name - Editor Suffix)
+{
+(Hero spell)
+}
+
+STRING 1664
+// Units: n014 (Dunkler Diener - Stufe 5), Name (Name)
+{
+Dunkler Diener - Stufe 5
+}
+
+STRING 1665
+// Abilities: A012 (Schwarzer Pfeil), Tip (Tooltip - Normal)
+{
+Schwarzer Pfeil [|cffffcc00Stufe 4|r]
+}
+
+STRING 1666
+// Abilities: A012 (Schwarzer Pfeil), Tip (Tooltip - Normal)
+{
+Schwarzer Pfeil [|cffffcc00Stufe 5|r]
+}
+
+STRING 1672
+// Abilities: A012 (Schwarzer Pfeil), Untip (Tooltip - Turn Off)
+{
+|cffc3dbffAutomatischen Einsatz mit Rechtsklick aktivieren.|r
+}
+
+STRING 1673
+// Abilities: A012 (Schwarzer Pfeil), Untip (Tooltip - Turn Off)
+{
+|cffc3dbffAutomatischen Einsatz mit Rechtsklick aktivieren.|r
+}
+
+STRING 1674
+// Abilities: A012 (Schwarzer Pfeil), Untip (Tooltip - Turn Off)
+{
+|cffc3dbffAutomatischen Einsatz mit Rechtsklick aktivieren.|r
+}
+
+STRING 1675
+// Abilities: A012 (Schwarzer Pfeil), Untip (Tooltip - Turn Off)
+{
+|cffc3dbffAutomatischen Einsatz mit Rechtsklick aktivieren.|r
+}
+
+STRING 1676
+// Abilities: A012 (Schwarzer Pfeil), Unubertip (Tooltip - Turn Off - Extended)
+{
+|cffc3dbffAutomatischen Einsatz mit Rechtsklick deaktivieren.|r
+}
+
+STRING 1677
+// Abilities: A012 (Schwarzer Pfeil), Unubertip (Tooltip - Turn Off - Extended)
+{
+|cffc3dbffAutomatischen Einsatz mit Rechtsklick deaktivieren.|r
+}
+
+STRING 1678
+// Abilities: A012 (Schwarzer Pfeil), Unubertip (Tooltip - Turn Off - Extended)
+{
+|cffc3dbffAutomatischen Einsatz mit Rechtsklick deaktivieren.|r
+}
+
+STRING 1679
+// Abilities: A012 (Schwarzer Pfeil), Unubertip (Tooltip - Turn Off - Extended)
+{
+|cffc3dbffAutomatischen Einsatz mit Rechtsklick deaktivieren.|r
+}
+
+STRING 1680
+// Abilities: A012 (Schwarzer Pfeil), Ubertip (Tooltip - Normal - Extended)
+{
+Erhöht den Angriffsschaden um <A012,DataA1>. Einheiten, die unter dem Einfluss von Schwarzen Pfeilen getötet werden, verwandeln sich in Diener mit <n010,RealHP> Trefferpunkten.
+}
+
+STRING 1681
+// Abilities: A012 (Schwarzer Pfeil), Ubertip (Tooltip - Normal - Extended)
+{
+Erhöht den Angriffsschaden um <A012,DataA2>. Einheiten, die unter dem Einfluss von Schwarzen Pfeilen getötet werden, verwandeln sich in Diener mit <n011,RealHP> Trefferpunkten.
+}
+
+STRING 1682
+// Abilities: A012 (Schwarzer Pfeil), Ubertip (Tooltip - Normal - Extended)
+{
+Erhöht den Angriffsschaden um <A012,DataA3>. Einheiten, die unter dem Einfluss von Schwarzen Pfeilen getötet werden, verwandeln sich in Diener mit <n012,RealHP> Trefferpunkten.
+}
+
+STRING 1683
+// Abilities: A012 (Schwarzer Pfeil), Ubertip (Tooltip - Normal - Extended)
+{
+Erhöht den Angriffsschaden um <A012,DataA4>. Einheiten, die unter dem Einfluss von Schwarzen Pfeilen getötet werden, verwandeln sich in Diener mit <n013,RealHP> Trefferpunkten.
+}
+
+STRING 1684
+// Abilities: A012 (Schwarzer Pfeil), Ubertip (Tooltip - Normal - Extended)
+{
+Erhöht den Angriffsschaden um <A012,DataA5>. Einheiten, die unter dem Einfluss von Schwarzen Pfeilen getötet werden, verwandeln sich in Diener mit <n014,RealHP> Trefferpunkten.
+}
+
+STRING 1685
+// Abilities: A012 (Schwarzer Pfeil), Researchubertip (Tooltip - Learn - Extended)
+{
+Erhöht den Angriffsschaden. Einheiten, die unter dem Einfluss von Schwarzen Pfeilen getötet werden, verwandeln sich in dunkle Diener des Spielers.|n|n|cffffcc00Stufe 1|r - <A012,DataA1> Bonusschaden, Diener mit <n010,RealHP> Trefferpunkten.|n|cffffcc00Stufe 2|r - <A012,DataA2> Bonusschaden, Diener mit <n011,RealHP> Trefferpunkten.|n|cffffcc00Stufe 3|r - <A012,DataA3> Bonusschaden, Diener mit <0012,RealHP> Trefferpunkten.
+}
+
+STRING 1686
+// Abilities: A0A0 (Bezauberung), Researchubertip (Tooltip - Learn - Extended)
+{
+Übernimmt die Kontrolle über eine gegnerische Zieleinheit, sowie über weitere Einheiten in der Nähe.|n|nKann nicht gegen Helden oder Gebäude eingesetzt werden.|n|n|cffffcc00Stufe 1|r - 1 weitere Einheit|n|cffffcc00Stufe 2|r - 2 weitere Einheiten|n|cffffcc00Stufe 3|r - 3 weitere Einheiten|nusw. ...
 }
 

@@ -9,7 +9,6 @@ Must have:
 ----------
 - Helden-Fähigkeiten auf lvl 10/5 anheben
 	- Bestienmeister
-	- Dunkle Waldläuferin
 	- Feuerlord
 	- Grubenlord
 - Held ändern ermöglichen + Stufe des alten Heldes übernehmen
@@ -57,3 +56,4 @@ Helden:
 - Meerhexe
 - Tüftler
 - Braumeister
+- Dunkle Waldläuferin
