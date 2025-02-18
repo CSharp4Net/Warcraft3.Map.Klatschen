@@ -558,7 +558,6 @@ u = BlzCreateUnitWithSkin(p, FourCC("n010"), 16442.2, 17977.1, 270.000, FourCC("
 u = BlzCreateUnitWithSkin(p, FourCC("n011"), 16323.8, 17966.6, 270.000, FourCC("n011"))
 u = BlzCreateUnitWithSkin(p, FourCC("n012"), 16201.2, 17960.7, 270.000, FourCC("n012"))
 u = BlzCreateUnitWithSkin(p, FourCC("n013"), 16076.7, 17983.0, 270.000, FourCC("n013"))
-SetUnitState(u, UNIT_STATE_MANA, 0)
 u = BlzCreateUnitWithSkin(p, FourCC("n014"), 15945.4, 17986.0, 270.000, FourCC("n014"))
 end
 

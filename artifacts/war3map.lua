@@ -43302,7 +43302,6 @@ function CreateNeutralPassive()
     gg_unit_n011_0282 = CreateUnit(p, 1848652081, 16323.8, 17966.6, 270.000)
     gg_unit_n012_0283 = CreateUnit(p, 1848652082, 16201.2, 17960.7, 270.000)
     gg_unit_n013_0284 = CreateUnit(p, 1848652083, 16076.7, 17983.0, 270.000)
-    SetUnitState(gg_unit_n013_0284, UNIT_STATE_MANA, 0)
     gg_unit_n014_0285 = CreateUnit(p, 1848652084, 15945.4, 17986.0, 270.000)
 end
 
