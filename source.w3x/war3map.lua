@@ -442,11 +442,11 @@ local unitID
 local t
 local life
 
-u = BlzCreateUnitWithSkin(p, FourCC("h000"), 16836.1, 17852.9, 270.000, FourCC("h000"))
-u = BlzCreateUnitWithSkin(p, FourCC("h000"), 16717.5, 17852.9, 270.000, FourCC("h000"))
-u = BlzCreateUnitWithSkin(p, FourCC("h000"), 16769.4, 17922.5, 270.000, FourCC("h000"))
-u = BlzCreateUnitWithSkin(p, FourCC("h000"), 16705.7, 17986.4, 270.000, FourCC("h000"))
-u = BlzCreateUnitWithSkin(p, FourCC("h000"), 16839.1, 17982.1, 270.000, FourCC("h000"))
+u = BlzCreateUnitWithSkin(p, FourCC("h000"), 14919.9, 16824.2, 270.000, FourCC("h000"))
+u = BlzCreateUnitWithSkin(p, FourCC("h000"), 14801.3, 16824.2, 270.000, FourCC("h000"))
+u = BlzCreateUnitWithSkin(p, FourCC("h000"), 14853.2, 16893.9, 270.000, FourCC("h000"))
+u = BlzCreateUnitWithSkin(p, FourCC("h000"), 14789.4, 16957.7, 270.000, FourCC("h000"))
+u = BlzCreateUnitWithSkin(p, FourCC("h000"), 14922.8, 16953.4, 270.000, FourCC("h000"))
 end
 
 function CreateNeutralPassiveBuildings()
@@ -459,16 +459,18 @@ local life
 u = BlzCreateUnitWithSkin(p, FourCC("n003"), -18432.0, 18560.0, 270.000, FourCC("n003"))
 SetUnitColor(u, ConvertPlayerColor(0))
 u = BlzCreateUnitWithSkin(p, FourCC("n005"), -11264.0, 14336.0, 270.000, FourCC("n005"))
-u = BlzCreateUnitWithSkin(p, FourCC("h003"), 17152.0, 18688.0, 270.000, FourCC("h003"))
-u = BlzCreateUnitWithSkin(p, FourCC("h007"), 16576.0, 18688.0, 270.000, FourCC("h007"))
-u = BlzCreateUnitWithSkin(p, FourCC("h004"), 15616.0, 18688.0, 270.000, FourCC("h004"))
-u = BlzCreateUnitWithSkin(p, FourCC("h005"), 16128.0, 18688.0, 270.000, FourCC("h005"))
+u = BlzCreateUnitWithSkin(p, FourCC("h003"), 16768.0, 18688.0, 270.000, FourCC("h003"))
+u = BlzCreateUnitWithSkin(p, FourCC("h007"), 16320.0, 18688.0, 270.000, FourCC("h007"))
+u = BlzCreateUnitWithSkin(p, FourCC("h004"), 15616.0, 18816.0, 270.000, FourCC("h004"))
+u = BlzCreateUnitWithSkin(p, FourCC("h005"), 15872.0, 18816.0, 270.000, FourCC("h005"))
 u = BlzCreateUnitWithSkin(p, FourCC("h009"), 15104.0, 18688.0, 270.000, FourCC("h009"))
 u = BlzCreateUnitWithSkin(p, FourCC("n005"), 11264.0, 14336.0, 270.000, FourCC("n005"))
 u = BlzCreateUnitWithSkin(p, FourCC("n005"), -11264.0, -8192.0, 270.000, FourCC("n005"))
 u = BlzCreateUnitWithSkin(p, FourCC("n005"), 11264.0, -8192.0, 270.000, FourCC("n005"))
 u = BlzCreateUnitWithSkin(p, FourCC("h00D"), 14592.0, 18688.0, 270.000, FourCC("h00D"))
 u = BlzCreateUnitWithSkin(p, FourCC("h00A"), 14080.0, 18688.0, 270.000, FourCC("h00A"))
+u = BlzCreateUnitWithSkin(p, FourCC("h004"), 15616.0, 18560.0, 270.000, FourCC("h004"))
+u = BlzCreateUnitWithSkin(p, FourCC("h005"), 15872.0, 18560.0, 270.000, FourCC("h005"))
 end
 
 function CreateNeutralPassive()
@@ -539,6 +541,12 @@ u = BlzCreateUnitWithSkin(p, FourCC("N004"), 17717.3, 17353.5, 270.000, FourCC("
 u = BlzCreateUnitWithSkin(p, FourCC("N00A"), 17591.3, 17616.2, 270.000, FourCC("N00A"))
 u = BlzCreateUnitWithSkin(p, FourCC("N009"), 17850.7, 17224.3, 270.000, FourCC("N009"))
 u = BlzCreateUnitWithSkin(p, FourCC("H00M"), 17723.1, 18366.2, 270.000, FourCC("H00M"))
+u = BlzCreateUnitWithSkin(p, FourCC("n016"), 16451.0, 17739.6, 270.000, FourCC("n016"))
+SetUnitState(u, UNIT_STATE_MANA, 0)
+u = BlzCreateUnitWithSkin(p, FourCC("n017"), 16326.5, 17726.6, 270.000, FourCC("n017"))
+SetUnitState(u, UNIT_STATE_MANA, 0)
+u = BlzCreateUnitWithSkin(p, FourCC("n015"), 16201.9, 17732.4, 270.000, FourCC("n015"))
+SetUnitState(u, UNIT_STATE_MANA, 0)
 u = BlzCreateUnitWithSkin(p, FourCC("h000"), 17088.1, 17848.5, 270.000, FourCC("h000"))
 life = GetUnitState(u, UNIT_STATE_LIFE)
 SetUnitState(u, UNIT_STATE_LIFE, 0.80 * life)
@@ -671,7 +679,7 @@ gg_rct_UndeadToHumanInnerLine = Rect(8640.0, -5696.0, 8768.0, -5568.0)
 gg_rct_UndeadToHumanOuterLine = Rect(5056.0, -2112.0, 5184.0, -1984.0)
 gg_rct_UndeadToOrcInnerLine = Rect(10176.0, -5184.0, 10304.0, -5056.0)
 gg_rct_UndeadToOrcOuterLine = Rect(10176.0, -1088.0, 10304.0, -960.0)
-gg_rct_TestArea = Rect(17280.0, 16896.0, 17408.0, 17024.0)
+gg_rct_TestArea = Rect(17280.0, 17280.0, 17408.0, 17408.0)
 end
 
 function InitCustomPlayerSlots()

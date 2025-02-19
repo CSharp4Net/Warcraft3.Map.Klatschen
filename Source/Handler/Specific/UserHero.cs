@@ -59,8 +59,8 @@ namespace Source.Handler.Specific
           return;
 
 #if DEBUG
-        //spawnArea = Areas.TestArea;
-        //user.HeroLevelCounter = 50;
+        spawnArea = Areas.TestArea;
+        user.HeroLevelCounter = 50;
 #endif
 
         user.CreateHero(unitId, spawnArea);

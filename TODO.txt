@@ -10,7 +10,6 @@ Must have:
 - Helden-Fähigkeiten auf lvl 10/5 anheben
 	- Bestienmeister
 	- Feuerlord
-	- Grubenlord
 - Held ändern ermöglichen + Stufe des alten Heldes übernehmen
 - Neutrale-Lager in den Dreicken zum Erforschen und Assimilieren
 - 11 sinnvolle ausarbeiten für Item-Shop
@@ -57,3 +56,4 @@ Helden:
 - Tüftler
 - Braumeister
 - Dunkle Waldläuferin
+- Grubenlord

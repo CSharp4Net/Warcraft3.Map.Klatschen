@@ -1,16 +1,18 @@
 ﻿STRING 1
 {
-KLATSCHEN-2
+Klatschen 2025
 }
 
 STRING 2
 {
-All you can eat.
+All you can eat
 }
 
 STRING 3
 {
-...Under construction...
+...
+
+0.8.0.0 by NozzNazz
 }
 
 STRING 4
@@ -108,17 +110,14 @@ Untote
 
 STRING 63
 {
-Klatschen
-}
-
-STRING 64
-{
-is back!
+Klatschen 2025
 }
 
 STRING 65
 {
-...Under construction...
+...
+
+0.8.0.0 by NozzNazz
 }
 
 STRING 72
@@ -3307,12 +3306,6 @@ STRING 1081
 (Hero 10)
 }
 
-STRING 1082
-// Abilities: A00G (Transmutieren), EditorSuffix (Editor Suffix)
-{
-(Hero 5)
-}
-
 STRING 1083
 // Abilities: A00H (Feuerodem), EditorSuffix (Editor Suffix)
 {
@@ -3335,12 +3328,6 @@ STRING 1086
 // Abilities: A00K (Manaschild), EditorSuffix (Editor Suffix)
 {
 (Hero 10)
-}
-
-STRING 1087
-// Abilities: A00R (Taschenfabrik), EditorSuffix (Editor Suffix)
-{
-(Hero 5)
 }
 
 STRING 1089
@@ -3871,12 +3858,6 @@ STRING 1182
 Erhöht die Bewegungsgeschwindigkeit von verbündeten Einheiten in der Nähe um <A00P,DataA10,%>% und ihre Trefferpunktregeneration.
 }
 
-STRING 1183
-// Abilities: A00Z (Sturm, Erde und Feuer), EditorSuffix (Editor Suffix)
-{
-(Hero 5)
-}
-
 STRING 1184
 // Abilities: A00Q (Gottesschild), Researchubertip (Tooltip - Learn - Extended)
 {
@@ -3995,18 +3976,6 @@ STRING 1214
 // Abilities: A00R (Taschenfabrik), Ubertip (Tooltip - Normal - Extended)
 {
 Baut eine Fabrik, die automatisch Uhrwerkgoblins herstellt.|n|nUhrwerkgoblins haben wenig Trefferpunkte, verursachen kaum Schaden... aber sie explodieren beim Tod, wodurch sie nahen gegnerischen Einheiten bis zu <A00T,DataB1> Schaden zufügen.|nDie Fabrik bleibt <A00R,Dur1> Sek. lang bestehen.|n|n|cffffcc00Uhrwerkgoblins können nur Bodeneinheiten angreifen.|r
-}
-
-STRING 1215
-// Abilities: A00R (Taschenfabrik), Ubertip (Tooltip - Normal - Extended)
-{
-Baut eine Fabrik, die automatisch Uhrwerkgoblins herstellt.|n|nUhrwerkgoblins haben wenig Trefferpunkte, verursachen kaum Schaden... aber sie explodieren beim Tod, wodurch sie nahen gegnerischen Einheiten bis zu <A00S,DataB2> Schaden zufügen.|nDie Fabrik bleibt <A00R,Dur2> Sek. lang bestehen.|n|n|cffffcc00Uhrwerkgoblins können nur Bodeneinheiten angreifen.|r
-}
-
-STRING 1216
-// Abilities: A00R (Taschenfabrik), Ubertip (Tooltip - Normal - Extended)
-{
-Baut eine Fabrik, die automatisch Uhrwerkgoblins herstellt.|n|nUhrwerkgoblins haben wenig Trefferpunkte, verursachen kaum Schaden... aber sie explodieren beim Tod, wodurch sie nahen gegnerischen Einheiten bis zu <A00U,DataB3> Schaden zufügen.|nDie Fabrik bleibt <A00R,Dur3> Sek. lang bestehen.|n|n|cffffcc00Uhrwerkgoblins können nur Bodeneinheiten angreifen.|r
 }
 
 STRING 1217
@@ -6032,7 +6001,7 @@ Teleportiert den Helden und bis zu <A00M,DataA1> verbündeten Einheiten in seine
 }
 
 STRING 1746
-// Abilities: A00L (Monsun), EditorSuffix (Editor Suffix)
+// Abilities: A00G (Transmutieren), EditorSuffix (Editor Suffix)
 {
 (Hero 3)
 }
@@ -6062,13 +6031,13 @@ Ruft einen Blitzsturm herbei, der gegnerischen Einheiten in einem Zielgebiet <A0
 }
 
 STRING 1751
-// Abilities: A012 (Schwarzer Pfeil), EditorSuffix (Editor Suffix)
+// Abilities: A00L (Monsun), EditorSuffix (Editor Suffix)
 {
 (Hero 3)
 }
 
 STRING 1752
-// Abilities: A0VD (Verdammnis), EditorSuffix (Editor Suffix)
+// Abilities: A00R (Taschenfabrik), EditorSuffix (Editor Suffix)
 {
 (Hero 3)
 }
@@ -6101,5 +6070,575 @@ STRING 1757
 // Abilities: A0VD (Verdammnis), Ubertip (Tooltip - Normal - Extended)
 {
 Markiert eine Zieleinheit für die Manifestation eines Dämons. Die Einheit kann keine Fähigkeiten einsetzen und erleidet <A0VD,DataA3> Schaden pro Sekunde, bis sie stirbt. Nach ihrem Tod steigt ein großer Dämon aus ihrer Leiche empor. Verdammnis kann nicht gebannt oder beendet werden.
+}
+
+STRING 1758
+// Abilities: A00Z (Sturm, Erde und Feuer), EditorSuffix (Editor Suffix)
+{
+(Hero 3)
+}
+
+STRING 1759
+// Units: n015 (Verdammniswache - Stufe 3), Name (Name)
+{
+Verdammniswache - Stufe 3
+}
+
+STRING 1760
+// Units: n015 (Verdammniswache - Stufe 3), EditorSuffix (Name - Editor Suffix)
+{
+(Hero spell)
+}
+
+STRING 1761
+// Units: n016 (Verdammniswache - Stufe 1), Name (Name)
+{
+Verdammniswache - Stufe 1
+}
+
+STRING 1762
+// Units: n016 (Verdammniswache - Stufe 1), EditorSuffix (Name - Editor Suffix)
+{
+(Hero spell)
+}
+
+STRING 1763
+// Units: n017 (Verdammniswache - Stufe 2), Name (Name)
+{
+Verdammniswache - Stufe 2
+}
+
+STRING 1764
+// Units: n017 (Verdammniswache - Stufe 2), EditorSuffix (Name - Editor Suffix)
+{
+(Hero spell)
+}
+
+STRING 1765
+// Abilities: A00R (Taschenfabrik), Ubertip (Tooltip - Normal - Extended)
+{
+Baut eine Fabrik, die automatisch Uhrwerkgoblins herstellt.|n|nUhrwerkgoblins haben wenig Trefferpunkte, verursachen kaum Schaden... aber sie explodieren beim Tod, wodurch sie nahen gegnerischen Einheiten bis zu <A00U,DataB2> Schaden zufügen.|nDie Fabrik bleibt <A00R,Dur2> Sek. lang bestehen.|n|n|cffffcc00Uhrwerkgoblins können nur Bodeneinheiten angreifen.|r
+}
+
+STRING 1766
+// Abilities: A00R (Taschenfabrik), Ubertip (Tooltip - Normal - Extended)
+{
+Baut eine Fabrik, die automatisch Uhrwerkgoblins herstellt.|n|nUhrwerkgoblins haben wenig Trefferpunkte, verursachen kaum Schaden... aber sie explodieren beim Tod, wodurch sie nahen gegnerischen Einheiten bis zu <A00W,DataB3> Schaden zufügen.|nDie Fabrik bleibt <A00R,Dur3> Sek. lang bestehen.|n|n|cffffcc00Uhrwerkgoblins können nur Bodeneinheiten angreifen.|r
+}
+
+STRING 1767
+// Abilities: A012 (Schwarzer Pfeil), EditorSuffix (Editor Suffix)
+{
+(Hero 3)
+}
+
+STRING 1768
+// Abilities: A0VD (Verdammnis), EditorSuffix (Editor Suffix)
+{
+(Hero 3)
+}
+
+STRING 1769
+// Abilities: A0VB (Verbrennen), EditorSuffix (Editor Suffix)
+{
+(Hero 10)
+}
+
+STRING 1770
+// Abilities: A0VB (Verbrennen), Researchubertip (Tooltip - Learn - Extended)
+{
+Verstärkt Angriffe mit lebenden Flammen, die beim ersten Angriff wenig Bonusschaden verursachen, beim zweiten Angriff doppelt so viel, beim dritten Angriff dreimal so viel usw.|n|nWenn eine betroffene Einheit stirbt, verbrennt sie und fügt allen gegnerischen Einheiten in der Nähe beträchtlichen Schaden zu.|n|n|cffffcc00Stufe 1|r - <A0VB,DataA1> Bonusschaden, <A0VB,DataB1> Verbrennungsschaden.|n|cffffcc00Stufe 2|r - <A0VB,DataA2> Bonusschaden, <A0VB,DataB2> Verbrennungsschaden.|n|cffffcc00Stufe 3|r - <A0VB,DataA3> Bonusschaden, <A0VB,DataB3> Verbrennungsschaden.
+}
+
+STRING 1771
+// Abilities: A0VB (Verbrennen), Tip (Tooltip - Normal)
+{
+Verbrennen [|cffffcc00Stufe 4|r]
+}
+
+STRING 1772
+// Abilities: A0VB (Verbrennen), Tip (Tooltip - Normal)
+{
+Verbrennen [|cffffcc00Stufe 5|r]
+}
+
+STRING 1773
+// Abilities: A0VB (Verbrennen), Tip (Tooltip - Normal)
+{
+Verbrennen [|cffffcc00Stufe 6|r]
+}
+
+STRING 1774
+// Abilities: A0VB (Verbrennen), Tip (Tooltip - Normal)
+{
+Verbrennen [|cffffcc00Stufe 7|r]
+}
+
+STRING 1775
+// Abilities: A0VB (Verbrennen), Tip (Tooltip - Normal)
+{
+Verbrennen [|cffffcc00Stufe 8|r]
+}
+
+STRING 1776
+// Abilities: A0VB (Verbrennen), Tip (Tooltip - Normal)
+{
+Verbrennen [|cffffcc00Stufe 9|r]
+}
+
+STRING 1777
+// Abilities: A0VB (Verbrennen), Tip (Tooltip - Normal)
+{
+Verbrennen [|cffffcc00Stufe 10|r]
+}
+
+STRING 1778
+// Abilities: A0VB (Verbrennen), Ubertip (Tooltip - Normal - Extended)
+{
+Verstärkt Angriffe mit lebenden Flammen, die beim ersten Angriff <A0VB,DataA1> Bonusschaden verursachen, beim zweiten Angriff doppelt so viel, beim dritten Angriff dreimal so viel usw.|n|nWenn eine betroffene Einheit stirbt, verbrennt sie und fügt allen gegnerischen Einheiten in der Nähe bis zu <A0VB,DataB1> Schaden zu.
+}
+
+STRING 1779
+// Abilities: A0VB (Verbrennen), Ubertip (Tooltip - Normal - Extended)
+{
+Verstärkt Angriffe mit lebenden Flammen, die beim ersten Angriff <A0VB,DataA2> Bonusschaden verursachen, beim zweiten Angriff doppelt so viel, beim dritten Angriff dreimal so viel usw.|n|nWenn eine betroffene Einheit stirbt, verbrennt sie und fügt allen gegnerischen Einheiten in der Nähe bis zu <A0VB,DataB2> Schaden zu.
+}
+
+STRING 1780
+// Abilities: A0VB (Verbrennen), Ubertip (Tooltip - Normal - Extended)
+{
+Verstärkt Angriffe mit lebenden Flammen, die beim ersten Angriff <A0VB,DataA3> Bonusschaden verursachen, beim zweiten Angriff doppelt so viel, beim dritten Angriff dreimal so viel usw.|n|nWenn eine betroffene Einheit stirbt, verbrennt sie und fügt allen gegnerischen Einheiten in der Nähe bis zu <A0VB,DataB3> Schaden zu.
+}
+
+STRING 1781
+// Abilities: A0VB (Verbrennen), Ubertip (Tooltip - Normal - Extended)
+{
+Verstärkt Angriffe mit lebenden Flammen, die beim ersten Angriff <A0VB,DataA4> Bonusschaden verursachen, beim zweiten Angriff doppelt so viel, beim dritten Angriff dreimal so viel usw.|n|nWenn eine betroffene Einheit stirbt, verbrennt sie und fügt allen gegnerischen Einheiten in der Nähe bis zu <A0VB,DataB4> Schaden zu.
+}
+
+STRING 1782
+// Abilities: A0VB (Verbrennen), Ubertip (Tooltip - Normal - Extended)
+{
+Verstärkt Angriffe mit lebenden Flammen, die beim ersten Angriff <A0VB,DataA5> Bonusschaden verursachen, beim zweiten Angriff doppelt so viel, beim dritten Angriff dreimal so viel usw.|n|nWenn eine betroffene Einheit stirbt, verbrennt sie und fügt allen gegnerischen Einheiten in der Nähe bis zu <A0VB,DataB5> Schaden zu.
+}
+
+STRING 1783
+// Abilities: A0VB (Verbrennen), Ubertip (Tooltip - Normal - Extended)
+{
+Verstärkt Angriffe mit lebenden Flammen, die beim ersten Angriff <A0VB,DataA6> Bonusschaden verursachen, beim zweiten Angriff doppelt so viel, beim dritten Angriff dreimal so viel usw.|n|nWenn eine betroffene Einheit stirbt, verbrennt sie und fügt allen gegnerischen Einheiten in der Nähe bis zu <A0VB,DataB6> Schaden zu.
+}
+
+STRING 1784
+// Abilities: A0VB (Verbrennen), Ubertip (Tooltip - Normal - Extended)
+{
+Verstärkt Angriffe mit lebenden Flammen, die beim ersten Angriff <A0VB,DataA7> Bonusschaden verursachen, beim zweiten Angriff doppelt so viel, beim dritten Angriff dreimal so viel usw.|n|nWenn eine betroffene Einheit stirbt, verbrennt sie und fügt allen gegnerischen Einheiten in der Nähe bis zu <A0VB,DataB7> Schaden zu.
+}
+
+STRING 1785
+// Abilities: A0VB (Verbrennen), Ubertip (Tooltip - Normal - Extended)
+{
+Verstärkt Angriffe mit lebenden Flammen, die beim ersten Angriff <A0VB,DataA8> Bonusschaden verursachen, beim zweiten Angriff doppelt so viel, beim dritten Angriff dreimal so viel usw.|n|nWenn eine betroffene Einheit stirbt, verbrennt sie und fügt allen gegnerischen Einheiten in der Nähe bis zu <A0VB,DataB8> Schaden zu.
+}
+
+STRING 1786
+// Abilities: A0VB (Verbrennen), Ubertip (Tooltip - Normal - Extended)
+{
+Verstärkt Angriffe mit lebenden Flammen, die beim ersten Angriff <A0VB,DataA9> Bonusschaden verursachen, beim zweiten Angriff doppelt so viel, beim dritten Angriff dreimal so viel usw.|n|nWenn eine betroffene Einheit stirbt, verbrennt sie und fügt allen gegnerischen Einheiten in der Nähe bis zu <A0VB,DataB9> Schaden zu.
+}
+
+STRING 1787
+// Abilities: A0VB (Verbrennen), Ubertip (Tooltip - Normal - Extended)
+{
+Verstärkt Angriffe mit lebenden Flammen, die beim ersten Angriff <A0VB,DataA10> Bonusschaden verursachen, beim zweiten Angriff doppelt so viel, beim dritten Angriff dreimal so viel usw.|n|nWenn eine betroffene Einheit stirbt, verbrennt sie und fügt allen gegnerischen Einheiten in der Nähe bis zu <A0VB,DataB10> Schaden zu.
+}
+
+STRING 1788
+// Abilities: A0SB (Seelenbrand), EditorSuffix (Editor Suffix)
+{
+(Hero 10)
+}
+
+STRING 1789
+// Abilities: A0SB (Seelenbrand), Tip (Tooltip - Normal)
+{
+Seelenbrand [|cffffcc00Stufe 4|r]
+}
+
+STRING 1790
+// Abilities: A0SB (Seelenbrand), Tip (Tooltip - Normal)
+{
+Seelenbrand [|cffffcc00Stufe 5|r]
+}
+
+STRING 1791
+// Abilities: A0SB (Seelenbrand), Tip (Tooltip - Normal)
+{
+Seelenbrand [|cffffcc00Stufe 6|r]
+}
+
+STRING 1792
+// Abilities: A0SB (Seelenbrand), Tip (Tooltip - Normal)
+{
+Seelenbrand [|cffffcc00Stufe 7|r]
+}
+
+STRING 1793
+// Abilities: A0SB (Seelenbrand), Tip (Tooltip - Normal)
+{
+Seelenbrand [|cffffcc00Stufe 8|r]
+}
+
+STRING 1794
+// Abilities: A0SB (Seelenbrand), Tip (Tooltip - Normal)
+{
+Seelenbrand [|cffffcc00Stufe 9|r]
+}
+
+STRING 1795
+// Abilities: A0SB (Seelenbrand), Tip (Tooltip - Normal)
+{
+Seelenbrand [|cffffcc00Stufe 10|r]
+}
+
+STRING 1796
+// Abilities: A0SB (Seelenbrand), Ubertip (Tooltip - Normal - Extended)
+{
+Hüllt eine gegnerische Einheit in magische Flammen, die <A0SB,DataA1> Schaden verursachen, den Einsatz von Fähigkeiten verhindern und den Angriffsschaden um <A0SB,DataC1,%>% verringern.|nHält <A0SB,Dur1> Sek. lang an.
+}
+
+STRING 1797
+// Abilities: A0SB (Seelenbrand), Ubertip (Tooltip - Normal - Extended)
+{
+Hüllt eine gegnerische Einheit in magische Flammen, die <A0SB,DataA2> Schaden verursachen, den Einsatz von Fähigkeiten verhindern und den Angriffsschaden um <A0SB,DataC2,%>% verringern.|nHält <A0SB,Dur2> Sek. lang an.
+}
+
+STRING 1798
+// Abilities: A0SB (Seelenbrand), Ubertip (Tooltip - Normal - Extended)
+{
+Hüllt eine gegnerische Einheit in magische Flammen, die <A0SB,DataA3> Schaden verursachen, den Einsatz von Fähigkeiten verhindern und den Angriffsschaden um <A0SB,DataC3,%>% verringern.|nHält <A0SB,Dur3> Sek. lang an.
+}
+
+STRING 1799
+// Abilities: A0SB (Seelenbrand), Ubertip (Tooltip - Normal - Extended)
+{
+Hüllt eine gegnerische Einheit in magische Flammen, die <A0SB,DataA4> Schaden verursachen, den Einsatz von Fähigkeiten verhindern und den Angriffsschaden um <A0SB,DataC4,%>% verringern.|nHält <A0SB,Dur4> Sek. lang an.
+}
+
+STRING 1800
+// Abilities: A0SB (Seelenbrand), Ubertip (Tooltip - Normal - Extended)
+{
+Hüllt eine gegnerische Einheit in magische Flammen, die <A0SB,DataA5> Schaden verursachen, den Einsatz von Fähigkeiten verhindern und den Angriffsschaden um <A0SB,DataC5,%>% verringern.|nHält <A0SB,Dur5> Sek. lang an.
+}
+
+STRING 1801
+// Abilities: A0SB (Seelenbrand), Ubertip (Tooltip - Normal - Extended)
+{
+Hüllt eine gegnerische Einheit in magische Flammen, die <A0SB,DataA6> Schaden verursachen, den Einsatz von Fähigkeiten verhindern und den Angriffsschaden um <A0SB,DataC6,%>% verringern.|nHält <A0SB,Dur6> Sek. lang an.
+}
+
+STRING 1802
+// Abilities: A0SB (Seelenbrand), Ubertip (Tooltip - Normal - Extended)
+{
+Hüllt eine gegnerische Einheit in magische Flammen, die <A0SB,DataA7> Schaden verursachen, den Einsatz von Fähigkeiten verhindern und den Angriffsschaden um <A0SB,DataC7,%>% verringern.|nHält <A0SB,Dur7> Sek. lang an.
+}
+
+STRING 1803
+// Abilities: A0SB (Seelenbrand), Ubertip (Tooltip - Normal - Extended)
+{
+Hüllt eine gegnerische Einheit in magische Flammen, die <A0SB,DataA8> Schaden verursachen, den Einsatz von Fähigkeiten verhindern und den Angriffsschaden um <A0SB,DataC8,%>% verringern.|nHält <A0SB,Dur8> Sek. lang an.
+}
+
+STRING 1804
+// Abilities: A0SB (Seelenbrand), Ubertip (Tooltip - Normal - Extended)
+{
+Hüllt eine gegnerische Einheit in magische Flammen, die <A0SB,DataA9> Schaden verursachen, den Einsatz von Fähigkeiten verhindern und den Angriffsschaden um <A0SB,DataC9,%>% verringern.|nHält <A0SB,Dur9> Sek. lang an.
+}
+
+STRING 1805
+// Abilities: A0SB (Seelenbrand), Ubertip (Tooltip - Normal - Extended)
+{
+Hüllt eine gegnerische Einheit in magische Flammen, die <A0SB,DataA10> Schaden verursachen, den Einsatz von Fähigkeiten verhindern und den Angriffsschaden um <A0SB,DataC10,%>% verringern.|nHält <A0SB,Dur10> Sek. lang an.
+}
+
+STRING 1806
+// Abilities: A0SB (Seelenbrand), Researchubertip (Tooltip - Learn - Extended)
+{
+Hüllt eine gegnerische Einheit in magische Flammen, die <A0SB,DataA1> periodischen Schaden verursachen, den Einsatz von Fähigkeiten verhindern und den Angriffsschaden um <A0SB,DataC1,%>% verringern.
+}
+
+STRING 1807
+// Units: n018 (Lavabrut - Stufe 1), EditorSuffix (Name - Editor Suffix)
+{
+(Hero spell)
+}
+
+STRING 1808
+// Units: n018 (Lavabrut - Stufe 1), Name (Name)
+{
+Lavabrut - Stufe 1
+}
+
+STRING 1809
+// Units: n019 (Lavabrut- Stufe 2), Name (Name)
+{
+Lavabrut- Stufe 2
+}
+
+STRING 1810
+// Units: n019 (Lavabrut- Stufe 2), EditorSuffix (Name - Editor Suffix)
+{
+(Hero spell)
+}
+
+STRING 1811
+// Units: n01A (Lavabrut - Stufe 3), Name (Name)
+{
+Lavabrut - Stufe 3
+}
+
+STRING 1812
+// Units: n01A (Lavabrut - Stufe 3), EditorSuffix (Name - Editor Suffix)
+{
+(Hero spell)
+}
+
+STRING 1813
+// Abilities: A0VK (Vulkan), EditorSuffix (Editor Suffix)
+{
+(Hero 10)
+}
+
+STRING 1814
+// Abilities: A0LB (Lavabrut beschwören), Researchubertip (Tooltip - Learn - Extended)
+{
+Beschwört eine Lavabrut, eine zähe und tödliche Feuerkreatur. Mit ihren Angriffen verzehrt die Lavabrut das Fleisch des Ziels, um ihr eigenes Feuer zu nähren. Sie teilt sich schließlich in zwei gesunde Lavabruten.|n|nBleibt <A0LB,Dur1> Sek. lang bestehen.
+}
+
+STRING 1815
+// Abilities: A0LB (Lavabrut beschwören), Tip (Tooltip - Normal)
+{
+Lavabrut beschwören [|cffffcc00Stufe 4|r]
+}
+
+STRING 1816
+// Abilities: A0LB (Lavabrut beschwören), Tip (Tooltip - Normal)
+{
+Lavabrut beschwören [|cffffcc00Stufe 5|r]
+}
+
+STRING 1817
+// Abilities: A0LB (Lavabrut beschwören), Tip (Tooltip - Normal)
+{
+Lavabrut beschwören [|cffffcc00Stufe 6|r]
+}
+
+STRING 1818
+// Abilities: A0LB (Lavabrut beschwören), Tip (Tooltip - Normal)
+{
+Lavabrut beschwören [|cffffcc00Stufe 7|r]
+}
+
+STRING 1819
+// Abilities: A0LB (Lavabrut beschwören), Tip (Tooltip - Normal)
+{
+Lavabrut beschwören [|cffffcc00Stufe 8|r]
+}
+
+STRING 1820
+// Abilities: A0LB (Lavabrut beschwören), Tip (Tooltip - Normal)
+{
+Lavabrut beschwören [|cffffcc00Stufe 9|r]
+}
+
+STRING 1821
+// Abilities: A0LB (Lavabrut beschwören), Tip (Tooltip - Normal)
+{
+Lavabrut beschwören [|cffffcc00Stufe 10|r]
+}
+
+STRING 1825
+// Abilities: A0LB (Lavabrut beschwören), Ubertip (Tooltip - Normal - Extended)
+{
+Beschwört eine Lavabrut, eine zähe und tödliche Feuerkreatur. Mit ihren Angriffen verzehrt die Lavabrut das Fleisch des Ziels, um ihr eigenes Feuer zu nähren. Sie teilt sich schließlich in zwei gesunde Lavabruten.|n|nHat <nlv4,realHP> Trefferpunkte und verursacht <nlv4,mindmg4>-<nlv4,maxdmg4> Schaden.|nBleibt <A0LB,Dur4> Sek. lang bestehen.|n|n|cffffcc00Kann Boden- und Lufteinheiten angreifen.|r
+}
+
+STRING 1826
+// Abilities: A0LB (Lavabrut beschwören), Ubertip (Tooltip - Normal - Extended)
+{
+Beschwört eine Lavabrut, eine zähe und tödliche Feuerkreatur. Mit ihren Angriffen verzehrt die Lavabrut das Fleisch des Ziels, um ihr eigenes Feuer zu nähren. Sie teilt sich schließlich in zwei gesunde Lavabruten.|n|nHat <nlv5,realHP> Trefferpunkte und verursacht <nlv5,mindmg5>-<nlv5,maxdmg5> Schaden.|nBleibt <A0LB,Dur5> Sek. lang bestehen.|n|n|cffffcc00Kann Boden- und Lufteinheiten angreifen.|r
+}
+
+STRING 1827
+// Abilities: A0LB (Lavabrut beschwören), Ubertip (Tooltip - Normal - Extended)
+{
+Beschwört eine Lavabrut, eine zähe und tödliche Feuerkreatur. Mit ihren Angriffen verzehrt die Lavabrut das Fleisch des Ziels, um ihr eigenes Feuer zu nähren. Sie teilt sich schließlich in zwei gesunde Lavabruten.|n|nHat <nlv6,realHP> Trefferpunkte und verursacht <nlv6,mindmg6>-<nlv6,maxdmg6> Schaden.|nBleibt <A0LB,Dur6> Sek. lang bestehen.|n|n|cffffcc00Kann Boden- und Lufteinheiten angreifen.|r
+}
+
+STRING 1828
+// Abilities: A0LB (Lavabrut beschwören), Ubertip (Tooltip - Normal - Extended)
+{
+Beschwört eine Lavabrut, eine zähe und tödliche Feuerkreatur. Mit ihren Angriffen verzehrt die Lavabrut das Fleisch des Ziels, um ihr eigenes Feuer zu nähren. Sie teilt sich schließlich in zwei gesunde Lavabruten.|n|nHat <nlv7,realHP> Trefferpunkte und verursacht <nlv7,mindmg7>-<nlv7,maxdmg7> Schaden.|nBleibt <A0LB,Dur7> Sek. lang bestehen.|n|n|cffffcc00Kann Boden- und Lufteinheiten angreifen.|r
+}
+
+STRING 1829
+// Abilities: A0LB (Lavabrut beschwören), Ubertip (Tooltip - Normal - Extended)
+{
+Beschwört eine Lavabrut, eine zähe und tödliche Feuerkreatur. Mit ihren Angriffen verzehrt die Lavabrut das Fleisch des Ziels, um ihr eigenes Feuer zu nähren. Sie teilt sich schließlich in zwei gesunde Lavabruten.|n|nHat <nlv8,realHP> Trefferpunkte und verursacht <nlv8,mindmg8>-<nlv8,maxdmg8> Schaden.|nBleibt <A0LB,Dur8> Sek. lang bestehen.|n|n|cffffcc00Kann Boden- und Lufteinheiten angreifen.|r
+}
+
+STRING 1830
+// Abilities: A0LB (Lavabrut beschwören), Ubertip (Tooltip - Normal - Extended)
+{
+Beschwört eine Lavabrut, eine zähe und tödliche Feuerkreatur. Mit ihren Angriffen verzehrt die Lavabrut das Fleisch des Ziels, um ihr eigenes Feuer zu nähren. Sie teilt sich schließlich in zwei gesunde Lavabruten.|n|nHat <nlv9,realHP> Trefferpunkte und verursacht <nlv9,mindmg9>-<nlv9,maxdmg9> Schaden.|nBleibt <A0LB,Dur9> Sek. lang bestehen.|n|n|cffffcc00Kann Boden- und Lufteinheiten angreifen.|r
+}
+
+STRING 1831
+// Abilities: A0LB (Lavabrut beschwören), Ubertip (Tooltip - Normal - Extended)
+{
+Beschwört eine Lavabrut, eine zähe und tödliche Feuerkreatur. Mit ihren Angriffen verzehrt die Lavabrut das Fleisch des Ziels, um ihr eigenes Feuer zu nähren. Sie teilt sich schließlich in zwei gesunde Lavabruten.|n|nHat <nlv10,realHP> Trefferpunkte und verursacht <nlv10,mindmg10>-<nlv10,maxdmg10> Schaden.|nBleibt <A0LB,Dur10> Sek. lang bestehen.|n|n|cffffcc00Kann Boden- und Lufteinheiten angreifen.|r
+}
+
+STRING 1832
+// Abilities: A0LB (Lavabrut beschwören), EditorSuffix (Editor Suffix)
+{
+(Hero 3)
+}
+
+STRING 1833
+// Abilities: A0LB (Lavabrut beschwören), Ubertip (Tooltip - Normal - Extended)
+{
+Beschwört eine Lavabrut, eine zähe und tödliche Feuerkreatur. Mit ihren Angriffen verzehrt die Lavabrut das Fleisch des Ziels, um ihr eigenes Feuer zu nähren. Sie teilt sich schließlich in zwei gesunde Lavabruten.|n|nHat <n018,realHP> Trefferpunkte und verursacht <n018,mindmg1>-<n018,maxdmg1> Schaden.|nBleibt <A0LB,Dur1> Sek. lang bestehen.|n|n|cffffcc00Kann Boden- und Lufteinheiten angreifen.|r
+}
+
+STRING 1834
+// Abilities: A0LB (Lavabrut beschwören), Ubertip (Tooltip - Normal - Extended)
+{
+Beschwört eine Lavabrut, eine zähe und tödliche Feuerkreatur. Mit ihren Angriffen verzehrt die Lavabrut das Fleisch des Ziels, um ihr eigenes Feuer zu nähren. Sie teilt sich schließlich in zwei gesunde Lavabruten.|n|nHat <n019,realHP> Trefferpunkte und verursacht <n019,mindmg2>-<n019,maxdmg2> Schaden.|nBleibt <A0LB,Dur2> Sek. lang bestehen.|n|n|cffffcc00Kann Boden- und Lufteinheiten angreifen.|r
+}
+
+STRING 1835
+// Abilities: A0LB (Lavabrut beschwören), Ubertip (Tooltip - Normal - Extended)
+{
+Beschwört eine Lavabrut, eine zähe und tödliche Feuerkreatur. Mit ihren Angriffen verzehrt die Lavabrut das Fleisch des Ziels, um ihr eigenes Feuer zu nähren. Sie teilt sich schließlich in zwei gesunde Lavabruten.|n|nHat <n01A,realHP> Trefferpunkte und verursacht <n01A,mindmg3>-<n01A,maxdmg3> Schaden.|nBleibt <A0LB,Dur3> Sek. lang bestehen.|n|n|cffffcc00Kann Boden- und Lufteinheiten angreifen.|r
+}
+
+STRING 1836
+// Abilities: A0VK (Vulkan), Researchubertip (Tooltip - Learn - Extended)
+{
+Lässt einen riesigen Vulkan aus dem Boden hervorbrechen, der alle <A0VK,DataC1> Sek. glühende Felsen auf nahe Bodeneinheiten und Gebäude schleudert, die jedem Ziel <A0VK,DataE1> Schaden zufügen und es für <A0VK,Dur1> Sek. betäuben.
+}
+
+STRING 1837
+// Abilities: A0VK (Vulkan), Tip (Tooltip - Normal)
+{
+Vulkan
+}
+
+STRING 1838
+// Abilities: A0VK (Vulkan), Tip (Tooltip - Normal)
+{
+Vulkan
+}
+
+STRING 1839
+// Abilities: A0VK (Vulkan), Tip (Tooltip - Normal)
+{
+Vulkan
+}
+
+STRING 1840
+// Abilities: A0VK (Vulkan), Tip (Tooltip - Normal)
+{
+Vulkan
+}
+
+STRING 1841
+// Abilities: A0VK (Vulkan), Tip (Tooltip - Normal)
+{
+Vulkan
+}
+
+STRING 1842
+// Abilities: A0VK (Vulkan), Tip (Tooltip - Normal)
+{
+Vulkan
+}
+
+STRING 1843
+// Abilities: A0VK (Vulkan), Tip (Tooltip - Normal)
+{
+Vulkan
+}
+
+STRING 1844
+// Abilities: A0VK (Vulkan), Tip (Tooltip - Normal)
+{
+Vulkan
+}
+
+STRING 1845
+// Abilities: A0VK (Vulkan), Tip (Tooltip - Normal)
+{
+Vulkan
+}
+
+STRING 1846
+// Abilities: A0VK (Vulkan), Ubertip (Tooltip - Normal - Extended)
+{
+Lässt einen riesigen Vulkan aus dem Boden hervorbrechen, der alle <A0VK,DataC1> Sek. glühende Felsen auf nahe Bodeneinheiten und Gebäude schleudert, die jedem Ziel <ANvc,DataE1> Schaden zufügen und es für <A0VK,Dur1> Sek. betäuben.
+}
+
+STRING 1847
+// Abilities: A0VK (Vulkan), Ubertip (Tooltip - Normal - Extended)
+{
+Lässt einen riesigen Vulkan aus dem Boden hervorbrechen, der alle <A0VK,DataC2> Sek. glühende Felsen auf nahe Bodeneinheiten und Gebäude schleudert, die jedem Ziel <ANvc,DataE2> Schaden zufügen und es für <A0VK,Dur2> Sek. betäuben.
+}
+
+STRING 1848
+// Abilities: A0VK (Vulkan), Ubertip (Tooltip - Normal - Extended)
+{
+Lässt einen riesigen Vulkan aus dem Boden hervorbrechen, der alle <A0VK,DataC3> Sek. glühende Felsen auf nahe Bodeneinheiten und Gebäude schleudert, die jedem Ziel <ANvc,DataE3> Schaden zufügen und es für <A0VK,Dur3> Sek. betäuben.
+}
+
+STRING 1849
+// Abilities: A0VK (Vulkan), Ubertip (Tooltip - Normal - Extended)
+{
+Lässt einen riesigen Vulkan aus dem Boden hervorbrechen, der alle <A0VK,DataC4> Sek. glühende Felsen auf nahe Bodeneinheiten und Gebäude schleudert, die jedem Ziel <ANvc,DataE4> Schaden zufügen und es für <A0VK,Dur4> Sek. betäuben.
+}
+
+STRING 1850
+// Abilities: A0VK (Vulkan), Ubertip (Tooltip - Normal - Extended)
+{
+Lässt einen riesigen Vulkan aus dem Boden hervorbrechen, der alle <A0VK,DataC5> Sek. glühende Felsen auf nahe Bodeneinheiten und Gebäude schleudert, die jedem Ziel <ANvc,DataE5> Schaden zufügen und es für <A0VK,Dur5> Sek. betäuben.
+}
+
+STRING 1851
+// Abilities: A0VK (Vulkan), Ubertip (Tooltip - Normal - Extended)
+{
+Lässt einen riesigen Vulkan aus dem Boden hervorbrechen, der alle <A0VK,DataC6> Sek. glühende Felsen auf nahe Bodeneinheiten und Gebäude schleudert, die jedem Ziel <ANvc,DataE6> Schaden zufügen und es für <A0VK,Dur6> Sek. betäuben.
+}
+
+STRING 1852
+// Abilities: A0VK (Vulkan), Ubertip (Tooltip - Normal - Extended)
+{
+Lässt einen riesigen Vulkan aus dem Boden hervorbrechen, der alle <A0VK,DataC7> Sek. glühende Felsen auf nahe Bodeneinheiten und Gebäude schleudert, die jedem Ziel <ANvc,DataE7> Schaden zufügen und es für <A0VK,Dur7> Sek. betäuben.
+}
+
+STRING 1853
+// Abilities: A0VK (Vulkan), Ubertip (Tooltip - Normal - Extended)
+{
+Lässt einen riesigen Vulkan aus dem Boden hervorbrechen, der alle <A0VK,DataC8> Sek. glühende Felsen auf nahe Bodeneinheiten und Gebäude schleudert, die jedem Ziel <ANvc,DataE8> Schaden zufügen und es für <A0VK,Dur8> Sek. betäuben.
+}
+
+STRING 1854
+// Abilities: A0VK (Vulkan), Ubertip (Tooltip - Normal - Extended)
+{
+Lässt einen riesigen Vulkan aus dem Boden hervorbrechen, der alle <A0VK,DataC9> Sek. glühende Felsen auf nahe Bodeneinheiten und Gebäude schleudert, die jedem Ziel <ANvc,DataE9> Schaden zufügen und es für <A0VK,Dur9> Sek. betäuben.
+}
+
+STRING 1855
+// Abilities: A0VK (Vulkan), Ubertip (Tooltip - Normal - Extended)
+{
+Lässt einen riesigen Vulkan aus dem Boden hervorbrechen, der alle <A0VK,DataC10> Sek. glühende Felsen auf nahe Bodeneinheiten und Gebäude schleudert, die jedem Ziel <ANvc,DataE10> Schaden zufügen und es für <A0VK,Dur10> Sek. betäuben.
 }
 
