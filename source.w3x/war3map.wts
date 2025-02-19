@@ -3338,15 +3338,9 @@ STRING 1086
 }
 
 STRING 1087
-// Abilities: A00L (Monsun), EditorSuffix (Editor Suffix)
+// Abilities: A00R (Taschenfabrik), EditorSuffix (Editor Suffix)
 {
 (Hero 5)
-}
-
-STRING 1088
-// Abilities: A00L (Monsun), Researchubertip (Tooltip - Learn - Extended)
-{
-Ruft einen Blitzsturm herbei, der gegnerischen Einheiten <A00L,DataA1> Schaden zufügt.|nHält <A00L,Dur1> Sek. lang an.|nDas Gebiet wird mit jeder Stufe größer.
 }
 
 STRING 1089
@@ -3359,24 +3353,6 @@ STRING 1090
 // Abilities: A00L (Monsun), Tip (Tooltip - Normal)
 {
 Monsun [|cffffcc00Stufe 5|r]
-}
-
-STRING 1091
-// Abilities: A00L (Monsun), Ubertip (Tooltip - Normal - Extended)
-{
-Ruft einen Blitzsturm herbei, der gegnerischen Einheiten in einem Zielgebiet <A00L,DataA1> Schaden zufügt.|nHält <ANmo,Dur1> Sek. lang an.
-}
-
-STRING 1092
-// Abilities: A00L (Monsun), Ubertip (Tooltip - Normal - Extended)
-{
-Ruft einen Blitzsturm herbei, der gegnerischen Einheiten in einem Zielgebiet <A00L,DataA2> Schaden zufügt.|nHält <ANmo,Dur2> Sek. lang an.
-}
-
-STRING 1093
-// Abilities: A00L (Monsun), Ubertip (Tooltip - Normal - Extended)
-{
-Ruft einen Blitzsturm herbei, der gegnerischen Einheiten in einem Zielgebiet <A00L,DataA3> Schaden zufügt.|nHält <ANmo,Dur3> Sek. lang an.
 }
 
 STRING 1094
@@ -3401,12 +3377,6 @@ STRING 1097
 // Abilities: A00M (Stadtportal), Tip (Tooltip - Normal)
 {
 Stadtportal
-}
-
-STRING 1098
-// Abilities: A00M (Stadtportal), Ubertip (Tooltip - Normal - Extended)
-{
-Teleportiert den Helden und alle verbündeten Einheiten in seiner Nähe zu einem ausgewählten verbündeten Rathaus.
 }
 
 STRING 1100
@@ -3902,7 +3872,7 @@ Erhöht die Bewegungsgeschwindigkeit von verbündeten Einheiten in der Nähe um 
 }
 
 STRING 1183
-// Abilities: A00Q (Gottesschild), EditorSuffix (Editor Suffix)
+// Abilities: A00Z (Sturm, Erde und Feuer), EditorSuffix (Editor Suffix)
 {
 (Hero 5)
 }
@@ -4007,12 +3977,6 @@ STRING 1200
 // Abilities: A00T (Kabumm), EditorSuffix (Editor Suffix)
 {
 (Hero spell - Stufe 1)
-}
-
-STRING 1202
-// Abilities: A00R (Taschenfabrik), EditorSuffix (Editor Suffix)
-{
-(Hero 5)
 }
 
 STRING 1212
@@ -4601,12 +4565,6 @@ STRING 1309
 // Abilities: A00Y (Flüchtiger Kämpfer), Ubertip (Tooltip - Normal - Extended)
 {
 Gewährt eine Ausweichchance von <A00Y,DataD10,%>% und eine Chance von <A00Y,DataA10>%, das <A00Y,DataB10>-Fache des normalen Schadens zu verursachen.
-}
-
-STRING 1310
-// Abilities: A00Z (Sturm, Erde und Feuer), EditorSuffix (Editor Suffix)
-{
-(Hero 5)
 }
 
 STRING 1311
@@ -5557,12 +5515,6 @@ STRING 1652
 Hüllt den Dämonenjäger in Flammen, die gegnerischen Bodeneinheiten in seiner Nähe Schaden zufügen.|nVerbraucht Mana bis Abbruch.|n|n|cffffcc00Stufe 1|r - <A00O,DataA1> Schaden alle 0,5 Sek.|n|cffffcc00Stufe 2|r - <A00O,DataA2> Schaden alle 0,5 Sek.|n|cffffcc00Stufe 3|r - <A00O,DataA3> Schaden alle 0,5 Sek.
 }
 
-STRING 1654
-// Abilities: A012 (Schwarzer Pfeil), EditorSuffix (Editor Suffix)
-{
-(Hero 5)
-}
-
 STRING 1655
 // Units: n010 (Dunkler Diener - Stufe 1), EditorSuffix (Name - Editor Suffix)
 {
@@ -5723,5 +5675,431 @@ STRING 1686
 // Abilities: A0A0 (Bezauberung), Researchubertip (Tooltip - Learn - Extended)
 {
 Übernimmt die Kontrolle über eine gegnerische Zieleinheit, sowie über weitere Einheiten in der Nähe.|n|nKann nicht gegen Helden oder Gebäude eingesetzt werden.|n|n|cffffcc00Stufe 1|r - 1 weitere Einheit|n|cffffcc00Stufe 2|r - 2 weitere Einheiten|n|cffffcc00Stufe 3|r - 3 weitere Einheiten|nusw. ...
+}
+
+STRING 1687
+// Abilities: A0FR (Feuerregen), EditorSuffix (Editor Suffix)
+{
+(Hero 10)
+}
+
+STRING 1688
+// Abilities: A0FR (Feuerregen), Researchubertip (Tooltip - Learn - Extended)
+{
+Ruft Feuerwellen herbei, die Flächenschaden verursachen. Jede Welle verursacht Direktschaden und verbrennt Gegner dann <A0FR,Dur1> Sek. lang.|n|n|cffffcc00Stufe 1|r - <A0FR,DataA1> Wellen, <A0FR,DataB1> Direktschaden, <A0FR,DataE1> Schaden pro Sekunde.|n|cffffcc00Stufe 2|r - <A0FR,DataA2> Wellen, <A0FR,DataB2> Direktschaden, <A0FR,DataE2> Schaden pro Sekunde.|n|cffffcc00Stufe 3|r - <A0FR,DataA3> Wellen, <A0FR,DataB3> Direktschaden, <A0FR,DataE3> Schaden pro Sekunde.
+}
+
+STRING 1689
+// Abilities: A0FR (Feuerregen), Tip (Tooltip - Normal)
+{
+Feuerregen [|cffffcc00Stufe 4|r]
+}
+
+STRING 1690
+// Abilities: A0FR (Feuerregen), Tip (Tooltip - Normal)
+{
+Feuerregen [|cffffcc00Stufe 5|r]
+}
+
+STRING 1691
+// Abilities: A0FR (Feuerregen), Tip (Tooltip - Normal)
+{
+Feuerregen [|cffffcc00Stufe 6|r]
+}
+
+STRING 1692
+// Abilities: A0FR (Feuerregen), Tip (Tooltip - Normal)
+{
+Feuerregen [|cffffcc00Stufe 7|r]
+}
+
+STRING 1693
+// Abilities: A0FR (Feuerregen), Tip (Tooltip - Normal)
+{
+Feuerregen [|cffffcc00Stufe 8|r]
+}
+
+STRING 1694
+// Abilities: A0FR (Feuerregen), Tip (Tooltip - Normal)
+{
+Feuerregen [|cffffcc00Stufe 9|r]
+}
+
+STRING 1695
+// Abilities: A0FR (Feuerregen), Tip (Tooltip - Normal)
+{
+Feuerregen [|cffffcc00Stufe 10|r]
+}
+
+STRING 1696
+// Abilities: A0FR (Feuerregen), Ubertip (Tooltip - Normal - Extended)
+{
+Ruft <A0FR,DataA1> Feuerwellen herbei, die Flächenschaden verursachen. Jede Welle verursacht <A0FR,DataB1> Direktschaden und <A0FR,Dur1> Sek. lang <A0FR,DataE1> Schaden pro Sekunde.
+}
+
+STRING 1697
+// Abilities: A0FR (Feuerregen), Ubertip (Tooltip - Normal - Extended)
+{
+Ruft <A0FR,DataA2> Feuerwellen herbei, die Flächenschaden verursachen. Jede Welle verursacht <A0FR,DataB2> Direktschaden und <A0FR,Dur2> Sek. lang <A0FR,DataE2> Schaden pro Sekunde.
+}
+
+STRING 1698
+// Abilities: A0FR (Feuerregen), Ubertip (Tooltip - Normal - Extended)
+{
+Ruft <A0FR,DataA3> Feuerwellen herbei, die Flächenschaden verursachen. Jede Welle verursacht <A0FR,DataB3> Direktschaden und <A0FR,Dur3> Sek. lang <A0FR,DataE3> Schaden pro Sekunde.
+}
+
+STRING 1699
+// Abilities: A0FR (Feuerregen), Ubertip (Tooltip - Normal - Extended)
+{
+Ruft <A0FR,DataA4> Feuerwellen herbei, die Flächenschaden verursachen. Jede Welle verursacht <A0FR,DataB4> Direktschaden und <A0FR,Dur4> Sek. lang <A0FR,DataE4> Schaden pro Sekunde.
+}
+
+STRING 1700
+// Abilities: A0FR (Feuerregen), Ubertip (Tooltip - Normal - Extended)
+{
+Ruft <A0FR,DataA5> Feuerwellen herbei, die Flächenschaden verursachen. Jede Welle verursacht <A0FR,DataB5> Direktschaden und <A0FR,Dur5> Sek. lang <A0FR,DataE5> Schaden pro Sekunde.
+}
+
+STRING 1701
+// Abilities: A0FR (Feuerregen), Ubertip (Tooltip - Normal - Extended)
+{
+Ruft <A0FR,DataA6> Feuerwellen herbei, die Flächenschaden verursachen. Jede Welle verursacht <A0FR,DataB6> Direktschaden und <A0FR,Dur6> Sek. lang <A0FR,DataE6> Schaden pro Sekunde.
+}
+
+STRING 1702
+// Abilities: A0FR (Feuerregen), Ubertip (Tooltip - Normal - Extended)
+{
+Ruft <A0FR,DataA7> Feuerwellen herbei, die Flächenschaden verursachen. Jede Welle verursacht <A0FR,DataB7> Direktschaden und <A0FR,Dur7> Sek. lang <A0FR,DataE7> Schaden pro Sekunde.
+}
+
+STRING 1703
+// Abilities: A0FR (Feuerregen), Ubertip (Tooltip - Normal - Extended)
+{
+Ruft <A0FR,DataA8> Feuerwellen herbei, die Flächenschaden verursachen. Jede Welle verursacht <A0FR,DataB8> Direktschaden und <A0FR,Dur8> Sek. lang <A0FR,DataE8> Schaden pro Sekunde.
+}
+
+STRING 1704
+// Abilities: A0FR (Feuerregen), Ubertip (Tooltip - Normal - Extended)
+{
+Ruft <A0FR,DataA9> Feuerwellen herbei, die Flächenschaden verursachen. Jede Welle verursacht <A0FR,DataB9> Direktschaden und <A0FR,Dur9> Sek. lang <A0FR,DataE9> Schaden pro Sekunde.
+}
+
+STRING 1705
+// Abilities: A0FR (Feuerregen), Ubertip (Tooltip - Normal - Extended)
+{
+Ruft <A0FR,DataA10> Feuerwellen herbei, die Flächenschaden verursachen. Jede Welle verursacht <A0FR,DataB10> Direktschaden und <A0FR,Dur10> Sek. lang <A0FR,DataE10> Schaden pro Sekunde.
+}
+
+STRING 1706
+// Abilities: A00Q (Gottesschild), EditorSuffix (Editor Suffix)
+{
+(Hero 5 - unfertig)
+}
+
+STRING 1707
+// Abilities: A0SG (Schreckensgeheul), EditorSuffix (Editor Suffix)
+{
+(Hero 10)
+}
+
+STRING 1708
+// Abilities: A0SG (Schreckensgeheul), Researchubertip (Tooltip - Learn - Extended)
+{
+Stößt ein grauenvolles Heulen aus, das nahe gegnerische Einheiten erzittern lässt und ihren Angriffsschaden verringert.|nHält <A0SG,Dur1> Sek. lang an.|n|n|cffffcc00Stufe 1|r - <A0SG,DataA1,%>% Schadensverringerung.|n|cffffcc00Stufe 2|r - <A0SG,DataA2,%>% Schadensverringerung.|n|cffffcc00Stufe 3|r - <A0SG,DataA3,%>% Schadensverringerung.
+}
+
+STRING 1709
+// Abilities: A0SG (Schreckensgeheul), Tip (Tooltip - Normal)
+{
+Schreckensgeheul [|cffffcc00Stufe 4|r]
+}
+
+STRING 1710
+// Abilities: A0SG (Schreckensgeheul), Tip (Tooltip - Normal)
+{
+Schreckensgeheul [|cffffcc00Stufe 5|r]
+}
+
+STRING 1711
+// Abilities: A0SG (Schreckensgeheul), Tip (Tooltip - Normal)
+{
+Schreckensgeheul [|cffffcc00Stufe 6|r]
+}
+
+STRING 1712
+// Abilities: A0SG (Schreckensgeheul), Tip (Tooltip - Normal)
+{
+Schreckensgeheul [|cffffcc00Stufe 7|r]
+}
+
+STRING 1713
+// Abilities: A0SG (Schreckensgeheul), Tip (Tooltip - Normal)
+{
+Schreckensgeheul [|cffffcc00Stufe 8|r]
+}
+
+STRING 1714
+// Abilities: A0SG (Schreckensgeheul), Tip (Tooltip - Normal)
+{
+Schreckensgeheul [|cffffcc00Stufe 9|r]
+}
+
+STRING 1715
+// Abilities: A0SG (Schreckensgeheul), Tip (Tooltip - Normal)
+{
+Schreckensgeheul [|cffffcc00Stufe 10|r]
+}
+
+STRING 1716
+// Abilities: A0SG (Schreckensgeheul), Ubertip (Tooltip - Normal - Extended)
+{
+Stößt ein grauenvolles Heulen aus, das den Angriffsschaden naher gegnerischer Einheiten <A0SG,Dur1> Sek. lang um <A0SG,DataA1,%>% verringert.
+}
+
+STRING 1717
+// Abilities: A0SG (Schreckensgeheul), Ubertip (Tooltip - Normal - Extended)
+{
+Stößt ein grauenvolles Heulen aus, das den Angriffsschaden naher gegnerischer Einheiten <A0SG,Dur2> Sek. lang um <A0SG,DataA2,%>% verringert.
+}
+
+STRING 1718
+// Abilities: A0SG (Schreckensgeheul), Ubertip (Tooltip - Normal - Extended)
+{
+Stößt ein grauenvolles Heulen aus, das den Angriffsschaden naher gegnerischer Einheiten <A0SG,Dur3> Sek. lang um <A0SG,DataA3,%>% verringert.
+}
+
+STRING 1719
+// Abilities: A0SG (Schreckensgeheul), Ubertip (Tooltip - Normal - Extended)
+{
+Stößt ein grauenvolles Heulen aus, das den Angriffsschaden naher gegnerischer Einheiten <A0SG,Dur4> Sek. lang um <A0SG,DataA4,%>% verringert.
+}
+
+STRING 1720
+// Abilities: A0SG (Schreckensgeheul), Ubertip (Tooltip - Normal - Extended)
+{
+Stößt ein grauenvolles Heulen aus, das den Angriffsschaden naher gegnerischer Einheiten <A0SG,Dur5> Sek. lang um <A0SG,DataA5,%>% verringert.
+}
+
+STRING 1721
+// Abilities: A0SG (Schreckensgeheul), Ubertip (Tooltip - Normal - Extended)
+{
+Stößt ein grauenvolles Heulen aus, das den Angriffsschaden naher gegnerischer Einheiten <A0SG,Dur6> Sek. lang um <A0SG,DataA6,%>% verringert.
+}
+
+STRING 1722
+// Abilities: A0SG (Schreckensgeheul), Ubertip (Tooltip - Normal - Extended)
+{
+Stößt ein grauenvolles Heulen aus, das den Angriffsschaden naher gegnerischer Einheiten <A0SG,Dur7> Sek. lang um <A0SG,DataA7,%>% verringert.
+}
+
+STRING 1723
+// Abilities: A0SG (Schreckensgeheul), Ubertip (Tooltip - Normal - Extended)
+{
+Stößt ein grauenvolles Heulen aus, das den Angriffsschaden naher gegnerischer Einheiten <A0SG,Dur8> Sek. lang um <A0SG,DataA8,%>% verringert.
+}
+
+STRING 1724
+// Abilities: A0SG (Schreckensgeheul), Ubertip (Tooltip - Normal - Extended)
+{
+Stößt ein grauenvolles Heulen aus, das den Angriffsschaden naher gegnerischer Einheiten <A0SG,Dur9> Sek. lang um <A0SG,DataA9,%>% verringert.
+}
+
+STRING 1725
+// Abilities: A0SG (Schreckensgeheul), Ubertip (Tooltip - Normal - Extended)
+{
+Stößt ein grauenvolles Heulen aus, das den Angriffsschaden naher gegnerischer Einheiten <A0SG,Dur10> Sek. lang um <A0SG,DataA10,%>% verringert.
+}
+
+STRING 1726
+// Abilities: A0SS (Spaltschlag), Researchubertip (Tooltip - Learn - Extended)
+{
+Schlägt mit solcher Kraft zu, dass mehrere Gegner Schaden erleiden.|n|n|cffffcc00Stufe 1|r - <A0SS,DataA1,%>% Flächenschaden.|n|cffffcc00Stufe 2|r - <A0SS,DataA2,%>% Flächenschaden.|n|cffffcc00Stufe 3|r - <A0SS,DataA3,%>% Flächenschaden.
+}
+
+STRING 1727
+// Abilities: A0SS (Spaltschlag), EditorSuffix (Editor Suffix)
+{
+(Hero 10)
+}
+
+STRING 1728
+// Abilities: A0SS (Spaltschlag), Tip (Tooltip - Normal)
+{
+Spaltschlag [|cffffcc00Stufe 4|r]
+}
+
+STRING 1729
+// Abilities: A0SS (Spaltschlag), Tip (Tooltip - Normal)
+{
+Spaltschlag [|cffffcc00Stufe 5|r]
+}
+
+STRING 1730
+// Abilities: A0SS (Spaltschlag), Tip (Tooltip - Normal)
+{
+Spaltschlag [|cffffcc00Stufe 6|r]
+}
+
+STRING 1731
+// Abilities: A0SS (Spaltschlag), Tip (Tooltip - Normal)
+{
+Spaltschlag [|cffffcc00Stufe 7|r]
+}
+
+STRING 1732
+// Abilities: A0SS (Spaltschlag), Tip (Tooltip - Normal)
+{
+Spaltschlag [|cffffcc00Stufe 8|r]
+}
+
+STRING 1733
+// Abilities: A0SS (Spaltschlag), Tip (Tooltip - Normal)
+{
+Spaltschlag [|cffffcc00Stufe 9|r]
+}
+
+STRING 1734
+// Abilities: A0SS (Spaltschlag), Tip (Tooltip - Normal)
+{
+Spaltschlag [|cffffcc00Stufe 10|r]
+}
+
+STRING 1735
+// Abilities: A0SS (Spaltschlag), Ubertip (Tooltip - Normal - Extended)
+{
+Schlägt mit solcher Kraft zu, dass auch Gegner in der Nähe des Primärziels <A0SS,DataA1,%>% Schaden erleiden.
+}
+
+STRING 1736
+// Abilities: A0SS (Spaltschlag), Ubertip (Tooltip - Normal - Extended)
+{
+Schlägt mit solcher Kraft zu, dass auch Gegner in der Nähe des Primärziels <A0SS,DataA2,%>% Schaden erleiden.
+}
+
+STRING 1737
+// Abilities: A0SS (Spaltschlag), Ubertip (Tooltip - Normal - Extended)
+{
+Schlägt mit solcher Kraft zu, dass auch Gegner in der Nähe des Primärziels <A0SS,DataA3,%>% Schaden erleiden.
+}
+
+STRING 1738
+// Abilities: A0SS (Spaltschlag), Ubertip (Tooltip - Normal - Extended)
+{
+Schlägt mit solcher Kraft zu, dass auch Gegner in der Nähe des Primärziels <A0SS,DataA4,%>% Schaden erleiden.
+}
+
+STRING 1739
+// Abilities: A0SS (Spaltschlag), Ubertip (Tooltip - Normal - Extended)
+{
+Schlägt mit solcher Kraft zu, dass auch Gegner in der Nähe des Primärziels <A0SS,DataA5,%>% Schaden erleiden.
+}
+
+STRING 1740
+// Abilities: A0SS (Spaltschlag), Ubertip (Tooltip - Normal - Extended)
+{
+Schlägt mit solcher Kraft zu, dass auch Gegner in der Nähe des Primärziels <A0SS,DataA6,%>% Schaden erleiden.
+}
+
+STRING 1741
+// Abilities: A0SS (Spaltschlag), Ubertip (Tooltip - Normal - Extended)
+{
+Schlägt mit solcher Kraft zu, dass auch Gegner in der Nähe des Primärziels <A0SS,DataA7,%>% Schaden erleiden.
+}
+
+STRING 1742
+// Abilities: A0SS (Spaltschlag), Ubertip (Tooltip - Normal - Extended)
+{
+Schlägt mit solcher Kraft zu, dass auch Gegner in der Nähe des Primärziels <A0SS,DataA8,%>% Schaden erleiden.
+}
+
+STRING 1743
+// Abilities: A0SS (Spaltschlag), Ubertip (Tooltip - Normal - Extended)
+{
+Schlägt mit solcher Kraft zu, dass auch Gegner in der Nähe des Primärziels <A0SS,DataA9,%>% Schaden erleiden.
+}
+
+STRING 1744
+// Abilities: A0SS (Spaltschlag), Ubertip (Tooltip - Normal - Extended)
+{
+Schlägt mit solcher Kraft zu, dass auch Gegner in der Nähe des Primärziels <A0SS,DataA10,%>% Schaden erleiden.
+}
+
+STRING 1745
+// Abilities: A00M (Stadtportal), Ubertip (Tooltip - Normal - Extended)
+{
+Teleportiert den Helden und bis zu <A00M,DataA1> verbündeten Einheiten in seiner Nähe zu einem ausgewählten verbündeten Hauptgebäude.
+}
+
+STRING 1746
+// Abilities: A00L (Monsun), EditorSuffix (Editor Suffix)
+{
+(Hero 3)
+}
+
+STRING 1747
+// Abilities: A00L (Monsun), Researchubertip (Tooltip - Learn - Extended)
+{
+Ruft einen Blitzsturm herbei, der gegnerischen Einheiten <A00L,DataA1> Schaden zufügt.|nHält <A00L,Dur1> Sek. lang an.|n|nDas Gebiet und der verursachte Schaden werden mit jeder Stufe größer.
+}
+
+STRING 1748
+// Abilities: A00L (Monsun), Ubertip (Tooltip - Normal - Extended)
+{
+Ruft einen Blitzsturm herbei, der gegnerischen Einheiten in einem Zielgebiet <A00L,DataA1> Schaden zufügt.|nHält <A00L,Dur1> Sek. lang an.
+}
+
+STRING 1749
+// Abilities: A00L (Monsun), Ubertip (Tooltip - Normal - Extended)
+{
+Ruft einen Blitzsturm herbei, der gegnerischen Einheiten in einem Zielgebiet <A00L,DataA2> Schaden zufügt.|nHält <A00L,Dur2> Sek. lang an.
+}
+
+STRING 1750
+// Abilities: A00L (Monsun), Ubertip (Tooltip - Normal - Extended)
+{
+Ruft einen Blitzsturm herbei, der gegnerischen Einheiten in einem Zielgebiet <A00L,DataA3> Schaden zufügt.|nHält <A00L,Dur3> Sek. lang an.
+}
+
+STRING 1751
+// Abilities: A012 (Schwarzer Pfeil), EditorSuffix (Editor Suffix)
+{
+(Hero 3)
+}
+
+STRING 1752
+// Abilities: A0VD (Verdammnis), EditorSuffix (Editor Suffix)
+{
+(Hero 3)
+}
+
+STRING 1753
+// Abilities: A0VD (Verdammnis), Tip (Tooltip - Normal)
+{
+Verdammnis
+}
+
+STRING 1754
+// Abilities: A0VD (Verdammnis), Tip (Tooltip - Normal)
+{
+Verdammnis
+}
+
+STRING 1755
+// Abilities: A0VD (Verdammnis), Ubertip (Tooltip - Normal - Extended)
+{
+Markiert eine Zieleinheit für die Manifestation eines Dämons. Die Einheit kann keine Fähigkeiten einsetzen und erleidet <A0VD,DataA1> Schaden pro Sekunde, bis sie stirbt. Nach ihrem Tod steigt ein großer Dämon aus ihrer Leiche empor. Verdammnis kann nicht gebannt oder beendet werden.
+}
+
+STRING 1756
+// Abilities: A0VD (Verdammnis), Ubertip (Tooltip - Normal - Extended)
+{
+Markiert eine Zieleinheit für die Manifestation eines Dämons. Die Einheit kann keine Fähigkeiten einsetzen und erleidet <A0VD,DataA2> Schaden pro Sekunde, bis sie stirbt. Nach ihrem Tod steigt ein großer Dämon aus ihrer Leiche empor. Verdammnis kann nicht gebannt oder beendet werden.
+}
+
+STRING 1757
+// Abilities: A0VD (Verdammnis), Ubertip (Tooltip - Normal - Extended)
+{
+Markiert eine Zieleinheit für die Manifestation eines Dämons. Die Einheit kann keine Fähigkeiten einsetzen und erleidet <A0VD,DataA3> Schaden pro Sekunde, bis sie stirbt. Nach ihrem Tod steigt ein großer Dämon aus ihrer Leiche empor. Verdammnis kann nicht gebannt oder beendet werden.
 }
 
