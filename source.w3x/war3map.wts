@@ -12,7 +12,7 @@ STRING 3
 {
 ...
 
-0.8.0.0 by NozzNazz
+0.8.1.0 by NozzNazz
 }
 
 STRING 4
@@ -117,7 +117,7 @@ STRING 65
 {
 ...
 
-0.8.0.0 by NozzNazz
+0.8.1.0 by NozzNazz
 }
 
 STRING 72
@@ -3397,13 +3397,13 @@ P
 }
 
 STRING 1106
-// Items: I001 ( Foliant des Auftstiegs (für Tests)), Tip (Tooltip - Basic)
+// Items: I001 (Foliant des Auftstiegs (für Tests)), Tip (Tooltip - Basic)
 {
 Foliant des Aufstiegs kaufen
 }
 
 STRING 1107
-// Items: I001 ( Foliant des Auftstiegs (für Tests)), Ubertip (Tooltip - Extended)
+// Items: I001 (Foliant des Auftstiegs (für Tests)), Ubertip (Tooltip - Extended)
 {
 Gewährt dem Helden eine Menge Erfahrungspunkte.
 }
@@ -4120,12 +4120,6 @@ STRING 1240
 // Abilities: A00G (Transmutieren), Researchubertip (Tooltip - Learn - Extended)
 {
 Tötet eine Zieleinheit sofort und wandelt sie in Gold um, das zum Gold des Spielers hinzugefügt wird!|nKann nicht gegen Helden eingesetzt werden.|n|n|cffffcc00Stufe 1|r - Gewährt dem Spieler <A00G,DataA1,%>% des Goldes.|n|cffffcc00Stufe 2|r - Gewährt dem Spieler <A00G,DataA2,%>% des Goldes.|n|cffffcc00Stufe 3|r - Gewährt dem Spieler <A00G,DataA3,%>% des Goldes... usw.
-}
-
-STRING 1241
-// Items: I001 ( Foliant des Auftstiegs (für Tests)), Name (Name)
-{
- Foliant des Auftstiegs (für Tests)
 }
 
 STRING 1242
@@ -6640,5 +6634,41 @@ STRING 1855
 // Abilities: A0VK (Vulkan), Ubertip (Tooltip - Normal - Extended)
 {
 Lässt einen riesigen Vulkan aus dem Boden hervorbrechen, der alle <A0VK,DataC10> Sek. glühende Felsen auf nahe Bodeneinheiten und Gebäude schleudert, die jedem Ziel <ANvc,DataE10> Schaden zufügen und es für <A0VK,Dur10> Sek. betäuben.
+}
+
+STRING 1856
+// Items: I001 (Foliant des Auftstiegs (für Tests)), Name (Name)
+{
+Foliant des Auftstiegs (für Tests)
+}
+
+STRING 1857
+// Items: I002 (Großer Manatrank (für Tests)), Name (Name)
+{
+Großer Manatrank (für Tests)
+}
+
+STRING 1858
+// Abilities: A013 (Gegenstand: Erfahrungsgewinn), EditorSuffix (Editor Suffix)
+{
+(5000)
+}
+
+STRING 1859
+// Abilities: A014 (Gegenstand: Manawiederherstellung), EditorSuffix (Editor Suffix)
+{
+(5000)
+}
+
+STRING 1860
+// Items: I002 (Großer Manatrank (für Tests)), Ubertip (Tooltip - Extended)
+{
+Stellt <A014,DataA1> Mana wieder her.
+}
+
+STRING 1861
+// Abilities: A0BA (Befehlsaura), EditorSuffix (Editor Suffix)
+{
+(Unit)
 }
 
