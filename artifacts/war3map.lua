@@ -34089,13 +34089,13 @@ gg_unit_h005_0026 = nil
 gg_unit_n010_0281 = nil
 gg_unit_n011_0282 = nil
 gg_unit_n012_0283 = nil
-gg_unit_n013_0284 = nil
+gg_unit_n01A_0234 = nil
 gg_unit_h000_0261 = nil
 gg_unit_h000_0262 = nil
 gg_unit_h000_0263 = nil
 gg_unit_h000_0264 = nil
 gg_unit_h009_0250 = nil
-gg_unit_n014_0285 = nil
+gg_unit_n019_0219 = nil
 gg_unit_h000_0220 = nil
 gg_unit_h000_0221 = nil
 gg_unit_h000_0222 = nil
@@ -34132,6 +34132,10 @@ gg_unit_n017_0192 = nil
 gg_unit_n015_0212 = nil
 gg_unit_h004_0213 = nil
 gg_unit_h005_0214 = nil
+gg_unit_h00P_0215 = nil
+gg_unit_h00Q_0216 = nil
+gg_unit_h00R_0217 = nil
+gg_unit_n018_0218 = nil
 gg_dest_HEch_0019 = nil
 gg_dest_HEch_0017 = nil
 gg_dest_HEch_0016 = nil
@@ -43298,6 +43302,11 @@ function CreateNeutralPassive()
     gg_unit_n016_0191 = CreateUnit(p, 1848652086, 16451.0, 17739.6, 270.000)
     gg_unit_n017_0192 = CreateUnit(p, 1848652087, 16326.5, 17726.6, 270.000)
     gg_unit_n015_0212 = CreateUnit(p, 1848652085, 16201.9, 17732.4, 270.000)
+    gg_unit_h00P_0215 = CreateUnit(p, 1747988560, 16702.6, 17714.8, 270.000)
+    gg_unit_h00Q_0216 = CreateUnit(p, 1747988561, 16701.4, 17844.4, 270.000)
+    gg_unit_h00R_0217 = CreateUnit(p, 1747988562, 16698.9, 17996.9, 270.000)
+    gg_unit_n018_0218 = CreateUnit(p, 1848652088, 16899.5, 17723.8, 270.000)
+    gg_unit_n019_0219 = CreateUnit(p, 1848652089, 16898.7, 17861.0, 270.000)
     gg_unit_h000_0220 = CreateUnit(p, 1747988528, 17088.1, 17848.5, 270.000)
     SetUnitState(gg_unit_h000_0220, UNIT_STATE_LIFE, 0.80 * GetUnitState(gg_unit_h000_0220, UNIT_STATE_LIFE))
     gg_unit_h000_0221 = CreateUnit(p, 1747988528, 17209.7, 17852.9, 270.000)
@@ -43308,11 +43317,10 @@ function CreateNeutralPassive()
     SetUnitState(gg_unit_h000_0223, UNIT_STATE_LIFE, 0.80 * GetUnitState(gg_unit_h000_0223, UNIT_STATE_LIFE))
     gg_unit_h000_0224 = CreateUnit(p, 1747988528, 17148.9, 17912.4, 270.000)
     SetUnitState(gg_unit_h000_0224, UNIT_STATE_LIFE, 0.80 * GetUnitState(gg_unit_h000_0224, UNIT_STATE_LIFE))
+    gg_unit_n01A_0234 = CreateUnit(p, 1848652097, 16887.6, 17975.1, 270.000)
     gg_unit_n010_0281 = CreateUnit(p, 1848652080, 16442.2, 17977.1, 270.000)
     gg_unit_n011_0282 = CreateUnit(p, 1848652081, 16323.8, 17966.6, 270.000)
     gg_unit_n012_0283 = CreateUnit(p, 1848652082, 16201.2, 17960.7, 270.000)
-    gg_unit_n013_0284 = CreateUnit(p, 1848652083, 16076.7, 17983.0, 270.000)
-    gg_unit_n014_0285 = CreateUnit(p, 1848652084, 15945.4, 17986.0, 270.000)
 end
 
 function CreatePlayerBuildings()

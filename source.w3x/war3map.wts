@@ -12,7 +12,7 @@ STRING 3
 {
 ...
 
-0.8.1.0 by NozzNazz
+0.8.2.0 by NozzNazz
 }
 
 STRING 4
@@ -117,7 +117,7 @@ STRING 65
 {
 ...
 
-0.8.1.0 by NozzNazz
+0.8.2.0 by NozzNazz
 }
 
 STRING 72
@@ -679,7 +679,7 @@ STRING 452
 }
 
 STRING 453
-// Units: N006 (Bestienmeister), EditorSuffix (Name - Editor Suffix)
+// Units: H00N (Bergkönig), EditorSuffix (Name - Editor Suffix)
 {
 (Hero)
 }
@@ -1945,7 +1945,7 @@ Erhöhte Attribute [|cffffcc00Stufe 30|r]
 }
 
 STRING 771
-// Abilities: A00M (Stadtportal), EditorSuffix (Editor Suffix)
+// Units: H00O (Erzmagier), EditorSuffix (Name - Editor Suffix)
 {
 (Hero)
 }
@@ -6372,14 +6372,8 @@ STRING 1808
 Lavabrut - Stufe 1
 }
 
-STRING 1809
-// Units: n019 (Lavabrut- Stufe 2), Name (Name)
-{
-Lavabrut- Stufe 2
-}
-
 STRING 1810
-// Units: n019 (Lavabrut- Stufe 2), EditorSuffix (Name - Editor Suffix)
+// Units: n019 (Lavabrut - Stufe 2), EditorSuffix (Name - Editor Suffix)
 {
 (Hero spell)
 }
@@ -6670,5 +6664,863 @@ STRING 1861
 // Abilities: A0BA (Befehlsaura), EditorSuffix (Editor Suffix)
 {
 (Unit)
+}
+
+STRING 1862
+// Units: N006 (Bestienmeister), EditorSuffix (Name - Editor Suffix)
+{
+(Hero unfertig)
+}
+
+STRING 1863
+// Abilities: A0DS (Donnerschlag), EditorSuffix (Editor Suffix)
+{
+(Hero 10)
+}
+
+STRING 1864
+// Abilities: A0DS (Donnerschlag), Researchubertip (Tooltip - Learn - Extended)
+{
+Erschüttert den Boden, fügt gegnerischen Bodeneinheiten in der Nähe Schaden zu und verringert ihre Bewegungs- und Angriffsgeschwindigkeit.|n|n|cffffcc00Stufe 1|r - <A0DS,DataA1> Schaden, <A0DS,DataC1,%>% Bewegungsgeschwindigkeit, <A0DS,DataD1,%>% Angriffsgeschwindigkeit.|n|cffffcc00Stufe 2|r - <A0DS,DataA2> Schaden, <A0DS,DataC2,%>% Bewegungsgeschwindigkeit, <A0DS,DataD2,%>% Angriffsgeschwindigkeit.|n|cffffcc00Stufe 3|r - <A0DS,DataA3> Schaden, <A0DS,DataC3,%>% Bewegungsgeschwindigkeit, <A0DS,DataD3,%>% Angriffsgeschwindigkeit.
+}
+
+STRING 1865
+// Abilities: A0DS (Donnerschlag), Tip (Tooltip - Normal)
+{
+Donnerschlag [|cffffcc00Stufe 4|r]
+}
+
+STRING 1866
+// Abilities: A0DS (Donnerschlag), Tip (Tooltip - Normal)
+{
+Donnerschlag [|cffffcc00Stufe 5|r]
+}
+
+STRING 1867
+// Abilities: A0DS (Donnerschlag), Tip (Tooltip - Normal)
+{
+Donnerschlag [|cffffcc00Stufe 6|r]
+}
+
+STRING 1868
+// Abilities: A0DS (Donnerschlag), Tip (Tooltip - Normal)
+{
+Donnerschlag [|cffffcc00Stufe 7|r]
+}
+
+STRING 1869
+// Abilities: A0DS (Donnerschlag), Tip (Tooltip - Normal)
+{
+Donnerschlag [|cffffcc00Stufe 8|r]
+}
+
+STRING 1870
+// Abilities: A0DS (Donnerschlag), Tip (Tooltip - Normal)
+{
+Donnerschlag [|cffffcc00Stufe 9|r]
+}
+
+STRING 1871
+// Abilities: A0DS (Donnerschlag), Tip (Tooltip - Normal)
+{
+Donnerschlag [|cffffcc00Stufe 10|r]
+}
+
+STRING 1872
+// Abilities: A0DS (Donnerschlag), Ubertip (Tooltip - Normal - Extended)
+{
+Erschüttert den Boden. Die Erschütterung fügt gegnerischen Bodeneinheiten in der Nähe <A0DS,DataA1> Schaden zu, verringert ihre Bewegungsgeschwindigkeit um <A0DS,DataC1,%>% und ihre Angriffsgeschwindigkeit um <A0DS,DataD1,%>%.
+}
+
+STRING 1873
+// Abilities: A0DS (Donnerschlag), Ubertip (Tooltip - Normal - Extended)
+{
+Erschüttert den Boden. Die Erschütterung fügt gegnerischen Bodeneinheiten in der Nähe <A0DS,DataA2> Schaden zu, verringert ihre Bewegungsgeschwindigkeit um <A0DS,DataC2,%>% und ihre Angriffsgeschwindigkeit um <A0DS,DataD2,%>%.
+}
+
+STRING 1874
+// Abilities: A0DS (Donnerschlag), Ubertip (Tooltip - Normal - Extended)
+{
+Erschüttert den Boden. Die Erschütterung fügt gegnerischen Bodeneinheiten in der Nähe <A0DS,DataA3> Schaden zu, verringert ihre Bewegungsgeschwindigkeit um <A0DS,DataC3,%>% und ihre Angriffsgeschwindigkeit um <A0DS,DataD3,%>%.
+}
+
+STRING 1875
+// Abilities: A0DS (Donnerschlag), Ubertip (Tooltip - Normal - Extended)
+{
+Erschüttert den Boden. Die Erschütterung fügt gegnerischen Bodeneinheiten in der Nähe <A0DS,DataA4> Schaden zu, verringert ihre Bewegungsgeschwindigkeit um <A0DS,DataC4,%>% und ihre Angriffsgeschwindigkeit um <A0DS,DataD4,%>%.
+}
+
+STRING 1876
+// Abilities: A0DS (Donnerschlag), Ubertip (Tooltip - Normal - Extended)
+{
+Erschüttert den Boden. Die Erschütterung fügt gegnerischen Bodeneinheiten in der Nähe <A0DS,DataA5> Schaden zu, verringert ihre Bewegungsgeschwindigkeit um <A0DS,DataC5,%>% und ihre Angriffsgeschwindigkeit um <A0DS,DataD5,%>%.
+}
+
+STRING 1877
+// Abilities: A0DS (Donnerschlag), Ubertip (Tooltip - Normal - Extended)
+{
+Erschüttert den Boden. Die Erschütterung fügt gegnerischen Bodeneinheiten in der Nähe <A0DS,DataA6> Schaden zu, verringert ihre Bewegungsgeschwindigkeit um <A0DS,DataC6,%>% und ihre Angriffsgeschwindigkeit um <A0DS,DataD6,%>%.
+}
+
+STRING 1878
+// Abilities: A0DS (Donnerschlag), Ubertip (Tooltip - Normal - Extended)
+{
+Erschüttert den Boden. Die Erschütterung fügt gegnerischen Bodeneinheiten in der Nähe <A0DS,DataA7> Schaden zu, verringert ihre Bewegungsgeschwindigkeit um <A0DS,DataC7,%>% und ihre Angriffsgeschwindigkeit um <A0DS,DataD7,%>%.
+}
+
+STRING 1879
+// Abilities: A0DS (Donnerschlag), Ubertip (Tooltip - Normal - Extended)
+{
+Erschüttert den Boden. Die Erschütterung fügt gegnerischen Bodeneinheiten in der Nähe <A0DS,DataA8> Schaden zu, verringert ihre Bewegungsgeschwindigkeit um <A0DS,DataC8,%>% und ihre Angriffsgeschwindigkeit um <A0DS,DataD8,%>%.
+}
+
+STRING 1880
+// Abilities: A0DS (Donnerschlag), Ubertip (Tooltip - Normal - Extended)
+{
+Erschüttert den Boden. Die Erschütterung fügt gegnerischen Bodeneinheiten in der Nähe <A0DS,DataA9> Schaden zu, verringert ihre Bewegungsgeschwindigkeit um <A0DS,DataC9,%>% und ihre Angriffsgeschwindigkeit um <A0DS,DataD9,%>%.
+}
+
+STRING 1881
+// Abilities: A0DS (Donnerschlag), Ubertip (Tooltip - Normal - Extended)
+{
+Erschüttert den Boden. Die Erschütterung fügt gegnerischen Bodeneinheiten in der Nähe <A0DS,DataA10> Schaden zu, verringert ihre Bewegungsgeschwindigkeit um <A0DS,DataC10,%>% und ihre Angriffsgeschwindigkeit um <A0DS,DataD10,%>%.
+}
+
+STRING 1882
+// Abilities: A0SC (Sturmschlag), EditorSuffix (Editor Suffix)
+{
+(Hero 10)
+}
+
+STRING 1883
+// Abilities: A0SC (Sturmschlag), Researchubertip (Tooltip - Learn - Extended)
+{
+Schleudert einen magischen Hammer auf eine gegnerische Einheit, fügt ihr Schaden zu und betäubt sie.|n|n|cffffcc00Stufe 1|r - <A0SC,DataA1> Schaden, betäubt für <A0SC,Dur1> Sek.|n|cffffcc00Stufe 2|r - <A0SC,DataA2> Schaden, betäubt für <A0SC,Dur2> Sek.|n|cffffcc00Stufe 3|r - <A0SC,DataA3> Schaden, betäubt für <A0SC,Dur3> Sek.
+}
+
+STRING 1884
+// Abilities: A0SC (Sturmschlag), Tip (Tooltip - Normal)
+{
+Sturmschlag [|cffffcc00Stufe 4|r]
+}
+
+STRING 1885
+// Abilities: A0SC (Sturmschlag), Tip (Tooltip - Normal)
+{
+Sturmschlag [|cffffcc00Stufe 5|r]
+}
+
+STRING 1886
+// Abilities: A0SC (Sturmschlag), Tip (Tooltip - Normal)
+{
+Sturmschlag [|cffffcc00Stufe 6|r]
+}
+
+STRING 1887
+// Abilities: A0SC (Sturmschlag), Tip (Tooltip - Normal)
+{
+Sturmschlag [|cffffcc00Stufe 7|r]
+}
+
+STRING 1888
+// Abilities: A0SC (Sturmschlag), Tip (Tooltip - Normal)
+{
+Sturmschlag [|cffffcc00Stufe 8|r]
+}
+
+STRING 1889
+// Abilities: A0SC (Sturmschlag), Tip (Tooltip - Normal)
+{
+Sturmschlag [|cffffcc00Stufe 9|r]
+}
+
+STRING 1890
+// Abilities: A0SC (Sturmschlag), Tip (Tooltip - Normal)
+{
+Sturmschlag [|cffffcc00Stufe 10|r]
+}
+
+STRING 1891
+// Abilities: A0SC (Sturmschlag), Ubertip (Tooltip - Normal - Extended)
+{
+Schleudert einen magischen Hammer auf eine gegnerische Zieleinheit, fügt ihr <A0SC,DataA1> Schaden zu und betäubt sie für <A0SC,Dur1> Sek.
+}
+
+STRING 1892
+// Abilities: A0SC (Sturmschlag), Ubertip (Tooltip - Normal - Extended)
+{
+Schleudert einen magischen Hammer auf eine gegnerische Zieleinheit, fügt ihr <A0SC,DataA2> Schaden zu und betäubt sie für <A0SC,Dur2> Sek.
+}
+
+STRING 1893
+// Abilities: A0SC (Sturmschlag), Ubertip (Tooltip - Normal - Extended)
+{
+Schleudert einen magischen Hammer auf eine gegnerische Zieleinheit, fügt ihr <A0SC,DataA3> Schaden zu und betäubt sie für <A0SC,Dur3> Sek.
+}
+
+STRING 1894
+// Abilities: A0SC (Sturmschlag), Ubertip (Tooltip - Normal - Extended)
+{
+Schleudert einen magischen Hammer auf eine gegnerische Zieleinheit, fügt ihr <A0SC,DataA4> Schaden zu und betäubt sie für <A0SC,Dur4> Sek.
+}
+
+STRING 1895
+// Abilities: A0SC (Sturmschlag), Ubertip (Tooltip - Normal - Extended)
+{
+Schleudert einen magischen Hammer auf eine gegnerische Zieleinheit, fügt ihr <A0SC,DataA5> Schaden zu und betäubt sie für <A0SC,Dur5> Sek.
+}
+
+STRING 1896
+// Abilities: A0SC (Sturmschlag), Ubertip (Tooltip - Normal - Extended)
+{
+Schleudert einen magischen Hammer auf eine gegnerische Zieleinheit, fügt ihr <A0SC,DataA6> Schaden zu und betäubt sie für <A0SC,Dur6> Sek.
+}
+
+STRING 1897
+// Abilities: A0SC (Sturmschlag), Ubertip (Tooltip - Normal - Extended)
+{
+Schleudert einen magischen Hammer auf eine gegnerische Zieleinheit, fügt ihr <A0SC,DataA7> Schaden zu und betäubt sie für <A0SC,Dur7> Sek.
+}
+
+STRING 1898
+// Abilities: A0SC (Sturmschlag), Ubertip (Tooltip - Normal - Extended)
+{
+Schleudert einen magischen Hammer auf eine gegnerische Zieleinheit, fügt ihr <A0SC,DataA8> Schaden zu und betäubt sie für <A0SC,Dur8> Sek.
+}
+
+STRING 1899
+// Abilities: A0SC (Sturmschlag), Ubertip (Tooltip - Normal - Extended)
+{
+Schleudert einen magischen Hammer auf eine gegnerische Zieleinheit, fügt ihr <A0SC,DataA9> Schaden zu und betäubt sie für <A0SC,Dur9> Sek.
+}
+
+STRING 1900
+// Abilities: A0SC (Sturmschlag), Ubertip (Tooltip - Normal - Extended)
+{
+Schleudert einen magischen Hammer auf eine gegnerische Zieleinheit, fügt ihr <A0SC,DataA10> Schaden zu und betäubt sie für <A0SC,Dur10> Sek.
+}
+
+STRING 1901
+// Abilities: A0HE (Hieb), EditorSuffix (Editor Suffix)
+{
+(Hero 10)
+}
+
+STRING 1902
+// Abilities: A0HE (Hieb), Researchubertip (Tooltip - Learn - Extended)
+{
+Gewährt eine Chance, bei einem Angriff <A0HE,DataC1> Bonusschaden zu verursachen und den Gegner für <A0HE,Dur1> Sek. zu betäuben.|n|n|cffffcc00Stufe 1|r - <A0HE,DataA1>% Chance pro Angriff.|n|cffffcc00Stufe 2|r - <A0HE,DataA2>% Chance pro Angriff.|n|cffffcc00Stufe 3|r - <A0HE,DataA3>% Chance pro Angriff.
+}
+
+STRING 1903
+// Abilities: A0HE (Hieb), Tip (Tooltip - Normal)
+{
+Hieb [|cffffcc00Stufe 4|r]
+}
+
+STRING 1904
+// Abilities: A0HE (Hieb), Tip (Tooltip - Normal)
+{
+Hieb [|cffffcc00Stufe 5|r]
+}
+
+STRING 1905
+// Abilities: A0HE (Hieb), Tip (Tooltip - Normal)
+{
+Hieb [|cffffcc00Stufe 6|r]
+}
+
+STRING 1906
+// Abilities: A0HE (Hieb), Tip (Tooltip - Normal)
+{
+Hieb [|cffffcc00Stufe 7|r]
+}
+
+STRING 1907
+// Abilities: A0HE (Hieb), Tip (Tooltip - Normal)
+{
+Hieb [|cffffcc00Stufe 8|r]
+}
+
+STRING 1908
+// Abilities: A0HE (Hieb), Tip (Tooltip - Normal)
+{
+Hieb [|cffffcc00Stufe 9|r]
+}
+
+STRING 1909
+// Abilities: A0HE (Hieb), Tip (Tooltip - Normal)
+{
+Hieb [|cffffcc00Stufe 10|r]
+}
+
+STRING 1910
+// Abilities: A0HE (Hieb), Ubertip (Tooltip - Normal - Extended)
+{
+Gewährt eine Chance von <A0HE,DataA1>%, bei einem Angriff <A0HE,DataC1> Bonusschaden zu verursachen und den Gegner für <A0HE,Dur1> Sek. zu betäuben.
+}
+
+STRING 1911
+// Abilities: A0HE (Hieb), Ubertip (Tooltip - Normal - Extended)
+{
+Gewährt eine Chance von <A0HE,DataA2>%, bei einem Angriff <A0HE,DataC2> Bonusschaden zu verursachen und den Gegner für <A0HE,Dur2> Sek. zu betäuben.
+}
+
+STRING 1912
+// Abilities: A0HE (Hieb), Ubertip (Tooltip - Normal - Extended)
+{
+Gewährt eine Chance von <A0HE,DataA3>%, bei einem Angriff <A0HE,DataC3> Bonusschaden zu verursachen und den Gegner für <A0HE,Dur3> Sek. zu betäuben.
+}
+
+STRING 1913
+// Abilities: A0HE (Hieb), Ubertip (Tooltip - Normal - Extended)
+{
+Gewährt eine Chance von <A0HE,DataA4>%, bei einem Angriff <A0HE,DataC4> Bonusschaden zu verursachen und den Gegner für <A0HE,Dur4> Sek. zu betäuben.
+}
+
+STRING 1914
+// Abilities: A0HE (Hieb), Ubertip (Tooltip - Normal - Extended)
+{
+Gewährt eine Chance von <A0HE,DataA5>%, bei einem Angriff <A0HE,DataC5> Bonusschaden zu verursachen und den Gegner für <A0HE,Dur5> Sek. zu betäuben.
+}
+
+STRING 1915
+// Abilities: A0HE (Hieb), Ubertip (Tooltip - Normal - Extended)
+{
+Gewährt eine Chance von <A0HE,DataA6>%, bei einem Angriff <A0HE,DataC6> Bonusschaden zu verursachen und den Gegner für <A0HE,Dur6> Sek. zu betäuben.
+}
+
+STRING 1916
+// Abilities: A0HE (Hieb), Ubertip (Tooltip - Normal - Extended)
+{
+Gewährt eine Chance von <A0HE,DataA7>%, bei einem Angriff <A0HE,DataC7> Bonusschaden zu verursachen und den Gegner für <A0HE,Dur7> Sek. zu betäuben.
+}
+
+STRING 1917
+// Abilities: A0HE (Hieb), Ubertip (Tooltip - Normal - Extended)
+{
+Gewährt eine Chance von <A0HE,DataA8>%, bei einem Angriff <A0HE,DataC8> Bonusschaden zu verursachen und den Gegner für <A0HE,Dur8> Sek. zu betäuben.
+}
+
+STRING 1918
+// Abilities: A0HE (Hieb), Ubertip (Tooltip - Normal - Extended)
+{
+Gewährt eine Chance von <A0HE,DataA9>%, bei einem Angriff <A0HE,DataC9> Bonusschaden zu verursachen und den Gegner für <A0HE,Dur9> Sek. zu betäuben.
+}
+
+STRING 1919
+// Abilities: A0HE (Hieb), Ubertip (Tooltip - Normal - Extended)
+{
+Gewährt eine Chance von <A0HE,DataA10>%, bei einem Angriff <A0HE,DataC10> Bonusschaden zu verursachen und den Gegner für <A0HE,Dur10> Sek. zu betäuben.
+}
+
+STRING 1920
+// Abilities: A015 (Avatar), Researchubertip (Tooltip - Learn - Extended)
+{
+Avatar erhöht die Rüstung des Bergkönigs um <A015,DataA1>, seine Trefferpunkte um <A015,DataB1>, seinen Schaden um <A015,DataC1> und gewährt ihm Zauberimmunität.|nHält <A015,Dur1> Sek. lang an.
+}
+
+STRING 1921
+// Abilities: A015 (Avatar), Tip (Tooltip - Normal)
+{
+Avatar aktivieren
+}
+
+STRING 1922
+// Abilities: A015 (Avatar), Tip (Tooltip - Normal)
+{
+Avatar aktivieren
+}
+
+STRING 1923
+// Abilities: A015 (Avatar), Untip (Tooltip - Turn Off)
+{
+Avatar deaktivieren
+}
+
+STRING 1924
+// Abilities: A015 (Avatar), Untip (Tooltip - Turn Off)
+{
+Avatar deaktivieren
+}
+
+STRING 1925
+// Abilities: A015 (Avatar), Ubertip (Tooltip - Normal - Extended)
+{
+Aktivieren, um die Rüstung des Bergkönigs um <A015,DataA1>, seine Trefferpunkte um <A015,DataB1> und seinen Schaden um <A015,DataC1> zu erhöhen und ihm Zauberimmunität zu gewähren.|nHält <A015,Dur1> Sek. lang an.
+}
+
+STRING 1926
+// Abilities: A015 (Avatar), Ubertip (Tooltip - Normal - Extended)
+{
+Aktivieren, um die Rüstung des Bergkönigs um <A015,DataA2>, seine Trefferpunkte um <A015,DataB2> und seinen Schaden um <A015,DataC2> zu erhöhen und ihm Zauberimmunität zu gewähren.|nHält <A015,Dur2> Sek. lang an.
+}
+
+STRING 1927
+// Abilities: A015 (Avatar), Ubertip (Tooltip - Normal - Extended)
+{
+Aktivieren, um die Rüstung des Bergkönigs um <A015,DataA3>, seine Trefferpunkte um <A015,DataB3> und seinen Schaden um <A015,DataC3> zu erhöhen und ihm Zauberimmunität zu gewähren.|nHält <A015,Dur3> Sek. lang an.
+}
+
+STRING 1928
+// Abilities: A015 (Avatar), EditorSuffix (Editor Suffix)
+{
+(Hero 3)
+}
+
+STRING 1929
+// Abilities: A00M (Stadtportal), EditorSuffix (Editor Suffix)
+{
+(Hero)
+}
+
+STRING 1930
+// Abilities: ABLZ (Blizzard), EditorSuffix (Editor Suffix)
+{
+(Hero 10)
+}
+
+STRING 1931
+// Abilities: ABLZ (Blizzard), Researchubertip (Tooltip - Learn - Extended)
+{
+Ruft Wellen von Eistrümmern herbei, die Einheiten im Zielgebiet Schaden zufügen.|n|n|cffffcc00Stufe 1|r - <ABLZ,DataA1> Wellen, die jeweils <ABLZ,DataB1> Schaden verursachen.|n|cffffcc00Stufe 2|r - <ABLZ,DataA2> Wellen, die jeweils <ABLZ,DataB2> Schaden verursachen.|n|cffffcc00Stufe 3|r - <ABLZ,DataA3> Wellen, die jeweils <ABLZ,DataB3> Schaden verursachen.
+}
+
+STRING 1932
+// Abilities: ABLZ (Blizzard), Tip (Tooltip - Normal)
+{
+Blizzard [|cffffcc00Stufe 4|r]
+}
+
+STRING 1933
+// Abilities: ABLZ (Blizzard), Tip (Tooltip - Normal)
+{
+Blizzard [|cffffcc00Stufe 5|r]
+}
+
+STRING 1934
+// Abilities: ABLZ (Blizzard), Tip (Tooltip - Normal)
+{
+Blizzard [|cffffcc00Stufe 6|r]
+}
+
+STRING 1935
+// Abilities: ABLZ (Blizzard), Tip (Tooltip - Normal)
+{
+Blizzard [|cffffcc00Stufe 7|r]
+}
+
+STRING 1936
+// Abilities: ABLZ (Blizzard), Tip (Tooltip - Normal)
+{
+Blizzard [|cffffcc00Stufe 8|r]
+}
+
+STRING 1937
+// Abilities: ABLZ (Blizzard), Tip (Tooltip - Normal)
+{
+Blizzard [|cffffcc00Stufe 9|r]
+}
+
+STRING 1938
+// Abilities: ABLZ (Blizzard), Tip (Tooltip - Normal)
+{
+Blizzard [|cffffcc00Stufe 10|r]
+}
+
+STRING 1939
+// Abilities: ABLZ (Blizzard), Ubertip (Tooltip - Normal - Extended)
+{
+Ruft <ABLZ,DataA1> Wellen von Eistrümmern herbei. Jede Welle fügt Einheiten im Wirkungsbereich <ABLZ,DataB1> Schaden zu.
+}
+
+STRING 1940
+// Abilities: ABLZ (Blizzard), Ubertip (Tooltip - Normal - Extended)
+{
+Ruft <ABLZ,DataA2> Wellen von Eistrümmern herbei. Jede Welle fügt Einheiten im Wirkungsbereich <ABLZ,DataB2> Schaden zu.
+}
+
+STRING 1941
+// Abilities: ABLZ (Blizzard), Ubertip (Tooltip - Normal - Extended)
+{
+Ruft <ABLZ,DataA3> Wellen von Eistrümmern herbei. Jede Welle fügt Einheiten im Wirkungsbereich <ABLZ,DataB3> Schaden zu.
+}
+
+STRING 1942
+// Abilities: ABLZ (Blizzard), Ubertip (Tooltip - Normal - Extended)
+{
+Ruft <ABLZ,DataA4> Wellen von Eistrümmern herbei. Jede Welle fügt Einheiten im Wirkungsbereich <ABLZ,DataB4> Schaden zu.
+}
+
+STRING 1943
+// Abilities: ABLZ (Blizzard), Ubertip (Tooltip - Normal - Extended)
+{
+Ruft <ABLZ,DataA5> Wellen von Eistrümmern herbei. Jede Welle fügt Einheiten im Wirkungsbereich <ABLZ,DataB5> Schaden zu.
+}
+
+STRING 1944
+// Abilities: ABLZ (Blizzard), Ubertip (Tooltip - Normal - Extended)
+{
+Ruft <ABLZ,DataA6> Wellen von Eistrümmern herbei. Jede Welle fügt Einheiten im Wirkungsbereich <ABLZ,DataB6> Schaden zu.
+}
+
+STRING 1945
+// Abilities: ABLZ (Blizzard), Ubertip (Tooltip - Normal - Extended)
+{
+Ruft <ABLZ,DataA7> Wellen von Eistrümmern herbei. Jede Welle fügt Einheiten im Wirkungsbereich <ABLZ,DataB7> Schaden zu.
+}
+
+STRING 1946
+// Abilities: ABLZ (Blizzard), Ubertip (Tooltip - Normal - Extended)
+{
+Ruft <ABLZ,DataA8> Wellen von Eistrümmern herbei. Jede Welle fügt Einheiten im Wirkungsbereich <ABLZ,DataB8> Schaden zu.
+}
+
+STRING 1947
+// Abilities: ABLZ (Blizzard), Ubertip (Tooltip - Normal - Extended)
+{
+Ruft <ABLZ,DataA9> Wellen von Eistrümmern herbei. Jede Welle fügt Einheiten im Wirkungsbereich <ABLZ,DataB9> Schaden zu.
+}
+
+STRING 1948
+// Abilities: ABLZ (Blizzard), Ubertip (Tooltip - Normal - Extended)
+{
+Ruft <ABLZ,DataA10> Wellen von Eistrümmern herbei. Jede Welle fügt Einheiten im Wirkungsbereich <ABLZ,DataB10> Schaden zu.
+}
+
+STRING 1949
+// Abilities: ABRA (Brillanzaura), EditorSuffix (Editor Suffix)
+{
+(Hero 10)
+}
+
+STRING 1950
+// Abilities: ABRA (Brillanzaura), Tip (Tooltip - Normal)
+{
+Brillanzaura [|cffffcc00Stufe 4|r]
+}
+
+STRING 1951
+// Abilities: ABRA (Brillanzaura), Tip (Tooltip - Normal)
+{
+Brillanzaura [|cffffcc00Stufe 5|r]
+}
+
+STRING 1952
+// Abilities: ABRA (Brillanzaura), Tip (Tooltip - Normal)
+{
+Brillanzaura [|cffffcc00Stufe 6|r]
+}
+
+STRING 1953
+// Abilities: ABRA (Brillanzaura), Tip (Tooltip - Normal)
+{
+Brillanzaura [|cffffcc00Stufe 7|r]
+}
+
+STRING 1954
+// Abilities: ABRA (Brillanzaura), Tip (Tooltip - Normal)
+{
+Brillanzaura [|cffffcc00Stufe 8|r]
+}
+
+STRING 1955
+// Abilities: ABRA (Brillanzaura), Tip (Tooltip - Normal)
+{
+Brillanzaura [|cffffcc00Stufe 9|r]
+}
+
+STRING 1956
+// Abilities: ABRA (Brillanzaura), Tip (Tooltip - Normal)
+{
+Brillanzaura [|cffffcc00Stufe 10|r]
+}
+
+STRING 1957
+// Abilities: ABRA (Brillanzaura), Ubertip (Tooltip - Normal - Extended)
+{
+Erhöht die Manaregeneration verbündeter Einheiten in der Nähe.
+}
+
+STRING 1958
+// Abilities: ABRA (Brillanzaura), Ubertip (Tooltip - Normal - Extended)
+{
+Erhöht die Manaregeneration verbündeter Einheiten in der Nähe.
+}
+
+STRING 1959
+// Abilities: ABRA (Brillanzaura), Ubertip (Tooltip - Normal - Extended)
+{
+Erhöht die Manaregeneration verbündeter Einheiten in der Nähe.
+}
+
+STRING 1960
+// Abilities: ABRA (Brillanzaura), Ubertip (Tooltip - Normal - Extended)
+{
+Erhöht die Manaregeneration verbündeter Einheiten in der Nähe.
+}
+
+STRING 1961
+// Abilities: ABRA (Brillanzaura), Ubertip (Tooltip - Normal - Extended)
+{
+Erhöht die Manaregeneration verbündeter Einheiten in der Nähe.
+}
+
+STRING 1962
+// Abilities: ABRA (Brillanzaura), Ubertip (Tooltip - Normal - Extended)
+{
+Erhöht die Manaregeneration verbündeter Einheiten in der Nähe.
+}
+
+STRING 1963
+// Abilities: ABRA (Brillanzaura), Ubertip (Tooltip - Normal - Extended)
+{
+Erhöht die Manaregeneration verbündeter Einheiten in der Nähe.
+}
+
+STRING 1966
+// Abilities: ABRA (Brillanzaura), Researchubertip (Tooltip - Learn - Extended)
+{
+Erhöht die Manaregeneration verbündeter Einheiten in der Nähe. Die Regeneration steigt mit jeder Stufe um 0,5 Punkte pro Sekunde.
+}
+
+STRING 1967
+// Units: h00P (Wasserelementar - Stufe 1), EditorSuffix (Name - Editor Suffix)
+{
+(Hero spell)
+}
+
+STRING 1968
+// Units: h00P (Wasserelementar - Stufe 1), Name (Name)
+{
+Wasserelementar - Stufe 1
+}
+
+STRING 1969
+// Units: h00Q (Wasserelementar - Stufe 2), Name (Name)
+{
+Wasserelementar - Stufe 2
+}
+
+STRING 1970
+// Units: h00Q (Wasserelementar - Stufe 2), EditorSuffix (Name - Editor Suffix)
+{
+(Hero spell)
+}
+
+STRING 1971
+// Units: h00R (Wasserelementar - Stufe 3), Name (Name)
+{
+Wasserelementar - Stufe 3
+}
+
+STRING 1972
+// Units: h00R (Wasserelementar - Stufe 3), EditorSuffix (Name - Editor Suffix)
+{
+(Hero spell)
+}
+
+STRING 1973
+// Abilities: AWEB (Wasserelementar beschwören), EditorSuffix (Editor Suffix)
+{
+(Hero 3)
+}
+
+STRING 1974
+// Units: n019 (Lavabrut - Stufe 2), Name (Name)
+{
+Lavabrut - Stufe 2
+}
+
+STRING 1975
+// Abilities: A004 (Brillanzaura), Ubertip (Tooltip - Normal - Extended)
+{
+Erhöht die Manaregeneration verbündeter Einheiten in der Nähe um <A004,DataA1> Mana pro Sekunde.
+}
+
+STRING 1976
+// Abilities: AFRG (Frostrüstung), EditorSuffix (Editor Suffix)
+{
+(Unit)
+}
+
+STRING 1977
+// Abilities: AFRG (Frostrüstung), Ubertip (Tooltip - Normal - Extended)
+{
+Hüllt eine verbündete Zieleinheit in einen Frostschild. Erhöht die Rüstung um <AFRG,DataB1> und verlangsamt angreifende Nahkampfeinheiten für <AFRG,Dur1> Sek.|nHält <AFRG,DataA1> Sek. lang an.
+}
+
+STRING 1978
+// Abilities: ASCW (Schmetterwelle), EditorSuffix (Editor Suffix)
+{
+(Unit)
+}
+
+STRING 1979
+// Abilities: ASCW (Schmetterwelle), Ubertip (Tooltip - Normal - Extended)
+{
+Schickt eine gigantische Welle aus, die allen gegnerischen Bodeneinheiten in einer Linie <ASCW,DataA1> Schaden zufügt, bis maximal <ASCW,DataB1> Schaden.
+}
+
+STRING 1981
+// Abilities: AWEB (Wasserelementar beschwören), Ubertip (Tooltip - Normal - Extended)
+{
+Beschwört einen Wasserelementar, der die Gegner des Erzmagiers angreift. Der Elementar hat <h00P,realHP> Trefferpunkte und verursacht <h00P,mindmg1>-<h00P,maxdmg1> Schaden.|nBleibt <AWEB,Dur1> Sek. lang bestehen.|n|n|cffffcc00Kann Boden- und Lufteinheiten angreifen.|r
+}
+
+STRING 1984
+// Abilities: ASSW (Schmetterwelle), EditorSuffix (Editor Suffix)
+{
+(Hero 10)
+}
+
+STRING 1985
+// Abilities: ASSW (Schmetterwelle), Tip (Tooltip - Normal)
+{
+Schmetterwelle [|cffffcc00Stufe 1|r]
+}
+
+STRING 1986
+// Abilities: ASSW (Schmetterwelle), Tip (Tooltip - Normal)
+{
+Schmetterwelle [|cffffcc00Stufe 2|r]
+}
+
+STRING 1987
+// Abilities: ASSW (Schmetterwelle), Tip (Tooltip - Normal)
+{
+Schmetterwelle [|cffffcc00Stufe 3|r]
+}
+
+STRING 1988
+// Abilities: ASSW (Schmetterwelle), Tip (Tooltip - Normal)
+{
+Schmetterwelle [|cffffcc00Stufe 4|r]
+}
+
+STRING 1989
+// Abilities: ASSW (Schmetterwelle), Tip (Tooltip - Normal)
+{
+Schmetterwelle [|cffffcc00Stufe 5|r]
+}
+
+STRING 1990
+// Abilities: ASSW (Schmetterwelle), Tip (Tooltip - Normal)
+{
+Schmetterwelle [|cffffcc00Stufe 6|r]
+}
+
+STRING 1991
+// Abilities: ASSW (Schmetterwelle), Tip (Tooltip - Normal)
+{
+Schmetterwelle [|cffffcc00Stufe 7|r]
+}
+
+STRING 1992
+// Abilities: ASSW (Schmetterwelle), Tip (Tooltip - Normal)
+{
+Schmetterwelle [|cffffcc00Stufe 8|r]
+}
+
+STRING 1993
+// Abilities: ASSW (Schmetterwelle), Tip (Tooltip - Normal)
+{
+Schmetterwelle [|cffffcc00Stufe 9|r]
+}
+
+STRING 1994
+// Abilities: ASSW (Schmetterwelle), Tip (Tooltip - Normal)
+{
+Schmetterwelle [|cffffcc00Stufe 10|r]
+}
+
+STRING 1995
+// Abilities: ASSW (Schmetterwelle), Ubertip (Tooltip - Normal - Extended)
+{
+Schickt eine gigantische Welle aus, die allen gegnerischen Bodeneinheiten in einer Linie <ASSW,DataA1> Schaden zufügt, bis maximal <ASSW,DataB1> Schaden.
+}
+
+STRING 1996
+// Abilities: ASSW (Schmetterwelle), Ubertip (Tooltip - Normal - Extended)
+{
+Schickt eine gigantische Welle aus, die allen gegnerischen Bodeneinheiten in einer Linie <ASSW,DataA2> Schaden zufügt, bis maximal <ASSW,DataB2> Schaden.
+}
+
+STRING 1997
+// Abilities: ASSW (Schmetterwelle), Ubertip (Tooltip - Normal - Extended)
+{
+Schickt eine gigantische Welle aus, die allen gegnerischen Bodeneinheiten in einer Linie <ASSW,DataA3> Schaden zufügt, bis maximal <ASSW,DataB3> Schaden.
+}
+
+STRING 1998
+// Abilities: ASSW (Schmetterwelle), Ubertip (Tooltip - Normal - Extended)
+{
+Schickt eine gigantische Welle aus, die allen gegnerischen Bodeneinheiten in einer Linie <ASSW,DataA4> Schaden zufügt, bis maximal <ASSW,DataB4> Schaden.
+}
+
+STRING 1999
+// Abilities: ASSW (Schmetterwelle), Ubertip (Tooltip - Normal - Extended)
+{
+Schickt eine gigantische Welle aus, die allen gegnerischen Bodeneinheiten in einer Linie <ASSW,DataA5> Schaden zufügt, bis maximal <ASSW,DataB5> Schaden.
+}
+
+STRING 2000
+// Abilities: ASSW (Schmetterwelle), Ubertip (Tooltip - Normal - Extended)
+{
+Schickt eine gigantische Welle aus, die allen gegnerischen Bodeneinheiten in einer Linie <ASSW,DataA6> Schaden zufügt, bis maximal <ASSW,DataB6> Schaden.
+}
+
+STRING 2001
+// Abilities: ASSW (Schmetterwelle), Ubertip (Tooltip - Normal - Extended)
+{
+Schickt eine gigantische Welle aus, die allen gegnerischen Bodeneinheiten in einer Linie <ASSW,DataA7> Schaden zufügt, bis maximal <ASSW,DataB7> Schaden.
+}
+
+STRING 2002
+// Abilities: ASSW (Schmetterwelle), Ubertip (Tooltip - Normal - Extended)
+{
+Schickt eine gigantische Welle aus, die allen gegnerischen Bodeneinheiten in einer Linie <ASSW,DataA8> Schaden zufügt, bis maximal <ASSW,DataB8> Schaden.
+}
+
+STRING 2003
+// Abilities: ASSW (Schmetterwelle), Ubertip (Tooltip - Normal - Extended)
+{
+Schickt eine gigantische Welle aus, die allen gegnerischen Bodeneinheiten in einer Linie <ASSW,DataA9> Schaden zufügt, bis maximal <ASSW,DataB9> Schaden.
+}
+
+STRING 2004
+// Abilities: ASSW (Schmetterwelle), Ubertip (Tooltip - Normal - Extended)
+{
+Schickt eine gigantische Welle aus, die allen gegnerischen Bodeneinheiten in einer Linie <ASSW,DataA10> Schaden zufügt, bis maximal <ASSW,DataB10> Schaden.
+}
+
+STRING 2005
+// Abilities: ASSW (Schmetterwelle), Researchubertip (Tooltip - Learn - Extended)
+{
+Schickt eine gigantische Welle aus, die allen gegnerischen Bodeneinheiten in einer Linie Schaden zufügt.
+}
+
+STRING 2006
+// Abilities: ASSW (Schmetterwelle), Researchtip (Tooltip - Learn)
+{
+Schmetterwelle [|cffffcc00Stufe %d|r] erlernen
+}
+
+STRING 2007
+// Abilities: AWEB (Wasserelementar beschwören), Researchubertip (Tooltip - Learn - Extended)
+{
+Beschwört einen Wasserelementar, der die Gegner des Erzmagiers angreift.|nBleibt <AWEB,Dur1> Sek. lang bestehen.|n|n|cffffcc00Kann Boden- und Lufteinheiten angreifen.|r|n|n|cffffcc00Stufe 1|r - <h00P,realHP> Trefferpunkte, <h00P,mindmg1>-<h00P,maxdmg1> Schaden.|n|cffffcc00Stufe 2|r - <h00Q,realHP> Trefferpunkte, <h00Q,mindmg1>-<h00Q,maxdmg1> Schaden.|n|cffffcc00Stufe 3|r - <h00R,realHP> Trefferpunkte, <h00R,mindmg1>-<h00R,maxdmg1> Schaden.
+}
+
+STRING 2008
+// Abilities: AWEB (Wasserelementar beschwören), Ubertip (Tooltip - Normal - Extended)
+{
+Beschwört einen Wasserelementar, der die Gegner des Erzmagiers angreift. Der Elementar hat <h00Q,realHP> Trefferpunkte und verursacht <h00Q,mindmg2>-<h00Q,maxdmg2> Schaden.|nBleibt <AWEB,Dur2> Sek. lang bestehen.|n|n|cffffcc00Kann Boden- und Lufteinheiten angreifen.|r
+}
+
+STRING 2009
+// Abilities: AWEB (Wasserelementar beschwören), Ubertip (Tooltip - Normal - Extended)
+{
+Beschwört einen Wasserelementar, der die Gegner des Erzmagiers angreift. Der Elementar hat <h00R,realHP> Trefferpunkte und verursacht <h00R,mindmg3>-<h00R,maxdmg3> Schaden.|nBleibt <AWEB,Dur3> Sek. lang bestehen.|n|n|cffffcc00Kann Boden- und Lufteinheiten angreifen.
 }
 

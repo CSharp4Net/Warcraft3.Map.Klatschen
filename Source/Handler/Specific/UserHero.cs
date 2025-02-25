@@ -60,7 +60,7 @@ namespace Source.Handler.Specific
 
 #if DEBUG
         //spawnArea = Areas.TestArea;
-        //user.HeroLevelCounter = 50;
+        user.HeroLevelCounter = 36;
 #endif
 
         user.CreateHero(unitId, spawnArea);
