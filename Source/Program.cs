@@ -122,7 +122,7 @@ namespace Source
         ConstructUndeadBuildingAndTrigger();
 
         // Spezifische Events registrieren
-        Console.WriteLine("Kämpft bis zum Tod!");
+        Console.WriteLine("Klatschen 2025 - Kämpft bis zum Tod!");
 
         // Für alle Benutzer-Spieler einen Hero-Selector generieren
         force force = Blizzard.GetPlayersByMapControl(mapcontrol.User);

@@ -12,7 +12,7 @@ STRING 3
 {
 ...
 
-0.8.2.0 by NozzNazz
+0.8.3.0 by NozzNazz
 }
 
 STRING 4
@@ -117,7 +117,7 @@ STRING 65
 {
 ...
 
-0.8.2.0 by NozzNazz
+0.8.3.0 by NozzNazz
 }
 
 STRING 72
@@ -2562,18 +2562,6 @@ STRING 923
 Transmutieren
 }
 
-STRING 924
-// Abilities: A00G (Transmutieren), Tip (Tooltip - Normal)
-{
-Transmutieren
-}
-
-STRING 925
-// Abilities: A00G (Transmutieren), Tip (Tooltip - Normal)
-{
-Transmutieren
-}
-
 STRING 926
 // Abilities: A00G (Transmutieren), Ubertip (Tooltip - Normal - Extended)
 {
@@ -3240,60 +3228,6 @@ STRING 1070
 Aktiviert einen Schild, der pro Mana <A00K,DataA10> Schaden absorbiert.
 }
 
-STRING 1071
-// Abilities: A00K (Manaschild), Untip (Tooltip - Turn Off)
-{
-Manaschild deaktivieren
-}
-
-STRING 1072
-// Abilities: A00K (Manaschild), Untip (Tooltip - Turn Off)
-{
-Manaschild deaktivieren
-}
-
-STRING 1073
-// Abilities: A00K (Manaschild), Untip (Tooltip - Turn Off)
-{
-Manaschild deaktivieren
-}
-
-STRING 1074
-// Abilities: A00K (Manaschild), Untip (Tooltip - Turn Off)
-{
-Manaschild deaktivieren
-}
-
-STRING 1075
-// Abilities: A00K (Manaschild), Untip (Tooltip - Turn Off)
-{
-Manaschild deaktivieren
-}
-
-STRING 1076
-// Abilities: A00K (Manaschild), Untip (Tooltip - Turn Off)
-{
-Manaschild deaktivieren
-}
-
-STRING 1077
-// Abilities: A00K (Manaschild), Untip (Tooltip - Turn Off)
-{
-Manaschild deaktivieren
-}
-
-STRING 1078
-// Abilities: A00K (Manaschild), Untip (Tooltip - Turn Off)
-{
-Manaschild deaktivieren
-}
-
-STRING 1079
-// Abilities: A00K (Manaschild), Untip (Tooltip - Turn Off)
-{
-Manaschild deaktivieren
-}
-
 STRING 1080
 // Abilities: A00E (Heilspray), EditorSuffix (Editor Suffix)
 {
@@ -3636,60 +3570,6 @@ STRING 1145
 Aktivieren, um diese Einheit in Flammen zu hüllen und nahen gegnerischen Bodeneinheiten <A00O,DataA10> Schaden pro Sekunde zuzufügen.|nVerbraucht Mana bis Abbruch.
 }
 
-STRING 1146
-// Abilities: A00O (Feuerbrand), Untip (Tooltip - Turn Off)
-{
-Feuerbrand deaktivieren
-}
-
-STRING 1147
-// Abilities: A00O (Feuerbrand), Untip (Tooltip - Turn Off)
-{
-Feuerbrand deaktivieren
-}
-
-STRING 1148
-// Abilities: A00O (Feuerbrand), Untip (Tooltip - Turn Off)
-{
-Feuerbrand deaktivieren
-}
-
-STRING 1149
-// Abilities: A00O (Feuerbrand), Untip (Tooltip - Turn Off)
-{
-Feuerbrand deaktivieren
-}
-
-STRING 1150
-// Abilities: A00O (Feuerbrand), Untip (Tooltip - Turn Off)
-{
-Feuerbrand deaktivieren
-}
-
-STRING 1151
-// Abilities: A00O (Feuerbrand), Untip (Tooltip - Turn Off)
-{
-Feuerbrand deaktivieren
-}
-
-STRING 1152
-// Abilities: A00O (Feuerbrand), Untip (Tooltip - Turn Off)
-{
-Feuerbrand deaktivieren
-}
-
-STRING 1153
-// Abilities: A00O (Feuerbrand), Untip (Tooltip - Turn Off)
-{
-Feuerbrand deaktivieren
-}
-
-STRING 1154
-// Abilities: A00O (Feuerbrand), Untip (Tooltip - Turn Off)
-{
-Feuerbrand deaktivieren
-}
-
 STRING 1155
 // Abilities: A00O (Feuerbrand), Unubertip (Tooltip - Turn Off - Extended)
 {
@@ -3858,78 +3738,6 @@ STRING 1182
 Erhöht die Bewegungsgeschwindigkeit von verbündeten Einheiten in der Nähe um <A00P,DataA10,%>% und ihre Trefferpunktregeneration.
 }
 
-STRING 1184
-// Abilities: A00Q (Gottesschild), Researchubertip (Tooltip - Learn - Extended)
-{
-Umgibt den Paladin mit einem undurchdringlichen Schild, der ihn vorübergehend vor jeglichem Schaden und Fähigkeiten schützt.|n|n|cffffcc00Stufe 1|r - Hält <A00Q,Dur1> Sek. lang an.|n|cffffcc00Stufe 2|r - Hält <A00Q,Dur2> Sek. lang an.|n|cffffcc00Stufe 3|r - Hält <A00Q,Dur3> Sek. lang an.
-}
-
-STRING 1185
-// Abilities: A00Q (Gottesschild), Tip (Tooltip - Normal)
-{
-Gottesschild [|cffffcc00Stufe 4|r] aktivieren
-}
-
-STRING 1186
-// Abilities: A00Q (Gottesschild), Tip (Tooltip - Normal)
-{
-Gottesschild [|cffffcc00Stufe 5|r] aktivieren
-}
-
-STRING 1187
-// Abilities: A00Q (Gottesschild), Ubertip (Tooltip - Normal - Extended)
-{
-Umgibt diese Einheit mit einem undurchdringlichen Schild, der sie <A00Q,Dur1> Sek. lang vor jeglichem Schaden und Fähigkeiten schützt.
-}
-
-STRING 1188
-// Abilities: A00Q (Gottesschild), Ubertip (Tooltip - Normal - Extended)
-{
-Umgibt diese Einheit mit einem undurchdringlichen Schild, der sie <A00Q,Dur2> Sek. lang vor jeglichem Schaden und Fähigkeiten schützt.
-}
-
-STRING 1189
-// Abilities: A00Q (Gottesschild), Ubertip (Tooltip - Normal - Extended)
-{
-Umgibt diese Einheit mit einem undurchdringlichen Schild, der sie <A00Q,Dur3> Sek. lang vor jeglichem Schaden und Fähigkeiten schützt.
-}
-
-STRING 1190
-// Abilities: A00Q (Gottesschild), Ubertip (Tooltip - Normal - Extended)
-{
-Umgibt diese Einheit mit einem undurchdringlichen Schild, der sie <A00Q,Dur4> Sek. lang vor jeglichem Schaden und Fähigkeiten schützt.
-}
-
-STRING 1191
-// Abilities: A00Q (Gottesschild), Ubertip (Tooltip - Normal - Extended)
-{
-Umgibt diese Einheit mit einem undurchdringlichen Schild, der sie <A00Q,Dur5> Sek. lang vor jeglichem Schaden und Fähigkeiten schützt.
-}
-
-STRING 1192
-// Abilities: A00Q (Gottesschild), Untip (Tooltip - Turn Off)
-{
-Gottesschild deaktivieren
-}
-
-STRING 1193
-// Abilities: A00Q (Gottesschild), Untip (Tooltip - Turn Off)
-{
-Gottesschild deaktivieren
-}
-
-STRING 1194
-// Abilities: A00Q (Gottesschild), Untip (Tooltip - Turn Off)
-{
-Gottesschild deaktivieren
-}
-
-STRING 1195
-// Abilities: A00Q (Gottesschild), Untip (Tooltip - Turn Off)
-{
-Gottesschild deaktivieren
-}
-
 STRING 1196
 // Abilities: A00S (Kabumm), EditorSuffix (Editor Suffix)
 {
@@ -4003,19 +3811,13 @@ Taschenfabrik - Stufe 2
 }
 
 STRING 1221
-// Units: n00C (Taschenfabrik - Stufe 4), EditorSuffix (Name - Editor Suffix)
+// Units: n00E (Taschenfabrik - Stufe 3), EditorSuffix (Name - Editor Suffix)
 {
 (Hero spell)
 }
 
-STRING 1222
-// Units: n00C (Taschenfabrik - Stufe 4), Name (Name)
-{
-Taschenfabrik - Stufe 4
-}
-
 STRING 1223
-// Units: n00E (Taschenfabrik - Stufe 3), EditorSuffix (Name - Editor Suffix)
+// Units: n00D (Taschenfabrik - Stufe 1), EditorSuffix (Name - Editor Suffix)
 {
 (Hero spell)
 }
@@ -4027,19 +3829,13 @@ Taschenfabrik - Stufe 3
 }
 
 STRING 1225
-// Units: n00F (Taschenfabrik - Stufe 5), EditorSuffix (Name - Editor Suffix)
+// Units: n00G (Uhrwerkgoblin - Stufe 1), EditorSuffix (Name - Editor Suffix)
 {
 (Hero spell)
 }
 
-STRING 1226
-// Units: n00F (Taschenfabrik - Stufe 5), Name (Name)
-{
-Taschenfabrik - Stufe 5
-}
-
 STRING 1227
-// Units: n00D (Taschenfabrik - Stufe 1), EditorSuffix (Name - Editor Suffix)
+// Units: n00H (Uhrwerkgoblin - Stufe 2), EditorSuffix (Name - Editor Suffix)
 {
 (Hero spell)
 }
@@ -4051,7 +3847,7 @@ Taschenfabrik - Stufe 1
 }
 
 STRING 1229
-// Units: n00G (Uhrwerkgoblin - Stufe 1), EditorSuffix (Name - Editor Suffix)
+// Units: n00I (Uhrwerkgoblin - Stufe 3), EditorSuffix (Name - Editor Suffix)
 {
 (Hero spell)
 }
@@ -4063,7 +3859,7 @@ Uhrwerkgoblin - Stufe 1
 }
 
 STRING 1231
-// Units: n00H (Uhrwerkgoblin - Stufe 2), EditorSuffix (Name - Editor Suffix)
+// Units: n010 (Dunkler Diener - Stufe 1), EditorSuffix (Name - Editor Suffix)
 {
 (Hero spell)
 }
@@ -4075,7 +3871,7 @@ Uhrwerkgoblin - Stufe 2
 }
 
 STRING 1233
-// Units: n00I (Uhrwerkgoblin - Stufe 3), EditorSuffix (Name - Editor Suffix)
+// Units: n011 (Dunkler Diener - Stufe 2), EditorSuffix (Name - Editor Suffix)
 {
 (Hero spell)
 }
@@ -4087,27 +3883,15 @@ Uhrwerkgoblin - Stufe 3
 }
 
 STRING 1235
-// Units: n00J (Uhrwerkgoblin - Stufe 4), EditorSuffix (Name - Editor Suffix)
+// Units: n012 (Dunkler Diener - Stufe 3), EditorSuffix (Name - Editor Suffix)
 {
 (Hero spell)
-}
-
-STRING 1236
-// Units: n00J (Uhrwerkgoblin - Stufe 4), Name (Name)
-{
-Uhrwerkgoblin - Stufe 4
 }
 
 STRING 1237
-// Units: n00K (Uhrwerkgoblin - Stufe 5), EditorSuffix (Name - Editor Suffix)
+// Units: n015 (Verdammniswache - Stufe 3), EditorSuffix (Name - Editor Suffix)
 {
 (Hero spell)
-}
-
-STRING 1238
-// Units: n00K (Uhrwerkgoblin - Stufe 5), Name (Name)
-{
-Uhrwerkgoblin - Stufe 5
 }
 
 STRING 1239
@@ -4147,159 +3931,105 @@ Erde - Stufe 1
 }
 
 STRING 1246
-// Units: n00N (Sturm - Stufe 2), EditorSuffix (Name - Editor Suffix)
+// Units: n00O (Erde - Stufe 2), EditorSuffix (Name - Editor Suffix)
 {
 (Hero Spell)
 }
 
 STRING 1247
-// Units: n00N (Sturm - Stufe 2), Name (Name)
+// Units: n00W (Sturm - Stufe 2), Name (Name)
 {
 Sturm - Stufe 2
 }
 
 STRING 1248
-// Units: n00O (Erde - Stufe 3), EditorSuffix (Name - Editor Suffix)
+// Units: n00R (Erde - Stufe 3), EditorSuffix (Name - Editor Suffix)
 {
 (Hero Spell)
 }
 
 STRING 1249
-// Units: n00O (Erde - Stufe 3), Name (Name)
+// Units: n00R (Erde - Stufe 3), Name (Name)
 {
 Erde - Stufe 3
 }
 
 STRING 1250
-// Units: n00P (Erde - Stufe 2), EditorSuffix (Name - Editor Suffix)
+// Units: n00S (Feuer - Stufe 3), EditorSuffix (Name - Editor Suffix)
 {
 (Hero Spell)
 }
 
 STRING 1251
-// Units: n00P (Erde - Stufe 2), Name (Name)
+// Units: n00O (Erde - Stufe 2), Name (Name)
 {
 Erde - Stufe 2
 }
 
 STRING 1252
-// Units: n00Q (Erde - Stufe 4), EditorSuffix (Name - Editor Suffix)
+// Units: n00U (Feuer - Stufe 2), EditorSuffix (Name - Editor Suffix)
 {
 (Hero Spell)
-}
-
-STRING 1253
-// Units: n00Q (Erde - Stufe 4), Name (Name)
-{
-Erde - Stufe 4
 }
 
 STRING 1254
-// Units: n00R (Erde - Stufe 5), EditorSuffix (Name - Editor Suffix)
+// Units: n00W (Sturm - Stufe 2), EditorSuffix (Name - Editor Suffix)
 {
 (Hero Spell)
-}
-
-STRING 1255
-// Units: n00R (Erde - Stufe 5), Name (Name)
-{
-Erde - Stufe 5
 }
 
 STRING 1256
-// Units: n00S (Feuer - Stufe 5), EditorSuffix (Name - Editor Suffix)
+// Units: n00Y (Sturm - Stufe 1), EditorSuffix (Name - Editor Suffix)
 {
 (Hero Spell)
 }
 
-STRING 1257
-// Units: n00S (Feuer - Stufe 5), Name (Name)
-{
-Feuer - Stufe 5
-}
-
 STRING 1258
-// Units: n00T (Feuer - Stufe 2), EditorSuffix (Name - Editor Suffix)
+// Units: n00Z (Sturm - Stufe 3), EditorSuffix (Name - Editor Suffix)
 {
 (Hero Spell)
 }
 
 STRING 1259
-// Units: n00T (Feuer - Stufe 2), Name (Name)
+// Units: n00U (Feuer - Stufe 2), Name (Name)
 {
 Feuer - Stufe 2
 }
 
 STRING 1260
-// Units: n00U (Feuer - Stufe 3), EditorSuffix (Name - Editor Suffix)
+// Units: e001 (Treant - Stufe 1), EditorSuffix (Name - Editor Suffix)
 {
 (Hero Spell)
 }
 
 STRING 1261
-// Units: n00U (Feuer - Stufe 3), Name (Name)
+// Units: n00S (Feuer - Stufe 3), Name (Name)
 {
 Feuer - Stufe 3
 }
 
 STRING 1262
-// Units: n00V (Feuer - Stufe 4), EditorSuffix (Name - Editor Suffix)
+// Units: e002 (Treant - Stufe 2), EditorSuffix (Name - Editor Suffix)
 {
 (Hero Spell)
 }
 
-STRING 1263
-// Units: n00V (Feuer - Stufe 4), Name (Name)
-{
-Feuer - Stufe 4
-}
-
 STRING 1264
-// Units: n00W (Sturm - Stufe 3), EditorSuffix (Name - Editor Suffix)
+// Units: e003 (Treant - Stufe 3), EditorSuffix (Name - Editor Suffix)
 {
 (Hero Spell)
 }
 
 STRING 1265
-// Units: n00W (Sturm - Stufe 3), Name (Name)
+// Units: n00Z (Sturm - Stufe 3), Name (Name)
 {
 Sturm - Stufe 3
-}
-
-STRING 1266
-// Units: n00X (Sturm - Stufe 4), EditorSuffix (Name - Editor Suffix)
-{
-(Hero Spell)
-}
-
-STRING 1267
-// Units: n00X (Sturm - Stufe 4), Name (Name)
-{
-Sturm - Stufe 4
-}
-
-STRING 1268
-// Units: n00Y (Sturm - Stufe 1), EditorSuffix (Name - Editor Suffix)
-{
-(Hero Spell)
 }
 
 STRING 1269
 // Units: n00Y (Sturm - Stufe 1), Name (Name)
 {
 Sturm - Stufe 1
-}
-
-STRING 1270
-// Units: n00Z (Sturm - Stufe 5), EditorSuffix (Name - Editor Suffix)
-{
-(Hero Spell)
-}
-
-STRING 1271
-// Units: n00Z (Sturm - Stufe 5), Name (Name)
-{
-Sturm - Stufe 5
 }
 
 STRING 1272
@@ -4537,18 +4267,6 @@ Sturm, Erde und Feuer
 }
 
 STRING 1312
-// Abilities: A00Z (Sturm, Erde und Feuer), Tip (Tooltip - Normal)
-{
-Sturm, Erde und Feuer
-}
-
-STRING 1313
-// Abilities: A00Z (Sturm, Erde und Feuer), Tip (Tooltip - Normal)
-{
-Sturm, Erde und Feuer
-}
-
-STRING 1314
 // Abilities: A00Z (Sturm, Erde und Feuer), Tip (Tooltip - Normal)
 {
 Sturm, Erde und Feuer
@@ -5479,7 +5197,7 @@ Hüllt den Dämonenjäger in Flammen, die gegnerischen Bodeneinheiten in seiner 
 }
 
 STRING 1655
-// Units: n010 (Dunkler Diener - Stufe 1), EditorSuffix (Name - Editor Suffix)
+// Units: n016 (Verdammniswache - Stufe 1), EditorSuffix (Name - Editor Suffix)
 {
 (Hero spell)
 }
@@ -5497,7 +5215,7 @@ Dunkler Diener - Stufe 2
 }
 
 STRING 1658
-// Units: n011 (Dunkler Diener - Stufe 2), EditorSuffix (Name - Editor Suffix)
+// Units: n017 (Verdammniswache - Stufe 2), EditorSuffix (Name - Editor Suffix)
 {
 (Hero spell)
 }
@@ -5509,33 +5227,21 @@ Dunkler Diener - Stufe 3
 }
 
 STRING 1660
-// Units: n012 (Dunkler Diener - Stufe 3), EditorSuffix (Name - Editor Suffix)
+// Units: n018 (Lavabrut - Stufe 1), EditorSuffix (Name - Editor Suffix)
 {
 (Hero spell)
 }
 
 STRING 1661
-// Units: n013 (Dunkler Diener - Stufe 4), EditorSuffix (Name - Editor Suffix)
+// Units: n019 (Lavabrut - Stufe 2), EditorSuffix (Name - Editor Suffix)
 {
 (Hero spell)
-}
-
-STRING 1662
-// Units: n013 (Dunkler Diener - Stufe 4), Name (Name)
-{
-Dunkler Diener - Stufe 4
 }
 
 STRING 1663
-// Units: n014 (Dunkler Diener - Stufe 5), EditorSuffix (Name - Editor Suffix)
+// Units: n01A (Lavabrut - Stufe 3), EditorSuffix (Name - Editor Suffix)
 {
 (Hero spell)
-}
-
-STRING 1664
-// Units: n014 (Dunkler Diener - Stufe 5), Name (Name)
-{
-Dunkler Diener - Stufe 5
 }
 
 STRING 1665
@@ -5752,12 +5458,6 @@ STRING 1705
 // Abilities: A0FR (Feuerregen), Ubertip (Tooltip - Normal - Extended)
 {
 Ruft <A0FR,DataA10> Feuerwellen herbei, die Flächenschaden verursachen. Jede Welle verursacht <A0FR,DataB10> Direktschaden und <A0FR,Dur10> Sek. lang <A0FR,DataE10> Schaden pro Sekunde.
-}
-
-STRING 1706
-// Abilities: A00Q (Gottesschild), EditorSuffix (Editor Suffix)
-{
-(Hero 5 - unfertig)
 }
 
 STRING 1707
@@ -6036,18 +5736,6 @@ STRING 1752
 (Hero 3)
 }
 
-STRING 1753
-// Abilities: A0VD (Verdammnis), Tip (Tooltip - Normal)
-{
-Verdammnis
-}
-
-STRING 1754
-// Abilities: A0VD (Verdammnis), Tip (Tooltip - Normal)
-{
-Verdammnis
-}
-
 STRING 1755
 // Abilities: A0VD (Verdammnis), Ubertip (Tooltip - Normal - Extended)
 {
@@ -6079,7 +5767,7 @@ Verdammniswache - Stufe 3
 }
 
 STRING 1760
-// Units: n015 (Verdammniswache - Stufe 3), EditorSuffix (Name - Editor Suffix)
+// Units: h00P (Wasserelementar - Stufe 1), EditorSuffix (Name - Editor Suffix)
 {
 (Hero spell)
 }
@@ -6091,7 +5779,7 @@ Verdammniswache - Stufe 1
 }
 
 STRING 1762
-// Units: n016 (Verdammniswache - Stufe 1), EditorSuffix (Name - Editor Suffix)
+// Units: h00Q (Wasserelementar - Stufe 2), EditorSuffix (Name - Editor Suffix)
 {
 (Hero spell)
 }
@@ -6103,7 +5791,7 @@ Verdammniswache - Stufe 2
 }
 
 STRING 1764
-// Units: n017 (Verdammniswache - Stufe 2), EditorSuffix (Name - Editor Suffix)
+// Units: h00R (Wasserelementar - Stufe 3), EditorSuffix (Name - Editor Suffix)
 {
 (Hero spell)
 }
@@ -6361,7 +6049,7 @@ Hüllt eine gegnerische Einheit in magische Flammen, die <A0SB,DataA1> periodisc
 }
 
 STRING 1807
-// Units: n018 (Lavabrut - Stufe 1), EditorSuffix (Name - Editor Suffix)
+// Units: o002 (Schlangenschutz - Stufe 1), EditorSuffix (Name - Editor Suffix)
 {
 (Hero spell)
 }
@@ -6373,7 +6061,7 @@ Lavabrut - Stufe 1
 }
 
 STRING 1810
-// Units: n019 (Lavabrut - Stufe 2), EditorSuffix (Name - Editor Suffix)
+// Units: o003 (Schlangenschutz - Stufe 2), EditorSuffix (Name - Editor Suffix)
 {
 (Hero spell)
 }
@@ -6385,7 +6073,7 @@ Lavabrut - Stufe 3
 }
 
 STRING 1812
-// Units: n01A (Lavabrut - Stufe 3), EditorSuffix (Name - Editor Suffix)
+// Units: o004 (Schlangenschutz - Stufe 3), EditorSuffix (Name - Editor Suffix)
 {
 (Hero spell)
 }
@@ -6516,60 +6204,6 @@ STRING 1836
 Lässt einen riesigen Vulkan aus dem Boden hervorbrechen, der alle <A0VK,DataC1> Sek. glühende Felsen auf nahe Bodeneinheiten und Gebäude schleudert, die jedem Ziel <A0VK,DataE1> Schaden zufügen und es für <A0VK,Dur1> Sek. betäuben.
 }
 
-STRING 1837
-// Abilities: A0VK (Vulkan), Tip (Tooltip - Normal)
-{
-Vulkan
-}
-
-STRING 1838
-// Abilities: A0VK (Vulkan), Tip (Tooltip - Normal)
-{
-Vulkan
-}
-
-STRING 1839
-// Abilities: A0VK (Vulkan), Tip (Tooltip - Normal)
-{
-Vulkan
-}
-
-STRING 1840
-// Abilities: A0VK (Vulkan), Tip (Tooltip - Normal)
-{
-Vulkan
-}
-
-STRING 1841
-// Abilities: A0VK (Vulkan), Tip (Tooltip - Normal)
-{
-Vulkan
-}
-
-STRING 1842
-// Abilities: A0VK (Vulkan), Tip (Tooltip - Normal)
-{
-Vulkan
-}
-
-STRING 1843
-// Abilities: A0VK (Vulkan), Tip (Tooltip - Normal)
-{
-Vulkan
-}
-
-STRING 1844
-// Abilities: A0VK (Vulkan), Tip (Tooltip - Normal)
-{
-Vulkan
-}
-
-STRING 1845
-// Abilities: A0VK (Vulkan), Tip (Tooltip - Normal)
-{
-Vulkan
-}
-
 STRING 1846
 // Abilities: A0VK (Vulkan), Ubertip (Tooltip - Normal - Extended)
 {
@@ -6636,26 +6270,14 @@ STRING 1856
 Foliant des Auftstiegs (für Tests)
 }
 
-STRING 1857
-// Items: I002 (Großer Manatrank (für Tests)), Name (Name)
-{
-Großer Manatrank (für Tests)
-}
-
 STRING 1858
 // Abilities: A013 (Gegenstand: Erfahrungsgewinn), EditorSuffix (Editor Suffix)
 {
 (5000)
 }
 
-STRING 1859
-// Abilities: A014 (Gegenstand: Manawiederherstellung), EditorSuffix (Editor Suffix)
-{
-(5000)
-}
-
 STRING 1860
-// Items: I002 (Großer Manatrank (für Tests)), Ubertip (Tooltip - Extended)
+// Items: I002 (Großer Manatrank 500), Ubertip (Tooltip - Extended)
 {
 Stellt <A014,DataA1> Mana wieder her.
 }
@@ -6664,12 +6286,6 @@ STRING 1861
 // Abilities: A0BA (Befehlsaura), EditorSuffix (Editor Suffix)
 {
 (Unit)
-}
-
-STRING 1862
-// Units: N006 (Bestienmeister), EditorSuffix (Name - Editor Suffix)
-{
-(Hero unfertig)
 }
 
 STRING 1863
@@ -7020,30 +6636,6 @@ STRING 1920
 Avatar erhöht die Rüstung des Bergkönigs um <A015,DataA1>, seine Trefferpunkte um <A015,DataB1>, seinen Schaden um <A015,DataC1> und gewährt ihm Zauberimmunität.|nHält <A015,Dur1> Sek. lang an.
 }
 
-STRING 1921
-// Abilities: A015 (Avatar), Tip (Tooltip - Normal)
-{
-Avatar aktivieren
-}
-
-STRING 1922
-// Abilities: A015 (Avatar), Tip (Tooltip - Normal)
-{
-Avatar aktivieren
-}
-
-STRING 1923
-// Abilities: A015 (Avatar), Untip (Tooltip - Turn Off)
-{
-Avatar deaktivieren
-}
-
-STRING 1924
-// Abilities: A015 (Avatar), Untip (Tooltip - Turn Off)
-{
-Avatar deaktivieren
-}
-
 STRING 1925
 // Abilities: A015 (Avatar), Ubertip (Tooltip - Normal - Extended)
 {
@@ -7069,7 +6661,7 @@ STRING 1928
 }
 
 STRING 1929
-// Abilities: A00M (Stadtportal), EditorSuffix (Editor Suffix)
+// Units: O000 (Klingenmeister), EditorSuffix (Name - Editor Suffix)
 {
 (Hero)
 }
@@ -7284,12 +6876,6 @@ STRING 1966
 Erhöht die Manaregeneration verbündeter Einheiten in der Nähe. Die Regeneration steigt mit jeder Stufe um 0,5 Punkte pro Sekunde.
 }
 
-STRING 1967
-// Units: h00P (Wasserelementar - Stufe 1), EditorSuffix (Name - Editor Suffix)
-{
-(Hero spell)
-}
-
 STRING 1968
 // Units: h00P (Wasserelementar - Stufe 1), Name (Name)
 {
@@ -7302,22 +6888,10 @@ STRING 1969
 Wasserelementar - Stufe 2
 }
 
-STRING 1970
-// Units: h00Q (Wasserelementar - Stufe 2), EditorSuffix (Name - Editor Suffix)
-{
-(Hero spell)
-}
-
 STRING 1971
 // Units: h00R (Wasserelementar - Stufe 3), Name (Name)
 {
 Wasserelementar - Stufe 3
-}
-
-STRING 1972
-// Units: h00R (Wasserelementar - Stufe 3), EditorSuffix (Name - Editor Suffix)
-{
-(Hero spell)
 }
 
 STRING 1973
@@ -7512,15 +7086,1665 @@ STRING 2007
 Beschwört einen Wasserelementar, der die Gegner des Erzmagiers angreift.|nBleibt <AWEB,Dur1> Sek. lang bestehen.|n|n|cffffcc00Kann Boden- und Lufteinheiten angreifen.|r|n|n|cffffcc00Stufe 1|r - <h00P,realHP> Trefferpunkte, <h00P,mindmg1>-<h00P,maxdmg1> Schaden.|n|cffffcc00Stufe 2|r - <h00Q,realHP> Trefferpunkte, <h00Q,mindmg1>-<h00Q,maxdmg1> Schaden.|n|cffffcc00Stufe 3|r - <h00R,realHP> Trefferpunkte, <h00R,mindmg1>-<h00R,maxdmg1> Schaden.
 }
 
-STRING 2008
+STRING 2010
 // Abilities: AWEB (Wasserelementar beschwören), Ubertip (Tooltip - Normal - Extended)
 {
-Beschwört einen Wasserelementar, der die Gegner des Erzmagiers angreift. Der Elementar hat <h00Q,realHP> Trefferpunkte und verursacht <h00Q,mindmg2>-<h00Q,maxdmg2> Schaden.|nBleibt <AWEB,Dur2> Sek. lang bestehen.|n|n|cffffcc00Kann Boden- und Lufteinheiten angreifen.|r
+Beschwört einen Wasserelementar, der die Gegner des Erzmagiers angreift. Der Elementar hat <h00Q,realHP> Trefferpunkte und verursacht <h00Q,mindmg1>-<h00Q,maxdmg1> Schaden.|nBleibt <AWEB,Dur2> Sek. lang bestehen.|n|n|cffffcc00Kann Boden- und Lufteinheiten angreifen.|r
 }
 
-STRING 2009
+STRING 2011
 // Abilities: AWEB (Wasserelementar beschwören), Ubertip (Tooltip - Normal - Extended)
 {
-Beschwört einen Wasserelementar, der die Gegner des Erzmagiers angreift. Der Elementar hat <h00R,realHP> Trefferpunkte und verursacht <h00R,mindmg3>-<h00R,maxdmg3> Schaden.|nBleibt <AWEB,Dur3> Sek. lang bestehen.|n|n|cffffcc00Kann Boden- und Lufteinheiten angreifen.
+Beschwört einen Wasserelementar, der die Gegner des Erzmagiers angreift. Der Elementar hat <h00R,realHP> Trefferpunkte und verursacht <h00R,mindmg1>-<h00R,maxdmg1> Schaden.|nBleibt <AWEB,Dur3> Sek. lang bestehen.|n|n|cffffcc00Kann Boden- und Lufteinheiten angreifen.
+}
+
+STRING 2012
+// Units: O001 (Schattenjäger), EditorSuffix (Name - Editor Suffix)
+{
+(Hero)
+}
+
+STRING 2013
+// Abilities: AWDL (Windlauf), EditorSuffix (Editor Suffix)
+{
+(Hero 10)
+}
+
+STRING 2014
+// Abilities: AWDL (Windlauf), Researchubertip (Tooltip - Learn - Extended)
+{
+Macht den Klingenmeister unsichtbar und lässt ihn vorübergehend schneller laufen. Sein erster Angriff aus der Unsichtbarkeit deckt ihn auf und verursacht Bonusschaden.|n|n|cffffcc00Stufe 1|r - <AWDL,DataB1,%>% Bewegungsgeschwindigkeit für <AWDL,Dur1> Sek., <AWDL,DataC1> zusätzlicher Schaden.|n|cffffcc00Stufe 2|r - <AWDL,DataB2,%>% Bewegungsgeschwindigkeit für <AWDL,Dur2> Sek., <AWDL,DataC2> zusätzlicher Schaden.|n|cffffcc00Stufe 3|r - <AWDL,DataB3,%>% Bewegungsgeschwindigkeit für <AWDL,Dur3> Sek., <AWDL,DataC3> zusätzlicher Schaden.
+}
+
+STRING 2015
+// Abilities: AWDL (Windlauf), Tip (Tooltip - Normal)
+{
+Windlauf [|cffffcc00Stufe 4|r]
+}
+
+STRING 2016
+// Abilities: AWDL (Windlauf), Tip (Tooltip - Normal)
+{
+Windlauf [|cffffcc00Stufe 5|r]
+}
+
+STRING 2017
+// Abilities: AWDL (Windlauf), Tip (Tooltip - Normal)
+{
+Windlauf [|cffffcc00Stufe 6|r]
+}
+
+STRING 2018
+// Abilities: AWDL (Windlauf), Tip (Tooltip - Normal)
+{
+Windlauf [|cffffcc00Stufe 7|r]
+}
+
+STRING 2019
+// Abilities: AWDL (Windlauf), Tip (Tooltip - Normal)
+{
+Windlauf [|cffffcc00Stufe 8|r]
+}
+
+STRING 2020
+// Abilities: AWDL (Windlauf), Tip (Tooltip - Normal)
+{
+Windlauf [|cffffcc00Stufe 9|r]
+}
+
+STRING 2021
+// Abilities: AWDL (Windlauf), Tip (Tooltip - Normal)
+{
+Windlauf [|cffffcc00Stufe 10|r]
+}
+
+STRING 2022
+// Abilities: AWDL (Windlauf), Ubertip (Tooltip - Normal - Extended)
+{
+Macht den Klingenmeister unsichtbar und lässt ihn für <AWDL,Dur1> Sek. <AWDL,DataB1,%>% schneller laufen. Sein erster Angriff aus der Unsichtbarkeit deckt ihn auf und verursacht <AWDL,DataC1> Bonusschaden.
+}
+
+STRING 2023
+// Abilities: AWDL (Windlauf), Ubertip (Tooltip - Normal - Extended)
+{
+Macht den Klingenmeister unsichtbar und lässt ihn für <AWDL,Dur2> Sek. <AWDL,DataB2,%>% schneller laufen. Sein erster Angriff aus der Unsichtbarkeit deckt ihn auf und verursacht <AWDL,DataC2> Bonusschaden.
+}
+
+STRING 2024
+// Abilities: AWDL (Windlauf), Ubertip (Tooltip - Normal - Extended)
+{
+Macht den Klingenmeister unsichtbar und lässt ihn für <AWDL,Dur3> Sek. <AWDL,DataB3,%>% schneller laufen. Sein erster Angriff aus der Unsichtbarkeit deckt ihn auf und verursacht <AWDL,DataC3> Bonusschaden.
+}
+
+STRING 2025
+// Abilities: AWDL (Windlauf), Ubertip (Tooltip - Normal - Extended)
+{
+Macht den Klingenmeister unsichtbar und lässt ihn für <AWDL,Dur4> Sek. <AWDL,DataB4,%>% schneller laufen. Sein erster Angriff aus der Unsichtbarkeit deckt ihn auf und verursacht <AWDL,DataC4> Bonusschaden.
+}
+
+STRING 2026
+// Abilities: AWDL (Windlauf), Ubertip (Tooltip - Normal - Extended)
+{
+Macht den Klingenmeister unsichtbar und lässt ihn für <AWDL,Dur5> Sek. <AWDL,DataB5,%>% schneller laufen. Sein erster Angriff aus der Unsichtbarkeit deckt ihn auf und verursacht <AWDL,DataC5> Bonusschaden.
+}
+
+STRING 2027
+// Abilities: AWDL (Windlauf), Ubertip (Tooltip - Normal - Extended)
+{
+Macht den Klingenmeister unsichtbar und lässt ihn für <AWDL,Dur6> Sek. <AWDL,DataB6,%>% schneller laufen. Sein erster Angriff aus der Unsichtbarkeit deckt ihn auf und verursacht <AWDL,DataC6> Bonusschaden.
+}
+
+STRING 2028
+// Abilities: AWDL (Windlauf), Ubertip (Tooltip - Normal - Extended)
+{
+Macht den Klingenmeister unsichtbar und lässt ihn für <AWDL,Dur7> Sek. <AWDL,DataB7,%>% schneller laufen. Sein erster Angriff aus der Unsichtbarkeit deckt ihn auf und verursacht <AWDL,DataC7> Bonusschaden.
+}
+
+STRING 2029
+// Abilities: AWDL (Windlauf), Ubertip (Tooltip - Normal - Extended)
+{
+Macht den Klingenmeister unsichtbar und lässt ihn für <AWDL,Dur8> Sek. <AWDL,DataB8,%>% schneller laufen. Sein erster Angriff aus der Unsichtbarkeit deckt ihn auf und verursacht <AWDL,DataC8> Bonusschaden.
+}
+
+STRING 2030
+// Abilities: AWDL (Windlauf), Ubertip (Tooltip - Normal - Extended)
+{
+Macht den Klingenmeister unsichtbar und lässt ihn für <AWDL,Dur9> Sek. <AWDL,DataB9,%>% schneller laufen. Sein erster Angriff aus der Unsichtbarkeit deckt ihn auf und verursacht <AWDL,DataC9> Bonusschaden.
+}
+
+STRING 2031
+// Abilities: AWDL (Windlauf), Ubertip (Tooltip - Normal - Extended)
+{
+Macht den Klingenmeister unsichtbar und lässt ihn für <AWDL,Dur10> Sek. <AWDL,DataB10,%>% schneller laufen. Sein erster Angriff aus der Unsichtbarkeit deckt ihn auf und verursacht <AWDL,DataC10> Bonusschaden.
+}
+
+STRING 2032
+// Abilities: AKRT (Kritische Treffer), EditorSuffix (Editor Suffix)
+{
+(Hero 10)
+}
+
+STRING 2033
+// Abilities: AKRT (Kritische Treffer), Researchubertip (Tooltip - Learn - Extended)
+{
+Gewährt eine Chance, bei einem Angriff mehr Schaden zu verursachen.|n|n|cffffcc00Stufe 1|r - <AKRT,DataA1>% Chance auf <AKRT,DataB1>-fachen normalen Schaden.|n|cffffcc00Stufe 2|r - <AKRT,DataA2>% Chance auf <AKRT,DataB2>-fachen normalen Schaden.|n|cffffcc00Stufe 3|r - <AKRT,DataA3>% Chance auf <AKRT,DataB3>-fachen normalen Schaden.
+}
+
+STRING 2034
+// Abilities: AKRT (Kritische Treffer), Tip (Tooltip - Normal)
+{
+Kritische Treffer [|cffffcc00Stufe 4|r]
+}
+
+STRING 2035
+// Abilities: AKRT (Kritische Treffer), Tip (Tooltip - Normal)
+{
+Kritische Treffer [|cffffcc00Stufe 5|r]
+}
+
+STRING 2036
+// Abilities: AKRT (Kritische Treffer), Tip (Tooltip - Normal)
+{
+Kritische Treffer [|cffffcc00Stufe 6|r]
+}
+
+STRING 2037
+// Abilities: AKRT (Kritische Treffer), Tip (Tooltip - Normal)
+{
+Kritische Treffer [|cffffcc00Stufe 7|r]
+}
+
+STRING 2038
+// Abilities: AKRT (Kritische Treffer), Tip (Tooltip - Normal)
+{
+Kritische Treffer [|cffffcc00Stufe 8|r]
+}
+
+STRING 2039
+// Abilities: AKRT (Kritische Treffer), Tip (Tooltip - Normal)
+{
+Kritische Treffer [|cffffcc00Stufe 9|r]
+}
+
+STRING 2040
+// Abilities: AKRT (Kritische Treffer), Tip (Tooltip - Normal)
+{
+Kritische Treffer [|cffffcc00Stufe 10|r]
+}
+
+STRING 2041
+// Abilities: AKRT (Kritische Treffer), Ubertip (Tooltip - Normal - Extended)
+{
+Gewährt eine Chance von <AKRT,DataA1>%, bei einem Angriff das <AKRT,DataB1>-Fache des normalen Schadens zu verursachen.
+}
+
+STRING 2042
+// Abilities: AKRT (Kritische Treffer), Ubertip (Tooltip - Normal - Extended)
+{
+Gewährt eine Chance von <AKRT,DataA2>%, bei einem Angriff das <AKRT,DataB2>-Fache des normalen Schadens zu verursachen.
+}
+
+STRING 2043
+// Abilities: AKRT (Kritische Treffer), Ubertip (Tooltip - Normal - Extended)
+{
+Gewährt eine Chance von <AKRT,DataA3>%, bei einem Angriff das <AKRT,DataB3>-Fache des normalen Schadens zu verursachen.
+}
+
+STRING 2044
+// Abilities: AKRT (Kritische Treffer), Ubertip (Tooltip - Normal - Extended)
+{
+Gewährt eine Chance von <AKRT,DataA4>%, bei einem Angriff das <AKRT,DataB4>-Fache des normalen Schadens zu verursachen.
+}
+
+STRING 2045
+// Abilities: AKRT (Kritische Treffer), Ubertip (Tooltip - Normal - Extended)
+{
+Gewährt eine Chance von <AKRT,DataA5>%, bei einem Angriff das <AKRT,DataB5>-Fache des normalen Schadens zu verursachen.
+}
+
+STRING 2046
+// Abilities: AKRT (Kritische Treffer), Ubertip (Tooltip - Normal - Extended)
+{
+Gewährt eine Chance von <AKRT,DataA6>%, bei einem Angriff das <AKRT,DataB6>-Fache des normalen Schadens zu verursachen.
+}
+
+STRING 2047
+// Abilities: AKRT (Kritische Treffer), Ubertip (Tooltip - Normal - Extended)
+{
+Gewährt eine Chance von <AKRT,DataA7>%, bei einem Angriff das <AKRT,DataB7>-Fache des normalen Schadens zu verursachen.
+}
+
+STRING 2048
+// Abilities: AKRT (Kritische Treffer), Ubertip (Tooltip - Normal - Extended)
+{
+Gewährt eine Chance von <AKRT,DataA8>%, bei einem Angriff das <AKRT,DataB8>-Fache des normalen Schadens zu verursachen.
+}
+
+STRING 2049
+// Abilities: AKRT (Kritische Treffer), Ubertip (Tooltip - Normal - Extended)
+{
+Gewährt eine Chance von <AKRT,DataA9>%, bei einem Angriff das <AKRT,DataB9>-Fache des normalen Schadens zu verursachen.
+}
+
+STRING 2050
+// Abilities: AKRT (Kritische Treffer), Ubertip (Tooltip - Normal - Extended)
+{
+Gewährt eine Chance von <AKRT,DataA10>%, bei einem Angriff das <AKRT,DataB10>-Fache des normalen Schadens zu verursachen.
+}
+
+STRING 2051
+// Abilities: AKLS (Klingensturm), EditorSuffix (Editor Suffix)
+{
+(Hero 3)
+}
+
+STRING 2052
+// Abilities: AKLS (Klingensturm), Researchubertip (Tooltip - Learn - Extended)
+{
+Entfesselt einen zerstörerischen Klingensturm um den Klingenmeister, der ihn immun gegen Magie macht und nahen gegnerischen Bodeneinheiten <AKLS,DataA1> Schaden pro Sekunde zufügt.
+}
+
+STRING 2053
+// Abilities: AKLS (Klingensturm), Ubertip (Tooltip - Normal - Extended)
+{
+Entfesselt einen zerstörerischen Klingensturm um den Klingenmeister, der ihn immun gegen Magie macht und nahen gegnerischen Bodeneinheiten <AKLS,DataA1> Schaden pro Sekunde zufügt.|nHält <AKLS,Dur1> Sek. lang an.
+}
+
+STRING 2054
+// Abilities: AKLS (Klingensturm), Ubertip (Tooltip - Normal - Extended)
+{
+Entfesselt einen zerstörerischen Klingensturm um den Klingenmeister, der ihn immun gegen Magie macht und nahen gegnerischen Bodeneinheiten <AKLS,DataA2> Schaden pro Sekunde zufügt.|nHält <AKLS,Dur2> Sek. lang an.
+}
+
+STRING 2055
+// Abilities: AKLS (Klingensturm), Ubertip (Tooltip - Normal - Extended)
+{
+Entfesselt einen zerstörerischen Klingensturm um den Klingenmeister, der ihn immun gegen Magie macht und nahen gegnerischen Bodeneinheiten <AKLS,DataA3> Schaden pro Sekunde zufügt.|nHält <AKLS,Dur3> Sek. lang an.
+}
+
+STRING 2056
+// Abilities: AKLS (Klingensturm), Tip (Tooltip - Normal)
+{
+Klingensturm [|cffffcc00Stufe 2|r]
+}
+
+STRING 2057
+// Abilities: AKLS (Klingensturm), Tip (Tooltip - Normal)
+{
+Klingensturm [|cffffcc00Stufe 3|r]
+}
+
+STRING 2058
+// Abilities: AKLS (Klingensturm), Tip (Tooltip - Normal)
+{
+Klingensturm [|cffffcc00Stufe 1|r]
+}
+
+STRING 2059
+// Abilities: ASPB (Spiegelbild), Researchubertip (Tooltip - Learn - Extended)
+{
+Verwirrt den Gegner mit Illusionen des Klingenmeisters und bannt jegliche Magie vom Klingenmeister.|n|n|cffffcc00Stufe 1|r - Erschafft <ASPB,DataA1> Illusion.|n|cffffcc00Stufe 2|r - Erschafft <ASPB,DataA2> Illusionen.|n|cffffcc00Stufe 3|r - Erschafft <ASPB,DataA3> Illusionen.
+}
+
+STRING 2060
+// Abilities: ASPB (Spiegelbild), EditorSuffix (Editor Suffix)
+{
+(Hero 10)
+}
+
+STRING 2061
+// Abilities: ASPB (Spiegelbild), Tip (Tooltip - Normal)
+{
+Spiegelbild [|cffffcc00Stufe 4|r]
+}
+
+STRING 2062
+// Abilities: ASPB (Spiegelbild), Tip (Tooltip - Normal)
+{
+Spiegelbild [|cffffcc00Stufe 5|r]
+}
+
+STRING 2063
+// Abilities: ASPB (Spiegelbild), Tip (Tooltip - Normal)
+{
+Spiegelbild [|cffffcc00Stufe 6|r]
+}
+
+STRING 2064
+// Abilities: ASPB (Spiegelbild), Tip (Tooltip - Normal)
+{
+Spiegelbild [|cffffcc00Stufe 7|r]
+}
+
+STRING 2065
+// Abilities: ASPB (Spiegelbild), Tip (Tooltip - Normal)
+{
+Spiegelbild [|cffffcc00Stufe 8|r]
+}
+
+STRING 2066
+// Abilities: ASPB (Spiegelbild), Tip (Tooltip - Normal)
+{
+Spiegelbild [|cffffcc00Stufe 9|r]
+}
+
+STRING 2067
+// Abilities: ASPB (Spiegelbild), Tip (Tooltip - Normal)
+{
+Spiegelbild [|cffffcc00Stufe 10|r]
+}
+
+STRING 2068
+// Abilities: ASPB (Spiegelbild), Ubertip (Tooltip - Normal - Extended)
+{
+Verwirrt den Gegner mit <ASPB,DataA1> Illusion des Klingenmeisters und bannt jegliche Magie vom Klingenmeister.|nHält <ASPB,Dur1> Sek. lang an.
+}
+
+STRING 2069
+// Abilities: ASPB (Spiegelbild), Ubertip (Tooltip - Normal - Extended)
+{
+Verwirrt den Gegner mit <ASPB,DataA2> Illusion des Klingenmeisters und bannt jegliche Magie vom Klingenmeister.|nHält <ASPB,Dur2> Sek. lang an.
+}
+
+STRING 2070
+// Abilities: ASPB (Spiegelbild), Ubertip (Tooltip - Normal - Extended)
+{
+Verwirrt den Gegner mit <ASPB,DataA3> Illusion des Klingenmeisters und bannt jegliche Magie vom Klingenmeister.|nHält <ASPB,Dur3> Sek. lang an.
+}
+
+STRING 2071
+// Abilities: ASPB (Spiegelbild), Ubertip (Tooltip - Normal - Extended)
+{
+Verwirrt den Gegner mit <ASPB,DataA4> Illusion des Klingenmeisters und bannt jegliche Magie vom Klingenmeister.|nHält <ASPB,Dur4> Sek. lang an.
+}
+
+STRING 2072
+// Abilities: ASPB (Spiegelbild), Ubertip (Tooltip - Normal - Extended)
+{
+Verwirrt den Gegner mit <ASPB,DataA5> Illusion des Klingenmeisters und bannt jegliche Magie vom Klingenmeister.|nHält <ASPB,Dur5> Sek. lang an.
+}
+
+STRING 2073
+// Abilities: ASPB (Spiegelbild), Ubertip (Tooltip - Normal - Extended)
+{
+Verwirrt den Gegner mit <ASPB,DataA6> Illusion des Klingenmeisters und bannt jegliche Magie vom Klingenmeister.|nHält <ASPB,Dur6> Sek. lang an.
+}
+
+STRING 2074
+// Abilities: ASPB (Spiegelbild), Ubertip (Tooltip - Normal - Extended)
+{
+Verwirrt den Gegner mit <ASPB,DataA7> Illusion des Klingenmeisters und bannt jegliche Magie vom Klingenmeister.|nHält <ASPB,Dur7> Sek. lang an.
+}
+
+STRING 2075
+// Abilities: ASPB (Spiegelbild), Ubertip (Tooltip - Normal - Extended)
+{
+Verwirrt den Gegner mit <ASPB,DataA8> Illusion des Klingenmeisters und bannt jegliche Magie vom Klingenmeister.|nHält <ASPB,Dur8> Sek. lang an.
+}
+
+STRING 2076
+// Abilities: ASPB (Spiegelbild), Ubertip (Tooltip - Normal - Extended)
+{
+Verwirrt den Gegner mit <ASPB,DataA9> Illusion des Klingenmeisters und bannt jegliche Magie vom Klingenmeister.|nHält <ASPB,Dur9> Sek. lang an.
+}
+
+STRING 2077
+// Abilities: ASPB (Spiegelbild), Ubertip (Tooltip - Normal - Extended)
+{
+Verwirrt den Gegner mit <ASPB,DataA10> Illusion des Klingenmeisters und bannt jegliche Magie vom Klingenmeister.|nHält <ASPB,Dur10> Sek. lang an.
+}
+
+STRING 2078
+// Units: E000 (Hüter des Hains), EditorSuffix (Name - Editor Suffix)
+{
+(Hero)
+}
+
+STRING 2079
+// Abilities: AWDH (Welle der Heilung), EditorSuffix (Editor Suffix)
+{
+(Hero 10)
+}
+
+STRING 2080
+// Abilities: AWDH (Welle der Heilung), Researchubertip (Tooltip - Learn - Extended)
+{
+Ruft eine Energiewelle hervor, die ein Ziel heilt und zu nahen verbündeten Einheiten überspringt. Jeder Sprung heilt weniger.|n|n|cffffcc00Stufe 1|r - Heilt um <AWDH,DataA1> Trefferpunkte, springt <AWDH,DataB1>-mal.|n|cffffcc00Stufe 2|r - Heilt um <AWDH,DataA2> Trefferpunkte, springt <AWDH,DataB2>-mal.|n|cffffcc00Stufe 3|r - Heilt um <AWDH,DataA3> Trefferpunkte, springt <AWDH,DataB3>-mal.
+}
+
+STRING 2081
+// Abilities: AWDH (Welle der Heilung), Tip (Tooltip - Normal)
+{
+Welle der Heilung [|cffffcc00Stufe 4|r]
+}
+
+STRING 2082
+// Abilities: AWDH (Welle der Heilung), Tip (Tooltip - Normal)
+{
+Welle der Heilung [|cffffcc00Stufe 5|r]
+}
+
+STRING 2083
+// Abilities: AWDH (Welle der Heilung), Tip (Tooltip - Normal)
+{
+Welle der Heilung [|cffffcc00Stufe 6|r]
+}
+
+STRING 2084
+// Abilities: AWDH (Welle der Heilung), Tip (Tooltip - Normal)
+{
+Welle der Heilung [|cffffcc00Stufe 7|r]
+}
+
+STRING 2085
+// Abilities: AWDH (Welle der Heilung), Tip (Tooltip - Normal)
+{
+Welle der Heilung [|cffffcc00Stufe 8|r]
+}
+
+STRING 2086
+// Abilities: AWDH (Welle der Heilung), Tip (Tooltip - Normal)
+{
+Welle der Heilung [|cffffcc00Stufe 9|r]
+}
+
+STRING 2087
+// Abilities: AWDH (Welle der Heilung), Tip (Tooltip - Normal)
+{
+Welle der Heilung [|cffffcc00Stufe 10|r]
+}
+
+STRING 2088
+// Abilities: AWDH (Welle der Heilung), Ubertip (Tooltip - Normal - Extended)
+{
+Ruft eine Energiewelle hervor, die das Primärziel um <AWDH,DataA1> Trefferpunkte heilt und <AWDH,DataB1>-mal überspringt. Jeder Sprung heilt weniger.
+}
+
+STRING 2089
+// Abilities: AWDH (Welle der Heilung), Ubertip (Tooltip - Normal - Extended)
+{
+Ruft eine Energiewelle hervor, die das Primärziel um <AWDH,DataA2> Trefferpunkte heilt und <AWDH,DataB2>-mal überspringt. Jeder Sprung heilt weniger.
+}
+
+STRING 2090
+// Abilities: AWDH (Welle der Heilung), Ubertip (Tooltip - Normal - Extended)
+{
+Ruft eine Energiewelle hervor, die das Primärziel um <AWDH,DataA3> Trefferpunkte heilt und <AWDH,DataB3>-mal überspringt. Jeder Sprung heilt weniger.
+}
+
+STRING 2091
+// Abilities: AWDH (Welle der Heilung), Ubertip (Tooltip - Normal - Extended)
+{
+Ruft eine Energiewelle hervor, die das Primärziel um <AWDH,DataA4> Trefferpunkte heilt und <AWDH,DataB4>-mal überspringt. Jeder Sprung heilt weniger.
+}
+
+STRING 2092
+// Abilities: AWDH (Welle der Heilung), Ubertip (Tooltip - Normal - Extended)
+{
+Ruft eine Energiewelle hervor, die das Primärziel um <AWDH,DataA5> Trefferpunkte heilt und <AWDH,DataB5>-mal überspringt. Jeder Sprung heilt weniger.
+}
+
+STRING 2093
+// Abilities: AWDH (Welle der Heilung), Ubertip (Tooltip - Normal - Extended)
+{
+Ruft eine Energiewelle hervor, die das Primärziel um <AWDH,DataA6> Trefferpunkte heilt und <AWDH,DataB6>-mal überspringt. Jeder Sprung heilt weniger.
+}
+
+STRING 2094
+// Abilities: AWDH (Welle der Heilung), Ubertip (Tooltip - Normal - Extended)
+{
+Ruft eine Energiewelle hervor, die das Primärziel um <AWDH,DataA7> Trefferpunkte heilt und <AWDH,DataB7>-mal überspringt. Jeder Sprung heilt weniger.
+}
+
+STRING 2095
+// Abilities: AWDH (Welle der Heilung), Ubertip (Tooltip - Normal - Extended)
+{
+Ruft eine Energiewelle hervor, die das Primärziel um <AWDH,DataA8> Trefferpunkte heilt und <AWDH,DataB8>-mal überspringt. Jeder Sprung heilt weniger.
+}
+
+STRING 2096
+// Abilities: AWDH (Welle der Heilung), Ubertip (Tooltip - Normal - Extended)
+{
+Ruft eine Energiewelle hervor, die das Primärziel um <AWDH,DataA9> Trefferpunkte heilt und <AWDH,DataB9>-mal überspringt. Jeder Sprung heilt weniger.
+}
+
+STRING 2097
+// Abilities: AWDH (Welle der Heilung), Ubertip (Tooltip - Normal - Extended)
+{
+Ruft eine Energiewelle hervor, die das Primärziel um <AWDH,DataA10> Trefferpunkte heilt und <AWDH,DataB10>-mal überspringt. Jeder Sprung heilt weniger.
+}
+
+STRING 2098
+// Abilities: AVHX (Verhexen), EditorSuffix (Editor Suffix)
+{
+(Hero 10)
+}
+
+STRING 2099
+// Abilities: AVHX (Verhexen), Researchubertip (Tooltip - Learn - Extended)
+{
+Verwandelt eine gegnerische Einheit in ein zufälliges Tier und deaktiviert Spezialfähigkeiten.|n|n|cffffcc00Stufe 1|r - Hält <AVHX,Dur1> Sek. lang an.|n|cffffcc00Stufe 2|r - Hält <AVHX,Dur2> Sek. lang an.|n|cffffcc00Stufe 3|r - Hält <AVHX,Dur3> Sek. lang an.
+}
+
+STRING 2100
+// Abilities: AVHX (Verhexen), Tip (Tooltip - Normal)
+{
+Verhexen [|cffffcc00Stufe 4|r]
+}
+
+STRING 2101
+// Abilities: AVHX (Verhexen), Tip (Tooltip - Normal)
+{
+Verhexen [|cffffcc00Stufe 5|r]
+}
+
+STRING 2102
+// Abilities: AVHX (Verhexen), Tip (Tooltip - Normal)
+{
+Verhexen [|cffffcc00Stufe 6|r]
+}
+
+STRING 2103
+// Abilities: AVHX (Verhexen), Tip (Tooltip - Normal)
+{
+Verhexen [|cffffcc00Stufe 7|r]
+}
+
+STRING 2104
+// Abilities: AVHX (Verhexen), Tip (Tooltip - Normal)
+{
+Verhexen [|cffffcc00Stufe 8|r]
+}
+
+STRING 2105
+// Abilities: AVHX (Verhexen), Tip (Tooltip - Normal)
+{
+Verhexen [|cffffcc00Stufe 9|r]
+}
+
+STRING 2106
+// Abilities: AVHX (Verhexen), Tip (Tooltip - Normal)
+{
+Verhexen [|cffffcc00Stufe 10|r]
+}
+
+STRING 2107
+// Abilities: AVHX (Verhexen), Ubertip (Tooltip - Normal - Extended)
+{
+Verwandelt eine gegnerische Einheit für <AVHX,Dur1> Sek. in ein zufälliges Tier.
+}
+
+STRING 2108
+// Abilities: AVHX (Verhexen), Ubertip (Tooltip - Normal - Extended)
+{
+Verwandelt eine gegnerische Einheit für <AVHX,Dur2> Sek. in ein zufälliges Tier.
+}
+
+STRING 2109
+// Abilities: AVHX (Verhexen), Ubertip (Tooltip - Normal - Extended)
+{
+Verwandelt eine gegnerische Einheit für <AVHX,Dur3> Sek. in ein zufälliges Tier.
+}
+
+STRING 2110
+// Abilities: AVHX (Verhexen), Ubertip (Tooltip - Normal - Extended)
+{
+Verwandelt eine gegnerische Einheit für <AVHX,Dur4> Sek. in ein zufälliges Tier.
+}
+
+STRING 2111
+// Abilities: AVHX (Verhexen), Ubertip (Tooltip - Normal - Extended)
+{
+Verwandelt eine gegnerische Einheit für <AVHX,Dur5> Sek. in ein zufälliges Tier.
+}
+
+STRING 2112
+// Abilities: AVHX (Verhexen), Ubertip (Tooltip - Normal - Extended)
+{
+Verwandelt eine gegnerische Einheit für <AVHX,Dur6> Sek. in ein zufälliges Tier.
+}
+
+STRING 2113
+// Abilities: AVHX (Verhexen), Ubertip (Tooltip - Normal - Extended)
+{
+Verwandelt eine gegnerische Einheit für <AVHX,Dur7> Sek. in ein zufälliges Tier.
+}
+
+STRING 2114
+// Abilities: AVHX (Verhexen), Ubertip (Tooltip - Normal - Extended)
+{
+Verwandelt eine gegnerische Einheit für <AVHX,Dur8> Sek. in ein zufälliges Tier.
+}
+
+STRING 2115
+// Abilities: AVHX (Verhexen), Ubertip (Tooltip - Normal - Extended)
+{
+Verwandelt eine gegnerische Einheit für <AVHX,Dur9> Sek. in ein zufälliges Tier.
+}
+
+STRING 2116
+// Abilities: AVHX (Verhexen), Ubertip (Tooltip - Normal - Extended)
+{
+Verwandelt eine gegnerische Einheit für <AVHX,Dur10> Sek. in ein zufälliges Tier.
+}
+
+STRING 2117
+// Abilities: AGBV (Großer böser Voodoo), EditorSuffix (Editor Suffix)
+{
+(Hero 10)
+}
+
+STRING 2118
+// Abilities: AGBV (Großer böser Voodoo), Ubertip (Tooltip - Normal - Extended)
+{
+Macht alle verbündeten Einheiten in der Nähe des Schattenjägers unverwundbar.|nDer Schattenjäger selbst wird nicht unverwundbar.|nHält <AGBV,Dur1> Sek. lang an.
+}
+
+STRING 2119
+// Abilities: AGBV (Großer böser Voodoo), Ubertip (Tooltip - Normal - Extended)
+{
+Macht alle verbündeten Einheiten in der Nähe des Schattenjägers unverwundbar.|nDer Schattenjäger selbst wird nicht unverwundbar.|nHält <AGBV,Dur2> Sek. lang an.
+}
+
+STRING 2120
+// Abilities: AGBV (Großer böser Voodoo), Ubertip (Tooltip - Normal - Extended)
+{
+Macht alle verbündeten Einheiten in der Nähe des Schattenjägers unverwundbar.|nDer Schattenjäger selbst wird nicht unverwundbar.|nHält <AGBV,Dur3> Sek. lang an.
+}
+
+STRING 2121
+// Abilities: AGBV (Großer böser Voodoo), Ubertip (Tooltip - Normal - Extended)
+{
+Macht alle verbündeten Einheiten in der Nähe des Schattenjägers unverwundbar.|nDer Schattenjäger selbst wird nicht unverwundbar.|nHält <AGBV,Dur4> Sek. lang an.
+}
+
+STRING 2122
+// Abilities: AGBV (Großer böser Voodoo), Ubertip (Tooltip - Normal - Extended)
+{
+Macht alle verbündeten Einheiten in der Nähe des Schattenjägers unverwundbar.|nDer Schattenjäger selbst wird nicht unverwundbar.|nHält <AGBV,Dur5> Sek. lang an.
+}
+
+STRING 2123
+// Abilities: AGBV (Großer böser Voodoo), Ubertip (Tooltip - Normal - Extended)
+{
+Macht alle verbündeten Einheiten in der Nähe des Schattenjägers unverwundbar.|nDer Schattenjäger selbst wird nicht unverwundbar.|nHält <AGBV,Dur6> Sek. lang an.
+}
+
+STRING 2124
+// Abilities: AGBV (Großer böser Voodoo), Ubertip (Tooltip - Normal - Extended)
+{
+Macht alle verbündeten Einheiten in der Nähe des Schattenjägers unverwundbar.|nDer Schattenjäger selbst wird nicht unverwundbar.|nHält <AGBV,Dur7> Sek. lang an.
+}
+
+STRING 2125
+// Abilities: AGBV (Großer böser Voodoo), Ubertip (Tooltip - Normal - Extended)
+{
+Macht alle verbündeten Einheiten in der Nähe des Schattenjägers unverwundbar.|nDer Schattenjäger selbst wird nicht unverwundbar.|nHält <AGBV,Dur8> Sek. lang an.
+}
+
+STRING 2126
+// Abilities: AGBV (Großer böser Voodoo), Ubertip (Tooltip - Normal - Extended)
+{
+Macht alle verbündeten Einheiten in der Nähe des Schattenjägers unverwundbar.|nDer Schattenjäger selbst wird nicht unverwundbar.|nHält <AGBV,Dur9> Sek. lang an.
+}
+
+STRING 2127
+// Abilities: AGBV (Großer böser Voodoo), Ubertip (Tooltip - Normal - Extended)
+{
+Macht alle verbündeten Einheiten in der Nähe des Schattenjägers unverwundbar.|nDer Schattenjäger selbst wird nicht unverwundbar.|nHält <AGBV,Dur10> Sek. lang an.
+}
+
+STRING 2128
+// Abilities: ASCS (Schlangenschutz), EditorSuffix (Editor Suffix)
+{
+(Hero 3)
+}
+
+STRING 2133
+// Units: o002 (Schlangenschutz - Stufe 1), Name (Name)
+{
+Schlangenschutz - Stufe 1
+}
+
+STRING 2135
+// Units: o003 (Schlangenschutz - Stufe 2), Name (Name)
+{
+Schlangenschutz - Stufe 2
+}
+
+STRING 2137
+// Units: o004 (Schlangenschutz - Stufe 3), Name (Name)
+{
+Schlangenschutz - Stufe 3
+}
+
+STRING 2139
+// Abilities: ASCS (Schlangenschutz), Researchubertip (Tooltip - Learn - Extended)
+{
+Beschwört einen stationären Schlangenschutz, der die Gegner des Schattenjägers angreift. Der Schutz ist immun gegen Magie.|nBleibt <ASCS,Dur1> Sek. lang bestehen.|n|n|cffffcc00Kann Boden- und Lufteinheiten angreifen.|r|n|n|cffffcc00Stufe 1|r - <o002,realHP> Trefferpunkte, <o002,mindmg1>-<o002,maxdmg1> Schaden.|n|cffffcc00Stufe 2|r - <o003,realHP> Trefferpunkte, <o003,mindmg1>-<o003,maxdmg1> Schaden.|n|cffffcc00Stufe 3|r - <o004,realHP> Trefferpunkte, <o004,mindmg1>-<o004,maxdmg1> Schaden.
+}
+
+STRING 2140
+// Abilities: ASCS (Schlangenschutz), Ubertip (Tooltip - Normal - Extended)
+{
+Beschwört einen stationären Schlangenschutz, der die Gegner des Schattenjägers angreift. Der Schutz hat <o002,realHP> Trefferpunkte, ist immun gegen Magie und verursacht <o002,mindmg1>-<o002,maxdmg1> Schaden.|nBleibt <ASCS,Dur1> Sek. lang bestehen.|n|n|cffffcc00Kann Boden- und Lufteinheiten angreifen.|r
+}
+
+STRING 2141
+// Abilities: ASCS (Schlangenschutz), Ubertip (Tooltip - Normal - Extended)
+{
+Beschwört einen stationären Schlangenschutz, der die Gegner des Schattenjägers angreift. Der Schutz hat <o003,realHP> Trefferpunkte, ist immun gegen Magie und verursacht <o003,mindmg1>-<o003,maxdmg1> Schaden.|nBleibt <ASCS,Dur1> Sek. lang bestehen.|n|n|cffffcc00Kann Boden- und Lufteinheiten angreifen.|r
+}
+
+STRING 2142
+// Abilities: ASCS (Schlangenschutz), Ubertip (Tooltip - Normal - Extended)
+{
+Beschwört einen stationären Schlangenschutz, der die Gegner des Schattenjägers angreift. Der Schutz hat <o004,realHP> Trefferpunkte, ist immun gegen Magie und verursacht <o004,mindmg1>-<o004,maxdmg1> Schaden.|nBleibt <ASCS,Dur1> Sek. lang bestehen.|n|n|cffffcc00Kann Boden- und Lufteinheiten angreifen.|r
+}
+
+STRING 2143
+// Abilities: A00M (Stadtportal), EditorSuffix (Editor Suffix)
+{
+(Hero)
+}
+
+STRING 2144
+// Abilities: AWWZ (Wucherwurzeln), Researchubertip (Tooltip - Learn - Extended)
+{
+Lässt Wurzeln aus dem Boden schießen, die eine gegnerische Zieleinheit vorübergehend bewegungsunfähig machen, sie entwaffnen und ihr Schaden zufügen.|n|n|cffffcc00Stufe 1|r - <AWWZ,DataA1> Schaden pro Sekunde, hält <AWWZ,Dur1> Sek. lang an.|n|cffffcc00Stufe 2|r - <AWWZ,DataA2> Schaden pro Sekunde, hält <AWWZ,Dur2> Sek. lang an.|n|cffffcc00Stufe 3|r - <AWWZ,DataA3> Schaden pro Sekunde, hält <AWWZ,Dur3> Sek. lang an.
+}
+
+STRING 2145
+// Abilities: AWWZ (Wucherwurzeln), EditorSuffix (Editor Suffix)
+{
+(Hero 10)
+}
+
+STRING 2146
+// Abilities: AWWZ (Wucherwurzeln), Tip (Tooltip - Normal)
+{
+Wucherwurzeln [|cffffcc00Stufe 4|r]
+}
+
+STRING 2147
+// Abilities: AWWZ (Wucherwurzeln), Tip (Tooltip - Normal)
+{
+Wucherwurzeln [|cffffcc00Stufe 5|r]
+}
+
+STRING 2148
+// Abilities: AWWZ (Wucherwurzeln), Tip (Tooltip - Normal)
+{
+Wucherwurzeln [|cffffcc00Stufe 6|r]
+}
+
+STRING 2149
+// Abilities: AWWZ (Wucherwurzeln), Tip (Tooltip - Normal)
+{
+Wucherwurzeln [|cffffcc00Stufe 7|r]
+}
+
+STRING 2150
+// Abilities: AWWZ (Wucherwurzeln), Tip (Tooltip - Normal)
+{
+Wucherwurzeln [|cffffcc00Stufe 8|r]
+}
+
+STRING 2151
+// Abilities: AWWZ (Wucherwurzeln), Tip (Tooltip - Normal)
+{
+Wucherwurzeln [|cffffcc00Stufe 9|r]
+}
+
+STRING 2152
+// Abilities: AWWZ (Wucherwurzeln), Tip (Tooltip - Normal)
+{
+Wucherwurzeln [|cffffcc00Stufe 10|r]
+}
+
+STRING 2153
+// Abilities: AWWZ (Wucherwurzeln), Ubertip (Tooltip - Normal - Extended)
+{
+Lässt Wurzeln aus dem Boden schießen, die eine gegnerische Zieleinheit <AWWZ,Dur1> Sek. lang bewegungsunfähig machen, sie entwaffnen und ihr <AWWZ,DataA1> Schaden pro Sekunde zufügen.
+}
+
+STRING 2154
+// Abilities: AWWZ (Wucherwurzeln), Ubertip (Tooltip - Normal - Extended)
+{
+Lässt Wurzeln aus dem Boden schießen, die eine gegnerische Zieleinheit <AWWZ,Dur2> Sek. lang bewegungsunfähig machen, sie entwaffnen und ihr <AWWZ,DataA2> Schaden pro Sekunde zufügen.
+}
+
+STRING 2155
+// Abilities: AWWZ (Wucherwurzeln), Ubertip (Tooltip - Normal - Extended)
+{
+Lässt Wurzeln aus dem Boden schießen, die eine gegnerische Zieleinheit <AWWZ,Dur3> Sek. lang bewegungsunfähig machen, sie entwaffnen und ihr <AWWZ,DataA3> Schaden pro Sekunde zufügen.
+}
+
+STRING 2156
+// Abilities: AWWZ (Wucherwurzeln), Ubertip (Tooltip - Normal - Extended)
+{
+Lässt Wurzeln aus dem Boden schießen, die eine gegnerische Zieleinheit <AWWZ,Dur4> Sek. lang bewegungsunfähig machen, sie entwaffnen und ihr <AWWZ,DataA4> Schaden pro Sekunde zufügen.
+}
+
+STRING 2157
+// Abilities: AWWZ (Wucherwurzeln), Ubertip (Tooltip - Normal - Extended)
+{
+Lässt Wurzeln aus dem Boden schießen, die eine gegnerische Zieleinheit <AWWZ,Dur5> Sek. lang bewegungsunfähig machen, sie entwaffnen und ihr <AWWZ,DataA5> Schaden pro Sekunde zufügen.
+}
+
+STRING 2158
+// Abilities: AWWZ (Wucherwurzeln), Ubertip (Tooltip - Normal - Extended)
+{
+Lässt Wurzeln aus dem Boden schießen, die eine gegnerische Zieleinheit <AWWZ,Dur6> Sek. lang bewegungsunfähig machen, sie entwaffnen und ihr <AWWZ,DataA6> Schaden pro Sekunde zufügen.
+}
+
+STRING 2159
+// Abilities: AWWZ (Wucherwurzeln), Ubertip (Tooltip - Normal - Extended)
+{
+Lässt Wurzeln aus dem Boden schießen, die eine gegnerische Zieleinheit <AWWZ,Dur7> Sek. lang bewegungsunfähig machen, sie entwaffnen und ihr <AWWZ,DataA7> Schaden pro Sekunde zufügen.
+}
+
+STRING 2160
+// Abilities: AWWZ (Wucherwurzeln), Ubertip (Tooltip - Normal - Extended)
+{
+Lässt Wurzeln aus dem Boden schießen, die eine gegnerische Zieleinheit <AWWZ,Dur8> Sek. lang bewegungsunfähig machen, sie entwaffnen und ihr <AWWZ,DataA8> Schaden pro Sekunde zufügen.
+}
+
+STRING 2161
+// Abilities: AWWZ (Wucherwurzeln), Ubertip (Tooltip - Normal - Extended)
+{
+Lässt Wurzeln aus dem Boden schießen, die eine gegnerische Zieleinheit <AWWZ,Dur9> Sek. lang bewegungsunfähig machen, sie entwaffnen und ihr <AWWZ,DataA9> Schaden pro Sekunde zufügen.
+}
+
+STRING 2162
+// Abilities: AWWZ (Wucherwurzeln), Ubertip (Tooltip - Normal - Extended)
+{
+Lässt Wurzeln aus dem Boden schießen, die eine gegnerische Zieleinheit <AWWZ,Dur10> Sek. lang bewegungsunfähig machen, sie entwaffnen und ihr <AWWZ,DataA10> Schaden pro Sekunde zufügen.
+}
+
+STRING 2163
+// Abilities: ADRA (Dornenaura), EditorSuffix (Editor Suffix)
+{
+(Hero 10)
+}
+
+STRING 2164
+// Abilities: ADRA (Dornenaura), Researchubertip (Tooltip - Learn - Extended)
+{
+Strahlt eine Aura aus, die nahen verbündeten Einheiten einen Schadensschild gewährt, der einen Anteil des eintreffenden Nahkampfschadens reflektiert.|n|n|cffffcc00Stufe 1|r - Reflektiert <ADRA,DataA1,%>% Schaden.|n|cffffcc00Stufe 2|r - Reflektiert <ADRA,DataA2,%>% Schaden.|n|cffffcc00Stufe 3|r - Reflektiert <ADRA,DataA3,%>% Schaden.
+}
+
+STRING 2165
+// Abilities: ADRA (Dornenaura), Tip (Tooltip - Normal)
+{
+Dornenaura [|cffffcc00Stufe 4|r]
+}
+
+STRING 2166
+// Abilities: ADRA (Dornenaura), Tip (Tooltip - Normal)
+{
+Dornenaura [|cffffcc00Stufe 5|r]
+}
+
+STRING 2167
+// Abilities: ADRA (Dornenaura), Tip (Tooltip - Normal)
+{
+Dornenaura [|cffffcc00Stufe 6|r]
+}
+
+STRING 2168
+// Abilities: ADRA (Dornenaura), Tip (Tooltip - Normal)
+{
+Dornenaura [|cffffcc00Stufe 7|r]
+}
+
+STRING 2169
+// Abilities: ADRA (Dornenaura), Tip (Tooltip - Normal)
+{
+Dornenaura [|cffffcc00Stufe 8|r]
+}
+
+STRING 2170
+// Abilities: ADRA (Dornenaura), Tip (Tooltip - Normal)
+{
+Dornenaura [|cffffcc00Stufe 9|r]
+}
+
+STRING 2171
+// Abilities: ADRA (Dornenaura), Tip (Tooltip - Normal)
+{
+Dornenaura [|cffffcc00Stufe 10|r]
+}
+
+STRING 2172
+// Abilities: ADRA (Dornenaura), Ubertip (Tooltip - Normal - Extended)
+{
+Strahlt eine Aura aus, die nahen verbündeten Einheiten einen Schadensschild gewährt, der <ADRA,DataA1,%>% des eintreffenden Nahkampfschadens reflektiert.
+}
+
+STRING 2173
+// Abilities: ADRA (Dornenaura), Ubertip (Tooltip - Normal - Extended)
+{
+Strahlt eine Aura aus, die nahen verbündeten Einheiten einen Schadensschild gewährt, der <ADRA,DataA2,%>% des eintreffenden Nahkampfschadens reflektiert.
+}
+
+STRING 2174
+// Abilities: ADRA (Dornenaura), Ubertip (Tooltip - Normal - Extended)
+{
+Strahlt eine Aura aus, die nahen verbündeten Einheiten einen Schadensschild gewährt, der <ADRA,DataA3,%>% des eintreffenden Nahkampfschadens reflektiert.
+}
+
+STRING 2175
+// Abilities: ADRA (Dornenaura), Ubertip (Tooltip - Normal - Extended)
+{
+Strahlt eine Aura aus, die nahen verbündeten Einheiten einen Schadensschild gewährt, der <ADRA,DataA4,%>% des eintreffenden Nahkampfschadens reflektiert.
+}
+
+STRING 2176
+// Abilities: ADRA (Dornenaura), Ubertip (Tooltip - Normal - Extended)
+{
+Strahlt eine Aura aus, die nahen verbündeten Einheiten einen Schadensschild gewährt, der <ADRA,DataA5,%>% des eintreffenden Nahkampfschadens reflektiert.
+}
+
+STRING 2177
+// Abilities: ADRA (Dornenaura), Ubertip (Tooltip - Normal - Extended)
+{
+Strahlt eine Aura aus, die nahen verbündeten Einheiten einen Schadensschild gewährt, der <ADRA,DataA6,%>% des eintreffenden Nahkampfschadens reflektiert.
+}
+
+STRING 2178
+// Abilities: ADRA (Dornenaura), Ubertip (Tooltip - Normal - Extended)
+{
+Strahlt eine Aura aus, die nahen verbündeten Einheiten einen Schadensschild gewährt, der <ADRA,DataA7,%>% des eintreffenden Nahkampfschadens reflektiert.
+}
+
+STRING 2179
+// Abilities: ADRA (Dornenaura), Ubertip (Tooltip - Normal - Extended)
+{
+Strahlt eine Aura aus, die nahen verbündeten Einheiten einen Schadensschild gewährt, der <ADRA,DataA8,%>% des eintreffenden Nahkampfschadens reflektiert.
+}
+
+STRING 2180
+// Abilities: ADRA (Dornenaura), Ubertip (Tooltip - Normal - Extended)
+{
+Strahlt eine Aura aus, die nahen verbündeten Einheiten einen Schadensschild gewährt, der <ADRA,DataA9,%>% des eintreffenden Nahkampfschadens reflektiert.
+}
+
+STRING 2181
+// Abilities: ADRA (Dornenaura), Ubertip (Tooltip - Normal - Extended)
+{
+Strahlt eine Aura aus, die nahen verbündeten Einheiten einen Schadensschild gewährt, der <ADRA,DataA10,%>% des eintreffenden Nahkampfschadens reflektiert.
+}
+
+STRING 2183
+// Units: e001 (Treant - Stufe 1), Name (Name)
+{
+Treant - Stufe 1
+}
+
+STRING 2185
+// Units: e002 (Treant - Stufe 2), Name (Name)
+{
+Treant - Stufe 2
+}
+
+STRING 2187
+// Units: e003 (Treant - Stufe 3), Name (Name)
+{
+Treant - Stufe 3
+}
+
+STRING 2188
+// Abilities: A00G (Transmutieren), Tip (Tooltip - Normal)
+{
+Transmutieren [|cffffcc00Stufe 2|r]
+}
+
+STRING 2189
+// Abilities: A00G (Transmutieren), Tip (Tooltip - Normal)
+{
+Transmutieren [|cffffcc00Stufe 3|r]
+}
+
+STRING 2190
+// Abilities: A00G (Transmutieren), Tip (Tooltip - Normal)
+{
+Transmutieren [|cffffcc00Stufe 1|r]
+}
+
+STRING 2191
+// Abilities: A00K (Manaschild), Untip (Tooltip - Turn Off)
+{
+Manaschild [|cffffcc00Stufe 2|r] deaktivieren
+}
+
+STRING 2192
+// Abilities: A00K (Manaschild), Untip (Tooltip - Turn Off)
+{
+Manaschild [|cffffcc00Stufe 3|r] deaktivieren
+}
+
+STRING 2193
+// Abilities: A00K (Manaschild), Untip (Tooltip - Turn Off)
+{
+Manaschild [|cffffcc00Stufe 4|r] deaktivieren
+}
+
+STRING 2194
+// Abilities: A00K (Manaschild), Untip (Tooltip - Turn Off)
+{
+Manaschild [|cffffcc00Stufe 5|r] deaktivieren
+}
+
+STRING 2195
+// Abilities: A00K (Manaschild), Untip (Tooltip - Turn Off)
+{
+Manaschild [|cffffcc00Stufe 6|r] deaktivieren
+}
+
+STRING 2196
+// Abilities: A00K (Manaschild), Untip (Tooltip - Turn Off)
+{
+Manaschild [|cffffcc00Stufe 7|r] deaktivieren
+}
+
+STRING 2197
+// Abilities: A00K (Manaschild), Untip (Tooltip - Turn Off)
+{
+Manaschild [|cffffcc00Stufe 8|r] deaktivieren
+}
+
+STRING 2198
+// Abilities: A00K (Manaschild), Untip (Tooltip - Turn Off)
+{
+Manaschild [|cffffcc00Stufe 9|r] deaktivieren
+}
+
+STRING 2199
+// Abilities: A00K (Manaschild), Untip (Tooltip - Turn Off)
+{
+Manaschild [|cffffcc00Stufe 10|r] deaktivieren
+}
+
+STRING 2200
+// Abilities: A00K (Manaschild), Untip (Tooltip - Turn Off)
+{
+Manaschild [|cffffcc00Stufe 1|r] deaktivieren
+}
+
+STRING 2201
+// Abilities: A00O (Feuerbrand), Untip (Tooltip - Turn Off)
+{
+Feuerbrand [|cffffcc00Stufe 2|r] deaktivieren
+}
+
+STRING 2202
+// Abilities: A00O (Feuerbrand), Untip (Tooltip - Turn Off)
+{
+Feuerbrand [|cffffcc00Stufe 3|r] deaktivieren
+}
+
+STRING 2203
+// Abilities: A00O (Feuerbrand), Untip (Tooltip - Turn Off)
+{
+Feuerbrand [|cffffcc00Stufe 4|r] deaktivieren
+}
+
+STRING 2204
+// Abilities: A00O (Feuerbrand), Untip (Tooltip - Turn Off)
+{
+Feuerbrand [|cffffcc00Stufe 5|r] deaktivieren
+}
+
+STRING 2205
+// Abilities: A00O (Feuerbrand), Untip (Tooltip - Turn Off)
+{
+Feuerbrand [|cffffcc00Stufe 6|r] deaktivieren
+}
+
+STRING 2206
+// Abilities: A00O (Feuerbrand), Untip (Tooltip - Turn Off)
+{
+Feuerbrand [|cffffcc00Stufe 7|r] deaktivieren
+}
+
+STRING 2207
+// Abilities: A00O (Feuerbrand), Untip (Tooltip - Turn Off)
+{
+Feuerbrand [|cffffcc00Stufe 8|r] deaktivieren
+}
+
+STRING 2208
+// Abilities: A00O (Feuerbrand), Untip (Tooltip - Turn Off)
+{
+Feuerbrand [|cffffcc00Stufe 9|r] deaktivieren
+}
+
+STRING 2209
+// Abilities: A00O (Feuerbrand), Untip (Tooltip - Turn Off)
+{
+Feuerbrand [|cffffcc00Stufe 10|r] deaktivieren
+}
+
+STRING 2210
+// Abilities: A00O (Feuerbrand), Untip (Tooltip - Turn Off)
+{
+Feuerbrand [|cffffcc00Stufe 1|r] deaktivieren
+}
+
+STRING 2211
+// Abilities: A00Z (Sturm, Erde und Feuer), Tip (Tooltip - Normal)
+{
+Sturm, Erde und Feuer [|cffffcc00Stufe 2|r]
+}
+
+STRING 2212
+// Abilities: A00Z (Sturm, Erde und Feuer), Tip (Tooltip - Normal)
+{
+Sturm, Erde und Feuer [|cffffcc00Stufe 3|r]
+}
+
+STRING 2213
+// Abilities: A00Z (Sturm, Erde und Feuer), Tip (Tooltip - Normal)
+{
+Sturm, Erde und Feuer [|cffffcc00Stufe 1|r]
+}
+
+STRING 2214
+// Abilities: A0VD (Verdammnis), Tip (Tooltip - Normal)
+{
+Verdammnis [|cffffcc00Stufe 2|r]
+}
+
+STRING 2215
+// Abilities: A0VD (Verdammnis), Tip (Tooltip - Normal)
+{
+Verdammnis [|cffffcc00Stufe 3|r]
+}
+
+STRING 2216
+// Abilities: A0VD (Verdammnis), Tip (Tooltip - Normal)
+{
+Verdammnis [|cffffcc00Stufe 1|r]
+}
+
+STRING 2217
+// Abilities: A0VK (Vulkan), Tip (Tooltip - Normal)
+{
+Vulkan [|cffffcc00Stufe 2|r]
+}
+
+STRING 2218
+// Abilities: A0VK (Vulkan), Tip (Tooltip - Normal)
+{
+Vulkan [|cffffcc00Stufe 3|r]
+}
+
+STRING 2219
+// Abilities: A0VK (Vulkan), Tip (Tooltip - Normal)
+{
+Vulkan [|cffffcc00Stufe 4|r]
+}
+
+STRING 2220
+// Abilities: A0VK (Vulkan), Tip (Tooltip - Normal)
+{
+Vulkan [|cffffcc00Stufe 5|r]
+}
+
+STRING 2221
+// Abilities: A0VK (Vulkan), Tip (Tooltip - Normal)
+{
+Vulkan [|cffffcc00Stufe 6|r]
+}
+
+STRING 2222
+// Abilities: A0VK (Vulkan), Tip (Tooltip - Normal)
+{
+Vulkan [|cffffcc00Stufe 7|r]
+}
+
+STRING 2223
+// Abilities: A0VK (Vulkan), Tip (Tooltip - Normal)
+{
+Vulkan [|cffffcc00Stufe 8|r]
+}
+
+STRING 2224
+// Abilities: A0VK (Vulkan), Tip (Tooltip - Normal)
+{
+Vulkan [|cffffcc00Stufe 9|r]
+}
+
+STRING 2225
+// Abilities: A0VK (Vulkan), Tip (Tooltip - Normal)
+{
+Vulkan [|cffffcc00Stufe 10|r]
+}
+
+STRING 2226
+// Abilities: A0VK (Vulkan), Tip (Tooltip - Normal)
+{
+Vulkan [|cffffcc00Stufe 1|r]
+}
+
+STRING 2227
+// Abilities: A015 (Avatar), Tip (Tooltip - Normal)
+{
+Avatar  [|cffffcc00Stufe 2|r] aktivieren
+}
+
+STRING 2228
+// Abilities: A015 (Avatar), Tip (Tooltip - Normal)
+{
+Avatar  [|cffffcc00Stufe 3|r] aktivieren
+}
+
+STRING 2229
+// Abilities: A015 (Avatar), Untip (Tooltip - Turn Off)
+{
+Avatar [|cffffcc00Stufe 2|r] deaktivieren
+}
+
+STRING 2230
+// Abilities: A015 (Avatar), Untip (Tooltip - Turn Off)
+{
+Avatar [|cffffcc00Stufe 3|r] deaktivieren
+}
+
+STRING 2231
+// Abilities: A015 (Avatar), Tip (Tooltip - Normal)
+{
+Avatar  [|cffffcc00Stufe 1|r] aktivieren
+}
+
+STRING 2232
+// Abilities: A015 (Avatar), Untip (Tooltip - Turn Off)
+{
+Avatar [|cffffcc00Stufe 1|r] deaktivieren
+}
+
+STRING 2233
+// Abilities: AGBV (Großer böser Voodoo), Tip (Tooltip - Normal)
+{
+Großer böser Voodoo [|cffffcc00Stufe 1|r]
+}
+
+STRING 2234
+// Abilities: AGBV (Großer böser Voodoo), Tip (Tooltip - Normal)
+{
+Großer böser Voodoo [|cffffcc00Stufe 2|r]
+}
+
+STRING 2235
+// Abilities: AGBV (Großer böser Voodoo), Tip (Tooltip - Normal)
+{
+Großer böser Voodoo [|cffffcc00Stufe 3|r]
+}
+
+STRING 2236
+// Abilities: AGBV (Großer böser Voodoo), Tip (Tooltip - Normal)
+{
+Großer böser Voodoo [|cffffcc00Stufe 4|r]
+}
+
+STRING 2237
+// Abilities: AGBV (Großer böser Voodoo), Tip (Tooltip - Normal)
+{
+Großer böser Voodoo [|cffffcc00Stufe 5|r]
+}
+
+STRING 2238
+// Abilities: AGBV (Großer böser Voodoo), Tip (Tooltip - Normal)
+{
+Großer böser Voodoo [|cffffcc00Stufe 6|r]
+}
+
+STRING 2239
+// Abilities: AGBV (Großer böser Voodoo), Tip (Tooltip - Normal)
+{
+Großer böser Voodoo [|cffffcc00Stufe 7|r]
+}
+
+STRING 2240
+// Abilities: AGBV (Großer böser Voodoo), Tip (Tooltip - Normal)
+{
+Großer böser Voodoo [|cffffcc00Stufe 8|r]
+}
+
+STRING 2241
+// Abilities: AGBV (Großer böser Voodoo), Tip (Tooltip - Normal)
+{
+Großer böser Voodoo [|cffffcc00Stufe 9|r]
+}
+
+STRING 2242
+// Abilities: AGBV (Großer böser Voodoo), Tip (Tooltip - Normal)
+{
+Großer böser Voodoo [|cffffcc00Stufe 10|r]
+}
+
+STRING 2243
+// Abilities: AGLH (Gelassenheit), Researchubertip (Tooltip - Learn - Extended)
+{
+Verursacht einen heilenden Regen, der über einem großen Gebiet niedergeht und verbündete Einheiten um <AGLH,DataA1> Trefferpunkte pro Sekunde heilt.|nHält <AGLH,Dur1> Sek. lang an.
+}
+
+STRING 2244
+// Abilities: AGLH (Gelassenheit), Tip (Tooltip - Normal)
+{
+Gelassenheit [|cffffcc00Stufe 1|r]
+}
+
+STRING 2245
+// Abilities: AGLH (Gelassenheit), Tip (Tooltip - Normal)
+{
+Gelassenheit [|cffffcc00Stufe 2|r]
+}
+
+STRING 2246
+// Abilities: AGLH (Gelassenheit), Tip (Tooltip - Normal)
+{
+Gelassenheit [|cffffcc00Stufe 3|r]
+}
+
+STRING 2247
+// Abilities: AGLH (Gelassenheit), Tip (Tooltip - Normal)
+{
+Gelassenheit [|cffffcc00Stufe 4|r]
+}
+
+STRING 2248
+// Abilities: AGLH (Gelassenheit), Tip (Tooltip - Normal)
+{
+Gelassenheit [|cffffcc00Stufe 5|r]
+}
+
+STRING 2249
+// Abilities: AGLH (Gelassenheit), Tip (Tooltip - Normal)
+{
+Gelassenheit [|cffffcc00Stufe 6|r]
+}
+
+STRING 2250
+// Abilities: AGLH (Gelassenheit), Tip (Tooltip - Normal)
+{
+Gelassenheit [|cffffcc00Stufe 7|r]
+}
+
+STRING 2251
+// Abilities: AGLH (Gelassenheit), Tip (Tooltip - Normal)
+{
+Gelassenheit [|cffffcc00Stufe 8|r]
+}
+
+STRING 2252
+// Abilities: AGLH (Gelassenheit), Tip (Tooltip - Normal)
+{
+Gelassenheit [|cffffcc00Stufe 9|r]
+}
+
+STRING 2253
+// Abilities: AGLH (Gelassenheit), Tip (Tooltip - Normal)
+{
+Gelassenheit [|cffffcc00Stufe 10|r]
+}
+
+STRING 2254
+// Abilities: AGLH (Gelassenheit), Ubertip (Tooltip - Normal - Extended)
+{
+Verursacht einen heilenden Regen, der über einem großen Gebiet niedergeht und verbündete Einheiten um <AGLH,DataA1> Trefferpunkte pro Sekunde heilt.|nHält <AGLH,Dur1> Sek. lang an.
+}
+
+STRING 2255
+// Abilities: AGLH (Gelassenheit), Ubertip (Tooltip - Normal - Extended)
+{
+Verursacht einen heilenden Regen, der über einem großen Gebiet niedergeht und verbündete Einheiten um <AGLH,DataA2> Trefferpunkte pro Sekunde heilt.|nHält <AGLH,Dur2> Sek. lang an.
+}
+
+STRING 2256
+// Abilities: AGLH (Gelassenheit), Ubertip (Tooltip - Normal - Extended)
+{
+Verursacht einen heilenden Regen, der über einem großen Gebiet niedergeht und verbündete Einheiten um <AGLH,DataA3> Trefferpunkte pro Sekunde heilt.|nHält <AGLH,Dur3> Sek. lang an.
+}
+
+STRING 2257
+// Abilities: AGLH (Gelassenheit), Ubertip (Tooltip - Normal - Extended)
+{
+Verursacht einen heilenden Regen, der über einem großen Gebiet niedergeht und verbündete Einheiten um <AGLH,DataA4> Trefferpunkte pro Sekunde heilt.|nHält <AGLH,Dur4> Sek. lang an.
+}
+
+STRING 2258
+// Abilities: AGLH (Gelassenheit), Ubertip (Tooltip - Normal - Extended)
+{
+Verursacht einen heilenden Regen, der über einem großen Gebiet niedergeht und verbündete Einheiten um <AGLH,DataA5> Trefferpunkte pro Sekunde heilt.|nHält <AGLH,Dur5> Sek. lang an.
+}
+
+STRING 2259
+// Abilities: AGLH (Gelassenheit), Ubertip (Tooltip - Normal - Extended)
+{
+Verursacht einen heilenden Regen, der über einem großen Gebiet niedergeht und verbündete Einheiten um <AGLH,DataA6> Trefferpunkte pro Sekunde heilt.|nHält <AGLH,Dur6> Sek. lang an.
+}
+
+STRING 2260
+// Abilities: AGLH (Gelassenheit), Ubertip (Tooltip - Normal - Extended)
+{
+Verursacht einen heilenden Regen, der über einem großen Gebiet niedergeht und verbündete Einheiten um <AGLH,DataA7> Trefferpunkte pro Sekunde heilt.|nHält <AGLH,Dur7> Sek. lang an.
+}
+
+STRING 2261
+// Abilities: AGLH (Gelassenheit), Ubertip (Tooltip - Normal - Extended)
+{
+Verursacht einen heilenden Regen, der über einem großen Gebiet niedergeht und verbündete Einheiten um <AGLH,DataA8> Trefferpunkte pro Sekunde heilt.|nHält <AGLH,Dur8> Sek. lang an.
+}
+
+STRING 2262
+// Abilities: AGLH (Gelassenheit), Ubertip (Tooltip - Normal - Extended)
+{
+Verursacht einen heilenden Regen, der über einem großen Gebiet niedergeht und verbündete Einheiten um <AGLH,DataA9> Trefferpunkte pro Sekunde heilt.|nHält <AGLH,Dur9> Sek. lang an.
+}
+
+STRING 2263
+// Abilities: AGLH (Gelassenheit), Ubertip (Tooltip - Normal - Extended)
+{
+Verursacht einen heilenden Regen, der über einem großen Gebiet niedergeht und verbündete Einheiten um <AGLH,DataA10> Trefferpunkte pro Sekunde heilt.|nHält <AGLH,Dur10> Sek. lang an.
+}
+
+STRING 2264
+// Abilities: AGLH (Gelassenheit), EditorSuffix (Editor Suffix)
+{
+(Hero 10)
+}
+
+STRING 2265
+// Abilities: A00Q (Naturgewalt), EditorSuffix (Editor Suffix)
+{
+(Hero 3)
+}
+
+STRING 2266
+// Abilities: A00Q (Naturgewalt), Ubertip (Tooltip - Normal - Extended)
+{
+Verwandelt Bäume und Gegner in einem Gebiet in <A00Q,DataA1> Treants. Treants haben <efon,realHP> Trefferpunkte und verursachen <efon,mindmg1>-<efon,maxdmg1> Schaden. Sie können Segen der Natur erlernen.|nBleiben <AEfn,Dur1> Sek. lang bestehen.|n|n|cffffcc00Können Bodeneinheiten angreifen.|r
+}
+
+STRING 2267
+// Abilities: A00Q (Naturgewalt), Ubertip (Tooltip - Normal - Extended)
+{
+Verwandelt Bäume und Gegner in einem Gebiet in <A00Q,DataA2> Treants. Treants haben <efon,realHP> Trefferpunkte und verursachen <efon,mindmg2>-<efon,maxdmg2> Schaden. Sie können Segen der Natur erlernen.|nBleiben <AEfn,Dur2> Sek. lang bestehen.|n|n|cffffcc00Können Bodeneinheiten angreifen.|r
+}
+
+STRING 2268
+// Abilities: A00Q (Naturgewalt), Ubertip (Tooltip - Normal - Extended)
+{
+Verwandelt Bäume und Gegner in einem Gebiet in <A00Q,DataA3> Treants. Treants haben <efon,realHP> Trefferpunkte und verursachen <efon,mindmg3>-<efon,maxdmg3> Schaden. Sie können Segen der Natur erlernen.|nBleiben <AEfn,Dur3> Sek. lang bestehen.|n|n|cffffcc00Können Bodeneinheiten angreifen.|r
+}
+
+STRING 2269
+// Abilities: A00Q (Naturgewalt), Researchubertip (Tooltip - Learn - Extended)
+{
+Verwandelt Bäume und Gegner in einem Gebiet in Treants.|n|n|cffffcc00Können Bodeneinheiten angreifen.|r|n|n|cffffcc00Stufe 1|r - Erweckt <A00Q,DataA1> Treants, die <A00Q,Dur1> Sek. lang bestehen bleiben.|n|cffffcc00Stufe 2|r - Erweckt <A00Q,DataA2> Treants, die <A00Q,Dur2> Sek. lang bestehen bleiben.|n|cffffcc00Stufe 3|r - Erweckt <A00Q,DataA3> Treants, die <A00Q,Dur3> Sek. lang bestehen bleiben.
+}
+
+STRING 2271
+// Items: I003 (Sobi-Maske 25), Ubertip (Tooltip - Extended)
+{
+Erhöht die Manaregeneration des Helden um <A016,DataA1,%>%.
+}
+
+STRING 2273
+// Items: I004 (Sobi-Maske 50), Ubertip (Tooltip - Extended)
+{
+Erhöht die Manaregeneration des Helden um <A017,DataA1,%>%.
+}
+
+STRING 2274
+// Abilities: A014 (Gegenstand: Manawiederherstellung 500), EditorSuffix (Editor Suffix)
+{
+(Hero)
+}
+
+STRING 2275
+// Abilities: A016 (Gegenstand: Manaregeneration 25%), Name (Name)
+{
+Gegenstand: Manaregeneration 25%
+}
+
+STRING 2276
+// Abilities: A016 (Gegenstand: Manaregeneration 25%), EditorSuffix (Editor Suffix)
+{
+(Hero)
+}
+
+STRING 2277
+// Abilities: A017 (Gegenstand: Manaregeneration 50%), Name (Name)
+{
+Gegenstand: Manaregeneration 50%
+}
+
+STRING 2278
+// Abilities: A018 (Gegenstand: Vampiraura 15%), Name (Name)
+{
+Gegenstand: Vampiraura 15%
+}
+
+STRING 2279
+// Abilities: A017 (Gegenstand: Manaregeneration 50%), EditorSuffix (Editor Suffix)
+{
+(Hero)
+}
+
+STRING 2280
+// Abilities: A019 (Gegenstand: Vampiraura 30%), Name (Name)
+{
+Gegenstand: Vampiraura 30%
+}
+
+STRING 2281
+// Abilities: A018 (Gegenstand: Vampiraura 15%), EditorSuffix (Editor Suffix)
+{
+(Hero)
+}
+
+STRING 2282
+// Items: I002 (Großer Manatrank 500), Name (Name)
+{
+Großer Manatrank 500
+}
+
+STRING 2283
+// Items: I003 (Sobi-Maske 25), Name (Name)
+{
+Sobi-Maske 25
+}
+
+STRING 2284
+// Items: I004 (Sobi-Maske 50), Name (Name)
+{
+Sobi-Maske 50
+}
+
+STRING 2285
+// Items: I005 (Knochenglocken der Geißel 15), Name (Name)
+{
+Knochenglocken der Geißel 15
+}
+
+STRING 2286
+// Items: I005 (Knochenglocken der Geißel 15), Ubertip (Tooltip - Extended)
+{
+Gewährt einem Nahkampfhelden und verbündeten Nahkampfeinheiten in der Nähe einen Trefferpunkte stehlenden Angriff, der <A018,DataA1,%>% des verursachten Schadens in Trefferpunkte umwandelt.|nNicht mit Vampiraura stapelbar.
+}
+
+STRING 2287
+// Items: I006 (Knochenglocken der Geißel 30), Name (Name)
+{
+Knochenglocken der Geißel 30
+}
+
+STRING 2288
+// Items: I006 (Knochenglocken der Geißel 30), Ubertip (Tooltip - Extended)
+{
+Gewährt einem Nahkampfhelden und verbündeten Nahkampfeinheiten in der Nähe einen Trefferpunkte stehlenden Angriff, der <A019,DataA1,%>% des verursachten Schadens in Trefferpunkte umwandelt.|nNicht mit Vampiraura stapelbar.
+}
+
+STRING 2289
+// Items: I007 (Amulett des Zauberschilds 40), Name (Name)
+{
+Amulett des Zauberschilds 40
+}
+
+STRING 2290
+// Abilities: A014 (Gegenstand: Manawiederherstellung 500), Name (Name)
+{
+Gegenstand: Manawiederherstellung 500
+}
+
+STRING 2291
+// Abilities: A019 (Gegenstand: Vampiraura 30%), EditorSuffix (Editor Suffix)
+{
+(Hero)
+}
+
+STRING 2292
+// Abilities: A01A (Gegenstand: Zauberschild 40), EditorSuffix (Editor Suffix)
+{
+(Hero)
+}
+
+STRING 2294
+// Abilities: A01B (Gegenstand: Zauberschild 20), EditorSuffix (Editor Suffix)
+{
+(Hero)
+}
+
+STRING 2296
+// Items: I007 (Amulett des Zauberschilds 40), Ubertip (Tooltip - Extended)
+{
+Blockt einmal alle <A01A,Cool1> Sek. einen Schwächungseffekt, den ein Gegner gegen den Helden einsetzt.
+}
+
+STRING 2297
+// Items: I008 (Amulett des Zauberschilds 20), Name (Name)
+{
+Amulett des Zauberschilds 20
+}
+
+STRING 2298
+// Items: I008 (Amulett des Zauberschilds 20), Ubertip (Tooltip - Extended)
+{
+Blockt einmal alle <A01B,Cool1> Sek. einen Schwächungseffekt, den ein Gegner gegen den Helden einsetzt.
+}
+
+STRING 2299
+// Abilities: A01A (Gegenstand: Zauberschild 40), Name (Name)
+{
+Gegenstand: Zauberschild 40
+}
+
+STRING 2300
+// Abilities: A01B (Gegenstand: Zauberschild 20), Name (Name)
+{
+Gegenstand: Zauberschild 20
 }
 
