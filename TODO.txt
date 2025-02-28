@@ -7,9 +7,6 @@ Bug's:
 
 Must have:
 ----------
-- Helden-Fähigkeiten auf lvl 10/5 anheben
-	- Bestienmeister
-	- Feuerlord
 - Held ändern ermöglichen + Stufe des alten Heldes übernehmen
 - Neutrale-Lager in den Dreicken zum Erforschen und Assimilieren
 - 11 sinnvolle ausarbeiten für Item-Shop
@@ -51,9 +48,15 @@ Feature-List:
 
 Helden:
 -------
-- Alchemist
-- Meerhexe
-- Tüftler
-- Braumeister
-- Dunkle Waldläuferin
-- Grubenlord
+- Alchemist (Nahkampf)
+- Bergkönig (Nahkampf)
+- Braumeister (Nahkampf)
+- Dunkle Waldläuferin (Distanz)
+- Erzmagier (Distanz)
+- Feuerlord (Distanz)
+- Grubenlord (Nahkampf)
+- Hüter des Hains (Distanz)
+- Klingenmeister (Nahkampf)
+- Meerhexe (Distanz)
+- Schattenjäger (Distanz)
+- Tüftler (Nahkampf)

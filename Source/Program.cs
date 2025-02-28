@@ -98,7 +98,6 @@ namespace Source
         Undeads = new Team(Common.Player(12));
 
         // Regions-Ereignisse registrieren für automatische Einheitenbewegungen
-
         RegisterRegionTriggersInHumanArea();
         RegisterRegionTriggerInOrcArea();
         RegisterRegionTriggerInElfArea();
