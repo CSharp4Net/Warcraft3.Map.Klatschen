@@ -74,6 +74,7 @@ gg_rct_UndeadToOrcInnerLine = nil
 gg_rct_UndeadToOrcOuterLine = nil
 gg_rct_TestArea = nil
 gg_trg_Melee_Initialization = nil
+gg_rct_CenterComplete = nil
 function InitGlobals()
 end
 
@@ -656,6 +657,7 @@ function CreateRegions()
 local we
 
 gg_rct_Center = Rect(-128.0, 2944.0, 128.0, 3200.0)
+gg_rct_CenterComplete = Rect(-1024.0, 2048.0, 1024.0, 4096.0)
 gg_rct_ElfBarracksToCenter = Rect(-6208.0, -3136.0, -6080.0, -3008.0)
 gg_rct_ElfBarracksToCenterSpawn = Rect(-6016.0, -3584.0, -5760.0, -2560.0)
 gg_rct_ElfBarracksToHuman = Rect(-10304.0, -1984.0, -10176.0, -1856.0)
@@ -711,6 +713,7 @@ gg_rct_OrcToHumanInnerLine = Rect(8128.0, 13248.0, 8256.0, 13376.0)
 gg_rct_OrcToHumanOuterLine = Rect(4032.0, 13248.0, 4160.0, 13376.0)
 gg_rct_OrcToUndeadInnerLine = Rect(10176.0, 11200.0, 10304.0, 11328.0)
 gg_rct_OrcToUndeadOuterLine = Rect(10176.0, 7104.0, 10304.0, 7232.0)
+gg_rct_TestArea = Rect(17280.0, 17280.0, 17408.0, 17408.0)
 gg_rct_UndeadBarracksToCenter = Rect(6080.0, -3136.0, 6208.0, -3008.0)
 gg_rct_UndeadBarracksToCenterSpawn = Rect(5760.0, -3584.0, 6016.0, -2560.0)
 gg_rct_UndeadBarracksToElf = Rect(4928.0, -7232.0, 5056.0, -7104.0)
@@ -729,7 +732,6 @@ gg_rct_UndeadToHumanInnerLine = Rect(8640.0, -5696.0, 8768.0, -5568.0)
 gg_rct_UndeadToHumanOuterLine = Rect(5056.0, -2112.0, 5184.0, -1984.0)
 gg_rct_UndeadToOrcInnerLine = Rect(10176.0, -5184.0, 10304.0, -5056.0)
 gg_rct_UndeadToOrcOuterLine = Rect(10176.0, -1088.0, 10304.0, -960.0)
-gg_rct_TestArea = Rect(17280.0, 17280.0, 17408.0, 17408.0)
 end
 
 function InitCustomPlayerSlots()

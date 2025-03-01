@@ -1,6 +1,6 @@
 ﻿using Source.Models;
 
-namespace Source.PermanentEvents
+namespace Source.Handler.Periodic
 {
   internal static class GoldIncome
   {

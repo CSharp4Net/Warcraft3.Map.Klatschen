@@ -6,6 +6,7 @@ using WCSharp.Shared.Data;
 public static class Regions
 {
 	public static Rectangle Center { get; set; } = new Rectangle(-128f, 2944f, 128f, 3200f);
+	public static Rectangle CenterComplete { get; set; } = new Rectangle(-1024f, 2048f, 1024f, 4096f);
 	public static Rectangle ElfBarracksToCenter { get; set; } = new Rectangle(-6208f, -3136f, -6080f, -3008f);
 	public static Rectangle ElfBarracksToCenterSpawn { get; set; } = new Rectangle(-6016f, -3584f, -5760f, -2560f);
 	public static Rectangle ElfBarracksToHuman { get; set; } = new Rectangle(-10304f, -1984f, -10176f, -1856f);
@@ -61,6 +62,7 @@ public static class Regions
 	public static Rectangle OrcToHumanOuterLine { get; set; } = new Rectangle(4032f, 13248f, 4160f, 13376f);
 	public static Rectangle OrcToUndeadInnerLine { get; set; } = new Rectangle(10176f, 11200f, 10304f, 11328f);
 	public static Rectangle OrcToUndeadOuterLine { get; set; } = new Rectangle(10176f, 7104f, 10304f, 7232f);
+	public static Rectangle TestArea { get; set; } = new Rectangle(17280f, 17280f, 17408f, 17408f);
 	public static Rectangle UndeadBarracksToCenter { get; set; } = new Rectangle(6080f, -3136f, 6208f, -3008f);
 	public static Rectangle UndeadBarracksToCenterSpawn { get; set; } = new Rectangle(5760f, -3584f, 6016f, -2560f);
 	public static Rectangle UndeadBarracksToElf { get; set; } = new Rectangle(4928f, -7232f, 5056f, -7104f);
@@ -79,6 +81,5 @@ public static class Regions
 	public static Rectangle UndeadToHumanOuterLine { get; set; } = new Rectangle(5056f, -2112f, 5184f, -1984f);
 	public static Rectangle UndeadToOrcInnerLine { get; set; } = new Rectangle(10176f, -5184f, 10304f, -5056f);
 	public static Rectangle UndeadToOrcOuterLine { get; set; } = new Rectangle(10176f, -1088f, 10304f, -960f);
-	public static Rectangle TestArea { get; set; } = new Rectangle(17280f, 17280f, 17408f, 17408f);
 
 }

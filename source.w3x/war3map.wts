@@ -9426,3 +9426,123 @@ STRING 2714
 (Item)
 }
 
+STRING 2715
+// Abilities: ACAR (Chaosregen), EditorSuffix (Editor Suffix)
+{
+(Dummy)
+}
+
+STRING 2716
+// Abilities: AMON (Monsun), EditorSuffix (Editor Suffix)
+{
+(Dummy)
+}
+
+STRING 2718
+// Abilities: AFRR (Feuerregen), EditorSuffix (Editor Suffix)
+{
+(Dummy)
+}
+
+STRING 2719
+// Abilities: AFRR (Feuerregen), Researchubertip (Tooltip - Learn - Extended)
+{
+Ruft Feuerwellen herbei, die Flächenschaden verursachen. Jede Welle verursacht Direktschaden und verbrennt Gegner dann <A0FR,Dur1> Sek. lang.|n|n|cffffcc00Stufe 1|r - <A0FR,DataA1> Wellen, <A0FR,DataB1> Direktschaden, <A0FR,DataE1> Schaden pro Sekunde.|n|cffffcc00Stufe 2|r - <A0FR,DataA2> Wellen, <A0FR,DataB2> Direktschaden, <A0FR,DataE2> Schaden pro Sekunde.|n|cffffcc00Stufe 3|r - <A0FR,DataA3> Wellen, <A0FR,DataB3> Direktschaden, <A0FR,DataE3> Schaden pro Sekunde.
+}
+
+STRING 2720
+// Abilities: AFRR (Feuerregen), Tip (Tooltip - Normal)
+{
+Feuerregen [|cffffcc00Stufe 4|r]
+}
+
+STRING 2721
+// Abilities: AFRR (Feuerregen), Tip (Tooltip - Normal)
+{
+Feuerregen [|cffffcc00Stufe 5|r]
+}
+
+STRING 2722
+// Abilities: AFRR (Feuerregen), Tip (Tooltip - Normal)
+{
+Feuerregen [|cffffcc00Stufe 6|r]
+}
+
+STRING 2723
+// Abilities: AFRR (Feuerregen), Tip (Tooltip - Normal)
+{
+Feuerregen [|cffffcc00Stufe 7|r]
+}
+
+STRING 2724
+// Abilities: AFRR (Feuerregen), Tip (Tooltip - Normal)
+{
+Feuerregen [|cffffcc00Stufe 8|r]
+}
+
+STRING 2725
+// Abilities: AFRR (Feuerregen), Tip (Tooltip - Normal)
+{
+Feuerregen [|cffffcc00Stufe 9|r]
+}
+
+STRING 2726
+// Abilities: AFRR (Feuerregen), Tip (Tooltip - Normal)
+{
+Feuerregen [|cffffcc00Stufe 10|r]
+}
+
+STRING 2727
+// Abilities: AFRR (Feuerregen), Ubertip (Tooltip - Normal - Extended)
+{
+Ruft <A0FR,DataA2> Feuerwellen herbei, die Flächenschaden verursachen. Jede Welle verursacht <A0FR,DataB2> Direktschaden und <A0FR,Dur2> Sek. lang <A0FR,DataE2> Schaden pro Sekunde.
+}
+
+STRING 2728
+// Abilities: AFRR (Feuerregen), Ubertip (Tooltip - Normal - Extended)
+{
+Ruft <A0FR,DataA3> Feuerwellen herbei, die Flächenschaden verursachen. Jede Welle verursacht <A0FR,DataB3> Direktschaden und <A0FR,Dur3> Sek. lang <A0FR,DataE3> Schaden pro Sekunde.
+}
+
+STRING 2729
+// Abilities: AFRR (Feuerregen), Ubertip (Tooltip - Normal - Extended)
+{
+Ruft <A0FR,DataA4> Feuerwellen herbei, die Flächenschaden verursachen. Jede Welle verursacht <A0FR,DataB4> Direktschaden und <A0FR,Dur4> Sek. lang <A0FR,DataE4> Schaden pro Sekunde.
+}
+
+STRING 2730
+// Abilities: AFRR (Feuerregen), Ubertip (Tooltip - Normal - Extended)
+{
+Ruft <A0FR,DataA5> Feuerwellen herbei, die Flächenschaden verursachen. Jede Welle verursacht <A0FR,DataB5> Direktschaden und <A0FR,Dur5> Sek. lang <A0FR,DataE5> Schaden pro Sekunde.
+}
+
+STRING 2731
+// Abilities: AFRR (Feuerregen), Ubertip (Tooltip - Normal - Extended)
+{
+Ruft <A0FR,DataA6> Feuerwellen herbei, die Flächenschaden verursachen. Jede Welle verursacht <A0FR,DataB6> Direktschaden und <A0FR,Dur6> Sek. lang <A0FR,DataE6> Schaden pro Sekunde.
+}
+
+STRING 2732
+// Abilities: AFRR (Feuerregen), Ubertip (Tooltip - Normal - Extended)
+{
+Ruft <A0FR,DataA7> Feuerwellen herbei, die Flächenschaden verursachen. Jede Welle verursacht <A0FR,DataB7> Direktschaden und <A0FR,Dur7> Sek. lang <A0FR,DataE7> Schaden pro Sekunde.
+}
+
+STRING 2733
+// Abilities: AFRR (Feuerregen), Ubertip (Tooltip - Normal - Extended)
+{
+Ruft <A0FR,DataA8> Feuerwellen herbei, die Flächenschaden verursachen. Jede Welle verursacht <A0FR,DataB8> Direktschaden und <A0FR,Dur8> Sek. lang <A0FR,DataE8> Schaden pro Sekunde.
+}
+
+STRING 2734
+// Abilities: AFRR (Feuerregen), Ubertip (Tooltip - Normal - Extended)
+{
+Ruft <A0FR,DataA9> Feuerwellen herbei, die Flächenschaden verursachen. Jede Welle verursacht <A0FR,DataB9> Direktschaden und <A0FR,Dur9> Sek. lang <A0FR,DataE9> Schaden pro Sekunde.
+}
+
+STRING 2735
+// Abilities: AFRR (Feuerregen), Ubertip (Tooltip - Normal - Extended)
+{
+Ruft <A0FR,DataA10> Feuerwellen herbei, die Flächenschaden verursachen. Jede Welle verursacht <A0FR,DataB10> Direktschaden und <A0FR,Dur10> Sek. lang <A0FR,DataE10> Schaden pro Sekunde.
+}
+

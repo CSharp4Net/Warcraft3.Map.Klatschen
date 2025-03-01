@@ -7,35 +7,30 @@ Bug's:
 
 Must have:
 ----------
-- Held ändern ermöglichen + Stufe des alten Heldes übernehmen
 - Neutrale-Lager in den Dreicken zum Erforschen und Assimilieren
-- 11 sinnvolle ausarbeiten für Item-Shop
 - Arena-Event mit zufälligem Rauskopieren 2er Benutzer-Helden
-- Klatschen-Event
 
 Nice to have:
 -------------
 - Einheiten-Upgrades auf 5 erhöhen, Belagerungsmaschinen auf 3.
 - Spawn-Einheiten kopieren für andere Teams
 - Gebäude-Einheiten (Türm, MainBuilding, Kaserne) kopieren für andere Teams
-- Forschungen kopieren für andere Teams
-- Galgen-Events im Zentrum, Unit-Spawner für zerstörenden Spieler
 - Beschwörungsgebiete für Boss-Calls
 - 1-3 Dungeon's für besondere Belohnungen
 
 Feature-List:
 =============
 - 4 Teams
-- 3 Lanes
-- Aller 15s Unit-Spawn von Kasernen (1 Kaserne pro Lane). 
-  Wenn Kaserne zerstört, dann kein aller 15s Unit-Spawn mehr für die Lane.
-- Aller 30s Unit-Spawn von Basis für alle Lanes. 
-  Wenn Basis zerstört, dann verlieren alle Spieler des Teams.
-- Computer-Team spawnt eigene Helden, welche automatisch angreifen und Stufen aufsteigen.
-  Sterben diese Helden, kehren diese nach einer Zeit (Heldenstufe + 2) zurück.
-- Benutzer bekommen bei Start Heldenseele für Heldenauswahl in Taverne.
-- Benutzer-Helden kehren bei Tod nach einer Zeit (Heldenstufe + 2) automatisch am Brunnen des Teams zurück.
-- Permanent Upgrades für Unit-Spawn (Stufe 1 bis 3)
+- 3 Lanes und 1 Schlachtfeld im Zentrum
+- Aller 15s Unit-Spawn von Kasernen (1 Kaserne pro Lane)
+  Wenn Kaserne zerstört, dann kein aller 15s Unit-Spawn mehr für die Lane
+- Aller 30s Unit-Spawn von Basis für alle Lanes
+  Wenn Basis zerstört, dann verlieren alle Spieler des Teams
+- Computer-Team spawnt eigene Helden, welche automatisch angreifen und Stufen aufsteigen
+  Sterben diese Helden, kehren diese nach einer Zeit (Heldenstufe + 2) zurück
+- Benutzer bekommen bei Start Heldenseele für Heldenauswahl in Taverne
+- Benutzer-Helden kehren bei Tod nach einer Zeit (Heldenstufe in Sekunden + 2) automatisch am Brunnen des Teams zurück
+- Permanent Upgrades für Unit-Spawn (Stufe 1 bis 2/3)
 - Permanent Upgrades für Einheiten und Gebäude (Stufe 1 bis 5)
 - Einfaches Gold-Income (1g aller 5s)
 - Helden bis max. Stufe 100
@@ -44,7 +39,27 @@ Feature-List:
 	- Attribute erhöhen (Stufe 1 bis 50)
 	- Einfache Fähigkeiten (Stufe 1 bis 10)
 	- Spezial Fähigkeit (Stufe 1 bis 5)
-- Heldenwechsel für nur 1g im Item-Shop
+- Heldenwechsel für nur 1g im Item-Shop, die erreichte Heldenstufe wird auf den neuen Helden übertragen
+
+Items (aktivierbar):
+--------------------
+- Mana-Trank
+- Unsichtbarkeits-Trank
+- Unverwundbarkeits-Trank
+- Glyphe der Opferung (Heldenwechsel)
+- Amulett des Zauberschilds, blockt 1 negativen Zauber (30s Cooldown)
+- Dolch des Entrinnens, Teleportiert den Helden (10s Cooldown)
+- Stab der Stille, verhindert das Zaubern von Einheiten im Gebiet 5 Sekunden (30s Cooldown)
+
+
+Items (permanent):
+--------------------
+- Feuerkugel
+- Frostwache
+- Knochenglocken der Geisel
+- Kriegstrommeln
+- Schild der Ehre
+- Sobi-Maske
 
 Helden:
 -------

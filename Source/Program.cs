@@ -1,9 +1,9 @@
 ﻿using Source.Handler.Generic;
 using Source.Handler.GenericEvents;
+using Source.Handler.Periodic;
 using Source.Handler.Region;
 using Source.Handler.Specific;
 using Source.Models;
-using Source.PermanentEvents;
 using Source.UnitEvents;
 using System;
 using System.Collections.Generic;
@@ -113,6 +113,7 @@ namespace Source
 
         // Periodische Events registrieren
         PeriodicEvents.AddPeriodicEvent(GoldIncome.OnElapsed, 5f);
+        PeriodicEvents.AddPeriodicEvent(SlapAround.OnElapsed, 10f);
 
         // Gebäude & Trigger für Computer-Spieler erstellen
         ConstructHumanBuildingAndTrigger();
