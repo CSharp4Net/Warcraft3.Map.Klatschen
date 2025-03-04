@@ -7,6 +7,10 @@ internal static class Areas
 {
   public static Area Center { get; set; } = new Area(Regions.Center);
   public static Area CenterComplete { get; set; } = new Area(Regions.CenterComplete);
+  public static Area CenterElf { get; set; } = new Area(Regions.CenterElf);
+  public static Area CenterHuman { get; set; } = new Area(Regions.CenterHuman);
+  public static Area CenterOrc { get; set; } = new Area(Regions.CenterOrc);
+  public static Area CenterUndead { get; set; } = new Area(Regions.CenterUndead);
   public static Area ElfBarracksToCenter { get; set; } = new Area(Regions.ElfBarracksToCenter);
   public static Area ElfBarracksToCenterSpawn { get; set; } = new Area(Regions.ElfBarracksToCenterSpawn);
   public static Area ElfBarracksToHuman { get; set; } = new Area(Regions.ElfBarracksToHuman);

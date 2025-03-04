@@ -1,4 +1,5 @@
 gg_rct_Center = nil
+gg_rct_CenterComplete = nil
 gg_rct_ElfBarracksToCenter = nil
 gg_rct_ElfBarracksToCenterSpawn = nil
 gg_rct_ElfBarracksToHuman = nil
@@ -54,6 +55,7 @@ gg_rct_OrcToHumanInnerLine = nil
 gg_rct_OrcToHumanOuterLine = nil
 gg_rct_OrcToUndeadInnerLine = nil
 gg_rct_OrcToUndeadOuterLine = nil
+gg_rct_TestArea = nil
 gg_rct_UndeadBarracksToCenter = nil
 gg_rct_UndeadBarracksToCenterSpawn = nil
 gg_rct_UndeadBarracksToElf = nil
@@ -72,9 +74,11 @@ gg_rct_UndeadToHumanInnerLine = nil
 gg_rct_UndeadToHumanOuterLine = nil
 gg_rct_UndeadToOrcInnerLine = nil
 gg_rct_UndeadToOrcOuterLine = nil
-gg_rct_TestArea = nil
 gg_trg_Melee_Initialization = nil
-gg_rct_CenterComplete = nil
+gg_rct_CenterHuman = nil
+gg_rct_CenterOrc = nil
+gg_rct_CenterElf = nil
+gg_rct_CenterUndead = nil
 function InitGlobals()
 end
 
@@ -185,6 +189,13 @@ SetUnitState(u, UNIT_STATE_LIFE, 0.80 * life)
 u = BlzCreateUnitWithSkin(p, FourCC("h000"), 17819.1, 16755.1, 270.000, FourCC("h000"))
 life = GetUnitState(u, UNIT_STATE_LIFE)
 SetUnitState(u, UNIT_STATE_LIFE, 0.80 * life)
+u = BlzCreateUnitWithSkin(p, FourCC("h000"), 5.3, 3827.4, 77.906, FourCC("h000"))
+u = BlzCreateUnitWithSkin(p, FourCC("h000"), -758.6, 3823.8, 77.906, FourCC("h000"))
+u = BlzCreateUnitWithSkin(p, FourCC("h000"), 764.2, 3827.4, 77.906, FourCC("h000"))
+u = BlzCreateUnitWithSkin(p, FourCC("h000"), -375.7, 4028.9, 77.906, FourCC("h000"))
+u = BlzCreateUnitWithSkin(p, FourCC("h000"), 372.7, 4036.5, 77.906, FourCC("h000"))
+u = BlzCreateUnitWithSkin(p, FourCC("h000"), -970.4, 3457.3, 77.906, FourCC("h000"))
+u = BlzCreateUnitWithSkin(p, FourCC("h000"), 981.2, 3457.3, 77.906, FourCC("h000"))
 end
 
 function CreateBuildingsForPlayer1()
@@ -493,6 +504,7 @@ u = BlzCreateUnitWithSkin(p, FourCC("h000"), 14801.3, 16824.2, 270.000, FourCC("
 u = BlzCreateUnitWithSkin(p, FourCC("h000"), 14853.2, 16893.9, 270.000, FourCC("h000"))
 u = BlzCreateUnitWithSkin(p, FourCC("h000"), 14789.4, 16957.7, 270.000, FourCC("h000"))
 u = BlzCreateUnitWithSkin(p, FourCC("h000"), 14922.8, 16953.4, 270.000, FourCC("h000"))
+u = BlzCreateUnitWithSkin(p, FourCC("h000"), -2.1, 2801.1, 327.570, FourCC("h000"))
 end
 
 function CreateNeutralPassiveBuildings()
@@ -658,6 +670,10 @@ local we
 
 gg_rct_Center = Rect(-128.0, 2944.0, 128.0, 3200.0)
 gg_rct_CenterComplete = Rect(-1024.0, 2048.0, 1024.0, 4096.0)
+gg_rct_CenterElf = Rect(-640.0, 2432.0, -384.0, 2688.0)
+gg_rct_CenterHuman = Rect(-640.0, 3456.0, -384.0, 3712.0)
+gg_rct_CenterOrc = Rect(384.0, 3456.0, 640.0, 3712.0)
+gg_rct_CenterUndead = Rect(384.0, 2432.0, 640.0, 2688.0)
 gg_rct_ElfBarracksToCenter = Rect(-6208.0, -3136.0, -6080.0, -3008.0)
 gg_rct_ElfBarracksToCenterSpawn = Rect(-6016.0, -3584.0, -5760.0, -2560.0)
 gg_rct_ElfBarracksToHuman = Rect(-10304.0, -1984.0, -10176.0, -1856.0)

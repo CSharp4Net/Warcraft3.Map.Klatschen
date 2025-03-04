@@ -7,6 +7,10 @@ public static class Regions
 {
 	public static Rectangle Center { get; set; } = new Rectangle(-128f, 2944f, 128f, 3200f);
 	public static Rectangle CenterComplete { get; set; } = new Rectangle(-1024f, 2048f, 1024f, 4096f);
+	public static Rectangle CenterElf { get; set; } = new Rectangle(-640f, 2432f, -384f, 2688f);
+	public static Rectangle CenterHuman { get; set; } = new Rectangle(-640f, 3456f, -384f, 3712f);
+	public static Rectangle CenterOrc { get; set; } = new Rectangle(384f, 3456f, 640f, 3712f);
+	public static Rectangle CenterUndead { get; set; } = new Rectangle(384f, 2432f, 640f, 2688f);
 	public static Rectangle ElfBarracksToCenter { get; set; } = new Rectangle(-6208f, -3136f, -6080f, -3008f);
 	public static Rectangle ElfBarracksToCenterSpawn { get; set; } = new Rectangle(-6016f, -3584f, -5760f, -2560f);
 	public static Rectangle ElfBarracksToHuman { get; set; } = new Rectangle(-10304f, -1984f, -10176f, -1856f);

@@ -9546,3 +9546,129 @@ STRING 2735
 Ruft <A0FR,DataA10> Feuerwellen herbei, die Flächenschaden verursachen. Jede Welle verursacht <A0FR,DataB10> Direktschaden und <A0FR,Dur10> Sek. lang <A0FR,DataE10> Schaden pro Sekunde.
 }
 
+STRING 2736
+// Abilities: AFLS (Flammenschlag), EditorSuffix (Editor Suffix)
+{
+(Dummy)
+}
+
+STRING 2739
+// Abilities: APHF (Phoenixfeuer), EditorSuffix (Editor Suffix)
+{
+(Dummy)
+}
+
+STRING 2740
+// Abilities: APHF (Phoenixfeuer), Tip (Tooltip - Normal)
+{
+Phönixfeuer
+}
+
+STRING 2741
+// Abilities: APHF (Phoenixfeuer), Tip (Tooltip - Normal)
+{
+Phönixfeuer
+}
+
+STRING 2742
+// Abilities: APHF (Phoenixfeuer), Tip (Tooltip - Normal)
+{
+Phönixfeuer
+}
+
+STRING 2743
+// Abilities: APHF (Phoenixfeuer), Tip (Tooltip - Normal)
+{
+Phönixfeuer
+}
+
+STRING 2744
+// Abilities: APHF (Phoenixfeuer), Ubertip (Tooltip - Normal - Extended)
+{
+Lässt Flammen auf Gegner in der Nähe niedergehen und setzt sie in Brand.
+}
+
+STRING 2745
+// Abilities: APHF (Phoenixfeuer), Ubertip (Tooltip - Normal - Extended)
+{
+Lässt Flammen auf Gegner in der Nähe niedergehen und setzt sie in Brand.
+}
+
+STRING 2746
+// Abilities: APHF (Phoenixfeuer), Ubertip (Tooltip - Normal - Extended)
+{
+Lässt Flammen auf Gegner in der Nähe niedergehen und setzt sie in Brand.
+}
+
+STRING 2747
+// Abilities: APHF (Phoenixfeuer), Ubertip (Tooltip - Normal - Extended)
+{
+Lässt Flammen auf Gegner in der Nähe niedergehen und setzt sie in Brand.
+}
+
+STRING 2748
+// Abilities: APHF (Phoenixfeuer), Name (Name)
+{
+Phoenixfeuer
+}
+
+STRING 2749
+// Abilities: APHF (Phoenixfeuer), Tip (Tooltip - Normal)
+{
+Phönixfeuer
+}
+
+STRING 2750
+// Abilities: APHF (Phoenixfeuer), Tip (Tooltip - Normal)
+{
+Phönixfeuer
+}
+
+STRING 2751
+// Abilities: APHF (Phoenixfeuer), Tip (Tooltip - Normal)
+{
+Phönixfeuer
+}
+
+STRING 2752
+// Abilities: APHF (Phoenixfeuer), Tip (Tooltip - Normal)
+{
+Phönixfeuer
+}
+
+STRING 2753
+// Abilities: APHF (Phoenixfeuer), Tip (Tooltip - Normal)
+{
+Phönixfeuer
+}
+
+STRING 2754
+// Abilities: APHF (Phoenixfeuer), Ubertip (Tooltip - Normal - Extended)
+{
+Lässt Flammen auf Gegner in der Nähe niedergehen und setzt sie in Brand.
+}
+
+STRING 2755
+// Abilities: APHF (Phoenixfeuer), Ubertip (Tooltip - Normal - Extended)
+{
+Lässt Flammen auf Gegner in der Nähe niedergehen und setzt sie in Brand.
+}
+
+STRING 2756
+// Abilities: APHF (Phoenixfeuer), Ubertip (Tooltip - Normal - Extended)
+{
+Lässt Flammen auf Gegner in der Nähe niedergehen und setzt sie in Brand.
+}
+
+STRING 2757
+// Abilities: APHF (Phoenixfeuer), Ubertip (Tooltip - Normal - Extended)
+{
+Lässt Flammen auf Gegner in der Nähe niedergehen und setzt sie in Brand.
+}
+
+STRING 2758
+// Abilities: APHF (Phoenixfeuer), Ubertip (Tooltip - Normal - Extended)
+{
+Lässt Flammen auf Gegner in der Nähe niedergehen und setzt sie in Brand.
+}
+

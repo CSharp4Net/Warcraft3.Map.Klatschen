@@ -113,7 +113,7 @@ namespace Source
 
         // Periodische Events registrieren
         PeriodicEvents.AddPeriodicEvent(GoldIncome.OnElapsed, 5f);
-        PeriodicEvents.AddPeriodicEvent(SlapAround.OnElapsed, 10f);
+        PeriodicEvents.AddPeriodicEvent(Klatschen.OnElapsed, 10f);
 
         // Gebäude & Trigger für Computer-Spieler erstellen
         ConstructHumanBuildingAndTrigger();

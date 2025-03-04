@@ -19761,6 +19761,10 @@ System.namespace("", function (namespace)
     static = function (this)
       this.Center = SourceModels.Area(Regions.Center)
       this.CenterComplete = SourceModels.Area(Regions.CenterComplete)
+      this.CenterElf = SourceModels.Area(Regions.CenterElf)
+      this.CenterHuman = SourceModels.Area(Regions.CenterHuman)
+      this.CenterOrc = SourceModels.Area(Regions.CenterOrc)
+      this.CenterUndead = SourceModels.Area(Regions.CenterUndead)
       this.ElfBarracksToCenter = SourceModels.Area(Regions.ElfBarracksToCenter)
       this.ElfBarracksToCenterSpawn = SourceModels.Area(Regions.ElfBarracksToCenterSpawn)
       this.ElfBarracksToHuman = SourceModels.Area(Regions.ElfBarracksToHuman)
@@ -19843,6 +19847,10 @@ System.namespace("", function (namespace)
           properties = {
             { "Center", 0xE, out.Source.Models.Area },
             { "CenterComplete", 0xE, out.Source.Models.Area },
+            { "CenterElf", 0xE, out.Source.Models.Area },
+            { "CenterHuman", 0xE, out.Source.Models.Area },
+            { "CenterOrc", 0xE, out.Source.Models.Area },
+            { "CenterUndead", 0xE, out.Source.Models.Area },
             { "ElfBarracksToCenter", 0xE, out.Source.Models.Area },
             { "ElfBarracksToCenterSpawn", 0xE, out.Source.Models.Area },
             { "ElfBarracksToHuman", 0xE, out.Source.Models.Area },
@@ -20047,7 +20055,7 @@ System.namespace("Source", function (namespace)
 
         -- Periodische Events registrieren
         WCSharpEvents.PeriodicEvents.AddPeriodicEvent(SourceHandlerPeriodic.GoldIncome.OnElapsed, 5)
-        WCSharpEvents.PeriodicEvents.AddPeriodicEvent(SourceHandlerPeriodic.SlapAround.OnElapsed, 10)
+        WCSharpEvents.PeriodicEvents.AddPeriodicEvent(SourceHandlerPeriodic.Klatschen.OnElapsed, 10)
 
         -- Gebäude & Trigger für Computer-Spieler erstellen
         ConstructHumanBuildingAndTrigger()
@@ -20281,6 +20289,10 @@ System.namespace("", function (namespace)
     static = function (this)
       this.Center = System.new(WCSharpSharedData.Rectangle, 2, -128, 2944, 128, 3200)
       this.CenterComplete = System.new(WCSharpSharedData.Rectangle, 2, -1024, 2048, 1024, 4096)
+      this.CenterElf = System.new(WCSharpSharedData.Rectangle, 2, -640, 2432, -384, 2688)
+      this.CenterHuman = System.new(WCSharpSharedData.Rectangle, 2, -640, 3456, -384, 3712)
+      this.CenterOrc = System.new(WCSharpSharedData.Rectangle, 2, 384, 3456, 640, 3712)
+      this.CenterUndead = System.new(WCSharpSharedData.Rectangle, 2, 384, 2432, 640, 2688)
       this.ElfBarracksToCenter = System.new(WCSharpSharedData.Rectangle, 2, -6208, -3136, -6080, -3008)
       this.ElfBarracksToCenterSpawn = System.new(WCSharpSharedData.Rectangle, 2, -6016, -3584, -5760, -2560)
       this.ElfBarracksToHuman = System.new(WCSharpSharedData.Rectangle, 2, -10304, -1984, -10176, -1856)
@@ -20363,6 +20375,10 @@ System.namespace("", function (namespace)
           properties = {
             { "Center", 0xE, out.WCSharp.Shared.Data.Rectangle },
             { "CenterComplete", 0xE, out.WCSharp.Shared.Data.Rectangle },
+            { "CenterElf", 0xE, out.WCSharp.Shared.Data.Rectangle },
+            { "CenterHuman", 0xE, out.WCSharp.Shared.Data.Rectangle },
+            { "CenterOrc", 0xE, out.WCSharp.Shared.Data.Rectangle },
+            { "CenterUndead", 0xE, out.WCSharp.Shared.Data.Rectangle },
             { "ElfBarracksToCenter", 0xE, out.WCSharp.Shared.Data.Rectangle },
             { "ElfBarracksToCenterSpawn", 0xE, out.WCSharp.Shared.Data.Rectangle },
             { "ElfBarracksToHuman", 0xE, out.WCSharp.Shared.Data.Rectangle },
@@ -21153,51 +21169,53 @@ do
 local System = System
 local WCSharpApi = WCSharp.Api
 local Source
-local WCSharpDummies
 local WCSharpEffects
 System.import(function (out)
   Source = out.Source
-  WCSharpDummies = WCSharp.Dummies
   WCSharpEffects = WCSharp.Effects
 end)
 System.namespace("Source.Handler.Periodic", function (namespace)
-  namespace.class("SlapAround", function (namespace)
-    local OnElapsed
+  namespace.class("Klatschen", function (namespace)
+    local executions, OnElapsed, CreateSpecialEffect, CreateSpecialEffectTimed, CreateAtDummyAndCastAbility, CreateAtDummyAndCastAbilityTimed
+    executions = 0
     OnElapsed = function ()
       System.try(function ()
         local player = Player(PLAYER_NEUTRAL_AGGRESSIVE)
 
-        Source.Program.ShowDebugMessage("Create dummy for NeutralAggressive")
-        local dummyUnit = CreateUnitAtLoc(player, 1848651824 --[[Constants.UNIT_DUMMY]], Areas.Center.Wc3CenterLocation, 0)
+        executions = executions + 1
 
-        Source.Program.ShowDebugMessage("Train spells")
-        UnitAddAbility(dummyUnit, 1095585614 --[[Constants.ABILITY_MONSUN_DUMMY]])
-        UnitAddAbility(dummyUnit, 1094926674 --[[Constants.ABILITY_CHAOSREGEN_DUMMY]])
+        System.Console.WriteLine("Die brennende Legion beansprucht das Zentrum, flieht ihr Narren...")
 
-        WCSharpDummies.DummySystem.RecycleDummy(dummyUnit, 4)
+        -- Effekt für Ankündigung für 6 Sekunden
+        CreateSpecialEffect("Abilities\\Spells\\Human\\FlameStrike\\FlameStrikeTarget.mdl", Areas.Center, 3, 6)
+
+        -- Nach 5 Sekunden die Schaden-Effekte anzeigen
+        CreateSpecialEffectTimed("Abilities\\Spells\\Human\\FlameStrike\\FlameStrike1.mdl", Areas.CenterHuman, 3, 5, 5)
+        CreateSpecialEffectTimed("Abilities\\Spells\\Human\\FlameStrike\\FlameStrike1.mdl", Areas.CenterOrc, 3, 5, 5)
+        CreateSpecialEffectTimed("Abilities\\Spells\\Human\\FlameStrike\\FlameStrike1.mdl", Areas.Center, 5, 5, 5)
+        CreateSpecialEffectTimed("Abilities\\Spells\\Human\\FlameStrike\\FlameStrike1.mdl", Areas.CenterElf, 3, 5, 5)
+        CreateSpecialEffectTimed("Abilities\\Spells\\Human\\FlameStrike\\FlameStrike1.mdl", Areas.CenterUndead, 3, 5, 5)
+
+        -- Nach 5 Sekunden die Schaden-Ability zünden
+        --CreateAtDummyAndCastAbilityTimed(player, Areas.CenterHuman, Constants.ABILITY_PHOENIXFEUER_DUMMY, executions, Constants.ORDER_PHOENIX_FIRE, 5.5f);
+        --CreateAtDummyAndCastAbilityTimed(player, Areas.CenterOrc, Constants.ABILITY_PHOENIXFEUER_DUMMY, executions, Constants.ORDER_PHOENIX_FIRE, 5.5f);
+        CreateAtDummyAndCastAbilityTimed(player, Areas.Center, 1095780422 --[[Constants.ABILITY_PHOENIXFEUER_DUMMY]], executions, 852481 --[[Constants.ORDER_PHOENIX_FIRE]], 5.5, 2)
+        --CreateAtDummyAndCastAbilityTimed(player, Areas.CenterElf, Constants.ABILITY_PHOENIXFEUER_DUMMY, executions, Constants.ORDER_PHOENIX_FIRE, 5.5f);
+        --CreateAtDummyAndCastAbilityTimed(player, Areas.CenterUndead, Constants.ABILITY_PHOENIXFEUER_DUMMY, executions, Constants.ORDER_PHOENIX_FIRE, 5.5f);
 
         local rectangle = Areas.CenterComplete.Wc3Rectangle
 
-        for i = 0, 9 do
-          local point = rectangle:GetRandomPoint()
-
-          local e = AddSpecialEffect("Units\\Demon\\Infernal\\InfernalBirth.mdl", point.X, point.Y)
-          WCSharpEffects.EffectSystem.Add(e, 0.03125)
-        end
-
-        --Program.ShowDebugMessage("Cast monsoon");
-        --dummyUnit.IssueOrder(Constants.ORDER_MONSOON, dummyUnit);
-
-        --var timer = Common.CreateTimer();
-        --Common.TimerStart(timer, 5f, false, () =>
+        --timer timer1 = Common.CreateTimer();
+        --Common.TimerStart(timer1, 1f, false, () =>
         --{
-        --  try
+        --  Program.ShowDebugMessage("Call meteors");
+        --  for (int i = 0; i < 8; i++)
         --  {
-        --    dummyUnit.IssueOrder(Constants.ORDER_RAIN_OF_CHAOS, dummyUnit);
-        --  }
-        --  catch (Exception ex)
-        --  {
-        --    Program.ShowExceptionMessage("SlapAround.OnElapsed-Inner", ex);
+        --    Point point = rectangle.GetRandomPoint();
+
+        --    effect e = Common.AddSpecialEffect("Units\\Demon\\Infernal\\InfernalBirth.mdl", point.X, point.Y);
+        --    e.SetColor(255, 0, 0);
+        --    EffectSystem.Add(e);
         --  }
         --});
       end, function (default)
@@ -21207,14 +21225,53 @@ System.namespace("Source.Handler.Periodic", function (namespace)
 
       return true
     end
+    CreateSpecialEffect = function (modelPath, area, scale, duration)
+      local e = AddSpecialEffect(modelPath, area.CenterX, area.CenterY)
+      BlzSetSpecialEffectScale(e, scale)
+      WCSharpEffects.EffectSystem.Add(e, duration)
+    end
+    CreateSpecialEffectTimed = function (modelPath, area, scale, delay, duration)
+      local timer = CreateTimer()
+      TimerStart(timer, delay, false, function ()
+        CreateSpecialEffect(modelPath, area, scale, duration)
+      end)
+    end
+    CreateAtDummyAndCastAbility = function (player, area, abilityId, abilityLevel, orderId, duration)
+      local dummy = CreateUnitAtLoc(player, 1848651824 --[[Constants.UNIT_DUMMY]], area.Wc3CenterLocation, 0)
+      --DummySystem.RecycleDummy(dummy, duration);
+      UnitAddAbility(dummy, abilityId)
+      SetUnitAbilityLevel(dummy, abilityId, abilityLevel)
+      IssueTargetOrderById(dummy, orderId, dummy)
+
+      -- Dummy nach Gebrauch wieder zerstören und freigeben
+      local timer = CreateTimer()
+      TimerStart(timer, duration, false, function ()
+        RemoveUnit(dummy)
+        RemoveUnit(dummy)
+        dummy = nil
+      end)
+    end
+    CreateAtDummyAndCastAbilityTimed = function (player, area, abilityId, abilityLevel, orderId, delay, duration)
+      local timer = CreateTimer()
+      TimerStart(timer, delay, false, function ()
+        CreateAtDummyAndCastAbility(player, area, abilityId, abilityLevel, orderId, duration)
+      end)
+    end
     return {
       OnElapsed = OnElapsed,
       __metadata__ = function (out)
         return {
+          fields = {
+            { "executions", 0x9, System.Int32 }
+          },
           methods = {
+            { "CreateAtDummyAndCastAbility", 0x609, CreateAtDummyAndCastAbility, out.WCSharp.Api.player, out.Source.Models.Area, System.Int32, System.Int32, System.Int32, System.Single },
+            { "CreateAtDummyAndCastAbilityTimed", 0x709, CreateAtDummyAndCastAbilityTimed, out.WCSharp.Api.player, out.Source.Models.Area, System.Int32, System.Int32, System.Int32, System.Single, System.Single },
+            { "CreateSpecialEffect", 0x409, CreateSpecialEffect, System.String, out.Source.Models.Area, System.Single, System.Single },
+            { "CreateSpecialEffectTimed", 0x509, CreateSpecialEffectTimed, System.String, out.Source.Models.Area, System.Single, System.Single, System.Single },
             { "OnElapsed", 0x8E, OnElapsed, System.Boolean }
           },
-          class = { "SlapAround", 0x3C }
+          class = { "Klatschen", 0x3C }
         }
       end
     }
@@ -33862,8 +33919,8 @@ local InitCSharp = function ()
       "WCSharp.Missiles.HomingMissile",
       "WCSharp.Missiles.MomentumMissile",
       "WCSharp.Missiles.OrbitalMissile",
-      "WCSharp.SaveLoad.SaveLoadedMessage_1",
       "WCSharp.SaveLoad.Save_1",
+      "WCSharp.SaveLoad.SaveLoadedMessage_1",
       "WCSharp.W3MMD.IW3MmdVar",
       "Areas",
       "Constants",
@@ -33873,7 +33930,7 @@ local InitCSharp = function ()
       "Source.Handler.GenericEvents.Research",
       "Source.Handler.GenericEvents.Unit",
       "Source.Handler.Periodic.GoldIncome",
-      "Source.Handler.Periodic.SlapAround",
+      "Source.Handler.Periodic.Klatschen",
       "Source.Handler.Region.ElfBase",
       "Source.Handler.Region.HumanBase",
       "Source.Handler.Region.OrcBase",
@@ -33992,6 +34049,10 @@ end
 
 gg_rct_Center = nil
 gg_rct_CenterComplete = nil
+gg_rct_CenterElf = nil
+gg_rct_CenterHuman = nil
+gg_rct_CenterOrc = nil
+gg_rct_CenterUndead = nil
 gg_rct_ElfBarracksToCenter = nil
 gg_rct_ElfBarracksToCenterSpawn = nil
 gg_rct_ElfBarracksToHuman = nil
@@ -34323,6 +34384,14 @@ gg_unit_h00T_0284 = nil
 gg_unit_h00T_0285 = nil
 gg_unit_h00T_0286 = nil
 gg_unit_h00A_0202 = nil
+gg_unit_h000_0323 = nil
+gg_unit_h000_0313 = nil
+gg_unit_h000_0318 = nil
+gg_unit_h000_0307 = nil
+gg_unit_h000_0314 = nil
+gg_unit_h000_0309 = nil
+gg_unit_h000_0319 = nil
+gg_unit_h000_0320 = nil
 gg_dest_HEch_0019 = nil
 gg_dest_HEch_0017 = nil
 gg_dest_HEch_0016 = nil
@@ -43839,6 +43908,13 @@ function CreateUnitsForPlayer0()
     SetUnitState(gg_unit_h000_0243, UNIT_STATE_LIFE, 0.80 * GetUnitState(gg_unit_h000_0243, UNIT_STATE_LIFE))
     gg_unit_h000_0244 = CreateUnit(p, 1747988528, 17819.1, 16755.1, 270.000)
     SetUnitState(gg_unit_h000_0244, UNIT_STATE_LIFE, 0.80 * GetUnitState(gg_unit_h000_0244, UNIT_STATE_LIFE))
+    gg_unit_h000_0309 = CreateUnit(p, 1747988528, 5.3, 3827.4, 77.906)
+    gg_unit_h000_0313 = CreateUnit(p, 1747988528, -758.6, 3823.8, 77.906)
+    gg_unit_h000_0314 = CreateUnit(p, 1747988528, 764.2, 3827.4, 77.906)
+    gg_unit_h000_0318 = CreateUnit(p, 1747988528, -375.7, 4028.9, 77.906)
+    gg_unit_h000_0319 = CreateUnit(p, 1747988528, 372.7, 4036.5, 77.906)
+    gg_unit_h000_0320 = CreateUnit(p, 1747988528, -970.4, 3457.3, 77.906)
+    gg_unit_h000_0323 = CreateUnit(p, 1747988528, 981.2, 3457.3, 77.906)
 end
 
 function CreateBuildingsForPlayer1()
@@ -44083,6 +44159,7 @@ function CreateNeutralHostile()
     gg_unit_h000_0227 = CreateUnit(p, 1747988528, 14853.2, 16893.9, 270.000)
     gg_unit_h000_0228 = CreateUnit(p, 1747988528, 14789.4, 16957.7, 270.000)
     gg_unit_h000_0229 = CreateUnit(p, 1747988528, 14922.8, 16953.4, 270.000)
+    gg_unit_h000_0307 = CreateUnit(p, 1747988528, -2.1, 2801.1, 327.570)
 end
 
 function CreateNeutralPassiveBuildings()
@@ -44234,6 +44311,10 @@ end
 function CreateRegions()
     gg_rct_Center = Rect(-128.0, 2944.0, 128.0, 3200.0)
     gg_rct_CenterComplete = Rect(-1024.0, 2048.0, 1024.0, 4096.0)
+    gg_rct_CenterElf = Rect(-640.0, 2432.0, -384.0, 2688.0)
+    gg_rct_CenterHuman = Rect(-640.0, 3456.0, -384.0, 3712.0)
+    gg_rct_CenterOrc = Rect(384.0, 3456.0, 640.0, 3712.0)
+    gg_rct_CenterUndead = Rect(384.0, 2432.0, 640.0, 2688.0)
     gg_rct_ElfBarracksToCenter = Rect(-6208.0, -3136.0, -6080.0, -3008.0)
     gg_rct_ElfBarracksToCenterSpawn = Rect(-6016.0, -3584.0, -5760.0, -2560.0)
     gg_rct_ElfBarracksToHuman = Rect(-10304.0, -1984.0, -10176.0, -1856.0)
