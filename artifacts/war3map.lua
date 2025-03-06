@@ -21170,13 +21170,17 @@ local System = System
 local WCSharpApi = WCSharp.Api
 local Source
 local WCSharpEffects
+local WCSharpLightnings
+local WCSharpSharedData
 System.import(function (out)
   Source = out.Source
   WCSharpEffects = WCSharp.Effects
+  WCSharpLightnings = WCSharp.Lightnings
+  WCSharpSharedData = WCSharp.Shared.Data
 end)
 System.namespace("Source.Handler.Periodic", function (namespace)
   namespace.class("Klatschen", function (namespace)
-    local executions, OnElapsed, CreateSpecialEffect, CreateSpecialEffectTimed, CreateAtDummyAndCastAbility, CreateAtDummyAndCastAbilityTimed
+    local executions, OnElapsed, CreateSpecialEffect, CreateSpecialEffectTimed, CreateAtDummyAndCastAbility, CreateAtDummyAndCastAbilityTimed, CreateLightning, CreateLightning1
     executions = 0
     OnElapsed = function ()
       System.try(function ()
@@ -21184,26 +21188,56 @@ System.namespace("Source.Handler.Periodic", function (namespace)
 
         executions = executions + 1
 
-        System.Console.WriteLine("Die brennende Legion beansprucht das Zentrum, flieht ihr Narren...")
+        System.Console.WriteLine("Brennt, ihr Narren!")
+
+        local center = Areas.CenterComplete.Wc3Rectangle:getCenter()
 
         -- Effekt für Ankündigung für 6 Sekunden
-        CreateSpecialEffect("Abilities\\Spells\\Human\\FlameStrike\\FlameStrikeTarget.mdl", Areas.Center, 3, 6)
+        CreateSpecialEffect("Abilities\\Spells\\Human\\FlameStrike\\FlameStrikeTarget.mdl", center, 3, 5)
+
+
+        local centerX = center.X
+        local centerY = center.Y - 100
+
+        local pentaPointBottom = WCSharpSharedData.Point(centerX, centerY - 900)
+        local pentaPointTopLeft = WCSharpSharedData.Point(centerX - 600, centerY + 750)
+        local pentaPointTopRight = WCSharpSharedData.Point(centerX + 600, centerY + 750)
+        local pentaPointLeft = WCSharpSharedData.Point(centerX - 900, centerY - 300)
+        local pentaPointRight = WCSharpSharedData.Point(centerX + 900, centerY - 300)
 
         -- Nach 5 Sekunden die Schaden-Effekte anzeigen
-        CreateSpecialEffectTimed("Abilities\\Spells\\Human\\FlameStrike\\FlameStrike1.mdl", Areas.CenterHuman, 3, 5, 5)
-        CreateSpecialEffectTimed("Abilities\\Spells\\Human\\FlameStrike\\FlameStrike1.mdl", Areas.CenterOrc, 3, 5, 5)
-        CreateSpecialEffectTimed("Abilities\\Spells\\Human\\FlameStrike\\FlameStrike1.mdl", Areas.Center, 5, 5, 5)
-        CreateSpecialEffectTimed("Abilities\\Spells\\Human\\FlameStrike\\FlameStrike1.mdl", Areas.CenterElf, 3, 5, 5)
-        CreateSpecialEffectTimed("Abilities\\Spells\\Human\\FlameStrike\\FlameStrike1.mdl", Areas.CenterUndead, 3, 5, 5)
+        CreateSpecialEffectTimed("Abilities\\Spells\\Human\\FlameStrike\\FlameStrike1.mdl", pentaPointBottom, 3, 5, 5)
+        CreateSpecialEffectTimed("Abilities\\Spells\\Human\\FlameStrike\\FlameStrike1.mdl", pentaPointTopLeft, 3, 5, 5)
+        CreateSpecialEffectTimed("Abilities\\Spells\\Human\\FlameStrike\\FlameStrike1.mdl", pentaPointTopRight, 5, 5, 5)
+        CreateSpecialEffectTimed("Abilities\\Spells\\Human\\FlameStrike\\FlameStrike1.mdl", pentaPointLeft, 3, 5, 5)
+        CreateSpecialEffectTimed("Abilities\\Spells\\Human\\FlameStrike\\FlameStrike1.mdl", pentaPointRight, 3, 5, 5)
+        CreateSpecialEffectTimed("Abilities\\Spells\\Human\\FlameStrike\\FlameStrike1.mdl", center, 5, 5, 5)
 
         -- Nach 5 Sekunden die Schaden-Ability zünden
-        --CreateAtDummyAndCastAbilityTimed(player, Areas.CenterHuman, Constants.ABILITY_PHOENIXFEUER_DUMMY, executions, Constants.ORDER_PHOENIX_FIRE, 5.5f);
-        --CreateAtDummyAndCastAbilityTimed(player, Areas.CenterOrc, Constants.ABILITY_PHOENIXFEUER_DUMMY, executions, Constants.ORDER_PHOENIX_FIRE, 5.5f);
-        CreateAtDummyAndCastAbilityTimed(player, Areas.Center, 1095780422 --[[Constants.ABILITY_PHOENIXFEUER_DUMMY]], executions, 852481 --[[Constants.ORDER_PHOENIX_FIRE]], 5.5, 2)
-        --CreateAtDummyAndCastAbilityTimed(player, Areas.CenterElf, Constants.ABILITY_PHOENIXFEUER_DUMMY, executions, Constants.ORDER_PHOENIX_FIRE, 5.5f);
-        --CreateAtDummyAndCastAbilityTimed(player, Areas.CenterUndead, Constants.ABILITY_PHOENIXFEUER_DUMMY, executions, Constants.ORDER_PHOENIX_FIRE, 5.5f);
+        CreateAtDummyAndCastAbilityTimed(player, center, 1095780422 --[[Constants.ABILITY_PHOENIXFEUER_DUMMY]], executions, 852481 --[[Constants.ORDER_PHOENIX_FIRE]], 5.5, 2)
 
-        local rectangle = Areas.CenterComplete.Wc3Rectangle
+        local timer1Count = 0
+        local pentaTimer = CreateTimer()
+        TimerStart(pentaTimer, 0.5, true, function ()
+          System.try(function ()
+            CreateLightning(pentaPointBottom, pentaPointTopLeft)
+            CreateLightning(pentaPointTopLeft, pentaPointRight)
+            CreateLightning(pentaPointRight, pentaPointLeft)
+            CreateLightning(pentaPointLeft, pentaPointTopRight)
+            CreateLightning(pentaPointTopRight, pentaPointBottom)
+
+
+            timer1Count = timer1Count + 1
+            if timer1Count >= 10 then
+              PauseTimer(pentaTimer)
+              DestroyTimer(pentaTimer)
+              pentaTimer = nil
+            end
+          end, function (default)
+            local ex = default
+            Source.Program.ShowExceptionMessage("SlapAround.Pentagram", ex)
+          end)
+        end)
 
         --timer timer1 = Common.CreateTimer();
         --Common.TimerStart(timer1, 1f, false, () =>
@@ -21225,19 +21259,19 @@ System.namespace("Source.Handler.Periodic", function (namespace)
 
       return true
     end
-    CreateSpecialEffect = function (modelPath, area, scale, duration)
-      local e = AddSpecialEffect(modelPath, area.CenterX, area.CenterY)
+    CreateSpecialEffect = function (modelPath, point, scale, duration)
+      local e = AddSpecialEffect(modelPath, point.X, point.Y)
       BlzSetSpecialEffectScale(e, scale)
       WCSharpEffects.EffectSystem.Add(e, duration)
     end
-    CreateSpecialEffectTimed = function (modelPath, area, scale, delay, duration)
+    CreateSpecialEffectTimed = function (modelPath, point, scale, delay, duration)
       local timer = CreateTimer()
       TimerStart(timer, delay, false, function ()
-        CreateSpecialEffect(modelPath, area, scale, duration)
+        CreateSpecialEffect(modelPath, point, scale, duration)
       end)
     end
-    CreateAtDummyAndCastAbility = function (player, area, abilityId, abilityLevel, orderId, duration)
-      local dummy = CreateUnitAtLoc(player, 1848651824 --[[Constants.UNIT_DUMMY]], area.Wc3CenterLocation, 0)
+    CreateAtDummyAndCastAbility = function (player, point, abilityId, abilityLevel, orderId, duration)
+      local dummy = CreateUnit(player, 1848651824 --[[Constants.UNIT_DUMMY]], point.X, point.Y, 0)
       --DummySystem.RecycleDummy(dummy, duration);
       UnitAddAbility(dummy, abilityId)
       SetUnitAbilityLevel(dummy, abilityId, abilityLevel)
@@ -21251,11 +21285,37 @@ System.namespace("Source.Handler.Periodic", function (namespace)
         dummy = nil
       end)
     end
-    CreateAtDummyAndCastAbilityTimed = function (player, area, abilityId, abilityLevel, orderId, delay, duration)
+    CreateAtDummyAndCastAbilityTimed = function (player, point, abilityId, abilityLevel, orderId, delay, duration)
       local timer = CreateTimer()
       TimerStart(timer, delay, false, function ()
-        CreateAtDummyAndCastAbility(player, area, abilityId, abilityLevel, orderId, duration)
+        CreateAtDummyAndCastAbility(player, point, abilityId, abilityLevel, orderId, duration)
       end)
+    end
+    CreateLightning = function (caster, target)
+      -- https://www.hiveworkshop.com/threads/beginners-guide-to-lightning-effects.220370/#herp
+      local lightning = AddLightningEx("AFOD", true, caster.X, caster.Y, 50, target.X, target.Y, 50)
+
+      local timer1 = CreateTimer()
+      TimerStart(timer1, 1, true, function ()
+        System.try(function ()
+          DestroyLightning(lightning)
+          DestroyLightning(lightning)
+          lightning = nil
+        end, function (default)
+          local ex = default
+          Source.Program.ShowExceptionMessage("SlapAround.CreateLightning", ex)
+        end)
+      end)
+    end
+    CreateLightning1 = function (caster, target, duration, fadeDuration)
+      local default = WCSharpLightnings.Lightning("AFOD", caster, target)
+      default.Duration = duration
+      default.FadeDuration = fadeDuration
+      default.CasterHeightOffset = 50
+      default.TargetHeightOffset = 50
+      local lightning = default
+
+      WCSharpLightnings.LightningSystem.Add(lightning)
     end
     return {
       OnElapsed = OnElapsed,
@@ -21265,10 +21325,12 @@ System.namespace("Source.Handler.Periodic", function (namespace)
             { "executions", 0x9, System.Int32 }
           },
           methods = {
-            { "CreateAtDummyAndCastAbility", 0x609, CreateAtDummyAndCastAbility, out.WCSharp.Api.player, out.Source.Models.Area, System.Int32, System.Int32, System.Int32, System.Single },
-            { "CreateAtDummyAndCastAbilityTimed", 0x709, CreateAtDummyAndCastAbilityTimed, out.WCSharp.Api.player, out.Source.Models.Area, System.Int32, System.Int32, System.Int32, System.Single, System.Single },
-            { "CreateSpecialEffect", 0x409, CreateSpecialEffect, System.String, out.Source.Models.Area, System.Single, System.Single },
-            { "CreateSpecialEffectTimed", 0x509, CreateSpecialEffectTimed, System.String, out.Source.Models.Area, System.Single, System.Single, System.Single },
+            { "CreateAtDummyAndCastAbility", 0x609, CreateAtDummyAndCastAbility, out.WCSharp.Api.player, out.WCSharp.Shared.Data.Point, System.Int32, System.Int32, System.Int32, System.Single },
+            { "CreateAtDummyAndCastAbilityTimed", 0x709, CreateAtDummyAndCastAbilityTimed, out.WCSharp.Api.player, out.WCSharp.Shared.Data.Point, System.Int32, System.Int32, System.Int32, System.Single, System.Single },
+            { "CreateLightning", 0x209, CreateLightning, out.WCSharp.Shared.Data.Point, out.WCSharp.Shared.Data.Point },
+            { "CreateLightning", 0x409, CreateLightning1, out.WCSharp.Api.unit, out.WCSharp.Api.unit, System.Single, System.Single },
+            { "CreateSpecialEffect", 0x409, CreateSpecialEffect, System.String, out.WCSharp.Shared.Data.Point, System.Single, System.Single },
+            { "CreateSpecialEffectTimed", 0x509, CreateSpecialEffectTimed, System.String, out.WCSharp.Shared.Data.Point, System.Single, System.Single, System.Single },
             { "OnElapsed", 0x8E, OnElapsed, System.Boolean }
           },
           class = { "Klatschen", 0x3C }
@@ -34384,14 +34446,6 @@ gg_unit_h00T_0284 = nil
 gg_unit_h00T_0285 = nil
 gg_unit_h00T_0286 = nil
 gg_unit_h00A_0202 = nil
-gg_unit_h000_0323 = nil
-gg_unit_h000_0313 = nil
-gg_unit_h000_0318 = nil
-gg_unit_h000_0307 = nil
-gg_unit_h000_0314 = nil
-gg_unit_h000_0309 = nil
-gg_unit_h000_0319 = nil
-gg_unit_h000_0320 = nil
 gg_dest_HEch_0019 = nil
 gg_dest_HEch_0017 = nil
 gg_dest_HEch_0016 = nil
@@ -43908,13 +43962,6 @@ function CreateUnitsForPlayer0()
     SetUnitState(gg_unit_h000_0243, UNIT_STATE_LIFE, 0.80 * GetUnitState(gg_unit_h000_0243, UNIT_STATE_LIFE))
     gg_unit_h000_0244 = CreateUnit(p, 1747988528, 17819.1, 16755.1, 270.000)
     SetUnitState(gg_unit_h000_0244, UNIT_STATE_LIFE, 0.80 * GetUnitState(gg_unit_h000_0244, UNIT_STATE_LIFE))
-    gg_unit_h000_0309 = CreateUnit(p, 1747988528, 5.3, 3827.4, 77.906)
-    gg_unit_h000_0313 = CreateUnit(p, 1747988528, -758.6, 3823.8, 77.906)
-    gg_unit_h000_0314 = CreateUnit(p, 1747988528, 764.2, 3827.4, 77.906)
-    gg_unit_h000_0318 = CreateUnit(p, 1747988528, -375.7, 4028.9, 77.906)
-    gg_unit_h000_0319 = CreateUnit(p, 1747988528, 372.7, 4036.5, 77.906)
-    gg_unit_h000_0320 = CreateUnit(p, 1747988528, -970.4, 3457.3, 77.906)
-    gg_unit_h000_0323 = CreateUnit(p, 1747988528, 981.2, 3457.3, 77.906)
 end
 
 function CreateBuildingsForPlayer1()
@@ -44159,7 +44206,6 @@ function CreateNeutralHostile()
     gg_unit_h000_0227 = CreateUnit(p, 1747988528, 14853.2, 16893.9, 270.000)
     gg_unit_h000_0228 = CreateUnit(p, 1747988528, 14789.4, 16957.7, 270.000)
     gg_unit_h000_0229 = CreateUnit(p, 1747988528, 14922.8, 16953.4, 270.000)
-    gg_unit_h000_0307 = CreateUnit(p, 1747988528, -2.1, 2801.1, 327.570)
 end
 
 function CreateNeutralPassiveBuildings()
