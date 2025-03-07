@@ -1,6 +1,8 @@
 [Misc]
 GlobalExperience=0
 GrantHeroXP=100
+GrantNormalXP=100
+HeroFactorXP=100
 HeroMaxAwakenCostGold=0
 HeroMaxAwakenCostLumber=0
 HeroMaxReviveCostGold=0
@@ -8,7 +10,12 @@ HeroMaxReviveTime=0.0
 HeroReviveLifeFactor=0.25
 HeroReviveManaFactor=0.25
 HeroReviveManaStart=1
+IntManaBonus=
+IntRegenBonus=0.01
 MaxHeroLevel=100
 MaxLevelHeroesDrainExp=0
-SummonedKillFactor=0.0
+StrAttackBonus=3.0
+StrHitPointBonus=
+StrRegenBonus=0.01
+SummonedKillFactor=0.1
 

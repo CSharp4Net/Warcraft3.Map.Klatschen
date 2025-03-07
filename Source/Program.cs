@@ -23,6 +23,8 @@ namespace Source
     public static Team Elves;
     public static Team Undeads;
 
+    public static Fragtion Slappers;
+
     /// <summary>
     /// Alle aktiven Benutzer-Spieler
     /// </summary>
@@ -97,6 +99,8 @@ namespace Source
         Elves = new Team(Common.Player(8));
         Undeads = new Team(Common.Player(12));
 
+        Slappers = new Fragtion(player.NeutralAggressive);
+
         // Regions-Ereignisse registrieren für automatische Einheitenbewegungen
         RegisterRegionTriggersInHumanArea();
         RegisterRegionTriggerInOrcArea();
@@ -113,7 +117,12 @@ namespace Source
 
         // Periodische Events registrieren
         PeriodicEvents.AddPeriodicEvent(GoldIncome.OnElapsed, 5f);
-        PeriodicEvents.AddPeriodicEvent(Klatschen.OnElapsed, 10f);
+
+#if DEBUG
+        PeriodicEvents.AddPeriodicEvent(Slapping.OnElapsed, 15f);
+#else
+        PeriodicEvents.AddPeriodicEvent(Slapping.OnElapsed, 1800f);
+#endif
 
         // Gebäude & Trigger für Computer-Spieler erstellen
         ConstructHumanBuildingAndTrigger();
@@ -122,7 +131,7 @@ namespace Source
         ConstructUndeadBuildingAndTrigger();
 
         // Spezifische Events registrieren
-        Console.WriteLine("Klatschen 2025 - Kämpft bis zum Tod!");
+        Console.WriteLine("Kämpft bis zum Tod!");
 
         // Für alle Benutzer-Spieler einen Hero-Selector generieren
         force force = Blizzard.GetPlayersByMapControl(mapcontrol.User);

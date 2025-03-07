@@ -43,8 +43,6 @@ namespace Source.Handler.Generic
         {
           unit groupUnit = group.UnitAtOrDefault(i);
 
-          Program.ShowDebugMessage($"{groupUnit.Name},{groupUnit.Owner.Name},{groupUnit.Owner.Controller}");
-
           if (groupUnit.IsABuilding)
             continue;
 
@@ -73,6 +71,8 @@ namespace Source.Handler.Generic
         }
 
         Common.DestroyGroup(group);
+        group.Dispose();
+        group = null;
       }
       catch (Exception ex)
       {

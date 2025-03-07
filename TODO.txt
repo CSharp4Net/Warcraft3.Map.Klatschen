@@ -7,11 +7,14 @@ Bug's:
 
 Must have:
 ----------
-- Neutrale-Lager in den Dreicken zum Erforschen und Assimilieren
-- Arena-Event mit zufälligem Rauskopieren 2er Benutzer-Helden
+- Klatschen:
+	- Zauber für Klatschen-Units!
+	- Kleine Events an den äußeren Punkten!
 
 Nice to have:
 -------------
+- Neutrale-Lager in den Dreicken zum Erforschen und Assimilieren
+- Arena-Event mit zufälligem Rauskopieren 2er Benutzer-Helden
 - Einheiten-Upgrades auf 5 erhöhen, Belagerungsmaschinen auf 3.
 - Spawn-Einheiten kopieren für andere Teams
 - Gebäude-Einheiten (Türm, MainBuilding, Kaserne) kopieren für andere Teams

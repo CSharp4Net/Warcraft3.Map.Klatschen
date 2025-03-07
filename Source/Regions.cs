@@ -6,11 +6,15 @@ using WCSharp.Shared.Data;
 public static class Regions
 {
 	public static Rectangle Center { get; set; } = new Rectangle(-128f, 2944f, 128f, 3200f);
-	public static Rectangle CenterComplete { get; set; } = new Rectangle(-1024f, 2048f, 1024f, 4096f);
-	public static Rectangle CenterElf { get; set; } = new Rectangle(-640f, 2432f, -384f, 2688f);
-	public static Rectangle CenterHuman { get; set; } = new Rectangle(-640f, 3456f, -384f, 3712f);
-	public static Rectangle CenterOrc { get; set; } = new Rectangle(384f, 3456f, 640f, 3712f);
-	public static Rectangle CenterUndead { get; set; } = new Rectangle(384f, 2432f, 640f, 2688f);
+	public static Rectangle CenterBottom { get; set; } = new Rectangle(-128f, -7232f, 128f, -6976f);
+	public static Rectangle CenterBottomComplete { get; set; } = new Rectangle(-384f, -7488f, 384f, -6720f);
+	public static Rectangle CenterComplete { get; set; } = new Rectangle(-768f, 2304f, 768f, 3840f);
+	public static Rectangle CenterLeft { get; set; } = new Rectangle(-10304f, 2944f, -10048f, 3200f);
+	public static Rectangle CenterLeftComplete { get; set; } = new Rectangle(-10560f, 2688f, -9792f, 3456f);
+	public static Rectangle CenterRight { get; set; } = new Rectangle(10048f, 2944f, 10304f, 3200f);
+	public static Rectangle CenterRightComplete { get; set; } = new Rectangle(9792f, 2688f, 10560f, 3456f);
+	public static Rectangle CenterTop { get; set; } = new Rectangle(-128f, 13120f, 128f, 13376f);
+	public static Rectangle CenterTopComplete { get; set; } = new Rectangle(-384f, 12864f, 384f, 13632f);
 	public static Rectangle ElfBarracksToCenter { get; set; } = new Rectangle(-6208f, -3136f, -6080f, -3008f);
 	public static Rectangle ElfBarracksToCenterSpawn { get; set; } = new Rectangle(-6016f, -3584f, -5760f, -2560f);
 	public static Rectangle ElfBarracksToHuman { get; set; } = new Rectangle(-10304f, -1984f, -10176f, -1856f);

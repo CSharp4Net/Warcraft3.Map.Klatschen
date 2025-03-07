@@ -78,13 +78,19 @@ namespace Source.Handler.GenericEvents
 
         if (unit.IsABuilding)
         {
-          // Befehle für Gebäude ignorieren
+          // Befehle für Gebäude nicht behandeln
           return;
         }
 
         if (unit.IsUnitType(unittype.Hero) && unit.Owner.Controller == mapcontrol.User)
         {
-          // Wenn Helden vom Benutzer Befehle erhalten, wird das nicht behandelt
+          // Befehle für Benutzer-Helden nicht behandeln
+          return;
+        }
+
+        if (Common.GetUnitTypeId(unit) == Constants.UNIT_DUMMY)
+        {
+          // Befehle für Dummy-Units nicht behandeln
           return;
         }
 

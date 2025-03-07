@@ -9427,132 +9427,12 @@ STRING 2714
 }
 
 STRING 2715
-// Abilities: ACAR (Chaosregen), EditorSuffix (Editor Suffix)
-{
-(Dummy)
-}
-
-STRING 2716
-// Abilities: AMON (Monsun), EditorSuffix (Editor Suffix)
-{
-(Dummy)
-}
-
-STRING 2718
-// Abilities: AFRR (Feuerregen), EditorSuffix (Editor Suffix)
-{
-(Dummy)
-}
-
-STRING 2719
-// Abilities: AFRR (Feuerregen), Researchubertip (Tooltip - Learn - Extended)
-{
-Ruft Feuerwellen herbei, die Flächenschaden verursachen. Jede Welle verursacht Direktschaden und verbrennt Gegner dann <A0FR,Dur1> Sek. lang.|n|n|cffffcc00Stufe 1|r - <A0FR,DataA1> Wellen, <A0FR,DataB1> Direktschaden, <A0FR,DataE1> Schaden pro Sekunde.|n|cffffcc00Stufe 2|r - <A0FR,DataA2> Wellen, <A0FR,DataB2> Direktschaden, <A0FR,DataE2> Schaden pro Sekunde.|n|cffffcc00Stufe 3|r - <A0FR,DataA3> Wellen, <A0FR,DataB3> Direktschaden, <A0FR,DataE3> Schaden pro Sekunde.
-}
-
-STRING 2720
-// Abilities: AFRR (Feuerregen), Tip (Tooltip - Normal)
-{
-Feuerregen [|cffffcc00Stufe 4|r]
-}
-
-STRING 2721
-// Abilities: AFRR (Feuerregen), Tip (Tooltip - Normal)
-{
-Feuerregen [|cffffcc00Stufe 5|r]
-}
-
-STRING 2722
-// Abilities: AFRR (Feuerregen), Tip (Tooltip - Normal)
-{
-Feuerregen [|cffffcc00Stufe 6|r]
-}
-
-STRING 2723
-// Abilities: AFRR (Feuerregen), Tip (Tooltip - Normal)
-{
-Feuerregen [|cffffcc00Stufe 7|r]
-}
-
-STRING 2724
-// Abilities: AFRR (Feuerregen), Tip (Tooltip - Normal)
-{
-Feuerregen [|cffffcc00Stufe 8|r]
-}
-
-STRING 2725
-// Abilities: AFRR (Feuerregen), Tip (Tooltip - Normal)
-{
-Feuerregen [|cffffcc00Stufe 9|r]
-}
-
-STRING 2726
-// Abilities: AFRR (Feuerregen), Tip (Tooltip - Normal)
-{
-Feuerregen [|cffffcc00Stufe 10|r]
-}
-
-STRING 2727
-// Abilities: AFRR (Feuerregen), Ubertip (Tooltip - Normal - Extended)
-{
-Ruft <A0FR,DataA2> Feuerwellen herbei, die Flächenschaden verursachen. Jede Welle verursacht <A0FR,DataB2> Direktschaden und <A0FR,Dur2> Sek. lang <A0FR,DataE2> Schaden pro Sekunde.
-}
-
-STRING 2728
-// Abilities: AFRR (Feuerregen), Ubertip (Tooltip - Normal - Extended)
-{
-Ruft <A0FR,DataA3> Feuerwellen herbei, die Flächenschaden verursachen. Jede Welle verursacht <A0FR,DataB3> Direktschaden und <A0FR,Dur3> Sek. lang <A0FR,DataE3> Schaden pro Sekunde.
-}
-
-STRING 2729
-// Abilities: AFRR (Feuerregen), Ubertip (Tooltip - Normal - Extended)
-{
-Ruft <A0FR,DataA4> Feuerwellen herbei, die Flächenschaden verursachen. Jede Welle verursacht <A0FR,DataB4> Direktschaden und <A0FR,Dur4> Sek. lang <A0FR,DataE4> Schaden pro Sekunde.
-}
-
-STRING 2730
-// Abilities: AFRR (Feuerregen), Ubertip (Tooltip - Normal - Extended)
-{
-Ruft <A0FR,DataA5> Feuerwellen herbei, die Flächenschaden verursachen. Jede Welle verursacht <A0FR,DataB5> Direktschaden und <A0FR,Dur5> Sek. lang <A0FR,DataE5> Schaden pro Sekunde.
-}
-
-STRING 2731
-// Abilities: AFRR (Feuerregen), Ubertip (Tooltip - Normal - Extended)
-{
-Ruft <A0FR,DataA6> Feuerwellen herbei, die Flächenschaden verursachen. Jede Welle verursacht <A0FR,DataB6> Direktschaden und <A0FR,Dur6> Sek. lang <A0FR,DataE6> Schaden pro Sekunde.
-}
-
-STRING 2732
-// Abilities: AFRR (Feuerregen), Ubertip (Tooltip - Normal - Extended)
-{
-Ruft <A0FR,DataA7> Feuerwellen herbei, die Flächenschaden verursachen. Jede Welle verursacht <A0FR,DataB7> Direktschaden und <A0FR,Dur7> Sek. lang <A0FR,DataE7> Schaden pro Sekunde.
-}
-
-STRING 2733
-// Abilities: AFRR (Feuerregen), Ubertip (Tooltip - Normal - Extended)
-{
-Ruft <A0FR,DataA8> Feuerwellen herbei, die Flächenschaden verursachen. Jede Welle verursacht <A0FR,DataB8> Direktschaden und <A0FR,Dur8> Sek. lang <A0FR,DataE8> Schaden pro Sekunde.
-}
-
-STRING 2734
-// Abilities: AFRR (Feuerregen), Ubertip (Tooltip - Normal - Extended)
-{
-Ruft <A0FR,DataA9> Feuerwellen herbei, die Flächenschaden verursachen. Jede Welle verursacht <A0FR,DataB9> Direktschaden und <A0FR,Dur9> Sek. lang <A0FR,DataE9> Schaden pro Sekunde.
-}
-
-STRING 2735
-// Abilities: AFRR (Feuerregen), Ubertip (Tooltip - Normal - Extended)
-{
-Ruft <A0FR,DataA10> Feuerwellen herbei, die Flächenschaden verursachen. Jede Welle verursacht <A0FR,DataB10> Direktschaden und <A0FR,Dur10> Sek. lang <A0FR,DataE10> Schaden pro Sekunde.
-}
-
-STRING 2736
 // Abilities: AFLS (Flammenschlag), EditorSuffix (Editor Suffix)
 {
 (Dummy)
 }
 
-STRING 2739
+STRING 2716
 // Abilities: APHF (Phoenixfeuer), EditorSuffix (Editor Suffix)
 {
 (Dummy)
@@ -9706,5 +9586,269 @@ STRING 2764
 // Units: n00T (Höllenmaschine), EditorSuffix (Name - Editor Suffix)
 {
 (Klatschen)
+}
+
+STRING 2765
+// Units: n00F (Höllenbestie), EditorSuffix (Name - Editor Suffix)
+{
+(Klatschen)
+}
+
+STRING 2768
+// Abilities: AIHR (Teufelswache), Name (Name)
+{
+Teufelswache
+}
+
+STRING 2770
+// Abilities: AIHM (Höllenmaschine), Name (Name)
+{
+Höllenmaschine
+}
+
+STRING 2772
+// Abilities: AIHB (Höllenbestie), Name (Name)
+{
+Höllenbestie
+}
+
+STRING 2774
+// Abilities: AIHS (Maid des Schreckens), Name (Name)
+{
+Maid des Schreckens
+}
+
+STRING 2776
+// Abilities: AIHF (Schändlicher Folterknecht), Name (Name)
+{
+Schändlicher Folterknecht
+}
+
+STRING 2778
+// Abilities: AIFR (Teufelsfresser), Name (Name)
+{
+Teufelsfresser
+}
+
+STRING 2779
+// Abilities: AIHR (Teufelswache), EditorSuffix (Editor Suffix)
+{
+(Klatschen)
+}
+
+STRING 2780
+// Abilities: AIHM (Höllenmaschine), EditorSuffix (Editor Suffix)
+{
+(Klatschen)
+}
+
+STRING 2781
+// Abilities: AIHB (Höllenbestie), EditorSuffix (Editor Suffix)
+{
+(Klatschen)
+}
+
+STRING 2782
+// Abilities: AIHS (Maid des Schreckens), EditorSuffix (Editor Suffix)
+{
+(Klatschen)
+}
+
+STRING 2783
+// Abilities: AIHF (Schändlicher Folterknecht), EditorSuffix (Editor Suffix)
+{
+(Klatschen)
+}
+
+STRING 2784
+// Abilities: AIFR (Teufelsfresser), EditorSuffix (Editor Suffix)
+{
+(Klatschen)
+}
+
+STRING 2785
+// Abilities: ACHA (Höllenbestien), EditorSuffix (Editor Suffix)
+{
+(Klatschen)
+}
+
+STRING 2786
+// Abilities: ACHA (Höllenbestien), Name (Name)
+{
+Höllenbestien
+}
+
+STRING 2787
+// Abilities: A01M (Höllenmaschinen), EditorSuffix (Editor Suffix)
+{
+(Klatschen)
+}
+
+STRING 2788
+// Abilities: A01M (Höllenmaschinen), Name (Name)
+{
+Höllenmaschinen
+}
+
+STRING 2789
+// Abilities: A01N (Maids des Schreckens), EditorSuffix (Editor Suffix)
+{
+(Klatschen)
+}
+
+STRING 2790
+// Abilities: A01N (Maids des Schreckens), Name (Name)
+{
+Maids des Schreckens
+}
+
+STRING 2791
+// Abilities: A01O (Schändliche Folterknechte), EditorSuffix (Editor Suffix)
+{
+(Klatschen)
+}
+
+STRING 2792
+// Abilities: A01O (Schändliche Folterknechte), Name (Name)
+{
+Schändliche Folterknechte
+}
+
+STRING 2793
+// Abilities: A01P (Teufelsfresserer), EditorSuffix (Editor Suffix)
+{
+(Klatschen)
+}
+
+STRING 2794
+// Abilities: A01P (Teufelsfresserer), Name (Name)
+{
+Teufelsfresserer
+}
+
+STRING 2795
+// Abilities: A01Q (Teufelswachen), EditorSuffix (Editor Suffix)
+{
+(Klatschen)
+}
+
+STRING 2796
+// Abilities: A01Q (Teufelswachen), Name (Name)
+{
+Teufelswachen
+}
+
+STRING 2797
+// Abilities: ASCH (Schockwelle), Researchubertip (Tooltip - Learn - Extended)
+{
+Entfesselt eine Kraftwelle, die vom Helden ausgeht und Bodeneinheiten in einer Linie Schaden zufügt.|n|n|cffffcc00Stufe 1|r - <ASCH,DataA1> Schaden.|n|cffffcc00Stufe 2|r - <ASCH,DataA2> Schaden.|n|cffffcc00Stufe 3|r - <ASCH,DataA3> Schaden.
+}
+
+STRING 2798
+// Abilities: ASCH (Schockwelle), Tip (Tooltip - Normal)
+{
+Schockwelle [|cffffcc00Stufe 4|r]
+}
+
+STRING 2799
+// Abilities: ASCH (Schockwelle), Tip (Tooltip - Normal)
+{
+Schockwelle [|cffffcc00Stufe 5|r]
+}
+
+STRING 2800
+// Abilities: ASCH (Schockwelle), Tip (Tooltip - Normal)
+{
+Schockwelle [|cffffcc00Stufe 6|r]
+}
+
+STRING 2801
+// Abilities: ASCH (Schockwelle), Tip (Tooltip - Normal)
+{
+Schockwelle [|cffffcc00Stufe 7|r]
+}
+
+STRING 2802
+// Abilities: ASCH (Schockwelle), Tip (Tooltip - Normal)
+{
+Schockwelle [|cffffcc00Stufe 8|r]
+}
+
+STRING 2803
+// Abilities: ASCH (Schockwelle), Tip (Tooltip - Normal)
+{
+Schockwelle [|cffffcc00Stufe 9|r]
+}
+
+STRING 2804
+// Abilities: ASCH (Schockwelle), Tip (Tooltip - Normal)
+{
+Schockwelle [|cffffcc00Stufe 10|r]
+}
+
+STRING 2805
+// Abilities: ASCH (Schockwelle), Ubertip (Tooltip - Normal - Extended)
+{
+Entfesselt eine Kraftwelle, die Bodeneinheiten in einer Linie <ASCH,DataA1> Schaden zufügt.
+}
+
+STRING 2806
+// Abilities: ASCH (Schockwelle), Ubertip (Tooltip - Normal - Extended)
+{
+Entfesselt eine Kraftwelle, die Bodeneinheiten in einer Linie <ASCH,DataA2> Schaden zufügt.
+}
+
+STRING 2807
+// Abilities: ASCH (Schockwelle), Ubertip (Tooltip - Normal - Extended)
+{
+Entfesselt eine Kraftwelle, die Bodeneinheiten in einer Linie <ASCH,DataA3> Schaden zufügt.
+}
+
+STRING 2808
+// Abilities: ASCH (Schockwelle), Ubertip (Tooltip - Normal - Extended)
+{
+Entfesselt eine Kraftwelle, die Bodeneinheiten in einer Linie <ASCH,DataA4> Schaden zufügt.
+}
+
+STRING 2809
+// Abilities: ASCH (Schockwelle), Ubertip (Tooltip - Normal - Extended)
+{
+Entfesselt eine Kraftwelle, die Bodeneinheiten in einer Linie <ASCH,DataA5> Schaden zufügt.
+}
+
+STRING 2810
+// Abilities: ASCH (Schockwelle), Ubertip (Tooltip - Normal - Extended)
+{
+Entfesselt eine Kraftwelle, die Bodeneinheiten in einer Linie <ASCH,DataA6> Schaden zufügt.
+}
+
+STRING 2811
+// Abilities: ASCH (Schockwelle), Ubertip (Tooltip - Normal - Extended)
+{
+Entfesselt eine Kraftwelle, die Bodeneinheiten in einer Linie <ASCH,DataA7> Schaden zufügt.
+}
+
+STRING 2812
+// Abilities: ASCH (Schockwelle), Ubertip (Tooltip - Normal - Extended)
+{
+Entfesselt eine Kraftwelle, die Bodeneinheiten in einer Linie <ASCH,DataA8> Schaden zufügt.
+}
+
+STRING 2813
+// Abilities: ASCH (Schockwelle), Ubertip (Tooltip - Normal - Extended)
+{
+Entfesselt eine Kraftwelle, die Bodeneinheiten in einer Linie <ASCH,DataA9> Schaden zufügt.
+}
+
+STRING 2814
+// Abilities: ASCH (Schockwelle), Ubertip (Tooltip - Normal - Extended)
+{
+Entfesselt eine Kraftwelle, die Bodeneinheiten in einer Linie <ASCH,DataA10> Schaden zufügt.
+}
+
+STRING 2815
+// Abilities: ASCH (Schockwelle), EditorSuffix (Editor Suffix)
+{
+(Hero 10)
 }
 

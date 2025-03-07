@@ -19761,10 +19761,10 @@ System.namespace("", function (namespace)
     static = function (this)
       this.Center = SourceModels.Area(Regions.Center)
       this.CenterComplete = SourceModels.Area(Regions.CenterComplete)
-      this.CenterElf = SourceModels.Area(Regions.CenterElf)
-      this.CenterHuman = SourceModels.Area(Regions.CenterHuman)
-      this.CenterOrc = SourceModels.Area(Regions.CenterOrc)
-      this.CenterUndead = SourceModels.Area(Regions.CenterUndead)
+      this.CenterLeft = SourceModels.Area(Regions.CenterLeft)
+      this.CenterLeftComplete = SourceModels.Area(Regions.CenterLeftComplete)
+      this.CenterTop = SourceModels.Area(Regions.CenterTop)
+      this.CenterTopComplete = SourceModels.Area(Regions.CenterTopComplete)
       this.ElfBarracksToCenter = SourceModels.Area(Regions.ElfBarracksToCenter)
       this.ElfBarracksToCenterSpawn = SourceModels.Area(Regions.ElfBarracksToCenterSpawn)
       this.ElfBarracksToHuman = SourceModels.Area(Regions.ElfBarracksToHuman)
@@ -19847,10 +19847,10 @@ System.namespace("", function (namespace)
           properties = {
             { "Center", 0xE, out.Source.Models.Area },
             { "CenterComplete", 0xE, out.Source.Models.Area },
-            { "CenterElf", 0xE, out.Source.Models.Area },
-            { "CenterHuman", 0xE, out.Source.Models.Area },
-            { "CenterOrc", 0xE, out.Source.Models.Area },
-            { "CenterUndead", 0xE, out.Source.Models.Area },
+            { "CenterLeft", 0xE, out.Source.Models.Area },
+            { "CenterLeftComplete", 0xE, out.Source.Models.Area },
+            { "CenterTop", 0xE, out.Source.Models.Area },
+            { "CenterTopComplete", 0xE, out.Source.Models.Area },
             { "ElfBarracksToCenter", 0xE, out.Source.Models.Area },
             { "ElfBarracksToCenterSpawn", 0xE, out.Source.Models.Area },
             { "ElfBarracksToHuman", 0xE, out.Source.Models.Area },
@@ -20039,6 +20039,8 @@ System.namespace("Source", function (namespace)
         class.Elves = SourceModels.Team(Player(8))
         class.Undeads = SourceModels.Team(Player(12))
 
+        class.Slappers = SourceModels.Fragtion(Player(PLAYER_NEUTRAL_AGGRESSIVE))
+
         -- Regions-Ereignisse registrieren für automatische Einheitenbewegungen
         RegisterRegionTriggersInHumanArea()
         RegisterRegionTriggerInOrcArea()
@@ -20055,7 +20057,9 @@ System.namespace("Source", function (namespace)
 
         -- Periodische Events registrieren
         WCSharpEvents.PeriodicEvents.AddPeriodicEvent(SourceHandlerPeriodic.GoldIncome.OnElapsed, 5)
-        WCSharpEvents.PeriodicEvents.AddPeriodicEvent(SourceHandlerPeriodic.Klatschen.OnElapsed, 10)
+
+
+        WCSharpEvents.PeriodicEvents.AddPeriodicEvent(SourceHandlerPeriodic.Slapping.OnElapsed, 15)
 
         -- Gebäude & Trigger für Computer-Spieler erstellen
         ConstructHumanBuildingAndTrigger()
@@ -20064,7 +20068,7 @@ System.namespace("Source", function (namespace)
         ConstructUndeadBuildingAndTrigger()
 
         -- Spezifische Events registrieren
-        System.Console.WriteLine("Klatschen 2025 - Kämpft bis zum Tod!")
+        System.Console.WriteLine("Kämpft bis zum Tod!")
 
         -- Für alle Benutzer-Spieler einen Hero-Selector generieren
         local force = GetPlayersByMapControl(MAP_CONTROL_USER)
@@ -20245,6 +20249,7 @@ System.namespace("Source", function (namespace)
             { "Elves", 0xE, out.Source.Models.Team },
             { "Humans", 0xE, out.Source.Models.Team },
             { "Orcs", 0xE, out.Source.Models.Team },
+            { "Slappers", 0xE, out.Source.Models.Fragtion },
             { "Undeads", 0xE, out.Source.Models.Team }
           },
           methods = {
@@ -20288,11 +20293,9 @@ System.namespace("", function (namespace)
     local static
     static = function (this)
       this.Center = System.new(WCSharpSharedData.Rectangle, 2, -128, 2944, 128, 3200)
-      this.CenterComplete = System.new(WCSharpSharedData.Rectangle, 2, -1024, 2048, 1024, 4096)
-      this.CenterElf = System.new(WCSharpSharedData.Rectangle, 2, -640, 2432, -384, 2688)
-      this.CenterHuman = System.new(WCSharpSharedData.Rectangle, 2, -640, 3456, -384, 3712)
-      this.CenterOrc = System.new(WCSharpSharedData.Rectangle, 2, 384, 3456, 640, 3712)
-      this.CenterUndead = System.new(WCSharpSharedData.Rectangle, 2, 384, 2432, 640, 2688)
+      this.CenterComplete = System.new(WCSharpSharedData.Rectangle, 2, -768, 2304, 768, 3840)
+      this.CenterLeft = System.new(WCSharpSharedData.Rectangle, 2, -10304, 2944, -10048, 3200)
+      this.CenterLeftComplete = System.new(WCSharpSharedData.Rectangle, 2, -10560, 2688, -9792, 3456)
       this.ElfBarracksToCenter = System.new(WCSharpSharedData.Rectangle, 2, -6208, -3136, -6080, -3008)
       this.ElfBarracksToCenterSpawn = System.new(WCSharpSharedData.Rectangle, 2, -6016, -3584, -5760, -2560)
       this.ElfBarracksToHuman = System.new(WCSharpSharedData.Rectangle, 2, -10304, -1984, -10176, -1856)
@@ -20367,6 +20370,8 @@ System.namespace("", function (namespace)
       this.UndeadToHumanOuterLine = System.new(WCSharpSharedData.Rectangle, 2, 5056, -2112, 5184, -1984)
       this.UndeadToOrcInnerLine = System.new(WCSharpSharedData.Rectangle, 2, 10176, -5184, 10304, -5056)
       this.UndeadToOrcOuterLine = System.new(WCSharpSharedData.Rectangle, 2, 10176, -1088, 10304, -960)
+      this.CenterTop = System.new(WCSharpSharedData.Rectangle, 2, -128, 13120, 128, 13376)
+      this.CenterTopComplete = System.new(WCSharpSharedData.Rectangle, 2, -384, 12864, 384, 13632)
     end
     return {
       static = static,
@@ -20375,10 +20380,10 @@ System.namespace("", function (namespace)
           properties = {
             { "Center", 0xE, out.WCSharp.Shared.Data.Rectangle },
             { "CenterComplete", 0xE, out.WCSharp.Shared.Data.Rectangle },
-            { "CenterElf", 0xE, out.WCSharp.Shared.Data.Rectangle },
-            { "CenterHuman", 0xE, out.WCSharp.Shared.Data.Rectangle },
-            { "CenterOrc", 0xE, out.WCSharp.Shared.Data.Rectangle },
-            { "CenterUndead", 0xE, out.WCSharp.Shared.Data.Rectangle },
+            { "CenterLeft", 0xE, out.WCSharp.Shared.Data.Rectangle },
+            { "CenterLeftComplete", 0xE, out.WCSharp.Shared.Data.Rectangle },
+            { "CenterTop", 0xE, out.WCSharp.Shared.Data.Rectangle },
+            { "CenterTopComplete", 0xE, out.WCSharp.Shared.Data.Rectangle },
             { "ElfBarracksToCenter", 0xE, out.WCSharp.Shared.Data.Rectangle },
             { "ElfBarracksToCenterSpawn", 0xE, out.WCSharp.Shared.Data.Rectangle },
             { "ElfBarracksToHuman", 0xE, out.WCSharp.Shared.Data.Rectangle },
@@ -20617,8 +20622,6 @@ System.namespace("Source.Handler.Generic", function (namespace)
           repeat
             local groupUnit = BlzGroupUnitAt(group, i)
 
-            Source.Program.ShowDebugMessage(System.toString(GetUnitName(groupUnit)) .. "," .. System.toString(GetPlayerName(GetOwningPlayer(groupUnit))) .. "," .. System.toString(GetPlayerController(GetOwningPlayer(groupUnit))))
-
             if BlzGetUnitBooleanField(groupUnit, UNIT_BF_IS_A_BUILDING) then
               continue = true
               break
@@ -20655,6 +20658,8 @@ System.namespace("Source.Handler.Generic", function (namespace)
         end
 
         DestroyGroup(group)
+        DestroyGroup(group)
+        group = nil
       end, function (default)
         local ex = default
         Source.Program.ShowExceptionMessage("Ability.HandleCharmCasted", ex)
@@ -21069,12 +21074,17 @@ System.namespace("Source.Handler.GenericEvents", function (namespace)
         local unit = GetTriggerUnit()
 
         if BlzGetUnitBooleanField(unit, UNIT_BF_IS_A_BUILDING) then
-          -- Befehle für Gebäude ignorieren
+          -- Befehle für Gebäude nicht behandeln
           return true
         end
 
         if IsUnitType(unit, UNIT_TYPE_HERO) and GetPlayerController(GetOwningPlayer(unit)) == MAP_CONTROL_USER then
-          -- Wenn Helden vom Benutzer Befehle erhalten, wird das nicht behandelt
+          -- Befehle für Benutzer-Helden nicht behandeln
+          return true
+        end
+
+        if GetUnitTypeId(unit) == 1848651824 --[[Constants.UNIT_DUMMY]] then
+          -- Befehle für Dummy-Units nicht behandeln
           return true
         end
 
@@ -21179,8 +21189,9 @@ System.import(function (out)
   WCSharpSharedData = WCSharp.Shared.Data
 end)
 System.namespace("Source.Handler.Periodic", function (namespace)
-  namespace.class("Klatschen", function (namespace)
-    local executions, OnElapsed, CreateSpecialEffect, CreateSpecialEffectTimed, CreateAtDummyAndCastAbility, CreateAtDummyAndCastAbilityTimed, CreateLightning, CreateLightning1
+  namespace.class("Slapping", function (namespace)
+    local executions, OnElapsed, CreateSpecialEffect, CreateSpecialEffectTimed, CreateAtDummyAndCastAbility, CreateAtDummyAndCastAbilityTimed, CreateAtDummyAndCastAbilityTimed1, CreateLightning, 
+    CreateLightning1, ComputePentagramPoints
     executions = 0
     OnElapsed = function ()
       System.try(function ()
@@ -21188,70 +21199,105 @@ System.namespace("Source.Handler.Periodic", function (namespace)
 
         executions = executions + 1
 
-        System.Console.WriteLine("Brennt, ihr Narren!")
+        System.Console.WriteLine("Klatschen!")
 
-        local center = Areas.CenterComplete.Wc3Rectangle:getCenter()
+        local centerRect = Areas.CenterComplete.Wc3Rectangle
+        local CenterLeftRect = Areas.CenterLeft.Wc3Rectangle
+        local CenterTopRect = Areas.CenterTop.Wc3Rectangle
+
+        local centerPoint = centerRect:getCenter()
+        local centerLeftPoint = CenterLeftRect:getCenter()
+        local centerTopPoint = CenterTopRect:getCenter()
 
         -- Effekt für Ankündigung für 6 Sekunden
-        CreateSpecialEffect("Abilities\\Spells\\Human\\FlameStrike\\FlameStrikeTarget.mdl", center, 3, 5)
+        CreateSpecialEffect("Abilities\\Spells\\Human\\FlameStrike\\FlameStrikeTarget.mdl", centerPoint, 3, 5)
 
+        local centerX = centerPoint.X
+        local centerY = centerPoint.Y - 100
 
-        local centerX = center.X
-        local centerY = center.Y - 100
+        -- Zentrum
+        local pentaCenterPointBottom, pentaCenterPointTopLeft, pentaCenterPointTopRight, pentaCenterPointLeft, pentaCenterPointRight = ComputePentagramPoints(centerPoint, 10)
 
-        local pentaPointBottom = WCSharpSharedData.Point(centerX, centerY - 900)
-        local pentaPointTopLeft = WCSharpSharedData.Point(centerX - 600, centerY + 750)
-        local pentaPointTopRight = WCSharpSharedData.Point(centerX + 600, centerY + 750)
-        local pentaPointLeft = WCSharpSharedData.Point(centerX - 900, centerY - 300)
-        local pentaPointRight = WCSharpSharedData.Point(centerX + 900, centerY - 300)
+        -- Left Lane
+        local pentaLeftPointBottom, pentaLeftPointTopLeft, pentaLeftPointTopRight, pentaLeftPointLeft, pentaLeftPointRight = ComputePentagramPoints(centerLeftPoint, 3)
 
-        -- Nach 5 Sekunden die Schaden-Effekte anzeigen
-        CreateSpecialEffectTimed("Abilities\\Spells\\Human\\FlameStrike\\FlameStrike1.mdl", pentaPointBottom, 3, 5, 5)
-        CreateSpecialEffectTimed("Abilities\\Spells\\Human\\FlameStrike\\FlameStrike1.mdl", pentaPointTopLeft, 3, 5, 5)
-        CreateSpecialEffectTimed("Abilities\\Spells\\Human\\FlameStrike\\FlameStrike1.mdl", pentaPointTopRight, 5, 5, 5)
-        CreateSpecialEffectTimed("Abilities\\Spells\\Human\\FlameStrike\\FlameStrike1.mdl", pentaPointLeft, 3, 5, 5)
-        CreateSpecialEffectTimed("Abilities\\Spells\\Human\\FlameStrike\\FlameStrike1.mdl", pentaPointRight, 3, 5, 5)
-        CreateSpecialEffectTimed("Abilities\\Spells\\Human\\FlameStrike\\FlameStrike1.mdl", center, 5, 5, 5)
+        -- Top Lane
+        local pentaTopPointBottom, pentaTopPointTopLeft, pentaTopPointTopRight, pentaTopPointLeft, pentaTopPointRight = ComputePentagramPoints(centerTopPoint, 3)
 
-        -- Nach 5 Sekunden die Schaden-Ability zünden
-        CreateAtDummyAndCastAbilityTimed(player, center, 1095780422 --[[Constants.ABILITY_PHOENIXFEUER_DUMMY]], executions, 852481 --[[Constants.ORDER_PHOENIX_FIRE]], 5.5, 2)
+        -- Zentrum - Nach 5 Sekunden die Schaden-Effekte anzeigen
+        CreateSpecialEffectTimed("Abilities\\Spells\\Human\\FlameStrike\\FlameStrike1.mdl", pentaCenterPointBottom, 3, 5, 5)
+        CreateSpecialEffectTimed("Abilities\\Spells\\Human\\FlameStrike\\FlameStrike1.mdl", pentaCenterPointTopLeft, 3, 5, 5)
+        CreateSpecialEffectTimed("Abilities\\Spells\\Human\\FlameStrike\\FlameStrike1.mdl", pentaCenterPointTopRight, 5, 5, 5)
+        CreateSpecialEffectTimed("Abilities\\Spells\\Human\\FlameStrike\\FlameStrike1.mdl", pentaCenterPointLeft, 3, 5, 5)
+        CreateSpecialEffectTimed("Abilities\\Spells\\Human\\FlameStrike\\FlameStrike1.mdl", pentaCenterPointRight, 3, 5, 5)
+        CreateSpecialEffectTimed("Abilities\\Spells\\Demon\\DarkPortal\\DarkPortalTarget.mdl", centerPoint, 3, 5, 0.03125)
 
+        -- Left Lange - Nach 5 Sekunden die Schaden-Effekte anzeigen
+        CreateSpecialEffectTimed("Abilities\\Spells\\Human\\FlameStrike\\FlameStrike1.mdl", centerLeftPoint, 3, 5, 5)
+
+        -- Top Lange - Nach 5 Sekunden die Schaden-Effekte anzeigen
+        CreateSpecialEffectTimed("Abilities\\Spells\\Human\\FlameStrike\\FlameStrike1.mdl", centerTopPoint, 3, 5, 5)
+
+        -- Zentrum - Nach 5 Sekunden die Schaden-Ability zünden
+        CreateAtDummyAndCastAbilityTimed1(player, centerPoint, 1095780422 --[[Constants.ABILITY_PHOENIXFEUER_DUMMY]], executions, 852481 --[[Constants.ORDER_PHOENIX_FIRE]], 5.5, 2)
+
+        -- Pentagram zeichen nach 1,5 Sekunden für 5 Sekunden
         local timer1Count = 0
         local pentaTimer = CreateTimer()
         TimerStart(pentaTimer, 0.5, true, function ()
-          System.try(function ()
-            CreateLightning(pentaPointBottom, pentaPointTopLeft)
-            CreateLightning(pentaPointTopLeft, pentaPointRight)
-            CreateLightning(pentaPointRight, pentaPointLeft)
-            CreateLightning(pentaPointLeft, pentaPointTopRight)
-            CreateLightning(pentaPointTopRight, pentaPointBottom)
+          -- Zentrum
+          CreateLightning(pentaCenterPointBottom, pentaCenterPointTopLeft)
+          CreateLightning(pentaCenterPointTopLeft, pentaCenterPointRight)
+          CreateLightning(pentaCenterPointRight, pentaCenterPointLeft)
+          CreateLightning(pentaCenterPointLeft, pentaCenterPointTopRight)
+          CreateLightning(pentaCenterPointTopRight, pentaCenterPointBottom)
 
+          -- Zentrum - Left Lange
+          CreateLightning(centerPoint, centerLeftPoint)
 
-            timer1Count = timer1Count + 1
-            if timer1Count >= 10 then
-              PauseTimer(pentaTimer)
-              DestroyTimer(pentaTimer)
-              pentaTimer = nil
-            end
-          end, function (default)
-            local ex = default
-            Source.Program.ShowExceptionMessage("SlapAround.Pentagram", ex)
-          end)
+          -- Left Lane
+          CreateLightning(pentaLeftPointBottom, pentaLeftPointTopLeft)
+          CreateLightning(pentaLeftPointTopLeft, pentaLeftPointRight)
+          CreateLightning(pentaLeftPointRight, pentaLeftPointLeft)
+          CreateLightning(pentaLeftPointLeft, pentaLeftPointTopRight)
+          CreateLightning(pentaLeftPointTopRight, pentaLeftPointBottom)
+
+          -- Zentrum - Top Lange
+          CreateLightning(centerPoint, centerTopPoint)
+
+          -- Top Lane
+          CreateLightning(pentaTopPointBottom, pentaTopPointTopLeft)
+          CreateLightning(pentaTopPointTopLeft, pentaTopPointRight)
+          CreateLightning(pentaTopPointRight, pentaTopPointLeft)
+          CreateLightning(pentaTopPointLeft, pentaTopPointTopRight)
+          CreateLightning(pentaTopPointTopRight, pentaTopPointBottom)
+
+          timer1Count = timer1Count + 1
+          if timer1Count >= 10 then
+            PauseTimer(pentaTimer)
+            DestroyTimer(pentaTimer)
+            pentaTimer = nil
+          end
         end)
 
-        --timer timer1 = Common.CreateTimer();
-        --Common.TimerStart(timer1, 1f, false, () =>
-        --{
-        --  Program.ShowDebugMessage("Call meteors");
-        --  for (int i = 0; i < 8; i++)
-        --  {
-        --    Point point = rectangle.GetRandomPoint();
+        -- Zentrum - Helden beleben nach 5 Sekunden
+        Source.Program.Slappers:CreateOrReviveHero(1311780918 --[[Constants.UNIT_GRUBENLORD_KLATSCHEN]], Areas.Center, executions * 10, executions * 2, 5.5)
 
-        --    effect e = Common.AddSpecialEffect("Units\\Demon\\Infernal\\InfernalBirth.mdl", point.X, point.Y);
-        --    e.SetColor(255, 0, 0);
-        --    EffectSystem.Add(e);
-        --  }
-        --});
+        -- Zentrum - Weitere Einheiten via Cast hinzurufen
+        CreateAtDummyAndCastAbilityTimed(player, centerRect, 1094928449 --[[Constants.ABILITY_H_LLENBESTIEN_KLATSCHEN]], executions, 852237 --[[Constants.ORDER_RAIN_OF_CHAOS]], 4, 2)
+        CreateAtDummyAndCastAbilityTimed(player, centerRect, 1093677393 --[[Constants.ABILITY_TEUFELSWACHEN_KLATSCHEN]], executions, 852237 --[[Constants.ORDER_RAIN_OF_CHAOS]], 4, 2)
+        CreateAtDummyAndCastAbilityTimed(player, centerRect, 1093677392 --[[Constants.ABILITY_TEUFELSFRESSERER_KLATSCHEN]], executions, 852237 --[[Constants.ORDER_RAIN_OF_CHAOS]], 4, 2)
+        CreateAtDummyAndCastAbilityTimed(player, centerRect, 1093677391 --[[Constants.ABILITY_SCH_NDLICHE_FOLTERKNECHTE_KLATSCHEN]], executions, 852237 --[[Constants.ORDER_RAIN_OF_CHAOS]], 4.5, 2)
+        CreateAtDummyAndCastAbilityTimed(player, centerRect, 1093677390 --[[Constants.ABILITY_MAIDS_DES_SCHRECKENS_KLATSCHEN]], executions, 852237 --[[Constants.ORDER_RAIN_OF_CHAOS]], 4.5, 2)
+        CreateAtDummyAndCastAbilityTimed(player, centerRect, 1093677389 --[[Constants.ABILITY_H_LLENMASCHINEN_KLATSCHEN]], executions, 852237 --[[Constants.ORDER_RAIN_OF_CHAOS]], 5, 2)
+
+        -- Left Lange - Weitere Einheiten via Cast hinzurufen
+        CreateAtDummyAndCastAbilityTimed(player, CenterLeftRect, 1094928449 --[[Constants.ABILITY_H_LLENBESTIEN_KLATSCHEN]], executions, 852237 --[[Constants.ORDER_RAIN_OF_CHAOS]], 4, 2)
+        CreateAtDummyAndCastAbilityTimed(player, CenterLeftRect, 1093677390 --[[Constants.ABILITY_MAIDS_DES_SCHRECKENS_KLATSCHEN]], executions, 852237 --[[Constants.ORDER_RAIN_OF_CHAOS]], 4.5, 2)
+
+        -- Top Lange - Weitere Einheiten via Cast hinzurufen
+        CreateAtDummyAndCastAbilityTimed(player, CenterTopRect, 1094928449 --[[Constants.ABILITY_H_LLENBESTIEN_KLATSCHEN]], executions, 852237 --[[Constants.ORDER_RAIN_OF_CHAOS]], 4, 2)
+        CreateAtDummyAndCastAbilityTimed(player, CenterTopRect, 1093677390 --[[Constants.ABILITY_MAIDS_DES_SCHRECKENS_KLATSCHEN]], executions, 852237 --[[Constants.ORDER_RAIN_OF_CHAOS]], 4.5, 2)
       end, function (default)
         local ex = default
         Source.Program.ShowExceptionMessage("SlapAround.OnElapsed", ex)
@@ -21285,7 +21331,10 @@ System.namespace("Source.Handler.Periodic", function (namespace)
         dummy = nil
       end)
     end
-    CreateAtDummyAndCastAbilityTimed = function (player, point, abilityId, abilityLevel, orderId, delay, duration)
+    CreateAtDummyAndCastAbilityTimed = function (player, rectangle, abilityId, abilityLevel, orderId, delay, duration)
+      CreateAtDummyAndCastAbilityTimed1(player, rectangle:GetRandomPoint(), abilityId, abilityLevel, orderId, delay, duration)
+    end
+    CreateAtDummyAndCastAbilityTimed1 = function (player, point, abilityId, abilityLevel, orderId, delay, duration)
       local timer = CreateTimer()
       TimerStart(timer, delay, false, function ()
         CreateAtDummyAndCastAbility(player, point, abilityId, abilityLevel, orderId, duration)
@@ -21317,6 +21366,17 @@ System.namespace("Source.Handler.Periodic", function (namespace)
 
       WCSharpLightnings.LightningSystem.Add(lightning)
     end
+    ComputePentagramPoints = function (center, size, pentaPointBottom, pentaPointTopLeft, pentaPointTopRight, pentaPointLeft, pentaPointRight)
+      local centerX = center.X
+      local centerY = center.Y - 100
+
+      pentaPointBottom = WCSharpSharedData.Point(centerX, centerY - (90 * size))
+      pentaPointTopLeft = WCSharpSharedData.Point(centerX - (60 * size), centerY + (75 * size))
+      pentaPointTopRight = WCSharpSharedData.Point(centerX + (60 * size), centerY + (75 * size))
+      pentaPointLeft = WCSharpSharedData.Point(centerX - (90 * size), centerY - (30 * size))
+      pentaPointRight = WCSharpSharedData.Point(centerX + (90 * size), centerY - (30 * size))
+      return pentaPointBottom, pentaPointTopLeft, pentaPointTopRight, pentaPointLeft, pentaPointRight
+    end
     return {
       OnElapsed = OnElapsed,
       __metadata__ = function (out)
@@ -21325,15 +21385,17 @@ System.namespace("Source.Handler.Periodic", function (namespace)
             { "executions", 0x9, System.Int32 }
           },
           methods = {
+            { "ComputePentagramPoints", 0x709, ComputePentagramPoints, out.WCSharp.Shared.Data.Point, System.Single, out.WCSharp.Shared.Data.Point, out.WCSharp.Shared.Data.Point, out.WCSharp.Shared.Data.Point, out.WCSharp.Shared.Data.Point, out.WCSharp.Shared.Data.Point },
             { "CreateAtDummyAndCastAbility", 0x609, CreateAtDummyAndCastAbility, out.WCSharp.Api.player, out.WCSharp.Shared.Data.Point, System.Int32, System.Int32, System.Int32, System.Single },
-            { "CreateAtDummyAndCastAbilityTimed", 0x709, CreateAtDummyAndCastAbilityTimed, out.WCSharp.Api.player, out.WCSharp.Shared.Data.Point, System.Int32, System.Int32, System.Int32, System.Single, System.Single },
+            { "CreateAtDummyAndCastAbilityTimed", 0x709, CreateAtDummyAndCastAbilityTimed, out.WCSharp.Api.player, out.WCSharp.Shared.Data.Rectangle, System.Int32, System.Int32, System.Int32, System.Single, System.Single },
+            { "CreateAtDummyAndCastAbilityTimed", 0x709, CreateAtDummyAndCastAbilityTimed1, out.WCSharp.Api.player, out.WCSharp.Shared.Data.Point, System.Int32, System.Int32, System.Int32, System.Single, System.Single },
             { "CreateLightning", 0x209, CreateLightning, out.WCSharp.Shared.Data.Point, out.WCSharp.Shared.Data.Point },
             { "CreateLightning", 0x409, CreateLightning1, out.WCSharp.Api.unit, out.WCSharp.Api.unit, System.Single, System.Single },
             { "CreateSpecialEffect", 0x409, CreateSpecialEffect, System.String, out.WCSharp.Shared.Data.Point, System.Single, System.Single },
             { "CreateSpecialEffectTimed", 0x509, CreateSpecialEffectTimed, System.String, out.WCSharp.Shared.Data.Point, System.Single, System.Single, System.Single },
             { "OnElapsed", 0x8E, OnElapsed, System.Boolean }
           },
-          class = { "Klatschen", 0x3C }
+          class = { "Slapping", 0x3C }
         }
       end
     }
@@ -22150,6 +22212,52 @@ System.namespace("Source.Models", function (namespace)
       __metadata__ = function (out)
         return {
           class = { "Enums", 0x3E }
+        }
+      end
+    }
+  end)
+end)
+
+end
+do
+local System = System
+System.namespace("Source.Models", function (namespace)
+  namespace.class("Fragtion", function (namespace)
+    local CreateOrReviveHero, __ctor__
+    __ctor__ = function (this, wc3ComputerPlayer)
+      this.Wc3Player = wc3ComputerPlayer
+    end
+    CreateOrReviveHero = function (this, unitTypeId, spawnArea, heroLevel, abilitiesLevel, delay)
+      local timer = CreateTimer()
+      TimerStart(timer, delay, false, function ()
+        if this.Hero == nil then
+          this.Hero = CreateUnitAtLoc(this.Wc3Player, unitTypeId, spawnArea.Wc3CenterLocation, 0)
+        else
+          ReviveHero(this.Hero, spawnArea.CenterX, spawnArea.CenterY, true)
+        end
+
+        SetHeroLevel(this.Hero, heroLevel, true)
+
+        -- MTA @ 2025-03-07 : Erstmal gehen wir stur davon aus, dass Neutrale Helden immer stets 3 Fähigkeiten haben...
+        SetUnitAbilityLevel(this.Hero, BlzGetAbilityId(BlzGetUnitAbilityByIndex(this.Hero, 0)), abilitiesLevel)
+        SetUnitAbilityLevel(this.Hero, BlzGetAbilityId(BlzGetUnitAbilityByIndex(this.Hero, 1)), abilitiesLevel)
+        SetUnitAbilityLevel(this.Hero, BlzGetAbilityId(BlzGetUnitAbilityByIndex(this.Hero, 2)), abilitiesLevel)
+      end)
+    end
+    return {
+      CreateOrReviveHero = CreateOrReviveHero,
+      __ctor__ = __ctor__,
+      __metadata__ = function (out)
+        return {
+          methods = {
+            { ".ctor", 0x106, nil, out.WCSharp.Api.player },
+            { "CreateOrReviveHero", 0x506, CreateOrReviveHero, System.Int32, out.Source.Models.Area, System.Int32, System.Int32, System.Single }
+          },
+          properties = {
+            { "Hero", 0x6, out.WCSharp.Api.unit },
+            { "Wc3Player", 0x6, out.WCSharp.Api.player }
+          },
+          class = { "Fragtion", 0x26 }
         }
       end
     }
@@ -33981,8 +34089,8 @@ local InitCSharp = function ()
       "WCSharp.Missiles.HomingMissile",
       "WCSharp.Missiles.MomentumMissile",
       "WCSharp.Missiles.OrbitalMissile",
-      "WCSharp.SaveLoad.Save_1",
       "WCSharp.SaveLoad.SaveLoadedMessage_1",
+      "WCSharp.SaveLoad.Save_1",
       "WCSharp.W3MMD.IW3MmdVar",
       "Areas",
       "Constants",
@@ -33992,7 +34100,7 @@ local InitCSharp = function ()
       "Source.Handler.GenericEvents.Research",
       "Source.Handler.GenericEvents.Unit",
       "Source.Handler.Periodic.GoldIncome",
-      "Source.Handler.Periodic.Klatschen",
+      "Source.Handler.Periodic.Slapping",
       "Source.Handler.Region.ElfBase",
       "Source.Handler.Region.HumanBase",
       "Source.Handler.Region.OrcBase",
@@ -34004,6 +34112,7 @@ local InitCSharp = function ()
       "Source.Models.ComputerPlayer",
       "Source.Models.Enums.ResearchType",
       "Source.Models.Enums.UnitSpawnType",
+      "Source.Models.Fragtion",
       "Source.Models.SpawnBuilding",
       "Source.Models.SpawnTrigger",
       "Source.Models.SpawnUnitCommand",
@@ -34111,10 +34220,8 @@ end
 
 gg_rct_Center = nil
 gg_rct_CenterComplete = nil
-gg_rct_CenterElf = nil
-gg_rct_CenterHuman = nil
-gg_rct_CenterOrc = nil
-gg_rct_CenterUndead = nil
+gg_rct_CenterLeft = nil
+gg_rct_CenterLeftComplete = nil
 gg_rct_ElfBarracksToCenter = nil
 gg_rct_ElfBarracksToCenterSpawn = nil
 gg_rct_ElfBarracksToHuman = nil
@@ -34189,6 +34296,13 @@ gg_rct_UndeadToHumanInnerLine = nil
 gg_rct_UndeadToHumanOuterLine = nil
 gg_rct_UndeadToOrcInnerLine = nil
 gg_rct_UndeadToOrcOuterLine = nil
+gg_rct_CenterTop = nil
+gg_rct_CenterTopComplete = nil
+gg_snd_HPitLordPissed1 = nil
+gg_snd_HPitLordPissed2 = nil
+gg_snd_HPitLordPissed3 = nil
+gg_snd_HPitLordPissed4 = nil
+gg_snd_HPitLordPissed5 = nil
 gg_trg_Melee_Initialization = nil
 gg_unit_h004_0069 = nil
 gg_unit_n005_0135 = nil
@@ -39191,6 +39305,49 @@ function CreateAllItems()
     CreateItem(1227894853, 11439.2, -7088.4)
     CreateItem(1227894853, 11436.3, -7224.2)
     CreateItem(1227894853, 11433.4, -7351.5)
+end
+
+function InitSounds()
+    gg_snd_HPitLordPissed1 = CreateSound("Units/Demon/HeroPitLord/HPitLordPissed1.flac", false, true, true, 0, 0, "HeroAcksEAX")
+    SetSoundDistanceCutoff(gg_snd_HPitLordPissed1, 340282346638528859811704183484516925440.0)
+    SetSoundChannel(gg_snd_HPitLordPissed1, 1)
+    SetSoundVolume(gg_snd_HPitLordPissed1, 127)
+    SetSoundPitch(gg_snd_HPitLordPissed1, 1.0)
+    SetSoundDistances(gg_snd_HPitLordPissed1, 100000.0, 100001.0)
+    SetSoundConeAngles(gg_snd_HPitLordPissed1, 0.0, 0.0, 127)
+    SetSoundConeOrientation(gg_snd_HPitLordPissed1, 0.0, 0.0, 0.0)
+    gg_snd_HPitLordPissed2 = CreateSound("Units/Demon/HeroPitLord/HPitLordPissed2.flac", false, true, true, 0, 0, "HeroAcksEAX")
+    SetSoundDistanceCutoff(gg_snd_HPitLordPissed2, 340282346638528859811704183484516925440.0)
+    SetSoundChannel(gg_snd_HPitLordPissed2, 1)
+    SetSoundVolume(gg_snd_HPitLordPissed2, 127)
+    SetSoundPitch(gg_snd_HPitLordPissed2, 1.0)
+    SetSoundDistances(gg_snd_HPitLordPissed2, 100000.0, 100001.0)
+    SetSoundConeAngles(gg_snd_HPitLordPissed2, 0.0, 0.0, 127)
+    SetSoundConeOrientation(gg_snd_HPitLordPissed2, 0.0, 0.0, 0.0)
+    gg_snd_HPitLordPissed3 = CreateSound("Units/Demon/HeroPitLord/HPitLordPissed3.flac", false, true, true, 0, 0, "HeroAcksEAX")
+    SetSoundDistanceCutoff(gg_snd_HPitLordPissed3, 340282346638528859811704183484516925440.0)
+    SetSoundChannel(gg_snd_HPitLordPissed3, 1)
+    SetSoundVolume(gg_snd_HPitLordPissed3, 127)
+    SetSoundPitch(gg_snd_HPitLordPissed3, 1.0)
+    SetSoundDistances(gg_snd_HPitLordPissed3, 100000.0, 100001.0)
+    SetSoundConeAngles(gg_snd_HPitLordPissed3, 0.0, 0.0, 127)
+    SetSoundConeOrientation(gg_snd_HPitLordPissed3, 0.0, 0.0, 0.0)
+    gg_snd_HPitLordPissed4 = CreateSound("Units/Demon/HeroPitLord/HPitLordPissed4.flac", false, true, true, 0, 0, "HeroAcksEAX")
+    SetSoundDistanceCutoff(gg_snd_HPitLordPissed4, 340282346638528859811704183484516925440.0)
+    SetSoundChannel(gg_snd_HPitLordPissed4, 1)
+    SetSoundVolume(gg_snd_HPitLordPissed4, 127)
+    SetSoundPitch(gg_snd_HPitLordPissed4, 1.0)
+    SetSoundDistances(gg_snd_HPitLordPissed4, 100000.0, 100001.0)
+    SetSoundConeAngles(gg_snd_HPitLordPissed4, 0.0, 0.0, 127)
+    SetSoundConeOrientation(gg_snd_HPitLordPissed4, 0.0, 0.0, 0.0)
+    gg_snd_HPitLordPissed5 = CreateSound("Units/Demon/HeroPitLord/HPitLordPissed5.flac", false, true, true, 0, 0, "HeroAcksEAX")
+    SetSoundDistanceCutoff(gg_snd_HPitLordPissed5, 340282346638528859811704183484516925440.0)
+    SetSoundChannel(gg_snd_HPitLordPissed5, 1)
+    SetSoundVolume(gg_snd_HPitLordPissed5, 127)
+    SetSoundPitch(gg_snd_HPitLordPissed5, 1.0)
+    SetSoundDistances(gg_snd_HPitLordPissed5, 100000.0, 100001.0)
+    SetSoundConeAngles(gg_snd_HPitLordPissed5, 0.0, 0.0, 127)
+    SetSoundConeOrientation(gg_snd_HPitLordPissed5, 0.0, 0.0, 0.0)
 end
 
 function CreateAllDestructables()
@@ -44356,11 +44513,9 @@ end
 
 function CreateRegions()
     gg_rct_Center = Rect(-128.0, 2944.0, 128.0, 3200.0)
-    gg_rct_CenterComplete = Rect(-1024.0, 2048.0, 1024.0, 4096.0)
-    gg_rct_CenterElf = Rect(-640.0, 2432.0, -384.0, 2688.0)
-    gg_rct_CenterHuman = Rect(-640.0, 3456.0, -384.0, 3712.0)
-    gg_rct_CenterOrc = Rect(384.0, 3456.0, 640.0, 3712.0)
-    gg_rct_CenterUndead = Rect(384.0, 2432.0, 640.0, 2688.0)
+    gg_rct_CenterComplete = Rect(-768.0, 2304.0, 768.0, 3840.0)
+    gg_rct_CenterLeft = Rect(-10304.0, 2944.0, -10048.0, 3200.0)
+    gg_rct_CenterLeftComplete = Rect(-10560.0, 2688.0, -9792.0, 3456.0)
     gg_rct_ElfBarracksToCenter = Rect(-6208.0, -3136.0, -6080.0, -3008.0)
     gg_rct_ElfBarracksToCenterSpawn = Rect(-6016.0, -3584.0, -5760.0, -2560.0)
     gg_rct_ElfBarracksToHuman = Rect(-10304.0, -1984.0, -10176.0, -1856.0)
@@ -44435,6 +44590,8 @@ function CreateRegions()
     gg_rct_UndeadToHumanOuterLine = Rect(5056.0, -2112.0, 5184.0, -1984.0)
     gg_rct_UndeadToOrcInnerLine = Rect(10176.0, -5184.0, 10304.0, -5056.0)
     gg_rct_UndeadToOrcOuterLine = Rect(10176.0, -1088.0, 10304.0, -960.0)
+    gg_rct_CenterTop = Rect(-128.0, 13120.0, 128.0, 13376.0)
+    gg_rct_CenterTopComplete = Rect(-384.0, 12864.0, 384.0, 13632.0)
 end
 
 function InitCustomPlayerSlots()
@@ -44724,6 +44881,7 @@ function main()
     SetAmbientDaySound("LordaeronSummerDay")
     SetAmbientNightSound("LordaeronSummerNight")
     SetMapMusic("Music", true, 0)
+    InitSounds()
     CreateRegions()
     CreateAllDestructables()
     CreateAllItems()
