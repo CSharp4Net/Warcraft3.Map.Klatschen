@@ -9672,3 +9672,39 @@ STRING 2758
 Lässt Flammen auf Gegner in der Nähe niedergehen und setzt sie in Brand.
 }
 
+STRING 2759
+// Units: N006 (Grubenlord), EditorSuffix (Name - Editor Suffix)
+{
+(Klatschen)
+}
+
+STRING 2760
+// Units: n00C (Teufelswache), EditorSuffix (Name - Editor Suffix)
+{
+(Klatschen)
+}
+
+STRING 2761
+// Units: n00J (Teufelsfresser), EditorSuffix (Name - Editor Suffix)
+{
+(Klatschen)
+}
+
+STRING 2762
+// Units: n00N (Schändlicher Folterknecht), EditorSuffix (Name - Editor Suffix)
+{
+(Klatschen)
+}
+
+STRING 2763
+// Units: n00Q (Maid des Schmerzes), EditorSuffix (Name - Editor Suffix)
+{
+(Klatschen)
+}
+
+STRING 2764
+// Units: n00T (Höllenmaschine), EditorSuffix (Name - Editor Suffix)
+{
+(Klatschen)
+}
+

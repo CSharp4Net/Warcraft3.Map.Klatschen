@@ -27,7 +27,6 @@ namespace Source.Handler.Periodic
         // Effekt für Ankündigung für 6 Sekunden
         CreateSpecialEffect("Abilities\\Spells\\Human\\FlameStrike\\FlameStrikeTarget.mdl", center, 3f, 5f);
 
-
         float centerX = center.X;
         float centerY = center.Y - 100;
 
@@ -52,42 +51,34 @@ namespace Source.Handler.Periodic
         timer pentaTimer = Common.CreateTimer();
         Common.TimerStart(pentaTimer, 0.5f, true, () =>
         {
-          try
-          {
-            CreateLightning(pentaPointBottom, pentaPointTopLeft);
-            CreateLightning(pentaPointTopLeft, pentaPointRight);
-            CreateLightning(pentaPointRight, pentaPointLeft);
-            CreateLightning(pentaPointLeft, pentaPointTopRight);
-            CreateLightning(pentaPointTopRight, pentaPointBottom);
+          CreateLightning(pentaPointBottom, pentaPointTopLeft);
+          CreateLightning(pentaPointTopLeft, pentaPointRight);
+          CreateLightning(pentaPointRight, pentaPointLeft);
+          CreateLightning(pentaPointLeft, pentaPointTopRight);
+          CreateLightning(pentaPointTopRight, pentaPointBottom);
 
-
-            timer1Count++;
-            if (timer1Count >= 10)
-            {
-              pentaTimer.Pause();
-              pentaTimer.Dispose();
-              pentaTimer = null;
-            }
-          }
-          catch (Exception ex)
+          timer1Count++;
+          if (timer1Count >= 10)
           {
-            Program.ShowExceptionMessage("SlapAround.Pentagram", ex);
+            pentaTimer.Pause();
+            pentaTimer.Dispose();
+            pentaTimer = null;
           }
         });
 
-        //timer timer1 = Common.CreateTimer();
-        //Common.TimerStart(timer1, 1f, false, () =>
-        //{
-        //  Program.ShowDebugMessage("Call meteors");
-        //  for (int i = 0; i < 8; i++)
-        //  {
-        //    Point point = rectangle.GetRandomPoint();
+        timer unitTimer = Common.CreateTimer();
+        Common.TimerStart(unitTimer, 6f, false, () =>
+        {
+          Program.ShowDebugMessage("Call meteors");
+          for (int i = 0; i < 8; i++)
+          {
+            Point point = rectangle.GetRandomPoint();
 
-        //    effect e = Common.AddSpecialEffect("Units\\Demon\\Infernal\\InfernalBirth.mdl", point.X, point.Y);
-        //    e.SetColor(255, 0, 0);
-        //    EffectSystem.Add(e);
-        //  }
-        //});
+            effect e = Common.AddSpecialEffect("Units\\Demon\\Infernal\\InfernalBirth.mdl", point.X, point.Y);
+            e.SetColor(255, 0, 0);
+            EffectSystem.Add(e);
+          }
+        });
       }
       catch (Exception ex)
       {
@@ -159,8 +150,8 @@ namespace Source.Handler.Periodic
           Program.ShowExceptionMessage("SlapAround.CreateLightning", ex);
         }
       });
-    }    
-    
+    }
+
     private static void CreateLightning(unit caster, unit target, float duration, float fadeDuration)
     {
       var lightning = new Lightning("AFOD", caster, target)
