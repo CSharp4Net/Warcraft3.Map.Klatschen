@@ -7,9 +7,7 @@ Bug's:
 
 Must have:
 ----------
-- Klatschen:
-	- Zauber für Klatschen-Units!
-	- Kleine Events an den äußeren Punkten!
+
 
 Nice to have:
 -------------
@@ -43,6 +41,7 @@ Feature-List:
 	- Einfache Fähigkeiten (Stufe 1 bis 10)
 	- Spezial Fähigkeit (Stufe 1 bis 5)
 - Heldenwechsel für nur 1g im Item-Shop, die erreichte Heldenstufe wird auf den neuen Helden übertragen
+- Klatschen-Event alle 30 Minuten im Zentrum, sowie auf allen 4 Lanes
 
 Items (aktivierbar):
 --------------------

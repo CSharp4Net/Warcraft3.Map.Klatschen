@@ -12,7 +12,7 @@ STRING 3
 {
 ...
 
-0.8.3.0 by NozzNazz
+0.9.0.0 by NozzNazz
 }
 
 STRING 4
@@ -117,7 +117,7 @@ STRING 65
 {
 ...
 
-0.8.3.0 by NozzNazz
+0.9.0.0 by NozzNazz
 }
 
 STRING 72
@@ -1500,24 +1500,6 @@ STRING 932
 Tötet eine Zieleinheit sofort und wandelt sie in Gold um, das zum Gold des Spielers hinzugefügt wird!|nKann nicht gegen Helden eingesetzt werden.
 }
 
-STRING 933
-// Abilities: A00G (Transmutieren), Ubertip (Tooltip - Normal - Extended)
-{
-Tötet eine Zieleinheit sofort und wandelt sie in Gold um, das zum Gold des Spielers hinzugefügt wird!|nKann nicht gegen Helden eingesetzt werden.
-}
-
-STRING 934
-// Abilities: A00G (Transmutieren), Ubertip (Tooltip - Normal - Extended)
-{
-Tötet eine Zieleinheit sofort und wandelt sie in Gold um, das zum Gold des Spielers hinzugefügt wird!|nKann nicht gegen Helden eingesetzt werden.
-}
-
-STRING 935
-// Abilities: A00G (Transmutieren), Ubertip (Tooltip - Normal - Extended)
-{
-Tötet eine Zieleinheit sofort und wandelt sie in Gold um, das zum Gold des Spielers hinzugefügt wird!|nKann nicht gegen Helden eingesetzt werden.
-}
-
 STRING 937
 // Abilities: A002 (Erhöhte Attribute), Tip (Tooltip - Normal)
 {
@@ -2664,12 +2646,6 @@ STRING 1213
 Taschenfabrik [|cffffcc00Stufe 5|r]
 }
 
-STRING 1214
-// Abilities: A00R (Taschenfabrik), Ubertip (Tooltip - Normal - Extended)
-{
-Baut eine Fabrik, die automatisch Uhrwerkgoblins herstellt.|n|nUhrwerkgoblins haben wenig Trefferpunkte, verursachen kaum Schaden... aber sie explodieren beim Tod, wodurch sie nahen gegnerischen Einheiten bis zu <A00T,DataB1> Schaden zufügen.|nDie Fabrik bleibt <A00R,Dur1> Sek. lang bestehen.|n|n|cffffcc00Uhrwerkgoblins können nur Bodeneinheiten angreifen.|r
-}
-
 STRING 1217
 // Abilities: A00R (Taschenfabrik), Ubertip (Tooltip - Normal - Extended)
 {
@@ -3154,24 +3130,6 @@ STRING 1312
 // Abilities: A00Z (Sturm, Erde und Feuer), Tip (Tooltip - Normal)
 {
 Sturm, Erde und Feuer
-}
-
-STRING 1315
-// Abilities: A00Z (Sturm, Erde und Feuer), Ubertip (Tooltip - Normal - Extended)
-{
-Teilt den Braumeister in drei spezialisierte Krieger verschiedener Elemente. Wenn mindestens einer bis zum Ende seiner Lebensdauer überlebt, wird der Braumeister wiedergeboren.|nHält <A00Z,HeroDur1> Sek. lang an.
-}
-
-STRING 1316
-// Abilities: A00Z (Sturm, Erde und Feuer), Ubertip (Tooltip - Normal - Extended)
-{
-Teilt den Braumeister in drei spezialisierte Krieger verschiedener Elemente. Wenn mindestens einer bis zum Ende seiner Lebensdauer überlebt, wird der Braumeister wiedergeboren.|nHält <A00Z,HeroDur2> Sek. lang an.
-}
-
-STRING 1317
-// Abilities: A00Z (Sturm, Erde und Feuer), Ubertip (Tooltip - Normal - Extended)
-{
-Teilt den Braumeister in drei spezialisierte Krieger verschiedener Elemente. Wenn mindestens einer bis zum Ende seiner Lebensdauer überlebt, wird der Braumeister wiedergeboren.|nHält <A00Z,HeroDur3> Sek. lang an.
 }
 
 STRING 1318
@@ -4188,24 +4146,6 @@ STRING 1679
 |cffc3dbffAutomatischen Einsatz mit Rechtsklick deaktivieren.|r
 }
 
-STRING 1680
-// Abilities: A012 (Schwarzer Pfeil), Ubertip (Tooltip - Normal - Extended)
-{
-Erhöht den Angriffsschaden um <A012,DataA1>. Einheiten, die unter dem Einfluss von Schwarzen Pfeilen getötet werden, verwandeln sich in Diener mit <n010,RealHP> Trefferpunkten.
-}
-
-STRING 1681
-// Abilities: A012 (Schwarzer Pfeil), Ubertip (Tooltip - Normal - Extended)
-{
-Erhöht den Angriffsschaden um <A012,DataA2>. Einheiten, die unter dem Einfluss von Schwarzen Pfeilen getötet werden, verwandeln sich in Diener mit <n011,RealHP> Trefferpunkten.
-}
-
-STRING 1682
-// Abilities: A012 (Schwarzer Pfeil), Ubertip (Tooltip - Normal - Extended)
-{
-Erhöht den Angriffsschaden um <A012,DataA3>. Einheiten, die unter dem Einfluss von Schwarzen Pfeilen getötet werden, verwandeln sich in Diener mit <n012,RealHP> Trefferpunkten.
-}
-
 STRING 1683
 // Abilities: A012 (Schwarzer Pfeil), Ubertip (Tooltip - Normal - Extended)
 {
@@ -4590,24 +4530,6 @@ STRING 1747
 Ruft einen Blitzsturm herbei, der gegnerischen Einheiten <A00L,DataA1> Schaden zufügt.|nHält <A00L,Dur1> Sek. lang an.|n|nDas Gebiet und der verursachte Schaden werden mit jeder Stufe größer.
 }
 
-STRING 1748
-// Abilities: A00L (Monsun), Ubertip (Tooltip - Normal - Extended)
-{
-Ruft einen Blitzsturm herbei, der gegnerischen Einheiten in einem Zielgebiet <A00L,DataA1> Schaden zufügt.|nHält <A00L,Dur1> Sek. lang an.
-}
-
-STRING 1749
-// Abilities: A00L (Monsun), Ubertip (Tooltip - Normal - Extended)
-{
-Ruft einen Blitzsturm herbei, der gegnerischen Einheiten in einem Zielgebiet <A00L,DataA2> Schaden zufügt.|nHält <A00L,Dur2> Sek. lang an.
-}
-
-STRING 1750
-// Abilities: A00L (Monsun), Ubertip (Tooltip - Normal - Extended)
-{
-Ruft einen Blitzsturm herbei, der gegnerischen Einheiten in einem Zielgebiet <A00L,DataA3> Schaden zufügt.|nHält <A00L,Dur3> Sek. lang an.
-}
-
 STRING 1751
 // Abilities: A00L (Monsun), EditorSuffix (Editor Suffix)
 {
@@ -4618,24 +4540,6 @@ STRING 1752
 // Abilities: A00R (Taschenfabrik), EditorSuffix (Editor Suffix)
 {
 (Hero 3)
-}
-
-STRING 1755
-// Abilities: A0VD (Verdammnis), Ubertip (Tooltip - Normal - Extended)
-{
-Markiert eine Zieleinheit für die Manifestation eines Dämons. Die Einheit kann keine Fähigkeiten einsetzen und erleidet <A0VD,DataA1> Schaden pro Sekunde, bis sie stirbt. Nach ihrem Tod steigt ein großer Dämon aus ihrer Leiche empor. Verdammnis kann nicht gebannt oder beendet werden.
-}
-
-STRING 1756
-// Abilities: A0VD (Verdammnis), Ubertip (Tooltip - Normal - Extended)
-{
-Markiert eine Zieleinheit für die Manifestation eines Dämons. Die Einheit kann keine Fähigkeiten einsetzen und erleidet <A0VD,DataA2> Schaden pro Sekunde, bis sie stirbt. Nach ihrem Tod steigt ein großer Dämon aus ihrer Leiche empor. Verdammnis kann nicht gebannt oder beendet werden.
-}
-
-STRING 1757
-// Abilities: A0VD (Verdammnis), Ubertip (Tooltip - Normal - Extended)
-{
-Markiert eine Zieleinheit für die Manifestation eines Dämons. Die Einheit kann keine Fähigkeiten einsetzen und erleidet <A0VD,DataA3> Schaden pro Sekunde, bis sie stirbt. Nach ihrem Tod steigt ein großer Dämon aus ihrer Leiche empor. Verdammnis kann nicht gebannt oder beendet werden.
 }
 
 STRING 1758
@@ -4678,18 +4582,6 @@ STRING 1764
 // Units: h00R (Wasserelementar - Stufe 3), EditorSuffix (Name - Editor Suffix)
 {
 (Hero spell)
-}
-
-STRING 1765
-// Abilities: A00R (Taschenfabrik), Ubertip (Tooltip - Normal - Extended)
-{
-Baut eine Fabrik, die automatisch Uhrwerkgoblins herstellt.|n|nUhrwerkgoblins haben wenig Trefferpunkte, verursachen kaum Schaden... aber sie explodieren beim Tod, wodurch sie nahen gegnerischen Einheiten bis zu <A00U,DataB2> Schaden zufügen.|nDie Fabrik bleibt <A00R,Dur2> Sek. lang bestehen.|n|n|cffffcc00Uhrwerkgoblins können nur Bodeneinheiten angreifen.|r
-}
-
-STRING 1766
-// Abilities: A00R (Taschenfabrik), Ubertip (Tooltip - Normal - Extended)
-{
-Baut eine Fabrik, die automatisch Uhrwerkgoblins herstellt.|n|nUhrwerkgoblins haben wenig Trefferpunkte, verursachen kaum Schaden... aber sie explodieren beim Tod, wodurch sie nahen gegnerischen Einheiten bis zu <A00W,DataB3> Schaden zufügen.|nDie Fabrik bleibt <A00R,Dur3> Sek. lang bestehen.|n|n|cffffcc00Uhrwerkgoblins können nur Bodeneinheiten angreifen.|r
 }
 
 STRING 1767
@@ -5062,24 +4954,6 @@ STRING 1832
 // Abilities: A0LB (Lavabrut beschwören), EditorSuffix (Editor Suffix)
 {
 (Hero 3)
-}
-
-STRING 1833
-// Abilities: A0LB (Lavabrut beschwören), Ubertip (Tooltip - Normal - Extended)
-{
-Beschwört eine Lavabrut, eine zähe und tödliche Feuerkreatur. Mit ihren Angriffen verzehrt die Lavabrut das Fleisch des Ziels, um ihr eigenes Feuer zu nähren. Sie teilt sich schließlich in zwei gesunde Lavabruten.|n|nHat <n018,realHP> Trefferpunkte und verursacht <n018,mindmg1>-<n018,maxdmg1> Schaden.|nBleibt <A0LB,Dur1> Sek. lang bestehen.|n|n|cffffcc00Kann Boden- und Lufteinheiten angreifen.|r
-}
-
-STRING 1834
-// Abilities: A0LB (Lavabrut beschwören), Ubertip (Tooltip - Normal - Extended)
-{
-Beschwört eine Lavabrut, eine zähe und tödliche Feuerkreatur. Mit ihren Angriffen verzehrt die Lavabrut das Fleisch des Ziels, um ihr eigenes Feuer zu nähren. Sie teilt sich schließlich in zwei gesunde Lavabruten.|n|nHat <n019,realHP> Trefferpunkte und verursacht <n019,mindmg2>-<n019,maxdmg2> Schaden.|nBleibt <A0LB,Dur2> Sek. lang bestehen.|n|n|cffffcc00Kann Boden- und Lufteinheiten angreifen.|r
-}
-
-STRING 1835
-// Abilities: A0LB (Lavabrut beschwören), Ubertip (Tooltip - Normal - Extended)
-{
-Beschwört eine Lavabrut, eine zähe und tödliche Feuerkreatur. Mit ihren Angriffen verzehrt die Lavabrut das Fleisch des Ziels, um ihr eigenes Feuer zu nähren. Sie teilt sich schließlich in zwei gesunde Lavabruten.|n|nHat <n01A,realHP> Trefferpunkte und verursacht <n01A,mindmg3>-<n01A,maxdmg3> Schaden.|nBleibt <A0LB,Dur3> Sek. lang bestehen.|n|n|cffffcc00Kann Boden- und Lufteinheiten angreifen.|r
 }
 
 STRING 1836
@@ -5508,24 +5382,6 @@ STRING 1920
 Avatar erhöht die Rüstung des Bergkönigs um <A015,DataA1>, seine Trefferpunkte um <A015,DataB1>, seinen Schaden um <A015,DataC1> und gewährt ihm Zauberimmunität.|nHält <A015,Dur1> Sek. lang an.
 }
 
-STRING 1925
-// Abilities: A015 (Avatar), Ubertip (Tooltip - Normal - Extended)
-{
-Aktivieren, um die Rüstung des Bergkönigs um <A015,DataA1>, seine Trefferpunkte um <A015,DataB1> und seinen Schaden um <A015,DataC1> zu erhöhen und ihm Zauberimmunität zu gewähren.|nHält <A015,Dur1> Sek. lang an.
-}
-
-STRING 1926
-// Abilities: A015 (Avatar), Ubertip (Tooltip - Normal - Extended)
-{
-Aktivieren, um die Rüstung des Bergkönigs um <A015,DataA2>, seine Trefferpunkte um <A015,DataB2> und seinen Schaden um <A015,DataC2> zu erhöhen und ihm Zauberimmunität zu gewähren.|nHält <A015,Dur2> Sek. lang an.
-}
-
-STRING 1927
-// Abilities: A015 (Avatar), Ubertip (Tooltip - Normal - Extended)
-{
-Aktivieren, um die Rüstung des Bergkönigs um <A015,DataA3>, seine Trefferpunkte um <A015,DataB3> und seinen Schaden um <A015,DataC3> zu erhöhen und ihm Zauberimmunität zu gewähren.|nHält <A015,Dur3> Sek. lang an.
-}
-
 STRING 1928
 // Abilities: A015 (Avatar), EditorSuffix (Editor Suffix)
 {
@@ -5808,12 +5664,6 @@ STRING 1979
 Schickt eine gigantische Welle aus, die allen gegnerischen Bodeneinheiten in einer Linie <ASCW,DataA1> Schaden zufügt, bis maximal <ASCW,DataB1> Schaden.
 }
 
-STRING 1981
-// Abilities: AWEB (Wasserelementar beschwören), Ubertip (Tooltip - Normal - Extended)
-{
-Beschwört einen Wasserelementar, der die Gegner des Erzmagiers angreift. Der Elementar hat <h00P,realHP> Trefferpunkte und verursacht <h00P,mindmg1>-<h00P,maxdmg1> Schaden.|nBleibt <AWEB,Dur1> Sek. lang bestehen.|n|n|cffffcc00Kann Boden- und Lufteinheiten angreifen.|r
-}
-
 STRING 1984
 // Abilities: ASSW (Schmetterwelle), EditorSuffix (Editor Suffix)
 {
@@ -5956,18 +5806,6 @@ STRING 2007
 // Abilities: AWEB (Wasserelementar beschwören), Researchubertip (Tooltip - Learn - Extended)
 {
 Beschwört einen Wasserelementar, der die Gegner des Erzmagiers angreift.|nBleibt <AWEB,Dur1> Sek. lang bestehen.|n|n|cffffcc00Kann Boden- und Lufteinheiten angreifen.|r|n|n|cffffcc00Stufe 1|r - <h00P,realHP> Trefferpunkte, <h00P,mindmg1>-<h00P,maxdmg1> Schaden.|n|cffffcc00Stufe 2|r - <h00Q,realHP> Trefferpunkte, <h00Q,mindmg1>-<h00Q,maxdmg1> Schaden.|n|cffffcc00Stufe 3|r - <h00R,realHP> Trefferpunkte, <h00R,mindmg1>-<h00R,maxdmg1> Schaden.
-}
-
-STRING 2010
-// Abilities: AWEB (Wasserelementar beschwören), Ubertip (Tooltip - Normal - Extended)
-{
-Beschwört einen Wasserelementar, der die Gegner des Erzmagiers angreift. Der Elementar hat <h00Q,realHP> Trefferpunkte und verursacht <h00Q,mindmg1>-<h00Q,maxdmg1> Schaden.|nBleibt <AWEB,Dur2> Sek. lang bestehen.|n|n|cffffcc00Kann Boden- und Lufteinheiten angreifen.|r
-}
-
-STRING 2011
-// Abilities: AWEB (Wasserelementar beschwören), Ubertip (Tooltip - Normal - Extended)
-{
-Beschwört einen Wasserelementar, der die Gegner des Erzmagiers angreift. Der Elementar hat <h00R,realHP> Trefferpunkte und verursacht <h00R,mindmg1>-<h00R,maxdmg1> Schaden.|nBleibt <AWEB,Dur3> Sek. lang bestehen.|n|n|cffffcc00Kann Boden- und Lufteinheiten angreifen.
 }
 
 STRING 2012
@@ -6214,24 +6052,6 @@ STRING 2052
 // Abilities: AKLS (Klingensturm), Researchubertip (Tooltip - Learn - Extended)
 {
 Entfesselt einen zerstörerischen Klingensturm um den Klingenmeister, der ihn immun gegen Magie macht und nahen gegnerischen Bodeneinheiten <AKLS,DataA1> Schaden pro Sekunde zufügt.
-}
-
-STRING 2053
-// Abilities: AKLS (Klingensturm), Ubertip (Tooltip - Normal - Extended)
-{
-Entfesselt einen zerstörerischen Klingensturm um den Klingenmeister, der ihn immun gegen Magie macht und nahen gegnerischen Bodeneinheiten <AKLS,DataA1> Schaden pro Sekunde zufügt.|nHält <AKLS,Dur1> Sek. lang an.
-}
-
-STRING 2054
-// Abilities: AKLS (Klingensturm), Ubertip (Tooltip - Normal - Extended)
-{
-Entfesselt einen zerstörerischen Klingensturm um den Klingenmeister, der ihn immun gegen Magie macht und nahen gegnerischen Bodeneinheiten <AKLS,DataA2> Schaden pro Sekunde zufügt.|nHält <AKLS,Dur2> Sek. lang an.
-}
-
-STRING 2055
-// Abilities: AKLS (Klingensturm), Ubertip (Tooltip - Normal - Extended)
-{
-Entfesselt einen zerstörerischen Klingensturm um den Klingenmeister, der ihn immun gegen Magie macht und nahen gegnerischen Bodeneinheiten <AKLS,DataA3> Schaden pro Sekunde zufügt.|nHält <AKLS,Dur3> Sek. lang an.
 }
 
 STRING 2056
@@ -6694,24 +6514,6 @@ STRING 2139
 // Abilities: ASCS (Schlangenschutz), Researchubertip (Tooltip - Learn - Extended)
 {
 Beschwört einen stationären Schlangenschutz, der die Gegner des Schattenjägers angreift. Der Schutz ist immun gegen Magie.|nBleibt <ASCS,Dur1> Sek. lang bestehen.|n|n|cffffcc00Kann Boden- und Lufteinheiten angreifen.|r|n|n|cffffcc00Stufe 1|r - <o002,realHP> Trefferpunkte, <o002,mindmg1>-<o002,maxdmg1> Schaden.|n|cffffcc00Stufe 2|r - <o003,realHP> Trefferpunkte, <o003,mindmg1>-<o003,maxdmg1> Schaden.|n|cffffcc00Stufe 3|r - <o004,realHP> Trefferpunkte, <o004,mindmg1>-<o004,maxdmg1> Schaden.
-}
-
-STRING 2140
-// Abilities: ASCS (Schlangenschutz), Ubertip (Tooltip - Normal - Extended)
-{
-Beschwört einen stationären Schlangenschutz, der die Gegner des Schattenjägers angreift. Der Schutz hat <o002,realHP> Trefferpunkte, ist immun gegen Magie und verursacht <o002,mindmg1>-<o002,maxdmg1> Schaden.|nBleibt <ASCS,Dur1> Sek. lang bestehen.|n|n|cffffcc00Kann Boden- und Lufteinheiten angreifen.|r
-}
-
-STRING 2141
-// Abilities: ASCS (Schlangenschutz), Ubertip (Tooltip - Normal - Extended)
-{
-Beschwört einen stationären Schlangenschutz, der die Gegner des Schattenjägers angreift. Der Schutz hat <o003,realHP> Trefferpunkte, ist immun gegen Magie und verursacht <o003,mindmg1>-<o003,maxdmg1> Schaden.|nBleibt <ASCS,Dur1> Sek. lang bestehen.|n|n|cffffcc00Kann Boden- und Lufteinheiten angreifen.|r
-}
-
-STRING 2142
-// Abilities: ASCS (Schlangenschutz), Ubertip (Tooltip - Normal - Extended)
-{
-Beschwört einen stationären Schlangenschutz, der die Gegner des Schattenjägers angreift. Der Schutz hat <o004,realHP> Trefferpunkte, ist immun gegen Magie und verursacht <o004,mindmg1>-<o004,maxdmg1> Schaden.|nBleibt <ASCS,Dur1> Sek. lang bestehen.|n|n|cffffcc00Kann Boden- und Lufteinheiten angreifen.|r
 }
 
 STRING 2143
@@ -7432,24 +7234,6 @@ STRING 2265
 // Abilities: A00Q (Naturgewalt), EditorSuffix (Editor Suffix)
 {
 (Hero 3)
-}
-
-STRING 2266
-// Abilities: A00Q (Naturgewalt), Ubertip (Tooltip - Normal - Extended)
-{
-Verwandelt Bäume und Gegner in einem Gebiet in <A00Q,DataA1> Treants. Treants haben <efon,realHP> Trefferpunkte und verursachen <efon,mindmg1>-<efon,maxdmg1> Schaden. Sie können Segen der Natur erlernen.|nBleiben <AEfn,Dur1> Sek. lang bestehen.|n|n|cffffcc00Können Bodeneinheiten angreifen.|r
-}
-
-STRING 2267
-// Abilities: A00Q (Naturgewalt), Ubertip (Tooltip - Normal - Extended)
-{
-Verwandelt Bäume und Gegner in einem Gebiet in <A00Q,DataA2> Treants. Treants haben <efon,realHP> Trefferpunkte und verursachen <efon,mindmg2>-<efon,maxdmg2> Schaden. Sie können Segen der Natur erlernen.|nBleiben <AEfn,Dur2> Sek. lang bestehen.|n|n|cffffcc00Können Bodeneinheiten angreifen.|r
-}
-
-STRING 2268
-// Abilities: A00Q (Naturgewalt), Ubertip (Tooltip - Normal - Extended)
-{
-Verwandelt Bäume und Gegner in einem Gebiet in <A00Q,DataA3> Treants. Treants haben <efon,realHP> Trefferpunkte und verursachen <efon,mindmg3>-<efon,maxdmg3> Schaden. Sie können Segen der Natur erlernen.|nBleiben <AEfn,Dur3> Sek. lang bestehen.|n|n|cffffcc00Können Bodeneinheiten angreifen.|r
 }
 
 STRING 2269
@@ -9850,5 +9634,287 @@ STRING 2815
 // Abilities: ASCH (Schockwelle), EditorSuffix (Editor Suffix)
 {
 (Hero 10)
+}
+
+STRING 2816
+// Abilities: A0PF (Permanenter Feuerbrand), EditorSuffix (Editor Suffix)
+{
+(Unit)
+}
+
+STRING 2817
+// Abilities: A0PF (Permanenter Feuerbrand), Ubertip (Tooltip - Normal - Extended)
+{
+Verbrennt nahe gegnerische Einheiten. Verursacht <A0PF,DataA1> Schaden pro Sekunde.
+}
+
+STRING 2819
+// Abilities: A0FO (Feuerodem), EditorSuffix (Editor Suffix)
+{
+(Unit)
+}
+
+STRING 2820
+// Abilities: A0FO (Feuerodem), Ubertip (Tooltip - Normal - Extended)
+{
+Haucht einen Feuerkegel auf gegnerische Einheiten, der <A0FO,DataA1> Schaden verursacht.
+}
+
+STRING 2821
+// Abilities: A00G (Transmutieren), Ubertip (Tooltip - Normal - Extended)
+{
+|cffff0000Ultimative Fähigkeit|r - Tötet eine Zieleinheit sofort und wandelt sie in Gold um, das zum Gold des Spielers hinzugefügt wird!|nKann nicht gegen Helden eingesetzt werden.
+}
+
+STRING 2822
+// Abilities: A00G (Transmutieren), Ubertip (Tooltip - Normal - Extended)
+{
+|cffff0000Ultimative Fähigkeit|r - Tötet eine Zieleinheit sofort und wandelt sie in Gold um, das zum Gold des Spielers hinzugefügt wird!|nKann nicht gegen Helden eingesetzt werden.
+}
+
+STRING 2823
+// Abilities: A00G (Transmutieren), Ubertip (Tooltip - Normal - Extended)
+{
+|cffff0000Ultimative Fähigkeit|r - Tötet eine Zieleinheit sofort und wandelt sie in Gold um, das zum Gold des Spielers hinzugefügt wird!|nKann nicht gegen Helden eingesetzt werden.
+}
+
+STRING 2824
+// Abilities: A00L (Monsun), Ubertip (Tooltip - Normal - Extended)
+{
+|cffff0000Ultimative Fähigkeit|r - Ruft einen Blitzsturm herbei, der gegnerischen Einheiten in einem Zielgebiet <A00L,DataA1> Schaden zufügt.|nHält <A00L,Dur1> Sek. lang an.
+}
+
+STRING 2825
+// Abilities: A00L (Monsun), Ubertip (Tooltip - Normal - Extended)
+{
+|cffff0000Ultimative Fähigkeit|r - Ruft einen Blitzsturm herbei, der gegnerischen Einheiten in einem Zielgebiet <A00L,DataA2> Schaden zufügt.|nHält <A00L,Dur2> Sek. lang an.
+}
+
+STRING 2826
+// Abilities: A00L (Monsun), Ubertip (Tooltip - Normal - Extended)
+{
+|cffff0000Ultimative Fähigkeit|r - Ruft einen Blitzsturm herbei, der gegnerischen Einheiten in einem Zielgebiet <A00L,DataA3> Schaden zufügt.|nHält <A00L,Dur3> Sek. lang an.
+}
+
+STRING 2827
+// Abilities: A00R (Taschenfabrik), Ubertip (Tooltip - Normal - Extended)
+{
+|cffff0000Ultimative Fähigkeit|r - Baut eine Fabrik, die automatisch Uhrwerkgoblins herstellt.|n|nUhrwerkgoblins haben wenig Trefferpunkte, verursachen kaum Schaden... aber sie explodieren beim Tod, wodurch sie nahen gegnerischen Einheiten bis zu <A00T,DataB1> Schaden zufügen.|nDie Fabrik bleibt <A00R,Dur1> Sek. lang bestehen.|n|n|cffffcc00Uhrwerkgoblins können nur Bodeneinheiten angreifen.|r
+}
+
+STRING 2828
+// Abilities: A00R (Taschenfabrik), Ubertip (Tooltip - Normal - Extended)
+{
+|cffff0000Ultimative Fähigkeit|r - Baut eine Fabrik, die automatisch Uhrwerkgoblins herstellt.|n|nUhrwerkgoblins haben wenig Trefferpunkte, verursachen kaum Schaden... aber sie explodieren beim Tod, wodurch sie nahen gegnerischen Einheiten bis zu <A00U,DataB2> Schaden zufügen.|nDie Fabrik bleibt <A00R,Dur2> Sek. lang bestehen.|n|n|cffffcc00Uhrwerkgoblins können nur Bodeneinheiten angreifen.|r
+}
+
+STRING 2829
+// Abilities: A00R (Taschenfabrik), Ubertip (Tooltip - Normal - Extended)
+{
+|cffff0000Ultimative Fähigkeit|r - Baut eine Fabrik, die automatisch Uhrwerkgoblins herstellt.|n|nUhrwerkgoblins haben wenig Trefferpunkte, verursachen kaum Schaden... aber sie explodieren beim Tod, wodurch sie nahen gegnerischen Einheiten bis zu <A00W,DataB3> Schaden zufügen.|nDie Fabrik bleibt <A00R,Dur3> Sek. lang bestehen.|n|n|cffffcc00Uhrwerkgoblins können nur Bodeneinheiten angreifen.|r
+}
+
+STRING 2830
+// Abilities: A00Z (Sturm, Erde und Feuer), Ubertip (Tooltip - Normal - Extended)
+{
+|cffff0000Ultimative Fähigkeit|r - Teilt den Braumeister in drei spezialisierte Krieger verschiedener Elemente. Wenn mindestens einer bis zum Ende seiner Lebensdauer überlebt, wird der Braumeister wiedergeboren.|n|nHält |cffffcc00<A00Z,HeroDur1> Sekunden|r lang an.
+}
+
+STRING 2831
+// Abilities: A00Z (Sturm, Erde und Feuer), Ubertip (Tooltip - Normal - Extended)
+{
+|cffff0000Ultimative Fähigkeit|r - Teilt den Braumeister in drei spezialisierte Krieger verschiedener Elemente. Wenn mindestens einer bis zum Ende seiner Lebensdauer überlebt, wird der Braumeister wiedergeboren.|n|nHält |cffffcc00<A00Z,HeroDur2> Sekunden|r lang an.
+}
+
+STRING 2832
+// Abilities: A00Z (Sturm, Erde und Feuer), Ubertip (Tooltip - Normal - Extended)
+{
+|cffff0000Ultimative Fähigkeit|r - Teilt den Braumeister in drei spezialisierte Krieger verschiedener Elemente. Wenn mindestens einer bis zum Ende seiner Lebensdauer überlebt, wird der Braumeister wiedergeboren.|n|nHält |cffffcc00<A00Z,HeroDur3> Sekunden|r lang an.
+}
+
+STRING 2833
+// Abilities: A012 (Schwarzer Pfeil), Ubertip (Tooltip - Normal - Extended)
+{
+|cffff0000Ultimative Fähigkeit|r - Erhöht den Angriffsschaden um <A012,DataA1>. Einheiten, die unter dem Einfluss von Schwarzen Pfeilen getötet werden, verwandeln sich in Diener mit <n010,RealHP> Trefferpunkten.
+}
+
+STRING 2834
+// Abilities: A012 (Schwarzer Pfeil), Ubertip (Tooltip - Normal - Extended)
+{
+|cffff0000Ultimative Fähigkeit|r - Erhöht den Angriffsschaden um <A012,DataA2>. Einheiten, die unter dem Einfluss von Schwarzen Pfeilen getötet werden, verwandeln sich in Diener mit <n011,RealHP> Trefferpunkten.
+}
+
+STRING 2835
+// Abilities: A012 (Schwarzer Pfeil), Ubertip (Tooltip - Normal - Extended)
+{
+|cffff0000Ultimative Fähigkeit|r - Erhöht den Angriffsschaden um <A012,DataA3>. Einheiten, die unter dem Einfluss von Schwarzen Pfeilen getötet werden, verwandeln sich in Diener mit <n012,RealHP> Trefferpunkten.
+}
+
+STRING 2836
+// Abilities: A0VD (Verdammnis), Ubertip (Tooltip - Normal - Extended)
+{
+|cffff0000Ultimative Fähigkeit|r - Markiert eine Zieleinheit für die Manifestation eines Dämons. Die Einheit kann keine Fähigkeiten einsetzen und erleidet <A0VD,DataA1> Schaden pro Sekunde, bis sie stirbt. Nach ihrem Tod steigt ein großer Dämon aus ihrer Leiche empor.|n|nVerdammnis kann nicht gebannt oder beendet werden.
+}
+
+STRING 2837
+// Abilities: A0VD (Verdammnis), Ubertip (Tooltip - Normal - Extended)
+{
+|cffff0000Ultimative Fähigkeit|r - Markiert eine Zieleinheit für die Manifestation eines Dämons. Die Einheit kann keine Fähigkeiten einsetzen und erleidet <A0VD,DataA2> Schaden pro Sekunde, bis sie stirbt. Nach ihrem Tod steigt ein großer Dämon aus ihrer Leiche empor.|n|nVerdammnis kann nicht gebannt oder beendet werden.
+}
+
+STRING 2838
+// Abilities: A0VD (Verdammnis), Ubertip (Tooltip - Normal - Extended)
+{
+|cffff0000Ultimative Fähigkeit|r - Markiert eine Zieleinheit für die Manifestation eines Dämons. Die Einheit kann keine Fähigkeiten einsetzen und erleidet <A0VD,DataA3> Schaden pro Sekunde, bis sie stirbt. Nach ihrem Tod steigt ein großer Dämon aus ihrer Leiche empor.|n|nVerdammnis kann nicht gebannt oder beendet werden.
+}
+
+STRING 2839
+// Abilities: A0LB (Lavabrut beschwören), Ubertip (Tooltip - Normal - Extended)
+{
+|cffff0000Ultimative Fähigkeit|r - Beschwört eine Lavabrut, eine zähe und tödliche Feuerkreatur. Mit ihren Angriffen verzehrt die Lavabrut das Fleisch des Ziels, um ihr eigenes Feuer zu nähren. Sie teilt sich schließlich in zwei gesunde Lavabruten.|n|nHat <n018,realHP> Trefferpunkte und verursacht <n018,mindmg1>-<n018,maxdmg1> Schaden.|nBleibt <A0LB,Dur1> Sek. lang bestehen.|n|n|cffffcc00Kann Boden- und Lufteinheiten angreifen.|r
+}
+
+STRING 2840
+// Abilities: A0LB (Lavabrut beschwören), Ubertip (Tooltip - Normal - Extended)
+{
+|cffff0000Ultimative Fähigkeit|r - Beschwört eine Lavabrut, eine zähe und tödliche Feuerkreatur. Mit ihren Angriffen verzehrt die Lavabrut das Fleisch des Ziels, um ihr eigenes Feuer zu nähren. Sie teilt sich schließlich in zwei gesunde Lavabruten.|n|nHat <n019,realHP> Trefferpunkte und verursacht <n019,mindmg2>-<n019,maxdmg2> Schaden.|nBleibt <A0LB,Dur2> Sek. lang bestehen.|n|n|cffffcc00Kann Boden- und Lufteinheiten angreifen.|r
+}
+
+STRING 2841
+// Abilities: A0LB (Lavabrut beschwören), Ubertip (Tooltip - Normal - Extended)
+{
+|cffff0000Ultimative Fähigkeit|r - Beschwört eine Lavabrut, eine zähe und tödliche Feuerkreatur. Mit ihren Angriffen verzehrt die Lavabrut das Fleisch des Ziels, um ihr eigenes Feuer zu nähren. Sie teilt sich schließlich in zwei gesunde Lavabruten.|n|nHat <n01A,realHP> Trefferpunkte und verursacht <n01A,mindmg3>-<n01A,maxdmg3> Schaden.|nBleibt <A0LB,Dur3> Sek. lang bestehen.|n|n|cffffcc00Kann Boden- und Lufteinheiten angreifen.|r
+}
+
+STRING 2842
+// Abilities: A015 (Avatar), Ubertip (Tooltip - Normal - Extended)
+{
+|cffff0000Ultimative Fähigkeit|r - Aktivieren, um die Rüstung des Bergkönigs um <A015,DataA1>, seine Trefferpunkte um <A015,DataB1> und seinen Schaden um <A015,DataC1> zu erhöhen und ihm Zauberimmunität zu gewähren.|nHält <A015,Dur1> Sek. lang an.
+}
+
+STRING 2843
+// Abilities: A015 (Avatar), Ubertip (Tooltip - Normal - Extended)
+{
+|cffff0000Ultimative Fähigkeit|r - Aktivieren, um die Rüstung des Bergkönigs um <A015,DataA2>, seine Trefferpunkte um <A015,DataB2> und seinen Schaden um <A015,DataC2> zu erhöhen und ihm Zauberimmunität zu gewähren.|nHält <A015,Dur2> Sek. lang an.
+}
+
+STRING 2844
+// Abilities: A015 (Avatar), Ubertip (Tooltip - Normal - Extended)
+{
+|cffff0000Ultimative Fähigkeit|r - Aktivieren, um die Rüstung des Bergkönigs um <A015,DataA3>, seine Trefferpunkte um <A015,DataB3> und seinen Schaden um <A015,DataC3> zu erhöhen und ihm Zauberimmunität zu gewähren.|nHält <A015,Dur3> Sek. lang an.
+}
+
+STRING 2845
+// Abilities: AWEB (Wasserelementar beschwören), Ubertip (Tooltip - Normal - Extended)
+{
+|cffff0000Ultimative Fähigkeit|r - Beschwört einen Wasserelementar, der die Gegner des Erzmagiers angreift. Der Elementar hat <h00P,realHP> Trefferpunkte und verursacht <h00P,mindmg1>-<h00P,maxdmg1> Schaden.|nBleibt <AWEB,Dur1> Sek. lang bestehen.|n|n|cffffcc00Kann Boden- und Lufteinheiten angreifen.|r
+}
+
+STRING 2846
+// Abilities: AWEB (Wasserelementar beschwören), Ubertip (Tooltip - Normal - Extended)
+{
+|cffff0000Ultimative Fähigkeit|r - Beschwört einen Wasserelementar, der die Gegner des Erzmagiers angreift. Der Elementar hat <h00Q,realHP> Trefferpunkte und verursacht <h00Q,mindmg1>-<h00Q,maxdmg1> Schaden.|nBleibt <AWEB,Dur2> Sek. lang bestehen.|n|n|cffffcc00Kann Boden- und Lufteinheiten angreifen.|r
+}
+
+STRING 2847
+// Abilities: AWEB (Wasserelementar beschwören), Ubertip (Tooltip - Normal - Extended)
+{
+|cffff0000Ultimative Fähigkeit|r - Beschwört einen Wasserelementar, der die Gegner des Erzmagiers angreift. Der Elementar hat <h00R,realHP> Trefferpunkte und verursacht <h00R,mindmg1>-<h00R,maxdmg1> Schaden.|nBleibt <AWEB,Dur3> Sek. lang bestehen.|n|n|cffffcc00Kann Boden- und Lufteinheiten angreifen.
+}
+
+STRING 2848
+// Abilities: AKLS (Klingensturm), Ubertip (Tooltip - Normal - Extended)
+{
+|cffff0000Ultimative Fähigkeit|r - Entfesselt einen zerstörerischen Klingensturm um den Klingenmeister, der ihn immun gegen Magie macht und nahen gegnerischen Bodeneinheiten <AKLS,DataA1> Schaden pro Sekunde zufügt.|nHält <AKLS,Dur1> Sek. lang an.
+}
+
+STRING 2849
+// Abilities: AKLS (Klingensturm), Ubertip (Tooltip - Normal - Extended)
+{
+|cffff0000Ultimative Fähigkeit|r - Entfesselt einen zerstörerischen Klingensturm um den Klingenmeister, der ihn immun gegen Magie macht und nahen gegnerischen Bodeneinheiten <AKLS,DataA2> Schaden pro Sekunde zufügt.|nHält <AKLS,Dur2> Sek. lang an.
+}
+
+STRING 2850
+// Abilities: AKLS (Klingensturm), Ubertip (Tooltip - Normal - Extended)
+{
+|cffff0000Ultimative Fähigkeit|r - Entfesselt einen zerstörerischen Klingensturm um den Klingenmeister, der ihn immun gegen Magie macht und nahen gegnerischen Bodeneinheiten <AKLS,DataA3> Schaden pro Sekunde zufügt.|nHält <AKLS,Dur3> Sek. lang an.
+}
+
+STRING 2851
+// Abilities: ASCS (Schlangenschutz), Ubertip (Tooltip - Normal - Extended)
+{
+|cffff0000Ultimative Fähigkeit|r - Beschwört einen stationären Schlangenschutz, der die Gegner des Schattenjägers angreift. Der Schutz hat <o002,realHP> Trefferpunkte, ist immun gegen Magie und verursacht <o002,mindmg1>-<o002,maxdmg1> Schaden.|nBleibt <ASCS,Dur1> Sek. lang bestehen.|n|n|cffffcc00Kann Boden- und Lufteinheiten angreifen.|r
+}
+
+STRING 2852
+// Abilities: ASCS (Schlangenschutz), Ubertip (Tooltip - Normal - Extended)
+{
+|cffff0000Ultimative Fähigkeit|r - Beschwört einen stationären Schlangenschutz, der die Gegner des Schattenjägers angreift. Der Schutz hat <o003,realHP> Trefferpunkte, ist immun gegen Magie und verursacht <o003,mindmg1>-<o003,maxdmg1> Schaden.|nBleibt <ASCS,Dur1> Sek. lang bestehen.|n|n|cffffcc00Kann Boden- und Lufteinheiten angreifen.|r
+}
+
+STRING 2853
+// Abilities: ASCS (Schlangenschutz), Ubertip (Tooltip - Normal - Extended)
+{
+|cffff0000Ultimative Fähigkeit|r - Beschwört einen stationären Schlangenschutz, der die Gegner des Schattenjägers angreift. Der Schutz hat <o004,realHP> Trefferpunkte, ist immun gegen Magie und verursacht <o004,mindmg1>-<o004,maxdmg1> Schaden.|nBleibt <ASCS,Dur1> Sek. lang bestehen.|n|n|cffffcc00Kann Boden- und Lufteinheiten angreifen.|r
+}
+
+STRING 2854
+// Abilities: A00Q (Naturgewalt), Ubertip (Tooltip - Normal - Extended)
+{
+|cffff0000Ultimative Fähigkeit|r - Verwandelt Bäume und Gegner in einem Gebiet in <A00Q,DataA1> Treants. Treants haben <efon,realHP> Trefferpunkte und verursachen <efon,mindmg1>-<efon,maxdmg1> Schaden. Sie können Segen der Natur erlernen.|nBleiben <AEfn,Dur1> Sek. lang bestehen.|n|n|cffffcc00Können Bodeneinheiten angreifen.|r
+}
+
+STRING 2855
+// Abilities: A00Q (Naturgewalt), Ubertip (Tooltip - Normal - Extended)
+{
+|cffff0000Ultimative Fähigkeit|r - Verwandelt Bäume und Gegner in einem Gebiet in <A00Q,DataA2> Treants. Treants haben <efon,realHP> Trefferpunkte und verursachen <efon,mindmg2>-<efon,maxdmg2> Schaden. Sie können Segen der Natur erlernen.|nBleiben <AEfn,Dur2> Sek. lang bestehen.|n|n|cffffcc00Können Bodeneinheiten angreifen.|r
+}
+
+STRING 2856
+// Abilities: A00Q (Naturgewalt), Ubertip (Tooltip - Normal - Extended)
+{
+|cffff0000Ultimative Fähigkeit|r - Verwandelt Bäume und Gegner in einem Gebiet in <A00Q,DataA3> Treants. Treants haben <efon,realHP> Trefferpunkte und verursachen <efon,mindmg3>-<efon,maxdmg3> Schaden. Sie können Segen der Natur erlernen.|nBleiben <AEfn,Dur3> Sek. lang bestehen.|n|n|cffffcc00Können Bodeneinheiten angreifen.|r
+}
+
+STRING 2857
+// Abilities: A0SR (Stille), EditorSuffix (Editor Suffix)
+{
+(Unit)
+}
+
+STRING 2858
+// Abilities: A0SR (Stille), Ubertip (Tooltip - Normal - Extended)
+{
+Hindert alle Gegner im Zielgebiet <A0SR,Dur1> Sek. lang daran, Fähigkeiten einzusetzen.
+}
+
+STRING 2859
+// Abilities: A0MV (Magie verschlingen), EditorSuffix (Editor Suffix)
+{
+(Unit)
+}
+
+STRING 2860
+// Abilities: A0MV (Magie verschlingen), Ubertip (Tooltip - Normal - Extended)
+{
+Raubt alle magischen Stärkungseffekte von Einheiten in einem Gebiet. Jede beraubte Einheit stellt beim Benutzer <A0MV,DataA1> Trefferpunkte und <A0MV,DataB1> Mana wieder her.|n|cffffcc00Fügt beschworenen Einheiten <A0MV,DataE1> Schaden zu.|r
+}
+
+STRING 2861
+// Abilities: ASSG (Schattenschlag), EditorSuffix (Editor Suffix)
+{
+(Unit)
+}
+
+STRING 2862
+// Abilities: ASSG (Schattenschlag), Name (Name)
+{
+Schattenschlag
+}
+
+STRING 2863
+// Abilities: ASSG (Schattenschlag), Ubertip (Tooltip - Normal - Extended)
+{
+Wirft einen vergifteten Dolch mit unglaublicher Wucht auf einen Gegner, fügt ihm <ASSG,DataE1> Direktschaden und <ASSG,Dur1> Sek. lang alle <ASSG,Cast1> Sek. <ASSG,DataA1> Schaden zu. Verringert außerdem für kurze Zeit die Bewegungs- und Angriffsgeschwindigkeit des Gegners.
 }
 

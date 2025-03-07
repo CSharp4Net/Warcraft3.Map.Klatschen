@@ -33,6 +33,12 @@ namespace Source
     internal const int BarracksSpawnTime = 15;
     internal const int MainBuildingSpawnTime = 30;
 
+#if DEBUG
+    internal const float KlatschenInterval = 15f;
+#else
+    internal const float KlatschenInterval = 1800f;
+#endif
+
     public static void Main()
     {
       // Delay a little since some stuff can break otherwise
@@ -117,12 +123,7 @@ namespace Source
 
         // Periodische Events registrieren
         PeriodicEvents.AddPeriodicEvent(GoldIncome.OnElapsed, 5f);
-
-#if DEBUG
-        PeriodicEvents.AddPeriodicEvent(Slapping.OnElapsed, 15f);
-#else
-        PeriodicEvents.AddPeriodicEvent(Slapping.OnElapsed, 1800f);
-#endif
+        PeriodicEvents.AddPeriodicEvent(Slapping.OnElapsed, KlatschenInterval);
 
         // Gebäude & Trigger für Computer-Spieler erstellen
         ConstructHumanBuildingAndTrigger();

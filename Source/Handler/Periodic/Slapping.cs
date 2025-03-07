@@ -17,6 +17,15 @@ namespace Source.Handler.Periodic
     {
       try
       {
+        weathereffect weathereffect = Common.AddWeatherEffect(Blizzard.GetPlayableMapRect(), ConstantsEx.WEATHER_Lorderon_Heavy_Rain);
+        timer weatherTimer = Common.CreateTimer();
+        Common.TimerStart(weatherTimer, Program.KlatschenInterval / 5, false, () =>
+        {
+          Common.RemoveWeatherEffect(weathereffect);
+          weathereffect.Dispose();
+          weathereffect = null;
+        });
+
         player player = player.NeutralAggressive;
 
         executions++;
@@ -24,12 +33,16 @@ namespace Source.Handler.Periodic
         Console.WriteLine("Klatschen!");
 
         Rectangle centerRect = Areas.CenterComplete.Wc3Rectangle;
+        Rectangle CenterBottomRect = Areas.CenterBottom.Wc3Rectangle;
         Rectangle CenterLeftRect = Areas.CenterLeft.Wc3Rectangle;
         Rectangle CenterTopRect = Areas.CenterTop.Wc3Rectangle;
+        Rectangle CenterRightRect = Areas.CenterRight.Wc3Rectangle;
 
         Point centerPoint = centerRect.Center;
+        Point centerBottomPoint = CenterBottomRect.Center;
         Point centerLeftPoint = CenterLeftRect.Center;
         Point centerTopPoint = CenterTopRect.Center;
+        Point centerRightPoint = CenterRightRect.Center;
 
         // Effekt für Ankündigung für 6 Sekunden
         CreateSpecialEffect("Abilities\\Spells\\Human\\FlameStrike\\FlameStrikeTarget.mdl", centerPoint, 3f, 5f);
@@ -38,12 +51,20 @@ namespace Source.Handler.Periodic
         float centerY = centerPoint.Y - 100;
 
         // Zentrum
-        ComputePentagramPoints(centerPoint, 10f, 
+        ComputePentagramPoints(centerPoint, 10f,
           out Point pentaCenterPointBottom,
-          out Point pentaCenterPointTopLeft, 
-          out Point pentaCenterPointTopRight, 
-          out Point pentaCenterPointLeft, 
+          out Point pentaCenterPointTopLeft,
+          out Point pentaCenterPointTopRight,
+          out Point pentaCenterPointLeft,
           out Point pentaCenterPointRight);
+
+        // Left Lane
+        ComputePentagramPoints(centerBottomPoint, 5f,
+          out Point pentaBottomPointBottom,
+          out Point pentaBottomPointTopLeft,
+          out Point pentaBottomPointTopRight,
+          out Point pentaBottomPointLeft,
+          out Point pentaBottomPointRight);
 
         // Left Lane
         ComputePentagramPoints(centerLeftPoint, 5f,
@@ -61,6 +82,14 @@ namespace Source.Handler.Periodic
           out Point pentaTopPointLeft,
           out Point pentaTopPointRight);
 
+        // Right Lane
+        ComputePentagramPoints(centerRightPoint, 5f,
+          out Point pentaRightPointBottom,
+          out Point pentaRightPointTopLeft,
+          out Point pentaRightPointTopRight,
+          out Point pentaRightPointLeft,
+          out Point pentaRightPointRight);
+
         // Zentrum - Nach 5 Sekunden die Schaden-Effekte anzeigen
         CreateSpecialEffectTimed("Abilities\\Spells\\Human\\FlameStrike\\FlameStrike1.mdl", pentaCenterPointBottom, 3f, 5f, 5f);
         CreateSpecialEffectTimed("Abilities\\Spells\\Human\\FlameStrike\\FlameStrike1.mdl", pentaCenterPointTopLeft, 3f, 5f, 5f);
@@ -69,11 +98,17 @@ namespace Source.Handler.Periodic
         CreateSpecialEffectTimed("Abilities\\Spells\\Human\\FlameStrike\\FlameStrike1.mdl", pentaCenterPointRight, 3f, 5f, 5f);
         CreateSpecialEffectTimed("Abilities\\Spells\\Demon\\DarkPortal\\DarkPortalTarget.mdl", centerPoint, 3, 5f);
 
+        // Bottom Lange - Nach 5 Sekunden die Schaden-Effekte anzeigen
+        CreateSpecialEffectTimed("Abilities\\Spells\\Human\\FlameStrike\\FlameStrike1.mdl", centerBottomPoint, 3f, 5f, 5f);
+
         // Left Lange - Nach 5 Sekunden die Schaden-Effekte anzeigen
         CreateSpecialEffectTimed("Abilities\\Spells\\Human\\FlameStrike\\FlameStrike1.mdl", centerLeftPoint, 3f, 5f, 5f);
 
         // Top Lange - Nach 5 Sekunden die Schaden-Effekte anzeigen
         CreateSpecialEffectTimed("Abilities\\Spells\\Human\\FlameStrike\\FlameStrike1.mdl", centerTopPoint, 3f, 5f, 5f);
+
+        // Right Lange - Nach 5 Sekunden die Schaden-Effekte anzeigen
+        CreateSpecialEffectTimed("Abilities\\Spells\\Human\\FlameStrike\\FlameStrike1.mdl", centerRightPoint, 3f, 5f, 5f);
 
         // Zentrum - Nach 5 Sekunden die Schaden-Ability zünden
         CreateAtDummyAndCastAbilityTimed(player, centerPoint, Constants.ABILITY_PHOENIXFEUER_DUMMY, executions, Constants.ORDER_PHOENIX_FIRE, 5.5f);
@@ -90,8 +125,18 @@ namespace Source.Handler.Periodic
           CreateLightning(pentaCenterPointLeft, pentaCenterPointTopRight);
           CreateLightning(pentaCenterPointTopRight, pentaCenterPointBottom);
 
-          // Zentrum - Left Lange
+          // Zentrum - Lanes
+          CreateLightning(centerPoint, centerBottomPoint);
           CreateLightning(centerPoint, centerLeftPoint);
+          CreateLightning(centerPoint, centerTopPoint);
+          CreateLightning(centerPoint, centerRightPoint);
+
+          // Bottom Lane
+          CreateLightning(pentaBottomPointBottom, pentaBottomPointTopLeft);
+          CreateLightning(pentaBottomPointTopLeft, pentaBottomPointRight);
+          CreateLightning(pentaBottomPointRight, pentaBottomPointLeft);
+          CreateLightning(pentaBottomPointLeft, pentaBottomPointTopRight);
+          CreateLightning(pentaBottomPointTopRight, pentaBottomPointBottom);
 
           // Left Lane
           CreateLightning(pentaLeftPointBottom, pentaLeftPointTopLeft);
@@ -100,15 +145,19 @@ namespace Source.Handler.Periodic
           CreateLightning(pentaLeftPointLeft, pentaLeftPointTopRight);
           CreateLightning(pentaLeftPointTopRight, pentaLeftPointBottom);
 
-          // Zentrum - Top Lange
-          CreateLightning(centerPoint, centerTopPoint);
-
           // Top Lane
           CreateLightning(pentaTopPointBottom, pentaTopPointTopLeft);
           CreateLightning(pentaTopPointTopLeft, pentaTopPointRight);
           CreateLightning(pentaTopPointRight, pentaTopPointLeft);
           CreateLightning(pentaTopPointLeft, pentaTopPointTopRight);
           CreateLightning(pentaTopPointTopRight, pentaTopPointBottom);
+
+          // Right Lane
+          CreateLightning(pentaRightPointBottom, pentaRightPointTopLeft);
+          CreateLightning(pentaRightPointTopLeft, pentaRightPointRight);
+          CreateLightning(pentaRightPointRight, pentaRightPointLeft);
+          CreateLightning(pentaRightPointLeft, pentaRightPointTopRight);
+          CreateLightning(pentaRightPointTopRight, pentaRightPointBottom);
 
           timer1Count++;
           if (timer1Count >= 10)
@@ -130,13 +179,21 @@ namespace Source.Handler.Periodic
         CreateAtDummyAndCastAbilityTimed(player, centerRect, Constants.ABILITY_MAIDS_DES_SCHRECKENS_KLATSCHEN, executions, Constants.ORDER_RAIN_OF_CHAOS, 4.5f);
         CreateAtDummyAndCastAbilityTimed(player, centerRect, Constants.ABILITY_H_LLENMASCHINEN_KLATSCHEN, executions, Constants.ORDER_RAIN_OF_CHAOS, 5f);
 
-        // Left Lange - Weitere Einheiten via Cast hinzurufen
+        // Bottom Lane - Weitere Einheiten via Cast hinzurufen
+        CreateAtDummyAndCastAbilityTimed(player, CenterBottomRect, Constants.ABILITY_H_LLENBESTIEN_KLATSCHEN, executions, Constants.ORDER_RAIN_OF_CHAOS, 4f);
+        CreateAtDummyAndCastAbilityTimed(player, CenterBottomRect, Constants.ABILITY_MAIDS_DES_SCHRECKENS_KLATSCHEN, executions, Constants.ORDER_RAIN_OF_CHAOS, 4.5f);
+
+        // Left Lane - Weitere Einheiten via Cast hinzurufen
         CreateAtDummyAndCastAbilityTimed(player, CenterLeftRect, Constants.ABILITY_H_LLENBESTIEN_KLATSCHEN, executions, Constants.ORDER_RAIN_OF_CHAOS, 4f);
         CreateAtDummyAndCastAbilityTimed(player, CenterLeftRect, Constants.ABILITY_MAIDS_DES_SCHRECKENS_KLATSCHEN, executions, Constants.ORDER_RAIN_OF_CHAOS, 4.5f);
 
-        // Top Lange - Weitere Einheiten via Cast hinzurufen
+        // Top Lane - Weitere Einheiten via Cast hinzurufen
         CreateAtDummyAndCastAbilityTimed(player, CenterTopRect, Constants.ABILITY_H_LLENBESTIEN_KLATSCHEN, executions, Constants.ORDER_RAIN_OF_CHAOS, 4f);
         CreateAtDummyAndCastAbilityTimed(player, CenterTopRect, Constants.ABILITY_MAIDS_DES_SCHRECKENS_KLATSCHEN, executions, Constants.ORDER_RAIN_OF_CHAOS, 4.5f);
+
+        // Right Lane - Weitere Einheiten via Cast hinzurufen
+        CreateAtDummyAndCastAbilityTimed(player, CenterRightRect, Constants.ABILITY_H_LLENBESTIEN_KLATSCHEN, executions, Constants.ORDER_RAIN_OF_CHAOS, 4f);
+        CreateAtDummyAndCastAbilityTimed(player, CenterRightRect, Constants.ABILITY_MAIDS_DES_SCHRECKENS_KLATSCHEN, executions, Constants.ORDER_RAIN_OF_CHAOS, 4.5f);
       }
       catch (Exception ex)
       {
