@@ -34077,8 +34077,8 @@ local InitCSharp = function ()
       "WCSharp.Missiles.HomingMissile",
       "WCSharp.Missiles.MomentumMissile",
       "WCSharp.Missiles.OrbitalMissile",
-      "WCSharp.SaveLoad.Save_1",
       "WCSharp.SaveLoad.SaveLoadedMessage_1",
+      "WCSharp.SaveLoad.Save_1",
       "WCSharp.W3MMD.IW3MmdVar",
       "Areas",
       "Constants",
@@ -34495,10 +34495,6 @@ gg_unit_n010_0281 = nil
 gg_unit_n011_0282 = nil
 gg_unit_n012_0283 = nil
 gg_unit_n01A_0234 = nil
-gg_unit_h000_0261 = nil
-gg_unit_h000_0262 = nil
-gg_unit_h000_0263 = nil
-gg_unit_h000_0264 = nil
 gg_unit_h009_0250 = nil
 gg_unit_n019_0219 = nil
 gg_unit_h000_0220 = nil
@@ -34506,32 +34502,10 @@ gg_unit_h000_0221 = nil
 gg_unit_h000_0222 = nil
 gg_unit_h000_0223 = nil
 gg_unit_h000_0224 = nil
-gg_unit_h000_0225 = nil
-gg_unit_h000_0226 = nil
-gg_unit_h000_0227 = nil
-gg_unit_h000_0228 = nil
-gg_unit_h000_0229 = nil
-gg_unit_h000_0230 = nil
-gg_unit_h000_0231 = nil
-gg_unit_h000_0232 = nil
-gg_unit_h000_0233 = nil
-gg_unit_h000_0255 = nil
-gg_unit_h000_0279 = nil
-gg_unit_h000_0278 = nil
-gg_unit_h000_0277 = nil
-gg_unit_h000_0276 = nil
-gg_unit_h000_0239 = nil
-gg_unit_h000_0240 = nil
-gg_unit_h000_0241 = nil
-gg_unit_h000_0242 = nil
-gg_unit_h000_0243 = nil
-gg_unit_h000_0244 = nil
-gg_unit_h000_0280 = nil
-gg_unit_h000_0259 = nil
-gg_unit_h000_0258 = nil
-gg_unit_h000_0257 = nil
-gg_unit_h000_0256 = nil
-gg_unit_h000_0265 = nil
+gg_unit_h00A_0202 = nil
+gg_unit_h00T_0286 = nil
+gg_unit_h00T_0285 = nil
+gg_unit_h00T_0284 = nil
 gg_unit_n016_0191 = nil
 gg_unit_n017_0192 = nil
 gg_unit_n015_0212 = nil
@@ -34549,10 +34523,12 @@ gg_unit_e001_0245 = nil
 gg_unit_e003_0246 = nil
 gg_unit_e002_0247 = nil
 gg_unit_h00S_0248 = nil
-gg_unit_h00T_0284 = nil
-gg_unit_h00T_0285 = nil
-gg_unit_h00T_0286 = nil
-gg_unit_h00A_0202 = nil
+gg_unit_n00F_0225 = nil
+gg_unit_n00C_0226 = nil
+gg_unit_n00J_0227 = nil
+gg_unit_n00N_0228 = nil
+gg_unit_n00Q_0229 = nil
+gg_unit_n00T_0230 = nil
 gg_dest_HEch_0019 = nil
 gg_dest_HEch_0017 = nil
 gg_dest_HEch_0016 = nil
@@ -39266,38 +39242,38 @@ end
 
 function CreateAllItems()
     local itemID = nil
+    CreateItem(1227894853, 11433.4, -7351.5)
+    CreateItem(1227894853, 11436.3, -7224.2)
+    CreateItem(1227894853, 11439.2, -7088.4)
+    CreateItem(1227894853, 11433.4, -6980.9)
+    CreateItem(1227894853, 10435.7, 14378.7)
+    CreateItem(1227894853, 10316.3, 14383.3)
+    CreateItem(1227894853, 10173.1, 14390.4)
+    CreateItem(1227894853, 10041.7, 14399.7)
+    CreateItem(1227894853, -11445.8, 13515.6)
+    CreateItem(1227894833, -11566.2, -6985.4)
+    CreateItem(1227894833, -11559.0, -7102.3)
+    CreateItem(1227894833, -11556.7, -7237.9)
+    CreateItem(1227894833, -11556.7, -7357.1)
+    CreateItem(1227894853, -11443.4, 13387.0)
+    CreateItem(1227894853, -11448.2, 13265.4)
+    CreateItem(1227894853, -11445.8, 13129.8)
+    CreateItem(1227894853, -10037.9, -8365.8)
+    CreateItem(1227894853, -10169.3, -8365.8)
+    CreateItem(1227894833, 10438.0, -8260.9)
+    CreateItem(1227894833, 10297.1, -8253.9)
+    CreateItem(1227894833, 10184.9, -8251.6)
+    CreateItem(1227894833, 10051.2, -8258.6)
+    CreateItem(1227894833, 11448.1, 13119.0)
+    CreateItem(1227894833, 11445.7, 13231.2)
+    CreateItem(1227894853, -10298.2, -8368.2)
+    CreateItem(1227894853, -10429.5, -8363.5)
     CreateItem(1227894833, -10314.9, 14400.8)
     CreateItem(1227894833, -10186.1, 14397.6)
     CreateItem(1227894833, -10435.6, 14400.8)
     CreateItem(1227894833, -10057.3, 14392.8)
     CreateItem(1227894833, 11436.1, 13495.4)
     CreateItem(1227894833, 11443.3, 13373.8)
-    CreateItem(1227894833, 11445.7, 13231.2)
-    CreateItem(1227894833, 11448.1, 13119.0)
-    CreateItem(1227894833, 10051.2, -8258.6)
-    CreateItem(1227894833, 10184.9, -8251.6)
-    CreateItem(1227894833, 10297.1, -8253.9)
-    CreateItem(1227894833, 10438.0, -8260.9)
-    CreateItem(1227894833, -11556.7, -7357.1)
-    CreateItem(1227894833, -11556.7, -7237.9)
-    CreateItem(1227894833, -11559.0, -7102.3)
-    CreateItem(1227894833, -11566.2, -6985.4)
-    CreateItem(1227894853, -10429.5, -8363.5)
-    CreateItem(1227894853, -10298.2, -8368.2)
-    CreateItem(1227894853, -10169.3, -8365.8)
-    CreateItem(1227894853, -10037.9, -8365.8)
-    CreateItem(1227894853, -11445.8, 13129.8)
-    CreateItem(1227894853, -11448.2, 13265.4)
-    CreateItem(1227894853, -11443.4, 13387.0)
-    CreateItem(1227894853, -11445.8, 13515.6)
-    CreateItem(1227894853, 10041.7, 14399.7)
-    CreateItem(1227894853, 10173.1, 14390.4)
-    CreateItem(1227894853, 10316.3, 14383.3)
-    CreateItem(1227894853, 10435.7, 14378.7)
-    CreateItem(1227894853, 11433.4, -6980.9)
-    CreateItem(1227894853, 11439.2, -7088.4)
-    CreateItem(1227894853, 11436.3, -7224.2)
-    CreateItem(1227894853, 11433.4, -7351.5)
 end
 
 function InitSounds()
@@ -44088,32 +44064,6 @@ function CreateBuildingsForPlayer0()
     gg_unit_h00T_0284 = CreateUnit(p, 1747988564, -10752.0, 13312.0, 270.000)
 end
 
-function CreateUnitsForPlayer0()
-    local p = Player(0)
-    local unitID = nil
-    local t = nil
-    gg_unit_h000_0230 = CreateUnit(p, 1747988528, 17884.1, 16446.1, 270.000)
-    SetUnitState(gg_unit_h000_0230, UNIT_STATE_LIFE, 0.20 * GetUnitState(gg_unit_h000_0230, UNIT_STATE_LIFE))
-    gg_unit_h000_0231 = CreateUnit(p, 1747988528, 17770.5, 16445.0, 270.000)
-    SetUnitState(gg_unit_h000_0231, UNIT_STATE_LIFE, 0.20 * GetUnitState(gg_unit_h000_0231, UNIT_STATE_LIFE))
-    gg_unit_h000_0232 = CreateUnit(p, 1747988528, 17759.4, 16320.6, 270.000)
-    SetUnitState(gg_unit_h000_0232, UNIT_STATE_LIFE, 0.20 * GetUnitState(gg_unit_h000_0232, UNIT_STATE_LIFE))
-    gg_unit_h000_0233 = CreateUnit(p, 1747988528, 17881.9, 16314.1, 270.000)
-    SetUnitState(gg_unit_h000_0233, UNIT_STATE_LIFE, 0.20 * GetUnitState(gg_unit_h000_0233, UNIT_STATE_LIFE))
-    gg_unit_h000_0239 = CreateUnit(p, 1747988528, 17822.9, 16380.0, 270.000)
-    SetUnitState(gg_unit_h000_0239, UNIT_STATE_LIFE, 0.20 * GetUnitState(gg_unit_h000_0239, UNIT_STATE_LIFE))
-    gg_unit_h000_0240 = CreateUnit(p, 1747988528, 17758.3, 16691.2, 270.000)
-    SetUnitState(gg_unit_h000_0240, UNIT_STATE_LIFE, 0.80 * GetUnitState(gg_unit_h000_0240, UNIT_STATE_LIFE))
-    gg_unit_h000_0241 = CreateUnit(p, 1747988528, 17879.9, 16695.6, 270.000)
-    SetUnitState(gg_unit_h000_0241, UNIT_STATE_LIFE, 0.80 * GetUnitState(gg_unit_h000_0241, UNIT_STATE_LIFE))
-    gg_unit_h000_0242 = CreateUnit(p, 1747988528, 17872.5, 16823.3, 270.000)
-    SetUnitState(gg_unit_h000_0242, UNIT_STATE_LIFE, 0.80 * GetUnitState(gg_unit_h000_0242, UNIT_STATE_LIFE))
-    gg_unit_h000_0243 = CreateUnit(p, 1747988528, 17749.4, 16819.0, 270.000)
-    SetUnitState(gg_unit_h000_0243, UNIT_STATE_LIFE, 0.80 * GetUnitState(gg_unit_h000_0243, UNIT_STATE_LIFE))
-    gg_unit_h000_0244 = CreateUnit(p, 1747988528, 17819.1, 16755.1, 270.000)
-    SetUnitState(gg_unit_h000_0244, UNIT_STATE_LIFE, 0.80 * GetUnitState(gg_unit_h000_0244, UNIT_STATE_LIFE))
-end
-
 function CreateBuildingsForPlayer1()
     local p = Player(1)
     local unitID = nil
@@ -44184,37 +44134,6 @@ function CreateBuildingsForPlayer4()
     gg_unit_h004_0180 = CreateUnit(p, 1747988532, 5440.0, 7872.0, 270.000)
     gg_unit_h004_0181 = CreateUnit(p, 1747988532, 4096.0, 7168.0, 270.000)
     gg_unit_h00T_0285 = CreateUnit(p, 1747988564, 10240.0, 13824.0, 270.000)
-end
-
-function CreateUnitsForPlayer4()
-    local p = Player(4)
-    local unitID = nil
-    local t = nil
-    gg_unit_h000_0255 = CreateUnit(p, 1747988528, 15671.7, 16443.3, 270.000)
-    SetUnitState(gg_unit_h000_0255, UNIT_STATE_LIFE, 0.40 * GetUnitState(gg_unit_h000_0255, UNIT_STATE_LIFE))
-    gg_unit_h000_0256 = CreateUnit(p, 1747988528, 15554.8, 16448.7, 270.000)
-    SetUnitState(gg_unit_h000_0256, UNIT_STATE_LIFE, 0.40 * GetUnitState(gg_unit_h000_0256, UNIT_STATE_LIFE))
-    gg_unit_h000_0257 = CreateUnit(p, 1747988528, 15550.3, 16322.2, 270.000)
-    SetUnitState(gg_unit_h000_0257, UNIT_STATE_LIFE, 0.40 * GetUnitState(gg_unit_h000_0257, UNIT_STATE_LIFE))
-    gg_unit_h000_0258 = CreateUnit(p, 1747988528, 15675.0, 16324.4, 270.000)
-    SetUnitState(gg_unit_h000_0258, UNIT_STATE_LIFE, 0.40 * GetUnitState(gg_unit_h000_0258, UNIT_STATE_LIFE))
-    gg_unit_h000_0259 = CreateUnit(p, 1747988528, 15610.4, 16381.1, 270.000)
-    SetUnitState(gg_unit_h000_0259, UNIT_STATE_LIFE, 0.40 * GetUnitState(gg_unit_h000_0259, UNIT_STATE_LIFE))
-    gg_unit_h000_0261 = CreateUnit(p, 1747988528, 16193.6, 16832.5, 270.000)
-    SetUnitState(gg_unit_h000_0261, UNIT_STATE_LIFE, 0.80 * GetUnitState(gg_unit_h000_0261, UNIT_STATE_LIFE))
-    gg_unit_h000_0262 = CreateUnit(p, 1747988528, 16315.1, 16836.9, 270.000)
-    SetUnitState(gg_unit_h000_0262, UNIT_STATE_LIFE, 0.80 * GetUnitState(gg_unit_h000_0262, UNIT_STATE_LIFE))
-    gg_unit_h000_0263 = CreateUnit(p, 1747988528, 16307.7, 16964.6, 270.000)
-    SetUnitState(gg_unit_h000_0263, UNIT_STATE_LIFE, 0.80 * GetUnitState(gg_unit_h000_0263, UNIT_STATE_LIFE))
-    gg_unit_h000_0264 = CreateUnit(p, 1747988528, 16184.7, 16960.3, 270.000)
-    SetUnitState(gg_unit_h000_0264, UNIT_STATE_LIFE, 0.80 * GetUnitState(gg_unit_h000_0264, UNIT_STATE_LIFE))
-    gg_unit_h000_0265 = CreateUnit(p, 1747988528, 16254.4, 16896.4, 270.000)
-    SetUnitState(gg_unit_h000_0265, UNIT_STATE_LIFE, 0.80 * GetUnitState(gg_unit_h000_0265, UNIT_STATE_LIFE))
-    gg_unit_h000_0276 = CreateUnit(p, 1747988528, 15683.1, 17337.6, 270.000)
-    gg_unit_h000_0277 = CreateUnit(p, 1747988528, 15564.5, 17337.6, 270.000)
-    gg_unit_h000_0278 = CreateUnit(p, 1747988528, 15616.4, 17407.3, 270.000)
-    gg_unit_h000_0279 = CreateUnit(p, 1747988528, 15552.7, 17471.1, 270.000)
-    gg_unit_h000_0280 = CreateUnit(p, 1747988528, 15686.1, 17466.8, 270.000)
 end
 
 function CreateBuildingsForPlayer5()
@@ -44351,11 +44270,16 @@ function CreateNeutralHostile()
     local p = Player(PLAYER_NEUTRAL_AGGRESSIVE)
     local unitID = nil
     local t = nil
-    gg_unit_h000_0225 = CreateUnit(p, 1747988528, 14919.9, 16824.2, 270.000)
-    gg_unit_h000_0226 = CreateUnit(p, 1747988528, 14801.3, 16824.2, 270.000)
-    gg_unit_h000_0227 = CreateUnit(p, 1747988528, 14853.2, 16893.9, 270.000)
-    gg_unit_h000_0228 = CreateUnit(p, 1747988528, 14789.4, 16957.7, 270.000)
-    gg_unit_h000_0229 = CreateUnit(p, 1747988528, 14922.8, 16953.4, 270.000)
+    gg_unit_n00F_0225 = CreateUnit(p, 1848651846, 16642.6, 17165.8, 270.000)
+    gg_unit_n00C_0226 = CreateUnit(p, 1848651843, 16382.9, 17155.2, 270.000)
+    gg_unit_n00J_0227 = CreateUnit(p, 1848651850, 16125.1, 17148.9, 270.000)
+    SetUnitState(gg_unit_n00J_0227, UNIT_STATE_MANA, 0)
+    gg_unit_n00N_0228 = CreateUnit(p, 1848651854, 15870.9, 17153.1, 270.000)
+    SetUnitState(gg_unit_n00N_0228, UNIT_STATE_MANA, 0)
+    gg_unit_n00Q_0229 = CreateUnit(p, 1848651857, 15621.3, 17153.1, 270.000)
+    SetUnitState(gg_unit_n00Q_0229, UNIT_STATE_MANA, 0)
+    gg_unit_n00T_0230 = CreateUnit(p, 1848651860, 15369.7, 17148.9, 270.000)
+    SetUnitState(gg_unit_n00T_0230, UNIT_STATE_MANA, 0)
 end
 
 function CreateNeutralPassiveBuildings()
@@ -44491,9 +44415,7 @@ function CreatePlayerBuildings()
 end
 
 function CreatePlayerUnits()
-    CreateUnitsForPlayer0()
     CreateUnitsForPlayer1()
-    CreateUnitsForPlayer4()
 end
 
 function CreateAllUnits()

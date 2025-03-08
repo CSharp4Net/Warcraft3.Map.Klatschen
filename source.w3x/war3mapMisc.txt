@@ -10,12 +10,10 @@ HeroMaxReviveTime=0.0
 HeroReviveLifeFactor=0.25
 HeroReviveManaFactor=0.25
 HeroReviveManaStart=1
-IntManaBonus=
 IntRegenBonus=0.01
 MaxHeroLevel=100
 MaxLevelHeroesDrainExp=0
 StrAttackBonus=3.0
-StrHitPointBonus=
 StrRegenBonus=0.01
 SummonedKillFactor=0.1
 

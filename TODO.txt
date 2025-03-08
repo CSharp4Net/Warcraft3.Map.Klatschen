@@ -13,7 +13,6 @@ Nice to have:
 -------------
 - Neutrale-Lager in den Dreicken zum Erforschen und Assimilieren
 - Arena-Event mit zufälligem Rauskopieren 2er Benutzer-Helden
-- Einheiten-Upgrades auf 5 erhöhen, Belagerungsmaschinen auf 3.
 - Spawn-Einheiten kopieren für andere Teams
 - Gebäude-Einheiten (Türm, MainBuilding, Kaserne) kopieren für andere Teams
 - Beschwörungsgebiete für Boss-Calls
@@ -45,23 +44,23 @@ Feature-List:
 
 Items (aktivierbar):
 --------------------
-- Mana-Trank
+- Ankh der Reinkarnation
+- Manatrank, Manastein
+- Heiltrank, Gesundheitsstein
+- Rolle der Bestie
 - Unsichtbarkeits-Trank
 - Unverwundbarkeits-Trank
 - Glyphe der Opferung (Heldenwechsel)
-- Amulett des Zauberschilds, blockt 1 negativen Zauber (30s Cooldown)
-- Dolch des Entrinnens, Teleportiert den Helden (10s Cooldown)
-- Stab der Stille, verhindert das Zaubern von Einheiten im Gebiet 5 Sekunden (30s Cooldown)
+- Dolch des Entrinnens, Stab der Stille
 
 
 Items (permanent):
 --------------------
-- Feuerkugel
-- Frostwache
-- Knochenglocken der Geisel
-- Kriegstrommeln
-- Schild der Ehre
-- Sobi-Maske
+- Amulett des Zauberschilds, blockt 1 negativen Zauber (30s Cooldown)
+- BLitzkugel, Feuerkugel, Forstkugel
+- Frostwache, Sengklinge
+- Knochenglocken der Geisel, Kriegstrommeln
+- Sobi-Maske, Schild der Ehre
 
 Helden:
 -------

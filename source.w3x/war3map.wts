@@ -12,7 +12,7 @@ STRING 3
 {
 ...
 
-0.9.0.0 by NozzNazz
+0.9.1.1 by NozzNazz
 }
 
 STRING 4
@@ -117,7 +117,7 @@ STRING 65
 {
 ...
 
-0.9.0.0 by NozzNazz
+0.9.1.1 by NozzNazz
 }
 
 STRING 72
@@ -5023,7 +5023,7 @@ Lässt einen riesigen Vulkan aus dem Boden hervorbrechen, der alle <A0VK,DataC10
 }
 
 STRING 1860
-// Items: I002 (Mana-Trunk), Ubertip (Tooltip - Extended)
+// Items: I002 (Manatrank), Ubertip (Tooltip - Extended)
 {
 Stellt <A014,DataA1> Mana wieder her.
 }
@@ -6070,12 +6070,6 @@ STRING 2058
 // Abilities: AKLS (Klingensturm), Tip (Tooltip - Normal)
 {
 Klingensturm [|cffffcc00Stufe 1|r]
-}
-
-STRING 2059
-// Abilities: ASPB (Spiegelbild), Researchubertip (Tooltip - Learn - Extended)
-{
-Verwirrt den Gegner mit Illusionen des Klingenmeisters und bannt jegliche Magie vom Klingenmeister.|n|n|cffffcc00Stufe 1|r - Erschafft <ASPB,DataA1> Illusion.|n|cffffcc00Stufe 2|r - Erschafft <ASPB,DataA2> Illusionen.|n|cffffcc00Stufe 3|r - Erschafft <ASPB,DataA3> Illusionen.
 }
 
 STRING 2060
@@ -8947,15 +8941,9 @@ STRING 2666
 }
 
 STRING 2668
-// Abilities: A014 (Mana-Trunk), EditorSuffix (Editor Suffix)
+// Abilities: A014 (Manatrank), EditorSuffix (Editor Suffix)
 {
 (Item)
-}
-
-STRING 2669
-// Items: I002 (Mana-Trunk), Name (Name)
-{
-Mana-Trunk
 }
 
 STRING 2670
@@ -8982,56 +8970,26 @@ STRING 2675
 (Item)
 }
 
-STRING 2677
-// Abilities: A014 (Mana-Trunk), Name (Name)
-{
-Mana-Trunk
-}
-
-STRING 2678
-// Items: I005 (Gott-Trunk), Name (Name)
-{
-Gott-Trunk
-}
-
 STRING 2679
-// Items: I005 (Gott-Trunk), Ubertip (Tooltip - Extended)
+// Items: I005 (Unverwundbarkeitstrank), Ubertip (Tooltip - Extended)
 {
 Macht den Helden für <A01A,Dur1> Sek. unverwundbar. Ein unverwundbarer Held kann nicht als Ziel für Fähigkeiten oder Effekte ausgewählt werden.
 }
 
-STRING 2680
-// Items: I007 (Schatten-Trunk), Name (Name)
-{
-Schatten-Trunk
-}
-
 STRING 2681
-// Items: I007 (Schatten-Trunk), Ubertip (Tooltip - Extended)
+// Items: I007 (Unsichtbarkeitstrank), Ubertip (Tooltip - Extended)
 {
 |cff87ceebNicht für Kampf, verbrauchbar|r|nMacht den Helden für <A018,Dur1> Sek. unsichtbar. Ein unsichtbarer Held kann bis zur Aufdeckung nicht von gegnerischen Einheiten anvisiert werden. Der Held wird aufgedeckt, wenn er sich bewegt, angreift oder eine Fähigkeit einsetzt.
 }
 
 STRING 2682
-// Abilities: A018 (Schatten-Trunk), EditorSuffix (Editor Suffix)
+// Abilities: A018 (Unsichtbarkeitstrank), EditorSuffix (Editor Suffix)
 {
 (Item)
 }
 
-STRING 2683
-// Abilities: A018 (Schatten-Trunk), Name (Name)
-{
-Schatten-Trunk
-}
-
-STRING 2684
-// Abilities: A01A (Gott-Trunk), Name (Name)
-{
-Gott-Trunk
-}
-
 STRING 2685
-// Abilities: A01A (Gott-Trunk), EditorSuffix (Editor Suffix)
+// Abilities: A01A (Unverwundbarkeitstrank), EditorSuffix (Editor Suffix)
 {
 (Item)
 }
@@ -9916,5 +9874,239 @@ STRING 2863
 // Abilities: ASSG (Schattenschlag), Ubertip (Tooltip - Normal - Extended)
 {
 Wirft einen vergifteten Dolch mit unglaublicher Wucht auf einen Gegner, fügt ihm <ASSG,DataE1> Direktschaden und <ASSG,Dur1> Sek. lang alle <ASSG,Cast1> Sek. <ASSG,DataA1> Schaden zu. Verringert außerdem für kurze Zeit die Bewegungs- und Angriffsgeschwindigkeit des Gegners.
+}
+
+STRING 2864
+// Items: I00G (Blitzkugel), Ubertip (Tooltip - Extended)
+{
+Erhöht den Angriffsschaden eines Helden um <A01S,DataA1>. Die Angriffe des Helden werden außerdem zu Fernkampfangriffen, wenn Lufteinheiten angegriffen werden und verringern die Bewegungsgeschwindigkeit von Gegnern <A01S,Dur1> Sek. lang.|n|cffffcc00Fügt beschworenen Einheiten zusätzlich <A01S,DataC1> Schaden zu.
+}
+
+STRING 2865
+// Abilities: A01R (Frostkugel), Name (Name)
+{
+Frostkugel
+}
+
+STRING 2866
+// Abilities: A01R (Frostkugel), EditorSuffix (Editor Suffix)
+{
+(Item)
+}
+
+STRING 2867
+// Abilities: A01S (Blitzkugel), Name (Name)
+{
+Blitzkugel
+}
+
+STRING 2868
+// Abilities: A01S (Blitzkugel), EditorSuffix (Editor Suffix)
+{
+(Item)
+}
+
+STRING 2869
+// Items: I00F (Frostkugel), Ubertip (Tooltip - Extended)
+{
+Verstärkt die Angriffe eines Helden mit <A01R,DataA1> Kälteschaden. Die Angriffe des Helden werden außerdem zu Fernkampfangriffen, wenn Lufteinheiten angegriffen werden, und verringern <A01R,Dur1> Sek. lang die Bewegungs- und Angriffsgeschwindigkeit des Gegners.
+}
+
+STRING 2874
+// Items: I00H (Heiltrank), Ubertip (Tooltip - Extended)
+{
+Heilt <A01T,DataA1> Trefferpunkte.
+}
+
+STRING 2875
+// Items: I00H (Heiltrank), Name (Name)
+{
+Heiltrank
+}
+
+STRING 2876
+// Abilities: A01T (Heiltrank), Name (Name)
+{
+Heiltrank
+}
+
+STRING 2877
+// Abilities: A01U (Sengklinge-Schaden), Name (Name)
+{
+Sengklinge-Schaden
+}
+
+STRING 2878
+// Abilities: A01U (Sengklinge-Schaden), EditorSuffix (Editor Suffix)
+{
+(Item)
+}
+
+STRING 2879
+// Abilities: A01V (Sengklinge-Kritisch), Name (Name)
+{
+Sengklinge-Kritisch
+}
+
+STRING 2880
+// Abilities: A01V (Sengklinge-Kritisch), EditorSuffix (Editor Suffix)
+{
+(Item)
+}
+
+STRING 2881
+// Items: I00I (Sengklinge), Ubertip (Tooltip - Extended)
+{
+Verstärkt die Angriffe eines Helden mit <A01U,DataA1> Feuerschaden. Die Angriffe des Helden verursachen außerdem Flächenschaden und haben eine Chance von <A01V,DataA1>%, das <A01V,DataB1>-Fache ihres normalen Schadens zu verursachen.
+}
+
+STRING 2882
+// Abilities: A01W (Ankh der Reinkarnation), Name (Name)
+{
+Ankh der Reinkarnation
+}
+
+STRING 2883
+// Abilities: A01W (Ankh der Reinkarnation), EditorSuffix (Editor Suffix)
+{
+(Item)
+}
+
+STRING 2884
+// Items: I00J (Ankh der Reinkarnation), Ubertip (Tooltip - Extended)
+{
+Belebt den Helden mit <A01W,DataB1> Trefferpunkten wieder, wenn er stirbt.
+}
+
+STRING 2885
+// Abilities: A01X (Gesundheitsstein-Heilung), EditorSuffix (Editor Suffix)
+{
+(Item)
+}
+
+STRING 2886
+// Abilities: A01X (Gesundheitsstein-Heilung), Name (Name)
+{
+Gesundheitsstein-Heilung
+}
+
+STRING 2887
+// Abilities: A01Y (Gesundheitsstein-Regeneration), EditorSuffix (Editor Suffix)
+{
+(Item)
+}
+
+STRING 2888
+// Abilities: A01Y (Gesundheitsstein-Regeneration), Name (Name)
+{
+Gesundheitsstein-Regeneration
+}
+
+STRING 2889
+// Items: I00L (Gesundheitsstein), Ubertip (Tooltip - Extended)
+{
+Erhöht die Trefferpunktregeneration des Helden um <A01Y,DataA1> Trefferpunkte pro Sekunde. Stellt bei Verzehr <A01X,DataA1> Trefferpunkte wieder her.
+}
+
+STRING 2890
+// Abilities: A01Z (Manastein-Heilung), Name (Name)
+{
+Manastein-Heilung
+}
+
+STRING 2891
+// Abilities: A01Z (Manastein-Heilung), EditorSuffix (Editor Suffix)
+{
+(Item)
+}
+
+STRING 2892
+// Abilities: A020 (Manastein-Regeneration), Name (Name)
+{
+Manastein-Regeneration
+}
+
+STRING 2893
+// Abilities: A020 (Manastein-Regeneration), EditorSuffix (Editor Suffix)
+{
+(Item)
+}
+
+STRING 2894
+// Items: I00K (Manastein), Ubertip (Tooltip - Extended)
+{
+Erhöht die Manaregeneration des Helden um <A020,DataA1,%>%. Stellt bei Verzehr <A01Z,DataA1> Mana wieder her.
+}
+
+STRING 2895
+// Items: I002 (Manatrank), Name (Name)
+{
+Manatrank
+}
+
+STRING 2896
+// Items: I005 (Unverwundbarkeitstrank), Name (Name)
+{
+Unverwundbarkeitstrank
+}
+
+STRING 2897
+// Abilities: A014 (Manatrank), Name (Name)
+{
+Manatrank
+}
+
+STRING 2898
+// Abilities: A018 (Unsichtbarkeitstrank), Name (Name)
+{
+Unsichtbarkeitstrank
+}
+
+STRING 2899
+// Abilities: A01A (Unverwundbarkeitstrank), Name (Name)
+{
+Unverwundbarkeitstrank
+}
+
+STRING 2900
+// Abilities: A021 (Flammenumhang), Name (Name)
+{
+Flammenumhang
+}
+
+STRING 2901
+// Abilities: A021 (Flammenumhang), EditorSuffix (Editor Suffix)
+{
+(Item)
+}
+
+STRING 2902
+// Abilities: A022 (Rolle der Bestie), EditorSuffix (Editor Suffix)
+{
+(Item)
+}
+
+STRING 2903
+// Abilities: A022 (Rolle der Bestie), Name (Name)
+{
+Rolle der Bestie
+}
+
+STRING 2904
+// Items: I00M (Flammenumhang), Ubertip (Tooltip - Extended)
+{
+Hüllt den Helden in Flammen, die gegnerischen Bodeneinheiten in der Nähe <A021,DataA1> Schaden pro Sekunde zufügen.|nNicht mit Feuerbrand stapelbar.
+}
+
+STRING 2905
+// Items: I00N (Rolle der Bestie), Ubertip (Tooltip - Extended)
+{
+Erhöht den Schaden verbündeter Einheiten in der Nähe <A022,Dur1> Sek. lang um <A022,DataA1,%>%.
+}
+
+STRING 2906
+// Abilities: ASPB (Spiegelbild), Researchubertip (Tooltip - Learn - Extended)
+{
+Verwirrt den Gegner mit Illusionen des Klingenmeisters und bannt jegliche Magie vom Klingenmeister. Der durch die Illusionen verursachte Schaden steigt mit jeder Stufe um 10%.|n|n|cffffcc00Stufe 1|r - Erschafft <ASPB,DataA1> Illusion.|n|cffffcc00Stufe 10|r - Erschafft <ASPB,DataA10> Illusionen.
 }
 
