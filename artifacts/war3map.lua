@@ -19977,6 +19977,8 @@ System.namespace("Source", function (namespace)
     Start = function ()
       System.try(function ()
 
+        SetTimeOfDay(0)
+
 
         class.Humans = SourceModels.Team(Player(0))
         class.Orcs = SourceModels.Team(Player(4))
@@ -20001,7 +20003,7 @@ System.namespace("Source", function (namespace)
 
 
         WCSharpEvents.PeriodicEvents.AddPeriodicEvent(SourceHandlerPeriodic.GoldIncome.OnElapsed, 5)
-        WCSharpEvents.PeriodicEvents.AddPeriodicEvent(SourceHandlerPeriodic.Slapping.OnElapsed, 1800)
+        WCSharpEvents.PeriodicEvents.AddPeriodicEvent(SourceHandlerPeriodic.Slapping.OnElapsed, 900)
 
 
         ConstructHumanBuildingAndTrigger()
@@ -21143,7 +21145,7 @@ System.namespace("Source.Handler.Periodic", function (namespace)
       System.try(function ()
         local weathereffect = AddWeatherEffect(GetPlayableMapRect(), 1380739186)
         local weatherTimer = CreateTimer()
-        TimerStart(weatherTimer, 360, false, function ()
+        TimerStart(weatherTimer, 180, false, function ()
           RemoveWeatherEffect(weathereffect)
           RemoveWeatherEffect(weathereffect)
           weathereffect = nil
@@ -21221,12 +21223,6 @@ System.namespace("Source.Handler.Periodic", function (namespace)
           CreateLightning(pentaCenterPointRight, pentaCenterPointLeft)
           CreateLightning(pentaCenterPointLeft, pentaCenterPointTopRight)
           CreateLightning(pentaCenterPointTopRight, pentaCenterPointBottom)
-
-
-          CreateLightning(centerPoint, centerBottomPoint)
-          CreateLightning(centerPoint, centerLeftPoint)
-          CreateLightning(centerPoint, centerTopPoint)
-          CreateLightning(centerPoint, centerRightPoint)
 
 
           CreateLightning(pentaBottomPointBottom, pentaBottomPointTopLeft)
@@ -34077,8 +34073,8 @@ local InitCSharp = function ()
       "WCSharp.Missiles.HomingMissile",
       "WCSharp.Missiles.MomentumMissile",
       "WCSharp.Missiles.OrbitalMissile",
-      "WCSharp.SaveLoad.SaveLoadedMessage_1",
       "WCSharp.SaveLoad.Save_1",
+      "WCSharp.SaveLoad.SaveLoadedMessage_1",
       "WCSharp.W3MMD.IW3MmdVar",
       "Areas",
       "Constants",
@@ -44266,22 +44262,6 @@ function CreateBuildingsForPlayer15()
     gg_unit_h00D_0210 = CreateUnit(p, 1747988548, 8192.0, -8704.0, 270.000)
 end
 
-function CreateNeutralHostile()
-    local p = Player(PLAYER_NEUTRAL_AGGRESSIVE)
-    local unitID = nil
-    local t = nil
-    gg_unit_n00F_0225 = CreateUnit(p, 1848651846, 16642.6, 17165.8, 270.000)
-    gg_unit_n00C_0226 = CreateUnit(p, 1848651843, 16382.9, 17155.2, 270.000)
-    gg_unit_n00J_0227 = CreateUnit(p, 1848651850, 16125.1, 17148.9, 270.000)
-    SetUnitState(gg_unit_n00J_0227, UNIT_STATE_MANA, 0)
-    gg_unit_n00N_0228 = CreateUnit(p, 1848651854, 15870.9, 17153.1, 270.000)
-    SetUnitState(gg_unit_n00N_0228, UNIT_STATE_MANA, 0)
-    gg_unit_n00Q_0229 = CreateUnit(p, 1848651857, 15621.3, 17153.1, 270.000)
-    SetUnitState(gg_unit_n00Q_0229, UNIT_STATE_MANA, 0)
-    gg_unit_n00T_0230 = CreateUnit(p, 1848651860, 15369.7, 17148.9, 270.000)
-    SetUnitState(gg_unit_n00T_0230, UNIT_STATE_MANA, 0)
-end
-
 function CreateNeutralPassiveBuildings()
     local p = Player(PLAYER_NEUTRAL_PASSIVE)
     local unitID = nil
@@ -44381,6 +44361,16 @@ function CreateNeutralPassive()
     SetUnitState(gg_unit_h000_0223, UNIT_STATE_LIFE, 0.80 * GetUnitState(gg_unit_h000_0223, UNIT_STATE_LIFE))
     gg_unit_h000_0224 = CreateUnit(p, 1747988528, 17148.9, 17912.4, 270.000)
     SetUnitState(gg_unit_h000_0224, UNIT_STATE_LIFE, 0.80 * GetUnitState(gg_unit_h000_0224, UNIT_STATE_LIFE))
+    gg_unit_n00F_0225 = CreateUnit(p, 1848651846, 16642.6, 17165.8, 270.000)
+    gg_unit_n00C_0226 = CreateUnit(p, 1848651843, 16382.9, 17155.2, 270.000)
+    gg_unit_n00J_0227 = CreateUnit(p, 1848651850, 16125.1, 17148.9, 270.000)
+    SetUnitState(gg_unit_n00J_0227, UNIT_STATE_MANA, 0)
+    gg_unit_n00N_0228 = CreateUnit(p, 1848651854, 15870.9, 17153.1, 270.000)
+    SetUnitState(gg_unit_n00N_0228, UNIT_STATE_MANA, 0)
+    gg_unit_n00Q_0229 = CreateUnit(p, 1848651857, 15621.3, 17153.1, 270.000)
+    SetUnitState(gg_unit_n00Q_0229, UNIT_STATE_MANA, 0)
+    gg_unit_n00T_0230 = CreateUnit(p, 1848651860, 15369.7, 17148.9, 270.000)
+    SetUnitState(gg_unit_n00T_0230, UNIT_STATE_MANA, 0)
     gg_unit_n01A_0234 = CreateUnit(p, 1848652097, 16887.6, 17975.1, 270.000)
     gg_unit_H00N_0235 = CreateUnit(p, 1211117646, 17596.7, 17603.8, 270.000)
     gg_unit_H00O_0236 = CreateUnit(p, 1211117647, 17730.4, 17208.9, 270.000)
@@ -44421,7 +44411,6 @@ end
 function CreateAllUnits()
     CreateNeutralPassiveBuildings()
     CreatePlayerBuildings()
-    CreateNeutralHostile()
     CreateNeutralPassive()
     CreatePlayerUnits()
 end

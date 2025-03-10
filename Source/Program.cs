@@ -34,9 +34,9 @@ namespace Source
     internal const int MainBuildingSpawnTime = 30;
 
 #if DEBUG
-    internal const float KlatschenInterval = 15f;
+    internal const float KlatschenInterval = 360f;
 #else
-    internal const float KlatschenInterval = 1800f;
+    internal const float KlatschenInterval = 900f;
 #endif
 
     public static void Main()
@@ -99,6 +99,8 @@ namespace Source
         Delay.EnableDebug();
 #endif
 
+        Blizzard.SetTimeOfDay(0f);
+
         // Teams initialisieren
         Humans = new Team(Common.Player(0));
         Orcs = new Team(Common.Player(4));
@@ -142,8 +144,8 @@ namespace Source
         }
 
 #if DEBUG
-        Common.FogEnable(false);
-        Common.FogMaskEnable(false);
+        //Common.FogEnable(false);
+        //Common.FogMaskEnable(false);
 #endif
 
         var timer = Common.CreateTimer();
@@ -174,7 +176,6 @@ namespace Source
     {
       // Wenn feindliche Einheiten in die Regionen treten, welche von zerstörten Gebäuden freigegeben werden
       Areas.OrcBase.RegisterOnEnter(OrcBase.OnEnter);
-
     }
     private static void RegisterRegionTriggerInElfArea()
     {

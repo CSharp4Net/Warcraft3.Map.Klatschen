@@ -434,25 +434,6 @@ u = BlzCreateUnitWithSkin(p, FourCC("h00A"), 11776.0, -5056.0, 270.000, FourCC("
 u = BlzCreateUnitWithSkin(p, FourCC("h00D"), 8192.0, -8704.0, 270.000, FourCC("h00D"))
 end
 
-function CreateNeutralHostile()
-local p = Player(PLAYER_NEUTRAL_AGGRESSIVE)
-local u
-local unitID
-local t
-local life
-
-u = BlzCreateUnitWithSkin(p, FourCC("n00F"), 16642.6, 17165.8, 270.000, FourCC("n00F"))
-u = BlzCreateUnitWithSkin(p, FourCC("n00C"), 16382.9, 17155.2, 270.000, FourCC("n00C"))
-u = BlzCreateUnitWithSkin(p, FourCC("n00J"), 16125.1, 17148.9, 270.000, FourCC("n00J"))
-SetUnitState(u, UNIT_STATE_MANA, 0)
-u = BlzCreateUnitWithSkin(p, FourCC("n00N"), 15870.9, 17153.1, 270.000, FourCC("n00N"))
-SetUnitState(u, UNIT_STATE_MANA, 0)
-u = BlzCreateUnitWithSkin(p, FourCC("n00Q"), 15621.3, 17153.1, 270.000, FourCC("n00Q"))
-SetUnitState(u, UNIT_STATE_MANA, 0)
-u = BlzCreateUnitWithSkin(p, FourCC("n00T"), 15369.7, 17148.9, 270.000, FourCC("n00T"))
-SetUnitState(u, UNIT_STATE_MANA, 0)
-end
-
 function CreateNeutralPassiveBuildings()
 local p = Player(PLAYER_NEUTRAL_PASSIVE)
 local u
@@ -564,6 +545,16 @@ SetUnitState(u, UNIT_STATE_LIFE, 0.80 * life)
 u = BlzCreateUnitWithSkin(p, FourCC("h000"), 17148.9, 17912.4, 270.000, FourCC("h000"))
 life = GetUnitState(u, UNIT_STATE_LIFE)
 SetUnitState(u, UNIT_STATE_LIFE, 0.80 * life)
+u = BlzCreateUnitWithSkin(p, FourCC("n00F"), 16642.6, 17165.8, 270.000, FourCC("n00F"))
+u = BlzCreateUnitWithSkin(p, FourCC("n00C"), 16382.9, 17155.2, 270.000, FourCC("n00C"))
+u = BlzCreateUnitWithSkin(p, FourCC("n00J"), 16125.1, 17148.9, 270.000, FourCC("n00J"))
+SetUnitState(u, UNIT_STATE_MANA, 0)
+u = BlzCreateUnitWithSkin(p, FourCC("n00N"), 15870.9, 17153.1, 270.000, FourCC("n00N"))
+SetUnitState(u, UNIT_STATE_MANA, 0)
+u = BlzCreateUnitWithSkin(p, FourCC("n00Q"), 15621.3, 17153.1, 270.000, FourCC("n00Q"))
+SetUnitState(u, UNIT_STATE_MANA, 0)
+u = BlzCreateUnitWithSkin(p, FourCC("n00T"), 15369.7, 17148.9, 270.000, FourCC("n00T"))
+SetUnitState(u, UNIT_STATE_MANA, 0)
 u = BlzCreateUnitWithSkin(p, FourCC("n01A"), 16887.6, 17975.1, 270.000, FourCC("n01A"))
 u = BlzCreateUnitWithSkin(p, FourCC("H00N"), 17596.7, 17603.8, 270.000, FourCC("H00N"))
 u = BlzCreateUnitWithSkin(p, FourCC("H00O"), 17730.4, 17208.9, 270.000, FourCC("H00O"))
@@ -604,7 +595,6 @@ end
 function CreateAllUnits()
 CreateNeutralPassiveBuildings()
 CreatePlayerBuildings()
-CreateNeutralHostile()
 CreateNeutralPassive()
 CreatePlayerUnits()
 end

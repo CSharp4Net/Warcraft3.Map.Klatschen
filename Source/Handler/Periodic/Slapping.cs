@@ -125,12 +125,6 @@ namespace Source.Handler.Periodic
           CreateLightning(pentaCenterPointLeft, pentaCenterPointTopRight);
           CreateLightning(pentaCenterPointTopRight, pentaCenterPointBottom);
 
-          // Zentrum - Lanes
-          CreateLightning(centerPoint, centerBottomPoint);
-          CreateLightning(centerPoint, centerLeftPoint);
-          CreateLightning(centerPoint, centerTopPoint);
-          CreateLightning(centerPoint, centerRightPoint);
-
           // Bottom Lane
           CreateLightning(pentaBottomPointBottom, pentaBottomPointTopLeft);
           CreateLightning(pentaBottomPointTopLeft, pentaBottomPointRight);

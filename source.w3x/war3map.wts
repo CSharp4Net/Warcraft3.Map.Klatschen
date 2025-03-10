@@ -12,7 +12,7 @@ STRING 3
 {
 ...
 
-0.9.1.1 by NozzNazz
+0.9.2.0 by NozzNazz
 }
 
 STRING 4
@@ -117,7 +117,7 @@ STRING 65
 {
 ...
 
-0.9.1.1 by NozzNazz
+0.9.2.0 by NozzNazz
 }
 
 STRING 72
@@ -7698,12 +7698,6 @@ STRING 2435
 (Team)
 }
 
-STRING 2436
-// Upgrades: R00B (Eisenrüstung,Stahlrüstung,Mithrilrüstung), effect2 (Effect 2)
-{
-rhpo
-}
-
 STRING 2437
 // Units: h00S (Belagerungsmaschine Stufe 2), Name (Name)
 {
@@ -7986,12 +7980,6 @@ STRING 2495
 M
 }
 
-STRING 2496
-// Upgrades: R00D (Schwarzes Schießpulver,Angereichertes Schießpulver,Magisches Schießpulver), effect2 (Effect 2)
-{
-rhpo
-}
-
 STRING 2497
 // Upgrades: R003 (Schwarzes Schießpulver,Angereichertes Schießpulver,Magisches Schießpulver), Name (Name)
 {
@@ -8206,12 +8194,6 @@ STRING 2544
 // Upgrades: R004 (Leuchtfeuer), EditorSuffix (Editor Suffix)
 {
 (Team)
-}
-
-STRING 2545
-// Upgrades: R00F (Eisenrüstung,Stahlrüstung,Mithrilrüstung), effect2 (Effect 2)
-{
-rhpo
 }
 
 STRING 2546
@@ -10108,5 +10090,29 @@ STRING 2906
 // Abilities: ASPB (Spiegelbild), Researchubertip (Tooltip - Learn - Extended)
 {
 Verwirrt den Gegner mit Illusionen des Klingenmeisters und bannt jegliche Magie vom Klingenmeister. Der durch die Illusionen verursachte Schaden steigt mit jeder Stufe um 10%.|n|n|cffffcc00Stufe 1|r - Erschafft <ASPB,DataA1> Illusion.|n|cffffcc00Stufe 10|r - Erschafft <ASPB,DataA10> Illusionen.
+}
+
+STRING 2907
+// Upgrades: R00B (Eisenrüstung,Stahlrüstung,Mithrilrüstung), effect2 (Effect 2)
+{
+rhpx
+}
+
+STRING 2908
+// Upgrades: R00D (Schwarzes Schießpulver,Angereichertes Schießpulver,Magisches Schießpulver), effect2 (Effect 2)
+{
+rhpx
+}
+
+STRING 2909
+// Upgrades: R00F (Eisenrüstung,Stahlrüstung,Mithrilrüstung), effect2 (Effect 2)
+{
+rhpx
+}
+
+STRING 2910
+// Upgrades: R00G (Verbesserte Baukunst,Hoch entwickelte Baukunst,Magische Baukunst), effect2 (Effect 2)
+{
+rhpx
 }
 
