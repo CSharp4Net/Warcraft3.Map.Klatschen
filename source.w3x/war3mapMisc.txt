@@ -32,7 +32,7 @@ ReviveMaxFactor=0.0
 ReviveMaxTimeFactor=0.0
 ReviveTimeFactor=0.0
 StrAttackBonus=5.0
-StrHitPointBonus=50.0
+StrHitPointBonus=25.0
 StrRegenBonus=0.02
 SummonedKillFactor=0.1
 

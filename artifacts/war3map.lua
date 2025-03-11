@@ -20163,24 +20163,24 @@ System.namespace("Source", function (namespace)
     end
     ConstructOrcBuildingAndTrigger = function ()
       -- Hauptgebäude
-      local building = class.Orcs.Computer:CreateBuilding(1747988531 --[[Constants.UNIT_SCHLOSS_HUMAN]], Areas.OrcBase, 0)
+      local building = class.Orcs.Computer:CreateBuilding(1747988570 --[[Constants.UNIT_FESTUNG_ORC]], Areas.OrcBase, 0)
       building:RegisterOnDies(SourceUnitEvents.MainBuilding.OnDies)
       building:AddSpawnTrigger(Areas.OrcBaseToCenterSpawn, 1 --[[UnitSpawnType.Distance]], 30 --[[Program.MainBuildingSpawnTime]], Areas.ElfBase, System.Array(System.Int32) { 1747988536 --[[Constants.UNIT_MAGIER_STUFE_1_HUMAN]] }):Run(5.5)
       building:AddSpawnTrigger(Areas.OrcBaseToHumanSpawn, 1 --[[UnitSpawnType.Distance]], 30 --[[Program.MainBuildingSpawnTime]], Areas.HumanBase, System.Array(System.Int32) { 1747988536 --[[Constants.UNIT_MAGIER_STUFE_1_HUMAN]] }):Run(5.5)
       building:AddSpawnTrigger(Areas.OrcBaseToUndeadSpawn, 1 --[[UnitSpawnType.Distance]], 30 --[[Program.MainBuildingSpawnTime]], Areas.UndeadBase, System.Array(System.Int32) { 1747988536 --[[Constants.UNIT_MAGIER_STUFE_1_HUMAN]] }):Run(5.5)
 
       -- Kasernen
-      building = class.Orcs.Computer:CreateBuilding(1747988535 --[[Constants.UNIT_KASERNE_HUMAN]], Areas.OrcBarracksToCenter, 0)
+      building = class.Orcs.Computer:CreateBuilding(1747988569 --[[Constants.UNIT_KASERNE_ORC]], Areas.OrcBarracksToCenter, 0)
       building:RegisterOnDies(SourceHandlerSpecific.BarracksBuilding.OnDies)
       building:AddSpawnTrigger(Areas.OrcBarracksToCenterSpawn, 0 --[[UnitSpawnType.Meelee]], 15 --[[Program.BarracksSpawnTime]], Areas.ElfBase, System.Array(System.Int32) { 1747988529 --[[Constants.UNIT_SOLDAT_STUFE_1_HUMAN]], 1747988529 --[[Constants.UNIT_SOLDAT_STUFE_1_HUMAN]] }):Run(0)
       building:AddSpawnTrigger(Areas.OrcBarracksToCenterSpawn, 1 --[[UnitSpawnType.Distance]], 15 --[[Program.BarracksSpawnTime]], Areas.ElfBase, System.Array(System.Int32) { 1747988530 --[[Constants.UNIT_SCH_TZE_STUFE_1_HUMAN]] }):Run(0.5)
 
-      building = class.Orcs.Computer:CreateBuilding(1747988535 --[[Constants.UNIT_KASERNE_HUMAN]], Areas.OrcBarracksToHuman, 0)
+      building = class.Orcs.Computer:CreateBuilding(1747988569 --[[Constants.UNIT_KASERNE_ORC]], Areas.OrcBarracksToHuman, 0)
       building:RegisterOnDies(SourceHandlerSpecific.BarracksBuilding.OnDies)
       building:AddSpawnTrigger(Areas.OrcBarracksToHumanSpawn, 0 --[[UnitSpawnType.Meelee]], 15 --[[Program.BarracksSpawnTime]], Areas.HumanBase, System.Array(System.Int32) { 1747988529 --[[Constants.UNIT_SOLDAT_STUFE_1_HUMAN]], 1747988529 --[[Constants.UNIT_SOLDAT_STUFE_1_HUMAN]] }):Run(0)
       building:AddSpawnTrigger(Areas.OrcBarracksToHumanSpawn, 1 --[[UnitSpawnType.Distance]], 15 --[[Program.BarracksSpawnTime]], Areas.HumanBase, System.Array(System.Int32) { 1747988530 --[[Constants.UNIT_SCH_TZE_STUFE_1_HUMAN]] }):Run(0.5)
 
-      building = class.Orcs.Computer:CreateBuilding(1747988535 --[[Constants.UNIT_KASERNE_HUMAN]], Areas.OrcBarracksToUndead, 0)
+      building = class.Orcs.Computer:CreateBuilding(1747988569 --[[Constants.UNIT_KASERNE_ORC]], Areas.OrcBarracksToUndead, 0)
       building:RegisterOnDies(SourceHandlerSpecific.BarracksBuilding.OnDies)
       building:AddSpawnTrigger(Areas.OrcBarracksToUndeadSpawn, 0 --[[UnitSpawnType.Meelee]], 15 --[[Program.BarracksSpawnTime]], Areas.UndeadBase, System.Array(System.Int32) { 1747988529 --[[Constants.UNIT_SOLDAT_STUFE_1_HUMAN]], 1747988529 --[[Constants.UNIT_SOLDAT_STUFE_1_HUMAN]] }):Run(0)
       building:AddSpawnTrigger(Areas.OrcBarracksToUndeadSpawn, 1 --[[UnitSpawnType.Distance]], 15 --[[Program.BarracksSpawnTime]], Areas.UndeadBase, System.Array(System.Int32) { 1747988530 --[[Constants.UNIT_SCH_TZE_STUFE_1_HUMAN]] }):Run(0.5)
@@ -20838,7 +20838,7 @@ System.import(function (out)
 end)
 System.namespace("Source.Handler.GenericEvents", function (namespace)
   namespace.class("Research", function (namespace)
-    local OnFinished, GetHumanTechType
+    local OnFinished, GetHumanTechType, GetOrcTechType
     OnFinished = function ()
       System.try(function ()
         local unit = GetResearchingUnit()
@@ -20847,11 +20847,13 @@ System.namespace("Source.Handler.GenericEvents", function (namespace)
 
         local player = GetOwningPlayer(unit)
         local playerId = GetPlayerId(player)
-        local default, spawnCommand = GetHumanTechType(researchedTechId, researchedTechIdCount)
-        local researchType = default
+        local researchType
 
-        local extern, foundUser = Source.Program.Humans:ContainsPlayer(playerId)
-        if extern then
+        local default, foundUser = Source.Program.Humans:ContainsPlayer(playerId)
+        if default then
+          local extern, spawnCommand = GetHumanTechType(researchedTechId, researchedTechIdCount)
+          researchType = extern
+
           Source.Program.Humans:IncreaseTechForAllPlayers(researchedTechId, researchedTechIdCount)
 
           if researchType == 1 --[[ResearchType.AddUnit]] then
@@ -20861,9 +20863,12 @@ System.namespace("Source.Handler.GenericEvents", function (namespace)
             --Program.Humans.Computer.AddSpawnUnit(spawnCommand); // TEST
           end
         else
-          local ref
-          ref, foundUser = Source.Program.Orcs:ContainsPlayer(playerId)
-          if ref then
+          local extern
+          extern, foundUser = Source.Program.Orcs:ContainsPlayer(playerId)
+          if extern then
+            local extern, spawnCommand = GetOrcTechType(researchedTechId, researchedTechIdCount)
+            researchType = extern
+
             Source.Program.Orcs:IncreaseTechForAllPlayers(researchedTechId, researchedTechIdCount)
 
             if researchType == 1 --[[ResearchType.AddUnit]] then
@@ -20873,9 +20878,12 @@ System.namespace("Source.Handler.GenericEvents", function (namespace)
               --Program.Orcs.Computer.AddSpawnUnit(spawnCommand); // TEST
             end
           else
-            local ref
-            ref, foundUser = Source.Program.Elves:ContainsPlayer(playerId)
-            if ref then
+            local extern
+            extern, foundUser = Source.Program.Elves:ContainsPlayer(playerId)
+            if extern then
+              local extern, spawnCommand = GetHumanTechType(researchedTechId, researchedTechIdCount)
+              researchType = extern
+
               Source.Program.Elves:IncreaseTechForAllPlayers(researchedTechId, researchedTechIdCount)
 
               if researchType == 1 --[[ResearchType.AddUnit]] then
@@ -20885,9 +20893,12 @@ System.namespace("Source.Handler.GenericEvents", function (namespace)
                 --Program.Elves.Computer.AddSpawnUnit(spawnCommand); // TEST
               end
             else
-              local ref
-              ref, foundUser = Source.Program.Undeads:ContainsPlayer(playerId)
-              if ref then
+              local extern
+              extern, foundUser = Source.Program.Undeads:ContainsPlayer(playerId)
+              if extern then
+                local extern, spawnCommand = GetHumanTechType(researchedTechId, researchedTechIdCount)
+                researchType = extern
+
                 Source.Program.Undeads:IncreaseTechForAllPlayers(researchedTechId, researchedTechIdCount)
 
                 if researchType == 1 --[[ResearchType.AddUnit]] then
@@ -21009,12 +21020,117 @@ System.namespace("Source.Handler.GenericEvents", function (namespace)
         end
       until 1
     end
+    GetOrcTechType = function (techId, techLevel, spawnCommand)
+      repeat
+        local default = techId
+        if default == 1378889781 --[[Constants.UPGRADE_EINHEIT_SOLDAT_TEAM]] then
+          local extern = SourceModels.SpawnUnitCommand()
+          extern.UnitSpawnType = 0 --[[UnitSpawnType.Meelee]]
+          extern.UnitIdOfBuilding = 1747988569 --[[Constants.UNIT_KASERNE_ORC]]
+          spawnCommand = extern
+
+          repeat
+            local extern = techLevel
+            if extern == 1 then
+              spawnCommand.UnitId = 1747988547 --[[Constants.UNIT_SOLDAT_STUFE_2_HUMAN]]
+              spawnCommand.UnitIdToUpgrade = 1747988529 --[[Constants.UNIT_SOLDAT_STUFE_1_HUMAN]]
+              return 2 --[[ResearchType.UpgradeUnit]], spawnCommand
+            else
+              spawnCommand.UnitId = 1747988546 --[[Constants.UNIT_SOLDAT_STUFE_3_HUMAN]]
+              spawnCommand.UnitIdToUpgrade = 1747988547 --[[Constants.UNIT_SOLDAT_STUFE_2_HUMAN]]
+              return 2 --[[ResearchType.UpgradeUnit]], spawnCommand
+            end
+          until 1
+        elseif default == 1378889785 --[[Constants.UPGRADE_EINHEIT_SCH_TZE_TEAM]] then
+          local extern = SourceModels.SpawnUnitCommand()
+          extern.UnitSpawnType = 1 --[[UnitSpawnType.Distance]]
+          extern.UnitIdOfBuilding = 1747988569 --[[Constants.UNIT_KASERNE_ORC]]
+          extern.UnitId = 1747988550 --[[Constants.UNIT_SCH_TZE_STUFE_2_HUMAN]]
+          extern.UnitIdToUpgrade = 1747988530 --[[Constants.UNIT_SCH_TZE_STUFE_1_HUMAN]]
+          spawnCommand = extern
+
+          repeat
+            local extern = techLevel
+            if extern == 1 then
+              spawnCommand.UnitId = 1747988550 --[[Constants.UNIT_SCH_TZE_STUFE_2_HUMAN]]
+              spawnCommand.UnitIdToUpgrade = 1747988530 --[[Constants.UNIT_SCH_TZE_STUFE_1_HUMAN]]
+              return 2 --[[ResearchType.UpgradeUnit]], spawnCommand
+            else
+              spawnCommand.UnitId = 1747988551 --[[Constants.UNIT_SCH_TZE_STUFE_3_HUMAN]]
+              spawnCommand.UnitIdToUpgrade = 1747988550 --[[Constants.UNIT_SCH_TZE_STUFE_2_HUMAN]]
+              return 2 --[[ResearchType.UpgradeUnit]], spawnCommand
+            end
+          until 1
+        elseif default == 1378889795 --[[Constants.UPGRADE_EINHEIT_REITER_TEAM]] then
+          local extern = SourceModels.SpawnUnitCommand()
+          extern.UnitSpawnType = 1 --[[UnitSpawnType.Distance]]
+          extern.UnitIdOfBuilding = 1747988570 --[[Constants.UNIT_FESTUNG_ORC]]
+          extern.UnitId = 1747988554 --[[Constants.UNIT_REITER_STUFE_1_HUMAN]]
+          spawnCommand = extern
+
+          repeat
+            local extern = techLevel
+            if extern == 1 then
+              spawnCommand.UnitId = 1747988554 --[[Constants.UNIT_REITER_STUFE_1_HUMAN]]
+              return 1 --[[ResearchType.AddUnit]], spawnCommand
+            elseif extern == 2 then
+              spawnCommand.UnitId = 1747988555 --[[Constants.UNIT_REITER_STUFE_2_HUMAN]]
+              spawnCommand.UnitIdToUpgrade = 1747988554 --[[Constants.UNIT_REITER_STUFE_1_HUMAN]]
+              return 2 --[[ResearchType.UpgradeUnit]], spawnCommand
+            else
+              spawnCommand.UnitId = 1747988556 --[[Constants.UNIT_REITER_STUFE_3_HUMAN]]
+              spawnCommand.UnitIdToUpgrade = 1747988555 --[[Constants.UNIT_REITER_STUFE_2_HUMAN]]
+              return 2 --[[ResearchType.UpgradeUnit]], spawnCommand
+            end
+          until 1
+        elseif default == 1378889797 --[[Constants.UPGRADE_EINHEIT_MAGIER_TEAM]] then
+          local extern = SourceModels.SpawnUnitCommand()
+          extern.UnitSpawnType = 1 --[[UnitSpawnType.Distance]]
+          extern.UnitIdOfBuilding = 1747988570 --[[Constants.UNIT_FESTUNG_ORC]]
+          spawnCommand = extern
+
+          repeat
+            local extern = techLevel
+            if extern == 1 then
+              spawnCommand.UnitId = 1747988552 --[[Constants.UNIT_MAGIER_STUFE_2_HUMAN]]
+              spawnCommand.UnitIdToUpgrade = 1747988536 --[[Constants.UNIT_MAGIER_STUFE_1_HUMAN]]
+              return 2 --[[ResearchType.UpgradeUnit]], spawnCommand
+            else
+              spawnCommand.UnitId = 1747988553 --[[Constants.UNIT_MAGIER_STUFE_3_HUMAN]]
+              spawnCommand.UnitIdToUpgrade = 1747988552 --[[Constants.UNIT_MAGIER_STUFE_2_HUMAN]]
+              return 2 --[[ResearchType.UpgradeUnit]], spawnCommand
+            end
+          until 1
+        elseif default == 1378889784 --[[Constants.UPGRADE_EINHEIT_BELAGERUNGSMASCHINE_TEAM]] then
+          local extern = SourceModels.SpawnUnitCommand()
+          extern.UnitSpawnType = 1 --[[UnitSpawnType.Distance]]
+          extern.UnitIdOfBuilding = 1747988570 --[[Constants.UNIT_FESTUNG_ORC]]
+          spawnCommand = extern
+
+          repeat
+            local extern = techLevel
+            if extern == 1 then
+              spawnCommand.UnitId = 1747988549 --[[Constants.UNIT_BELAGERUNGSMASCHINE_STUFE_1_HUMAN]]
+              return 1 --[[ResearchType.AddUnit]], spawnCommand
+            else
+              spawnCommand.UnitId = 1747988549 --[[Constants.UNIT_BELAGERUNGSMASCHINE_STUFE_1_HUMAN]]
+              spawnCommand.UnitIdToUpgrade = 1747988563 --[[Constants.UNIT_BELAGERUNGSMASCHINE_STUFE_2_HUMAN]]
+              return 2 --[[ResearchType.UpgradeUnit]], spawnCommand
+            end
+          until 1
+        else
+          spawnCommand = nil
+          return 0 --[[ResearchType.CommonUpgrade]], spawnCommand
+        end
+      until 1
+    end
     return {
       OnFinished = OnFinished,
       __metadata__ = function (out)
         return {
           methods = {
             { "GetHumanTechType", 0x389, GetHumanTechType, System.Int32, System.Int32, out.Source.Models.SpawnUnitCommand, System.Int32 },
+            { "GetOrcTechType", 0x389, GetOrcTechType, System.Int32, System.Int32, out.Source.Models.SpawnUnitCommand, System.Int32 },
             { "OnFinished", 0xC, OnFinished }
           },
           class = { "Research", 0x3C }
@@ -34393,11 +34509,11 @@ gg_unit_n005_0136 = nil
 gg_unit_h005_0040 = nil
 gg_unit_h005_0055 = nil
 gg_unit_h003_0067 = nil
-gg_unit_h005_0057 = nil
+gg_unit_h00V_0042 = nil
 gg_unit_h007_0068 = nil
 gg_unit_n003_0010 = nil
 gg_unit_h005_0070 = nil
-gg_unit_h005_0056 = nil
+gg_unit_h00V_0041 = nil
 gg_unit_n005_0134 = nil
 gg_unit_h005_0023 = nil
 gg_unit_H00M_0132 = nil
@@ -34414,19 +34530,19 @@ gg_unit_h004_0034 = nil
 gg_unit_h004_0035 = nil
 gg_unit_h004_0036 = nil
 gg_unit_h005_0038 = nil
-gg_unit_h005_0017 = nil
-gg_unit_h005_0037 = nil
-gg_unit_h005_0041 = nil
-gg_unit_h005_0042 = nil
-gg_unit_h00U_0048 = nil
-gg_unit_h005_0045 = nil
+gg_unit_h00V_0048 = nil
+gg_unit_h00V_0049 = nil
+gg_unit_h00V_0141 = nil
+gg_unit_h00V_0142 = nil
+gg_unit_h00V_0043 = nil
+gg_unit_h00V_0140 = nil
 gg_unit_h00U_0231 = nil
 gg_unit_h00D_0008 = nil
 gg_unit_h00A_0028 = nil
 gg_unit_h00D_0029 = nil
 gg_unit_h00A_0030 = nil
 gg_unit_h00D_0051 = nil
-gg_unit_h009_0052 = nil
+gg_unit_h00W_0045 = nil
 gg_unit_h009_0053 = nil
 gg_unit_h005_0054 = nil
 gg_unit_h001_0016 = nil
@@ -34507,9 +34623,9 @@ gg_unit_h00D_0210 = nil
 gg_unit_h00D_0209 = nil
 gg_unit_h005_0138 = nil
 gg_unit_h005_0139 = nil
-gg_unit_h005_0140 = nil
-gg_unit_h005_0141 = nil
-gg_unit_h005_0142 = nil
+gg_unit_h00V_0050 = nil
+gg_unit_h00V_0037 = nil
+gg_unit_h00V_0017 = nil
 gg_unit_h005_0143 = nil
 gg_unit_h004_0144 = nil
 gg_unit_h004_0145 = nil
@@ -34590,7 +34706,7 @@ gg_unit_h000_0223 = nil
 gg_unit_h000_0224 = nil
 gg_unit_h00A_0202 = nil
 gg_unit_h00T_0286 = nil
-gg_unit_h00T_0285 = nil
+gg_unit_h00X_0052 = nil
 gg_unit_h00T_0284 = nil
 gg_unit_n016_0191 = nil
 gg_unit_n017_0192 = nil
@@ -36970,7 +37086,7 @@ gg_dest_LTlt_2351 = nil
 gg_dest_LTlt_2884 = nil
 gg_dest_LTlt_2353 = nil
 gg_dest_LTlt_2354 = nil
-gg_dest_LTlt_2885 = nil
+gg_dest_LTlt_4707 = nil
 gg_dest_LTlt_2356 = nil
 gg_dest_LTlt_2883 = nil
 gg_dest_LTlt_2358 = nil
@@ -39322,7 +39438,10 @@ gg_dest_LTlt_4703 = nil
 gg_dest_LTlt_4704 = nil
 gg_dest_LTlt_4705 = nil
 gg_dest_LTlt_4706 = nil
-gg_dest_LTlt_4707 = nil
+gg_dest_LSwl_2885 = nil
+gg_dest_LSwm_4708 = nil
+gg_dest_LSgr_4709 = nil
+gg_dest_LSba_4710 = nil
 function InitGlobals()
 end
 
@@ -40410,9 +40529,9 @@ function CreateAllDestructables()
     gg_dest_LTlt_0997 = CreateDestructable(1280601204, 7936.0, 14528.0, 270.000, 1.032, 8)
     gg_dest_LTlt_0998 = CreateDestructable(1280601204, 8192.0, 14272.0, 270.000, 0.831, 7)
     gg_dest_LTlt_0999 = CreateDestructable(1280601204, 8128.0, 14400.0, 270.000, 0.811, 6)
-    gg_dest_LTlt_1000 = CreateDestructable(1280601204, 8128.0, 13952.0, 270.000, 1.089, 4)
+    gg_dest_LTlt_1000 = CreateDestructable(1280601204, 8064.0, 14016.0, 270.000, 1.089, 4)
     gg_dest_LTlt_1001 = CreateDestructable(1280601204, 8320.0, 14336.0, 270.000, 0.891, 7)
-    gg_dest_LTlt_1002 = CreateDestructable(1280601204, 8256.0, 13952.0, 270.000, 1.163, 3)
+    gg_dest_LTlt_1002 = CreateDestructable(1280601204, 8448.0, 13888.0, 270.000, 1.163, 3)
     gg_dest_LTlt_1003 = CreateDestructable(1280601204, 8256.0, 14464.0, 270.000, 1.075, 9)
     gg_dest_LTlt_1004 = CreateDestructable(1280601204, 8512.0, 14208.0, 270.000, 0.808, 4)
     gg_dest_LTlt_1005 = CreateDestructable(1280601204, 8448.0, 14336.0, 270.000, 0.933, 7)
@@ -41765,7 +41884,7 @@ function CreateAllDestructables()
     gg_dest_LTlt_2884 = CreateDestructable(1280601204, 9408.0, 11328.0, 270.000, 1.011, 1)
     gg_dest_LTlt_2353 = CreateDestructable(1280601204, -9600.0, -4736.0, 270.000, 0.812, 0)
     gg_dest_LTlt_2354 = CreateDestructable(1280601204, -9216.0, -4800.0, 270.000, 0.877, 1)
-    gg_dest_LTlt_2885 = CreateDestructable(1280601204, 9664.0, 11392.0, 270.000, 1.052, 5)
+    gg_dest_LTlt_4707 = CreateDestructable(1280601204, 12352.0, -5760.0, 270.000, 0.809, 8)
     gg_dest_LTlt_2356 = CreateDestructable(1280601204, -9280.0, -4928.0, 270.000, 0.910, 7)
     gg_dest_LTlt_2883 = CreateDestructable(1280601204, 9664.0, 11520.0, 270.000, 1.119, 5)
     gg_dest_LTlt_2358 = CreateDestructable(1280601204, -1152.0, -6208.0, 270.000, 0.978, 2)
@@ -44117,7 +44236,14 @@ function CreateAllDestructables()
     gg_dest_LTlt_4704 = CreateDestructable(1280601204, 12096.0, -5504.0, 270.000, 0.926, 3)
     gg_dest_LTlt_4705 = CreateDestructable(1280601204, 12288.0, -5632.0, 270.000, 1.031, 8)
     gg_dest_LTlt_4706 = CreateDestructable(1280601204, 12224.0, -5504.0, 270.000, 0.951, 6)
-    gg_dest_LTlt_4707 = CreateDestructable(1280601204, 12352.0, -5760.0, 270.000, 0.809, 8)
+    gg_dest_LSwl_2885 = CreateDestructable(1280538476, -11264.0, 13824.0, 71.000, 1.123, 0)
+    SetDestructableLife(gg_dest_LSwl_2885, 2.55 * GetDestructableLife(gg_dest_LSwl_2885))
+    gg_dest_LSwm_4708 = CreateDestructable(1280538477, -11424.0, 13760.0, 270.000, 1.082, 0)
+    SetDestructableLife(gg_dest_LSwm_4708, 2.55 * GetDestructableLife(gg_dest_LSwm_4708))
+    gg_dest_LSgr_4709 = CreateDestructable(1280534386, -10688.0, 14368.0, 270.000, 0.988, 0)
+    SetDestructableLife(gg_dest_LSgr_4709, 2.55 * GetDestructableLife(gg_dest_LSgr_4709))
+    gg_dest_LSba_4710 = CreateDestructable(1280533089, -9632.0, 14368.0, 90.000, 1.036, 0)
+    SetDestructableLife(gg_dest_LSba_4710, 2.55 * GetDestructableLife(gg_dest_LSba_4710))
 end
 
 function CreateBuildingsForPlayer0()
@@ -44198,28 +44324,28 @@ function CreateBuildingsForPlayer4()
     local unitID = nil
     local t = nil
     gg_unit_h00U_0013 = CreateUnit(p, 1747988565, 4096.0, 7168.0, 270.000)
-    gg_unit_h005_0017 = CreateUnit(p, 1747988533, 8192.0, 13824.0, 270.000)
-    gg_unit_h005_0037 = CreateUnit(p, 1747988533, 8192.0, 12800.0, 270.000)
-    gg_unit_h005_0041 = CreateUnit(p, 1747988533, 9728.0, 11264.0, 270.000)
-    gg_unit_h005_0042 = CreateUnit(p, 1747988533, 10752.0, 11264.0, 270.000)
-    gg_unit_h005_0045 = CreateUnit(p, 1747988533, 10240.0, 9984.0, 270.000)
+    gg_unit_h00V_0017 = CreateUnit(p, 1747988566, 7680.0, 10752.0, 270.000)
+    gg_unit_h00V_0037 = CreateUnit(p, 1747988566, 8384.0, 12096.0, 270.000)
+    gg_unit_h00V_0041 = CreateUnit(p, 1747988566, 9728.0, 13824.0, 270.000)
+    gg_unit_h00V_0042 = CreateUnit(p, 1747988566, 10752.0, 12800.0, 270.000)
+    gg_unit_h00V_0043 = CreateUnit(p, 1747988566, 6912.0, 13312.0, 270.000)
+    gg_unit_h00W_0045 = CreateUnit(p, 1747988567, 10752.0, 13312.0, 270.000)
     gg_unit_h00U_0046 = CreateUnit(p, 1747988565, 2816.0, 13312.0, 270.000)
     gg_unit_h00U_0047 = CreateUnit(p, 1747988565, 4800.0, 8512.0, 270.000)
-    gg_unit_h00U_0048 = CreateUnit(p, 1747988565, 6912.0, 13312.0, 270.000)
-    gg_unit_h009_0052 = CreateUnit(p, 1747988537, 10752.0, 13312.0, 270.000)
-    gg_unit_h005_0056 = CreateUnit(p, 1747988533, 9728.0, 13824.0, 270.000)
-    gg_unit_h005_0057 = CreateUnit(p, 1747988533, 10752.0, 12800.0, 270.000)
+    gg_unit_h00V_0048 = CreateUnit(p, 1747988566, 8192.0, 13824.0, 270.000)
+    gg_unit_h00V_0049 = CreateUnit(p, 1747988566, 8192.0, 12800.0, 270.000)
+    gg_unit_h00V_0050 = CreateUnit(p, 1747988566, 9024.0, 11456.0, 270.000)
+    gg_unit_h00X_0052 = CreateUnit(p, 1747988568, 10240.0, 13824.0, 270.000)
     gg_unit_n005_0134 = CreateUnit(p, 1848651829, 11264.0, 14336.0, 270.000)
-    gg_unit_h005_0140 = CreateUnit(p, 1747988533, 9024.0, 11456.0, 270.000)
-    gg_unit_h005_0141 = CreateUnit(p, 1747988533, 8384.0, 12096.0, 270.000)
-    gg_unit_h005_0142 = CreateUnit(p, 1747988533, 7680.0, 10752.0, 270.000)
+    gg_unit_h00V_0140 = CreateUnit(p, 1747988566, 10240.0, 9984.0, 270.000)
+    gg_unit_h00V_0141 = CreateUnit(p, 1747988566, 9728.0, 11264.0, 270.000)
+    gg_unit_h00V_0142 = CreateUnit(p, 1747988566, 10752.0, 11264.0, 270.000)
     gg_unit_h00U_0179 = CreateUnit(p, 1747988565, 10240.0, 5888.0, 270.000)
     gg_unit_h00U_0180 = CreateUnit(p, 1747988565, 9728.0, 7168.0, 270.000)
     gg_unit_h00U_0181 = CreateUnit(p, 1747988565, 5440.0, 7872.0, 270.000)
     gg_unit_h00U_0231 = CreateUnit(p, 1747988565, 4096.0, 13824.0, 270.000)
     gg_unit_h00U_0232 = CreateUnit(p, 1747988565, 4096.0, 12800.0, 270.000)
     gg_unit_h00U_0233 = CreateUnit(p, 1747988565, 10752.0, 7168.0, 270.000)
-    gg_unit_h00T_0285 = CreateUnit(p, 1747988564, 10240.0, 13824.0, 270.000)
 end
 
 function CreateBuildingsForPlayer5()

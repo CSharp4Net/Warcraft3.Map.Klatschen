@@ -39,7 +39,7 @@ STRING 30
 }
 
 STRING 31
-// Units: h005 (Arkaner Turm), EditorSuffix (Name - Editor Suffix)
+// Units: h005 (Energieturm), EditorSuffix (Name - Editor Suffix)
 {
 (Human)
 }
@@ -253,7 +253,7 @@ Undead 3
 }
 
 STRING 97
-// Units: h009 (Arkanes Gewölbe), EditorSuffix (Name - Editor Suffix)
+// Units: h009 (Tränke und Allerlei), EditorSuffix (Name - Editor Suffix)
 {
 (Human)
 }
@@ -379,7 +379,7 @@ STRING 170
 }
 
 STRING 171
-// Units: h00T (Arkanes Sanktum), EditorSuffix (Name - Editor Suffix)
+// Units: h00T (Waffen und Artefakte), EditorSuffix (Name - Editor Suffix)
 {
 (Human)
 }
@@ -10123,8 +10123,74 @@ STRING 2911
 }
 
 STRING 2912
-// Units: h00V (Arkaner Turm), EditorSuffix (Name - Editor Suffix)
+// Units: h00V (Energieturm), EditorSuffix (Name - Editor Suffix)
 {
 (Orc)
+}
+
+STRING 2913
+// Units: h005 (Energieturm), Name (Name)
+{
+Energieturm
+}
+
+STRING 2914
+// Units: h00V (Energieturm), Name (Name)
+{
+Energieturm
+}
+
+STRING 2915
+// Units: h009 (Tränke und Allerlei), Name (Name)
+{
+Tränke und Allerlei
+}
+
+STRING 2916
+// Units: h00T (Waffen und Artefakte), Name (Name)
+{
+Waffen und Artefakte
+}
+
+STRING 2917
+// Units: h00W (Tränke und Allerlei), EditorSuffix (Name - Editor Suffix)
+{
+(Orc)
+}
+
+STRING 2918
+// Units: h00W (Tränke und Allerlei), Name (Name)
+{
+Tränke und Allerlei
+}
+
+STRING 2919
+// Units: h00X (Waffen und Artefakte), EditorSuffix (Name - Editor Suffix)
+{
+(Orc)
+}
+
+STRING 2920
+// Units: h00X (Waffen und Artefakte), Name (Name)
+{
+Waffen und Artefakte
+}
+
+STRING 2921
+// Units: h00Y (Kaserne), EditorSuffix (Name - Editor Suffix)
+{
+(Orc)
+}
+
+STRING 2922
+// Units: h00Z (Festung), EditorSuffix (Name - Editor Suffix)
+{
+(Orc)
+}
+
+STRING 2923
+// Units: h00Z (Festung), Name (Name)
+{
+Festung
 }
 

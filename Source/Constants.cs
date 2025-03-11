@@ -156,7 +156,7 @@ public static class Constants
 	public const int UNIT_DUMMY = 1848651824;
 	public const int UNIT_SCHLOSS_HUMAN = 1747988531;
 	public const int UNIT_WACHTURM_HUMAN = 1747988532;
-	public const int UNIT_ARKANER_TURM_HUMAN = 1747988533;
+	public const int UNIT_ENERGIETURM_HUMAN = 1747988533;
 	public const int UNIT_KASERNE_HUMAN = 1747988535;
 	public const int UNIT_SOLDAT_STUFE_1_HUMAN = 1747988529;
 	public const int UNIT_SCH_TZE_STUFE_1_HUMAN = 1747988530;
@@ -167,7 +167,7 @@ public static class Constants
 	public const int UNIT_OPFER_TEST = 1747988528;
 	public const int UNIT_T_TER_TEST = 1747988534;
 	public const int UNIT_MAGIER_STUFE_1_HUMAN = 1747988536;
-	public const int UNIT_ARKANES_GEW_LBE_HUMAN = 1747988537;
+	public const int UNIT_TR_NKE_UND_ALLERLEI_HUMAN = 1747988537;
 	public const int UNIT_SOLDAT_STUFE_3_HUMAN = 1747988546;
 	public const int UNIT_SOLDAT_STUFE_2_HUMAN = 1747988547;
 	public const int UNIT_TRAININGSLAGER_HUMAN = 1747988548;
@@ -182,7 +182,7 @@ public static class Constants
 	public const int UNIT_REITER_STUFE_3_HUMAN = 1747988556;
 	public const int UNIT_W_CHTER_HUMAN = 1211117645;
 	public const int UNIT_BELAGERUNGSMASCHINE_STUFE_2_HUMAN = 1747988563;
-	public const int UNIT_ARKANES_SANKTUM_HUMAN = 1747988564;
+	public const int UNIT_WAFFEN_UND_ARTEFAKTE_HUMAN = 1747988564;
 	public const int UNIT_ALCHEMIST_HERO = 1311780913;
 	public const int UNIT_MEERHEXE_HERO = 1311780914;
 	public const int UNIT_T_FTLER_HERO = 1311780919;
@@ -235,7 +235,11 @@ public static class Constants
 	public const int UNIT_H_LLENMASCHINE_KLATSCHEN = 1848651860;
 	public const int UNIT_H_LLENBESTIE_KLATSCHEN = 1848651846;
 	public const int UNIT_WACHTURM_ORC = 1747988565;
-	public const int UNIT_ARKANER_TURM_ORC = 1747988566;
+	public const int UNIT_ENERGIETURM_ORC = 1747988566;
+	public const int UNIT_TR_NKE_UND_ALLERLEI_ORC = 1747988567;
+	public const int UNIT_WAFFEN_UND_ARTEFAKTE_ORC = 1747988568;
+	public const int UNIT_KASERNE_ORC = 1747988569;
+	public const int UNIT_FESTUNG_ORC = 1747988570;
 	public const int UPGRADE_EINHEIT_REITER_TEAM = 1378889795;
 	public const int UPGRADE_UPGRADE_NAHK_MPFER_ANGRIFF_TEAM = 1378889778;
 	public const int UPGRADE_EINHEIT_SCH_TZE_TEAM = 1378889785;
