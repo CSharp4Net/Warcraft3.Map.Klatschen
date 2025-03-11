@@ -18,6 +18,8 @@ Nice to have:
 - Beschwörungsgebiete für Boss-Calls
 - 1-3 Dungeon's für besondere Belohnungen
 
+
+
 Feature-List:
 =============
 - 4 Teams

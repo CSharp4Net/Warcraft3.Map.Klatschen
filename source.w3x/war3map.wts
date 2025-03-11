@@ -10116,3 +10116,15 @@ STRING 2910
 rhpx
 }
 
+STRING 2911
+// Units: h00U (Wachturm), EditorSuffix (Name - Editor Suffix)
+{
+(Orc)
+}
+
+STRING 2912
+// Units: h00V (Arkaner Turm), EditorSuffix (Name - Editor Suffix)
+{
+(Orc)
+}
+

@@ -2,7 +2,6 @@
 AgiDefenseBase=0.0
 AgiDefenseBonus=0.0
 AgiMoveBonus=0.02
-DamageBonusHero=
 Dawn=0.001
 DayLength=900.0
 Dusk=23.0
