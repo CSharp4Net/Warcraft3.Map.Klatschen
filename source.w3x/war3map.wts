@@ -12,7 +12,7 @@ STRING 3
 {
 ...
 
-0.9.2.0 by NozzNazz
+0.9.3.0 by NozzNazz
 }
 
 STRING 4
@@ -117,7 +117,7 @@ STRING 65
 {
 ...
 
-0.9.2.0 by NozzNazz
+0.9.3.0 by NozzNazz
 }
 
 STRING 72
@@ -10210,5 +10210,71 @@ STRING 2926
 // Units: h011 (Energieturm), Name (Name)
 {
 Energieturm
+}
+
+STRING 2927
+// Units: h012 (Tränke und Allerlei), EditorSuffix (Name - Editor Suffix)
+{
+(Elf)
+}
+
+STRING 2928
+// Units: h012 (Tränke und Allerlei), Name (Name)
+{
+Tränke und Allerlei
+}
+
+STRING 2929
+// Units: h013 (Waffen und Artefakte), EditorSuffix (Name - Editor Suffix)
+{
+(Elf)
+}
+
+STRING 2930
+// Units: h013 (Waffen und Artefakte), Name (Name)
+{
+Waffen und Artefakte
+}
+
+STRING 2931
+// Units: h014 (Kaserne), EditorSuffix (Name - Editor Suffix)
+{
+(Elf)
+}
+
+STRING 2932
+// Units: h015 (Teldrassil), EditorSuffix (Name - Editor Suffix)
+{
+(Elf)
+}
+
+STRING 2933
+// Units: h015 (Teldrassil), Name (Name)
+{
+Teldrassil
+}
+
+STRING 2934
+// Units: h016 (Jägerhalle), EditorSuffix (Name - Editor Suffix)
+{
+(Elf)
+}
+
+STRING 2935
+// Units: h017 (Kriegswerkstatt), EditorSuffix (Name - Editor Suffix)
+{
+(Orc)
+}
+
+STRING 2936
+// Units: h017 (Kriegswerkstatt), Name (Name)
+{
+Kriegswerkstatt
+}
+
+STRING 2937
+// Units: h016 (Jägerhalle), Name (Name)
+{
+Jägerhalle
 }
 
