@@ -33,7 +33,7 @@ public static class Regions
 	public static Rectangle ElfToOrcOuterLine { get; set; } = new Rectangle(-5184f, -2112f, -5056f, -1984f);
 	public static Rectangle ElfToUndeadInnerLine { get; set; } = new Rectangle(-8256f, -7232f, -8128f, -7104f);
 	public static Rectangle ElfToUndeadOuterLine { get; set; } = new Rectangle(-4160f, -7232f, -4032f, -7104f);
-	public static Rectangle HeroSelectorSpawn { get; set; } = new Rectangle(-18496f, 18112f, -18368f, 18240f);
+	public static Rectangle HeroSelectorSpawn { get; set; } = new Rectangle(-18496f, 18368f, -18368f, 18496f);
 	public static Rectangle HumanBarracksToCenter { get; set; } = new Rectangle(-6208f, 9152f, -6080f, 9280f);
 	public static Rectangle HumanBarracksToCenterSpawn { get; set; } = new Rectangle(-6016f, 8704f, -5760f, 9728f);
 	public static Rectangle HumanBarracksToElf { get; set; } = new Rectangle(-10304f, 8000f, -10176f, 8128f);

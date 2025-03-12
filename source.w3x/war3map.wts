@@ -10194,3 +10194,21 @@ STRING 2923
 Festung
 }
 
+STRING 2924
+// Units: h010 (Wachturm), EditorSuffix (Name - Editor Suffix)
+{
+(Elf)
+}
+
+STRING 2925
+// Units: h011 (Energieturm), EditorSuffix (Name - Editor Suffix)
+{
+(Elf)
+}
+
+STRING 2926
+// Units: h011 (Energieturm), Name (Name)
+{
+Energieturm
+}
+

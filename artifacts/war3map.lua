@@ -20346,7 +20346,7 @@ System.namespace("", function (namespace)
       this.ElfToOrcOuterLine = System.new(WCSharpSharedData.Rectangle, 2, -5184, -2112, -5056, -1984)
       this.ElfToUndeadInnerLine = System.new(WCSharpSharedData.Rectangle, 2, -8256, -7232, -8128, -7104)
       this.ElfToUndeadOuterLine = System.new(WCSharpSharedData.Rectangle, 2, -4160, -7232, -4032, -7104)
-      this.HeroSelectorSpawn = System.new(WCSharpSharedData.Rectangle, 2, -18496, 18112, -18368, 18240)
+      this.HeroSelectorSpawn = System.new(WCSharpSharedData.Rectangle, 2, -18496, 18368, -18368, 18496)
       this.HumanBarracksToCenter = System.new(WCSharpSharedData.Rectangle, 2, -6208, 9152, -6080, 9280)
       this.HumanBarracksToCenterSpawn = System.new(WCSharpSharedData.Rectangle, 2, -6016, 8704, -5760, 9728)
       this.HumanBarracksToElf = System.new(WCSharpSharedData.Rectangle, 2, -10304, 8000, -10176, 8128)
@@ -34279,8 +34279,8 @@ local InitCSharp = function ()
       "WCSharp.Missiles.HomingMissile",
       "WCSharp.Missiles.MomentumMissile",
       "WCSharp.Missiles.OrbitalMissile",
-      "WCSharp.SaveLoad.SaveLoadedMessage_1",
       "WCSharp.SaveLoad.Save_1",
+      "WCSharp.SaveLoad.SaveLoadedMessage_1",
       "WCSharp.W3MMD.IW3MmdVar",
       "Areas",
       "Constants",
@@ -34637,21 +34637,21 @@ gg_unit_h005_0162 = nil
 gg_unit_h005_0151 = nil
 gg_unit_h005_0152 = nil
 gg_unit_h005_0150 = nil
-gg_unit_h005_0154 = nil
+gg_unit_h011_0186 = nil
 gg_unit_h005_0155 = nil
 gg_unit_h005_0032 = nil
 gg_unit_h005_0157 = nil
-gg_unit_h005_0153 = nil
+gg_unit_h011_0160 = nil
 gg_unit_h005_0159 = nil
-gg_unit_h005_0160 = nil
+gg_unit_h011_0185 = nil
 gg_unit_h005_0161 = nil
 gg_unit_h005_0156 = nil
-gg_unit_h004_0163 = nil
-gg_unit_h004_0164 = nil
-gg_unit_h004_0165 = nil
-gg_unit_h004_0166 = nil
-gg_unit_h004_0167 = nil
-gg_unit_h004_0168 = nil
+gg_unit_h010_0165 = nil
+gg_unit_h010_0057 = nil
+gg_unit_h010_0056 = nil
+gg_unit_h010_0163 = nil
+gg_unit_n00Q_0229 = nil
+gg_unit_n00N_0228 = nil
 gg_unit_h004_0169 = nil
 gg_unit_h004_0170 = nil
 gg_unit_h004_0171 = nil
@@ -34668,9 +34668,9 @@ gg_unit_n00T_0230 = nil
 gg_unit_h004_0182 = nil
 gg_unit_h004_0183 = nil
 gg_unit_h004_0184 = nil
-gg_unit_h004_0185 = nil
-gg_unit_h004_0186 = nil
-gg_unit_h004_0187 = nil
+gg_unit_h010_0164 = nil
+gg_unit_h010_0187 = nil
+gg_unit_h00U_0013 = nil
 gg_unit_h009_0188 = nil
 gg_unit_h009_0189 = nil
 gg_unit_h009_0133 = nil
@@ -34728,9 +34728,9 @@ gg_unit_h00S_0248 = nil
 gg_unit_n00F_0225 = nil
 gg_unit_n00C_0226 = nil
 gg_unit_n00J_0227 = nil
-gg_unit_n00N_0228 = nil
-gg_unit_n00Q_0229 = nil
-gg_unit_h00U_0013 = nil
+gg_unit_h010_0166 = nil
+gg_unit_h010_0167 = nil
+gg_unit_h010_0168 = nil
 gg_dest_HEch_0019 = nil
 gg_dest_HEch_0017 = nil
 gg_dest_HEch_0016 = nil
@@ -38638,7 +38638,7 @@ gg_dest_LTlt_3903 = nil
 gg_dest_LTlt_3904 = nil
 gg_dest_LTlt_3905 = nil
 gg_dest_LTlt_3906 = nil
-gg_dest_LTlt_3907 = nil
+gg_dest_AOob_4728 = nil
 gg_dest_LTlt_3908 = nil
 gg_dest_LTlt_3909 = nil
 gg_dest_LTlt_3910 = nil
@@ -39442,6 +39442,24 @@ gg_dest_LSwl_2885 = nil
 gg_dest_LSwm_4708 = nil
 gg_dest_LSgr_4709 = nil
 gg_dest_LSba_4710 = nil
+gg_dest_LOcg_4711 = nil
+gg_dest_LOcg_4712 = nil
+gg_dest_NOfg_4713 = nil
+gg_dest_LOct_4714 = nil
+gg_dest_IOob_4715 = nil
+gg_dest_AOsk_4716 = nil
+gg_dest_LOtz_4717 = nil
+gg_dest_LOtz_4718 = nil
+gg_dest_LOtz_4719 = nil
+gg_dest_LOsk_4720 = nil
+gg_dest_LOss_4721 = nil
+gg_dest_AOob_4722 = nil
+gg_dest_AOob_4723 = nil
+gg_dest_AOob_4724 = nil
+gg_dest_AOob_4725 = nil
+gg_dest_AOob_4726 = nil
+gg_dest_AOob_4727 = nil
+gg_dest_AOob_3907 = nil
 function InitGlobals()
 end
 
@@ -43436,7 +43454,8 @@ function CreateAllDestructables()
     gg_dest_LTlt_3904 = CreateDestructable(1280601204, 768.0, 704.0, 270.000, 0.810, 2)
     gg_dest_LTlt_3905 = CreateDestructable(1280601204, 704.0, 896.0, 270.000, 1.070, 1)
     gg_dest_LTlt_3906 = CreateDestructable(1280601204, 704.0, 1344.0, 270.000, 1.089, 0)
-    gg_dest_LTlt_3907 = CreateDestructable(1280601204, 704.0, 1472.0, 270.000, 1.021, 7)
+    gg_dest_AOob_4728 = CreateDestructable(1095724898, -704.0, 1536.0, 244.000, 0.900, 2)
+    SetDestructableLife(gg_dest_AOob_4728, 2.55 * GetDestructableLife(gg_dest_AOob_4728))
     gg_dest_LTlt_3908 = CreateDestructable(1280601204, -448.0, 1088.0, 270.000, 1.100, 8)
     gg_dest_LTlt_3909 = CreateDestructable(1280601204, -704.0, 1088.0, 270.000, 0.861, 3)
     gg_dest_LTlt_3910 = CreateDestructable(1280601204, -768.0, 832.0, 270.000, 1.102, 0)
@@ -44244,6 +44263,40 @@ function CreateAllDestructables()
     SetDestructableLife(gg_dest_LSgr_4709, 2.55 * GetDestructableLife(gg_dest_LSgr_4709))
     gg_dest_LSba_4710 = CreateDestructable(1280533089, -9632.0, 14368.0, 90.000, 1.036, 0)
     SetDestructableLife(gg_dest_LSba_4710, 2.55 * GetDestructableLife(gg_dest_LSba_4710))
+    gg_dest_LOcg_4711 = CreateDestructable(1280271207, 10560.0, 14464.0, 270.000, 1.069, 0)
+    gg_dest_LOcg_4712 = CreateDestructable(1280271207, 10688.0, 14464.0, 270.000, 0.919, 0)
+    gg_dest_NOfg_4713 = CreateDestructable(1313826407, 11392.0, 13824.0, 336.000, 1.044, 0)
+    SetDestructableLife(gg_dest_NOfg_4713, 2.55 * GetDestructableLife(gg_dest_NOfg_4713))
+    gg_dest_LOct_4714 = CreateDestructable(1280271220, 10880.0, 14464.0, 280.000, 0.816, 0)
+    SetDestructableLife(gg_dest_LOct_4714, 2.55 * GetDestructableLife(gg_dest_LOct_4714))
+    gg_dest_IOob_4715 = CreateDestructable(1229942626, -18688.0, 18688.0, 297.000, 0.969, 2)
+    SetDestructableLife(gg_dest_IOob_4715, 2.55 * GetDestructableLife(gg_dest_IOob_4715))
+    gg_dest_AOsk_4716 = CreateDestructable(1095725931, -18688.0, 18560.0, 60.000, 0.970, 0)
+    SetDestructableLife(gg_dest_AOsk_4716, 2.55 * GetDestructableLife(gg_dest_AOsk_4716))
+    gg_dest_LOtz_4717 = CreateDestructable(1280275578, 10750.7, 14332.2, 20.000, 1.171, 0)
+    SetDestructableLife(gg_dest_LOtz_4717, 2.55 * GetDestructableLife(gg_dest_LOtz_4717))
+    gg_dest_LOtz_4718 = CreateDestructable(1280275578, 10500.6, 14329.3, 163.000, 0.888, 1)
+    SetDestructableLife(gg_dest_LOtz_4718, 2.55 * GetDestructableLife(gg_dest_LOtz_4718))
+    gg_dest_LOtz_4719 = CreateDestructable(1280275578, 10629.1, 14333.7, 358.000, 1.154, 0)
+    SetDestructableLife(gg_dest_LOtz_4719, 2.55 * GetDestructableLife(gg_dest_LOtz_4719))
+    gg_dest_LOsk_4720 = CreateDestructable(1280275307, 11456.0, 13632.0, 301.000, 0.846, 3)
+    SetDestructableLife(gg_dest_LOsk_4720, 2.55 * GetDestructableLife(gg_dest_LOsk_4720))
+    gg_dest_LOss_4721 = CreateDestructable(1280275315, 11616.0, 13664.0, 119.000, 1.197, 3)
+    SetDestructableLife(gg_dest_LOss_4721, 2.55 * GetDestructableLife(gg_dest_LOss_4721))
+    gg_dest_AOob_4722 = CreateDestructable(1095724898, 1600.0, 3776.0, 160.000, 1.192, 1)
+    SetDestructableLife(gg_dest_AOob_4722, 2.55 * GetDestructableLife(gg_dest_AOob_4722))
+    gg_dest_AOob_4723 = CreateDestructable(1095724898, 1600.0, 2368.0, 64.000, 0.967, 2)
+    SetDestructableLife(gg_dest_AOob_4723, 2.55 * GetDestructableLife(gg_dest_AOob_4723))
+    gg_dest_AOob_4724 = CreateDestructable(1095724898, 704.0, 4672.0, 148.000, 0.896, 0)
+    SetDestructableLife(gg_dest_AOob_4724, 2.55 * GetDestructableLife(gg_dest_AOob_4724))
+    gg_dest_AOob_4725 = CreateDestructable(1095724898, -640.0, 4736.0, 307.000, 1.050, 0)
+    SetDestructableLife(gg_dest_AOob_4725, 2.55 * GetDestructableLife(gg_dest_AOob_4725))
+    gg_dest_AOob_4726 = CreateDestructable(1095724898, -1536.0, 3776.0, 261.000, 0.979, 2)
+    SetDestructableLife(gg_dest_AOob_4726, 2.55 * GetDestructableLife(gg_dest_AOob_4726))
+    gg_dest_AOob_4727 = CreateDestructable(1095724898, -1536.0, 2368.0, 354.000, 0.929, 0)
+    SetDestructableLife(gg_dest_AOob_4727, 2.55 * GetDestructableLife(gg_dest_AOob_4727))
+    gg_dest_AOob_3907 = CreateDestructable(1095724898, 704.0, 1536.0, 244.000, 0.900, 2)
+    SetDestructableLife(gg_dest_AOob_3907, 2.55 * GetDestructableLife(gg_dest_AOob_3907))
 end
 
 function CreateBuildingsForPlayer0()
@@ -44378,25 +44431,25 @@ function CreateBuildingsForPlayer8()
     local t = nil
     gg_unit_h005_0025 = CreateUnit(p, 1747988533, -9728.0, -7680.0, 270.000)
     gg_unit_h005_0026 = CreateUnit(p, 1747988533, -10752.0, -6656.0, 270.000)
+    gg_unit_h010_0056 = CreateUnit(p, 1747988784, -10240.0, 256.0, 270.000)
+    gg_unit_h010_0057 = CreateUnit(p, 1747988784, -10752.0, -1024.0, 270.000)
     gg_unit_n005_0135 = CreateUnit(p, 1848651829, -11264.0, -8192.0, 270.000)
-    gg_unit_h005_0153 = CreateUnit(p, 1747988533, -8192.0, -6656.0, 270.000)
-    gg_unit_h005_0154 = CreateUnit(p, 1747988533, -8192.0, -7680.0, 270.000)
     gg_unit_h005_0155 = CreateUnit(p, 1747988533, -9024.0, -5312.0, 270.000)
     gg_unit_h005_0156 = CreateUnit(p, 1747988533, -8384.0, -5952.0, 270.000)
     gg_unit_h005_0157 = CreateUnit(p, 1747988533, -10752.0, -5120.0, 270.000)
     gg_unit_h005_0158 = CreateUnit(p, 1747988533, -9728.0, -5120.0, 270.000)
     gg_unit_h005_0159 = CreateUnit(p, 1747988533, -10240.0, -3840.0, 270.000)
-    gg_unit_h005_0160 = CreateUnit(p, 1747988533, -6912.0, -7168.0, 270.000)
+    gg_unit_h011_0160 = CreateUnit(p, 1747988785, -8192.0, -6656.0, 270.000)
     gg_unit_h005_0161 = CreateUnit(p, 1747988533, -7680.0, -4608.0, 270.000)
-    gg_unit_h004_0163 = CreateUnit(p, 1747988532, -10752.0, -1024.0, 270.000)
-    gg_unit_h004_0164 = CreateUnit(p, 1747988532, -9728.0, -1024.0, 270.000)
-    gg_unit_h004_0165 = CreateUnit(p, 1747988532, -10240.0, 256.0, 270.000)
-    gg_unit_h004_0166 = CreateUnit(p, 1747988532, -4096.0, -6656.0, 270.000)
-    gg_unit_h004_0167 = CreateUnit(p, 1747988532, -4096.0, -7680.0, 270.000)
-    gg_unit_h004_0168 = CreateUnit(p, 1747988532, -2816.0, -7168.0, 270.000)
-    gg_unit_h004_0185 = CreateUnit(p, 1747988532, -4800.0, -2368.0, 270.000)
-    gg_unit_h004_0186 = CreateUnit(p, 1747988532, -5440.0, -1728.0, 270.000)
-    gg_unit_h004_0187 = CreateUnit(p, 1747988532, -4096.0, -1024.0, 270.000)
+    gg_unit_h010_0163 = CreateUnit(p, 1747988784, -4096.0, -1024.0, 270.000)
+    gg_unit_h010_0164 = CreateUnit(p, 1747988784, -4800.0, -2368.0, 270.000)
+    gg_unit_h010_0165 = CreateUnit(p, 1747988784, -9728.0, -1024.0, 270.000)
+    gg_unit_h010_0166 = CreateUnit(p, 1747988784, -2816.0, -7168.0, 270.000)
+    gg_unit_h010_0167 = CreateUnit(p, 1747988784, -4096.0, -7680.0, 270.000)
+    gg_unit_h010_0168 = CreateUnit(p, 1747988784, -4096.0, -6656.0, 270.000)
+    gg_unit_h011_0185 = CreateUnit(p, 1747988785, -6912.0, -7168.0, 270.000)
+    gg_unit_h011_0186 = CreateUnit(p, 1747988785, -8192.0, -7680.0, 270.000)
+    gg_unit_h010_0187 = CreateUnit(p, 1747988784, -5440.0, -1728.0, 270.000)
     gg_unit_h009_0188 = CreateUnit(p, 1747988537, -11008.0, -7168.0, 270.000)
     gg_unit_h00T_0287 = CreateUnit(p, 1747988564, -10240.0, -7680.0, 270.000)
 end
@@ -44482,7 +44535,7 @@ function CreateNeutralPassiveBuildings()
     local p = Player(PLAYER_NEUTRAL_PASSIVE)
     local unitID = nil
     local t = nil
-    gg_unit_n003_0010 = CreateUnit(p, 1848651827, -18432.0, 18560.0, 270.000)
+    gg_unit_n003_0010 = CreateUnit(p, 1848651827, -18432.0, 18944.0, 270.000)
     gg_unit_h003_0067 = CreateUnit(p, 1747988531, 16768.0, 18688.0, 270.000)
     gg_unit_h007_0068 = CreateUnit(p, 1747988535, 16320.0, 18688.0, 270.000)
     gg_unit_h004_0069 = CreateUnit(p, 1747988532, 15616.0, 18816.0, 270.000)
@@ -44656,7 +44709,7 @@ function CreateRegions()
     gg_rct_ElfToOrcOuterLine = Rect(-5184.0, -2112.0, -5056.0, -1984.0)
     gg_rct_ElfToUndeadInnerLine = Rect(-8256.0, -7232.0, -8128.0, -7104.0)
     gg_rct_ElfToUndeadOuterLine = Rect(-4160.0, -7232.0, -4032.0, -7104.0)
-    gg_rct_HeroSelectorSpawn = Rect(-18496.0, 18112.0, -18368.0, 18240.0)
+    gg_rct_HeroSelectorSpawn = Rect(-18496.0, 18368.0, -18368.0, 18496.0)
     gg_rct_HumanBarracksToCenter = Rect(-6208.0, 9152.0, -6080.0, 9280.0)
     gg_rct_HumanBarracksToCenterSpawn = Rect(-6016.0, 8704.0, -5760.0, 9728.0)
     gg_rct_HumanBarracksToElf = Rect(-10304.0, 8000.0, -10176.0, 8128.0)

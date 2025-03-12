@@ -240,6 +240,8 @@ public static class Constants
 	public const int UNIT_WAFFEN_UND_ARTEFAKTE_ORC = 1747988568;
 	public const int UNIT_KASERNE_ORC = 1747988569;
 	public const int UNIT_FESTUNG_ORC = 1747988570;
+	public const int UNIT_WACHTURM_ELF = 1747988784;
+	public const int UNIT_ENERGIETURM_ELF = 1747988785;
 	public const int UPGRADE_EINHEIT_REITER_TEAM = 1378889795;
 	public const int UPGRADE_UPGRADE_NAHK_MPFER_ANGRIFF_TEAM = 1378889778;
 	public const int UPGRADE_EINHEIT_SCH_TZE_TEAM = 1378889785;
