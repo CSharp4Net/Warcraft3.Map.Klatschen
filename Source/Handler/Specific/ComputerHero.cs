@@ -8,6 +8,9 @@ namespace Source.Handler.Specific
   {
     internal static void OnDies(unit unit)
     {
+      if (unit.Owner.SlotState == playerslotstate.Left) // TODO TEST
+        return;
+
       // Verstorbenen Held nach gegebener Zeit wieder belegen
       timer timer = Common.CreateTimer();
 

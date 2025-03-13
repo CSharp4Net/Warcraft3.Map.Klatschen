@@ -271,55 +271,55 @@ STRING 116
 }
 
 STRING 117
-// Units: h00D (Trainingslager), EditorSuffix (Name - Editor Suffix)
-{
-(Human)
-}
-
-STRING 118
 // Units: h00A (Schmiede), EditorSuffix (Name - Editor Suffix)
 {
 (Human)
 }
 
-STRING 119
+STRING 118
 // Units: h00E (Belagerungsmaschine Stufe 1), EditorSuffix (Name - Editor Suffix)
 {
 (Human)
 }
 
-STRING 120
+STRING 119
 // Units: h00F (Schütze - Stufe 2), EditorSuffix (Name - Editor Suffix)
 {
 (Human)
 }
 
-STRING 122
+STRING 120
 // Units: h00G (Schütze - Stufe 3), EditorSuffix (Name - Editor Suffix)
 {
 (Human)
 }
 
-STRING 123
+STRING 122
 // Units: h00H (Magier - Stufe 2), EditorSuffix (Name - Editor Suffix)
 {
 (Human)
 }
 
-STRING 124
+STRING 123
 // Units: h00I (Magier - Stufe 3), EditorSuffix (Name - Editor Suffix)
 {
 (Human)
 }
 
-STRING 125
+STRING 124
 // Units: h00J (Reiter - Stufe 1), EditorSuffix (Name - Editor Suffix)
 {
 (Human)
 }
 
-STRING 126
+STRING 125
 // Units: h00K (Reiter - Stufe 2), EditorSuffix (Name - Editor Suffix)
+{
+(Human)
+}
+
+STRING 126
+// Units: h00L (Reiter - Stufe 3), EditorSuffix (Name - Editor Suffix)
 {
 (Human)
 }
@@ -361,25 +361,25 @@ S
 }
 
 STRING 168
-// Units: h00L (Reiter - Stufe 3), EditorSuffix (Name - Editor Suffix)
-{
-(Human)
-}
-
-STRING 169
 // Units: H00M (Wächter), EditorSuffix (Name - Editor Suffix)
 {
 (Human)
 }
 
-STRING 170
+STRING 169
 // Units: h00S (Belagerungsmaschine Stufe 2), EditorSuffix (Name - Editor Suffix)
 {
 (Human)
 }
 
-STRING 171
+STRING 170
 // Units: h00T (Waffen und Artefakte), EditorSuffix (Name - Editor Suffix)
+{
+(Human)
+}
+
+STRING 171
+// Units: h019 (Energieturm), EditorSuffix (Name - Editor Suffix)
 {
 (Human)
 }
@@ -10276,5 +10276,59 @@ STRING 2937
 // Units: h016 (Jägerhalle), Name (Name)
 {
 Jägerhalle
+}
+
+STRING 2938
+// Units: h018 (Wachturm), EditorSuffix (Name - Editor Suffix)
+{
+(Undead)
+}
+
+STRING 2939
+// Units: h019 (Energieturm), Name (Name)
+{
+Energieturm
+}
+
+STRING 2940
+// Units: h01A (Schloss), EditorSuffix (Name - Editor Suffix)
+{
+(Human)
+}
+
+STRING 2941
+// Units: h01B (Schmiede), EditorSuffix (Name - Editor Suffix)
+{
+(Human)
+}
+
+STRING 2942
+// Units: h01C (Tränke und Allerlei), EditorSuffix (Name - Editor Suffix)
+{
+(Human)
+}
+
+STRING 2943
+// Units: h01C (Tränke und Allerlei), Name (Name)
+{
+Tränke und Allerlei
+}
+
+STRING 2944
+// Units: h01D (Waffen und Artefakte), EditorSuffix (Name - Editor Suffix)
+{
+(Human)
+}
+
+STRING 2945
+// Units: h01D (Waffen und Artefakte), Name (Name)
+{
+Waffen und Artefakte
+}
+
+STRING 2946
+// Units: h01E (Kaserne), EditorSuffix (Name - Editor Suffix)
+{
+(Human)
 }
 
