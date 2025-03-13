@@ -23,7 +23,7 @@ namespace Source.Abstracts
     /// <summary>
     /// Auflistung aller Einheiten dieses Spielers
     /// </summary>
-    private List<SpawnedUnit> Units { get; init; } = new List<SpawnedUnit>();
+    protected List<SpawnedUnit> Units { get; init; } = new List<SpawnedUnit>();
 
     public bool Defeated { get; private set; }
 
@@ -46,11 +46,6 @@ namespace Source.Abstracts
     /// </summary>
     public virtual void Defeat()
     {
-      for (int i = Units.Count - 1; i >= 0; i--)
-      {
-        Units[i].Kill();
-      }
-
       Blizzard.MeleeDoDefeat(Wc3Player);
 
       Defeated = true;

@@ -439,7 +439,7 @@ namespace Source.Handler.GenericEvents
           spawnCommand = new SpawnUnitCommand()
           {
             UnitSpawnType = Enums.UnitSpawnType.Meelee,
-            UnitIdOfBuilding = Constants.UNIT_KASERNE_HUMAN,
+            UnitIdOfBuilding = Constants.UNIT_GRUFT_UNDEAD,
           };
 
           switch (techLevel)
@@ -459,7 +459,7 @@ namespace Source.Handler.GenericEvents
           spawnCommand = new SpawnUnitCommand()
           {
             UnitSpawnType = Enums.UnitSpawnType.Distance,
-            UnitIdOfBuilding = Constants.UNIT_KASERNE_HUMAN,
+            UnitIdOfBuilding = Constants.UNIT_GRUFT_UNDEAD,
             UnitId = Constants.UNIT_SCH_TZE_STUFE_2_HUMAN,
             UnitIdToUpgrade = Constants.UNIT_SCH_TZE_STUFE_1_HUMAN
           };
@@ -481,7 +481,7 @@ namespace Source.Handler.GenericEvents
           spawnCommand = new SpawnUnitCommand()
           {
             UnitSpawnType = Enums.UnitSpawnType.Distance,
-            UnitIdOfBuilding = Constants.UNIT_SCHLOSS_HUMAN,
+            UnitIdOfBuilding = Constants.UNIT_SCHWARZE_ZITADELLE_UNDEAD,
             UnitId = Constants.UNIT_REITER_STUFE_1_HUMAN
           };
 
@@ -506,7 +506,7 @@ namespace Source.Handler.GenericEvents
           spawnCommand = new SpawnUnitCommand()
           {
             UnitSpawnType = Enums.UnitSpawnType.Distance,
-            UnitIdOfBuilding = Constants.UNIT_SCHLOSS_HUMAN
+            UnitIdOfBuilding = Constants.UNIT_SCHWARZE_ZITADELLE_UNDEAD
           };
 
           switch (techLevel)
@@ -526,7 +526,7 @@ namespace Source.Handler.GenericEvents
           spawnCommand = new SpawnUnitCommand()
           {
             UnitSpawnType = Enums.UnitSpawnType.Distance,
-            UnitIdOfBuilding = Constants.UNIT_SCHLOSS_HUMAN
+            UnitIdOfBuilding = Constants.UNIT_SCHWARZE_ZITADELLE_UNDEAD
           };
 
           switch (techLevel)

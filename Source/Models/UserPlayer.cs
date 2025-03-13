@@ -1,4 +1,5 @@
 ﻿using Source.Abstracts;
+using Source.Handler.GenericEvents;
 using WCSharp.Api;
 
 namespace Source.Models
@@ -41,6 +42,19 @@ namespace Source.Models
 
       ApplyCamera(spawnArea);
       Blizzard.SelectUnitForPlayerSingle(unit, Wc3Player);
+    }
+
+    /// <summary>
+    /// Zerstört und entfernt alle Gebäude und Einheiten des Spielers und setzt diesen auf "Besiegt".
+    /// </summary>
+    public override void Defeat()
+    {
+      for (int i = Units.Count - 1; i >= 0; i--)
+      {
+        Units[i].Kill();
+      }
+
+      base.Defeat();
     }
   }
 }

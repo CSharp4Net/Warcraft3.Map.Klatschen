@@ -67,7 +67,7 @@ namespace Source.Models
     }
 
     /// <summary>
-    /// Zerstört und entfernt alle Gebäude und Einheiten des Spielers und setzt diesen auf "Besiegt".
+    /// Zerstört und entfernt alle Gebäude des Computer-Spielers und setzt diesen auf "Besiegt".
     /// </summary>
     public override void Defeat()
     {
@@ -75,11 +75,10 @@ namespace Source.Models
       for (int i = Buildings.Count - 1; i >= 0; i--) 
       {
         SpawnBuilding building = Buildings[i];
-        //Program.ShowDebugMessage("ComputerPlayer.Defeat", $"Destroy building {building.Wc3Unit.Name}");
-        building.Destroy();
-        //Program.ShowDebugMessage("ComputerPlayer.Defeat", $"Building destroyed.");
-        RemoveBuilding(building);
 
+        building.Destroy();
+
+        RemoveBuilding(building);
       }
 
       base.Defeat();

@@ -12,7 +12,7 @@ STRING 3
 {
 ...
 
-0.9.3.0 by NozzNazz
+0.9.4.0 by NozzNazz
 }
 
 STRING 4
@@ -117,7 +117,7 @@ STRING 65
 {
 ...
 
-0.9.3.0 by NozzNazz
+0.9.4.0 by NozzNazz
 }
 
 STRING 72
@@ -374,12 +374,6 @@ STRING 169
 
 STRING 170
 // Units: h00T (Waffen und Artefakte), EditorSuffix (Name - Editor Suffix)
-{
-(Human)
-}
-
-STRING 171
-// Units: h019 (Energieturm), EditorSuffix (Name - Editor Suffix)
 {
 (Human)
 }
@@ -10195,7 +10189,7 @@ Festung
 }
 
 STRING 2924
-// Units: h010 (Wachturm), EditorSuffix (Name - Editor Suffix)
+// Units: h010 (Wächter), EditorSuffix (Name - Editor Suffix)
 {
 (Elf)
 }
@@ -10279,7 +10273,7 @@ Jägerhalle
 }
 
 STRING 2938
-// Units: h018 (Wachturm), EditorSuffix (Name - Editor Suffix)
+// Units: h018 (Geisterturm), EditorSuffix (Name - Editor Suffix)
 {
 (Undead)
 }
@@ -10290,34 +10284,10 @@ STRING 2939
 Energieturm
 }
 
-STRING 2940
-// Units: h01A (Schloss), EditorSuffix (Name - Editor Suffix)
-{
-(Human)
-}
-
-STRING 2941
-// Units: h01B (Schmiede), EditorSuffix (Name - Editor Suffix)
-{
-(Human)
-}
-
-STRING 2942
-// Units: h01C (Tränke und Allerlei), EditorSuffix (Name - Editor Suffix)
-{
-(Human)
-}
-
 STRING 2943
 // Units: h01C (Tränke und Allerlei), Name (Name)
 {
 Tränke und Allerlei
-}
-
-STRING 2944
-// Units: h01D (Waffen und Artefakte), EditorSuffix (Name - Editor Suffix)
-{
-(Human)
 }
 
 STRING 2945
@@ -10326,9 +10296,69 @@ STRING 2945
 Waffen und Artefakte
 }
 
-STRING 2946
-// Units: h01E (Kaserne), EditorSuffix (Name - Editor Suffix)
+STRING 2947
+// Units: h019 (Energieturm), EditorSuffix (Name - Editor Suffix)
 {
-(Human)
+(Undead)
+}
+
+STRING 2948
+// Units: h01A (Schwarze Zitadelle), EditorSuffix (Name - Editor Suffix)
+{
+(Undead)
+}
+
+STRING 2949
+// Units: h01B (Opfergrube), EditorSuffix (Name - Editor Suffix)
+{
+(Undead)
+}
+
+STRING 2950
+// Units: h01C (Tränke und Allerlei), EditorSuffix (Name - Editor Suffix)
+{
+(Undead)
+}
+
+STRING 2951
+// Units: h01D (Waffen und Artefakte), EditorSuffix (Name - Editor Suffix)
+{
+(Undead)
+}
+
+STRING 2952
+// Units: h01E (Gruft), EditorSuffix (Name - Editor Suffix)
+{
+(Undead)
+}
+
+STRING 2953
+// Units: h010 (Wächter), Name (Name)
+{
+Wächter
+}
+
+STRING 2954
+// Units: h01A (Schwarze Zitadelle), Name (Name)
+{
+Schwarze Zitadelle
+}
+
+STRING 2955
+// Units: h01B (Opfergrube), Name (Name)
+{
+Opfergrube
+}
+
+STRING 2956
+// Units: h01E (Gruft), Name (Name)
+{
+Gruft
+}
+
+STRING 2957
+// Units: h018 (Geisterturm), Name (Name)
+{
+Geisterturm
 }
 

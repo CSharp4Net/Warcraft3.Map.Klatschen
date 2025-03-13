@@ -8,8 +8,29 @@ namespace Source.Handler.Specific
   {
     internal static void OnDies(unit unit)
     {
-      if (unit.Owner.SlotState == playerslotstate.Left) // TODO TEST
-        return;
+      int playerId = unit.Owner.Id;
+
+      // Prüfe vor Wiedergeburt, ob der Computer-Spieler noch unbesiegt ist
+      if (playerId == Program.Humans.Computer.PlayerId)
+      {
+        if (Program.Humans.Computer.Defeated)
+          return;
+      }
+      else if (playerId == Program.Orcs.Computer.PlayerId)
+      {
+        if (Program.Orcs.Computer.Defeated)
+          return;
+      }
+      else if (playerId == Program.Elves.Computer.PlayerId)
+      {
+        if (Program.Elves.Computer.Defeated)
+          return;
+      }
+      else if (playerId == Program.Undeads.Computer.PlayerId)
+      {
+        if (Program.Undeads.Computer.Defeated)
+          return;
+      }
 
       // Verstorbenen Held nach gegebener Zeit wieder belegen
       timer timer = Common.CreateTimer();
@@ -22,6 +43,28 @@ namespace Source.Handler.Specific
           Common.DestroyTimer(timer);
           timer.Dispose();
           timer = null;
+
+          // Prüfe vor Wiedergeburt, ob der Computer-Spieler noch unbesiegt ist
+          if (playerId == Program.Humans.Computer.PlayerId)
+          {
+            if (Program.Humans.Computer.Defeated)
+              return;
+          }
+          else if (playerId == Program.Orcs.Computer.PlayerId)
+          {
+            if (Program.Orcs.Computer.Defeated)
+              return;
+          }
+          else if (playerId == Program.Elves.Computer.PlayerId)
+          {
+            if (Program.Elves.Computer.Defeated)
+              return;
+          }
+          else if (playerId == Program.Undeads.Computer.PlayerId)
+          {
+            if (Program.Undeads.Computer.Defeated)
+              return;
+          }
 
           player owner = unit.Owner;
           Area respawnArea = null;
