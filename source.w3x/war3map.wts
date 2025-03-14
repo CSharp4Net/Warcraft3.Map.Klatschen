@@ -2748,18 +2748,6 @@ STRING 1237
 (Hero spell)
 }
 
-STRING 1239
-// Abilities: A00R (Taschenfabrik), Researchubertip (Tooltip - Learn - Extended)
-{
-Baut eine Fabrik, die automatisch Uhrwerkgoblins herstellt. Diese künstlichen Goblins sind starke Angreifer und explodieren beim Tod, wodurch sie nahen gegnerischen Einheiten Schaden zufügen.|n|n|cffffcc00Stufe 1|r - Die Explosion verursacht <A00T,DataB1> Schaden.|n|cffffcc00Stufe 2|r - Die Explosion verursacht <A00S,DataB1> Schaden.|n|cffffcc00Stufe 3|r - Die Explosion verursacht <A00U,DataB1> Schaden.|nDie Fabrik bleibt <A00R,Dur3> Sek. lang bestehen.
-}
-
-STRING 1240
-// Abilities: A00G (Transmutieren), Researchubertip (Tooltip - Learn - Extended)
-{
-Tötet eine Zieleinheit sofort und wandelt sie in Gold um, das zum Gold des Spielers hinzugefügt wird!|nKann nicht gegen Helden eingesetzt werden.|n|n|cffffcc00Stufe 1|r - Gewährt dem Spieler <A00G,DataA1,%>% des Goldes.|n|cffffcc00Stufe 2|r - Gewährt dem Spieler <A00G,DataA2,%>% des Goldes.|n|cffffcc00Stufe 3|r - Gewährt dem Spieler <A00G,DataA3,%>% des Goldes... usw.
-}
-
 STRING 1242
 // Units: n00L (Feuer - Stufe 1), EditorSuffix (Name - Editor Suffix)
 {
@@ -3136,12 +3124,6 @@ STRING 1319
 // Abilities: A00Z (Sturm, Erde und Feuer), Ubertip (Tooltip - Normal - Extended)
 {
 Teilt den Braumeister in drei spezialisierte Krieger verschiedener Elemente. Wenn mindestens einer bis zum Ende seiner Lebensdauer überlebt, wird der Braumeister wiedergeboren.|nHält <A00Z,HeroDur5> Sek. lang an.
-}
-
-STRING 1320
-// Abilities: A00Z (Sturm, Erde und Feuer), Researchubertip (Tooltip - Learn - Extended)
-{
-Teilt den Braumeister in drei spezialisierte Krieger verschiedener Elemente. Wenn mindestens einer bis zum Ende seiner Lebensdauer überlebt, wird der Braumeister wiedergeboren.|nHält <A00Z,HeroDur1> Sek. lang an.|n|nDie drei Krieger werden mit jeder Stufe stärker.
 }
 
 STRING 1321
@@ -4152,12 +4134,6 @@ STRING 1684
 Erhöht den Angriffsschaden um <A012,DataA5>. Einheiten, die unter dem Einfluss von Schwarzen Pfeilen getötet werden, verwandeln sich in Diener mit <n014,RealHP> Trefferpunkten.
 }
 
-STRING 1685
-// Abilities: A012 (Schwarzer Pfeil), Researchubertip (Tooltip - Learn - Extended)
-{
-Erhöht den Angriffsschaden. Einheiten, die unter dem Einfluss von Schwarzen Pfeilen getötet werden, verwandeln sich in dunkle Diener des Spielers.|n|n|cffffcc00Stufe 1|r - <A012,DataA1> Bonusschaden, Diener mit <n010,RealHP> Trefferpunkten.|n|cffffcc00Stufe 2|r - <A012,DataA2> Bonusschaden, Diener mit <n011,RealHP> Trefferpunkten.|n|cffffcc00Stufe 3|r - <A012,DataA3> Bonusschaden, Diener mit <0012,RealHP> Trefferpunkten.
-}
-
 STRING 1686
 // Abilities: A0A0 (Bezauberung), Researchubertip (Tooltip - Learn - Extended)
 {
@@ -4518,12 +4494,6 @@ STRING 1746
 (Hero 3)
 }
 
-STRING 1747
-// Abilities: A00L (Monsun), Researchubertip (Tooltip - Learn - Extended)
-{
-Ruft einen Blitzsturm herbei, der gegnerischen Einheiten <A00L,DataA1> Schaden zufügt.|nHält <A00L,Dur1> Sek. lang an.|n|nDas Gebiet und der verursachte Schaden werden mit jeder Stufe größer.
-}
-
 STRING 1751
 // Abilities: A00L (Monsun), EditorSuffix (Editor Suffix)
 {
@@ -4852,12 +4822,6 @@ STRING 1813
 // Abilities: A0VK (Vulkan), EditorSuffix (Editor Suffix)
 {
 (Hero 10)
-}
-
-STRING 1814
-// Abilities: A0LB (Lavabrut beschwören), Researchubertip (Tooltip - Learn - Extended)
-{
-Beschwört eine Lavabrut, eine zähe und tödliche Feuerkreatur. Mit ihren Angriffen verzehrt die Lavabrut das Fleisch des Ziels, um ihr eigenes Feuer zu nähren. Sie teilt sich schließlich in zwei gesunde Lavabruten.|n|nBleibt <A0LB,Dur1> Sek. lang bestehen.
 }
 
 STRING 1815
@@ -5370,12 +5334,6 @@ STRING 1919
 Gewährt eine Chance von <A0HE,DataA10>%, bei einem Angriff <A0HE,DataC10> Bonusschaden zu verursachen und den Gegner für <A0HE,Dur10> Sek. zu betäuben.
 }
 
-STRING 1920
-// Abilities: A015 (Avatar), Researchubertip (Tooltip - Learn - Extended)
-{
-Avatar erhöht die Rüstung des Bergkönigs um <A015,DataA1>, seine Trefferpunkte um <A015,DataB1>, seinen Schaden um <A015,DataC1> und gewährt ihm Zauberimmunität.|nHält <A015,Dur1> Sek. lang an.
-}
-
 STRING 1928
 // Abilities: A015 (Avatar), EditorSuffix (Editor Suffix)
 {
@@ -5796,12 +5754,6 @@ STRING 2006
 Schmetterwelle [|cffffcc00Stufe %d|r] erlernen
 }
 
-STRING 2007
-// Abilities: AWEB (Wasserelementar beschwören), Researchubertip (Tooltip - Learn - Extended)
-{
-Beschwört einen Wasserelementar, der die Gegner des Erzmagiers angreift.|nBleibt <AWEB,Dur1> Sek. lang bestehen.|n|n|cffffcc00Kann Boden- und Lufteinheiten angreifen.|r|n|n|cffffcc00Stufe 1|r - <h00P,realHP> Trefferpunkte, <h00P,mindmg1>-<h00P,maxdmg1> Schaden.|n|cffffcc00Stufe 2|r - <h00Q,realHP> Trefferpunkte, <h00Q,mindmg1>-<h00Q,maxdmg1> Schaden.|n|cffffcc00Stufe 3|r - <h00R,realHP> Trefferpunkte, <h00R,mindmg1>-<h00R,maxdmg1> Schaden.
-}
-
 STRING 2012
 // Units: O001 (Schattenjäger), EditorSuffix (Name - Editor Suffix)
 {
@@ -6040,12 +5992,6 @@ STRING 2051
 // Abilities: AKLS (Klingensturm), EditorSuffix (Editor Suffix)
 {
 (Hero 3)
-}
-
-STRING 2052
-// Abilities: AKLS (Klingensturm), Researchubertip (Tooltip - Learn - Extended)
-{
-Entfesselt einen zerstörerischen Klingensturm um den Klingenmeister, der ihn immun gegen Magie macht und nahen gegnerischen Bodeneinheiten <AKLS,DataA1> Schaden pro Sekunde zufügt.
 }
 
 STRING 2056
@@ -6496,12 +6442,6 @@ STRING 2137
 // Units: o004 (Schlangenschutz - Stufe 3), Name (Name)
 {
 Schlangenschutz - Stufe 3
-}
-
-STRING 2139
-// Abilities: ASCS (Schlangenschutz), Researchubertip (Tooltip - Learn - Extended)
-{
-Beschwört einen stationären Schlangenschutz, der die Gegner des Schattenjägers angreift. Der Schutz ist immun gegen Magie.|nBleibt <ASCS,Dur1> Sek. lang bestehen.|n|n|cffffcc00Kann Boden- und Lufteinheiten angreifen.|r|n|n|cffffcc00Stufe 1|r - <o002,realHP> Trefferpunkte, <o002,mindmg1>-<o002,maxdmg1> Schaden.|n|cffffcc00Stufe 2|r - <o003,realHP> Trefferpunkte, <o003,mindmg1>-<o003,maxdmg1> Schaden.|n|cffffcc00Stufe 3|r - <o004,realHP> Trefferpunkte, <o004,mindmg1>-<o004,maxdmg1> Schaden.
 }
 
 STRING 2143
@@ -7222,12 +7162,6 @@ STRING 2265
 // Abilities: A00Q (Naturgewalt), EditorSuffix (Editor Suffix)
 {
 (Hero 3)
-}
-
-STRING 2269
-// Abilities: A00Q (Naturgewalt), Researchubertip (Tooltip - Learn - Extended)
-{
-Verwandelt Bäume und Gegner in einem Gebiet in Treants.|n|n|cffffcc00Können Bodeneinheiten angreifen.|r|n|n|cffffcc00Stufe 1|r - Erweckt <A00Q,DataA1> Treants, die <A00Q,Dur1> Sek. lang bestehen bleiben.|n|cffffcc00Stufe 2|r - Erweckt <A00Q,DataA2> Treants, die <A00Q,Dur2> Sek. lang bestehen bleiben.|n|cffffcc00Stufe 3|r - Erweckt <A00Q,DataA3> Treants, die <A00Q,Dur3> Sek. lang bestehen bleiben.
 }
 
 STRING 2271
@@ -10360,5 +10294,77 @@ STRING 2957
 // Units: h018 (Geisterturm), Name (Name)
 {
 Geisterturm
+}
+
+STRING 2958
+// Abilities: A00G (Transmutieren), Researchubertip (Tooltip - Learn - Extended)
+{
+|cffff0000Ultimative Fähigkeit|r|n|nTötet eine Zieleinheit sofort und wandelt sie in Gold um, das zum Gold des Spielers hinzugefügt wird!|nKann nicht gegen Helden eingesetzt werden.|n|n|cffffcc00Stufe 1|r - Gewährt dem Spieler <A00G,DataA1,%>% des Goldes.|n|cffffcc00Stufe 2|r - Gewährt dem Spieler <A00G,DataA2,%>% des Goldes.|n|cffffcc00Stufe 3|r - Gewährt dem Spieler <A00G,DataA3,%>% des Goldes... usw.
+}
+
+STRING 2959
+// Abilities: A00L (Monsun), Researchubertip (Tooltip - Learn - Extended)
+{
+|cffff0000Ultimative Fähigkeit|r|n|nRuft einen Blitzsturm herbei, der gegnerischen Einheiten <A00L,DataA1> Schaden zufügt.|nHält <A00L,Dur1> Sek. lang an.|n|nDas Gebiet und der verursachte Schaden werden mit jeder Stufe größer.
+}
+
+STRING 2960
+// Abilities: A00R (Taschenfabrik), Researchubertip (Tooltip - Learn - Extended)
+{
+|cffff0000Ultimative Fähigkeit|r|n|nBaut eine Fabrik, die automatisch Uhrwerkgoblins herstellt. Diese künstlichen Goblins sind starke Angreifer und explodieren beim Tod, wodurch sie nahen gegnerischen Einheiten Schaden zufügen.|n|n|cffffcc00Stufe 1|r - Die Explosion verursacht <A00T,DataB1> Schaden.|n|cffffcc00Stufe 2|r - Die Explosion verursacht <A00S,DataB1> Schaden.|n|cffffcc00Stufe 3|r - Die Explosion verursacht <A00U,DataB1> Schaden.|nDie Fabrik bleibt <A00R,Dur3> Sek. lang bestehen.
+}
+
+STRING 2961
+// Abilities: A00Z (Sturm, Erde und Feuer), Researchubertip (Tooltip - Learn - Extended)
+{
+|cffff0000Ultimative Fähigkeit|r|n|nTeilt den Braumeister in drei spezialisierte Krieger verschiedener Elemente. Wenn mindestens einer bis zum Ende seiner Lebensdauer überlebt, wird der Braumeister wiedergeboren.|nHält <A00Z,HeroDur1> Sek. lang an.|n|nDie drei Krieger werden mit jeder Stufe stärker.
+}
+
+STRING 2962
+// Abilities: A012 (Schwarzer Pfeil), Researchubertip (Tooltip - Learn - Extended)
+{
+|cffff0000Ultimative Fähigkeit|r|n|nErhöht den Angriffsschaden. Einheiten, die unter dem Einfluss von Schwarzen Pfeilen getötet werden, verwandeln sich in dunkle Diener des Spielers.|n|n|cffffcc00Stufe 1|r - <A012,DataA1> Bonusschaden, Diener mit <n010,RealHP> Trefferpunkten.|n|cffffcc00Stufe 2|r - <A012,DataA2> Bonusschaden, Diener mit <n011,RealHP> Trefferpunkten.|n|cffffcc00Stufe 3|r - <A012,DataA3> Bonusschaden, Diener mit <n012,RealHP> Trefferpunkten.
+}
+
+STRING 2963
+// Abilities: A0VD (Verdammnis), Researchubertip (Tooltip - Learn - Extended)
+{
+|cffff0000Ultimative Fähigkeit|r|n|nMarkiert eine Zieleinheit für die Manifestation eines Dämons. Die Einheit kann keine Fähigkeiten einsetzen und erleidet <A0VD,DataA1> Schaden pro Sekunde, bis sie stirbt. Nach ihrem Tod steigt ein großer Dämon aus ihrer Leiche empor. |n|nVerdammnis kann nicht gebannt oder beendet werden.
+}
+
+STRING 2964
+// Abilities: A0LB (Lavabrut beschwören), Researchubertip (Tooltip - Learn - Extended)
+{
+|cffff0000Ultimative Fähigkeit|r|n|nBeschwört eine Lavabrut, eine zähe und tödliche Feuerkreatur. Mit ihren Angriffen verzehrt die Lavabrut das Fleisch des Ziels, um ihr eigenes Feuer zu nähren. Sie teilt sich schließlich in zwei gesunde Lavabruten.|n|nBleibt <A0LB,Dur1> Sek. lang bestehen.
+}
+
+STRING 2965
+// Abilities: A015 (Avatar), Researchubertip (Tooltip - Learn - Extended)
+{
+|cffff0000Ultimative Fähigkeit|r|n|nAvatar erhöht die Rüstung des Bergkönigs um <A015,DataA1>, seine Trefferpunkte um <A015,DataB1>, seinen Schaden um <A015,DataC1> und gewährt ihm Zauberimmunität.|nHält <A015,Dur1> Sek. lang an.
+}
+
+STRING 2966
+// Abilities: AWEB (Wasserelementar beschwören), Researchubertip (Tooltip - Learn - Extended)
+{
+|cffff0000Ultimative Fähigkeit|r|n|nBeschwört einen Wasserelementar, der die Gegner des Erzmagiers angreift.|nBleibt <AWEB,Dur1> Sek. lang bestehen.|n|n|cffffcc00Kann Boden- und Lufteinheiten angreifen.|r|n|n|cffffcc00Stufe 1|r - <h00P,realHP> Trefferpunkte, <h00P,mindmg1>-<h00P,maxdmg1> Schaden.|n|cffffcc00Stufe 2|r - <h00Q,realHP> Trefferpunkte, <h00Q,mindmg1>-<h00Q,maxdmg1> Schaden.|n|cffffcc00Stufe 3|r - <h00R,realHP> Trefferpunkte, <h00R,mindmg1>-<h00R,maxdmg1> Schaden.
+}
+
+STRING 2967
+// Abilities: AKLS (Klingensturm), Researchubertip (Tooltip - Learn - Extended)
+{
+|cffff0000Ultimative Fähigkeit|r|n|nEntfesselt einen zerstörerischen Klingensturm um den Klingenmeister, der ihn immun gegen Magie macht und nahen gegnerischen Bodeneinheiten <AKLS,DataA1> Schaden pro Sekunde zufügt.
+}
+
+STRING 2968
+// Abilities: ASCS (Schlangenschutz), Researchubertip (Tooltip - Learn - Extended)
+{
+|cffff0000Ultimative Fähigkeit|r|n|nBeschwört einen stationären Schlangenschutz, der die Gegner des Schattenjägers angreift. Der Schutz ist immun gegen Magie.|nBleibt <ASCS,Dur1> Sek. lang bestehen.|n|n|cffffcc00Kann Boden- und Lufteinheiten angreifen.|r|n|n|cffffcc00Stufe 1|r - <o002,realHP> Trefferpunkte, <o002,mindmg1>-<o002,maxdmg1> Schaden.|n|cffffcc00Stufe 2|r - <o003,realHP> Trefferpunkte, <o003,mindmg1>-<o003,maxdmg1> Schaden.|n|cffffcc00Stufe 3|r - <o004,realHP> Trefferpunkte, <o004,mindmg1>-<o004,maxdmg1> Schaden.
+}
+
+STRING 2969
+// Abilities: A00Q (Naturgewalt), Researchubertip (Tooltip - Learn - Extended)
+{
+|cffff0000Ultimative Fähigkeit|r|n|nVerwandelt Bäume und Gegner in einem Gebiet in Treants.|n|n|cffffcc00Können Bodeneinheiten angreifen.|r|n|n|cffffcc00Stufe 1|r - Erweckt <A00Q,DataA1> Treants, die <A00Q,Dur1> Sek. lang bestehen bleiben.|n|cffffcc00Stufe 2|r - Erweckt <A00Q,DataA2> Treants, die <A00Q,Dur2> Sek. lang bestehen bleiben.|n|cffffcc00Stufe 3|r - Erweckt <A00Q,DataA3> Treants, die <A00Q,Dur3> Sek. lang bestehen bleiben.
 }
 
