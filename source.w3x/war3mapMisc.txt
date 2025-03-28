@@ -4,6 +4,7 @@ AgiDefenseBonus=0.02
 AgiMoveBonus=0.02
 Dawn=0.001
 DayLength=900.0
+DisplayEnemyInventory=0
 Dusk=23.0
 GlobalExperience=0
 GrantHeroXP=100

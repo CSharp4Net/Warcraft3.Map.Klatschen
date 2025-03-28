@@ -147,7 +147,6 @@ namespace Source.Handler.GenericEvents
               return Enums.ResearchType.UpgradeUnit;
           }
 
-
         case Constants.UPGRADE_EINHEIT_MAGIER_TEAM:
           spawnCommand = new SpawnUnitCommand()
           {
@@ -182,8 +181,8 @@ namespace Source.Handler.GenericEvents
               return Enums.ResearchType.AddUnit;
 
             default:
-              spawnCommand.UnitId = Constants.UNIT_BELAGERUNGSMASCHINE_STUFE_1_HUMAN;
-              spawnCommand.UnitIdToUpgrade = Constants.UNIT_BELAGERUNGSMASCHINE_STUFE_2_HUMAN;
+              spawnCommand.UnitId = Constants.UNIT_BELAGERUNGSMASCHINE_STUFE_2_HUMAN;
+              spawnCommand.UnitIdToUpgrade = Constants.UNIT_BELAGERUNGSMASCHINE_STUFE_1_HUMAN;
               return Enums.ResearchType.UpgradeUnit;
           }
 
