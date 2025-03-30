@@ -20142,9 +20142,12 @@ System.namespace("Source", function (namespace)
       -- Hauptgebäude
       local building = class.Humans.Computer:CreateBuilding(1747988531 --[[Constants.UNIT_SCHLOSS_HUMAN]], Areas.HumanBase, 0)
       building:RegisterOnDies(SourceUnitEvents.MainBuilding.OnDies)
-      building:AddSpawnTrigger(Areas.HumanBaseToCenterSpawn, 1 --[[UnitSpawnType.Distance]], 30 --[[Program.MainBuildingSpawnTime]], Areas.UndeadBase, System.Array(System.Int32) { 1747988536 --[[Constants.UNIT_MAGIER_STUFE_1_HUMAN]] }):Run(5.5)
-      building:AddSpawnTrigger(Areas.HumanBaseToElfSpawn, 1 --[[UnitSpawnType.Distance]], 30 --[[Program.MainBuildingSpawnTime]], Areas.ElfBase, System.Array(System.Int32) { 1747988536 --[[Constants.UNIT_MAGIER_STUFE_1_HUMAN]] }):Run(5.5)
-      building:AddSpawnTrigger(Areas.HumanBaseToOrcsSpawn, 1 --[[UnitSpawnType.Distance]], 30 --[[Program.MainBuildingSpawnTime]], Areas.OrcBase, System.Array(System.Int32) { 1747988536 --[[Constants.UNIT_MAGIER_STUFE_1_HUMAN]] }):Run(5.5)
+      building:AddSpawnTrigger(Areas.HumanBaseToCenterSpawn, 1 --[[UnitSpawnType.Distance]], 30 --[[Program.MainBuilding1SpawnTime]], Areas.UndeadBase, System.Array(System.Int32) { 1747988536 --[[Constants.UNIT_MAGIER_STUFE_1_HUMAN]], 1747988554 --[[Constants.UNIT_REITER_STUFE_1_HUMAN]] }):Run(5.5)
+      building:AddSpawnTrigger(Areas.HumanBaseToCenterSpawn, 2 --[[UnitSpawnType.Artillery]], 60 --[[Program.MainBuilding2SpawnTime]], Areas.UndeadBase, System.Array.Empty(System.Int32)):Run(7.5)
+      building:AddSpawnTrigger(Areas.HumanBaseToElfSpawn, 1 --[[UnitSpawnType.Distance]], 30 --[[Program.MainBuilding1SpawnTime]], Areas.ElfBase, System.Array(System.Int32) { 1747988536 --[[Constants.UNIT_MAGIER_STUFE_1_HUMAN]], 1747988554 --[[Constants.UNIT_REITER_STUFE_1_HUMAN]] }):Run(5.5)
+      building:AddSpawnTrigger(Areas.HumanBaseToElfSpawn, 2 --[[UnitSpawnType.Artillery]], 60 --[[Program.MainBuilding2SpawnTime]], Areas.ElfBase, System.Array.Empty(System.Int32)):Run(7.5)
+      building:AddSpawnTrigger(Areas.HumanBaseToOrcsSpawn, 1 --[[UnitSpawnType.Distance]], 30 --[[Program.MainBuilding1SpawnTime]], Areas.OrcBase, System.Array(System.Int32) { 1747988536 --[[Constants.UNIT_MAGIER_STUFE_1_HUMAN]], 1747988554 --[[Constants.UNIT_REITER_STUFE_1_HUMAN]] }):Run(5.5)
+      building:AddSpawnTrigger(Areas.HumanBaseToOrcsSpawn, 2 --[[UnitSpawnType.Artillery]], 60 --[[Program.MainBuilding2SpawnTime]], Areas.OrcBase, System.Array.Empty(System.Int32)):Run(7.5)
 
       -- Kasernen
       building = class.Humans.Computer:CreateBuilding(1747988535 --[[Constants.UNIT_KASERNE_HUMAN]], Areas.HumanBarracksToCenter, 0)
@@ -20166,9 +20169,12 @@ System.namespace("Source", function (namespace)
       -- Hauptgebäude
       local building = class.Orcs.Computer:CreateBuilding(1747988570 --[[Constants.UNIT_FESTUNG_ORC]], Areas.OrcBase, 0)
       building:RegisterOnDies(SourceUnitEvents.MainBuilding.OnDies)
-      building:AddSpawnTrigger(Areas.OrcBaseToCenterSpawn, 1 --[[UnitSpawnType.Distance]], 30 --[[Program.MainBuildingSpawnTime]], Areas.ElfBase, System.Array(System.Int32) { 1747988536 --[[Constants.UNIT_MAGIER_STUFE_1_HUMAN]] }):Run(5.5)
-      building:AddSpawnTrigger(Areas.OrcBaseToHumanSpawn, 1 --[[UnitSpawnType.Distance]], 30 --[[Program.MainBuildingSpawnTime]], Areas.HumanBase, System.Array(System.Int32) { 1747988536 --[[Constants.UNIT_MAGIER_STUFE_1_HUMAN]] }):Run(5.5)
-      building:AddSpawnTrigger(Areas.OrcBaseToUndeadSpawn, 1 --[[UnitSpawnType.Distance]], 30 --[[Program.MainBuildingSpawnTime]], Areas.UndeadBase, System.Array(System.Int32) { 1747988536 --[[Constants.UNIT_MAGIER_STUFE_1_HUMAN]] }):Run(5.5)
+      building:AddSpawnTrigger(Areas.OrcBaseToCenterSpawn, 1 --[[UnitSpawnType.Distance]], 30 --[[Program.MainBuilding1SpawnTime]], Areas.ElfBase, System.Array(System.Int32) { 1747988536 --[[Constants.UNIT_MAGIER_STUFE_1_HUMAN]], 1747988554 --[[Constants.UNIT_REITER_STUFE_1_HUMAN]] }):Run(5.5)
+      building:AddSpawnTrigger(Areas.OrcBaseToCenterSpawn, 2 --[[UnitSpawnType.Artillery]], 60 --[[Program.MainBuilding2SpawnTime]], Areas.ElfBase, System.Array.Empty(System.Int32)):Run(7.5)
+      building:AddSpawnTrigger(Areas.OrcBaseToHumanSpawn, 1 --[[UnitSpawnType.Distance]], 30 --[[Program.MainBuilding1SpawnTime]], Areas.HumanBase, System.Array(System.Int32) { 1747988536 --[[Constants.UNIT_MAGIER_STUFE_1_HUMAN]], 1747988554 --[[Constants.UNIT_REITER_STUFE_1_HUMAN]] }):Run(5.5)
+      building:AddSpawnTrigger(Areas.OrcBaseToHumanSpawn, 2 --[[UnitSpawnType.Artillery]], 60 --[[Program.MainBuilding2SpawnTime]], Areas.HumanBase, System.Array.Empty(System.Int32)):Run(7.5)
+      building:AddSpawnTrigger(Areas.OrcBaseToUndeadSpawn, 1 --[[UnitSpawnType.Distance]], 30 --[[Program.MainBuilding1SpawnTime]], Areas.UndeadBase, System.Array(System.Int32) { 1747988536 --[[Constants.UNIT_MAGIER_STUFE_1_HUMAN]], 1747988554 --[[Constants.UNIT_REITER_STUFE_1_HUMAN]] }):Run(5.5)
+      building:AddSpawnTrigger(Areas.OrcBaseToUndeadSpawn, 2 --[[UnitSpawnType.Artillery]], 60 --[[Program.MainBuilding2SpawnTime]], Areas.UndeadBase, System.Array.Empty(System.Int32)):Run(7.5)
 
       -- Kasernen
       building = class.Orcs.Computer:CreateBuilding(1747988569 --[[Constants.UNIT_KASERNE_ORC]], Areas.OrcBarracksToCenter, 0)
@@ -20190,9 +20196,12 @@ System.namespace("Source", function (namespace)
       -- Hauptgebäude
       local building = class.Elves.Computer:CreateBuilding(1747988789 --[[Constants.UNIT_TELDRASSIL_ELF]], Areas.ElfBase, 0)
       building:RegisterOnDies(SourceUnitEvents.MainBuilding.OnDies)
-      building:AddSpawnTrigger(Areas.ElfBaseToCenterSpawn, 1 --[[UnitSpawnType.Distance]], 30 --[[Program.MainBuildingSpawnTime]], Areas.OrcBase, System.Array(System.Int32) { 1747988536 --[[Constants.UNIT_MAGIER_STUFE_1_HUMAN]] }):Run(5.5)
-      building:AddSpawnTrigger(Areas.ElfBaseToHumanSpawn, 1 --[[UnitSpawnType.Distance]], 30 --[[Program.MainBuildingSpawnTime]], Areas.HumanBase, System.Array(System.Int32) { 1747988536 --[[Constants.UNIT_MAGIER_STUFE_1_HUMAN]] }):Run(5.5)
-      building:AddSpawnTrigger(Areas.ElfBaseToUndeadSpawn, 1 --[[UnitSpawnType.Distance]], 30 --[[Program.MainBuildingSpawnTime]], Areas.UndeadBase, System.Array(System.Int32) { 1747988536 --[[Constants.UNIT_MAGIER_STUFE_1_HUMAN]] }):Run(5.5)
+      building:AddSpawnTrigger(Areas.ElfBaseToCenterSpawn, 1 --[[UnitSpawnType.Distance]], 30 --[[Program.MainBuilding1SpawnTime]], Areas.OrcBase, System.Array(System.Int32) { 1747988536 --[[Constants.UNIT_MAGIER_STUFE_1_HUMAN]], 1747988554 --[[Constants.UNIT_REITER_STUFE_1_HUMAN]] }):Run(5.5)
+      building:AddSpawnTrigger(Areas.ElfBaseToCenterSpawn, 2 --[[UnitSpawnType.Artillery]], 60 --[[Program.MainBuilding2SpawnTime]], Areas.OrcBase, System.Array.Empty(System.Int32)):Run(7.5)
+      building:AddSpawnTrigger(Areas.ElfBaseToHumanSpawn, 1 --[[UnitSpawnType.Distance]], 30 --[[Program.MainBuilding1SpawnTime]], Areas.HumanBase, System.Array(System.Int32) { 1747988536 --[[Constants.UNIT_MAGIER_STUFE_1_HUMAN]], 1747988554 --[[Constants.UNIT_REITER_STUFE_1_HUMAN]] }):Run(5.5)
+      building:AddSpawnTrigger(Areas.ElfBaseToHumanSpawn, 2 --[[UnitSpawnType.Artillery]], 60 --[[Program.MainBuilding2SpawnTime]], Areas.HumanBase, System.Array.Empty(System.Int32)):Run(7.5)
+      building:AddSpawnTrigger(Areas.ElfBaseToUndeadSpawn, 1 --[[UnitSpawnType.Distance]], 30 --[[Program.MainBuilding1SpawnTime]], Areas.UndeadBase, System.Array(System.Int32) { 1747988536 --[[Constants.UNIT_MAGIER_STUFE_1_HUMAN]], 1747988554 --[[Constants.UNIT_REITER_STUFE_1_HUMAN]] }):Run(5.5)
+      building:AddSpawnTrigger(Areas.ElfBaseToUndeadSpawn, 2 --[[UnitSpawnType.Artillery]], 60 --[[Program.MainBuilding2SpawnTime]], Areas.UndeadBase, System.Array.Empty(System.Int32)):Run(7.5)
 
       -- Kasernen
       building = class.Elves.Computer:CreateBuilding(1747988788 --[[Constants.UNIT_KASERNE_ELF]], Areas.ElfBarracksToCenter, 0)
@@ -20214,9 +20223,12 @@ System.namespace("Source", function (namespace)
       -- Hauptgebäude
       local building = class.Undeads.Computer:CreateBuilding(1747988801 --[[Constants.UNIT_SCHWARZE_ZITADELLE_UNDEAD]], Areas.UndeadBase, 0)
       building:RegisterOnDies(SourceUnitEvents.MainBuilding.OnDies)
-      building:AddSpawnTrigger(Areas.UndeadBaseToCenterSpawn, 1 --[[UnitSpawnType.Distance]], 30 --[[Program.MainBuildingSpawnTime]], Areas.HumanBase, System.Array(System.Int32) { 1747988536 --[[Constants.UNIT_MAGIER_STUFE_1_HUMAN]] }):Run(5.5)
-      building:AddSpawnTrigger(Areas.UndeadBaseToElfSpawn, 1 --[[UnitSpawnType.Distance]], 30 --[[Program.MainBuildingSpawnTime]], Areas.ElfBase, System.Array(System.Int32) { 1747988536 --[[Constants.UNIT_MAGIER_STUFE_1_HUMAN]] }):Run(5.5)
-      building:AddSpawnTrigger(Areas.UndeadBaseToOrcsSpawn, 1 --[[UnitSpawnType.Distance]], 30 --[[Program.MainBuildingSpawnTime]], Areas.OrcBase, System.Array(System.Int32) { 1747988536 --[[Constants.UNIT_MAGIER_STUFE_1_HUMAN]] }):Run(5.5)
+      building:AddSpawnTrigger(Areas.UndeadBaseToCenterSpawn, 1 --[[UnitSpawnType.Distance]], 30 --[[Program.MainBuilding1SpawnTime]], Areas.HumanBase, System.Array(System.Int32) { 1747988536 --[[Constants.UNIT_MAGIER_STUFE_1_HUMAN]], 1747988554 --[[Constants.UNIT_REITER_STUFE_1_HUMAN]] }):Run(5.5)
+      building:AddSpawnTrigger(Areas.UndeadBaseToCenterSpawn, 2 --[[UnitSpawnType.Artillery]], 60 --[[Program.MainBuilding2SpawnTime]], Areas.HumanBase, System.Array.Empty(System.Int32)):Run(7.5)
+      building:AddSpawnTrigger(Areas.UndeadBaseToElfSpawn, 1 --[[UnitSpawnType.Distance]], 30 --[[Program.MainBuilding1SpawnTime]], Areas.ElfBase, System.Array(System.Int32) { 1747988536 --[[Constants.UNIT_MAGIER_STUFE_1_HUMAN]], 1747988554 --[[Constants.UNIT_REITER_STUFE_1_HUMAN]] }):Run(5.5)
+      building:AddSpawnTrigger(Areas.UndeadBaseToElfSpawn, 2 --[[UnitSpawnType.Artillery]], 60 --[[Program.MainBuilding2SpawnTime]], Areas.ElfBase, System.Array.Empty(System.Int32)):Run(7.5)
+      building:AddSpawnTrigger(Areas.UndeadBaseToOrcsSpawn, 1 --[[UnitSpawnType.Distance]], 30 --[[Program.MainBuilding1SpawnTime]], Areas.OrcBase, System.Array(System.Int32) { 1747988536 --[[Constants.UNIT_MAGIER_STUFE_1_HUMAN]], 1747988554 --[[Constants.UNIT_REITER_STUFE_1_HUMAN]] }):Run(5.5)
+      building:AddSpawnTrigger(Areas.UndeadBaseToOrcsSpawn, 2 --[[UnitSpawnType.Artillery]], 60 --[[Program.MainBuilding2SpawnTime]], Areas.OrcBase, System.Array.Empty(System.Int32)):Run(7.5)
 
       -- Kasernen
       building = class.Undeads.Computer:CreateBuilding(1747988805 --[[Constants.UNIT_GRUFT_UNDEAD]], Areas.UndeadBarracksToCenter, 0)
@@ -20960,9 +20972,6 @@ System.namespace("Source.Handler.GenericEvents", function (namespace)
           repeat
             local extern = techLevel
             if extern == 1 then
-              spawnCommand.UnitId = 1747988554 --[[Constants.UNIT_REITER_STUFE_1_HUMAN]]
-              return 1 --[[ResearchType.AddUnit]], spawnCommand
-            elseif extern == 2 then
               spawnCommand.UnitId = 1747988555 --[[Constants.UNIT_REITER_STUFE_2_HUMAN]]
               spawnCommand.UnitIdToUpgrade = 1747988554 --[[Constants.UNIT_REITER_STUFE_1_HUMAN]]
               return 2 --[[ResearchType.UpgradeUnit]], spawnCommand
@@ -20992,7 +21001,7 @@ System.namespace("Source.Handler.GenericEvents", function (namespace)
           until 1
         elseif default == 1378889784 --[[Constants.UPGRADE_EINHEIT_BELAGERUNGSMASCHINE_TEAM]] then
           local extern = SourceModels.SpawnUnitCommand()
-          extern.UnitSpawnType = 1 --[[UnitSpawnType.Distance]]
+          extern.UnitSpawnType = 2 --[[UnitSpawnType.Artillery]]
           extern.UnitIdOfBuilding = 1747988531 --[[Constants.UNIT_SCHLOSS_HUMAN]]
           spawnCommand = extern
 
@@ -21065,9 +21074,6 @@ System.namespace("Source.Handler.GenericEvents", function (namespace)
           repeat
             local extern = techLevel
             if extern == 1 then
-              spawnCommand.UnitId = 1747988554 --[[Constants.UNIT_REITER_STUFE_1_HUMAN]]
-              return 1 --[[ResearchType.AddUnit]], spawnCommand
-            elseif extern == 2 then
               spawnCommand.UnitId = 1747988555 --[[Constants.UNIT_REITER_STUFE_2_HUMAN]]
               spawnCommand.UnitIdToUpgrade = 1747988554 --[[Constants.UNIT_REITER_STUFE_1_HUMAN]]
               return 2 --[[ResearchType.UpgradeUnit]], spawnCommand
@@ -21097,7 +21103,7 @@ System.namespace("Source.Handler.GenericEvents", function (namespace)
           until 1
         elseif default == 1378889784 --[[Constants.UPGRADE_EINHEIT_BELAGERUNGSMASCHINE_TEAM]] then
           local extern = SourceModels.SpawnUnitCommand()
-          extern.UnitSpawnType = 1 --[[UnitSpawnType.Distance]]
+          extern.UnitSpawnType = 2 --[[UnitSpawnType.Artillery]]
           extern.UnitIdOfBuilding = 1747988570 --[[Constants.UNIT_FESTUNG_ORC]]
           spawnCommand = extern
 
@@ -21169,9 +21175,6 @@ System.namespace("Source.Handler.GenericEvents", function (namespace)
           repeat
             local extern = techLevel
             if extern == 1 then
-              spawnCommand.UnitId = 1747988554 --[[Constants.UNIT_REITER_STUFE_1_HUMAN]]
-              return 1 --[[ResearchType.AddUnit]], spawnCommand
-            elseif extern == 2 then
               spawnCommand.UnitId = 1747988555 --[[Constants.UNIT_REITER_STUFE_2_HUMAN]]
               spawnCommand.UnitIdToUpgrade = 1747988554 --[[Constants.UNIT_REITER_STUFE_1_HUMAN]]
               return 2 --[[ResearchType.UpgradeUnit]], spawnCommand
@@ -21201,7 +21204,7 @@ System.namespace("Source.Handler.GenericEvents", function (namespace)
           until 1
         elseif default == 1378889784 --[[Constants.UPGRADE_EINHEIT_BELAGERUNGSMASCHINE_TEAM]] then
           local extern = SourceModels.SpawnUnitCommand()
-          extern.UnitSpawnType = 1 --[[UnitSpawnType.Distance]]
+          extern.UnitSpawnType = 2 --[[UnitSpawnType.Artillery]]
           extern.UnitIdOfBuilding = 1747988789 --[[Constants.UNIT_TELDRASSIL_ELF]]
           spawnCommand = extern
 
@@ -21273,9 +21276,6 @@ System.namespace("Source.Handler.GenericEvents", function (namespace)
           repeat
             local extern = techLevel
             if extern == 1 then
-              spawnCommand.UnitId = 1747988554 --[[Constants.UNIT_REITER_STUFE_1_HUMAN]]
-              return 1 --[[ResearchType.AddUnit]], spawnCommand
-            elseif extern == 2 then
               spawnCommand.UnitId = 1747988555 --[[Constants.UNIT_REITER_STUFE_2_HUMAN]]
               spawnCommand.UnitIdToUpgrade = 1747988554 --[[Constants.UNIT_REITER_STUFE_1_HUMAN]]
               return 2 --[[ResearchType.UpgradeUnit]], spawnCommand
@@ -21305,7 +21305,7 @@ System.namespace("Source.Handler.GenericEvents", function (namespace)
           until 1
         elseif default == 1378889784 --[[Constants.UPGRADE_EINHEIT_BELAGERUNGSMASCHINE_TEAM]] then
           local extern = SourceModels.SpawnUnitCommand()
-          extern.UnitSpawnType = 1 --[[UnitSpawnType.Distance]]
+          extern.UnitSpawnType = 2 --[[UnitSpawnType.Artillery]]
           extern.UnitIdOfBuilding = 1747988801 --[[Constants.UNIT_SCHWARZE_ZITADELLE_UNDEAD]]
           spawnCommand = extern
 
@@ -21544,6 +21544,8 @@ System.namespace("Source.Handler.Periodic", function (namespace)
       end
 
       local default, extern = System.try(function ()
+        -- TODO
+
         local player = Source.Program.Humans.Computer.Wc3Player
 
         --int player.Gold;
@@ -21569,13 +21571,12 @@ System.namespace("Source.Handler.Periodic", function (namespace)
       end
     end
     CheckTechLevelAndIncrease = function (player, techId, targetLevel)
-      Source.Program.ShowDebugMessage("Validate tech " .. techId)
-      local currentTechLevel = GetPlayerTechCount(player, techId, true)
-      --if (currentTechLevel == targetLevel -1)
+      --Program.ShowDebugMessage($"Validate tech {techId}");
+      --int currentTechLevel = Common.GetPlayerTechCount(player, techId, true);
+      --if (currentTechLevel == targetLevel - 1)
       --{
-      local techCost = GetUnitGoldCost(techId)
 
-      Source.Program.ShowDebugMessage("Cost: " .. techCost .. " Gold")
+      --  Program.ShowDebugMessage($"Cost: {techCost} Gold");
       --}
 
       return false
@@ -22701,9 +22702,11 @@ System.namespace("Source.Models", function (namespace)
       return {
         Meelee = 0,
         Distance = 1,
+        Artillery = 2,
         __metadata__ = function (out)
           return {
             fields = {
+              { "Artillery", 0xE, System.Int32 },
               { "Distance", 0xE, System.Int32 },
               { "Meelee", 0xE, System.Int32 }
             },

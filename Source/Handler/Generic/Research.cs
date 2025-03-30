@@ -134,9 +134,6 @@ namespace Source.Handler.GenericEvents
           switch (techLevel)
           {
             case 1:
-              spawnCommand.UnitId = Constants.UNIT_REITER_STUFE_1_HUMAN;
-              return Enums.ResearchType.AddUnit;
-            case 2:
               spawnCommand.UnitId = Constants.UNIT_REITER_STUFE_2_HUMAN;
               spawnCommand.UnitIdToUpgrade = Constants.UNIT_REITER_STUFE_1_HUMAN;
               return Enums.ResearchType.UpgradeUnit;
@@ -170,7 +167,7 @@ namespace Source.Handler.GenericEvents
         case Constants.UPGRADE_EINHEIT_BELAGERUNGSMASCHINE_TEAM:
           spawnCommand = new SpawnUnitCommand()
           {
-            UnitSpawnType = Enums.UnitSpawnType.Distance,
+            UnitSpawnType = Enums.UnitSpawnType.Artillery,
             UnitIdOfBuilding = Constants.UNIT_SCHLOSS_HUMAN
           };
 
@@ -249,9 +246,6 @@ namespace Source.Handler.GenericEvents
           switch (techLevel)
           {
             case 1:
-              spawnCommand.UnitId = Constants.UNIT_REITER_STUFE_1_HUMAN;
-              return Enums.ResearchType.AddUnit;
-            case 2:
               spawnCommand.UnitId = Constants.UNIT_REITER_STUFE_2_HUMAN;
               spawnCommand.UnitIdToUpgrade = Constants.UNIT_REITER_STUFE_1_HUMAN;
               return Enums.ResearchType.UpgradeUnit;
@@ -261,7 +255,6 @@ namespace Source.Handler.GenericEvents
               spawnCommand.UnitIdToUpgrade = Constants.UNIT_REITER_STUFE_2_HUMAN;
               return Enums.ResearchType.UpgradeUnit;
           }
-
 
         case Constants.UPGRADE_EINHEIT_MAGIER_TEAM:
           spawnCommand = new SpawnUnitCommand()
@@ -286,7 +279,7 @@ namespace Source.Handler.GenericEvents
         case Constants.UPGRADE_EINHEIT_BELAGERUNGSMASCHINE_TEAM:
           spawnCommand = new SpawnUnitCommand()
           {
-            UnitSpawnType = Enums.UnitSpawnType.Distance,
+            UnitSpawnType = Enums.UnitSpawnType.Artillery,
             UnitIdOfBuilding = Constants.UNIT_FESTUNG_ORC
           };
 
@@ -301,8 +294,6 @@ namespace Source.Handler.GenericEvents
               spawnCommand.UnitIdToUpgrade = Constants.UNIT_BELAGERUNGSMASCHINE_STUFE_2_HUMAN;
               return Enums.ResearchType.UpgradeUnit;
           }
-
-        // TODO : Add more technolgies 
 
         default:
           spawnCommand = null;
@@ -367,9 +358,6 @@ namespace Source.Handler.GenericEvents
           switch (techLevel)
           {
             case 1:
-              spawnCommand.UnitId = Constants.UNIT_REITER_STUFE_1_HUMAN;
-              return Enums.ResearchType.AddUnit;
-            case 2:
               spawnCommand.UnitId = Constants.UNIT_REITER_STUFE_2_HUMAN;
               spawnCommand.UnitIdToUpgrade = Constants.UNIT_REITER_STUFE_1_HUMAN;
               return Enums.ResearchType.UpgradeUnit;
@@ -379,7 +367,6 @@ namespace Source.Handler.GenericEvents
               spawnCommand.UnitIdToUpgrade = Constants.UNIT_REITER_STUFE_2_HUMAN;
               return Enums.ResearchType.UpgradeUnit;
           }
-
 
         case Constants.UPGRADE_EINHEIT_MAGIER_TEAM:
           spawnCommand = new SpawnUnitCommand()
@@ -404,7 +391,7 @@ namespace Source.Handler.GenericEvents
         case Constants.UPGRADE_EINHEIT_BELAGERUNGSMASCHINE_TEAM:
           spawnCommand = new SpawnUnitCommand()
           {
-            UnitSpawnType = Enums.UnitSpawnType.Distance,
+            UnitSpawnType = Enums.UnitSpawnType.Artillery,
             UnitIdOfBuilding = Constants.UNIT_TELDRASSIL_ELF
           };
 
@@ -419,8 +406,6 @@ namespace Source.Handler.GenericEvents
               spawnCommand.UnitIdToUpgrade = Constants.UNIT_BELAGERUNGSMASCHINE_STUFE_2_HUMAN;
               return Enums.ResearchType.UpgradeUnit;
           }
-
-        // TODO : Add more technolgies 
 
         default:
           spawnCommand = null;
@@ -485,9 +470,6 @@ namespace Source.Handler.GenericEvents
           switch (techLevel)
           {
             case 1:
-              spawnCommand.UnitId = Constants.UNIT_REITER_STUFE_1_HUMAN;
-              return Enums.ResearchType.AddUnit;
-            case 2:
               spawnCommand.UnitId = Constants.UNIT_REITER_STUFE_2_HUMAN;
               spawnCommand.UnitIdToUpgrade = Constants.UNIT_REITER_STUFE_1_HUMAN;
               return Enums.ResearchType.UpgradeUnit;
@@ -497,7 +479,6 @@ namespace Source.Handler.GenericEvents
               spawnCommand.UnitIdToUpgrade = Constants.UNIT_REITER_STUFE_2_HUMAN;
               return Enums.ResearchType.UpgradeUnit;
           }
-
 
         case Constants.UPGRADE_EINHEIT_MAGIER_TEAM:
           spawnCommand = new SpawnUnitCommand()
@@ -522,7 +503,7 @@ namespace Source.Handler.GenericEvents
         case Constants.UPGRADE_EINHEIT_BELAGERUNGSMASCHINE_TEAM:
           spawnCommand = new SpawnUnitCommand()
           {
-            UnitSpawnType = Enums.UnitSpawnType.Distance,
+            UnitSpawnType = Enums.UnitSpawnType.Artillery,
             UnitIdOfBuilding = Constants.UNIT_SCHWARZE_ZITADELLE_UNDEAD
           };
 
