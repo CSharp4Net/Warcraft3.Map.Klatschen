@@ -402,12 +402,6 @@ STRING 264
 melee
 }
 
-STRING 268
-// Upgrades: R008 (Kampftierausbildung), class (Class)
-{
-melee
-}
-
 STRING 271
 // Upgrades: R006 (Leuchtfeuer), effect1 (Effect 1)
 {
@@ -427,7 +421,7 @@ R
 }
 
 STRING 289
-// Upgrades: R004 (Leuchtfeuer), class (Class)
+// Upgrades: R009 (Kampftierausbildung), class (Class)
 {
 ranged
 }
@@ -442,12 +436,6 @@ STRING 296
 // Units: h00D (Trainingslager), Name (Name)
 {
 Trainingslager
-}
-
-STRING 324
-// Upgrades: R009 (Kampftierausbildung), class (Class)
-{
-melee
 }
 
 STRING 328
@@ -496,12 +484,6 @@ STRING 453
 // Units: H00N (Bergkönig), EditorSuffix (Name - Editor Suffix)
 {
 (Hero)
-}
-
-STRING 457
-// Upgrades: R00C (Kampftierausbildung), class (Class)
-{
-melee
 }
 
 STRING 497
@@ -568,12 +550,6 @@ STRING 529
 // Units: h00I (Magier - Stufe 3), Name (Name)
 {
 Magier - Stufe 3
-}
-
-STRING 609
-// Upgrades: R00E (Kampftierausbildung), class (Class)
-{
-melee
 }
 
 STRING 647
@@ -8568,12 +8544,6 @@ STRING 2619
 Einheit Soldat
 }
 
-STRING 2620
-// Upgrades: R005 (Kampftierausbildung), Tip (Tooltip)
-{
-Soldaten aufwerten [|cffffcc00Stufe 1|r]
-}
-
 STRING 2621
 // Upgrades: R005 (Kampftierausbildung), Ubertip (Tooltip - Extended)
 {
@@ -8586,22 +8556,10 @@ STRING 2622
 Einheit Soldat
 }
 
-STRING 2623
-// Upgrades: R005 (Kampftierausbildung), Tip (Tooltip)
-{
-Soldaten aufwerten [|cffffcc00Stufe 2|r]
-}
-
 STRING 2624
 // Upgrades: R005 (Kampftierausbildung), Ubertip (Tooltip - Extended)
 {
 Wertet die Soldaten eurer Streitmacht auf die nächste Stufe auf, wodurch sie wesentlich effektiver werden.
-}
-
-STRING 2625
-// Upgrades: R008 (Kampftierausbildung), Tip (Tooltip)
-{
-Belagerungsmaschinen aufwerten [|cffffcc00Stufe 2|r]
 }
 
 STRING 2626
@@ -8616,12 +8574,6 @@ STRING 2627
 Einheit Schütze
 }
 
-STRING 2628
-// Upgrades: R009 (Kampftierausbildung), Tip (Tooltip)
-{
-Schützen aufwerten [|cffffcc00Stufe 1|r]
-}
-
 STRING 2629
 // Upgrades: R009 (Kampftierausbildung), Ubertip (Tooltip - Extended)
 {
@@ -8632,12 +8584,6 @@ STRING 2630
 // Upgrades: R009 (Kampftierausbildung), Name (Name)
 {
 Einheit Schütze
-}
-
-STRING 2631
-// Upgrades: R009 (Kampftierausbildung), Tip (Tooltip)
-{
-Schützen aufwerten [|cffffcc00Stufe 2|r]
 }
 
 STRING 2632
@@ -8652,12 +8598,6 @@ STRING 2633
 Einheit Magier
 }
 
-STRING 2634
-// Upgrades: R00E (Kampftierausbildung), Tip (Tooltip)
-{
-Magier aufwerten [|cffffcc00Stufe 1|r]
-}
-
 STRING 2635
 // Upgrades: R00E (Kampftierausbildung), Ubertip (Tooltip - Extended)
 {
@@ -8668,12 +8608,6 @@ STRING 2636
 // Upgrades: R00E (Kampftierausbildung), Name (Name)
 {
 Einheit Magier
-}
-
-STRING 2637
-// Upgrades: R00E (Kampftierausbildung), Tip (Tooltip)
-{
-Magier aufwerten [|cffffcc00Stufe 2|r]
 }
 
 STRING 2638
@@ -8754,12 +8688,6 @@ STRING 2650
 Einheit Reiter
 }
 
-STRING 2651
-// Upgrades: R00C (Kampftierausbildung), Tip (Tooltip)
-{
-Reiter rekrutieren [|cffffcc00Stufe 1|r]
-}
-
 STRING 2652
 // Upgrades: R00C (Kampftierausbildung), Name (Name)
 {
@@ -8770,18 +8698,6 @@ STRING 2653
 // Upgrades: R00C (Kampftierausbildung), Name (Name)
 {
 Einheit Reiter
-}
-
-STRING 2654
-// Upgrades: R00C (Kampftierausbildung), Tip (Tooltip)
-{
-Reiter aufwerten [|cffffcc00Stufe 2|r]
-}
-
-STRING 2655
-// Upgrades: R00C (Kampftierausbildung), Tip (Tooltip)
-{
-Reiter aufwerten [|cffffcc00Stufe 3|r]
 }
 
 STRING 2656
@@ -10372,5 +10288,89 @@ STRING 3011
 // Abilities: A00Q (Naturgewalt), Researchubertip (Tooltip - Learn - Extended)
 {
 |cffff0000Ultimative Fähigkeit|r|n|nVerwandelt Bäume und Gegner in einem Gebiet in Treants.|n|n|cffffcc00Können Bodeneinheiten angreifen.|r
+}
+
+STRING 3012
+// Upgrades: R005 (Kampftierausbildung), Tip (Tooltip)
+{
+Soldaten aufwerten auf [|cffffcc00Stufe 2|r]
+}
+
+STRING 3013
+// Upgrades: R005 (Kampftierausbildung), Tip (Tooltip)
+{
+Soldaten aufwerten auf [|cffffcc00Stufe 3|r]
+}
+
+STRING 3014
+// Upgrades: R008 (Kampftierausbildung), Tip (Tooltip)
+{
+Belagerungsmaschinen aufwerten auf [|cffffcc00Stufe 2|r]
+}
+
+STRING 3015
+// Upgrades: R009 (Kampftierausbildung), Tip (Tooltip)
+{
+Schützen aufwerten auf [|cffffcc00Stufe 2|r]
+}
+
+STRING 3016
+// Upgrades: R009 (Kampftierausbildung), Tip (Tooltip)
+{
+Schützen aufwerten auf [|cffffcc00Stufe 3|r]
+}
+
+STRING 3017
+// Upgrades: R00C (Kampftierausbildung), Tip (Tooltip)
+{
+Reiter aufwerten auf [|cffffcc00Stufe 2|r]
+}
+
+STRING 3018
+// Upgrades: R00C (Kampftierausbildung), Tip (Tooltip)
+{
+Reiter aufwerten auf [|cffffcc00Stufe 3|r]
+}
+
+STRING 3019
+// Upgrades: R00E (Kampftierausbildung), Tip (Tooltip)
+{
+Magier aufwerten auf [|cffffcc00Stufe 2|r]
+}
+
+STRING 3020
+// Upgrades: R00E (Kampftierausbildung), Tip (Tooltip)
+{
+Magier aufwerten auf [|cffffcc00Stufe 3|r]
+}
+
+STRING 3021
+// Upgrades: R008 (Kampftierausbildung), class (Class)
+{
+artillery
+}
+
+STRING 3022
+// Upgrades: R00C (Kampftierausbildung), class (Class)
+{
+ranged
+}
+
+STRING 3023
+// Upgrades: R00C (Kampftierausbildung), Tip (Tooltip)
+{
+Reiter aufwerten auf [|cffffcc00Stufe 3|r]
+}
+
+STRING 3024
+// Upgrades: R00E (Kampftierausbildung), class (Class)
+{
+caster
+}
+
+STRING 3025
+// Upgrades: R004 (Leuchtfeuer), class (Class)
+{
+ranged
 }
 

@@ -27,7 +27,11 @@
       /// <summary>
       /// Fernkampfeinheiten
       /// </summary>
-      Distance = 1
+      Distance = 1,
+      /// <summary>
+      /// Belagerungseinheiten
+      /// </summary>
+      Artillery = 2
     }
   }
 }

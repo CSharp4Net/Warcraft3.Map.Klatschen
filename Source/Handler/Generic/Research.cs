@@ -186,9 +186,7 @@ namespace Source.Handler.GenericEvents
               return Enums.ResearchType.UpgradeUnit;
           }
 
-        // TODO : Add more technolgies 
-
-        default:
+        default: // Einfache Verbeserungen bestehender Einheiten
           spawnCommand = null;
           return Enums.ResearchType.CommonUpgrade;
       }
