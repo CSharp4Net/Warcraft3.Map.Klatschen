@@ -20851,27 +20851,43 @@ System.namespace("Source.Handler.Computer", function (namespace)
     OnLevels = function ()
       local unit = GetLevelingUnit()
 
-      Source.Program.ShowDebugMessage("Held hat gelevelt!")
-
       if GetPlayerController(GetOwningPlayer(unit)) ~= MAP_CONTROL_COMPUTER then
         return
       end
 
-      --int randomIndex = Random.Shared.Next(1, 5);
-      --ability ability = unit.GetAbilityByIndex(randomIndex);
-      --int abilityId = ability.Id;
-      --int abilityLevel = unit.GetAbilityLevel(abilityId);
-
-      --// TODO : Level des Helden und Skill-Level-Skip beachten?
-
-      --if (abilityLevel < ability.Levels)
+      --if (Common.GetUnitTypeId(unit) == Constants.UNIT_W_CHTER_HUMAN)
       --{
-      --  // Skill kann verbessert werden
-      --  unit.IncrementAbilityLevel(abilityId);
-      --  unit.SkillPoints--;
+      --  switch (unit.HeroLevel)
+      --  {
+      --    case 6:
+      --      unit.AddAbility()
+      --      break;
+      --    case 12:
 
-      --  Program.ShowDebugMessage($"Heldenfähigkeiten {ability.Name} verbessert!");
+      --      break;
+      --    case 18:
+
+      --      break;
+      --    case 24:
+
+      --      break;
+      --  }
       --}
+
+      local randomIndex = GetRandomInt(1, 5)
+      local ability = BlzGetUnitAbilityByIndex(unit, randomIndex)
+      local abilityId = BlzGetAbilityId(ability)
+      local abilityLevel = GetUnitAbilityLevel(unit, abilityId)
+
+      -- TODO : Level des Helden und Skill-Level-Skip beachten?
+      if abilityLevel == 0 then
+        UnitAddAbility(unit, abilityId)
+        Source.Program.ShowDebugMessage("Heldenfähigkeiten " .. System.toString(BlzGetAbilityStringField(ability, ABILITY_SF_NAME)) .. " gelernt!")
+      elseif abilityLevel < BlzGetAbilityIntegerField(ability, ABILITY_IF_LEVELS) then
+        -- Skill kann verbessert werden
+        IncUnitAbilityLevel(unit, abilityId)
+        Source.Program.ShowDebugMessage("Heldenfähigkeiten " .. System.toString(BlzGetAbilityStringField(ability, ABILITY_SF_NAME)) .. " verbessert!")
+      end
     end
     return {
       OnDies = OnDies,
@@ -22806,6 +22822,8 @@ System.namespace("Source.Models", function (namespace)
         SetUnitAbilityLevel(this.Hero, BlzGetAbilityId(BlzGetUnitAbilityByIndex(this.Hero, 0)), abilitiesLevel)
         SetUnitAbilityLevel(this.Hero, BlzGetAbilityId(BlzGetUnitAbilityByIndex(this.Hero, 1)), abilitiesLevel)
         SetUnitAbilityLevel(this.Hero, BlzGetAbilityId(BlzGetUnitAbilityByIndex(this.Hero, 2)), abilitiesLevel)
+
+        -- TODO : Computer-Helden zaubern NICHT automatisch Heldenzauber, sondern lediglich einfacher Unit-Zauber?
       end)
     end
     return {
@@ -39841,7 +39859,17 @@ gg_dest_LOcg_4712 = nil
 gg_dest_NOfg_4713 = nil
 gg_dest_LOct_4714 = nil
 gg_dest_IOob_4715 = nil
-gg_dest_AOsk_4716 = nil
+gg_dest_LOtz_1195 = nil
+gg_dest_LOtz_1178 = nil
+gg_dest_LOtz_1187 = nil
+gg_dest_LOtz_1188 = nil
+gg_dest_LOtz_1190 = nil
+gg_dest_LOtz_1192 = nil
+gg_dest_IOob_1201 = nil
+gg_dest_IOob_1204 = nil
+gg_dest_IOob_1207 = nil
+gg_dest_LOtz_1795 = nil
+gg_dest_LOtz_1803 = nil
 function InitGlobals()
 end
 
@@ -44665,8 +44693,28 @@ function CreateAllDestructables()
     SetDestructableLife(gg_dest_LOct_4714, 2.55 * GetDestructableLife(gg_dest_LOct_4714))
     gg_dest_IOob_4715 = CreateDestructable(1229942626, -18688.0, 18688.0, 297.000, 0.969, 2)
     SetDestructableLife(gg_dest_IOob_4715, 2.55 * GetDestructableLife(gg_dest_IOob_4715))
-    gg_dest_AOsk_4716 = CreateDestructable(1095725931, -18688.0, 18560.0, 60.000, 0.970, 0)
-    SetDestructableLife(gg_dest_AOsk_4716, 2.55 * GetDestructableLife(gg_dest_AOsk_4716))
+    gg_dest_LOtz_1195 = CreateDestructable(1280275578, -18681.1, 18819.4, 222.000, 0.977, 1)
+    SetDestructableLife(gg_dest_LOtz_1195, 2.55 * GetDestructableLife(gg_dest_LOtz_1195))
+    gg_dest_LOtz_1178 = CreateDestructable(1280275578, -18303.0, 18685.0, 66.000, 0.825, 1)
+    SetDestructableLife(gg_dest_LOtz_1178, 2.55 * GetDestructableLife(gg_dest_LOtz_1178))
+    gg_dest_LOtz_1187 = CreateDestructable(1280275578, -18553.4, 18681.8, 315.000, 0.850, 2)
+    SetDestructableLife(gg_dest_LOtz_1187, 2.55 * GetDestructableLife(gg_dest_LOtz_1187))
+    gg_dest_LOtz_1188 = CreateDestructable(1280275578, -18555.0, 18558.6, 82.000, 1.098, 2)
+    SetDestructableLife(gg_dest_LOtz_1188, 2.55 * GetDestructableLife(gg_dest_LOtz_1188))
+    gg_dest_LOtz_1190 = CreateDestructable(1280275578, -18301.4, 18553.8, 242.000, 1.078, 1)
+    SetDestructableLife(gg_dest_LOtz_1190, 2.55 * GetDestructableLife(gg_dest_LOtz_1190))
+    gg_dest_LOtz_1192 = CreateDestructable(1280275578, -18177.0, 18809.8, 34.000, 1.013, 2)
+    SetDestructableLife(gg_dest_LOtz_1192, 2.55 * GetDestructableLife(gg_dest_LOtz_1192))
+    gg_dest_IOob_1201 = CreateDestructable(1229942626, -18176.0, 18688.0, 297.000, 0.969, 2)
+    SetDestructableLife(gg_dest_IOob_1201, 2.55 * GetDestructableLife(gg_dest_IOob_1201))
+    gg_dest_IOob_1204 = CreateDestructable(1229942626, -18176.0, 19072.0, 297.000, 0.969, 2)
+    SetDestructableLife(gg_dest_IOob_1204, 2.55 * GetDestructableLife(gg_dest_IOob_1204))
+    gg_dest_IOob_1207 = CreateDestructable(1229942626, -18688.0, 19072.0, 297.000, 0.969, 2)
+    SetDestructableLife(gg_dest_IOob_1207, 2.55 * GetDestructableLife(gg_dest_IOob_1207))
+    gg_dest_LOtz_1795 = CreateDestructable(1280275578, -18180.3, 18942.6, 66.000, 0.825, 1)
+    SetDestructableLife(gg_dest_LOtz_1795, 2.55 * GetDestructableLife(gg_dest_LOtz_1795))
+    gg_dest_LOtz_1803 = CreateDestructable(1280275578, -18686.0, 18945.8, 66.000, 0.825, 1)
+    SetDestructableLife(gg_dest_LOtz_1803, 2.55 * GetDestructableLife(gg_dest_LOtz_1803))
 end
 
 function CreateBuildingsForPlayer0()

@@ -33,6 +33,8 @@ namespace Source.Models
         Hero.SetAbilityLevel(Hero.GetAbilityByIndex(0).Id, abilitiesLevel);
         Hero.SetAbilityLevel(Hero.GetAbilityByIndex(1).Id, abilitiesLevel);
         Hero.SetAbilityLevel(Hero.GetAbilityByIndex(2).Id, abilitiesLevel);
+
+        // TODO : Computer-Helden zaubern NICHT automatisch Heldenzauber, sondern lediglich einfacher Unit-Zauber?
       });
     }
   }

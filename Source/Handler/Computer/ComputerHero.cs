@@ -103,26 +103,45 @@ namespace Source.Handler.Computer
     {
       unit unit = Common.GetLevelingUnit();
 
-      Program.ShowDebugMessage("Held hat gelevelt!");
-
       if (unit.Owner.Controller != mapcontrol.Computer)
         return;
 
-      //int randomIndex = Random.Shared.Next(1, 5);
-      //ability ability = unit.GetAbilityByIndex(randomIndex);
-      //int abilityId = ability.Id;
-      //int abilityLevel = unit.GetAbilityLevel(abilityId);
-
-      //// TODO : Level des Helden und Skill-Level-Skip beachten?
-
-      //if (abilityLevel < ability.Levels)
+      //if (Common.GetUnitTypeId(unit) == Constants.UNIT_W_CHTER_HUMAN)
       //{
-      //  // Skill kann verbessert werden
-      //  unit.IncrementAbilityLevel(abilityId);
-      //  unit.SkillPoints--;
+      //  switch (unit.HeroLevel)
+      //  {
+      //    case 6:
+      //      unit.AddAbility()
+      //      break;
+      //    case 12:
 
-      //  Program.ShowDebugMessage($"Heldenfähigkeiten {ability.Name} verbessert!");
+      //      break;
+      //    case 18:
+
+      //      break;
+      //    case 24:
+
+      //      break;
+      //  }
       //}
+
+      int randomIndex = Common.GetRandomInt(1, 5);
+      ability ability = unit.Hero(randomIndex);
+      int abilityId = ability.Id;
+      int abilityLevel = unit.GetAbilityLevel(abilityId);
+
+      // TODO : Level des Helden und Skill-Level-Skip beachten?
+      if (abilityLevel == 0)
+      {
+        unit.AddAbility(abilityId);
+        Program.ShowDebugMessage($"Heldenfähigkeiten {ability.Name} gelernt!");
+      }
+      else if (abilityLevel < ability.Levels)
+      {
+        // Skill kann verbessert werden
+        unit.IncrementAbilityLevel(abilityId);
+        Program.ShowDebugMessage($"Heldenfähigkeiten {ability.Name} verbessert!");
+      }
     }
   }
 }
