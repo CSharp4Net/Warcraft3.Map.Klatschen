@@ -19985,25 +19985,29 @@ end
 do
 local System = System
 local WCSharpApi = WCSharp.Api
+local SourceHandlerComputer
 local SourceHandlerGeneric
 local SourceGenericEvents
 local SourceHandlerPeriodic
+local SourceHandlerPlayer
 local SourceHandlerRegion
 local SourceHandlerSpecific
+local SourceHandlerUser
 local SourceModels
-local SourceUnitEvents
 local WCSharpEvents
 local WCSharpShared
 local WCSharpSync
 local ListUserPlayer
 System.import(function (out)
+  SourceHandlerComputer = Source.Handler.Computer
   SourceHandlerGeneric = Source.Handler.Generic
   SourceGenericEvents = Source.Handler.GenericEvents
   SourceHandlerPeriodic = Source.Handler.Periodic
+  SourceHandlerPlayer = Source.Handler.Player
   SourceHandlerRegion = Source.Handler.Region
   SourceHandlerSpecific = Source.Handler.Specific
+  SourceHandlerUser = Source.Handler.User
   SourceModels = Source.Models
-  SourceUnitEvents = Source.UnitEvents
   WCSharpEvents = WCSharp.Events
   WCSharpShared = WCSharp.Shared
   WCSharpSync = WCSharp.Sync
@@ -20076,17 +20080,19 @@ System.namespace("Source", function (namespace)
         RegisterRegionTriggerInUndeadArea()
 
         -- Allgemeine Events registrieren
-        WCSharpEvents.PlayerUnitEvents.Register14(802 --[[UnitTypeEvent.BuysUnit]], SourceHandlerSpecific.UserHero.OnBuyed)
-        WCSharpEvents.PlayerUnitEvents.Register14(818 --[[UnitTypeEvent.FinishesResearch]], SourceGenericEvents.Research.OnFinished)
-        WCSharpEvents.PlayerUnitEvents.Register14(842 --[[UnitTypeEvent.SellsItem]], SourceGenericEvents.Item.OnSellsFinished)
+        WCSharpEvents.PlayerUnitEvents.Register14(802 --[[UnitTypeEvent.BuysUnit]], SourceHandlerPlayer.UserHero.OnBuyed)
+        WCSharpEvents.PlayerUnitEvents.Register14(818 --[[UnitTypeEvent.FinishesResearch]], SourceHandlerUser.UserResearch.OnFinished)
+        WCSharpEvents.PlayerUnitEvents.Register14(842 --[[UnitTypeEvent.SellsItem]], SourceHandlerUser.Item.OnSellsFinished)
         WCSharpEvents.PlayerUnitEvents.Register14(813 --[[UnitTypeEvent.Dies]], SourceGenericEvents.Unit.OnDies)
         WCSharpEvents.PlayerUnitEvents.Register14(837 --[[UnitTypeEvent.ReceivesOrder]], SourceGenericEvents.Unit.OnReceivesOrder)
         WCSharpEvents.PlayerUnitEvents.Register14(848 --[[UnitTypeEvent.SpellEffect]], SourceHandlerGeneric.Ability.OnCasted)
+        WCSharpEvents.PlayerUnitEvents.Register1(105 --[[HeroTypeEvent.Levels]], SourceHandlerComputer.ComputerHero.OnLevels)
 
         -- Periodische Events registrieren
         WCSharpEvents.PeriodicEvents.AddPeriodicEvent(SourceHandlerPeriodic.GoldIncome.OnElapsed, 5)
         WCSharpEvents.PeriodicEvents.AddPeriodicEvent(SourceHandlerPeriodic.Slapping.OnElapsed, 360 --[[Program.KlatschenInterval]])
-        WCSharpEvents.PeriodicEvents.AddPeriodicEvent(SourceHandlerPeriodic.ResearchCheckHumans.OnElapsed, 5)
+
+        WCSharpEvents.PeriodicEvents.AddPeriodicEvent(SourceHandlerPeriodic.ResearchCheck.OnElapsed, 10)
 
         -- Gebäude & Trigger für Computer-Spieler erstellen
         ConstructHumanBuildingAndTrigger()
@@ -20141,7 +20147,7 @@ System.namespace("Source", function (namespace)
     ConstructHumanBuildingAndTrigger = function ()
       -- Hauptgebäude
       local building = class.Humans.Computer:CreateBuilding(1747988531 --[[Constants.UNIT_SCHLOSS_HUMAN]], Areas.HumanBase, 0)
-      building:RegisterOnDies(SourceUnitEvents.MainBuilding.OnDies)
+      building:RegisterOnDies(SourceHandlerComputer.BuildingMain.OnDies)
       building:AddSpawnTrigger(Areas.HumanBaseToCenterSpawn, 1 --[[UnitSpawnType.Distance]], 30 --[[Program.MainBuilding1SpawnTime]], Areas.UndeadBase, System.Array(System.Int32) { 1747988536 --[[Constants.UNIT_MAGIER_STUFE_1_HUMAN]], 1747988554 --[[Constants.UNIT_REITER_STUFE_1_HUMAN]] }):Run(5.5)
       building:AddSpawnTrigger(Areas.HumanBaseToCenterSpawn, 2 --[[UnitSpawnType.Artillery]], 60 --[[Program.MainBuilding2SpawnTime]], Areas.UndeadBase, System.Array.Empty(System.Int32)):Run(7.5)
       building:AddSpawnTrigger(Areas.HumanBaseToElfSpawn, 1 --[[UnitSpawnType.Distance]], 30 --[[Program.MainBuilding1SpawnTime]], Areas.ElfBase, System.Array(System.Int32) { 1747988536 --[[Constants.UNIT_MAGIER_STUFE_1_HUMAN]], 1747988554 --[[Constants.UNIT_REITER_STUFE_1_HUMAN]] }):Run(5.5)
@@ -20151,24 +20157,24 @@ System.namespace("Source", function (namespace)
 
       -- Kasernen
       building = class.Humans.Computer:CreateBuilding(1747988535 --[[Constants.UNIT_KASERNE_HUMAN]], Areas.HumanBarracksToCenter, 0)
-      building:RegisterOnDies(SourceHandlerSpecific.BarracksBuilding.OnDies)
+      building:RegisterOnDies(SourceHandlerSpecific.BuildingBarracks.OnDies)
       building:AddSpawnTrigger(Areas.HumanBarracksToCenterSpawn, 0 --[[UnitSpawnType.Meelee]], 15 --[[Program.BarracksSpawnTime]], Areas.UndeadBase, System.Array(System.Int32) { 1747988529 --[[Constants.UNIT_SOLDAT_STUFE_1_HUMAN]], 1747988529 --[[Constants.UNIT_SOLDAT_STUFE_1_HUMAN]] }):Run(0)
       building:AddSpawnTrigger(Areas.HumanBarracksToCenterSpawn, 1 --[[UnitSpawnType.Distance]], 15 --[[Program.BarracksSpawnTime]], Areas.UndeadBase, System.Array(System.Int32) { 1747988530 --[[Constants.UNIT_SCH_TZE_STUFE_1_HUMAN]] }):Run(1)
 
       building = class.Humans.Computer:CreateBuilding(1747988535 --[[Constants.UNIT_KASERNE_HUMAN]], Areas.HumanBarracksToElf, 0)
-      building:RegisterOnDies(SourceHandlerSpecific.BarracksBuilding.OnDies)
+      building:RegisterOnDies(SourceHandlerSpecific.BuildingBarracks.OnDies)
       building:AddSpawnTrigger(Areas.HumanBarracksToElfSpawn, 0 --[[UnitSpawnType.Meelee]], 15 --[[Program.BarracksSpawnTime]], Areas.ElfBase, System.Array(System.Int32) { 1747988529 --[[Constants.UNIT_SOLDAT_STUFE_1_HUMAN]], 1747988529 --[[Constants.UNIT_SOLDAT_STUFE_1_HUMAN]] }):Run(0)
       building:AddSpawnTrigger(Areas.HumanBarracksToElfSpawn, 1 --[[UnitSpawnType.Distance]], 15 --[[Program.BarracksSpawnTime]], Areas.ElfBase, System.Array(System.Int32) { 1747988530 --[[Constants.UNIT_SCH_TZE_STUFE_1_HUMAN]] }):Run(1)
 
       building = class.Humans.Computer:CreateBuilding(1747988535 --[[Constants.UNIT_KASERNE_HUMAN]], Areas.HumanBarracksToOrcs, 0)
-      building:RegisterOnDies(SourceHandlerSpecific.BarracksBuilding.OnDies)
+      building:RegisterOnDies(SourceHandlerSpecific.BuildingBarracks.OnDies)
       building:AddSpawnTrigger(Areas.HumanBarracksToOrcsSpawn, 0 --[[UnitSpawnType.Meelee]], 15 --[[Program.BarracksSpawnTime]], Areas.OrcBase, System.Array(System.Int32) { 1747988529 --[[Constants.UNIT_SOLDAT_STUFE_1_HUMAN]], 1747988529 --[[Constants.UNIT_SOLDAT_STUFE_1_HUMAN]] }):Run(0)
       building:AddSpawnTrigger(Areas.HumanBarracksToOrcsSpawn, 1 --[[UnitSpawnType.Distance]], 15 --[[Program.BarracksSpawnTime]], Areas.OrcBase, System.Array(System.Int32) { 1747988530 --[[Constants.UNIT_SCH_TZE_STUFE_1_HUMAN]] }):Run(1)
     end
     ConstructOrcBuildingAndTrigger = function ()
       -- Hauptgebäude
       local building = class.Orcs.Computer:CreateBuilding(1747988570 --[[Constants.UNIT_FESTUNG_ORC]], Areas.OrcBase, 0)
-      building:RegisterOnDies(SourceUnitEvents.MainBuilding.OnDies)
+      building:RegisterOnDies(SourceHandlerComputer.BuildingMain.OnDies)
       building:AddSpawnTrigger(Areas.OrcBaseToCenterSpawn, 1 --[[UnitSpawnType.Distance]], 30 --[[Program.MainBuilding1SpawnTime]], Areas.ElfBase, System.Array(System.Int32) { 1747988536 --[[Constants.UNIT_MAGIER_STUFE_1_HUMAN]], 1747988554 --[[Constants.UNIT_REITER_STUFE_1_HUMAN]] }):Run(5.5)
       building:AddSpawnTrigger(Areas.OrcBaseToCenterSpawn, 2 --[[UnitSpawnType.Artillery]], 60 --[[Program.MainBuilding2SpawnTime]], Areas.ElfBase, System.Array.Empty(System.Int32)):Run(7.5)
       building:AddSpawnTrigger(Areas.OrcBaseToHumanSpawn, 1 --[[UnitSpawnType.Distance]], 30 --[[Program.MainBuilding1SpawnTime]], Areas.HumanBase, System.Array(System.Int32) { 1747988536 --[[Constants.UNIT_MAGIER_STUFE_1_HUMAN]], 1747988554 --[[Constants.UNIT_REITER_STUFE_1_HUMAN]] }):Run(5.5)
@@ -20178,24 +20184,24 @@ System.namespace("Source", function (namespace)
 
       -- Kasernen
       building = class.Orcs.Computer:CreateBuilding(1747988569 --[[Constants.UNIT_KASERNE_ORC]], Areas.OrcBarracksToCenter, 0)
-      building:RegisterOnDies(SourceHandlerSpecific.BarracksBuilding.OnDies)
+      building:RegisterOnDies(SourceHandlerSpecific.BuildingBarracks.OnDies)
       building:AddSpawnTrigger(Areas.OrcBarracksToCenterSpawn, 0 --[[UnitSpawnType.Meelee]], 15 --[[Program.BarracksSpawnTime]], Areas.ElfBase, System.Array(System.Int32) { 1747988529 --[[Constants.UNIT_SOLDAT_STUFE_1_HUMAN]], 1747988529 --[[Constants.UNIT_SOLDAT_STUFE_1_HUMAN]] }):Run(0)
       building:AddSpawnTrigger(Areas.OrcBarracksToCenterSpawn, 1 --[[UnitSpawnType.Distance]], 15 --[[Program.BarracksSpawnTime]], Areas.ElfBase, System.Array(System.Int32) { 1747988530 --[[Constants.UNIT_SCH_TZE_STUFE_1_HUMAN]] }):Run(0.5)
 
       building = class.Orcs.Computer:CreateBuilding(1747988569 --[[Constants.UNIT_KASERNE_ORC]], Areas.OrcBarracksToHuman, 0)
-      building:RegisterOnDies(SourceHandlerSpecific.BarracksBuilding.OnDies)
+      building:RegisterOnDies(SourceHandlerSpecific.BuildingBarracks.OnDies)
       building:AddSpawnTrigger(Areas.OrcBarracksToHumanSpawn, 0 --[[UnitSpawnType.Meelee]], 15 --[[Program.BarracksSpawnTime]], Areas.HumanBase, System.Array(System.Int32) { 1747988529 --[[Constants.UNIT_SOLDAT_STUFE_1_HUMAN]], 1747988529 --[[Constants.UNIT_SOLDAT_STUFE_1_HUMAN]] }):Run(0)
       building:AddSpawnTrigger(Areas.OrcBarracksToHumanSpawn, 1 --[[UnitSpawnType.Distance]], 15 --[[Program.BarracksSpawnTime]], Areas.HumanBase, System.Array(System.Int32) { 1747988530 --[[Constants.UNIT_SCH_TZE_STUFE_1_HUMAN]] }):Run(0.5)
 
       building = class.Orcs.Computer:CreateBuilding(1747988569 --[[Constants.UNIT_KASERNE_ORC]], Areas.OrcBarracksToUndead, 0)
-      building:RegisterOnDies(SourceHandlerSpecific.BarracksBuilding.OnDies)
+      building:RegisterOnDies(SourceHandlerSpecific.BuildingBarracks.OnDies)
       building:AddSpawnTrigger(Areas.OrcBarracksToUndeadSpawn, 0 --[[UnitSpawnType.Meelee]], 15 --[[Program.BarracksSpawnTime]], Areas.UndeadBase, System.Array(System.Int32) { 1747988529 --[[Constants.UNIT_SOLDAT_STUFE_1_HUMAN]], 1747988529 --[[Constants.UNIT_SOLDAT_STUFE_1_HUMAN]] }):Run(0)
       building:AddSpawnTrigger(Areas.OrcBarracksToUndeadSpawn, 1 --[[UnitSpawnType.Distance]], 15 --[[Program.BarracksSpawnTime]], Areas.UndeadBase, System.Array(System.Int32) { 1747988530 --[[Constants.UNIT_SCH_TZE_STUFE_1_HUMAN]] }):Run(0.5)
     end
     ConstructElfBuildingAndTrigger = function ()
       -- Hauptgebäude
       local building = class.Elves.Computer:CreateBuilding(1747988789 --[[Constants.UNIT_TELDRASSIL_ELF]], Areas.ElfBase, 0)
-      building:RegisterOnDies(SourceUnitEvents.MainBuilding.OnDies)
+      building:RegisterOnDies(SourceHandlerComputer.BuildingMain.OnDies)
       building:AddSpawnTrigger(Areas.ElfBaseToCenterSpawn, 1 --[[UnitSpawnType.Distance]], 30 --[[Program.MainBuilding1SpawnTime]], Areas.OrcBase, System.Array(System.Int32) { 1747988536 --[[Constants.UNIT_MAGIER_STUFE_1_HUMAN]], 1747988554 --[[Constants.UNIT_REITER_STUFE_1_HUMAN]] }):Run(5.5)
       building:AddSpawnTrigger(Areas.ElfBaseToCenterSpawn, 2 --[[UnitSpawnType.Artillery]], 60 --[[Program.MainBuilding2SpawnTime]], Areas.OrcBase, System.Array.Empty(System.Int32)):Run(7.5)
       building:AddSpawnTrigger(Areas.ElfBaseToHumanSpawn, 1 --[[UnitSpawnType.Distance]], 30 --[[Program.MainBuilding1SpawnTime]], Areas.HumanBase, System.Array(System.Int32) { 1747988536 --[[Constants.UNIT_MAGIER_STUFE_1_HUMAN]], 1747988554 --[[Constants.UNIT_REITER_STUFE_1_HUMAN]] }):Run(5.5)
@@ -20205,24 +20211,24 @@ System.namespace("Source", function (namespace)
 
       -- Kasernen
       building = class.Elves.Computer:CreateBuilding(1747988788 --[[Constants.UNIT_KASERNE_ELF]], Areas.ElfBarracksToCenter, 0)
-      building:RegisterOnDies(SourceHandlerSpecific.BarracksBuilding.OnDies)
+      building:RegisterOnDies(SourceHandlerSpecific.BuildingBarracks.OnDies)
       building:AddSpawnTrigger(Areas.ElfBarracksToCenterSpawn, 0 --[[UnitSpawnType.Meelee]], 15 --[[Program.BarracksSpawnTime]], Areas.OrcBase, System.Array(System.Int32) { 1747988529 --[[Constants.UNIT_SOLDAT_STUFE_1_HUMAN]], 1747988529 --[[Constants.UNIT_SOLDAT_STUFE_1_HUMAN]] }):Run(0)
       building:AddSpawnTrigger(Areas.ElfBarracksToCenterSpawn, 1 --[[UnitSpawnType.Distance]], 15 --[[Program.BarracksSpawnTime]], Areas.OrcBase, System.Array(System.Int32) { 1747988530 --[[Constants.UNIT_SCH_TZE_STUFE_1_HUMAN]] }):Run(0.5)
 
       building = class.Elves.Computer:CreateBuilding(1747988788 --[[Constants.UNIT_KASERNE_ELF]], Areas.ElfBarracksToHuman, 0)
-      building:RegisterOnDies(SourceHandlerSpecific.BarracksBuilding.OnDies)
+      building:RegisterOnDies(SourceHandlerSpecific.BuildingBarracks.OnDies)
       building:AddSpawnTrigger(Areas.ElfBarracksToHumanSpawn, 0 --[[UnitSpawnType.Meelee]], 15 --[[Program.BarracksSpawnTime]], Areas.HumanBase, System.Array(System.Int32) { 1747988529 --[[Constants.UNIT_SOLDAT_STUFE_1_HUMAN]], 1747988529 --[[Constants.UNIT_SOLDAT_STUFE_1_HUMAN]] }):Run(0)
       building:AddSpawnTrigger(Areas.ElfBarracksToHumanSpawn, 1 --[[UnitSpawnType.Distance]], 15 --[[Program.BarracksSpawnTime]], Areas.HumanBase, System.Array(System.Int32) { 1747988530 --[[Constants.UNIT_SCH_TZE_STUFE_1_HUMAN]] }):Run(0.5)
 
       building = class.Elves.Computer:CreateBuilding(1747988788 --[[Constants.UNIT_KASERNE_ELF]], Areas.ElfBarracksToUndead, 0)
-      building:RegisterOnDies(SourceHandlerSpecific.BarracksBuilding.OnDies)
+      building:RegisterOnDies(SourceHandlerSpecific.BuildingBarracks.OnDies)
       building:AddSpawnTrigger(Areas.ElfBarracksToUndeadSpawn, 0 --[[UnitSpawnType.Meelee]], 15 --[[Program.BarracksSpawnTime]], Areas.UndeadBase, System.Array(System.Int32) { 1747988529 --[[Constants.UNIT_SOLDAT_STUFE_1_HUMAN]], 1747988529 --[[Constants.UNIT_SOLDAT_STUFE_1_HUMAN]] }):Run(0)
       building:AddSpawnTrigger(Areas.ElfBarracksToUndeadSpawn, 1 --[[UnitSpawnType.Distance]], 15 --[[Program.BarracksSpawnTime]], Areas.UndeadBase, System.Array(System.Int32) { 1747988530 --[[Constants.UNIT_SCH_TZE_STUFE_1_HUMAN]] }):Run(0.5)
     end
     ConstructUndeadBuildingAndTrigger = function ()
       -- Hauptgebäude
       local building = class.Undeads.Computer:CreateBuilding(1747988801 --[[Constants.UNIT_SCHWARZE_ZITADELLE_UNDEAD]], Areas.UndeadBase, 0)
-      building:RegisterOnDies(SourceUnitEvents.MainBuilding.OnDies)
+      building:RegisterOnDies(SourceHandlerComputer.BuildingMain.OnDies)
       building:AddSpawnTrigger(Areas.UndeadBaseToCenterSpawn, 1 --[[UnitSpawnType.Distance]], 30 --[[Program.MainBuilding1SpawnTime]], Areas.HumanBase, System.Array(System.Int32) { 1747988536 --[[Constants.UNIT_MAGIER_STUFE_1_HUMAN]], 1747988554 --[[Constants.UNIT_REITER_STUFE_1_HUMAN]] }):Run(5.5)
       building:AddSpawnTrigger(Areas.UndeadBaseToCenterSpawn, 2 --[[UnitSpawnType.Artillery]], 60 --[[Program.MainBuilding2SpawnTime]], Areas.HumanBase, System.Array.Empty(System.Int32)):Run(7.5)
       building:AddSpawnTrigger(Areas.UndeadBaseToElfSpawn, 1 --[[UnitSpawnType.Distance]], 30 --[[Program.MainBuilding1SpawnTime]], Areas.ElfBase, System.Array(System.Int32) { 1747988536 --[[Constants.UNIT_MAGIER_STUFE_1_HUMAN]], 1747988554 --[[Constants.UNIT_REITER_STUFE_1_HUMAN]] }):Run(5.5)
@@ -20232,17 +20238,17 @@ System.namespace("Source", function (namespace)
 
       -- Kasernen
       building = class.Undeads.Computer:CreateBuilding(1747988805 --[[Constants.UNIT_GRUFT_UNDEAD]], Areas.UndeadBarracksToCenter, 0)
-      building:RegisterOnDies(SourceHandlerSpecific.BarracksBuilding.OnDies)
+      building:RegisterOnDies(SourceHandlerSpecific.BuildingBarracks.OnDies)
       building:AddSpawnTrigger(Areas.UndeadBarracksToCenterSpawn, 0 --[[UnitSpawnType.Meelee]], 15 --[[Program.BarracksSpawnTime]], Areas.HumanBase, System.Array(System.Int32) { 1747988529 --[[Constants.UNIT_SOLDAT_STUFE_1_HUMAN]], 1747988529 --[[Constants.UNIT_SOLDAT_STUFE_1_HUMAN]] }):Run(0)
       building:AddSpawnTrigger(Areas.UndeadBarracksToCenterSpawn, 1 --[[UnitSpawnType.Distance]], 15 --[[Program.BarracksSpawnTime]], Areas.HumanBase, System.Array(System.Int32) { 1747988530 --[[Constants.UNIT_SCH_TZE_STUFE_1_HUMAN]] }):Run(0.5)
 
       building = class.Undeads.Computer:CreateBuilding(1747988805 --[[Constants.UNIT_GRUFT_UNDEAD]], Areas.UndeadBarracksToElf, 0)
-      building:RegisterOnDies(SourceHandlerSpecific.BarracksBuilding.OnDies)
+      building:RegisterOnDies(SourceHandlerSpecific.BuildingBarracks.OnDies)
       building:AddSpawnTrigger(Areas.UndeadBarracksToElfSpawn, 0 --[[UnitSpawnType.Meelee]], 15 --[[Program.BarracksSpawnTime]], Areas.ElfBase, System.Array(System.Int32) { 1747988529 --[[Constants.UNIT_SOLDAT_STUFE_1_HUMAN]], 1747988529 --[[Constants.UNIT_SOLDAT_STUFE_1_HUMAN]] }):Run(0)
       building:AddSpawnTrigger(Areas.UndeadBarracksToElfSpawn, 1 --[[UnitSpawnType.Distance]], 15 --[[Program.BarracksSpawnTime]], Areas.ElfBase, System.Array(System.Int32) { 1747988530 --[[Constants.UNIT_SCH_TZE_STUFE_1_HUMAN]] }):Run(0.5)
 
       building = class.Undeads.Computer:CreateBuilding(1747988805 --[[Constants.UNIT_GRUFT_UNDEAD]], Areas.UndeadBarracksToOrcs, 0)
-      building:RegisterOnDies(SourceHandlerSpecific.BarracksBuilding.OnDies)
+      building:RegisterOnDies(SourceHandlerSpecific.BuildingBarracks.OnDies)
       building:AddSpawnTrigger(Areas.UndeadBarracksToOrcsSpawn, 0 --[[UnitSpawnType.Meelee]], 15 --[[Program.BarracksSpawnTime]], Areas.OrcBase, System.Array(System.Int32) { 1747988529 --[[Constants.UNIT_SOLDAT_STUFE_1_HUMAN]], 1747988529 --[[Constants.UNIT_SOLDAT_STUFE_1_HUMAN]] }):Run(0)
       building:AddSpawnTrigger(Areas.UndeadBarracksToOrcsSpawn, 1 --[[UnitSpawnType.Distance]], 15 --[[Program.BarracksSpawnTime]], Areas.OrcBase, System.Array(System.Int32) { 1747988530 --[[Constants.UNIT_SCH_TZE_STUFE_1_HUMAN]] }):Run(0.5)
     end
@@ -20621,6 +20627,271 @@ end)
 end
 do
 local System = System
+local Source
+System.import(function (out)
+  Source = out.Source
+end)
+System.namespace("Source.Handler.Specific", function (namespace)
+  namespace.class("BuildingBarracks", function (namespace)
+    local OnDies
+    OnDies = function ()
+      System.try(function ()
+        local unit = GetTriggerUnit()
+
+        local default, building = Source.Program.Humans.Computer:IsOwnerOfBuilding(unit)
+        if default then
+          building:Destroy()
+          System.Console.WriteLine("Die Menschen haben eine ihrer Kasernen verloren!")
+          Source.Program.Humans.Computer:RemoveBuilding(building)
+        else
+          local extern
+          extern, building = Source.Program.Orcs.Computer:IsOwnerOfBuilding(unit)
+          if extern then
+            building:Destroy()
+            System.Console.WriteLine("Die Orks haben eine ihrer Kasernen verloren!")
+            Source.Program.Orcs.Computer:RemoveBuilding(building)
+          else
+            local extern
+            extern, building = Source.Program.Elves.Computer:IsOwnerOfBuilding(unit)
+            if extern then
+              building:Destroy()
+              System.Console.WriteLine("Die Elfen haben eine ihrer Kasernen verloren!")
+              Source.Program.Elves.Computer:RemoveBuilding(building)
+            else
+              local extern
+              extern, building = Source.Program.Undeads.Computer:IsOwnerOfBuilding(unit)
+              if extern then
+                building:Destroy()
+                System.Console.WriteLine("Die Elfen haben eine ihrer Kasernen verloren!")
+                Source.Program.Elves.Computer:RemoveBuilding(building)
+              else
+                Source.Program.ShowDebugMessage1("BarracksBuilding.OnDies", "Building " .. System.toString(GetUnitName(unit)) .. " not found in building lists of computer players!")
+              end
+            end
+          end
+        end
+      end, function (default)
+        local ex = default
+        Source.Program.ShowExceptionMessage("BarracksBuilding.OnDies", ex)
+      end)
+    end
+    return {
+      OnDies = OnDies,
+      __metadata__ = function (out)
+        return {
+          methods = {
+            { "OnDies", 0xC, OnDies }
+          },
+          class = { "BuildingBarracks", 0x3C }
+        }
+      end
+    }
+  end)
+end)
+
+end
+do
+local System = System
+local Source
+System.import(function (out)
+  Source = out.Source
+end)
+System.namespace("Source.Handler.Computer", function (namespace)
+  namespace.class("BuildingMain", function (namespace)
+    local OnDies
+    OnDies = function ()
+      System.try(function ()
+        local unit = GetTriggerUnit()
+
+        local playerId = GetPlayerId(GetOwningPlayer(unit))
+
+        -- Besiege alle Spieler im Team des Hauptgebäudes
+        if playerId == Source.Program.Humans.Computer.PlayerId then
+          Source.Program.Humans:Defeat()
+        elseif playerId == Source.Program.Orcs.Computer.PlayerId then
+          Source.Program.Orcs:Defeat()
+        elseif playerId == Source.Program.Elves.Computer.PlayerId then
+          Source.Program.Elves:Defeat()
+        elseif playerId == Source.Program.Undeads.Computer.PlayerId then
+          Source.Program.Undeads:Defeat()
+        else
+          Source.Program.ShowDebugMessage1("MainBuilding.OnDies", "Unit of building " .. System.toString(GetUnitName(unit)) .. " not found in computer players!")
+        end
+
+        -- Ist nur noch ein Team übrig, gewinnen alle Spieler im Team
+        if Source.Program.Elves.Defeated and Source.Program.Orcs.Defeated and Source.Program.Undeads.Defeated then
+          Source.Program.Humans:Win()
+        elseif Source.Program.Humans.Defeated and Source.Program.Elves.Defeated and Source.Program.Undeads.Defeated then
+          Source.Program.Orcs:Win()
+        elseif Source.Program.Orcs.Defeated and Source.Program.Humans.Defeated and Source.Program.Undeads.Defeated then
+          Source.Program.Elves:Win()
+        elseif Source.Program.Orcs.Defeated and Source.Program.Elves.Defeated and Source.Program.Humans.Defeated then
+          Source.Program.Undeads:Win()
+        end
+      end, function (default)
+        local ex = default
+        Source.Program.ShowExceptionMessage("MainBuilding.OnDies", ex)
+      end)
+    end
+    return {
+      OnDies = OnDies,
+      __metadata__ = function (out)
+        return {
+          methods = {
+            { "OnDies", 0xC, OnDies }
+          },
+          class = { "BuildingMain", 0x3C }
+        }
+      end
+    }
+  end)
+end)
+
+end
+do
+local System = System
+local WCSharpApi = WCSharp.Api
+local Source
+System.import(function (out)
+  Source = out.Source
+end)
+System.namespace("Source.Handler.Computer", function (namespace)
+  namespace.class("ComputerHero", function (namespace)
+    local OnDies, OnLevels
+    OnDies = function (unit)
+      local playerId = GetPlayerId(GetOwningPlayer(unit))
+
+      -- Prüfe vor Wiedergeburt, ob der Computer-Spieler noch unbesiegt ist
+      if playerId == Source.Program.Humans.Computer.PlayerId then
+        if Source.Program.Humans.Computer.Defeated then
+          return
+        end
+      elseif playerId == Source.Program.Orcs.Computer.PlayerId then
+        if Source.Program.Orcs.Computer.Defeated then
+          return
+        end
+      elseif playerId == Source.Program.Elves.Computer.PlayerId then
+        if Source.Program.Elves.Computer.Defeated then
+          return
+        end
+      elseif playerId == Source.Program.Undeads.Computer.PlayerId then
+        if Source.Program.Undeads.Computer.Defeated then
+          return
+        end
+      end
+
+      -- Verstorbenen Held nach gegebener Zeit wieder belegen
+      local timer = CreateTimer()
+
+      TimerStart(timer, GetHeroLevel(unit) + 2, false, function ()
+        local default = System.try(function ()
+          -- Timer wieder zerstören
+          DestroyTimer(timer)
+          DestroyTimer(timer)
+          timer = nil
+
+          -- Prüfe vor Wiedergeburt, ob der Computer-Spieler noch unbesiegt ist
+          if playerId == Source.Program.Humans.Computer.PlayerId then
+            if Source.Program.Humans.Computer.Defeated then
+              return true
+            end
+          elseif playerId == Source.Program.Orcs.Computer.PlayerId then
+            if Source.Program.Orcs.Computer.Defeated then
+              return true
+            end
+          elseif playerId == Source.Program.Elves.Computer.PlayerId then
+            if Source.Program.Elves.Computer.Defeated then
+              return true
+            end
+          elseif playerId == Source.Program.Undeads.Computer.PlayerId then
+            if Source.Program.Undeads.Computer.Defeated then
+              return true
+            end
+          end
+
+          local owner = GetOwningPlayer(unit)
+          local respawnArea = nil
+
+          local default, spawnedUnit = Source.Program.Humans.Computer:IsOwnerOfUnit(unit)
+          if default then
+            respawnArea = Areas.HumanBaseHeroRespawn
+          else
+            local extern
+            extern, spawnedUnit = Source.Program.Orcs.Computer:IsOwnerOfUnit(unit)
+            if extern then
+              respawnArea = Areas.OrcBaseHeroRespawn
+            else
+              local extern
+              extern, spawnedUnit = Source.Program.Elves.Computer:IsOwnerOfUnit(unit)
+              if extern then
+                respawnArea = Areas.ElfBaseHeroRespawn
+              else
+                local extern
+                extern, spawnedUnit = Source.Program.Undeads.Computer:IsOwnerOfUnit(unit)
+                if extern then
+                  respawnArea = Areas.UndeadBaseHeroRespawn
+                end
+              end
+            end
+          end
+
+          if spawnedUnit ~= nil then
+            ReviveHero(unit, respawnArea.CenterX, respawnArea.CenterY, true)
+            spawnedUnit:RepeatAttackMove()
+          end
+        end, function (default)
+          local ex = default
+          Source.Program.ShowExceptionMessage("ComputerHero.OnDies", ex)
+        end)
+        if default then
+          return
+        end
+      end)
+    end
+    OnLevels = function ()
+      local unit = GetLevelingUnit()
+
+      Source.Program.ShowDebugMessage("Held hat gelevelt!")
+
+      if GetPlayerController(GetOwningPlayer(unit)) ~= MAP_CONTROL_COMPUTER then
+        return
+      end
+
+      --int randomIndex = Random.Shared.Next(1, 5);
+      --ability ability = unit.GetAbilityByIndex(randomIndex);
+      --int abilityId = ability.Id;
+      --int abilityLevel = unit.GetAbilityLevel(abilityId);
+
+      --// TODO : Level des Helden und Skill-Level-Skip beachten?
+
+      --if (abilityLevel < ability.Levels)
+      --{
+      --  // Skill kann verbessert werden
+      --  unit.IncrementAbilityLevel(abilityId);
+      --  unit.SkillPoints--;
+
+      --  Program.ShowDebugMessage($"Heldenfähigkeiten {ability.Name} verbessert!");
+      --}
+    end
+    return {
+      OnDies = OnDies,
+      OnLevels = OnLevels,
+      __metadata__ = function (out)
+        return {
+          methods = {
+            { "OnDies", 0x10C, OnDies, out.WCSharp.Api.unit },
+            { "OnLevels", 0xC, OnLevels }
+          },
+          class = { "ComputerHero", 0x3C }
+        }
+      end
+    }
+  end)
+end)
+
+end
+do
+local System = System
 local WCSharpApi = WCSharp.Api
 local Source
 System.import(function (out)
@@ -20788,571 +21059,14 @@ end)
 end
 do
 local System = System
-local Source
-System.import(function (out)
-  Source = out.Source
-end)
-System.namespace("Source.Handler.GenericEvents", function (namespace)
-  namespace.class("Item", function (namespace)
-    local OnSellsFinished
-    OnSellsFinished = function ()
-      System.try(function ()
-        local unit = GetBuyingUnit()
-
-        local item = GetSoldItem()
-        local itemId = GetItemTypeId(item)
-
-        System.Console.WriteLine("Item " .. System.toString(GetItemName(item)) .. " verkauft an " .. System.toString(GetPlayerName(GetOwningPlayer(unit))) .. "!")
-
-        if itemId == 1227894832 --[[Constants.ITEM_GLYPHE_DER_OPFERUNG]] then
-          local playerId = GetPlayerId(GetOwningPlayer(unit))
-          local default, user = Source.Program.TryGetActiveUser(playerId)
-          if default then
-            -- Merke Heldenstufe
-            user.HeroLevelCounter = GetHeroLevel(unit)
-            -- Entferne Käufer/Helden aus Spiel
-            RemoveUnit(unit)
-
-            -- Heldenseele erstellen und Kamera verschieben
-            Source.Program.CreateHeroSelectorForPlayerAndAdjustCamera(user)
-          end
-        end
-      end, function (default)
-        local ex = default
-        Source.Program.ShowExceptionMessage("Item.OnSellsFinished", ex)
-      end)
-    end
-    return {
-      OnSellsFinished = OnSellsFinished,
-      __metadata__ = function (out)
-        return {
-          methods = {
-            { "OnSellsFinished", 0xC, OnSellsFinished }
-          },
-          class = { "Item", 0x3C }
-        }
-      end
-    }
-  end)
-end)
-
-end
-do
-local System = System
-local Source
-local SourceModels
-System.import(function (out)
-  Source = out.Source
-  SourceModels = Source.Models
-end)
-System.namespace("Source.Handler.GenericEvents", function (namespace)
-  namespace.class("Research", function (namespace)
-    local OnFinished, GetHumanTechType, GetOrcTechType, GetElfTechType, GetUndeadTechType
-    OnFinished = function ()
-      System.try(function ()
-        local unit = GetResearchingUnit()
-        local researchedTechId = GetResearched()
-        local researchedTechIdCount = GetPlayerTechCount(GetOwningPlayer(unit), researchedTechId, true)
-
-        local player = GetOwningPlayer(unit)
-        local playerId = GetPlayerId(player)
-        local researchType
-
-        local default, foundUser = Source.Program.Humans:ContainsPlayer(playerId)
-        if default then
-          local extern, spawnCommand = GetHumanTechType(researchedTechId, researchedTechIdCount)
-          researchType = extern
-
-          Source.Program.Humans:IncreaseTechForAllPlayers(researchedTechId, researchedTechIdCount)
-
-          if researchType == 1 --[[ResearchType.AddUnit]] then
-            Source.Program.Humans.Computer:AddSpawnUnit(spawnCommand)
-          elseif researchType == 2 --[[ResearchType.UpgradeUnit]] then
-            Source.Program.Humans.Computer:UpgradeSpawnUnit(spawnCommand)
-          end
-        else
-          local extern
-          extern, foundUser = Source.Program.Orcs:ContainsPlayer(playerId)
-          if extern then
-            local extern, spawnCommand = GetOrcTechType(researchedTechId, researchedTechIdCount)
-            researchType = extern
-
-            Source.Program.Orcs:IncreaseTechForAllPlayers(researchedTechId, researchedTechIdCount)
-
-            if researchType == 1 --[[ResearchType.AddUnit]] then
-              Source.Program.Orcs.Computer:AddSpawnUnit(spawnCommand)
-            elseif researchType == 2 --[[ResearchType.UpgradeUnit]] then
-              Source.Program.Orcs.Computer:UpgradeSpawnUnit(spawnCommand)
-            end
-          else
-            local extern
-            extern, foundUser = Source.Program.Elves:ContainsPlayer(playerId)
-            if extern then
-              local extern, spawnCommand = GetElfTechType(researchedTechId, researchedTechIdCount)
-              researchType = extern
-
-              Source.Program.Elves:IncreaseTechForAllPlayers(researchedTechId, researchedTechIdCount)
-
-              if researchType == 1 --[[ResearchType.AddUnit]] then
-                Source.Program.Elves.Computer:AddSpawnUnit(spawnCommand)
-              elseif researchType == 2 --[[ResearchType.UpgradeUnit]] then
-                Source.Program.Elves.Computer:UpgradeSpawnUnit(spawnCommand)
-              end
-            else
-              local extern
-              extern, foundUser = Source.Program.Undeads:ContainsPlayer(playerId)
-              if extern then
-                local extern, spawnCommand = GetUndeadTechType(researchedTechId, researchedTechIdCount)
-                researchType = extern
-
-                Source.Program.Undeads:IncreaseTechForAllPlayers(researchedTechId, researchedTechIdCount)
-
-                if researchType == 1 --[[ResearchType.AddUnit]] then
-                  Source.Program.Undeads.Computer:AddSpawnUnit(spawnCommand)
-                elseif researchType == 2 --[[ResearchType.UpgradeUnit]] then
-                  Source.Program.Undeads.Computer:UpgradeSpawnUnit(spawnCommand)
-                end
-              end
-            end
-          end
-        end
-      end, function (default)
-        local ex = default
-        Source.Program.ShowExceptionMessage("Research.OnFinished", ex)
-      end)
-    end
-    GetHumanTechType = function (techId, techLevel, spawnCommand)
-      repeat
-        local default = techId
-        if default == 1378889781 --[[Constants.UPGRADE_EINHEIT_SOLDAT_TEAM]] then
-          local extern = SourceModels.SpawnUnitCommand()
-          extern.UnitSpawnType = 0 --[[UnitSpawnType.Meelee]]
-          extern.UnitIdOfBuilding = 1747988535 --[[Constants.UNIT_KASERNE_HUMAN]]
-          spawnCommand = extern
-
-          repeat
-            local extern = techLevel
-            if extern == 1 then
-              spawnCommand.UnitId = 1747988547 --[[Constants.UNIT_SOLDAT_STUFE_2_HUMAN]]
-              spawnCommand.UnitIdToUpgrade = 1747988529 --[[Constants.UNIT_SOLDAT_STUFE_1_HUMAN]]
-              return 2 --[[ResearchType.UpgradeUnit]], spawnCommand
-            else
-              spawnCommand.UnitId = 1747988546 --[[Constants.UNIT_SOLDAT_STUFE_3_HUMAN]]
-              spawnCommand.UnitIdToUpgrade = 1747988547 --[[Constants.UNIT_SOLDAT_STUFE_2_HUMAN]]
-              return 2 --[[ResearchType.UpgradeUnit]], spawnCommand
-            end
-          until 1
-        elseif default == 1378889785 --[[Constants.UPGRADE_EINHEIT_SCH_TZE_TEAM]] then
-          local extern = SourceModels.SpawnUnitCommand()
-          extern.UnitSpawnType = 1 --[[UnitSpawnType.Distance]]
-          extern.UnitIdOfBuilding = 1747988535 --[[Constants.UNIT_KASERNE_HUMAN]]
-          extern.UnitId = 1747988550 --[[Constants.UNIT_SCH_TZE_STUFE_2_HUMAN]]
-          extern.UnitIdToUpgrade = 1747988530 --[[Constants.UNIT_SCH_TZE_STUFE_1_HUMAN]]
-          spawnCommand = extern
-
-          repeat
-            local extern = techLevel
-            if extern == 1 then
-              spawnCommand.UnitId = 1747988550 --[[Constants.UNIT_SCH_TZE_STUFE_2_HUMAN]]
-              spawnCommand.UnitIdToUpgrade = 1747988530 --[[Constants.UNIT_SCH_TZE_STUFE_1_HUMAN]]
-              return 2 --[[ResearchType.UpgradeUnit]], spawnCommand
-            else
-              spawnCommand.UnitId = 1747988551 --[[Constants.UNIT_SCH_TZE_STUFE_3_HUMAN]]
-              spawnCommand.UnitIdToUpgrade = 1747988550 --[[Constants.UNIT_SCH_TZE_STUFE_2_HUMAN]]
-              return 2 --[[ResearchType.UpgradeUnit]], spawnCommand
-            end
-          until 1
-        elseif default == 1378889795 --[[Constants.UPGRADE_EINHEIT_REITER_TEAM]] then
-          local extern = SourceModels.SpawnUnitCommand()
-          extern.UnitSpawnType = 1 --[[UnitSpawnType.Distance]]
-          extern.UnitIdOfBuilding = 1747988531 --[[Constants.UNIT_SCHLOSS_HUMAN]]
-          extern.UnitId = 1747988554 --[[Constants.UNIT_REITER_STUFE_1_HUMAN]]
-          spawnCommand = extern
-
-          repeat
-            local extern = techLevel
-            if extern == 1 then
-              spawnCommand.UnitId = 1747988555 --[[Constants.UNIT_REITER_STUFE_2_HUMAN]]
-              spawnCommand.UnitIdToUpgrade = 1747988554 --[[Constants.UNIT_REITER_STUFE_1_HUMAN]]
-              return 2 --[[ResearchType.UpgradeUnit]], spawnCommand
-            else
-              spawnCommand.UnitId = 1747988556 --[[Constants.UNIT_REITER_STUFE_3_HUMAN]]
-              spawnCommand.UnitIdToUpgrade = 1747988555 --[[Constants.UNIT_REITER_STUFE_2_HUMAN]]
-              return 2 --[[ResearchType.UpgradeUnit]], spawnCommand
-            end
-          until 1
-        elseif default == 1378889797 --[[Constants.UPGRADE_EINHEIT_MAGIER_TEAM]] then
-          local extern = SourceModels.SpawnUnitCommand()
-          extern.UnitSpawnType = 1 --[[UnitSpawnType.Distance]]
-          extern.UnitIdOfBuilding = 1747988531 --[[Constants.UNIT_SCHLOSS_HUMAN]]
-          spawnCommand = extern
-
-          repeat
-            local extern = techLevel
-            if extern == 1 then
-              spawnCommand.UnitId = 1747988552 --[[Constants.UNIT_MAGIER_STUFE_2_HUMAN]]
-              spawnCommand.UnitIdToUpgrade = 1747988536 --[[Constants.UNIT_MAGIER_STUFE_1_HUMAN]]
-              return 2 --[[ResearchType.UpgradeUnit]], spawnCommand
-            else
-              spawnCommand.UnitId = 1747988553 --[[Constants.UNIT_MAGIER_STUFE_3_HUMAN]]
-              spawnCommand.UnitIdToUpgrade = 1747988552 --[[Constants.UNIT_MAGIER_STUFE_2_HUMAN]]
-              return 2 --[[ResearchType.UpgradeUnit]], spawnCommand
-            end
-          until 1
-        elseif default == 1378889784 --[[Constants.UPGRADE_EINHEIT_BELAGERUNGSMASCHINE_TEAM]] then
-          local extern = SourceModels.SpawnUnitCommand()
-          extern.UnitSpawnType = 2 --[[UnitSpawnType.Artillery]]
-          extern.UnitIdOfBuilding = 1747988531 --[[Constants.UNIT_SCHLOSS_HUMAN]]
-          spawnCommand = extern
-
-          repeat
-            local extern = techLevel
-            if extern == 1 then
-              spawnCommand.UnitId = 1747988549 --[[Constants.UNIT_BELAGERUNGSMASCHINE_STUFE_1_HUMAN]]
-              return 1 --[[ResearchType.AddUnit]], spawnCommand
-            else
-              spawnCommand.UnitId = 1747988563 --[[Constants.UNIT_BELAGERUNGSMASCHINE_STUFE_2_HUMAN]]
-              spawnCommand.UnitIdToUpgrade = 1747988549 --[[Constants.UNIT_BELAGERUNGSMASCHINE_STUFE_1_HUMAN]]
-              return 2 --[[ResearchType.UpgradeUnit]], spawnCommand
-            end
-          until 1
-        else
-          -- Einfache Verbeserungen bestehender Einheiten
-          spawnCommand = nil
-          return 0 --[[ResearchType.CommonUpgrade]], spawnCommand
-        end
-      until 1
-    end
-    GetOrcTechType = function (techId, techLevel, spawnCommand)
-      repeat
-        local default = techId
-        if default == 1378889781 --[[Constants.UPGRADE_EINHEIT_SOLDAT_TEAM]] then
-          local extern = SourceModels.SpawnUnitCommand()
-          extern.UnitSpawnType = 0 --[[UnitSpawnType.Meelee]]
-          extern.UnitIdOfBuilding = 1747988569 --[[Constants.UNIT_KASERNE_ORC]]
-          spawnCommand = extern
-
-          repeat
-            local extern = techLevel
-            if extern == 1 then
-              spawnCommand.UnitId = 1747988547 --[[Constants.UNIT_SOLDAT_STUFE_2_HUMAN]]
-              spawnCommand.UnitIdToUpgrade = 1747988529 --[[Constants.UNIT_SOLDAT_STUFE_1_HUMAN]]
-              return 2 --[[ResearchType.UpgradeUnit]], spawnCommand
-            else
-              spawnCommand.UnitId = 1747988546 --[[Constants.UNIT_SOLDAT_STUFE_3_HUMAN]]
-              spawnCommand.UnitIdToUpgrade = 1747988547 --[[Constants.UNIT_SOLDAT_STUFE_2_HUMAN]]
-              return 2 --[[ResearchType.UpgradeUnit]], spawnCommand
-            end
-          until 1
-        elseif default == 1378889785 --[[Constants.UPGRADE_EINHEIT_SCH_TZE_TEAM]] then
-          local extern = SourceModels.SpawnUnitCommand()
-          extern.UnitSpawnType = 1 --[[UnitSpawnType.Distance]]
-          extern.UnitIdOfBuilding = 1747988569 --[[Constants.UNIT_KASERNE_ORC]]
-          extern.UnitId = 1747988550 --[[Constants.UNIT_SCH_TZE_STUFE_2_HUMAN]]
-          extern.UnitIdToUpgrade = 1747988530 --[[Constants.UNIT_SCH_TZE_STUFE_1_HUMAN]]
-          spawnCommand = extern
-
-          repeat
-            local extern = techLevel
-            if extern == 1 then
-              spawnCommand.UnitId = 1747988550 --[[Constants.UNIT_SCH_TZE_STUFE_2_HUMAN]]
-              spawnCommand.UnitIdToUpgrade = 1747988530 --[[Constants.UNIT_SCH_TZE_STUFE_1_HUMAN]]
-              return 2 --[[ResearchType.UpgradeUnit]], spawnCommand
-            else
-              spawnCommand.UnitId = 1747988551 --[[Constants.UNIT_SCH_TZE_STUFE_3_HUMAN]]
-              spawnCommand.UnitIdToUpgrade = 1747988550 --[[Constants.UNIT_SCH_TZE_STUFE_2_HUMAN]]
-              return 2 --[[ResearchType.UpgradeUnit]], spawnCommand
-            end
-          until 1
-        elseif default == 1378889795 --[[Constants.UPGRADE_EINHEIT_REITER_TEAM]] then
-          local extern = SourceModels.SpawnUnitCommand()
-          extern.UnitSpawnType = 1 --[[UnitSpawnType.Distance]]
-          extern.UnitIdOfBuilding = 1747988570 --[[Constants.UNIT_FESTUNG_ORC]]
-          extern.UnitId = 1747988554 --[[Constants.UNIT_REITER_STUFE_1_HUMAN]]
-          spawnCommand = extern
-
-          repeat
-            local extern = techLevel
-            if extern == 1 then
-              spawnCommand.UnitId = 1747988555 --[[Constants.UNIT_REITER_STUFE_2_HUMAN]]
-              spawnCommand.UnitIdToUpgrade = 1747988554 --[[Constants.UNIT_REITER_STUFE_1_HUMAN]]
-              return 2 --[[ResearchType.UpgradeUnit]], spawnCommand
-            else
-              spawnCommand.UnitId = 1747988556 --[[Constants.UNIT_REITER_STUFE_3_HUMAN]]
-              spawnCommand.UnitIdToUpgrade = 1747988555 --[[Constants.UNIT_REITER_STUFE_2_HUMAN]]
-              return 2 --[[ResearchType.UpgradeUnit]], spawnCommand
-            end
-          until 1
-        elseif default == 1378889797 --[[Constants.UPGRADE_EINHEIT_MAGIER_TEAM]] then
-          local extern = SourceModels.SpawnUnitCommand()
-          extern.UnitSpawnType = 1 --[[UnitSpawnType.Distance]]
-          extern.UnitIdOfBuilding = 1747988570 --[[Constants.UNIT_FESTUNG_ORC]]
-          spawnCommand = extern
-
-          repeat
-            local extern = techLevel
-            if extern == 1 then
-              spawnCommand.UnitId = 1747988552 --[[Constants.UNIT_MAGIER_STUFE_2_HUMAN]]
-              spawnCommand.UnitIdToUpgrade = 1747988536 --[[Constants.UNIT_MAGIER_STUFE_1_HUMAN]]
-              return 2 --[[ResearchType.UpgradeUnit]], spawnCommand
-            else
-              spawnCommand.UnitId = 1747988553 --[[Constants.UNIT_MAGIER_STUFE_3_HUMAN]]
-              spawnCommand.UnitIdToUpgrade = 1747988552 --[[Constants.UNIT_MAGIER_STUFE_2_HUMAN]]
-              return 2 --[[ResearchType.UpgradeUnit]], spawnCommand
-            end
-          until 1
-        elseif default == 1378889784 --[[Constants.UPGRADE_EINHEIT_BELAGERUNGSMASCHINE_TEAM]] then
-          local extern = SourceModels.SpawnUnitCommand()
-          extern.UnitSpawnType = 2 --[[UnitSpawnType.Artillery]]
-          extern.UnitIdOfBuilding = 1747988570 --[[Constants.UNIT_FESTUNG_ORC]]
-          spawnCommand = extern
-
-          repeat
-            local extern = techLevel
-            if extern == 1 then
-              spawnCommand.UnitId = 1747988549 --[[Constants.UNIT_BELAGERUNGSMASCHINE_STUFE_1_HUMAN]]
-              return 1 --[[ResearchType.AddUnit]], spawnCommand
-            else
-              spawnCommand.UnitId = 1747988549 --[[Constants.UNIT_BELAGERUNGSMASCHINE_STUFE_1_HUMAN]]
-              spawnCommand.UnitIdToUpgrade = 1747988563 --[[Constants.UNIT_BELAGERUNGSMASCHINE_STUFE_2_HUMAN]]
-              return 2 --[[ResearchType.UpgradeUnit]], spawnCommand
-            end
-          until 1
-        else
-          spawnCommand = nil
-          return 0 --[[ResearchType.CommonUpgrade]], spawnCommand
-        end
-      until 1
-    end
-    GetElfTechType = function (techId, techLevel, spawnCommand)
-      repeat
-        local default = techId
-        if default == 1378889781 --[[Constants.UPGRADE_EINHEIT_SOLDAT_TEAM]] then
-          local extern = SourceModels.SpawnUnitCommand()
-          extern.UnitSpawnType = 0 --[[UnitSpawnType.Meelee]]
-          extern.UnitIdOfBuilding = 1747988788 --[[Constants.UNIT_KASERNE_ELF]]
-          spawnCommand = extern
-
-          repeat
-            local extern = techLevel
-            if extern == 1 then
-              spawnCommand.UnitId = 1747988547 --[[Constants.UNIT_SOLDAT_STUFE_2_HUMAN]]
-              spawnCommand.UnitIdToUpgrade = 1747988529 --[[Constants.UNIT_SOLDAT_STUFE_1_HUMAN]]
-              return 2 --[[ResearchType.UpgradeUnit]], spawnCommand
-            else
-              spawnCommand.UnitId = 1747988546 --[[Constants.UNIT_SOLDAT_STUFE_3_HUMAN]]
-              spawnCommand.UnitIdToUpgrade = 1747988547 --[[Constants.UNIT_SOLDAT_STUFE_2_HUMAN]]
-              return 2 --[[ResearchType.UpgradeUnit]], spawnCommand
-            end
-          until 1
-        elseif default == 1378889785 --[[Constants.UPGRADE_EINHEIT_SCH_TZE_TEAM]] then
-          local extern = SourceModels.SpawnUnitCommand()
-          extern.UnitSpawnType = 1 --[[UnitSpawnType.Distance]]
-          extern.UnitIdOfBuilding = 1747988788 --[[Constants.UNIT_KASERNE_ELF]]
-          extern.UnitId = 1747988550 --[[Constants.UNIT_SCH_TZE_STUFE_2_HUMAN]]
-          extern.UnitIdToUpgrade = 1747988530 --[[Constants.UNIT_SCH_TZE_STUFE_1_HUMAN]]
-          spawnCommand = extern
-
-          repeat
-            local extern = techLevel
-            if extern == 1 then
-              spawnCommand.UnitId = 1747988550 --[[Constants.UNIT_SCH_TZE_STUFE_2_HUMAN]]
-              spawnCommand.UnitIdToUpgrade = 1747988530 --[[Constants.UNIT_SCH_TZE_STUFE_1_HUMAN]]
-              return 2 --[[ResearchType.UpgradeUnit]], spawnCommand
-            else
-              spawnCommand.UnitId = 1747988551 --[[Constants.UNIT_SCH_TZE_STUFE_3_HUMAN]]
-              spawnCommand.UnitIdToUpgrade = 1747988550 --[[Constants.UNIT_SCH_TZE_STUFE_2_HUMAN]]
-              return 2 --[[ResearchType.UpgradeUnit]], spawnCommand
-            end
-          until 1
-        elseif default == 1378889795 --[[Constants.UPGRADE_EINHEIT_REITER_TEAM]] then
-          local extern = SourceModels.SpawnUnitCommand()
-          extern.UnitSpawnType = 1 --[[UnitSpawnType.Distance]]
-          extern.UnitIdOfBuilding = 1747988789 --[[Constants.UNIT_TELDRASSIL_ELF]]
-          extern.UnitId = 1747988554 --[[Constants.UNIT_REITER_STUFE_1_HUMAN]]
-          spawnCommand = extern
-
-          repeat
-            local extern = techLevel
-            if extern == 1 then
-              spawnCommand.UnitId = 1747988555 --[[Constants.UNIT_REITER_STUFE_2_HUMAN]]
-              spawnCommand.UnitIdToUpgrade = 1747988554 --[[Constants.UNIT_REITER_STUFE_1_HUMAN]]
-              return 2 --[[ResearchType.UpgradeUnit]], spawnCommand
-            else
-              spawnCommand.UnitId = 1747988556 --[[Constants.UNIT_REITER_STUFE_3_HUMAN]]
-              spawnCommand.UnitIdToUpgrade = 1747988555 --[[Constants.UNIT_REITER_STUFE_2_HUMAN]]
-              return 2 --[[ResearchType.UpgradeUnit]], spawnCommand
-            end
-          until 1
-        elseif default == 1378889797 --[[Constants.UPGRADE_EINHEIT_MAGIER_TEAM]] then
-          local extern = SourceModels.SpawnUnitCommand()
-          extern.UnitSpawnType = 1 --[[UnitSpawnType.Distance]]
-          extern.UnitIdOfBuilding = 1747988789 --[[Constants.UNIT_TELDRASSIL_ELF]]
-          spawnCommand = extern
-
-          repeat
-            local extern = techLevel
-            if extern == 1 then
-              spawnCommand.UnitId = 1747988552 --[[Constants.UNIT_MAGIER_STUFE_2_HUMAN]]
-              spawnCommand.UnitIdToUpgrade = 1747988536 --[[Constants.UNIT_MAGIER_STUFE_1_HUMAN]]
-              return 2 --[[ResearchType.UpgradeUnit]], spawnCommand
-            else
-              spawnCommand.UnitId = 1747988553 --[[Constants.UNIT_MAGIER_STUFE_3_HUMAN]]
-              spawnCommand.UnitIdToUpgrade = 1747988552 --[[Constants.UNIT_MAGIER_STUFE_2_HUMAN]]
-              return 2 --[[ResearchType.UpgradeUnit]], spawnCommand
-            end
-          until 1
-        elseif default == 1378889784 --[[Constants.UPGRADE_EINHEIT_BELAGERUNGSMASCHINE_TEAM]] then
-          local extern = SourceModels.SpawnUnitCommand()
-          extern.UnitSpawnType = 2 --[[UnitSpawnType.Artillery]]
-          extern.UnitIdOfBuilding = 1747988789 --[[Constants.UNIT_TELDRASSIL_ELF]]
-          spawnCommand = extern
-
-          repeat
-            local extern = techLevel
-            if extern == 1 then
-              spawnCommand.UnitId = 1747988549 --[[Constants.UNIT_BELAGERUNGSMASCHINE_STUFE_1_HUMAN]]
-              return 1 --[[ResearchType.AddUnit]], spawnCommand
-            else
-              spawnCommand.UnitId = 1747988549 --[[Constants.UNIT_BELAGERUNGSMASCHINE_STUFE_1_HUMAN]]
-              spawnCommand.UnitIdToUpgrade = 1747988563 --[[Constants.UNIT_BELAGERUNGSMASCHINE_STUFE_2_HUMAN]]
-              return 2 --[[ResearchType.UpgradeUnit]], spawnCommand
-            end
-          until 1
-        else
-          spawnCommand = nil
-          return 0 --[[ResearchType.CommonUpgrade]], spawnCommand
-        end
-      until 1
-    end
-    GetUndeadTechType = function (techId, techLevel, spawnCommand)
-      repeat
-        local default = techId
-        if default == 1378889781 --[[Constants.UPGRADE_EINHEIT_SOLDAT_TEAM]] then
-          local extern = SourceModels.SpawnUnitCommand()
-          extern.UnitSpawnType = 0 --[[UnitSpawnType.Meelee]]
-          extern.UnitIdOfBuilding = 1747988805 --[[Constants.UNIT_GRUFT_UNDEAD]]
-          spawnCommand = extern
-
-          repeat
-            local extern = techLevel
-            if extern == 1 then
-              spawnCommand.UnitId = 1747988547 --[[Constants.UNIT_SOLDAT_STUFE_2_HUMAN]]
-              spawnCommand.UnitIdToUpgrade = 1747988529 --[[Constants.UNIT_SOLDAT_STUFE_1_HUMAN]]
-              return 2 --[[ResearchType.UpgradeUnit]], spawnCommand
-            else
-              spawnCommand.UnitId = 1747988546 --[[Constants.UNIT_SOLDAT_STUFE_3_HUMAN]]
-              spawnCommand.UnitIdToUpgrade = 1747988547 --[[Constants.UNIT_SOLDAT_STUFE_2_HUMAN]]
-              return 2 --[[ResearchType.UpgradeUnit]], spawnCommand
-            end
-          until 1
-        elseif default == 1378889785 --[[Constants.UPGRADE_EINHEIT_SCH_TZE_TEAM]] then
-          local extern = SourceModels.SpawnUnitCommand()
-          extern.UnitSpawnType = 1 --[[UnitSpawnType.Distance]]
-          extern.UnitIdOfBuilding = 1747988805 --[[Constants.UNIT_GRUFT_UNDEAD]]
-          extern.UnitId = 1747988550 --[[Constants.UNIT_SCH_TZE_STUFE_2_HUMAN]]
-          extern.UnitIdToUpgrade = 1747988530 --[[Constants.UNIT_SCH_TZE_STUFE_1_HUMAN]]
-          spawnCommand = extern
-
-          repeat
-            local extern = techLevel
-            if extern == 1 then
-              spawnCommand.UnitId = 1747988550 --[[Constants.UNIT_SCH_TZE_STUFE_2_HUMAN]]
-              spawnCommand.UnitIdToUpgrade = 1747988530 --[[Constants.UNIT_SCH_TZE_STUFE_1_HUMAN]]
-              return 2 --[[ResearchType.UpgradeUnit]], spawnCommand
-            else
-              spawnCommand.UnitId = 1747988551 --[[Constants.UNIT_SCH_TZE_STUFE_3_HUMAN]]
-              spawnCommand.UnitIdToUpgrade = 1747988550 --[[Constants.UNIT_SCH_TZE_STUFE_2_HUMAN]]
-              return 2 --[[ResearchType.UpgradeUnit]], spawnCommand
-            end
-          until 1
-        elseif default == 1378889795 --[[Constants.UPGRADE_EINHEIT_REITER_TEAM]] then
-          local extern = SourceModels.SpawnUnitCommand()
-          extern.UnitSpawnType = 1 --[[UnitSpawnType.Distance]]
-          extern.UnitIdOfBuilding = 1747988801 --[[Constants.UNIT_SCHWARZE_ZITADELLE_UNDEAD]]
-          extern.UnitId = 1747988554 --[[Constants.UNIT_REITER_STUFE_1_HUMAN]]
-          spawnCommand = extern
-
-          repeat
-            local extern = techLevel
-            if extern == 1 then
-              spawnCommand.UnitId = 1747988555 --[[Constants.UNIT_REITER_STUFE_2_HUMAN]]
-              spawnCommand.UnitIdToUpgrade = 1747988554 --[[Constants.UNIT_REITER_STUFE_1_HUMAN]]
-              return 2 --[[ResearchType.UpgradeUnit]], spawnCommand
-            else
-              spawnCommand.UnitId = 1747988556 --[[Constants.UNIT_REITER_STUFE_3_HUMAN]]
-              spawnCommand.UnitIdToUpgrade = 1747988555 --[[Constants.UNIT_REITER_STUFE_2_HUMAN]]
-              return 2 --[[ResearchType.UpgradeUnit]], spawnCommand
-            end
-          until 1
-        elseif default == 1378889797 --[[Constants.UPGRADE_EINHEIT_MAGIER_TEAM]] then
-          local extern = SourceModels.SpawnUnitCommand()
-          extern.UnitSpawnType = 1 --[[UnitSpawnType.Distance]]
-          extern.UnitIdOfBuilding = 1747988801 --[[Constants.UNIT_SCHWARZE_ZITADELLE_UNDEAD]]
-          spawnCommand = extern
-
-          repeat
-            local extern = techLevel
-            if extern == 1 then
-              spawnCommand.UnitId = 1747988552 --[[Constants.UNIT_MAGIER_STUFE_2_HUMAN]]
-              spawnCommand.UnitIdToUpgrade = 1747988536 --[[Constants.UNIT_MAGIER_STUFE_1_HUMAN]]
-              return 2 --[[ResearchType.UpgradeUnit]], spawnCommand
-            else
-              spawnCommand.UnitId = 1747988553 --[[Constants.UNIT_MAGIER_STUFE_3_HUMAN]]
-              spawnCommand.UnitIdToUpgrade = 1747988552 --[[Constants.UNIT_MAGIER_STUFE_2_HUMAN]]
-              return 2 --[[ResearchType.UpgradeUnit]], spawnCommand
-            end
-          until 1
-        elseif default == 1378889784 --[[Constants.UPGRADE_EINHEIT_BELAGERUNGSMASCHINE_TEAM]] then
-          local extern = SourceModels.SpawnUnitCommand()
-          extern.UnitSpawnType = 2 --[[UnitSpawnType.Artillery]]
-          extern.UnitIdOfBuilding = 1747988801 --[[Constants.UNIT_SCHWARZE_ZITADELLE_UNDEAD]]
-          spawnCommand = extern
-
-          repeat
-            local extern = techLevel
-            if extern == 1 then
-              spawnCommand.UnitId = 1747988549 --[[Constants.UNIT_BELAGERUNGSMASCHINE_STUFE_1_HUMAN]]
-              return 1 --[[ResearchType.AddUnit]], spawnCommand
-            else
-              spawnCommand.UnitId = 1747988549 --[[Constants.UNIT_BELAGERUNGSMASCHINE_STUFE_1_HUMAN]]
-              spawnCommand.UnitIdToUpgrade = 1747988563 --[[Constants.UNIT_BELAGERUNGSMASCHINE_STUFE_2_HUMAN]]
-              return 2 --[[ResearchType.UpgradeUnit]], spawnCommand
-            end
-          until 1
-        else
-          spawnCommand = nil
-          return 0 --[[ResearchType.CommonUpgrade]], spawnCommand
-        end
-      until 1
-    end
-    return {
-      OnFinished = OnFinished,
-      __metadata__ = function (out)
-        return {
-          methods = {
-            { "GetElfTechType", 0x389, GetElfTechType, System.Int32, System.Int32, out.Source.Models.SpawnUnitCommand, System.Int32 },
-            { "GetHumanTechType", 0x389, GetHumanTechType, System.Int32, System.Int32, out.Source.Models.SpawnUnitCommand, System.Int32 },
-            { "GetOrcTechType", 0x389, GetOrcTechType, System.Int32, System.Int32, out.Source.Models.SpawnUnitCommand, System.Int32 },
-            { "GetUndeadTechType", 0x389, GetUndeadTechType, System.Int32, System.Int32, out.Source.Models.SpawnUnitCommand, System.Int32 },
-            { "OnFinished", 0xC, OnFinished }
-          },
-          class = { "Research", 0x3C }
-        }
-      end
-    }
-  end)
-end)
-
-end
-do
-local System = System
 local WCSharpApi = WCSharp.Api
 local Source
-local SourceHandlerSpecific
+local SourceHandlerComputer
+local SourceHandlerPlayer
 System.import(function (out)
   Source = out.Source
-  SourceHandlerSpecific = Source.Handler.Specific
+  SourceHandlerComputer = Source.Handler.Computer
+  SourceHandlerPlayer = Source.Handler.Player
 end)
 System.namespace("Source.Handler.GenericEvents", function (namespace)
   namespace.class("Unit", function (namespace)
@@ -21369,9 +21083,9 @@ System.namespace("Source.Handler.GenericEvents", function (namespace)
         if IsUnitType(unit, UNIT_TYPE_HERO) then
           -- Wenn Helden sterben, werden diese abhängig vom SlotStatus gesondert behandelt
           if GetPlayerController(GetOwningPlayer(unit)) == MAP_CONTROL_USER then
-            SourceHandlerSpecific.UserHero.OnDies(unit)
+            SourceHandlerPlayer.UserHero.OnDies(unit)
           else
-            SourceHandlerSpecific.ComputerHero.OnDies(unit)
+            SourceHandlerComputer.ComputerHero.OnDies(unit)
           end
 
           return true
@@ -21536,60 +21250,83 @@ System.import(function (out)
   Source = out.Source
 end)
 System.namespace("Source.Handler.Periodic", function (namespace)
-  namespace.class("ResearchCheckHumans", function (namespace)
-    local OnElapsed, CheckTechLevelAndIncrease
+  namespace.class("ResearchCheck", function (namespace)
+    local OnElapsed, ProcessComputerTechCheck, IncreaseTechIfAffordable
     OnElapsed = function ()
-      if Source.Program.Humans.Defeated then
-        return true
+      if not Source.Program.Humans.Defeated then
+        ProcessComputerTechCheck(Source.Program.Humans)
       end
 
+      if not Source.Program.Orcs.Defeated then
+        ProcessComputerTechCheck(Source.Program.Orcs)
+      end
+
+      if not Source.Program.Elves.Defeated then
+        ProcessComputerTechCheck(Source.Program.Elves)
+      end
+
+      if not Source.Program.Undeads.Defeated then
+        ProcessComputerTechCheck(Source.Program.Undeads)
+      end
+
+      return true
+    end
+    ProcessComputerTechCheck = function (team)
       local default, extern = System.try(function ()
-        -- TODO
+        local player = team.Computer.Wc3Player
 
-        local player = Source.Program.Humans.Computer.Wc3Player
+        IncreaseTechIfAffordable(team, player, 1378889778 --[[Constants.UPGRADE_UPGRADE_NAHK_MPFER_ANGRIFF_TEAM]], 100 --[[ResearchCheck.GoldPriceBase]])
+        IncreaseTechIfAffordable(team, player, 1378889794 --[[Constants.UPGRADE_UPGRADE_NAHK_MPFER_R_STUNG_TEAM]], 100 --[[ResearchCheck.GoldPriceBase]])
+        IncreaseTechIfAffordable(team, player, 1378889779 --[[Constants.UPGRADE_UPGRADE_FERNK_MPFER_ANGRIFF_TEAM]], 100 --[[ResearchCheck.GoldPriceBase]])
+        IncreaseTechIfAffordable(team, player, 1378889798 --[[Constants.UPGRADE_UPGRADE_FERNK_MPFER_R_STUNG_TEAM]], 100 --[[ResearchCheck.GoldPriceBase]])
+        IncreaseTechIfAffordable(team, player, 1378889793 --[[Constants.UPGRADE_UPGRADE_MAGIER_ANGRIFF_TEAM]], 100 --[[ResearchCheck.GoldPriceBase]])
+        IncreaseTechIfAffordable(team, player, 1378889796 --[[Constants.UPGRADE_UPGRADE_MAGIER_VERTEIDIGUNG_TEAM]], 100 --[[ResearchCheck.GoldPriceBase]])
 
-        --int player.Gold;
+        IncreaseTechIfAffordable(team, player, 1378889780 --[[Constants.UPGRADE_UPGRADE_GEB_UDE_ANGRIFF_TEAM]], 200 --[[ResearchCheck.GoldPriceBaseBuilding]])
+        IncreaseTechIfAffordable(team, player, 1378889776 --[[Constants.UPGRADE_UPGRADE_GEB_UDE_VERTEIDIGUNG_TEAM]], 200 --[[ResearchCheck.GoldPriceBaseBuilding]])
 
-        if CheckTechLevelAndIncrease(player, 1378889785 --[[Constants.UPGRADE_EINHEIT_SCH_TZE_TEAM]], 1) then
-          return true, true
-        end
-        if CheckTechLevelAndIncrease(player, 1378889785 --[[Constants.UPGRADE_EINHEIT_SCH_TZE_TEAM]], 2) then
-          return true, true
-        elseif CheckTechLevelAndIncrease(player, 1378889795 --[[Constants.UPGRADE_EINHEIT_REITER_TEAM]], 1) then
-          return true, true
-        else
-          return true, true
-        end
+        IncreaseTechIfAffordable(team, player, 1378889782 --[[Constants.UPGRADE_UPGRADE_ARTILLERIE_ANGRIFF_TEAM]], 250 --[[ResearchCheck.GoldPriceBaseArtillery]])
+        IncreaseTechIfAffordable(team, player, 1378889799 --[[Constants.UPGRADE_UPGRADE_ARTILLERIE_VERTEIDIGUNG_TEAM]], 250 --[[ResearchCheck.GoldPriceBaseArtillery]])
+
+        -- Keine bezahlbare Forschung übrig
+        return true, true
       end, function (default)
         local ex = default
         Source.Program.ShowExceptionMessage("ResearchCheckHumans.OnElapsed", ex)
 
-        return true, true
+        return true, false
       end)
       if default then
         return extern
       end
     end
-    CheckTechLevelAndIncrease = function (player, techId, targetLevel)
-      --Program.ShowDebugMessage($"Validate tech {techId}");
-      --int currentTechLevel = Common.GetPlayerTechCount(player, techId, true);
-      --if (currentTechLevel == targetLevel - 1)
-      --{
+    IncreaseTechIfAffordable = function (team, computerPlayer, techId, goldPriceBase)
+      local currentTechLevel = GetPlayerTechCount(computerPlayer, techId, true)
+      if currentTechLevel == GetPlayerTechMaxAllowed(computerPlayer, techId) then
+        -- Spieler hat maximale Stufe der Forschung erreicht
+        Source.Program.ShowDebugMessage("Fraction has research max level of tech: " .. techId)
+        return
+      end
 
-      --  Program.ShowDebugMessage($"Cost: {techCost} Gold");
-      --}
+      local nextTechLevel = currentTechLevel + 1
+      if GetPlayerState(computerPlayer, PLAYER_STATE_RESOURCE_GOLD) >= goldPriceBase * nextTechLevel then
+        team:IncreaseTechForAllPlayers(techId, nextTechLevel)
+        SetPlayerState(computerPlayer, PLAYER_STATE_RESOURCE_GOLD, GetPlayerState(computerPlayer, PLAYER_STATE_RESOURCE_GOLD) - (goldPriceBase * nextTechLevel))
+        team:DisplayChatMessage("Eure Fraktion hat eine Forschung abgeschlossen!" .. "")
 
-      return false
+        -- TODO : Name der Forschung anhand ID ermitteln und mit ausgeben?
+      end
     end
     return {
       OnElapsed = OnElapsed,
       __metadata__ = function (out)
         return {
           methods = {
-            { "CheckTechLevelAndIncrease", 0x389, CheckTechLevelAndIncrease, out.WCSharp.Api.player, System.Int32, System.Int32, System.Boolean },
-            { "OnElapsed", 0x8E, OnElapsed, System.Boolean }
+            { "IncreaseTechIfAffordable", 0x409, IncreaseTechIfAffordable, out.Source.Models.Team, out.WCSharp.Api.player, System.Int32, System.Int32 },
+            { "OnElapsed", 0x8E, OnElapsed, System.Boolean },
+            { "ProcessComputerTechCheck", 0x189, ProcessComputerTechCheck, out.Source.Models.Team, System.Boolean }
           },
-          class = { "ResearchCheckHumans", 0x3E }
+          class = { "ResearchCheck", 0x3E }
         }
       end
     }
@@ -22119,232 +21856,44 @@ local Source
 System.import(function (out)
   Source = out.Source
 end)
-System.namespace("Source.Handler.Specific", function (namespace)
-  namespace.class("BarracksBuilding", function (namespace)
-    local OnDies
-    OnDies = function ()
+System.namespace("Source.Handler.User", function (namespace)
+  namespace.class("Item", function (namespace)
+    local OnSellsFinished
+    OnSellsFinished = function ()
       System.try(function ()
-        local unit = GetTriggerUnit()
+        local unit = GetBuyingUnit()
 
-        local default, building = Source.Program.Humans.Computer:IsOwnerOfBuilding(unit)
-        if default then
-          building:Destroy()
-          System.Console.WriteLine("Die Menschen haben eine ihrer Kasernen verloren!")
-          Source.Program.Humans.Computer:RemoveBuilding(building)
-        else
-          local extern
-          extern, building = Source.Program.Orcs.Computer:IsOwnerOfBuilding(unit)
-          if extern then
-            building:Destroy()
-            System.Console.WriteLine("Die Orks haben eine ihrer Kasernen verloren!")
-            Source.Program.Orcs.Computer:RemoveBuilding(building)
-          else
-            local extern
-            extern, building = Source.Program.Elves.Computer:IsOwnerOfBuilding(unit)
-            if extern then
-              building:Destroy()
-              System.Console.WriteLine("Die Elfen haben eine ihrer Kasernen verloren!")
-              Source.Program.Elves.Computer:RemoveBuilding(building)
-            else
-              local extern
-              extern, building = Source.Program.Undeads.Computer:IsOwnerOfBuilding(unit)
-              if extern then
-                building:Destroy()
-                System.Console.WriteLine("Die Elfen haben eine ihrer Kasernen verloren!")
-                Source.Program.Elves.Computer:RemoveBuilding(building)
-              else
-                Source.Program.ShowDebugMessage1("BarracksBuilding.OnDies", "Building " .. System.toString(GetUnitName(unit)) .. " not found in building lists of computer players!")
-              end
-            end
-          end
-        end
-      end, function (default)
-        local ex = default
-        Source.Program.ShowExceptionMessage("BarracksBuilding.OnDies", ex)
-      end)
-    end
-    return {
-      OnDies = OnDies,
-      __metadata__ = function (out)
-        return {
-          methods = {
-            { "OnDies", 0xC, OnDies }
-          },
-          class = { "BarracksBuilding", 0x3C }
-        }
-      end
-    }
-  end)
-end)
+        local item = GetSoldItem()
+        local itemId = GetItemTypeId(item)
 
-end
-do
-local System = System
-local Source
-System.import(function (out)
-  Source = out.Source
-end)
-System.namespace("Source.Handler.Specific", function (namespace)
-  namespace.class("ComputerHero", function (namespace)
-    local OnDies
-    OnDies = function (unit)
-      local playerId = GetPlayerId(GetOwningPlayer(unit))
+        System.Console.WriteLine("Item " .. System.toString(GetItemName(item)) .. " verkauft an " .. System.toString(GetPlayerName(GetOwningPlayer(unit))) .. "!")
 
-      -- Prüfe vor Wiedergeburt, ob der Computer-Spieler noch unbesiegt ist
-      if playerId == Source.Program.Humans.Computer.PlayerId then
-        if Source.Program.Humans.Computer.Defeated then
-          return
-        end
-      elseif playerId == Source.Program.Orcs.Computer.PlayerId then
-        if Source.Program.Orcs.Computer.Defeated then
-          return
-        end
-      elseif playerId == Source.Program.Elves.Computer.PlayerId then
-        if Source.Program.Elves.Computer.Defeated then
-          return
-        end
-      elseif playerId == Source.Program.Undeads.Computer.PlayerId then
-        if Source.Program.Undeads.Computer.Defeated then
-          return
-        end
-      end
-
-      -- Verstorbenen Held nach gegebener Zeit wieder belegen
-      local timer = CreateTimer()
-
-      TimerStart(timer, GetHeroLevel(unit) + 2, false, function ()
-        local default = System.try(function ()
-          -- Timer wieder zerstören
-          DestroyTimer(timer)
-          DestroyTimer(timer)
-          timer = nil
-
-          -- Prüfe vor Wiedergeburt, ob der Computer-Spieler noch unbesiegt ist
-          if playerId == Source.Program.Humans.Computer.PlayerId then
-            if Source.Program.Humans.Computer.Defeated then
-              return true
-            end
-          elseif playerId == Source.Program.Orcs.Computer.PlayerId then
-            if Source.Program.Orcs.Computer.Defeated then
-              return true
-            end
-          elseif playerId == Source.Program.Elves.Computer.PlayerId then
-            if Source.Program.Elves.Computer.Defeated then
-              return true
-            end
-          elseif playerId == Source.Program.Undeads.Computer.PlayerId then
-            if Source.Program.Undeads.Computer.Defeated then
-              return true
-            end
-          end
-
-          local owner = GetOwningPlayer(unit)
-          local respawnArea = nil
-
-          local default, spawnedUnit = Source.Program.Humans.Computer:IsOwnerOfUnit(unit)
+        if itemId == 1227894832 --[[Constants.ITEM_GLYPHE_DER_OPFERUNG]] then
+          local playerId = GetPlayerId(GetOwningPlayer(unit))
+          local default, user = Source.Program.TryGetActiveUser(playerId)
           if default then
-            respawnArea = Areas.HumanBaseHeroRespawn
-          else
-            local extern
-            extern, spawnedUnit = Source.Program.Orcs.Computer:IsOwnerOfUnit(unit)
-            if extern then
-              respawnArea = Areas.OrcBaseHeroRespawn
-            else
-              local extern
-              extern, spawnedUnit = Source.Program.Elves.Computer:IsOwnerOfUnit(unit)
-              if extern then
-                respawnArea = Areas.ElfBaseHeroRespawn
-              else
-                local extern
-                extern, spawnedUnit = Source.Program.Undeads.Computer:IsOwnerOfUnit(unit)
-                if extern then
-                  respawnArea = Areas.UndeadBaseHeroRespawn
-                else
-                  Source.Program.ShowDebugMessage1("ComputerHero.OnDies", "Unit " .. System.toString(GetUnitName(unit)) .. " not found unit list of computer players!")
-                end
-              end
-            end
+            -- Merke Heldenstufe
+            user.HeroLevelCounter = GetHeroLevel(unit)
+            -- Entferne Käufer/Helden aus Spiel
+            RemoveUnit(unit)
+
+            -- Heldenseele erstellen und Kamera verschieben
+            Source.Program.CreateHeroSelectorForPlayerAndAdjustCamera(user)
           end
-
-          if spawnedUnit ~= nil then
-            ReviveHero(unit, respawnArea.CenterX, respawnArea.CenterY, true)
-            spawnedUnit:RepeatAttackMove()
-          end
-        end, function (default)
-          local ex = default
-          Source.Program.ShowExceptionMessage("ComputerHero.OnDies", ex)
-        end)
-        if default then
-          return
-        end
-      end)
-    end
-    return {
-      OnDies = OnDies,
-      __metadata__ = function (out)
-        return {
-          methods = {
-            { "OnDies", 0x10C, OnDies, out.WCSharp.Api.unit }
-          },
-          class = { "ComputerHero", 0x3C }
-        }
-      end
-    }
-  end)
-end)
-
-end
-do
-local System = System
-local Source
-System.import(function (out)
-  Source = out.Source
-end)
-System.namespace("Source.UnitEvents", function (namespace)
-  namespace.class("MainBuilding", function (namespace)
-    local OnDies
-    OnDies = function ()
-      System.try(function ()
-        local unit = GetTriggerUnit()
-
-        local playerId = GetPlayerId(GetOwningPlayer(unit))
-
-        -- Besiege alle Spieler im Team des Hauptgebäudes
-        if playerId == Source.Program.Humans.Computer.PlayerId then
-          Source.Program.Humans:Defeat()
-        elseif playerId == Source.Program.Orcs.Computer.PlayerId then
-          Source.Program.Orcs:Defeat()
-        elseif playerId == Source.Program.Elves.Computer.PlayerId then
-          Source.Program.Elves:Defeat()
-        elseif playerId == Source.Program.Undeads.Computer.PlayerId then
-          Source.Program.Undeads:Defeat()
-        else
-          Source.Program.ShowDebugMessage1("MainBuilding.OnDies", "Unit of building " .. System.toString(GetUnitName(unit)) .. " not found in computer players!")
-        end
-
-        -- Ist nur noch ein Team übrig, gewinnen alle Spieler im Team
-        if Source.Program.Elves.Defeated and Source.Program.Orcs.Defeated and Source.Program.Undeads.Defeated then
-          Source.Program.Humans:Win()
-        elseif Source.Program.Humans.Defeated and Source.Program.Elves.Defeated and Source.Program.Undeads.Defeated then
-          Source.Program.Orcs:Win()
-        elseif Source.Program.Orcs.Defeated and Source.Program.Humans.Defeated and Source.Program.Undeads.Defeated then
-          Source.Program.Elves:Win()
-        elseif Source.Program.Orcs.Defeated and Source.Program.Elves.Defeated and Source.Program.Humans.Defeated then
-          Source.Program.Undeads:Win()
         end
       end, function (default)
         local ex = default
-        Source.Program.ShowExceptionMessage("MainBuilding.OnDies", ex)
+        Source.Program.ShowExceptionMessage("Item.OnSellsFinished", ex)
       end)
     end
     return {
-      OnDies = OnDies,
+      OnSellsFinished = OnSellsFinished,
       __metadata__ = function (out)
         return {
           methods = {
-            { "OnDies", 0xC, OnDies }
+            { "OnSellsFinished", 0xC, OnSellsFinished }
           },
-          class = { "MainBuilding", 0x3C }
+          class = { "Item", 0x3C }
         }
       end
     }
@@ -22358,7 +21907,7 @@ local Source
 System.import(function (out)
   Source = out.Source
 end)
-System.namespace("Source.Handler.Specific", function (namespace)
+System.namespace("Source.Handler.Player", function (namespace)
   namespace.class("UserHero", function (namespace)
     local OnBuyed, OnDies
     OnBuyed = function ()
@@ -22504,6 +22053,514 @@ System.namespace("Source.Handler.Specific", function (namespace)
             { "OnDies", 0x10C, OnDies, out.WCSharp.Api.unit }
           },
           class = { "UserHero", 0x3C }
+        }
+      end
+    }
+  end)
+end)
+
+end
+do
+local System = System
+local Source
+local SourceModels
+System.import(function (out)
+  Source = out.Source
+  SourceModels = Source.Models
+end)
+System.namespace("Source.Handler.User", function (namespace)
+  namespace.class("UserResearch", function (namespace)
+    local OnFinished, GetHumanTechType, GetOrcTechType, GetElfTechType, GetUndeadTechType
+    OnFinished = function ()
+      System.try(function ()
+        local unit = GetResearchingUnit()
+        local researchedTechId = GetResearched()
+        local researchedTechIdCount = GetPlayerTechCount(GetOwningPlayer(unit), researchedTechId, true)
+
+        local player = GetOwningPlayer(unit)
+        local playerId = GetPlayerId(player)
+        local researchType
+
+        local default, foundUser = Source.Program.Humans:ContainsPlayer(playerId)
+        if default then
+          local extern, spawnCommand = GetHumanTechType(researchedTechId, researchedTechIdCount)
+          researchType = extern
+
+          Source.Program.Humans:IncreaseTechForAllPlayers(researchedTechId, researchedTechIdCount)
+
+          if researchType == 1 --[[ResearchType.AddUnit]] then
+            Source.Program.Humans.Computer:AddSpawnUnit(spawnCommand)
+          elseif researchType == 2 --[[ResearchType.UpgradeUnit]] then
+            Source.Program.Humans.Computer:UpgradeSpawnUnit(spawnCommand)
+          end
+        else
+          local extern
+          extern, foundUser = Source.Program.Orcs:ContainsPlayer(playerId)
+          if extern then
+            local extern, spawnCommand = GetOrcTechType(researchedTechId, researchedTechIdCount)
+            researchType = extern
+
+            Source.Program.Orcs:IncreaseTechForAllPlayers(researchedTechId, researchedTechIdCount)
+
+            if researchType == 1 --[[ResearchType.AddUnit]] then
+              Source.Program.Orcs.Computer:AddSpawnUnit(spawnCommand)
+            elseif researchType == 2 --[[ResearchType.UpgradeUnit]] then
+              Source.Program.Orcs.Computer:UpgradeSpawnUnit(spawnCommand)
+            end
+          else
+            local extern
+            extern, foundUser = Source.Program.Elves:ContainsPlayer(playerId)
+            if extern then
+              local extern, spawnCommand = GetElfTechType(researchedTechId, researchedTechIdCount)
+              researchType = extern
+
+              Source.Program.Elves:IncreaseTechForAllPlayers(researchedTechId, researchedTechIdCount)
+
+              if researchType == 1 --[[ResearchType.AddUnit]] then
+                Source.Program.Elves.Computer:AddSpawnUnit(spawnCommand)
+              elseif researchType == 2 --[[ResearchType.UpgradeUnit]] then
+                Source.Program.Elves.Computer:UpgradeSpawnUnit(spawnCommand)
+              end
+            else
+              local extern
+              extern, foundUser = Source.Program.Undeads:ContainsPlayer(playerId)
+              if extern then
+                local extern, spawnCommand = GetUndeadTechType(researchedTechId, researchedTechIdCount)
+                researchType = extern
+
+                Source.Program.Undeads:IncreaseTechForAllPlayers(researchedTechId, researchedTechIdCount)
+
+                if researchType == 1 --[[ResearchType.AddUnit]] then
+                  Source.Program.Undeads.Computer:AddSpawnUnit(spawnCommand)
+                elseif researchType == 2 --[[ResearchType.UpgradeUnit]] then
+                  Source.Program.Undeads.Computer:UpgradeSpawnUnit(spawnCommand)
+                end
+              end
+            end
+          end
+        end
+      end, function (default)
+        local ex = default
+        Source.Program.ShowExceptionMessage("Research.OnFinished", ex)
+      end)
+    end
+    GetHumanTechType = function (techId, techLevel, spawnCommand)
+      repeat
+        local default = techId
+        if default == 1378889781 --[[Constants.UPGRADE_EINHEIT_SOLDAT_TEAM]] then
+          local extern = SourceModels.SpawnUnitCommand()
+          extern.UnitSpawnType = 0 --[[UnitSpawnType.Meelee]]
+          extern.UnitIdOfBuilding = 1747988535 --[[Constants.UNIT_KASERNE_HUMAN]]
+          spawnCommand = extern
+
+          repeat
+            local extern = techLevel
+            if extern == 1 then
+              spawnCommand.UnitId = 1747988547 --[[Constants.UNIT_SOLDAT_STUFE_2_HUMAN]]
+              spawnCommand.UnitIdToUpgrade = 1747988529 --[[Constants.UNIT_SOLDAT_STUFE_1_HUMAN]]
+              return 2 --[[ResearchType.UpgradeUnit]], spawnCommand
+            else
+              spawnCommand.UnitId = 1747988546 --[[Constants.UNIT_SOLDAT_STUFE_3_HUMAN]]
+              spawnCommand.UnitIdToUpgrade = 1747988547 --[[Constants.UNIT_SOLDAT_STUFE_2_HUMAN]]
+              return 2 --[[ResearchType.UpgradeUnit]], spawnCommand
+            end
+          until 1
+        elseif default == 1378889785 --[[Constants.UPGRADE_EINHEIT_SCH_TZE_TEAM]] then
+          local extern = SourceModels.SpawnUnitCommand()
+          extern.UnitSpawnType = 1 --[[UnitSpawnType.Distance]]
+          extern.UnitIdOfBuilding = 1747988535 --[[Constants.UNIT_KASERNE_HUMAN]]
+          extern.UnitId = 1747988550 --[[Constants.UNIT_SCH_TZE_STUFE_2_HUMAN]]
+          extern.UnitIdToUpgrade = 1747988530 --[[Constants.UNIT_SCH_TZE_STUFE_1_HUMAN]]
+          spawnCommand = extern
+
+          repeat
+            local extern = techLevel
+            if extern == 1 then
+              spawnCommand.UnitId = 1747988550 --[[Constants.UNIT_SCH_TZE_STUFE_2_HUMAN]]
+              spawnCommand.UnitIdToUpgrade = 1747988530 --[[Constants.UNIT_SCH_TZE_STUFE_1_HUMAN]]
+              return 2 --[[ResearchType.UpgradeUnit]], spawnCommand
+            else
+              spawnCommand.UnitId = 1747988551 --[[Constants.UNIT_SCH_TZE_STUFE_3_HUMAN]]
+              spawnCommand.UnitIdToUpgrade = 1747988550 --[[Constants.UNIT_SCH_TZE_STUFE_2_HUMAN]]
+              return 2 --[[ResearchType.UpgradeUnit]], spawnCommand
+            end
+          until 1
+        elseif default == 1378889795 --[[Constants.UPGRADE_EINHEIT_REITER_TEAM]] then
+          local extern = SourceModels.SpawnUnitCommand()
+          extern.UnitSpawnType = 1 --[[UnitSpawnType.Distance]]
+          extern.UnitIdOfBuilding = 1747988531 --[[Constants.UNIT_SCHLOSS_HUMAN]]
+          extern.UnitId = 1747988554 --[[Constants.UNIT_REITER_STUFE_1_HUMAN]]
+          spawnCommand = extern
+
+          repeat
+            local extern = techLevel
+            if extern == 1 then
+              spawnCommand.UnitId = 1747988555 --[[Constants.UNIT_REITER_STUFE_2_HUMAN]]
+              spawnCommand.UnitIdToUpgrade = 1747988554 --[[Constants.UNIT_REITER_STUFE_1_HUMAN]]
+              return 2 --[[ResearchType.UpgradeUnit]], spawnCommand
+            else
+              spawnCommand.UnitId = 1747988556 --[[Constants.UNIT_REITER_STUFE_3_HUMAN]]
+              spawnCommand.UnitIdToUpgrade = 1747988555 --[[Constants.UNIT_REITER_STUFE_2_HUMAN]]
+              return 2 --[[ResearchType.UpgradeUnit]], spawnCommand
+            end
+          until 1
+        elseif default == 1378889797 --[[Constants.UPGRADE_EINHEIT_MAGIER_TEAM]] then
+          local extern = SourceModels.SpawnUnitCommand()
+          extern.UnitSpawnType = 1 --[[UnitSpawnType.Distance]]
+          extern.UnitIdOfBuilding = 1747988531 --[[Constants.UNIT_SCHLOSS_HUMAN]]
+          spawnCommand = extern
+
+          repeat
+            local extern = techLevel
+            if extern == 1 then
+              spawnCommand.UnitId = 1747988552 --[[Constants.UNIT_MAGIER_STUFE_2_HUMAN]]
+              spawnCommand.UnitIdToUpgrade = 1747988536 --[[Constants.UNIT_MAGIER_STUFE_1_HUMAN]]
+              return 2 --[[ResearchType.UpgradeUnit]], spawnCommand
+            else
+              spawnCommand.UnitId = 1747988553 --[[Constants.UNIT_MAGIER_STUFE_3_HUMAN]]
+              spawnCommand.UnitIdToUpgrade = 1747988552 --[[Constants.UNIT_MAGIER_STUFE_2_HUMAN]]
+              return 2 --[[ResearchType.UpgradeUnit]], spawnCommand
+            end
+          until 1
+        elseif default == 1378889784 --[[Constants.UPGRADE_EINHEIT_BELAGERUNGSMASCHINE_TEAM]] then
+          local extern = SourceModels.SpawnUnitCommand()
+          extern.UnitSpawnType = 2 --[[UnitSpawnType.Artillery]]
+          extern.UnitIdOfBuilding = 1747988531 --[[Constants.UNIT_SCHLOSS_HUMAN]]
+          spawnCommand = extern
+
+          repeat
+            local extern = techLevel
+            if extern == 1 then
+              spawnCommand.UnitId = 1747988549 --[[Constants.UNIT_BELAGERUNGSMASCHINE_STUFE_1_HUMAN]]
+              return 1 --[[ResearchType.AddUnit]], spawnCommand
+            else
+              spawnCommand.UnitId = 1747988563 --[[Constants.UNIT_BELAGERUNGSMASCHINE_STUFE_2_HUMAN]]
+              spawnCommand.UnitIdToUpgrade = 1747988549 --[[Constants.UNIT_BELAGERUNGSMASCHINE_STUFE_1_HUMAN]]
+              return 2 --[[ResearchType.UpgradeUnit]], spawnCommand
+            end
+          until 1
+        else
+          -- Einfache Verbeserungen bestehender Einheiten
+          spawnCommand = nil
+          return 0 --[[ResearchType.CommonUpgrade]], spawnCommand
+        end
+      until 1
+    end
+    GetOrcTechType = function (techId, techLevel, spawnCommand)
+      repeat
+        local default = techId
+        if default == 1378889781 --[[Constants.UPGRADE_EINHEIT_SOLDAT_TEAM]] then
+          local extern = SourceModels.SpawnUnitCommand()
+          extern.UnitSpawnType = 0 --[[UnitSpawnType.Meelee]]
+          extern.UnitIdOfBuilding = 1747988569 --[[Constants.UNIT_KASERNE_ORC]]
+          spawnCommand = extern
+
+          repeat
+            local extern = techLevel
+            if extern == 1 then
+              spawnCommand.UnitId = 1747988547 --[[Constants.UNIT_SOLDAT_STUFE_2_HUMAN]]
+              spawnCommand.UnitIdToUpgrade = 1747988529 --[[Constants.UNIT_SOLDAT_STUFE_1_HUMAN]]
+              return 2 --[[ResearchType.UpgradeUnit]], spawnCommand
+            else
+              spawnCommand.UnitId = 1747988546 --[[Constants.UNIT_SOLDAT_STUFE_3_HUMAN]]
+              spawnCommand.UnitIdToUpgrade = 1747988547 --[[Constants.UNIT_SOLDAT_STUFE_2_HUMAN]]
+              return 2 --[[ResearchType.UpgradeUnit]], spawnCommand
+            end
+          until 1
+        elseif default == 1378889785 --[[Constants.UPGRADE_EINHEIT_SCH_TZE_TEAM]] then
+          local extern = SourceModels.SpawnUnitCommand()
+          extern.UnitSpawnType = 1 --[[UnitSpawnType.Distance]]
+          extern.UnitIdOfBuilding = 1747988569 --[[Constants.UNIT_KASERNE_ORC]]
+          extern.UnitId = 1747988550 --[[Constants.UNIT_SCH_TZE_STUFE_2_HUMAN]]
+          extern.UnitIdToUpgrade = 1747988530 --[[Constants.UNIT_SCH_TZE_STUFE_1_HUMAN]]
+          spawnCommand = extern
+
+          repeat
+            local extern = techLevel
+            if extern == 1 then
+              spawnCommand.UnitId = 1747988550 --[[Constants.UNIT_SCH_TZE_STUFE_2_HUMAN]]
+              spawnCommand.UnitIdToUpgrade = 1747988530 --[[Constants.UNIT_SCH_TZE_STUFE_1_HUMAN]]
+              return 2 --[[ResearchType.UpgradeUnit]], spawnCommand
+            else
+              spawnCommand.UnitId = 1747988551 --[[Constants.UNIT_SCH_TZE_STUFE_3_HUMAN]]
+              spawnCommand.UnitIdToUpgrade = 1747988550 --[[Constants.UNIT_SCH_TZE_STUFE_2_HUMAN]]
+              return 2 --[[ResearchType.UpgradeUnit]], spawnCommand
+            end
+          until 1
+        elseif default == 1378889795 --[[Constants.UPGRADE_EINHEIT_REITER_TEAM]] then
+          local extern = SourceModels.SpawnUnitCommand()
+          extern.UnitSpawnType = 1 --[[UnitSpawnType.Distance]]
+          extern.UnitIdOfBuilding = 1747988570 --[[Constants.UNIT_FESTUNG_ORC]]
+          extern.UnitId = 1747988554 --[[Constants.UNIT_REITER_STUFE_1_HUMAN]]
+          spawnCommand = extern
+
+          repeat
+            local extern = techLevel
+            if extern == 1 then
+              spawnCommand.UnitId = 1747988555 --[[Constants.UNIT_REITER_STUFE_2_HUMAN]]
+              spawnCommand.UnitIdToUpgrade = 1747988554 --[[Constants.UNIT_REITER_STUFE_1_HUMAN]]
+              return 2 --[[ResearchType.UpgradeUnit]], spawnCommand
+            else
+              spawnCommand.UnitId = 1747988556 --[[Constants.UNIT_REITER_STUFE_3_HUMAN]]
+              spawnCommand.UnitIdToUpgrade = 1747988555 --[[Constants.UNIT_REITER_STUFE_2_HUMAN]]
+              return 2 --[[ResearchType.UpgradeUnit]], spawnCommand
+            end
+          until 1
+        elseif default == 1378889797 --[[Constants.UPGRADE_EINHEIT_MAGIER_TEAM]] then
+          local extern = SourceModels.SpawnUnitCommand()
+          extern.UnitSpawnType = 1 --[[UnitSpawnType.Distance]]
+          extern.UnitIdOfBuilding = 1747988570 --[[Constants.UNIT_FESTUNG_ORC]]
+          spawnCommand = extern
+
+          repeat
+            local extern = techLevel
+            if extern == 1 then
+              spawnCommand.UnitId = 1747988552 --[[Constants.UNIT_MAGIER_STUFE_2_HUMAN]]
+              spawnCommand.UnitIdToUpgrade = 1747988536 --[[Constants.UNIT_MAGIER_STUFE_1_HUMAN]]
+              return 2 --[[ResearchType.UpgradeUnit]], spawnCommand
+            else
+              spawnCommand.UnitId = 1747988553 --[[Constants.UNIT_MAGIER_STUFE_3_HUMAN]]
+              spawnCommand.UnitIdToUpgrade = 1747988552 --[[Constants.UNIT_MAGIER_STUFE_2_HUMAN]]
+              return 2 --[[ResearchType.UpgradeUnit]], spawnCommand
+            end
+          until 1
+        elseif default == 1378889784 --[[Constants.UPGRADE_EINHEIT_BELAGERUNGSMASCHINE_TEAM]] then
+          local extern = SourceModels.SpawnUnitCommand()
+          extern.UnitSpawnType = 2 --[[UnitSpawnType.Artillery]]
+          extern.UnitIdOfBuilding = 1747988570 --[[Constants.UNIT_FESTUNG_ORC]]
+          spawnCommand = extern
+
+          repeat
+            local extern = techLevel
+            if extern == 1 then
+              spawnCommand.UnitId = 1747988549 --[[Constants.UNIT_BELAGERUNGSMASCHINE_STUFE_1_HUMAN]]
+              return 1 --[[ResearchType.AddUnit]], spawnCommand
+            else
+              spawnCommand.UnitId = 1747988549 --[[Constants.UNIT_BELAGERUNGSMASCHINE_STUFE_1_HUMAN]]
+              spawnCommand.UnitIdToUpgrade = 1747988563 --[[Constants.UNIT_BELAGERUNGSMASCHINE_STUFE_2_HUMAN]]
+              return 2 --[[ResearchType.UpgradeUnit]], spawnCommand
+            end
+          until 1
+        else
+          spawnCommand = nil
+          return 0 --[[ResearchType.CommonUpgrade]], spawnCommand
+        end
+      until 1
+    end
+    GetElfTechType = function (techId, techLevel, spawnCommand)
+      repeat
+        local default = techId
+        if default == 1378889781 --[[Constants.UPGRADE_EINHEIT_SOLDAT_TEAM]] then
+          local extern = SourceModels.SpawnUnitCommand()
+          extern.UnitSpawnType = 0 --[[UnitSpawnType.Meelee]]
+          extern.UnitIdOfBuilding = 1747988788 --[[Constants.UNIT_KASERNE_ELF]]
+          spawnCommand = extern
+
+          repeat
+            local extern = techLevel
+            if extern == 1 then
+              spawnCommand.UnitId = 1747988547 --[[Constants.UNIT_SOLDAT_STUFE_2_HUMAN]]
+              spawnCommand.UnitIdToUpgrade = 1747988529 --[[Constants.UNIT_SOLDAT_STUFE_1_HUMAN]]
+              return 2 --[[ResearchType.UpgradeUnit]], spawnCommand
+            else
+              spawnCommand.UnitId = 1747988546 --[[Constants.UNIT_SOLDAT_STUFE_3_HUMAN]]
+              spawnCommand.UnitIdToUpgrade = 1747988547 --[[Constants.UNIT_SOLDAT_STUFE_2_HUMAN]]
+              return 2 --[[ResearchType.UpgradeUnit]], spawnCommand
+            end
+          until 1
+        elseif default == 1378889785 --[[Constants.UPGRADE_EINHEIT_SCH_TZE_TEAM]] then
+          local extern = SourceModels.SpawnUnitCommand()
+          extern.UnitSpawnType = 1 --[[UnitSpawnType.Distance]]
+          extern.UnitIdOfBuilding = 1747988788 --[[Constants.UNIT_KASERNE_ELF]]
+          extern.UnitId = 1747988550 --[[Constants.UNIT_SCH_TZE_STUFE_2_HUMAN]]
+          extern.UnitIdToUpgrade = 1747988530 --[[Constants.UNIT_SCH_TZE_STUFE_1_HUMAN]]
+          spawnCommand = extern
+
+          repeat
+            local extern = techLevel
+            if extern == 1 then
+              spawnCommand.UnitId = 1747988550 --[[Constants.UNIT_SCH_TZE_STUFE_2_HUMAN]]
+              spawnCommand.UnitIdToUpgrade = 1747988530 --[[Constants.UNIT_SCH_TZE_STUFE_1_HUMAN]]
+              return 2 --[[ResearchType.UpgradeUnit]], spawnCommand
+            else
+              spawnCommand.UnitId = 1747988551 --[[Constants.UNIT_SCH_TZE_STUFE_3_HUMAN]]
+              spawnCommand.UnitIdToUpgrade = 1747988550 --[[Constants.UNIT_SCH_TZE_STUFE_2_HUMAN]]
+              return 2 --[[ResearchType.UpgradeUnit]], spawnCommand
+            end
+          until 1
+        elseif default == 1378889795 --[[Constants.UPGRADE_EINHEIT_REITER_TEAM]] then
+          local extern = SourceModels.SpawnUnitCommand()
+          extern.UnitSpawnType = 1 --[[UnitSpawnType.Distance]]
+          extern.UnitIdOfBuilding = 1747988789 --[[Constants.UNIT_TELDRASSIL_ELF]]
+          extern.UnitId = 1747988554 --[[Constants.UNIT_REITER_STUFE_1_HUMAN]]
+          spawnCommand = extern
+
+          repeat
+            local extern = techLevel
+            if extern == 1 then
+              spawnCommand.UnitId = 1747988555 --[[Constants.UNIT_REITER_STUFE_2_HUMAN]]
+              spawnCommand.UnitIdToUpgrade = 1747988554 --[[Constants.UNIT_REITER_STUFE_1_HUMAN]]
+              return 2 --[[ResearchType.UpgradeUnit]], spawnCommand
+            else
+              spawnCommand.UnitId = 1747988556 --[[Constants.UNIT_REITER_STUFE_3_HUMAN]]
+              spawnCommand.UnitIdToUpgrade = 1747988555 --[[Constants.UNIT_REITER_STUFE_2_HUMAN]]
+              return 2 --[[ResearchType.UpgradeUnit]], spawnCommand
+            end
+          until 1
+        elseif default == 1378889797 --[[Constants.UPGRADE_EINHEIT_MAGIER_TEAM]] then
+          local extern = SourceModels.SpawnUnitCommand()
+          extern.UnitSpawnType = 1 --[[UnitSpawnType.Distance]]
+          extern.UnitIdOfBuilding = 1747988789 --[[Constants.UNIT_TELDRASSIL_ELF]]
+          spawnCommand = extern
+
+          repeat
+            local extern = techLevel
+            if extern == 1 then
+              spawnCommand.UnitId = 1747988552 --[[Constants.UNIT_MAGIER_STUFE_2_HUMAN]]
+              spawnCommand.UnitIdToUpgrade = 1747988536 --[[Constants.UNIT_MAGIER_STUFE_1_HUMAN]]
+              return 2 --[[ResearchType.UpgradeUnit]], spawnCommand
+            else
+              spawnCommand.UnitId = 1747988553 --[[Constants.UNIT_MAGIER_STUFE_3_HUMAN]]
+              spawnCommand.UnitIdToUpgrade = 1747988552 --[[Constants.UNIT_MAGIER_STUFE_2_HUMAN]]
+              return 2 --[[ResearchType.UpgradeUnit]], spawnCommand
+            end
+          until 1
+        elseif default == 1378889784 --[[Constants.UPGRADE_EINHEIT_BELAGERUNGSMASCHINE_TEAM]] then
+          local extern = SourceModels.SpawnUnitCommand()
+          extern.UnitSpawnType = 2 --[[UnitSpawnType.Artillery]]
+          extern.UnitIdOfBuilding = 1747988789 --[[Constants.UNIT_TELDRASSIL_ELF]]
+          spawnCommand = extern
+
+          repeat
+            local extern = techLevel
+            if extern == 1 then
+              spawnCommand.UnitId = 1747988549 --[[Constants.UNIT_BELAGERUNGSMASCHINE_STUFE_1_HUMAN]]
+              return 1 --[[ResearchType.AddUnit]], spawnCommand
+            else
+              spawnCommand.UnitId = 1747988549 --[[Constants.UNIT_BELAGERUNGSMASCHINE_STUFE_1_HUMAN]]
+              spawnCommand.UnitIdToUpgrade = 1747988563 --[[Constants.UNIT_BELAGERUNGSMASCHINE_STUFE_2_HUMAN]]
+              return 2 --[[ResearchType.UpgradeUnit]], spawnCommand
+            end
+          until 1
+        else
+          spawnCommand = nil
+          return 0 --[[ResearchType.CommonUpgrade]], spawnCommand
+        end
+      until 1
+    end
+    GetUndeadTechType = function (techId, techLevel, spawnCommand)
+      repeat
+        local default = techId
+        if default == 1378889781 --[[Constants.UPGRADE_EINHEIT_SOLDAT_TEAM]] then
+          local extern = SourceModels.SpawnUnitCommand()
+          extern.UnitSpawnType = 0 --[[UnitSpawnType.Meelee]]
+          extern.UnitIdOfBuilding = 1747988805 --[[Constants.UNIT_GRUFT_UNDEAD]]
+          spawnCommand = extern
+
+          repeat
+            local extern = techLevel
+            if extern == 1 then
+              spawnCommand.UnitId = 1747988547 --[[Constants.UNIT_SOLDAT_STUFE_2_HUMAN]]
+              spawnCommand.UnitIdToUpgrade = 1747988529 --[[Constants.UNIT_SOLDAT_STUFE_1_HUMAN]]
+              return 2 --[[ResearchType.UpgradeUnit]], spawnCommand
+            else
+              spawnCommand.UnitId = 1747988546 --[[Constants.UNIT_SOLDAT_STUFE_3_HUMAN]]
+              spawnCommand.UnitIdToUpgrade = 1747988547 --[[Constants.UNIT_SOLDAT_STUFE_2_HUMAN]]
+              return 2 --[[ResearchType.UpgradeUnit]], spawnCommand
+            end
+          until 1
+        elseif default == 1378889785 --[[Constants.UPGRADE_EINHEIT_SCH_TZE_TEAM]] then
+          local extern = SourceModels.SpawnUnitCommand()
+          extern.UnitSpawnType = 1 --[[UnitSpawnType.Distance]]
+          extern.UnitIdOfBuilding = 1747988805 --[[Constants.UNIT_GRUFT_UNDEAD]]
+          extern.UnitId = 1747988550 --[[Constants.UNIT_SCH_TZE_STUFE_2_HUMAN]]
+          extern.UnitIdToUpgrade = 1747988530 --[[Constants.UNIT_SCH_TZE_STUFE_1_HUMAN]]
+          spawnCommand = extern
+
+          repeat
+            local extern = techLevel
+            if extern == 1 then
+              spawnCommand.UnitId = 1747988550 --[[Constants.UNIT_SCH_TZE_STUFE_2_HUMAN]]
+              spawnCommand.UnitIdToUpgrade = 1747988530 --[[Constants.UNIT_SCH_TZE_STUFE_1_HUMAN]]
+              return 2 --[[ResearchType.UpgradeUnit]], spawnCommand
+            else
+              spawnCommand.UnitId = 1747988551 --[[Constants.UNIT_SCH_TZE_STUFE_3_HUMAN]]
+              spawnCommand.UnitIdToUpgrade = 1747988550 --[[Constants.UNIT_SCH_TZE_STUFE_2_HUMAN]]
+              return 2 --[[ResearchType.UpgradeUnit]], spawnCommand
+            end
+          until 1
+        elseif default == 1378889795 --[[Constants.UPGRADE_EINHEIT_REITER_TEAM]] then
+          local extern = SourceModels.SpawnUnitCommand()
+          extern.UnitSpawnType = 1 --[[UnitSpawnType.Distance]]
+          extern.UnitIdOfBuilding = 1747988801 --[[Constants.UNIT_SCHWARZE_ZITADELLE_UNDEAD]]
+          extern.UnitId = 1747988554 --[[Constants.UNIT_REITER_STUFE_1_HUMAN]]
+          spawnCommand = extern
+
+          repeat
+            local extern = techLevel
+            if extern == 1 then
+              spawnCommand.UnitId = 1747988555 --[[Constants.UNIT_REITER_STUFE_2_HUMAN]]
+              spawnCommand.UnitIdToUpgrade = 1747988554 --[[Constants.UNIT_REITER_STUFE_1_HUMAN]]
+              return 2 --[[ResearchType.UpgradeUnit]], spawnCommand
+            else
+              spawnCommand.UnitId = 1747988556 --[[Constants.UNIT_REITER_STUFE_3_HUMAN]]
+              spawnCommand.UnitIdToUpgrade = 1747988555 --[[Constants.UNIT_REITER_STUFE_2_HUMAN]]
+              return 2 --[[ResearchType.UpgradeUnit]], spawnCommand
+            end
+          until 1
+        elseif default == 1378889797 --[[Constants.UPGRADE_EINHEIT_MAGIER_TEAM]] then
+          local extern = SourceModels.SpawnUnitCommand()
+          extern.UnitSpawnType = 1 --[[UnitSpawnType.Distance]]
+          extern.UnitIdOfBuilding = 1747988801 --[[Constants.UNIT_SCHWARZE_ZITADELLE_UNDEAD]]
+          spawnCommand = extern
+
+          repeat
+            local extern = techLevel
+            if extern == 1 then
+              spawnCommand.UnitId = 1747988552 --[[Constants.UNIT_MAGIER_STUFE_2_HUMAN]]
+              spawnCommand.UnitIdToUpgrade = 1747988536 --[[Constants.UNIT_MAGIER_STUFE_1_HUMAN]]
+              return 2 --[[ResearchType.UpgradeUnit]], spawnCommand
+            else
+              spawnCommand.UnitId = 1747988553 --[[Constants.UNIT_MAGIER_STUFE_3_HUMAN]]
+              spawnCommand.UnitIdToUpgrade = 1747988552 --[[Constants.UNIT_MAGIER_STUFE_2_HUMAN]]
+              return 2 --[[ResearchType.UpgradeUnit]], spawnCommand
+            end
+          until 1
+        elseif default == 1378889784 --[[Constants.UPGRADE_EINHEIT_BELAGERUNGSMASCHINE_TEAM]] then
+          local extern = SourceModels.SpawnUnitCommand()
+          extern.UnitSpawnType = 2 --[[UnitSpawnType.Artillery]]
+          extern.UnitIdOfBuilding = 1747988801 --[[Constants.UNIT_SCHWARZE_ZITADELLE_UNDEAD]]
+          spawnCommand = extern
+
+          repeat
+            local extern = techLevel
+            if extern == 1 then
+              spawnCommand.UnitId = 1747988549 --[[Constants.UNIT_BELAGERUNGSMASCHINE_STUFE_1_HUMAN]]
+              return 1 --[[ResearchType.AddUnit]], spawnCommand
+            else
+              spawnCommand.UnitId = 1747988549 --[[Constants.UNIT_BELAGERUNGSMASCHINE_STUFE_1_HUMAN]]
+              spawnCommand.UnitIdToUpgrade = 1747988563 --[[Constants.UNIT_BELAGERUNGSMASCHINE_STUFE_2_HUMAN]]
+              return 2 --[[ResearchType.UpgradeUnit]], spawnCommand
+            end
+          until 1
+        else
+          spawnCommand = nil
+          return 0 --[[ResearchType.CommonUpgrade]], spawnCommand
+        end
+      until 1
+    end
+    return {
+      OnFinished = OnFinished,
+      __metadata__ = function (out)
+        return {
+          methods = {
+            { "GetElfTechType", 0x389, GetElfTechType, System.Int32, System.Int32, out.Source.Models.SpawnUnitCommand, System.Int32 },
+            { "GetHumanTechType", 0x389, GetHumanTechType, System.Int32, System.Int32, out.Source.Models.SpawnUnitCommand, System.Int32 },
+            { "GetOrcTechType", 0x389, GetOrcTechType, System.Int32, System.Int32, out.Source.Models.SpawnUnitCommand, System.Int32 },
+            { "GetUndeadTechType", 0x389, GetUndeadTechType, System.Int32, System.Int32, out.Source.Models.SpawnUnitCommand, System.Int32 },
+            { "OnFinished", 0xC, OnFinished }
+          },
+          class = { "UserResearch", 0x3C }
         }
       end
     }
@@ -23082,7 +23139,7 @@ System.import(function (out)
 end)
 System.namespace("Source.Models", function (namespace)
   namespace.class("Team", function (namespace)
-    local Defeat, Win, ContainsPlayer, IncreaseTechForAllPlayers, __ctor__
+    local Defeat, Win, ContainsPlayer, IncreaseTechForAllPlayers, DisplayChatMessage, __ctor__
     __ctor__ = function (this, wc3ComputerPlayer)
       this.Computer = SourceModels.ComputerPlayer(wc3ComputerPlayer, this)
       SetPlayerState(this.Computer.Wc3Player, PLAYER_STATE_GIVES_BOUNTY, 1)
@@ -23164,12 +23221,18 @@ System.namespace("Source.Models", function (namespace)
         end
       end
     end
+    DisplayChatMessage = function (this, message)
+      for _, user in System.each(this.Users) do
+        BlzDisplayChatMessage(user.Wc3Player, user.PlayerId, message)
+      end
+    end
     return {
       Defeated = false,
       Defeat = Defeat,
       Win = Win,
       ContainsPlayer = ContainsPlayer,
       IncreaseTechForAllPlayers = IncreaseTechForAllPlayers,
+      DisplayChatMessage = DisplayChatMessage,
       __ctor__ = __ctor__,
       __metadata__ = function (out)
         return {
@@ -23177,6 +23240,7 @@ System.namespace("Source.Models", function (namespace)
             { ".ctor", 0x106, nil, out.WCSharp.Api.player },
             { "ContainsPlayer", 0x286, ContainsPlayer, System.Int32, out.Source.Models.UserPlayer, System.Boolean },
             { "Defeat", 0x6, Defeat },
+            { "DisplayChatMessage", 0x106, DisplayChatMessage, System.String },
             { "IncreaseTechForAllPlayers", 0x206, IncreaseTechForAllPlayers, System.Int32, System.Int32 },
             { "Win", 0x6, Win }
           },
@@ -34608,27 +34672,28 @@ local InitCSharp = function ()
       "WCSharp.Missiles.HomingMissile",
       "WCSharp.Missiles.MomentumMissile",
       "WCSharp.Missiles.OrbitalMissile",
-      "WCSharp.SaveLoad.SaveLoadedMessage_1",
       "WCSharp.SaveLoad.Save_1",
+      "WCSharp.SaveLoad.SaveLoadedMessage_1",
       "WCSharp.W3MMD.IW3MmdVar",
       "Areas",
       "Constants",
       "Regions",
       "Source.ConstantsEx",
+      "Source.Handler.Computer.BuildingMain",
+      "Source.Handler.Computer.ComputerHero",
       "Source.Handler.Generic.Ability",
-      "Source.Handler.GenericEvents.Item",
-      "Source.Handler.GenericEvents.Research",
       "Source.Handler.GenericEvents.Unit",
       "Source.Handler.Periodic.GoldIncome",
-      "Source.Handler.Periodic.ResearchCheckHumans",
+      "Source.Handler.Periodic.ResearchCheck",
       "Source.Handler.Periodic.Slapping",
+      "Source.Handler.Player.UserHero",
       "Source.Handler.Region.ElfBase",
       "Source.Handler.Region.HumanBase",
       "Source.Handler.Region.OrcBase",
       "Source.Handler.Region.UndeadBase",
-      "Source.Handler.Specific.BarracksBuilding",
-      "Source.Handler.Specific.ComputerHero",
-      "Source.Handler.Specific.UserHero",
+      "Source.Handler.Specific.BuildingBarracks",
+      "Source.Handler.User.Item",
+      "Source.Handler.User.UserResearch",
       "Source.Models.Area",
       "Source.Models.ComputerPlayer",
       "Source.Models.Enums.ResearchType",
@@ -34641,7 +34706,6 @@ local InitCSharp = function ()
       "Source.Models.Team",
       "Source.Models.UserPlayer",
       "Source.Program",
-      "Source.UnitEvents.MainBuilding",
       "WCSharp.Api.Enums.TargetsAllowed",
       "WCSharp.Buffs.Aura_1",
       "WCSharp.Buffs.AuraBoundBuff",

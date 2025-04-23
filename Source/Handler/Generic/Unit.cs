@@ -1,5 +1,4 @@
-﻿using Source.Handler.Specific;
-using Source.Models;
+﻿using Source.Models;
 using System;
 using WCSharp.Api;
 
@@ -23,9 +22,9 @@ namespace Source.Handler.GenericEvents
         {
           // Wenn Helden sterben, werden diese abhängig vom SlotStatus gesondert behandelt
           if (unit.Owner.Controller == mapcontrol.User)
-            UserHero.OnDies(unit);
+            Player.UserHero.OnDies(unit);
           else
-            ComputerHero.OnDies(unit);
+            Computer.ComputerHero.OnDies(unit);
 
           return;
         }

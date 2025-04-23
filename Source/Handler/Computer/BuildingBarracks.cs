@@ -4,7 +4,7 @@ using WCSharp.Api;
 
 namespace Source.Handler.Specific
 {
-  internal static class BarracksBuilding
+  internal static class BuildingBarracks
   {
     internal static void OnDies()
     {

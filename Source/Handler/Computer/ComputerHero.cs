@@ -2,7 +2,7 @@
 using System;
 using WCSharp.Api;
 
-namespace Source.Handler.Specific
+namespace Source.Handler.Computer
 {
   internal static class ComputerHero
   {
@@ -85,8 +85,6 @@ namespace Source.Handler.Specific
           {
             respawnArea = Areas.UndeadBaseHeroRespawn;
           }
-          else
-            Program.ShowDebugMessage("ComputerHero.OnDies", $"Unit {unit.Name} not found unit list of computer players!");
 
           if (spawnedUnit != null)
           {
@@ -99,6 +97,32 @@ namespace Source.Handler.Specific
           Program.ShowExceptionMessage("ComputerHero.OnDies", ex);
         }
       });
+    }
+
+    internal static void OnLevels()
+    {
+      unit unit = Common.GetLevelingUnit();
+
+      Program.ShowDebugMessage("Held hat gelevelt!");
+
+      if (unit.Owner.Controller != mapcontrol.Computer)
+        return;
+
+      //int randomIndex = Random.Shared.Next(1, 5);
+      //ability ability = unit.GetAbilityByIndex(randomIndex);
+      //int abilityId = ability.Id;
+      //int abilityLevel = unit.GetAbilityLevel(abilityId);
+
+      //// TODO : Level des Helden und Skill-Level-Skip beachten?
+
+      //if (abilityLevel < ability.Levels)
+      //{
+      //  // Skill kann verbessert werden
+      //  unit.IncrementAbilityLevel(abilityId);
+      //  unit.SkillPoints--;
+
+      //  Program.ShowDebugMessage($"Heldenfähigkeiten {ability.Name} verbessert!");
+      //}
     }
   }
 }

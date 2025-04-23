@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using WCSharp.Api;
 
 namespace Source.Models
@@ -114,6 +115,14 @@ namespace Source.Models
       {
         if (user.Wc3Player.SlotState == playerslotstate.Playing)
           Common.SetPlayerTechResearched(user.Wc3Player, techId, techLevel);
+      }
+    }
+
+    public void DisplayChatMessage(string message)
+    {
+      foreach (UserPlayer user in Users)
+      {
+        Common.BlzDisplayChatMessage(user.Wc3Player, user.PlayerId, message);
       }
     }
   }
