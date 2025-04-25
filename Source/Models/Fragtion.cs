@@ -1,4 +1,5 @@
 ﻿using Source.Handler.Generic;
+using Source.Statics;
 using System.Reflection.Emit;
 using WCSharp.Api;
 
@@ -20,6 +21,7 @@ namespace Source.Models
       var timer = Common.CreateTimer();
       Common.TimerStart(timer, delay, false, () =>
       {
+
         if (Hero == null)
         {
           Hero = Common.CreateUnitAtLoc(Wc3Player, unitTypeId, spawnArea.Wc3CenterLocation, 0f);

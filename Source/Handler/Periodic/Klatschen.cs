@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Source.Statics;
+using System;
 using WCSharp.Api;
 using WCSharp.Effects;
 using WCSharp.Lightnings;
@@ -42,7 +43,7 @@ namespace Source.Handler.Periodic
         Point centerRightPoint = CenterRightRect.Center;
 
         // Effekt für Ankündigung für 6 Sekunden
-        CreateSpecialEffect("Abilities\\Spells\\Human\\FlameStrike\\FlameStrikeTarget.mdl", centerPoint, 3f, 5f);
+        SpecialEffects.CreateSpecialEffect("Abilities\\Spells\\Human\\FlameStrike\\FlameStrikeTarget.mdl", centerPoint, 3f, 5f);
 
         float centerX = centerPoint.X;
         float centerY = centerPoint.Y - 100;
@@ -88,24 +89,24 @@ namespace Source.Handler.Periodic
           out Point pentaRightPointRight);
 
         // Zentrum - Nach 5 Sekunden die Schaden-Effekte anzeigen
-        CreateSpecialEffectTimed("Abilities\\Spells\\Human\\FlameStrike\\FlameStrike1.mdl", pentaCenterPointBottom, 3f, 5f, 5f);
-        CreateSpecialEffectTimed("Abilities\\Spells\\Human\\FlameStrike\\FlameStrike1.mdl", pentaCenterPointTopLeft, 3f, 5f, 5f);
-        CreateSpecialEffectTimed("Abilities\\Spells\\Human\\FlameStrike\\FlameStrike1.mdl", pentaCenterPointTopRight, 5f, 5f, 5f);
-        CreateSpecialEffectTimed("Abilities\\Spells\\Human\\FlameStrike\\FlameStrike1.mdl", pentaCenterPointLeft, 3f, 5f, 5f);
-        CreateSpecialEffectTimed("Abilities\\Spells\\Human\\FlameStrike\\FlameStrike1.mdl", pentaCenterPointRight, 3f, 5f, 5f);
-        CreateSpecialEffectTimed("Abilities\\Spells\\Demon\\DarkPortal\\DarkPortalTarget.mdl", centerPoint, 3, 5f);
+        SpecialEffects.CreateSpecialEffectTimed("Abilities\\Spells\\Human\\FlameStrike\\FlameStrike1.mdl", pentaCenterPointBottom, 3f, 5f, 5f);
+        SpecialEffects.CreateSpecialEffectTimed("Abilities\\Spells\\Human\\FlameStrike\\FlameStrike1.mdl", pentaCenterPointTopLeft, 3f, 5f, 5f);
+        SpecialEffects.CreateSpecialEffectTimed("Abilities\\Spells\\Human\\FlameStrike\\FlameStrike1.mdl", pentaCenterPointTopRight, 5f, 5f, 5f);
+        SpecialEffects.CreateSpecialEffectTimed("Abilities\\Spells\\Human\\FlameStrike\\FlameStrike1.mdl", pentaCenterPointLeft, 3f, 5f, 5f);
+        SpecialEffects.CreateSpecialEffectTimed("Abilities\\Spells\\Human\\FlameStrike\\FlameStrike1.mdl", pentaCenterPointRight, 3f, 5f, 5f);
+        SpecialEffects.CreateSpecialEffectTimed("Abilities\\Spells\\Demon\\DarkPortal\\DarkPortalTarget.mdl", centerPoint, 3, 5f);
 
         // Bottom Lange - Nach 5 Sekunden die Schaden-Effekte anzeigen
-        CreateSpecialEffectTimed("Abilities\\Spells\\Human\\FlameStrike\\FlameStrike1.mdl", centerBottomPoint, 3f, 5f, 5f);
+        SpecialEffects.CreateSpecialEffectTimed("Abilities\\Spells\\Human\\FlameStrike\\FlameStrike1.mdl", centerBottomPoint, 3f, 5f, 5f);
 
         // Left Lange - Nach 5 Sekunden die Schaden-Effekte anzeigen
-        CreateSpecialEffectTimed("Abilities\\Spells\\Human\\FlameStrike\\FlameStrike1.mdl", centerLeftPoint, 3f, 5f, 5f);
+        SpecialEffects.CreateSpecialEffectTimed("Abilities\\Spells\\Human\\FlameStrike\\FlameStrike1.mdl", centerLeftPoint, 3f, 5f, 5f);
 
         // Top Lange - Nach 5 Sekunden die Schaden-Effekte anzeigen
-        CreateSpecialEffectTimed("Abilities\\Spells\\Human\\FlameStrike\\FlameStrike1.mdl", centerTopPoint, 3f, 5f, 5f);
+        SpecialEffects.CreateSpecialEffectTimed("Abilities\\Spells\\Human\\FlameStrike\\FlameStrike1.mdl", centerTopPoint, 3f, 5f, 5f);
 
         // Right Lange - Nach 5 Sekunden die Schaden-Effekte anzeigen
-        CreateSpecialEffectTimed("Abilities\\Spells\\Human\\FlameStrike\\FlameStrike1.mdl", centerRightPoint, 3f, 5f, 5f);
+        SpecialEffects.CreateSpecialEffectTimed("Abilities\\Spells\\Human\\FlameStrike\\FlameStrike1.mdl", centerRightPoint, 3f, 5f, 5f);
 
         // Zentrum - Nach 5 Sekunden die Schaden-Ability zünden
         CreateAtDummyAndCastAbilityTimed(player, centerPoint, Constants.ABILITY_PHOENIXFEUER_DUMMY, executions, Constants.ORDER_PHOENIX_FIRE, 5.5f);
@@ -192,22 +193,6 @@ namespace Source.Handler.Periodic
       }
 
       return true;
-    }
-
-    private static void CreateSpecialEffect(string modelPath, Point point, float scale, float duration = 0.03125f)
-    {
-      effect e = Common.AddSpecialEffect(modelPath, point.X, point.Y);
-      e.Scale = scale;
-      EffectSystem.Add(e, duration);
-    }
-
-    private static void CreateSpecialEffectTimed(string modelPath, Point point, float scale, float delay, float duration = 0.03125f)
-    {
-      timer timer = Common.CreateTimer();
-      Common.TimerStart(timer, delay, false, () =>
-      {
-        CreateSpecialEffect(modelPath, point, scale, duration);
-      });
     }
 
     private static void CreateAtDummyAndCastAbility(player player, Point point, int abilityId, int abilityLevel, int orderId, float duration = 2f)

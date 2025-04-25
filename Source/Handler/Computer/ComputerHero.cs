@@ -1,4 +1,5 @@
 ﻿using Source.Models;
+using Source.Statics;
 using System;
 using WCSharp.Api;
 
