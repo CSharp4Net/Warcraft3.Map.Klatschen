@@ -1,4 +1,6 @@
-﻿using WCSharp.Api;
+﻿using Source.Handler.Generic;
+using System.Reflection.Emit;
+using WCSharp.Api;
 
 namespace Source.Models
 {
@@ -29,13 +31,39 @@ namespace Source.Models
 
         Hero.HeroLevel = heroLevel;
 
-        // MTA @ 2025-03-07 : Erstmal gehen wir stur davon aus, dass Neutrale Helden immer stets 3 Fähigkeiten haben...
-        Hero.SetAbilityLevel(Hero.GetAbilityByIndex(0).Id, abilitiesLevel);
-        Hero.SetAbilityLevel(Hero.GetAbilityByIndex(1).Id, abilitiesLevel);
-        Hero.SetAbilityLevel(Hero.GetAbilityByIndex(2).Id, abilitiesLevel);
-
-        // TODO : Computer-Helden zaubern NICHT automatisch Heldenzauber, sondern lediglich einfacher Unit-Zauber?
+        int unitId = Common.GetUnitTypeId(Hero);
+        if (unitId == Constants.UNIT_GRUBENLORD_KLATSCHEN)
+        {
+          TrainGrubenlord(Hero, abilitiesLevel);
+        }
       });
+    }
+
+    private void TrainGrubenlord(unit unit, int abilitiesLevel)
+    {
+      switch (abilitiesLevel)
+      {
+        case 1:
+          unit.AddAbility(Constants.ABILITY_FEUERREGEN_KLATSCHEN_5);
+          unit.AddAbility(Constants.ABILITY_SPALTSCHLAG_KLATSCHEN_5);
+          unit.AddAbility(Constants.ABILITY_INFERNO_KLATSCHEN_5);
+          unit.AddAbility(Constants.ABILITY_UNHEILIGE_AURA_KLATSCHEN_5);
+
+          unit.AddAbility(Constants.ABILITY_ERH_HTE_ATTRIBUTE_HERO_50);
+          unit.SetAbilityLevel(Constants.ABILITY_ERH_HTE_ATTRIBUTE_HERO_50, 10);
+          break;
+        case 2:
+        case 3:
+        case 4:
+        case 5:
+          unit.IncrementAbilityLevel(Constants.ABILITY_FEUERREGEN_KLATSCHEN_5);
+          unit.IncrementAbilityLevel(Constants.ABILITY_SPALTSCHLAG_KLATSCHEN_5);
+          unit.IncrementAbilityLevel(Constants.ABILITY_INFERNO_KLATSCHEN_5);
+          unit.IncrementAbilityLevel(Constants.ABILITY_UNHEILIGE_AURA_KLATSCHEN_5);
+
+          unit.SetAbilityLevel(Constants.ABILITY_ERH_HTE_ATTRIBUTE_HERO_50, abilitiesLevel * 10);
+          break;
+      }
     }
   }
 }

@@ -106,41 +106,50 @@ namespace Source.Handler.Computer
       if (unit.Owner.Controller != mapcontrol.Computer)
         return;
 
-      //if (Common.GetUnitTypeId(unit) == Constants.UNIT_W_CHTER_HUMAN)
-      //{
-      //  switch (unit.HeroLevel)
-      //  {
-      //    case 6:
-      //      unit.AddAbility()
-      //      break;
-      //    case 12:
+      int unitId = Common.GetUnitTypeId(unit);
 
-      //      break;
-      //    case 18:
-
-      //      break;
-      //    case 24:
-
-      //      break;
-      //  }
-      //}
-
-      int randomIndex = Common.GetRandomInt(1, 5);
-      ability ability = unit.Hero(randomIndex);
-      int abilityId = ability.Id;
-      int abilityLevel = unit.GetAbilityLevel(abilityId);
-
-      // TODO : Level des Helden und Skill-Level-Skip beachten?
-      if (abilityLevel == 0)
+      if (unitId == Constants.UNIT_W_CHTER_HUMAN)
       {
-        unit.AddAbility(abilityId);
-        Program.ShowDebugMessage($"Heldenfähigkeiten {ability.Name} gelernt!");
+        ProcessWaechterLevelUp(unit);
       }
-      else if (abilityLevel < ability.Levels)
+    }
+
+    private static void ProcessWaechterLevelUp(unit unit)
+    {
+      string level =  unit.HeroLevel.ToString();
+      int abilityId = 0;
+
+      if (level.EndsWith("1") || level.EndsWith("6"))
+      {
+        abilityId = Constants.ABILITY_SPOTT_GUARD_20;
+      }
+      else if (level.EndsWith("2") || level.EndsWith("7"))
+      {
+        abilityId = Constants.ABILITY_BEFEHLSAURA_GUARD_20;
+      }
+      else if (level.EndsWith("3") || level.EndsWith("8"))
+      {
+        abilityId = Constants.ABILITY_DONNERSCHLAG_GUARD_20;
+      }
+      else if (level.EndsWith("4") || level.EndsWith("9"))
+      {
+        abilityId = Constants.ABILITY_AUSDAUERAURA_GUARD_20;
+      }
+      else // 5 oder 0
+      {
+        abilityId = Constants.ABILITY_ERH_HTE_ATTRIBUTE_HERO_50;
+      }
+
+      ability ability = unit.GetAbility(abilityId);
+      if (ability.Id == 0)
+      {
+        // Held hat Fähigkeit noch nicht gelernt
+        unit.AddAbility(abilityId);
+      }
+      else
       {
         // Skill kann verbessert werden
-        unit.IncrementAbilityLevel(abilityId);
-        Program.ShowDebugMessage($"Heldenfähigkeiten {ability.Name} verbessert!");
+        int abilityLevel = unit.IncrementAbilityLevel(abilityId);
       }
     }
   }

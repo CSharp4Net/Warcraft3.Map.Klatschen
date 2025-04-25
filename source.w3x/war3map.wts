@@ -12,7 +12,7 @@ STRING 3
 {
 ...
 
-0.9.7.0 by NozzNazz
+0.9.8.0 by NozzNazz
 }
 
 STRING 4
@@ -117,7 +117,7 @@ STRING 65
 {
 ...
 
-0.9.7.0 by NozzNazz
+0.9.8.0 by NozzNazz
 }
 
 STRING 72
@@ -10372,5 +10372,1169 @@ STRING 3025
 // Upgrades: R004 (Leuchtfeuer), class (Class)
 {
 ranged
+}
+
+STRING 3026
+// Abilities: ABFA (Befehlsaura), EditorSuffix (Editor Suffix)
+{
+(Guard 20)
+}
+
+STRING 3027
+// Abilities: ABFA (Befehlsaura), Tip (Tooltip - Normal)
+{
+Befehlsaura
+}
+
+STRING 3028
+// Abilities: ABFA (Befehlsaura), Tip (Tooltip - Normal)
+{
+Befehlsaura
+}
+
+STRING 3029
+// Abilities: ABFA (Befehlsaura), Tip (Tooltip - Normal)
+{
+Befehlsaura
+}
+
+STRING 3030
+// Abilities: ABFA (Befehlsaura), Tip (Tooltip - Normal)
+{
+Befehlsaura
+}
+
+STRING 3031
+// Abilities: ABFA (Befehlsaura), Tip (Tooltip - Normal)
+{
+Befehlsaura
+}
+
+STRING 3032
+// Abilities: ABFA (Befehlsaura), Tip (Tooltip - Normal)
+{
+Befehlsaura
+}
+
+STRING 3033
+// Abilities: ABFA (Befehlsaura), Tip (Tooltip - Normal)
+{
+Befehlsaura
+}
+
+STRING 3034
+// Abilities: ABFA (Befehlsaura), Tip (Tooltip - Normal)
+{
+Befehlsaura
+}
+
+STRING 3035
+// Abilities: ABFA (Befehlsaura), Tip (Tooltip - Normal)
+{
+Befehlsaura
+}
+
+STRING 3036
+// Abilities: ABFA (Befehlsaura), Tip (Tooltip - Normal)
+{
+Befehlsaura
+}
+
+STRING 3037
+// Abilities: ABFA (Befehlsaura), Tip (Tooltip - Normal)
+{
+Befehlsaura
+}
+
+STRING 3038
+// Abilities: ABFA (Befehlsaura), Tip (Tooltip - Normal)
+{
+Befehlsaura
+}
+
+STRING 3039
+// Abilities: ABFA (Befehlsaura), Tip (Tooltip - Normal)
+{
+Befehlsaura
+}
+
+STRING 3040
+// Abilities: ABFA (Befehlsaura), Tip (Tooltip - Normal)
+{
+Befehlsaura
+}
+
+STRING 3041
+// Abilities: ABFA (Befehlsaura), Tip (Tooltip - Normal)
+{
+Befehlsaura
+}
+
+STRING 3042
+// Abilities: ABFA (Befehlsaura), Tip (Tooltip - Normal)
+{
+Befehlsaura
+}
+
+STRING 3043
+// Abilities: ABFA (Befehlsaura), Tip (Tooltip - Normal)
+{
+Befehlsaura
+}
+
+STRING 3044
+// Abilities: ABFA (Befehlsaura), Tip (Tooltip - Normal)
+{
+Befehlsaura
+}
+
+STRING 3045
+// Abilities: ABFA (Befehlsaura), Tip (Tooltip - Normal)
+{
+Befehlsaura
+}
+
+STRING 3046
+// Abilities: ABFA (Befehlsaura), Ubertip (Tooltip - Normal - Extended)
+{
+Erhöht den Schaden verbündeter Einheiten in der Nähe.
+}
+
+STRING 3047
+// Abilities: ABFA (Befehlsaura), Ubertip (Tooltip - Normal - Extended)
+{
+Erhöht den Schaden verbündeter Einheiten in der Nähe.
+}
+
+STRING 3048
+// Abilities: ABFA (Befehlsaura), Ubertip (Tooltip - Normal - Extended)
+{
+Erhöht den Schaden verbündeter Einheiten in der Nähe.
+}
+
+STRING 3049
+// Abilities: ABFA (Befehlsaura), Ubertip (Tooltip - Normal - Extended)
+{
+Erhöht den Schaden verbündeter Einheiten in der Nähe.
+}
+
+STRING 3050
+// Abilities: ABFA (Befehlsaura), Ubertip (Tooltip - Normal - Extended)
+{
+Erhöht den Schaden verbündeter Einheiten in der Nähe.
+}
+
+STRING 3051
+// Abilities: ABFA (Befehlsaura), Ubertip (Tooltip - Normal - Extended)
+{
+Erhöht den Schaden verbündeter Einheiten in der Nähe.
+}
+
+STRING 3052
+// Abilities: ABFA (Befehlsaura), Ubertip (Tooltip - Normal - Extended)
+{
+Erhöht den Schaden verbündeter Einheiten in der Nähe.
+}
+
+STRING 3053
+// Abilities: ABFA (Befehlsaura), Ubertip (Tooltip - Normal - Extended)
+{
+Erhöht den Schaden verbündeter Einheiten in der Nähe.
+}
+
+STRING 3054
+// Abilities: ABFA (Befehlsaura), Ubertip (Tooltip - Normal - Extended)
+{
+Erhöht den Schaden verbündeter Einheiten in der Nähe.
+}
+
+STRING 3055
+// Abilities: ABFA (Befehlsaura), Ubertip (Tooltip - Normal - Extended)
+{
+Erhöht den Schaden verbündeter Einheiten in der Nähe.
+}
+
+STRING 3056
+// Abilities: ABFA (Befehlsaura), Ubertip (Tooltip - Normal - Extended)
+{
+Erhöht den Schaden verbündeter Einheiten in der Nähe.
+}
+
+STRING 3057
+// Abilities: ABFA (Befehlsaura), Ubertip (Tooltip - Normal - Extended)
+{
+Erhöht den Schaden verbündeter Einheiten in der Nähe.
+}
+
+STRING 3058
+// Abilities: ABFA (Befehlsaura), Ubertip (Tooltip - Normal - Extended)
+{
+Erhöht den Schaden verbündeter Einheiten in der Nähe.
+}
+
+STRING 3059
+// Abilities: ABFA (Befehlsaura), Ubertip (Tooltip - Normal - Extended)
+{
+Erhöht den Schaden verbündeter Einheiten in der Nähe.
+}
+
+STRING 3060
+// Abilities: ABFA (Befehlsaura), Ubertip (Tooltip - Normal - Extended)
+{
+Erhöht den Schaden verbündeter Einheiten in der Nähe.
+}
+
+STRING 3061
+// Abilities: ABFA (Befehlsaura), Ubertip (Tooltip - Normal - Extended)
+{
+Erhöht den Schaden verbündeter Einheiten in der Nähe.
+}
+
+STRING 3062
+// Abilities: ABFA (Befehlsaura), Ubertip (Tooltip - Normal - Extended)
+{
+Erhöht den Schaden verbündeter Einheiten in der Nähe.
+}
+
+STRING 3063
+// Abilities: ABFA (Befehlsaura), Ubertip (Tooltip - Normal - Extended)
+{
+Erhöht den Schaden verbündeter Einheiten in der Nähe.
+}
+
+STRING 3064
+// Abilities: ABFA (Befehlsaura), Ubertip (Tooltip - Normal - Extended)
+{
+Erhöht den Schaden verbündeter Einheiten in der Nähe.
+}
+
+STRING 3065
+// Abilities: A023 (Spott), EditorSuffix (Editor Suffix)
+{
+(Guard 20)
+}
+
+STRING 3066
+// Abilities: A023 (Spott), Tip (Tooltip - Normal)
+{
+Spott
+}
+
+STRING 3067
+// Abilities: A023 (Spott), Tip (Tooltip - Normal)
+{
+Spott
+}
+
+STRING 3068
+// Abilities: A023 (Spott), Tip (Tooltip - Normal)
+{
+Spott
+}
+
+STRING 3069
+// Abilities: A023 (Spott), Tip (Tooltip - Normal)
+{
+Spott
+}
+
+STRING 3070
+// Abilities: A023 (Spott), Tip (Tooltip - Normal)
+{
+Spott
+}
+
+STRING 3071
+// Abilities: A023 (Spott), Tip (Tooltip - Normal)
+{
+Spott
+}
+
+STRING 3072
+// Abilities: A023 (Spott), Tip (Tooltip - Normal)
+{
+Spott
+}
+
+STRING 3073
+// Abilities: A023 (Spott), Tip (Tooltip - Normal)
+{
+Spott
+}
+
+STRING 3074
+// Abilities: A023 (Spott), Tip (Tooltip - Normal)
+{
+Spott
+}
+
+STRING 3075
+// Abilities: A023 (Spott), Tip (Tooltip - Normal)
+{
+Spott
+}
+
+STRING 3076
+// Abilities: A023 (Spott), Tip (Tooltip - Normal)
+{
+Spott
+}
+
+STRING 3077
+// Abilities: A023 (Spott), Tip (Tooltip - Normal)
+{
+Spott
+}
+
+STRING 3078
+// Abilities: A023 (Spott), Tip (Tooltip - Normal)
+{
+Spott
+}
+
+STRING 3079
+// Abilities: A023 (Spott), Tip (Tooltip - Normal)
+{
+Spott
+}
+
+STRING 3080
+// Abilities: A023 (Spott), Tip (Tooltip - Normal)
+{
+Spott
+}
+
+STRING 3081
+// Abilities: A023 (Spott), Tip (Tooltip - Normal)
+{
+Spott
+}
+
+STRING 3082
+// Abilities: A023 (Spott), Tip (Tooltip - Normal)
+{
+Spott
+}
+
+STRING 3083
+// Abilities: A023 (Spott), Tip (Tooltip - Normal)
+{
+Spott
+}
+
+STRING 3084
+// Abilities: A023 (Spott), Tip (Tooltip - Normal)
+{
+Spott
+}
+
+STRING 3085
+// Abilities: A023 (Spott), Ubertip (Tooltip - Normal - Extended)
+{
+Die <A023,DataA1> Gegner, die dieser Einheit am nächsten sind, werden gezwungen, sie anzugreifen.
+}
+
+STRING 3086
+// Abilities: A023 (Spott), Ubertip (Tooltip - Normal - Extended)
+{
+Die <A023,DataA2> Gegner, die dieser Einheit am nächsten sind, werden gezwungen, sie anzugreifen.
+}
+
+STRING 3087
+// Abilities: A023 (Spott), Ubertip (Tooltip - Normal - Extended)
+{
+Die <A023,DataA3> Gegner, die dieser Einheit am nächsten sind, werden gezwungen, sie anzugreifen.
+}
+
+STRING 3088
+// Abilities: A023 (Spott), Ubertip (Tooltip - Normal - Extended)
+{
+Die <A023,DataA4> Gegner, die dieser Einheit am nächsten sind, werden gezwungen, sie anzugreifen.
+}
+
+STRING 3089
+// Abilities: A023 (Spott), Ubertip (Tooltip - Normal - Extended)
+{
+Die <A023,DataA5> Gegner, die dieser Einheit am nächsten sind, werden gezwungen, sie anzugreifen.
+}
+
+STRING 3090
+// Abilities: A023 (Spott), Ubertip (Tooltip - Normal - Extended)
+{
+Die <A023,DataA6> Gegner, die dieser Einheit am nächsten sind, werden gezwungen, sie anzugreifen.
+}
+
+STRING 3091
+// Abilities: A023 (Spott), Ubertip (Tooltip - Normal - Extended)
+{
+Die <A023,DataA7> Gegner, die dieser Einheit am nächsten sind, werden gezwungen, sie anzugreifen.
+}
+
+STRING 3092
+// Abilities: A023 (Spott), Ubertip (Tooltip - Normal - Extended)
+{
+Die <A023,DataA8> Gegner, die dieser Einheit am nächsten sind, werden gezwungen, sie anzugreifen.
+}
+
+STRING 3093
+// Abilities: A023 (Spott), Ubertip (Tooltip - Normal - Extended)
+{
+Die <A023,DataA9> Gegner, die dieser Einheit am nächsten sind, werden gezwungen, sie anzugreifen.
+}
+
+STRING 3094
+// Abilities: A023 (Spott), Ubertip (Tooltip - Normal - Extended)
+{
+Die <A023,DataA10> Gegner, die dieser Einheit am nächsten sind, werden gezwungen, sie anzugreifen.
+}
+
+STRING 3095
+// Abilities: A023 (Spott), Ubertip (Tooltip - Normal - Extended)
+{
+Die <A023,DataA11> Gegner, die dieser Einheit am nächsten sind, werden gezwungen, sie anzugreifen.
+}
+
+STRING 3096
+// Abilities: A023 (Spott), Ubertip (Tooltip - Normal - Extended)
+{
+Die <A023,DataA12> Gegner, die dieser Einheit am nächsten sind, werden gezwungen, sie anzugreifen.
+}
+
+STRING 3097
+// Abilities: A023 (Spott), Ubertip (Tooltip - Normal - Extended)
+{
+Die <A023,DataA13> Gegner, die dieser Einheit am nächsten sind, werden gezwungen, sie anzugreifen.
+}
+
+STRING 3098
+// Abilities: A023 (Spott), Ubertip (Tooltip - Normal - Extended)
+{
+Die <A023,DataA14> Gegner, die dieser Einheit am nächsten sind, werden gezwungen, sie anzugreifen.
+}
+
+STRING 3099
+// Abilities: A023 (Spott), Ubertip (Tooltip - Normal - Extended)
+{
+Die <A023,DataA15> Gegner, die dieser Einheit am nächsten sind, werden gezwungen, sie anzugreifen.
+}
+
+STRING 3100
+// Abilities: A023 (Spott), Ubertip (Tooltip - Normal - Extended)
+{
+Die <A023,DataA16> Gegner, die dieser Einheit am nächsten sind, werden gezwungen, sie anzugreifen.
+}
+
+STRING 3101
+// Abilities: A023 (Spott), Ubertip (Tooltip - Normal - Extended)
+{
+Die <A023,DataA17> Gegner, die dieser Einheit am nächsten sind, werden gezwungen, sie anzugreifen.
+}
+
+STRING 3102
+// Abilities: A023 (Spott), Ubertip (Tooltip - Normal - Extended)
+{
+Die <A023,DataA18> Gegner, die dieser Einheit am nächsten sind, werden gezwungen, sie anzugreifen.
+}
+
+STRING 3103
+// Abilities: A023 (Spott), Ubertip (Tooltip - Normal - Extended)
+{
+Die <A023,DataA19> Gegner, die dieser Einheit am nächsten sind, werden gezwungen, sie anzugreifen.
+}
+
+STRING 3104
+// Abilities: A023 (Spott), Ubertip (Tooltip - Normal - Extended)
+{
+Die <A023,DataA20> Gegner, die dieser Einheit am nächsten sind, werden gezwungen, sie anzugreifen.
+}
+
+STRING 3105
+// Abilities: AADA (Ausdaueraura), EditorSuffix (Editor Suffix)
+{
+(Guard 20)
+}
+
+STRING 3106
+// Abilities: AADA (Ausdaueraura), Researchubertip (Tooltip - Learn - Extended)
+{
+Erhöht die Bewegungs- und Angriffsgeschwindigkeit von verbündeten Einheiten in der Nähe.
+}
+
+STRING 3107
+// Abilities: AADA (Ausdaueraura), Tip (Tooltip - Normal)
+{
+Ausdaueraura [|cffffcc00Stufe 4|r]
+}
+
+STRING 3108
+// Abilities: AADA (Ausdaueraura), Tip (Tooltip - Normal)
+{
+Ausdaueraura [|cffffcc00Stufe 5|r]
+}
+
+STRING 3109
+// Abilities: AADA (Ausdaueraura), Tip (Tooltip - Normal)
+{
+Ausdaueraura [|cffffcc00Stufe 6|r]
+}
+
+STRING 3110
+// Abilities: AADA (Ausdaueraura), Tip (Tooltip - Normal)
+{
+Ausdaueraura [|cffffcc00Stufe 7|r]
+}
+
+STRING 3111
+// Abilities: AADA (Ausdaueraura), Tip (Tooltip - Normal)
+{
+Ausdaueraura [|cffffcc00Stufe 8|r]
+}
+
+STRING 3112
+// Abilities: AADA (Ausdaueraura), Tip (Tooltip - Normal)
+{
+Ausdaueraura [|cffffcc00Stufe 9|r]
+}
+
+STRING 3113
+// Abilities: AADA (Ausdaueraura), Tip (Tooltip - Normal)
+{
+Ausdaueraura [|cffffcc00Stufe 10|r]
+}
+
+STRING 3114
+// Abilities: AADA (Ausdaueraura), Tip (Tooltip - Normal)
+{
+Ausdaueraura [|cffffcc00Stufe 11|r]
+}
+
+STRING 3115
+// Abilities: AADA (Ausdaueraura), Tip (Tooltip - Normal)
+{
+Ausdaueraura [|cffffcc00Stufe 12|r]
+}
+
+STRING 3116
+// Abilities: AADA (Ausdaueraura), Tip (Tooltip - Normal)
+{
+Ausdaueraura [|cffffcc00Stufe 13|r]
+}
+
+STRING 3117
+// Abilities: AADA (Ausdaueraura), Tip (Tooltip - Normal)
+{
+Ausdaueraura [|cffffcc00Stufe 14|r]
+}
+
+STRING 3118
+// Abilities: AADA (Ausdaueraura), Tip (Tooltip - Normal)
+{
+Ausdaueraura [|cffffcc00Stufe 15|r]
+}
+
+STRING 3119
+// Abilities: AADA (Ausdaueraura), Tip (Tooltip - Normal)
+{
+Ausdaueraura [|cffffcc00Stufe 16|r]
+}
+
+STRING 3120
+// Abilities: AADA (Ausdaueraura), Tip (Tooltip - Normal)
+{
+Ausdaueraura [|cffffcc00Stufe 17|r]
+}
+
+STRING 3121
+// Abilities: AADA (Ausdaueraura), Tip (Tooltip - Normal)
+{
+Ausdaueraura [|cffffcc00Stufe 18|r]
+}
+
+STRING 3122
+// Abilities: AADA (Ausdaueraura), Tip (Tooltip - Normal)
+{
+Ausdaueraura [|cffffcc00Stufe 19|r]
+}
+
+STRING 3123
+// Abilities: AADA (Ausdaueraura), Tip (Tooltip - Normal)
+{
+Ausdaueraura [|cffffcc00Stufe 20|r]
+}
+
+STRING 3124
+// Abilities: AADA (Ausdaueraura), Ubertip (Tooltip - Normal - Extended)
+{
+Erhöht die Bewegungsgeschwindigkeit von verbündeten Einheiten in der Nähe um <AADA,DataA1,%>% und die Angriffsgeschwindigkeit um <AADA,DataB1,%>%.
+}
+
+STRING 3125
+// Abilities: AADA (Ausdaueraura), Ubertip (Tooltip - Normal - Extended)
+{
+Erhöht die Bewegungsgeschwindigkeit von verbündeten Einheiten in der Nähe um <AADA,DataA2,%>% und die Angriffsgeschwindigkeit um <AADA,DataB2,%>%.
+}
+
+STRING 3126
+// Abilities: AADA (Ausdaueraura), Ubertip (Tooltip - Normal - Extended)
+{
+Erhöht die Bewegungsgeschwindigkeit von verbündeten Einheiten in der Nähe um <AADA,DataA3,%>% und die Angriffsgeschwindigkeit um <AADA,DataB3,%>%.
+}
+
+STRING 3127
+// Abilities: AADA (Ausdaueraura), Ubertip (Tooltip - Normal - Extended)
+{
+Erhöht die Bewegungsgeschwindigkeit von verbündeten Einheiten in der Nähe um <AADA,DataA4,%>% und die Angriffsgeschwindigkeit um <AADA,DataB4,%>%.
+}
+
+STRING 3128
+// Abilities: AADA (Ausdaueraura), Ubertip (Tooltip - Normal - Extended)
+{
+Erhöht die Bewegungsgeschwindigkeit von verbündeten Einheiten in der Nähe um <AADA,DataA5,%>% und die Angriffsgeschwindigkeit um <AADA,DataB5,%>%.
+}
+
+STRING 3129
+// Abilities: AADA (Ausdaueraura), Ubertip (Tooltip - Normal - Extended)
+{
+Erhöht die Bewegungsgeschwindigkeit von verbündeten Einheiten in der Nähe um <AADA,DataA6,%>% und die Angriffsgeschwindigkeit um <AADA,DataB6,%>%.
+}
+
+STRING 3130
+// Abilities: AADA (Ausdaueraura), Ubertip (Tooltip - Normal - Extended)
+{
+Erhöht die Bewegungsgeschwindigkeit von verbündeten Einheiten in der Nähe um <AADA,DataA7,%>% und die Angriffsgeschwindigkeit um <AADA,DataB7,%>%.
+}
+
+STRING 3131
+// Abilities: AADA (Ausdaueraura), Ubertip (Tooltip - Normal - Extended)
+{
+Erhöht die Bewegungsgeschwindigkeit von verbündeten Einheiten in der Nähe um <AADA,DataA8,%>% und die Angriffsgeschwindigkeit um <AADA,DataB8,%>%.
+}
+
+STRING 3132
+// Abilities: AADA (Ausdaueraura), Ubertip (Tooltip - Normal - Extended)
+{
+Erhöht die Bewegungsgeschwindigkeit von verbündeten Einheiten in der Nähe um <AADA,DataA9,%>% und die Angriffsgeschwindigkeit um <AADA,DataB9,%>%.
+}
+
+STRING 3133
+// Abilities: AADA (Ausdaueraura), Ubertip (Tooltip - Normal - Extended)
+{
+Erhöht die Bewegungsgeschwindigkeit von verbündeten Einheiten in der Nähe um <AADA,DataA10,%>% und die Angriffsgeschwindigkeit um <AADA,DataB10,%>%.
+}
+
+STRING 3134
+// Abilities: AADA (Ausdaueraura), Ubertip (Tooltip - Normal - Extended)
+{
+Erhöht die Bewegungsgeschwindigkeit von verbündeten Einheiten in der Nähe um <AADA,DataA11,%>% und die Angriffsgeschwindigkeit um <AADA,DataB11,%>%.
+}
+
+STRING 3135
+// Abilities: AADA (Ausdaueraura), Ubertip (Tooltip - Normal - Extended)
+{
+Erhöht die Bewegungsgeschwindigkeit von verbündeten Einheiten in der Nähe um <AADA,DataA12,%>% und die Angriffsgeschwindigkeit um <AADA,DataB12,%>%.
+}
+
+STRING 3136
+// Abilities: AADA (Ausdaueraura), Ubertip (Tooltip - Normal - Extended)
+{
+Erhöht die Bewegungsgeschwindigkeit von verbündeten Einheiten in der Nähe um <AADA,DataA13,%>% und die Angriffsgeschwindigkeit um <AADA,DataB13,%>%.
+}
+
+STRING 3137
+// Abilities: AADA (Ausdaueraura), Ubertip (Tooltip - Normal - Extended)
+{
+Erhöht die Bewegungsgeschwindigkeit von verbündeten Einheiten in der Nähe um <AADA,DataA14,%>% und die Angriffsgeschwindigkeit um <AADA,DataB14,%>%.
+}
+
+STRING 3138
+// Abilities: AADA (Ausdaueraura), Ubertip (Tooltip - Normal - Extended)
+{
+Erhöht die Bewegungsgeschwindigkeit von verbündeten Einheiten in der Nähe um <AADA,DataA15,%>% und die Angriffsgeschwindigkeit um <AADA,DataB15,%>%.
+}
+
+STRING 3139
+// Abilities: AADA (Ausdaueraura), Ubertip (Tooltip - Normal - Extended)
+{
+Erhöht die Bewegungsgeschwindigkeit von verbündeten Einheiten in der Nähe um <AADA,DataA16,%>% und die Angriffsgeschwindigkeit um <AADA,DataB16,%>%.
+}
+
+STRING 3140
+// Abilities: AADA (Ausdaueraura), Ubertip (Tooltip - Normal - Extended)
+{
+Erhöht die Bewegungsgeschwindigkeit von verbündeten Einheiten in der Nähe um <AADA,DataA17,%>% und die Angriffsgeschwindigkeit um <AADA,DataB17,%>%.
+}
+
+STRING 3141
+// Abilities: AADA (Ausdaueraura), Ubertip (Tooltip - Normal - Extended)
+{
+Erhöht die Bewegungsgeschwindigkeit von verbündeten Einheiten in der Nähe um <AADA,DataA18,%>% und die Angriffsgeschwindigkeit um <AADA,DataB18,%>%.
+}
+
+STRING 3142
+// Abilities: AADA (Ausdaueraura), Ubertip (Tooltip - Normal - Extended)
+{
+Erhöht die Bewegungsgeschwindigkeit von verbündeten Einheiten in der Nähe um <AADA,DataA19,%>% und die Angriffsgeschwindigkeit um <AADA,DataB19,%>%.
+}
+
+STRING 3143
+// Abilities: AADA (Ausdaueraura), Ubertip (Tooltip - Normal - Extended)
+{
+Erhöht die Bewegungsgeschwindigkeit von verbündeten Einheiten in der Nähe um <AADA,DataA20,%>% und die Angriffsgeschwindigkeit um <AADA,DataB20,%>%.
+}
+
+STRING 3144
+// Abilities: ADSC (Donnerschlag), EditorSuffix (Editor Suffix)
+{
+(Guard 20)
+}
+
+STRING 3145
+// Abilities: ADSC (Donnerschlag), Researchubertip (Tooltip - Learn - Extended)
+{
+Erschüttert den Boden, fügt gegnerischen Bodeneinheiten in der Nähe Schaden zu und verringert ihre Bewegungs- und Angriffsgeschwindigkeit.
+}
+
+STRING 3146
+// Abilities: ADSC (Donnerschlag), Tip (Tooltip - Normal)
+{
+Donnerschlag [|cffffcc00Stufe 4|r]
+}
+
+STRING 3147
+// Abilities: ADSC (Donnerschlag), Tip (Tooltip - Normal)
+{
+Donnerschlag [|cffffcc00Stufe 5|r]
+}
+
+STRING 3148
+// Abilities: ADSC (Donnerschlag), Tip (Tooltip - Normal)
+{
+Donnerschlag [|cffffcc00Stufe 6|r]
+}
+
+STRING 3149
+// Abilities: ADSC (Donnerschlag), Tip (Tooltip - Normal)
+{
+Donnerschlag [|cffffcc00Stufe 7|r]
+}
+
+STRING 3150
+// Abilities: ADSC (Donnerschlag), Tip (Tooltip - Normal)
+{
+Donnerschlag [|cffffcc00Stufe 8|r]
+}
+
+STRING 3151
+// Abilities: ADSC (Donnerschlag), Tip (Tooltip - Normal)
+{
+Donnerschlag [|cffffcc00Stufe 9|r]
+}
+
+STRING 3152
+// Abilities: ADSC (Donnerschlag), Tip (Tooltip - Normal)
+{
+Donnerschlag [|cffffcc00Stufe 10|r]
+}
+
+STRING 3153
+// Abilities: ADSC (Donnerschlag), Ubertip (Tooltip - Normal - Extended)
+{
+Erschüttert den Boden. Die Erschütterung fügt gegnerischen Bodeneinheiten in der Nähe <A0DS,DataA1> Schaden zu, verringert ihre Bewegungsgeschwindigkeit um <A0DS,DataC1,%>% und ihre Angriffsgeschwindigkeit um <A0DS,DataD1,%>%.
+}
+
+STRING 3154
+// Abilities: ADSC (Donnerschlag), Ubertip (Tooltip - Normal - Extended)
+{
+Erschüttert den Boden. Die Erschütterung fügt gegnerischen Bodeneinheiten in der Nähe <A0DS,DataA2> Schaden zu, verringert ihre Bewegungsgeschwindigkeit um <A0DS,DataC2,%>% und ihre Angriffsgeschwindigkeit um <A0DS,DataD2,%>%.
+}
+
+STRING 3155
+// Abilities: ADSC (Donnerschlag), Ubertip (Tooltip - Normal - Extended)
+{
+Erschüttert den Boden. Die Erschütterung fügt gegnerischen Bodeneinheiten in der Nähe <A0DS,DataA3> Schaden zu, verringert ihre Bewegungsgeschwindigkeit um <A0DS,DataC3,%>% und ihre Angriffsgeschwindigkeit um <A0DS,DataD3,%>%.
+}
+
+STRING 3156
+// Abilities: ADSC (Donnerschlag), Ubertip (Tooltip - Normal - Extended)
+{
+Erschüttert den Boden. Die Erschütterung fügt gegnerischen Bodeneinheiten in der Nähe <A0DS,DataA4> Schaden zu, verringert ihre Bewegungsgeschwindigkeit um <A0DS,DataC4,%>% und ihre Angriffsgeschwindigkeit um <A0DS,DataD4,%>%.
+}
+
+STRING 3157
+// Abilities: ADSC (Donnerschlag), Ubertip (Tooltip - Normal - Extended)
+{
+Erschüttert den Boden. Die Erschütterung fügt gegnerischen Bodeneinheiten in der Nähe <A0DS,DataA5> Schaden zu, verringert ihre Bewegungsgeschwindigkeit um <A0DS,DataC5,%>% und ihre Angriffsgeschwindigkeit um <A0DS,DataD5,%>%.
+}
+
+STRING 3158
+// Abilities: ADSC (Donnerschlag), Ubertip (Tooltip - Normal - Extended)
+{
+Erschüttert den Boden. Die Erschütterung fügt gegnerischen Bodeneinheiten in der Nähe <A0DS,DataA6> Schaden zu, verringert ihre Bewegungsgeschwindigkeit um <A0DS,DataC6,%>% und ihre Angriffsgeschwindigkeit um <A0DS,DataD6,%>%.
+}
+
+STRING 3159
+// Abilities: ADSC (Donnerschlag), Ubertip (Tooltip - Normal - Extended)
+{
+Erschüttert den Boden. Die Erschütterung fügt gegnerischen Bodeneinheiten in der Nähe <A0DS,DataA7> Schaden zu, verringert ihre Bewegungsgeschwindigkeit um <A0DS,DataC7,%>% und ihre Angriffsgeschwindigkeit um <A0DS,DataD7,%>%.
+}
+
+STRING 3160
+// Abilities: ADSC (Donnerschlag), Ubertip (Tooltip - Normal - Extended)
+{
+Erschüttert den Boden. Die Erschütterung fügt gegnerischen Bodeneinheiten in der Nähe <A0DS,DataA8> Schaden zu, verringert ihre Bewegungsgeschwindigkeit um <A0DS,DataC8,%>% und ihre Angriffsgeschwindigkeit um <A0DS,DataD8,%>%.
+}
+
+STRING 3161
+// Abilities: ADSC (Donnerschlag), Ubertip (Tooltip - Normal - Extended)
+{
+Erschüttert den Boden. Die Erschütterung fügt gegnerischen Bodeneinheiten in der Nähe <A0DS,DataA9> Schaden zu, verringert ihre Bewegungsgeschwindigkeit um <A0DS,DataC9,%>% und ihre Angriffsgeschwindigkeit um <A0DS,DataD9,%>%.
+}
+
+STRING 3162
+// Abilities: ADSC (Donnerschlag), Ubertip (Tooltip - Normal - Extended)
+{
+Erschüttert den Boden. Die Erschütterung fügt gegnerischen Bodeneinheiten in der Nähe <A0DS,DataA10> Schaden zu, verringert ihre Bewegungsgeschwindigkeit um <A0DS,DataC10,%>% und ihre Angriffsgeschwindigkeit um <A0DS,DataD10,%>%.
+}
+
+STRING 3163
+// Abilities: A024 (Spaltschlag), Researchubertip (Tooltip - Learn - Extended)
+{
+Schlägt mit solcher Kraft zu, dass mehrere Gegner Schaden erleiden.
+}
+
+STRING 3164
+// Abilities: A024 (Spaltschlag), EditorSuffix (Editor Suffix)
+{
+(Klatschen 5)
+}
+
+STRING 3165
+// Abilities: A024 (Spaltschlag), Tip (Tooltip - Normal)
+{
+Spaltschlag [|cffffcc00Stufe 4|r]
+}
+
+STRING 3166
+// Abilities: A024 (Spaltschlag), Tip (Tooltip - Normal)
+{
+Spaltschlag [|cffffcc00Stufe 5|r]
+}
+
+STRING 3167
+// Abilities: A024 (Spaltschlag), Tip (Tooltip - Normal)
+{
+Spaltschlag [|cffffcc00Stufe 6|r]
+}
+
+STRING 3168
+// Abilities: A024 (Spaltschlag), Tip (Tooltip - Normal)
+{
+Spaltschlag [|cffffcc00Stufe 7|r]
+}
+
+STRING 3169
+// Abilities: A024 (Spaltschlag), Tip (Tooltip - Normal)
+{
+Spaltschlag [|cffffcc00Stufe 8|r]
+}
+
+STRING 3170
+// Abilities: A024 (Spaltschlag), Tip (Tooltip - Normal)
+{
+Spaltschlag [|cffffcc00Stufe 9|r]
+}
+
+STRING 3171
+// Abilities: A024 (Spaltschlag), Tip (Tooltip - Normal)
+{
+Spaltschlag [|cffffcc00Stufe 10|r]
+}
+
+STRING 3172
+// Abilities: A024 (Spaltschlag), Ubertip (Tooltip - Normal - Extended)
+{
+Schlägt mit solcher Kraft zu, dass auch Gegner in der Nähe des Primärziels <A0SS,DataA1,%>% Schaden erleiden.
+}
+
+STRING 3173
+// Abilities: A024 (Spaltschlag), Ubertip (Tooltip - Normal - Extended)
+{
+Schlägt mit solcher Kraft zu, dass auch Gegner in der Nähe des Primärziels <A0SS,DataA2,%>% Schaden erleiden.
+}
+
+STRING 3174
+// Abilities: A024 (Spaltschlag), Ubertip (Tooltip - Normal - Extended)
+{
+Schlägt mit solcher Kraft zu, dass auch Gegner in der Nähe des Primärziels <A0SS,DataA3,%>% Schaden erleiden.
+}
+
+STRING 3175
+// Abilities: A024 (Spaltschlag), Ubertip (Tooltip - Normal - Extended)
+{
+Schlägt mit solcher Kraft zu, dass auch Gegner in der Nähe des Primärziels <A0SS,DataA4,%>% Schaden erleiden.
+}
+
+STRING 3176
+// Abilities: A024 (Spaltschlag), Ubertip (Tooltip - Normal - Extended)
+{
+Schlägt mit solcher Kraft zu, dass auch Gegner in der Nähe des Primärziels <A0SS,DataA5,%>% Schaden erleiden.
+}
+
+STRING 3177
+// Abilities: A024 (Spaltschlag), Ubertip (Tooltip - Normal - Extended)
+{
+Schlägt mit solcher Kraft zu, dass auch Gegner in der Nähe des Primärziels <A0SS,DataA6,%>% Schaden erleiden.
+}
+
+STRING 3178
+// Abilities: A024 (Spaltschlag), Ubertip (Tooltip - Normal - Extended)
+{
+Schlägt mit solcher Kraft zu, dass auch Gegner in der Nähe des Primärziels <A0SS,DataA7,%>% Schaden erleiden.
+}
+
+STRING 3179
+// Abilities: A024 (Spaltschlag), Ubertip (Tooltip - Normal - Extended)
+{
+Schlägt mit solcher Kraft zu, dass auch Gegner in der Nähe des Primärziels <A0SS,DataA8,%>% Schaden erleiden.
+}
+
+STRING 3180
+// Abilities: A024 (Spaltschlag), Ubertip (Tooltip - Normal - Extended)
+{
+Schlägt mit solcher Kraft zu, dass auch Gegner in der Nähe des Primärziels <A0SS,DataA9,%>% Schaden erleiden.
+}
+
+STRING 3181
+// Abilities: A024 (Spaltschlag), Ubertip (Tooltip - Normal - Extended)
+{
+Schlägt mit solcher Kraft zu, dass auch Gegner in der Nähe des Primärziels <A0SS,DataA10,%>% Schaden erleiden.
+}
+
+STRING 3182
+// Abilities: A025 (Unheilige Aura), EditorSuffix (Editor Suffix)
+{
+(Klatschen 5)
+}
+
+STRING 3183
+// Abilities: A025 (Unheilige Aura), Researchubertip (Tooltip - Learn - Extended)
+{
+Erhöht die Bewegungsgeschwindigkeit und die Trefferpunktregeneration von verbündeten Einheiten in der Nähe.
+}
+
+STRING 3184
+// Abilities: A025 (Unheilige Aura), Tip (Tooltip - Normal)
+{
+Unheilige Aura [|cffffcc00Stufe 4|r]
+}
+
+STRING 3185
+// Abilities: A025 (Unheilige Aura), Tip (Tooltip - Normal)
+{
+Unheilige Aura [|cffffcc00Stufe 5|r]
+}
+
+STRING 3186
+// Abilities: A025 (Unheilige Aura), Tip (Tooltip - Normal)
+{
+Unheilige Aura [|cffffcc00Stufe 6|r]
+}
+
+STRING 3187
+// Abilities: A025 (Unheilige Aura), Tip (Tooltip - Normal)
+{
+Unheilige Aura [|cffffcc00Stufe 7|r]
+}
+
+STRING 3188
+// Abilities: A025 (Unheilige Aura), Tip (Tooltip - Normal)
+{
+Unheilige Aura [|cffffcc00Stufe 8|r]
+}
+
+STRING 3189
+// Abilities: A025 (Unheilige Aura), Tip (Tooltip - Normal)
+{
+Unheilige Aura [|cffffcc00Stufe 9|r]
+}
+
+STRING 3190
+// Abilities: A025 (Unheilige Aura), Tip (Tooltip - Normal)
+{
+Unheilige Aura [|cffffcc00Stufe 10|r]
+}
+
+STRING 3191
+// Abilities: A025 (Unheilige Aura), Ubertip (Tooltip - Normal - Extended)
+{
+Erhöht die Bewegungsgeschwindigkeit von verbündeten Einheiten in der Nähe um <A00P,DataA1,%>% und ihre Trefferpunktregeneration.
+}
+
+STRING 3192
+// Abilities: A025 (Unheilige Aura), Ubertip (Tooltip - Normal - Extended)
+{
+Erhöht die Bewegungsgeschwindigkeit von verbündeten Einheiten in der Nähe um <A00P,DataA2,%>% und ihre Trefferpunktregeneration.
+}
+
+STRING 3193
+// Abilities: A025 (Unheilige Aura), Ubertip (Tooltip - Normal - Extended)
+{
+Erhöht die Bewegungsgeschwindigkeit von verbündeten Einheiten in der Nähe um <A00P,DataA3,%>% und ihre Trefferpunktregeneration.
+}
+
+STRING 3194
+// Abilities: A025 (Unheilige Aura), Ubertip (Tooltip - Normal - Extended)
+{
+Erhöht die Bewegungsgeschwindigkeit von verbündeten Einheiten in der Nähe um <A00P,DataA4,%>% und ihre Trefferpunktregeneration.
+}
+
+STRING 3195
+// Abilities: A025 (Unheilige Aura), Ubertip (Tooltip - Normal - Extended)
+{
+Erhöht die Bewegungsgeschwindigkeit von verbündeten Einheiten in der Nähe um <A00P,DataA5,%>% und ihre Trefferpunktregeneration.
+}
+
+STRING 3196
+// Abilities: A025 (Unheilige Aura), Ubertip (Tooltip - Normal - Extended)
+{
+Erhöht die Bewegungsgeschwindigkeit von verbündeten Einheiten in der Nähe um <A00P,DataA6,%>% und ihre Trefferpunktregeneration.
+}
+
+STRING 3197
+// Abilities: A025 (Unheilige Aura), Ubertip (Tooltip - Normal - Extended)
+{
+Erhöht die Bewegungsgeschwindigkeit von verbündeten Einheiten in der Nähe um <A00P,DataA7,%>% und ihre Trefferpunktregeneration.
+}
+
+STRING 3198
+// Abilities: A025 (Unheilige Aura), Ubertip (Tooltip - Normal - Extended)
+{
+Erhöht die Bewegungsgeschwindigkeit von verbündeten Einheiten in der Nähe um <A00P,DataA8,%>% und ihre Trefferpunktregeneration.
+}
+
+STRING 3199
+// Abilities: A025 (Unheilige Aura), Ubertip (Tooltip - Normal - Extended)
+{
+Erhöht die Bewegungsgeschwindigkeit von verbündeten Einheiten in der Nähe um <A00P,DataA9,%>% und ihre Trefferpunktregeneration.
+}
+
+STRING 3200
+// Abilities: A025 (Unheilige Aura), Ubertip (Tooltip - Normal - Extended)
+{
+Erhöht die Bewegungsgeschwindigkeit von verbündeten Einheiten in der Nähe um <A00P,DataA10,%>% und ihre Trefferpunktregeneration.
+}
+
+STRING 3201
+// Abilities: A026 (Inferno), EditorSuffix (Editor Suffix)
+{
+(Klatschen 5)
+}
+
+STRING 3202
+// Abilities: A026 (Inferno), Tip (Tooltip - Normal)
+{
+Inferno
+}
+
+STRING 3203
+// Abilities: A026 (Inferno), Tip (Tooltip - Normal)
+{
+Inferno
+}
+
+STRING 3204
+// Abilities: A026 (Inferno), Tip (Tooltip - Normal)
+{
+Inferno
+}
+
+STRING 3205
+// Abilities: A026 (Inferno), Tip (Tooltip - Normal)
+{
+Inferno
+}
+
+STRING 3206
+// Abilities: A026 (Inferno), Ubertip (Tooltip - Normal - Extended)
+{
+Ruft eine Höllenbestie vom Himmel herab,
+}
+
+STRING 3207
+// Abilities: A026 (Inferno), Ubertip (Tooltip - Normal - Extended)
+{
+Ruft eine Höllenbestie vom Himmel herab,
+}
+
+STRING 3208
+// Abilities: A026 (Inferno), Ubertip (Tooltip - Normal - Extended)
+{
+Ruft eine Höllenbestie vom Himmel herab,
+}
+
+STRING 3209
+// Abilities: A026 (Inferno), Ubertip (Tooltip - Normal - Extended)
+{
+Ruft eine Höllenbestie vom Himmel herab,
+}
+
+STRING 3210
+// Abilities: A026 (Inferno), Ubertip (Tooltip - Normal - Extended)
+{
+Ruft eine Höllenbestie vom Himmel herab,
+}
+
+STRING 3211
+// Abilities: A027 (Feuerregen), EditorSuffix (Editor Suffix)
+{
+(Klatschen 5)
+}
+
+STRING 3212
+// Abilities: A027 (Feuerregen), Researchubertip (Tooltip - Learn - Extended)
+{
+Ruft Feuerwellen herbei, die Flächenschaden verursachen.
+}
+
+STRING 3213
+// Abilities: A027 (Feuerregen), Tip (Tooltip - Normal)
+{
+Feuerregen [|cffffcc00Stufe 4|r]
+}
+
+STRING 3214
+// Abilities: A027 (Feuerregen), Tip (Tooltip - Normal)
+{
+Feuerregen [|cffffcc00Stufe 5|r]
+}
+
+STRING 3215
+// Abilities: A027 (Feuerregen), Ubertip (Tooltip - Normal - Extended)
+{
+Ruft Feuerwellen herbei, die Flächenschaden verursachen.
+}
+
+STRING 3216
+// Abilities: A027 (Feuerregen), Ubertip (Tooltip - Normal - Extended)
+{
+Ruft Feuerwellen herbei, die Flächenschaden verursachen.
+}
+
+STRING 3217
+// Abilities: A027 (Feuerregen), Ubertip (Tooltip - Normal - Extended)
+{
+Ruft Feuerwellen herbei, die Flächenschaden verursachen.
+}
+
+STRING 3218
+// Abilities: A027 (Feuerregen), Ubertip (Tooltip - Normal - Extended)
+{
+Ruft Feuerwellen herbei, die Flächenschaden verursachen.
+}
+
+STRING 3219
+// Abilities: A027 (Feuerregen), Ubertip (Tooltip - Normal - Extended)
+{
+Ruft Feuerwellen herbei, die Flächenschaden verursachen.
 }
 

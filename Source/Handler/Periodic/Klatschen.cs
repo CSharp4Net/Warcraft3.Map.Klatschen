@@ -1,7 +1,4 @@
-﻿using Source.Handler.GenericEvents;
-using Source.Models;
-using System;
-using System.Threading;
+﻿using System;
 using WCSharp.Api;
 using WCSharp.Effects;
 using WCSharp.Lightnings;
@@ -9,7 +6,7 @@ using WCSharp.Shared.Data;
 
 namespace Source.Handler.Periodic
 {
-  internal static class Slapping
+  internal static class Klatschen
   {
     private static int executions = 0;
 
@@ -163,7 +160,7 @@ namespace Source.Handler.Periodic
         });
 
         // Zentrum - Helden beleben nach 5 Sekunden
-        Program.Slappers.CreateOrReviveHero(Constants.UNIT_GRUBENLORD_KLATSCHEN, Areas.Center, executions * 10, executions * 2, 5.5f);
+        Program.Slappers.CreateOrReviveHero(Constants.UNIT_GRUBENLORD_KLATSCHEN, Areas.Center, executions * 10, executions, 5.5f);
 
         // Zentrum - Weitere Einheiten via Cast hinzurufen
         CreateAtDummyAndCastAbilityTimed(player, centerRect, Constants.ABILITY_H_LLENBESTIEN_KLATSCHEN, executions, Constants.ORDER_RAIN_OF_CHAOS, 4f);

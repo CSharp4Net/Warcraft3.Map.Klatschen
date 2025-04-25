@@ -129,7 +129,7 @@ namespace Source
 
         // Periodische Events registrieren
         PeriodicEvents.AddPeriodicEvent(GoldIncome.OnElapsed, 5f);
-        PeriodicEvents.AddPeriodicEvent(Slapping.OnElapsed, KlatschenInterval);
+        PeriodicEvents.AddPeriodicEvent(Klatschen.OnElapsed, KlatschenInterval);
 
         PeriodicEvents.AddPeriodicEvent(ResearchCheck.OnElapsed, 10f);
 
