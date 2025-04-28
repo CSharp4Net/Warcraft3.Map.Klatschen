@@ -6,9 +6,10 @@ namespace Source.Handler.Periodic
 {
   public static class ResearchCheck
   {
-    private const int GoldPriceBase = 100;
-    private const int GoldPriceBaseBuilding = 200;
-    private const int GoldPriceBaseArtillery = 250;
+    // Computer-Spielen zahlen 2,5fachen Preis für Forschungen, sonst bietet sich für echte Spieler wenig Anreiz
+    private const int GoldPriceBase = 250; // 100
+    private const int GoldPriceBaseBuilding = 500; // 200
+    private const int GoldPriceBaseArtillery = 625; // 250
 
     public static bool OnElapsed()
     {

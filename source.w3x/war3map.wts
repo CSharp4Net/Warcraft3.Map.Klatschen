@@ -12,7 +12,7 @@ STRING 3
 {
 ...
 
-0.9.8.0 by NozzNazz
+0.9.9.0 by NozzNazz
 }
 
 STRING 4
@@ -117,7 +117,7 @@ STRING 65
 {
 ...
 
-0.9.8.0 by NozzNazz
+0.9.9.0 by NozzNazz
 }
 
 STRING 72
@@ -139,25 +139,19 @@ STRING 74
 }
 
 STRING 75
-// Units: n005 (Brunnen der Wiederherstellung), EditorSuffix (Name - Editor Suffix)
+// Units: n005 (Brunnen der Hoffnung), EditorSuffix (Name - Editor Suffix)
 {
 (Restore)
 }
 
-STRING 76
-// Units: n005 (Brunnen der Wiederherstellung), Name (Name)
-{
-Brunnen der Wiederherstellung
-}
-
 STRING 77
-// Abilities: A000 (Trefferpunktregenerationsaura), EditorSuffix (Editor Suffix)
+// Units: NEBL (Entweihter Brunnen des Lebens), EditorSuffix (Name - Editor Suffix)
 {
 (Restore)
 }
 
 STRING 78
-// Abilities: A001 (Manaregeneration), EditorSuffix (Editor Suffix)
+// Units: NBDB (Brunnen des Blutes), EditorSuffix (Name - Editor Suffix)
 {
 (Restore)
 }
@@ -11536,5 +11530,59 @@ STRING 3219
 // Abilities: A027 (Feuerregen), Ubertip (Tooltip - Normal - Extended)
 {
 Ruft Feuerwellen herbei, die Flächenschaden verursachen.
+}
+
+STRING 3220
+// Units: n005 (Brunnen der Hoffnung), Name (Name)
+{
+Brunnen der Hoffnung
+}
+
+STRING 3221
+// Units: NEBL (Entweihter Brunnen des Lebens), Name (Name)
+{
+Entweihter Brunnen des Lebens
+}
+
+STRING 3222
+// Units: NBDB (Brunnen des Blutes), Name (Name)
+{
+Brunnen des Blutes
+}
+
+STRING 3223
+// Units: NBDL (Brunnen des Lebens), EditorSuffix (Name - Editor Suffix)
+{
+(Restore)
+}
+
+STRING 3224
+// Units: NBDL (Brunnen des Lebens), Name (Name)
+{
+Brunnen des Lebens
+}
+
+STRING 3225
+// Abilities: A000 (Trefferpunktregenerationsaura), EditorSuffix (Editor Suffix)
+{
+(Restore)
+}
+
+STRING 3226
+// Abilities: A001 (Manaregeneration), EditorSuffix (Editor Suffix)
+{
+(Restore)
+}
+
+STRING 3227
+// Units: h01F (Friedhof), Name (Name)
+{
+Friedhof
+}
+
+STRING 3228
+// Units: h01F (Friedhof), EditorSuffix (Name - Editor Suffix)
+{
+(Undead)
 }
 

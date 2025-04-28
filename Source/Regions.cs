@@ -22,8 +22,8 @@ public static class Regions
 	public static Rectangle ElfBarracksToUndead { get; set; } = new Rectangle(-5056f, -7232f, -4928f, -7104f);
 	public static Rectangle ElfBarracksToUndeadSpawn { get; set; } = new Rectangle(-4864f, -7680f, -4608f, -6656f);
 	public static Rectangle ElfBase { get; set; } = new Rectangle(-10304f, -7232f, -10176f, -7104f);
-	public static Rectangle ElfBaseHeroRespawn { get; set; } = new Rectangle(-11136f, -8064f, -11008f, -7936f);
-	public static Rectangle ElfBaseHeroSpawn { get; set; } = new Rectangle(-10816f, -7744f, -10688f, -7616f);
+	public static Rectangle ElfBaseHeroRespawn { get; set; } = new Rectangle(-12032f, -8576f, -11904f, -8448f);
+	public static Rectangle ElfBaseHeroSpawn { get; set; } = new Rectangle(-11648f, -8960f, -11520f, -8832f);
 	public static Rectangle ElfBaseToCenterSpawn { get; set; } = new Rectangle(-9984f, -6912f, -9728f, -6656f);
 	public static Rectangle ElfBaseToHumanSpawn { get; set; } = new Rectangle(-10368f, -6912f, -10112f, -6656f);
 	public static Rectangle ElfBaseToUndeadSpawn { get; set; } = new Rectangle(-9984f, -7296f, -9728f, -7040f);
@@ -41,8 +41,8 @@ public static class Regions
 	public static Rectangle HumanBarracksToOrc { get; set; } = new Rectangle(-5056f, 13248f, -4928f, 13376f);
 	public static Rectangle HumanBarracksToOrcSpawn { get; set; } = new Rectangle(-4864f, 12800f, -4608f, 13824f);
 	public static Rectangle HumanBase { get; set; } = new Rectangle(-10304f, 13248f, -10176f, 13376f);
-	public static Rectangle HumanBaseHeroRespawn { get; set; } = new Rectangle(-11136f, 14080f, -11008f, 14208f);
-	public static Rectangle HumanBaseHeroSpawn { get; set; } = new Rectangle(-10816f, 13760f, -10688f, 13888f);
+	public static Rectangle HumanBaseHeroRespawn { get; set; } = new Rectangle(-11648f, 14976f, -11520f, 15104f);
+	public static Rectangle HumanBaseHeroSpawn { get; set; } = new Rectangle(-12032f, 14592f, -11904f, 14720f);
 	public static Rectangle HumanBaseToCenterSpawn { get; set; } = new Rectangle(-9984f, 12800f, -9728f, 13056f);
 	public static Rectangle HumanBaseToElfSpawn { get; set; } = new Rectangle(-10368f, 12800f, -10112f, 13056f);
 	public static Rectangle HumanBaseToOrcSpawn { get; set; } = new Rectangle(-9984f, 13184f, -9728f, 13440f);
@@ -59,8 +59,8 @@ public static class Regions
 	public static Rectangle OrcBarracksToUndead { get; set; } = new Rectangle(10176f, 8000f, 10304f, 8128f);
 	public static Rectangle OrcBarracksToUndeadSpawn { get; set; } = new Rectangle(9728f, 7680f, 10752f, 7936f);
 	public static Rectangle OrcBase { get; set; } = new Rectangle(10176f, 13248f, 10304f, 13376f);
-	public static Rectangle OrcBaseHeroRespawn { get; set; } = new Rectangle(11008f, 14080f, 11136f, 14208f);
-	public static Rectangle OrcBaseHeroSpawn { get; set; } = new Rectangle(10688f, 13760f, 10816f, 13888f);
+	public static Rectangle OrcBaseHeroRespawn { get; set; } = new Rectangle(11904f, 14592f, 12032f, 14720f);
+	public static Rectangle OrcBaseHeroSpawn { get; set; } = new Rectangle(11520f, 14976f, 11648f, 15104f);
 	public static Rectangle OrcBaseToCenterSpawn { get; set; } = new Rectangle(9728f, 12800f, 9984f, 13056f);
 	public static Rectangle OrcBaseToHumanSpawn { get; set; } = new Rectangle(9728f, 13184f, 9984f, 13440f);
 	public static Rectangle OrcBaseToUndeadSpawn { get; set; } = new Rectangle(10112f, 12800f, 10368f, 13056f);
@@ -78,8 +78,8 @@ public static class Regions
 	public static Rectangle UndeadBarracksToOrc { get; set; } = new Rectangle(10176f, -1984f, 10304f, -1856f);
 	public static Rectangle UndeadBarracksToOrcSpawn { get; set; } = new Rectangle(9728f, -1792f, 10752f, -1536f);
 	public static Rectangle UndeadBase { get; set; } = new Rectangle(10176f, -7232f, 10304f, -7104f);
-	public static Rectangle UndeadBaseHeroRespawn { get; set; } = new Rectangle(11008f, -8064f, 11136f, -7936f);
-	public static Rectangle UndeadBaseHeroSpawn { get; set; } = new Rectangle(10688f, -7744f, 10816f, -7616f);
+	public static Rectangle UndeadBaseHeroRespawn { get; set; } = new Rectangle(11520f, -8960f, 11648f, -8832f);
+	public static Rectangle UndeadBaseHeroSpawn { get; set; } = new Rectangle(11904f, -8576f, 12032f, -8448f);
 	public static Rectangle UndeadBaseToCenterSpawn { get; set; } = new Rectangle(9728f, -6912f, 9984f, -6656f);
 	public static Rectangle UndeadBaseToElfSpawn { get; set; } = new Rectangle(9728f, -7296f, 9984f, -7040f);
 	public static Rectangle UndeadBaseToOrcSpawn { get; set; } = new Rectangle(10112f, -6912f, 10368f, -6656f);
