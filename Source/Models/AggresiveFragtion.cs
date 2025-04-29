@@ -1,44 +1,28 @@
-﻿using Source.Handler.Generic;
+﻿using Source.Abstracts;
+using Source.Handler.Generic;
 using Source.Statics;
 using System.Reflection.Emit;
 using WCSharp.Api;
 
 namespace Source.Models
 {
-  public sealed class Fragtion
+  public sealed class AggresiveFragtion : FragtionBase
   {
-    public Fragtion(player wc3ComputerPlayer)
+    public AggresiveFragtion()
+      : base(player.NeutralAggressive)
     {
-      Wc3Player = wc3ComputerPlayer;
+
     }
 
-    public player Wc3Player { get; init; }
-
-    public unit Hero { get; private set; }
-
-    public void CreateOrReviveHero(int unitTypeId, Area spawnArea, int heroLevel, int abilitiesLevel, float delay)
+    public override void CreateOrReviveHero(int unitTypeId, Area spawnArea, int heroLevel, int abilitiesLevel, float delay)
     {
-      var timer = Common.CreateTimer();
-      Common.TimerStart(timer, delay, false, () =>
+      base.CreateOrReviveHero(unitTypeId, spawnArea, heroLevel, abilitiesLevel, delay);
+
+      int unitId = Common.GetUnitTypeId(Hero);
+      if (unitId == Constants.UNIT_GRUBENLORD_KLATSCHEN)
       {
-
-        if (Hero == null)
-        {
-          Hero = Common.CreateUnitAtLoc(Wc3Player, unitTypeId, spawnArea.Wc3CenterLocation, 0f);
-        }
-        else
-        {
-          Common.ReviveHero(Hero, spawnArea.CenterX, spawnArea.CenterY, true);
-        }
-
-        Hero.HeroLevel = heroLevel;
-
-        int unitId = Common.GetUnitTypeId(Hero);
-        if (unitId == Constants.UNIT_GRUBENLORD_KLATSCHEN)
-        {
-          TrainGrubenlord(Hero, abilitiesLevel);
-        }
-      });
+        TrainGrubenlord(Hero, abilitiesLevel);
+      }
     }
 
     private void TrainGrubenlord(unit unit, int abilitiesLevel)

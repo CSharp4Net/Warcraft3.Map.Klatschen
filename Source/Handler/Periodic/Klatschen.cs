@@ -161,7 +161,7 @@ namespace Source.Handler.Periodic
         });
 
         // Zentrum - Helden beleben nach 5 Sekunden
-        Program.Slappers.CreateOrReviveHero(Constants.UNIT_GRUBENLORD_KLATSCHEN, Areas.Center, executions * 10, executions, 5.5f);
+        Program.BurningLegion.CreateOrReviveHero(Constants.UNIT_GRUBENLORD_KLATSCHEN, Areas.Center, executions * 10, executions, 5.5f);
 
         // Zentrum - Weitere Einheiten via Cast hinzurufen
         CreateAtDummyAndCastAbilityTimed(player, centerRect, Constants.ABILITY_H_LLENBESTIEN_KLATSCHEN, executions, Constants.ORDER_RAIN_OF_CHAOS, 4f);

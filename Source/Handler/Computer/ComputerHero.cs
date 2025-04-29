@@ -1,5 +1,4 @@
 ﻿using Source.Models;
-using Source.Statics;
 using System;
 using WCSharp.Api;
 
@@ -10,6 +9,8 @@ namespace Source.Handler.Computer
     internal static void OnDies(unit unit)
     {
       int playerId = unit.Owner.Id;
+
+      // TODO : Verstorbener PC-Hero wird nicht automatisch wieder geboren, sondern muss gekauft werden!
 
       // Prüfe vor Wiedergeburt, ob der Computer-Spieler noch unbesiegt ist
       if (playerId == Program.Humans.Computer.PlayerId)
@@ -32,6 +33,12 @@ namespace Source.Handler.Computer
         if (Program.Undeads.Computer.Defeated)
           return;
       }
+
+      // TODO
+      //if (playerId == Program.HumanCreepToElf.Wc3Player.Id)
+      //{
+      //   unit killingUnit = Common.GetKillingUnit();
+      //}
 
       // Verstorbenen Held nach gegebener Zeit wieder belegen
       timer timer = Common.CreateTimer();
@@ -117,7 +124,7 @@ namespace Source.Handler.Computer
 
     private static void ProcessWaechterLevelUp(unit unit)
     {
-      string level =  unit.HeroLevel.ToString();
+      string level = unit.HeroLevel.ToString();
       int abilityId = 0;
 
       if (level.EndsWith("1") || level.EndsWith("6"))

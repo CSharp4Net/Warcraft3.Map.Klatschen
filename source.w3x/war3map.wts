@@ -265,55 +265,55 @@ STRING 116
 }
 
 STRING 117
-// Units: h00A (Schmiede), EditorSuffix (Name - Editor Suffix)
+// Units: h00D (Altar der Könige), EditorSuffix (Name - Editor Suffix)
 {
 (Human)
 }
 
 STRING 118
-// Units: h00E (Belagerungsmaschine Stufe 1), EditorSuffix (Name - Editor Suffix)
+// Units: h00A (Schmiede), EditorSuffix (Name - Editor Suffix)
 {
 (Human)
 }
 
 STRING 119
-// Units: h00F (Schütze - Stufe 2), EditorSuffix (Name - Editor Suffix)
+// Units: h00E (Belagerungsmaschine Stufe 1), EditorSuffix (Name - Editor Suffix)
 {
 (Human)
 }
 
 STRING 120
-// Units: h00G (Schütze - Stufe 3), EditorSuffix (Name - Editor Suffix)
+// Units: h00F (Schütze - Stufe 2), EditorSuffix (Name - Editor Suffix)
 {
 (Human)
 }
 
 STRING 122
-// Units: h00H (Magier - Stufe 2), EditorSuffix (Name - Editor Suffix)
+// Units: h00G (Schütze - Stufe 3), EditorSuffix (Name - Editor Suffix)
 {
 (Human)
 }
 
 STRING 123
-// Units: h00I (Magier - Stufe 3), EditorSuffix (Name - Editor Suffix)
+// Units: h00H (Magier - Stufe 2), EditorSuffix (Name - Editor Suffix)
 {
 (Human)
 }
 
 STRING 124
-// Units: h00J (Reiter - Stufe 1), EditorSuffix (Name - Editor Suffix)
+// Units: h00I (Magier - Stufe 3), EditorSuffix (Name - Editor Suffix)
 {
 (Human)
 }
 
 STRING 125
-// Units: h00K (Reiter - Stufe 2), EditorSuffix (Name - Editor Suffix)
+// Units: h00J (Reiter - Stufe 1), EditorSuffix (Name - Editor Suffix)
 {
 (Human)
 }
 
 STRING 126
-// Units: h00L (Reiter - Stufe 3), EditorSuffix (Name - Editor Suffix)
+// Units: h00K (Reiter - Stufe 2), EditorSuffix (Name - Editor Suffix)
 {
 (Human)
 }
@@ -355,19 +355,19 @@ S
 }
 
 STRING 168
-// Units: H00M (Wächter), EditorSuffix (Name - Editor Suffix)
+// Units: h00L (Reiter - Stufe 3), EditorSuffix (Name - Editor Suffix)
 {
 (Human)
 }
 
 STRING 169
-// Units: h00S (Belagerungsmaschine Stufe 2), EditorSuffix (Name - Editor Suffix)
+// Units: H00M (Wächter), EditorSuffix (Name - Editor Suffix)
 {
 (Human)
 }
 
 STRING 170
-// Units: h00T (Waffen und Artefakte), EditorSuffix (Name - Editor Suffix)
+// Units: h00S (Belagerungsmaschine Stufe 2), EditorSuffix (Name - Editor Suffix)
 {
 (Human)
 }
@@ -424,12 +424,6 @@ STRING 290
 // Upgrades: R003 (Schwarzes Schießpulver,Angereichertes Schießpulver,Magisches Schießpulver), effect2 (Effect 2)
 {
 ratr
-}
-
-STRING 296
-// Units: h00D (Trainingslager), Name (Name)
-{
-Trainingslager
 }
 
 STRING 328
@@ -9949,7 +9943,7 @@ STRING 2948
 }
 
 STRING 2949
-// Units: h01B (Opfergrube), EditorSuffix (Name - Editor Suffix)
+// Units: h01B (Altar der Dunkelheit), EditorSuffix (Name - Editor Suffix)
 {
 (Undead)
 }
@@ -9982,12 +9976,6 @@ STRING 2954
 // Units: h01A (Schwarze Zitadelle), Name (Name)
 {
 Schwarze Zitadelle
-}
-
-STRING 2955
-// Units: h01B (Opfergrube), Name (Name)
-{
-Opfergrube
 }
 
 STRING 2956
@@ -11584,5 +11572,47 @@ STRING 3228
 // Units: h01F (Friedhof), EditorSuffix (Name - Editor Suffix)
 {
 (Undead)
+}
+
+STRING 3229
+// Units: h00D (Altar der Könige), Name (Name)
+{
+Altar der Könige
+}
+
+STRING 3230
+// Units: h00T (Waffen und Artefakte), EditorSuffix (Name - Editor Suffix)
+{
+(Human)
+}
+
+STRING 3231
+// Units: h01B (Altar der Dunkelheit), Name (Name)
+{
+Altar der Dunkelheit
+}
+
+STRING 3232
+// Units: h01G (Altar der Stürme), Name (Name)
+{
+Altar der Stürme
+}
+
+STRING 3233
+// Units: h01G (Altar der Stürme), EditorSuffix (Name - Editor Suffix)
+{
+(Orc)
+}
+
+STRING 3234
+// Units: h01H (Altar der Alten), Name (Name)
+{
+Altar der Alten
+}
+
+STRING 3235
+// Units: h01H (Altar der Alten), EditorSuffix (Name - Editor Suffix)
+{
+(Elf)
 }
 
