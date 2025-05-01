@@ -1,5 +1,5 @@
 
-Projekt von NozzNazz, gehostet in GitHub:
+Projekt von CS4N, gehostet in GitHub:
 -----------------------------------------
 https://github.com/CSharp4Net/Warcraft3.Map.Klatschen
 
@@ -9,7 +9,7 @@ https://github.com/CSharp4Net/Warcraft3.Map.Klatschen.git
 
 Bereitstellung:
 ---------------
-1. JASSHelper-Verzeichnis erstellen, bspw.: C:\Users\NozzNazz\Documents\Warcraft III\JassHelper
+1. JASSHelper-Verzeichnis erstellen, bspw.: C:\Users\<Benutzername>\Documents\Warcraft III\JassHelper
 2. JASS-Dateien in dieses Verzeichnis kopieren:
 	- Other/Blizzard.j
 	- Other/common.j

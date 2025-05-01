@@ -34,16 +34,10 @@ namespace Source.Handler.Computer
           return;
       }
 
-      // TODO
-      //if (playerId == Program.HumanCreepToElf.Wc3Player.Id)
-      //{
-      //   unit killingUnit = Common.GetKillingUnit();
-      //}
-
       // Verstorbenen Held nach gegebener Zeit wieder belegen
       timer timer = Common.CreateTimer();
 
-      Common.TimerStart(timer, unit.HeroLevel + 2, false, () =>
+      Common.TimerStart(timer, 30, false, () =>
       {
         try
         {

@@ -39,6 +39,7 @@ gg_rct_HumanBaseHeroSpawn = nil
 gg_rct_HumanBaseToCenterSpawn = nil
 gg_rct_HumanBaseToElfSpawn = nil
 gg_rct_HumanBaseToOrcSpawn = nil
+gg_rct_HumanCreepToElf = nil
 gg_rct_HumanToElfInnerLine = nil
 gg_rct_HumanToElfOuterLine = nil
 gg_rct_HumanToOrcInnerLine = nil
@@ -88,7 +89,6 @@ gg_snd_HPitLordPissed3 = nil
 gg_snd_HPitLordPissed4 = nil
 gg_snd_HPitLordPissed5 = nil
 gg_trg_Melee_Initialization = nil
-gg_rct_HumanCreepToElf = nil
 function InitGlobals()
 end
 
@@ -309,7 +309,6 @@ u = BlzCreateUnitWithSkin(p, FourCC("h011"), -7680.0, -4608.0, 270.000, FourCC("
 u = BlzCreateUnitWithSkin(p, FourCC("h011"), -10240.0, -3840.0, 270.000, FourCC("h011"))
 u = BlzCreateUnitWithSkin(p, FourCC("h011"), -10752.0, -5120.0, 270.000, FourCC("h011"))
 u = BlzCreateUnitWithSkin(p, FourCC("h011"), -9728.0, -5120.0, 270.000, FourCC("h011"))
-u = BlzCreateUnitWithSkin(p, FourCC("h011"), -9472.0, -6400.0, 270.000, FourCC("h011"))
 u = BlzCreateUnitWithSkin(p, FourCC("h011"), -12288.0, -8704.0, 270.000, FourCC("h011"))
 u = BlzCreateUnitWithSkin(p, FourCC("h011"), -11776.0, -9216.0, 270.000, FourCC("h011"))
 end

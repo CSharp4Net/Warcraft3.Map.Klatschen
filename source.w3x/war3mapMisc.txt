@@ -25,6 +25,7 @@ IntRegenBonus=0.02
 InvisSpeed=0.5
 MaxHeroLevel=100
 MaxLevelHeroesDrainExp=0
+NeedHeroXP=100,200,400
 ReviveBaseFactor=0.0
 ReviveBaseLumberFactor=0.0
 ReviveLevelFactor=0.0

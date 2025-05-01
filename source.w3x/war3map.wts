@@ -11616,3 +11616,15 @@ STRING 3235
 (Elf)
 }
 
+STRING 3236
+// Units: n00K (Blaudrachenhorst), EditorSuffix (Name - Editor Suffix)
+{
+(Support)
+}
+
+STRING 3237
+// Units: n00P (Blaudrache), EditorSuffix (Name - Editor Suffix)
+{
+(Support)
+}
+

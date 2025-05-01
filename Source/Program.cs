@@ -27,7 +27,7 @@ namespace Source
 
     public static AggresiveFragtion BurningLegion;
 
-    public static PassiveFragtion HumanCreepToElf;
+    public static PassiveFragtion CreepCamps;
 
     /// <summary>
     /// Alle aktiven Benutzer-Spieler
@@ -113,7 +113,7 @@ namespace Source
         Undeads = new Team(Common.Player(12));
 
         BurningLegion = new AggresiveFragtion();
-        HumanCreepToElf = new PassiveFragtion(player.NeutralAggressive);
+        CreepCamps = new PassiveFragtion(player.NeutralPassive);
 
         // Regions-Ereignisse registrieren für automatische Einheitenbewegungen
         RegisterRegionTriggersInHumanArea();
@@ -142,6 +142,8 @@ namespace Source
         ConstructElfBuildingAndTrigger();
         ConstructUndeadBuildingAndTrigger();
 
+        CreepCamps.CreateBuilding(Constants.UNIT_BLAUDRACHENHORST_SUPPORT, Areas.HumanCreepToElf);
+
         // Spezifische Events registrieren
         Console.WriteLine("Kämpft bis zum Tod!");
 
@@ -158,7 +160,7 @@ namespace Source
 #endif
 
         var timer = Common.CreateTimer();
-        Common.TimerStart(timer, 5f, false, () =>
+        Common.TimerStart(timer, 30f, false, () =>
         {
           try
           {
@@ -354,23 +356,21 @@ namespace Source
 
     private static void CreateComputerHeros()
     {
-      //Humans.Computer.CreateUnit(Constants.UNIT_W_CHTER_HUMAN, Areas.HumanBaseHeroSpawn).AttackMove(Areas.ElfBase);
-      //Humans.Computer.CreateUnit(Constants.UNIT_W_CHTER_HUMAN, Areas.HumanBaseHeroSpawn).AttackMove(Areas.UndeadBase);
-      //Humans.Computer.CreateUnit(Constants.UNIT_W_CHTER_HUMAN, Areas.HumanBaseHeroSpawn).AttackMove(Areas.OrcBase);
+      Humans.Computer.CreateUnit(Constants.UNIT_W_CHTER_HUMAN, Areas.HumanBaseHeroSpawn).AttackMove(Areas.ElfBase);
+      Humans.Computer.CreateUnit(Constants.UNIT_W_CHTER_HUMAN, Areas.HumanBaseHeroSpawn).AttackMove(Areas.UndeadBase);
+      Humans.Computer.CreateUnit(Constants.UNIT_W_CHTER_HUMAN, Areas.HumanBaseHeroSpawn).AttackMove(Areas.OrcBase);
 
-      //Orcs.Computer.CreateUnit(Constants.UNIT_W_CHTER_HUMAN, Areas.OrcBaseHeroSpawn).AttackMove(Areas.ElfBase);
-      //Orcs.Computer.CreateUnit(Constants.UNIT_W_CHTER_HUMAN, Areas.OrcBaseHeroSpawn).AttackMove(Areas.UndeadBase);
-      //Orcs.Computer.CreateUnit(Constants.UNIT_W_CHTER_HUMAN, Areas.OrcBaseHeroSpawn).AttackMove(Areas.HumanBase);
+      Orcs.Computer.CreateUnit(Constants.UNIT_W_CHTER_HUMAN, Areas.OrcBaseHeroSpawn).AttackMove(Areas.ElfBase);
+      Orcs.Computer.CreateUnit(Constants.UNIT_W_CHTER_HUMAN, Areas.OrcBaseHeroSpawn).AttackMove(Areas.UndeadBase);
+      Orcs.Computer.CreateUnit(Constants.UNIT_W_CHTER_HUMAN, Areas.OrcBaseHeroSpawn).AttackMove(Areas.HumanBase);
 
-      //Elves.Computer.CreateUnit(Constants.UNIT_W_CHTER_HUMAN, Areas.ElfBaseHeroSpawn).AttackMove(Areas.HumanBase);
-      //Elves.Computer.CreateUnit(Constants.UNIT_W_CHTER_HUMAN, Areas.ElfBaseHeroSpawn).AttackMove(Areas.UndeadBase);
-      //Elves.Computer.CreateUnit(Constants.UNIT_W_CHTER_HUMAN, Areas.ElfBaseHeroSpawn).AttackMove(Areas.OrcBase);
+      Elves.Computer.CreateUnit(Constants.UNIT_W_CHTER_HUMAN, Areas.ElfBaseHeroSpawn).AttackMove(Areas.HumanBase);
+      Elves.Computer.CreateUnit(Constants.UNIT_W_CHTER_HUMAN, Areas.ElfBaseHeroSpawn).AttackMove(Areas.UndeadBase);
+      Elves.Computer.CreateUnit(Constants.UNIT_W_CHTER_HUMAN, Areas.ElfBaseHeroSpawn).AttackMove(Areas.OrcBase);
 
-      //Undeads.Computer.CreateUnit(Constants.UNIT_W_CHTER_HUMAN, Areas.UndeadBaseHeroSpawn).AttackMove(Areas.ElfBase);
-      //Undeads.Computer.CreateUnit(Constants.UNIT_W_CHTER_HUMAN, Areas.UndeadBaseHeroSpawn).AttackMove(Areas.HumanBase);
-      //Undeads.Computer.CreateUnit(Constants.UNIT_W_CHTER_HUMAN, Areas.UndeadBaseHeroSpawn).AttackMove(Areas.OrcBase);
-
-      HumanCreepToElf.CreateOrReviveHero(Constants.UNIT_W_CHTER_HUMAN, Areas.HumanCreepToElf, 1, 1, 1f);
+      Undeads.Computer.CreateUnit(Constants.UNIT_W_CHTER_HUMAN, Areas.UndeadBaseHeroSpawn).AttackMove(Areas.ElfBase);
+      Undeads.Computer.CreateUnit(Constants.UNIT_W_CHTER_HUMAN, Areas.UndeadBaseHeroSpawn).AttackMove(Areas.HumanBase);
+      Undeads.Computer.CreateUnit(Constants.UNIT_W_CHTER_HUMAN, Areas.UndeadBaseHeroSpawn).AttackMove(Areas.OrcBase);
     }
 
     internal static void CreateHeroSelectorForPlayerAndAdjustCamera(UserPlayer user)
