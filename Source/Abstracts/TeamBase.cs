@@ -1,12 +1,13 @@
-﻿using System;
+﻿using Source.Models;
+using System;
 using System.Collections.Generic;
 using WCSharp.Api;
 
-namespace Source.Models
+namespace Source.Abstracts
 {
-  public sealed class Team
+  public abstract class TeamBase
   {
-    public Team(player wc3ComputerPlayer)
+    public TeamBase(player wc3ComputerPlayer)
     {
       Computer = new ComputerPlayer(wc3ComputerPlayer, this);
       Computer.Wc3Player.SetState(playerstate.GivesBounty, 1);
@@ -124,6 +125,14 @@ namespace Source.Models
       {
         Common.BlzDisplayChatMessage(user.Wc3Player, user.PlayerId, message);
       }
+    }
+
+    public virtual Enums.ResearchType GetTechType(int techId, int techLevel, out SpawnUnitCommand spawnCommand)
+    {
+      Console.WriteLine("GetTechType - not implemented yet for player " + Computer.Wc3Player.Name);
+
+      spawnCommand = null;
+      return Enums.ResearchType.CommonUpgrade;
     }
   }
 }

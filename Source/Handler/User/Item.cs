@@ -15,8 +15,6 @@ namespace Source.Handler.User
         item item = Common.GetSoldItem();
         int itemId = item.TypeId;
 
-        Console.WriteLine($"Item {item.Name} verkauft an {unit.Owner.Name}!");
-
         if (itemId == Constants.ITEM_GLYPHE_DER_OPFERUNG)
         {
           int playerId = unit.Owner.Id;

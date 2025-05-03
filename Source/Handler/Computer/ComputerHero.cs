@@ -91,6 +91,10 @@ namespace Source.Handler.Computer
           if (spawnedUnit != null)
           {
             Common.ReviveHero(unit, respawnArea.CenterX, respawnArea.CenterY, true);
+
+            // Computer-Helden starten stets mit vollem Mana
+            unit.Mana = unit.MaxMana;
+
             spawnedUnit.RepeatAttackMove();
           }
         }

@@ -6,7 +6,7 @@ namespace Source.Models
 {
   public sealed class UserPlayer : PlayerBase
   {
-    public UserPlayer(player player, Team team)
+    public UserPlayer(player player, TeamBase team)
       : base(player)
     {
       Team = team;
@@ -15,7 +15,7 @@ namespace Source.Models
     /// <summary>
     /// Team des Benutzers
     /// </summary>
-    public Team Team { get; init; }
+    public TeamBase Team { get; init; }
 
     public int HeroLevelCounter { get; set; } = 0;
 

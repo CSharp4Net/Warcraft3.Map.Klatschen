@@ -1,6 +1,6 @@
 [Misc]
 AgiDefenseBase=0.0
-AgiDefenseBonus=0.02
+AgiDefenseBonus=0.2
 AgiMoveBonus=0.02
 Dawn=6.0
 DayLength=900.0

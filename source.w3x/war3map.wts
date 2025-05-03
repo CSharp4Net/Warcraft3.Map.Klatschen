@@ -613,13 +613,13 @@ H
 }
 
 STRING 695
-// Upgrades: R003 (Schwarzes Schießpulver,Angereichertes Schießpulver,Magisches Schießpulver), Hotkey (Hotkey)
+// Units: h01Z (Soldat - Stufe 2), Hotkey (Hotkey)
 {
 H
 }
 
 STRING 696
-// Upgrades: R003 (Schwarzes Schießpulver,Angereichertes Schießpulver,Magisches Schießpulver), Hotkey (Hotkey)
+// Units: h020 (Soldat - Stufe 2), Hotkey (Hotkey)
 {
 H
 }
@@ -9714,12 +9714,6 @@ STRING 2905
 Erhöht den Schaden verbündeter Einheiten in der Nähe <A022,Dur1> Sek. lang um <A022,DataA1,%>%.
 }
 
-STRING 2906
-// Abilities: ASPB (Spiegelbild), Researchubertip (Tooltip - Learn - Extended)
-{
-Verwirrt den Gegner mit Illusionen des Klingenmeisters und bannt jegliche Magie vom Klingenmeister. Der durch die Illusionen verursachte Schaden steigt mit jeder Stufe um 10%.|n|n|cffffcc00Stufe 1|r - Erschafft <ASPB,DataA1> Illusion.|n|cffffcc00Stufe 10|r - Erschafft <ASPB,DataA10> Illusionen.
-}
-
 STRING 2907
 // Upgrades: R00B (Eisenrüstung,Stahlrüstung,Mithrilrüstung), effect2 (Effect 2)
 {
@@ -9823,7 +9817,7 @@ Festung
 }
 
 STRING 2924
-// Units: h010 (Wächter), EditorSuffix (Name - Editor Suffix)
+// Units: h010 (Urtumwächter), EditorSuffix (Name - Editor Suffix)
 {
 (Elf)
 }
@@ -9967,7 +9961,7 @@ STRING 2952
 }
 
 STRING 2953
-// Units: h010 (Wächter), Name (Name)
+// Units: H01W (Wächter), Name (Name)
 {
 Wächter
 }
@@ -11802,15 +11796,393 @@ STRING 3266
 Belagerungsmaschine Stufe 2
 }
 
-STRING 3267
-// Units: H01W (Wächter), EditorSuffix (Name - Editor Suffix)
-{
-(Human)
-}
-
 STRING 3268
-// Units: H01W (Wächter), Name (Name)
+// Units: H02P (Wächter), Name (Name)
 {
 Wächter
+}
+
+STRING 3270
+// Units: h01X (Soldat - Stufe 1), Name (Name)
+{
+Soldat - Stufe 1
+}
+
+STRING 3272
+// Units: h01Y (Soldat - Stufe 1), Name (Name)
+{
+Soldat - Stufe 1
+}
+
+STRING 3274
+// Units: h01Z (Soldat - Stufe 2), Name (Name)
+{
+Soldat - Stufe 2
+}
+
+STRING 3276
+// Units: h020 (Soldat - Stufe 2), Name (Name)
+{
+Soldat - Stufe 2
+}
+
+STRING 3278
+// Units: h021 (Soldat - Stufe 3), Name (Name)
+{
+Soldat - Stufe 3
+}
+
+STRING 3280
+// Units: h022 (Soldat - Stufe 3), Name (Name)
+{
+Soldat - Stufe 3
+}
+
+STRING 3282
+// Units: h023 (Schütze - Stufe 1), Name (Name)
+{
+Schütze - Stufe 1
+}
+
+STRING 3284
+// Units: h024 (Schütze - Stufe 1), Name (Name)
+{
+Schütze - Stufe 1
+}
+
+STRING 3286
+// Units: h025 (Schütze - Stufe 2), Name (Name)
+{
+Schütze - Stufe 2
+}
+
+STRING 3288
+// Units: h026 (Schütze - Stufe 2), Name (Name)
+{
+Schütze - Stufe 2
+}
+
+STRING 3290
+// Units: h027 (Schütze - Stufe 3), Name (Name)
+{
+Schütze - Stufe 3
+}
+
+STRING 3292
+// Units: h028 (Schütze - Stufe 3), Name (Name)
+{
+Schütze - Stufe 3
+}
+
+STRING 3293
+// Units: h029 (Reiter - Stufe 3), Name (Name)
+{
+Reiter - Stufe 3
+}
+
+STRING 3295
+// Units: h02A (Reiter - Stufe 3), Name (Name)
+{
+Reiter - Stufe 3
+}
+
+STRING 3297
+// Units: h02B (Reiter - Stufe 2), Name (Name)
+{
+Reiter - Stufe 2
+}
+
+STRING 3299
+// Units: h02C (Reiter - Stufe 2), Name (Name)
+{
+Reiter - Stufe 2
+}
+
+STRING 3302
+// Units: h02D (Reiter - Stufe 1), Name (Name)
+{
+Reiter - Stufe 1
+}
+
+STRING 3304
+// Units: h02E (Reiter - Stufe 1), Name (Name)
+{
+Reiter - Stufe 1
+}
+
+STRING 3306
+// Units: h02F (Magier - Stufe 3), Name (Name)
+{
+Magier - Stufe 3
+}
+
+STRING 3308
+// Units: h02G (Magier - Stufe 3), Name (Name)
+{
+Magier - Stufe 3
+}
+
+STRING 3310
+// Units: h02H (Magier - Stufe 2), Name (Name)
+{
+Magier - Stufe 2
+}
+
+STRING 3312
+// Units: h02I (Magier - Stufe 2), Name (Name)
+{
+Magier - Stufe 2
+}
+
+STRING 3314
+// Units: h02J (Magier - Stufe 1), Name (Name)
+{
+Magier - Stufe 1
+}
+
+STRING 3316
+// Units: h02K (Magier - Stufe 1), Name (Name)
+{
+Magier - Stufe 1
+}
+
+STRING 3318
+// Units: h02L (Belagerungsmaschine Stufe 2), Name (Name)
+{
+Belagerungsmaschine Stufe 2
+}
+
+STRING 3320
+// Units: h02M (Belagerungsmaschine Stufe 2), Name (Name)
+{
+Belagerungsmaschine Stufe 2
+}
+
+STRING 3322
+// Units: h02N (Belagerungsmaschine Stufe 1), Name (Name)
+{
+Belagerungsmaschine Stufe 1
+}
+
+STRING 3324
+// Units: h02O (Belagerungsmaschine Stufe 1), Name (Name)
+{
+Belagerungsmaschine Stufe 1
+}
+
+STRING 3325
+// Upgrades: R003 (Schwarzes Schießpulver,Angereichertes Schießpulver,Magisches Schießpulver), Hotkey (Hotkey)
+{
+H
+}
+
+STRING 3326
+// Upgrades: R003 (Schwarzes Schießpulver,Angereichertes Schießpulver,Magisches Schießpulver), Hotkey (Hotkey)
+{
+H
+}
+
+STRING 3327
+// Units: h01X (Soldat - Stufe 1), EditorSuffix (Name - Editor Suffix)
+{
+(Elf)
+}
+
+STRING 3328
+// Units: h01Y (Soldat - Stufe 1), EditorSuffix (Name - Editor Suffix)
+{
+(Undead)
+}
+
+STRING 3329
+// Units: h01Z (Soldat - Stufe 2), EditorSuffix (Name - Editor Suffix)
+{
+(Elf)
+}
+
+STRING 3330
+// Units: h020 (Soldat - Stufe 2), EditorSuffix (Name - Editor Suffix)
+{
+(Undead)
+}
+
+STRING 3331
+// Units: h021 (Soldat - Stufe 3), EditorSuffix (Name - Editor Suffix)
+{
+(Elf)
+}
+
+STRING 3332
+// Units: h022 (Soldat - Stufe 3), EditorSuffix (Name - Editor Suffix)
+{
+(Undead)
+}
+
+STRING 3333
+// Units: h023 (Schütze - Stufe 1), EditorSuffix (Name - Editor Suffix)
+{
+(Elf)
+}
+
+STRING 3334
+// Units: h024 (Schütze - Stufe 1), EditorSuffix (Name - Editor Suffix)
+{
+(Undead)
+}
+
+STRING 3335
+// Units: h025 (Schütze - Stufe 2), EditorSuffix (Name - Editor Suffix)
+{
+(Elf)
+}
+
+STRING 3336
+// Units: h026 (Schütze - Stufe 2), EditorSuffix (Name - Editor Suffix)
+{
+(Undead)
+}
+
+STRING 3337
+// Units: h027 (Schütze - Stufe 3), EditorSuffix (Name - Editor Suffix)
+{
+(Elf)
+}
+
+STRING 3338
+// Units: h028 (Schütze - Stufe 3), EditorSuffix (Name - Editor Suffix)
+{
+(Undead)
+}
+
+STRING 3339
+// Units: h029 (Reiter - Stufe 3), EditorSuffix (Name - Editor Suffix)
+{
+(Elf)
+}
+
+STRING 3340
+// Units: h02A (Reiter - Stufe 3), EditorSuffix (Name - Editor Suffix)
+{
+(Undead)
+}
+
+STRING 3341
+// Units: h02B (Reiter - Stufe 2), EditorSuffix (Name - Editor Suffix)
+{
+(Elf)
+}
+
+STRING 3342
+// Units: h02C (Reiter - Stufe 2), EditorSuffix (Name - Editor Suffix)
+{
+(Undead)
+}
+
+STRING 3343
+// Units: h02D (Reiter - Stufe 1), EditorSuffix (Name - Editor Suffix)
+{
+(Elf)
+}
+
+STRING 3344
+// Units: h02E (Reiter - Stufe 1), EditorSuffix (Name - Editor Suffix)
+{
+(Undead)
+}
+
+STRING 3345
+// Units: h02F (Magier - Stufe 3), EditorSuffix (Name - Editor Suffix)
+{
+(Elf)
+}
+
+STRING 3346
+// Units: h02G (Magier - Stufe 3), EditorSuffix (Name - Editor Suffix)
+{
+(Undead)
+}
+
+STRING 3347
+// Units: h02H (Magier - Stufe 2), EditorSuffix (Name - Editor Suffix)
+{
+(Elf)
+}
+
+STRING 3348
+// Units: h02I (Magier - Stufe 2), EditorSuffix (Name - Editor Suffix)
+{
+(Undead)
+}
+
+STRING 3349
+// Units: h02J (Magier - Stufe 1), EditorSuffix (Name - Editor Suffix)
+{
+(Elf)
+}
+
+STRING 3350
+// Units: h02K (Magier - Stufe 1), EditorSuffix (Name - Editor Suffix)
+{
+(Undead)
+}
+
+STRING 3351
+// Units: h02L (Belagerungsmaschine Stufe 2), EditorSuffix (Name - Editor Suffix)
+{
+(Elf)
+}
+
+STRING 3352
+// Units: h02M (Belagerungsmaschine Stufe 2), EditorSuffix (Name - Editor Suffix)
+{
+(Undead)
+}
+
+STRING 3353
+// Units: h02N (Belagerungsmaschine Stufe 1), EditorSuffix (Name - Editor Suffix)
+{
+(Elf)
+}
+
+STRING 3354
+// Units: h02O (Belagerungsmaschine Stufe 1), EditorSuffix (Name - Editor Suffix)
+{
+(Undead)
+}
+
+STRING 3355
+// Units: H01W (Wächter), EditorSuffix (Name - Editor Suffix)
+{
+(Orc)
+}
+
+STRING 3356
+// Units: H02P (Wächter), EditorSuffix (Name - Editor Suffix)
+{
+(Elf)
+}
+
+STRING 3357
+// Units: H02Q (Wächter), Name (Name)
+{
+Wächter
+}
+
+STRING 3358
+// Units: H02Q (Wächter), EditorSuffix (Name - Editor Suffix)
+{
+(Undead)
+}
+
+STRING 3360
+// Units: h010 (Urtumwächter), Name (Name)
+{
+Urtumwächter
+}
+
+STRING 3361
+// Abilities: ASPB (Spiegelbild), Researchubertip (Tooltip - Learn - Extended)
+{
+Verwirrt den Gegner mit Illusionen des Klingenmeisters und bannt jegliche Magie vom Klingenmeister. Der durch die Illusionen verursachte Schaden steigt mit jeder Stufe um 10%.
 }
 

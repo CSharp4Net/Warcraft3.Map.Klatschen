@@ -6,7 +6,7 @@ namespace Source.Models
 {
   public sealed class ComputerPlayer : PlayerBase
   {
-    public ComputerPlayer(player player, Team team)
+    public ComputerPlayer(player player, TeamBase team)
       : base(player)
     {
       Team = team;
@@ -15,7 +15,7 @@ namespace Source.Models
     /// <summary>
     /// Das Team, zu dem der Computer-Spieler gehört.
     /// </summary>
-    private Team Team { get; init; }
+    private TeamBase Team { get; init; }
 
     private List<SpawnBuilding> Buildings { get; init; } = new List<SpawnBuilding>();
 
