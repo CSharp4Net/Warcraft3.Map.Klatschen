@@ -6,8 +6,8 @@ using WCSharp.Shared.Data;
 public static class Regions
 {
 	public static Rectangle Center { get; set; } = new Rectangle(-128f, 2944f, 128f, 3200f);
-	public static Rectangle CenterBottom { get; set; } = new Rectangle(-128f, -7232f, 128f, -6976f);
-	public static Rectangle CenterBottomComplete { get; set; } = new Rectangle(-384f, -7488f, 384f, -6720f);
+	public static Rectangle CenterBottom { get; set; } = new Rectangle(-128f, -7328f, 128f, -7072f);
+	public static Rectangle CenterBottomComplete { get; set; } = new Rectangle(-384f, -7552f, 384f, -6784f);
 	public static Rectangle CenterComplete { get; set; } = new Rectangle(-768f, 2304f, 768f, 3840f);
 	public static Rectangle CenterLeft { get; set; } = new Rectangle(-10304f, 2944f, -10048f, 3200f);
 	public static Rectangle CenterLeftComplete { get; set; } = new Rectangle(-10560f, 2688f, -9792f, 3456f);

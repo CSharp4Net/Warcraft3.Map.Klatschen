@@ -607,7 +607,7 @@ N
 }
 
 STRING 694
-// Upgrades: R003 (Schwarzes Schießpulver,Angereichertes Schießpulver,Magisches Schießpulver), Hotkey (Hotkey)
+// Units: h01J (Grunzer - Stufe 2), Hotkey (Hotkey)
 {
 H
 }
@@ -11626,5 +11626,191 @@ STRING 3237
 // Units: n00P (Blaudrache), EditorSuffix (Name - Editor Suffix)
 {
 (Support)
+}
+
+STRING 3238
+// Units: h01I (Grunzer - Stufe 1), EditorSuffix (Name - Editor Suffix)
+{
+(Orc)
+}
+
+STRING 3239
+// Units: h01I (Grunzer - Stufe 1), Name (Name)
+{
+Grunzer - Stufe 1
+}
+
+STRING 3240
+// Units: h01J (Grunzer - Stufe 2), EditorSuffix (Name - Editor Suffix)
+{
+(Orc)
+}
+
+STRING 3241
+// Units: h01J (Grunzer - Stufe 2), Name (Name)
+{
+Grunzer - Stufe 2
+}
+
+STRING 3242
+// Units: h01K (Grunzer - Stufe 3), EditorSuffix (Name - Editor Suffix)
+{
+(Orc)
+}
+
+STRING 3243
+// Units: h01K (Grunzer - Stufe 3), Name (Name)
+{
+Grunzer - Stufe 3
+}
+
+STRING 3244
+// Upgrades: R003 (Schwarzes Schießpulver,Angereichertes Schießpulver,Magisches Schießpulver), Hotkey (Hotkey)
+{
+H
+}
+
+STRING 3245
+// Units: h01L (Schütze - Stufe 1), EditorSuffix (Name - Editor Suffix)
+{
+(Orc)
+}
+
+STRING 3246
+// Units: h01L (Schütze - Stufe 1), Name (Name)
+{
+Schütze - Stufe 1
+}
+
+STRING 3247
+// Units: h01M (Schütze - Stufe 2), EditorSuffix (Name - Editor Suffix)
+{
+(Orc)
+}
+
+STRING 3248
+// Units: h01M (Schütze - Stufe 2), Name (Name)
+{
+Schütze - Stufe 2
+}
+
+STRING 3249
+// Units: h01N (Schütze - Stufe 3), EditorSuffix (Name - Editor Suffix)
+{
+(Orc)
+}
+
+STRING 3250
+// Units: h01N (Schütze - Stufe 3), Name (Name)
+{
+Schütze - Stufe 3
+}
+
+STRING 3251
+// Units: h01O (Reiter - Stufe 1), EditorSuffix (Name - Editor Suffix)
+{
+(Orc)
+}
+
+STRING 3252
+// Units: h01O (Reiter - Stufe 1), Name (Name)
+{
+Reiter - Stufe 1
+}
+
+STRING 3253
+// Units: h01P (Reiter - Stufe 2), Name (Name)
+{
+Reiter - Stufe 2
+}
+
+STRING 3254
+// Units: h01P (Reiter - Stufe 2), EditorSuffix (Name - Editor Suffix)
+{
+(Orc)
+}
+
+STRING 3255
+// Units: h01Q (Reiter - Stufe 3), Name (Name)
+{
+Reiter - Stufe 3
+}
+
+STRING 3256
+// Units: h01Q (Reiter - Stufe 3), EditorSuffix (Name - Editor Suffix)
+{
+(Orc)
+}
+
+STRING 3257
+// Units: h01R (Magier - Stufe 1), EditorSuffix (Name - Editor Suffix)
+{
+(Orc)
+}
+
+STRING 3258
+// Units: h01R (Magier - Stufe 1), Name (Name)
+{
+Magier - Stufe 1
+}
+
+STRING 3259
+// Units: h01S (Magier - Stufe 2), EditorSuffix (Name - Editor Suffix)
+{
+(Orc)
+}
+
+STRING 3260
+// Units: h01S (Magier - Stufe 2), Name (Name)
+{
+Magier - Stufe 2
+}
+
+STRING 3261
+// Units: h01T (Magier - Stufe 3), EditorSuffix (Name - Editor Suffix)
+{
+(Orc)
+}
+
+STRING 3262
+// Units: h01T (Magier - Stufe 3), Name (Name)
+{
+Magier - Stufe 3
+}
+
+STRING 3263
+// Units: h01U (Belagerungsmaschine Stufe 1), EditorSuffix (Name - Editor Suffix)
+{
+(Orc)
+}
+
+STRING 3264
+// Units: h01U (Belagerungsmaschine Stufe 1), Name (Name)
+{
+Belagerungsmaschine Stufe 1
+}
+
+STRING 3265
+// Units: h01V (Belagerungsmaschine Stufe 2), EditorSuffix (Name - Editor Suffix)
+{
+(Orc)
+}
+
+STRING 3266
+// Units: h01V (Belagerungsmaschine Stufe 2), Name (Name)
+{
+Belagerungsmaschine Stufe 2
+}
+
+STRING 3267
+// Units: H01W (Wächter), EditorSuffix (Name - Editor Suffix)
+{
+(Human)
+}
+
+STRING 3268
+// Units: H01W (Wächter), Name (Name)
+{
+Wächter
 }
 
