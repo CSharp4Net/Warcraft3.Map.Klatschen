@@ -1,7 +1,7 @@
 ﻿using System;
 using WCSharp.Api;
 
-namespace Source.Handler.Computer
+namespace Source.Events.Computer
 {
   internal static class BuildingMain
   {

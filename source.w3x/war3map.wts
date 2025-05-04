@@ -51,13 +51,13 @@ STRING 38
 }
 
 STRING 39
-// Units: h001 (Soldat - Stufe 1), EditorSuffix (Name - Editor Suffix)
+// Units: h001 (Nahkampfeinheit - Stufe 1), EditorSuffix (Name - Editor Suffix)
 {
 (Human)
 }
 
 STRING 45
-// Units: h002 (Schütze - Stufe 1), EditorSuffix (Name - Editor Suffix)
+// Units: h002 (Fernkampfeinheit - Stufe 1), EditorSuffix (Name - Editor Suffix)
 {
 (Human)
 }
@@ -181,7 +181,7 @@ STRING 82
 }
 
 STRING 83
-// Units: h008 (Magier - Stufe 1), EditorSuffix (Name - Editor Suffix)
+// Units: h008 (Magieeinheit - Stufe 1), EditorSuffix (Name - Editor Suffix)
 {
 (Human)
 }
@@ -253,13 +253,13 @@ STRING 97
 }
 
 STRING 115
-// Units: h00B (Soldat - Stufe 3), EditorSuffix (Name - Editor Suffix)
+// Units: h00B (Nahkampfeinheit - Stufe 3), EditorSuffix (Name - Editor Suffix)
 {
 (Human)
 }
 
 STRING 116
-// Units: h00C (Soldat - Stufe 2), EditorSuffix (Name - Editor Suffix)
+// Units: h00C (Nahkampfeinheit - Stufe 2), EditorSuffix (Name - Editor Suffix)
 {
 (Human)
 }
@@ -277,43 +277,43 @@ STRING 118
 }
 
 STRING 119
-// Units: h00E (Belagerungsmaschine Stufe 1), EditorSuffix (Name - Editor Suffix)
+// Units: h00E (Belagerungseinheit - Stufe 1), EditorSuffix (Name - Editor Suffix)
 {
 (Human)
 }
 
 STRING 120
-// Units: h00F (Schütze - Stufe 2), EditorSuffix (Name - Editor Suffix)
+// Units: h00F (Fernkampfeinheit - Stufe 2), EditorSuffix (Name - Editor Suffix)
 {
 (Human)
 }
 
 STRING 122
-// Units: h00G (Schütze - Stufe 3), EditorSuffix (Name - Editor Suffix)
+// Units: h00G (Fernkampfeinheit - Stufe 3), EditorSuffix (Name - Editor Suffix)
 {
 (Human)
 }
 
 STRING 123
-// Units: h00H (Magier - Stufe 2), EditorSuffix (Name - Editor Suffix)
+// Units: h00H (Magieeinheit - Stufe 2), EditorSuffix (Name - Editor Suffix)
 {
 (Human)
 }
 
 STRING 124
-// Units: h00I (Magier - Stufe 3), EditorSuffix (Name - Editor Suffix)
+// Units: h00I (Magieeinheit - Stufe 3), EditorSuffix (Name - Editor Suffix)
 {
 (Human)
 }
 
 STRING 125
-// Units: h00J (Reiter - Stufe 1), EditorSuffix (Name - Editor Suffix)
+// Units: h00J (Flugeinheit - Stufe 1), EditorSuffix (Name - Editor Suffix)
 {
 (Human)
 }
 
 STRING 126
-// Units: h00K (Reiter - Stufe 2), EditorSuffix (Name - Editor Suffix)
+// Units: h00K (Flugeinheit - Stufe 2), EditorSuffix (Name - Editor Suffix)
 {
 (Human)
 }
@@ -355,7 +355,7 @@ S
 }
 
 STRING 168
-// Units: h00L (Reiter - Stufe 3), EditorSuffix (Name - Editor Suffix)
+// Units: h00L (Flugeinheit - Stufe 3), EditorSuffix (Name - Editor Suffix)
 {
 (Human)
 }
@@ -367,7 +367,7 @@ STRING 169
 }
 
 STRING 170
-// Units: h00S (Belagerungsmaschine Stufe 2), EditorSuffix (Name - Editor Suffix)
+// Units: h00S (Belagerungseinheit - Stufe 2), EditorSuffix (Name - Editor Suffix)
 {
 (Human)
 }
@@ -379,7 +379,7 @@ ratx
 }
 
 STRING 223
-// Units: h00C (Soldat - Stufe 2), Hotkey (Hotkey)
+// Units: h00C (Nahkampfeinheit - Stufe 2), Hotkey (Hotkey)
 {
 H
 }
@@ -480,66 +480,6 @@ STRING 497
 ratx
 }
 
-STRING 520
-// Units: h001 (Soldat - Stufe 1), Name (Name)
-{
-Soldat - Stufe 1
-}
-
-STRING 521
-// Units: h002 (Schütze - Stufe 1), Name (Name)
-{
-Schütze - Stufe 1
-}
-
-STRING 522
-// Units: h008 (Magier - Stufe 1), Name (Name)
-{
-Magier - Stufe 1
-}
-
-STRING 523
-// Units: h00B (Soldat - Stufe 3), Name (Name)
-{
-Soldat - Stufe 3
-}
-
-STRING 524
-// Units: h00C (Soldat - Stufe 2), Name (Name)
-{
-Soldat - Stufe 2
-}
-
-STRING 525
-// Units: h00E (Belagerungsmaschine Stufe 1), Name (Name)
-{
-Belagerungsmaschine Stufe 1
-}
-
-STRING 526
-// Units: h00F (Schütze - Stufe 2), Name (Name)
-{
-Schütze - Stufe 2
-}
-
-STRING 527
-// Units: h00G (Schütze - Stufe 3), Name (Name)
-{
-Schütze - Stufe 3
-}
-
-STRING 528
-// Units: h00H (Magier - Stufe 2), Name (Name)
-{
-Magier - Stufe 2
-}
-
-STRING 529
-// Units: h00I (Magier - Stufe 3), Name (Name)
-{
-Magier - Stufe 3
-}
-
 STRING 647
 // Upgrades: R00C (Kampftierausbildung), Ubertip (Tooltip - Extended)
 {
@@ -607,19 +547,19 @@ N
 }
 
 STRING 694
-// Units: h01J (Grunzer - Stufe 2), Hotkey (Hotkey)
+// Units: h01J (Nahkampfeinheit - Stufe 2), Hotkey (Hotkey)
 {
 H
 }
 
 STRING 695
-// Units: h01Z (Soldat - Stufe 2), Hotkey (Hotkey)
+// Units: h01Z (Nahkampfeinheit - Stufe 2), Hotkey (Hotkey)
 {
 H
 }
 
 STRING 696
-// Units: h020 (Soldat - Stufe 2), Hotkey (Hotkey)
+// Units: h020 (Nahkampfeinheit - Stufe 2), Hotkey (Hotkey)
 {
 H
 }
@@ -7368,12 +7308,6 @@ STRING 2435
 (Team)
 }
 
-STRING 2437
-// Units: h00S (Belagerungsmaschine Stufe 2), Name (Name)
-{
-Belagerungsmaschine Stufe 2
-}
-
 STRING 2439
 // Upgrades: R008 (Kampftierausbildung), Tip (Tooltip)
 {
@@ -7822,24 +7756,6 @@ STRING 2615
 // Upgrades: R00D (Schwarzes Schießpulver,Angereichertes Schießpulver,Magisches Schießpulver), EditorSuffix (Editor Suffix)
 {
 (Team)
-}
-
-STRING 2616
-// Units: h00J (Reiter - Stufe 1), Name (Name)
-{
-Reiter - Stufe 1
-}
-
-STRING 2617
-// Units: h00K (Reiter - Stufe 2), Name (Name)
-{
-Reiter - Stufe 2
-}
-
-STRING 2618
-// Units: h00L (Reiter - Stufe 3), Name (Name)
-{
-Reiter - Stufe 3
 }
 
 STRING 2626
@@ -10825,39 +10741,21 @@ STRING 3237
 }
 
 STRING 3238
-// Units: h01I (Grunzer - Stufe 1), EditorSuffix (Name - Editor Suffix)
+// Units: h01I (Nahkampfeinheit - Stufe 1), EditorSuffix (Name - Editor Suffix)
 {
 (Orc)
-}
-
-STRING 3239
-// Units: h01I (Grunzer - Stufe 1), Name (Name)
-{
-Grunzer - Stufe 1
 }
 
 STRING 3240
-// Units: h01J (Grunzer - Stufe 2), EditorSuffix (Name - Editor Suffix)
+// Units: h01J (Nahkampfeinheit - Stufe 2), EditorSuffix (Name - Editor Suffix)
 {
 (Orc)
-}
-
-STRING 3241
-// Units: h01J (Grunzer - Stufe 2), Name (Name)
-{
-Grunzer - Stufe 2
 }
 
 STRING 3242
-// Units: h01K (Grunzer - Stufe 3), EditorSuffix (Name - Editor Suffix)
+// Units: h01K (Nahkampfeinheit - Stufe 3), EditorSuffix (Name - Editor Suffix)
 {
 (Orc)
-}
-
-STRING 3243
-// Units: h01K (Grunzer - Stufe 3), Name (Name)
-{
-Grunzer - Stufe 3
 }
 
 STRING 3244
@@ -10867,309 +10765,75 @@ H
 }
 
 STRING 3245
-// Units: h01L (Schütze - Stufe 1), EditorSuffix (Name - Editor Suffix)
+// Units: h01L (Fernkampfeinheit - Stufe 1), EditorSuffix (Name - Editor Suffix)
 {
 (Orc)
-}
-
-STRING 3246
-// Units: h01L (Schütze - Stufe 1), Name (Name)
-{
-Schütze - Stufe 1
 }
 
 STRING 3247
-// Units: h01M (Schütze - Stufe 2), EditorSuffix (Name - Editor Suffix)
+// Units: h01M (Fernkampfeinheit - Stufe 2), EditorSuffix (Name - Editor Suffix)
 {
 (Orc)
-}
-
-STRING 3248
-// Units: h01M (Schütze - Stufe 2), Name (Name)
-{
-Schütze - Stufe 2
 }
 
 STRING 3249
-// Units: h01N (Schütze - Stufe 3), EditorSuffix (Name - Editor Suffix)
+// Units: h01N (Fernkampfeinheit - Stufe 3), EditorSuffix (Name - Editor Suffix)
 {
 (Orc)
-}
-
-STRING 3250
-// Units: h01N (Schütze - Stufe 3), Name (Name)
-{
-Schütze - Stufe 3
 }
 
 STRING 3251
-// Units: h01O (Reiter - Stufe 1), EditorSuffix (Name - Editor Suffix)
+// Units: h01O (Flugeinheit - Stufe 1), EditorSuffix (Name - Editor Suffix)
 {
 (Orc)
-}
-
-STRING 3252
-// Units: h01O (Reiter - Stufe 1), Name (Name)
-{
-Reiter - Stufe 1
-}
-
-STRING 3253
-// Units: h01P (Reiter - Stufe 2), Name (Name)
-{
-Reiter - Stufe 2
 }
 
 STRING 3254
-// Units: h01P (Reiter - Stufe 2), EditorSuffix (Name - Editor Suffix)
+// Units: h01P (Flugeinheit - Stufe 2), EditorSuffix (Name - Editor Suffix)
 {
 (Orc)
 }
 
-STRING 3255
-// Units: h01Q (Reiter - Stufe 3), Name (Name)
-{
-Reiter - Stufe 3
-}
-
 STRING 3256
-// Units: h01Q (Reiter - Stufe 3), EditorSuffix (Name - Editor Suffix)
+// Units: h01Q (Flugeinheit - Stufe 3), EditorSuffix (Name - Editor Suffix)
 {
 (Orc)
 }
 
 STRING 3257
-// Units: h01R (Magier - Stufe 1), EditorSuffix (Name - Editor Suffix)
+// Units: h01R (Magieeinheit - Stufe 1), EditorSuffix (Name - Editor Suffix)
 {
 (Orc)
-}
-
-STRING 3258
-// Units: h01R (Magier - Stufe 1), Name (Name)
-{
-Magier - Stufe 1
 }
 
 STRING 3259
-// Units: h01S (Magier - Stufe 2), EditorSuffix (Name - Editor Suffix)
+// Units: h01S (Magieeinheit - Stufe 2), EditorSuffix (Name - Editor Suffix)
 {
 (Orc)
-}
-
-STRING 3260
-// Units: h01S (Magier - Stufe 2), Name (Name)
-{
-Magier - Stufe 2
 }
 
 STRING 3261
-// Units: h01T (Magier - Stufe 3), EditorSuffix (Name - Editor Suffix)
+// Units: h01T (Magieeinheit - Stufe 3), EditorSuffix (Name - Editor Suffix)
 {
 (Orc)
-}
-
-STRING 3262
-// Units: h01T (Magier - Stufe 3), Name (Name)
-{
-Magier - Stufe 3
 }
 
 STRING 3263
-// Units: h01U (Belagerungsmaschine Stufe 1), EditorSuffix (Name - Editor Suffix)
+// Units: h01U (Belagerungseinheit - Stufe 1), EditorSuffix (Name - Editor Suffix)
 {
 (Orc)
-}
-
-STRING 3264
-// Units: h01U (Belagerungsmaschine Stufe 1), Name (Name)
-{
-Belagerungsmaschine Stufe 1
 }
 
 STRING 3265
-// Units: h01V (Belagerungsmaschine Stufe 2), EditorSuffix (Name - Editor Suffix)
+// Units: h01V (Belagerungseinheit - Stufe 2), EditorSuffix (Name - Editor Suffix)
 {
 (Orc)
-}
-
-STRING 3266
-// Units: h01V (Belagerungsmaschine Stufe 2), Name (Name)
-{
-Belagerungsmaschine Stufe 2
 }
 
 STRING 3268
 // Units: H02P (Wächter), Name (Name)
 {
 Wächter
-}
-
-STRING 3270
-// Units: h01X (Soldat - Stufe 1), Name (Name)
-{
-Soldat - Stufe 1
-}
-
-STRING 3272
-// Units: h01Y (Soldat - Stufe 1), Name (Name)
-{
-Soldat - Stufe 1
-}
-
-STRING 3274
-// Units: h01Z (Soldat - Stufe 2), Name (Name)
-{
-Soldat - Stufe 2
-}
-
-STRING 3276
-// Units: h020 (Soldat - Stufe 2), Name (Name)
-{
-Soldat - Stufe 2
-}
-
-STRING 3278
-// Units: h021 (Soldat - Stufe 3), Name (Name)
-{
-Soldat - Stufe 3
-}
-
-STRING 3280
-// Units: h022 (Soldat - Stufe 3), Name (Name)
-{
-Soldat - Stufe 3
-}
-
-STRING 3282
-// Units: h023 (Schütze - Stufe 1), Name (Name)
-{
-Schütze - Stufe 1
-}
-
-STRING 3284
-// Units: h024 (Schütze - Stufe 1), Name (Name)
-{
-Schütze - Stufe 1
-}
-
-STRING 3286
-// Units: h025 (Schütze - Stufe 2), Name (Name)
-{
-Schütze - Stufe 2
-}
-
-STRING 3288
-// Units: h026 (Schütze - Stufe 2), Name (Name)
-{
-Schütze - Stufe 2
-}
-
-STRING 3290
-// Units: h027 (Schütze - Stufe 3), Name (Name)
-{
-Schütze - Stufe 3
-}
-
-STRING 3292
-// Units: h028 (Schütze - Stufe 3), Name (Name)
-{
-Schütze - Stufe 3
-}
-
-STRING 3293
-// Units: h029 (Reiter - Stufe 3), Name (Name)
-{
-Reiter - Stufe 3
-}
-
-STRING 3295
-// Units: h02A (Reiter - Stufe 3), Name (Name)
-{
-Reiter - Stufe 3
-}
-
-STRING 3297
-// Units: h02B (Reiter - Stufe 2), Name (Name)
-{
-Reiter - Stufe 2
-}
-
-STRING 3299
-// Units: h02C (Reiter - Stufe 2), Name (Name)
-{
-Reiter - Stufe 2
-}
-
-STRING 3302
-// Units: h02D (Reiter - Stufe 1), Name (Name)
-{
-Reiter - Stufe 1
-}
-
-STRING 3304
-// Units: h02E (Reiter - Stufe 1), Name (Name)
-{
-Reiter - Stufe 1
-}
-
-STRING 3306
-// Units: h02F (Magier - Stufe 3), Name (Name)
-{
-Magier - Stufe 3
-}
-
-STRING 3308
-// Units: h02G (Magier - Stufe 3), Name (Name)
-{
-Magier - Stufe 3
-}
-
-STRING 3310
-// Units: h02H (Magier - Stufe 2), Name (Name)
-{
-Magier - Stufe 2
-}
-
-STRING 3312
-// Units: h02I (Magier - Stufe 2), Name (Name)
-{
-Magier - Stufe 2
-}
-
-STRING 3314
-// Units: h02J (Magier - Stufe 1), Name (Name)
-{
-Magier - Stufe 1
-}
-
-STRING 3316
-// Units: h02K (Magier - Stufe 1), Name (Name)
-{
-Magier - Stufe 1
-}
-
-STRING 3318
-// Units: h02L (Belagerungsmaschine Stufe 2), Name (Name)
-{
-Belagerungsmaschine Stufe 2
-}
-
-STRING 3320
-// Units: h02M (Belagerungsmaschine Stufe 2), Name (Name)
-{
-Belagerungsmaschine Stufe 2
-}
-
-STRING 3322
-// Units: h02N (Belagerungsmaschine Stufe 1), Name (Name)
-{
-Belagerungsmaschine Stufe 1
-}
-
-STRING 3324
-// Units: h02O (Belagerungsmaschine Stufe 1), Name (Name)
-{
-Belagerungsmaschine Stufe 1
 }
 
 STRING 3325
@@ -11185,169 +10849,169 @@ H
 }
 
 STRING 3327
-// Units: h01X (Soldat - Stufe 1), EditorSuffix (Name - Editor Suffix)
+// Units: h01X (Nahkampfeinheit - Stufe 1), EditorSuffix (Name - Editor Suffix)
 {
 (Elf)
 }
 
 STRING 3328
-// Units: h01Y (Soldat - Stufe 1), EditorSuffix (Name - Editor Suffix)
+// Units: h01Y (Nahkampfeinheit - Stufe 1), EditorSuffix (Name - Editor Suffix)
 {
 (Undead)
 }
 
 STRING 3329
-// Units: h01Z (Soldat - Stufe 2), EditorSuffix (Name - Editor Suffix)
+// Units: h01Z (Nahkampfeinheit - Stufe 2), EditorSuffix (Name - Editor Suffix)
 {
 (Elf)
 }
 
 STRING 3330
-// Units: h020 (Soldat - Stufe 2), EditorSuffix (Name - Editor Suffix)
+// Units: h020 (Nahkampfeinheit - Stufe 2), EditorSuffix (Name - Editor Suffix)
 {
 (Undead)
 }
 
 STRING 3331
-// Units: h021 (Soldat - Stufe 3), EditorSuffix (Name - Editor Suffix)
+// Units: h021 (Nahkampfeinheit - Stufe 3), EditorSuffix (Name - Editor Suffix)
 {
 (Elf)
 }
 
 STRING 3332
-// Units: h022 (Soldat - Stufe 3), EditorSuffix (Name - Editor Suffix)
+// Units: h022 (Nahkampfeinheit - Stufe 3), EditorSuffix (Name - Editor Suffix)
 {
 (Undead)
 }
 
 STRING 3333
-// Units: h023 (Schütze - Stufe 1), EditorSuffix (Name - Editor Suffix)
+// Units: h023 (Fernkampfeinheit - Stufe 1), EditorSuffix (Name - Editor Suffix)
 {
 (Elf)
 }
 
 STRING 3334
-// Units: h024 (Schütze - Stufe 1), EditorSuffix (Name - Editor Suffix)
+// Units: h024 (Fernkampfeinheit - Stufe 1), EditorSuffix (Name - Editor Suffix)
 {
 (Undead)
 }
 
 STRING 3335
-// Units: h025 (Schütze - Stufe 2), EditorSuffix (Name - Editor Suffix)
+// Units: h025 (Fernkampfeinheit - Stufe 2), EditorSuffix (Name - Editor Suffix)
 {
 (Elf)
 }
 
 STRING 3336
-// Units: h026 (Schütze - Stufe 2), EditorSuffix (Name - Editor Suffix)
+// Units: h026 (Fernkampfeinheit - Stufe 2), EditorSuffix (Name - Editor Suffix)
 {
 (Undead)
 }
 
 STRING 3337
-// Units: h027 (Schütze - Stufe 3), EditorSuffix (Name - Editor Suffix)
+// Units: h027 (Fernkampfeinheit - Stufe 3), EditorSuffix (Name - Editor Suffix)
 {
 (Elf)
 }
 
 STRING 3338
-// Units: h028 (Schütze - Stufe 3), EditorSuffix (Name - Editor Suffix)
+// Units: h028 (Fernkampfeinheit - Stufe 3), EditorSuffix (Name - Editor Suffix)
 {
 (Undead)
 }
 
 STRING 3339
-// Units: h029 (Reiter - Stufe 3), EditorSuffix (Name - Editor Suffix)
+// Units: h029 (Flugeinheit - Stufe 3), EditorSuffix (Name - Editor Suffix)
 {
 (Elf)
 }
 
 STRING 3340
-// Units: h02A (Reiter - Stufe 3), EditorSuffix (Name - Editor Suffix)
+// Units: h02A (Flugeinheit - Stufe 3), EditorSuffix (Name - Editor Suffix)
 {
 (Undead)
 }
 
 STRING 3341
-// Units: h02B (Reiter - Stufe 2), EditorSuffix (Name - Editor Suffix)
+// Units: h02B (Flugeinheit - Stufe 2), EditorSuffix (Name - Editor Suffix)
 {
 (Elf)
 }
 
 STRING 3342
-// Units: h02C (Reiter - Stufe 2), EditorSuffix (Name - Editor Suffix)
+// Units: h02C (Flugeinheit - Stufe 2), EditorSuffix (Name - Editor Suffix)
 {
 (Undead)
 }
 
 STRING 3343
-// Units: h02D (Reiter - Stufe 1), EditorSuffix (Name - Editor Suffix)
+// Units: h02D (Flugeinheit - Stufe 1), EditorSuffix (Name - Editor Suffix)
 {
 (Elf)
 }
 
 STRING 3344
-// Units: h02E (Reiter - Stufe 1), EditorSuffix (Name - Editor Suffix)
+// Units: h02E (Flugeinheit - Stufe 1), EditorSuffix (Name - Editor Suffix)
 {
 (Undead)
 }
 
 STRING 3345
-// Units: h02F (Magier - Stufe 3), EditorSuffix (Name - Editor Suffix)
+// Units: h02F (Magieeinheit - Stufe 3), EditorSuffix (Name - Editor Suffix)
 {
 (Elf)
 }
 
 STRING 3346
-// Units: h02G (Magier - Stufe 3), EditorSuffix (Name - Editor Suffix)
+// Units: h02G (Magieeinheit - Stufe 3), EditorSuffix (Name - Editor Suffix)
 {
 (Undead)
 }
 
 STRING 3347
-// Units: h02H (Magier - Stufe 2), EditorSuffix (Name - Editor Suffix)
+// Units: h02H (Magieeinheit - Stufe 2), EditorSuffix (Name - Editor Suffix)
 {
 (Elf)
 }
 
 STRING 3348
-// Units: h02I (Magier - Stufe 2), EditorSuffix (Name - Editor Suffix)
+// Units: h02I (Magieeinheit - Stufe 2), EditorSuffix (Name - Editor Suffix)
 {
 (Undead)
 }
 
 STRING 3349
-// Units: h02J (Magier - Stufe 1), EditorSuffix (Name - Editor Suffix)
+// Units: h02J (Magieeinheit - Stufe 1), EditorSuffix (Name - Editor Suffix)
 {
 (Elf)
 }
 
 STRING 3350
-// Units: h02K (Magier - Stufe 1), EditorSuffix (Name - Editor Suffix)
+// Units: h02K (Magieeinheit - Stufe 1), EditorSuffix (Name - Editor Suffix)
 {
 (Undead)
 }
 
 STRING 3351
-// Units: h02L (Belagerungsmaschine Stufe 2), EditorSuffix (Name - Editor Suffix)
+// Units: h02L (Belagerungseinheit - Stufe 2), EditorSuffix (Name - Editor Suffix)
 {
 (Elf)
 }
 
 STRING 3352
-// Units: h02M (Belagerungsmaschine Stufe 2), EditorSuffix (Name - Editor Suffix)
+// Units: h02M (Belagerungseinheit - Stufe 2), EditorSuffix (Name - Editor Suffix)
 {
 (Undead)
 }
 
 STRING 3353
-// Units: h02N (Belagerungsmaschine Stufe 1), EditorSuffix (Name - Editor Suffix)
+// Units: h02N (Belagerungseinheit - Stufe 1), EditorSuffix (Name - Editor Suffix)
 {
 (Elf)
 }
 
 STRING 3354
-// Units: h02O (Belagerungsmaschine Stufe 1), EditorSuffix (Name - Editor Suffix)
+// Units: h02O (Belagerungseinheit - Stufe 1), EditorSuffix (Name - Editor Suffix)
 {
 (Undead)
 }
@@ -12207,5 +11871,365 @@ Artillerie-Verteidigung verbessern [|cffffcc00Stufe 1|r]
 STRING 3538
 {
 Kämpft bis zum Tod!
+}
+
+STRING 3549
+// Units: h001 (Nahkampfeinheit - Stufe 1), Name (Name)
+{
+Nahkampfeinheit - Stufe 1
+}
+
+STRING 3550
+// Units: h00B (Nahkampfeinheit - Stufe 3), Name (Name)
+{
+Nahkampfeinheit - Stufe 3
+}
+
+STRING 3551
+// Units: h00C (Nahkampfeinheit - Stufe 2), Name (Name)
+{
+Nahkampfeinheit - Stufe 2
+}
+
+STRING 3552
+// Units: h002 (Fernkampfeinheit - Stufe 1), Name (Name)
+{
+Fernkampfeinheit - Stufe 1
+}
+
+STRING 3553
+// Units: h00E (Belagerungseinheit - Stufe 1), Name (Name)
+{
+Belagerungseinheit - Stufe 1
+}
+
+STRING 3554
+// Units: h00F (Fernkampfeinheit - Stufe 2), Name (Name)
+{
+Fernkampfeinheit - Stufe 2
+}
+
+STRING 3555
+// Units: h00G (Fernkampfeinheit - Stufe 3), Name (Name)
+{
+Fernkampfeinheit - Stufe 3
+}
+
+STRING 3556
+// Units: h00S (Belagerungseinheit - Stufe 2), Name (Name)
+{
+Belagerungseinheit - Stufe 2
+}
+
+STRING 3557
+// Units: h008 (Magieeinheit - Stufe 1), Name (Name)
+{
+Magieeinheit - Stufe 1
+}
+
+STRING 3558
+// Units: h00H (Magieeinheit - Stufe 2), Name (Name)
+{
+Magieeinheit - Stufe 2
+}
+
+STRING 3559
+// Units: h00I (Magieeinheit - Stufe 3), Name (Name)
+{
+Magieeinheit - Stufe 3
+}
+
+STRING 3560
+// Units: h00J (Flugeinheit - Stufe 1), Name (Name)
+{
+Flugeinheit - Stufe 1
+}
+
+STRING 3561
+// Units: h00K (Flugeinheit - Stufe 2), Name (Name)
+{
+Flugeinheit - Stufe 2
+}
+
+STRING 3562
+// Units: h00L (Flugeinheit - Stufe 3), Name (Name)
+{
+Flugeinheit - Stufe 3
+}
+
+STRING 3563
+// Units: h01I (Nahkampfeinheit - Stufe 1), Name (Name)
+{
+Nahkampfeinheit - Stufe 1
+}
+
+STRING 3564
+// Units: h01J (Nahkampfeinheit - Stufe 2), Name (Name)
+{
+Nahkampfeinheit - Stufe 2
+}
+
+STRING 3565
+// Units: h01K (Nahkampfeinheit - Stufe 3), Name (Name)
+{
+Nahkampfeinheit - Stufe 3
+}
+
+STRING 3566
+// Units: h01L (Fernkampfeinheit - Stufe 1), Name (Name)
+{
+Fernkampfeinheit - Stufe 1
+}
+
+STRING 3567
+// Units: h01M (Fernkampfeinheit - Stufe 2), Name (Name)
+{
+Fernkampfeinheit - Stufe 2
+}
+
+STRING 3568
+// Units: h01N (Fernkampfeinheit - Stufe 3), Name (Name)
+{
+Fernkampfeinheit - Stufe 3
+}
+
+STRING 3569
+// Units: h01O (Flugeinheit - Stufe 1), Name (Name)
+{
+Flugeinheit - Stufe 1
+}
+
+STRING 3570
+// Units: h01P (Flugeinheit - Stufe 2), Name (Name)
+{
+Flugeinheit - Stufe 2
+}
+
+STRING 3571
+// Units: h01Q (Flugeinheit - Stufe 3), Name (Name)
+{
+Flugeinheit - Stufe 3
+}
+
+STRING 3572
+// Units: h01R (Magieeinheit - Stufe 1), Name (Name)
+{
+Magieeinheit - Stufe 1
+}
+
+STRING 3573
+// Units: h01S (Magieeinheit - Stufe 2), Name (Name)
+{
+Magieeinheit - Stufe 2
+}
+
+STRING 3574
+// Units: h01T (Magieeinheit - Stufe 3), Name (Name)
+{
+Magieeinheit - Stufe 3
+}
+
+STRING 3575
+// Units: h01U (Belagerungseinheit - Stufe 1), Name (Name)
+{
+Belagerungseinheit - Stufe 1
+}
+
+STRING 3576
+// Units: h01V (Belagerungseinheit - Stufe 2), Name (Name)
+{
+Belagerungseinheit - Stufe 2
+}
+
+STRING 3577
+// Units: h01X (Nahkampfeinheit - Stufe 1), Name (Name)
+{
+Nahkampfeinheit - Stufe 1
+}
+
+STRING 3578
+// Units: h01Y (Nahkampfeinheit - Stufe 1), Name (Name)
+{
+Nahkampfeinheit - Stufe 1
+}
+
+STRING 3579
+// Units: h01Z (Nahkampfeinheit - Stufe 2), Name (Name)
+{
+Nahkampfeinheit - Stufe 2
+}
+
+STRING 3580
+// Units: h020 (Nahkampfeinheit - Stufe 2), Name (Name)
+{
+Nahkampfeinheit - Stufe 2
+}
+
+STRING 3581
+// Units: h021 (Nahkampfeinheit - Stufe 3), Name (Name)
+{
+Nahkampfeinheit - Stufe 3
+}
+
+STRING 3582
+// Units: h022 (Nahkampfeinheit - Stufe 3), Name (Name)
+{
+Nahkampfeinheit - Stufe 3
+}
+
+STRING 3583
+// Units: h023 (Fernkampfeinheit - Stufe 1), Name (Name)
+{
+Fernkampfeinheit - Stufe 1
+}
+
+STRING 3584
+// Units: h024 (Fernkampfeinheit - Stufe 1), Name (Name)
+{
+Fernkampfeinheit - Stufe 1
+}
+
+STRING 3585
+// Units: h025 (Fernkampfeinheit - Stufe 2), Name (Name)
+{
+Fernkampfeinheit - Stufe 2
+}
+
+STRING 3586
+// Units: h026 (Fernkampfeinheit - Stufe 2), Name (Name)
+{
+Fernkampfeinheit - Stufe 2
+}
+
+STRING 3587
+// Units: h027 (Fernkampfeinheit - Stufe 3), Name (Name)
+{
+Fernkampfeinheit - Stufe 3
+}
+
+STRING 3588
+// Units: h028 (Fernkampfeinheit - Stufe 3), Name (Name)
+{
+Fernkampfeinheit - Stufe 3
+}
+
+STRING 3589
+// Units: h029 (Flugeinheit - Stufe 3), Name (Name)
+{
+Flugeinheit - Stufe 3
+}
+
+STRING 3590
+// Units: h02A (Flugeinheit - Stufe 3), Name (Name)
+{
+Flugeinheit - Stufe 3
+}
+
+STRING 3591
+// Units: h02B (Flugeinheit - Stufe 2), Name (Name)
+{
+Flugeinheit - Stufe 2
+}
+
+STRING 3592
+// Units: h02C (Flugeinheit - Stufe 2), Name (Name)
+{
+Flugeinheit - Stufe 2
+}
+
+STRING 3593
+// Units: h02D (Flugeinheit - Stufe 1), Name (Name)
+{
+Flugeinheit - Stufe 1
+}
+
+STRING 3594
+// Units: h02E (Flugeinheit - Stufe 1), Name (Name)
+{
+Flugeinheit - Stufe 1
+}
+
+STRING 3595
+// Units: h02F (Magieeinheit - Stufe 3), Name (Name)
+{
+Magieeinheit - Stufe 3
+}
+
+STRING 3596
+// Units: h02G (Magieeinheit - Stufe 3), Name (Name)
+{
+Magieeinheit - Stufe 3
+}
+
+STRING 3597
+// Units: h02H (Magieeinheit - Stufe 2), Name (Name)
+{
+Magieeinheit - Stufe 2
+}
+
+STRING 3598
+// Units: h02I (Magieeinheit - Stufe 2), Name (Name)
+{
+Magieeinheit - Stufe 2
+}
+
+STRING 3599
+// Units: h02J (Magieeinheit - Stufe 1), Name (Name)
+{
+Magieeinheit - Stufe 1
+}
+
+STRING 3600
+// Units: h02K (Magieeinheit - Stufe 1), Name (Name)
+{
+Magieeinheit - Stufe 1
+}
+
+STRING 3601
+// Units: h02L (Belagerungseinheit - Stufe 2), Name (Name)
+{
+Belagerungseinheit - Stufe 2
+}
+
+STRING 3602
+// Units: h02M (Belagerungseinheit - Stufe 2), Name (Name)
+{
+Belagerungseinheit - Stufe 2
+}
+
+STRING 3603
+// Units: h02N (Belagerungseinheit - Stufe 1), Name (Name)
+{
+Belagerungseinheit - Stufe 1
+}
+
+STRING 3604
+// Units: h02O (Belagerungseinheit - Stufe 1), Name (Name)
+{
+Belagerungseinheit - Stufe 1
+}
+
+STRING 3605
+// Units: H02R (Banditenfürst), EditorSuffix (Name - Editor Suffix)
+{
+(Creep)
+}
+
+STRING 3606
+// Units: H02R (Banditenfürst), Name (Name)
+{
+Banditenfürst
+}
+
+STRING 3607
+// Units: H02R (Banditenfürst), Propernames (Proper Names)
+{
+Banditenfürst
+}
+
+STRING 3608
+// Units: n00X (Bandit), EditorSuffix (Name - Editor Suffix)
+{
+(Creep)
 }
 

@@ -1,5 +1,5 @@
 ﻿using Source.Abstracts;
-using Source.Handler.GenericEvents;
+using Source.Events.GenericEvents;
 using WCSharp.Api;
 
 namespace Source.Models

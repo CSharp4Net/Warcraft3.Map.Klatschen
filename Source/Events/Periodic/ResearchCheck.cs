@@ -1,11 +1,11 @@
 ﻿using Source.Abstracts;
-using Source.Handler.User;
+using Source.Events.User;
 using Source.Models;
 using System;
 using WCSharp.Api;
 using static Source.Models.Enums;
 
-namespace Source.Handler.Periodic
+namespace Source.Events.Periodic
 {
   public static class ResearchCheck
   {

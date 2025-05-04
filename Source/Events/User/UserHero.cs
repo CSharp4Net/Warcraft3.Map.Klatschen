@@ -2,7 +2,7 @@
 using System;
 using WCSharp.Api;
 
-namespace Source.Handler.Player
+namespace Source.Events.Player
 {
   internal static class UserHero
   {

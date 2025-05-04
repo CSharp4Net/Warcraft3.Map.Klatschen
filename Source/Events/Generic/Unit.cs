@@ -2,7 +2,7 @@
 using System;
 using WCSharp.Api;
 
-namespace Source.Handler.GenericEvents
+namespace Source.Events.GenericEvents
 {
   internal static class Unit
   {

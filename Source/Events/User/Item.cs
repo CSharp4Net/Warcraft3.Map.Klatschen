@@ -2,7 +2,7 @@
 using System;
 using WCSharp.Api;
 
-namespace Source.Handler.User
+namespace Source.Events.User
 {
   internal static class Item
   {

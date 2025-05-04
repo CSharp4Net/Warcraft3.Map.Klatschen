@@ -47,6 +47,7 @@ public static class Regions
 	public static Rectangle HumanBaseToElfSpawn { get; set; } = new Rectangle(-10368f, 12800f, -10112f, 13056f);
 	public static Rectangle HumanBaseToOrcSpawn { get; set; } = new Rectangle(-9984f, 13184f, -9728f, 13440f);
 	public static Rectangle HumanCreepToElf { get; set; } = new Rectangle(-7104f, 5952f, -6976f, 6080f);
+	public static Rectangle HumanCreepToElfSpawn { get; set; } = new Rectangle(-7424f, 5632f, -6656f, 6400f);
 	public static Rectangle HumanToElfInnerLine { get; set; } = new Rectangle(-10304f, 11200f, -10176f, 11328f);
 	public static Rectangle HumanToElfOuterLine { get; set; } = new Rectangle(-10304f, 7104f, -10176f, 7232f);
 	public static Rectangle HumanToOrcInnerLine { get; set; } = new Rectangle(-8256f, 13248f, -8128f, 13376f);

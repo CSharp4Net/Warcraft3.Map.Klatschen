@@ -5,7 +5,7 @@ using WCSharp.Effects;
 using WCSharp.Lightnings;
 using WCSharp.Shared.Data;
 
-namespace Source.Handler.Periodic
+namespace Source.Events.Periodic
 {
   internal static class Klatschen
   {
@@ -161,7 +161,7 @@ namespace Source.Handler.Periodic
         });
 
         // Zentrum - Helden beleben nach 5 Sekunden
-        Program.BurningLegion.CreateOrReviveHero(Constants.UNIT_GRUBENLORD_KLATSCHEN, Areas.Center, executions * 10, executions, 5.5f);
+        Program.Legion.CreateOrReviveHero(Constants.UNIT_GRUBENLORD_KLATSCHEN, Areas.Center, executions * 10, executions, 5.5f);
 
         // Zentrum - Weitere Einheiten via Cast hinzurufen
         CreateAtDummyAndCastAbilityTimed(player, centerRect, Constants.ABILITY_H_LLENBESTIEN_KLATSCHEN, executions, Constants.ORDER_RAIN_OF_CHAOS, 4f);

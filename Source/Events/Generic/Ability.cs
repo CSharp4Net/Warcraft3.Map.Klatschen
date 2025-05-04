@@ -1,7 +1,7 @@
 ﻿using System;
 using WCSharp.Api;
 
-namespace Source.Handler.Generic
+namespace Source.Events.Generic
 {
   internal static class Ability
   {

@@ -25,13 +25,13 @@ namespace Source.Models.Teams
           switch (techLevel)
           {
             case 1:
-              spawnCommand.UnitId = Constants.UNIT_SOLDAT_STUFE_2_HUMAN;
-              spawnCommand.UnitIdToUpgrade = Constants.UNIT_SOLDAT_STUFE_1_HUMAN;
+              spawnCommand.UnitId = Constants.UNIT_NAHKAMPFEINHEIT_STUFE_2_HUMAN;
+              spawnCommand.UnitIdToUpgrade = Constants.UNIT_NAHKAMPFEINHEIT_STUFE_1_HUMAN;
               return Enums.ResearchType.UpgradeUnit;
 
             default:
-              spawnCommand.UnitId = Constants.UNIT_SOLDAT_STUFE_3_HUMAN;
-              spawnCommand.UnitIdToUpgrade = Constants.UNIT_SOLDAT_STUFE_2_HUMAN;
+              spawnCommand.UnitId = Constants.UNIT_NAHKAMPFEINHEIT_STUFE_3_HUMAN;
+              spawnCommand.UnitIdToUpgrade = Constants.UNIT_NAHKAMPFEINHEIT_STUFE_2_HUMAN;
               return Enums.ResearchType.UpgradeUnit;
           }
 
@@ -40,20 +40,18 @@ namespace Source.Models.Teams
           {
             UnitSpawnType = Enums.UnitSpawnType.Distance,
             UnitIdOfBuilding = Constants.UNIT_KASERNE_HUMAN,
-            UnitId = Constants.UNIT_SCH_TZE_STUFE_2_HUMAN,
-            UnitIdToUpgrade = Constants.UNIT_SCH_TZE_STUFE_1_HUMAN
           };
 
           switch (techLevel)
           {
             case 1:
-              spawnCommand.UnitId = Constants.UNIT_SCH_TZE_STUFE_2_HUMAN;
-              spawnCommand.UnitIdToUpgrade = Constants.UNIT_SCH_TZE_STUFE_1_HUMAN;
+              spawnCommand.UnitId = Constants.UNIT_FERNKAMPFEINHEIT_STUFE_2_HUMAN;
+              spawnCommand.UnitIdToUpgrade = Constants.UNIT_FERNKAMPFEINHEIT_STUFE_1_HUMAN;
               return Enums.ResearchType.UpgradeUnit;
 
             default:
-              spawnCommand.UnitId = Constants.UNIT_SCH_TZE_STUFE_3_HUMAN;
-              spawnCommand.UnitIdToUpgrade = Constants.UNIT_SCH_TZE_STUFE_2_HUMAN;
+              spawnCommand.UnitId = Constants.UNIT_FERNKAMPFEINHEIT_STUFE_3_HUMAN;
+              spawnCommand.UnitIdToUpgrade = Constants.UNIT_FERNKAMPFEINHEIT_STUFE_2_HUMAN;
               return Enums.ResearchType.UpgradeUnit;
           }
 
@@ -62,19 +60,18 @@ namespace Source.Models.Teams
           {
             UnitSpawnType = Enums.UnitSpawnType.Distance,
             UnitIdOfBuilding = Constants.UNIT_SCHLOSS_HUMAN,
-            UnitId = Constants.UNIT_REITER_STUFE_1_HUMAN
           };
 
           switch (techLevel)
           {
             case 1:
-              spawnCommand.UnitId = Constants.UNIT_REITER_STUFE_2_HUMAN;
-              spawnCommand.UnitIdToUpgrade = Constants.UNIT_REITER_STUFE_1_HUMAN;
+              spawnCommand.UnitId = Constants.UNIT_FLUGEINHEIT_STUFE_2_HUMAN;
+              spawnCommand.UnitIdToUpgrade = Constants.UNIT_FLUGEINHEIT_STUFE_1_HUMAN;
               return Enums.ResearchType.UpgradeUnit;
 
             default:
-              spawnCommand.UnitId = Constants.UNIT_REITER_STUFE_3_HUMAN;
-              spawnCommand.UnitIdToUpgrade = Constants.UNIT_REITER_STUFE_2_HUMAN;
+              spawnCommand.UnitId = Constants.UNIT_FLUGEINHEIT_STUFE_3_HUMAN;
+              spawnCommand.UnitIdToUpgrade = Constants.UNIT_FLUGEINHEIT_STUFE_2_HUMAN;
               return Enums.ResearchType.UpgradeUnit;
           }
 
@@ -88,13 +85,13 @@ namespace Source.Models.Teams
           switch (techLevel)
           {
             case 1:
-              spawnCommand.UnitId = Constants.UNIT_MAGIER_STUFE_2_HUMAN;
-              spawnCommand.UnitIdToUpgrade = Constants.UNIT_MAGIER_STUFE_1_HUMAN;
+              spawnCommand.UnitId = Constants.UNIT_MAGIEEINHEIT_STUFE_2_HUMAN;
+              spawnCommand.UnitIdToUpgrade = Constants.UNIT_MAGIEEINHEIT_STUFE_1_HUMAN;
               return Enums.ResearchType.UpgradeUnit;
 
             default:
-              spawnCommand.UnitId = Constants.UNIT_MAGIER_STUFE_3_HUMAN;
-              spawnCommand.UnitIdToUpgrade = Constants.UNIT_MAGIER_STUFE_2_HUMAN;
+              spawnCommand.UnitId = Constants.UNIT_MAGIEEINHEIT_STUFE_3_HUMAN;
+              spawnCommand.UnitIdToUpgrade = Constants.UNIT_MAGIEEINHEIT_STUFE_2_HUMAN;
               return Enums.ResearchType.UpgradeUnit;
           }
 
@@ -108,12 +105,12 @@ namespace Source.Models.Teams
           switch (techLevel)
           {
             case 1:
-              spawnCommand.UnitId = Constants.UNIT_BELAGERUNGSMASCHINE_STUFE_1_HUMAN;
+              spawnCommand.UnitId = Constants.UNIT_BELAGERUNGSEINHEIT_STUFE_1_HUMAN;
               return Enums.ResearchType.AddUnit;
 
             default:
-              spawnCommand.UnitId = Constants.UNIT_BELAGERUNGSMASCHINE_STUFE_2_HUMAN;
-              spawnCommand.UnitIdToUpgrade = Constants.UNIT_BELAGERUNGSMASCHINE_STUFE_1_HUMAN;
+              spawnCommand.UnitId = Constants.UNIT_BELAGERUNGSEINHEIT_STUFE_2_HUMAN;
+              spawnCommand.UnitIdToUpgrade = Constants.UNIT_BELAGERUNGSEINHEIT_STUFE_1_HUMAN;
               return Enums.ResearchType.UpgradeUnit;
           }
 

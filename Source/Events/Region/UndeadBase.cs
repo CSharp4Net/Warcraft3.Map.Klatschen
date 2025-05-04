@@ -1,9 +1,9 @@
 ﻿using Source.Models;
 using WCSharp.Api;
 
-namespace Source.Handler.Region
+namespace Source.Events.Region
 {
-  internal static class ElfBase
+  internal static class UndeadBase
   {
     internal static void OnEnter()
     {
@@ -12,38 +12,38 @@ namespace Source.Handler.Region
       if (unit.IsABuilding || unit.Owner.Controller != mapcontrol.Computer)
         return;
 
-      // Feindliche Einheit zur Basis eines anderen Spielers schicken
+      // Feindliche Einheit zur Basis des anderen Spielers schicken
       if (Program.Humans.Computer.IsOwnerOfUnit(unit, out SpawnedUnit spawnedUnit))
       {
-        if (!Program.Undeads.Defeated)
+        if (!Program.Orcs.Defeated)
         {
-          spawnedUnit.AttackMove(Areas.UndeadBase);
+          spawnedUnit.AttackMove(Areas.OrcBase);
         }
         else
         {
-          spawnedUnit.AttackMove(Areas.OrcBase);
+          spawnedUnit.AttackMove(Areas.ElfBase);
         }
       }
       else if (Program.Orcs.Computer.IsOwnerOfUnit(unit, out spawnedUnit))
       {
-        if (!Program.Undeads.Defeated)
+        if (!Program.Elves.Defeated)
         {
-          spawnedUnit.AttackMove(Areas.UndeadBase);
+          spawnedUnit.AttackMove(Areas.ElfBase);
         }
         else
         {
           spawnedUnit.AttackMove(Areas.HumanBase);
         }
       }
-      else if (Program.Undeads.Computer.IsOwnerOfUnit(unit, out spawnedUnit))
+      else if (Program.Elves.Computer.IsOwnerOfUnit(unit, out spawnedUnit))
       {
-        if (!Program.Humans.Defeated)
+        if (!Program.Orcs.Defeated)
         {
-          spawnedUnit.AttackMove(Areas.HumanBase);
+          spawnedUnit.AttackMove(Areas.OrcBase);
         }
         else
         {
-          spawnedUnit.AttackMove(Areas.OrcBase);
+          spawnedUnit.AttackMove(Areas.HumanBase);
         }
       }
     }

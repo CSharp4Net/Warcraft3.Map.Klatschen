@@ -19736,6 +19736,7 @@ System.namespace("", function (namespace)
       this.HumanBaseToElfSpawn = SourceModels.Area(Regions.HumanBaseToElfSpawn)
       this.HumanBaseToOrcsSpawn = SourceModels.Area(Regions.HumanBaseToOrcSpawn)
       this.HumanCreepToElf = SourceModels.Area(Regions.HumanCreepToElf)
+      this.HumanCreepToElfSpawn = SourceModels.Area(Regions.HumanCreepToElfSpawn)
       this.HumanToElfInnerLine = SourceModels.Area(Regions.HumanToElfInnerLine)
       this.HumanToElfOuterLine = SourceModels.Area(Regions.HumanToElfOuterLine)
       this.HumanToOrcInnerLine = SourceModels.Area(Regions.HumanToOrcInnerLine)
@@ -19827,6 +19828,7 @@ System.namespace("", function (namespace)
             { "HumanBaseToElfSpawn", 0xE, out.Source.Models.Area },
             { "HumanBaseToOrcsSpawn", 0xE, out.Source.Models.Area },
             { "HumanCreepToElf", 0xE, out.Source.Models.Area },
+            { "HumanCreepToElfSpawn", 0xE, out.Source.Models.Area },
             { "HumanToElfInnerLine", 0xE, out.Source.Models.Area },
             { "HumanToElfOuterLine", 0xE, out.Source.Models.Area },
             { "HumanToOrcInnerLine", 0xE, out.Source.Models.Area },
@@ -19922,31 +19924,33 @@ end
 do
 local System = System
 local WCSharpApi = WCSharp.Api
-local SourceHandlerComputer
-local SourceHandlerGeneric
-local SourceGenericEvents
-local SourceHandlerPeriodic
-local SourceHandlerPlayer
-local SourceHandlerRegion
-local SourceHandlerSpecific
-local SourceHandlerUser
+local SourceEventsComputer
+local SourceEventsGeneric
+local SourceEventsGenericEvents
+local SourceEventsPeriodic
+local SourceEventsPlayer
+local SourceEventsRegion
+local SourceEventsSpecific
+local SourceEventsUser
 local SourceModels
 local SourceModelsTeams
 local WCSharpEvents
 local ListUserPlayer
+local ListCreepFragtion
 System.import(function (out)
-  SourceHandlerComputer = Source.Handler.Computer
-  SourceHandlerGeneric = Source.Handler.Generic
-  SourceGenericEvents = Source.Handler.GenericEvents
-  SourceHandlerPeriodic = Source.Handler.Periodic
-  SourceHandlerPlayer = Source.Handler.Player
-  SourceHandlerRegion = Source.Handler.Region
-  SourceHandlerSpecific = Source.Handler.Specific
-  SourceHandlerUser = Source.Handler.User
+  SourceEventsComputer = Source.Events.Computer
+  SourceEventsGeneric = Source.Events.Generic
+  SourceEventsGenericEvents = Source.Events.GenericEvents
+  SourceEventsPeriodic = Source.Events.Periodic
+  SourceEventsPlayer = Source.Events.Player
+  SourceEventsRegion = Source.Events.Region
+  SourceEventsSpecific = Source.Events.Specific
+  SourceEventsUser = Source.Events.User
   SourceModels = Source.Models
   SourceModelsTeams = Source.Models.Teams
   WCSharpEvents = WCSharp.Events
   ListUserPlayer = System.List(SourceModels.UserPlayer)
+  ListCreepFragtion = System.List(SourceModels.CreepFragtion)
 end)
 System.namespace("Source", function (namespace)
   namespace.class("Program", function (namespace)
@@ -19954,6 +19958,7 @@ System.namespace("Source", function (namespace)
     RegisterRegionTriggerInElfArea, RegisterRegionTriggerInUndeadArea, ConstructHumanBuildingAndTrigger, ConstructOrcBuildingAndTrigger, ConstructElfBuildingAndTrigger, ConstructUndeadBuildingAndTrigger, CreateComputerHeros, CreateHeroSelectorForPlayerAndAdjustCamera, 
     class, static
     static = function (this)
+      this.Creeps = ListCreepFragtion()
       this.AllActiveUsers = ListUserPlayer()
     end
     Main = function ()
@@ -19993,8 +19998,7 @@ System.namespace("Source", function (namespace)
         class.Elves = SourceModelsTeams.ElfTeam(Player(8))
         class.Undeads = SourceModelsTeams.UndeadTeam(Player(12))
 
-        class.BurningLegion = SourceModels.AggresiveFragtion()
-        class.CreepCamps = SourceModels.PassiveFragtion(Player(PLAYER_NEUTRAL_PASSIVE))
+        class.Legion = SourceModels.KlatschenFragtion()
 
 
         RegisterRegionTriggersInHumanArea()
@@ -20003,19 +20007,18 @@ System.namespace("Source", function (namespace)
         RegisterRegionTriggerInUndeadArea()
 
 
-        WCSharpEvents.PlayerUnitEvents.Register14(802, SourceHandlerPlayer.UserHero.OnBuyed)
-        WCSharpEvents.PlayerUnitEvents.Register14(818, SourceHandlerUser.UserResearch.OnFinished)
-        WCSharpEvents.PlayerUnitEvents.Register14(842, SourceHandlerUser.Item.OnSellsFinished)
-        WCSharpEvents.PlayerUnitEvents.Register14(813, SourceGenericEvents.Unit.OnDies)
-        WCSharpEvents.PlayerUnitEvents.Register14(837, SourceGenericEvents.Unit.OnReceivesOrder)
-        WCSharpEvents.PlayerUnitEvents.Register14(848, SourceHandlerGeneric.Ability.OnCasted)
-        WCSharpEvents.PlayerUnitEvents.Register1(105, SourceHandlerComputer.ComputerHero.OnLevels)
+        WCSharpEvents.PlayerUnitEvents.Register14(802, SourceEventsPlayer.UserHero.OnBuyed)
+        WCSharpEvents.PlayerUnitEvents.Register14(818, SourceEventsUser.UserResearch.OnFinished)
+        WCSharpEvents.PlayerUnitEvents.Register14(842, SourceEventsUser.Item.OnSellsFinished)
+        WCSharpEvents.PlayerUnitEvents.Register14(813, SourceEventsGenericEvents.Unit.OnDies)
+        WCSharpEvents.PlayerUnitEvents.Register14(837, SourceEventsGenericEvents.Unit.OnReceivesOrder)
+        WCSharpEvents.PlayerUnitEvents.Register14(848, SourceEventsGeneric.Ability.OnCasted)
+        WCSharpEvents.PlayerUnitEvents.Register1(105, SourceEventsComputer.ComputerHero.OnLevels)
 
 
-        WCSharpEvents.PeriodicEvents.AddPeriodicEvent(SourceHandlerPeriodic.GoldIncome.OnElapsed, 5)
-        WCSharpEvents.PeriodicEvents.AddPeriodicEvent(SourceHandlerPeriodic.Klatschen.OnElapsed, 900)
-
-        WCSharpEvents.PeriodicEvents.AddPeriodicEvent(SourceHandlerPeriodic.ResearchCheck.OnElapsed, 10)
+        WCSharpEvents.PeriodicEvents.AddPeriodicEvent(SourceEventsPeriodic.GoldIncome.OnElapsed, 5)
+        WCSharpEvents.PeriodicEvents.AddPeriodicEvent(SourceEventsPeriodic.Klatschen.OnElapsed, 900)
+        WCSharpEvents.PeriodicEvents.AddPeriodicEvent(SourceEventsPeriodic.ResearchCheck.OnElapsed, 10)
 
 
         ConstructHumanBuildingAndTrigger()
@@ -20023,16 +20026,25 @@ System.namespace("Source", function (namespace)
         ConstructElfBuildingAndTrigger()
         ConstructUndeadBuildingAndTrigger()
 
-        class.CreepCamps:CreateBuilding(1848651851, Areas.HumanCreepToElf, 0)
 
-
-        System.Console.WriteLine("Kämpft bis zum Tod!")
+        System.Console.WriteLine("Kämpft bis zum Tod, ihr Lappen!")
 
 
         local force = GetPlayersByMapControl(MAP_CONTROL_USER)
         for _, user in System.each(class.AllActiveUsers) do
           CreateHeroSelectorForPlayerAndAdjustCamera(user)
         end
+
+
+        local bandits = SourceModels.CreepFragtion(Areas.HumanCreepToElf, Areas.HumanCreepToElfSpawn)
+
+        bandits:CreateOrReviveHero1(1211118162)
+        bandits:SpawnUnitInAreaAtRandomPoint(1848651864)
+        bandits:SpawnUnitInAreaAtRandomPoint(1848651864)
+        bandits:SpawnUnitInAreaAtRandomPoint(1848651864)
+        bandits:SpawnUnitInAreaAtRandomPoint(1848651864)
+
+        class.Creeps:Add(bandits)
 
 
         local timer = CreateTimer()
@@ -20051,24 +20063,24 @@ System.namespace("Source", function (namespace)
     end
     RegisterRegionTriggersInHumanArea = function ()
 
-      Areas.HumanBase:RegisterOnEnter(SourceHandlerRegion.HumanBase.OnEnter)
+      Areas.HumanBase:RegisterOnEnter(SourceEventsRegion.HumanBase.OnEnter)
     end
     RegisterRegionTriggerInOrcArea = function ()
 
-      Areas.OrcBase:RegisterOnEnter(SourceHandlerRegion.OrcBase.OnEnter)
+      Areas.OrcBase:RegisterOnEnter(SourceEventsRegion.OrcBase.OnEnter)
     end
     RegisterRegionTriggerInElfArea = function ()
 
-      Areas.ElfBase:RegisterOnEnter(SourceHandlerRegion.ElfBase.OnEnter)
+      Areas.ElfBase:RegisterOnEnter(SourceEventsRegion.ElfBase.OnEnter)
     end
     RegisterRegionTriggerInUndeadArea = function ()
 
-      Areas.UndeadBase:RegisterOnEnter(SourceHandlerRegion.UndeadBase.OnEnter)
+      Areas.UndeadBase:RegisterOnEnter(SourceEventsRegion.UndeadBase.OnEnter)
     end
     ConstructHumanBuildingAndTrigger = function ()
 
       local building = class.Humans.Computer:CreateBuilding(1747988531, Areas.HumanBase, 0)
-      building:RegisterOnDies(SourceHandlerComputer.BuildingMain.OnDies)
+      building:RegisterOnDies(SourceEventsComputer.BuildingMain.OnDies)
       building:AddSpawnTrigger(Areas.HumanBaseToCenterSpawn, 1, 30, Areas.UndeadBase, System.Array(System.Int32) { 1747988536, 1747988554 }):Run(5.5)
       building:AddSpawnTrigger(Areas.HumanBaseToCenterSpawn, 2, 60, Areas.UndeadBase, System.Array.Empty(System.Int32)):Run(7.5)
       building:AddSpawnTrigger(Areas.HumanBaseToElfSpawn, 1, 30, Areas.ElfBase, System.Array(System.Int32) { 1747988536, 1747988554 }):Run(5.5)
@@ -20078,24 +20090,24 @@ System.namespace("Source", function (namespace)
 
 
       building = class.Humans.Computer:CreateBuilding(1747988535, Areas.HumanBarracksToCenter, 0)
-      building:RegisterOnDies(SourceHandlerSpecific.BuildingBarracks.OnDies)
+      building:RegisterOnDies(SourceEventsSpecific.BuildingBarracks.OnDies)
       building:AddSpawnTrigger(Areas.HumanBarracksToCenterSpawn, 0, 15, Areas.UndeadBase, System.Array(System.Int32) { 1747988529, 1747988529 }):Run(0)
       building:AddSpawnTrigger(Areas.HumanBarracksToCenterSpawn, 1, 15, Areas.UndeadBase, System.Array(System.Int32) { 1747988530 }):Run(1)
 
       building = class.Humans.Computer:CreateBuilding(1747988535, Areas.HumanBarracksToElf, 0)
-      building:RegisterOnDies(SourceHandlerSpecific.BuildingBarracks.OnDies)
+      building:RegisterOnDies(SourceEventsSpecific.BuildingBarracks.OnDies)
       building:AddSpawnTrigger(Areas.HumanBarracksToElfSpawn, 0, 15, Areas.ElfBase, System.Array(System.Int32) { 1747988529, 1747988529 }):Run(0)
       building:AddSpawnTrigger(Areas.HumanBarracksToElfSpawn, 1, 15, Areas.ElfBase, System.Array(System.Int32) { 1747988530 }):Run(1)
 
       building = class.Humans.Computer:CreateBuilding(1747988535, Areas.HumanBarracksToOrcs, 0)
-      building:RegisterOnDies(SourceHandlerSpecific.BuildingBarracks.OnDies)
+      building:RegisterOnDies(SourceEventsSpecific.BuildingBarracks.OnDies)
       building:AddSpawnTrigger(Areas.HumanBarracksToOrcsSpawn, 0, 15, Areas.OrcBase, System.Array(System.Int32) { 1747988529, 1747988529 }):Run(0)
       building:AddSpawnTrigger(Areas.HumanBarracksToOrcsSpawn, 1, 15, Areas.OrcBase, System.Array(System.Int32) { 1747988530 }):Run(1)
     end
     ConstructOrcBuildingAndTrigger = function ()
 
       local building = class.Orcs.Computer:CreateBuilding(1747988570, Areas.OrcBase, 0)
-      building:RegisterOnDies(SourceHandlerComputer.BuildingMain.OnDies)
+      building:RegisterOnDies(SourceEventsComputer.BuildingMain.OnDies)
       building:AddSpawnTrigger(Areas.OrcBaseToCenterSpawn, 1, 30, Areas.ElfBase, System.Array(System.Int32) { 1747988818, 1747988815 }):Run(5.5)
       building:AddSpawnTrigger(Areas.OrcBaseToCenterSpawn, 2, 60, Areas.ElfBase, System.Array.Empty(System.Int32)):Run(7.5)
       building:AddSpawnTrigger(Areas.OrcBaseToHumanSpawn, 1, 30, Areas.HumanBase, System.Array(System.Int32) { 1747988818, 1747988815 }):Run(5.5)
@@ -20105,24 +20117,24 @@ System.namespace("Source", function (namespace)
 
 
       building = class.Orcs.Computer:CreateBuilding(1747988569, Areas.OrcBarracksToCenter, 0)
-      building:RegisterOnDies(SourceHandlerSpecific.BuildingBarracks.OnDies)
+      building:RegisterOnDies(SourceEventsSpecific.BuildingBarracks.OnDies)
       building:AddSpawnTrigger(Areas.OrcBarracksToCenterSpawn, 0, 15, Areas.ElfBase, System.Array(System.Int32) { 1747988809, 1747988809 }):Run(0)
       building:AddSpawnTrigger(Areas.OrcBarracksToCenterSpawn, 1, 15, Areas.ElfBase, System.Array(System.Int32) { 1747988812 }):Run(0.5)
 
       building = class.Orcs.Computer:CreateBuilding(1747988569, Areas.OrcBarracksToHuman, 0)
-      building:RegisterOnDies(SourceHandlerSpecific.BuildingBarracks.OnDies)
+      building:RegisterOnDies(SourceEventsSpecific.BuildingBarracks.OnDies)
       building:AddSpawnTrigger(Areas.OrcBarracksToHumanSpawn, 0, 15, Areas.HumanBase, System.Array(System.Int32) { 1747988809, 1747988809 }):Run(0)
       building:AddSpawnTrigger(Areas.OrcBarracksToHumanSpawn, 1, 15, Areas.HumanBase, System.Array(System.Int32) { 1747988812 }):Run(0.5)
 
       building = class.Orcs.Computer:CreateBuilding(1747988569, Areas.OrcBarracksToUndead, 0)
-      building:RegisterOnDies(SourceHandlerSpecific.BuildingBarracks.OnDies)
+      building:RegisterOnDies(SourceEventsSpecific.BuildingBarracks.OnDies)
       building:AddSpawnTrigger(Areas.OrcBarracksToUndeadSpawn, 0, 15, Areas.UndeadBase, System.Array(System.Int32) { 1747988809, 1747988809 }):Run(0)
       building:AddSpawnTrigger(Areas.OrcBarracksToUndeadSpawn, 1, 15, Areas.UndeadBase, System.Array(System.Int32) { 1747988812 }):Run(0.5)
     end
     ConstructElfBuildingAndTrigger = function ()
 
       local building = class.Elves.Computer:CreateBuilding(1747988789, Areas.ElfBase, 0)
-      building:RegisterOnDies(SourceHandlerComputer.BuildingMain.OnDies)
+      building:RegisterOnDies(SourceEventsComputer.BuildingMain.OnDies)
       building:AddSpawnTrigger(Areas.ElfBaseToCenterSpawn, 1, 30, Areas.OrcBase, System.Array(System.Int32) { 1747989066, 1747989060 }):Run(5.5)
       building:AddSpawnTrigger(Areas.ElfBaseToCenterSpawn, 2, 60, Areas.OrcBase, System.Array.Empty(System.Int32)):Run(7.5)
       building:AddSpawnTrigger(Areas.ElfBaseToHumanSpawn, 1, 30, Areas.HumanBase, System.Array(System.Int32) { 1747989066, 1747989060 }):Run(5.5)
@@ -20132,24 +20144,24 @@ System.namespace("Source", function (namespace)
 
 
       building = class.Elves.Computer:CreateBuilding(1747988788, Areas.ElfBarracksToCenter, 0)
-      building:RegisterOnDies(SourceHandlerSpecific.BuildingBarracks.OnDies)
+      building:RegisterOnDies(SourceEventsSpecific.BuildingBarracks.OnDies)
       building:AddSpawnTrigger(Areas.ElfBarracksToCenterSpawn, 0, 15, Areas.OrcBase, System.Array(System.Int32) { 1747988824, 1747988824 }):Run(0)
       building:AddSpawnTrigger(Areas.ElfBarracksToCenterSpawn, 1, 15, Areas.OrcBase, System.Array(System.Int32) { 1747989043 }):Run(0.5)
 
       building = class.Elves.Computer:CreateBuilding(1747988788, Areas.ElfBarracksToHuman, 0)
-      building:RegisterOnDies(SourceHandlerSpecific.BuildingBarracks.OnDies)
+      building:RegisterOnDies(SourceEventsSpecific.BuildingBarracks.OnDies)
       building:AddSpawnTrigger(Areas.ElfBarracksToHumanSpawn, 0, 15, Areas.HumanBase, System.Array(System.Int32) { 1747988824, 1747988824 }):Run(0)
       building:AddSpawnTrigger(Areas.ElfBarracksToHumanSpawn, 1, 15, Areas.HumanBase, System.Array(System.Int32) { 1747989043 }):Run(0.5)
 
       building = class.Elves.Computer:CreateBuilding(1747988788, Areas.ElfBarracksToUndead, 0)
-      building:RegisterOnDies(SourceHandlerSpecific.BuildingBarracks.OnDies)
+      building:RegisterOnDies(SourceEventsSpecific.BuildingBarracks.OnDies)
       building:AddSpawnTrigger(Areas.ElfBarracksToUndeadSpawn, 0, 15, Areas.UndeadBase, System.Array(System.Int32) { 1747988824, 1747988824 }):Run(0)
       building:AddSpawnTrigger(Areas.ElfBarracksToUndeadSpawn, 1, 15, Areas.UndeadBase, System.Array(System.Int32) { 1747989043 }):Run(0.5)
     end
     ConstructUndeadBuildingAndTrigger = function ()
 
       local building = class.Undeads.Computer:CreateBuilding(1747988801, Areas.UndeadBase, 0)
-      building:RegisterOnDies(SourceHandlerComputer.BuildingMain.OnDies)
+      building:RegisterOnDies(SourceEventsComputer.BuildingMain.OnDies)
       building:AddSpawnTrigger(Areas.UndeadBaseToCenterSpawn, 1, 30, Areas.HumanBase, System.Array(System.Int32) { 1747989067, 1747989061 }):Run(5.5)
       building:AddSpawnTrigger(Areas.UndeadBaseToCenterSpawn, 2, 60, Areas.HumanBase, System.Array.Empty(System.Int32)):Run(7.5)
       building:AddSpawnTrigger(Areas.UndeadBaseToElfSpawn, 1, 30, Areas.ElfBase, System.Array(System.Int32) { 1747989067, 1747989061 }):Run(5.5)
@@ -20159,17 +20171,17 @@ System.namespace("Source", function (namespace)
 
 
       building = class.Undeads.Computer:CreateBuilding(1747988805, Areas.UndeadBarracksToCenter, 0)
-      building:RegisterOnDies(SourceHandlerSpecific.BuildingBarracks.OnDies)
+      building:RegisterOnDies(SourceEventsSpecific.BuildingBarracks.OnDies)
       building:AddSpawnTrigger(Areas.UndeadBarracksToCenterSpawn, 0, 15, Areas.HumanBase, System.Array(System.Int32) { 1747988825, 1747988825 }):Run(0)
       building:AddSpawnTrigger(Areas.UndeadBarracksToCenterSpawn, 1, 15, Areas.HumanBase, System.Array(System.Int32) { 1747989044 }):Run(0.5)
 
       building = class.Undeads.Computer:CreateBuilding(1747988805, Areas.UndeadBarracksToElf, 0)
-      building:RegisterOnDies(SourceHandlerSpecific.BuildingBarracks.OnDies)
+      building:RegisterOnDies(SourceEventsSpecific.BuildingBarracks.OnDies)
       building:AddSpawnTrigger(Areas.UndeadBarracksToElfSpawn, 0, 15, Areas.ElfBase, System.Array(System.Int32) { 1747988825, 1747988825 }):Run(0)
       building:AddSpawnTrigger(Areas.UndeadBarracksToElfSpawn, 1, 15, Areas.ElfBase, System.Array(System.Int32) { 1747989044 }):Run(0.5)
 
       building = class.Undeads.Computer:CreateBuilding(1747988805, Areas.UndeadBarracksToOrcs, 0)
-      building:RegisterOnDies(SourceHandlerSpecific.BuildingBarracks.OnDies)
+      building:RegisterOnDies(SourceEventsSpecific.BuildingBarracks.OnDies)
       building:AddSpawnTrigger(Areas.UndeadBarracksToOrcsSpawn, 0, 15, Areas.OrcBase, System.Array(System.Int32) { 1747988825, 1747988825 }):Run(0)
       building:AddSpawnTrigger(Areas.UndeadBarracksToOrcsSpawn, 1, 15, Areas.OrcBase, System.Array(System.Int32) { 1747989044 }):Run(0.5)
     end
@@ -20209,13 +20221,13 @@ System.namespace("Source", function (namespace)
         return {
           properties = {
             { "AllActiveUsers", 0xE, System.List(out.Source.Models.UserPlayer) },
+            { "Creeps", 0xE, System.List(out.Source.Models.CreepFragtion) },
             { "Debug", 0xE, System.Boolean }
           },
           fields = {
-            { "BurningLegion", 0xE, out.Source.Models.AggresiveFragtion },
-            { "CreepCamps", 0xE, out.Source.Models.PassiveFragtion },
             { "Elves", 0xE, out.Source.Models.Teams.ElfTeam },
             { "Humans", 0xE, out.Source.Models.Teams.HumanTeam },
+            { "Legion", 0xE, out.Source.Models.KlatschenFragtion },
             { "Orcs", 0xE, out.Source.Models.Teams.OrcTeam },
             { "Undeads", 0xE, out.Source.Models.Teams.UndeadTeam }
           },
@@ -20301,6 +20313,7 @@ System.namespace("", function (namespace)
       this.HumanBaseToElfSpawn = System.new(WCSharpSharedData.Rectangle, 2, -10368, 12800, -10112, 13056)
       this.HumanBaseToOrcSpawn = System.new(WCSharpSharedData.Rectangle, 2, -9984, 13184, -9728, 13440)
       this.HumanCreepToElf = System.new(WCSharpSharedData.Rectangle, 2, -7104, 5952, -6976, 6080)
+      this.HumanCreepToElfSpawn = System.new(WCSharpSharedData.Rectangle, 2, -7424, 5632, -6656, 6400)
       this.HumanToElfInnerLine = System.new(WCSharpSharedData.Rectangle, 2, -10304, 11200, -10176, 11328)
       this.HumanToElfOuterLine = System.new(WCSharpSharedData.Rectangle, 2, -10304, 7104, -10176, 7232)
       this.HumanToOrcInnerLine = System.new(WCSharpSharedData.Rectangle, 2, -8256, 13248, -8128, 13376)
@@ -20392,6 +20405,7 @@ System.namespace("", function (namespace)
             { "HumanBaseToElfSpawn", 0xE, out.WCSharp.Shared.Data.Rectangle },
             { "HumanBaseToOrcSpawn", 0xE, out.WCSharp.Shared.Data.Rectangle },
             { "HumanCreepToElf", 0xE, out.WCSharp.Shared.Data.Rectangle },
+            { "HumanCreepToElfSpawn", 0xE, out.WCSharp.Shared.Data.Rectangle },
             { "HumanToElfInnerLine", 0xE, out.WCSharp.Shared.Data.Rectangle },
             { "HumanToElfOuterLine", 0xE, out.WCSharp.Shared.Data.Rectangle },
             { "HumanToOrcInnerLine", 0xE, out.WCSharp.Shared.Data.Rectangle },
@@ -20452,7 +20466,7 @@ System.namespace("Source.Abstracts", function (namespace)
     __ctor__ = function (this, wc3ComputerPlayer)
       this.Wc3Player = wc3ComputerPlayer
     end
-    CreateOrReviveHero = function (this, unitTypeId, spawnArea, heroLevel, abilitiesLevel, delay)
+    CreateOrReviveHero = function (this, unitTypeId, spawnArea, heroLevel, delay)
       local timer = CreateTimer()
       TimerStart(timer, delay, false, function ()
         if this.Hero == nil then
@@ -20471,7 +20485,7 @@ System.namespace("Source.Abstracts", function (namespace)
         return {
           methods = {
             { ".ctor", 0x106, nil, out.WCSharp.Api.player },
-            { "CreateOrReviveHero", 0x506, CreateOrReviveHero, System.Int32, out.Source.Models.Area, System.Int32, System.Int32, System.Single }
+            { "CreateOrReviveHero", 0x403, CreateOrReviveHero, System.Int32, out.Source.Models.Area, System.Int32, System.Single }
           },
           properties = {
             { "Hero", 0x6, out.WCSharp.Api.unit },
@@ -20735,7 +20749,7 @@ local Source
 System.import(function (out)
   Source = out.Source
 end)
-System.namespace("Source.Handler.Specific", function (namespace)
+System.namespace("Source.Events.Specific", function (namespace)
   namespace.class("BuildingBarracks", function (namespace)
     local OnDies
     OnDies = function ()
@@ -20800,7 +20814,7 @@ local Source
 System.import(function (out)
   Source = out.Source
 end)
-System.namespace("Source.Handler.Computer", function (namespace)
+System.namespace("Source.Events.Computer", function (namespace)
   namespace.class("BuildingMain", function (namespace)
     local OnDies
     OnDies = function ()
@@ -20859,7 +20873,7 @@ local Source
 System.import(function (out)
   Source = out.Source
 end)
-System.namespace("Source.Handler.Computer", function (namespace)
+System.namespace("Source.Events.Computer", function (namespace)
   namespace.class("ComputerHero", function (namespace)
     local OnDies, OnLevels, ProcessWaechterLevelUp
     OnDies = function (unit)
@@ -21021,7 +21035,7 @@ local Source
 System.import(function (out)
   Source = out.Source
 end)
-System.namespace("Source.Handler.Generic", function (namespace)
+System.namespace("Source.Events.Generic", function (namespace)
   namespace.class("Ability", function (namespace)
     local OnCasted, HandleCharmCasted, HandleAnythingCasted
     OnCasted = function ()
@@ -21185,14 +21199,14 @@ do
 local System = System
 local WCSharpApi = WCSharp.Api
 local Source
-local SourceHandlerComputer
-local SourceHandlerPlayer
+local SourceEventsComputer
+local SourceEventsPlayer
 System.import(function (out)
   Source = out.Source
-  SourceHandlerComputer = Source.Handler.Computer
-  SourceHandlerPlayer = Source.Handler.Player
+  SourceEventsComputer = Source.Events.Computer
+  SourceEventsPlayer = Source.Events.Player
 end)
-System.namespace("Source.Handler.GenericEvents", function (namespace)
+System.namespace("Source.Events.GenericEvents", function (namespace)
   namespace.class("Unit", function (namespace)
     local OnDies, OnReceivesOrder
     OnDies = function ()
@@ -21207,9 +21221,9 @@ System.namespace("Source.Handler.GenericEvents", function (namespace)
         if IsUnitType(unit, UNIT_TYPE_HERO) then
 
           if GetPlayerController(GetOwningPlayer(unit)) == MAP_CONTROL_USER then
-            SourceHandlerPlayer.UserHero.OnDies(unit)
+            SourceEventsPlayer.UserHero.OnDies(unit)
           else
-            SourceHandlerComputer.ComputerHero.OnDies(unit)
+            SourceEventsComputer.ComputerHero.OnDies(unit)
           end
 
           return true
@@ -21338,7 +21352,7 @@ local Source
 System.import(function (out)
   Source = out.Source
 end)
-System.namespace("Source.Handler.Periodic", function (namespace)
+System.namespace("Source.Events.Periodic", function (namespace)
   namespace.class("GoldIncome", function (namespace)
     local OnElapsed
     OnElapsed = function ()
@@ -21380,7 +21394,7 @@ System.import(function (out)
   WCSharpLightnings = WCSharp.Lightnings
   WCSharpSharedData = WCSharp.Shared.Data
 end)
-System.namespace("Source.Handler.Periodic", function (namespace)
+System.namespace("Source.Events.Periodic", function (namespace)
   namespace.class("Klatschen", function (namespace)
     local executions, OnElapsed, CreateAtDummyAndCastAbility, CreateAtDummyAndCastAbilityTimed, CreateAtDummyAndCastAbilityTimed1, CreateLightning, CreateLightning1, ComputePentagramPoints
     executions = 0
@@ -21504,7 +21518,7 @@ System.namespace("Source.Handler.Periodic", function (namespace)
         end)
 
 
-        Source.Program.BurningLegion:CreateOrReviveHero(1311780918, Areas.Center, executions * 10, executions, 5.5)
+        Source.Program.Legion:CreateOrReviveHero1(1311780918, Areas.Center, executions * 10, executions, 5.5)
 
 
         CreateAtDummyAndCastAbilityTimed(player, centerRect, 1094928449, executions, 852237, 4, 2)
@@ -21627,7 +21641,7 @@ local Source
 System.import(function (out)
   Source = out.Source
 end)
-System.namespace("Source.Handler.Periodic", function (namespace)
+System.namespace("Source.Events.Periodic", function (namespace)
   namespace.class("ResearchCheck", function (namespace)
     local OnElapsed, ProcessComputerTechCheck, IncreaseTechIfAffordable
     OnElapsed = function ()
@@ -21743,7 +21757,7 @@ local Source
 System.import(function (out)
   Source = out.Source
 end)
-System.namespace("Source.Handler.Region", function (namespace)
+System.namespace("Source.Events.Region", function (namespace)
   namespace.class("ElfBase", function (namespace)
     local OnEnter
     OnEnter = function ()
@@ -21805,7 +21819,7 @@ local Source
 System.import(function (out)
   Source = out.Source
 end)
-System.namespace("Source.Handler.Region", function (namespace)
+System.namespace("Source.Events.Region", function (namespace)
   namespace.class("HumanBase", function (namespace)
     local OnEnter
     OnEnter = function ()
@@ -21867,7 +21881,7 @@ local Source
 System.import(function (out)
   Source = out.Source
 end)
-System.namespace("Source.Handler.Region", function (namespace)
+System.namespace("Source.Events.Region", function (namespace)
   namespace.class("OrcBase", function (namespace)
     local OnEnter
     OnEnter = function ()
@@ -21929,7 +21943,7 @@ local Source
 System.import(function (out)
   Source = out.Source
 end)
-System.namespace("Source.Handler.Region", function (namespace)
+System.namespace("Source.Events.Region", function (namespace)
   namespace.class("UndeadBase", function (namespace)
     local OnEnter
     OnEnter = function ()
@@ -21990,7 +22004,7 @@ local Source
 System.import(function (out)
   Source = out.Source
 end)
-System.namespace("Source.Handler.User", function (namespace)
+System.namespace("Source.Events.User", function (namespace)
   namespace.class("Item", function (namespace)
     local OnSellsFinished
     OnSellsFinished = function ()
@@ -22039,7 +22053,7 @@ local Source
 System.import(function (out)
   Source = out.Source
 end)
-System.namespace("Source.Handler.Player", function (namespace)
+System.namespace("Source.Events.Player", function (namespace)
   namespace.class("UserHero", function (namespace)
     local OnBuyed, OnDies
     OnBuyed = function ()
@@ -22194,7 +22208,7 @@ local Source
 System.import(function (out)
   Source = out.Source
 end)
-System.namespace("Source.Handler.User", function (namespace)
+System.namespace("Source.Events.User", function (namespace)
   namespace.class("UserResearch", function (namespace)
     local OnFinished
     OnFinished = function ()
@@ -22278,69 +22292,6 @@ System.namespace("Source.Handler.User", function (namespace)
             { "OnFinished", 0xC, OnFinished }
           },
           class = { "UserResearch", 0x3C }
-        }
-      end
-    }
-  end)
-end)
-
-end
-do
-local System = System
-local WCSharpApi = WCSharp.Api
-System.namespace("Source.Models", function (namespace)
-  namespace.class("AggresiveFragtion", function (namespace)
-    local CreateOrReviveHero, TrainGrubenlord, __ctor__
-    __ctor__ = function (this)
-      System.base(this).__ctor__(this, Player(PLAYER_NEUTRAL_AGGRESSIVE))
-    end
-    CreateOrReviveHero = function (this, unitTypeId, spawnArea, heroLevel, abilitiesLevel, delay)
-      System.base(this).CreateOrReviveHero(this, unitTypeId, spawnArea, heroLevel, abilitiesLevel, delay)
-
-      local unitId = GetUnitTypeId(this.Hero)
-      if unitId == 1311780918 then
-        TrainGrubenlord(this, this.Hero, abilitiesLevel)
-      end
-    end
-    TrainGrubenlord = function (this, unit, abilitiesLevel)
-      repeat
-        local default = abilitiesLevel
-        if default == 1 then
-          UnitAddAbility(unit, 1093677623)
-          UnitAddAbility(unit, 1093677620)
-          UnitAddAbility(unit, 1093677622)
-          UnitAddAbility(unit, 1093677621)
-
-          UnitAddAbility(unit, 1093677106)
-          SetUnitAbilityLevel(unit, 1093677106, 10)
-          break
-        elseif default == 2 or default == 3 or default == 4 or default == 5 then
-          IncUnitAbilityLevel(unit, 1093677623)
-          IncUnitAbilityLevel(unit, 1093677620)
-          IncUnitAbilityLevel(unit, 1093677622)
-          IncUnitAbilityLevel(unit, 1093677621)
-
-          SetUnitAbilityLevel(unit, 1093677106, abilitiesLevel * 10)
-          break
-        end
-      until 1
-    end
-    return {
-      base = function (out)
-        return {
-          out.Source.Abstracts.FragtionBase
-        }
-      end,
-      CreateOrReviveHero = CreateOrReviveHero,
-      __ctor__ = __ctor__,
-      __metadata__ = function (out)
-        return {
-          methods = {
-            { ".ctor", 0x6, nil },
-            { "CreateOrReviveHero", 0x506, CreateOrReviveHero, System.Int32, out.Source.Models.Area, System.Int32, System.Int32, System.Single },
-            { "TrainGrubenlord", 0x201, TrainGrubenlord, out.WCSharp.Api.unit, System.Int32 }
-          },
-          class = { "AggresiveFragtion", 0x26 }
         }
       end
     }
@@ -22516,6 +22467,53 @@ end)
 end
 do
 local System = System
+local WCSharpApi = WCSharp.Api
+System.namespace("Source.Models", function (namespace)
+  namespace.class("CreepFragtion", function (namespace)
+    local CreateOrReviveHero1, SpawnUnitInAreaAtRandomPoint, __ctor__
+    __ctor__ = function (this, campCenter, campSpawnArea)
+      System.base(this).__ctor__(this, Player(PLAYER_NEUTRAL_AGGRESSIVE))
+      this.Center = campCenter
+      this.SpawnArea = campSpawnArea
+    end
+    CreateOrReviveHero1 = function (this, unitTypeId)
+      this:CreateOrReviveHero(unitTypeId, this.Center, GetHeroLevel(this.Hero), 0)
+    end
+    SpawnUnitInAreaAtRandomPoint = function (this, unitTypeId)
+      local point = this.SpawnArea.Wc3Rectangle:GetRandomPoint()
+
+      CreateUnit(this.Wc3Player, unitTypeId, point.X, point.Y, 270)
+    end
+    return {
+      base = function (out)
+        return {
+          out.Source.Abstracts.FragtionBase
+        }
+      end,
+      CreateOrReviveHero1 = CreateOrReviveHero1,
+      SpawnUnitInAreaAtRandomPoint = SpawnUnitInAreaAtRandomPoint,
+      __ctor__ = __ctor__,
+      __metadata__ = function (out)
+        return {
+          methods = {
+            { ".ctor", 0x206, nil, out.Source.Models.Area, out.Source.Models.Area },
+            { "CreateOrReviveHero", 0x106, CreateOrReviveHero1, System.Int32 },
+            { "SpawnUnitInAreaAtRandomPoint", 0x106, SpawnUnitInAreaAtRandomPoint, System.Int32 }
+          },
+          properties = {
+            { "Center", 0x6, out.Source.Models.Area },
+            { "SpawnArea", 0x6, out.Source.Models.Area }
+          },
+          class = { "CreepFragtion", 0x26 }
+        }
+      end
+    }
+  end)
+end)
+
+end
+do
+local System = System
 System.namespace("Source.Models", function (namespace)
   namespace.class("Enums", function (namespace)
     namespace.enum("ResearchType", function ()
@@ -22565,26 +22563,43 @@ end)
 end
 do
 local System = System
-local SourceModels
-System.import(function (out)
-  SourceModels = Source.Models
-end)
+local WCSharpApi = WCSharp.Api
 System.namespace("Source.Models", function (namespace)
-  namespace.class("PassiveFragtion", function (namespace)
-    local CreateBuilding, __ctor__
-    __ctor__ = function (this, initialPlayer)
-      System.base(this).__ctor__(this, initialPlayer)
+  namespace.class("KlatschenFragtion", function (namespace)
+    local CreateOrReviveHero1, TrainGrubenlord, __ctor__
+    __ctor__ = function (this)
+      System.base(this).__ctor__(this, Player(PLAYER_NEUTRAL_AGGRESSIVE))
     end
+    CreateOrReviveHero1 = function (this, unitTypeId, spawnArea, heroLevel, abilitiesLevel, delay)
+      this:CreateOrReviveHero(unitTypeId, spawnArea, heroLevel, delay)
 
+      local unitId = GetUnitTypeId(this.Hero)
+      if unitId == 1311780918 then
+        TrainGrubenlord(this, this.Hero, abilitiesLevel)
+      end
+    end
+    TrainGrubenlord = function (this, unit, abilitiesLevel)
+      repeat
+        local default = abilitiesLevel
+        if default == 1 then
+          UnitAddAbility(unit, 1093677623)
+          UnitAddAbility(unit, 1093677620)
+          UnitAddAbility(unit, 1093677622)
+          UnitAddAbility(unit, 1093677621)
 
+          UnitAddAbility(unit, 1093677106)
+          SetUnitAbilityLevel(unit, 1093677106, 10)
+          break
+        elseif default == 2 or default == 3 or default == 4 or default == 5 then
+          IncUnitAbilityLevel(unit, 1093677623)
+          IncUnitAbilityLevel(unit, 1093677620)
+          IncUnitAbilityLevel(unit, 1093677622)
+          IncUnitAbilityLevel(unit, 1093677621)
 
-
-
-
-
-    CreateBuilding = function (this, unitTypeId, creationArea, face)
-
-      return SourceModels.SpawnCreepsBuilding(this.Wc3Player, unitTypeId, creationArea, face)
+          SetUnitAbilityLevel(unit, 1093677106, abilitiesLevel * 10)
+          break
+        end
+      until 1
     end
     return {
       base = function (out)
@@ -22592,15 +22607,16 @@ System.namespace("Source.Models", function (namespace)
           out.Source.Abstracts.FragtionBase
         }
       end,
-      CreateBuilding = CreateBuilding,
+      CreateOrReviveHero1 = CreateOrReviveHero1,
       __ctor__ = __ctor__,
       __metadata__ = function (out)
         return {
           methods = {
-            { ".ctor", 0x106, nil, out.WCSharp.Api.player },
-            { "CreateBuilding", 0x386, CreateBuilding, System.Int32, out.Source.Models.Area, System.Single, out.Source.Models.SpawnCreepsBuilding }
+            { ".ctor", 0x6, nil },
+            { "CreateOrReviveHero", 0x506, CreateOrReviveHero1, System.Int32, out.Source.Models.Area, System.Int32, System.Int32, System.Single },
+            { "TrainGrubenlord", 0x201, TrainGrubenlord, out.WCSharp.Api.unit, System.Int32 }
           },
-          class = { "PassiveFragtion", 0x26 }
+          class = { "KlatschenFragtion", 0x26 }
         }
       end
     }
@@ -23050,8 +23066,6 @@ System.namespace("Source.Models.Teams", function (namespace)
           local extern = SourceModels.SpawnUnitCommand()
           extern.UnitSpawnType = 1
           extern.UnitIdOfBuilding = 1747988788
-          extern.UnitId = 1747989045
-          extern.UnitIdToUpgrade = 1747989043
           spawnCommand = extern
 
           repeat
@@ -23070,7 +23084,6 @@ System.namespace("Source.Models.Teams", function (namespace)
           local extern = SourceModels.SpawnUnitCommand()
           extern.UnitSpawnType = 1
           extern.UnitIdOfBuilding = 1747988789
-          extern.UnitId = 1747989060
           spawnCommand = extern
 
           repeat
@@ -23115,8 +23128,8 @@ System.namespace("Source.Models.Teams", function (namespace)
               spawnCommand.UnitId = 1747989070
               return 1, spawnCommand
             else
-              spawnCommand.UnitId = 1747989070
-              spawnCommand.UnitIdToUpgrade = 1747989068
+              spawnCommand.UnitId = 1747989068
+              spawnCommand.UnitIdToUpgrade = 1747989070
               return 2, spawnCommand
             end
           until 1
@@ -23185,8 +23198,6 @@ System.namespace("Source.Models.Teams", function (namespace)
           local extern = SourceModels.SpawnUnitCommand()
           extern.UnitSpawnType = 1
           extern.UnitIdOfBuilding = 1747988535
-          extern.UnitId = 1747988550
-          extern.UnitIdToUpgrade = 1747988530
           spawnCommand = extern
 
           repeat
@@ -23205,7 +23216,6 @@ System.namespace("Source.Models.Teams", function (namespace)
           local extern = SourceModels.SpawnUnitCommand()
           extern.UnitSpawnType = 1
           extern.UnitIdOfBuilding = 1747988531
-          extern.UnitId = 1747988554
           spawnCommand = extern
 
           repeat
@@ -23321,8 +23331,6 @@ System.namespace("Source.Models.Teams", function (namespace)
           local extern = SourceModels.SpawnUnitCommand()
           extern.UnitSpawnType = 1
           extern.UnitIdOfBuilding = 1747988569
-          extern.UnitId = 1747988550
-          extern.UnitIdToUpgrade = 1747988530
           spawnCommand = extern
 
           repeat
@@ -23341,7 +23349,6 @@ System.namespace("Source.Models.Teams", function (namespace)
           local extern = SourceModels.SpawnUnitCommand()
           extern.UnitSpawnType = 1
           extern.UnitIdOfBuilding = 1747988570
-          extern.UnitId = 1747988554
           spawnCommand = extern
 
           repeat
@@ -23386,8 +23393,8 @@ System.namespace("Source.Models.Teams", function (namespace)
               spawnCommand.UnitId = 1747988821
               return 1, spawnCommand
             else
-              spawnCommand.UnitId = 1747988821
-              spawnCommand.UnitIdToUpgrade = 1747988822
+              spawnCommand.UnitId = 1747988822
+              spawnCommand.UnitIdToUpgrade = 1747988821
               return 2, spawnCommand
             end
           until 1
@@ -23456,8 +23463,6 @@ System.namespace("Source.Models.Teams", function (namespace)
           local extern = SourceModels.SpawnUnitCommand()
           extern.UnitSpawnType = 1
           extern.UnitIdOfBuilding = 1747988805
-          extern.UnitId = 1747989046
-          extern.UnitIdToUpgrade = 1747989044
           spawnCommand = extern
 
           repeat
@@ -23476,7 +23481,6 @@ System.namespace("Source.Models.Teams", function (namespace)
           local extern = SourceModels.SpawnUnitCommand()
           extern.UnitSpawnType = 1
           extern.UnitIdOfBuilding = 1747988801
-          extern.UnitId = 1747989061
           spawnCommand = extern
 
           repeat
@@ -23521,8 +23525,8 @@ System.namespace("Source.Models.Teams", function (namespace)
               spawnCommand.UnitId = 1747989071
               return 1, spawnCommand
             else
-              spawnCommand.UnitId = 1747989071
-              spawnCommand.UnitIdToUpgrade = 1747989069
+              spawnCommand.UnitId = 1747989069
+              spawnCommand.UnitIdToUpgrade = 1747989071
               return 2, spawnCommand
             end
           until 1
@@ -34920,8 +34924,8 @@ local InitCSharp = function ()
       "WCSharp.Buffs.Buff",
       "WCSharp.Events.EventHandlers.PlayerUnitEventHandlers.IPlayerUnitEventHandler",
       "WCSharp.Missiles.Missile",
-      "Source.Abstracts.FragtionBase",
       "Source.Abstracts.PlayerBase",
+      "Source.Abstracts.FragtionBase",
       "Source.Models.Enums",
       "Source.Abstracts.TeamBase",
       "WCSharp.Buffs.IAura",
@@ -34943,27 +34947,27 @@ local InitCSharp = function ()
       "Constants",
       "Regions",
       "Source.ConstantsEx",
-      "Source.Handler.Computer.BuildingMain",
-      "Source.Handler.Computer.ComputerHero",
-      "Source.Handler.Generic.Ability",
-      "Source.Handler.GenericEvents.Unit",
-      "Source.Handler.Periodic.GoldIncome",
-      "Source.Handler.Periodic.Klatschen",
-      "Source.Handler.Periodic.ResearchCheck",
-      "Source.Handler.Player.UserHero",
-      "Source.Handler.Region.ElfBase",
-      "Source.Handler.Region.HumanBase",
-      "Source.Handler.Region.OrcBase",
-      "Source.Handler.Region.UndeadBase",
-      "Source.Handler.Specific.BuildingBarracks",
-      "Source.Handler.User.Item",
-      "Source.Handler.User.UserResearch",
-      "Source.Models.AggresiveFragtion",
+      "Source.Events.Computer.BuildingMain",
+      "Source.Events.Computer.ComputerHero",
+      "Source.Events.Generic.Ability",
+      "Source.Events.GenericEvents.Unit",
+      "Source.Events.Periodic.GoldIncome",
+      "Source.Events.Periodic.Klatschen",
+      "Source.Events.Periodic.ResearchCheck",
+      "Source.Events.Player.UserHero",
+      "Source.Events.Region.ElfBase",
+      "Source.Events.Region.HumanBase",
+      "Source.Events.Region.OrcBase",
+      "Source.Events.Region.UndeadBase",
+      "Source.Events.Specific.BuildingBarracks",
+      "Source.Events.User.Item",
+      "Source.Events.User.UserResearch",
       "Source.Models.Area",
       "Source.Models.ComputerPlayer",
+      "Source.Models.CreepFragtion",
       "Source.Models.Enums.ResearchType",
       "Source.Models.Enums.UnitSpawnType",
-      "Source.Models.PassiveFragtion",
+      "Source.Models.KlatschenFragtion",
       "Source.Models.SpawnBuilding",
       "Source.Models.SpawnCreepsBuilding",
       "Source.Models.SpawnTrigger",
@@ -35115,6 +35119,7 @@ gg_rct_HumanBaseToCenterSpawn = nil
 gg_rct_HumanBaseToElfSpawn = nil
 gg_rct_HumanBaseToOrcSpawn = nil
 gg_rct_HumanCreepToElf = nil
+gg_rct_HumanCreepToElfSpawn = nil
 gg_rct_HumanToElfInnerLine = nil
 gg_rct_HumanToElfOuterLine = nil
 gg_rct_HumanToOrcInnerLine = nil
@@ -35389,6 +35394,13 @@ gg_unit_h006_0217 = nil
 gg_unit_h006_0218 = nil
 gg_unit_h006_0219 = nil
 gg_unit_h006_0220 = nil
+gg_unit_nten_0221 = nil
+gg_unit_nten_0222 = nil
+gg_unit_nten_0223 = nil
+gg_unit_nten_0224 = nil
+gg_unit_nten_0225 = nil
+gg_unit_ntn2_0229 = nil
+gg_unit_ntn2_0228 = nil
 gg_dest_HEch_0019 = nil
 gg_dest_HEch_0017 = nil
 gg_dest_HEch_0016 = nil
@@ -41757,10 +41769,10 @@ gg_dest_LTlt_5384 = nil
 gg_dest_LTlt_5385 = nil
 gg_dest_LTlt_5386 = nil
 gg_dest_LTlt_6690 = nil
-gg_dest_LTlt_5388 = nil
+gg_dest_LTlt_5476 = nil
 gg_dest_LTlt_5389 = nil
-gg_dest_LTlt_5390 = nil
-gg_dest_LTlt_5391 = nil
+gg_dest_LTlt_5474 = nil
+gg_dest_LTlt_5475 = nil
 gg_dest_LTlt_5392 = nil
 gg_dest_LTlt_5393 = nil
 gg_dest_LTlt_5394 = nil
@@ -41840,22 +41852,22 @@ gg_dest_LTlt_5467 = nil
 gg_dest_LTlt_5468 = nil
 gg_dest_LTlt_5469 = nil
 gg_dest_LTlt_5470 = nil
-gg_dest_LTlt_5471 = nil
+gg_dest_LTcr_4463 = nil
 gg_dest_LTlt_5472 = nil
 gg_dest_LTlt_5473 = nil
-gg_dest_LTlt_5474 = nil
-gg_dest_LTlt_5475 = nil
-gg_dest_LTlt_5476 = nil
-gg_dest_LTlt_5477 = nil
-gg_dest_LTlt_5478 = nil
-gg_dest_LTlt_5479 = nil
-gg_dest_LTlt_5480 = nil
-gg_dest_LTlt_5481 = nil
-gg_dest_LTlt_5482 = nil
-gg_dest_LTlt_5483 = nil
+gg_dest_LTlt_4446 = nil
+gg_dest_LTlt_4460 = nil
+gg_dest_LTlt_5871 = nil
+gg_dest_LTlt_4445 = nil
+gg_dest_LTlt_4419 = nil
+gg_dest_LTlt_4417 = nil
+gg_dest_LTlt_4413 = nil
+gg_dest_LTlt_4454 = nil
+gg_dest_LTlt_4410 = nil
+gg_dest_LTlt_4407 = nil
 gg_dest_LTlt_5484 = nil
-gg_dest_LTlt_5485 = nil
-gg_dest_LTlt_5486 = nil
+gg_dest_LTlt_4453 = nil
+gg_dest_LTlt_4452 = nil
 gg_dest_LTlt_5487 = nil
 gg_dest_LTlt_5488 = nil
 gg_dest_LTlt_5489 = nil
@@ -42049,34 +42061,34 @@ gg_dest_LTlt_6656 = nil
 gg_dest_LTlt_6657 = nil
 gg_dest_LTlt_6658 = nil
 gg_dest_LTlt_6659 = nil
-gg_dest_LTlt_6660 = nil
-gg_dest_LTlt_6661 = nil
+gg_dest_LTlt_4401 = nil
+gg_dest_LTbr_4542 = nil
 gg_dest_LTlt_6692 = nil
 gg_dest_LTlt_6663 = nil
-gg_dest_LTlt_6664 = nil
-gg_dest_LTlt_6665 = nil
-gg_dest_LTlt_6666 = nil
-gg_dest_LTlt_6667 = nil
-gg_dest_LTlt_6668 = nil
-gg_dest_LTlt_6669 = nil
-gg_dest_LTlt_6670 = nil
-gg_dest_LTlt_6671 = nil
-gg_dest_LTlt_6672 = nil
-gg_dest_LTlt_6673 = nil
-gg_dest_LTlt_6674 = nil
-gg_dest_LTlt_6675 = nil
+gg_dest_LTlt_4448 = nil
+gg_dest_LTbr_4544 = nil
+gg_dest_LTlt_4404 = nil
+gg_dest_LTbs_4545 = nil
+gg_dest_LTbr_4541 = nil
+gg_dest_LTlt_4450 = nil
+gg_dest_LTlt_4451 = nil
+gg_dest_LTlt_3887 = nil
+gg_dest_LTlt_3884 = nil
+gg_dest_FTtw_3842 = nil
+gg_dest_LTlt_3883 = nil
+gg_dest_LTlt_3881 = nil
 gg_dest_LTlt_6676 = nil
 gg_dest_LTlt_6677 = nil
-gg_dest_LTlt_6678 = nil
-gg_dest_LTlt_6679 = nil
-gg_dest_LTlt_6680 = nil
-gg_dest_LTlt_6681 = nil
-gg_dest_LTlt_6682 = nil
-gg_dest_LTlt_6683 = nil
-gg_dest_LTlt_6684 = nil
-gg_dest_LTlt_6685 = nil
-gg_dest_LTlt_6686 = nil
-gg_dest_LTlt_6687 = nil
+gg_dest_LTlt_3880 = nil
+gg_dest_LTlt_3878 = nil
+gg_dest_LTlt_3877 = nil
+gg_dest_LTlt_3876 = nil
+gg_dest_LTlt_3875 = nil
+gg_dest_LTlt_3867 = nil
+gg_dest_LTlt_3868 = nil
+gg_dest_LTlt_3872 = nil
+gg_dest_LTlt_3871 = nil
+gg_dest_LTlt_3870 = nil
 gg_dest_LTlt_6691 = nil
 gg_dest_LTlt_6689 = nil
 gg_dest_CTtr_5387 = nil
@@ -42966,7 +42978,61 @@ gg_dest_FTtw_3838 = nil
 gg_dest_FTtw_3839 = nil
 gg_dest_FTtw_3840 = nil
 gg_dest_FTtw_3841 = nil
-gg_dest_FTtw_3842 = nil
+gg_dest_NOfp_4838 = nil
+gg_dest_LTlt_3869 = nil
+gg_dest_LOar_4834 = nil
+gg_dest_LOar_4836 = nil
+gg_dest_LOar_4835 = nil
+gg_dest_LTlt_3849 = nil
+gg_dest_LTlt_3850 = nil
+gg_dest_LTlt_3851 = nil
+gg_dest_LTlt_5867 = nil
+gg_dest_LTlt_5868 = nil
+gg_dest_LTlt_5869 = nil
+gg_dest_LTlt_5870 = nil
+gg_dest_LTlt_3856 = nil
+gg_dest_LTlt_3857 = nil
+gg_dest_LTlt_3858 = nil
+gg_dest_LTlt_3859 = nil
+gg_dest_LTlt_3860 = nil
+gg_dest_LTlt_3861 = nil
+gg_dest_LTlt_3862 = nil
+gg_dest_LTlt_5483 = nil
+gg_dest_LTbx_4832 = nil
+gg_dest_LTlt_3866 = nil
+gg_dest_LTlt_3843 = nil
+gg_dest_LTlt_3844 = nil
+gg_dest_LTlt_3846 = nil
+gg_dest_LTlt_3847 = nil
+gg_dest_LTlt_3848 = nil
+gg_dest_LTlt_3863 = nil
+gg_dest_LTlt_3865 = nil
+gg_dest_LTlt_3873 = nil
+gg_dest_LTlt_3874 = nil
+gg_dest_LTlt_3889 = nil
+gg_dest_LTlt_3891 = nil
+gg_dest_LTlt_5865 = nil
+gg_dest_LTlt_5863 = nil
+gg_dest_LTlt_5486 = nil
+gg_dest_LTlt_5485 = nil
+gg_dest_LTlt_4394 = nil
+gg_dest_LTlt_4396 = nil
+gg_dest_LTlt_4447 = nil
+gg_dest_LTlt_4449 = nil
+gg_dest_LTlt_4455 = nil
+gg_dest_LTlt_5325 = nil
+gg_dest_LTlt_5439 = nil
+gg_dest_LTlt_5447 = nil
+gg_dest_LTlt_5388 = nil
+gg_dest_LTlt_5390 = nil
+gg_dest_LTlt_5391 = nil
+gg_dest_LTlt_5471 = nil
+gg_dest_LTlt_5477 = nil
+gg_dest_LTlt_5478 = nil
+gg_dest_LTlt_5479 = nil
+gg_dest_LTlt_5480 = nil
+gg_dest_LTlt_5481 = nil
+gg_dest_LTlt_5482 = nil
 function InitGlobals()
 end
 
@@ -49413,10 +49479,10 @@ function CreateAllDestructables()
     gg_dest_LTlt_5385 = CreateDestructable(1280601204, -9472.0, 6336.0, 270.000, 0.804, 5)
     gg_dest_LTlt_5386 = CreateDestructable(1280601204, -9536.0, 6464.0, 270.000, 0.884, 3)
     gg_dest_LTlt_6690 = CreateDestructable(1280601204, -9472.0, 5568.0, 270.000, 1.029, 4)
-    gg_dest_LTlt_5388 = CreateDestructable(1280601204, -9408.0, 6208.0, 270.000, 0.955, 2)
+    gg_dest_LTlt_5476 = CreateDestructable(1280601204, -8896.0, 6208.0, 270.000, 1.043, 9)
     gg_dest_LTlt_5389 = CreateDestructable(1280601204, -9408.0, 6464.0, 270.000, 0.941, 6)
-    gg_dest_LTlt_5390 = CreateDestructable(1280601204, -9088.0, 6336.0, 270.000, 0.950, 8)
-    gg_dest_LTlt_5391 = CreateDestructable(1280601204, -9152.0, 6464.0, 270.000, 0.871, 8)
+    gg_dest_LTlt_5474 = CreateDestructable(1280601204, -9024.0, 6080.0, 270.000, 1.163, 4)
+    gg_dest_LTlt_5475 = CreateDestructable(1280601204, -9024.0, 6208.0, 270.000, 1.041, 2)
     gg_dest_LTlt_5392 = CreateDestructable(1280601204, -9600.0, 6656.0, 270.000, 0.828, 0)
     gg_dest_LTlt_5393 = CreateDestructable(1280601204, -9600.0, 6784.0, 270.000, 1.079, 7)
     gg_dest_LTlt_5394 = CreateDestructable(1280601204, -9408.0, 5440.0, 270.000, 0.980, 8)
@@ -49496,22 +49562,22 @@ function CreateAllDestructables()
     gg_dest_LTlt_5468 = CreateDestructable(1280601204, -7488.0, 3776.0, 270.000, 1.009, 7)
     gg_dest_LTlt_5469 = CreateDestructable(1280601204, -7552.0, 3904.0, 270.000, 0.970, 4)
     gg_dest_LTlt_5470 = CreateDestructable(1280601204, -7552.0, 4032.0, 270.000, 0.865, 8)
-    gg_dest_LTlt_5471 = CreateDestructable(1280601204, -7296.0, 3776.0, 270.000, 1.164, 7)
+    gg_dest_LTcr_4463 = CreateDestructable(1280598898, -6336.0, 5888.0, 327.000, 1.090, 0)
     gg_dest_LTlt_5472 = CreateDestructable(1280601204, -7360.0, 3904.0, 270.000, 1.121, 7)
     gg_dest_LTlt_5473 = CreateDestructable(1280601204, -7360.0, 4032.0, 270.000, 0.985, 0)
-    gg_dest_LTlt_5474 = CreateDestructable(1280601204, -7104.0, 3776.0, 270.000, 1.062, 1)
-    gg_dest_LTlt_5475 = CreateDestructable(1280601204, -7168.0, 3904.0, 270.000, 0.950, 9)
-    gg_dest_LTlt_5476 = CreateDestructable(1280601204, -7232.0, 4032.0, 270.000, 0.914, 3)
-    gg_dest_LTlt_5477 = CreateDestructable(1280601204, -6976.0, 3776.0, 270.000, 0.827, 1)
-    gg_dest_LTlt_5478 = CreateDestructable(1280601204, -7040.0, 3904.0, 270.000, 0.809, 7)
-    gg_dest_LTlt_5479 = CreateDestructable(1280601204, -7104.0, 4032.0, 270.000, 1.022, 7)
-    gg_dest_LTlt_5480 = CreateDestructable(1280601204, -6848.0, 3776.0, 270.000, 0.820, 1)
-    gg_dest_LTlt_5481 = CreateDestructable(1280601204, -6912.0, 3904.0, 270.000, 1.146, 6)
-    gg_dest_LTlt_5482 = CreateDestructable(1280601204, -6976.0, 3520.0, 270.000, 0.871, 1)
-    gg_dest_LTlt_5483 = CreateDestructable(1280601204, -6976.0, 4032.0, 270.000, 0.965, 5)
+    gg_dest_LTlt_4446 = CreateDestructable(1280601204, -6080.0, 5824.0, 270.000, 1.143, 0)
+    gg_dest_LTlt_4460 = CreateDestructable(1280601204, -7744.0, 6720.0, 270.000, 1.077, 6)
+    gg_dest_LTlt_5871 = CreateDestructable(1280601204, -5952.0, 5760.0, 270.000, 1.144, 7)
+    gg_dest_LTlt_4445 = CreateDestructable(1280601204, -6080.0, 5696.0, 270.000, 0.904, 7)
+    gg_dest_LTlt_4419 = CreateDestructable(1280601204, -6080.0, 5504.0, 270.000, 1.163, 8)
+    gg_dest_LTlt_4417 = CreateDestructable(1280601204, -6208.0, 5376.0, 270.000, 0.816, 7)
+    gg_dest_LTlt_4413 = CreateDestructable(1280601204, -6272.0, 5248.0, 270.000, 0.850, 7)
+    gg_dest_LTlt_4454 = CreateDestructable(1280601204, -7744.0, 5696.0, 270.000, 1.104, 5)
+    gg_dest_LTlt_4410 = CreateDestructable(1280601204, -6400.0, 5120.0, 270.000, 1.047, 3)
+    gg_dest_LTlt_4407 = CreateDestructable(1280601204, -6464.0, 4992.0, 270.000, 1.083, 5)
     gg_dest_LTlt_5484 = CreateDestructable(1280601204, -6720.0, 3776.0, 270.000, 1.045, 8)
-    gg_dest_LTlt_5485 = CreateDestructable(1280601204, -6784.0, 3904.0, 270.000, 0.946, 5)
-    gg_dest_LTlt_5486 = CreateDestructable(1280601204, -6784.0, 4032.0, 270.000, 1.058, 4)
+    gg_dest_LTlt_4453 = CreateDestructable(1280601204, -6016.0, 6592.0, 270.000, 1.098, 3)
+    gg_dest_LTlt_4452 = CreateDestructable(1280601204, -6016.0, 6464.0, 270.000, 0.862, 8)
     gg_dest_LTlt_5487 = CreateDestructable(1280601204, -6528.0, 3776.0, 270.000, 1.025, 7)
     gg_dest_LTlt_5488 = CreateDestructable(1280601204, -6592.0, 3904.0, 270.000, 1.091, 3)
     gg_dest_LTlt_5489 = CreateDestructable(1280601204, -6656.0, 4032.0, 270.000, 0.828, 3)
@@ -49705,34 +49771,34 @@ function CreateAllDestructables()
     gg_dest_LTlt_6657 = CreateDestructable(1280601204, -8832.0, 6592.0, 270.000, 1.162, 4)
     gg_dest_LTlt_6658 = CreateDestructable(1280601204, -8704.0, 6336.0, 270.000, 0.956, 0)
     gg_dest_LTlt_6659 = CreateDestructable(1280601204, -8768.0, 6464.0, 270.000, 0.999, 2)
-    gg_dest_LTlt_6660 = CreateDestructable(1280601204, -8576.0, 6336.0, 270.000, 1.063, 1)
-    gg_dest_LTlt_6661 = CreateDestructable(1280601204, -8640.0, 6464.0, 270.000, 1.020, 7)
+    gg_dest_LTlt_4401 = CreateDestructable(1280601204, -6656.0, 4928.0, 270.000, 0.928, 2)
+    gg_dest_LTbr_4542 = CreateDestructable(1280598642, -6944.0, 6752.0, 28.000, 1.472, 0)
     gg_dest_LTlt_6692 = CreateDestructable(1280601204, -9536.0, 5696.0, 270.000, 1.075, 9)
     gg_dest_LTlt_6663 = CreateDestructable(1280601204, -8704.0, 6592.0, 270.000, 0.953, 7)
-    gg_dest_LTlt_6664 = CreateDestructable(1280601204, -8448.0, 6336.0, 270.000, 1.044, 9)
-    gg_dest_LTlt_6665 = CreateDestructable(1280601204, -8512.0, 6464.0, 270.000, 1.141, 5)
-    gg_dest_LTlt_6666 = CreateDestructable(1280601204, -8512.0, 6656.0, 270.000, 0.804, 0)
-    gg_dest_LTlt_6667 = CreateDestructable(1280601204, -8256.0, 6400.0, 270.000, 1.058, 0)
-    gg_dest_LTlt_6668 = CreateDestructable(1280601204, -8320.0, 6528.0, 270.000, 0.971, 4)
-    gg_dest_LTlt_6669 = CreateDestructable(1280601204, -8384.0, 6656.0, 270.000, 0.989, 2)
-    gg_dest_LTlt_6670 = CreateDestructable(1280601204, -8128.0, 6400.0, 270.000, 0.827, 1)
-    gg_dest_LTlt_6671 = CreateDestructable(1280601204, -8192.0, 6528.0, 270.000, 1.069, 4)
-    gg_dest_LTlt_6672 = CreateDestructable(1280601204, -8256.0, 6656.0, 270.000, 1.145, 9)
-    gg_dest_LTlt_6673 = CreateDestructable(1280601204, -8000.0, 6400.0, 270.000, 0.870, 9)
-    gg_dest_LTlt_6674 = CreateDestructable(1280601204, -8064.0, 6528.0, 270.000, 0.933, 5)
-    gg_dest_LTlt_6675 = CreateDestructable(1280601204, -8128.0, 6656.0, 270.000, 1.059, 5)
+    gg_dest_LTlt_4448 = CreateDestructable(1280601204, -5952.0, 5952.0, 270.000, 1.190, 0)
+    gg_dest_LTbr_4544 = CreateDestructable(1280598642, -6688.0, 6688.0, 229.000, 1.139, 0)
+    gg_dest_LTlt_4404 = CreateDestructable(1280601204, -6592.0, 5056.0, 270.000, 0.805, 6)
+    gg_dest_LTbs_4545 = CreateDestructable(1280598643, -6624.0, 5344.0, 159.000, 1.499, 0)
+    gg_dest_LTbr_4541 = CreateDestructable(1280598642, -7520.0, 6624.0, 12.000, 1.233, 0)
+    gg_dest_LTlt_4450 = CreateDestructable(1280601204, -6016.0, 6208.0, 270.000, 0.992, 0)
+    gg_dest_LTlt_4451 = CreateDestructable(1280601204, -6016.0, 6336.0, 270.000, 1.125, 4)
+    gg_dest_LTlt_3887 = CreateDestructable(1280601204, -7360.0, 5056.0, 270.000, 0.855, 9)
+    gg_dest_LTlt_3884 = CreateDestructable(1280601204, -7424.0, 4928.0, 270.000, 0.933, 7)
+    gg_dest_FTtw_3842 = CreateDestructable(1179939959, 11840.0, 13376.0, 270.000, 0.981, 8)
+    gg_dest_LTlt_3883 = CreateDestructable(1280601204, -7552.0, 4928.0, 270.000, 1.059, 5)
+    gg_dest_LTlt_3881 = CreateDestructable(1280601204, -7488.0, 5056.0, 270.000, 1.147, 5)
     gg_dest_LTlt_6676 = CreateDestructable(1280601204, -8768.0, 5568.0, 270.000, 0.923, 3)
     gg_dest_LTlt_6677 = CreateDestructable(1280601204, -8704.0, 5440.0, 270.000, 0.895, 5)
-    gg_dest_LTlt_6678 = CreateDestructable(1280601204, -8640.0, 5568.0, 270.000, 0.972, 7)
-    gg_dest_LTlt_6679 = CreateDestructable(1280601204, -8576.0, 5440.0, 270.000, 0.828, 1)
-    gg_dest_LTlt_6680 = CreateDestructable(1280601204, -8512.0, 5568.0, 270.000, 0.812, 3)
-    gg_dest_LTlt_6681 = CreateDestructable(1280601204, -8576.0, 5696.0, 270.000, 0.869, 4)
-    gg_dest_LTlt_6682 = CreateDestructable(1280601204, -8384.0, 5632.0, 270.000, 0.857, 5)
-    gg_dest_LTlt_6683 = CreateDestructable(1280601204, -8320.0, 5504.0, 270.000, 0.997, 5)
-    gg_dest_LTlt_6684 = CreateDestructable(1280601204, -8256.0, 5632.0, 270.000, 1.137, 9)
-    gg_dest_LTlt_6685 = CreateDestructable(1280601204, -8384.0, 5376.0, 270.000, 0.808, 3)
-    gg_dest_LTlt_6686 = CreateDestructable(1280601204, -8192.0, 5504.0, 270.000, 1.100, 4)
-    gg_dest_LTlt_6687 = CreateDestructable(1280601204, -8128.0, 5632.0, 270.000, 1.046, 3)
+    gg_dest_LTlt_3880 = CreateDestructable(1280601204, -7616.0, 5056.0, 270.000, 0.960, 8)
+    gg_dest_LTlt_3878 = CreateDestructable(1280601204, -7616.0, 5184.0, 270.000, 1.026, 3)
+    gg_dest_LTlt_3877 = CreateDestructable(1280601204, -7744.0, 5184.0, 270.000, 0.833, 6)
+    gg_dest_LTlt_3876 = CreateDestructable(1280601204, -7744.0, 5312.0, 270.000, 1.189, 9)
+    gg_dest_LTlt_3875 = CreateDestructable(1280601204, -7872.0, 5376.0, 270.000, 1.178, 9)
+    gg_dest_LTlt_3867 = CreateDestructable(1280601204, -6720.0, 7040.0, 270.000, 0.848, 9)
+    gg_dest_LTlt_3868 = CreateDestructable(1280601204, -6592.0, 6976.0, 270.000, 1.034, 9)
+    gg_dest_LTlt_3872 = CreateDestructable(1280601204, -6208.0, 6656.0, 270.000, 0.822, 1)
+    gg_dest_LTlt_3871 = CreateDestructable(1280601204, -6336.0, 6848.0, 270.000, 0.875, 9)
+    gg_dest_LTlt_3870 = CreateDestructable(1280601204, -6336.0, 6720.0, 270.000, 1.034, 8)
     gg_dest_LTlt_6691 = CreateDestructable(1280601204, -9600.0, 5568.0, 270.000, 0.910, 1)
     gg_dest_LTlt_6689 = CreateDestructable(1280601204, -9536.0, 5376.0, 270.000, 1.154, 6)
     gg_dest_CTtr_5387 = CreateDestructable(1129608306, -8960.0, -4160.0, 270.000, 1.022, 1)
@@ -50623,7 +50689,65 @@ function CreateAllDestructables()
     gg_dest_FTtw_3839 = CreateDestructable(1179939959, 12224.0, 15360.0, 270.000, 1.038, 1)
     gg_dest_FTtw_3840 = CreateDestructable(1179939959, 12544.0, 14784.0, 270.000, 0.819, 8)
     gg_dest_FTtw_3841 = CreateDestructable(1179939959, 12480.0, 14528.0, 270.000, 0.934, 2)
-    gg_dest_FTtw_3842 = CreateDestructable(1179939959, 11840.0, 13376.0, 270.000, 0.981, 8)
+    gg_dest_NOfp_4838 = CreateDestructable(1313826416, -6528.0, 6016.0, 323.000, 1.018, 0)
+    SetDestructableLife(gg_dest_NOfp_4838, 2.55 * GetDestructableLife(gg_dest_NOfp_4838))
+    gg_dest_LTlt_3869 = CreateDestructable(1280601204, -6464.0, 6848.0, 270.000, 1.147, 3)
+    gg_dest_LOar_4834 = CreateDestructable(1280270706, -7712.0, 6368.0, 307.000, 0.801, 0)
+    SetDestructableLife(gg_dest_LOar_4834, 2.55 * GetDestructableLife(gg_dest_LOar_4834))
+    gg_dest_LOar_4836 = CreateDestructable(1280270706, -7712.0, 5856.0, 34.000, 1.160, 0)
+    SetDestructableLife(gg_dest_LOar_4836, 2.55 * GetDestructableLife(gg_dest_LOar_4836))
+    gg_dest_LOar_4835 = CreateDestructable(1280270706, -7712.0, 6048.0, 9.000, 1.160, 0)
+    SetDestructableLife(gg_dest_LOar_4835, 2.55 * GetDestructableLife(gg_dest_LOar_4835))
+    gg_dest_LTlt_3849 = CreateDestructable(1280601204, -7616.0, 5568.0, 270.000, 0.836, 7)
+    gg_dest_LTlt_3850 = CreateDestructable(1280601204, -7488.0, 5440.0, 270.000, 0.981, 7)
+    gg_dest_LTlt_3851 = CreateDestructable(1280601204, -7360.0, 5312.0, 270.000, 0.848, 7)
+    gg_dest_LTlt_5867 = CreateDestructable(1280601204, -7488.0, 4352.0, 270.000, 0.972, 9)
+    gg_dest_LTlt_5868 = CreateDestructable(1280601204, -7488.0, 4224.0, 270.000, 1.126, 5)
+    gg_dest_LTlt_5869 = CreateDestructable(1280601204, -7552.0, 4480.0, 270.000, 1.043, 8)
+    gg_dest_LTlt_5870 = CreateDestructable(1280601204, -7552.0, 4672.0, 270.000, 1.009, 1)
+    gg_dest_LTlt_3856 = CreateDestructable(1280601204, -7872.0, 6656.0, 270.000, 0.845, 7)
+    gg_dest_LTlt_3857 = CreateDestructable(1280601204, -7744.0, 6848.0, 270.000, 1.131, 7)
+    gg_dest_LTlt_3858 = CreateDestructable(1280601204, -7616.0, 6848.0, 270.000, 1.074, 0)
+    gg_dest_LTlt_3859 = CreateDestructable(1280601204, -7680.0, 6976.0, 270.000, 0.957, 2)
+    gg_dest_LTlt_3860 = CreateDestructable(1280601204, -7552.0, 6976.0, 270.000, 0.855, 0)
+    gg_dest_LTlt_3861 = CreateDestructable(1280601204, -7424.0, 6976.0, 270.000, 1.042, 8)
+    gg_dest_LTlt_3862 = CreateDestructable(1280601204, -7296.0, 7040.0, 270.000, 0.883, 6)
+    gg_dest_LTlt_5483 = CreateDestructable(1280601204, -7360.0, 4160.0, 270.000, 1.197, 3)
+    gg_dest_LTbx_4832 = CreateDestructable(1280598648, -6624.0, 6624.0, 151.000, 1.363, 0)
+    gg_dest_LTlt_3866 = CreateDestructable(1280601204, -6848.0, 7040.0, 270.000, 0.957, 6)
+    gg_dest_LTlt_3843 = CreateDestructable(1280601204, -7744.0, 6208.0, 270.000, 1.197, 6)
+    gg_dest_LTlt_3844 = CreateDestructable(1280601204, -8000.0, 5312.0, 270.000, 1.116, 2)
+    gg_dest_LTlt_3846 = CreateDestructable(1280601204, -8000.0, 5568.0, 270.000, 0.873, 0)
+    gg_dest_LTlt_3847 = CreateDestructable(1280601204, -7616.0, 6464.0, 270.000, 1.056, 1)
+    gg_dest_LTlt_3848 = CreateDestructable(1280601204, -8064.0, 5696.0, 270.000, 0.881, 4)
+    gg_dest_LTlt_3863 = CreateDestructable(1280601204, -8064.0, 5824.0, 270.000, 1.069, 8)
+    gg_dest_LTlt_3865 = CreateDestructable(1280601204, -8064.0, 5952.0, 270.000, 0.832, 7)
+    gg_dest_LTlt_3873 = CreateDestructable(1280601204, -8064.0, 6080.0, 270.000, 0.848, 8)
+    gg_dest_LTlt_3874 = CreateDestructable(1280601204, -8064.0, 6208.0, 270.000, 1.173, 7)
+    gg_dest_LTlt_3889 = CreateDestructable(1280601204, -8000.0, 6336.0, 270.000, 0.987, 5)
+    gg_dest_LTlt_3891 = CreateDestructable(1280601204, -8000.0, 6464.0, 270.000, 0.882, 7)
+    gg_dest_LTlt_5865 = CreateDestructable(1280601204, -7424.0, 4736.0, 270.000, 0.940, 9)
+    gg_dest_LTlt_5863 = CreateDestructable(1280601204, -7424.0, 4544.0, 270.000, 0.998, 5)
+    gg_dest_LTlt_5486 = CreateDestructable(1280601204, -7360.0, 4416.0, 270.000, 0.868, 8)
+    gg_dest_LTlt_5485 = CreateDestructable(1280601204, -7360.0, 4288.0, 270.000, 1.138, 3)
+    gg_dest_LTlt_4394 = CreateDestructable(1280601204, -9088.0, 5696.0, 270.000, 0.810, 7)
+    gg_dest_LTlt_4396 = CreateDestructable(1280601204, -9152.0, 5824.0, 270.000, 1.084, 5)
+    gg_dest_LTlt_4447 = CreateDestructable(1280601204, -8960.0, 5696.0, 270.000, 1.134, 1)
+    gg_dest_LTlt_4449 = CreateDestructable(1280601204, -9024.0, 5824.0, 270.000, 0.889, 2)
+    gg_dest_LTlt_4455 = CreateDestructable(1280601204, -9152.0, 5952.0, 270.000, 0.979, 8)
+    gg_dest_LTlt_5325 = CreateDestructable(1280601204, -9024.0, 5952.0, 270.000, 1.050, 9)
+    gg_dest_LTlt_5439 = CreateDestructable(1280601204, -9408.0, 5888.0, 270.000, 1.163, 3)
+    gg_dest_LTlt_5447 = CreateDestructable(1280601204, -9536.0, 5952.0, 270.000, 0.909, 6)
+    gg_dest_LTlt_5388 = CreateDestructable(1280601204, -6592.0, 4160.0, 270.000, 1.141, 2)
+    gg_dest_LTlt_5390 = CreateDestructable(1280601204, -6656.0, 4352.0, 270.000, 0.888, 9)
+    gg_dest_LTlt_5391 = CreateDestructable(1280601204, -6656.0, 4480.0, 270.000, 0.943, 7)
+    gg_dest_LTlt_5471 = CreateDestructable(1280601204, -6656.0, 4672.0, 270.000, 1.064, 0)
+    gg_dest_LTlt_5477 = CreateDestructable(1280601204, -6656.0, 4800.0, 270.000, 1.061, 2)
+    gg_dest_LTlt_5478 = CreateDestructable(1280601204, -6528.0, 4864.0, 270.000, 0.829, 7)
+    gg_dest_LTlt_5479 = CreateDestructable(1280601204, -6528.0, 4736.0, 270.000, 1.123, 7)
+    gg_dest_LTlt_5480 = CreateDestructable(1280601204, -6528.0, 4544.0, 270.000, 0.826, 3)
+    gg_dest_LTlt_5481 = CreateDestructable(1280601204, -6528.0, 4416.0, 270.000, 1.078, 3)
+    gg_dest_LTlt_5482 = CreateDestructable(1280601204, -6528.0, 4288.0, 270.000, 0.987, 7)
 end
 
 function CreateBuildingsForPlayer0()
@@ -50898,6 +51022,13 @@ function CreateNeutralPassiveBuildings()
     gg_unit_h018_0091 = CreateUnit(p, 1747988792, 16320.0, 18496.0, 270.000)
     gg_unit_h019_0092 = CreateUnit(p, 1747988793, 16576.0, 18496.0, 270.000)
     gg_unit_NBDL_0135 = CreateUnit(p, 1312965708, -12032.0, -8960.0, 270.000)
+    gg_unit_nten_0221 = CreateUnit(p, 1853121902, -7328.0, 6688.0, 270.000)
+    gg_unit_nten_0222 = CreateUnit(p, 1853121902, -7072.0, 6688.0, 270.000)
+    gg_unit_nten_0223 = CreateUnit(p, 1853121902, -6816.0, 6688.0, 270.000)
+    gg_unit_nten_0224 = CreateUnit(p, 1853121902, -6368.0, 6304.0, 270.000)
+    gg_unit_nten_0225 = CreateUnit(p, 1853121902, -6560.0, 6496.0, 270.000)
+    gg_unit_ntn2_0228 = CreateUnit(p, 1853124146, -6560.0, 5536.0, 270.000)
+    gg_unit_ntn2_0229 = CreateUnit(p, 1853124146, -6368.0, 5728.0, 270.000)
 end
 
 function CreateNeutralPassive()
@@ -51035,6 +51166,7 @@ function CreateRegions()
     gg_rct_HumanBaseToElfSpawn = Rect(-10368.0, 12800.0, -10112.0, 13056.0)
     gg_rct_HumanBaseToOrcSpawn = Rect(-9984.0, 13184.0, -9728.0, 13440.0)
     gg_rct_HumanCreepToElf = Rect(-7104.0, 5952.0, -6976.0, 6080.0)
+    gg_rct_HumanCreepToElfSpawn = Rect(-7424.0, 5632.0, -6656.0, 6400.0)
     gg_rct_HumanToElfInnerLine = Rect(-10304.0, 11200.0, -10176.0, 11328.0)
     gg_rct_HumanToElfOuterLine = Rect(-10304.0, 7104.0, -10176.0, 7232.0)
     gg_rct_HumanToOrcInnerLine = Rect(-8256.0, 13248.0, -8128.0, 13376.0)

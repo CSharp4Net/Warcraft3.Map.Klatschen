@@ -14,7 +14,7 @@ namespace Source.Abstracts
 
     public unit Hero { get; private set; }
 
-    public virtual void CreateOrReviveHero(int unitTypeId, Area spawnArea, int heroLevel, int abilitiesLevel, float delay)
+    protected void CreateOrReviveHero(int unitTypeId, Area spawnArea, int heroLevel, float delay)
     {
       var timer = Common.CreateTimer();
       Common.TimerStart(timer, delay, false, () =>

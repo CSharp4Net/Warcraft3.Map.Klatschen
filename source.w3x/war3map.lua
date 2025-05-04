@@ -89,6 +89,7 @@ gg_snd_HPitLordPissed3 = nil
 gg_snd_HPitLordPissed4 = nil
 gg_snd_HPitLordPissed5 = nil
 gg_trg_Melee_Initialization = nil
+gg_rct_HumanCreepToElfSpawn = nil
 function InitGlobals()
 end
 
@@ -455,6 +456,13 @@ u = BlzCreateUnitWithSkin(p, FourCC("h010"), 16320.0, 18752.0, 270.000, FourCC("
 u = BlzCreateUnitWithSkin(p, FourCC("h018"), 16320.0, 18496.0, 270.000, FourCC("h018"))
 u = BlzCreateUnitWithSkin(p, FourCC("h019"), 16576.0, 18496.0, 270.000, FourCC("h019"))
 u = BlzCreateUnitWithSkin(p, FourCC("NBDL"), -12032.0, -8960.0, 270.000, FourCC("NBDL"))
+u = BlzCreateUnitWithSkin(p, FourCC("nten"), -7328.0, 6688.0, 270.000, FourCC("nten"))
+u = BlzCreateUnitWithSkin(p, FourCC("nten"), -7072.0, 6688.0, 270.000, FourCC("nten"))
+u = BlzCreateUnitWithSkin(p, FourCC("nten"), -6816.0, 6688.0, 270.000, FourCC("nten"))
+u = BlzCreateUnitWithSkin(p, FourCC("nten"), -6368.0, 6304.0, 270.000, FourCC("nten"))
+u = BlzCreateUnitWithSkin(p, FourCC("nten"), -6560.0, 6496.0, 270.000, FourCC("nten"))
+u = BlzCreateUnitWithSkin(p, FourCC("ntn2"), -6560.0, 5536.0, 270.000, FourCC("ntn2"))
+u = BlzCreateUnitWithSkin(p, FourCC("ntn2"), -6368.0, 5728.0, 270.000, FourCC("ntn2"))
 end
 
 function CreateNeutralPassive()
@@ -601,6 +609,7 @@ gg_rct_HumanBaseToCenterSpawn = Rect(-9984.0, 12800.0, -9728.0, 13056.0)
 gg_rct_HumanBaseToElfSpawn = Rect(-10368.0, 12800.0, -10112.0, 13056.0)
 gg_rct_HumanBaseToOrcSpawn = Rect(-9984.0, 13184.0, -9728.0, 13440.0)
 gg_rct_HumanCreepToElf = Rect(-7104.0, 5952.0, -6976.0, 6080.0)
+gg_rct_HumanCreepToElfSpawn = Rect(-7424.0, 5632.0, -6656.0, 6400.0)
 gg_rct_HumanToElfInnerLine = Rect(-10304.0, 11200.0, -10176.0, 11328.0)
 gg_rct_HumanToElfOuterLine = Rect(-10304.0, 7104.0, -10176.0, 7232.0)
 gg_rct_HumanToOrcInnerLine = Rect(-8256.0, 13248.0, -8128.0, 13376.0)

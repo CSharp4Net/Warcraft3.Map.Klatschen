@@ -1,22 +1,19 @@
 ﻿using Source.Abstracts;
-using Source.Handler.Generic;
-using Source.Statics;
-using System.Reflection.Emit;
 using WCSharp.Api;
 
 namespace Source.Models
 {
-  public sealed class AggresiveFragtion : FragtionBase
+  public sealed class KlatschenFragtion : FragtionBase
   {
-    public AggresiveFragtion()
+    public KlatschenFragtion()
       : base(player.NeutralAggressive)
     {
 
     }
 
-    public override void CreateOrReviveHero(int unitTypeId, Area spawnArea, int heroLevel, int abilitiesLevel, float delay)
+    public void CreateOrReviveHero(int unitTypeId, Area spawnArea, int heroLevel, int abilitiesLevel, float delay)
     {
-      base.CreateOrReviveHero(unitTypeId, spawnArea, heroLevel, abilitiesLevel, delay);
+      base.CreateOrReviveHero(unitTypeId, spawnArea, heroLevel, delay);
 
       int unitId = Common.GetUnitTypeId(Hero);
       if (unitId == Constants.UNIT_GRUBENLORD_KLATSCHEN)
