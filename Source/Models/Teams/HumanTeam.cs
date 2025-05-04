@@ -15,7 +15,7 @@ namespace Source.Models.Teams
     {
       switch (techId)
       {
-        case Constants.UPGRADE_EINHEIT_SOLDAT_TEAM:
+        case Constants.UPGRADE_MELEE_UNIT_TEAM:
           spawnCommand = new SpawnUnitCommand()
           {
             UnitSpawnType = Enums.UnitSpawnType.Meelee,
@@ -35,7 +35,7 @@ namespace Source.Models.Teams
               return Enums.ResearchType.UpgradeUnit;
           }
 
-        case Constants.UPGRADE_EINHEIT_SCH_TZE_TEAM:
+        case Constants.UPGRADE_DISTANCE_UNIT_TEAM:
           spawnCommand = new SpawnUnitCommand()
           {
             UnitSpawnType = Enums.UnitSpawnType.Distance,
@@ -57,7 +57,7 @@ namespace Source.Models.Teams
               return Enums.ResearchType.UpgradeUnit;
           }
 
-        case Constants.UPGRADE_EINHEIT_REITER_TEAM:
+        case Constants.UPGRADE_FLIGHT_UNIT_TEAM:
           spawnCommand = new SpawnUnitCommand()
           {
             UnitSpawnType = Enums.UnitSpawnType.Distance,
@@ -78,7 +78,7 @@ namespace Source.Models.Teams
               return Enums.ResearchType.UpgradeUnit;
           }
 
-        case Constants.UPGRADE_EINHEIT_MAGIER_TEAM:
+        case Constants.UPGRADE_MAGE_UNIT_TEAM:
           spawnCommand = new SpawnUnitCommand()
           {
             UnitSpawnType = Enums.UnitSpawnType.Distance,
@@ -98,7 +98,7 @@ namespace Source.Models.Teams
               return Enums.ResearchType.UpgradeUnit;
           }
 
-        case Constants.UPGRADE_EINHEIT_BELAGERUNGSMASCHINE_TEAM:
+        case Constants.UPGRADE_SIEGE_UNIT_TEAM:
           spawnCommand = new SpawnUnitCommand()
           {
             UnitSpawnType = Enums.UnitSpawnType.Artillery,

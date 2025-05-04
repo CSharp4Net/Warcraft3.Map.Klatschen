@@ -13,8 +13,8 @@ namespace Source.Handler.Periodic
     private const int BaseGoldPriceUnitResearch = 250; // 100
     private const int BaseGoldPriceUnitResearchBuilding = 500; // 200
     private const int BaseGoldPriceUnitResearchArtillery = 625; // 250
-    private const int BaseGoldPriceUnitUpgrade = 400; // 200
-    private const int BaseGoldPriceUnitUpgradeArtillery = 1000; // 500
+    private const int BaseGoldPriceUnitUpgrade = 500; // 200
+    private const int BaseGoldPriceUnitUpgradeArtillery = 1250; // 500
 
     public static bool OnElapsed()
     {
@@ -39,25 +39,25 @@ namespace Source.Handler.Periodic
       {
         player player = team.Computer.Wc3Player;
 
-        IncreaseTechIfAffordable(team, player, Constants.UPGRADE_UPGRADE_NAHK_MPFER_ANGRIFF_TEAM, BaseGoldPriceUnitResearch);
-        //IncreaseTechIfAffordable(team, player, Constants.UPGRADE_UPGRADE_NAHK_MPFER_R_STUNG_TEAM, BaseGoldPriceUnitResearch);
-        //IncreaseTechIfAffordable(team, player, Constants.UPGRADE_UPGRADE_FERNK_MPFER_ANGRIFF_TEAM, BaseGoldPriceUnitResearch);
-        //IncreaseTechIfAffordable(team, player, Constants.UPGRADE_UPGRADE_FERNK_MPFER_R_STUNG_TEAM, BaseGoldPriceUnitResearch);
-        //IncreaseTechIfAffordable(team, player, Constants.UPGRADE_UPGRADE_MAGIER_ANGRIFF_TEAM, BaseGoldPriceUnitResearch);
-        //IncreaseTechIfAffordable(team, player, Constants.UPGRADE_UPGRADE_MAGIER_VERTEIDIGUNG_TEAM, BaseGoldPriceUnitResearch);
+        IncreaseTechIfAffordable(team, player, Constants.UPGRADE_MELEE_ATTACK_TEAM, BaseGoldPriceUnitResearch);
+        IncreaseTechIfAffordable(team, player, Constants.UPGRADE_MELEE_DEFENSE_TEAM, BaseGoldPriceUnitResearch);
+        IncreaseTechIfAffordable(team, player, Constants.UPGRADE_DISTANCE_ATTACK_TEAM, BaseGoldPriceUnitResearch);
+        IncreaseTechIfAffordable(team, player, Constants.UPGRADE_DISTANCE_DEFENSE_TEAM, BaseGoldPriceUnitResearch);
+        IncreaseTechIfAffordable(team, player, Constants.UPGRADE_MAGE_ATTACK_TEAM, BaseGoldPriceUnitResearch);
+        IncreaseTechIfAffordable(team, player, Constants.UPGRADE_MAGE_DEFENSE_TEAM, BaseGoldPriceUnitResearch);
 
-        //IncreaseTechIfAffordable(team, player, Constants.UPGRADE_UPGRADE_GEB_UDE_ANGRIFF_TEAM, BaseGoldPriceUnitResearchBuilding);
-        //IncreaseTechIfAffordable(team, player, Constants.UPGRADE_UPGRADE_GEB_UDE_VERTEIDIGUNG_TEAM, BaseGoldPriceUnitResearchBuilding);
+        IncreaseTechIfAffordable(team, player, Constants.UPGRADE_BUILDING_ATTACK_TEAM, BaseGoldPriceUnitResearchBuilding);
+        IncreaseTechIfAffordable(team, player, Constants.UPGRADE_BUILDING_DEFENSE_TEAM, BaseGoldPriceUnitResearchBuilding);
 
-        //IncreaseTechIfAffordable(team, player, Constants.UPGRADE_UPGRADE_ARTILLERIE_ANGRIFF_TEAM, BaseGoldPriceUnitResearchArtillery);
-        //IncreaseTechIfAffordable(team, player, Constants.UPGRADE_UPGRADE_ARTILLERIE_VERTEIDIGUNG_TEAM, BaseGoldPriceUnitResearchArtillery);
+        IncreaseTechIfAffordable(team, player, Constants.UPGRADE_MELEE_UNIT_TEAM, BaseGoldPriceUnitUpgrade);
+        IncreaseTechIfAffordable(team, player, Constants.UPGRADE_DISTANCE_UNIT_TEAM, BaseGoldPriceUnitUpgrade);
+        IncreaseTechIfAffordable(team, player, Constants.UPGRADE_FLIGHT_UNIT_TEAM, BaseGoldPriceUnitUpgrade);
+        IncreaseTechIfAffordable(team, player, Constants.UPGRADE_MAGE_UNIT_TEAM, BaseGoldPriceUnitUpgrade);
 
-        IncreaseTechIfAffordable(team, player, Constants.UPGRADE_EINHEIT_SOLDAT_TEAM, BaseGoldPriceUnitUpgrade);
-        IncreaseTechIfAffordable(team, player, Constants.UPGRADE_EINHEIT_SCH_TZE_TEAM, BaseGoldPriceUnitUpgrade);
-        IncreaseTechIfAffordable(team, player, Constants.UPGRADE_EINHEIT_REITER_TEAM, BaseGoldPriceUnitUpgrade);
-        IncreaseTechIfAffordable(team, player, Constants.UPGRADE_EINHEIT_MAGIER_TEAM, BaseGoldPriceUnitUpgrade);
+        IncreaseTechIfAffordable(team, player, Constants.UPGRADE_SIEGE_ATTACK_TEAM, BaseGoldPriceUnitResearchArtillery);
+        IncreaseTechIfAffordable(team, player, Constants.UPGRADE_SIEGE_DEFENSE_TEAM, BaseGoldPriceUnitResearchArtillery);
 
-        IncreaseTechIfAffordable(team, player, Constants.UPGRADE_EINHEIT_BELAGERUNGSMASCHINE_TEAM, BaseGoldPriceUnitUpgradeArtillery);
+        IncreaseTechIfAffordable(team, player, Constants.UPGRADE_SIEGE_UNIT_TEAM, BaseGoldPriceUnitUpgradeArtillery);
 
         // Keine bezahlbare Forschung übrig
         return true;
