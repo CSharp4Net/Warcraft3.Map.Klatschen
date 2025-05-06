@@ -18,7 +18,7 @@
       UpgradeUnit = 2
     }
 
-    public enum UnitSpawnType
+    public enum UnitClass
     {
       /// <summary>
       /// Nahkampfeinheiten

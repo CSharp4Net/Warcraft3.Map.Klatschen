@@ -59,8 +59,8 @@ namespace Source.Events.Player
           return;
 
 #if DEBUG
-        //spawnArea = Areas.TestArea;
-        //user.HeroLevelCounter = 36;
+        spawnArea = Areas.TestArea2;
+        user.HeroLevelCounter = 36;
 #endif
 
         user.CreateHero(unitId, spawnArea);

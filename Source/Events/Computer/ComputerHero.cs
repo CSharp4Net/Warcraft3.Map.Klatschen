@@ -9,6 +9,7 @@ namespace Source.Events.Computer
     internal static void OnDies(unit unit)
     {
       int playerId = unit.Owner.Id;
+      int respawnTime = 0;
 
       // TODO : Verstorbener PC-Hero wird nicht automatisch wieder geboren, sondern muss gekauft werden!
 
@@ -17,27 +18,49 @@ namespace Source.Events.Computer
       {
         if (Program.Humans.Computer.Defeated)
           return;
+        else
+          respawnTime = 30;
       }
       else if (playerId == Program.Orcs.Computer.PlayerId)
       {
         if (Program.Orcs.Computer.Defeated)
           return;
+        else
+          respawnTime = 30;
       }
       else if (playerId == Program.Elves.Computer.PlayerId)
       {
         if (Program.Elves.Computer.Defeated)
           return;
+        else
+          respawnTime = 30;
       }
       else if (playerId == Program.Undeads.Computer.PlayerId)
       {
         if (Program.Undeads.Computer.Defeated)
           return;
+        else
+          respawnTime = 30;
+      }
+      else if (playerId == player.NeutralAggressiveId)
+      {
+        int unitType = Common.GetUnitTypeId(unit);
+
+        foreach (CreepFragtion fragtion in Program.Creeps)
+        {
+          // Prüfe primär die Einheit-Id, da ein UNIT-Vergleich nicht empfohlen wird!
+          if (fragtion.Hero.UnitType == unitType && fragtion.Hero == unit)
+          {
+            Program.ShowDebugMessage("Creep hero killed!");
+            break;
+          }
+        }
       }
 
       // Verstorbenen Held nach gegebener Zeit wieder belegen
       timer timer = Common.CreateTimer();
 
-      Common.TimerStart(timer, 30, false, () =>
+      Common.TimerStart(timer, respawnTime, false, () =>
       {
         try
         {
@@ -73,19 +96,19 @@ namespace Source.Events.Computer
 
           if (Program.Humans.Computer.IsOwnerOfUnit(unit, out SpawnedUnit spawnedUnit))
           {
-            respawnArea = Areas.HumanBaseHeroRespawn;
+            respawnArea = spawnedUnit.SpawnArea;
           }
           else if (Program.Orcs.Computer.IsOwnerOfUnit(unit, out spawnedUnit))
           {
-            respawnArea = Areas.OrcBaseHeroRespawn;
+            respawnArea = spawnedUnit.SpawnArea;
           }
           else if (Program.Elves.Computer.IsOwnerOfUnit(unit, out spawnedUnit))
           {
-            respawnArea = Areas.ElfBaseHeroRespawn;
+            respawnArea = spawnedUnit.SpawnArea;
           }
           else if (Program.Undeads.Computer.IsOwnerOfUnit(unit, out spawnedUnit))
           {
-            respawnArea = Areas.UndeadBaseHeroRespawn;
+            respawnArea = spawnedUnit.SpawnArea;
           }
 
           if (spawnedUnit != null)

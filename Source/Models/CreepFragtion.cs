@@ -18,7 +18,7 @@ namespace Source.Models
 
     public void CreateOrReviveHero(int unitTypeId)
     {
-      base.CreateOrReviveHero(unitTypeId, Center, Hero.HeroLevel, 0f);
+      CreateOrReviveHero(unitTypeId, Center, Hero.HeroLevel, 0f);
     }
 
     public void SpawnUnitInAreaAtRandomPoint(int unitTypeId)

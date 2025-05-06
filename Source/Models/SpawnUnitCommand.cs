@@ -5,7 +5,7 @@
     /// <summary>
     /// Typ der zu spawnenden Einheit
     /// </summary>
-    public Enums.UnitSpawnType UnitSpawnType { get; set; }
+    public Enums.UnitClass UnitSpawnType { get; set; }
 
     /// <summary>
     /// Id der Einheit, welche diese Einheit spawned

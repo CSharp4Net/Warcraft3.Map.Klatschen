@@ -40,6 +40,7 @@ gg_rct_HumanBaseToCenterSpawn = nil
 gg_rct_HumanBaseToElfSpawn = nil
 gg_rct_HumanBaseToOrcSpawn = nil
 gg_rct_HumanCreepToElf = nil
+gg_rct_HumanCreepToElfSpawn = nil
 gg_rct_HumanToElfInnerLine = nil
 gg_rct_HumanToElfOuterLine = nil
 gg_rct_HumanToOrcInnerLine = nil
@@ -89,7 +90,7 @@ gg_snd_HPitLordPissed3 = nil
 gg_snd_HPitLordPissed4 = nil
 gg_snd_HPitLordPissed5 = nil
 gg_trg_Melee_Initialization = nil
-gg_rct_HumanCreepToElfSpawn = nil
+gg_rct_TestArea2 = nil
 function InitGlobals()
 end
 
@@ -653,6 +654,7 @@ gg_rct_UndeadToHumanInnerLine = Rect(8640.0, -5696.0, 8768.0, -5568.0)
 gg_rct_UndeadToHumanOuterLine = Rect(5056.0, -2112.0, 5184.0, -1984.0)
 gg_rct_UndeadToOrcInnerLine = Rect(10176.0, -5184.0, 10304.0, -5056.0)
 gg_rct_UndeadToOrcOuterLine = Rect(10176.0, -1088.0, 10304.0, -960.0)
+gg_rct_TestArea2 = Rect(-7104.0, 3008.0, -6976.0, 3136.0)
 end
 
 function InitCustomPlayerSlots()

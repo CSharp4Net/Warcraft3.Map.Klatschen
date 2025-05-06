@@ -73,9 +73,13 @@ namespace Source.Abstracts
         return false;
       }
 
+      int unitId = wc3Unit.UnitType;
+
       foreach (SpawnedUnit spawnedUnit in Units)
       {
-        if (spawnedUnit.Wc3Unit == wc3Unit)
+        // Prüfe primär die Einheit-Id, da ein UNIT-Vergleich nicht empfohlen wird!
+        // Ein Einheitenvergleich wird zwar nicht empfohlen, ist aber die einzige Möglichkeit diesselbe Einheit zu ermitteln
+        if (spawnedUnit.Wc3Unit.UnitType == unitId && spawnedUnit.Wc3Unit == wc3Unit)
         {
           unit = spawnedUnit;
           return true;

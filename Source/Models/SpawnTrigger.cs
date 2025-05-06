@@ -8,7 +8,17 @@ namespace Source.Models
 {
   public sealed class SpawnTrigger
   {
-    public SpawnTrigger(ComputerPlayer player, SpawnBuilding building,  Area spawnArea,  UnitSpawnType unitSpawnType, float interval, Area targetArea, params int[] unitIds)
+    /// <summary>
+    /// Erstellt einen zeitgesteuertem Auslöser für das regelmäßige Erstellen von Einheiten.
+    /// </summary>
+    /// <param name="player">Computer-Spieler, für den Einheiten erstellt werden</param>
+    /// <param name="building">Gebäude, an dessen Lebenszeit dieser Auslöser gebunden ist</param>
+    /// <param name="spawnArea">Gebiet, in dem die Einheiten erstellt werden</param>
+    /// <param name="unitSpawnType">Klasse der erstellten Einheiten</param>
+    /// <param name="interval">Interval in Sekunden, nach dessen Rythmus Einheiten erstellt werden</param>
+    /// <param name="targetArea">Zielgebiet, für das erstellte Einheiten einen Angriff/Bewegen-Befehl erhalten</param>
+    /// <param name="unitIds">Auflistung an Einheit-Typen zu beginn</param>
+    public SpawnTrigger(ComputerPlayer player, SpawnBuilding building,  Area spawnArea,  UnitClass unitSpawnType, float interval, Area targetArea, params int[] unitIds)
     {
       Player = player;
       Interval = interval;
@@ -19,8 +29,14 @@ namespace Source.Models
       UnitIds = unitIds.ToList();
     }
 
+    /// <summary>
+    /// Computer-Spieler, für den Einheiten erstellt werden.
+    /// </summary>
     private ComputerPlayer Player { get; init; }
-
+    /// <summary>
+    /// Gebäude, an das der Auslöser gebunden ist.
+    /// Stirbt das Gebäude, werden gebundene Auslöser gestoppt.
+    /// </summary>
     private SpawnBuilding Building { get; init; }
 
     private float Interval { get; init; }
@@ -35,7 +51,7 @@ namespace Source.Models
     /// <summary>
     /// Typ der erstellenden Einheiten.
     /// </summary>
-    public Enums.UnitSpawnType UnitSpawnType { get; init; }
+    public Enums.UnitClass UnitSpawnType { get; init; }
 
     /// <summary>
     /// Startet den Trigger im angegebenen Interval
