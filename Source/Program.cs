@@ -145,7 +145,6 @@ namespace Source
         Console.WriteLine("Kämpft bis zum Tod, ihr Lappen!");
 
         // Für alle Benutzer-Spieler einen Hero-Selector generieren
-        force force = Blizzard.GetPlayersByMapControl(mapcontrol.User);
         foreach (UserPlayer user in AllActiveUsers)
         {
           CreateHeroSelectorForPlayerAndAdjustCamera(user);

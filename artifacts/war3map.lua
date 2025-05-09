@@ -19990,7 +19990,6 @@ end)
 end
 do
 local System = System
-local WCSharpApi = WCSharp.Api
 local SourceEventsComputer
 local SourceEventsGeneric
 local SourceEventsGenericEvents
@@ -20114,7 +20113,6 @@ System.namespace("Source", function (namespace)
         System.Console.WriteLine("Kämpft bis zum Tod, ihr Lappen!")
 
         -- Für alle Benutzer-Spieler einen Hero-Selector generieren
-        local force = GetPlayersByMapControl(MAP_CONTROL_USER)
         for _, user in System.each(class.AllActiveUsers) do
           CreateHeroSelectorForPlayerAndAdjustCamera(user)
         end
@@ -20169,125 +20167,125 @@ System.namespace("Source", function (namespace)
       -- Hauptgebäude
       local building = class.Humans.Computer:CreateBuilding(1747988531 --[[Constants.UNIT_SCHLOSS_HUMAN]], Areas.HumanBase, 0)
       building:RegisterOnDies(SourceEventsComputer.BuildingMain.OnDies)
-      building:AddSpawnTrigger(Areas.HumanBaseToCenterSpawn, 1 --[[UnitSpawnType.Distance]], 30 --[[Program.MainBuilding1SpawnTime]], Areas.UndeadBase, System.Array(System.Int32) { 1747988536 --[[Constants.UNIT_MAGIEEINHEIT_STUFE_1_HUMAN]], 1747988554 --[[Constants.UNIT_FLUGEINHEIT_STUFE_1_HUMAN]] }):Run(5.5)
-      building:AddSpawnTrigger(Areas.HumanBaseToCenterSpawn, 2 --[[UnitSpawnType.Artillery]], 60 --[[Program.MainBuilding2SpawnTime]], Areas.UndeadBase, System.Array.Empty(System.Int32)):Run(7.5)
-      building:AddSpawnTrigger(Areas.HumanBaseToElfSpawn, 1 --[[UnitSpawnType.Distance]], 30 --[[Program.MainBuilding1SpawnTime]], Areas.ElfBase, System.Array(System.Int32) { 1747988536 --[[Constants.UNIT_MAGIEEINHEIT_STUFE_1_HUMAN]], 1747988554 --[[Constants.UNIT_FLUGEINHEIT_STUFE_1_HUMAN]] }):Run(5.5)
-      building:AddSpawnTrigger(Areas.HumanBaseToElfSpawn, 2 --[[UnitSpawnType.Artillery]], 60 --[[Program.MainBuilding2SpawnTime]], Areas.ElfBase, System.Array.Empty(System.Int32)):Run(7.5)
-      building:AddSpawnTrigger(Areas.HumanBaseToOrcsSpawn, 1 --[[UnitSpawnType.Distance]], 30 --[[Program.MainBuilding1SpawnTime]], Areas.OrcBase, System.Array(System.Int32) { 1747988536 --[[Constants.UNIT_MAGIEEINHEIT_STUFE_1_HUMAN]], 1747988554 --[[Constants.UNIT_FLUGEINHEIT_STUFE_1_HUMAN]] }):Run(5.5)
-      building:AddSpawnTrigger(Areas.HumanBaseToOrcsSpawn, 2 --[[UnitSpawnType.Artillery]], 60 --[[Program.MainBuilding2SpawnTime]], Areas.OrcBase, System.Array.Empty(System.Int32)):Run(7.5)
+      building:AddSpawnTrigger(Areas.HumanBaseToCenterSpawn, 1 --[[UnitClass.Distance]], 30 --[[Program.MainBuilding1SpawnTime]], Areas.UndeadBase, System.Array(System.Int32) { 1747988536 --[[Constants.UNIT_MAGIEEINHEIT_STUFE_1_HUMAN]], 1747988554 --[[Constants.UNIT_FLUGEINHEIT_STUFE_1_HUMAN]] }):Run(5.5)
+      building:AddSpawnTrigger(Areas.HumanBaseToCenterSpawn, 2 --[[UnitClass.Artillery]], 60 --[[Program.MainBuilding2SpawnTime]], Areas.UndeadBase, System.Array.Empty(System.Int32)):Run(7.5)
+      building:AddSpawnTrigger(Areas.HumanBaseToElfSpawn, 1 --[[UnitClass.Distance]], 30 --[[Program.MainBuilding1SpawnTime]], Areas.ElfBase, System.Array(System.Int32) { 1747988536 --[[Constants.UNIT_MAGIEEINHEIT_STUFE_1_HUMAN]], 1747988554 --[[Constants.UNIT_FLUGEINHEIT_STUFE_1_HUMAN]] }):Run(5.5)
+      building:AddSpawnTrigger(Areas.HumanBaseToElfSpawn, 2 --[[UnitClass.Artillery]], 60 --[[Program.MainBuilding2SpawnTime]], Areas.ElfBase, System.Array.Empty(System.Int32)):Run(7.5)
+      building:AddSpawnTrigger(Areas.HumanBaseToOrcsSpawn, 1 --[[UnitClass.Distance]], 30 --[[Program.MainBuilding1SpawnTime]], Areas.OrcBase, System.Array(System.Int32) { 1747988536 --[[Constants.UNIT_MAGIEEINHEIT_STUFE_1_HUMAN]], 1747988554 --[[Constants.UNIT_FLUGEINHEIT_STUFE_1_HUMAN]] }):Run(5.5)
+      building:AddSpawnTrigger(Areas.HumanBaseToOrcsSpawn, 2 --[[UnitClass.Artillery]], 60 --[[Program.MainBuilding2SpawnTime]], Areas.OrcBase, System.Array.Empty(System.Int32)):Run(7.5)
 
       -- Kasernen
       building = class.Humans.Computer:CreateBuilding(1747988535 --[[Constants.UNIT_KASERNE_HUMAN]], Areas.HumanBarracksToCenter, 0)
       building:RegisterOnDies(SourceEventsSpecific.BuildingBarracks.OnDies)
-      building:AddSpawnTrigger(Areas.HumanBarracksToCenterSpawn, 0 --[[UnitSpawnType.Meelee]], 15 --[[Program.BarracksSpawnTime]], Areas.UndeadBase, System.Array(System.Int32) { 1747988529 --[[Constants.UNIT_NAHKAMPFEINHEIT_STUFE_1_HUMAN]], 1747988529 --[[Constants.UNIT_NAHKAMPFEINHEIT_STUFE_1_HUMAN]] }):Run(0)
-      building:AddSpawnTrigger(Areas.HumanBarracksToCenterSpawn, 1 --[[UnitSpawnType.Distance]], 15 --[[Program.BarracksSpawnTime]], Areas.UndeadBase, System.Array(System.Int32) { 1747988530 --[[Constants.UNIT_FERNKAMPFEINHEIT_STUFE_1_HUMAN]] }):Run(1)
+      building:AddSpawnTrigger(Areas.HumanBarracksToCenterSpawn, 0 --[[UnitClass.Meelee]], 15 --[[Program.BarracksSpawnTime]], Areas.UndeadBase, System.Array(System.Int32) { 1747988529 --[[Constants.UNIT_NAHKAMPFEINHEIT_STUFE_1_HUMAN]], 1747988529 --[[Constants.UNIT_NAHKAMPFEINHEIT_STUFE_1_HUMAN]] }):Run(0)
+      building:AddSpawnTrigger(Areas.HumanBarracksToCenterSpawn, 1 --[[UnitClass.Distance]], 15 --[[Program.BarracksSpawnTime]], Areas.UndeadBase, System.Array(System.Int32) { 1747988530 --[[Constants.UNIT_FERNKAMPFEINHEIT_STUFE_1_HUMAN]] }):Run(1)
 
       building = class.Humans.Computer:CreateBuilding(1747988535 --[[Constants.UNIT_KASERNE_HUMAN]], Areas.HumanBarracksToElf, 0)
       building:RegisterOnDies(SourceEventsSpecific.BuildingBarracks.OnDies)
-      building:AddSpawnTrigger(Areas.HumanBarracksToElfSpawn, 0 --[[UnitSpawnType.Meelee]], 15 --[[Program.BarracksSpawnTime]], Areas.ElfBase, System.Array(System.Int32) { 1747988529 --[[Constants.UNIT_NAHKAMPFEINHEIT_STUFE_1_HUMAN]], 1747988529 --[[Constants.UNIT_NAHKAMPFEINHEIT_STUFE_1_HUMAN]] }):Run(0)
-      building:AddSpawnTrigger(Areas.HumanBarracksToElfSpawn, 1 --[[UnitSpawnType.Distance]], 15 --[[Program.BarracksSpawnTime]], Areas.ElfBase, System.Array(System.Int32) { 1747988530 --[[Constants.UNIT_FERNKAMPFEINHEIT_STUFE_1_HUMAN]] }):Run(1)
+      building:AddSpawnTrigger(Areas.HumanBarracksToElfSpawn, 0 --[[UnitClass.Meelee]], 15 --[[Program.BarracksSpawnTime]], Areas.ElfBase, System.Array(System.Int32) { 1747988529 --[[Constants.UNIT_NAHKAMPFEINHEIT_STUFE_1_HUMAN]], 1747988529 --[[Constants.UNIT_NAHKAMPFEINHEIT_STUFE_1_HUMAN]] }):Run(0)
+      building:AddSpawnTrigger(Areas.HumanBarracksToElfSpawn, 1 --[[UnitClass.Distance]], 15 --[[Program.BarracksSpawnTime]], Areas.ElfBase, System.Array(System.Int32) { 1747988530 --[[Constants.UNIT_FERNKAMPFEINHEIT_STUFE_1_HUMAN]] }):Run(1)
 
       building = class.Humans.Computer:CreateBuilding(1747988535 --[[Constants.UNIT_KASERNE_HUMAN]], Areas.HumanBarracksToOrcs, 0)
       building:RegisterOnDies(SourceEventsSpecific.BuildingBarracks.OnDies)
-      building:AddSpawnTrigger(Areas.HumanBarracksToOrcsSpawn, 0 --[[UnitSpawnType.Meelee]], 15 --[[Program.BarracksSpawnTime]], Areas.OrcBase, System.Array(System.Int32) { 1747988529 --[[Constants.UNIT_NAHKAMPFEINHEIT_STUFE_1_HUMAN]], 1747988529 --[[Constants.UNIT_NAHKAMPFEINHEIT_STUFE_1_HUMAN]] }):Run(0)
-      building:AddSpawnTrigger(Areas.HumanBarracksToOrcsSpawn, 1 --[[UnitSpawnType.Distance]], 15 --[[Program.BarracksSpawnTime]], Areas.OrcBase, System.Array(System.Int32) { 1747988530 --[[Constants.UNIT_FERNKAMPFEINHEIT_STUFE_1_HUMAN]] }):Run(1)
+      building:AddSpawnTrigger(Areas.HumanBarracksToOrcsSpawn, 0 --[[UnitClass.Meelee]], 15 --[[Program.BarracksSpawnTime]], Areas.OrcBase, System.Array(System.Int32) { 1747988529 --[[Constants.UNIT_NAHKAMPFEINHEIT_STUFE_1_HUMAN]], 1747988529 --[[Constants.UNIT_NAHKAMPFEINHEIT_STUFE_1_HUMAN]] }):Run(0)
+      building:AddSpawnTrigger(Areas.HumanBarracksToOrcsSpawn, 1 --[[UnitClass.Distance]], 15 --[[Program.BarracksSpawnTime]], Areas.OrcBase, System.Array(System.Int32) { 1747988530 --[[Constants.UNIT_FERNKAMPFEINHEIT_STUFE_1_HUMAN]] }):Run(1)
     end
     ConstructOrcBuildingAndTrigger = function ()
       -- Hauptgebäude
       local building = class.Orcs.Computer:CreateBuilding(1747988570 --[[Constants.UNIT_FESTUNG_ORC]], Areas.OrcBase, 0)
       building:RegisterOnDies(SourceEventsComputer.BuildingMain.OnDies)
-      building:AddSpawnTrigger(Areas.OrcBaseToCenterSpawn, 1 --[[UnitSpawnType.Distance]], 30 --[[Program.MainBuilding1SpawnTime]], Areas.ElfBase, System.Array(System.Int32) { 1747988818 --[[Constants.UNIT_MAGIEEINHEIT_STUFE_1_ORC]], 1747988815 --[[Constants.UNIT_FLUGEINHEIT_STUFE_1_ORC]] }):Run(5.5)
-      building:AddSpawnTrigger(Areas.OrcBaseToCenterSpawn, 2 --[[UnitSpawnType.Artillery]], 60 --[[Program.MainBuilding2SpawnTime]], Areas.ElfBase, System.Array.Empty(System.Int32)):Run(7.5)
-      building:AddSpawnTrigger(Areas.OrcBaseToHumanSpawn, 1 --[[UnitSpawnType.Distance]], 30 --[[Program.MainBuilding1SpawnTime]], Areas.HumanBase, System.Array(System.Int32) { 1747988818 --[[Constants.UNIT_MAGIEEINHEIT_STUFE_1_ORC]], 1747988815 --[[Constants.UNIT_FLUGEINHEIT_STUFE_1_ORC]] }):Run(5.5)
-      building:AddSpawnTrigger(Areas.OrcBaseToHumanSpawn, 2 --[[UnitSpawnType.Artillery]], 60 --[[Program.MainBuilding2SpawnTime]], Areas.HumanBase, System.Array.Empty(System.Int32)):Run(7.5)
-      building:AddSpawnTrigger(Areas.OrcBaseToUndeadSpawn, 1 --[[UnitSpawnType.Distance]], 30 --[[Program.MainBuilding1SpawnTime]], Areas.UndeadBase, System.Array(System.Int32) { 1747988818 --[[Constants.UNIT_MAGIEEINHEIT_STUFE_1_ORC]], 1747988815 --[[Constants.UNIT_FLUGEINHEIT_STUFE_1_ORC]] }):Run(5.5)
-      building:AddSpawnTrigger(Areas.OrcBaseToUndeadSpawn, 2 --[[UnitSpawnType.Artillery]], 60 --[[Program.MainBuilding2SpawnTime]], Areas.UndeadBase, System.Array.Empty(System.Int32)):Run(7.5)
+      building:AddSpawnTrigger(Areas.OrcBaseToCenterSpawn, 1 --[[UnitClass.Distance]], 30 --[[Program.MainBuilding1SpawnTime]], Areas.ElfBase, System.Array(System.Int32) { 1747988818 --[[Constants.UNIT_MAGIEEINHEIT_STUFE_1_ORC]], 1747988815 --[[Constants.UNIT_FLUGEINHEIT_STUFE_1_ORC]] }):Run(5.5)
+      building:AddSpawnTrigger(Areas.OrcBaseToCenterSpawn, 2 --[[UnitClass.Artillery]], 60 --[[Program.MainBuilding2SpawnTime]], Areas.ElfBase, System.Array.Empty(System.Int32)):Run(7.5)
+      building:AddSpawnTrigger(Areas.OrcBaseToHumanSpawn, 1 --[[UnitClass.Distance]], 30 --[[Program.MainBuilding1SpawnTime]], Areas.HumanBase, System.Array(System.Int32) { 1747988818 --[[Constants.UNIT_MAGIEEINHEIT_STUFE_1_ORC]], 1747988815 --[[Constants.UNIT_FLUGEINHEIT_STUFE_1_ORC]] }):Run(5.5)
+      building:AddSpawnTrigger(Areas.OrcBaseToHumanSpawn, 2 --[[UnitClass.Artillery]], 60 --[[Program.MainBuilding2SpawnTime]], Areas.HumanBase, System.Array.Empty(System.Int32)):Run(7.5)
+      building:AddSpawnTrigger(Areas.OrcBaseToUndeadSpawn, 1 --[[UnitClass.Distance]], 30 --[[Program.MainBuilding1SpawnTime]], Areas.UndeadBase, System.Array(System.Int32) { 1747988818 --[[Constants.UNIT_MAGIEEINHEIT_STUFE_1_ORC]], 1747988815 --[[Constants.UNIT_FLUGEINHEIT_STUFE_1_ORC]] }):Run(5.5)
+      building:AddSpawnTrigger(Areas.OrcBaseToUndeadSpawn, 2 --[[UnitClass.Artillery]], 60 --[[Program.MainBuilding2SpawnTime]], Areas.UndeadBase, System.Array.Empty(System.Int32)):Run(7.5)
 
       -- Kasernen
       building = class.Orcs.Computer:CreateBuilding(1747988569 --[[Constants.UNIT_KASERNE_ORC]], Areas.OrcBarracksToCenter, 0)
       building:RegisterOnDies(SourceEventsSpecific.BuildingBarracks.OnDies)
-      building:AddSpawnTrigger(Areas.OrcBarracksToCenterSpawn, 0 --[[UnitSpawnType.Meelee]], 15 --[[Program.BarracksSpawnTime]], Areas.ElfBase, System.Array(System.Int32) { 1747988809 --[[Constants.UNIT_NAHKAMPFEINHEIT_STUFE_1_ORC]], 1747988809 --[[Constants.UNIT_NAHKAMPFEINHEIT_STUFE_1_ORC]] }):Run(0)
-      building:AddSpawnTrigger(Areas.OrcBarracksToCenterSpawn, 1 --[[UnitSpawnType.Distance]], 15 --[[Program.BarracksSpawnTime]], Areas.ElfBase, System.Array(System.Int32) { 1747988812 --[[Constants.UNIT_FERNKAMPFEINHEIT_STUFE_1_ORC]] }):Run(0.5)
+      building:AddSpawnTrigger(Areas.OrcBarracksToCenterSpawn, 0 --[[UnitClass.Meelee]], 15 --[[Program.BarracksSpawnTime]], Areas.ElfBase, System.Array(System.Int32) { 1747988809 --[[Constants.UNIT_NAHKAMPFEINHEIT_STUFE_1_ORC]], 1747988809 --[[Constants.UNIT_NAHKAMPFEINHEIT_STUFE_1_ORC]] }):Run(0)
+      building:AddSpawnTrigger(Areas.OrcBarracksToCenterSpawn, 1 --[[UnitClass.Distance]], 15 --[[Program.BarracksSpawnTime]], Areas.ElfBase, System.Array(System.Int32) { 1747988812 --[[Constants.UNIT_FERNKAMPFEINHEIT_STUFE_1_ORC]] }):Run(0.5)
 
       building = class.Orcs.Computer:CreateBuilding(1747988569 --[[Constants.UNIT_KASERNE_ORC]], Areas.OrcBarracksToHuman, 0)
       building:RegisterOnDies(SourceEventsSpecific.BuildingBarracks.OnDies)
-      building:AddSpawnTrigger(Areas.OrcBarracksToHumanSpawn, 0 --[[UnitSpawnType.Meelee]], 15 --[[Program.BarracksSpawnTime]], Areas.HumanBase, System.Array(System.Int32) { 1747988809 --[[Constants.UNIT_NAHKAMPFEINHEIT_STUFE_1_ORC]], 1747988809 --[[Constants.UNIT_NAHKAMPFEINHEIT_STUFE_1_ORC]] }):Run(0)
-      building:AddSpawnTrigger(Areas.OrcBarracksToHumanSpawn, 1 --[[UnitSpawnType.Distance]], 15 --[[Program.BarracksSpawnTime]], Areas.HumanBase, System.Array(System.Int32) { 1747988812 --[[Constants.UNIT_FERNKAMPFEINHEIT_STUFE_1_ORC]] }):Run(0.5)
+      building:AddSpawnTrigger(Areas.OrcBarracksToHumanSpawn, 0 --[[UnitClass.Meelee]], 15 --[[Program.BarracksSpawnTime]], Areas.HumanBase, System.Array(System.Int32) { 1747988809 --[[Constants.UNIT_NAHKAMPFEINHEIT_STUFE_1_ORC]], 1747988809 --[[Constants.UNIT_NAHKAMPFEINHEIT_STUFE_1_ORC]] }):Run(0)
+      building:AddSpawnTrigger(Areas.OrcBarracksToHumanSpawn, 1 --[[UnitClass.Distance]], 15 --[[Program.BarracksSpawnTime]], Areas.HumanBase, System.Array(System.Int32) { 1747988812 --[[Constants.UNIT_FERNKAMPFEINHEIT_STUFE_1_ORC]] }):Run(0.5)
 
       building = class.Orcs.Computer:CreateBuilding(1747988569 --[[Constants.UNIT_KASERNE_ORC]], Areas.OrcBarracksToUndead, 0)
       building:RegisterOnDies(SourceEventsSpecific.BuildingBarracks.OnDies)
-      building:AddSpawnTrigger(Areas.OrcBarracksToUndeadSpawn, 0 --[[UnitSpawnType.Meelee]], 15 --[[Program.BarracksSpawnTime]], Areas.UndeadBase, System.Array(System.Int32) { 1747988809 --[[Constants.UNIT_NAHKAMPFEINHEIT_STUFE_1_ORC]], 1747988809 --[[Constants.UNIT_NAHKAMPFEINHEIT_STUFE_1_ORC]] }):Run(0)
-      building:AddSpawnTrigger(Areas.OrcBarracksToUndeadSpawn, 1 --[[UnitSpawnType.Distance]], 15 --[[Program.BarracksSpawnTime]], Areas.UndeadBase, System.Array(System.Int32) { 1747988812 --[[Constants.UNIT_FERNKAMPFEINHEIT_STUFE_1_ORC]] }):Run(0.5)
+      building:AddSpawnTrigger(Areas.OrcBarracksToUndeadSpawn, 0 --[[UnitClass.Meelee]], 15 --[[Program.BarracksSpawnTime]], Areas.UndeadBase, System.Array(System.Int32) { 1747988809 --[[Constants.UNIT_NAHKAMPFEINHEIT_STUFE_1_ORC]], 1747988809 --[[Constants.UNIT_NAHKAMPFEINHEIT_STUFE_1_ORC]] }):Run(0)
+      building:AddSpawnTrigger(Areas.OrcBarracksToUndeadSpawn, 1 --[[UnitClass.Distance]], 15 --[[Program.BarracksSpawnTime]], Areas.UndeadBase, System.Array(System.Int32) { 1747988812 --[[Constants.UNIT_FERNKAMPFEINHEIT_STUFE_1_ORC]] }):Run(0.5)
     end
     ConstructElfBuildingAndTrigger = function ()
       -- Hauptgebäude
       local building = class.Elves.Computer:CreateBuilding(1747988789 --[[Constants.UNIT_TELDRASSIL_ELF]], Areas.ElfBase, 0)
       building:RegisterOnDies(SourceEventsComputer.BuildingMain.OnDies)
-      building:AddSpawnTrigger(Areas.ElfBaseToCenterSpawn, 1 --[[UnitSpawnType.Distance]], 30 --[[Program.MainBuilding1SpawnTime]], Areas.OrcBase, System.Array(System.Int32) { 1747989066 --[[Constants.UNIT_MAGIEEINHEIT_STUFE_1_ELF]], 1747989060 --[[Constants.UNIT_FLUGEINHEIT_STUFE_1_ELF]] }):Run(5.5)
-      building:AddSpawnTrigger(Areas.ElfBaseToCenterSpawn, 2 --[[UnitSpawnType.Artillery]], 60 --[[Program.MainBuilding2SpawnTime]], Areas.OrcBase, System.Array.Empty(System.Int32)):Run(7.5)
-      building:AddSpawnTrigger(Areas.ElfBaseToHumanSpawn, 1 --[[UnitSpawnType.Distance]], 30 --[[Program.MainBuilding1SpawnTime]], Areas.HumanBase, System.Array(System.Int32) { 1747989066 --[[Constants.UNIT_MAGIEEINHEIT_STUFE_1_ELF]], 1747989060 --[[Constants.UNIT_FLUGEINHEIT_STUFE_1_ELF]] }):Run(5.5)
-      building:AddSpawnTrigger(Areas.ElfBaseToHumanSpawn, 2 --[[UnitSpawnType.Artillery]], 60 --[[Program.MainBuilding2SpawnTime]], Areas.HumanBase, System.Array.Empty(System.Int32)):Run(7.5)
-      building:AddSpawnTrigger(Areas.ElfBaseToUndeadSpawn, 1 --[[UnitSpawnType.Distance]], 30 --[[Program.MainBuilding1SpawnTime]], Areas.UndeadBase, System.Array(System.Int32) { 1747989066 --[[Constants.UNIT_MAGIEEINHEIT_STUFE_1_ELF]], 1747989060 --[[Constants.UNIT_FLUGEINHEIT_STUFE_1_ELF]] }):Run(5.5)
-      building:AddSpawnTrigger(Areas.ElfBaseToUndeadSpawn, 2 --[[UnitSpawnType.Artillery]], 60 --[[Program.MainBuilding2SpawnTime]], Areas.UndeadBase, System.Array.Empty(System.Int32)):Run(7.5)
+      building:AddSpawnTrigger(Areas.ElfBaseToCenterSpawn, 1 --[[UnitClass.Distance]], 30 --[[Program.MainBuilding1SpawnTime]], Areas.OrcBase, System.Array(System.Int32) { 1747989066 --[[Constants.UNIT_MAGIEEINHEIT_STUFE_1_ELF]], 1747989060 --[[Constants.UNIT_FLUGEINHEIT_STUFE_1_ELF]] }):Run(5.5)
+      building:AddSpawnTrigger(Areas.ElfBaseToCenterSpawn, 2 --[[UnitClass.Artillery]], 60 --[[Program.MainBuilding2SpawnTime]], Areas.OrcBase, System.Array.Empty(System.Int32)):Run(7.5)
+      building:AddSpawnTrigger(Areas.ElfBaseToHumanSpawn, 1 --[[UnitClass.Distance]], 30 --[[Program.MainBuilding1SpawnTime]], Areas.HumanBase, System.Array(System.Int32) { 1747989066 --[[Constants.UNIT_MAGIEEINHEIT_STUFE_1_ELF]], 1747989060 --[[Constants.UNIT_FLUGEINHEIT_STUFE_1_ELF]] }):Run(5.5)
+      building:AddSpawnTrigger(Areas.ElfBaseToHumanSpawn, 2 --[[UnitClass.Artillery]], 60 --[[Program.MainBuilding2SpawnTime]], Areas.HumanBase, System.Array.Empty(System.Int32)):Run(7.5)
+      building:AddSpawnTrigger(Areas.ElfBaseToUndeadSpawn, 1 --[[UnitClass.Distance]], 30 --[[Program.MainBuilding1SpawnTime]], Areas.UndeadBase, System.Array(System.Int32) { 1747989066 --[[Constants.UNIT_MAGIEEINHEIT_STUFE_1_ELF]], 1747989060 --[[Constants.UNIT_FLUGEINHEIT_STUFE_1_ELF]] }):Run(5.5)
+      building:AddSpawnTrigger(Areas.ElfBaseToUndeadSpawn, 2 --[[UnitClass.Artillery]], 60 --[[Program.MainBuilding2SpawnTime]], Areas.UndeadBase, System.Array.Empty(System.Int32)):Run(7.5)
 
       -- Kasernen
       building = class.Elves.Computer:CreateBuilding(1747988788 --[[Constants.UNIT_KASERNE_ELF]], Areas.ElfBarracksToCenter, 0)
       building:RegisterOnDies(SourceEventsSpecific.BuildingBarracks.OnDies)
-      building:AddSpawnTrigger(Areas.ElfBarracksToCenterSpawn, 0 --[[UnitSpawnType.Meelee]], 15 --[[Program.BarracksSpawnTime]], Areas.OrcBase, System.Array(System.Int32) { 1747988824 --[[Constants.UNIT_NAHKAMPFEINHEIT_STUFE_1_ELF]], 1747988824 --[[Constants.UNIT_NAHKAMPFEINHEIT_STUFE_1_ELF]] }):Run(0)
-      building:AddSpawnTrigger(Areas.ElfBarracksToCenterSpawn, 1 --[[UnitSpawnType.Distance]], 15 --[[Program.BarracksSpawnTime]], Areas.OrcBase, System.Array(System.Int32) { 1747989043 --[[Constants.UNIT_FERNKAMPFEINHEIT_STUFE_1_ELF]] }):Run(0.5)
+      building:AddSpawnTrigger(Areas.ElfBarracksToCenterSpawn, 0 --[[UnitClass.Meelee]], 15 --[[Program.BarracksSpawnTime]], Areas.OrcBase, System.Array(System.Int32) { 1747988824 --[[Constants.UNIT_NAHKAMPFEINHEIT_STUFE_1_ELF]], 1747988824 --[[Constants.UNIT_NAHKAMPFEINHEIT_STUFE_1_ELF]] }):Run(0)
+      building:AddSpawnTrigger(Areas.ElfBarracksToCenterSpawn, 1 --[[UnitClass.Distance]], 15 --[[Program.BarracksSpawnTime]], Areas.OrcBase, System.Array(System.Int32) { 1747989043 --[[Constants.UNIT_FERNKAMPFEINHEIT_STUFE_1_ELF]] }):Run(0.5)
 
       building = class.Elves.Computer:CreateBuilding(1747988788 --[[Constants.UNIT_KASERNE_ELF]], Areas.ElfBarracksToHuman, 0)
       building:RegisterOnDies(SourceEventsSpecific.BuildingBarracks.OnDies)
-      building:AddSpawnTrigger(Areas.ElfBarracksToHumanSpawn, 0 --[[UnitSpawnType.Meelee]], 15 --[[Program.BarracksSpawnTime]], Areas.HumanBase, System.Array(System.Int32) { 1747988824 --[[Constants.UNIT_NAHKAMPFEINHEIT_STUFE_1_ELF]], 1747988824 --[[Constants.UNIT_NAHKAMPFEINHEIT_STUFE_1_ELF]] }):Run(0)
-      building:AddSpawnTrigger(Areas.ElfBarracksToHumanSpawn, 1 --[[UnitSpawnType.Distance]], 15 --[[Program.BarracksSpawnTime]], Areas.HumanBase, System.Array(System.Int32) { 1747989043 --[[Constants.UNIT_FERNKAMPFEINHEIT_STUFE_1_ELF]] }):Run(0.5)
+      building:AddSpawnTrigger(Areas.ElfBarracksToHumanSpawn, 0 --[[UnitClass.Meelee]], 15 --[[Program.BarracksSpawnTime]], Areas.HumanBase, System.Array(System.Int32) { 1747988824 --[[Constants.UNIT_NAHKAMPFEINHEIT_STUFE_1_ELF]], 1747988824 --[[Constants.UNIT_NAHKAMPFEINHEIT_STUFE_1_ELF]] }):Run(0)
+      building:AddSpawnTrigger(Areas.ElfBarracksToHumanSpawn, 1 --[[UnitClass.Distance]], 15 --[[Program.BarracksSpawnTime]], Areas.HumanBase, System.Array(System.Int32) { 1747989043 --[[Constants.UNIT_FERNKAMPFEINHEIT_STUFE_1_ELF]] }):Run(0.5)
 
       building = class.Elves.Computer:CreateBuilding(1747988788 --[[Constants.UNIT_KASERNE_ELF]], Areas.ElfBarracksToUndead, 0)
       building:RegisterOnDies(SourceEventsSpecific.BuildingBarracks.OnDies)
-      building:AddSpawnTrigger(Areas.ElfBarracksToUndeadSpawn, 0 --[[UnitSpawnType.Meelee]], 15 --[[Program.BarracksSpawnTime]], Areas.UndeadBase, System.Array(System.Int32) { 1747988824 --[[Constants.UNIT_NAHKAMPFEINHEIT_STUFE_1_ELF]], 1747988824 --[[Constants.UNIT_NAHKAMPFEINHEIT_STUFE_1_ELF]] }):Run(0)
-      building:AddSpawnTrigger(Areas.ElfBarracksToUndeadSpawn, 1 --[[UnitSpawnType.Distance]], 15 --[[Program.BarracksSpawnTime]], Areas.UndeadBase, System.Array(System.Int32) { 1747989043 --[[Constants.UNIT_FERNKAMPFEINHEIT_STUFE_1_ELF]] }):Run(0.5)
+      building:AddSpawnTrigger(Areas.ElfBarracksToUndeadSpawn, 0 --[[UnitClass.Meelee]], 15 --[[Program.BarracksSpawnTime]], Areas.UndeadBase, System.Array(System.Int32) { 1747988824 --[[Constants.UNIT_NAHKAMPFEINHEIT_STUFE_1_ELF]], 1747988824 --[[Constants.UNIT_NAHKAMPFEINHEIT_STUFE_1_ELF]] }):Run(0)
+      building:AddSpawnTrigger(Areas.ElfBarracksToUndeadSpawn, 1 --[[UnitClass.Distance]], 15 --[[Program.BarracksSpawnTime]], Areas.UndeadBase, System.Array(System.Int32) { 1747989043 --[[Constants.UNIT_FERNKAMPFEINHEIT_STUFE_1_ELF]] }):Run(0.5)
     end
     ConstructUndeadBuildingAndTrigger = function ()
       -- Hauptgebäude
       local building = class.Undeads.Computer:CreateBuilding(1747988801 --[[Constants.UNIT_SCHWARZE_ZITADELLE_UNDEAD]], Areas.UndeadBase, 0)
       building:RegisterOnDies(SourceEventsComputer.BuildingMain.OnDies)
-      building:AddSpawnTrigger(Areas.UndeadBaseToCenterSpawn, 1 --[[UnitSpawnType.Distance]], 30 --[[Program.MainBuilding1SpawnTime]], Areas.HumanBase, System.Array(System.Int32) { 1747989067 --[[Constants.UNIT_MAGIEEINHEIT_STUFE_1_UNDEAD]], 1747989061 --[[Constants.UNIT_FLUGEINHEIT_STUFE_1_UNDEAD]] }):Run(5.5)
-      building:AddSpawnTrigger(Areas.UndeadBaseToCenterSpawn, 2 --[[UnitSpawnType.Artillery]], 60 --[[Program.MainBuilding2SpawnTime]], Areas.HumanBase, System.Array.Empty(System.Int32)):Run(7.5)
-      building:AddSpawnTrigger(Areas.UndeadBaseToElfSpawn, 1 --[[UnitSpawnType.Distance]], 30 --[[Program.MainBuilding1SpawnTime]], Areas.ElfBase, System.Array(System.Int32) { 1747989067 --[[Constants.UNIT_MAGIEEINHEIT_STUFE_1_UNDEAD]], 1747989061 --[[Constants.UNIT_FLUGEINHEIT_STUFE_1_UNDEAD]] }):Run(5.5)
-      building:AddSpawnTrigger(Areas.UndeadBaseToElfSpawn, 2 --[[UnitSpawnType.Artillery]], 60 --[[Program.MainBuilding2SpawnTime]], Areas.ElfBase, System.Array.Empty(System.Int32)):Run(7.5)
-      building:AddSpawnTrigger(Areas.UndeadBaseToOrcsSpawn, 1 --[[UnitSpawnType.Distance]], 30 --[[Program.MainBuilding1SpawnTime]], Areas.OrcBase, System.Array(System.Int32) { 1747989067 --[[Constants.UNIT_MAGIEEINHEIT_STUFE_1_UNDEAD]], 1747989061 --[[Constants.UNIT_FLUGEINHEIT_STUFE_1_UNDEAD]] }):Run(5.5)
-      building:AddSpawnTrigger(Areas.UndeadBaseToOrcsSpawn, 2 --[[UnitSpawnType.Artillery]], 60 --[[Program.MainBuilding2SpawnTime]], Areas.OrcBase, System.Array.Empty(System.Int32)):Run(7.5)
+      building:AddSpawnTrigger(Areas.UndeadBaseToCenterSpawn, 1 --[[UnitClass.Distance]], 30 --[[Program.MainBuilding1SpawnTime]], Areas.HumanBase, System.Array(System.Int32) { 1747989067 --[[Constants.UNIT_MAGIEEINHEIT_STUFE_1_UNDEAD]], 1747989061 --[[Constants.UNIT_FLUGEINHEIT_STUFE_1_UNDEAD]] }):Run(5.5)
+      building:AddSpawnTrigger(Areas.UndeadBaseToCenterSpawn, 2 --[[UnitClass.Artillery]], 60 --[[Program.MainBuilding2SpawnTime]], Areas.HumanBase, System.Array.Empty(System.Int32)):Run(7.5)
+      building:AddSpawnTrigger(Areas.UndeadBaseToElfSpawn, 1 --[[UnitClass.Distance]], 30 --[[Program.MainBuilding1SpawnTime]], Areas.ElfBase, System.Array(System.Int32) { 1747989067 --[[Constants.UNIT_MAGIEEINHEIT_STUFE_1_UNDEAD]], 1747989061 --[[Constants.UNIT_FLUGEINHEIT_STUFE_1_UNDEAD]] }):Run(5.5)
+      building:AddSpawnTrigger(Areas.UndeadBaseToElfSpawn, 2 --[[UnitClass.Artillery]], 60 --[[Program.MainBuilding2SpawnTime]], Areas.ElfBase, System.Array.Empty(System.Int32)):Run(7.5)
+      building:AddSpawnTrigger(Areas.UndeadBaseToOrcsSpawn, 1 --[[UnitClass.Distance]], 30 --[[Program.MainBuilding1SpawnTime]], Areas.OrcBase, System.Array(System.Int32) { 1747989067 --[[Constants.UNIT_MAGIEEINHEIT_STUFE_1_UNDEAD]], 1747989061 --[[Constants.UNIT_FLUGEINHEIT_STUFE_1_UNDEAD]] }):Run(5.5)
+      building:AddSpawnTrigger(Areas.UndeadBaseToOrcsSpawn, 2 --[[UnitClass.Artillery]], 60 --[[Program.MainBuilding2SpawnTime]], Areas.OrcBase, System.Array.Empty(System.Int32)):Run(7.5)
 
       -- Kasernen
       building = class.Undeads.Computer:CreateBuilding(1747988805 --[[Constants.UNIT_GRUFT_UNDEAD]], Areas.UndeadBarracksToCenter, 0)
       building:RegisterOnDies(SourceEventsSpecific.BuildingBarracks.OnDies)
-      building:AddSpawnTrigger(Areas.UndeadBarracksToCenterSpawn, 0 --[[UnitSpawnType.Meelee]], 15 --[[Program.BarracksSpawnTime]], Areas.HumanBase, System.Array(System.Int32) { 1747988825 --[[Constants.UNIT_NAHKAMPFEINHEIT_STUFE_1_UNDEAD]], 1747988825 --[[Constants.UNIT_NAHKAMPFEINHEIT_STUFE_1_UNDEAD]] }):Run(0)
-      building:AddSpawnTrigger(Areas.UndeadBarracksToCenterSpawn, 1 --[[UnitSpawnType.Distance]], 15 --[[Program.BarracksSpawnTime]], Areas.HumanBase, System.Array(System.Int32) { 1747989044 --[[Constants.UNIT_FERNKAMPFEINHEIT_STUFE_1_UNDEAD]] }):Run(0.5)
+      building:AddSpawnTrigger(Areas.UndeadBarracksToCenterSpawn, 0 --[[UnitClass.Meelee]], 15 --[[Program.BarracksSpawnTime]], Areas.HumanBase, System.Array(System.Int32) { 1747988825 --[[Constants.UNIT_NAHKAMPFEINHEIT_STUFE_1_UNDEAD]], 1747988825 --[[Constants.UNIT_NAHKAMPFEINHEIT_STUFE_1_UNDEAD]] }):Run(0)
+      building:AddSpawnTrigger(Areas.UndeadBarracksToCenterSpawn, 1 --[[UnitClass.Distance]], 15 --[[Program.BarracksSpawnTime]], Areas.HumanBase, System.Array(System.Int32) { 1747989044 --[[Constants.UNIT_FERNKAMPFEINHEIT_STUFE_1_UNDEAD]] }):Run(0.5)
 
       building = class.Undeads.Computer:CreateBuilding(1747988805 --[[Constants.UNIT_GRUFT_UNDEAD]], Areas.UndeadBarracksToElf, 0)
       building:RegisterOnDies(SourceEventsSpecific.BuildingBarracks.OnDies)
-      building:AddSpawnTrigger(Areas.UndeadBarracksToElfSpawn, 0 --[[UnitSpawnType.Meelee]], 15 --[[Program.BarracksSpawnTime]], Areas.ElfBase, System.Array(System.Int32) { 1747988825 --[[Constants.UNIT_NAHKAMPFEINHEIT_STUFE_1_UNDEAD]], 1747988825 --[[Constants.UNIT_NAHKAMPFEINHEIT_STUFE_1_UNDEAD]] }):Run(0)
-      building:AddSpawnTrigger(Areas.UndeadBarracksToElfSpawn, 1 --[[UnitSpawnType.Distance]], 15 --[[Program.BarracksSpawnTime]], Areas.ElfBase, System.Array(System.Int32) { 1747989044 --[[Constants.UNIT_FERNKAMPFEINHEIT_STUFE_1_UNDEAD]] }):Run(0.5)
+      building:AddSpawnTrigger(Areas.UndeadBarracksToElfSpawn, 0 --[[UnitClass.Meelee]], 15 --[[Program.BarracksSpawnTime]], Areas.ElfBase, System.Array(System.Int32) { 1747988825 --[[Constants.UNIT_NAHKAMPFEINHEIT_STUFE_1_UNDEAD]], 1747988825 --[[Constants.UNIT_NAHKAMPFEINHEIT_STUFE_1_UNDEAD]] }):Run(0)
+      building:AddSpawnTrigger(Areas.UndeadBarracksToElfSpawn, 1 --[[UnitClass.Distance]], 15 --[[Program.BarracksSpawnTime]], Areas.ElfBase, System.Array(System.Int32) { 1747989044 --[[Constants.UNIT_FERNKAMPFEINHEIT_STUFE_1_UNDEAD]] }):Run(0.5)
 
       building = class.Undeads.Computer:CreateBuilding(1747988805 --[[Constants.UNIT_GRUFT_UNDEAD]], Areas.UndeadBarracksToOrcs, 0)
       building:RegisterOnDies(SourceEventsSpecific.BuildingBarracks.OnDies)
-      building:AddSpawnTrigger(Areas.UndeadBarracksToOrcsSpawn, 0 --[[UnitSpawnType.Meelee]], 15 --[[Program.BarracksSpawnTime]], Areas.OrcBase, System.Array(System.Int32) { 1747988825 --[[Constants.UNIT_NAHKAMPFEINHEIT_STUFE_1_UNDEAD]], 1747988825 --[[Constants.UNIT_NAHKAMPFEINHEIT_STUFE_1_UNDEAD]] }):Run(0)
-      building:AddSpawnTrigger(Areas.UndeadBarracksToOrcsSpawn, 1 --[[UnitSpawnType.Distance]], 15 --[[Program.BarracksSpawnTime]], Areas.OrcBase, System.Array(System.Int32) { 1747989044 --[[Constants.UNIT_FERNKAMPFEINHEIT_STUFE_1_UNDEAD]] }):Run(0.5)
+      building:AddSpawnTrigger(Areas.UndeadBarracksToOrcsSpawn, 0 --[[UnitClass.Meelee]], 15 --[[Program.BarracksSpawnTime]], Areas.OrcBase, System.Array(System.Int32) { 1747988825 --[[Constants.UNIT_NAHKAMPFEINHEIT_STUFE_1_UNDEAD]], 1747988825 --[[Constants.UNIT_NAHKAMPFEINHEIT_STUFE_1_UNDEAD]] }):Run(0)
+      building:AddSpawnTrigger(Areas.UndeadBarracksToOrcsSpawn, 1 --[[UnitClass.Distance]], 15 --[[Program.BarracksSpawnTime]], Areas.OrcBase, System.Array(System.Int32) { 1747989044 --[[Constants.UNIT_FERNKAMPFEINHEIT_STUFE_1_UNDEAD]] }):Run(0.5)
     end
     CreateComputerHeros = function ()
-      class.Humans.Computer:CreateUnit(1211117645 --[[Constants.UNIT_W_CHTER_HUMAN]], Areas.HumanBaseToCenterSpawn, 0):AttackMove(Areas.ElfBase)
-      class.Humans.Computer:CreateUnit(1211117645 --[[Constants.UNIT_W_CHTER_HUMAN]], Areas.HumanBaseToElfSpawn, 0):AttackMove(Areas.UndeadBase)
+      class.Humans.Computer:CreateUnit(1211117645 --[[Constants.UNIT_W_CHTER_HUMAN]], Areas.HumanBaseToElfSpawn, 0):AttackMove(Areas.ElfBase)
+      class.Humans.Computer:CreateUnit(1211117645 --[[Constants.UNIT_W_CHTER_HUMAN]], Areas.HumanBaseToCenterSpawn, 0):AttackMove(Areas.UndeadBase)
       class.Humans.Computer:CreateUnit(1211117645 --[[Constants.UNIT_W_CHTER_HUMAN]], Areas.HumanBaseToOrcsSpawn, 0):AttackMove(Areas.OrcBase)
 
       class.Orcs.Computer:CreateUnit(1211117911 --[[Constants.UNIT_W_CHTER_ORC]], Areas.OrcBaseToCenterSpawn, 0):AttackMove(Areas.ElfBase)
-      class.Orcs.Computer:CreateUnit(1211117911 --[[Constants.UNIT_W_CHTER_ORC]], Areas.OrcBaseToHumanSpawn, 0):AttackMove(Areas.UndeadBase)
-      class.Orcs.Computer:CreateUnit(1211117911 --[[Constants.UNIT_W_CHTER_ORC]], Areas.OrcBaseToUndeadSpawn, 0):AttackMove(Areas.HumanBase)
+      class.Orcs.Computer:CreateUnit(1211117911 --[[Constants.UNIT_W_CHTER_ORC]], Areas.OrcBaseToUndeadSpawn, 0):AttackMove(Areas.UndeadBase)
+      class.Orcs.Computer:CreateUnit(1211117911 --[[Constants.UNIT_W_CHTER_ORC]], Areas.OrcBaseToHumanSpawn, 0):AttackMove(Areas.HumanBase)
 
-      class.Elves.Computer:CreateUnit(1211118160 --[[Constants.UNIT_W_CHTER_ELF]], Areas.ElfBaseToCenterSpawn, 0):AttackMove(Areas.HumanBase)
-      class.Elves.Computer:CreateUnit(1211118160 --[[Constants.UNIT_W_CHTER_ELF]], Areas.ElfBaseToHumanSpawn, 0):AttackMove(Areas.UndeadBase)
-      class.Elves.Computer:CreateUnit(1211118160 --[[Constants.UNIT_W_CHTER_ELF]], Areas.ElfBaseToUndeadSpawn, 0):AttackMove(Areas.OrcBase)
+      class.Elves.Computer:CreateUnit(1211118160 --[[Constants.UNIT_W_CHTER_ELF]], Areas.ElfBaseToHumanSpawn, 0):AttackMove(Areas.HumanBase)
+      class.Elves.Computer:CreateUnit(1211118160 --[[Constants.UNIT_W_CHTER_ELF]], Areas.ElfBaseToUndeadSpawn, 0):AttackMove(Areas.UndeadBase)
+      class.Elves.Computer:CreateUnit(1211118160 --[[Constants.UNIT_W_CHTER_ELF]], Areas.ElfBaseToCenterSpawn, 0):AttackMove(Areas.OrcBase)
 
-      class.Undeads.Computer:CreateUnit(1211118161 --[[Constants.UNIT_W_CHTER_UNDEAD]], Areas.UndeadBaseToCenterSpawn, 0):AttackMove(Areas.ElfBase)
-      class.Undeads.Computer:CreateUnit(1211118161 --[[Constants.UNIT_W_CHTER_UNDEAD]], Areas.UndeadBaseToElfSpawn, 0):AttackMove(Areas.HumanBase)
+      class.Undeads.Computer:CreateUnit(1211118161 --[[Constants.UNIT_W_CHTER_UNDEAD]], Areas.UndeadBaseToElfSpawn, 0):AttackMove(Areas.ElfBase)
+      class.Undeads.Computer:CreateUnit(1211118161 --[[Constants.UNIT_W_CHTER_UNDEAD]], Areas.UndeadBaseToCenterSpawn, 0):AttackMove(Areas.HumanBase)
       class.Undeads.Computer:CreateUnit(1211118161 --[[Constants.UNIT_W_CHTER_UNDEAD]], Areas.UndeadBaseToOrcsSpawn, 0):AttackMove(Areas.OrcBase)
     end
     CreateHeroSelectorForPlayerAndAdjustCamera = function (user)
@@ -22650,7 +22648,7 @@ System.namespace("Source.Models", function (namespace)
         end
       }
     end)
-    namespace.enum("UnitSpawnType", function ()
+    namespace.enum("UnitClass", function ()
       return {
         Meelee = 0,
         Distance = 1,
@@ -22662,7 +22660,7 @@ System.namespace("Source.Models", function (namespace)
               { "Distance", 0xE, System.Int32 },
               { "Meelee", 0xE, System.Int32 }
             },
-            class = { "UnitSpawnType", 0x26 }
+            class = { "UnitClass", 0x26 }
           }
         end
       }
@@ -22974,6 +22972,16 @@ local Linq = System.Linq.Enumerable
 System.namespace("Source.Models", function (namespace)
   namespace.class("SpawnTrigger", function (namespace)
     local Run, Start, Elapsed, Stop, Add, Upgrade, __ctor__
+    -- <summary>
+    -- Erstellt einen zeitgesteuertem Auslöser für das regelmäßige Erstellen von Einheiten.
+    -- </summary>
+    -- <param name="player">Computer-Spieler, für den Einheiten erstellt werden</param>
+    -- <param name="building">Gebäude, an dessen Lebenszeit dieser Auslöser gebunden ist</param>
+    -- <param name="spawnArea">Gebiet, in dem die Einheiten erstellt werden</param>
+    -- <param name="unitSpawnType">Klasse der erstellten Einheiten</param>
+    -- <param name="interval">Interval in Sekunden, nach dessen Rythmus Einheiten erstellt werden</param>
+    -- <param name="targetArea">Zielgebiet, für das erstellte Einheiten einen Angriff/Bewegen-Befehl erhalten</param>
+    -- <param name="unitIds">Auflistung an Einheit-Typen zu beginn</param>
     __ctor__ = function (this, player, building, spawnArea, unitSpawnType, interval, targetArea, unitIds)
       this.Player = player
       this.Interval = interval
@@ -23182,7 +23190,7 @@ System.namespace("Source.Models.Teams", function (namespace)
         local default = techId
         if default == 1378889781 --[[Constants.UPGRADE_MELEE_UNIT_TEAM]] then
           local extern = SourceModels.SpawnUnitCommand()
-          extern.UnitSpawnType = 0 --[[UnitSpawnType.Meelee]]
+          extern.UnitSpawnType = 0 --[[UnitClass.Meelee]]
           extern.UnitIdOfBuilding = 1747988788 --[[Constants.UNIT_KASERNE_ELF]]
           spawnCommand = extern
 
@@ -23200,7 +23208,7 @@ System.namespace("Source.Models.Teams", function (namespace)
           until 1
         elseif default == 1378889785 --[[Constants.UPGRADE_DISTANCE_UNIT_TEAM]] then
           local extern = SourceModels.SpawnUnitCommand()
-          extern.UnitSpawnType = 1 --[[UnitSpawnType.Distance]]
+          extern.UnitSpawnType = 1 --[[UnitClass.Distance]]
           extern.UnitIdOfBuilding = 1747988788 --[[Constants.UNIT_KASERNE_ELF]]
           spawnCommand = extern
 
@@ -23218,7 +23226,7 @@ System.namespace("Source.Models.Teams", function (namespace)
           until 1
         elseif default == 1378889795 --[[Constants.UPGRADE_FLIGHT_UNIT_TEAM]] then
           local extern = SourceModels.SpawnUnitCommand()
-          extern.UnitSpawnType = 1 --[[UnitSpawnType.Distance]]
+          extern.UnitSpawnType = 1 --[[UnitClass.Distance]]
           extern.UnitIdOfBuilding = 1747988789 --[[Constants.UNIT_TELDRASSIL_ELF]]
           spawnCommand = extern
 
@@ -23236,7 +23244,7 @@ System.namespace("Source.Models.Teams", function (namespace)
           until 1
         elseif default == 1378889797 --[[Constants.UPGRADE_MAGE_UNIT_TEAM]] then
           local extern = SourceModels.SpawnUnitCommand()
-          extern.UnitSpawnType = 1 --[[UnitSpawnType.Distance]]
+          extern.UnitSpawnType = 1 --[[UnitClass.Distance]]
           extern.UnitIdOfBuilding = 1747988789 --[[Constants.UNIT_TELDRASSIL_ELF]]
           spawnCommand = extern
 
@@ -23254,7 +23262,7 @@ System.namespace("Source.Models.Teams", function (namespace)
           until 1
         elseif default == 1378889784 --[[Constants.UPGRADE_SIEGE_UNIT_TEAM]] then
           local extern = SourceModels.SpawnUnitCommand()
-          extern.UnitSpawnType = 2 --[[UnitSpawnType.Artillery]]
+          extern.UnitSpawnType = 2 --[[UnitClass.Artillery]]
           extern.UnitIdOfBuilding = 1747988789 --[[Constants.UNIT_TELDRASSIL_ELF]]
           spawnCommand = extern
 
@@ -23314,7 +23322,7 @@ System.namespace("Source.Models.Teams", function (namespace)
         local default = techId
         if default == 1378889781 --[[Constants.UPGRADE_MELEE_UNIT_TEAM]] then
           local extern = SourceModels.SpawnUnitCommand()
-          extern.UnitSpawnType = 0 --[[UnitSpawnType.Meelee]]
+          extern.UnitSpawnType = 0 --[[UnitClass.Meelee]]
           extern.UnitIdOfBuilding = 1747988535 --[[Constants.UNIT_KASERNE_HUMAN]]
           spawnCommand = extern
 
@@ -23332,7 +23340,7 @@ System.namespace("Source.Models.Teams", function (namespace)
           until 1
         elseif default == 1378889785 --[[Constants.UPGRADE_DISTANCE_UNIT_TEAM]] then
           local extern = SourceModels.SpawnUnitCommand()
-          extern.UnitSpawnType = 1 --[[UnitSpawnType.Distance]]
+          extern.UnitSpawnType = 1 --[[UnitClass.Distance]]
           extern.UnitIdOfBuilding = 1747988535 --[[Constants.UNIT_KASERNE_HUMAN]]
           spawnCommand = extern
 
@@ -23350,7 +23358,7 @@ System.namespace("Source.Models.Teams", function (namespace)
           until 1
         elseif default == 1378889795 --[[Constants.UPGRADE_FLIGHT_UNIT_TEAM]] then
           local extern = SourceModels.SpawnUnitCommand()
-          extern.UnitSpawnType = 1 --[[UnitSpawnType.Distance]]
+          extern.UnitSpawnType = 1 --[[UnitClass.Distance]]
           extern.UnitIdOfBuilding = 1747988531 --[[Constants.UNIT_SCHLOSS_HUMAN]]
           spawnCommand = extern
 
@@ -23368,7 +23376,7 @@ System.namespace("Source.Models.Teams", function (namespace)
           until 1
         elseif default == 1378889797 --[[Constants.UPGRADE_MAGE_UNIT_TEAM]] then
           local extern = SourceModels.SpawnUnitCommand()
-          extern.UnitSpawnType = 1 --[[UnitSpawnType.Distance]]
+          extern.UnitSpawnType = 1 --[[UnitClass.Distance]]
           extern.UnitIdOfBuilding = 1747988531 --[[Constants.UNIT_SCHLOSS_HUMAN]]
           spawnCommand = extern
 
@@ -23386,7 +23394,7 @@ System.namespace("Source.Models.Teams", function (namespace)
           until 1
         elseif default == 1378889784 --[[Constants.UPGRADE_SIEGE_UNIT_TEAM]] then
           local extern = SourceModels.SpawnUnitCommand()
-          extern.UnitSpawnType = 2 --[[UnitSpawnType.Artillery]]
+          extern.UnitSpawnType = 2 --[[UnitClass.Artillery]]
           extern.UnitIdOfBuilding = 1747988531 --[[Constants.UNIT_SCHLOSS_HUMAN]]
           spawnCommand = extern
 
@@ -23447,7 +23455,7 @@ System.namespace("Source.Models.Teams", function (namespace)
         local default = techId
         if default == 1378889781 --[[Constants.UPGRADE_MELEE_UNIT_TEAM]] then
           local extern = SourceModels.SpawnUnitCommand()
-          extern.UnitSpawnType = 0 --[[UnitSpawnType.Meelee]]
+          extern.UnitSpawnType = 0 --[[UnitClass.Meelee]]
           extern.UnitIdOfBuilding = 1747988569 --[[Constants.UNIT_KASERNE_ORC]]
           spawnCommand = extern
 
@@ -23465,7 +23473,7 @@ System.namespace("Source.Models.Teams", function (namespace)
           until 1
         elseif default == 1378889785 --[[Constants.UPGRADE_DISTANCE_UNIT_TEAM]] then
           local extern = SourceModels.SpawnUnitCommand()
-          extern.UnitSpawnType = 1 --[[UnitSpawnType.Distance]]
+          extern.UnitSpawnType = 1 --[[UnitClass.Distance]]
           extern.UnitIdOfBuilding = 1747988569 --[[Constants.UNIT_KASERNE_ORC]]
           spawnCommand = extern
 
@@ -23483,7 +23491,7 @@ System.namespace("Source.Models.Teams", function (namespace)
           until 1
         elseif default == 1378889795 --[[Constants.UPGRADE_FLIGHT_UNIT_TEAM]] then
           local extern = SourceModels.SpawnUnitCommand()
-          extern.UnitSpawnType = 1 --[[UnitSpawnType.Distance]]
+          extern.UnitSpawnType = 1 --[[UnitClass.Distance]]
           extern.UnitIdOfBuilding = 1747988570 --[[Constants.UNIT_FESTUNG_ORC]]
           spawnCommand = extern
 
@@ -23501,7 +23509,7 @@ System.namespace("Source.Models.Teams", function (namespace)
           until 1
         elseif default == 1378889797 --[[Constants.UPGRADE_MAGE_UNIT_TEAM]] then
           local extern = SourceModels.SpawnUnitCommand()
-          extern.UnitSpawnType = 1 --[[UnitSpawnType.Distance]]
+          extern.UnitSpawnType = 1 --[[UnitClass.Distance]]
           extern.UnitIdOfBuilding = 1747988570 --[[Constants.UNIT_FESTUNG_ORC]]
           spawnCommand = extern
 
@@ -23519,7 +23527,7 @@ System.namespace("Source.Models.Teams", function (namespace)
           until 1
         elseif default == 1378889784 --[[Constants.UPGRADE_SIEGE_UNIT_TEAM]] then
           local extern = SourceModels.SpawnUnitCommand()
-          extern.UnitSpawnType = 2 --[[UnitSpawnType.Artillery]]
+          extern.UnitSpawnType = 2 --[[UnitClass.Artillery]]
           extern.UnitIdOfBuilding = 1747988570 --[[Constants.UNIT_FESTUNG_ORC]]
           spawnCommand = extern
 
@@ -23579,7 +23587,7 @@ System.namespace("Source.Models.Teams", function (namespace)
         local default = techId
         if default == 1378889781 --[[Constants.UPGRADE_MELEE_UNIT_TEAM]] then
           local extern = SourceModels.SpawnUnitCommand()
-          extern.UnitSpawnType = 0 --[[UnitSpawnType.Meelee]]
+          extern.UnitSpawnType = 0 --[[UnitClass.Meelee]]
           extern.UnitIdOfBuilding = 1747988805 --[[Constants.UNIT_GRUFT_UNDEAD]]
           spawnCommand = extern
 
@@ -23597,7 +23605,7 @@ System.namespace("Source.Models.Teams", function (namespace)
           until 1
         elseif default == 1378889785 --[[Constants.UPGRADE_DISTANCE_UNIT_TEAM]] then
           local extern = SourceModels.SpawnUnitCommand()
-          extern.UnitSpawnType = 1 --[[UnitSpawnType.Distance]]
+          extern.UnitSpawnType = 1 --[[UnitClass.Distance]]
           extern.UnitIdOfBuilding = 1747988805 --[[Constants.UNIT_GRUFT_UNDEAD]]
           spawnCommand = extern
 
@@ -23615,7 +23623,7 @@ System.namespace("Source.Models.Teams", function (namespace)
           until 1
         elseif default == 1378889795 --[[Constants.UPGRADE_FLIGHT_UNIT_TEAM]] then
           local extern = SourceModels.SpawnUnitCommand()
-          extern.UnitSpawnType = 1 --[[UnitSpawnType.Distance]]
+          extern.UnitSpawnType = 1 --[[UnitClass.Distance]]
           extern.UnitIdOfBuilding = 1747988801 --[[Constants.UNIT_SCHWARZE_ZITADELLE_UNDEAD]]
           spawnCommand = extern
 
@@ -23633,7 +23641,7 @@ System.namespace("Source.Models.Teams", function (namespace)
           until 1
         elseif default == 1378889797 --[[Constants.UPGRADE_MAGE_UNIT_TEAM]] then
           local extern = SourceModels.SpawnUnitCommand()
-          extern.UnitSpawnType = 1 --[[UnitSpawnType.Distance]]
+          extern.UnitSpawnType = 1 --[[UnitClass.Distance]]
           extern.UnitIdOfBuilding = 1747988801 --[[Constants.UNIT_SCHWARZE_ZITADELLE_UNDEAD]]
           spawnCommand = extern
 
@@ -23651,7 +23659,7 @@ System.namespace("Source.Models.Teams", function (namespace)
           until 1
         elseif default == 1378889784 --[[Constants.UPGRADE_SIEGE_UNIT_TEAM]] then
           local extern = SourceModels.SpawnUnitCommand()
-          extern.UnitSpawnType = 2 --[[UnitSpawnType.Artillery]]
+          extern.UnitSpawnType = 2 --[[UnitClass.Artillery]]
           extern.UnitIdOfBuilding = 1747988801 --[[Constants.UNIT_SCHWARZE_ZITADELLE_UNDEAD]]
           spawnCommand = extern
 
@@ -35076,8 +35084,8 @@ local InitCSharp = function ()
       "WCSharp.Missiles.HomingMissile",
       "WCSharp.Missiles.MomentumMissile",
       "WCSharp.Missiles.OrbitalMissile",
-      "WCSharp.SaveLoad.SaveLoadedMessage_1",
       "WCSharp.SaveLoad.Save_1",
+      "WCSharp.SaveLoad.SaveLoadedMessage_1",
       "WCSharp.W3MMD.IW3MmdVar",
       "Areas",
       "Constants",
@@ -35102,7 +35110,7 @@ local InitCSharp = function ()
       "Source.Models.ComputerPlayer",
       "Source.Models.CreepFragtion",
       "Source.Models.Enums.ResearchType",
-      "Source.Models.Enums.UnitSpawnType",
+      "Source.Models.Enums.UnitClass",
       "Source.Models.KlatschenFragtion",
       "Source.Models.SpawnBuilding",
       "Source.Models.SpawnCreepsBuilding",
@@ -43170,6 +43178,706 @@ gg_dest_LTlt_5479 = nil
 gg_dest_LTlt_5480 = nil
 gg_dest_LTlt_5481 = nil
 gg_dest_LTlt_5482 = nil
+gg_dest_LTlt_3852 = nil
+gg_dest_LTlt_3853 = nil
+gg_dest_LTlt_3854 = nil
+gg_dest_LTlt_3855 = nil
+gg_dest_LTlt_3892 = nil
+gg_dest_LTlt_3902 = nil
+gg_dest_LTlt_3903 = nil
+gg_dest_LTlt_4329 = nil
+gg_dest_LTlt_4456 = nil
+gg_dest_LTlt_4837 = nil
+gg_dest_LTlt_5872 = nil
+gg_dest_LTlt_5873 = nil
+gg_dest_LTlt_5879 = nil
+gg_dest_LTlt_5880 = nil
+gg_dest_LTlt_5882 = nil
+gg_dest_LTlt_5883 = nil
+gg_dest_LTlt_6057 = nil
+gg_dest_LTlt_6060 = nil
+gg_dest_LTlt_6061 = nil
+gg_dest_LTlt_6179 = nil
+gg_dest_LTlt_6212 = nil
+gg_dest_LTlt_6213 = nil
+gg_dest_LTlt_6218 = nil
+gg_dest_LTlt_6219 = nil
+gg_dest_LTlt_6222 = nil
+gg_dest_LTlt_6223 = nil
+gg_dest_LTlt_6229 = nil
+gg_dest_LTlt_6234 = nil
+gg_dest_LTlt_6239 = nil
+gg_dest_LTlt_6264 = nil
+gg_dest_LTlt_6269 = nil
+gg_dest_LTlt_6660 = nil
+gg_dest_LTlt_6661 = nil
+gg_dest_LTlt_6664 = nil
+gg_dest_LTlt_6665 = nil
+gg_dest_LTlt_6666 = nil
+gg_dest_LTlt_6667 = nil
+gg_dest_LTlt_6668 = nil
+gg_dest_LTlt_6669 = nil
+gg_dest_LTlt_6670 = nil
+gg_dest_LTlt_6671 = nil
+gg_dest_LTlt_6672 = nil
+gg_dest_LTlt_6673 = nil
+gg_dest_LTlt_6674 = nil
+gg_dest_LTlt_6675 = nil
+gg_dest_LTlt_6678 = nil
+gg_dest_LTlt_6679 = nil
+gg_dest_LTlt_6680 = nil
+gg_dest_LTlt_6681 = nil
+gg_dest_LTlt_6682 = nil
+gg_dest_LTlt_6683 = nil
+gg_dest_LTlt_6684 = nil
+gg_dest_LTlt_6685 = nil
+gg_dest_LTlt_6686 = nil
+gg_dest_LTlt_6687 = nil
+gg_dest_LTlt_6867 = nil
+gg_dest_LTlt_6870 = nil
+gg_dest_LTlt_6872 = nil
+gg_dest_LTlt_6874 = nil
+gg_dest_LTlt_6876 = nil
+gg_dest_LTlt_6878 = nil
+gg_dest_LTlt_6880 = nil
+gg_dest_LTlt_6885 = nil
+gg_dest_LTlt_6887 = nil
+gg_dest_LTlt_6891 = nil
+gg_dest_LTlt_6894 = nil
+gg_dest_LTlt_6905 = nil
+gg_dest_LTlt_6908 = nil
+gg_dest_LTlt_6910 = nil
+gg_dest_LTlt_6912 = nil
+gg_dest_LTlt_6914 = nil
+gg_dest_LTlt_6916 = nil
+gg_dest_LTlt_6918 = nil
+gg_dest_LTlt_6920 = nil
+gg_dest_LTlt_6922 = nil
+gg_dest_LTlt_6925 = nil
+gg_dest_LTlt_6926 = nil
+gg_dest_LTlt_6927 = nil
+gg_dest_LTlt_6928 = nil
+gg_dest_LTlt_6929 = nil
+gg_dest_LTlt_6930 = nil
+gg_dest_LTlt_6931 = nil
+gg_dest_LTlt_6932 = nil
+gg_dest_LTlt_6933 = nil
+gg_dest_LTlt_6934 = nil
+gg_dest_LTlt_6935 = nil
+gg_dest_LTlt_6936 = nil
+gg_dest_LTlt_6937 = nil
+gg_dest_LTlt_6938 = nil
+gg_dest_LTlt_6939 = nil
+gg_dest_LTlt_6940 = nil
+gg_dest_LTlt_6941 = nil
+gg_dest_LTlt_6942 = nil
+gg_dest_LTlt_6943 = nil
+gg_dest_LTlt_6944 = nil
+gg_dest_LTlt_6945 = nil
+gg_dest_LTlt_6946 = nil
+gg_dest_LTlt_6947 = nil
+gg_dest_LTlt_6948 = nil
+gg_dest_LTlt_6949 = nil
+gg_dest_LTlt_6950 = nil
+gg_dest_LTlt_6952 = nil
+gg_dest_LTlt_6953 = nil
+gg_dest_LTlt_6954 = nil
+gg_dest_LTlt_6955 = nil
+gg_dest_LTlt_7000 = nil
+gg_dest_LTlt_7015 = nil
+gg_dest_LTlt_7018 = nil
+gg_dest_LTlt_7029 = nil
+gg_dest_LTlt_7031 = nil
+gg_dest_LTlt_7033 = nil
+gg_dest_LTlt_7035 = nil
+gg_dest_LTlt_7038 = nil
+gg_dest_LTlt_7041 = nil
+gg_dest_LTlt_7044 = nil
+gg_dest_LTlt_7045 = nil
+gg_dest_LTlt_7049 = nil
+gg_dest_LTlt_7050 = nil
+gg_dest_LTlt_7051 = nil
+gg_dest_LTlt_7052 = nil
+gg_dest_LTlt_7054 = nil
+gg_dest_LTlt_7056 = nil
+gg_dest_LTlt_7058 = nil
+gg_dest_LTlt_7060 = nil
+gg_dest_LTlt_7062 = nil
+gg_dest_LTlt_7065 = nil
+gg_dest_LTlt_7066 = nil
+gg_dest_LTlt_7068 = nil
+gg_dest_LTlt_7069 = nil
+gg_dest_LTlt_7072 = nil
+gg_dest_LTlt_7107 = nil
+gg_dest_LTlt_7108 = nil
+gg_dest_LTlt_7109 = nil
+gg_dest_LTlt_7110 = nil
+gg_dest_LTlt_7111 = nil
+gg_dest_LTlt_7113 = nil
+gg_dest_LTlt_7114 = nil
+gg_dest_LTlt_7115 = nil
+gg_dest_LTlt_7116 = nil
+gg_dest_LTlt_7232 = nil
+gg_dest_LTlt_7233 = nil
+gg_dest_LTlt_7236 = nil
+gg_dest_LTlt_7237 = nil
+gg_dest_LTlt_7238 = nil
+gg_dest_LTlt_7242 = nil
+gg_dest_LTlt_7244 = nil
+gg_dest_LTlt_7245 = nil
+gg_dest_LTlt_7246 = nil
+gg_dest_LTlt_7249 = nil
+gg_dest_LTlt_7250 = nil
+gg_dest_LTlt_7251 = nil
+gg_dest_LTlt_7252 = nil
+gg_dest_LTlt_7254 = nil
+gg_dest_LTlt_7256 = nil
+gg_dest_LTlt_7258 = nil
+gg_dest_LTlt_7261 = nil
+gg_dest_LTlt_7263 = nil
+gg_dest_LTlt_7265 = nil
+gg_dest_LTlt_7268 = nil
+gg_dest_LTlt_7270 = nil
+gg_dest_LTlt_7313 = nil
+gg_dest_LTlt_7315 = nil
+gg_dest_LTlt_7324 = nil
+gg_dest_LTlt_7327 = nil
+gg_dest_LTlt_7330 = nil
+gg_dest_LTlt_7333 = nil
+gg_dest_LTlt_7336 = nil
+gg_dest_LTlt_7339 = nil
+gg_dest_LTlt_7341 = nil
+gg_dest_LTlt_7343 = nil
+gg_dest_LTlt_7346 = nil
+gg_dest_LTlt_7349 = nil
+gg_dest_LTlt_7352 = nil
+gg_dest_LTlt_7354 = nil
+gg_dest_LTlt_7357 = nil
+gg_dest_LTlt_7360 = nil
+gg_dest_LTlt_7362 = nil
+gg_dest_LTlt_7364 = nil
+gg_dest_LTlt_7375 = nil
+gg_dest_LTlt_7379 = nil
+gg_dest_LTlt_7382 = nil
+gg_dest_LTlt_7384 = nil
+gg_dest_LTlt_7386 = nil
+gg_dest_LTlt_7390 = nil
+gg_dest_LTlt_7404 = nil
+gg_dest_LTlt_7405 = nil
+gg_dest_LTlt_7406 = nil
+gg_dest_LTlt_7407 = nil
+gg_dest_LTlt_7408 = nil
+gg_dest_LTlt_7415 = nil
+gg_dest_LTlt_7427 = nil
+gg_dest_LTlt_7431 = nil
+gg_dest_LTlt_7434 = nil
+gg_dest_LTlt_7438 = nil
+gg_dest_LTlt_7441 = nil
+gg_dest_LTlt_7443 = nil
+gg_dest_LTlt_7449 = nil
+gg_dest_LTlt_7452 = nil
+gg_dest_LTlt_7455 = nil
+gg_dest_LTlt_7458 = nil
+gg_dest_LTlt_7463 = nil
+gg_dest_LTlt_7466 = nil
+gg_dest_LTlt_7468 = nil
+gg_dest_LTlt_7472 = nil
+gg_dest_LTlt_7476 = nil
+gg_dest_LTlt_7481 = nil
+gg_dest_LTlt_7485 = nil
+gg_dest_LTlt_7486 = nil
+gg_dest_LTlt_7487 = nil
+gg_dest_LTlt_7488 = nil
+gg_dest_LTlt_7489 = nil
+gg_dest_LTlt_7490 = nil
+gg_dest_LTlt_7491 = nil
+gg_dest_LTlt_7492 = nil
+gg_dest_LTlt_7493 = nil
+gg_dest_LTlt_7572 = nil
+gg_dest_LTlt_7573 = nil
+gg_dest_LTlt_7574 = nil
+gg_dest_LTlt_7575 = nil
+gg_dest_LTlt_7576 = nil
+gg_dest_LTlt_7578 = nil
+gg_dest_LTlt_7579 = nil
+gg_dest_LTlt_7580 = nil
+gg_dest_LTlt_7588 = nil
+gg_dest_LTlt_7625 = nil
+gg_dest_LTlt_7627 = nil
+gg_dest_LTlt_7629 = nil
+gg_dest_LTlt_7633 = nil
+gg_dest_LTlt_7635 = nil
+gg_dest_LTlt_7637 = nil
+gg_dest_LTlt_7640 = nil
+gg_dest_LTlt_7656 = nil
+gg_dest_LTlt_7661 = nil
+gg_dest_LTlt_7664 = nil
+gg_dest_LTlt_7667 = nil
+gg_dest_LTlt_7669 = nil
+gg_dest_LTlt_7671 = nil
+gg_dest_LTlt_7672 = nil
+gg_dest_LTlt_7673 = nil
+gg_dest_LTlt_7674 = nil
+gg_dest_LTlt_7679 = nil
+gg_dest_LTlt_7682 = nil
+gg_dest_LTlt_7683 = nil
+gg_dest_LTlt_7686 = nil
+gg_dest_LTlt_7687 = nil
+gg_dest_LTlt_7688 = nil
+gg_dest_LTlt_7689 = nil
+gg_dest_LTlt_7690 = nil
+gg_dest_LTlt_7691 = nil
+gg_dest_LTlt_7692 = nil
+gg_dest_LTlt_7694 = nil
+gg_dest_LTlt_7695 = nil
+gg_dest_LTlt_7696 = nil
+gg_dest_LTlt_7697 = nil
+gg_dest_LTlt_7698 = nil
+gg_dest_LTlt_7699 = nil
+gg_dest_LTlt_7700 = nil
+gg_dest_LTlt_7701 = nil
+gg_dest_LTlt_7702 = nil
+gg_dest_LTlt_7703 = nil
+gg_dest_LTlt_7704 = nil
+gg_dest_LTlt_7705 = nil
+gg_dest_LTlt_7707 = nil
+gg_dest_LTlt_7708 = nil
+gg_dest_LTlt_7709 = nil
+gg_dest_LTlt_7710 = nil
+gg_dest_LTlt_7713 = nil
+gg_dest_LTlt_7714 = nil
+gg_dest_LTlt_7715 = nil
+gg_dest_LTlt_7716 = nil
+gg_dest_LTlt_7717 = nil
+gg_dest_LTlt_7718 = nil
+gg_dest_LTlt_7719 = nil
+gg_dest_LTlt_7720 = nil
+gg_dest_LTlt_7721 = nil
+gg_dest_LTlt_7723 = nil
+gg_dest_LTlt_7724 = nil
+gg_dest_LTlt_7725 = nil
+gg_dest_LTlt_7726 = nil
+gg_dest_LTlt_7727 = nil
+gg_dest_LTlt_7728 = nil
+gg_dest_LTlt_7729 = nil
+gg_dest_LTlt_7730 = nil
+gg_dest_LTlt_7731 = nil
+gg_dest_LTlt_7732 = nil
+gg_dest_LTlt_7733 = nil
+gg_dest_LTlt_7734 = nil
+gg_dest_LTlt_7735 = nil
+gg_dest_LTlt_7736 = nil
+gg_dest_LTlt_7737 = nil
+gg_dest_LTlt_7739 = nil
+gg_dest_LTlt_7741 = nil
+gg_dest_LTlt_7749 = nil
+gg_dest_LTlt_7756 = nil
+gg_dest_LTlt_7761 = nil
+gg_dest_LTlt_7764 = nil
+gg_dest_LTlt_7766 = nil
+gg_dest_LTlt_7770 = nil
+gg_dest_LTlt_7772 = nil
+gg_dest_LTlt_7773 = nil
+gg_dest_LTlt_7774 = nil
+gg_dest_LTlt_7775 = nil
+gg_dest_LTlt_7776 = nil
+gg_dest_LTlt_7777 = nil
+gg_dest_LTlt_7778 = nil
+gg_dest_LTlt_7779 = nil
+gg_dest_LTlt_7780 = nil
+gg_dest_LTlt_7781 = nil
+gg_dest_LTlt_7782 = nil
+gg_dest_LTlt_7785 = nil
+gg_dest_LTlt_7899 = nil
+gg_dest_LTlt_7900 = nil
+gg_dest_LTlt_7901 = nil
+gg_dest_LTlt_7902 = nil
+gg_dest_LTlt_7946 = nil
+gg_dest_LTlt_7947 = nil
+gg_dest_LTlt_7948 = nil
+gg_dest_LTlt_7949 = nil
+gg_dest_LTlt_7950 = nil
+gg_dest_LTlt_7951 = nil
+gg_dest_LTlt_7952 = nil
+gg_dest_LTlt_7953 = nil
+gg_dest_LTlt_7954 = nil
+gg_dest_LTlt_7955 = nil
+gg_dest_LTlt_7956 = nil
+gg_dest_LTlt_7957 = nil
+gg_dest_LTlt_7958 = nil
+gg_dest_LTlt_7959 = nil
+gg_dest_LTlt_7960 = nil
+gg_dest_LTlt_7961 = nil
+gg_dest_LTlt_7962 = nil
+gg_dest_LTlt_7963 = nil
+gg_dest_LTlt_7964 = nil
+gg_dest_LTlt_7965 = nil
+gg_dest_LTlt_7966 = nil
+gg_dest_LTlt_7967 = nil
+gg_dest_LTlt_7968 = nil
+gg_dest_LTlt_7969 = nil
+gg_dest_LTlt_7970 = nil
+gg_dest_LTlt_7971 = nil
+gg_dest_LTlt_7972 = nil
+gg_dest_LTlt_7973 = nil
+gg_dest_LTlt_7974 = nil
+gg_dest_LTlt_7975 = nil
+gg_dest_LTlt_7976 = nil
+gg_dest_LTlt_7977 = nil
+gg_dest_LTlt_7978 = nil
+gg_dest_LTlt_7979 = nil
+gg_dest_LTlt_7980 = nil
+gg_dest_LTlt_7981 = nil
+gg_dest_LTlt_7982 = nil
+gg_dest_LTlt_7983 = nil
+gg_dest_LTlt_7984 = nil
+gg_dest_LTlt_7985 = nil
+gg_dest_LTlt_7986 = nil
+gg_dest_LTlt_7987 = nil
+gg_dest_LTlt_7988 = nil
+gg_dest_LTlt_7989 = nil
+gg_dest_LTlt_7990 = nil
+gg_dest_LTlt_7991 = nil
+gg_dest_LTlt_7992 = nil
+gg_dest_LTlt_7993 = nil
+gg_dest_LTlt_7994 = nil
+gg_dest_LTlt_7995 = nil
+gg_dest_LTlt_7996 = nil
+gg_dest_LTlt_7997 = nil
+gg_dest_LTlt_7998 = nil
+gg_dest_LTlt_7999 = nil
+gg_dest_LTlt_8000 = nil
+gg_dest_LTlt_8001 = nil
+gg_dest_LTlt_8002 = nil
+gg_dest_LTlt_8003 = nil
+gg_dest_LTlt_8004 = nil
+gg_dest_LTlt_8005 = nil
+gg_dest_LTlt_8006 = nil
+gg_dest_LTlt_8007 = nil
+gg_dest_LTlt_8008 = nil
+gg_dest_LTlt_8009 = nil
+gg_dest_LTlt_8010 = nil
+gg_dest_LTlt_8011 = nil
+gg_dest_LTlt_8012 = nil
+gg_dest_LTlt_8013 = nil
+gg_dest_LTlt_8014 = nil
+gg_dest_LTlt_8015 = nil
+gg_dest_LTlt_8016 = nil
+gg_dest_LTlt_8017 = nil
+gg_dest_LTlt_8018 = nil
+gg_dest_LTlt_8019 = nil
+gg_dest_LTlt_8020 = nil
+gg_dest_LTlt_8021 = nil
+gg_dest_LTlt_8022 = nil
+gg_dest_LTlt_8023 = nil
+gg_dest_LTlt_8024 = nil
+gg_dest_LTlt_8025 = nil
+gg_dest_LTlt_8026 = nil
+gg_dest_LTlt_8027 = nil
+gg_dest_LTlt_8028 = nil
+gg_dest_LTlt_8029 = nil
+gg_dest_LTlt_8030 = nil
+gg_dest_LTlt_8031 = nil
+gg_dest_LTlt_8032 = nil
+gg_dest_LTlt_8033 = nil
+gg_dest_LTlt_8034 = nil
+gg_dest_LTlt_8035 = nil
+gg_dest_LTlt_8036 = nil
+gg_dest_LTlt_8037 = nil
+gg_dest_LTlt_8038 = nil
+gg_dest_LTlt_8039 = nil
+gg_dest_LTlt_8040 = nil
+gg_dest_LTlt_8041 = nil
+gg_dest_LTlt_8042 = nil
+gg_dest_LTlt_8043 = nil
+gg_dest_LTlt_8044 = nil
+gg_dest_LTlt_8045 = nil
+gg_dest_LTlt_8046 = nil
+gg_dest_LTlt_8047 = nil
+gg_dest_LTlt_8048 = nil
+gg_dest_LTlt_8049 = nil
+gg_dest_LTlt_8050 = nil
+gg_dest_LTlt_8051 = nil
+gg_dest_LTlt_8052 = nil
+gg_dest_LTlt_8053 = nil
+gg_dest_LTlt_8054 = nil
+gg_dest_LTlt_8055 = nil
+gg_dest_LTlt_8056 = nil
+gg_dest_LTlt_8057 = nil
+gg_dest_LTlt_8058 = nil
+gg_dest_LTlt_8059 = nil
+gg_dest_LTlt_8060 = nil
+gg_dest_LTlt_8061 = nil
+gg_dest_LTlt_8062 = nil
+gg_dest_LTlt_8063 = nil
+gg_dest_LTlt_8064 = nil
+gg_dest_LTlt_8065 = nil
+gg_dest_LTlt_8066 = nil
+gg_dest_LTlt_8067 = nil
+gg_dest_LTlt_8068 = nil
+gg_dest_LTlt_8069 = nil
+gg_dest_LTlt_8070 = nil
+gg_dest_LTlt_8071 = nil
+gg_dest_LTlt_8072 = nil
+gg_dest_LTlt_8073 = nil
+gg_dest_LTlt_8074 = nil
+gg_dest_LTlt_8075 = nil
+gg_dest_LTlt_8076 = nil
+gg_dest_LTlt_8077 = nil
+gg_dest_LTlt_8078 = nil
+gg_dest_LTlt_8079 = nil
+gg_dest_LTlt_8080 = nil
+gg_dest_LTlt_8081 = nil
+gg_dest_LTlt_8082 = nil
+gg_dest_LTlt_8083 = nil
+gg_dest_LTlt_8084 = nil
+gg_dest_LTlt_8085 = nil
+gg_dest_LTlt_8086 = nil
+gg_dest_LTlt_8087 = nil
+gg_dest_LTlt_8088 = nil
+gg_dest_LTlt_8089 = nil
+gg_dest_LTlt_8090 = nil
+gg_dest_LTlt_8091 = nil
+gg_dest_LTlt_8092 = nil
+gg_dest_LTlt_8093 = nil
+gg_dest_LTlt_8094 = nil
+gg_dest_LTlt_8095 = nil
+gg_dest_LTlt_8096 = nil
+gg_dest_LTlt_8097 = nil
+gg_dest_LTlt_8098 = nil
+gg_dest_LTlt_8099 = nil
+gg_dest_LTlt_8100 = nil
+gg_dest_LTlt_8101 = nil
+gg_dest_LTlt_8102 = nil
+gg_dest_LTlt_8103 = nil
+gg_dest_LTlt_8104 = nil
+gg_dest_LTlt_8105 = nil
+gg_dest_LTlt_8106 = nil
+gg_dest_LTlt_8107 = nil
+gg_dest_LTlt_8108 = nil
+gg_dest_LTlt_8109 = nil
+gg_dest_LTlt_8110 = nil
+gg_dest_LTlt_8111 = nil
+gg_dest_LTlt_8112 = nil
+gg_dest_LTlt_8113 = nil
+gg_dest_LTlt_8114 = nil
+gg_dest_LTlt_8115 = nil
+gg_dest_LTlt_8116 = nil
+gg_dest_LTlt_8117 = nil
+gg_dest_LTlt_8118 = nil
+gg_dest_LTlt_8119 = nil
+gg_dest_LTlt_8120 = nil
+gg_dest_LTlt_8121 = nil
+gg_dest_LTlt_8122 = nil
+gg_dest_LTlt_8123 = nil
+gg_dest_LTlt_8124 = nil
+gg_dest_LTlt_8125 = nil
+gg_dest_LTlt_8126 = nil
+gg_dest_LTlt_8127 = nil
+gg_dest_LTlt_8128 = nil
+gg_dest_LTlt_8129 = nil
+gg_dest_LTlt_8130 = nil
+gg_dest_LTlt_8131 = nil
+gg_dest_LTlt_8132 = nil
+gg_dest_LTlt_8133 = nil
+gg_dest_LTlt_8134 = nil
+gg_dest_LTlt_8135 = nil
+gg_dest_LTlt_8136 = nil
+gg_dest_LTlt_8137 = nil
+gg_dest_LTlt_8138 = nil
+gg_dest_LTlt_8139 = nil
+gg_dest_LTlt_8140 = nil
+gg_dest_LTlt_8141 = nil
+gg_dest_LTlt_8142 = nil
+gg_dest_LTlt_8143 = nil
+gg_dest_LTlt_8144 = nil
+gg_dest_LTlt_8145 = nil
+gg_dest_LTlt_8146 = nil
+gg_dest_LTlt_8147 = nil
+gg_dest_LTlt_8148 = nil
+gg_dest_LTlt_8149 = nil
+gg_dest_LTlt_8150 = nil
+gg_dest_LTlt_8151 = nil
+gg_dest_LTlt_8152 = nil
+gg_dest_LTlt_8153 = nil
+gg_dest_LTlt_8154 = nil
+gg_dest_LTlt_8155 = nil
+gg_dest_LTlt_8156 = nil
+gg_dest_LTlt_8157 = nil
+gg_dest_LTlt_8158 = nil
+gg_dest_LTlt_8159 = nil
+gg_dest_LTlt_8160 = nil
+gg_dest_LTlt_8161 = nil
+gg_dest_LTlt_8162 = nil
+gg_dest_LTlt_8163 = nil
+gg_dest_LTlt_8164 = nil
+gg_dest_LTlt_8165 = nil
+gg_dest_LTlt_8166 = nil
+gg_dest_LTlt_8167 = nil
+gg_dest_LTlt_8168 = nil
+gg_dest_LTlt_8169 = nil
+gg_dest_LTlt_8170 = nil
+gg_dest_LTlt_8171 = nil
+gg_dest_LTlt_8172 = nil
+gg_dest_LTlt_8173 = nil
+gg_dest_LTlt_8174 = nil
+gg_dest_LTlt_8175 = nil
+gg_dest_LTlt_8176 = nil
+gg_dest_LTlt_8177 = nil
+gg_dest_LTlt_8178 = nil
+gg_dest_LTlt_8179 = nil
+gg_dest_LTlt_8180 = nil
+gg_dest_LTlt_8181 = nil
+gg_dest_LTlt_8182 = nil
+gg_dest_LTlt_8183 = nil
+gg_dest_LTlt_8184 = nil
+gg_dest_LTlt_8185 = nil
+gg_dest_LTlt_8186 = nil
+gg_dest_LTlt_8187 = nil
+gg_dest_LTlt_8188 = nil
+gg_dest_LTlt_8189 = nil
+gg_dest_LTlt_8190 = nil
+gg_dest_LTlt_8191 = nil
+gg_dest_LTlt_8192 = nil
+gg_dest_LTlt_8193 = nil
+gg_dest_LTlt_8194 = nil
+gg_dest_LTlt_8195 = nil
+gg_dest_LTlt_8196 = nil
+gg_dest_LTlt_8197 = nil
+gg_dest_LTlt_8198 = nil
+gg_dest_LTlt_8199 = nil
+gg_dest_LTlt_8200 = nil
+gg_dest_LTlt_8201 = nil
+gg_dest_LTlt_8202 = nil
+gg_dest_LTlt_8203 = nil
+gg_dest_LTlt_8204 = nil
+gg_dest_LTlt_8205 = nil
+gg_dest_LTlt_8206 = nil
+gg_dest_LTlt_8207 = nil
+gg_dest_LTlt_8208 = nil
+gg_dest_LTlt_8209 = nil
+gg_dest_LTlt_8210 = nil
+gg_dest_LTlt_8211 = nil
+gg_dest_LTlt_8212 = nil
+gg_dest_LTlt_8213 = nil
+gg_dest_LTlt_8214 = nil
+gg_dest_LTlt_8215 = nil
+gg_dest_LTlt_8216 = nil
+gg_dest_LTlt_8217 = nil
+gg_dest_LTlt_8218 = nil
+gg_dest_LTlt_8219 = nil
+gg_dest_LTlt_8220 = nil
+gg_dest_LTlt_8221 = nil
+gg_dest_LTlt_8222 = nil
+gg_dest_LTlt_8223 = nil
+gg_dest_LTlt_8224 = nil
+gg_dest_LTlt_8225 = nil
+gg_dest_LTlt_8226 = nil
+gg_dest_LTlt_8227 = nil
+gg_dest_LTlt_8228 = nil
+gg_dest_LTlt_8229 = nil
+gg_dest_LTlt_8230 = nil
+gg_dest_LTlt_8231 = nil
+gg_dest_LTlt_8232 = nil
+gg_dest_LTlt_8233 = nil
+gg_dest_LTlt_8234 = nil
+gg_dest_LTlt_8235 = nil
+gg_dest_LTlt_8236 = nil
+gg_dest_LTlt_8237 = nil
+gg_dest_LTlt_8238 = nil
+gg_dest_LTlt_8239 = nil
+gg_dest_LTlt_8240 = nil
+gg_dest_LTlt_8241 = nil
+gg_dest_LTlt_8242 = nil
+gg_dest_LTlt_8243 = nil
+gg_dest_LTlt_8244 = nil
+gg_dest_LTlt_8245 = nil
+gg_dest_LTlt_8246 = nil
+gg_dest_LTlt_8247 = nil
+gg_dest_LTlt_8248 = nil
+gg_dest_LTlt_8249 = nil
+gg_dest_LTlt_8250 = nil
+gg_dest_LTlt_8251 = nil
+gg_dest_LTlt_8252 = nil
+gg_dest_LTlt_8253 = nil
+gg_dest_LTlt_8254 = nil
+gg_dest_LTlt_8255 = nil
+gg_dest_LTlt_8256 = nil
+gg_dest_LTlt_8257 = nil
+gg_dest_LTlt_8258 = nil
+gg_dest_LTlt_8259 = nil
+gg_dest_LTlt_8260 = nil
+gg_dest_LTlt_8261 = nil
+gg_dest_LTlt_8262 = nil
+gg_dest_LTlt_8263 = nil
+gg_dest_LTlt_8264 = nil
+gg_dest_LTlt_8265 = nil
+gg_dest_LTlt_8266 = nil
+gg_dest_LTlt_8267 = nil
+gg_dest_LTlt_8268 = nil
+gg_dest_LTlt_8269 = nil
+gg_dest_LTlt_8270 = nil
+gg_dest_LTlt_8271 = nil
+gg_dest_LTlt_8272 = nil
+gg_dest_LTlt_8273 = nil
+gg_dest_LTlt_8274 = nil
+gg_dest_LTlt_8275 = nil
+gg_dest_LTlt_8276 = nil
+gg_dest_LTlt_8277 = nil
+gg_dest_LTlt_8278 = nil
+gg_dest_LTlt_8279 = nil
+gg_dest_LTlt_8280 = nil
+gg_dest_LTlt_8281 = nil
+gg_dest_LTlt_8282 = nil
+gg_dest_LTlt_8283 = nil
+gg_dest_LTlt_8284 = nil
+gg_dest_LTlt_8285 = nil
+gg_dest_LTlt_8286 = nil
+gg_dest_LTlt_8287 = nil
+gg_dest_LTlt_8288 = nil
+gg_dest_LTlt_8289 = nil
+gg_dest_LTlt_8290 = nil
+gg_dest_LTlt_8291 = nil
+gg_dest_LTlt_8292 = nil
+gg_dest_LTlt_8293 = nil
+gg_dest_LTlt_8294 = nil
+gg_dest_LTlt_8295 = nil
+gg_dest_LTlt_8296 = nil
+gg_dest_LTlt_8297 = nil
+gg_dest_LTlt_8298 = nil
+gg_dest_LTlt_8299 = nil
+gg_dest_LTlt_8300 = nil
+gg_dest_LTlt_8301 = nil
+gg_dest_LTlt_8302 = nil
+gg_dest_LTlt_8303 = nil
+gg_dest_LTlt_8304 = nil
+gg_dest_LTlt_8305 = nil
+gg_dest_LTlt_8306 = nil
+gg_dest_LTlt_8307 = nil
+gg_dest_LTlt_8308 = nil
+gg_dest_LTlt_8309 = nil
+gg_dest_LTlt_8310 = nil
+gg_dest_LTlt_8311 = nil
+gg_dest_LTlt_8312 = nil
+gg_dest_LTlt_8313 = nil
+gg_dest_LTlt_8314 = nil
+gg_dest_LTlt_8315 = nil
+gg_dest_LTlt_8316 = nil
+gg_dest_LTlt_8317 = nil
+gg_dest_LTlt_8318 = nil
+gg_dest_LTlt_8319 = nil
+gg_dest_LTlt_8320 = nil
+gg_dest_LTlt_8321 = nil
+gg_dest_LTlt_8322 = nil
+gg_dest_LTlt_8323 = nil
+gg_dest_LTlt_8324 = nil
+gg_dest_LTlt_8325 = nil
+gg_dest_LTlt_8326 = nil
+gg_dest_LTlt_8327 = nil
+gg_dest_LTlt_8328 = nil
+gg_dest_LTlt_8329 = nil
+gg_dest_LTlt_8330 = nil
+gg_dest_LTlt_8331 = nil
 function InitGlobals()
 end
 
@@ -50885,6 +51593,706 @@ function CreateAllDestructables()
     gg_dest_LTlt_5480 = CreateDestructable(1280601204, -6528.0, 4544.0, 270.000, 0.826, 3)
     gg_dest_LTlt_5481 = CreateDestructable(1280601204, -6528.0, 4416.0, 270.000, 1.078, 3)
     gg_dest_LTlt_5482 = CreateDestructable(1280601204, -6528.0, 4288.0, 270.000, 0.987, 7)
+    gg_dest_LTlt_3852 = CreateDestructable(1280601204, -9280.0, 8576.0, 270.000, 1.174, 0)
+    gg_dest_LTlt_3853 = CreateDestructable(1280601204, -9216.0, 8448.0, 270.000, 1.020, 1)
+    gg_dest_LTlt_3854 = CreateDestructable(1280601204, -9280.0, 8832.0, 270.000, 0.971, 2)
+    gg_dest_LTlt_3855 = CreateDestructable(1280601204, -9344.0, 9216.0, 270.000, 0.882, 5)
+    gg_dest_LTlt_3892 = CreateDestructable(1280601204, -9344.0, 9344.0, 270.000, 1.154, 4)
+    gg_dest_LTlt_3902 = CreateDestructable(1280601204, -9280.0, 9024.0, 270.000, 0.810, 5)
+    gg_dest_LTlt_3903 = CreateDestructable(1280601204, -9280.0, 9472.0, 270.000, 0.839, 8)
+    gg_dest_LTlt_4329 = CreateDestructable(1280601204, -9280.0, 9600.0, 270.000, 0.886, 1)
+    gg_dest_LTlt_4456 = CreateDestructable(1280601204, -9408.0, 9856.0, 270.000, 1.008, 8)
+    gg_dest_LTlt_4837 = CreateDestructable(1280601204, -9408.0, 10112.0, 270.000, 0.931, 0)
+    gg_dest_LTlt_5872 = CreateDestructable(1280601204, -9408.0, 10240.0, 270.000, 0.826, 0)
+    gg_dest_LTlt_5873 = CreateDestructable(1280601204, -9408.0, 10432.0, 270.000, 0.959, 8)
+    gg_dest_LTlt_5879 = CreateDestructable(1280601204, -9408.0, 10560.0, 270.000, 0.920, 6)
+    gg_dest_LTlt_5880 = CreateDestructable(1280601204, -9344.0, 10688.0, 270.000, 1.180, 5)
+    gg_dest_LTlt_5882 = CreateDestructable(1280601204, -9408.0, 10880.0, 270.000, 0.896, 5)
+    gg_dest_LTlt_5883 = CreateDestructable(1280601204, -9408.0, 11008.0, 270.000, 0.936, 6)
+    gg_dest_LTlt_6057 = CreateDestructable(1280601204, -9408.0, 11136.0, 270.000, 1.037, 5)
+    gg_dest_LTlt_6060 = CreateDestructable(1280601204, -9472.0, 11456.0, 270.000, 0.828, 6)
+    gg_dest_LTlt_6061 = CreateDestructable(1280601204, -9536.0, 11584.0, 270.000, 1.077, 0)
+    gg_dest_LTlt_6179 = CreateDestructable(1280601204, -9536.0, 11712.0, 270.000, 1.071, 3)
+    gg_dest_LTlt_6212 = CreateDestructable(1280601204, -9152.0, 11072.0, 270.000, 1.140, 1)
+    gg_dest_LTlt_6213 = CreateDestructable(1280601204, -9024.0, 11008.0, 270.000, 0.809, 7)
+    gg_dest_LTlt_6218 = CreateDestructable(1280601204, -8896.0, 10752.0, 270.000, 0.964, 2)
+    gg_dest_LTlt_6219 = CreateDestructable(1280601204, -9152.0, 11200.0, 270.000, 0.946, 4)
+    gg_dest_LTlt_6222 = CreateDestructable(1280601204, -9216.0, 11392.0, 270.000, 1.192, 6)
+    gg_dest_LTlt_6223 = CreateDestructable(1280601204, -9344.0, 11456.0, 270.000, 1.103, 1)
+    gg_dest_LTlt_6229 = CreateDestructable(1280601204, -9536.0, 11200.0, 270.000, 1.105, 6)
+    gg_dest_LTlt_6234 = CreateDestructable(1280601204, -9600.0, 11392.0, 270.000, 1.195, 5)
+    gg_dest_LTlt_6239 = CreateDestructable(1280601204, -11072.0, 9984.0, 270.000, 0.965, 7)
+    gg_dest_LTlt_6264 = CreateDestructable(1280601204, -11008.0, 9856.0, 270.000, 0.881, 3)
+    gg_dest_LTlt_6269 = CreateDestructable(1280601204, -10944.0, 9984.0, 270.000, 0.942, 9)
+    gg_dest_LTlt_6660 = CreateDestructable(1280601204, -11008.0, 10112.0, 270.000, 1.107, 0)
+    gg_dest_LTlt_6661 = CreateDestructable(1280601204, -11072.0, 10304.0, 270.000, 1.182, 4)
+    gg_dest_LTlt_6664 = CreateDestructable(1280601204, -11136.0, 10432.0, 270.000, 0.964, 1)
+    gg_dest_LTlt_6665 = CreateDestructable(1280601204, -11136.0, 10560.0, 270.000, 1.097, 9)
+    gg_dest_LTlt_6666 = CreateDestructable(1280601204, -11136.0, 10752.0, 270.000, 1.165, 2)
+    gg_dest_LTlt_6667 = CreateDestructable(1280601204, -11008.0, 10880.0, 270.000, 1.169, 2)
+    gg_dest_LTlt_6668 = CreateDestructable(1280601204, -11072.0, 11008.0, 270.000, 0.986, 4)
+    gg_dest_LTlt_6669 = CreateDestructable(1280601204, -11072.0, 11136.0, 270.000, 0.990, 9)
+    gg_dest_LTlt_6670 = CreateDestructable(1280601204, -11072.0, 11264.0, 270.000, 1.043, 9)
+    gg_dest_LTlt_6671 = CreateDestructable(1280601204, -11072.0, 11520.0, 270.000, 0.800, 6)
+    gg_dest_LTlt_6672 = CreateDestructable(1280601204, -11072.0, 11392.0, 270.000, 0.906, 0)
+    gg_dest_LTlt_6673 = CreateDestructable(1280601204, -11200.0, 11776.0, 270.000, 0.860, 4)
+    gg_dest_LTlt_6674 = CreateDestructable(1280601204, -11200.0, 11584.0, 270.000, 0.871, 8)
+    gg_dest_LTlt_6675 = CreateDestructable(1280601204, -11200.0, 11904.0, 270.000, 1.058, 3)
+    gg_dest_LTlt_6678 = CreateDestructable(1280601204, -11072.0, 12160.0, 270.000, 0.807, 5)
+    gg_dest_LTlt_6679 = CreateDestructable(1280601204, -11072.0, 11968.0, 270.000, 1.054, 7)
+    gg_dest_LTlt_6680 = CreateDestructable(1280601204, -11072.0, 12352.0, 270.000, 1.109, 7)
+    gg_dest_LTlt_6681 = CreateDestructable(1280601204, -11072.0, 12608.0, 270.000, 0.985, 9)
+    gg_dest_LTlt_6682 = CreateDestructable(1280601204, -11136.0, 12864.0, 270.000, 0.989, 7)
+    gg_dest_LTlt_6683 = CreateDestructable(1280601204, -11200.0, 12992.0, 270.000, 1.081, 5)
+    gg_dest_LTlt_6684 = CreateDestructable(1280601204, -11072.0, 12736.0, 270.000, 0.913, 8)
+    gg_dest_LTlt_6685 = CreateDestructable(1280601204, -11136.0, 13120.0, 270.000, 0.830, 1)
+    gg_dest_LTlt_6686 = CreateDestructable(1280601204, -11264.0, 13184.0, 270.000, 0.967, 0)
+    gg_dest_LTlt_6687 = CreateDestructable(1280601204, -11136.0, 13248.0, 270.000, 0.882, 6)
+    gg_dest_LTlt_6867 = CreateDestructable(1280601204, -11264.0, 13312.0, 270.000, 0.874, 1)
+    gg_dest_LTlt_6870 = CreateDestructable(1280601204, -11136.0, 13376.0, 270.000, 1.033, 2)
+    gg_dest_LTlt_6872 = CreateDestructable(1280601204, -11392.0, 13312.0, 270.000, 1.052, 7)
+    gg_dest_LTlt_6874 = CreateDestructable(1280601204, -11520.0, 13376.0, 270.000, 0.937, 5)
+    gg_dest_LTlt_6876 = CreateDestructable(1280601204, -11712.0, 13184.0, 270.000, 1.014, 0)
+    gg_dest_LTlt_6878 = CreateDestructable(1280601204, -11840.0, 13120.0, 270.000, 1.063, 7)
+    gg_dest_LTlt_6880 = CreateDestructable(1280601204, -11968.0, 12864.0, 270.000, 0.954, 9)
+    gg_dest_LTlt_6885 = CreateDestructable(1280601204, -11968.0, 12992.0, 270.000, 0.893, 2)
+    gg_dest_LTlt_6887 = CreateDestructable(1280601204, -12096.0, 12800.0, 270.000, 1.121, 6)
+    gg_dest_LTlt_6891 = CreateDestructable(1280601204, -12672.0, 12864.0, 270.000, 1.067, 7)
+    gg_dest_LTlt_6894 = CreateDestructable(1280601204, -12544.0, 12864.0, 270.000, 1.017, 4)
+    gg_dest_LTlt_6905 = CreateDestructable(1280601204, -12416.0, 12864.0, 270.000, 0.862, 3)
+    gg_dest_LTlt_6908 = CreateDestructable(1280601204, -12800.0, 12928.0, 270.000, 1.105, 9)
+    gg_dest_LTlt_6910 = CreateDestructable(1280601204, -12736.0, 13056.0, 270.000, 0.963, 0)
+    gg_dest_LTlt_6912 = CreateDestructable(1280601204, -12864.0, 13056.0, 270.000, 0.839, 2)
+    gg_dest_LTlt_6914 = CreateDestructable(1280601204, -12800.0, 13184.0, 270.000, 1.069, 4)
+    gg_dest_LTlt_6916 = CreateDestructable(1280601204, -12800.0, 13312.0, 270.000, 1.199, 5)
+    gg_dest_LTlt_6918 = CreateDestructable(1280601204, -12800.0, 13440.0, 270.000, 0.992, 6)
+    gg_dest_LTlt_6920 = CreateDestructable(1280601204, -12800.0, 13568.0, 270.000, 0.907, 4)
+    gg_dest_LTlt_6922 = CreateDestructable(1280601204, -12928.0, 13248.0, 270.000, 0.845, 4)
+    gg_dest_LTlt_6925 = CreateDestructable(1280601204, -12736.0, 13760.0, 270.000, 1.062, 8)
+    gg_dest_LTlt_6926 = CreateDestructable(1280601204, -12736.0, 13952.0, 270.000, 1.037, 8)
+    gg_dest_LTlt_6927 = CreateDestructable(1280601204, -12736.0, 14208.0, 270.000, 0.984, 3)
+    gg_dest_LTlt_6928 = CreateDestructable(1280601204, -12800.0, 14400.0, 270.000, 0.850, 4)
+    gg_dest_LTlt_6929 = CreateDestructable(1280601204, -12864.0, 14528.0, 270.000, 1.080, 2)
+    gg_dest_LTlt_6930 = CreateDestructable(1280601204, -12864.0, 14656.0, 270.000, 1.032, 9)
+    gg_dest_LTlt_6931 = CreateDestructable(1280601204, -12864.0, 14976.0, 270.000, 0.932, 0)
+    gg_dest_LTlt_6932 = CreateDestructable(1280601204, -12800.0, 15104.0, 270.000, 1.097, 7)
+    gg_dest_LTlt_6933 = CreateDestructable(1280601204, -12736.0, 15232.0, 270.000, 0.999, 1)
+    gg_dest_LTlt_6934 = CreateDestructable(1280601204, -12736.0, 15360.0, 270.000, 0.990, 2)
+    gg_dest_LTlt_6935 = CreateDestructable(1280601204, -12736.0, 15616.0, 270.000, 0.858, 3)
+    gg_dest_LTlt_6936 = CreateDestructable(1280601204, -12800.0, 15744.0, 270.000, 0.874, 2)
+    gg_dest_LTlt_6937 = CreateDestructable(1280601204, -12672.0, 15744.0, 270.000, 0.901, 6)
+    gg_dest_LTlt_6938 = CreateDestructable(1280601204, -12608.0, 15872.0, 270.000, 0.814, 2)
+    gg_dest_LTlt_6939 = CreateDestructable(1280601204, -12416.0, 15808.0, 270.000, 0.879, 1)
+    gg_dest_LTlt_6940 = CreateDestructable(1280601204, -12288.0, 15808.0, 270.000, 1.197, 0)
+    gg_dest_LTlt_6941 = CreateDestructable(1280601204, -12160.0, 15808.0, 270.000, 0.962, 2)
+    gg_dest_LTlt_6942 = CreateDestructable(1280601204, -12032.0, 15808.0, 270.000, 1.014, 2)
+    gg_dest_LTlt_6943 = CreateDestructable(1280601204, -11840.0, 15808.0, 270.000, 0.872, 9)
+    gg_dest_LTlt_6944 = CreateDestructable(1280601204, -11712.0, 15808.0, 270.000, 1.005, 4)
+    gg_dest_LTlt_6945 = CreateDestructable(1280601204, -11264.0, 15872.0, 270.000, 0.951, 5)
+    gg_dest_LTlt_6946 = CreateDestructable(1280601204, -11136.0, 15744.0, 270.000, 0.929, 4)
+    gg_dest_LTlt_6947 = CreateDestructable(1280601204, -11072.0, 15872.0, 270.000, 1.190, 2)
+    gg_dest_LTlt_6948 = CreateDestructable(1280601204, -10944.0, 15936.0, 270.000, 1.161, 8)
+    gg_dest_LTlt_6949 = CreateDestructable(1280601204, -10816.0, 15936.0, 270.000, 1.102, 5)
+    gg_dest_LTlt_6950 = CreateDestructable(1280601204, -10688.0, 15936.0, 270.000, 1.092, 3)
+    gg_dest_LTlt_6952 = CreateDestructable(1280601204, -10624.0, 15744.0, 270.000, 0.891, 9)
+    gg_dest_LTlt_6953 = CreateDestructable(1280601204, -10560.0, 15872.0, 270.000, 1.124, 5)
+    gg_dest_LTlt_6954 = CreateDestructable(1280601204, -10560.0, 16000.0, 270.000, 1.109, 0)
+    gg_dest_LTlt_6955 = CreateDestructable(1280601204, -10432.0, 15744.0, 270.000, 0.987, 0)
+    gg_dest_LTlt_7000 = CreateDestructable(1280601204, -10368.0, 15872.0, 270.000, 0.956, 3)
+    gg_dest_LTlt_7015 = CreateDestructable(1280601204, -10304.0, 15744.0, 270.000, 0.932, 7)
+    gg_dest_LTlt_7018 = CreateDestructable(1280601204, -10240.0, 15872.0, 270.000, 1.109, 1)
+    gg_dest_LTlt_7029 = CreateDestructable(1280601204, -10112.0, 15808.0, 270.000, 1.023, 0)
+    gg_dest_LTlt_7031 = CreateDestructable(1280601204, -9920.0, 15808.0, 270.000, 0.950, 3)
+    gg_dest_LTlt_7033 = CreateDestructable(1280601204, -9856.0, 15680.0, 270.000, 0.942, 3)
+    gg_dest_LTlt_7035 = CreateDestructable(1280601204, -9792.0, 15808.0, 270.000, 0.834, 7)
+    gg_dest_LTlt_7038 = CreateDestructable(1280601204, -9728.0, 15552.0, 270.000, 1.161, 8)
+    gg_dest_LTlt_7041 = CreateDestructable(1280601204, -9664.0, 15424.0, 270.000, 1.026, 3)
+    gg_dest_LTlt_7044 = CreateDestructable(1280601204, -9600.0, 15552.0, 270.000, 0.922, 2)
+    gg_dest_LTlt_7045 = CreateDestructable(1280601204, -9664.0, 15296.0, 270.000, 0.938, 8)
+    gg_dest_LTlt_7049 = CreateDestructable(1280601204, -9728.0, 15040.0, 270.000, 0.892, 6)
+    gg_dest_LTlt_7050 = CreateDestructable(1280601204, -9664.0, 15168.0, 270.000, 1.175, 7)
+    gg_dest_LTlt_7051 = CreateDestructable(1280601204, -9856.0, 14976.0, 270.000, 1.116, 9)
+    gg_dest_LTlt_7052 = CreateDestructable(1280601204, -9984.0, 14848.0, 270.000, 1.196, 5)
+    gg_dest_LTlt_7054 = CreateDestructable(1280601204, -10048.0, 14720.0, 270.000, 1.172, 6)
+    gg_dest_LTlt_7056 = CreateDestructable(1280601204, -10304.0, 14528.0, 270.000, 0.963, 0)
+    gg_dest_LTlt_7058 = CreateDestructable(1280601204, -10240.0, 14400.0, 270.000, 0.947, 4)
+    gg_dest_LTlt_7060 = CreateDestructable(1280601204, -10240.0, 14656.0, 270.000, 1.164, 0)
+    gg_dest_LTlt_7062 = CreateDestructable(1280601204, -10112.0, 14400.0, 270.000, 0.801, 9)
+    gg_dest_LTlt_7065 = CreateDestructable(1280601204, -10432.0, 14272.0, 270.000, 0.857, 3)
+    gg_dest_LTlt_7066 = CreateDestructable(1280601204, -10304.0, 14272.0, 270.000, 0.904, 4)
+    gg_dest_LTlt_7068 = CreateDestructable(1280601204, -10560.0, 14400.0, 270.000, 1.151, 7)
+    gg_dest_LTlt_7069 = CreateDestructable(1280601204, -10176.0, 14272.0, 270.000, 0.903, 7)
+    gg_dest_LTlt_7072 = CreateDestructable(1280601204, -10048.0, 14208.0, 270.000, 0.837, 6)
+    gg_dest_LTlt_7107 = CreateDestructable(1280601204, -9920.0, 14208.0, 270.000, 0.913, 7)
+    gg_dest_LTlt_7108 = CreateDestructable(1280601204, -9792.0, 14208.0, 270.000, 1.101, 3)
+    gg_dest_LTlt_7109 = CreateDestructable(1280601204, -9600.0, 14208.0, 270.000, 1.159, 2)
+    gg_dest_LTlt_7110 = CreateDestructable(1280601204, -9536.0, 14080.0, 270.000, 0.978, 6)
+    gg_dest_LTlt_7111 = CreateDestructable(1280601204, -9472.0, 14208.0, 270.000, 1.031, 6)
+    gg_dest_LTlt_7113 = CreateDestructable(1280601204, -9408.0, 14080.0, 270.000, 1.166, 5)
+    gg_dest_LTlt_7114 = CreateDestructable(1280601204, -9344.0, 14208.0, 270.000, 0.853, 2)
+    gg_dest_LTlt_7115 = CreateDestructable(1280601204, -9280.0, 14080.0, 270.000, 0.886, 7)
+    gg_dest_LTlt_7116 = CreateDestructable(1280601204, -9216.0, 14208.0, 270.000, 1.071, 1)
+    gg_dest_LTlt_7232 = CreateDestructable(1280601204, -9216.0, 14336.0, 270.000, 0.995, 7)
+    gg_dest_LTlt_7233 = CreateDestructable(1280601204, -9088.0, 14080.0, 270.000, 0.939, 4)
+    gg_dest_LTlt_7236 = CreateDestructable(1280601204, -9024.0, 14208.0, 270.000, 1.130, 5)
+    gg_dest_LTlt_7237 = CreateDestructable(1280601204, -9088.0, 14336.0, 270.000, 0.822, 9)
+    gg_dest_LTlt_7238 = CreateDestructable(1280601204, -8896.0, 14272.0, 270.000, 0.848, 4)
+    gg_dest_LTlt_7242 = CreateDestructable(1280601204, -8832.0, 14144.0, 270.000, 0.966, 6)
+    gg_dest_LTlt_7244 = CreateDestructable(1280601204, -8768.0, 14272.0, 270.000, 1.028, 8)
+    gg_dest_LTlt_7245 = CreateDestructable(1280601204, -8704.0, 14144.0, 270.000, 1.065, 5)
+    gg_dest_LTlt_7246 = CreateDestructable(1280601204, -8448.0, 14144.0, 270.000, 0.980, 6)
+    gg_dest_LTlt_7249 = CreateDestructable(1280601204, -8320.0, 14144.0, 270.000, 0.811, 1)
+    gg_dest_LTlt_7250 = CreateDestructable(1280601204, -8192.0, 14080.0, 270.000, 1.063, 9)
+    gg_dest_LTlt_7251 = CreateDestructable(1280601204, -8128.0, 14208.0, 270.000, 1.025, 4)
+    gg_dest_LTlt_7252 = CreateDestructable(1280601204, -7808.0, 14208.0, 270.000, 1.196, 2)
+    gg_dest_LTlt_7254 = CreateDestructable(1280601204, -7744.0, 14080.0, 270.000, 1.153, 8)
+    gg_dest_LTlt_7256 = CreateDestructable(1280601204, -7680.0, 14208.0, 270.000, 1.185, 1)
+    gg_dest_LTlt_7258 = CreateDestructable(1280601204, -7616.0, 14080.0, 270.000, 1.069, 8)
+    gg_dest_LTlt_7261 = CreateDestructable(1280601204, -7552.0, 14208.0, 270.000, 1.162, 8)
+    gg_dest_LTlt_7263 = CreateDestructable(1280601204, -7232.0, 14208.0, 270.000, 0.917, 7)
+    gg_dest_LTlt_7265 = CreateDestructable(1280601204, -7104.0, 14208.0, 270.000, 1.133, 0)
+    gg_dest_LTlt_7268 = CreateDestructable(1280601204, -7040.0, 14080.0, 270.000, 1.168, 7)
+    gg_dest_LTlt_7270 = CreateDestructable(1280601204, -6976.0, 14208.0, 270.000, 0.974, 8)
+    gg_dest_LTlt_7313 = CreateDestructable(1280601204, -7360.0, 14208.0, 270.000, 0.864, 0)
+    gg_dest_LTlt_7315 = CreateDestructable(1280601204, -7296.0, 14080.0, 270.000, 0.865, 7)
+    gg_dest_LTlt_7324 = CreateDestructable(1280601204, -6784.0, 14144.0, 270.000, 0.876, 7)
+    gg_dest_LTlt_7327 = CreateDestructable(1280601204, -6656.0, 14144.0, 270.000, 0.851, 1)
+    gg_dest_LTlt_7330 = CreateDestructable(1280601204, -6464.0, 14144.0, 270.000, 0.908, 8)
+    gg_dest_LTlt_7333 = CreateDestructable(1280601204, -6336.0, 14144.0, 270.000, 0.875, 8)
+    gg_dest_LTlt_7336 = CreateDestructable(1280601204, -6080.0, 14208.0, 270.000, 0.924, 3)
+    gg_dest_LTlt_7339 = CreateDestructable(1280601204, -5952.0, 14272.0, 270.000, 0.810, 1)
+    gg_dest_LTlt_7341 = CreateDestructable(1280601204, -5888.0, 14144.0, 270.000, 1.011, 4)
+    gg_dest_LTlt_7343 = CreateDestructable(1280601204, -5760.0, 14144.0, 270.000, 0.803, 7)
+    gg_dest_LTlt_7346 = CreateDestructable(1280601204, -4480.0, 14144.0, 270.000, 0.931, 7)
+    gg_dest_LTlt_7349 = CreateDestructable(1280601204, -4416.0, 14016.0, 270.000, 1.197, 4)
+    gg_dest_LTlt_7352 = CreateDestructable(1280601204, -4352.0, 14144.0, 270.000, 1.193, 4)
+    gg_dest_LTlt_7354 = CreateDestructable(1280601204, -4224.0, 14144.0, 270.000, 0.947, 2)
+    gg_dest_LTlt_7357 = CreateDestructable(1280601204, -4672.0, 14144.0, 270.000, 0.836, 2)
+    gg_dest_LTlt_7360 = CreateDestructable(1280601204, -4608.0, 14016.0, 270.000, 0.962, 8)
+    gg_dest_LTlt_7362 = CreateDestructable(1280601204, -4736.0, 14016.0, 270.000, 0.883, 3)
+    gg_dest_LTlt_7364 = CreateDestructable(1280601204, -4864.0, 14016.0, 270.000, 0.894, 7)
+    gg_dest_LTlt_7375 = CreateDestructable(1280601204, -5120.0, 14144.0, 270.000, 0.988, 9)
+    gg_dest_LTlt_7379 = CreateDestructable(1280601204, -5056.0, 14016.0, 270.000, 0.813, 8)
+    gg_dest_LTlt_7382 = CreateDestructable(1280601204, -5312.0, 14144.0, 270.000, 0.858, 7)
+    gg_dest_LTlt_7384 = CreateDestructable(1280601204, -5440.0, 14144.0, 270.000, 0.955, 2)
+    gg_dest_LTlt_7386 = CreateDestructable(1280601204, -5376.0, 14016.0, 270.000, 1.084, 2)
+    gg_dest_LTlt_7390 = CreateDestructable(1280601204, -7936.0, 14144.0, 270.000, 1.141, 2)
+    gg_dest_LTlt_7404 = CreateDestructable(1280601204, -1088.0, 14144.0, 270.000, 0.932, 6)
+    gg_dest_LTlt_7405 = CreateDestructable(1280601204, -960.0, 14144.0, 270.000, 1.118, 4)
+    gg_dest_LTlt_7406 = CreateDestructable(1280601204, -832.0, 14144.0, 270.000, 0.927, 6)
+    gg_dest_LTlt_7407 = CreateDestructable(1280601204, -1216.0, 14144.0, 270.000, 0.855, 4)
+    gg_dest_LTlt_7408 = CreateDestructable(1280601204, -1344.0, 14144.0, 270.000, 1.128, 0)
+    gg_dest_LTlt_7415 = CreateDestructable(1280601204, -1280.0, 14272.0, 270.000, 0.904, 2)
+    gg_dest_LTlt_7427 = CreateDestructable(1280601204, -1472.0, 14144.0, 270.000, 0.970, 4)
+    gg_dest_LTlt_7431 = CreateDestructable(1280601204, -1408.0, 14272.0, 270.000, 0.875, 9)
+    gg_dest_LTlt_7434 = CreateDestructable(1280601204, -1664.0, 14144.0, 270.000, 1.027, 2)
+    gg_dest_LTlt_7438 = CreateDestructable(1280601204, -1536.0, 14272.0, 270.000, 1.137, 6)
+    gg_dest_LTlt_7441 = CreateDestructable(1280601204, -1856.0, 14144.0, 270.000, 0.865, 7)
+    gg_dest_LTlt_7443 = CreateDestructable(1280601204, -1984.0, 14144.0, 270.000, 1.107, 7)
+    gg_dest_LTlt_7449 = CreateDestructable(1280601204, -1984.0, 13952.0, 270.000, 1.144, 2)
+    gg_dest_LTlt_7452 = CreateDestructable(1280601204, -2112.0, 14080.0, 270.000, 1.003, 3)
+    gg_dest_LTlt_7455 = CreateDestructable(1280601204, -2240.0, 14080.0, 270.000, 0.828, 8)
+    gg_dest_LTlt_7458 = CreateDestructable(1280601204, -2432.0, 14080.0, 270.000, 1.030, 3)
+    gg_dest_LTlt_7463 = CreateDestructable(1280601204, -2560.0, 14144.0, 270.000, 1.091, 3)
+    gg_dest_LTlt_7466 = CreateDestructable(1280601204, -2688.0, 14144.0, 270.000, 0.971, 3)
+    gg_dest_LTlt_7468 = CreateDestructable(1280601204, -2624.0, 14016.0, 270.000, 0.826, 3)
+    gg_dest_LTlt_7472 = CreateDestructable(1280601204, -2816.0, 14144.0, 270.000, 0.917, 5)
+    gg_dest_LTlt_7476 = CreateDestructable(1280601204, -2752.0, 14016.0, 270.000, 1.137, 9)
+    gg_dest_LTlt_7481 = CreateDestructable(1280601204, -2944.0, 14144.0, 270.000, 0.875, 1)
+    gg_dest_LTlt_7485 = CreateDestructable(1280601204, -3072.0, 14144.0, 270.000, 1.113, 7)
+    gg_dest_LTlt_7486 = CreateDestructable(1280601204, -3200.0, 14144.0, 270.000, 1.069, 3)
+    gg_dest_LTlt_7487 = CreateDestructable(1280601204, -3328.0, 14144.0, 270.000, 1.149, 5)
+    gg_dest_LTlt_7488 = CreateDestructable(1280601204, -3520.0, 14144.0, 270.000, 0.872, 2)
+    gg_dest_LTlt_7489 = CreateDestructable(1280601204, -3648.0, 14144.0, 270.000, 0.959, 9)
+    gg_dest_LTlt_7490 = CreateDestructable(1280601204, -3776.0, 14144.0, 270.000, 0.963, 1)
+    gg_dest_LTlt_7491 = CreateDestructable(1280601204, -3968.0, 14208.0, 270.000, 1.145, 2)
+    gg_dest_LTlt_7492 = CreateDestructable(1280601204, -3904.0, 14080.0, 270.000, 1.144, 2)
+    gg_dest_LTlt_7493 = CreateDestructable(1280601204, -3904.0, 14336.0, 270.000, 1.163, 3)
+    gg_dest_LTlt_7572 = CreateDestructable(1280601204, -4032.0, 14080.0, 270.000, 0.930, 4)
+    gg_dest_LTlt_7573 = CreateDestructable(1280601204, -4032.0, 14336.0, 270.000, 0.942, 5)
+    gg_dest_LTlt_7574 = CreateDestructable(1280601204, -768.0, 14272.0, 270.000, 1.195, 3)
+    gg_dest_LTlt_7575 = CreateDestructable(1280601204, -768.0, 14016.0, 270.000, 1.025, 3)
+    gg_dest_LTlt_7576 = CreateDestructable(1280601204, -704.0, 14144.0, 270.000, 1.016, 8)
+    gg_dest_LTlt_7578 = CreateDestructable(1280601204, -640.0, 14272.0, 270.000, 0.957, 8)
+    gg_dest_LTlt_7579 = CreateDestructable(1280601204, -704.0, 14400.0, 270.000, 1.024, 3)
+    gg_dest_LTlt_7580 = CreateDestructable(1280601204, -1024.0, 12416.0, 270.000, 0.995, 4)
+    gg_dest_LTlt_7588 = CreateDestructable(1280601204, -1088.0, 12544.0, 270.000, 0.863, 6)
+    gg_dest_LTlt_7625 = CreateDestructable(1280601204, -896.0, 12416.0, 270.000, 1.003, 2)
+    gg_dest_LTlt_7627 = CreateDestructable(1280601204, -960.0, 12544.0, 270.000, 1.107, 8)
+    gg_dest_LTlt_7629 = CreateDestructable(1280601204, -1216.0, 12608.0, 270.000, 1.164, 0)
+    gg_dest_LTlt_7633 = CreateDestructable(1280601204, -1344.0, 12608.0, 270.000, 1.106, 1)
+    gg_dest_LTlt_7635 = CreateDestructable(1280601204, -1472.0, 12544.0, 270.000, 0.888, 1)
+    gg_dest_LTlt_7637 = CreateDestructable(1280601204, -1472.0, 12672.0, 270.000, 0.812, 6)
+    gg_dest_LTlt_7640 = CreateDestructable(1280601204, -1600.0, 12544.0, 270.000, 1.079, 3)
+    gg_dest_LTlt_7656 = CreateDestructable(1280601204, -1600.0, 12672.0, 270.000, 1.186, 1)
+    gg_dest_LTlt_7661 = CreateDestructable(1280601204, -1792.0, 12608.0, 270.000, 1.062, 3)
+    gg_dest_LTlt_7664 = CreateDestructable(1280601204, -1984.0, 12480.0, 270.000, 1.153, 0)
+    gg_dest_LTlt_7667 = CreateDestructable(1280601204, -1920.0, 12608.0, 270.000, 1.015, 5)
+    gg_dest_LTlt_7669 = CreateDestructable(1280601204, -2112.0, 12480.0, 270.000, 1.179, 3)
+    gg_dest_LTlt_7671 = CreateDestructable(1280601204, -2048.0, 12608.0, 270.000, 1.013, 3)
+    gg_dest_LTlt_7672 = CreateDestructable(1280601204, -2240.0, 12480.0, 270.000, 0.878, 5)
+    gg_dest_LTlt_7673 = CreateDestructable(1280601204, -2368.0, 12480.0, 270.000, 0.901, 4)
+    gg_dest_LTlt_7674 = CreateDestructable(1280601204, -2496.0, 12480.0, 270.000, 0.801, 7)
+    gg_dest_LTlt_7679 = CreateDestructable(1280601204, -2624.0, 12480.0, 270.000, 0.975, 1)
+    gg_dest_LTlt_7682 = CreateDestructable(1280601204, -2816.0, 12480.0, 270.000, 0.976, 0)
+    gg_dest_LTlt_7683 = CreateDestructable(1280601204, -2944.0, 12480.0, 270.000, 0.860, 3)
+    gg_dest_LTlt_7686 = CreateDestructable(1280601204, -3072.0, 12480.0, 270.000, 1.118, 7)
+    gg_dest_LTlt_7687 = CreateDestructable(1280601204, -3136.0, 12608.0, 270.000, 1.189, 0)
+    gg_dest_LTlt_7688 = CreateDestructable(1280601204, -3264.0, 12608.0, 270.000, 1.090, 0)
+    gg_dest_LTlt_7689 = CreateDestructable(1280601204, -3392.0, 12480.0, 270.000, 1.185, 5)
+    gg_dest_LTlt_7690 = CreateDestructable(1280601204, -3520.0, 12480.0, 270.000, 0.981, 0)
+    gg_dest_LTlt_7691 = CreateDestructable(1280601204, -3648.0, 12480.0, 270.000, 0.864, 6)
+    gg_dest_LTlt_7692 = CreateDestructable(1280601204, -3776.0, 12480.0, 270.000, 1.020, 1)
+    gg_dest_LTlt_7694 = CreateDestructable(1280601204, -3904.0, 12480.0, 270.000, 0.991, 2)
+    gg_dest_LTlt_7695 = CreateDestructable(1280601204, -3840.0, 12352.0, 270.000, 1.187, 0)
+    gg_dest_LTlt_7696 = CreateDestructable(1280601204, -4032.0, 12480.0, 270.000, 0.951, 3)
+    gg_dest_LTlt_7697 = CreateDestructable(1280601204, -3968.0, 12352.0, 270.000, 0.835, 0)
+    gg_dest_LTlt_7698 = CreateDestructable(1280601204, -4160.0, 12480.0, 270.000, 0.938, 9)
+    gg_dest_LTlt_7699 = CreateDestructable(1280601204, -4288.0, 12480.0, 270.000, 1.031, 3)
+    gg_dest_LTlt_7700 = CreateDestructable(1280601204, -4416.0, 12480.0, 270.000, 0.852, 3)
+    gg_dest_LTlt_7701 = CreateDestructable(1280601204, -4544.0, 12480.0, 270.000, 1.122, 6)
+    gg_dest_LTlt_7702 = CreateDestructable(1280601204, -4672.0, 12480.0, 270.000, 1.109, 6)
+    gg_dest_LTlt_7703 = CreateDestructable(1280601204, -4800.0, 12608.0, 270.000, 1.174, 9)
+    gg_dest_LTlt_7704 = CreateDestructable(1280601204, -4800.0, 12480.0, 270.000, 1.033, 3)
+    gg_dest_LTlt_7705 = CreateDestructable(1280601204, -4992.0, 12608.0, 270.000, 0.907, 5)
+    gg_dest_LTlt_7707 = CreateDestructable(1280601204, -5184.0, 12480.0, 270.000, 1.155, 1)
+    gg_dest_LTlt_7708 = CreateDestructable(1280601204, -5120.0, 12608.0, 270.000, 0.938, 6)
+    gg_dest_LTlt_7709 = CreateDestructable(1280601204, -5632.0, 12480.0, 270.000, 0.944, 1)
+    gg_dest_LTlt_7710 = CreateDestructable(1280601204, -5504.0, 12480.0, 270.000, 0.909, 7)
+    gg_dest_LTlt_7713 = CreateDestructable(1280601204, -5760.0, 12480.0, 270.000, 1.051, 3)
+    gg_dest_LTlt_7714 = CreateDestructable(1280601204, -6016.0, 12352.0, 270.000, 1.126, 2)
+    gg_dest_LTlt_7715 = CreateDestructable(1280601204, -5888.0, 12352.0, 270.000, 0.867, 5)
+    gg_dest_LTlt_7716 = CreateDestructable(1280601204, -5952.0, 12480.0, 270.000, 1.113, 7)
+    gg_dest_LTlt_7717 = CreateDestructable(1280601204, -6144.0, 12416.0, 270.000, 1.042, 3)
+    gg_dest_LTlt_7718 = CreateDestructable(1280601204, -6336.0, 12416.0, 270.000, 1.023, 7)
+    gg_dest_LTlt_7719 = CreateDestructable(1280601204, -6272.0, 12544.0, 270.000, 1.010, 8)
+    gg_dest_LTlt_7720 = CreateDestructable(1280601204, -6464.0, 12480.0, 270.000, 1.082, 0)
+    gg_dest_LTlt_7721 = CreateDestructable(1280601204, -6592.0, 12480.0, 270.000, 1.031, 6)
+    gg_dest_LTlt_7723 = CreateDestructable(1280601204, -6656.0, 12608.0, 270.000, 1.152, 2)
+    gg_dest_LTlt_7724 = CreateDestructable(1280601204, -6848.0, 12608.0, 270.000, 0.865, 3)
+    gg_dest_LTlt_7725 = CreateDestructable(1280601204, -6976.0, 12608.0, 270.000, 1.026, 7)
+    gg_dest_LTlt_7726 = CreateDestructable(1280601204, -7104.0, 12480.0, 270.000, 0.984, 4)
+    gg_dest_LTlt_7727 = CreateDestructable(1280601204, -7104.0, 12608.0, 270.000, 1.086, 4)
+    gg_dest_LTlt_7728 = CreateDestructable(1280601204, -7232.0, 12480.0, 270.000, 1.114, 4)
+    gg_dest_LTlt_7729 = CreateDestructable(1280601204, -7232.0, 12608.0, 270.000, 1.127, 5)
+    gg_dest_LTlt_7730 = CreateDestructable(1280601204, -7360.0, 12480.0, 270.000, 0.920, 2)
+    gg_dest_LTlt_7731 = CreateDestructable(1280601204, -7488.0, 12480.0, 270.000, 1.197, 9)
+    gg_dest_LTlt_7732 = CreateDestructable(1280601204, -7424.0, 12352.0, 270.000, 1.132, 4)
+    gg_dest_LTlt_7733 = CreateDestructable(1280601204, -7616.0, 12416.0, 270.000, 0.908, 5)
+    gg_dest_LTlt_7734 = CreateDestructable(1280601204, -7552.0, 12288.0, 270.000, 0.819, 0)
+    gg_dest_LTlt_7735 = CreateDestructable(1280601204, -7616.0, 12544.0, 270.000, 0.827, 9)
+    gg_dest_LTlt_7736 = CreateDestructable(1280601204, -7680.0, 12288.0, 270.000, 1.002, 6)
+    gg_dest_LTlt_7737 = CreateDestructable(1280601204, -8000.0, 12480.0, 270.000, 0.901, 6)
+    gg_dest_LTlt_7739 = CreateDestructable(1280601204, -7872.0, 12480.0, 270.000, 0.985, 5)
+    gg_dest_LTlt_7741 = CreateDestructable(1280601204, -7744.0, 12480.0, 270.000, 0.826, 8)
+    gg_dest_LTlt_7749 = CreateDestructable(1280601204, -8192.0, 12480.0, 270.000, 0.973, 2)
+    gg_dest_LTlt_7756 = CreateDestructable(1280601204, -8320.0, 12480.0, 270.000, 0.923, 3)
+    gg_dest_LTlt_7761 = CreateDestructable(1280601204, -8256.0, 12352.0, 270.000, 1.100, 7)
+    gg_dest_LTlt_7764 = CreateDestructable(1280601204, -8256.0, 12608.0, 270.000, 1.035, 8)
+    gg_dest_LTlt_7766 = CreateDestructable(1280601204, -8448.0, 12672.0, 270.000, 1.031, 6)
+    gg_dest_LTlt_7770 = CreateDestructable(1280601204, -8576.0, 12544.0, 270.000, 0.823, 1)
+    gg_dest_LTlt_7772 = CreateDestructable(1280601204, -8576.0, 12416.0, 270.000, 1.026, 3)
+    gg_dest_LTlt_7773 = CreateDestructable(1280601204, -8448.0, 12352.0, 270.000, 1.130, 6)
+    gg_dest_LTlt_7774 = CreateDestructable(1280601204, -8320.0, 12224.0, 270.000, 1.177, 3)
+    gg_dest_LTlt_7775 = CreateDestructable(1280601204, -8192.0, 12224.0, 270.000, 0.921, 5)
+    gg_dest_LTlt_7776 = CreateDestructable(1280601204, -8064.0, 12160.0, 270.000, 0.959, 7)
+    gg_dest_LTlt_7777 = CreateDestructable(1280601204, -7936.0, 12224.0, 270.000, 1.117, 0)
+    gg_dest_LTlt_7778 = CreateDestructable(1280601204, -7872.0, 12032.0, 270.000, 0.828, 4)
+    gg_dest_LTlt_7779 = CreateDestructable(1280601204, -7808.0, 12160.0, 270.000, 0.866, 4)
+    gg_dest_LTlt_7780 = CreateDestructable(1280601204, -7744.0, 12032.0, 270.000, 1.144, 9)
+    gg_dest_LTlt_7781 = CreateDestructable(1280601204, -7616.0, 11968.0, 270.000, 0.956, 4)
+    gg_dest_LTlt_7782 = CreateDestructable(1280601204, -8896.0, 12736.0, 270.000, 0.889, 4)
+    gg_dest_LTlt_7785 = CreateDestructable(1280601204, -7616.0, 11712.0, 270.000, 1.170, 9)
+    gg_dest_LTlt_7899 = CreateDestructable(1280601204, -7552.0, 11840.0, 270.000, 1.016, 8)
+    gg_dest_LTlt_7900 = CreateDestructable(1280601204, -7488.0, 11712.0, 270.000, 1.177, 7)
+    gg_dest_LTlt_7901 = CreateDestructable(1280601204, -7552.0, 11584.0, 270.000, 1.013, 5)
+    gg_dest_LTlt_7902 = CreateDestructable(1280601204, -7360.0, 11456.0, 270.000, 0.917, 5)
+    gg_dest_LTlt_7946 = CreateDestructable(1280601204, -7232.0, 11456.0, 270.000, 1.127, 3)
+    gg_dest_LTlt_7947 = CreateDestructable(1280601204, -7104.0, 11392.0, 270.000, 0.891, 5)
+    gg_dest_LTlt_7948 = CreateDestructable(1280601204, -6976.0, 11328.0, 270.000, 1.142, 8)
+    gg_dest_LTlt_7949 = CreateDestructable(1280601204, -6976.0, 11200.0, 270.000, 0.945, 7)
+    gg_dest_LTlt_7950 = CreateDestructable(1280601204, -6848.0, 11200.0, 270.000, 0.905, 2)
+    gg_dest_LTlt_7951 = CreateDestructable(1280601204, -6720.0, 11136.0, 270.000, 0.998, 2)
+    gg_dest_LTlt_7952 = CreateDestructable(1280601204, -6720.0, 11008.0, 270.000, 0.813, 4)
+    gg_dest_LTlt_7953 = CreateDestructable(1280601204, -6656.0, 10880.0, 270.000, 1.105, 0)
+    gg_dest_LTlt_7954 = CreateDestructable(1280601204, -6528.0, 10752.0, 270.000, 0.805, 1)
+    gg_dest_LTlt_7955 = CreateDestructable(1280601204, -6400.0, 10752.0, 270.000, 1.066, 6)
+    gg_dest_LTlt_7956 = CreateDestructable(1280601204, -6400.0, 10624.0, 270.000, 1.151, 5)
+    gg_dest_LTlt_7957 = CreateDestructable(1280601204, -6208.0, 10560.0, 270.000, 0.859, 4)
+    gg_dest_LTlt_7958 = CreateDestructable(1280601204, -6080.0, 10496.0, 270.000, 1.073, 2)
+    gg_dest_LTlt_7959 = CreateDestructable(1280601204, -6080.0, 10368.0, 270.000, 1.017, 9)
+    gg_dest_LTlt_7960 = CreateDestructable(1280601204, -6528.0, 10624.0, 270.000, 0.881, 6)
+    gg_dest_LTlt_7961 = CreateDestructable(1280601204, -6848.0, 11072.0, 270.000, 1.031, 2)
+    gg_dest_LTlt_7962 = CreateDestructable(1280601204, -6208.0, 10432.0, 270.000, 0.878, 9)
+    gg_dest_LTlt_7963 = CreateDestructable(1280601204, -5952.0, 10176.0, 270.000, 1.142, 1)
+    gg_dest_LTlt_7964 = CreateDestructable(1280601204, -5760.0, 10048.0, 270.000, 0.925, 6)
+    gg_dest_LTlt_7965 = CreateDestructable(1280601204, -5632.0, 9984.0, 270.000, 0.806, 4)
+    gg_dest_LTlt_7966 = CreateDestructable(1280601204, -5504.0, 9920.0, 270.000, 0.834, 9)
+    gg_dest_LTlt_7967 = CreateDestructable(1280601204, -5376.0, 9856.0, 270.000, 0.940, 1)
+    gg_dest_LTlt_7968 = CreateDestructable(1280601204, -5504.0, 9792.0, 270.000, 1.095, 1)
+    gg_dest_LTlt_7969 = CreateDestructable(1280601204, -5376.0, 9728.0, 270.000, 1.169, 4)
+    gg_dest_LTlt_7970 = CreateDestructable(1280601204, -5312.0, 9600.0, 270.000, 1.061, 1)
+    gg_dest_LTlt_7971 = CreateDestructable(1280601204, -5248.0, 9728.0, 270.000, 1.001, 8)
+    gg_dest_LTlt_7972 = CreateDestructable(1280601204, -5184.0, 9536.0, 270.000, 1.000, 8)
+    gg_dest_LTlt_7973 = CreateDestructable(1280601204, -5184.0, 9408.0, 270.000, 0.975, 5)
+    gg_dest_LTlt_7974 = CreateDestructable(1280601204, -5056.0, 9344.0, 270.000, 0.964, 1)
+    gg_dest_LTlt_7975 = CreateDestructable(1280601204, -4928.0, 9216.0, 270.000, 0.974, 6)
+    gg_dest_LTlt_7976 = CreateDestructable(1280601204, -4864.0, 9344.0, 270.000, 0.893, 5)
+    gg_dest_LTlt_7977 = CreateDestructable(1280601204, -4672.0, 9088.0, 270.000, 1.066, 1)
+    gg_dest_LTlt_7978 = CreateDestructable(1280601204, -4800.0, 9152.0, 270.000, 1.081, 4)
+    gg_dest_LTlt_7979 = CreateDestructable(1280601204, -4544.0, 8960.0, 270.000, 0.814, 9)
+    gg_dest_LTlt_7980 = CreateDestructable(1280601204, -4416.0, 8768.0, 270.000, 1.077, 2)
+    gg_dest_LTlt_7981 = CreateDestructable(1280601204, -4352.0, 8896.0, 270.000, 0.912, 0)
+    gg_dest_LTlt_7982 = CreateDestructable(1280601204, -4288.0, 8704.0, 270.000, 0.972, 0)
+    gg_dest_LTlt_7983 = CreateDestructable(1280601204, -4224.0, 8832.0, 270.000, 0.936, 7)
+    gg_dest_LTlt_7984 = CreateDestructable(1280601204, -4288.0, 8576.0, 270.000, 1.018, 7)
+    gg_dest_LTlt_7985 = CreateDestructable(1280601204, -4160.0, 8576.0, 270.000, 0.904, 0)
+    gg_dest_LTlt_7986 = CreateDestructable(1280601204, -4160.0, 8448.0, 270.000, 0.881, 2)
+    gg_dest_LTlt_7987 = CreateDestructable(1280601204, -4032.0, 8448.0, 270.000, 0.956, 6)
+    gg_dest_LTlt_7988 = CreateDestructable(1280601204, -4032.0, 8320.0, 270.000, 0.809, 0)
+    gg_dest_LTlt_7989 = CreateDestructable(1280601204, -3904.0, 8320.0, 270.000, 0.837, 5)
+    gg_dest_LTlt_7990 = CreateDestructable(1280601204, -3904.0, 8448.0, 270.000, 1.192, 4)
+    gg_dest_LTlt_7991 = CreateDestructable(1280601204, -3776.0, 8192.0, 270.000, 1.060, 5)
+    gg_dest_LTlt_7992 = CreateDestructable(1280601204, -3584.0, 8128.0, 270.000, 0.954, 4)
+    gg_dest_LTlt_7993 = CreateDestructable(1280601204, -3456.0, 8064.0, 270.000, 1.122, 5)
+    gg_dest_LTlt_7994 = CreateDestructable(1280601204, -3520.0, 7936.0, 270.000, 0.991, 8)
+    gg_dest_LTlt_7995 = CreateDestructable(1280601204, -3328.0, 7872.0, 270.000, 1.111, 1)
+    gg_dest_LTlt_7996 = CreateDestructable(1280601204, -3328.0, 7744.0, 270.000, 1.052, 9)
+    gg_dest_LTlt_7997 = CreateDestructable(1280601204, -3264.0, 7616.0, 270.000, 0.965, 7)
+    gg_dest_LTlt_7998 = CreateDestructable(1280601204, -3136.0, 7552.0, 270.000, 1.106, 1)
+    gg_dest_LTlt_7999 = CreateDestructable(1280601204, -2944.0, 7424.0, 270.000, 0.983, 0)
+    gg_dest_LTlt_8000 = CreateDestructable(1280601204, -2944.0, 7296.0, 270.000, 0.915, 2)
+    gg_dest_LTlt_8001 = CreateDestructable(1280601204, -2816.0, 7296.0, 270.000, 0.884, 7)
+    gg_dest_LTlt_8002 = CreateDestructable(1280601204, -2880.0, 7168.0, 270.000, 1.068, 4)
+    gg_dest_LTlt_8003 = CreateDestructable(1280601204, -2752.0, 7168.0, 270.000, 1.163, 3)
+    gg_dest_LTlt_8004 = CreateDestructable(1280601204, -2624.0, 7040.0, 270.000, 1.051, 7)
+    gg_dest_LTlt_8005 = CreateDestructable(1280601204, -2624.0, 6912.0, 270.000, 0.892, 2)
+    gg_dest_LTlt_8006 = CreateDestructable(1280601204, -2496.0, 6848.0, 270.000, 0.805, 6)
+    gg_dest_LTlt_8007 = CreateDestructable(1280601204, -2368.0, 6848.0, 270.000, 0.808, 5)
+    gg_dest_LTlt_8008 = CreateDestructable(1280601204, -2240.0, 6784.0, 270.000, 1.112, 0)
+    gg_dest_LTlt_8009 = CreateDestructable(1280601204, -2176.0, 6656.0, 270.000, 1.118, 2)
+    gg_dest_LTlt_8010 = CreateDestructable(1280601204, -2048.0, 6528.0, 270.000, 0.862, 6)
+    gg_dest_LTlt_8011 = CreateDestructable(1280601204, -1920.0, 6400.0, 270.000, 0.960, 0)
+    gg_dest_LTlt_8012 = CreateDestructable(1280601204, -1856.0, 6528.0, 270.000, 0.876, 8)
+    gg_dest_LTlt_8013 = CreateDestructable(1280601204, -1920.0, 6272.0, 270.000, 1.042, 6)
+    gg_dest_LTlt_8014 = CreateDestructable(1280601204, -1792.0, 6272.0, 270.000, 1.191, 1)
+    gg_dest_LTlt_8015 = CreateDestructable(1280601204, -1856.0, 6144.0, 270.000, 0.805, 8)
+    gg_dest_LTlt_8016 = CreateDestructable(1280601204, -1728.0, 6144.0, 270.000, 1.044, 5)
+    gg_dest_LTlt_8017 = CreateDestructable(1280601204, -1728.0, 6016.0, 270.000, 0.928, 8)
+    gg_dest_LTlt_8018 = CreateDestructable(1280601204, -1600.0, 6016.0, 270.000, 0.950, 9)
+    gg_dest_LTlt_8019 = CreateDestructable(1280601204, -1536.0, 5888.0, 270.000, 1.036, 9)
+    gg_dest_LTlt_8020 = CreateDestructable(1280601204, -1408.0, 5888.0, 270.000, 1.017, 8)
+    gg_dest_LTlt_8021 = CreateDestructable(1280601204, -1536.0, 5760.0, 270.000, 0.916, 4)
+    gg_dest_LTlt_8022 = CreateDestructable(1280601204, -1408.0, 5760.0, 270.000, 1.027, 0)
+    gg_dest_LTlt_8023 = CreateDestructable(1280601204, -1280.0, 5632.0, 270.000, 1.085, 3)
+    gg_dest_LTlt_8024 = CreateDestructable(1280601204, -1216.0, 5760.0, 270.000, 1.037, 3)
+    gg_dest_LTlt_8025 = CreateDestructable(1280601204, -1152.0, 5504.0, 270.000, 0.954, 6)
+    gg_dest_LTlt_8026 = CreateDestructable(1280601204, -1088.0, 5632.0, 270.000, 0.821, 3)
+    gg_dest_LTlt_8027 = CreateDestructable(1280601204, -1024.0, 5440.0, 270.000, 0.918, 2)
+    gg_dest_LTlt_8028 = CreateDestructable(1280601204, -1024.0, 5248.0, 270.000, 1.053, 2)
+    gg_dest_LTlt_8029 = CreateDestructable(1280601204, -896.0, 5248.0, 270.000, 1.061, 7)
+    gg_dest_LTlt_8030 = CreateDestructable(1280601204, -832.0, 5120.0, 270.000, 1.173, 4)
+    gg_dest_LTlt_8031 = CreateDestructable(1280601204, -832.0, 4992.0, 270.000, 0.966, 7)
+    gg_dest_LTlt_8032 = CreateDestructable(1280601204, -704.0, 4992.0, 270.000, 1.126, 7)
+    gg_dest_LTlt_8033 = CreateDestructable(1280601204, -832.0, 4864.0, 270.000, 0.944, 3)
+    gg_dest_LTlt_8034 = CreateDestructable(1280601204, -704.0, 4864.0, 270.000, 1.027, 6)
+    gg_dest_LTlt_8035 = CreateDestructable(1280601204, -832.0, 4736.0, 270.000, 1.131, 0)
+    gg_dest_LTlt_8036 = CreateDestructable(1280601204, -704.0, 4736.0, 270.000, 0.940, 4)
+    gg_dest_LTlt_8037 = CreateDestructable(1280601204, -576.0, 4800.0, 270.000, 1.144, 6)
+    gg_dest_LTlt_8038 = CreateDestructable(1280601204, -768.0, 4608.0, 270.000, 0.831, 6)
+    gg_dest_LTlt_8039 = CreateDestructable(1280601204, -640.0, 4608.0, 270.000, 0.928, 2)
+    gg_dest_LTlt_8040 = CreateDestructable(1280601204, -576.0, 4992.0, 270.000, 0.918, 0)
+    gg_dest_LTlt_8041 = CreateDestructable(1280601204, -576.0, 5120.0, 270.000, 1.034, 0)
+    gg_dest_LTlt_8042 = CreateDestructable(1280601204, -576.0, 5248.0, 270.000, 1.027, 5)
+    gg_dest_LTlt_8043 = CreateDestructable(1280601204, -640.0, 5440.0, 270.000, 0.825, 5)
+    gg_dest_LTlt_8044 = CreateDestructable(1280601204, -896.0, 5440.0, 270.000, 1.050, 5)
+    gg_dest_LTlt_8045 = CreateDestructable(1280601204, -576.0, 5760.0, 270.000, 0.985, 2)
+    gg_dest_LTlt_8046 = CreateDestructable(1280601204, -576.0, 5888.0, 270.000, 0.981, 5)
+    gg_dest_LTlt_8047 = CreateDestructable(1280601204, -576.0, 6080.0, 270.000, 0.869, 9)
+    gg_dest_LTlt_8048 = CreateDestructable(1280601204, -640.0, 6272.0, 270.000, 1.057, 2)
+    gg_dest_LTlt_8049 = CreateDestructable(1280601204, -640.0, 6464.0, 270.000, 1.129, 4)
+    gg_dest_LTlt_8050 = CreateDestructable(1280601204, -512.0, 6336.0, 270.000, 1.193, 6)
+    gg_dest_LTlt_8051 = CreateDestructable(1280601204, -512.0, 6464.0, 270.000, 1.147, 5)
+    gg_dest_LTlt_8052 = CreateDestructable(1280601204, -576.0, 6592.0, 270.000, 0.920, 8)
+    gg_dest_LTlt_8053 = CreateDestructable(1280601204, -640.0, 6784.0, 270.000, 1.149, 6)
+    gg_dest_LTlt_8054 = CreateDestructable(1280601204, -576.0, 6912.0, 270.000, 0.885, 4)
+    gg_dest_LTlt_8055 = CreateDestructable(1280601204, -640.0, 7104.0, 270.000, 0.948, 9)
+    gg_dest_LTlt_8056 = CreateDestructable(1280601204, -576.0, 7296.0, 270.000, 1.102, 2)
+    gg_dest_LTlt_8057 = CreateDestructable(1280601204, -640.0, 7424.0, 270.000, 1.178, 3)
+    gg_dest_LTlt_8058 = CreateDestructable(1280601204, -640.0, 7616.0, 270.000, 0.866, 4)
+    gg_dest_LTlt_8059 = CreateDestructable(1280601204, -512.0, 7616.0, 270.000, 0.971, 7)
+    gg_dest_LTlt_8060 = CreateDestructable(1280601204, -576.0, 7744.0, 270.000, 1.016, 3)
+    gg_dest_LTlt_8061 = CreateDestructable(1280601204, -640.0, 7936.0, 270.000, 0.963, 8)
+    gg_dest_LTlt_8062 = CreateDestructable(1280601204, -576.0, 8128.0, 270.000, 0.935, 6)
+    gg_dest_LTlt_8063 = CreateDestructable(1280601204, -576.0, 8256.0, 270.000, 1.119, 1)
+    gg_dest_LTlt_8064 = CreateDestructable(1280601204, -576.0, 8384.0, 270.000, 1.001, 3)
+    gg_dest_LTlt_8065 = CreateDestructable(1280601204, -640.0, 8704.0, 270.000, 1.038, 7)
+    gg_dest_LTlt_8066 = CreateDestructable(1280601204, -576.0, 8832.0, 270.000, 0.924, 0)
+    gg_dest_LTlt_8067 = CreateDestructable(1280601204, -640.0, 8960.0, 270.000, 1.151, 2)
+    gg_dest_LTlt_8068 = CreateDestructable(1280601204, -512.0, 8960.0, 270.000, 0.906, 0)
+    gg_dest_LTlt_8069 = CreateDestructable(1280601204, -576.0, 9088.0, 270.000, 1.054, 7)
+    gg_dest_LTlt_8070 = CreateDestructable(1280601204, -576.0, 8576.0, 270.000, 1.006, 8)
+    gg_dest_LTlt_8071 = CreateDestructable(1280601204, -512.0, 8704.0, 270.000, 0.899, 1)
+    gg_dest_LTlt_8072 = CreateDestructable(1280601204, -576.0, 9344.0, 270.000, 1.045, 1)
+    gg_dest_LTlt_8073 = CreateDestructable(1280601204, -576.0, 9472.0, 270.000, 1.060, 9)
+    gg_dest_LTlt_8074 = CreateDestructable(1280601204, -576.0, 9664.0, 270.000, 0.984, 6)
+    gg_dest_LTlt_8075 = CreateDestructable(1280601204, -576.0, 9792.0, 270.000, 1.024, 5)
+    gg_dest_LTlt_8076 = CreateDestructable(1280601204, -640.0, 9920.0, 270.000, 0.858, 8)
+    gg_dest_LTlt_8077 = CreateDestructable(1280601204, -640.0, 10048.0, 270.000, 0.845, 7)
+    gg_dest_LTlt_8078 = CreateDestructable(1280601204, -640.0, 10240.0, 270.000, 1.149, 4)
+    gg_dest_LTlt_8079 = CreateDestructable(1280601204, -640.0, 10432.0, 270.000, 0.953, 7)
+    gg_dest_LTlt_8080 = CreateDestructable(1280601204, -640.0, 10560.0, 270.000, 1.059, 5)
+    gg_dest_LTlt_8081 = CreateDestructable(1280601204, -640.0, 10688.0, 270.000, 0.904, 7)
+    gg_dest_LTlt_8082 = CreateDestructable(1280601204, -512.0, 10752.0, 270.000, 0.879, 3)
+    gg_dest_LTlt_8083 = CreateDestructable(1280601204, -576.0, 10880.0, 270.000, 0.971, 5)
+    gg_dest_LTlt_8084 = CreateDestructable(1280601204, -576.0, 11008.0, 270.000, 0.815, 0)
+    gg_dest_LTlt_8085 = CreateDestructable(1280601204, -576.0, 11200.0, 270.000, 1.077, 7)
+    gg_dest_LTlt_8086 = CreateDestructable(1280601204, -576.0, 11328.0, 270.000, 0.925, 1)
+    gg_dest_LTlt_8087 = CreateDestructable(1280601204, -576.0, 11456.0, 270.000, 0.936, 7)
+    gg_dest_LTlt_8088 = CreateDestructable(1280601204, -576.0, 11584.0, 270.000, 0.844, 7)
+    gg_dest_LTlt_8089 = CreateDestructable(1280601204, -576.0, 11712.0, 270.000, 0.856, 8)
+    gg_dest_LTlt_8090 = CreateDestructable(1280601204, -576.0, 11840.0, 270.000, 1.078, 2)
+    gg_dest_LTlt_8091 = CreateDestructable(1280601204, -576.0, 11968.0, 270.000, 0.908, 0)
+    gg_dest_LTlt_8092 = CreateDestructable(1280601204, -704.0, 12032.0, 270.000, 0.854, 8)
+    gg_dest_LTlt_8093 = CreateDestructable(1280601204, -704.0, 12160.0, 270.000, 0.801, 5)
+    gg_dest_LTlt_8094 = CreateDestructable(1280601204, -576.0, 12160.0, 270.000, 1.101, 2)
+    gg_dest_LTlt_8095 = CreateDestructable(1280601204, -640.0, 12288.0, 270.000, 0.819, 0)
+    gg_dest_LTlt_8096 = CreateDestructable(1280601204, -704.0, 12416.0, 270.000, 1.085, 3)
+    gg_dest_LTlt_8097 = CreateDestructable(1280601204, -8704.0, 10560.0, 270.000, 1.125, 5)
+    gg_dest_LTlt_8098 = CreateDestructable(1280601204, -8768.0, 10688.0, 270.000, 1.099, 7)
+    gg_dest_LTlt_8099 = CreateDestructable(1280601204, -8576.0, 10560.0, 270.000, 1.161, 7)
+    gg_dest_LTlt_8100 = CreateDestructable(1280601204, -8448.0, 10304.0, 270.000, 1.097, 2)
+    gg_dest_LTlt_8101 = CreateDestructable(1280601204, -8384.0, 10432.0, 270.000, 1.188, 2)
+    gg_dest_LTlt_8102 = CreateDestructable(1280601204, -8448.0, 10560.0, 270.000, 0.975, 5)
+    gg_dest_LTlt_8103 = CreateDestructable(1280601204, -8320.0, 10176.0, 270.000, 0.834, 2)
+    gg_dest_LTlt_8104 = CreateDestructable(1280601204, -8256.0, 10048.0, 270.000, 1.091, 2)
+    gg_dest_LTlt_8105 = CreateDestructable(1280601204, -8128.0, 9920.0, 270.000, 0.948, 5)
+    gg_dest_LTlt_8106 = CreateDestructable(1280601204, -8000.0, 9920.0, 270.000, 0.862, 2)
+    gg_dest_LTlt_8107 = CreateDestructable(1280601204, -7936.0, 9792.0, 270.000, 0.915, 5)
+    gg_dest_LTlt_8108 = CreateDestructable(1280601204, -7744.0, 9600.0, 270.000, 0.834, 4)
+    gg_dest_LTlt_8109 = CreateDestructable(1280601204, -7744.0, 9408.0, 270.000, 1.120, 7)
+    gg_dest_LTlt_8110 = CreateDestructable(1280601204, -7680.0, 9280.0, 270.000, 0.987, 2)
+    gg_dest_LTlt_8111 = CreateDestructable(1280601204, -7616.0, 9408.0, 270.000, 0.891, 6)
+    gg_dest_LTlt_8112 = CreateDestructable(1280601204, -7552.0, 9152.0, 270.000, 0.815, 6)
+    gg_dest_LTlt_8113 = CreateDestructable(1280601204, -7488.0, 9280.0, 270.000, 0.991, 3)
+    gg_dest_LTlt_8114 = CreateDestructable(1280601204, -7424.0, 9152.0, 270.000, 0.987, 0)
+    gg_dest_LTlt_8115 = CreateDestructable(1280601204, -7360.0, 9024.0, 270.000, 1.161, 3)
+    gg_dest_LTlt_8116 = CreateDestructable(1280601204, -7232.0, 8960.0, 270.000, 1.107, 9)
+    gg_dest_LTlt_8117 = CreateDestructable(1280601204, -7104.0, 9024.0, 270.000, 1.195, 9)
+    gg_dest_LTlt_8118 = CreateDestructable(1280601204, -6976.0, 8896.0, 270.000, 1.042, 7)
+    gg_dest_LTlt_8119 = CreateDestructable(1280601204, -6976.0, 9024.0, 270.000, 1.140, 7)
+    gg_dest_LTlt_8120 = CreateDestructable(1280601204, -6912.0, 8704.0, 270.000, 0.848, 5)
+    gg_dest_LTlt_8121 = CreateDestructable(1280601204, -6848.0, 8832.0, 270.000, 0.973, 2)
+    gg_dest_LTlt_8122 = CreateDestructable(1280601204, -6720.0, 8640.0, 270.000, 0.835, 9)
+    gg_dest_LTlt_8123 = CreateDestructable(1280601204, -6720.0, 8512.0, 270.000, 0.866, 2)
+    gg_dest_LTlt_8124 = CreateDestructable(1280601204, -6592.0, 8512.0, 270.000, 1.030, 1)
+    gg_dest_LTlt_8125 = CreateDestructable(1280601204, -6528.0, 8384.0, 270.000, 0.977, 7)
+    gg_dest_LTlt_8126 = CreateDestructable(1280601204, -6528.0, 8256.0, 270.000, 1.154, 6)
+    gg_dest_LTlt_8127 = CreateDestructable(1280601204, -6336.0, 8256.0, 270.000, 1.094, 3)
+    gg_dest_LTlt_8128 = CreateDestructable(1280601204, -6208.0, 8256.0, 270.000, 0.880, 6)
+    gg_dest_LTlt_8129 = CreateDestructable(1280601204, -6080.0, 8064.0, 270.000, 1.064, 1)
+    gg_dest_LTlt_8130 = CreateDestructable(1280601204, -6016.0, 7808.0, 270.000, 0.959, 9)
+    gg_dest_LTlt_8131 = CreateDestructable(1280601204, -5952.0, 7936.0, 270.000, 1.038, 6)
+    gg_dest_LTlt_8132 = CreateDestructable(1280601204, -5952.0, 8064.0, 270.000, 0.910, 6)
+    gg_dest_LTlt_8133 = CreateDestructable(1280601204, -5888.0, 7744.0, 270.000, 1.058, 3)
+    gg_dest_LTlt_8134 = CreateDestructable(1280601204, -5824.0, 7872.0, 270.000, 1.125, 4)
+    gg_dest_LTlt_8135 = CreateDestructable(1280601204, -5760.0, 7744.0, 270.000, 0.992, 9)
+    gg_dest_LTlt_8136 = CreateDestructable(1280601204, -5760.0, 7616.0, 270.000, 0.821, 7)
+    gg_dest_LTlt_8137 = CreateDestructable(1280601204, -5632.0, 7616.0, 270.000, 0.879, 0)
+    gg_dest_LTlt_8138 = CreateDestructable(1280601204, -5504.0, 7552.0, 270.000, 0.995, 6)
+    gg_dest_LTlt_8139 = CreateDestructable(1280601204, -5632.0, 7488.0, 270.000, 1.036, 9)
+    gg_dest_LTlt_8140 = CreateDestructable(1280601204, -5056.0, 7040.0, 270.000, 1.188, 6)
+    gg_dest_LTlt_8141 = CreateDestructable(1280601204, -4928.0, 6976.0, 270.000, 0.919, 5)
+    gg_dest_LTlt_8142 = CreateDestructable(1280601204, -4864.0, 6848.0, 270.000, 1.113, 9)
+    gg_dest_LTlt_8143 = CreateDestructable(1280601204, -4800.0, 6720.0, 270.000, 1.080, 0)
+    gg_dest_LTlt_8144 = CreateDestructable(1280601204, -4672.0, 6720.0, 270.000, 0.891, 5)
+    gg_dest_LTlt_8145 = CreateDestructable(1280601204, -4672.0, 6528.0, 270.000, 1.045, 9)
+    gg_dest_LTlt_8146 = CreateDestructable(1280601204, -4544.0, 6592.0, 270.000, 0.839, 0)
+    gg_dest_LTlt_8147 = CreateDestructable(1280601204, -4416.0, 6464.0, 270.000, 1.056, 2)
+    gg_dest_LTlt_8148 = CreateDestructable(1280601204, -4288.0, 6272.0, 270.000, 1.159, 2)
+    gg_dest_LTlt_8149 = CreateDestructable(1280601204, -4160.0, 6208.0, 270.000, 1.170, 0)
+    gg_dest_LTlt_8150 = CreateDestructable(1280601204, -4160.0, 6080.0, 270.000, 0.967, 3)
+    gg_dest_LTlt_8151 = CreateDestructable(1280601204, -4032.0, 6080.0, 270.000, 0.939, 7)
+    gg_dest_LTlt_8152 = CreateDestructable(1280601204, -4032.0, 5952.0, 270.000, 0.958, 3)
+    gg_dest_LTlt_8153 = CreateDestructable(1280601204, -3904.0, 5952.0, 270.000, 0.943, 2)
+    gg_dest_LTlt_8154 = CreateDestructable(1280601204, -3904.0, 5824.0, 270.000, 0.851, 1)
+    gg_dest_LTlt_8155 = CreateDestructable(1280601204, -3712.0, 5760.0, 270.000, 0.899, 2)
+    gg_dest_LTlt_8156 = CreateDestructable(1280601204, -3520.0, 5568.0, 270.000, 1.083, 5)
+    gg_dest_LTlt_8157 = CreateDestructable(1280601204, -3584.0, 5696.0, 270.000, 0.955, 1)
+    gg_dest_LTlt_8158 = CreateDestructable(1280601204, -3456.0, 5376.0, 270.000, 1.120, 0)
+    gg_dest_LTlt_8159 = CreateDestructable(1280601204, -3392.0, 5504.0, 270.000, 0.850, 7)
+    gg_dest_LTlt_8160 = CreateDestructable(1280601204, -3392.0, 5632.0, 270.000, 1.018, 0)
+    gg_dest_LTlt_8161 = CreateDestructable(1280601204, -3264.0, 5440.0, 270.000, 1.064, 3)
+    gg_dest_LTlt_8162 = CreateDestructable(1280601204, -3200.0, 5312.0, 270.000, 1.037, 7)
+    gg_dest_LTlt_8163 = CreateDestructable(1280601204, -3136.0, 5120.0, 270.000, 1.142, 5)
+    gg_dest_LTlt_8164 = CreateDestructable(1280601204, -3008.0, 5184.0, 270.000, 0.943, 1)
+    gg_dest_LTlt_8165 = CreateDestructable(1280601204, -3008.0, 4992.0, 270.000, 0.871, 3)
+    gg_dest_LTlt_8166 = CreateDestructable(1280601204, -2880.0, 4992.0, 270.000, 1.199, 8)
+    gg_dest_LTlt_8167 = CreateDestructable(1280601204, -2752.0, 4928.0, 270.000, 1.175, 2)
+    gg_dest_LTlt_8168 = CreateDestructable(1280601204, -2688.0, 4672.0, 270.000, 1.147, 8)
+    gg_dest_LTlt_8169 = CreateDestructable(1280601204, -2624.0, 4800.0, 270.000, 0.959, 4)
+    gg_dest_LTlt_8170 = CreateDestructable(1280601204, -2496.0, 4672.0, 270.000, 1.042, 3)
+    gg_dest_LTlt_8171 = CreateDestructable(1280601204, -2496.0, 4544.0, 270.000, 1.104, 3)
+    gg_dest_LTlt_8172 = CreateDestructable(1280601204, -2432.0, 4416.0, 270.000, 0.842, 0)
+    gg_dest_LTlt_8173 = CreateDestructable(1280601204, -2368.0, 4288.0, 270.000, 0.932, 9)
+    gg_dest_LTlt_8174 = CreateDestructable(1280601204, -2240.0, 4224.0, 270.000, 1.149, 0)
+    gg_dest_LTlt_8175 = CreateDestructable(1280601204, -2112.0, 4160.0, 270.000, 1.129, 7)
+    gg_dest_LTlt_8176 = CreateDestructable(1280601204, -2112.0, 3968.0, 270.000, 0.885, 9)
+    gg_dest_LTlt_8177 = CreateDestructable(1280601204, -1920.0, 4032.0, 270.000, 0.936, 6)
+    gg_dest_LTlt_8178 = CreateDestructable(1280601204, -1728.0, 3904.0, 270.000, 0.898, 4)
+    gg_dest_LTlt_8179 = CreateDestructable(1280601204, -1792.0, 4032.0, 270.000, 1.158, 2)
+    gg_dest_LTlt_8180 = CreateDestructable(1280601204, -1792.0, 3648.0, 270.000, 0.989, 7)
+    gg_dest_LTlt_8181 = CreateDestructable(1280601204, -1664.0, 3648.0, 270.000, 0.833, 7)
+    gg_dest_LTlt_8182 = CreateDestructable(1280601204, -1536.0, 3712.0, 270.000, 1.132, 2)
+    gg_dest_LTlt_8183 = CreateDestructable(1280601204, -1664.0, 3520.0, 270.000, 1.137, 8)
+    gg_dest_LTlt_8184 = CreateDestructable(1280601204, -1792.0, 3520.0, 270.000, 0.919, 1)
+    gg_dest_LTlt_8185 = CreateDestructable(1280601204, -1984.0, 3648.0, 270.000, 0.875, 9)
+    gg_dest_LTlt_8186 = CreateDestructable(1280601204, -2176.0, 3712.0, 270.000, 1.147, 1)
+    gg_dest_LTlt_8187 = CreateDestructable(1280601204, -2112.0, 3584.0, 270.000, 0.805, 9)
+    gg_dest_LTlt_8188 = CreateDestructable(1280601204, -2304.0, 3712.0, 270.000, 1.176, 9)
+    gg_dest_LTlt_8189 = CreateDestructable(1280601204, -2240.0, 3584.0, 270.000, 0.990, 9)
+    gg_dest_LTlt_8190 = CreateDestructable(1280601204, -2432.0, 3648.0, 270.000, 1.194, 8)
+    gg_dest_LTlt_8191 = CreateDestructable(1280601204, -2560.0, 3648.0, 270.000, 1.112, 9)
+    gg_dest_LTlt_8192 = CreateDestructable(1280601204, -2752.0, 3648.0, 270.000, 1.153, 8)
+    gg_dest_LTlt_8193 = CreateDestructable(1280601204, -2880.0, 3648.0, 270.000, 1.158, 5)
+    gg_dest_LTlt_8194 = CreateDestructable(1280601204, -3008.0, 3648.0, 270.000, 0.982, 0)
+    gg_dest_LTlt_8195 = CreateDestructable(1280601204, -3136.0, 3648.0, 270.000, 0.982, 7)
+    gg_dest_LTlt_8196 = CreateDestructable(1280601204, -3264.0, 3648.0, 270.000, 0.970, 2)
+    gg_dest_LTlt_8197 = CreateDestructable(1280601204, -3392.0, 3648.0, 270.000, 1.112, 6)
+    gg_dest_LTlt_8198 = CreateDestructable(1280601204, -3520.0, 3648.0, 270.000, 0.844, 5)
+    gg_dest_LTlt_8199 = CreateDestructable(1280601204, -3648.0, 3648.0, 270.000, 0.964, 6)
+    gg_dest_LTlt_8200 = CreateDestructable(1280601204, -3776.0, 3648.0, 270.000, 0.903, 0)
+    gg_dest_LTlt_8201 = CreateDestructable(1280601204, -3904.0, 3648.0, 270.000, 0.873, 6)
+    gg_dest_LTlt_8202 = CreateDestructable(1280601204, -4032.0, 3648.0, 270.000, 0.840, 7)
+    gg_dest_LTlt_8203 = CreateDestructable(1280601204, -4224.0, 3712.0, 270.000, 0.969, 0)
+    gg_dest_LTlt_8204 = CreateDestructable(1280601204, -4352.0, 3712.0, 270.000, 0.840, 2)
+    gg_dest_LTlt_8205 = CreateDestructable(1280601204, -4480.0, 3648.0, 270.000, 0.868, 1)
+    gg_dest_LTlt_8206 = CreateDestructable(1280601204, -4672.0, 3648.0, 270.000, 0.826, 0)
+    gg_dest_LTlt_8207 = CreateDestructable(1280601204, -4800.0, 3648.0, 270.000, 1.103, 1)
+    gg_dest_LTlt_8208 = CreateDestructable(1280601204, -4928.0, 3648.0, 270.000, 0.958, 0)
+    gg_dest_LTlt_8209 = CreateDestructable(1280601204, -5056.0, 3648.0, 270.000, 1.063, 4)
+    gg_dest_LTlt_8210 = CreateDestructable(1280601204, -5248.0, 3648.0, 270.000, 1.165, 2)
+    gg_dest_LTlt_8211 = CreateDestructable(1280601204, -5376.0, 3648.0, 270.000, 1.142, 4)
+    gg_dest_LTlt_8212 = CreateDestructable(1280601204, -5504.0, 3648.0, 270.000, 0.877, 3)
+    gg_dest_LTlt_8213 = CreateDestructable(1280601204, -5632.0, 3648.0, 270.000, 0.925, 3)
+    gg_dest_LTlt_8214 = CreateDestructable(1280601204, -5824.0, 3648.0, 270.000, 1.176, 2)
+    gg_dest_LTlt_8215 = CreateDestructable(1280601204, -6016.0, 3648.0, 270.000, 1.119, 3)
+    gg_dest_LTlt_8216 = CreateDestructable(1280601204, -6208.0, 3648.0, 270.000, 1.090, 5)
+    gg_dest_LTlt_8217 = CreateDestructable(1280601204, -6336.0, 3648.0, 270.000, 0.813, 4)
+    gg_dest_LTlt_8218 = CreateDestructable(1280601204, -6528.0, 3648.0, 270.000, 1.084, 9)
+    gg_dest_LTlt_8219 = CreateDestructable(1280601204, -6656.0, 3584.0, 270.000, 0.990, 1)
+    gg_dest_LTlt_8220 = CreateDestructable(1280601204, -7616.0, 3648.0, 270.000, 0.811, 5)
+    gg_dest_LTlt_8221 = CreateDestructable(1280601204, -7488.0, 3648.0, 270.000, 1.103, 7)
+    gg_dest_LTlt_8222 = CreateDestructable(1280601204, -7744.0, 3584.0, 270.000, 1.180, 0)
+    gg_dest_LTlt_8223 = CreateDestructable(1280601204, -7872.0, 3584.0, 270.000, 1.174, 4)
+    gg_dest_LTlt_8224 = CreateDestructable(1280601204, -8064.0, 3584.0, 270.000, 0.863, 2)
+    gg_dest_LTlt_8225 = CreateDestructable(1280601204, -8192.0, 3584.0, 270.000, 1.144, 7)
+    gg_dest_LTlt_8226 = CreateDestructable(1280601204, -8320.0, 3584.0, 270.000, 1.166, 0)
+    gg_dest_LTlt_8227 = CreateDestructable(1280601204, -8448.0, 3584.0, 270.000, 1.162, 3)
+    gg_dest_LTlt_8228 = CreateDestructable(1280601204, -8640.0, 3648.0, 270.000, 0.864, 5)
+    gg_dest_LTlt_8229 = CreateDestructable(1280601204, -8576.0, 3520.0, 270.000, 1.173, 5)
+    gg_dest_LTlt_8230 = CreateDestructable(1280601204, -8768.0, 3648.0, 270.000, 0.869, 9)
+    gg_dest_LTlt_8231 = CreateDestructable(1280601204, -8704.0, 3520.0, 270.000, 0.944, 4)
+    gg_dest_LTlt_8232 = CreateDestructable(1280601204, -8896.0, 3648.0, 270.000, 1.195, 3)
+    gg_dest_LTlt_8233 = CreateDestructable(1280601204, -9088.0, 3712.0, 270.000, 1.191, 2)
+    gg_dest_LTlt_8234 = CreateDestructable(1280601204, -9024.0, 3584.0, 270.000, 1.011, 7)
+    gg_dest_LTlt_8235 = CreateDestructable(1280601204, -9216.0, 3776.0, 270.000, 1.066, 8)
+    gg_dest_LTlt_8236 = CreateDestructable(1280601204, -9216.0, 3648.0, 270.000, 1.044, 9)
+    gg_dest_LTlt_8237 = CreateDestructable(1280601204, -9408.0, 3776.0, 270.000, 0.877, 6)
+    gg_dest_LTlt_8238 = CreateDestructable(1280601204, -9344.0, 3648.0, 270.000, 1.078, 8)
+    gg_dest_LTlt_8239 = CreateDestructable(1280601204, -9344.0, 3904.0, 270.000, 0.960, 7)
+    gg_dest_LTlt_8240 = CreateDestructable(1280601204, -9280.0, 4032.0, 270.000, 1.137, 0)
+    gg_dest_LTlt_8241 = CreateDestructable(1280601204, -9280.0, 4160.0, 270.000, 1.109, 7)
+    gg_dest_LTlt_8242 = CreateDestructable(1280601204, -9344.0, 4288.0, 270.000, 0.828, 1)
+    gg_dest_LTlt_8243 = CreateDestructable(1280601204, -9408.0, 4416.0, 270.000, 0.860, 0)
+    gg_dest_LTlt_8244 = CreateDestructable(1280601204, -9280.0, 4416.0, 270.000, 0.879, 7)
+    gg_dest_LTlt_8245 = CreateDestructable(1280601204, -9280.0, 4544.0, 270.000, 1.173, 8)
+    gg_dest_LTlt_8246 = CreateDestructable(1280601204, -9280.0, 4800.0, 270.000, 0.944, 5)
+    gg_dest_LTlt_8247 = CreateDestructable(1280601204, -9280.0, 4672.0, 270.000, 0.857, 0)
+    gg_dest_LTlt_8248 = CreateDestructable(1280601204, -9280.0, 4928.0, 270.000, 1.085, 6)
+    gg_dest_LTlt_8249 = CreateDestructable(1280601204, -9280.0, 5312.0, 270.000, 1.167, 6)
+    gg_dest_LTlt_8250 = CreateDestructable(1280601204, -9344.0, 5568.0, 270.000, 1.103, 3)
+    gg_dest_LTlt_8251 = CreateDestructable(1280601204, -9280.0, 5696.0, 270.000, 1.095, 0)
+    gg_dest_LTlt_8252 = CreateDestructable(1280601204, -9216.0, 5568.0, 270.000, 1.050, 5)
+    gg_dest_LTlt_8253 = CreateDestructable(1280601204, -9280.0, 5952.0, 270.000, 0.812, 2)
+    gg_dest_LTlt_8254 = CreateDestructable(1280601204, -9280.0, 5120.0, 270.000, 1.022, 6)
+    gg_dest_LTlt_8255 = CreateDestructable(1280601204, -9344.0, 6080.0, 270.000, 0.819, 5)
+    gg_dest_LTlt_8256 = CreateDestructable(1280601204, -9216.0, 6080.0, 270.000, 1.195, 2)
+    gg_dest_LTlt_8257 = CreateDestructable(1280601204, -9344.0, 6272.0, 270.000, 0.828, 0)
+    gg_dest_LTlt_8258 = CreateDestructable(1280601204, -9280.0, 6400.0, 270.000, 0.915, 3)
+    gg_dest_LTlt_8259 = CreateDestructable(1280601204, -9216.0, 6272.0, 270.000, 0.999, 1)
+    gg_dest_LTlt_8260 = CreateDestructable(1280601204, -9152.0, 6400.0, 270.000, 0.878, 9)
+    gg_dest_LTlt_8261 = CreateDestructable(1280601204, -9216.0, 6528.0, 270.000, 0.990, 7)
+    gg_dest_LTlt_8262 = CreateDestructable(1280601204, -9280.0, 6656.0, 270.000, 1.193, 6)
+    gg_dest_LTlt_8263 = CreateDestructable(1280601204, -9280.0, 7040.0, 270.000, 0.957, 0)
+    gg_dest_LTlt_8264 = CreateDestructable(1280601204, -9152.0, 6784.0, 270.000, 1.011, 2)
+    gg_dest_LTlt_8265 = CreateDestructable(1280601204, -9152.0, 6976.0, 270.000, 1.084, 5)
+    gg_dest_LTlt_8266 = CreateDestructable(1280601204, -9280.0, 7424.0, 270.000, 0.984, 2)
+    gg_dest_LTlt_8267 = CreateDestructable(1280601204, -9280.0, 7552.0, 270.000, 1.011, 3)
+    gg_dest_LTlt_8268 = CreateDestructable(1280601204, -9408.0, 7936.0, 270.000, 0.890, 0)
+    gg_dest_LTlt_8269 = CreateDestructable(1280601204, -9344.0, 7808.0, 270.000, 0.988, 1)
+    gg_dest_LTlt_8270 = CreateDestructable(1280601204, -9216.0, 7808.0, 270.000, 1.066, 9)
+    gg_dest_LTlt_8271 = CreateDestructable(1280601204, -9344.0, 8192.0, 270.000, 0.962, 7)
+    gg_dest_LTlt_8272 = CreateDestructable(1280601204, -9280.0, 8320.0, 270.000, 0.964, 0)
+    gg_dest_LTlt_8273 = CreateDestructable(1280601204, -9344.0, 8448.0, 270.000, 0.860, 7)
+    gg_dest_LTlt_8274 = CreateDestructable(1280601204, -9216.0, 8192.0, 270.000, 1.099, 7)
+    gg_dest_LTlt_8275 = CreateDestructable(1280601204, -9408.0, 8064.0, 270.000, 1.147, 0)
+    gg_dest_LTlt_8276 = CreateDestructable(1280601204, -9280.0, 7296.0, 270.000, 1.021, 4)
+    gg_dest_LTlt_8277 = CreateDestructable(1280601204, -9280.0, 7168.0, 270.000, 1.150, 0)
+    gg_dest_LTlt_8278 = CreateDestructable(1280601204, -9280.0, 8704.0, 270.000, 1.053, 0)
+    gg_dest_LTlt_8279 = CreateDestructable(1280601204, -9408.0, 9664.0, 270.000, 0.810, 9)
+    gg_dest_LTlt_8280 = CreateDestructable(1280601204, -9216.0, 10560.0, 270.000, 0.996, 9)
+    gg_dest_LTlt_8281 = CreateDestructable(1280601204, -9472.0, 10688.0, 270.000, 1.175, 1)
+    gg_dest_LTlt_8282 = CreateDestructable(1280601204, -9216.0, 10688.0, 270.000, 1.106, 4)
+    gg_dest_LTlt_8283 = CreateDestructable(1280601204, -9408.0, 9984.0, 270.000, 1.005, 6)
+    gg_dest_LTlt_8284 = CreateDestructable(1280601204, -11072.0, 9728.0, 270.000, 1.076, 0)
+    gg_dest_LTlt_8285 = CreateDestructable(1280601204, -11136.0, 9536.0, 270.000, 0.860, 0)
+    gg_dest_LTlt_8286 = CreateDestructable(1280601204, -11008.0, 9472.0, 270.000, 1.109, 1)
+    gg_dest_LTlt_8287 = CreateDestructable(1280601204, -11072.0, 9216.0, 270.000, 0.996, 7)
+    gg_dest_LTlt_8288 = CreateDestructable(1280601204, -11072.0, 9024.0, 270.000, 1.107, 2)
+    gg_dest_LTlt_8289 = CreateDestructable(1280601204, -11200.0, 8832.0, 270.000, 1.004, 3)
+    gg_dest_LTlt_8290 = CreateDestructable(1280601204, -11072.0, 8576.0, 270.000, 1.178, 4)
+    gg_dest_LTlt_8291 = CreateDestructable(1280601204, -11072.0, 8832.0, 270.000, 0.871, 2)
+    gg_dest_LTlt_8292 = CreateDestructable(1280601204, -11072.0, 8128.0, 270.000, 0.802, 7)
+    gg_dest_LTlt_8293 = CreateDestructable(1280601204, -11072.0, 8384.0, 270.000, 1.160, 4)
+    gg_dest_LTlt_8294 = CreateDestructable(1280601204, -11072.0, 7680.0, 270.000, 1.129, 3)
+    gg_dest_LTlt_8295 = CreateDestructable(1280601204, -11072.0, 7552.0, 270.000, 1.171, 9)
+    gg_dest_LTlt_8296 = CreateDestructable(1280601204, -11072.0, 7232.0, 270.000, 0.830, 5)
+    gg_dest_LTlt_8297 = CreateDestructable(1280601204, -11072.0, 7424.0, 270.000, 1.187, 3)
+    gg_dest_LTlt_8298 = CreateDestructable(1280601204, -11200.0, 6848.0, 270.000, 0.985, 2)
+    gg_dest_LTlt_8299 = CreateDestructable(1280601204, -11136.0, 6976.0, 270.000, 1.087, 5)
+    gg_dest_LTlt_8300 = CreateDestructable(1280601204, -11072.0, 7104.0, 270.000, 1.199, 7)
+    gg_dest_LTlt_8301 = CreateDestructable(1280601204, -11200.0, 6720.0, 270.000, 1.089, 3)
+    gg_dest_LTlt_8302 = CreateDestructable(1280601204, -11072.0, 6720.0, 270.000, 0.830, 9)
+    gg_dest_LTlt_8303 = CreateDestructable(1280601204, -11072.0, 6592.0, 270.000, 1.168, 6)
+    gg_dest_LTlt_8304 = CreateDestructable(1280601204, -11136.0, 6336.0, 270.000, 0.849, 4)
+    gg_dest_LTlt_8305 = CreateDestructable(1280601204, -11072.0, 6208.0, 270.000, 0.878, 8)
+    gg_dest_LTlt_8306 = CreateDestructable(1280601204, -11008.0, 6336.0, 270.000, 1.018, 6)
+    gg_dest_LTlt_8307 = CreateDestructable(1280601204, -11072.0, 6464.0, 270.000, 0.963, 0)
+    gg_dest_LTlt_8308 = CreateDestructable(1280601204, -11136.0, 5888.0, 270.000, 1.059, 5)
+    gg_dest_LTlt_8309 = CreateDestructable(1280601204, -11072.0, 6016.0, 270.000, 1.058, 2)
+    gg_dest_LTlt_8310 = CreateDestructable(1280601204, -11072.0, 5760.0, 270.000, 0.907, 2)
+    gg_dest_LTlt_8311 = CreateDestructable(1280601204, -11008.0, 5632.0, 270.000, 1.164, 8)
+    gg_dest_LTlt_8312 = CreateDestructable(1280601204, -11136.0, 5504.0, 270.000, 0.957, 5)
+    gg_dest_LTlt_8313 = CreateDestructable(1280601204, -11072.0, 5184.0, 270.000, 0.915, 6)
+    gg_dest_LTlt_8314 = CreateDestructable(1280601204, -11072.0, 5312.0, 270.000, 0.853, 0)
+    gg_dest_LTlt_8315 = CreateDestructable(1280601204, -11072.0, 4736.0, 270.000, 0.887, 4)
+    gg_dest_LTlt_8316 = CreateDestructable(1280601204, -11136.0, 4864.0, 270.000, 0.856, 6)
+    gg_dest_LTlt_8317 = CreateDestructable(1280601204, -11072.0, 4288.0, 270.000, 1.013, 8)
+    gg_dest_LTlt_8318 = CreateDestructable(1280601204, -11136.0, 4416.0, 270.000, 0.980, 2)
+    gg_dest_LTlt_8319 = CreateDestructable(1280601204, -11008.0, 4160.0, 270.000, 0.937, 0)
+    gg_dest_LTlt_8320 = CreateDestructable(1280601204, -10944.0, 4288.0, 270.000, 1.132, 9)
+    gg_dest_LTlt_8321 = CreateDestructable(1280601204, -11008.0, 4416.0, 270.000, 1.060, 9)
+    gg_dest_LTlt_8322 = CreateDestructable(1280601204, -11072.0, 4032.0, 270.000, 1.095, 6)
+    gg_dest_LTlt_8323 = CreateDestructable(1280601204, -10944.0, 4032.0, 270.000, 0.888, 6)
+    gg_dest_LTlt_8324 = CreateDestructable(1280601204, -10880.0, 4160.0, 270.000, 0.953, 8)
+    gg_dest_LTlt_8325 = CreateDestructable(1280601204, -11072.0, 3648.0, 270.000, 0.983, 1)
+    gg_dest_LTlt_8326 = CreateDestructable(1280601204, -11072.0, 3904.0, 270.000, 0.865, 0)
+    gg_dest_LTlt_8327 = CreateDestructable(1280601204, -10944.0, 3584.0, 270.000, 0.908, 7)
+    gg_dest_LTlt_8328 = CreateDestructable(1280601204, -11136.0, 3520.0, 270.000, 0.885, 1)
+    gg_dest_LTlt_8329 = CreateDestructable(1280601204, -11072.0, 4544.0, 270.000, 0.813, 5)
+    gg_dest_LTlt_8330 = CreateDestructable(1280601204, -11264.0, 4992.0, 270.000, 0.986, 6)
+    gg_dest_LTlt_8331 = CreateDestructable(1280601204, -11136.0, 4992.0, 270.000, 1.149, 8)
 end
 
 function CreateBuildingsForPlayer0()

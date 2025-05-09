@@ -84,13 +84,13 @@ gg_rct_UndeadToHumanInnerLine = nil
 gg_rct_UndeadToHumanOuterLine = nil
 gg_rct_UndeadToOrcInnerLine = nil
 gg_rct_UndeadToOrcOuterLine = nil
+gg_rct_TestArea2 = nil
 gg_snd_HPitLordPissed1 = nil
 gg_snd_HPitLordPissed2 = nil
 gg_snd_HPitLordPissed3 = nil
 gg_snd_HPitLordPissed4 = nil
 gg_snd_HPitLordPissed5 = nil
 gg_trg_Melee_Initialization = nil
-gg_rct_TestArea2 = nil
 function InitGlobals()
 end
 
