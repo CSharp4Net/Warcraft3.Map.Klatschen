@@ -6,7 +6,7 @@ using static Source.Models.Enums;
 
 namespace Source.Models
 {
-  public sealed class SpawnTrigger
+  public sealed class SpawnUnitsTrigger
   {
     /// <summary>
     /// Erstellt einen zeitgesteuertem Auslöser für das regelmäßige Erstellen von Einheiten.
@@ -18,26 +18,28 @@ namespace Source.Models
     /// <param name="interval">Interval in Sekunden, nach dessen Rythmus Einheiten erstellt werden</param>
     /// <param name="targetArea">Zielgebiet, für das erstellte Einheiten einen Angriff/Bewegen-Befehl erhalten</param>
     /// <param name="unitIds">Auflistung an Einheit-Typen zu beginn</param>
-    public SpawnTrigger(ComputerPlayer player, SpawnBuilding building,  Area spawnArea,  UnitClass unitSpawnType, float interval, Area targetArea, params int[] unitIds)
+    public SpawnUnitsTrigger(ComputerPlayer player, SpawnUnitsBuilding building, Area spawnArea, UnitClass unitSpawnType, float interval, Area targetArea, params int[] unitIds)
     {
       Player = player;
       Interval = interval;
       SpawnArea = spawnArea;
       TargetArea = targetArea;
-      Building = building;
+      //Building = building;
       UnitSpawnType = unitSpawnType;
       UnitIds = unitIds.ToList();
+      IsNeutralPlayer = false;
     }
 
     /// <summary>
     /// Computer-Spieler, für den Einheiten erstellt werden.
     /// </summary>
     private ComputerPlayer Player { get; init; }
-    /// <summary>
-    /// Gebäude, an das der Auslöser gebunden ist.
-    /// Stirbt das Gebäude, werden gebundene Auslöser gestoppt.
-    /// </summary>
-    private SpawnBuilding Building { get; init; }
+
+    ///// <summary>
+    ///// Gebäude, an das der Auslöser gebunden ist.
+    ///// Stirbt das Gebäude, werden gebundene Auslöser gestoppt.
+    ///// </summary>
+    //private SpawnBuilding Building { get; init; }
 
     private float Interval { get; init; }
 
@@ -47,6 +49,8 @@ namespace Source.Models
     private List<int> UnitIds { get; init; }
 
     private timer Timer { get; set; }
+
+    public bool IsNeutralPlayer { get; init; }
 
     /// <summary>
     /// Typ der erstellenden Einheiten.
@@ -82,7 +86,7 @@ namespace Source.Models
       {
         foreach (int unitId in UnitIds)
         {
-          SpawnedUnit unit =  Player.CreateUnit(unitId, SpawnArea);
+          SpawnedUnit unit = Player.CreateUnit(unitId, SpawnArea);
 
           unit.AttackMove(TargetArea);
         }

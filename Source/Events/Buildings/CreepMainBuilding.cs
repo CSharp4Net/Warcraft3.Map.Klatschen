@@ -47,7 +47,7 @@ namespace Source.Events.Buildings
         timer timer = Common.CreateTimer();
         // Währenddessen Timer-Dialog anzeigen
         timerdialog timerdialog = timer.CreateDialog();
-        timerdialog.SetTitle($"{creepCamp.Name} unterstützt nun {user.Team.Computer.Wc3Player.Name}...");
+        timerdialog.SetTitle($"{creepCamp.Name} wurde besiegt...");
         timerdialog.IsDisplayed = true;
 
         Common.TimerStart(timer, rebuildTime, false, () =>
@@ -59,57 +59,27 @@ namespace Source.Events.Buildings
             timer.Dispose();
             timer = null;
 
-            // Prüfe vor Übernahme, ob der Computer-Spieler noch unbesiegt ist
+            // Timer-Dialog wieder zerstören
+            timerdialog.Dispose();
+            timerdialog = null;
 
+            // Prüfe vor Übernahme, ob der Computer-Spieler noch unbesiegt ist
             if (user.Team.Computer.Defeated)
               return;
 
-            creepCamp.SetOwner(user.Team.Computer.Wc3Player);
+            Program.ShowDebugMessage(user.Team.Computer.Wc3Player.Name + " takes the ownership!");
+            creepCamp.SetOwnerAndRebuild(user.Team.Computer.Wc3Player);
 
-            creepCamp.InitializeBuilding(Constants.UNIT_BANDITENZELT_CREEP);
-            creepCamp.CreateOrReviveHero()
-
-
-            throw new NotImplementedException("TODO");
+            Program.ShowDebugMessage(user.Team.Computer.Wc3Player.Name + " start spawning in 15 seconds!");
+            creepCamp.Building.AddSpawnTrigger(creepCamp.SpawnArea, Enums.UnitClass.Meelee, 15f, Areas.Center,
+               Constants.UNIT_BLAUDRACHE_SUPPORT)
+              .Run();
           }
           catch (Exception ex)
           {
-            Program.ShowExceptionMessage("ComputerHero.OnDies", ex);
+            Program.ShowExceptionMessage("BuildingCreep.OnDies", ex);
           }
         });
-
-        //if (Program.Humans.Computer.IsOwnerOfBuilding(unit, out SpawnBuilding building))
-        //{
-        //  building.Destroy();
-        //  Console.WriteLine("Die Menschen haben eine ihrer Kasernen verloren!");
-        //  Program.Humans.Computer.RemoveBuilding(building);
-        //}
-        //else if (Program.Orcs.Computer.IsOwnerOfBuilding(unit, out building))
-        //{
-        //  building.Destroy();
-        //  Console.WriteLine("Die Orks haben eine ihrer Kasernen verloren!");
-        //  Program.Orcs.Computer.RemoveBuilding(building);
-        //}
-        //else if (Program.Elves.Computer.IsOwnerOfBuilding(unit, out building))
-        //{
-        //  building.Destroy();
-        //  Console.WriteLine("Die Elfen haben eine ihrer Kasernen verloren!");
-        //  Program.Elves.Computer.RemoveBuilding(building);
-        //}
-        //else if (Program.Undeads.Computer.IsOwnerOfBuilding(unit, out building))
-        //{
-        //  building.Destroy();
-        //  Console.WriteLine("Die Elfen haben eine ihrer Kasernen verloren!");
-        //  Program.Elves.Computer.RemoveBuilding(building);
-        //}
-        //else if (unit.Owner == player.NeutralAggressive)
-        //{
-        //  building.Destroy();
-
-        //}
-
-        //if (building != null)
-        // building.Destroy();
       }
       catch (Exception ex)
       {

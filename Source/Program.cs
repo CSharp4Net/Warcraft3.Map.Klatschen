@@ -157,7 +157,7 @@ namespace Source
 
         CreepCamp bandits = new CreepCamp("Räudige Banditen", Areas.HumanCreepToElfSpawnBuilding, Areas.HumanCreepToElf, Areas.HumanCreepToElfSpawn);
 
-        SpawnBuilding building = bandits.InitializeBuilding(Constants.UNIT_BANDITENZELT_CREEP);
+        SpawnCreepsBuilding building = bandits.InitializeBuilding(Constants.UNIT_BANDITENZELT_CREEP);
 
         //bandits.CreateOrReviveHero(Constants.UNIT_BANDITENF_RST_CREEP);
         //bandits.SpawnUnitInAreaAtRandomPoint(Constants.UNIT_BANDIT_CREEP);
@@ -214,7 +214,7 @@ namespace Source
     private static void ConstructHumanBuildingAndTrigger()
     {
       // Hauptgebäude
-      SpawnBuilding building = Humans.Computer.CreateBuilding(Constants.UNIT_SCHLOSS_HUMAN, Areas.HumanBase);
+      SpawnUnitsBuilding building = Humans.Computer.CreateBuilding(Constants.UNIT_SCHLOSS_HUMAN, Areas.HumanBase);
       building.RegisterOnDies(TeamMainBuilding.OnDies);
       building.AddSpawnTrigger(Areas.HumanBaseToCenterSpawn, Enums.UnitClass.Distance, MainBuilding1SpawnTime, Areas.UndeadBase,
         Constants.UNIT_MAGIEEINHEIT_STUFE_1_HUMAN, Constants.UNIT_FLUGEINHEIT_STUFE_1_HUMAN).Run(5.5f);
@@ -252,7 +252,7 @@ namespace Source
     private static void ConstructOrcBuildingAndTrigger()
     {
       // Hauptgebäude
-      SpawnBuilding building = Orcs.Computer.CreateBuilding(Constants.UNIT_FESTUNG_ORC, Areas.OrcBase);
+      SpawnUnitsBuilding building = Orcs.Computer.CreateBuilding(Constants.UNIT_FESTUNG_ORC, Areas.OrcBase);
       building.RegisterOnDies(TeamMainBuilding.OnDies);
       building.AddSpawnTrigger(Areas.OrcBaseToCenterSpawn, Enums.UnitClass.Distance, MainBuilding1SpawnTime, Areas.ElfBase,
         Constants.UNIT_MAGIEEINHEIT_STUFE_1_ORC, Constants.UNIT_FLUGEINHEIT_STUFE_1_ORC).Run(5.5f);
@@ -290,7 +290,7 @@ namespace Source
     private static void ConstructElfBuildingAndTrigger()
     {
       // Hauptgebäude
-      SpawnBuilding building = Elves.Computer.CreateBuilding(Constants.UNIT_TELDRASSIL_ELF, Areas.ElfBase);
+      SpawnUnitsBuilding building = Elves.Computer.CreateBuilding(Constants.UNIT_TELDRASSIL_ELF, Areas.ElfBase);
       building.RegisterOnDies(TeamMainBuilding.OnDies);
       building.AddSpawnTrigger(Areas.ElfBaseToCenterSpawn, Enums.UnitClass.Distance, MainBuilding1SpawnTime, Areas.OrcBase,
         Constants.UNIT_MAGIEEINHEIT_STUFE_1_ELF, Constants.UNIT_FLUGEINHEIT_STUFE_1_ELF).Run(5.5f);
@@ -328,7 +328,7 @@ namespace Source
     private static void ConstructUndeadBuildingAndTrigger()
     {
       // Hauptgebäude
-      SpawnBuilding building = Undeads.Computer.CreateBuilding(Constants.UNIT_SCHWARZE_ZITADELLE_UNDEAD, Areas.UndeadBase);
+      SpawnUnitsBuilding building = Undeads.Computer.CreateBuilding(Constants.UNIT_SCHWARZE_ZITADELLE_UNDEAD, Areas.UndeadBase);
       building.RegisterOnDies(TeamMainBuilding.OnDies);
       building.AddSpawnTrigger(Areas.UndeadBaseToCenterSpawn, Enums.UnitClass.Distance, MainBuilding1SpawnTime, Areas.HumanBase,
         Constants.UNIT_MAGIEEINHEIT_STUFE_1_UNDEAD, Constants.UNIT_FLUGEINHEIT_STUFE_1_UNDEAD).Run(5.5f);

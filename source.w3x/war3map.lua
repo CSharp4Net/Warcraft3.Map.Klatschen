@@ -41,6 +41,7 @@ gg_rct_HumanBaseToElfSpawn = nil
 gg_rct_HumanBaseToOrcSpawn = nil
 gg_rct_HumanCreepToElf = nil
 gg_rct_HumanCreepToElfSpawn = nil
+gg_rct_HumanCreepToElfSpawnBuilding = nil
 gg_rct_HumanToElfInnerLine = nil
 gg_rct_HumanToElfOuterLine = nil
 gg_rct_HumanToOrcInnerLine = nil
@@ -66,6 +67,7 @@ gg_rct_OrcToHumanOuterLine = nil
 gg_rct_OrcToUndeadInnerLine = nil
 gg_rct_OrcToUndeadOuterLine = nil
 gg_rct_TestArea = nil
+gg_rct_TestArea2 = nil
 gg_rct_UndeadBarracksToCenter = nil
 gg_rct_UndeadBarracksToCenterSpawn = nil
 gg_rct_UndeadBarracksToElf = nil
@@ -84,14 +86,12 @@ gg_rct_UndeadToHumanInnerLine = nil
 gg_rct_UndeadToHumanOuterLine = nil
 gg_rct_UndeadToOrcInnerLine = nil
 gg_rct_UndeadToOrcOuterLine = nil
-gg_rct_TestArea2 = nil
 gg_snd_HPitLordPissed1 = nil
 gg_snd_HPitLordPissed2 = nil
 gg_snd_HPitLordPissed3 = nil
 gg_snd_HPitLordPissed4 = nil
 gg_snd_HPitLordPissed5 = nil
 gg_trg_Melee_Initialization = nil
-gg_rct_HumanCreepToElfSpawnBuilding = nil
 function InitGlobals()
 end
 

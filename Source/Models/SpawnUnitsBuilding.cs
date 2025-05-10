@@ -4,20 +4,13 @@ using WCSharp.Api;
 
 namespace Source.Models
 {
-  public sealed class SpawnBuilding
+  public sealed class SpawnUnitsBuilding
   {
-    public SpawnBuilding(ComputerPlayer computer, int unitTypeId, Area creationArea, float face = 0f)
+    public SpawnUnitsBuilding(ComputerPlayer computer, int unitTypeId, Area creationArea, float face = 0f)
     {
       Wc3Unit = Common.CreateUnitAtLoc(computer.Wc3Player, unitTypeId, creationArea.Wc3CenterLocation, face);
       Computer = computer;
-      SpawnTriggers = new List<SpawnTrigger>();
-    }
-
-    public SpawnBuilding(CreepCamp creepCamp, int unitTypeId, Area creationArea, float face = 0f)
-    {
-      Wc3Unit = Common.CreateUnitAtLoc(creepCamp.Wc3Player, unitTypeId, creationArea.Wc3CenterLocation, face);
-      CreepCamp = creepCamp;
-      SpawnTriggers = new List<SpawnTrigger>();
+      SpawnTriggers = new List<SpawnUnitsTrigger>();
     }
 
     /// <summary>
@@ -35,14 +28,9 @@ namespace Source.Models
     private ComputerPlayer Computer { get; init; }
 
     /// <summary>
-    /// Das CreepCamp, dem dieses Gebäude gehört.
-    /// </summary>
-    private CreepCamp CreepCamp { get; init; }
-
-    /// <summary>
     /// Auflistung von Spawn-Triggers.
     /// </summary>
-    private List<SpawnTrigger> SpawnTriggers { get; init; }
+    private List<SpawnUnitsTrigger> SpawnTriggers { get; init; }
 
     /// <summary>
     /// Fügt dem Gebäude einen Spawn-Trigger hinzu, welcher solange existiert ist, bis das Gebäude via <see cref="Destroy"/> zerstört wird.
@@ -51,9 +39,9 @@ namespace Source.Models
     /// <param name="spawnArea">Spawn-Gebiet</param>
     /// <param name="unitIds">Auflistung an Einheiten-Ids</param>
     /// <returns></returns>
-    public SpawnTrigger AddSpawnTrigger(Area spawnArea, Enums.UnitClass unitSpawnType, float interval, Area targetArea, params int[] unitIds)
+    public SpawnUnitsTrigger AddSpawnTrigger(Area spawnArea, Enums.UnitClass unitSpawnType, float interval, Area targetArea, params int[] unitIds)
     {
-      SpawnTrigger trigger = new SpawnTrigger(Computer, this, spawnArea, unitSpawnType, interval, targetArea, unitIds);
+      SpawnUnitsTrigger trigger = new SpawnUnitsTrigger(Computer, this, spawnArea, unitSpawnType, interval, targetArea, unitIds);
       SpawnTriggers.Add(trigger);
       return trigger;
     }
@@ -65,9 +53,13 @@ namespace Source.Models
     {
       DeRegisterOnDies();
 
-      foreach (SpawnTrigger trigger in SpawnTriggers)
+      for (int i = SpawnTriggers.Count - 1; i >= 0; i--)
       {
+        SpawnUnitsTrigger trigger = SpawnTriggers[i];
+
         trigger.Stop();
+
+        SpawnTriggers.RemoveAt(i);
       }
 
       if (Wc3Unit.Alive)
@@ -108,7 +100,7 @@ namespace Source.Models
     /// <param name="spawnCommand"></param>
     public void AddUnitSpawn(SpawnUnitCommand spawnCommand)
     {
-      foreach (SpawnTrigger trigger in SpawnTriggers)
+      foreach (SpawnUnitsTrigger trigger in SpawnTriggers)
       {
         if (trigger.UnitSpawnType == spawnCommand.UnitSpawnType)
           trigger.Add(spawnCommand);
@@ -121,7 +113,7 @@ namespace Source.Models
     /// <param name="spawnCommand"></param>
     public void UpgradeUnitSpawn(SpawnUnitCommand spawnCommand)
     {
-      foreach (SpawnTrigger trigger in SpawnTriggers)
+      foreach (SpawnUnitsTrigger trigger in SpawnTriggers)
       {
         if (trigger.UnitSpawnType == spawnCommand.UnitSpawnType)
           trigger.Upgrade(spawnCommand);

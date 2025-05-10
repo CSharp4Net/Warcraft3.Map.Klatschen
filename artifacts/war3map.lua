@@ -20126,7 +20126,7 @@ System.namespace("Source", function (namespace)
 
         local bandits = SourceModels.CreepCamp("Räudige Banditen", Areas.HumanCreepToElfSpawnBuilding, Areas.HumanCreepToElf, Areas.HumanCreepToElfSpawn)
 
-        local building = bandits:CreateBuilding(1848651862 --[[Constants.UNIT_BANDITENZELT_CREEP]], 0)
+        local building = bandits:InitializeBuilding(1848651862 --[[Constants.UNIT_BANDITENZELT_CREEP]], 0)
 
         --bandits.CreateOrReviveHero(Constants.UNIT_BANDITENF_RST_CREEP);
         --bandits.SpawnUnitInAreaAtRandomPoint(Constants.UNIT_BANDIT_CREEP);
@@ -20404,7 +20404,7 @@ System.namespace("", function (namespace)
       this.HumanBaseToOrcSpawn = System.new(WCSharpSharedData.Rectangle, 2, -9984, 13184, -9728, 13440)
       this.HumanCreepToElf = System.new(WCSharpSharedData.Rectangle, 2, -6848, 6080, -6720, 6208)
       this.HumanCreepToElfSpawn = System.new(WCSharpSharedData.Rectangle, 2, -7424, 5504, -6656, 6272)
-      this.HumanCreepToElfSpawnBuilding = System.new(WCSharpSharedData.Rectangle, 2, -7168, 6272, -6912, 6528)
+      this.HumanCreepToElfSpawnBuilding = System.new(WCSharpSharedData.Rectangle, 2, -7104, 6336, -6976, 6464)
       this.HumanToElfInnerLine = System.new(WCSharpSharedData.Rectangle, 2, -10304, 11200, -10176, 11328)
       this.HumanToElfOuterLine = System.new(WCSharpSharedData.Rectangle, 2, -10304, 7104, -10176, 7232)
       this.HumanToOrcInnerLine = System.new(WCSharpSharedData.Rectangle, 2, -8256, 13248, -8128, 13376)
@@ -20890,7 +20890,7 @@ System.namespace("Source.Events.Buildings", function (namespace)
         local timer = CreateTimer()
         -- Währenddessen Timer-Dialog anzeigen
         local timerdialog = CreateTimerDialog(timer)
-        TimerDialogSetTitle(timerdialog, System.toString(creepCamp.Name) .. " unterstützt nun " .. System.toString(GetPlayerName(user.Team.Computer.Wc3Player)) .. "...")
+        TimerDialogSetTitle(timerdialog, System.toString(creepCamp.Name) .. " wurde besiegt...")
         TimerDialogDisplay(timerdialog, true)
 
         TimerStart(timer, rebuildTime, false, function ()
@@ -20900,59 +20900,28 @@ System.namespace("Source.Events.Buildings", function (namespace)
             DestroyTimer(timer)
             timer = nil
 
-            -- Prüfe vor Übernahme, ob der Computer-Spieler noch unbesiegt ist
+            -- Timer-Dialog wieder zerstören
+            DestroyTimerDialog(timerdialog)
+            timerdialog = nil
 
+            -- Prüfe vor Übernahme, ob der Computer-Spieler noch unbesiegt ist
             if user.Team.Computer.Defeated then
               return true
             end
 
-            creepCamp:SetOwner(user.Team.Computer.Wc3Player)
+            Source.Program.ShowDebugMessage(System.toString(GetPlayerName(user.Team.Computer.Wc3Player)) .. " takes the ownership!")
+            creepCamp:SetOwnerAndRebuild(user.Team.Computer.Wc3Player)
 
-            creepCamp:CreateBuilding(1848651862 --[[Constants.UNIT_BANDITENZELT_CREEP]], 0)
-
-
-            System.throw(System.NotImplementedException("TODO"))
+            Source.Program.ShowDebugMessage(System.toString(GetPlayerName(user.Team.Computer.Wc3Player)) .. " start spawning in 15 seconds!")
+            creepCamp.Building:AddSpawnTrigger(creepCamp.SpawnArea, 0 --[[UnitClass.Meelee]], 15, Areas.Center, System.Array(System.Int32) { 1848651856 --[[Constants.UNIT_BLAUDRACHE_SUPPORT]] }):Run(0)
           end, function (default)
             local ex = default
-            Source.Program.ShowExceptionMessage("ComputerHero.OnDies", ex)
+            Source.Program.ShowExceptionMessage("BuildingCreep.OnDies", ex)
           end)
           if default then
             return
           end
         end)
-
-        --if (Program.Humans.Computer.IsOwnerOfBuilding(unit, out SpawnBuilding building))
-        --{
-        --  building.Destroy();
-        --  Console.WriteLine("Die Menschen haben eine ihrer Kasernen verloren!");
-        --  Program.Humans.Computer.RemoveBuilding(building);
-        --}
-        --else if (Program.Orcs.Computer.IsOwnerOfBuilding(unit, out building))
-        --{
-        --  building.Destroy();
-        --  Console.WriteLine("Die Orks haben eine ihrer Kasernen verloren!");
-        --  Program.Orcs.Computer.RemoveBuilding(building);
-        --}
-        --else if (Program.Elves.Computer.IsOwnerOfBuilding(unit, out building))
-        --{
-        --  building.Destroy();
-        --  Console.WriteLine("Die Elfen haben eine ihrer Kasernen verloren!");
-        --  Program.Elves.Computer.RemoveBuilding(building);
-        --}
-        --else if (Program.Undeads.Computer.IsOwnerOfBuilding(unit, out building))
-        --{
-        --  building.Destroy();
-        --  Console.WriteLine("Die Elfen haben eine ihrer Kasernen verloren!");
-        --  Program.Elves.Computer.RemoveBuilding(building);
-        --}
-        --else if (unit.Owner == player.NeutralAggressive)
-        --{
-        --  building.Destroy();
-
-        --}
-
-        --if (building != null)
-        -- building.Destroy();
       end, function (default)
         local ex = default
         Source.Program.ShowExceptionMessage("BuildingCreep.OnDies", ex)
@@ -22584,16 +22553,16 @@ end
 do
 local System = System
 local SourceModels
-local ListSpawnBuilding
+local ListSpawnUnitsBuilding
 System.import(function (out)
   SourceModels = Source.Models
-  ListSpawnBuilding = System.List(SourceModels.SpawnBuilding)
+  ListSpawnUnitsBuilding = System.List(SourceModels.SpawnUnitsBuilding)
 end)
 System.namespace("Source.Models", function (namespace)
   namespace.class("ComputerPlayer", function (namespace)
     local CreateBuilding, IsOwnerOfBuilding, RemoveBuilding, Defeat, AddSpawnUnit, UpgradeSpawnUnit, __ctor__
     __ctor__ = function (this, player, team)
-      this.Buildings = ListSpawnBuilding()
+      this.Buildings = ListSpawnUnitsBuilding()
       System.base(this).__ctor__(this, player)
       this.Team = team
     end
@@ -22606,7 +22575,7 @@ System.namespace("Source.Models", function (namespace)
     -- <returns></returns>
     CreateBuilding = function (this, unitTypeId, creationArea, face)
       -- Ort anhand Zentrum einer Region erstellen
-      local building = SourceModels.SpawnBuilding(this, unitTypeId, creationArea, face)
+      local building = SourceModels.SpawnUnitsBuilding(this, unitTypeId, creationArea, face)
       this.Buildings:Add(building)
       return building
     end
@@ -22682,14 +22651,14 @@ System.namespace("Source.Models", function (namespace)
           methods = {
             { ".ctor", 0x206, nil, out.WCSharp.Api.player, out.Source.Abstracts.TeamBase },
             { "AddSpawnUnit", 0x106, AddSpawnUnit, out.Source.Models.SpawnUnitCommand },
-            { "CreateBuilding", 0x386, CreateBuilding, System.Int32, out.Source.Models.Area, System.Single, out.Source.Models.SpawnBuilding },
+            { "CreateBuilding", 0x386, CreateBuilding, System.Int32, out.Source.Models.Area, System.Single, out.Source.Models.SpawnUnitsBuilding },
             { "Defeat", 0x6, Defeat },
-            { "IsOwnerOfBuilding", 0x286, IsOwnerOfBuilding, out.WCSharp.Api.unit, out.Source.Models.SpawnBuilding, System.Boolean },
-            { "RemoveBuilding", 0x106, RemoveBuilding, out.Source.Models.SpawnBuilding },
+            { "IsOwnerOfBuilding", 0x286, IsOwnerOfBuilding, out.WCSharp.Api.unit, out.Source.Models.SpawnUnitsBuilding, System.Boolean },
+            { "RemoveBuilding", 0x106, RemoveBuilding, out.Source.Models.SpawnUnitsBuilding },
             { "UpgradeSpawnUnit", 0x106, UpgradeSpawnUnit, out.Source.Models.SpawnUnitCommand }
           },
           properties = {
-            { "Buildings", 0x1, System.List(out.Source.Models.SpawnBuilding) },
+            { "Buildings", 0x1, System.List(out.Source.Models.SpawnUnitsBuilding) },
             { "Team", 0x1, out.Source.Abstracts.TeamBase }
           },
           class = { "ComputerPlayer", 0x26 }
@@ -22711,7 +22680,7 @@ System.import(function (out)
 end)
 System.namespace("Source.Models", function (namespace)
   namespace.class("CreepCamp", function (namespace)
-    local CreateOrReviveHero1, SpawnUnitInAreaAtRandomPoint, CreateBuilding, SetOwner, __ctor__
+    local InitializeHero, InitializeBuilding, ReviveHero, SpawnUnitInAreaAtRandomPoint, SetOwnerAndRebuild, __ctor__
     __ctor__ = function (this, campName, campBuilding, campCenter, campSpawnArea)
       System.base(this).__ctor__(this, Player(PLAYER_NEUTRAL_AGGRESSIVE))
       this.Name = campName
@@ -22719,23 +22688,32 @@ System.namespace("Source.Models", function (namespace)
       this.SpawnArea = campSpawnArea
       this.BuildingArea = campBuilding
     end
-    CreateOrReviveHero1 = function (this, unitTypeId)
-      this:CreateOrReviveHero(unitTypeId, this.Center, GetHeroLevel(this.Hero), 0)
+    InitializeHero = function (this, unitTypeId, face)
+      this:CreateOrReviveHero(unitTypeId, this.Center, GetHeroLevel(this.Hero), face)
+    end
+    InitializeBuilding = function (this, unitTypeId, face)
+      -- Ort anhand Zentrum einer Region erstellen
+      this.Building = SourceModels.SpawnCreepsBuilding(this, unitTypeId, this.BuildingArea, face)
+      this.Building:RegisterOnDies(SourceEventsBuildings.CreepMainBuilding.OnDies)
+
+      return this.Building
+    end
+    ReviveHero = function (this)
+      this:CreateOrReviveHero(GetUnitTypeId(this.Hero), this.Center, GetHeroLevel(this.Hero), 0)
     end
     SpawnUnitInAreaAtRandomPoint = function (this, unitTypeId)
       local point = this.SpawnArea.Wc3Rectangle:GetRandomPoint()
 
       CreateUnit(this.Wc3Player, unitTypeId, point.X, point.Y, 270)
-    end
-    CreateBuilding = function (this, unitTypeId, face)
-      -- Ort anhand Zentrum einer Region erstellen
-      this.Building = System.new(SourceModels.SpawnBuilding, 2, this, unitTypeId, this.BuildingArea, face)
-      this.Building:RegisterOnDies(SourceEventsBuildings.CreepMainBuilding.OnDies)
 
-      return this.Building
+      return SourceModels.SpawnedCreep(this, unitTypeId, this.SpawnArea, 0)
     end
-    SetOwner = function (this, wc3Player)
+    SetOwnerAndRebuild = function (this, wc3Player)
       this.Wc3Player = wc3Player
+
+      -- Ort anhand Zentrum einer Region erstellen
+      this.Building = SourceModels.SpawnCreepsBuilding(this, GetUnitTypeId(this.Building.Wc3Unit), this.BuildingArea, 0)
+      this.Building:RegisterOnDies(SourceEventsBuildings.CreepMainBuilding.OnDies)
     end
     return {
       base = function (out)
@@ -22743,22 +22721,24 @@ System.namespace("Source.Models", function (namespace)
           out.Source.Abstracts.NeutralForce
         }
       end,
-      CreateOrReviveHero1 = CreateOrReviveHero1,
+      InitializeHero = InitializeHero,
+      InitializeBuilding = InitializeBuilding,
+      ReviveHero = ReviveHero,
       SpawnUnitInAreaAtRandomPoint = SpawnUnitInAreaAtRandomPoint,
-      CreateBuilding = CreateBuilding,
-      SetOwner = SetOwner,
+      SetOwnerAndRebuild = SetOwnerAndRebuild,
       __ctor__ = __ctor__,
       __metadata__ = function (out)
         return {
           methods = {
             { ".ctor", 0x406, nil, System.String, out.Source.Models.Area, out.Source.Models.Area, out.Source.Models.Area },
-            { "CreateBuilding", 0x286, CreateBuilding, System.Int32, System.Single, out.Source.Models.SpawnBuilding },
-            { "CreateOrReviveHero", 0x106, CreateOrReviveHero1, System.Int32 },
-            { "SetOwner", 0x106, SetOwner, out.WCSharp.Api.player },
-            { "SpawnUnitInAreaAtRandomPoint", 0x106, SpawnUnitInAreaAtRandomPoint, System.Int32 }
+            { "InitializeBuilding", 0x286, InitializeBuilding, System.Int32, System.Single, out.Source.Models.SpawnCreepsBuilding },
+            { "InitializeHero", 0x206, InitializeHero, System.Int32, System.Single },
+            { "ReviveHero", 0x6, ReviveHero },
+            { "SetOwnerAndRebuild", 0x106, SetOwnerAndRebuild, out.WCSharp.Api.player },
+            { "SpawnUnitInAreaAtRandomPoint", 0x186, SpawnUnitInAreaAtRandomPoint, System.Int32, out.Source.Models.SpawnedCreep }
           },
           properties = {
-            { "Building", 0x6, out.Source.Models.SpawnBuilding },
+            { "Building", 0x6, out.Source.Models.SpawnCreepsBuilding },
             { "BuildingArea", 0x6, out.Source.Models.Area },
             { "Center", 0x6, out.Source.Models.Area },
             { "Name", 0x6, System.String },
@@ -22888,23 +22868,18 @@ do
 local System = System
 local WCSharpApi = WCSharp.Api
 local SourceModels
-local ListSpawnTrigger
+local ListSpawnCreepsTrigger
 System.import(function (out)
   SourceModels = Source.Models
-  ListSpawnTrigger = System.List(SourceModels.SpawnTrigger)
+  ListSpawnCreepsTrigger = System.List(SourceModels.SpawnCreepsTrigger)
 end)
 System.namespace("Source.Models", function (namespace)
-  namespace.class("SpawnBuilding", function (namespace)
-    local AddSpawnTrigger, Destroy, RegisterOnDies, DeRegisterOnDies, AddUnitSpawn, UpgradeUnitSpawn, __ctor1__, __ctor2__
-    __ctor1__ = function (this, computer, unitTypeId, creationArea, face)
-      this.Wc3Unit = CreateUnitAtLoc(computer.Wc3Player, unitTypeId, creationArea.Wc3CenterLocation, face)
-      this.Computer = computer
-      this.SpawnTriggers = ListSpawnTrigger()
-    end
-    __ctor2__ = function (this, creepCamp, unitTypeId, creationArea, face)
+  namespace.class("SpawnCreepsBuilding", function (namespace)
+    local AddSpawnTrigger, Destroy, RegisterOnDies, DeRegisterOnDies, __ctor__
+    __ctor__ = function (this, creepCamp, unitTypeId, creationArea, face)
       this.Wc3Unit = CreateUnitAtLoc(creepCamp.Wc3Player, unitTypeId, creationArea.Wc3CenterLocation, face)
       this.CreepCamp = creepCamp
-      this.SpawnTriggers = ListSpawnTrigger()
+      this.SpawnTriggers = ListSpawnCreepsTrigger()
     end
     -- <summary>
     -- Fügt dem Gebäude einen Spawn-Trigger hinzu, welcher solange existiert ist, bis das Gebäude via <see cref="Destroy"/> zerstört wird.
@@ -22914,7 +22889,7 @@ System.namespace("Source.Models", function (namespace)
     -- <param name="unitIds">Auflistung an Einheiten-Ids</param>
     -- <returns></returns>
     AddSpawnTrigger = function (this, spawnArea, unitSpawnType, interval, targetArea, unitIds)
-      local trigger = SourceModels.SpawnTrigger(this.Computer, this, spawnArea, unitSpawnType, interval, targetArea, unitIds)
+      local trigger = SourceModels.SpawnCreepsTrigger(this.CreepCamp, this, spawnArea, unitSpawnType, interval, targetArea, unitIds)
       this.SpawnTriggers:Add(trigger)
       return trigger
     end
@@ -22924,8 +22899,12 @@ System.namespace("Source.Models", function (namespace)
     Destroy = function (this)
       DeRegisterOnDies(this)
 
-      for _, trigger in System.each(this.SpawnTriggers) do
+      for i = #this.SpawnTriggers - 1, 0, -1 do
+        local trigger = this.SpawnTriggers:get(i)
+
         trigger:Stop()
+
+        this.SpawnTriggers:RemoveAt(i)
       end
 
       if UnitAlive(this.Wc3Unit) then
@@ -22955,58 +22934,27 @@ System.namespace("Source.Models", function (namespace)
       DestroyTrigger(this.Wc3Trigger)
       this.Wc3Trigger = nil
     end
-    -- <summary>
-    -- Fügt passenden Spawn-Triggern von diesem Gebäude eine neue Einheit hinzu.
-    -- </summary>
-    -- <param name="spawnCommand"></param>
-    AddUnitSpawn = function (this, spawnCommand)
-      for _, trigger in System.each(this.SpawnTriggers) do
-        if trigger.UnitSpawnType == spawnCommand.UnitSpawnType then
-          trigger:Add(spawnCommand)
-        end
-      end
-    end
-    -- <summary>
-    -- Überschreibt eine bestehende Einheit in passenden Spawn-Triggern.
-    -- </summary>
-    -- <param name="spawnCommand"></param>
-    UpgradeUnitSpawn = function (this, spawnCommand)
-      for _, trigger in System.each(this.SpawnTriggers) do
-        if trigger.UnitSpawnType == spawnCommand.UnitSpawnType then
-          trigger:Upgrade(spawnCommand)
-        end
-      end
-    end
     return {
       AddSpawnTrigger = AddSpawnTrigger,
       Destroy = Destroy,
       RegisterOnDies = RegisterOnDies,
-      AddUnitSpawn = AddUnitSpawn,
-      UpgradeUnitSpawn = UpgradeUnitSpawn,
-      __ctor__ = {
-        __ctor1__,
-        __ctor2__
-      },
+      __ctor__ = __ctor__,
       __metadata__ = function (out)
         return {
           methods = {
-            { ".ctor", 0x406, __ctor1__, out.Source.Models.ComputerPlayer, System.Int32, out.Source.Models.Area, System.Single },
-            { ".ctor", 0x406, __ctor2__, out.Source.Models.CreepCamp, System.Int32, out.Source.Models.Area, System.Single },
-            { "AddSpawnTrigger", 0x586, AddSpawnTrigger, out.Source.Models.Area, System.Int32, System.Single, out.Source.Models.Area, System.Array(System.Int32), out.Source.Models.SpawnTrigger },
-            { "AddUnitSpawn", 0x106, AddUnitSpawn, out.Source.Models.SpawnUnitCommand },
+            { ".ctor", 0x406, nil, out.Source.Models.CreepCamp, System.Int32, out.Source.Models.Area, System.Single },
+            { "AddSpawnTrigger", 0x586, AddSpawnTrigger, out.Source.Models.Area, System.Int32, System.Single, out.Source.Models.Area, System.Array(System.Int32), out.Source.Models.SpawnCreepsTrigger },
             { "DeRegisterOnDies", 0x1, DeRegisterOnDies },
             { "Destroy", 0x6, Destroy },
-            { "RegisterOnDies", 0x106, RegisterOnDies, System.Delegate },
-            { "UpgradeUnitSpawn", 0x106, UpgradeUnitSpawn, out.Source.Models.SpawnUnitCommand }
+            { "RegisterOnDies", 0x106, RegisterOnDies, System.Delegate }
           },
           properties = {
-            { "Computer", 0x1, out.Source.Models.ComputerPlayer },
             { "CreepCamp", 0x1, out.Source.Models.CreepCamp },
-            { "SpawnTriggers", 0x1, System.List(out.Source.Models.SpawnTrigger) },
+            { "SpawnTriggers", 0x1, System.List(out.Source.Models.SpawnCreepsTrigger) },
             { "Wc3Trigger", 0x1, out.WCSharp.Api.trigger },
             { "Wc3Unit", 0x6, out.WCSharp.Api.unit }
           },
-          class = { "SpawnBuilding", 0x26 }
+          class = { "SpawnCreepsBuilding", 0x26 }
         }
       end
     }
@@ -23016,33 +22964,167 @@ end)
 end
 do
 local System = System
-local SourceModels
-local ListSpawnTrigger
+local Linq = System.Linq.Enumerable
+local Source
 System.import(function (out)
-  SourceModels = Source.Models
-  ListSpawnTrigger = System.List(SourceModels.SpawnTrigger)
+  Source = out.Source
 end)
 System.namespace("Source.Models", function (namespace)
-  namespace.class("SpawnCreepsBuilding", function (namespace)
-    local __ctor__
-    __ctor__ = function (this, player, unitTypeId, creationArea, face)
-      this.Wc3Unit = CreateUnitAtLoc(player, unitTypeId, creationArea.Wc3CenterLocation, face)
-      this.Wc3Player = player
-      this.SpawnTriggers = ListSpawnTrigger()
+  namespace.class("SpawnCreepsTrigger", function (namespace)
+    local Run, Start, Elapsed, Stop, __ctor__
+    -- <summary>
+    -- Erstellt einen zeitgesteuertem Auslöser für das regelmäßige Erstellen von Einheiten.
+    -- </summary>
+    -- <param name="player">Computer-Spieler, für den Einheiten erstellt werden</param>
+    -- <param name="building">Gebäude, an dessen Lebenszeit dieser Auslöser gebunden ist</param>
+    -- <param name="spawnArea">Gebiet, in dem die Einheiten erstellt werden</param>
+    -- <param name="unitSpawnType">Klasse der erstellten Einheiten</param>
+    -- <param name="interval">Interval in Sekunden, nach dessen Rythmus Einheiten erstellt werden</param>
+    -- <param name="targetArea">Zielgebiet, für das erstellte Einheiten einen Angriff/Bewegen-Befehl erhalten</param>
+    -- <param name="unitIds">Auflistung an Einheit-Typen zu beginn</param>
+    __ctor__ = function (this, creepCamp, building, spawnArea, unitSpawnType, interval, targetArea, unitIds)
+      this.CreepCamp = creepCamp
+      this.Interval = interval
+      --SpawnArea = spawnArea;
+      this.TargetArea = targetArea
+      --Building = building;
+      this.UnitSpawnType = unitSpawnType
+      this.UnitIds = Linq.ToList(unitIds)
+    end
+    -- <summary>
+    -- Startet den Trigger im angegebenen Interval
+    -- </summary>
+    Run = function (this, delay)
+      -- Delay a little since some stuff can break otherwise
+      local timer = CreateTimer()
+      TimerStart(timer, delay, false, function ()
+        DestroyTimer(timer)
+        Start(this)
+      end)
+    end
+    Start = function (this)
+      this.Timer = CreateTimer()
+      TimerStart(this.Timer, this.Interval, true, System.fn(this, Elapsed))
+    end
+    -- <summary>
+    -- Wird vom Trigger im angegeben Interval abgearbeitet.
+    -- </summary>
+    Elapsed = function (this)
+      System.try(function ()
+        for _, unitId in System.each(this.UnitIds) do
+          Source.Program.ShowDebugMessage("spawn unit " .. unitId)
+          local unit = this.CreepCamp:SpawnUnitInAreaAtRandomPoint(unitId)
+
+          unit:AttackMove(this.TargetArea)
+        end
+      end, function (default)
+        local ex = default
+        System.Console.WriteLine(ex:getMessage())
+      end)
+    end
+    -- <summary>
+    -- Stoppt den Trigger und zerstört ihn für den GC.
+    -- </summary>
+    Stop = function (this)
+      PauseTimer(this.Timer)
+      DestroyTimer(this.Timer)
+      this.Timer = nil
     end
     return {
+      Interval = 0,
+      UnitSpawnType = 0,
+      Run = Run,
+      Stop = Stop,
       __ctor__ = __ctor__,
       __metadata__ = function (out)
         return {
           methods = {
-            { ".ctor", 0x406, nil, out.WCSharp.Api.player, System.Int32, out.Source.Models.Area, System.Single }
+            { ".ctor", 0x706, nil, out.Source.Models.CreepCamp, out.Source.Models.SpawnCreepsBuilding, out.Source.Models.Area, System.Int32, System.Single, out.Source.Models.Area, System.Array(System.Int32) },
+            { "Elapsed", 0x1, Elapsed },
+            { "Run", 0x106, Run, System.Single },
+            { "Start", 0x1, Start },
+            { "Stop", 0x6, Stop }
           },
           properties = {
-            { "SpawnTriggers", 0x1, System.List(out.Source.Models.SpawnTrigger) },
-            { "Wc3Player", 0x1, out.WCSharp.Api.player },
-            { "Wc3Unit", 0x6, out.WCSharp.Api.unit }
+            { "CreepCamp", 0x1, out.Source.Models.CreepCamp },
+            { "Interval", 0x1, System.Single },
+            { "TargetArea", 0x1, out.Source.Models.Area },
+            { "Timer", 0x1, out.WCSharp.Api.timer },
+            { "UnitIds", 0x1, System.List(System.Int32) },
+            { "UnitSpawnType", 0x6, System.Int32 }
           },
-          class = { "SpawnCreepsBuilding", 0x26 }
+          class = { "SpawnCreepsTrigger", 0x26 }
+        }
+      end
+    }
+  end)
+end)
+
+end
+do
+local System = System
+System.namespace("Source.Models", function (namespace)
+  namespace.class("SpawnedCreep", function (namespace)
+    local AttackMove, RepeatAttackMove, Kill, __ctor__
+    -- <summary>
+    -- Erstellt eine neue Einheit im Zentrum eines Gebiets.
+    -- </summary>
+    -- <param name="owner">Besitzer</param>
+    -- <param name="unitType">Einheit-Typ</param>
+    -- <param name="area">Gebiet</param>
+    -- <param name="face">Blickrichtung (0 = rechts, 90 = oben, 180 = unten, 270 = links)</param>
+    __ctor__ = function (this, owner, unitType, area, face)
+      this.Owner = owner
+      this.SpawnArea = area
+      this.Wc3Unit = CreateUnitAtLoc(owner.Wc3Player, unitType, area.Wc3CenterLocation, face)
+    end
+    -- <summary>
+    -- Gibt der Einheit einen Angriff/Bewegen-Befehl bis zum Zentrum eines Gebiets.
+    -- </summary>
+    -- <param name="targetArea">Zielgebiet</param>
+    AttackMove = function (this, targetArea)
+      this.LastAreaTarget = targetArea
+
+      IssuePointOrderById(this.Wc3Unit, 851983 --[[Constants.ORDER_ATTACK]], this.LastAreaTarget.CenterX, this.LastAreaTarget.CenterY)
+    end
+    -- <summary>
+    -- Gibt der Einheit erneut einen Angriff/Bewegen-Befehl zum letzten Zielgebiet, falls bekannt.
+    -- </summary>
+    RepeatAttackMove = function (this)
+      if this.LastAreaTarget ~= nil then
+        IssuePointOrderById(this.Wc3Unit, 851983 --[[Constants.ORDER_ATTACK]], this.LastAreaTarget.CenterX, this.LastAreaTarget.CenterY)
+      end
+    end
+    -- <summary>
+    -- Tötet die Einheit, falls diese noch am Leben ist.
+    -- </summary>
+    Kill = function (this)
+      if UnitAlive(this.Wc3Unit) then
+        KillUnit(this.Wc3Unit)
+      end
+    end
+    return {
+      Wc3UnitTypeId = 0,
+      AttackMove = AttackMove,
+      RepeatAttackMove = RepeatAttackMove,
+      Kill = Kill,
+      __ctor__ = __ctor__,
+      __metadata__ = function (out)
+        return {
+          methods = {
+            { ".ctor", 0x406, nil, out.Source.Abstracts.NeutralForce, System.Int32, out.Source.Models.Area, System.Single },
+            { "AttackMove", 0x106, AttackMove, out.Source.Models.Area },
+            { "Kill", 0x6, Kill },
+            { "RepeatAttackMove", 0x6, RepeatAttackMove }
+          },
+          properties = {
+            { "LastAreaTarget", 0x6, out.Source.Models.Area },
+            { "Owner", 0x6, out.Source.Abstracts.NeutralForce },
+            { "SpawnArea", 0x6, out.Source.Models.Area },
+            { "Wc3Unit", 0x6, out.WCSharp.Api.unit },
+            { "Wc3UnitTypeId", 0x6, System.Int32 }
+          },
+          class = { "SpawnedCreep", 0x26 }
         }
       end
     }
@@ -23123,9 +23205,158 @@ end)
 end
 do
 local System = System
+System.namespace("Source.Models", function (namespace)
+  namespace.class("SpawnUnitCommand", function (namespace)
+    return {
+      UnitSpawnType = 0,
+      UnitIdOfBuilding = 0,
+      UnitId = 0,
+      UnitIdToUpgrade = 0,
+      __metadata__ = function (out)
+        return {
+          properties = {
+            { "UnitId", 0x6, System.Int32 },
+            { "UnitIdOfBuilding", 0x6, System.Int32 },
+            { "UnitIdToUpgrade", 0x6, System.Int32 },
+            { "UnitSpawnType", 0x6, System.Int32 }
+          },
+          class = { "SpawnUnitCommand", 0x26 }
+        }
+      end
+    }
+  end)
+end)
+
+end
+do
+local System = System
+local WCSharpApi = WCSharp.Api
+local SourceModels
+local ListSpawnUnitsTrigger
+System.import(function (out)
+  SourceModels = Source.Models
+  ListSpawnUnitsTrigger = System.List(SourceModels.SpawnUnitsTrigger)
+end)
+System.namespace("Source.Models", function (namespace)
+  namespace.class("SpawnUnitsBuilding", function (namespace)
+    local AddSpawnTrigger, Destroy, RegisterOnDies, DeRegisterOnDies, AddUnitSpawn, UpgradeUnitSpawn, __ctor__
+    __ctor__ = function (this, computer, unitTypeId, creationArea, face)
+      this.Wc3Unit = CreateUnitAtLoc(computer.Wc3Player, unitTypeId, creationArea.Wc3CenterLocation, face)
+      this.Computer = computer
+      this.SpawnTriggers = ListSpawnUnitsTrigger()
+    end
+    -- <summary>
+    -- Fügt dem Gebäude einen Spawn-Trigger hinzu, welcher solange existiert ist, bis das Gebäude via <see cref="Destroy"/> zerstört wird.
+    -- </summary>
+    -- <param name="interval">Sekunden</param>
+    -- <param name="spawnArea">Spawn-Gebiet</param>
+    -- <param name="unitIds">Auflistung an Einheiten-Ids</param>
+    -- <returns></returns>
+    AddSpawnTrigger = function (this, spawnArea, unitSpawnType, interval, targetArea, unitIds)
+      local trigger = SourceModels.SpawnUnitsTrigger(this.Computer, this, spawnArea, unitSpawnType, interval, targetArea, unitIds)
+      this.SpawnTriggers:Add(trigger)
+      return trigger
+    end
+    -- <summary>
+    -- Deregistriert das Sterbe-Event, stoppt alle Spawn-Trigger und tötet (falls noch nötig) die WC3-Einheit.
+    -- </summary>
+    Destroy = function (this)
+      DeRegisterOnDies(this)
+
+      for i = #this.SpawnTriggers - 1, 0, -1 do
+        local trigger = this.SpawnTriggers:get(i)
+
+        trigger:Stop()
+
+        this.SpawnTriggers:RemoveAt(i)
+      end
+
+      if UnitAlive(this.Wc3Unit) then
+        -- Da diese Funktion auch beim Tod des Gebäudes ausgelöst werden kann,
+        -- töte Gebäude bei Bedarf, d.h. wenn Team verliert und Spieler entfernt werden.
+        KillUnit(this.Wc3Unit)
+      end
+    end
+    -- <summary>
+    -- Registriert das Sterbe-Event.
+    -- </summary>
+    -- <param name="eventHandler"></param>
+    RegisterOnDies = function (this, eventHandler)
+      this.Wc3Trigger = CreateTrigger()
+      TriggerRegisterUnitEvent(this.Wc3Trigger, this.Wc3Unit, EVENT_UNIT_DEATH)
+      TriggerAddAction(this.Wc3Trigger, eventHandler)
+    end
+    -- <summary>
+    -- Deregistriert das Sterbe-Event.
+    -- </summary>
+    DeRegisterOnDies = function (this)
+      if this.Wc3Trigger == nil then
+        return
+      end
+
+      DisableTrigger(this.Wc3Trigger)
+      DestroyTrigger(this.Wc3Trigger)
+      this.Wc3Trigger = nil
+    end
+    -- <summary>
+    -- Fügt passenden Spawn-Triggern von diesem Gebäude eine neue Einheit hinzu.
+    -- </summary>
+    -- <param name="spawnCommand"></param>
+    AddUnitSpawn = function (this, spawnCommand)
+      for _, trigger in System.each(this.SpawnTriggers) do
+        if trigger.UnitSpawnType == spawnCommand.UnitSpawnType then
+          trigger:Add(spawnCommand)
+        end
+      end
+    end
+    -- <summary>
+    -- Überschreibt eine bestehende Einheit in passenden Spawn-Triggern.
+    -- </summary>
+    -- <param name="spawnCommand"></param>
+    UpgradeUnitSpawn = function (this, spawnCommand)
+      for _, trigger in System.each(this.SpawnTriggers) do
+        if trigger.UnitSpawnType == spawnCommand.UnitSpawnType then
+          trigger:Upgrade(spawnCommand)
+        end
+      end
+    end
+    return {
+      AddSpawnTrigger = AddSpawnTrigger,
+      Destroy = Destroy,
+      RegisterOnDies = RegisterOnDies,
+      AddUnitSpawn = AddUnitSpawn,
+      UpgradeUnitSpawn = UpgradeUnitSpawn,
+      __ctor__ = __ctor__,
+      __metadata__ = function (out)
+        return {
+          methods = {
+            { ".ctor", 0x406, nil, out.Source.Models.ComputerPlayer, System.Int32, out.Source.Models.Area, System.Single },
+            { "AddSpawnTrigger", 0x586, AddSpawnTrigger, out.Source.Models.Area, System.Int32, System.Single, out.Source.Models.Area, System.Array(System.Int32), out.Source.Models.SpawnUnitsTrigger },
+            { "AddUnitSpawn", 0x106, AddUnitSpawn, out.Source.Models.SpawnUnitCommand },
+            { "DeRegisterOnDies", 0x1, DeRegisterOnDies },
+            { "Destroy", 0x6, Destroy },
+            { "RegisterOnDies", 0x106, RegisterOnDies, System.Delegate },
+            { "UpgradeUnitSpawn", 0x106, UpgradeUnitSpawn, out.Source.Models.SpawnUnitCommand }
+          },
+          properties = {
+            { "Computer", 0x1, out.Source.Models.ComputerPlayer },
+            { "SpawnTriggers", 0x1, System.List(out.Source.Models.SpawnUnitsTrigger) },
+            { "Wc3Trigger", 0x1, out.WCSharp.Api.trigger },
+            { "Wc3Unit", 0x6, out.WCSharp.Api.unit }
+          },
+          class = { "SpawnUnitsBuilding", 0x26 }
+        }
+      end
+    }
+  end)
+end)
+
+end
+do
+local System = System
 local Linq = System.Linq.Enumerable
 System.namespace("Source.Models", function (namespace)
-  namespace.class("SpawnTrigger", function (namespace)
+  namespace.class("SpawnUnitsTrigger", function (namespace)
     local Run, Start, Elapsed, Stop, Add, Upgrade, __ctor__
     -- <summary>
     -- Erstellt einen zeitgesteuertem Auslöser für das regelmäßige Erstellen von Einheiten.
@@ -23142,9 +23373,10 @@ System.namespace("Source.Models", function (namespace)
       this.Interval = interval
       this.SpawnArea = spawnArea
       this.TargetArea = targetArea
-      this.Building = building
+      --Building = building;
       this.UnitSpawnType = unitSpawnType
       this.UnitIds = Linq.ToList(unitIds)
+      this.IsNeutralPlayer = false
     end
     -- <summary>
     -- Startet den Trigger im angegebenen Interval
@@ -23196,6 +23428,7 @@ System.namespace("Source.Models", function (namespace)
     end
     return {
       Interval = 0,
+      IsNeutralPlayer = false,
       UnitSpawnType = 0,
       Run = Run,
       Stop = Stop,
@@ -23205,7 +23438,7 @@ System.namespace("Source.Models", function (namespace)
       __metadata__ = function (out)
         return {
           methods = {
-            { ".ctor", 0x706, nil, out.Source.Models.ComputerPlayer, out.Source.Models.SpawnBuilding, out.Source.Models.Area, System.Int32, System.Single, out.Source.Models.Area, System.Array(System.Int32) },
+            { ".ctor", 0x706, nil, out.Source.Models.ComputerPlayer, out.Source.Models.SpawnUnitsBuilding, out.Source.Models.Area, System.Int32, System.Single, out.Source.Models.Area, System.Array(System.Int32) },
             { "Add", 0x106, Add, out.Source.Models.SpawnUnitCommand },
             { "Elapsed", 0x1, Elapsed },
             { "Run", 0x106, Run, System.Single },
@@ -23214,8 +23447,8 @@ System.namespace("Source.Models", function (namespace)
             { "Upgrade", 0x106, Upgrade, out.Source.Models.SpawnUnitCommand }
           },
           properties = {
-            { "Building", 0x1, out.Source.Models.SpawnBuilding },
             { "Interval", 0x1, System.Single },
+            { "IsNeutralPlayer", 0x6, System.Boolean },
             { "Player", 0x1, out.Source.Models.ComputerPlayer },
             { "SpawnArea", 0x1, out.Source.Models.Area },
             { "TargetArea", 0x1, out.Source.Models.Area },
@@ -23223,32 +23456,7 @@ System.namespace("Source.Models", function (namespace)
             { "UnitIds", 0x1, System.List(System.Int32) },
             { "UnitSpawnType", 0x6, System.Int32 }
           },
-          class = { "SpawnTrigger", 0x26 }
-        }
-      end
-    }
-  end)
-end)
-
-end
-do
-local System = System
-System.namespace("Source.Models", function (namespace)
-  namespace.class("SpawnUnitCommand", function (namespace)
-    return {
-      UnitSpawnType = 0,
-      UnitIdOfBuilding = 0,
-      UnitId = 0,
-      UnitIdToUpgrade = 0,
-      __metadata__ = function (out)
-        return {
-          properties = {
-            { "UnitId", 0x6, System.Int32 },
-            { "UnitIdOfBuilding", 0x6, System.Int32 },
-            { "UnitIdToUpgrade", 0x6, System.Int32 },
-            { "UnitSpawnType", 0x6, System.Int32 }
-          },
-          class = { "SpawnUnitCommand", 0x26 }
+          class = { "SpawnUnitsTrigger", 0x26 }
         }
       end
     }
@@ -35239,8 +35447,8 @@ local InitCSharp = function ()
       "WCSharp.Missiles.HomingMissile",
       "WCSharp.Missiles.MomentumMissile",
       "WCSharp.Missiles.OrbitalMissile",
-      "WCSharp.SaveLoad.Save_1",
       "WCSharp.SaveLoad.SaveLoadedMessage_1",
+      "WCSharp.SaveLoad.Save_1",
       "WCSharp.W3MMD.IW3MmdVar",
       "Areas",
       "Constants",
@@ -35268,10 +35476,12 @@ local InitCSharp = function ()
       "Source.Models.Enums.ResearchType",
       "Source.Models.Enums.UnitClass",
       "Source.Models.KlatschenFragtion",
-      "Source.Models.SpawnBuilding",
       "Source.Models.SpawnCreepsBuilding",
-      "Source.Models.SpawnTrigger",
+      "Source.Models.SpawnCreepsTrigger",
       "Source.Models.SpawnUnitCommand",
+      "Source.Models.SpawnUnitsBuilding",
+      "Source.Models.SpawnUnitsTrigger",
+      "Source.Models.SpawnedCreep",
       "Source.Models.SpawnedUnit",
       "Source.Models.Teams.ElfTeam",
       "Source.Models.Teams.HumanTeam",

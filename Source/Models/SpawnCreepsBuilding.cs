@@ -1,30 +1,97 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using WCSharp.Api;
 
 namespace Source.Models
 {
   public sealed class SpawnCreepsBuilding
   {
-    public SpawnCreepsBuilding(player player, int unitTypeId, Area creationArea, float face = 0f)
+    public SpawnCreepsBuilding(CreepCamp creepCamp, int unitTypeId, Area creationArea, float face = 0f)
     {
-      Wc3Unit = Common.CreateUnitAtLoc(player, unitTypeId, creationArea.Wc3CenterLocation, face);
-      Wc3Player = player;
-      SpawnTriggers = new List<SpawnTrigger>();
+      Wc3Unit = Common.CreateUnitAtLoc(creepCamp.Wc3Player, unitTypeId, creationArea.Wc3CenterLocation, face);
+      CreepCamp = creepCamp;
+      SpawnTriggers = new List<SpawnCreepsTrigger>();
     }
 
     /// <summary>
     /// WC3-Einheit zu diesem Gebäude.
     /// </summary>
     public unit Wc3Unit { get; init; }
+    /// <summary>
+    /// WC3-Trigger für das Sterbe-Event.
+    /// </summary>
+    private trigger Wc3Trigger { get; set; }
 
     /// <summary>
-    /// Der Computer-Spieler, dem dieses Gebäude gehört.
+    /// Das CreepCamp, dem dieses Gebäude gehört.
     /// </summary>
-    private player Wc3Player { get; init; }
+    private CreepCamp CreepCamp { get; init; }
 
     /// <summary>
     /// Auflistung von Spawn-Triggers.
     /// </summary>
-    private List<SpawnTrigger> SpawnTriggers { get; init; }
+    private List<SpawnCreepsTrigger> SpawnTriggers { get; init; }
+
+    /// <summary>
+    /// Fügt dem Gebäude einen Spawn-Trigger hinzu, welcher solange existiert ist, bis das Gebäude via <see cref="Destroy"/> zerstört wird.
+    /// </summary>
+    /// <param name="interval">Sekunden</param>
+    /// <param name="spawnArea">Spawn-Gebiet</param>
+    /// <param name="unitIds">Auflistung an Einheiten-Ids</param>
+    /// <returns></returns>
+    public SpawnCreepsTrigger AddSpawnTrigger(Area spawnArea, Enums.UnitClass unitSpawnType, float interval, Area targetArea, params int[] unitIds)
+    {
+      SpawnCreepsTrigger trigger = new SpawnCreepsTrigger(CreepCamp, this, spawnArea, unitSpawnType, interval, targetArea, unitIds);
+      SpawnTriggers.Add(trigger);
+      return trigger;
+    }
+
+    /// <summary>
+    /// Deregistriert das Sterbe-Event, stoppt alle Spawn-Trigger und tötet (falls noch nötig) die WC3-Einheit.
+    /// </summary>
+    public void Destroy()
+    {
+      DeRegisterOnDies();
+
+      for (int i = SpawnTriggers.Count - 1; i >= 0; i--)
+      {
+        SpawnCreepsTrigger trigger = SpawnTriggers[i];
+
+        trigger.Stop();
+
+        SpawnTriggers.RemoveAt(i);
+      }
+
+      if (Wc3Unit.Alive)
+      {
+        // Da diese Funktion auch beim Tod des Gebäudes ausgelöst werden kann,
+        // töte Gebäude bei Bedarf, d.h. wenn Team verliert und Spieler entfernt werden.
+        Wc3Unit.Kill();
+      }
+    }
+
+    /// <summary>
+    /// Registriert das Sterbe-Event.
+    /// </summary>
+    /// <param name="eventHandler"></param>
+    public void RegisterOnDies(Action eventHandler)
+    {
+      Wc3Trigger = trigger.Create();
+      Wc3Trigger.RegisterUnitEvent(Wc3Unit, unitevent.Death);
+      Wc3Trigger.AddAction(eventHandler);
+    }
+
+    /// <summary>
+    /// Deregistriert das Sterbe-Event.
+    /// </summary>
+    private void DeRegisterOnDies()
+    {
+      if (Wc3Trigger == null)
+        return;
+
+      Wc3Trigger.Disable();
+      Wc3Trigger.Dispose();
+      Wc3Trigger = null;
+    }
   }
 }
