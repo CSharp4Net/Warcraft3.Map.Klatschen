@@ -2,7 +2,7 @@
 using System;
 using WCSharp.Api;
 
-namespace Source.Events.User
+namespace Source.Events.Research
 {
   internal static class UserResearch
   {

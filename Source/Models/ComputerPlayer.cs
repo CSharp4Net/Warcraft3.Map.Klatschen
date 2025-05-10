@@ -42,7 +42,6 @@ namespace Source.Models
     /// <returns></returns>
     public bool IsOwnerOfBuilding(unit wc3Unit, out SpawnBuilding foundBuilding)
     {
-      //Program.ShowDebugMessage("ComputerPlayer.IsOwnerOfBuilding", $"Find building in list...");
       foreach (SpawnBuilding building in Buildings)
       {
         if (building.Wc3Unit == wc3Unit)

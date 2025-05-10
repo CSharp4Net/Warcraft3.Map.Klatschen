@@ -1,9 +1,9 @@
 ﻿using System;
 using WCSharp.Api;
 
-namespace Source.Events.Computer
+namespace Source.Events.Buildings
 {
-  internal static class BuildingMain
+  internal static class TeamMainBuilding
   {
     internal static void OnDies()
     {

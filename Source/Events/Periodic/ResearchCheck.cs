@@ -1,5 +1,5 @@
 ﻿using Source.Abstracts;
-using Source.Events.User;
+using Source.Events.Other;
 using Source.Models;
 using System;
 using WCSharp.Api;

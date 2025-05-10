@@ -3,9 +3,9 @@ using WCSharp.Api;
 
 namespace Source.Abstracts
 {
-  public abstract class FragtionBase
+  public abstract class NeutralForce
   {
-    public FragtionBase(player wc3ComputerPlayer)
+    public NeutralForce(player wc3ComputerPlayer)
     {
       Wc3Player = wc3ComputerPlayer;
     }

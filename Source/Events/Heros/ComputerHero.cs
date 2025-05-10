@@ -2,7 +2,7 @@
 using System;
 using WCSharp.Api;
 
-namespace Source.Events.Computer
+namespace Source.Events.Heros
 {
   internal static class ComputerHero
   {
@@ -11,51 +11,29 @@ namespace Source.Events.Computer
       int playerId = unit.Owner.Id;
       int respawnTime = 0;
 
-      // TODO : Verstorbener PC-Hero wird nicht automatisch wieder geboren, sondern muss gekauft werden!
-
       // Prüfe vor Wiedergeburt, ob der Computer-Spieler noch unbesiegt ist
       if (playerId == Program.Humans.Computer.PlayerId)
       {
         if (Program.Humans.Computer.Defeated)
           return;
-        else
-          respawnTime = 30;
       }
       else if (playerId == Program.Orcs.Computer.PlayerId)
       {
         if (Program.Orcs.Computer.Defeated)
           return;
-        else
-          respawnTime = 30;
       }
       else if (playerId == Program.Elves.Computer.PlayerId)
       {
         if (Program.Elves.Computer.Defeated)
           return;
-        else
-          respawnTime = 30;
       }
       else if (playerId == Program.Undeads.Computer.PlayerId)
       {
         if (Program.Undeads.Computer.Defeated)
           return;
-        else
-          respawnTime = 30;
       }
-      else if (playerId == player.NeutralAggressiveId)
-      {
-        int unitType = Common.GetUnitTypeId(unit);
 
-        foreach (CreepFragtion fragtion in Program.Creeps)
-        {
-          // Prüfe primär die Einheit-Id, da ein UNIT-Vergleich nicht empfohlen wird!
-          if (fragtion.Hero.UnitType == unitType && fragtion.Hero == unit)
-          {
-            Program.ShowDebugMessage("Creep hero killed!");
-            break;
-          }
-        }
-      }
+      respawnTime = 30;
 
       // Verstorbenen Held nach gegebener Zeit wieder belegen
       timer timer = Common.CreateTimer();

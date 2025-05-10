@@ -2,9 +2,9 @@
 using System;
 using WCSharp.Api;
 
-namespace Source.Events.Specific
+namespace Source.Events.Buildings
 {
-  internal static class BuildingBarracks
+  internal static class TeamBarracksBuilding
   {
     internal static void OnDies()
     {

@@ -318,6 +318,7 @@ public static class Constants
 	public const int UNIT_W_CHTER_UNDEAD = 1211118161;
 	public const int UNIT_BANDITENF_RST_CREEP = 1211118162;
 	public const int UNIT_BANDIT_CREEP = 1848651864;
+	public const int UNIT_BANDITENZELT_CREEP = 1848651862;
 	public const int UPGRADE_FLIGHT_UNIT_TEAM = 1378889795;
 	public const int UPGRADE_MELEE_ATTACK_TEAM = 1378889778;
 	public const int UPGRADE_DISTANCE_UNIT_TEAM = 1378889785;

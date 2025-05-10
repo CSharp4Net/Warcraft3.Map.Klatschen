@@ -3,7 +3,7 @@ using WCSharp.Api;
 
 namespace Source.Models
 {
-  public sealed class KlatschenFragtion : FragtionBase
+  public sealed class KlatschenFragtion : NeutralForce
   {
     public KlatschenFragtion()
       : base(player.NeutralAggressive)

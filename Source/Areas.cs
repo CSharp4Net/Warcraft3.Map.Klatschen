@@ -48,6 +48,7 @@ internal static class Areas
   public static Area HumanBaseToOrcsSpawn { get; set; } = new Area(Regions.HumanBaseToOrcSpawn);
   public static Area HumanCreepToElf { get; set; } = new Area(Regions.HumanCreepToElf);
   public static Area HumanCreepToElfSpawn { get; set; } = new Area(Regions.HumanCreepToElfSpawn);
+  public static Area HumanCreepToElfSpawnBuilding { get; set; } = new Area(Regions.HumanCreepToElfSpawnBuilding);
   public static Area HumanToElfInnerLine { get; set; } = new Area(Regions.HumanToElfInnerLine);
   public static Area HumanToElfOuterLine { get; set; } = new Area(Regions.HumanToElfOuterLine);
   public static Area HumanToOrcInnerLine { get; set; } = new Area(Regions.HumanToOrcInnerLine);

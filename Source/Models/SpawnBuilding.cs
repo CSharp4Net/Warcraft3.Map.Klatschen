@@ -13,6 +13,13 @@ namespace Source.Models
       SpawnTriggers = new List<SpawnTrigger>();
     }
 
+    public SpawnBuilding(CreepCamp creepCamp, int unitTypeId, Area creationArea, float face = 0f)
+    {
+      Wc3Unit = Common.CreateUnitAtLoc(creepCamp.Wc3Player, unitTypeId, creationArea.Wc3CenterLocation, face);
+      CreepCamp = creepCamp;
+      SpawnTriggers = new List<SpawnTrigger>();
+    }
+
     /// <summary>
     /// WC3-Einheit zu diesem Gebäude.
     /// </summary>
@@ -26,6 +33,12 @@ namespace Source.Models
     /// Der Computer-Spieler, dem dieses Gebäude gehört.
     /// </summary>
     private ComputerPlayer Computer { get; init; }
+
+    /// <summary>
+    /// Das CreepCamp, dem dieses Gebäude gehört.
+    /// </summary>
+    private CreepCamp CreepCamp { get; init; }
+
     /// <summary>
     /// Auflistung von Spawn-Triggers.
     /// </summary>

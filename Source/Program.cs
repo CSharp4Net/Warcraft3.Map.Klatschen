@@ -1,11 +1,11 @@
-﻿using Source.Events.Computer;
+﻿using Source.Events.Buildings;
 using Source.Events.Generic;
 using Source.Events.GenericEvents;
+using Source.Events.Heros;
 using Source.Events.Periodic;
-using Source.Events.Player;
 using Source.Events.Region;
-using Source.Events.Specific;
-using Source.Events.User;
+using Source.Events.Research;
+using Source.Events.Other;
 using Source.Models;
 using Source.Models.Teams;
 using System;
@@ -28,7 +28,7 @@ namespace Source
 
     public static KlatschenFragtion Legion;
 
-    public static List<CreepFragtion> Creeps { get; set; } = new List<CreepFragtion>();
+    public static List<CreepCamp> CreepCamps { get; set; } = new List<CreepCamp>();
 
     /// <summary>
     /// Alle aktiven Benutzer-Spieler
@@ -155,16 +155,18 @@ namespace Source
         Common.FogMaskEnable(false);
 #endif
 
-        CreepFragtion bandits = new CreepFragtion(Areas.HumanCreepToElf, Areas.HumanCreepToElfSpawn);
+        CreepCamp bandits = new CreepCamp("Räudige Banditen", Areas.HumanCreepToElfSpawnBuilding, Areas.HumanCreepToElf, Areas.HumanCreepToElfSpawn);
 
-        bandits.CreateOrReviveHero(Constants.UNIT_BANDITENF_RST_CREEP);
+        SpawnBuilding building = bandits.InitializeBuilding(Constants.UNIT_BANDITENZELT_CREEP);
+
+        //bandits.CreateOrReviveHero(Constants.UNIT_BANDITENF_RST_CREEP);
         //bandits.SpawnUnitInAreaAtRandomPoint(Constants.UNIT_BANDIT_CREEP);
         //bandits.SpawnUnitInAreaAtRandomPoint(Constants.UNIT_BANDIT_CREEP);
         //bandits.SpawnUnitInAreaAtRandomPoint(Constants.UNIT_BANDIT_CREEP);
         //bandits.SpawnUnitInAreaAtRandomPoint(Constants.UNIT_BANDIT_CREEP);
 
-        Creeps.Add(bandits);
-        
+        CreepCamps.Add(bandits);
+
 
         var timer = Common.CreateTimer();
         Common.TimerStart(timer, 30f, false, () =>
@@ -213,7 +215,7 @@ namespace Source
     {
       // Hauptgebäude
       SpawnBuilding building = Humans.Computer.CreateBuilding(Constants.UNIT_SCHLOSS_HUMAN, Areas.HumanBase);
-      building.RegisterOnDies(BuildingMain.OnDies);
+      building.RegisterOnDies(TeamMainBuilding.OnDies);
       building.AddSpawnTrigger(Areas.HumanBaseToCenterSpawn, Enums.UnitClass.Distance, MainBuilding1SpawnTime, Areas.UndeadBase,
         Constants.UNIT_MAGIEEINHEIT_STUFE_1_HUMAN, Constants.UNIT_FLUGEINHEIT_STUFE_1_HUMAN).Run(5.5f);
       building.AddSpawnTrigger(Areas.HumanBaseToCenterSpawn, Enums.UnitClass.Artillery, MainBuilding2SpawnTime, Areas.UndeadBase).Run(7.5f);
@@ -226,21 +228,21 @@ namespace Source
 
       // Kasernen
       building = Humans.Computer.CreateBuilding(Constants.UNIT_KASERNE_HUMAN, Areas.HumanBarracksToCenter);
-      building.RegisterOnDies(BuildingBarracks.OnDies);
+      building.RegisterOnDies(TeamBarracksBuilding.OnDies);
       building.AddSpawnTrigger(Areas.HumanBarracksToCenterSpawn, Enums.UnitClass.Meelee, BarracksSpawnTime, Areas.UndeadBase,
         Constants.UNIT_NAHKAMPFEINHEIT_STUFE_1_HUMAN, Constants.UNIT_NAHKAMPFEINHEIT_STUFE_1_HUMAN).Run();
       building.AddSpawnTrigger(Areas.HumanBarracksToCenterSpawn, Enums.UnitClass.Distance, BarracksSpawnTime, Areas.UndeadBase,
         Constants.UNIT_FERNKAMPFEINHEIT_STUFE_1_HUMAN).Run(1f);
 
       building = Humans.Computer.CreateBuilding(Constants.UNIT_KASERNE_HUMAN, Areas.HumanBarracksToElf);
-      building.RegisterOnDies(BuildingBarracks.OnDies);
+      building.RegisterOnDies(TeamBarracksBuilding.OnDies);
       building.AddSpawnTrigger(Areas.HumanBarracksToElfSpawn, Enums.UnitClass.Meelee, BarracksSpawnTime, Areas.ElfBase,
         Constants.UNIT_NAHKAMPFEINHEIT_STUFE_1_HUMAN, Constants.UNIT_NAHKAMPFEINHEIT_STUFE_1_HUMAN).Run();
       building.AddSpawnTrigger(Areas.HumanBarracksToElfSpawn, Enums.UnitClass.Distance, BarracksSpawnTime, Areas.ElfBase,
         Constants.UNIT_FERNKAMPFEINHEIT_STUFE_1_HUMAN).Run(1f);
 
       building = Humans.Computer.CreateBuilding(Constants.UNIT_KASERNE_HUMAN, Areas.HumanBarracksToOrcs);
-      building.RegisterOnDies(BuildingBarracks.OnDies);
+      building.RegisterOnDies(TeamBarracksBuilding.OnDies);
       building.AddSpawnTrigger(Areas.HumanBarracksToOrcsSpawn, Enums.UnitClass.Meelee, BarracksSpawnTime, Areas.OrcBase,
         Constants.UNIT_NAHKAMPFEINHEIT_STUFE_1_HUMAN, Constants.UNIT_NAHKAMPFEINHEIT_STUFE_1_HUMAN).Run();
       building.AddSpawnTrigger(Areas.HumanBarracksToOrcsSpawn, Enums.UnitClass.Distance, BarracksSpawnTime, Areas.OrcBase,
@@ -251,7 +253,7 @@ namespace Source
     {
       // Hauptgebäude
       SpawnBuilding building = Orcs.Computer.CreateBuilding(Constants.UNIT_FESTUNG_ORC, Areas.OrcBase);
-      building.RegisterOnDies(BuildingMain.OnDies);
+      building.RegisterOnDies(TeamMainBuilding.OnDies);
       building.AddSpawnTrigger(Areas.OrcBaseToCenterSpawn, Enums.UnitClass.Distance, MainBuilding1SpawnTime, Areas.ElfBase,
         Constants.UNIT_MAGIEEINHEIT_STUFE_1_ORC, Constants.UNIT_FLUGEINHEIT_STUFE_1_ORC).Run(5.5f);
       building.AddSpawnTrigger(Areas.OrcBaseToCenterSpawn, Enums.UnitClass.Artillery, MainBuilding2SpawnTime, Areas.ElfBase).Run(7.5f);
@@ -264,21 +266,21 @@ namespace Source
 
       // Kasernen
       building = Orcs.Computer.CreateBuilding(Constants.UNIT_KASERNE_ORC, Areas.OrcBarracksToCenter);
-      building.RegisterOnDies(BuildingBarracks.OnDies);
+      building.RegisterOnDies(TeamBarracksBuilding.OnDies);
       building.AddSpawnTrigger(Areas.OrcBarracksToCenterSpawn, Enums.UnitClass.Meelee, BarracksSpawnTime, Areas.ElfBase,
         Constants.UNIT_NAHKAMPFEINHEIT_STUFE_1_ORC, Constants.UNIT_NAHKAMPFEINHEIT_STUFE_1_ORC).Run();
       building.AddSpawnTrigger(Areas.OrcBarracksToCenterSpawn, Enums.UnitClass.Distance, BarracksSpawnTime, Areas.ElfBase,
         Constants.UNIT_FERNKAMPFEINHEIT_STUFE_1_ORC).Run(0.5f);
 
       building = Orcs.Computer.CreateBuilding(Constants.UNIT_KASERNE_ORC, Areas.OrcBarracksToHuman);
-      building.RegisterOnDies(BuildingBarracks.OnDies);
+      building.RegisterOnDies(TeamBarracksBuilding.OnDies);
       building.AddSpawnTrigger(Areas.OrcBarracksToHumanSpawn, Enums.UnitClass.Meelee, BarracksSpawnTime, Areas.HumanBase,
         Constants.UNIT_NAHKAMPFEINHEIT_STUFE_1_ORC, Constants.UNIT_NAHKAMPFEINHEIT_STUFE_1_ORC).Run();
       building.AddSpawnTrigger(Areas.OrcBarracksToHumanSpawn, Enums.UnitClass.Distance, BarracksSpawnTime, Areas.HumanBase,
         Constants.UNIT_FERNKAMPFEINHEIT_STUFE_1_ORC).Run(0.5f);
 
       building = Orcs.Computer.CreateBuilding(Constants.UNIT_KASERNE_ORC, Areas.OrcBarracksToUndead);
-      building.RegisterOnDies(BuildingBarracks.OnDies);
+      building.RegisterOnDies(TeamBarracksBuilding.OnDies);
       building.AddSpawnTrigger(Areas.OrcBarracksToUndeadSpawn, Enums.UnitClass.Meelee, BarracksSpawnTime, Areas.UndeadBase,
         Constants.UNIT_NAHKAMPFEINHEIT_STUFE_1_ORC, Constants.UNIT_NAHKAMPFEINHEIT_STUFE_1_ORC).Run();
       building.AddSpawnTrigger(Areas.OrcBarracksToUndeadSpawn, Enums.UnitClass.Distance, BarracksSpawnTime, Areas.UndeadBase,
@@ -289,7 +291,7 @@ namespace Source
     {
       // Hauptgebäude
       SpawnBuilding building = Elves.Computer.CreateBuilding(Constants.UNIT_TELDRASSIL_ELF, Areas.ElfBase);
-      building.RegisterOnDies(BuildingMain.OnDies);
+      building.RegisterOnDies(TeamMainBuilding.OnDies);
       building.AddSpawnTrigger(Areas.ElfBaseToCenterSpawn, Enums.UnitClass.Distance, MainBuilding1SpawnTime, Areas.OrcBase,
         Constants.UNIT_MAGIEEINHEIT_STUFE_1_ELF, Constants.UNIT_FLUGEINHEIT_STUFE_1_ELF).Run(5.5f);
       building.AddSpawnTrigger(Areas.ElfBaseToCenterSpawn, Enums.UnitClass.Artillery, MainBuilding2SpawnTime, Areas.OrcBase).Run(7.5f);
@@ -302,21 +304,21 @@ namespace Source
 
       // Kasernen
       building = Elves.Computer.CreateBuilding(Constants.UNIT_KASERNE_ELF, Areas.ElfBarracksToCenter);
-      building.RegisterOnDies(BuildingBarracks.OnDies);
+      building.RegisterOnDies(TeamBarracksBuilding.OnDies);
       building.AddSpawnTrigger(Areas.ElfBarracksToCenterSpawn, Enums.UnitClass.Meelee, BarracksSpawnTime, Areas.OrcBase,
         Constants.UNIT_NAHKAMPFEINHEIT_STUFE_1_ELF, Constants.UNIT_NAHKAMPFEINHEIT_STUFE_1_ELF).Run();
       building.AddSpawnTrigger(Areas.ElfBarracksToCenterSpawn, Enums.UnitClass.Distance, BarracksSpawnTime, Areas.OrcBase,
         Constants.UNIT_FERNKAMPFEINHEIT_STUFE_1_ELF).Run(0.5f);
 
       building = Elves.Computer.CreateBuilding(Constants.UNIT_KASERNE_ELF, Areas.ElfBarracksToHuman);
-      building.RegisterOnDies(BuildingBarracks.OnDies);
+      building.RegisterOnDies(TeamBarracksBuilding.OnDies);
       building.AddSpawnTrigger(Areas.ElfBarracksToHumanSpawn, Enums.UnitClass.Meelee, BarracksSpawnTime, Areas.HumanBase,
         Constants.UNIT_NAHKAMPFEINHEIT_STUFE_1_ELF, Constants.UNIT_NAHKAMPFEINHEIT_STUFE_1_ELF).Run();
       building.AddSpawnTrigger(Areas.ElfBarracksToHumanSpawn, Enums.UnitClass.Distance, BarracksSpawnTime, Areas.HumanBase,
         Constants.UNIT_FERNKAMPFEINHEIT_STUFE_1_ELF).Run(0.5f);
 
       building = Elves.Computer.CreateBuilding(Constants.UNIT_KASERNE_ELF, Areas.ElfBarracksToUndead);
-      building.RegisterOnDies(BuildingBarracks.OnDies);
+      building.RegisterOnDies(TeamBarracksBuilding.OnDies);
       building.AddSpawnTrigger(Areas.ElfBarracksToUndeadSpawn, Enums.UnitClass.Meelee, BarracksSpawnTime, Areas.UndeadBase,
         Constants.UNIT_NAHKAMPFEINHEIT_STUFE_1_ELF, Constants.UNIT_NAHKAMPFEINHEIT_STUFE_1_ELF).Run();
       building.AddSpawnTrigger(Areas.ElfBarracksToUndeadSpawn, Enums.UnitClass.Distance, BarracksSpawnTime, Areas.UndeadBase,
@@ -327,7 +329,7 @@ namespace Source
     {
       // Hauptgebäude
       SpawnBuilding building = Undeads.Computer.CreateBuilding(Constants.UNIT_SCHWARZE_ZITADELLE_UNDEAD, Areas.UndeadBase);
-      building.RegisterOnDies(BuildingMain.OnDies);
+      building.RegisterOnDies(TeamMainBuilding.OnDies);
       building.AddSpawnTrigger(Areas.UndeadBaseToCenterSpawn, Enums.UnitClass.Distance, MainBuilding1SpawnTime, Areas.HumanBase,
         Constants.UNIT_MAGIEEINHEIT_STUFE_1_UNDEAD, Constants.UNIT_FLUGEINHEIT_STUFE_1_UNDEAD).Run(5.5f);
       building.AddSpawnTrigger(Areas.UndeadBaseToCenterSpawn, Enums.UnitClass.Artillery, MainBuilding2SpawnTime, Areas.HumanBase).Run(7.5f);
@@ -340,21 +342,21 @@ namespace Source
 
       // Kasernen
       building = Undeads.Computer.CreateBuilding(Constants.UNIT_GRUFT_UNDEAD, Areas.UndeadBarracksToCenter);
-      building.RegisterOnDies(BuildingBarracks.OnDies);
+      building.RegisterOnDies(TeamBarracksBuilding.OnDies);
       building.AddSpawnTrigger(Areas.UndeadBarracksToCenterSpawn, Enums.UnitClass.Meelee, BarracksSpawnTime, Areas.HumanBase,
         Constants.UNIT_NAHKAMPFEINHEIT_STUFE_1_UNDEAD, Constants.UNIT_NAHKAMPFEINHEIT_STUFE_1_UNDEAD).Run();
       building.AddSpawnTrigger(Areas.UndeadBarracksToCenterSpawn, Enums.UnitClass.Distance, BarracksSpawnTime, Areas.HumanBase,
         Constants.UNIT_FERNKAMPFEINHEIT_STUFE_1_UNDEAD).Run(0.5f);
 
       building = Undeads.Computer.CreateBuilding(Constants.UNIT_GRUFT_UNDEAD, Areas.UndeadBarracksToElf);
-      building.RegisterOnDies(BuildingBarracks.OnDies);
+      building.RegisterOnDies(TeamBarracksBuilding.OnDies);
       building.AddSpawnTrigger(Areas.UndeadBarracksToElfSpawn, Enums.UnitClass.Meelee, BarracksSpawnTime, Areas.ElfBase,
         Constants.UNIT_NAHKAMPFEINHEIT_STUFE_1_UNDEAD, Constants.UNIT_NAHKAMPFEINHEIT_STUFE_1_UNDEAD).Run();
       building.AddSpawnTrigger(Areas.UndeadBarracksToElfSpawn, Enums.UnitClass.Distance, BarracksSpawnTime, Areas.ElfBase,
         Constants.UNIT_FERNKAMPFEINHEIT_STUFE_1_UNDEAD).Run(0.5f);
 
       building = Undeads.Computer.CreateBuilding(Constants.UNIT_GRUFT_UNDEAD, Areas.UndeadBarracksToOrcs);
-      building.RegisterOnDies(BuildingBarracks.OnDies);
+      building.RegisterOnDies(TeamBarracksBuilding.OnDies);
       building.AddSpawnTrigger(Areas.UndeadBarracksToOrcsSpawn, Enums.UnitClass.Meelee, BarracksSpawnTime, Areas.OrcBase,
         Constants.UNIT_NAHKAMPFEINHEIT_STUFE_1_UNDEAD, Constants.UNIT_NAHKAMPFEINHEIT_STUFE_1_UNDEAD).Run();
       building.AddSpawnTrigger(Areas.UndeadBarracksToOrcsSpawn, Enums.UnitClass.Distance, BarracksSpawnTime, Areas.OrcBase,

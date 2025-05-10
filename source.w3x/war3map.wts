@@ -12233,3 +12233,15 @@ STRING 3608
 (Creep)
 }
 
+STRING 3609
+// Units: n00V (Banditenzelt), EditorSuffix (Name - Editor Suffix)
+{
+(Creep)
+}
+
+STRING 3610
+// Units: n00V (Banditenzelt), Name (Name)
+{
+Banditenzelt
+}
+

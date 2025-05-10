@@ -2,7 +2,7 @@
 using System;
 using WCSharp.Api;
 
-namespace Source.Events.Player
+namespace Source.Events.Heros
 {
   internal static class UserHero
   {
@@ -73,13 +73,6 @@ namespace Source.Events.Player
 
     internal static void OnDies(unit unit)
     {
-      // Verstorbenen Held nach gegebener Zeit wieder belegen
-      timer timer = Common.CreateTimer();
-      // Währenddessen Timer-Dialog anzeigen
-      timerdialog timerdialog = timer.CreateDialog();
-      timerdialog.SetTitle($"{unit.Name} erscheint erneut...");
-      timerdialog.IsDisplayed = true;
-
       player player = unit.Owner;
       int playerId = unit.Owner.Id;
       Area respawnArea = null;
@@ -105,6 +98,13 @@ namespace Source.Events.Player
 
       if (user == null)
         return;
+
+      // Verstorbenen Held nach gegebener Zeit wieder belegen
+      timer timer = Common.CreateTimer();
+      // Währenddessen Timer-Dialog anzeigen
+      timerdialog timerdialog = timer.CreateDialog();
+      timerdialog.SetTitle($"{unit.Name} erscheint erneut...");
+      timerdialog.IsDisplayed = true;
 
       Common.TimerStart(timer, unit.HeroLevel + 2, false, () =>
       {
