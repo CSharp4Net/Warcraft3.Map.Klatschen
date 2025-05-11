@@ -20026,9 +20026,8 @@ System.import(function (out)
 end)
 System.namespace("Source", function (namespace)
   namespace.class("Program", function (namespace)
-    local Main, ShowDebugMessage, ShowDebugMessage1, ShowExceptionMessage, TryGetActiveUser, Start, RegisterRegionTriggersInHumanArea, RegisterRegionTriggerInOrcArea, 
-    RegisterRegionTriggerInElfArea, RegisterRegionTriggerInUndeadArea, ConstructHumanBuildingAndTrigger, ConstructOrcBuildingAndTrigger, ConstructElfBuildingAndTrigger, ConstructUndeadBuildingAndTrigger, CreateComputerHeros, CreateHeroSelectorForPlayerAndAdjustCamera, 
-    class, static
+    local Main, ShowDebugMessage, ShowDebugMessage1, ShowExceptionMessage, TryGetActiveUser, Start, ConstructHumanBuildingAndTrigger, ConstructOrcBuildingAndTrigger, 
+    ConstructElfBuildingAndTrigger, ConstructUndeadBuildingAndTrigger, CreateComputerHeros, CreateHeroSelectorForPlayerAndAdjustCamera, class, static
     static = function (this)
       this.CreepCamps = ListCreepCamp()
       this.AllActiveUsers = ListUserPlayer()
@@ -20078,18 +20077,19 @@ System.namespace("Source", function (namespace)
         SetTimeOfDay(0)
 
         -- Teams initialisieren
-        class.Humans = SourceModelsTeams.HumanTeam(Player(0))
-        class.Orcs = SourceModelsTeams.OrcTeam(Player(4))
-        class.Elves = SourceModelsTeams.ElfTeam(Player(8))
-        class.Undeads = SourceModelsTeams.UndeadTeam(Player(12))
+        class.Humans = SourceModelsTeams.HumanTeam(Player(0), Areas.HumanBase)
+        class.Orcs = SourceModelsTeams.OrcTeam(Player(4), Areas.OrcBase)
+        class.Elves = SourceModelsTeams.ElfTeam(Player(8), Areas.ElfBase)
+        class.Undeads = SourceModelsTeams.UndeadTeam(Player(12), Areas.UndeadBase)
 
         class.Legion = SourceModels.KlatschenFragtion()
 
-        -- Regions-Ereignisse registrieren für automatische Einheitenbewegungen
-        RegisterRegionTriggersInHumanArea()
-        RegisterRegionTriggerInOrcArea()
-        RegisterRegionTriggerInElfArea()
-        RegisterRegionTriggerInUndeadArea()
+        -- Regions-Ereignisse registrieren für automatische Einheitenbewegungen:
+        -- Wenn feindliche Einheiten in die Regionen treten, welche von zerstörten Gebäuden freigegeben werden.
+        Areas.HumanBase:RegisterOnEnter(SourceEventsRegion.HumanBase.OnEnter)
+        Areas.OrcBase:RegisterOnEnter(SourceEventsRegion.OrcBase.OnEnter)
+        Areas.ElfBase:RegisterOnEnter(SourceEventsRegion.ElfBase.OnEnter)
+        Areas.UndeadBase:RegisterOnEnter(SourceEventsRegion.UndeadBase.OnEnter)
 
         -- Allgemeine Events registrieren
         WCSharpEvents.PlayerUnitEvents.Register14(802 --[[UnitTypeEvent.BuysUnit]], SourceEventsHeros.UserHero.OnBuyed)
@@ -20124,7 +20124,7 @@ System.namespace("Source", function (namespace)
         FogMaskEnable(false)
 
 
-        local bandits = SourceModels.CreepCamp("Räudige Banditen", Areas.HumanCreepToElfSpawnBuilding, Areas.HumanCreepToElf, Areas.HumanCreepToElfSpawn)
+        local bandits = SourceModels.CreepCamp("Räudige Banditen", Areas.HumanCreepToElfSpawnBuilding, Areas.HumanCreepToElf, Areas.HumanCreepToElfSpawn, class.Humans.Computer, class.Elves.Computer)
 
         local building = bandits:InitializeBuilding(1848651862 --[[Constants.UNIT_BANDITENZELT_CREEP]], 0)
 
@@ -20150,22 +20150,6 @@ System.namespace("Source", function (namespace)
         local ex = default
         ShowExceptionMessage("Start", ex)
       end)
-    end
-    RegisterRegionTriggersInHumanArea = function ()
-      -- Wenn feindliche Einheiten in die Regionen treten, welche von zerstörten Gebäuden freigegeben werden
-      Areas.HumanBase:RegisterOnEnter(SourceEventsRegion.HumanBase.OnEnter)
-    end
-    RegisterRegionTriggerInOrcArea = function ()
-      -- Wenn feindliche Einheiten in die Regionen treten, welche von zerstörten Gebäuden freigegeben werden
-      Areas.OrcBase:RegisterOnEnter(SourceEventsRegion.OrcBase.OnEnter)
-    end
-    RegisterRegionTriggerInElfArea = function ()
-      -- Wenn feindliche Einheiten in die Regionen treten, welche von zerstörten Gebäuden freigegeben werden
-      Areas.ElfBase:RegisterOnEnter(SourceEventsRegion.ElfBase.OnEnter)
-    end
-    RegisterRegionTriggerInUndeadArea = function ()
-      -- Wenn feindliche Einheiten in die Regionen treten, welche von zerstörten Gebäuden freigegeben werden
-      Areas.UndeadBase:RegisterOnEnter(SourceEventsRegion.UndeadBase.OnEnter)
     end
     ConstructHumanBuildingAndTrigger = function ()
       -- Hauptgebäude
@@ -20329,10 +20313,6 @@ System.namespace("Source", function (namespace)
             { "CreateComputerHeros", 0x9, CreateComputerHeros },
             { "CreateHeroSelectorForPlayerAndAdjustCamera", 0x10C, CreateHeroSelectorForPlayerAndAdjustCamera, out.Source.Models.UserPlayer },
             { "Main", 0xE, Main },
-            { "RegisterRegionTriggerInElfArea", 0x9, RegisterRegionTriggerInElfArea },
-            { "RegisterRegionTriggerInOrcArea", 0x9, RegisterRegionTriggerInOrcArea },
-            { "RegisterRegionTriggerInUndeadArea", 0x9, RegisterRegionTriggerInUndeadArea },
-            { "RegisterRegionTriggersInHumanArea", 0x9, RegisterRegionTriggersInHumanArea },
             { "ShowDebugMessage", 0x10E, ShowDebugMessage, System.String },
             { "ShowDebugMessage", 0x20E, ShowDebugMessage1, System.String, System.String },
             { "ShowExceptionMessage", 0x20E, ShowExceptionMessage, System.String, System.Exception },
@@ -20716,9 +20696,11 @@ end)
 System.namespace("Source.Abstracts", function (namespace)
   namespace.class("TeamBase", function (namespace)
     local Defeat, Win, ContainsPlayer, IncreaseTechForAllPlayers, DisplayChatMessage, GetTechType, __ctor__
-    __ctor__ = function (this, wc3ComputerPlayer)
+    __ctor__ = function (this, wc3ComputerPlayer, teamBaseArea)
       this.Computer = SourceModels.ComputerPlayer(wc3ComputerPlayer, this)
       SetPlayerState(this.Computer.Wc3Player, PLAYER_STATE_GIVES_BOUNTY, 1)
+
+      this.TeamBaseArea = teamBaseArea
 
       this.Users = ListUserPlayer()
 
@@ -20797,11 +20779,23 @@ System.namespace("Source.Abstracts", function (namespace)
         end
       end
     end
+    -- <summary>
+    -- Zeigt allen menschlichen Mitspielern des Teams eine Chat-Nachricht an.
+    -- </summary>
+    -- <param name="message">Nachricht</param>
     DisplayChatMessage = function (this, message)
       for _, user in System.each(this.Users) do
         BlzDisplayChatMessage(user.Wc3Player, user.PlayerId, message)
       end
     end
+    -- <summary>
+    -- Virtuelle Methode für das Auswerten einer Technologie und der daraus resultierenden Spawn-Befehle.
+    -- Dieser Methode liefert keine verwertbaren Daten und muss pro Streitmacht überschrieben werden!
+    -- </summary>
+    -- <param name="techId">Technologie-Id</param>
+    -- <param name="techLevel">Technologie-Stufe</param>
+    -- <param name="spawnCommand">Spawn-Befehl, welcher sich aus dieser Konstellation ergibt.</param>
+    -- <returns></returns>
     GetTechType = function (this, techId, techLevel, spawnCommand)
       System.Console.WriteLine("GetTechType - not implemented yet for player " .. System.toString(GetPlayerName(this.Computer.Wc3Player)))
 
@@ -20820,7 +20814,7 @@ System.namespace("Source.Abstracts", function (namespace)
       __metadata__ = function (out)
         return {
           methods = {
-            { ".ctor", 0x106, nil, out.WCSharp.Api.player },
+            { ".ctor", 0x206, nil, out.WCSharp.Api.player, out.Source.Models.Area },
             { "ContainsPlayer", 0x286, ContainsPlayer, System.Int32, out.Source.Models.UserPlayer, System.Boolean },
             { "Defeat", 0x6, Defeat },
             { "DisplayChatMessage", 0x106, DisplayChatMessage, System.String },
@@ -20831,6 +20825,7 @@ System.namespace("Source.Abstracts", function (namespace)
           properties = {
             { "Computer", 0x6, out.Source.Models.ComputerPlayer },
             { "Defeated", 0x6, System.Boolean },
+            { "TeamBaseArea", 0x6, out.Source.Models.Area },
             { "Users", 0x6, System.List(out.Source.Models.UserPlayer) }
           },
           class = { "TeamBase", 0x16 }
@@ -20852,8 +20847,6 @@ System.namespace("Source.Events.Buildings", function (namespace)
     local OnDies
     OnDies = function ()
       local default = System.try(function ()
-        Source.Program.ShowDebugMessage("BuildingCreep.OnDies")
-
         local unit = GetTriggerUnit()
         local killingUnit = GetKillingUnit()
         local player = GetOwningPlayer(killingUnit)
@@ -20862,8 +20855,6 @@ System.namespace("Source.Events.Buildings", function (namespace)
         if not default then
           return true
         end
-
-        Source.Program.ShowDebugMessage(System.toString(GetPlayerName(player)) .. " has killed the creep building!")
 
         local unitType = GetUnitTypeId(unit)
         local creepCamp = nil
@@ -20880,8 +20871,7 @@ System.namespace("Source.Events.Buildings", function (namespace)
           return true
         end
 
-        Source.Program.ShowDebugMessage(System.toString(GetPlayerName(creepCamp.Wc3Player)) .. " has lost creep building!")
-        local rebuildTime = 30
+        local rebuildTime = 15
 
         -- Stoppe Trigger
         creepCamp.Building:Destroy()
@@ -20890,8 +20880,10 @@ System.namespace("Source.Events.Buildings", function (namespace)
         local timer = CreateTimer()
         -- Währenddessen Timer-Dialog anzeigen
         local timerdialog = CreateTimerDialog(timer)
-        TimerDialogSetTitle(timerdialog, System.toString(creepCamp.Name) .. " wurde besiegt...")
+        TimerDialogSetTitle(timerdialog, System.toString(creepCamp.Name) .. " wurden besiegt und schließen sich " .. System.toString(GetPlayerName(user.Team.Computer.Wc3Player)) .. " an!")
         TimerDialogDisplay(timerdialog, true)
+
+        local newOwningPlayer = user.Team.Computer
 
         TimerStart(timer, rebuildTime, false, function ()
           local default = System.try(function ()
@@ -20905,15 +20897,23 @@ System.namespace("Source.Events.Buildings", function (namespace)
             timerdialog = nil
 
             -- Prüfe vor Übernahme, ob der Computer-Spieler noch unbesiegt ist
-            if user.Team.Computer.Defeated then
+            if newOwningPlayer.Defeated then
               return true
             end
 
-            Source.Program.ShowDebugMessage(System.toString(GetPlayerName(user.Team.Computer.Wc3Player)) .. " takes the ownership!")
             creepCamp:SetOwnerAndRebuild(user.Team.Computer.Wc3Player)
 
-            Source.Program.ShowDebugMessage(System.toString(GetPlayerName(user.Team.Computer.Wc3Player)) .. " start spawning in 15 seconds!")
-            creepCamp.Building:AddSpawnTrigger(creepCamp.SpawnArea, 0 --[[UnitClass.Meelee]], 15, Areas.Center, System.Array(System.Int32) { 1848651856 --[[Constants.UNIT_BLAUDRACHE_SUPPORT]] }):Run(0)
+            local attackTargetArea
+
+            -- Ist der neue Eigentümer die nahe Streitmacht, ist das Ziel die Streitmacht am anderen Ende
+            -- der Lane - alternativ ist es die nahe Streitmacht.
+            if newOwningPlayer.PlayerId == creepCamp.NearestForce.PlayerId then
+              attackTargetArea = creepCamp.OpposingForce.Team.TeamBaseArea
+            else
+              attackTargetArea = user.Team.TeamBaseArea
+            end
+
+            creepCamp.Building:AddSpawnTrigger(creepCamp.SpawnArea, 0 --[[UnitClass.Meelee]], 15, attackTargetArea, System.Array(System.Int32) { 1848651864 --[[Constants.UNIT_NAHKAMPFEINHEIT_CREEP]], 1848652083 --[[Constants.UNIT_FERNKAMPFEINHEIT_CREEP]] }):Run(0)
           end, function (default)
             local ex = default
             Source.Program.ShowExceptionMessage("BuildingCreep.OnDies", ex)
@@ -22659,7 +22659,7 @@ System.namespace("Source.Models", function (namespace)
           },
           properties = {
             { "Buildings", 0x1, System.List(out.Source.Models.SpawnUnitsBuilding) },
-            { "Team", 0x1, out.Source.Abstracts.TeamBase }
+            { "Team", 0x6, out.Source.Abstracts.TeamBase }
           },
           class = { "ComputerPlayer", 0x26 }
         }
@@ -22681,12 +22681,14 @@ end)
 System.namespace("Source.Models", function (namespace)
   namespace.class("CreepCamp", function (namespace)
     local InitializeHero, InitializeBuilding, ReviveHero, SpawnUnitInAreaAtRandomPoint, SetOwnerAndRebuild, __ctor__
-    __ctor__ = function (this, campName, campBuilding, campCenter, campSpawnArea)
+    __ctor__ = function (this, campName, campBuilding, campCenter, campSpawnArea, nearestForce, opposingForce)
       System.base(this).__ctor__(this, Player(PLAYER_NEUTRAL_AGGRESSIVE))
       this.Name = campName
       this.Center = campCenter
       this.SpawnArea = campSpawnArea
       this.BuildingArea = campBuilding
+      this.NearestForce = nearestForce
+      this.OpposingForce = opposingForce
     end
     InitializeHero = function (this, unitTypeId, face)
       this:CreateOrReviveHero(unitTypeId, this.Center, GetHeroLevel(this.Hero), face)
@@ -22703,8 +22705,6 @@ System.namespace("Source.Models", function (namespace)
     end
     SpawnUnitInAreaAtRandomPoint = function (this, unitTypeId)
       local point = this.SpawnArea.Wc3Rectangle:GetRandomPoint()
-
-      CreateUnit(this.Wc3Player, unitTypeId, point.X, point.Y, 270)
 
       return SourceModels.SpawnedCreep(this, unitTypeId, this.SpawnArea, 0)
     end
@@ -22730,7 +22730,7 @@ System.namespace("Source.Models", function (namespace)
       __metadata__ = function (out)
         return {
           methods = {
-            { ".ctor", 0x406, nil, System.String, out.Source.Models.Area, out.Source.Models.Area, out.Source.Models.Area },
+            { ".ctor", 0x606, nil, System.String, out.Source.Models.Area, out.Source.Models.Area, out.Source.Models.Area, out.Source.Models.ComputerPlayer, out.Source.Models.ComputerPlayer },
             { "InitializeBuilding", 0x286, InitializeBuilding, System.Int32, System.Single, out.Source.Models.SpawnCreepsBuilding },
             { "InitializeHero", 0x206, InitializeHero, System.Int32, System.Single },
             { "ReviveHero", 0x6, ReviveHero },
@@ -22742,6 +22742,8 @@ System.namespace("Source.Models", function (namespace)
             { "BuildingArea", 0x6, out.Source.Models.Area },
             { "Center", 0x6, out.Source.Models.Area },
             { "Name", 0x6, System.String },
+            { "NearestForce", 0x6, out.Source.Models.ComputerPlayer },
+            { "OpposingForce", 0x6, out.Source.Models.ComputerPlayer },
             { "SpawnArea", 0x6, out.Source.Models.Area }
           },
           class = { "CreepCamp", 0x26 }
@@ -23545,8 +23547,8 @@ end)
 System.namespace("Source.Models.Teams", function (namespace)
   namespace.class("ElfTeam", function (namespace)
     local GetTechType, __ctor__
-    __ctor__ = function (this, wc3ComputerPlayer)
-      System.base(this).__ctor__(this, wc3ComputerPlayer)
+    __ctor__ = function (this, wc3ComputerPlayer, teamBaseArea)
+      System.base(this).__ctor__(this, wc3ComputerPlayer, teamBaseArea)
     end
     GetTechType = function (this, techId, techLevel, spawnCommand)
       repeat
@@ -23657,7 +23659,7 @@ System.namespace("Source.Models.Teams", function (namespace)
       __metadata__ = function (out)
         return {
           methods = {
-            { ".ctor", 0x106, nil, out.WCSharp.Api.player },
+            { ".ctor", 0x206, nil, out.WCSharp.Api.player, out.Source.Models.Area },
             { "GetTechType", 0x386, GetTechType, System.Int32, System.Int32, out.Source.Models.SpawnUnitCommand, System.Int32 }
           },
           class = { "ElfTeam", 0x26 }
@@ -23677,8 +23679,8 @@ end)
 System.namespace("Source.Models.Teams", function (namespace)
   namespace.class("HumanTeam", function (namespace)
     local GetTechType, __ctor__
-    __ctor__ = function (this, wc3ComputerPlayer)
-      System.base(this).__ctor__(this, wc3ComputerPlayer)
+    __ctor__ = function (this, wc3ComputerPlayer, teamBaseArea)
+      System.base(this).__ctor__(this, wc3ComputerPlayer, teamBaseArea)
     end
     GetTechType = function (this, techId, techLevel, spawnCommand)
       repeat
@@ -23790,7 +23792,7 @@ System.namespace("Source.Models.Teams", function (namespace)
       __metadata__ = function (out)
         return {
           methods = {
-            { ".ctor", 0x106, nil, out.WCSharp.Api.player },
+            { ".ctor", 0x206, nil, out.WCSharp.Api.player, out.Source.Models.Area },
             { "GetTechType", 0x386, GetTechType, System.Int32, System.Int32, out.Source.Models.SpawnUnitCommand, System.Int32 }
           },
           class = { "HumanTeam", 0x26 }
@@ -23810,8 +23812,8 @@ end)
 System.namespace("Source.Models.Teams", function (namespace)
   namespace.class("OrcTeam", function (namespace)
     local GetTechType, __ctor__
-    __ctor__ = function (this, wc3ComputerPlayer)
-      System.base(this).__ctor__(this, wc3ComputerPlayer)
+    __ctor__ = function (this, wc3ComputerPlayer, teamBaseArea)
+      System.base(this).__ctor__(this, wc3ComputerPlayer, teamBaseArea)
     end
     GetTechType = function (this, techId, techLevel, spawnCommand)
       repeat
@@ -23922,7 +23924,7 @@ System.namespace("Source.Models.Teams", function (namespace)
       __metadata__ = function (out)
         return {
           methods = {
-            { ".ctor", 0x106, nil, out.WCSharp.Api.player },
+            { ".ctor", 0x206, nil, out.WCSharp.Api.player, out.Source.Models.Area },
             { "GetTechType", 0x386, GetTechType, System.Int32, System.Int32, out.Source.Models.SpawnUnitCommand, System.Int32 }
           },
           class = { "OrcTeam", 0x26 }
@@ -23942,8 +23944,8 @@ end)
 System.namespace("Source.Models.Teams", function (namespace)
   namespace.class("UndeadTeam", function (namespace)
     local GetTechType, __ctor__
-    __ctor__ = function (this, wc3ComputerPlayer)
-      System.base(this).__ctor__(this, wc3ComputerPlayer)
+    __ctor__ = function (this, wc3ComputerPlayer, teamBaseArea)
+      System.base(this).__ctor__(this, wc3ComputerPlayer, teamBaseArea)
     end
     GetTechType = function (this, techId, techLevel, spawnCommand)
       repeat
@@ -24054,7 +24056,7 @@ System.namespace("Source.Models.Teams", function (namespace)
       __metadata__ = function (out)
         return {
           methods = {
-            { ".ctor", 0x106, nil, out.WCSharp.Api.player },
+            { ".ctor", 0x206, nil, out.WCSharp.Api.player, out.Source.Models.Area },
             { "GetTechType", 0x386, GetTechType, System.Int32, System.Int32, out.Source.Models.SpawnUnitCommand, System.Int32 }
           },
           class = { "UndeadTeam", 0x26 }
@@ -35447,8 +35449,8 @@ local InitCSharp = function ()
       "WCSharp.Missiles.HomingMissile",
       "WCSharp.Missiles.MomentumMissile",
       "WCSharp.Missiles.OrbitalMissile",
-      "WCSharp.SaveLoad.SaveLoadedMessage_1",
       "WCSharp.SaveLoad.Save_1",
+      "WCSharp.SaveLoad.SaveLoadedMessage_1",
       "WCSharp.W3MMD.IW3MmdVar",
       "Areas",
       "Constants",
@@ -35913,6 +35915,10 @@ gg_unit_nten_0224 = nil
 gg_unit_nten_0225 = nil
 gg_unit_ntn2_0229 = nil
 gg_unit_ntn2_0228 = nil
+gg_unit_nech_0230 = nil
+gg_unit_necr_0234 = nil
+gg_unit_npig_0226 = nil
+gg_unit_nshe_0227 = nil
 gg_dest_HEch_0019 = nil
 gg_dest_HEch_0017 = nil
 gg_dest_HEch_0016 = nil
@@ -57250,7 +57256,7 @@ function CreateBuildingsForPlayer0()
     gg_unit_h004_0036 = CreateUnit(p, 1747988532, -2816.0, 13312.0, 270.000)
     gg_unit_h005_0038 = CreateUnit(p, 1747988533, -9856.0, 11264.0, 270.000)
     gg_unit_h005_0039 = CreateUnit(p, 1747988533, -10624.0, 11264.0, 270.000)
-    gg_unit_h005_0040 = CreateUnit(p, 1747988533, -10240.0, 9920.0, 270.000)
+    gg_unit_h005_0040 = CreateUnit(p, 1747988533, -10240.0, 9984.0, 270.000)
     gg_unit_n005_0044 = CreateUnit(p, 1848651829, -12032.0, 15104.0, 270.000)
     gg_unit_h009_0053 = CreateUnit(p, 1747988537, -11264.0, 14848.0, 270.000)
     gg_unit_h005_0054 = CreateUnit(p, 1747988533, -10624.0, 12288.0, 270.000)
@@ -57258,8 +57264,8 @@ function CreateBuildingsForPlayer0()
     gg_unit_h005_0138 = CreateUnit(p, 1747988533, -8960.0, 11520.0, 270.000)
     gg_unit_h005_0139 = CreateUnit(p, 1747988533, -8448.0, 12032.0, 270.000)
     gg_unit_h005_0143 = CreateUnit(p, 1747988533, -7680.0, 10752.0, 270.000)
-    gg_unit_h004_0144 = CreateUnit(p, 1747988532, -9856.0, 7168.0, 270.000)
-    gg_unit_h004_0145 = CreateUnit(p, 1747988532, -10624.0, 7168.0, 270.000)
+    gg_unit_h004_0144 = CreateUnit(p, 1747988532, -9920.0, 7168.0, 270.000)
+    gg_unit_h004_0145 = CreateUnit(p, 1747988532, -10560.0, 7168.0, 270.000)
     gg_unit_h004_0146 = CreateUnit(p, 1747988532, -10240.0, 5888.0, 270.000)
     gg_unit_h004_0176 = CreateUnit(p, 1747988532, -5376.0, 7936.0, 270.000)
     gg_unit_h004_0177 = CreateUnit(p, 1747988532, -4864.0, 8448.0, 270.000)
@@ -57583,6 +57589,10 @@ function CreateNeutralPassive()
     gg_unit_h02B_0120 = CreateUnit(p, 1747989058, 15051.8, 18751.7, 270.000)
     gg_unit_H02P_0121 = CreateUnit(p, 1211118160, 16060.4, 18751.7, 270.000)
     gg_unit_H02Q_0122 = CreateUnit(p, 1211118161, 16058.8, 18500.4, 270.000)
+    gg_unit_npig_0226 = CreateUnit(p, 1852860775, -9861.3, 12591.0, 290.707)
+    gg_unit_nshe_0227 = CreateUnit(p, 1853057125, -9950.5, 12557.9, 337.994)
+    gg_unit_nech_0230 = CreateUnit(p, 1852138344, -9501.4, 12963.4, 190.124)
+    gg_unit_necr_0234 = CreateUnit(p, 1852138354, -9538.0, 12905.5, 179.984)
 end
 
 function CreatePlayerBuildings()
@@ -58094,7 +58104,6 @@ function main()
     SetCameraBounds(-19712.0 + GetCameraMargin(CAMERA_MARGIN_LEFT), -19968.0 + GetCameraMargin(CAMERA_MARGIN_BOTTOM), 19712.0 - GetCameraMargin(CAMERA_MARGIN_RIGHT), 19456.0 - GetCameraMargin(CAMERA_MARGIN_TOP), -19712.0 + GetCameraMargin(CAMERA_MARGIN_LEFT), 19456.0 - GetCameraMargin(CAMERA_MARGIN_TOP), 19712.0 - GetCameraMargin(CAMERA_MARGIN_RIGHT), -19968.0 + GetCameraMargin(CAMERA_MARGIN_BOTTOM))
     SetDayNightModels("Environment\\DNC\\DNCLordaeron\\DNCLordaeronTerrain\\DNCLordaeronTerrain.mdl", "Environment\\DNC\\DNCLordaeron\\DNCLordaeronUnit\\DNCLordaeronUnit.mdl")
     SetTerrainFogEx(0, 3000.0, 5000.0, 0.500, 1.000, 0.000, 0.000)
-    SetWaterBaseColor(255, 0, 0, 255)
     NewSoundEnvironment("Default")
     SetAmbientDaySound("LordaeronSummerDay")
     SetAmbientNightSound("LordaeronSummerNight")

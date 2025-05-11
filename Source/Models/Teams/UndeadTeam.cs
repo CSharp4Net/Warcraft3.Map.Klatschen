@@ -5,8 +5,8 @@ namespace Source.Models.Teams
 {
   public sealed class UndeadTeam : TeamBase
   {
-    public UndeadTeam(player wc3ComputerPlayer)
-      : base(wc3ComputerPlayer)
+    public UndeadTeam(player wc3ComputerPlayer, Area teamBaseArea)
+      : base(wc3ComputerPlayer, teamBaseArea)
     {
 
     }

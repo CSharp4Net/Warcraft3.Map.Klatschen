@@ -5,8 +5,8 @@ namespace Source.Models.Teams
 {
   public sealed class ElfTeam : TeamBase
   {
-    public ElfTeam(player wc3ComputerPlayer)
-      : base(wc3ComputerPlayer)
+    public ElfTeam(player wc3ComputerPlayer, Area teamBaseArea)
+      : base(wc3ComputerPlayer, teamBaseArea)
     {
 
     }

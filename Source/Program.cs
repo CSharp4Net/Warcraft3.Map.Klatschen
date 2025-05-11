@@ -108,18 +108,19 @@ namespace Source
         Blizzard.SetTimeOfDay(0f);
 
         // Teams initialisieren
-        Humans = new HumanTeam(Common.Player(0));
-        Orcs = new OrcTeam(Common.Player(4));
-        Elves = new ElfTeam(Common.Player(8));
-        Undeads = new UndeadTeam(Common.Player(12));
+        Humans = new HumanTeam(Common.Player(0), Areas.HumanBase);
+        Orcs = new OrcTeam(Common.Player(4), Areas.OrcBase);
+        Elves = new ElfTeam(Common.Player(8), Areas.ElfBase);
+        Undeads = new UndeadTeam(Common.Player(12), Areas.UndeadBase);
 
         Legion = new KlatschenFragtion();
 
-        // Regions-Ereignisse registrieren für automatische Einheitenbewegungen
-        RegisterRegionTriggersInHumanArea();
-        RegisterRegionTriggerInOrcArea();
-        RegisterRegionTriggerInElfArea();
-        RegisterRegionTriggerInUndeadArea();
+        // Regions-Ereignisse registrieren für automatische Einheitenbewegungen:
+        // Wenn feindliche Einheiten in die Regionen treten, welche von zerstörten Gebäuden freigegeben werden.
+        Areas.HumanBase.RegisterOnEnter(HumanBase.OnEnter);
+        Areas.OrcBase.RegisterOnEnter(OrcBase.OnEnter);
+        Areas.ElfBase.RegisterOnEnter(ElfBase.OnEnter);
+        Areas.UndeadBase.RegisterOnEnter(UndeadBase.OnEnter);
 
         // Allgemeine Events registrieren
         PlayerUnitEvents.Register(UnitTypeEvent.BuysUnit, UserHero.OnBuyed);
@@ -155,7 +156,9 @@ namespace Source
         Common.FogMaskEnable(false);
 #endif
 
-        CreepCamp bandits = new CreepCamp("Räudige Banditen", Areas.HumanCreepToElfSpawnBuilding, Areas.HumanCreepToElf, Areas.HumanCreepToElfSpawn);
+        CreepCamp bandits = new CreepCamp("Räudige Banditen", 
+          Areas.HumanCreepToElfSpawnBuilding, Areas.HumanCreepToElf, Areas.HumanCreepToElfSpawn,
+          Humans.Computer, Elves.Computer);
 
         SpawnCreepsBuilding building = bandits.InitializeBuilding(Constants.UNIT_BANDITENZELT_CREEP);
 
@@ -185,30 +188,6 @@ namespace Source
       {
         ShowExceptionMessage("Start", ex);
       }
-    }
-
-    private static void RegisterRegionTriggersInHumanArea()
-    {
-      // Wenn feindliche Einheiten in die Regionen treten, welche von zerstörten Gebäuden freigegeben werden
-      Areas.HumanBase.RegisterOnEnter(HumanBase.OnEnter);
-    }
-
-    private static void RegisterRegionTriggerInOrcArea()
-    {
-      // Wenn feindliche Einheiten in die Regionen treten, welche von zerstörten Gebäuden freigegeben werden
-      Areas.OrcBase.RegisterOnEnter(OrcBase.OnEnter);
-    }
-
-    private static void RegisterRegionTriggerInElfArea()
-    {
-      // Wenn feindliche Einheiten in die Regionen treten, welche von zerstörten Gebäuden freigegeben werden
-      Areas.ElfBase.RegisterOnEnter(ElfBase.OnEnter);
-    }
-
-    private static void RegisterRegionTriggerInUndeadArea()
-    {
-      // Wenn feindliche Einheiten in die Regionen treten, welche von zerstörten Gebäuden freigegeben werden
-      Areas.UndeadBase.RegisterOnEnter(UndeadBase.OnEnter);
     }
 
     private static void ConstructHumanBuildingAndTrigger()

@@ -10,16 +10,12 @@ namespace Source.Events.Buildings
     {
       try
       {
-        Program.ShowDebugMessage("BuildingCreep.OnDies");
-
         unit unit = Common.GetTriggerUnit();
         unit killingUnit = Common.GetKillingUnit();
         player player = killingUnit.Owner;
 
         if (!Program.TryGetActiveUser(player.Id, out UserPlayer user))
           return;
-
-        Program.ShowDebugMessage(player.Name + " has killed the creep building!");
 
         int unitType = unit.UnitType;
         CreepCamp creepCamp = null;
@@ -37,8 +33,7 @@ namespace Source.Events.Buildings
         if (creepCamp == null)
           return;
 
-        Program.ShowDebugMessage(creepCamp.Wc3Player.Name + " has lost creep building!");
-        int rebuildTime = 30;
+        int rebuildTime = 15;
 
         // Stoppe Trigger
         creepCamp.Building.Destroy();
@@ -47,8 +42,10 @@ namespace Source.Events.Buildings
         timer timer = Common.CreateTimer();
         // Währenddessen Timer-Dialog anzeigen
         timerdialog timerdialog = timer.CreateDialog();
-        timerdialog.SetTitle($"{creepCamp.Name} wurde besiegt...");
+        timerdialog.SetTitle($"{creepCamp.Name} wurden besiegt und schließen sich {user.Team.Computer.Wc3Player.Name} an!");
         timerdialog.IsDisplayed = true;
+
+        ComputerPlayer newOwningPlayer = user.Team.Computer;
 
         Common.TimerStart(timer, rebuildTime, false, () =>
         {
@@ -64,16 +61,22 @@ namespace Source.Events.Buildings
             timerdialog = null;
 
             // Prüfe vor Übernahme, ob der Computer-Spieler noch unbesiegt ist
-            if (user.Team.Computer.Defeated)
+            if (newOwningPlayer.Defeated)
               return;
 
-            Program.ShowDebugMessage(user.Team.Computer.Wc3Player.Name + " takes the ownership!");
             creepCamp.SetOwnerAndRebuild(user.Team.Computer.Wc3Player);
 
-            Program.ShowDebugMessage(user.Team.Computer.Wc3Player.Name + " start spawning in 15 seconds!");
-            creepCamp.Building.AddSpawnTrigger(creepCamp.SpawnArea, Enums.UnitClass.Meelee, 15f, Areas.Center,
-               Constants.UNIT_BLAUDRACHE_SUPPORT)
-              .Run();
+            Area attackTargetArea;
+
+            // Ist der neue Eigentümer die nahe Streitmacht, ist das Ziel die Streitmacht am anderen Ende
+            // der Lane - alternativ ist es die nahe Streitmacht.
+            if (newOwningPlayer.PlayerId == creepCamp.NearestForce.PlayerId)
+              attackTargetArea = creepCamp.OpposingForce.Team.TeamBaseArea;
+            else
+              attackTargetArea = user.Team.TeamBaseArea;
+
+            creepCamp.Building.AddSpawnTrigger(creepCamp.SpawnArea, Enums.UnitClass.Meelee, 15f, attackTargetArea, 
+              Constants.UNIT_NAHKAMPFEINHEIT_CREEP, Constants.UNIT_FERNKAMPFEINHEIT_CREEP).Run();
           }
           catch (Exception ex)
           {

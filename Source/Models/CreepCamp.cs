@@ -8,20 +8,25 @@ namespace Source.Models
 {
   public sealed class CreepCamp : NeutralForce
   {
-    public CreepCamp(string campName, Area campBuilding, Area campCenter, Area campSpawnArea)
+    public CreepCamp(string campName, Area campBuilding, Area campCenter, Area campSpawnArea, ComputerPlayer nearestForce, ComputerPlayer opposingForce)
       : base(player.NeutralAggressive)
     {
       Name = campName;
       Center = campCenter;
       SpawnArea = campSpawnArea;
       BuildingArea = campBuilding;
+      NearestForce = nearestForce;
+      OpposingForce = opposingForce;
     }
 
-    public string Name { get; private set; }
+    public string Name { get; init; }
 
-    public Area Center { get; private set; }
-    public Area SpawnArea { get; private set; }
-    public Area BuildingArea { get; private set; }
+    public Area Center { get; init; }
+    public Area SpawnArea { get; init; }
+    public Area BuildingArea { get; init; }
+
+    public ComputerPlayer NearestForce { get; init; }
+    public ComputerPlayer OpposingForce { get; init; }
 
     public SpawnCreepsBuilding Building { get; private set; }
 

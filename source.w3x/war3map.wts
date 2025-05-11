@@ -12245,3 +12245,21 @@ STRING 3610
 Banditenzelt
 }
 
+STRING 3611
+// Units: n013 (Auftragsmörder), EditorSuffix (Name - Editor Suffix)
+{
+(Creep)
+}
+
+STRING 3612
+// Units: n00X (Bandit), Description (Description)
+{
+Nahkampfeinheit
+}
+
+STRING 3613
+// Units: n013 (Auftragsmörder), Description (Description)
+{
+Fernkampfeinheit
+}
+

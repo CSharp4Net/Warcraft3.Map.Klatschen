@@ -7,10 +7,12 @@ namespace Source.Abstracts
 {
   public abstract class TeamBase
   {
-    public TeamBase(player wc3ComputerPlayer)
+    public TeamBase(player wc3ComputerPlayer, Area teamBaseArea)
     {
       Computer = new ComputerPlayer(wc3ComputerPlayer, this);
       Computer.Wc3Player.SetState(playerstate.GivesBounty, 1);
+
+      TeamBaseArea = teamBaseArea;
 
       Users = new List<UserPlayer>();
 
@@ -34,12 +36,17 @@ namespace Source.Abstracts
     }
 
     /// <summary>
-    /// Computer-Spieler dieser Streitmacht
+    /// Computer-Spieler dieser Streitmacht.
     /// </summary>
     public ComputerPlayer Computer { get; init; }
 
     /// <summary>
-    /// Menschliche Mitspieler in dieser Streitmacht
+    /// Gebiet, auf dem das Hauptgebäude dieser Streitmacht steht.
+    /// </summary>
+    public Area TeamBaseArea { get; init; }
+
+    /// <summary>
+    /// Auflistung menschlicher Mitspieler in dieser Streitmacht.
     /// </summary>
     public List<UserPlayer> Users { get; init; }
 
@@ -119,6 +126,10 @@ namespace Source.Abstracts
       }
     }
 
+    /// <summary>
+    /// Zeigt allen menschlichen Mitspielern des Teams eine Chat-Nachricht an.
+    /// </summary>
+    /// <param name="message">Nachricht</param>
     public void DisplayChatMessage(string message)
     {
       foreach (UserPlayer user in Users)
@@ -127,6 +138,14 @@ namespace Source.Abstracts
       }
     }
 
+    /// <summary>
+    /// Virtuelle Methode für das Auswerten einer Technologie und der daraus resultierenden Spawn-Befehle.
+    /// Dieser Methode liefert keine verwertbaren Daten und muss pro Streitmacht überschrieben werden!
+    /// </summary>
+    /// <param name="techId">Technologie-Id</param>
+    /// <param name="techLevel">Technologie-Stufe</param>
+    /// <param name="spawnCommand">Spawn-Befehl, welcher sich aus dieser Konstellation ergibt.</param>
+    /// <returns></returns>
     public virtual Enums.ResearchType GetTechType(int techId, int techLevel, out SpawnUnitCommand spawnCommand)
     {
       Console.WriteLine("GetTechType - not implemented yet for player " + Computer.Wc3Player.Name);

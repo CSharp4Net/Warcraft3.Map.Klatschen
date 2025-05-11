@@ -15,7 +15,7 @@ namespace Source.Models
     /// <summary>
     /// Das Team, zu dem der Computer-Spieler gehört.
     /// </summary>
-    private TeamBase Team { get; init; }
+    public TeamBase Team { get; init; }
 
     private List<SpawnUnitsBuilding> Buildings { get; init; } = new List<SpawnUnitsBuilding>();
 
