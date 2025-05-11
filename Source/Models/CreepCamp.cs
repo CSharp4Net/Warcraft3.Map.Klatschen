@@ -20,17 +20,14 @@ namespace Source.Models
     }
 
     public string Name { get; init; }
-
     public Area Center { get; init; }
     public Area SpawnArea { get; init; }
     public Area BuildingArea { get; init; }
-    public Area AttackTargetArea { get; init; }
-
     public ComputerPlayer NearestForce { get; init; }
     public ComputerPlayer OpposingForce { get; init; }
 
+    public Area AttackTargetArea { get; private set; }
     public SpawnCreepsBuilding Building { get; private set; }
-
     public TeamBase OwnerTeam { get; private set; }
 
     public void InitializeHero(int unitTypeId, float face = 0f)
