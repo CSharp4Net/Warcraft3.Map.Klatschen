@@ -24,11 +24,14 @@ namespace Source.Models
     public Area Center { get; init; }
     public Area SpawnArea { get; init; }
     public Area BuildingArea { get; init; }
+    public Area AttackTargetArea { get; init; }
 
     public ComputerPlayer NearestForce { get; init; }
     public ComputerPlayer OpposingForce { get; init; }
 
     public SpawnCreepsBuilding Building { get; private set; }
+
+    public TeamBase OwnerTeam { get; private set; }
 
     public void InitializeHero(int unitTypeId, float face = 0f)
     {
@@ -56,9 +59,12 @@ namespace Source.Models
       return new SpawnedCreep(this, unitTypeId, SpawnArea);
     }
 
-    public void SetOwnerAndRebuild(player wc3Player)
+    public void SetOwnerAndRebuild(TeamBase team, Area attackTargetForSpawn)
     {
-      Wc3Player = wc3Player;
+      OwnerTeam = team;
+      AttackTargetArea = attackTargetForSpawn;
+
+      Wc3Player = OwnerTeam.Computer.Wc3Player;
 
       // Ort anhand Zentrum einer Region erstellen
       Building = new SpawnCreepsBuilding(this, Building.Wc3Unit.UnitType, BuildingArea, 0f);

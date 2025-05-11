@@ -65,8 +65,6 @@ namespace Source.Events.Buildings
             if (newOwningPlayer.Defeated)
               return;
 
-            creepCamp.SetOwnerAndRebuild(user.Team.Computer.Wc3Player);
-
             Area attackTargetArea;
 
             // Ist der neue Eigentümer die nahe Streitmacht, ist das Ziel die Streitmacht am anderen Ende
@@ -76,8 +74,10 @@ namespace Source.Events.Buildings
             else
               attackTargetArea = user.Team.TeamBaseArea;
 
-            creepCamp.Building.AddSpawnTrigger(creepCamp.SpawnArea, Enums.UnitClass.Meelee, 15f, attackTargetArea, 
-              Constants.UNIT_NAHKAMPFEINHEIT_CREEP, Constants.UNIT_FERNKAMPFEINHEIT_CREEP).Run();
+            creepCamp.SetOwnerAndRebuild(user.Team, attackTargetArea);
+
+            //creepCamp.Building.AddSpawnTrigger(creepCamp.SpawnArea, Enums.UnitClass.Meelee, 15f, attackTargetArea, 
+            //  Constants.UNIT_NAHKAMPFEINHEIT_CREEP, Constants.UNIT_FERNKAMPFEINHEIT_CREEP).Run();
           }
           catch (Exception ex)
           {
