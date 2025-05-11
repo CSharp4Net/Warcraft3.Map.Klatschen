@@ -33,7 +33,7 @@ namespace Source.Events.Buildings
         if (creepCamp == null)
           return;
 
-        int rebuildTime = 15;
+        int rebuildTime = 10;
 
         // Stoppe Trigger
         creepCamp.Building.Destroy();
@@ -42,11 +42,12 @@ namespace Source.Events.Buildings
         timer timer = Common.CreateTimer();
         // Währenddessen Timer-Dialog anzeigen
         timerdialog timerdialog = timer.CreateDialog();
-        timerdialog.SetTitle($"{creepCamp.Name} wurden besiegt und schließen sich {user.Team.Computer.Wc3Player.Name} an!");
+        timerdialog.SetTitle($"{creepCamp.Name}...");
         timerdialog.IsDisplayed = true;
 
         ComputerPlayer newOwningPlayer = user.Team.Computer;
 
+        Console.WriteLine($"{creepCamp.Name} wurden besiegt und schließen sich {user.Team.Computer.Wc3Player.Name} an!");
         Common.TimerStart(timer, rebuildTime, false, () =>
         {
           try

@@ -23,7 +23,7 @@ namespace Source.Events.GenericEvents
         {
           // Wenn Helden sterben, werden diese abhängig vom SlotStatus gesondert behandelt
           if (unit.Owner.Controller == mapcontrol.User)
-            Heros.UserHero.OnDies(unit);
+            UserHero.OnDies(unit);
           else
             ComputerHero.OnDies(unit);
 
