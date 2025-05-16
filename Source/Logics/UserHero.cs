@@ -74,7 +74,7 @@ namespace Source.Logics
       if (itemId == Constants.ITEM_GLYPHE_DER_OPFERUNG)
       {
         int playerId = buyingUnit.Owner.Id;
-        if (Program.TryGetActiveUser(playerId, out UserPlayer user))
+        if (Program.TryGetUserById(playerId, out UserPlayer user))
         {
           // Merke Heldenstufe
           user.HeroLevelCounter = buyingUnit.HeroLevel;
@@ -230,14 +230,14 @@ namespace Source.Logics
 
       int playerId = buyingUnit.Owner.Id;
 
-      if (!Program.TryGetActiveUser(playerId, out UserPlayer user))
+      if (!Program.TryGetUserById(playerId, out UserPlayer user))
       {
 
         Console.WriteLine($"HandleCreepSpawnBuyed, invalid player id {playerId}!");
         return;
       }
 
-      if (!Program.TryGetCreepCamp(sellingUnit, out CreepCamp creepCamp))
+      if (!Program.TryGetCreepCampByUnit(sellingUnit, out CreepCamp creepCamp))
       {
 
         Console.WriteLine($"HandleCreepSpawnBuyed, invalid selling creep unit {sellingUnit.Name}!");

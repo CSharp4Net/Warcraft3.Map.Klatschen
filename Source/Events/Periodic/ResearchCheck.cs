@@ -94,16 +94,16 @@ namespace Source.Events.Periodic
       if (researchType == ResearchType.AddUnit)
       {
         team.Computer.AddSpawnUnit(spawnCommand);
-        team.DisplayChatMessage($"Wir haben unserer Streitmacht aufgestockt!");
+        team.DisplayChatMessage($"Mit dem gesammelten Gold wurden der Streitmacht weitere Einheiten hinzugefügt.");
       }
       else if (researchType == ResearchType.UpgradeUnit)
       {
         team.Computer.UpgradeSpawnUnit(spawnCommand);
-        team.DisplayChatMessage($"Wir haben Teile seiner Streitmacht verbessert!");
+        team.DisplayChatMessage($"Mit dem gesammelten Gold wurde Einheiten der Streitmacht aufgewertet.");
       }
       else
       {
-        team.DisplayChatMessage($"Wir haben eine Forschung abgeschlossen!");
+        team.DisplayChatMessage($"Mit dem gesammelten Gold wurde eine Forschung abgeschlossen.");
       }
 
       return true;

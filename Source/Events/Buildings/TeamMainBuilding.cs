@@ -14,7 +14,7 @@ namespace Source.Events.Buildings
 
         int playerId = unit.Owner.Id;
 
-        if (Program.TryUnitTeam(unit, out TeamBase team))
+        if (Program.TryGetUnitByUnit(unit, out TeamBase team))
         {
           team.Defeat();
         }

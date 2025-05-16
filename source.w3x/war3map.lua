@@ -66,7 +66,6 @@ gg_rct_OrcToHumanOuterLine = nil
 gg_rct_OrcToUndeadInnerLine = nil
 gg_rct_OrcToUndeadOuterLine = nil
 gg_rct_TestArea = nil
-gg_rct_TestArea2 = nil
 gg_rct_UndeadBarracksToCenter = nil
 gg_rct_UndeadBarracksToCenterSpawn = nil
 gg_rct_UndeadBarracksToElf = nil
@@ -91,6 +90,9 @@ gg_snd_HPitLordPissed3 = nil
 gg_snd_HPitLordPissed4 = nil
 gg_snd_HPitLordPissed5 = nil
 gg_trg_Melee_Initialization = nil
+gg_rct_ElfCreepToHumanSpawn = nil
+gg_rct_ElfCreepToHumanSpawnBuilding = nil
+gg_rct_TestArea2 = nil
 function InitGlobals()
 end
 
@@ -124,10 +126,11 @@ BlzCreateItemWithSkin(FourCC("I002"), 19263.0, 17206.7, FourCC("I002"))
 BlzCreateItemWithSkin(FourCC("I002"), 19247.2, 17073.1, FourCC("I002"))
 BlzCreateItemWithSkin(FourCC("I002"), 19237.3, 16964.6, FourCC("I002"))
 BlzCreateItemWithSkin(FourCC("I002"), 19265.0, 17350.0, FourCC("I002"))
-BlzCreateItemWithSkin(FourCC("I00H"), 19257.1, 17593.9, FourCC("I00H"))
+BlzCreateItemWithSkin(FourCC("I00E"), -8296.4, -1767.8, FourCC("I00E"))
 BlzCreateItemWithSkin(FourCC("I00H"), 19257.1, 17714.0, FourCC("I00H"))
 BlzCreateItemWithSkin(FourCC("I00H"), 19272.9, 17839.9, FourCC("I00H"))
 BlzCreateItemWithSkin(FourCC("I00H"), 19263.0, 17464.2, FourCC("I00H"))
+BlzCreateItemWithSkin(FourCC("I00H"), 19257.1, 17593.9, FourCC("I00H"))
 end
 
 function CreateBuildingsForPlayer0()
@@ -593,6 +596,8 @@ gg_rct_ElfBaseHeroSpawn = Rect(-11904.0, -8960.0, -11776.0, -8832.0)
 gg_rct_ElfBaseToCenterSpawn = Rect(-9984.0, -6912.0, -9728.0, -6656.0)
 gg_rct_ElfBaseToHumanSpawn = Rect(-10368.0, -6912.0, -10112.0, -6656.0)
 gg_rct_ElfBaseToUndeadSpawn = Rect(-9984.0, -7296.0, -9728.0, -7040.0)
+gg_rct_ElfCreepToHumanSpawn = Rect(-8192.0, -1536.0, -7424.0, -768.0)
+gg_rct_ElfCreepToHumanSpawnBuilding = Rect(-7808.0, -768.0, -7552.0, -512.0)
 gg_rct_ElfToHumanInnerLine = Rect(-10304.0, -5184.0, -10176.0, -5056.0)
 gg_rct_ElfToHumanOuterLine = Rect(-10304.0, -1088.0, -10176.0, -960.0)
 gg_rct_ElfToOrcInnerLine = Rect(-8768.0, -5696.0, -8640.0, -5568.0)
@@ -639,7 +644,7 @@ gg_rct_OrcToHumanOuterLine = Rect(4032.0, 13248.0, 4160.0, 13376.0)
 gg_rct_OrcToUndeadInnerLine = Rect(10176.0, 11200.0, 10304.0, 11328.0)
 gg_rct_OrcToUndeadOuterLine = Rect(10176.0, 7104.0, 10304.0, 7232.0)
 gg_rct_TestArea = Rect(17280.0, 17280.0, 17408.0, 17408.0)
-gg_rct_TestArea2 = Rect(-9472.0, 8000.0, -9344.0, 8128.0)
+gg_rct_TestArea2 = Rect(-9280.0, -1984.0, -9152.0, -1856.0)
 gg_rct_UndeadBarracksToCenter = Rect(6080.0, -3136.0, 6208.0, -3008.0)
 gg_rct_UndeadBarracksToCenterSpawn = Rect(5760.0, -3584.0, 6016.0, -2560.0)
 gg_rct_UndeadBarracksToElf = Rect(4928.0, -7232.0, 5056.0, -7104.0)

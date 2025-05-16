@@ -1,4 +1,5 @@
-﻿using Source.Models;
+﻿using Source.Abstracts;
+using Source.Models;
 using System;
 using WCSharp.Api;
 
@@ -11,25 +12,10 @@ namespace Source.Logics
       int playerId = unit.Owner.Id;
       int respawnTime = 0;
 
-      // Prüfe vor Wiedergeburt, ob der Computer-Spieler noch unbesiegt ist
-      if (playerId == Program.Humans.Computer.PlayerId)
+      // Prüfe vor Wiedergeburt-Einleitung, ob der Computer-Spieler noch unbesiegt ist
+      if (Program.TryGetUnitByUnit(unit, out TeamBase team))
       {
-        if (Program.Humans.Computer.Defeated)
-          return;
-      }
-      else if (playerId == Program.Orcs.Computer.PlayerId)
-      {
-        if (Program.Orcs.Computer.Defeated)
-          return;
-      }
-      else if (playerId == Program.Elves.Computer.PlayerId)
-      {
-        if (Program.Elves.Computer.Defeated)
-          return;
-      }
-      else if (playerId == Program.Undeads.Computer.PlayerId)
-      {
-        if (Program.Undeads.Computer.Defeated)
+        if (team.Computer.Defeated)
           return;
       }
 
@@ -47,50 +33,19 @@ namespace Source.Logics
           timer.Dispose();
           timer = null;
 
-          // Prüfe vor Wiedergeburt, ob der Computer-Spieler noch unbesiegt ist
-          if (playerId == Program.Humans.Computer.PlayerId)
+          // Prüfe vor Wiedergeburt-Abschluss, ob der Computer-Spieler noch unbesiegt ist
+          if (Program.TryGetUnitByUnit(unit, out TeamBase team))
           {
-            if (Program.Humans.Computer.Defeated)
-              return;
-          }
-          else if (playerId == Program.Orcs.Computer.PlayerId)
-          {
-            if (Program.Orcs.Computer.Defeated)
-              return;
-          }
-          else if (playerId == Program.Elves.Computer.PlayerId)
-          {
-            if (Program.Elves.Computer.Defeated)
-              return;
-          }
-          else if (playerId == Program.Undeads.Computer.PlayerId)
-          {
-            if (Program.Undeads.Computer.Defeated)
+            if (team.Computer.Defeated)
               return;
           }
 
           player owner = unit.Owner;
           Area respawnArea = null;
 
-          if (Program.Humans.Computer.IsOwnerOfUnit(unit, out SpawnedUnit spawnedUnit))
+          if (team.Computer.IsOwnerOfUnit(unit, out SpawnedUnit spawnedUnit))
           {
             respawnArea = spawnedUnit.SpawnArea;
-          }
-          else if (Program.Orcs.Computer.IsOwnerOfUnit(unit, out spawnedUnit))
-          {
-            respawnArea = spawnedUnit.SpawnArea;
-          }
-          else if (Program.Elves.Computer.IsOwnerOfUnit(unit, out spawnedUnit))
-          {
-            respawnArea = spawnedUnit.SpawnArea;
-          }
-          else if (Program.Undeads.Computer.IsOwnerOfUnit(unit, out spawnedUnit))
-          {
-            respawnArea = spawnedUnit.SpawnArea;
-          }
-
-          if (spawnedUnit != null)
-          {
             Common.ReviveHero(unit, respawnArea.CenterX, respawnArea.CenterY, true);
 
             // Computer-Helden starten stets mit vollem Mana
@@ -98,6 +53,33 @@ namespace Source.Logics
 
             spawnedUnit.RepeatAttackMove();
           }
+
+          //if (Program.Humans.Computer.IsOwnerOfUnit(unit, out SpawnedUnit spawnedUnit))
+          //{
+          //  respawnArea = spawnedUnit.SpawnArea;
+          //}
+          //else if (Program.Orcs.Computer.IsOwnerOfUnit(unit, out spawnedUnit))
+          //{
+          //  respawnArea = spawnedUnit.SpawnArea;
+          //}
+          //else if (Program.Elves.Computer.IsOwnerOfUnit(unit, out spawnedUnit))
+          //{
+          //  respawnArea = spawnedUnit.SpawnArea;
+          //}
+          //else if (Program.Undeads.Computer.IsOwnerOfUnit(unit, out spawnedUnit))
+          //{
+          //  respawnArea = spawnedUnit.SpawnArea;
+          //}
+
+          //if (spawnedUnit != null)
+          //{
+          //  Common.ReviveHero(unit, respawnArea.CenterX, respawnArea.CenterY, true);
+
+          //  // Computer-Helden starten stets mit vollem Mana
+          //  unit.Mana = unit.MaxMana;
+
+          //  spawnedUnit.RepeatAttackMove();
+          //}
         }
         catch (Exception ex)
         {

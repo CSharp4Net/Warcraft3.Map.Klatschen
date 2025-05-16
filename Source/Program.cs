@@ -132,13 +132,14 @@ namespace Source
         Common.FogMaskEnable(false);
 #endif
 
-        // TODO
-        CreepCamp bandits = new CreepCamp("Räudige Banditen", Areas.HumanCreepToElfSpawnBuilding, Areas.HumanCreepToElfSpawn, Humans.Computer, Elves.Computer);
+        CreepCamp creepCamp = new CreepCamp("Banditen", Areas.HumanCreepToElfSpawnBuilding, Areas.HumanCreepToElfSpawn, Humans.Computer, Elves.Computer);
+        SpawnCreepsBuilding building = creepCamp.InitializeBuilding(Constants.UNIT_BANDITENZELT_CREEP);
+        CreepCamps.Add(creepCamp);
 
-        SpawnCreepsBuilding building = bandits.InitializeBuilding(Constants.UNIT_BANDITENZELT_CREEP); ;
-
-        CreepCamps.Add(bandits);
-        // TODO
+        creepCamp = new CreepCamp("Furbolgs", Areas.ElfCreepToHumanSpawnBuilding, Areas.ElfCreepToHumanSpawn, Elves.Computer, Humans.Computer);
+        building = creepCamp.InitializeBuilding(Constants.UNIT_BANDITENZELT_CREEP);
+        CreepCamps.Add(creepCamp);
+ 
 
 
         var timer = Common.CreateTimer();
@@ -160,7 +161,7 @@ namespace Source
       }
     }
 
-    public static bool TryGetActiveUser(int wc3PlayerId, out UserPlayer user)
+    public static bool TryGetUserById(int wc3PlayerId, out UserPlayer user)
     {
       for (int i = AllActiveUsers.Count - 1; i >= 0; i--)
       {
@@ -175,7 +176,7 @@ namespace Source
       return false;
     }
 
-    public static bool TryGetCreepCamp(unit mainBuildingUnit, out CreepCamp creepCamp)
+    public static bool TryGetCreepCampByUnit(unit mainBuildingUnit, out CreepCamp creepCamp)
     {
       for (int i = CreepCamps.Count - 1; i >= 0; i--)
       {
@@ -190,7 +191,7 @@ namespace Source
       return false;
     }
 
-    public static bool TryUnitTeam(unit unit, out TeamBase team)
+    public static bool TryGetUnitByUnit(unit unit, out TeamBase team)
     {
       int playerId = unit.Owner.Id;
 

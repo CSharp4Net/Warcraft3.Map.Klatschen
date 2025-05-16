@@ -13,7 +13,7 @@ namespace Source.Events.Buildings
       {
         unit unit = Common.GetTriggerUnit();
 
-        if (!Program.TryUnitTeam(unit, out TeamBase team))
+        if (!Program.TryGetUnitByUnit(unit, out TeamBase team))
         {
           Program.ShowErrorMessage("BarracksBuilding.OnDies", $"Building {unit.Name} not found in building lists of teams!");
           return;

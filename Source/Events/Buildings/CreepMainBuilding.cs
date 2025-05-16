@@ -15,7 +15,7 @@ namespace Source.Events.Buildings
 
         player player = killingUnit.Owner;
 
-        if (!Program.TryGetActiveUser(player.Id, out UserPlayer user))
+        if (!Program.TryGetUserById(player.Id, out UserPlayer user))
           return;
 
         int unitType = buildingUnit.UnitType;
