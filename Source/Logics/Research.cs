@@ -2,19 +2,17 @@
 using System;
 using WCSharp.Api;
 
-namespace Source.Events.Research
+namespace Source.Logics
 {
-  internal static class UserResearch
+  internal static class Research
   {
-    internal static void OnFinished()
+    internal static void HandleResearchFinished(unit researchingUnit, int researchedTechId)
     {
       try
       {
-        unit unit = Common.GetResearchingUnit();
-        int researchedTechId = Common.GetResearched();
-        int researchedTechIdCount = Common.GetPlayerTechCount(unit.Owner, researchedTechId, true);
+        int researchedTechIdCount = Common.GetPlayerTechCount(researchingUnit.Owner, researchedTechId, true);
 
-        player player = unit.Owner;
+        player player = researchingUnit.Owner;
         int playerId = player.Id;
         Enums.ResearchType researchType;
 

@@ -1,9 +1,9 @@
-﻿using Source.Events.Heros;
+﻿using Source.Extensions;
 using Source.Models;
 using System;
 using WCSharp.Api;
 
-namespace Source.Events.GenericEvents
+namespace Source.Events
 {
   internal static class Unit
   {
@@ -23,9 +23,9 @@ namespace Source.Events.GenericEvents
         {
           // Wenn Helden sterben, werden diese abhängig vom SlotStatus gesondert behandelt
           if (unit.Owner.Controller == mapcontrol.User)
-            UserHero.OnDies(unit);
+            Logics.UserHero.HandleDied(unit);
           else
-            ComputerHero.OnDies(unit);
+            Logics.ComputerHero.HandleDied(unit);
 
           return;
         }
@@ -82,7 +82,7 @@ namespace Source.Events.GenericEvents
           return;
         }
 
-        if (unit.IsUnitType(unittype.Hero) && unit.Owner.Controller == mapcontrol.User)
+        if (unit.IsHero() && unit.IsUnitOfUser())
         {
           // Befehle für Benutzer-Helden nicht behandeln
           return;
@@ -94,33 +94,90 @@ namespace Source.Events.GenericEvents
           return;
         }
 
-        // Wenn eine gespawnte Einheit ihren Angriffsbefehl verliert, erteilen wir ihr diesen erneut
-        // Befehl 851974 ist die Heimkehr zum Ausgangspunkt und fehlt in der Constants.
-        if (unit.CurrentOrder == 851974 || unit.CurrentOrder == Constants.ORDER_CANCEL ||
-            unit.CurrentOrder == Constants.ORDER_STUNNED || unit.CurrentOrder == Constants.ORDER_STOP)
-        {
-          // Zaubernde Einheit den letzten Angriffsbefehl wiederholen lassen
-          if (Program.Humans.Computer.IsOwnerOfUnit(unit, out SpawnedUnit spawnedUnit))
-          {
-            spawnedUnit.RepeatAttackMove();
-          }
-          else if (Program.Orcs.Computer.IsOwnerOfUnit(unit, out spawnedUnit))
-          {
-            spawnedUnit.RepeatAttackMove();
-          }
-          else if (Program.Elves.Computer.IsOwnerOfUnit(unit, out spawnedUnit))
-          {
-            spawnedUnit.RepeatAttackMove();
-          }
-          else if (Program.Undeads.Computer.IsOwnerOfUnit(unit, out spawnedUnit))
-          {
-            spawnedUnit.RepeatAttackMove();
-          }
-        }
+        Logics.ComputerUnit.HandleOrderReceived(unit);
       }
       catch (Exception ex)
       {
         Program.ShowExceptionMessage("Unit.OnReceivesOrder", ex);
+      }
+    }
+
+    internal static void OnSpellEffect()
+    {
+      try
+      {
+        unit unit = Common.GetTriggerUnit();
+
+        if (!unit.IsHero() || !unit.IsUnitOfUser())
+          return;
+
+        int abilityId = Common.GetSpellAbilityId();
+
+        switch (abilityId)
+        {
+          case Constants.ABILITY_BEZAUBERUNG_HERO_10:
+            Logics.UserHero.HandleCharmCasted(abilityId);
+            break;
+        }
+      }
+      catch (Exception ex)
+      {
+        Program.ShowExceptionMessage("Unit.OnSpellEffect", ex);
+      }
+    }
+
+    internal static void OnBuysUnit()
+    {
+      try
+      {
+        unit buyingUnit = Common.GetBuyingUnit();
+        unit soldUnit = Common.GetSoldUnit();
+
+        if (Common.GetUnitTypeId(buyingUnit) == Constants.UNIT_HELDENSEELE_HERO_SELECTOR)
+        {
+          // Helden-Selector kauft Benutzerhelden
+          Logics.HeroSelector.HandleHeroBuyed(buyingUnit, soldUnit);
+        }
+
+        // TODO : CreepCamps
+      }
+      catch (Exception ex)
+      {
+        Program.ShowExceptionMessage("Unit.OnBuysUnit", ex);
+      }
+    }
+
+    internal static void OnSellsItem()
+    {
+      try
+      {
+        unit buyingUnit = Common.GetBuyingUnit();
+
+        if (!buyingUnit.IsHero() || !buyingUnit.IsUnitOfUser())
+          return;
+
+        item buyedItem = Common.GetSoldItem();
+
+        Logics.UserHero.HandleItemBuyed(buyingUnit, buyedItem);
+      }
+      catch (Exception ex)
+      {
+        Program.ShowExceptionMessage("Unit.OnSellsItem", ex);
+      }
+    }
+
+    internal static void OnFinishesResearch()
+    {
+      try
+      {
+        unit researchingUnit = Common.GetResearchingUnit();
+        int researchedTechId = Common.GetResearched();
+
+        Logics.Research.HandleResearchFinished(researchingUnit, researchedTechId);
+      }
+      catch (Exception ex)
+      {
+        Program.ShowExceptionMessage("Unit.OnFinishesResearch", ex);
       }
     }
   }

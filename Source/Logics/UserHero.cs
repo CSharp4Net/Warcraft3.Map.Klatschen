@@ -1,23 +1,93 @@
-﻿using System;
+﻿using Source.Models;
+using System;
 using WCSharp.Api;
 
-namespace Source.Events.Generic
+namespace Source.Logics
 {
-  internal static class Ability
+  internal static class UserHero
   {
-    public static void OnCasted()
+    internal static void HandleDied(unit unit)
     {
-      int abilityId = Common.GetSpellAbilityId();
+      player player = unit.Owner;
+      int playerId = unit.Owner.Id;
+      Area respawnArea = null;
 
-      switch (abilityId)
+      if (Program.Humans.ContainsPlayer(playerId, out UserPlayer user))
       {
-        case Constants.ABILITY_BEZAUBERUNG_HERO_10:
-          HandleCharmCasted(abilityId);
-          break;
+        respawnArea = Areas.HumanBaseHeroRespawn;
+      }
+      else if (Program.Orcs.ContainsPlayer(playerId, out user))
+      {
+        respawnArea = Areas.OrcBaseHeroRespawn;
+      }
+      else if (Program.Elves.ContainsPlayer(playerId, out user))
+      {
+        respawnArea = Areas.ElfBaseHeroRespawn;
+      }
+      else if (Program.Undeads.ContainsPlayer(playerId, out user))
+      {
+        respawnArea = Areas.UndeadBaseHeroRespawn;
+      }
+      else
+        Program.ShowDebugMessage("UserHero.OnDies", $"Player {player.Name} of hero {unit.Name} not found in teams!");
+
+      if (user == null)
+        return;
+
+      // Verstorbenen Held nach gegebener Zeit wieder belegen
+      timer timer = Common.CreateTimer();
+      // Währenddessen Timer-Dialog anzeigen
+      timerdialog timerdialog = timer.CreateDialog();
+      timerdialog.SetTitle($"{unit.Name} erscheint erneut...");
+      timerdialog.IsDisplayed = true;
+
+      Common.TimerStart(timer, unit.HeroLevel + 2, false, () =>
+      {
+        try
+        {
+          // Timer wieder zerstören
+          Common.DestroyTimer(timer);
+          timer.Dispose();
+          timer = null;
+
+          // Timer-Dialog wieder zerstören
+          timerdialog.Dispose();
+          timerdialog = null;
+
+          Common.ReviveHero(unit, respawnArea.CenterX, respawnArea.CenterY, true);
+
+          user.ApplyCamera(respawnArea);
+
+          Blizzard.SelectUnitForPlayerSingle(unit, unit.Owner);
+        }
+        catch (Exception ex)
+        {
+          Program.ShowExceptionMessage("UserHero.OnDies", ex);
+        }
+      });
+    }
+
+    internal static void HandleItemBuyed(unit hero, item soldItem)
+    {
+      int itemId = soldItem.TypeId;
+
+      if (itemId == Constants.ITEM_GLYPHE_DER_OPFERUNG)
+      {
+        int playerId = hero.Owner.Id;
+        if (Program.TryGetActiveUser(playerId, out UserPlayer user))
+        {
+          // Merke Heldenstufe
+          user.HeroLevelCounter = hero.HeroLevel;
+          // Entferne Käufer/Helden aus Spiel
+          Common.RemoveUnit(hero);
+
+          // Heldenseele erstellen und Kamera verschieben
+          Program.CreateHeroSelectorForPlayerAndAdjustCamera(user);
+        }
       }
     }
 
-    private static void HandleCharmCasted(int abilityId)
+    internal static void HandleCharmCasted(int abilityId)
     {
       try
       {
@@ -29,7 +99,7 @@ namespace Source.Events.Generic
 
         // Stufe & Reichweite des Zaubers
         int spellLevel = castingUnit.GetAbilityLevel(abilityId);
-        int spellRange = 250 + (spellLevel * 50);
+        int spellRange = 250 + spellLevel * 50;
 
         // Ziel & Position des Zauberziels
         unit targetUnit = Common.GetSpellTargetUnit();

@@ -1,5 +1,4 @@
 ﻿using Source.Abstracts;
-using Source.Events.GenericEvents;
 using WCSharp.Api;
 
 namespace Source.Models

@@ -19992,14 +19992,10 @@ end)
 end
 do
 local System = System
+local SourceEvents
 local SourceEventsBuildings
-local SourceEventsGeneric
-local SourceEventsGenericEvents
-local SourceEventsHeros
-local SourceEventsOther
 local SourceEventsPeriodic
 local SourceEventsRegion
-local SourceEventsResearch
 local SourceModels
 local SourceModelsTeams
 local WCSharpEvents
@@ -20008,14 +20004,10 @@ local WCSharpSync
 local ListCreepCamp
 local ListUserPlayer
 System.import(function (out)
+  SourceEvents = Source.Events
   SourceEventsBuildings = Source.Events.Buildings
-  SourceEventsGeneric = Source.Events.Generic
-  SourceEventsGenericEvents = Source.Events.GenericEvents
-  SourceEventsHeros = Source.Events.Heros
-  SourceEventsOther = Source.Events.Other
   SourceEventsPeriodic = Source.Events.Periodic
   SourceEventsRegion = Source.Events.Region
-  SourceEventsResearch = Source.Events.Research
   SourceModels = Source.Models
   SourceModelsTeams = Source.Models.Teams
   WCSharpEvents = WCSharp.Events
@@ -20092,13 +20084,13 @@ System.namespace("Source", function (namespace)
         Areas.UndeadBase:RegisterOnEnter(SourceEventsRegion.UndeadBase.OnEnter)
 
         -- Allgemeine Events registrieren
-        WCSharpEvents.PlayerUnitEvents.Register14(802 --[[UnitTypeEvent.BuysUnit]], SourceEventsHeros.UserHero.OnBuyed)
-        WCSharpEvents.PlayerUnitEvents.Register14(818 --[[UnitTypeEvent.FinishesResearch]], SourceEventsResearch.UserResearch.OnFinished)
-        WCSharpEvents.PlayerUnitEvents.Register14(842 --[[UnitTypeEvent.SellsItem]], SourceEventsOther.Item.OnSellsFinished)
-        WCSharpEvents.PlayerUnitEvents.Register14(813 --[[UnitTypeEvent.Dies]], SourceEventsGenericEvents.Unit.OnDies)
-        WCSharpEvents.PlayerUnitEvents.Register14(837 --[[UnitTypeEvent.ReceivesOrder]], SourceEventsGenericEvents.Unit.OnReceivesOrder)
-        WCSharpEvents.PlayerUnitEvents.Register14(848 --[[UnitTypeEvent.SpellEffect]], SourceEventsGeneric.Ability.OnCasted)
-        WCSharpEvents.PlayerUnitEvents.Register1(105 --[[HeroTypeEvent.Levels]], SourceEventsHeros.ComputerHero.OnLevels)
+        WCSharpEvents.PlayerUnitEvents.Register14(802 --[[UnitTypeEvent.BuysUnit]], SourceEvents.Unit.OnBuysUnit)
+        WCSharpEvents.PlayerUnitEvents.Register14(818 --[[UnitTypeEvent.FinishesResearch]], SourceEvents.Unit.OnFinishesResearch)
+        WCSharpEvents.PlayerUnitEvents.Register14(842 --[[UnitTypeEvent.SellsItem]], SourceEvents.Unit.OnSellsItem)
+        WCSharpEvents.PlayerUnitEvents.Register14(813 --[[UnitTypeEvent.Dies]], SourceEvents.Unit.OnDies)
+        WCSharpEvents.PlayerUnitEvents.Register14(837 --[[UnitTypeEvent.ReceivesOrder]], SourceEvents.Unit.OnReceivesOrder)
+        WCSharpEvents.PlayerUnitEvents.Register14(848 --[[UnitTypeEvent.SpellEffect]], SourceEvents.Unit.OnSpellEffect)
+        WCSharpEvents.PlayerUnitEvents.Register1(105 --[[HeroTypeEvent.Levels]], SourceEvents.Hero.OnLevels)
 
         -- Periodische Events registrieren
         WCSharpEvents.PeriodicEvents.AddPeriodicEvent(SourceEventsPeriodic.GoldIncome.OnElapsed, 5)
@@ -20124,17 +20116,13 @@ System.namespace("Source", function (namespace)
         FogMaskEnable(false)
 
 
+        -- TODO
         local bandits = SourceModels.CreepCamp("Räudige Banditen", Areas.HumanCreepToElfSpawnBuilding, Areas.HumanCreepToElf, Areas.HumanCreepToElfSpawn, class.Humans.Computer, class.Elves.Computer)
 
         local building = bandits:InitializeBuilding(1848651862 --[[Constants.UNIT_BANDITENZELT_CREEP]], 0)
 
-        --bandits.CreateOrReviveHero(Constants.UNIT_BANDITENF_RST_CREEP);
-        --bandits.SpawnUnitInAreaAtRandomPoint(Constants.UNIT_BANDIT_CREEP);
-        --bandits.SpawnUnitInAreaAtRandomPoint(Constants.UNIT_BANDIT_CREEP);
-        --bandits.SpawnUnitInAreaAtRandomPoint(Constants.UNIT_BANDIT_CREEP);
-        --bandits.SpawnUnitInAreaAtRandomPoint(Constants.UNIT_BANDIT_CREEP);
-
         class.CreepCamps:Add(bandits)
+        -- TODO
 
 
         local timer = CreateTimer()
@@ -20382,9 +20370,9 @@ System.namespace("", function (namespace)
       this.HumanBaseToCenterSpawn = System.new(WCSharpSharedData.Rectangle, 2, -9984, 12800, -9728, 13056)
       this.HumanBaseToElfSpawn = System.new(WCSharpSharedData.Rectangle, 2, -10368, 12800, -10112, 13056)
       this.HumanBaseToOrcSpawn = System.new(WCSharpSharedData.Rectangle, 2, -9984, 13184, -9728, 13440)
-      this.HumanCreepToElf = System.new(WCSharpSharedData.Rectangle, 2, -6848, 6080, -6720, 6208)
-      this.HumanCreepToElfSpawn = System.new(WCSharpSharedData.Rectangle, 2, -7424, 5504, -6656, 6272)
-      this.HumanCreepToElfSpawnBuilding = System.new(WCSharpSharedData.Rectangle, 2, -7104, 6336, -6976, 6464)
+      this.HumanCreepToElf = System.new(WCSharpSharedData.Rectangle, 2, -6464, 6080, -6336, 6208)
+      this.HumanCreepToElfSpawn = System.new(WCSharpSharedData.Rectangle, 2, -7552, 5504, -6528, 6528)
+      this.HumanCreepToElfSpawnBuilding = System.new(WCSharpSharedData.Rectangle, 2, -7104, 5952, -6976, 6080)
       this.HumanToElfInnerLine = System.new(WCSharpSharedData.Rectangle, 2, -10304, 11200, -10176, 11328)
       this.HumanToElfOuterLine = System.new(WCSharpSharedData.Rectangle, 2, -10304, 7104, -10176, 7232)
       this.HumanToOrcInnerLine = System.new(WCSharpSharedData.Rectangle, 2, -8256, 13248, -8128, 13376)
@@ -20410,7 +20398,7 @@ System.namespace("", function (namespace)
       this.OrcToUndeadInnerLine = System.new(WCSharpSharedData.Rectangle, 2, 10176, 11200, 10304, 11328)
       this.OrcToUndeadOuterLine = System.new(WCSharpSharedData.Rectangle, 2, 10176, 7104, 10304, 7232)
       this.TestArea = System.new(WCSharpSharedData.Rectangle, 2, 17280, 17280, 17408, 17408)
-      this.TestArea2 = System.new(WCSharpSharedData.Rectangle, 2, -7104, 3008, -6976, 3136)
+      this.TestArea2 = System.new(WCSharpSharedData.Rectangle, 2, -7104, 5056, -6976, 5184)
       this.UndeadBarracksToCenter = System.new(WCSharpSharedData.Rectangle, 2, 6080, -3136, 6208, -3008)
       this.UndeadBarracksToCenterSpawn = System.new(WCSharpSharedData.Rectangle, 2, 5760, -3584, 6016, -2560)
       this.UndeadBarracksToElf = System.new(WCSharpSharedData.Rectangle, 2, 4928, -7232, 5056, -7104)
@@ -20839,6 +20827,255 @@ end
 do
 local System = System
 local Source
+local SourceExtensions
+local SourceLogics
+System.import(function (out)
+  Source = out.Source
+  SourceExtensions = Source.Extensions
+  SourceLogics = Source.Logics
+end)
+System.namespace("Source.Events", function (namespace)
+  namespace.class("Hero", function (namespace)
+    local OnLevels
+    OnLevels = function ()
+      local default = System.try(function ()
+        local unit = GetLevelingUnit()
+
+        if not SourceExtensions.unitExtension.IsUnitOfComputer(unit) then
+          return true
+        end
+
+        SourceLogics.ComputerHero.HandleLeveled()
+      end, function (default)
+        local ex = default
+        Source.Program.ShowExceptionMessage("Hero.OnLevels", ex)
+      end)
+      if default then
+        return
+      end
+    end
+    return {
+      OnLevels = OnLevels,
+      __metadata__ = function (out)
+        return {
+          methods = {
+            { "OnLevels", 0xC, OnLevels }
+          },
+          class = { "Hero", 0x3C }
+        }
+      end
+    }
+  end)
+end)
+
+end
+do
+local System = System
+local WCSharpApi = WCSharp.Api
+local Source
+local SourceExtensions
+local SourceLogics
+System.import(function (out)
+  Source = out.Source
+  SourceExtensions = Source.Extensions
+  SourceLogics = Source.Logics
+end)
+System.namespace("Source.Events", function (namespace)
+  namespace.class("Unit", function (namespace)
+    local OnDies, OnReceivesOrder, OnSpellEffect, OnBuysUnit, OnSellsItem, OnFinishesResearch
+    OnDies = function ()
+      local default = System.try(function ()
+        local unit = GetTriggerUnit()
+
+        if BlzGetUnitBooleanField(unit, UNIT_BF_IS_A_BUILDING) then
+          -- Wenn Gebäude sterben, haben diese wenn überhaupt eigene Trigger - TODO ??
+          return true
+        end
+
+        if IsUnitType(unit, UNIT_TYPE_HERO) then
+          -- Wenn Helden sterben, werden diese abhängig vom SlotStatus gesondert behandelt
+          if GetPlayerController(GetOwningPlayer(unit)) == MAP_CONTROL_USER then
+            SourceLogics.UserHero.HandleDied(unit)
+          else
+            SourceLogics.ComputerHero.HandleDied(unit)
+          end
+
+          return true
+        end
+
+        local owner = GetOwningPlayer(unit)
+
+        -- Getötete Einheit von Spieler entfernen
+        local default, spawnedUnit = Source.Program.Humans.Computer:IsOwnerOfUnit(unit)
+        if default then
+          Source.Program.Humans.Computer:RemoveUnit(spawnedUnit)
+        else
+          local extern
+          extern, spawnedUnit = Source.Program.Orcs.Computer:IsOwnerOfUnit(unit)
+          if extern then
+            Source.Program.Orcs.Computer:RemoveUnit(spawnedUnit)
+          else
+            local extern
+            extern, spawnedUnit = Source.Program.Elves.Computer:IsOwnerOfUnit(unit)
+            if extern then
+              Source.Program.Elves.Computer:RemoveUnit(spawnedUnit)
+            else
+              local extern
+              extern, spawnedUnit = Source.Program.Undeads.Computer:IsOwnerOfUnit(unit)
+              if extern then
+                Source.Program.Undeads.Computer:RemoveUnit(spawnedUnit)
+              end
+            end
+          end
+        end
+        --else
+        --  Bspw. der Tod der Heldenseele bei Kauf löst diesen Fall aus.
+        --  Program.ShowDebugMessage("Unit.OnDies", $"Unit {unit.Name} not found in unit lists of computer players!");
+
+        -- Verstorbene Einheit nach kurzer Zeit aus Spiel entfernen um RAM zu sparen
+        local timer = CreateTimer()
+        TimerStart(timer, 10, false, function ()
+          DestroyTimer(timer)
+          RemoveUnit(unit)
+          -- Sicherheitshalber Verweis auf Einheit für GC freigeben
+          RemoveUnit(unit)
+          unit = nil
+        end)
+      end, function (default)
+        local ex = default
+        Source.Program.ShowExceptionMessage("Unit.OnDies", ex)
+      end)
+      if default then
+        return
+      end
+    end
+    OnReceivesOrder = function ()
+      local default = System.try(function ()
+        local unit = GetTriggerUnit()
+
+        if BlzGetUnitBooleanField(unit, UNIT_BF_IS_A_BUILDING) then
+          -- Befehle für Gebäude nicht behandeln
+          return true
+        end
+
+        if SourceExtensions.unitExtension.IsHero(unit) and SourceExtensions.unitExtension.IsUnitOfUser(unit) then
+          -- Befehle für Benutzer-Helden nicht behandeln
+          return true
+        end
+
+        if GetUnitTypeId(unit) == 1848651824 --[[Constants.UNIT_DUMMY]] then
+          -- Befehle für Dummy-Units nicht behandeln
+          return true
+        end
+
+        SourceLogics.ComputerUnit.HandleOrderReceived(unit)
+      end, function (default)
+        local ex = default
+        Source.Program.ShowExceptionMessage("Unit.OnReceivesOrder", ex)
+      end)
+      if default then
+        return
+      end
+    end
+    OnSpellEffect = function ()
+      local default = System.try(function ()
+        local unit = GetTriggerUnit()
+
+        if not SourceExtensions.unitExtension.IsHero(unit) or not SourceExtensions.unitExtension.IsUnitOfUser(unit) then
+          return true
+        end
+
+        local abilityId = GetSpellAbilityId()
+
+        repeat
+          local default = abilityId
+          if default == 1093681456 --[[Constants.ABILITY_BEZAUBERUNG_HERO_10]] then
+            SourceLogics.UserHero.HandleCharmCasted(abilityId)
+            break
+          end
+        until 1
+      end, function (default)
+        local ex = default
+        Source.Program.ShowExceptionMessage("Unit.OnSpellEffect", ex)
+      end)
+      if default then
+        return
+      end
+    end
+    OnBuysUnit = function ()
+      System.try(function ()
+        local buyingUnit = GetBuyingUnit()
+        local soldUnit = GetSoldUnit()
+
+        if GetUnitTypeId(buyingUnit) == 1966092342 --[[Constants.UNIT_HELDENSEELE_HERO_SELECTOR]] then
+          -- Helden-Selector kauft Benutzerhelden
+          SourceLogics.HeroSelector.HandleHeroBuyed(buyingUnit, soldUnit)
+        end
+
+        -- TODO : CreepCamps
+      end, function (default)
+        local ex = default
+        Source.Program.ShowExceptionMessage("Unit.OnBuysUnit", ex)
+      end)
+    end
+    OnSellsItem = function ()
+      local default = System.try(function ()
+        local buyingUnit = GetBuyingUnit()
+
+        if not SourceExtensions.unitExtension.IsHero(buyingUnit) or not SourceExtensions.unitExtension.IsUnitOfUser(buyingUnit) then
+          return true
+        end
+
+        local buyedItem = GetSoldItem()
+
+        SourceLogics.UserHero.HandleItemBuyed(buyingUnit, buyedItem)
+      end, function (default)
+        local ex = default
+        Source.Program.ShowExceptionMessage("Unit.OnSellsItem", ex)
+      end)
+      if default then
+        return
+      end
+    end
+    OnFinishesResearch = function ()
+      System.try(function ()
+        local researchingUnit = GetResearchingUnit()
+        local researchedTechId = GetResearched()
+
+        SourceLogics.Research.HandleResearchFinished(researchingUnit, researchedTechId)
+      end, function (default)
+        local ex = default
+        Source.Program.ShowExceptionMessage("Unit.OnFinishesResearch", ex)
+      end)
+    end
+    return {
+      OnDies = OnDies,
+      OnReceivesOrder = OnReceivesOrder,
+      OnSpellEffect = OnSpellEffect,
+      OnBuysUnit = OnBuysUnit,
+      OnSellsItem = OnSellsItem,
+      OnFinishesResearch = OnFinishesResearch,
+      __metadata__ = function (out)
+        return {
+          methods = {
+            { "OnBuysUnit", 0xC, OnBuysUnit },
+            { "OnDies", 0xC, OnDies },
+            { "OnFinishesResearch", 0xC, OnFinishesResearch },
+            { "OnReceivesOrder", 0xC, OnReceivesOrder },
+            { "OnSellsItem", 0xC, OnSellsItem },
+            { "OnSpellEffect", 0xC, OnSpellEffect }
+          },
+          class = { "Unit", 0x3C }
+        }
+      end
+    }
+  end)
+end)
+
+end
+do
+local System = System
+local Source
 System.import(function (out)
   Source = out.Source
 end)
@@ -20871,7 +21108,7 @@ System.namespace("Source.Events.Buildings", function (namespace)
           return true
         end
 
-        local rebuildTime = 15
+        local rebuildTime = 10
 
         -- Stoppe Trigger
         creepCamp.Building:Destroy()
@@ -20880,11 +21117,12 @@ System.namespace("Source.Events.Buildings", function (namespace)
         local timer = CreateTimer()
         -- Währenddessen Timer-Dialog anzeigen
         local timerdialog = CreateTimerDialog(timer)
-        TimerDialogSetTitle(timerdialog, System.toString(creepCamp.Name) .. " wurden besiegt und schließen sich " .. System.toString(GetPlayerName(user.Team.Computer.Wc3Player)) .. " an!")
+        TimerDialogSetTitle(timerdialog, System.toString(creepCamp.Name) .. "...")
         TimerDialogDisplay(timerdialog, true)
 
         local newOwningPlayer = user.Team.Computer
 
+        System.Console.WriteLine("|cffff0000" .. System.toString(creepCamp.Name) .. "|r wurden besiegt und schließen sich " .. System.toString(GetPlayerName(user.Team.Computer.Wc3Player)) .. " an!")
         TimerStart(timer, rebuildTime, false, function ()
           local default = System.try(function ()
             -- Timer wieder zerstören
@@ -20901,8 +21139,6 @@ System.namespace("Source.Events.Buildings", function (namespace)
               return true
             end
 
-            creepCamp:SetOwnerAndRebuild(user.Team.Computer.Wc3Player)
-
             local attackTargetArea
 
             -- Ist der neue Eigentümer die nahe Streitmacht, ist das Ziel die Streitmacht am anderen Ende
@@ -20913,7 +21149,10 @@ System.namespace("Source.Events.Buildings", function (namespace)
               attackTargetArea = user.Team.TeamBaseArea
             end
 
-            creepCamp.Building:AddSpawnTrigger(creepCamp.SpawnArea, 0 --[[UnitClass.Meelee]], 15, attackTargetArea, System.Array(System.Int32) { 1848651864 --[[Constants.UNIT_NAHKAMPFEINHEIT_CREEP]], 1848652083 --[[Constants.UNIT_FERNKAMPFEINHEIT_CREEP]] }):Run(0)
+            creepCamp:SetOwnerAndRebuild(user.Team, attackTargetArea)
+
+            --creepCamp.Building.AddSpawnTrigger(creepCamp.SpawnArea, Enums.UnitClass.Meelee, 15f, attackTargetArea, 
+            --  Constants.UNIT_NAHKAMPFEINHEIT_CREEP, Constants.UNIT_FERNKAMPFEINHEIT_CREEP).Run();
           end, function (default)
             local ex = default
             Source.Program.ShowExceptionMessage("BuildingCreep.OnDies", ex)
@@ -21061,693 +21300,6 @@ System.namespace("Source.Events.Buildings", function (namespace)
             { "OnDies", 0xC, OnDies }
           },
           class = { "TeamMainBuilding", 0x3C }
-        }
-      end
-    }
-  end)
-end)
-
-end
-do
-local System = System
-local WCSharpApi = WCSharp.Api
-local Source
-System.import(function (out)
-  Source = out.Source
-end)
-System.namespace("Source.Events.Generic", function (namespace)
-  namespace.class("Ability", function (namespace)
-    local OnCasted, HandleCharmCasted, HandleAnythingCasted
-    OnCasted = function ()
-      local abilityId = GetSpellAbilityId()
-
-      repeat
-        local default = abilityId
-        if default == 1093681456 --[[Constants.ABILITY_BEZAUBERUNG_HERO_10]] then
-          HandleCharmCasted(abilityId)
-          break
-        end
-      until 1
-    end
-    HandleCharmCasted = function (abilityId)
-      System.try(function ()
-        -- Zauberdefinition
-        local ability = GetSpellAbility()
-
-        -- Zaubernde Einheit
-        local castingUnit = GetSpellAbilityUnit()
-
-        -- Stufe & Reichweite des Zaubers
-        local spellLevel = GetUnitAbilityLevel(castingUnit, abilityId)
-        local spellRange = 250 + (spellLevel * 50)
-
-        -- Ziel & Position des Zauberziels
-        local targetUnit = GetSpellTargetUnit()
-        local targetLocation = GetUnitLoc(targetUnit)
-
-        -- Alle Einheiten um die Position des Ziels durchlaufen
-        local group = GetUnitsInRangeOfLocAll(spellRange, targetLocation)
-
-        local charmedUnits = 0
-        for i = BlzGroupGetSize(group) - 1, 0, -1 do
-          local continue
-          repeat
-            local groupUnit = BlzGroupUnitAt(group, i)
-
-            if BlzGetUnitBooleanField(groupUnit, UNIT_BF_IS_A_BUILDING) then
-              continue = true
-              break
-            end
-
-            if IsUnitType(groupUnit, UNIT_TYPE_HERO) then
-              continue = true
-              break
-            end
-
-            -- Einheit in Gruppe ist Feind (oder Neutral) der Zaubernden Einheit?
-            if IsPlayerEnemy(GetOwningPlayer(groupUnit), GetOwningPlayer(castingUnit)) or GetPlayerController(GetOwningPlayer(groupUnit)) == MAP_CONTROL_CREEP then
-              local dummyUnit = CreateUnitAtLoc(GetOwningPlayer(castingUnit), 1848651824 --[[Constants.UNIT_DUMMY]], targetLocation, 0)
-
-              UnitAddAbility(dummyUnit, 1093681473 --[[Constants.ABILITY_BEZAUBERUNG_DUMMY]])
-              IssueTargetOrderById(dummyUnit, 852581 --[[Constants.ORDER_CHARM]], groupUnit)
-
-              -- Dummy nach Gebrauch sofort wieder zerstören und freigeben
-              RemoveUnit(dummyUnit)
-              RemoveUnit(dummyUnit)
-              dummyUnit = nil
-
-              charmedUnits = charmedUnits + 1
-
-              if charmedUnits >= spellLevel then
-                break
-              end
-            end
-            continue = true
-          until 1
-          if not continue then
-            break
-          end
-        end
-
-        DestroyGroup(group)
-        DestroyGroup(group)
-        group = nil
-      end, function (default)
-        local ex = default
-        Source.Program.ShowExceptionMessage("Ability.HandleCharmCasted", ex)
-      end)
-    end
-    HandleAnythingCasted = function (abilityId)
-      System.try(function ()
-        -- Zauberdefinition
-        local ability = GetSpellAbility()
-
-        -- Zaubernde Einheit
-        local castingUnit = GetSpellAbilityUnit()
-
-        -- Stufe des Zaubers
-        local spellLevel = GetUnitAbilityLevel(castingUnit, abilityId)
-        local spellRange = 100 * spellLevel
-        Source.Program.ShowDebugMessage("Ability " .. System.toString(BlzGetAbilityStringField(ability, ABILITY_SF_NAME)) .. " with level: " .. spellLevel)
-
-        -- Ziel des Zaubers
-        local targetUnit = GetSpellTargetUnit()
-
-        -- Position des Ziels
-        local targetLocation = GetUnitLoc(targetUnit)
-
-        -- Alle Einheiten um die Position des Ziels durchlaufen
-        local group = GetUnitsInRangeOfLocAll(spellRange, targetLocation)
-
-        local charmedUnits = 0
-        for i = BlzGroupGetSize(group) - 1, 0, -1 do
-          if charmedUnits >= spellLevel then
-            break
-          end
-
-          local groupUnit = BlzGroupUnitAt(group, i)
-
-          -- Einheit in Gruppe ist Feind der Zaubernden Einheit?
-          if IsPlayerEnemy(GetOwningPlayer(groupUnit), GetOwningPlayer(castingUnit)) then
-            -- Dummy erstellen
-            local dummyUnit = CreateUnitAtLoc(GetOwningPlayer(castingUnit), 1848651824 --[[Constants.UNIT_DUMMY]], targetLocation, 0)
-            UnitAddAbility(dummyUnit, 1093681473 --[[Constants.ABILITY_BEZAUBERUNG_DUMMY]])
-
-            -- Dummy einen Dummy-Zauber (keine Manakosten) ausführen lassen
-            IssueTargetOrderById(dummyUnit, 852581 --[[Constants.ORDER_CHARM]], groupUnit)
-
-            -- Effekt erstellen
-            local effect = AddSpecialEffectTarget("Abilities\\Spells\\Other\\Charm\\CharmTarget.mdl", groupUnit, "overhead")
-
-            -- Effekte sofort wieder zerstören, um RAM freizugeben
-            DestroyEffect(effect)
-            effect = nil
-
-            -- Dummy sofort wieder zerstören, um RAM freizuegeben
-            Source.Program.ShowDebugMessage("- Destroy dummy" .. "")
-            RemoveUnit(dummyUnit)
-            dummyUnit = nil
-
-            charmedUnits = charmedUnits + 1
-          end
-        end
-
-        DestroyGroup(group)
-      end, function (default)
-        local ex = default
-        Source.Program.ShowExceptionMessage("Ability.HandleAnythingCasted", ex)
-      end)
-    end
-    return {
-      OnCasted = OnCasted,
-      __metadata__ = function (out)
-        return {
-          methods = {
-            { "HandleAnythingCasted", 0x109, HandleAnythingCasted, System.Int32 },
-            { "HandleCharmCasted", 0x109, HandleCharmCasted, System.Int32 },
-            { "OnCasted", 0xE, OnCasted }
-          },
-          class = { "Ability", 0x3C }
-        }
-      end
-    }
-  end)
-end)
-
-end
-do
-local System = System
-local WCSharpApi = WCSharp.Api
-local Source
-local SourceEventsHeros
-System.import(function (out)
-  Source = out.Source
-  SourceEventsHeros = Source.Events.Heros
-end)
-System.namespace("Source.Events.GenericEvents", function (namespace)
-  namespace.class("Unit", function (namespace)
-    local OnDies, OnReceivesOrder
-    OnDies = function ()
-      local default = System.try(function ()
-        local unit = GetTriggerUnit()
-
-        if BlzGetUnitBooleanField(unit, UNIT_BF_IS_A_BUILDING) then
-          -- Wenn Gebäude sterben, haben diese wenn überhaupt eigene Trigger - TODO ??
-          return true
-        end
-
-        if IsUnitType(unit, UNIT_TYPE_HERO) then
-          -- Wenn Helden sterben, werden diese abhängig vom SlotStatus gesondert behandelt
-          if GetPlayerController(GetOwningPlayer(unit)) == MAP_CONTROL_USER then
-            SourceEventsHeros.UserHero.OnDies(unit)
-          else
-            SourceEventsHeros.ComputerHero.OnDies(unit)
-          end
-
-          return true
-        end
-
-        local owner = GetOwningPlayer(unit)
-
-        -- Getötete Einheit von Spieler entfernen
-        local default, spawnedUnit = Source.Program.Humans.Computer:IsOwnerOfUnit(unit)
-        if default then
-          Source.Program.Humans.Computer:RemoveUnit(spawnedUnit)
-        else
-          local extern
-          extern, spawnedUnit = Source.Program.Orcs.Computer:IsOwnerOfUnit(unit)
-          if extern then
-            Source.Program.Orcs.Computer:RemoveUnit(spawnedUnit)
-          else
-            local extern
-            extern, spawnedUnit = Source.Program.Elves.Computer:IsOwnerOfUnit(unit)
-            if extern then
-              Source.Program.Elves.Computer:RemoveUnit(spawnedUnit)
-            else
-              local extern
-              extern, spawnedUnit = Source.Program.Undeads.Computer:IsOwnerOfUnit(unit)
-              if extern then
-                Source.Program.Undeads.Computer:RemoveUnit(spawnedUnit)
-              end
-            end
-          end
-        end
-        --else
-        --  Bspw. der Tod der Heldenseele bei Kauf löst diesen Fall aus.
-        --  Program.ShowDebugMessage("Unit.OnDies", $"Unit {unit.Name} not found in unit lists of computer players!");
-
-        -- Verstorbene Einheit nach kurzer Zeit aus Spiel entfernen um RAM zu sparen
-        local timer = CreateTimer()
-        TimerStart(timer, 10, false, function ()
-          DestroyTimer(timer)
-          RemoveUnit(unit)
-          -- Sicherheitshalber Verweis auf Einheit für GC freigeben
-          RemoveUnit(unit)
-          unit = nil
-        end)
-      end, function (default)
-        local ex = default
-        Source.Program.ShowExceptionMessage("Unit.OnDies", ex)
-      end)
-      if default then
-        return
-      end
-    end
-    OnReceivesOrder = function ()
-      local default = System.try(function ()
-        local unit = GetTriggerUnit()
-
-        if BlzGetUnitBooleanField(unit, UNIT_BF_IS_A_BUILDING) then
-          -- Befehle für Gebäude nicht behandeln
-          return true
-        end
-
-        if IsUnitType(unit, UNIT_TYPE_HERO) and GetPlayerController(GetOwningPlayer(unit)) == MAP_CONTROL_USER then
-          -- Befehle für Benutzer-Helden nicht behandeln
-          return true
-        end
-
-        if GetUnitTypeId(unit) == 1848651824 --[[Constants.UNIT_DUMMY]] then
-          -- Befehle für Dummy-Units nicht behandeln
-          return true
-        end
-
-        -- Wenn eine gespawnte Einheit ihren Angriffsbefehl verliert, erteilen wir ihr diesen erneut
-        -- Befehl 851974 ist die Heimkehr zum Ausgangspunkt und fehlt in der Constants.
-        if GetUnitCurrentOrder(unit) == 851974 or GetUnitCurrentOrder(unit) == 851976 --[[Constants.ORDER_CANCEL]] or GetUnitCurrentOrder(unit) == 851973 --[[Constants.ORDER_STUNNED]] or GetUnitCurrentOrder(unit) == 851972 --[[Constants.ORDER_STOP]] then
-          -- Zaubernde Einheit den letzten Angriffsbefehl wiederholen lassen
-          local default, spawnedUnit = Source.Program.Humans.Computer:IsOwnerOfUnit(unit)
-          if default then
-            spawnedUnit:RepeatAttackMove()
-          else
-            local extern
-            extern, spawnedUnit = Source.Program.Orcs.Computer:IsOwnerOfUnit(unit)
-            if extern then
-              spawnedUnit:RepeatAttackMove()
-            else
-              local extern
-              extern, spawnedUnit = Source.Program.Elves.Computer:IsOwnerOfUnit(unit)
-              if extern then
-                spawnedUnit:RepeatAttackMove()
-              else
-                local extern
-                extern, spawnedUnit = Source.Program.Undeads.Computer:IsOwnerOfUnit(unit)
-                if extern then
-                  spawnedUnit:RepeatAttackMove()
-                end
-              end
-            end
-          end
-        end
-      end, function (default)
-        local ex = default
-        Source.Program.ShowExceptionMessage("Unit.OnReceivesOrder", ex)
-      end)
-      if default then
-        return
-      end
-    end
-    return {
-      OnDies = OnDies,
-      OnReceivesOrder = OnReceivesOrder,
-      __metadata__ = function (out)
-        return {
-          methods = {
-            { "OnDies", 0xC, OnDies },
-            { "OnReceivesOrder", 0xC, OnReceivesOrder }
-          },
-          class = { "Unit", 0x3C }
-        }
-      end
-    }
-  end)
-end)
-
-end
-do
-local System = System
-local WCSharpApi = WCSharp.Api
-local Source
-System.import(function (out)
-  Source = out.Source
-end)
-System.namespace("Source.Events.Heros", function (namespace)
-  namespace.class("ComputerHero", function (namespace)
-    local OnDies, OnLevels, ProcessWaechterLevelUp
-    OnDies = function (unit)
-      local playerId = GetPlayerId(GetOwningPlayer(unit))
-      local respawnTime = 0
-
-      -- Prüfe vor Wiedergeburt, ob der Computer-Spieler noch unbesiegt ist
-      if playerId == Source.Program.Humans.Computer.PlayerId then
-        if Source.Program.Humans.Computer.Defeated then
-          return
-        end
-      elseif playerId == Source.Program.Orcs.Computer.PlayerId then
-        if Source.Program.Orcs.Computer.Defeated then
-          return
-        end
-      elseif playerId == Source.Program.Elves.Computer.PlayerId then
-        if Source.Program.Elves.Computer.Defeated then
-          return
-        end
-      elseif playerId == Source.Program.Undeads.Computer.PlayerId then
-        if Source.Program.Undeads.Computer.Defeated then
-          return
-        end
-      end
-
-      respawnTime = 30
-
-      -- Verstorbenen Held nach gegebener Zeit wieder belegen
-      local timer = CreateTimer()
-
-      TimerStart(timer, respawnTime, false, function ()
-        local default = System.try(function ()
-          -- Timer wieder zerstören
-          DestroyTimer(timer)
-          DestroyTimer(timer)
-          timer = nil
-
-          -- Prüfe vor Wiedergeburt, ob der Computer-Spieler noch unbesiegt ist
-          if playerId == Source.Program.Humans.Computer.PlayerId then
-            if Source.Program.Humans.Computer.Defeated then
-              return true
-            end
-          elseif playerId == Source.Program.Orcs.Computer.PlayerId then
-            if Source.Program.Orcs.Computer.Defeated then
-              return true
-            end
-          elseif playerId == Source.Program.Elves.Computer.PlayerId then
-            if Source.Program.Elves.Computer.Defeated then
-              return true
-            end
-          elseif playerId == Source.Program.Undeads.Computer.PlayerId then
-            if Source.Program.Undeads.Computer.Defeated then
-              return true
-            end
-          end
-
-          local owner = GetOwningPlayer(unit)
-          local respawnArea = nil
-
-          local default, spawnedUnit = Source.Program.Humans.Computer:IsOwnerOfUnit(unit)
-          if default then
-            respawnArea = spawnedUnit.SpawnArea
-          else
-            local extern
-            extern, spawnedUnit = Source.Program.Orcs.Computer:IsOwnerOfUnit(unit)
-            if extern then
-              respawnArea = spawnedUnit.SpawnArea
-            else
-              local extern
-              extern, spawnedUnit = Source.Program.Elves.Computer:IsOwnerOfUnit(unit)
-              if extern then
-                respawnArea = spawnedUnit.SpawnArea
-              else
-                local extern
-                extern, spawnedUnit = Source.Program.Undeads.Computer:IsOwnerOfUnit(unit)
-                if extern then
-                  respawnArea = spawnedUnit.SpawnArea
-                end
-              end
-            end
-          end
-
-          if spawnedUnit ~= nil then
-            ReviveHero(unit, respawnArea.CenterX, respawnArea.CenterY, true)
-
-            -- Computer-Helden starten stets mit vollem Mana
-            SetUnitState(unit, UNIT_STATE_MANA, BlzGetUnitMaxMana(unit))
-
-            spawnedUnit:RepeatAttackMove()
-          end
-        end, function (default)
-          local ex = default
-          Source.Program.ShowExceptionMessage("ComputerHero.OnDies", ex)
-        end)
-        if default then
-          return
-        end
-      end)
-    end
-    OnLevels = function ()
-      local unit = GetLevelingUnit()
-
-      if GetPlayerController(GetOwningPlayer(unit)) ~= MAP_CONTROL_COMPUTER then
-        return
-      end
-
-      local unitId = GetUnitTypeId(unit)
-
-      if unitId == 1211117645 --[[Constants.UNIT_W_CHTER_HUMAN]] then
-        ProcessWaechterLevelUp(unit)
-      end
-    end
-    ProcessWaechterLevelUp = function (unit)
-      local level = System.Int32.ToString(GetHeroLevel(unit))
-      local abilityId = 0
-
-      if level:EndsWith("1") or level:EndsWith("6") then
-        abilityId = 1093677619 --[[Constants.ABILITY_SPOTT_GUARD_20]]
-      elseif level:EndsWith("2") or level:EndsWith("7") then
-        abilityId = 1094862401 --[[Constants.ABILITY_BEFEHLSAURA_GUARD_20]]
-      elseif level:EndsWith("3") or level:EndsWith("8") then
-        abilityId = 1094996803 --[[Constants.ABILITY_DONNERSCHLAG_GUARD_20]]
-      elseif level:EndsWith("4") or level:EndsWith("9") then
-        abilityId = 1094796353 --[[Constants.ABILITY_AUSDAUERAURA_GUARD_20]]
-      else
-        abilityId = 1093677106 --[[Constants.ABILITY_ERH_HTE_ATTRIBUTE_HERO_50]]
-      end
-
-      local ability = BlzGetUnitAbility(unit, abilityId)
-      if BlzGetAbilityId(ability) == 0 then
-        -- Held hat Fähigkeit noch nicht gelernt
-        UnitAddAbility(unit, abilityId)
-      else
-        -- Skill kann verbessert werden
-        local abilityLevel = IncUnitAbilityLevel(unit, abilityId)
-      end
-    end
-    return {
-      OnDies = OnDies,
-      OnLevels = OnLevels,
-      __metadata__ = function (out)
-        return {
-          methods = {
-            { "OnDies", 0x10C, OnDies, out.WCSharp.Api.unit },
-            { "OnLevels", 0xC, OnLevels },
-            { "ProcessWaechterLevelUp", 0x109, ProcessWaechterLevelUp, out.WCSharp.Api.unit }
-          },
-          class = { "ComputerHero", 0x3C }
-        }
-      end
-    }
-  end)
-end)
-
-end
-do
-local System = System
-local Source
-System.import(function (out)
-  Source = out.Source
-end)
-System.namespace("Source.Events.Heros", function (namespace)
-  namespace.class("UserHero", function (namespace)
-    local OnBuyed, OnDies
-    OnBuyed = function ()
-      local default = System.try(function ()
-        local buyingUnit = GetBuyingUnit()
-        local soldUnit = GetSoldUnit()
-
-        -- Nur auf Hero-Selector reagieren!
-        if GetUnitTypeId(buyingUnit) ~= 1966092342 --[[Constants.UNIT_HELDENSEELE_HERO_SELECTOR]] then
-          System.Console.WriteLine("Falsche Event-Registrierung 'OnBuyed' für " .. System.toString(GetUnitName(buyingUnit)) .. "!")
-          return true
-        end
-
-        local unitId = GetUnitTypeId(soldUnit)
-        local player = GetOwningPlayer(buyingUnit)
-        local playerId = GetPlayerId(player)
-
-        -- Käufer-Einheit töten
-        KillUnit(buyingUnit)
-
-        -- Gekaufte Einheit sofort wieder entfernen und in Player-Base neu erstelleN!
-        RemoveUnit(soldUnit)
-
-        -- Sicherheitshalber Verweis auf Einheit für GC freigeben
-        RemoveUnit(soldUnit)
-        soldUnit = nil
-
-        local spawnArea = nil
-
-        local default, user = Source.Program.Humans:ContainsPlayer(playerId)
-        if default then
-          spawnArea = Areas.HumanBaseHeroSpawn
-        else
-          local extern
-          extern, user = Source.Program.Orcs:ContainsPlayer(playerId)
-          if extern then
-            spawnArea = Areas.OrcBaseHeroSpawn
-          else
-            local extern
-            extern, user = Source.Program.Elves:ContainsPlayer(playerId)
-            if extern then
-              spawnArea = Areas.ElfBaseHeroSpawn
-            else
-              local extern
-              extern, user = Source.Program.Undeads:ContainsPlayer(playerId)
-              if extern then
-                spawnArea = Areas.UndeadBaseHeroSpawn
-              else
-                Source.Program.ShowDebugMessage1("UserHero.OnBuyed", "Player " .. System.toString(GetPlayerName(player)) .. " of buying unit not found in teams!")
-              end
-            end
-          end
-        end
-
-        if user == nil then
-          return true
-        end
-
-
-        spawnArea = Areas.TestArea2
-        user.HeroLevelCounter = 36
-
-
-        user:CreateHero(unitId, spawnArea)
-      end, function (default)
-        local ex = default
-        System.Console.WriteLine(ex:getMessage())
-      end)
-      if default then
-        return
-      end
-    end
-    OnDies = function (unit)
-      local player = GetOwningPlayer(unit)
-      local playerId = GetPlayerId(GetOwningPlayer(unit))
-      local respawnArea = nil
-
-      local default, user = Source.Program.Humans:ContainsPlayer(playerId)
-      if default then
-        respawnArea = Areas.HumanBaseHeroRespawn
-      else
-        local extern
-        extern, user = Source.Program.Orcs:ContainsPlayer(playerId)
-        if extern then
-          respawnArea = Areas.OrcBaseHeroRespawn
-        else
-          local extern
-          extern, user = Source.Program.Elves:ContainsPlayer(playerId)
-          if extern then
-            respawnArea = Areas.ElfBaseHeroRespawn
-          else
-            local extern
-            extern, user = Source.Program.Undeads:ContainsPlayer(playerId)
-            if extern then
-              respawnArea = Areas.UndeadBaseHeroRespawn
-            else
-              Source.Program.ShowDebugMessage1("UserHero.OnDies", "Player " .. System.toString(GetPlayerName(player)) .. " of hero " .. System.toString(GetUnitName(unit)) .. " not found in teams!")
-            end
-          end
-        end
-      end
-
-      if user == nil then
-        return
-      end
-
-      -- Verstorbenen Held nach gegebener Zeit wieder belegen
-      local timer = CreateTimer()
-      -- Währenddessen Timer-Dialog anzeigen
-      local timerdialog = CreateTimerDialog(timer)
-      TimerDialogSetTitle(timerdialog, System.toString(GetUnitName(unit)) .. " erscheint erneut...")
-      TimerDialogDisplay(timerdialog, true)
-
-      TimerStart(timer, GetHeroLevel(unit) + 2, false, function ()
-        System.try(function ()
-          -- Timer wieder zerstören
-          DestroyTimer(timer)
-          DestroyTimer(timer)
-          timer = nil
-
-          -- Timer-Dialog wieder zerstören
-          DestroyTimerDialog(timerdialog)
-          timerdialog = nil
-
-          ReviveHero(unit, respawnArea.CenterX, respawnArea.CenterY, true)
-
-          user:ApplyCamera(respawnArea)
-
-          SelectUnitForPlayerSingle(unit, GetOwningPlayer(unit))
-        end, function (default)
-          local ex = default
-          Source.Program.ShowExceptionMessage("UserHero.OnDies", ex)
-        end)
-      end)
-    end
-    return {
-      OnBuyed = OnBuyed,
-      OnDies = OnDies,
-      __metadata__ = function (out)
-        return {
-          methods = {
-            { "OnBuyed", 0xE, OnBuyed },
-            { "OnDies", 0x10C, OnDies, out.WCSharp.Api.unit }
-          },
-          class = { "UserHero", 0x3C }
-        }
-      end
-    }
-  end)
-end)
-
-end
-do
-local System = System
-local Source
-System.import(function (out)
-  Source = out.Source
-end)
-System.namespace("Source.Events.Other", function (namespace)
-  namespace.class("Item", function (namespace)
-    local OnSellsFinished
-    OnSellsFinished = function ()
-      System.try(function ()
-        local unit = GetBuyingUnit()
-
-        local item = GetSoldItem()
-        local itemId = GetItemTypeId(item)
-
-        if itemId == 1227894832 --[[Constants.ITEM_GLYPHE_DER_OPFERUNG]] then
-          local playerId = GetPlayerId(GetOwningPlayer(unit))
-          local default, user = Source.Program.TryGetActiveUser(playerId)
-          if default then
-            -- Merke Heldenstufe
-            user.HeroLevelCounter = GetHeroLevel(unit)
-            -- Entferne Käufer/Helden aus Spiel
-            RemoveUnit(unit)
-
-            -- Heldenseele erstellen und Kamera verschieben
-            Source.Program.CreateHeroSelectorForPlayerAndAdjustCamera(user)
-          end
-        end
-      end, function (default)
-        local ex = default
-        Source.Program.ShowExceptionMessage("Item.OnSellsFinished", ex)
-      end)
-    end
-    return {
-      OnSellsFinished = OnSellsFinished,
-      __metadata__ = function (out)
-        return {
-          methods = {
-            { "OnSellsFinished", 0xC, OnSellsFinished }
-          },
-          class = { "Item", 0x3C }
         }
       end
     }
@@ -22409,20 +21961,357 @@ end)
 end
 do
 local System = System
+local WCSharpApi = WCSharp.Api
+System.namespace("Source.Extensions", function (namespace)
+  namespace.class("unitExtension", function (namespace)
+    local IsHero, IsUnitOfUser, IsUnitOfComputer, IsUnitOfCreep
+    IsHero = function (unit)
+      return IsUnitType(unit, UNIT_TYPE_HERO)
+    end
+    IsUnitOfUser = function (unit)
+      return GetPlayerController(GetOwningPlayer(unit)) == MAP_CONTROL_USER
+    end
+    IsUnitOfComputer = function (unit)
+      return GetPlayerController(GetOwningPlayer(unit)) == MAP_CONTROL_COMPUTER
+    end
+    IsUnitOfCreep = function (unit)
+      return GetPlayerController(GetOwningPlayer(unit)) == MAP_CONTROL_CREEP
+    end
+    return {
+      IsHero = IsHero,
+      IsUnitOfUser = IsUnitOfUser,
+      IsUnitOfComputer = IsUnitOfComputer,
+      IsUnitOfCreep = IsUnitOfCreep,
+      __metadata__ = function (out)
+        return {
+          methods = {
+            { "IsHero", 0x18C, IsHero, out.WCSharp.Api.unit, System.Boolean },
+            { "IsUnitOfComputer", 0x18C, IsUnitOfComputer, out.WCSharp.Api.unit, System.Boolean },
+            { "IsUnitOfCreep", 0x18C, IsUnitOfCreep, out.WCSharp.Api.unit, System.Boolean },
+            { "IsUnitOfUser", 0x18C, IsUnitOfUser, out.WCSharp.Api.unit, System.Boolean }
+          },
+          class = { "unitExtension", 0x3C }
+        }
+      end
+    }
+  end)
+end)
+
+end
+do
+local System = System
+local WCSharpApi = WCSharp.Api
 local Source
 System.import(function (out)
   Source = out.Source
 end)
-System.namespace("Source.Events.Research", function (namespace)
-  namespace.class("UserResearch", function (namespace)
-    local OnFinished
-    OnFinished = function ()
-      System.try(function ()
-        local unit = GetResearchingUnit()
-        local researchedTechId = GetResearched()
-        local researchedTechIdCount = GetPlayerTechCount(GetOwningPlayer(unit), researchedTechId, true)
+System.namespace("Source.Logics", function (namespace)
+  namespace.class("ComputerHero", function (namespace)
+    local HandleDied, HandleLeveled, ProcessWaechterLevelUp
+    HandleDied = function (unit)
+      local playerId = GetPlayerId(GetOwningPlayer(unit))
+      local respawnTime = 0
 
-        local player = GetOwningPlayer(unit)
+      -- Prüfe vor Wiedergeburt, ob der Computer-Spieler noch unbesiegt ist
+      if playerId == Source.Program.Humans.Computer.PlayerId then
+        if Source.Program.Humans.Computer.Defeated then
+          return
+        end
+      elseif playerId == Source.Program.Orcs.Computer.PlayerId then
+        if Source.Program.Orcs.Computer.Defeated then
+          return
+        end
+      elseif playerId == Source.Program.Elves.Computer.PlayerId then
+        if Source.Program.Elves.Computer.Defeated then
+          return
+        end
+      elseif playerId == Source.Program.Undeads.Computer.PlayerId then
+        if Source.Program.Undeads.Computer.Defeated then
+          return
+        end
+      end
+
+      respawnTime = 30
+
+      -- Verstorbenen Held nach gegebener Zeit wieder belegen
+      local timer = CreateTimer()
+
+      TimerStart(timer, respawnTime, false, function ()
+        local default = System.try(function ()
+          -- Timer wieder zerstören
+          DestroyTimer(timer)
+          DestroyTimer(timer)
+          timer = nil
+
+          -- Prüfe vor Wiedergeburt, ob der Computer-Spieler noch unbesiegt ist
+          if playerId == Source.Program.Humans.Computer.PlayerId then
+            if Source.Program.Humans.Computer.Defeated then
+              return true
+            end
+          elseif playerId == Source.Program.Orcs.Computer.PlayerId then
+            if Source.Program.Orcs.Computer.Defeated then
+              return true
+            end
+          elseif playerId == Source.Program.Elves.Computer.PlayerId then
+            if Source.Program.Elves.Computer.Defeated then
+              return true
+            end
+          elseif playerId == Source.Program.Undeads.Computer.PlayerId then
+            if Source.Program.Undeads.Computer.Defeated then
+              return true
+            end
+          end
+
+          local owner = GetOwningPlayer(unit)
+          local respawnArea = nil
+
+          local default, spawnedUnit = Source.Program.Humans.Computer:IsOwnerOfUnit(unit)
+          if default then
+            respawnArea = spawnedUnit.SpawnArea
+          else
+            local extern
+            extern, spawnedUnit = Source.Program.Orcs.Computer:IsOwnerOfUnit(unit)
+            if extern then
+              respawnArea = spawnedUnit.SpawnArea
+            else
+              local extern
+              extern, spawnedUnit = Source.Program.Elves.Computer:IsOwnerOfUnit(unit)
+              if extern then
+                respawnArea = spawnedUnit.SpawnArea
+              else
+                local extern
+                extern, spawnedUnit = Source.Program.Undeads.Computer:IsOwnerOfUnit(unit)
+                if extern then
+                  respawnArea = spawnedUnit.SpawnArea
+                end
+              end
+            end
+          end
+
+          if spawnedUnit ~= nil then
+            ReviveHero(unit, respawnArea.CenterX, respawnArea.CenterY, true)
+
+            -- Computer-Helden starten stets mit vollem Mana
+            SetUnitState(unit, UNIT_STATE_MANA, BlzGetUnitMaxMana(unit))
+
+            spawnedUnit:RepeatAttackMove()
+          end
+        end, function (default)
+          local ex = default
+          Source.Program.ShowExceptionMessage("ComputerHero.OnDies", ex)
+        end)
+        if default then
+          return
+        end
+      end)
+    end
+    HandleLeveled = function ()
+      local unit = GetLevelingUnit()
+
+      if GetPlayerController(GetOwningPlayer(unit)) ~= MAP_CONTROL_COMPUTER then
+        return
+      end
+
+      local unitId = GetUnitTypeId(unit)
+
+      if unitId == 1211117645 --[[Constants.UNIT_W_CHTER_HUMAN]] then
+        ProcessWaechterLevelUp(unit)
+      end
+    end
+    ProcessWaechterLevelUp = function (unit)
+      local level = System.Int32.ToString(GetHeroLevel(unit))
+      local abilityId = 0
+
+      if level:EndsWith("1") or level:EndsWith("6") then
+        abilityId = 1093677619 --[[Constants.ABILITY_SPOTT_GUARD_20]]
+      elseif level:EndsWith("2") or level:EndsWith("7") then
+        abilityId = 1094862401 --[[Constants.ABILITY_BEFEHLSAURA_GUARD_20]]
+      elseif level:EndsWith("3") or level:EndsWith("8") then
+        abilityId = 1094996803 --[[Constants.ABILITY_DONNERSCHLAG_GUARD_20]]
+      elseif level:EndsWith("4") or level:EndsWith("9") then
+        abilityId = 1094796353 --[[Constants.ABILITY_AUSDAUERAURA_GUARD_20]]
+      else
+        abilityId = 1093677106 --[[Constants.ABILITY_ERH_HTE_ATTRIBUTE_HERO_50]]
+      end
+
+      local ability = BlzGetUnitAbility(unit, abilityId)
+      if BlzGetAbilityId(ability) == 0 then
+        -- Held hat Fähigkeit noch nicht gelernt
+        UnitAddAbility(unit, abilityId)
+      else
+        -- Skill kann verbessert werden
+        local abilityLevel = IncUnitAbilityLevel(unit, abilityId)
+      end
+    end
+    return {
+      HandleDied = HandleDied,
+      HandleLeveled = HandleLeveled,
+      __metadata__ = function (out)
+        return {
+          methods = {
+            { "HandleDied", 0x10C, HandleDied, out.WCSharp.Api.unit },
+            { "HandleLeveled", 0xC, HandleLeveled },
+            { "ProcessWaechterLevelUp", 0x109, ProcessWaechterLevelUp, out.WCSharp.Api.unit }
+          },
+          class = { "ComputerHero", 0x3C }
+        }
+      end
+    }
+  end)
+end)
+
+end
+do
+local System = System
+local Source
+System.import(function (out)
+  Source = out.Source
+end)
+System.namespace("Source.Logics", function (namespace)
+  namespace.class("ComputerUnit", function (namespace)
+    local HandleOrderReceived, RepeatAttackMove
+    HandleOrderReceived = function (unit)
+      -- Wenn eine gespawnte Einheit ihren Angriffsbefehl verliert, erteilen wir ihr diesen erneut
+      -- Befehl 851974 ist die Heimkehr zum Ausgangspunkt und fehlt in der Constants.
+      repeat
+        local default = GetUnitCurrentOrder(unit)
+        if default == 851974 or default == 851976 --[[Constants.ORDER_CANCEL]] or default == 851973 --[[Constants.ORDER_STUNNED]] or default == 851972 --[[Constants.ORDER_STOP]] then
+          RepeatAttackMove(unit)
+          break
+        end
+      until 1
+    end
+    RepeatAttackMove = function (unit)
+      local default, spawnedUnit = Source.Program.Humans.Computer:IsOwnerOfUnit(unit)
+      if default then
+        spawnedUnit:RepeatAttackMove()
+      else
+        local extern
+        extern, spawnedUnit = Source.Program.Orcs.Computer:IsOwnerOfUnit(unit)
+        if extern then
+          spawnedUnit:RepeatAttackMove()
+        else
+          local extern
+          extern, spawnedUnit = Source.Program.Elves.Computer:IsOwnerOfUnit(unit)
+          if extern then
+            spawnedUnit:RepeatAttackMove()
+          else
+            local extern
+            extern, spawnedUnit = Source.Program.Undeads.Computer:IsOwnerOfUnit(unit)
+            if extern then
+              spawnedUnit:RepeatAttackMove()
+            end
+          end
+        end
+      end
+    end
+    return {
+      HandleOrderReceived = HandleOrderReceived,
+      __metadata__ = function (out)
+        return {
+          methods = {
+            { "HandleOrderReceived", 0x10C, HandleOrderReceived, out.WCSharp.Api.unit },
+            { "RepeatAttackMove", 0x109, RepeatAttackMove, out.WCSharp.Api.unit }
+          },
+          class = { "ComputerUnit", 0x3C }
+        }
+      end
+    }
+  end)
+end)
+
+end
+do
+local System = System
+local Source
+System.import(function (out)
+  Source = out.Source
+end)
+System.namespace("Source.Logics", function (namespace)
+  namespace.class("HeroSelector", function (namespace)
+    local HandleHeroBuyed
+    HandleHeroBuyed = function (buyingUnit, soldUnit)
+      local unitId = GetUnitTypeId(soldUnit)
+      local player = GetOwningPlayer(buyingUnit)
+      local playerId = GetPlayerId(player)
+
+      -- Käufer-Einheit töten
+      KillUnit(buyingUnit)
+
+      -- Gekaufte Einheit sofort wieder entfernen und in Player-Base neu erstelleN!
+      RemoveUnit(soldUnit)
+
+      -- Sicherheitshalber Verweis auf Einheit für GC freigeben
+      RemoveUnit(soldUnit)
+      soldUnit = nil
+
+      local spawnArea = nil
+
+      local default, user = Source.Program.Humans:ContainsPlayer(playerId)
+      if default then
+        spawnArea = Areas.HumanBaseHeroSpawn
+      else
+        local extern
+        extern, user = Source.Program.Orcs:ContainsPlayer(playerId)
+        if extern then
+          spawnArea = Areas.OrcBaseHeroSpawn
+        else
+          local extern
+          extern, user = Source.Program.Elves:ContainsPlayer(playerId)
+          if extern then
+            spawnArea = Areas.ElfBaseHeroSpawn
+          else
+            local extern
+            extern, user = Source.Program.Undeads:ContainsPlayer(playerId)
+            if extern then
+              spawnArea = Areas.UndeadBaseHeroSpawn
+            else
+              Source.Program.ShowDebugMessage1("UserHero.OnBuyed", "Player " .. System.toString(GetPlayerName(player)) .. " of buying unit not found in teams!")
+            end
+          end
+        end
+      end
+
+      if user == nil then
+        return
+      end
+
+
+      spawnArea = Areas.TestArea2
+      user.HeroLevelCounter = 36
+
+
+      user:CreateHero(unitId, spawnArea)
+    end
+    return {
+      HandleHeroBuyed = HandleHeroBuyed,
+      __metadata__ = function (out)
+        return {
+          methods = {
+            { "HandleHeroBuyed", 0x20C, HandleHeroBuyed, out.WCSharp.Api.unit, out.WCSharp.Api.unit }
+          },
+          class = { "HeroSelector", 0x4 }
+        }
+      end
+    }
+  end)
+end)
+
+end
+do
+local System = System
+local Source
+System.import(function (out)
+  Source = out.Source
+end)
+System.namespace("Source.Logics", function (namespace)
+  namespace.class("Research", function (namespace)
+    local HandleResearchFinished
+    HandleResearchFinished = function (researchingUnit, researchedTechId)
+      System.try(function ()
+        local researchedTechIdCount = GetPlayerTechCount(GetOwningPlayer(researchingUnit), researchedTechId, true)
+
+        local player = GetOwningPlayer(researchingUnit)
         local playerId = GetPlayerId(player)
         local researchType
 
@@ -22490,13 +22379,252 @@ System.namespace("Source.Events.Research", function (namespace)
       end)
     end
     return {
-      OnFinished = OnFinished,
+      HandleResearchFinished = HandleResearchFinished,
       __metadata__ = function (out)
         return {
           methods = {
-            { "OnFinished", 0xC, OnFinished }
+            { "HandleResearchFinished", 0x20C, HandleResearchFinished, out.WCSharp.Api.unit, System.Int32 }
           },
-          class = { "UserResearch", 0x3C }
+          class = { "Research", 0x3C }
+        }
+      end
+    }
+  end)
+end)
+
+end
+do
+local System = System
+local WCSharpApi = WCSharp.Api
+local Source
+System.import(function (out)
+  Source = out.Source
+end)
+System.namespace("Source.Logics", function (namespace)
+  namespace.class("UserHero", function (namespace)
+    local HandleDied, HandleItemBuyed, HandleCharmCasted, HandleAnythingCasted
+    HandleDied = function (unit)
+      local player = GetOwningPlayer(unit)
+      local playerId = GetPlayerId(GetOwningPlayer(unit))
+      local respawnArea = nil
+
+      local default, user = Source.Program.Humans:ContainsPlayer(playerId)
+      if default then
+        respawnArea = Areas.HumanBaseHeroRespawn
+      else
+        local extern
+        extern, user = Source.Program.Orcs:ContainsPlayer(playerId)
+        if extern then
+          respawnArea = Areas.OrcBaseHeroRespawn
+        else
+          local extern
+          extern, user = Source.Program.Elves:ContainsPlayer(playerId)
+          if extern then
+            respawnArea = Areas.ElfBaseHeroRespawn
+          else
+            local extern
+            extern, user = Source.Program.Undeads:ContainsPlayer(playerId)
+            if extern then
+              respawnArea = Areas.UndeadBaseHeroRespawn
+            else
+              Source.Program.ShowDebugMessage1("UserHero.OnDies", "Player " .. System.toString(GetPlayerName(player)) .. " of hero " .. System.toString(GetUnitName(unit)) .. " not found in teams!")
+            end
+          end
+        end
+      end
+
+      if user == nil then
+        return
+      end
+
+      -- Verstorbenen Held nach gegebener Zeit wieder belegen
+      local timer = CreateTimer()
+      -- Währenddessen Timer-Dialog anzeigen
+      local timerdialog = CreateTimerDialog(timer)
+      TimerDialogSetTitle(timerdialog, System.toString(GetUnitName(unit)) .. " erscheint erneut...")
+      TimerDialogDisplay(timerdialog, true)
+
+      TimerStart(timer, GetHeroLevel(unit) + 2, false, function ()
+        System.try(function ()
+          -- Timer wieder zerstören
+          DestroyTimer(timer)
+          DestroyTimer(timer)
+          timer = nil
+
+          -- Timer-Dialog wieder zerstören
+          DestroyTimerDialog(timerdialog)
+          timerdialog = nil
+
+          ReviveHero(unit, respawnArea.CenterX, respawnArea.CenterY, true)
+
+          user:ApplyCamera(respawnArea)
+
+          SelectUnitForPlayerSingle(unit, GetOwningPlayer(unit))
+        end, function (default)
+          local ex = default
+          Source.Program.ShowExceptionMessage("UserHero.OnDies", ex)
+        end)
+      end)
+    end
+    HandleItemBuyed = function (hero, soldItem)
+      local itemId = GetItemTypeId(soldItem)
+
+      if itemId == 1227894832 --[[Constants.ITEM_GLYPHE_DER_OPFERUNG]] then
+        local playerId = GetPlayerId(GetOwningPlayer(hero))
+        local default, user = Source.Program.TryGetActiveUser(playerId)
+        if default then
+          -- Merke Heldenstufe
+          user.HeroLevelCounter = GetHeroLevel(hero)
+          -- Entferne Käufer/Helden aus Spiel
+          RemoveUnit(hero)
+
+          -- Heldenseele erstellen und Kamera verschieben
+          Source.Program.CreateHeroSelectorForPlayerAndAdjustCamera(user)
+        end
+      end
+    end
+    HandleCharmCasted = function (abilityId)
+      System.try(function ()
+        -- Zauberdefinition
+        local ability = GetSpellAbility()
+
+        -- Zaubernde Einheit
+        local castingUnit = GetSpellAbilityUnit()
+
+        -- Stufe & Reichweite des Zaubers
+        local spellLevel = GetUnitAbilityLevel(castingUnit, abilityId)
+        local spellRange = 250 + spellLevel * 50
+
+        -- Ziel & Position des Zauberziels
+        local targetUnit = GetSpellTargetUnit()
+        local targetLocation = GetUnitLoc(targetUnit)
+
+        -- Alle Einheiten um die Position des Ziels durchlaufen
+        local group = GetUnitsInRangeOfLocAll(spellRange, targetLocation)
+
+        local charmedUnits = 0
+        for i = BlzGroupGetSize(group) - 1, 0, -1 do
+          local continue
+          repeat
+            local groupUnit = BlzGroupUnitAt(group, i)
+
+            if BlzGetUnitBooleanField(groupUnit, UNIT_BF_IS_A_BUILDING) then
+              continue = true
+              break
+            end
+
+            if IsUnitType(groupUnit, UNIT_TYPE_HERO) then
+              continue = true
+              break
+            end
+
+            -- Einheit in Gruppe ist Feind (oder Neutral) der Zaubernden Einheit?
+            if IsPlayerEnemy(GetOwningPlayer(groupUnit), GetOwningPlayer(castingUnit)) or GetPlayerController(GetOwningPlayer(groupUnit)) == MAP_CONTROL_CREEP then
+              local dummyUnit = CreateUnitAtLoc(GetOwningPlayer(castingUnit), 1848651824 --[[Constants.UNIT_DUMMY]], targetLocation, 0)
+
+              UnitAddAbility(dummyUnit, 1093681473 --[[Constants.ABILITY_BEZAUBERUNG_DUMMY]])
+              IssueTargetOrderById(dummyUnit, 852581 --[[Constants.ORDER_CHARM]], groupUnit)
+
+              -- Dummy nach Gebrauch sofort wieder zerstören und freigeben
+              RemoveUnit(dummyUnit)
+              RemoveUnit(dummyUnit)
+              dummyUnit = nil
+
+              charmedUnits = charmedUnits + 1
+
+              if charmedUnits >= spellLevel then
+                break
+              end
+            end
+            continue = true
+          until 1
+          if not continue then
+            break
+          end
+        end
+
+        DestroyGroup(group)
+        DestroyGroup(group)
+        group = nil
+      end, function (default)
+        local ex = default
+        Source.Program.ShowExceptionMessage("Ability.HandleCharmCasted", ex)
+      end)
+    end
+    HandleAnythingCasted = function (abilityId)
+      System.try(function ()
+        -- Zauberdefinition
+        local ability = GetSpellAbility()
+
+        -- Zaubernde Einheit
+        local castingUnit = GetSpellAbilityUnit()
+
+        -- Stufe des Zaubers
+        local spellLevel = GetUnitAbilityLevel(castingUnit, abilityId)
+        local spellRange = 100 * spellLevel
+        Source.Program.ShowDebugMessage("Ability " .. System.toString(BlzGetAbilityStringField(ability, ABILITY_SF_NAME)) .. " with level: " .. spellLevel)
+
+        -- Ziel des Zaubers
+        local targetUnit = GetSpellTargetUnit()
+
+        -- Position des Ziels
+        local targetLocation = GetUnitLoc(targetUnit)
+
+        -- Alle Einheiten um die Position des Ziels durchlaufen
+        local group = GetUnitsInRangeOfLocAll(spellRange, targetLocation)
+
+        local charmedUnits = 0
+        for i = BlzGroupGetSize(group) - 1, 0, -1 do
+          if charmedUnits >= spellLevel then
+            break
+          end
+
+          local groupUnit = BlzGroupUnitAt(group, i)
+
+          -- Einheit in Gruppe ist Feind der Zaubernden Einheit?
+          if IsPlayerEnemy(GetOwningPlayer(groupUnit), GetOwningPlayer(castingUnit)) then
+            -- Dummy erstellen
+            local dummyUnit = CreateUnitAtLoc(GetOwningPlayer(castingUnit), 1848651824 --[[Constants.UNIT_DUMMY]], targetLocation, 0)
+            UnitAddAbility(dummyUnit, 1093681473 --[[Constants.ABILITY_BEZAUBERUNG_DUMMY]])
+
+            -- Dummy einen Dummy-Zauber (keine Manakosten) ausführen lassen
+            IssueTargetOrderById(dummyUnit, 852581 --[[Constants.ORDER_CHARM]], groupUnit)
+
+            -- Effekt erstellen
+            local effect = AddSpecialEffectTarget("Abilities\\Spells\\Other\\Charm\\CharmTarget.mdl", groupUnit, "overhead")
+
+            -- Effekte sofort wieder zerstören, um RAM freizugeben
+            DestroyEffect(effect)
+            effect = nil
+
+            -- Dummy sofort wieder zerstören, um RAM freizuegeben
+            Source.Program.ShowDebugMessage("- Destroy dummy" .. "")
+            RemoveUnit(dummyUnit)
+            dummyUnit = nil
+
+            charmedUnits = charmedUnits + 1
+          end
+        end
+
+        DestroyGroup(group)
+      end, function (default)
+        local ex = default
+        Source.Program.ShowExceptionMessage("Ability.HandleAnythingCasted", ex)
+      end)
+    end
+    return {
+      HandleDied = HandleDied,
+      HandleItemBuyed = HandleItemBuyed,
+      HandleCharmCasted = HandleCharmCasted,
+      __metadata__ = function (out)
+        return {
+          methods = {
+            { "HandleAnythingCasted", 0x109, HandleAnythingCasted, System.Int32 },
+            { "HandleCharmCasted", 0x10C, HandleCharmCasted, System.Int32 },
+            { "HandleDied", 0x10C, HandleDied, out.WCSharp.Api.unit },
+            { "HandleItemBuyed", 0x20C, HandleItemBuyed, out.WCSharp.Api.unit, out.WCSharp.Api.item }
+          },
+          class = { "UserHero", 0x3C }
         }
       end
     }
@@ -22708,8 +22836,11 @@ System.namespace("Source.Models", function (namespace)
 
       return SourceModels.SpawnedCreep(this, unitTypeId, this.SpawnArea, 0)
     end
-    SetOwnerAndRebuild = function (this, wc3Player)
-      this.Wc3Player = wc3Player
+    SetOwnerAndRebuild = function (this, team, attackTargetForSpawn)
+      this.OwnerTeam = team
+      this.AttackTargetArea = attackTargetForSpawn
+
+      this.Wc3Player = this.OwnerTeam.Computer.Wc3Player
 
       -- Ort anhand Zentrum einer Region erstellen
       this.Building = SourceModels.SpawnCreepsBuilding(this, GetUnitTypeId(this.Building.Wc3Unit), this.BuildingArea, 0)
@@ -22734,16 +22865,18 @@ System.namespace("Source.Models", function (namespace)
             { "InitializeBuilding", 0x286, InitializeBuilding, System.Int32, System.Single, out.Source.Models.SpawnCreepsBuilding },
             { "InitializeHero", 0x206, InitializeHero, System.Int32, System.Single },
             { "ReviveHero", 0x6, ReviveHero },
-            { "SetOwnerAndRebuild", 0x106, SetOwnerAndRebuild, out.WCSharp.Api.player },
+            { "SetOwnerAndRebuild", 0x206, SetOwnerAndRebuild, out.Source.Abstracts.TeamBase, out.Source.Models.Area },
             { "SpawnUnitInAreaAtRandomPoint", 0x186, SpawnUnitInAreaAtRandomPoint, System.Int32, out.Source.Models.SpawnedCreep }
           },
           properties = {
+            { "AttackTargetArea", 0x6, out.Source.Models.Area },
             { "Building", 0x6, out.Source.Models.SpawnCreepsBuilding },
             { "BuildingArea", 0x6, out.Source.Models.Area },
             { "Center", 0x6, out.Source.Models.Area },
             { "Name", 0x6, System.String },
             { "NearestForce", 0x6, out.Source.Models.ComputerPlayer },
             { "OpposingForce", 0x6, out.Source.Models.ComputerPlayer },
+            { "OwnerTeam", 0x6, out.Source.Abstracts.TeamBase },
             { "SpawnArea", 0x6, out.Source.Models.Area }
           },
           class = { "CreepCamp", 0x26 }
@@ -35449,8 +35582,8 @@ local InitCSharp = function ()
       "WCSharp.Missiles.HomingMissile",
       "WCSharp.Missiles.MomentumMissile",
       "WCSharp.Missiles.OrbitalMissile",
-      "WCSharp.SaveLoad.Save_1",
       "WCSharp.SaveLoad.SaveLoadedMessage_1",
+      "WCSharp.SaveLoad.Save_1",
       "WCSharp.W3MMD.IW3MmdVar",
       "Areas",
       "Constants",
@@ -35459,11 +35592,7 @@ local InitCSharp = function ()
       "Source.Events.Buildings.CreepMainBuilding",
       "Source.Events.Buildings.TeamBarracksBuilding",
       "Source.Events.Buildings.TeamMainBuilding",
-      "Source.Events.Generic.Ability",
-      "Source.Events.GenericEvents.Unit",
-      "Source.Events.Heros.ComputerHero",
-      "Source.Events.Heros.UserHero",
-      "Source.Events.Other.Item",
+      "Source.Events.Hero",
       "Source.Events.Periodic.GoldIncome",
       "Source.Events.Periodic.Klatschen",
       "Source.Events.Periodic.ResearchCheck",
@@ -35471,7 +35600,13 @@ local InitCSharp = function ()
       "Source.Events.Region.HumanBase",
       "Source.Events.Region.OrcBase",
       "Source.Events.Region.UndeadBase",
-      "Source.Events.Research.UserResearch",
+      "Source.Events.Unit",
+      "Source.Extensions.unitExtension",
+      "Source.Logics.ComputerHero",
+      "Source.Logics.ComputerUnit",
+      "Source.Logics.HeroSelector",
+      "Source.Logics.Research",
+      "Source.Logics.UserHero",
       "Source.Models.Area",
       "Source.Models.ComputerPlayer",
       "Source.Models.CreepCamp",
@@ -35910,15 +36045,13 @@ gg_unit_h006_0219 = nil
 gg_unit_h006_0220 = nil
 gg_unit_nten_0221 = nil
 gg_unit_nten_0222 = nil
-gg_unit_nten_0223 = nil
+gg_unit_nshe_0227 = nil
 gg_unit_nten_0224 = nil
-gg_unit_nten_0225 = nil
+gg_unit_npig_0226 = nil
 gg_unit_ntn2_0229 = nil
 gg_unit_ntn2_0228 = nil
 gg_unit_nech_0230 = nil
 gg_unit_necr_0234 = nil
-gg_unit_npig_0226 = nil
-gg_unit_nshe_0227 = nil
 gg_dest_HEch_0019 = nil
 gg_dest_HEch_0017 = nil
 gg_dest_HEch_0016 = nil
@@ -57516,13 +57649,11 @@ function CreateNeutralPassiveBuildings()
     gg_unit_h018_0091 = CreateUnit(p, 1747988792, 16320.0, 18496.0, 270.000)
     gg_unit_h019_0092 = CreateUnit(p, 1747988793, 16576.0, 18496.0, 270.000)
     gg_unit_NBDL_0135 = CreateUnit(p, 1312965708, -12032.0, -8960.0, 270.000)
-    gg_unit_nten_0221 = CreateUnit(p, 1853121902, -7328.0, 6560.0, 270.000)
-    gg_unit_nten_0222 = CreateUnit(p, 1853121902, -7072.0, 6688.0, 270.000)
-    gg_unit_nten_0223 = CreateUnit(p, 1853121902, -6816.0, 6688.0, 270.000)
+    gg_unit_nten_0221 = CreateUnit(p, 1853121902, -7200.0, 6624.0, 270.000)
+    gg_unit_nten_0222 = CreateUnit(p, 1853121902, -6816.0, 6624.0, 270.000)
     gg_unit_nten_0224 = CreateUnit(p, 1853121902, -6432.0, 6368.0, 270.000)
-    gg_unit_nten_0225 = CreateUnit(p, 1853121902, -6688.0, 6432.0, 270.000)
     gg_unit_ntn2_0228 = CreateUnit(p, 1853124146, -6560.0, 5536.0, 270.000)
-    gg_unit_ntn2_0229 = CreateUnit(p, 1853124146, -6368.0, 5664.0, 270.000)
+    gg_unit_ntn2_0229 = CreateUnit(p, 1853124146, -6368.0, 5728.0, 270.000)
 end
 
 function CreateNeutralPassive()
@@ -57663,9 +57794,9 @@ function CreateRegions()
     gg_rct_HumanBaseToCenterSpawn = Rect(-9984.0, 12800.0, -9728.0, 13056.0)
     gg_rct_HumanBaseToElfSpawn = Rect(-10368.0, 12800.0, -10112.0, 13056.0)
     gg_rct_HumanBaseToOrcSpawn = Rect(-9984.0, 13184.0, -9728.0, 13440.0)
-    gg_rct_HumanCreepToElf = Rect(-6848.0, 6080.0, -6720.0, 6208.0)
-    gg_rct_HumanCreepToElfSpawn = Rect(-7424.0, 5504.0, -6656.0, 6272.0)
-    gg_rct_HumanCreepToElfSpawnBuilding = Rect(-7104.0, 6336.0, -6976.0, 6464.0)
+    gg_rct_HumanCreepToElf = Rect(-6464.0, 6080.0, -6336.0, 6208.0)
+    gg_rct_HumanCreepToElfSpawn = Rect(-7552.0, 5504.0, -6528.0, 6528.0)
+    gg_rct_HumanCreepToElfSpawnBuilding = Rect(-7104.0, 5952.0, -6976.0, 6080.0)
     gg_rct_HumanToElfInnerLine = Rect(-10304.0, 11200.0, -10176.0, 11328.0)
     gg_rct_HumanToElfOuterLine = Rect(-10304.0, 7104.0, -10176.0, 7232.0)
     gg_rct_HumanToOrcInnerLine = Rect(-8256.0, 13248.0, -8128.0, 13376.0)
@@ -57691,7 +57822,7 @@ function CreateRegions()
     gg_rct_OrcToUndeadInnerLine = Rect(10176.0, 11200.0, 10304.0, 11328.0)
     gg_rct_OrcToUndeadOuterLine = Rect(10176.0, 7104.0, 10304.0, 7232.0)
     gg_rct_TestArea = Rect(17280.0, 17280.0, 17408.0, 17408.0)
-    gg_rct_TestArea2 = Rect(-7104.0, 3008.0, -6976.0, 3136.0)
+    gg_rct_TestArea2 = Rect(-7104.0, 5056.0, -6976.0, 5184.0)
     gg_rct_UndeadBarracksToCenter = Rect(6080.0, -3136.0, 6208.0, -3008.0)
     gg_rct_UndeadBarracksToCenterSpawn = Rect(5760.0, -3584.0, 6016.0, -2560.0)
     gg_rct_UndeadBarracksToElf = Rect(4928.0, -7232.0, 5056.0, -7104.0)
@@ -58103,7 +58234,6 @@ end
 function main()
     SetCameraBounds(-19712.0 + GetCameraMargin(CAMERA_MARGIN_LEFT), -19968.0 + GetCameraMargin(CAMERA_MARGIN_BOTTOM), 19712.0 - GetCameraMargin(CAMERA_MARGIN_RIGHT), 19456.0 - GetCameraMargin(CAMERA_MARGIN_TOP), -19712.0 + GetCameraMargin(CAMERA_MARGIN_LEFT), 19456.0 - GetCameraMargin(CAMERA_MARGIN_TOP), 19712.0 - GetCameraMargin(CAMERA_MARGIN_RIGHT), -19968.0 + GetCameraMargin(CAMERA_MARGIN_BOTTOM))
     SetDayNightModels("Environment\\DNC\\DNCLordaeron\\DNCLordaeronTerrain\\DNCLordaeronTerrain.mdl", "Environment\\DNC\\DNCLordaeron\\DNCLordaeronUnit\\DNCLordaeronUnit.mdl")
-    SetTerrainFogEx(0, 3000.0, 5000.0, 0.500, 1.000, 0.000, 0.000)
     NewSoundEnvironment("Default")
     SetAmbientDaySound("LordaeronSummerDay")
     SetAmbientNightSound("LordaeronSummerNight")

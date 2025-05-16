@@ -2,11 +2,11 @@
 using System;
 using WCSharp.Api;
 
-namespace Source.Events.Heros
+namespace Source.Logics
 {
   internal static class ComputerHero
   {
-    internal static void OnDies(unit unit)
+    internal static void HandleDied(unit unit)
     {
       int playerId = unit.Owner.Id;
       int respawnTime = 0;
@@ -106,7 +106,7 @@ namespace Source.Events.Heros
       });
     }
 
-    internal static void OnLevels()
+    internal static void HandleLeveled()
     {
       unit unit = Common.GetLevelingUnit();
 

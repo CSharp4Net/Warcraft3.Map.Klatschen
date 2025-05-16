@@ -47,7 +47,7 @@ namespace Source.Events.Buildings
 
         ComputerPlayer newOwningPlayer = user.Team.Computer;
 
-        Console.WriteLine($"{creepCamp.Name} wurden besiegt und schließen sich {user.Team.Computer.Wc3Player.Name} an!");
+        Console.WriteLine($"|cffff0000{creepCamp.Name}|r wurden besiegt und schließen sich {user.Team.Computer.Wc3Player.Name} an!");
         Common.TimerStart(timer, rebuildTime, false, () =>
         {
           try

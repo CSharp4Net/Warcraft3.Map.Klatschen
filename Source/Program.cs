@@ -1,11 +1,7 @@
-﻿using Source.Events.Buildings;
-using Source.Events.Generic;
-using Source.Events.GenericEvents;
-using Source.Events.Heros;
+﻿using Source.Events;
+using Source.Events.Buildings;
 using Source.Events.Periodic;
 using Source.Events.Region;
-using Source.Events.Research;
-using Source.Events.Other;
 using Source.Models;
 using Source.Models.Teams;
 using System;
@@ -123,13 +119,13 @@ namespace Source
         Areas.UndeadBase.RegisterOnEnter(UndeadBase.OnEnter);
 
         // Allgemeine Events registrieren
-        PlayerUnitEvents.Register(UnitTypeEvent.BuysUnit, UserHero.OnBuyed);
-        PlayerUnitEvents.Register(UnitTypeEvent.FinishesResearch, UserResearch.OnFinished);
-        PlayerUnitEvents.Register(UnitTypeEvent.SellsItem, Item.OnSellsFinished);
+        PlayerUnitEvents.Register(UnitTypeEvent.BuysUnit, Unit.OnBuysUnit);
+        PlayerUnitEvents.Register(UnitTypeEvent.FinishesResearch, Unit.OnFinishesResearch);
+        PlayerUnitEvents.Register(UnitTypeEvent.SellsItem, Unit.OnSellsItem);
         PlayerUnitEvents.Register(UnitTypeEvent.Dies, Unit.OnDies);
         PlayerUnitEvents.Register(UnitTypeEvent.ReceivesOrder, Unit.OnReceivesOrder);
-        PlayerUnitEvents.Register(UnitTypeEvent.SpellEffect, Ability.OnCasted);
-        PlayerUnitEvents.Register(HeroTypeEvent.Levels, ComputerHero.OnLevels);
+        PlayerUnitEvents.Register(UnitTypeEvent.SpellEffect, Unit.OnSpellEffect);
+        PlayerUnitEvents.Register(HeroTypeEvent.Levels, Hero.OnLevels);
 
         // Periodische Events registrieren
         PeriodicEvents.AddPeriodicEvent(GoldIncome.OnElapsed, 5f);
@@ -156,19 +152,15 @@ namespace Source
         Common.FogMaskEnable(false);
 #endif
 
+        // TODO
         CreepCamp bandits = new CreepCamp("Räudige Banditen", 
           Areas.HumanCreepToElfSpawnBuilding, Areas.HumanCreepToElf, Areas.HumanCreepToElfSpawn,
           Humans.Computer, Elves.Computer);
 
-        SpawnCreepsBuilding building = bandits.InitializeBuilding(Constants.UNIT_BANDITENZELT_CREEP);
-
-        //bandits.CreateOrReviveHero(Constants.UNIT_BANDITENF_RST_CREEP);
-        //bandits.SpawnUnitInAreaAtRandomPoint(Constants.UNIT_BANDIT_CREEP);
-        //bandits.SpawnUnitInAreaAtRandomPoint(Constants.UNIT_BANDIT_CREEP);
-        //bandits.SpawnUnitInAreaAtRandomPoint(Constants.UNIT_BANDIT_CREEP);
-        //bandits.SpawnUnitInAreaAtRandomPoint(Constants.UNIT_BANDIT_CREEP);
+        SpawnCreepsBuilding building = bandits.InitializeBuilding(Constants.UNIT_BANDITENZELT_CREEP);;
 
         CreepCamps.Add(bandits);
+        // TODO
 
 
         var timer = Common.CreateTimer();
