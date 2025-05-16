@@ -12,22 +12,19 @@ namespace Source.Models
     /// Erstellt einen zeitgesteuertem Auslöser für das regelmäßige Erstellen von Einheiten.
     /// </summary>
     /// <param name="player">Computer-Spieler, für den Einheiten erstellt werden</param>
-    /// <param name="building">Gebäude, an dessen Lebenszeit dieser Auslöser gebunden ist</param>
     /// <param name="spawnArea">Gebiet, in dem die Einheiten erstellt werden</param>
-    /// <param name="unitSpawnType">Klasse der erstellten Einheiten</param>
-    /// <param name="interval">Interval in Sekunden, nach dessen Rythmus Einheiten erstellt werden</param>
+    /// <param name="spawnInterval">Klasse der erstellten Einheiten</param>
     /// <param name="targetArea">Zielgebiet, für das erstellte Einheiten einen Angriff/Bewegen-Befehl erhalten</param>
     /// <param name="unitIds">Auflistung an Einheit-Typen zu beginn</param>
-    public SpawnUnitsTrigger(ComputerPlayer player, SpawnUnitsBuilding building, Area spawnArea, UnitClass unitSpawnType, float interval, Area targetArea, params int[] unitIds)
+    public SpawnUnitsTrigger(ComputerPlayer player, Area spawnArea, SpawnInterval spawnInterval, Area targetArea, params int[] unitIds)
     {
       Player = player;
-      Interval = interval;
       SpawnArea = spawnArea;
       TargetArea = targetArea;
-      //Building = building;
-      UnitSpawnType = unitSpawnType;
+      UnitSpawnType = spawnInterval;
       UnitIds = unitIds.ToList();
       IsNeutralPlayer = false;
+      Interval = Program.GetIntervalSeconds(spawnInterval);
     }
 
     /// <summary>
@@ -55,7 +52,7 @@ namespace Source.Models
     /// <summary>
     /// Typ der erstellenden Einheiten.
     /// </summary>
-    public Enums.UnitClass UnitSpawnType { get; init; }
+    public Enums.SpawnInterval UnitSpawnType { get; init; }
 
     /// <summary>
     /// Startet den Trigger im angegebenen Interval

@@ -10728,18 +10728,6 @@ STRING 3235
 (Elf)
 }
 
-STRING 3236
-// Units: n00K (Blaudrachenhorst), EditorSuffix (Name - Editor Suffix)
-{
-(Support)
-}
-
-STRING 3237
-// Units: n00P (Blaudrache), EditorSuffix (Name - Editor Suffix)
-{
-(Support)
-}
-
 STRING 3238
 // Units: h01I (Nahkampfeinheit - Stufe 1), EditorSuffix (Name - Editor Suffix)
 {
@@ -12261,5 +12249,89 @@ STRING 3613
 // Units: n013 (Auftragsmörder), Description (Description)
 {
 Fernkampfeinheit
+}
+
+STRING 3614
+// Abilities: A00G (Transmutieren), Researchtip (Tooltip - Learn)
+{
+Transmutieren [|cffffcc00Stufe %d|r] erlernen
+}
+
+STRING 3615
+// Abilities: A00Z (Sturm, Erde und Feuer), Researchtip (Tooltip - Learn)
+{
+Sturm, Erde und Feuer [|cffffcc00Stufe %d|r] erlernen
+}
+
+STRING 3616
+// Abilities: A0A0 (Bezauberung), Researchtip (Tooltip - Learn)
+{
+Bezauberung [|cffffcc00Stufe %d|r] erlernen
+}
+
+STRING 3617
+// Abilities: A0VD (Verdammnis), Researchtip (Tooltip - Learn)
+{
+Verdammnis [|cffffcc00Stufe %d|r] erlernen
+}
+
+STRING 3618
+// Abilities: A0VK (Vulkan), Researchtip (Tooltip - Learn)
+{
+Vulkan [|cffffcc00Stufe %d|r] erlernen
+}
+
+STRING 3619
+// Abilities: A015 (Avatar), Researchtip (Tooltip - Learn)
+{
+Avatar [|cffffcc00Stufe %d|r] erlernen
+}
+
+STRING 3620
+// Abilities: AKLS (Klingensturm), Researchtip (Tooltip - Learn)
+{
+Klingensturm [|cffffcc00Stufe %d|r] erlernen
+}
+
+STRING 3621
+// Abilities: AGBV (Großer böser Voodoo), Researchtip (Tooltip - Learn)
+{
+Großer böser Voodoo [|cffffcc00Stufe %d|r] erlernen
+}
+
+STRING 3622
+// Abilities: AGLH (Gelassenheit), Researchtip (Tooltip - Learn)
+{
+Gelassenheit [|cffffcc00Stufe %d|r] erlernen
+}
+
+STRING 3623
+// Abilities: A026 (Inferno), Researchtip (Tooltip - Learn)
+{
+Inferno [|cffffcc00Stufe %d|r] erlernen
+}
+
+STRING 3624
+// Units: n014 (Zauberlehrling), EditorSuffix (Name - Editor Suffix)
+{
+(Creep)
+}
+
+STRING 3625
+// Units: n00X (Bandit), Ubertip (Tooltip - Extended)
+{
+Eine Nahkampfeinheit.|n|n|cffffcc00Kann Bodeneinheiten angreifen.|r
+}
+
+STRING 3626
+// Units: n013 (Auftragsmörder), Ubertip (Tooltip - Extended)
+{
+Eine Fernkampfeinheit, die Giftpfeile verschießt.|n|n|cffffcc00Kann Boden- und Lufteinheiten angreifen.|r
+}
+
+STRING 3627
+// Units: n014 (Zauberlehrling), Ubertip (Tooltip - Extended)
+{
+Eine Magieeinhei, die Feuerblitze verschießen kann.|n|n|cffffcc00Kann Boden- und Lufteinheiten angreifen.|r
 }
 

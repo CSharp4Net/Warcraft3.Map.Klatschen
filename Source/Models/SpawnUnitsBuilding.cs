@@ -39,9 +39,9 @@ namespace Source.Models
     /// <param name="spawnArea">Spawn-Gebiet</param>
     /// <param name="unitIds">Auflistung an Einheiten-Ids</param>
     /// <returns></returns>
-    public SpawnUnitsTrigger AddSpawnTrigger(Area spawnArea, Enums.UnitClass unitSpawnType, float interval, Area targetArea, params int[] unitIds)
+    public SpawnUnitsTrigger AddSpawnTrigger(Area spawnArea, Enums.SpawnInterval spawnInterval, Area targetArea, params int[] unitIds)
     {
-      SpawnUnitsTrigger trigger = new SpawnUnitsTrigger(Computer, this, spawnArea, unitSpawnType, interval, targetArea, unitIds);
+      SpawnUnitsTrigger trigger = new SpawnUnitsTrigger(Computer, spawnArea, spawnInterval, targetArea, unitIds);
       SpawnTriggers.Add(trigger);
       return trigger;
     }

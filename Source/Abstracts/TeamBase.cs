@@ -35,6 +35,8 @@ namespace Source.Abstracts
       });
     }
 
+    public string ColorizedName { get; init; }
+
     /// <summary>
     /// Computer-Spieler dieser Streitmacht.
     /// </summary>
@@ -60,11 +62,9 @@ namespace Source.Abstracts
     /// </summary>
     public void Defeat()
     {
-      //Program.ShowDebugMessage("Team.Defeat", $"Defeat computer");
       // Töte alle Computer-Einheiten
       Computer.Defeat();
 
-      //Program.ShowDebugMessage("Team.Defeat", $"Defeat players");
       // Alle echten Spieler durchlaufen
       foreach (UserPlayer player in Users)
       {
@@ -134,7 +134,7 @@ namespace Source.Abstracts
     {
       foreach (UserPlayer user in Users)
       {
-        Common.BlzDisplayChatMessage(user.Wc3Player, user.PlayerId, message);
+        Common.BlzDisplayChatMessage(Computer.Wc3Player, user.PlayerId, message);
       }
     }
 
@@ -148,7 +148,7 @@ namespace Source.Abstracts
     /// <returns></returns>
     public virtual Enums.ResearchType GetTechType(int techId, int techLevel, out SpawnUnitCommand spawnCommand)
     {
-      Console.WriteLine("GetTechType - not implemented yet for player " + Computer.Wc3Player.Name);
+      Program.ShowErrorMessage("GetTechType", $"Method not implemented yet for player {ColorizedName}!");
 
       spawnCommand = null;
       return Enums.ResearchType.CommonUpgrade;

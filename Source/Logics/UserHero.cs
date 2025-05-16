@@ -67,19 +67,19 @@ namespace Source.Logics
       });
     }
 
-    internal static void HandleItemBuyed(unit hero, item soldItem)
+    internal static void HandleItemBuyed(unit buyingUnit, item soldItem)
     {
       int itemId = soldItem.TypeId;
 
       if (itemId == Constants.ITEM_GLYPHE_DER_OPFERUNG)
       {
-        int playerId = hero.Owner.Id;
+        int playerId = buyingUnit.Owner.Id;
         if (Program.TryGetActiveUser(playerId, out UserPlayer user))
         {
           // Merke Heldenstufe
-          user.HeroLevelCounter = hero.HeroLevel;
+          user.HeroLevelCounter = buyingUnit.HeroLevel;
           // Entferne Käufer/Helden aus Spiel
-          Common.RemoveUnit(hero);
+          Common.RemoveUnit(buyingUnit);
 
           // Heldenseele erstellen und Kamera verschieben
           Program.CreateHeroSelectorForPlayerAndAdjustCamera(user);
@@ -87,7 +87,7 @@ namespace Source.Logics
       }
     }
 
-    internal static void HandleCharmCasted(int abilityId)
+    internal static void HandleCharmCasted(int castedAbilityId)
     {
       try
       {
@@ -98,7 +98,7 @@ namespace Source.Logics
         unit castingUnit = Common.GetSpellAbilityUnit();
 
         // Stufe & Reichweite des Zaubers
-        int spellLevel = castingUnit.GetAbilityLevel(abilityId);
+        int spellLevel = castingUnit.GetAbilityLevel(castedAbilityId);
         int spellRange = 250 + spellLevel * 50;
 
         // Ziel & Position des Zauberziels
@@ -150,7 +150,7 @@ namespace Source.Logics
       }
     }
 
-    private static void HandleAnythingCasted(int abilityId)
+    private static void HandleAnythingCasted(int castedAbilityId)
     {
       try
       {
@@ -161,7 +161,7 @@ namespace Source.Logics
         unit castingUnit = Common.GetSpellAbilityUnit();
 
         // Stufe des Zaubers
-        int spellLevel = castingUnit.GetAbilityLevel(abilityId);
+        int spellLevel = castingUnit.GetAbilityLevel(castedAbilityId);
         int spellRange = 100 * spellLevel;
         Program.ShowDebugMessage($"Ability {ability.Name} with level: {spellLevel}");
 
@@ -215,6 +215,36 @@ namespace Source.Logics
       {
         Program.ShowExceptionMessage("Ability.HandleAnythingCasted", ex);
       }
+    }
+
+    internal static void HandleCreepSpawnBuyed(unit buyingUnit, unit soldUnit, unit sellingUnit)
+    {
+      int soldUnitId = Common.GetUnitTypeId(soldUnit);
+
+      // Gekaufte Einheit sofort entfernen
+      Common.RemoveUnit(soldUnit);
+
+      // Sicherheitshalber Verweis auf Einheit für GC freigeben
+      soldUnit.Dispose();
+      soldUnit = null;
+
+      int playerId = buyingUnit.Owner.Id;
+
+      if (!Program.TryGetActiveUser(playerId, out UserPlayer user))
+      {
+
+        Console.WriteLine($"HandleCreepSpawnBuyed, invalid player id {playerId}!");
+        return;
+      }
+
+      if (!Program.TryGetCreepCamp(sellingUnit, out CreepCamp creepCamp))
+      {
+
+        Console.WriteLine($"HandleCreepSpawnBuyed, invalid selling creep unit {sellingUnit.Name}!");
+        return;
+      }
+
+      creepCamp.Building.AddUnitToSpawnTrigger(soldUnitId);
     }
   }
 }

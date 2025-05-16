@@ -46,9 +46,8 @@ public static class Regions
 	public static Rectangle HumanBaseToCenterSpawn { get; set; } = new Rectangle(-9984f, 12800f, -9728f, 13056f);
 	public static Rectangle HumanBaseToElfSpawn { get; set; } = new Rectangle(-10368f, 12800f, -10112f, 13056f);
 	public static Rectangle HumanBaseToOrcSpawn { get; set; } = new Rectangle(-9984f, 13184f, -9728f, 13440f);
-	public static Rectangle HumanCreepToElf { get; set; } = new Rectangle(-6464f, 6080f, -6336f, 6208f);
-	public static Rectangle HumanCreepToElfSpawn { get; set; } = new Rectangle(-7552f, 5504f, -6528f, 6528f);
-	public static Rectangle HumanCreepToElfSpawnBuilding { get; set; } = new Rectangle(-7104f, 5952f, -6976f, 6080f);
+	public static Rectangle HumanCreepToElfSpawn { get; set; } = new Rectangle(-8192f, 6912f, -7424f, 7680f);
+	public static Rectangle HumanCreepToElfSpawnBuilding { get; set; } = new Rectangle(-7808f, 6656f, -7552f, 6912f);
 	public static Rectangle HumanToElfInnerLine { get; set; } = new Rectangle(-10304f, 11200f, -10176f, 11328f);
 	public static Rectangle HumanToElfOuterLine { get; set; } = new Rectangle(-10304f, 7104f, -10176f, 7232f);
 	public static Rectangle HumanToOrcInnerLine { get; set; } = new Rectangle(-8256f, 13248f, -8128f, 13376f);
@@ -74,7 +73,7 @@ public static class Regions
 	public static Rectangle OrcToUndeadInnerLine { get; set; } = new Rectangle(10176f, 11200f, 10304f, 11328f);
 	public static Rectangle OrcToUndeadOuterLine { get; set; } = new Rectangle(10176f, 7104f, 10304f, 7232f);
 	public static Rectangle TestArea { get; set; } = new Rectangle(17280f, 17280f, 17408f, 17408f);
-	public static Rectangle TestArea2 { get; set; } = new Rectangle(-7104f, 5056f, -6976f, 5184f);
+	public static Rectangle TestArea2 { get; set; } = new Rectangle(-9472f, 8000f, -9344f, 8128f);
 	public static Rectangle UndeadBarracksToCenter { get; set; } = new Rectangle(6080f, -3136f, 6208f, -3008f);
 	public static Rectangle UndeadBarracksToCenterSpawn { get; set; } = new Rectangle(5760f, -3584f, 6016f, -2560f);
 	public static Rectangle UndeadBarracksToElf { get; set; } = new Rectangle(4928f, -7232f, 5056f, -7104f);

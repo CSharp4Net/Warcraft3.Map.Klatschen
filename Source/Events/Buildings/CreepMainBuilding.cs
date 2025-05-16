@@ -10,20 +10,21 @@ namespace Source.Events.Buildings
     {
       try
       {
-        unit unit = Common.GetTriggerUnit();
+        unit buildingUnit = Common.GetTriggerUnit();
         unit killingUnit = Common.GetKillingUnit();
+
         player player = killingUnit.Owner;
 
         if (!Program.TryGetActiveUser(player.Id, out UserPlayer user))
           return;
 
-        int unitType = unit.UnitType;
+        int unitType = buildingUnit.UnitType;
         CreepCamp creepCamp = null;
 
         // Suche CreepCamp, zudem das zerstörte Gebäude gehört
         foreach (CreepCamp camp in Program.CreepCamps)
         {
-          if (camp.Building.Wc3Unit == unit)
+          if (camp.Building.Wc3Unit == buildingUnit)
           {
             creepCamp = camp;
             break;
@@ -47,7 +48,7 @@ namespace Source.Events.Buildings
 
         ComputerPlayer newOwningPlayer = user.Team.Computer;
 
-        Console.WriteLine($"|cffff0000{creepCamp.Name}|r wurden besiegt und schließen sich {user.Team.Computer.Wc3Player.Name} an!");
+        Console.WriteLine($"|c{ConstantsEx.ColorHexCode_Gold}{creepCamp.Name}|r wurden besiegt und schließen sich der {user.Team.ColorizedName} an!");
         Common.TimerStart(timer, rebuildTime, false, () =>
         {
           try

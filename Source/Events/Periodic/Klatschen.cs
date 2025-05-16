@@ -17,7 +17,7 @@ namespace Source.Events.Periodic
       {
         weathereffect weathereffect = Common.AddWeatherEffect(Blizzard.GetPlayableMapRect(), ConstantsEx.WEATHER_Lorderon_Heavy_Rain);
         timer weatherTimer = Common.CreateTimer();
-        Common.TimerStart(weatherTimer, Program.KlatschenInterval / 5, false, () =>
+        Common.TimerStart(weatherTimer, ConstantsEx.Interval_Event_Klatschen / 5, false, () =>
         {
           Common.RemoveWeatherEffect(weathereffect);
           weathereffect.Dispose();

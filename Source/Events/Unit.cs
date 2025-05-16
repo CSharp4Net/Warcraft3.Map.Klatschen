@@ -5,8 +5,14 @@ using WCSharp.Api;
 
 namespace Source.Events
 {
+  /// <summary>
+  /// Stellt statische Methoden zum Behandeln von Einheiten-Events bereit.
+  /// </summary>
   internal static class Unit
   {
+    /// <summary>
+    /// Behandelt den Tod einer Einheit.
+    /// </summary>
     internal static void OnDies()
     {
       try
@@ -22,47 +28,26 @@ namespace Source.Events
         if (unit.IsUnitType(unittype.Hero))
         {
           // Wenn Helden sterben, werden diese abhängig vom SlotStatus gesondert behandelt
-          if (unit.Owner.Controller == mapcontrol.User)
+          if (unit.IsUnitOfUser())
+          {
             Logics.UserHero.HandleDied(unit);
-          else
+          }
+          else if (unit.IsUnitOfComputer())
+          {
             Logics.ComputerHero.HandleDied(unit);
-
-          return;
+          }
+          else if (unit.IsUnitOfCreep())
+          {
+            Program.ShowDebugMessage("Creep hero died");
+            Logics.ComputerHero.HandleDied(unit);
+          }
+          else
+          {
+            Console.WriteLine("UNKNOWN hero died!!!");
+          }
         }
-
-        player owner = unit.Owner;
-
-        // Getötete Einheit von Spieler entfernen
-        if (Program.Humans.Computer.IsOwnerOfUnit(unit, out SpawnedUnit spawnedUnit))
-        {
-          Program.Humans.Computer.RemoveUnit(spawnedUnit);
-        }
-        else if (Program.Orcs.Computer.IsOwnerOfUnit(unit, out spawnedUnit))
-        {
-          Program.Orcs.Computer.RemoveUnit(spawnedUnit);
-        }
-        else if (Program.Elves.Computer.IsOwnerOfUnit(unit, out spawnedUnit))
-        {
-          Program.Elves.Computer.RemoveUnit(spawnedUnit);
-        }
-        else if (Program.Undeads.Computer.IsOwnerOfUnit(unit, out spawnedUnit))
-        {
-          Program.Undeads.Computer.RemoveUnit(spawnedUnit);
-        }
-        //else
-        //  Bspw. der Tod der Heldenseele bei Kauf löst diesen Fall aus.
-        //  Program.ShowDebugMessage("Unit.OnDies", $"Unit {unit.Name} not found in unit lists of computer players!");
-
-        // Verstorbene Einheit nach kurzer Zeit aus Spiel entfernen um RAM zu sparen
-        var timer = Common.CreateTimer();
-        Common.TimerStart(timer, 10f, false, () =>
-        {
-          Common.DestroyTimer(timer);
-          Common.RemoveUnit(unit);
-          // Sicherheitshalber Verweis auf Einheit für GC freigeben
-          unit.Dispose();
-          unit = null;
-        });
+        else
+          Logics.ComputerUnit.HandleDied(unit);
       }
       catch (Exception ex)
       {
@@ -70,6 +55,9 @@ namespace Source.Events
       }
     }
 
+    /// <summary>
+    /// Behandelt den Befehlswechsel einer Einheit.
+    /// </summary>
     internal static void OnReceivesOrder()
     {
       try
@@ -102,6 +90,9 @@ namespace Source.Events
       }
     }
 
+    /// <summary>
+    /// Behandelt den Zaubervorgang einer Einheit.
+    /// </summary>
     internal static void OnSpellEffect()
     {
       try
@@ -126,20 +117,25 @@ namespace Source.Events
       }
     }
 
+    /// <summary>
+    /// Behandelt den Kaufvorgang einer Einheit.
+    /// </summary>
     internal static void OnBuysUnit()
     {
       try
       {
         unit buyingUnit = Common.GetBuyingUnit();
         unit soldUnit = Common.GetSoldUnit();
+        unit sellingUnit = Common.GetSellingUnit();
 
         if (Common.GetUnitTypeId(buyingUnit) == Constants.UNIT_HELDENSEELE_HERO_SELECTOR)
         {
           // Helden-Selector kauft Benutzerhelden
           Logics.HeroSelector.HandleHeroBuyed(buyingUnit, soldUnit);
+          return;
         }
 
-        // TODO : CreepCamps
+        Logics.UserHero.HandleCreepSpawnBuyed(buyingUnit, soldUnit, sellingUnit);
       }
       catch (Exception ex)
       {
@@ -147,6 +143,9 @@ namespace Source.Events
       }
     }
 
+    /// <summary>
+    /// Behandelt den Gegenstandskauf einer Einheit.
+    /// </summary>
     internal static void OnSellsItem()
     {
       try
@@ -166,6 +165,9 @@ namespace Source.Events
       }
     }
 
+    /// <summary>
+    /// Behandelt den Forschungsabschluss einer Einheit.
+    /// </summary>
     internal static void OnFinishesResearch()
     {
       try

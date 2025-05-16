@@ -18,20 +18,23 @@
       UpgradeUnit = 2
     }
 
-    public enum UnitClass
+    /// <summary>
+    /// Stellt die verschiedenen Zeitintervalle dar, in denen Einheiten automatisch gespawned werden.
+    /// </summary>
+    public enum SpawnInterval
     {
       /// <summary>
-      /// Nahkampfeinheiten
+      /// Kurzer Intervall
       /// </summary>
-      Meelee = 0,
+      Short = 0,
       /// <summary>
-      /// Fernkampfeinheiten
+      /// Mittlerer Intervall
       /// </summary>
-      Distance = 1,
+      Middle = 1,
       /// <summary>
-      /// Belagerungseinheiten
+      /// Langer Intervall
       /// </summary>
-      Artillery = 2
+      Long = 2
     }
   }
 }

@@ -7,14 +7,14 @@ namespace Source.Logics
   {
     internal static void HandleHeroBuyed(unit buyingUnit, unit soldUnit)
     {
-      int unitId = Common.GetUnitTypeId(soldUnit);
+      int soldUnitId = Common.GetUnitTypeId(soldUnit);
       player player = buyingUnit.Owner;
       int playerId = player.Id;
 
       // Käufer-Einheit töten
       buyingUnit.Kill();
 
-      // Gekaufte Einheit sofort wieder entfernen und in Player-Base neu erstelleN!
+      // Gekaufte Einheit sofort wieder entfernen und in Player-Base neu erstellen!
       Common.RemoveUnit(soldUnit);
 
       // Sicherheitshalber Verweis auf Einheit für GC freigeben
@@ -50,7 +50,7 @@ namespace Source.Logics
       user.HeroLevelCounter = 36;
 #endif
 
-      user.CreateHero(unitId, spawnArea);
+      user.CreateHero(soldUnitId, spawnArea);
     }
   }
 }

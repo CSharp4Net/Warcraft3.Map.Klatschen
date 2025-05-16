@@ -12,31 +12,20 @@ namespace Source.Models
     /// <summary>
     /// Erstellt einen zeitgesteuertem Auslöser für das regelmäßige Erstellen von Einheiten.
     /// </summary>
-    /// <param name="player">Computer-Spieler, für den Einheiten erstellt werden</param>
-    /// <param name="building">Gebäude, an dessen Lebenszeit dieser Auslöser gebunden ist</param>
-    /// <param name="spawnArea">Gebiet, in dem die Einheiten erstellt werden</param>
-    /// <param name="unitSpawnType">Klasse der erstellten Einheiten</param>
-    /// <param name="interval">Interval in Sekunden, nach dessen Rythmus Einheiten erstellt werden</param>
+    /// <param name="creepCamp">Computer-Spieler, für den Einheiten erstellt werden</param>
+    /// <param name="spawnInterval">Klasse der erstellten Einheiten</param>
     /// <param name="targetArea">Zielgebiet, für das erstellte Einheiten einen Angriff/Bewegen-Befehl erhalten</param>
     /// <param name="unitIds">Auflistung an Einheit-Typen zu beginn</param>
-    public SpawnCreepsTrigger(CreepCamp creepCamp, SpawnCreepsBuilding building, Area spawnArea, UnitClass unitSpawnType, float interval, Area targetArea, params int[] unitIds)
+    public SpawnCreepsTrigger(CreepCamp creepCamp, SpawnInterval spawnInterval, Area targetArea, params int[] unitIds)
     {
       CreepCamp = creepCamp;
-      Interval = interval;
-      //SpawnArea = spawnArea;
       TargetArea = targetArea;
-      //Building = building;
-      UnitSpawnType = unitSpawnType;
       UnitIds = unitIds.ToList();
+      SpawnInterval = spawnInterval;
+      Interval = Program.GetIntervalSeconds(spawnInterval);
     }
 
     private CreepCamp CreepCamp { get; init; }
-
-    ///// <summary>
-    ///// Gebäude, an das der Auslöser gebunden ist.
-    ///// Stirbt das Gebäude, werden gebundene Auslöser gestoppt.
-    ///// </summary>
-    //private SpawnBuilding Building { get; init; }
 
     private float Interval { get; init; }
 
@@ -49,12 +38,12 @@ namespace Source.Models
     /// <summary>
     /// Typ der erstellenden Einheiten.
     /// </summary>
-    public Enums.UnitClass UnitSpawnType { get; init; }
+    public Enums.SpawnInterval SpawnInterval { get; init; }
 
     /// <summary>
     /// Startet den Trigger im angegebenen Interval
     /// </summary>
-    public void Run(float delay = 0f)
+    internal void Run(float delay = 0f)
     {
       // Delay a little since some stuff can break otherwise
       timer timer = Common.CreateTimer();
@@ -80,10 +69,8 @@ namespace Source.Models
       {
         foreach (int unitId in UnitIds)
         {
-          Program.ShowDebugMessage($"spawn unit {unitId}");
-          SpawnedCreep unit = CreepCamp.SpawnUnitInAreaAtRandomPoint(unitId);
-
-          unit.AttackMove(TargetArea);
+          CreepCamp.SpawnUnitInAreaAtRandomPoint(unitId)
+            .AttackMove(TargetArea);
         }
       }
       catch (Exception ex)
@@ -95,11 +82,16 @@ namespace Source.Models
     /// <summary>
     /// Stoppt den Trigger und zerstört ihn für den GC.
     /// </summary>
-    public void Stop()
+    internal void Stop()
     {
       Timer.Pause();
       Timer.Dispose();
       Timer = null;
+    }
+
+    internal void AddUnit(int unitId)
+    {
+      UnitIds.Add(unitId);
     }
   }
 }

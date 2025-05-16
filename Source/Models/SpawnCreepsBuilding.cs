@@ -10,7 +10,6 @@ namespace Source.Models
     {
       Wc3Unit = Common.CreateUnitAtLoc(creepCamp.Wc3Player, unitTypeId, creationArea.Wc3CenterLocation, face);
       CreepCamp = creepCamp;
-      SpawnTriggers = new List<SpawnCreepsTrigger>();
     }
 
     /// <summary>
@@ -27,10 +26,7 @@ namespace Source.Models
     /// </summary>
     private CreepCamp CreepCamp { get; init; }
 
-    /// <summary>
-    /// Auflistung von Spawn-Triggers.
-    /// </summary>
-    private List<SpawnCreepsTrigger> SpawnTriggers { get; init; }
+    private SpawnCreepsTrigger SpawnTrigger { get; set; }
 
     /// <summary>
     /// Fügt dem Gebäude einen Spawn-Trigger hinzu, welcher solange existiert ist, bis das Gebäude via <see cref="Destroy"/> zerstört wird.
@@ -39,11 +35,14 @@ namespace Source.Models
     /// <param name="spawnArea">Spawn-Gebiet</param>
     /// <param name="unitIds">Auflistung an Einheiten-Ids</param>
     /// <returns></returns>
-    public SpawnCreepsTrigger AddSpawnTrigger(Area spawnArea, Enums.UnitClass unitSpawnType, float interval, Area targetArea, params int[] unitIds)
+    public SpawnCreepsTrigger InitializeSpawnTrigger(Enums.SpawnInterval spawnInterval, Area targetArea)
     {
-      SpawnCreepsTrigger trigger = new SpawnCreepsTrigger(CreepCamp, this, spawnArea, unitSpawnType, interval, targetArea, unitIds);
-      SpawnTriggers.Add(trigger);
-      return trigger;
+      return SpawnTrigger = new SpawnCreepsTrigger(CreepCamp, spawnInterval, targetArea);
+    }
+
+    public void AddUnitToSpawnTrigger(int unitId)
+    {
+      SpawnTrigger.AddUnit(unitId);
     }
 
     /// <summary>
@@ -53,14 +52,8 @@ namespace Source.Models
     {
       DeRegisterOnDies();
 
-      for (int i = SpawnTriggers.Count - 1; i >= 0; i--)
-      {
-        SpawnCreepsTrigger trigger = SpawnTriggers[i];
-
-        trigger.Stop();
-
-        SpawnTriggers.RemoveAt(i);
-      }
+      if (SpawnTrigger != null)
+        SpawnTrigger.Stop();
 
       if (Wc3Unit.Alive)
       {

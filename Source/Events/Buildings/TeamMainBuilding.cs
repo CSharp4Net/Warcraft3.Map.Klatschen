@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Source.Abstracts;
+using System;
 using WCSharp.Api;
 
 namespace Source.Events.Buildings
@@ -13,22 +14,9 @@ namespace Source.Events.Buildings
 
         int playerId = unit.Owner.Id;
 
-        // Besiege alle Spieler im Team des Hauptgebäudes
-        if (playerId == Program.Humans.Computer.PlayerId)
+        if (Program.TryUnitTeam(unit, out TeamBase team))
         {
-          Program.Humans.Defeat();
-        }
-        else if (playerId == Program.Orcs.Computer.PlayerId)
-        {
-          Program.Orcs.Defeat();
-        }
-        else if (playerId == Program.Elves.Computer.PlayerId)
-        {
-          Program.Elves.Defeat();
-        }
-        else if (playerId == Program.Undeads.Computer.PlayerId)
-        {
-          Program.Undeads.Defeat();
+          team.Defeat();
         }
         else
           Program.ShowDebugMessage("MainBuilding.OnDies", $"Unit of building {unit.Name} not found in computer players!");

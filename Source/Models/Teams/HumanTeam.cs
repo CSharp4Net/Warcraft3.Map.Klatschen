@@ -8,7 +8,7 @@ namespace Source.Models.Teams
     public HumanTeam(player wc3ComputerPlayer, Area teamBaseArea)
       : base(wc3ComputerPlayer, teamBaseArea)
     {
-
+      ColorizedName = $"|c{ConstantsEx.ColorHexCode_Red}{wc3ComputerPlayer.Name}|r";
     }
 
     public override Enums.ResearchType GetTechType(int techId, int techLevel, out SpawnUnitCommand spawnCommand)
@@ -18,7 +18,7 @@ namespace Source.Models.Teams
         case Constants.UPGRADE_MELEE_UNIT_TEAM:
           spawnCommand = new SpawnUnitCommand()
           {
-            UnitSpawnType = Enums.UnitClass.Meelee,
+            UnitSpawnType = Enums.SpawnInterval.Short,
             UnitIdOfBuilding = Constants.UNIT_KASERNE_HUMAN,
           };
 
@@ -38,7 +38,7 @@ namespace Source.Models.Teams
         case Constants.UPGRADE_DISTANCE_UNIT_TEAM:
           spawnCommand = new SpawnUnitCommand()
           {
-            UnitSpawnType = Enums.UnitClass.Distance,
+            UnitSpawnType = Enums.SpawnInterval.Middle,
             UnitIdOfBuilding = Constants.UNIT_KASERNE_HUMAN,
           };
 
@@ -58,7 +58,7 @@ namespace Source.Models.Teams
         case Constants.UPGRADE_FLIGHT_UNIT_TEAM:
           spawnCommand = new SpawnUnitCommand()
           {
-            UnitSpawnType = Enums.UnitClass.Distance,
+            UnitSpawnType = Enums.SpawnInterval.Middle,
             UnitIdOfBuilding = Constants.UNIT_SCHLOSS_HUMAN,
           };
 
@@ -78,7 +78,7 @@ namespace Source.Models.Teams
         case Constants.UPGRADE_MAGE_UNIT_TEAM:
           spawnCommand = new SpawnUnitCommand()
           {
-            UnitSpawnType = Enums.UnitClass.Distance,
+            UnitSpawnType = Enums.SpawnInterval.Middle,
             UnitIdOfBuilding = Constants.UNIT_SCHLOSS_HUMAN
           };
 
@@ -98,7 +98,7 @@ namespace Source.Models.Teams
         case Constants.UPGRADE_SIEGE_UNIT_TEAM:
           spawnCommand = new SpawnUnitCommand()
           {
-            UnitSpawnType = Enums.UnitClass.Artillery,
+            UnitSpawnType = Enums.SpawnInterval.Long,
             UnitIdOfBuilding = Constants.UNIT_SCHLOSS_HUMAN
           };
 
