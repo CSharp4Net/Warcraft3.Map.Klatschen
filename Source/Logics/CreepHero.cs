@@ -23,6 +23,7 @@ namespace Source.Logics
       // Verstorbenen Held nach gegebener Zeit wieder belegen
       timer timer = Common.CreateTimer();
 
+      Program.ShowDebugMessage("Start creep hero timer!"); // TODO : Code prüfen!
       Common.TimerStart(timer, respawnTime, false, () =>
       {
         try
@@ -32,6 +33,7 @@ namespace Source.Logics
           timer.Dispose();
           timer = null;
 
+          Program.ShowDebugMessage("Detect creep hcampt of hero!"); // TODO : Code prüfen!
           // Prüfe vor Wiedergeburt-Abschluss, ob der Computer-Spieler noch unbesiegt ist
           if (!Program.TryGetCreepCampByHero(unit, out CreepCamp creepCamp))
           {
@@ -39,8 +41,10 @@ namespace Source.Logics
             return;
           }
 
+          Program.ShowDebugMessage($"Set creep hero owner to {creepCamp.Name}!"); // TODO : Code prüfen!
           unit.SetOwner(creepCamp.OwnerTeam.Computer.Wc3Player);
 
+          Program.ShowDebugMessage($"Revive creep hero for {creepCamp.OwnerTeam.Computer.Wc3Player.Name}!"); // TODO : Code prüfen!
           creepCamp.ReviveHero();
         }
         catch (Exception ex)

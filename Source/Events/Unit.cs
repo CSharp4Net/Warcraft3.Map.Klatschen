@@ -34,6 +34,7 @@ namespace Source.Events
           }
           else if (unit.IsUnitOfComputer())
           {
+            Program.ShowDebugMessage($"Computer hero {unit.Name} died with race {unit.Race}!"); // TODO : Code prüfen!
             Logics.ComputerHero.HandleDied(unit);
           }
           else if (unit.IsUnitOfCreep())

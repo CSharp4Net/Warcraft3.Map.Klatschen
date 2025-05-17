@@ -21090,8 +21090,12 @@ System.namespace("Source.Events", function (namespace)
           if SourceExtensions.unitExtension.IsUnitOfUser(unit) then
             SourceLogics.UserHero.HandleDied(unit)
           elseif SourceExtensions.unitExtension.IsUnitOfComputer(unit) then
+            Source.Program.ShowDebugMessage("Computer hero " .. System.toString(GetUnitName(unit)) .. " died with race " .. System.toString(GetUnitRace(unit)) .. "!")
+            -- TODO : Code prüfen!
             SourceLogics.ComputerHero.HandleDied(unit)
           elseif SourceExtensions.unitExtension.IsUnitOfCreep(unit) then
+            Source.Program.ShowDebugMessage("Creep hero died!")
+            -- TODO : Code prüfen!
             SourceLogics.CreepHero.HandleDied(unit)
           else
             System.Console.WriteLine("UNKNOWN hero died!!!")
@@ -22384,6 +22388,8 @@ System.namespace("Source.Logics", function (namespace)
       -- Verstorbenen Held nach gegebener Zeit wieder belegen
       local timer = CreateTimer()
 
+      Source.Program.ShowDebugMessage("Start creep hero timer!")
+      -- TODO : Code prüfen!
       TimerStart(timer, respawnTime, false, function ()
         local default = System.try(function ()
           -- Timer wieder zerstören
@@ -22391,6 +22397,8 @@ System.namespace("Source.Logics", function (namespace)
           DestroyTimer(timer)
           timer = nil
 
+          Source.Program.ShowDebugMessage("Detect creep hcampt of hero!")
+          -- TODO : Code prüfen!
           -- Prüfe vor Wiedergeburt-Abschluss, ob der Computer-Spieler noch unbesiegt ist
           local default, creepCamp = Source.Program.TryGetCreepCampByHero(unit)
           if not default then
@@ -22398,8 +22406,12 @@ System.namespace("Source.Logics", function (namespace)
             return true
           end
 
+          Source.Program.ShowDebugMessage("Set creep hero owner to " .. System.toString(creepCamp.Name) .. "!")
+          -- TODO : Code prüfen!
           SetUnitOwner(unit, creepCamp.OwnerTeam.Computer.Wc3Player, true)
 
+          Source.Program.ShowDebugMessage("Revive creep hero for " .. System.toString(GetPlayerName(creepCamp.OwnerTeam.Computer.Wc3Player)) .. "!")
+          -- TODO : Code prüfen!
           creepCamp:ReviveHero1(1, 0)
         end, function (default)
           local ex = default
