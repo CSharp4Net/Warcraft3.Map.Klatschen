@@ -1,4 +1,5 @@
-﻿using Source.Extensions;
+﻿using Source.Abstracts;
+using Source.Extensions;
 using Source.Models;
 using System;
 using WCSharp.Api;
@@ -34,14 +35,13 @@ namespace Source.Events
           }
           else if (unit.IsUnitOfComputer())
           {
-            Program.ShowDebugMessage($"Computer hero {unit.Name} died with race {unit.Race}!"); // TODO : Code prüfen!
             Logics.ComputerHero.HandleDied(unit);
           }
-          else if (unit.IsUnitOfCreep())
-          {
-            Program.ShowDebugMessage("Creep hero died!"); // TODO : Code prüfen!
-            Logics.CreepHero.HandleDied(unit);
-          }
+          // TODO 001
+          //else if (unit.IsUnitOfCreep())
+          //{
+          //  Logics.CreepHero.HandleDied(unit);
+          //}
           else
           {
             Console.WriteLine("UNKNOWN hero died!!!");
@@ -136,9 +136,10 @@ namespace Source.Events
           return;
         }
 
-        if (soldUnit.IsHero())
-          Logics.UserHero.HandleCreepHeroBuyed(buyingUnit, soldUnit, sellingUnit);
-        else
+        // TODO 001
+        //if (soldUnit.IsHero())
+        //  Logics.UserHero.HandleCreepHeroBuyed(buyingUnit, soldUnit, sellingUnit);
+        //else
           Logics.UserHero.HandleCreepSpawnBuyed(buyingUnit, soldUnit, sellingUnit);
       }
       catch (Exception ex)

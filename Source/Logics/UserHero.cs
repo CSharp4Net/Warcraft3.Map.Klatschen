@@ -240,30 +240,31 @@ namespace Source.Logics
       creepCamp.Building.AddUnitToSpawnTrigger(soldUnitId);
     }
 
-    internal static void HandleCreepHeroBuyed(unit buyingUnit, unit soldUnit, unit sellingUnit)
-    {
-      int soldUnitId = Common.GetUnitTypeId(soldUnit);
+    // TODO 001
+    //internal static void HandleCreepHeroBuyed(unit buyingUnit, unit soldUnit, unit sellingUnit)
+    //{
+    //  int soldUnitId = Common.GetUnitTypeId(soldUnit);
 
-      // Gekaufte Einheit sofort entfernen
-      Common.RemoveUnit(soldUnit);
+    //  // Gekaufte Einheit sofort entfernen
+    //  Common.RemoveUnit(soldUnit);
 
-      // Sicherheitshalber Verweis auf Einheit für GC freigeben
-      soldUnit.Dispose();
-      soldUnit = null;
+    //  // Sicherheitshalber Verweis auf Einheit für GC freigeben
+    //  soldUnit.Dispose();
+    //  soldUnit = null;
 
-      int playerId = buyingUnit.Owner.Id;
+    //  int playerId = buyingUnit.Owner.Id;
 
-      if (!Program.TryGetCreepCampByBuilding(sellingUnit, out CreepCamp creepCamp))
-      {
+    //  if (!Program.TryGetCreepCampByBuilding(sellingUnit, out CreepCamp creepCamp))
+    //  {
 
-        Console.WriteLine($"HandleCreepSpawnBuyed, invalid selling creep unit {sellingUnit.Name}!");
-        return;
-      }
+    //    Console.WriteLine($"HandleCreepSpawnBuyed, invalid selling creep unit {sellingUnit.Name}!");
+    //    return;
+    //  }
 
-      if (creepCamp.Hero == null)
-        creepCamp.CreateHero(soldUnitId);
-      else
-        creepCamp.ReviveHero();
-    }
+    //  if (creepCamp.Hero == null)
+    //    creepCamp.CreateHero(soldUnitId);
+    //  else
+    //    creepCamp.ReviveHero();
+    //}
   }
 }

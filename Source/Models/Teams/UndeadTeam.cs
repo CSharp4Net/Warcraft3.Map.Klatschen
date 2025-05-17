@@ -114,8 +114,6 @@ namespace Source.Models.Teams
               return Enums.ResearchType.UpgradeUnit;
           }
 
-        // TODO : Add more technolgies 
-
         default:
           spawnCommand = null;
           return Enums.ResearchType.CommonUpgrade;

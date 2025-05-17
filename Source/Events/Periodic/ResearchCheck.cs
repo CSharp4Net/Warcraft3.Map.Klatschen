@@ -87,8 +87,6 @@ namespace Source.Events.Periodic
       team.IncreaseTechForAllPlayers(techId, nextTechLevel);
       computerPlayer.Gold -= (goldPriceBase * nextTechLevel);
 
-      // TODO : Name der Forschung anhand ID ermitteln und mit ausgeben?
-
       ResearchType researchType = team.GetTechType(techId, nextTechLevel, out SpawnUnitCommand spawnCommand);
 
       if (researchType == ResearchType.AddUnit)

@@ -1,0 +1,7 @@
+TODO 001:
+=========
+Ein Creep-Hero, welcher zu einem Team-Computer-Spieler gehört, kann bei dessen Tot
+nicht mehr als Creep-Hero erkannt werden, da er kein entsprechendes Flag besitzt. Insofern
+wird die Erstellung und Wiedergeburt bis auf weiteres nicht implementiert.
+
+Idee : Ggf. kann die Race der Unit einen Hinweis darauf geben?!

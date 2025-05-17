@@ -12317,21 +12317,21 @@ STRING 3624
 (Creep)
 }
 
-STRING 3625
+STRING 3629
 // Units: n00X (Bandit), Ubertip (Tooltip - Extended)
 {
-Eine Nahkampfeinheit.|n|n|cffffcc00Kann Bodeneinheiten angreifen.|r
+Wirbt eine Nahkampfeinheit an, welche von euren Forschungen profitiert. Die Einheit spawnt rythmisch und greift die Feinde deines Teams an.|n|n|cffffcc00Kann Bodeneinheiten angreifen.|r
 }
 
-STRING 3626
+STRING 3630
 // Units: n013 (Auftragsmörder), Ubertip (Tooltip - Extended)
 {
-Eine Fernkampfeinheit, die Giftpfeile verschießt.|n|n|cffffcc00Kann Boden- und Lufteinheiten angreifen.|r
+Wirbt eine Fernkampfeinheit an, die Giftpfeile verschießt und von euren Forschungen profitiert. Die Einheit spawnt rythmisch und greift die Feinde deines Teams an.|n|n|cffffcc00Kann Boden- und Lufteinheiten angreifen.|r
 }
 
-STRING 3628
+STRING 3631
 // Units: n014 (Zauberlehrling), Ubertip (Tooltip - Extended)
 {
-Eine Magieeinheit, die Feuerblitze verschießen kann.|n|n|cffffcc00Kann Boden- und Lufteinheiten angreifen.|r
+Wirbt eine Magieeinheit an, die Feuerblitze verschießen kann und von euren Forschungen profitiert. Die Einheit spawnt rythmisch und greift die Feinde deines Teams an.|n|n|cffffcc00Kann Boden- und Lufteinheiten angreifen.|r
 }
 

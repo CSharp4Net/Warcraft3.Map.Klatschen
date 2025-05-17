@@ -118,6 +118,8 @@ namespace Source
         ConstructElfBuildingAndTrigger();
         ConstructUndeadBuildingAndTrigger();
 
+        ConstructCreepCamps();
+
         // Spezifische Events registrieren
         Console.WriteLine("Kämpft bis zum Tod, ihr Lappen!");
 
@@ -131,38 +133,6 @@ namespace Source
         Common.FogEnable(false);
         Common.FogMaskEnable(false);
 #endif
-
-        // Menschen-Creeps
-        CreepCamp creepCamp = new CreepCamp("Banditen", Areas.HumanCreepToElfSpawnBuilding, Areas.HumanCreepToElfSpawn, Humans, Elves);
-        SpawnCreepsBuilding building = creepCamp.InitializeBuilding(Constants.UNIT_BANDITENZELT_CREEP);
-        CreepCamps.Add(creepCamp);
-        creepCamp = new CreepCamp("Tuskarr", Areas.HumanCreepToOrcSpawnBuilding, Areas.HumanCreepToOrcSpawn, Humans, Orcs);
-        building = creepCamp.InitializeBuilding(Constants.UNIT_BANDITENZELT_CREEP);
-        CreepCamps.Add(creepCamp);
-
-        // Elfen-Creeps
-        creepCamp = new CreepCamp("Furbolgs", Areas.ElfCreepToHumanSpawnBuilding, Areas.ElfCreepToHumanSpawn, Elves, Humans);
-        building = creepCamp.InitializeBuilding(Constants.UNIT_BANDITENZELT_CREEP);
-        CreepCamps.Add(creepCamp);
-        creepCamp = new CreepCamp("Murlocs", Areas.ElfCreepToUndeadSpawnBuilding, Areas.ElfCreepToUndeadSpawn, Elves, Undeads);
-        building = creepCamp.InitializeBuilding(Constants.UNIT_BANDITENZELT_CREEP);
-        CreepCamps.Add(creepCamp);
-
-        // Orcs-Creeps
-        creepCamp = new CreepCamp("Zentauren", Areas.OrcCreepToHumanSpawnBuilding, Areas.OrcCreepToHumanSpawn, Orcs, Humans);
-        building = creepCamp.InitializeBuilding(Constants.UNIT_BANDITENZELT_CREEP);
-        CreepCamps.Add(creepCamp);
-        creepCamp = new CreepCamp("Oger", Areas.OrcCreepToUndeadSpawnBuilding, Areas.OrcCreepToUndeadSpawn, Orcs, Undeads);
-        building = creepCamp.InitializeBuilding(Constants.UNIT_BANDITENZELT_CREEP);
-        CreepCamps.Add(creepCamp);
-
-        // Untoten-Creeps
-        creepCamp = new CreepCamp("Mur'guls", Areas.UndeadCreepToOrcSpawnBuilding, Areas.UndeadCreepToOrcSpawn, Undeads, Orcs);
-        building = creepCamp.InitializeBuilding(Constants.UNIT_BANDITENZELT_CREEP);
-        CreepCamps.Add(creepCamp);
-        creepCamp = new CreepCamp("Neruber", Areas.UndeadCreepToElfSpawnBuilding, Areas.UndeadCreepToElfSpawn, Undeads, Elves);
-        building = creepCamp.InitializeBuilding(Constants.UNIT_BANDITENZELT_CREEP);
-        CreepCamps.Add(creepCamp);
 
         var timer = Common.CreateTimer();
         Common.TimerStart(timer, 30f, false, () =>
@@ -419,6 +389,41 @@ namespace Source
         .Run();
       building.AddSpawnTrigger(Areas.UndeadBarracksToOrcsSpawn, Enums.SpawnInterval.Middle, Areas.OrcBase, Constants.UNIT_FERNKAMPFEINHEIT_STUFE_1_UNDEAD)
         .Run(0.5f);
+    }
+
+    private static void ConstructCreepCamps()
+    {
+      // Menschen-Creeps
+      CreepCamp creepCamp = new CreepCamp("Banditen", Areas.HumanCreepToElfSpawnBuilding, Areas.HumanCreepToElfSpawn, Humans, Elves);
+      SpawnCreepsBuilding building = creepCamp.InitializeBuilding(Constants.UNIT_BANDITENZELT_CREEP);
+      CreepCamps.Add(creepCamp);
+      creepCamp = new CreepCamp("Tuskarr", Areas.HumanCreepToOrcSpawnBuilding, Areas.HumanCreepToOrcSpawn, Humans, Orcs);
+      building = creepCamp.InitializeBuilding(Constants.UNIT_BANDITENZELT_CREEP);
+      CreepCamps.Add(creepCamp);
+
+      // Elfen-Creeps
+      creepCamp = new CreepCamp("Furbolgs", Areas.ElfCreepToHumanSpawnBuilding, Areas.ElfCreepToHumanSpawn, Elves, Humans);
+      building = creepCamp.InitializeBuilding(Constants.UNIT_BANDITENZELT_CREEP);
+      CreepCamps.Add(creepCamp);
+      creepCamp = new CreepCamp("Murlocs", Areas.ElfCreepToUndeadSpawnBuilding, Areas.ElfCreepToUndeadSpawn, Elves, Undeads);
+      building = creepCamp.InitializeBuilding(Constants.UNIT_BANDITENZELT_CREEP);
+      CreepCamps.Add(creepCamp);
+
+      // Orcs-Creeps
+      creepCamp = new CreepCamp("Zentauren", Areas.OrcCreepToHumanSpawnBuilding, Areas.OrcCreepToHumanSpawn, Orcs, Humans);
+      building = creepCamp.InitializeBuilding(Constants.UNIT_BANDITENZELT_CREEP);
+      CreepCamps.Add(creepCamp);
+      creepCamp = new CreepCamp("Oger", Areas.OrcCreepToUndeadSpawnBuilding, Areas.OrcCreepToUndeadSpawn, Orcs, Undeads);
+      building = creepCamp.InitializeBuilding(Constants.UNIT_BANDITENZELT_CREEP);
+      CreepCamps.Add(creepCamp);
+
+      // Untoten-Creeps
+      creepCamp = new CreepCamp("Mur'guls", Areas.UndeadCreepToOrcSpawnBuilding, Areas.UndeadCreepToOrcSpawn, Undeads, Orcs);
+      building = creepCamp.InitializeBuilding(Constants.UNIT_BANDITENZELT_CREEP);
+      CreepCamps.Add(creepCamp);
+      creepCamp = new CreepCamp("Neruber", Areas.UndeadCreepToElfSpawnBuilding, Areas.UndeadCreepToElfSpawn, Undeads, Elves);
+      building = creepCamp.InitializeBuilding(Constants.UNIT_BANDITENZELT_CREEP);
+      CreepCamps.Add(creepCamp);
     }
 
     private static void CreateComputerHeros()

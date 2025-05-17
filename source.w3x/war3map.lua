@@ -22,6 +22,8 @@ gg_rct_ElfBaseToHumanSpawn = nil
 gg_rct_ElfBaseToUndeadSpawn = nil
 gg_rct_ElfCreepToHumanSpawn = nil
 gg_rct_ElfCreepToHumanSpawnBuilding = nil
+gg_rct_ElfCreepToUndeadSpawn = nil
+gg_rct_ElfCreepToUndeadSpawnBuilding = nil
 gg_rct_ElfToHumanInnerLine = nil
 gg_rct_ElfToHumanOuterLine = nil
 gg_rct_ElfToOrcInnerLine = nil
@@ -43,6 +45,8 @@ gg_rct_HumanBaseToElfSpawn = nil
 gg_rct_HumanBaseToOrcSpawn = nil
 gg_rct_HumanCreepToElfSpawn = nil
 gg_rct_HumanCreepToElfSpawnBuilding = nil
+gg_rct_HumanCreepToOrcSpawn = nil
+gg_rct_HumanCreepToOrcSpawnBuilding = nil
 gg_rct_HumanToElfInnerLine = nil
 gg_rct_HumanToElfOuterLine = nil
 gg_rct_HumanToOrcInnerLine = nil
@@ -61,6 +65,10 @@ gg_rct_OrcBaseHeroSpawn = nil
 gg_rct_OrcBaseToCenterSpawn = nil
 gg_rct_OrcBaseToHumanSpawn = nil
 gg_rct_OrcBaseToUndeadSpawn = nil
+gg_rct_OrcCreepToHumanSpawn = nil
+gg_rct_OrcCreepToHumanSpawnBuilding = nil
+gg_rct_OrcCreepToUndeadSpawn = nil
+gg_rct_OrcCreepToUndeadSpawnBuilding = nil
 gg_rct_OrcToElfInnerLine = nil
 gg_rct_OrcToElfOuterLine = nil
 gg_rct_OrcToHumanInnerLine = nil
@@ -81,6 +89,10 @@ gg_rct_UndeadBaseHeroSpawn = nil
 gg_rct_UndeadBaseToCenterSpawn = nil
 gg_rct_UndeadBaseToElfSpawn = nil
 gg_rct_UndeadBaseToOrcSpawn = nil
+gg_rct_UndeadCreepToElfSpawn = nil
+gg_rct_UndeadCreepToElfSpawnBuilding = nil
+gg_rct_UndeadCreepToOrcSpawn = nil
+gg_rct_UndeadCreepToOrcSpawnBuilding = nil
 gg_rct_UndeadToElfInnerLine = nil
 gg_rct_UndeadToElfOuterLine = nil
 gg_rct_UndeadToHumanInnerLine = nil
@@ -93,18 +105,6 @@ gg_snd_HPitLordPissed3 = nil
 gg_snd_HPitLordPissed4 = nil
 gg_snd_HPitLordPissed5 = nil
 gg_trg_Melee_Initialization = nil
-gg_rct_HumanCreepToOrcSpawn = nil
-gg_rct_HumanCreepToOrcSpawnBuilding = nil
-gg_rct_ElfCreepToUndeadSpawn = nil
-gg_rct_ElfCreepToUndeadSpawnBuilding = nil
-gg_rct_UndeadCreepToElfSpawn = nil
-gg_rct_UndeadCreepToElfSpawnBuilding = nil
-gg_rct_UndeadCreepToOrcSpawn = nil
-gg_rct_UndeadCreepToOrcSpawnBuilding = nil
-gg_rct_OrcCreepToUndeadSpawn = nil
-gg_rct_OrcCreepToUndeadSpawnBuilding = nil
-gg_rct_OrcCreepToHumanSpawn = nil
-gg_rct_OrcCreepToHumanSpawnBuilding = nil
 function InitGlobals()
 end
 
@@ -138,11 +138,10 @@ BlzCreateItemWithSkin(FourCC("I002"), 19263.0, 17206.7, FourCC("I002"))
 BlzCreateItemWithSkin(FourCC("I002"), 19247.2, 17073.1, FourCC("I002"))
 BlzCreateItemWithSkin(FourCC("I002"), 19237.3, 16964.6, FourCC("I002"))
 BlzCreateItemWithSkin(FourCC("I002"), 19265.0, 17350.0, FourCC("I002"))
-BlzCreateItemWithSkin(FourCC("I00E"), -4646.7, 11594.9, FourCC("I00E"))
+BlzCreateItemWithSkin(FourCC("I00H"), 19257.1, 17593.9, FourCC("I00H"))
 BlzCreateItemWithSkin(FourCC("I00H"), 19257.1, 17714.0, FourCC("I00H"))
 BlzCreateItemWithSkin(FourCC("I00H"), 19272.9, 17839.9, FourCC("I00H"))
 BlzCreateItemWithSkin(FourCC("I00H"), 19263.0, 17464.2, FourCC("I00H"))
-BlzCreateItemWithSkin(FourCC("I00H"), 19257.1, 17593.9, FourCC("I00H"))
 end
 
 function CreateBuildingsForPlayer0()
