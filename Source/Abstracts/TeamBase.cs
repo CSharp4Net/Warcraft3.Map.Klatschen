@@ -9,6 +9,8 @@ namespace Source.Abstracts
   {
     public TeamBase(player wc3ComputerPlayer, Area teamBaseArea)
     {
+      Name = wc3ComputerPlayer.Name;
+
       Computer = new ComputerPlayer(wc3ComputerPlayer, this);
       Computer.Wc3Player.SetState(playerstate.GivesBounty, 1);
 
@@ -35,6 +37,13 @@ namespace Source.Abstracts
       });
     }
 
+    /// <summary>
+    /// Name des Teams
+    /// </summary>
+    public string Name { get; init; }
+    /// <summary>
+    /// Name des Teams mit Farberweiterung.
+    /// </summary>
     public string ColorizedName { get; init; }
 
     /// <summary>
@@ -148,7 +157,7 @@ namespace Source.Abstracts
     /// <returns></returns>
     public virtual Enums.ResearchType GetTechType(int techId, int techLevel, out SpawnUnitCommand spawnCommand)
     {
-      Program.ShowErrorMessage("GetTechType", $"Method not implemented yet for player {ColorizedName}!");
+      Program.ShowErrorMessage("TeamBase.GetTechType", $"Method not implemented yet for player {ColorizedName}!");
 
       spawnCommand = null;
       return Enums.ResearchType.CommonUpgrade;

@@ -132,15 +132,37 @@ namespace Source
         Common.FogMaskEnable(false);
 #endif
 
-        CreepCamp creepCamp = new CreepCamp("Banditen", Areas.HumanCreepToElfSpawnBuilding, Areas.HumanCreepToElfSpawn, Humans.Computer, Elves.Computer);
+        // Menschen-Creeps
+        CreepCamp creepCamp = new CreepCamp("Banditen", Areas.HumanCreepToElfSpawnBuilding, Areas.HumanCreepToElfSpawn, Humans, Elves);
         SpawnCreepsBuilding building = creepCamp.InitializeBuilding(Constants.UNIT_BANDITENZELT_CREEP);
         CreepCamps.Add(creepCamp);
-
-        creepCamp = new CreepCamp("Furbolgs", Areas.ElfCreepToHumanSpawnBuilding, Areas.ElfCreepToHumanSpawn, Elves.Computer, Humans.Computer);
+        creepCamp = new CreepCamp("Tuskarr", Areas.HumanCreepToOrcSpawnBuilding, Areas.HumanCreepToOrcSpawn, Humans, Orcs);
         building = creepCamp.InitializeBuilding(Constants.UNIT_BANDITENZELT_CREEP);
         CreepCamps.Add(creepCamp);
- 
 
+        // Elfen-Creeps
+        creepCamp = new CreepCamp("Furbolgs", Areas.ElfCreepToHumanSpawnBuilding, Areas.ElfCreepToHumanSpawn, Elves, Humans);
+        building = creepCamp.InitializeBuilding(Constants.UNIT_BANDITENZELT_CREEP);
+        CreepCamps.Add(creepCamp);
+        creepCamp = new CreepCamp("Murlocs", Areas.ElfCreepToUndeadSpawnBuilding, Areas.ElfCreepToUndeadSpawn, Elves, Undeads);
+        building = creepCamp.InitializeBuilding(Constants.UNIT_BANDITENZELT_CREEP);
+        CreepCamps.Add(creepCamp);
+
+        // Orcs-Creeps
+        creepCamp = new CreepCamp("Zentauren", Areas.OrcCreepToHumanSpawnBuilding, Areas.OrcCreepToHumanSpawn, Orcs, Humans);
+        building = creepCamp.InitializeBuilding(Constants.UNIT_BANDITENZELT_CREEP);
+        CreepCamps.Add(creepCamp);
+        creepCamp = new CreepCamp("Oger", Areas.OrcCreepToUndeadSpawnBuilding, Areas.OrcCreepToUndeadSpawn, Orcs, Undeads);
+        building = creepCamp.InitializeBuilding(Constants.UNIT_BANDITENZELT_CREEP);
+        CreepCamps.Add(creepCamp);
+
+        // Untoten-Creeps
+        creepCamp = new CreepCamp("Mur'guls", Areas.UndeadCreepToOrcSpawnBuilding, Areas.UndeadCreepToOrcSpawn, Undeads, Orcs);
+        building = creepCamp.InitializeBuilding(Constants.UNIT_BANDITENZELT_CREEP);
+        CreepCamps.Add(creepCamp);
+        creepCamp = new CreepCamp("Neruber", Areas.UndeadCreepToElfSpawnBuilding, Areas.UndeadCreepToElfSpawn, Undeads, Elves);
+        building = creepCamp.InitializeBuilding(Constants.UNIT_BANDITENZELT_CREEP);
+        CreepCamps.Add(creepCamp);
 
         var timer = Common.CreateTimer();
         Common.TimerStart(timer, 30f, false, () =>
@@ -176,11 +198,11 @@ namespace Source
       return false;
     }
 
-    public static bool TryGetCreepCampByUnit(unit mainBuildingUnit, out CreepCamp creepCamp)
+    public static bool TryGetCreepCampByBuilding(unit buildingUnit, out CreepCamp creepCamp)
     {
       for (int i = CreepCamps.Count - 1; i >= 0; i--)
       {
-        if (CreepCamps[i].Building.Wc3Unit == mainBuildingUnit)
+        if (CreepCamps[i].Building.Wc3Unit == buildingUnit)
         {
           creepCamp = CreepCamps[i];
           return true;
@@ -191,7 +213,22 @@ namespace Source
       return false;
     }
 
-    public static bool TryGetUnitByUnit(unit unit, out TeamBase team)
+    public static bool TryGetCreepCampByHero(unit heroUnit, out CreepCamp creepCamp)
+    {
+      for (int i = CreepCamps.Count - 1; i >= 0; i--)
+      {
+        if (CreepCamps[i].Hero.Wc3Unit == heroUnit)
+        {
+          creepCamp = CreepCamps[i];
+          return true;
+        }
+      }
+
+      creepCamp = null;
+      return false;
+    }
+
+    public static bool TryGetTeamByUnit(unit unit, out TeamBase team)
     {
       int playerId = unit.Owner.Id;
 

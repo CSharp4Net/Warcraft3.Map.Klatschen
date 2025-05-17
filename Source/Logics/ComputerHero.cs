@@ -13,7 +13,7 @@ namespace Source.Logics
       int respawnTime = 0;
 
       // Prüfe vor Wiedergeburt-Einleitung, ob der Computer-Spieler noch unbesiegt ist
-      if (Program.TryGetUnitByUnit(unit, out TeamBase team))
+      if (Program.TryGetTeamByUnit(unit, out TeamBase team))
       {
         if (team.Computer.Defeated)
           return;
@@ -34,7 +34,7 @@ namespace Source.Logics
           timer = null;
 
           // Prüfe vor Wiedergeburt-Abschluss, ob der Computer-Spieler noch unbesiegt ist
-          if (Program.TryGetUnitByUnit(unit, out TeamBase team))
+          if (Program.TryGetTeamByUnit(unit, out TeamBase team))
           {
             if (team.Computer.Defeated)
               return;
@@ -53,33 +53,6 @@ namespace Source.Logics
 
             spawnedUnit.RepeatAttackMove();
           }
-
-          //if (Program.Humans.Computer.IsOwnerOfUnit(unit, out SpawnedUnit spawnedUnit))
-          //{
-          //  respawnArea = spawnedUnit.SpawnArea;
-          //}
-          //else if (Program.Orcs.Computer.IsOwnerOfUnit(unit, out spawnedUnit))
-          //{
-          //  respawnArea = spawnedUnit.SpawnArea;
-          //}
-          //else if (Program.Elves.Computer.IsOwnerOfUnit(unit, out spawnedUnit))
-          //{
-          //  respawnArea = spawnedUnit.SpawnArea;
-          //}
-          //else if (Program.Undeads.Computer.IsOwnerOfUnit(unit, out spawnedUnit))
-          //{
-          //  respawnArea = spawnedUnit.SpawnArea;
-          //}
-
-          //if (spawnedUnit != null)
-          //{
-          //  Common.ReviveHero(unit, respawnArea.CenterX, respawnArea.CenterY, true);
-
-          //  // Computer-Helden starten stets mit vollem Mana
-          //  unit.Mana = unit.MaxMana;
-
-          //  spawnedUnit.RepeatAttackMove();
-          //}
         }
         catch (Exception ex)
         {
@@ -88,13 +61,8 @@ namespace Source.Logics
       });
     }
 
-    internal static void HandleLeveled()
-    {
-      unit unit = Common.GetLevelingUnit();
-
-      if (unit.Owner.Controller != mapcontrol.Computer)
-        return;
-
+    internal static void HandleLeveled(unit unit)
+    {   
       int unitId = Common.GetUnitTypeId(unit);
 
       if (unitId == Constants.UNIT_W_CHTER_HUMAN)

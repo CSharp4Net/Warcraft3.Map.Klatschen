@@ -27,10 +27,12 @@ internal static class Areas
   public static Area ElfBaseToCenterSpawn { get; set; } = new Area(Regions.ElfBaseToCenterSpawn);
   public static Area ElfBaseToHumanSpawn { get; set; } = new Area(Regions.ElfBaseToHumanSpawn);
   public static Area ElfBaseToUndeadSpawn { get; set; } = new Area(Regions.ElfBaseToUndeadSpawn);
-  public static Area ElfToHumanInnerLine { get; set; } = new Area(Regions.ElfToHumanInnerLine);
-  public static Area ElfToHumanOuterLine { get; set; } = new Area(Regions.ElfToHumanOuterLine);
   public static Area ElfCreepToHumanSpawn { get; set; } = new Area(Regions.ElfCreepToHumanSpawn);
   public static Area ElfCreepToHumanSpawnBuilding { get; set; } = new Area(Regions.ElfCreepToHumanSpawnBuilding);
+  public static Area ElfCreepToUndeadSpawn { get; set; } = new Area(Regions.ElfCreepToUndeadSpawn);
+  public static Area ElfCreepToUndeadSpawnBuilding { get; set; } = new Area(Regions.ElfCreepToUndeadSpawnBuilding);
+  public static Area ElfToHumanInnerLine { get; set; } = new Area(Regions.ElfToHumanInnerLine);
+  public static Area ElfToHumanOuterLine { get; set; } = new Area(Regions.ElfToHumanOuterLine);
   public static Area ElfToOrcInnerLine { get; set; } = new Area(Regions.ElfToOrcInnerLine);
   public static Area ElfToOrcOuterLine { get; set; } = new Area(Regions.ElfToOrcOuterLine);
   public static Area ElfToUndeadInnerLine { get; set; } = new Area(Regions.ElfToUndeadInnerLine);
@@ -50,6 +52,8 @@ internal static class Areas
   public static Area HumanBaseToOrcsSpawn { get; set; } = new Area(Regions.HumanBaseToOrcSpawn);
   public static Area HumanCreepToElfSpawn { get; set; } = new Area(Regions.HumanCreepToElfSpawn);
   public static Area HumanCreepToElfSpawnBuilding { get; set; } = new Area(Regions.HumanCreepToElfSpawnBuilding);
+  public static Area HumanCreepToOrcSpawn { get; set; } = new Area(Regions.HumanCreepToOrcSpawn);
+  public static Area HumanCreepToOrcSpawnBuilding { get; set; } = new Area(Regions.HumanCreepToOrcSpawnBuilding);
   public static Area HumanToElfInnerLine { get; set; } = new Area(Regions.HumanToElfInnerLine);
   public static Area HumanToElfOuterLine { get; set; } = new Area(Regions.HumanToElfOuterLine);
   public static Area HumanToOrcInnerLine { get; set; } = new Area(Regions.HumanToOrcInnerLine);
@@ -68,12 +72,18 @@ internal static class Areas
   public static Area OrcBaseToCenterSpawn { get; set; } = new Area(Regions.OrcBaseToCenterSpawn);
   public static Area OrcBaseToHumanSpawn { get; set; } = new Area(Regions.OrcBaseToHumanSpawn);
   public static Area OrcBaseToUndeadSpawn { get; set; } = new Area(Regions.OrcBaseToUndeadSpawn);
+  public static Area OrcCreepToHumanSpawn { get; set; } = new Area(Regions.OrcCreepToHumanSpawn);
+  public static Area OrcCreepToHumanSpawnBuilding { get; set; } = new Area(Regions.OrcCreepToHumanSpawnBuilding);
+  public static Area OrcCreepToUndeadSpawn { get; set; } = new Area(Regions.OrcCreepToUndeadSpawn);
+  public static Area OrcCreepToUndeadSpawnBuilding { get; set; } = new Area(Regions.OrcCreepToUndeadSpawnBuilding);
   public static Area OrcToElfInnerLine { get; set; } = new Area(Regions.OrcToElfInnerLine);
   public static Area OrcToElfOuterLine { get; set; } = new Area(Regions.OrcToElfOuterLine);
   public static Area OrcToHumanInnerLine { get; set; } = new Area(Regions.OrcToHumanInnerLine);
   public static Area OrcToHumanOuterLine { get; set; } = new Area(Regions.OrcToHumanOuterLine);
   public static Area OrcToUndeadInnerLine { get; set; } = new Area(Regions.OrcToUndeadInnerLine);
   public static Area OrcToUndeadOuterLine { get; set; } = new Area(Regions.OrcToUndeadOuterLine);
+  public static Area TestArea { get; set; } = new Area(Regions.TestArea);
+  public static Area TestArea2 { get; set; } = new Area(Regions.TestArea2);
   public static Area UndeadBarracksToCenter { get; set; } = new Area(Regions.UndeadBarracksToCenter);
   public static Area UndeadBarracksToCenterSpawn { get; set; } = new Area(Regions.UndeadBarracksToCenterSpawn);
   public static Area UndeadBarracksToElf { get; set; } = new Area(Regions.UndeadBarracksToElf);
@@ -86,13 +96,15 @@ internal static class Areas
   public static Area UndeadBaseToCenterSpawn { get; set; } = new Area(Regions.UndeadBaseToCenterSpawn);
   public static Area UndeadBaseToElfSpawn { get; set; } = new Area(Regions.UndeadBaseToElfSpawn);
   public static Area UndeadBaseToOrcsSpawn { get; set; } = new Area(Regions.UndeadBaseToOrcSpawn);
+  public static Area UndeadCreepToElfSpawn { get; set; } = new Area(Regions.UndeadCreepToElfSpawn);
+  public static Area UndeadCreepToElfSpawnBuilding { get; set; } = new Area(Regions.UndeadCreepToElfSpawnBuilding);
+  public static Area UndeadCreepToOrcSpawn { get; set; } = new Area(Regions.UndeadCreepToOrcSpawn);
+  public static Area UndeadCreepToOrcSpawnBuilding { get; set; } = new Area(Regions.UndeadCreepToOrcSpawnBuilding);
   public static Area UndeadToElfInnerLine { get; set; } = new Area(Regions.UndeadToElfInnerLine);
   public static Area UndeadToElfOuterLine { get; set; } = new Area(Regions.UndeadToElfOuterLine);
   public static Area UndeadToHumanInnerLine { get; set; } = new Area(Regions.UndeadToHumanInnerLine);
   public static Area UndeadToHumanOuterLine { get; set; } = new Area(Regions.UndeadToHumanOuterLine);
   public static Area UndeadToOrcInnerLine { get; set; } = new Area(Regions.UndeadToOrcInnerLine);
   public static Area UndeadToOrcOuterLine { get; set; } = new Area(Regions.UndeadToOrcOuterLine);
-  public static Area TestArea { get; set; } = new Area(Regions.TestArea);
-  public static Area TestArea2 { get; set; } = new Area(Regions.TestArea2);
 
 }

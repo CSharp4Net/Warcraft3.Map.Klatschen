@@ -38,8 +38,8 @@ namespace Source.Events
           }
           else if (unit.IsUnitOfCreep())
           {
-            Program.ShowDebugMessage("Creep hero died");
-            Logics.ComputerHero.HandleDied(unit);
+            Program.ShowDebugMessage("Creep hero died!"); // TODO : Code prüfen!
+            Logics.CreepHero.HandleDied(unit);
           }
           else
           {
@@ -135,7 +135,10 @@ namespace Source.Events
           return;
         }
 
-        Logics.UserHero.HandleCreepSpawnBuyed(buyingUnit, soldUnit, sellingUnit);
+        if (soldUnit.IsHero())
+          Logics.UserHero.HandleCreepHeroBuyed(buyingUnit, soldUnit, sellingUnit);
+        else
+          Logics.UserHero.HandleCreepSpawnBuyed(buyingUnit, soldUnit, sellingUnit);
       }
       catch (Exception ex)
       {

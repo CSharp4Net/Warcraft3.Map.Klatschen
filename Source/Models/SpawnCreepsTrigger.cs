@@ -69,6 +69,7 @@ namespace Source.Models
       {
         foreach (int unitId in UnitIds)
         {
+        //  Console.WriteLine($"Unit {unitId} attack target {TargetArea.CenterX}:{TargetArea.CenterY}");
           CreepCamp.SpawnUnitInAreaAtRandomPoint(unitId)
             .AttackMove(TargetArea);
         }

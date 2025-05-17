@@ -5,20 +5,21 @@ namespace Source.Models
 {
   public sealed class KlatschenFragtion : NeutralForce
   {
-    public KlatschenFragtion()
-      : base(player.NeutralAggressive)
+    public KlatschenFragtion() : base(player.NeutralAggressive)
     {
 
     }
 
-    public void CreateOrReviveHero(int unitTypeId, Area spawnArea, int heroLevel, int abilitiesLevel, float delay)
+    public void CreateOrReviveHero(int unitTypeId, Area spawnArea, int heroLevel, int abilitiesLevel, float delay, Area targetArea = null)
     {
-      base.CreateOrReviveHero(unitTypeId, spawnArea, heroLevel, delay);
+      if (Hero == null)
+        CreateHero(unitTypeId, spawnArea, heroLevel, delay, targetArea);
+      else
+        ReviveHero(spawnArea, heroLevel, delay, targetArea);
 
-      int unitId = Common.GetUnitTypeId(Hero);
-      if (unitId == Constants.UNIT_GRUBENLORD_KLATSCHEN)
+      if (unitTypeId == Constants.UNIT_GRUBENLORD_KLATSCHEN)
       {
-        TrainGrubenlord(Hero, abilitiesLevel);
+        TrainGrubenlord(Hero.Wc3Unit, abilitiesLevel);
       }
     }
 

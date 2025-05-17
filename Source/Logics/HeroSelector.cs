@@ -47,7 +47,7 @@ namespace Source.Logics
 
 #if DEBUG
       spawnArea = Areas.TestArea2;
-      user.HeroLevelCounter = 36;
+      user.HeroLevelCounter = 36;      
 #endif
 
       user.CreateHero(soldUnitId, spawnArea);

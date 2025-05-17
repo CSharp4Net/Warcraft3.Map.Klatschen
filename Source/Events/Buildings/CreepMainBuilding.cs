@@ -19,20 +19,13 @@ namespace Source.Events.Buildings
           return;
 
         int unitType = buildingUnit.UnitType;
-        CreepCamp creepCamp = null;
 
         // Suche CreepCamp, zudem das zerstörte Gebäude gehört
-        foreach (CreepCamp camp in Program.CreepCamps)
+        if (!Program.TryGetCreepCampByBuilding(buildingUnit, out CreepCamp creepCamp))
         {
-          if (camp.Building.Wc3Unit == buildingUnit)
-          {
-            creepCamp = camp;
-            break;
-          }
-        }
-
-        if (creepCamp == null)
+          Program.ShowErrorMessage("CreepMainBuilding.OnDies", $"Creep camp of creep building {buildingUnit.Name} not found!");
           return;
+        }
 
         int rebuildTime = 10;
 
@@ -41,14 +34,10 @@ namespace Source.Events.Buildings
 
         // Verstorbenen Held nach gegebener Zeit wieder belegen
         timer timer = Common.CreateTimer();
-        // Währenddessen Timer-Dialog anzeigen
-        timerdialog timerdialog = timer.CreateDialog();
-        timerdialog.SetTitle($"{creepCamp.Name}...");
-        timerdialog.IsDisplayed = true;
 
         ComputerPlayer newOwningPlayer = user.Team.Computer;
 
-        Console.WriteLine($"|c{ConstantsEx.ColorHexCode_Gold}{creepCamp.Name}|r wurden besiegt und schließen sich der {user.Team.ColorizedName} an!");
+        Console.WriteLine($"Die {creepCamp.ColorizedName} wurden besiegt und schließen sich der {user.Team.ColorizedName} an!");
         Common.TimerStart(timer, rebuildTime, false, () =>
         {
           try
@@ -58,27 +47,24 @@ namespace Source.Events.Buildings
             timer.Dispose();
             timer = null;
 
-            // Timer-Dialog wieder zerstören
-            timerdialog.Dispose();
-            timerdialog = null;
-
             // Prüfe vor Übernahme, ob der Computer-Spieler noch unbesiegt ist
             if (newOwningPlayer.Defeated)
               return;
 
             Area attackTargetArea;
 
-            // Ist der neue Eigentümer die nahe Streitmacht, ist das Ziel die Streitmacht am anderen Ende
-            // der Lane - alternativ ist es die nahe Streitmacht.
-            if (newOwningPlayer.PlayerId == creepCamp.NearestForce.PlayerId)
-              attackTargetArea = creepCamp.OpposingForce.Team.TeamBaseArea;
+            // Ist der neue Eigentümer das Team im gleichen Quadranten, ist das Ziel das Team am anderen Ende
+            // der Lane, ansonsten alternativ ist es das Team im gleichen Quadrant.
+            if (newOwningPlayer.PlayerId == creepCamp.NearTeam.Computer.PlayerId)
+            {
+              attackTargetArea = creepCamp.OpposingTeam.TeamBaseArea;
+            }
             else
-              attackTargetArea = user.Team.TeamBaseArea;
+            {
+              attackTargetArea = creepCamp.NearTeam.TeamBaseArea;
+            }
 
             creepCamp.SetOwnerAndRebuild(user.Team, attackTargetArea);
-
-            //creepCamp.Building.AddSpawnTrigger(creepCamp.SpawnArea, Enums.UnitClass.Meelee, 15f, attackTargetArea, 
-            //  Constants.UNIT_NAHKAMPFEINHEIT_CREEP, Constants.UNIT_FERNKAMPFEINHEIT_CREEP).Run();
           }
           catch (Exception ex)
           {

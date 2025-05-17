@@ -8,16 +8,21 @@ namespace Source.Models
 {
   public sealed class CreepCamp : NeutralForce
   {
-    public CreepCamp(string campName, Area campBuilding, Area campSpawnArea, ComputerPlayer nearestForce, ComputerPlayer opposingForce)
+    public CreepCamp(string name, Area buildingArea, Area spawnArea, TeamBase nearTeam, TeamBase opposingTeam)
       : base(player.NeutralAggressive)
     {
-      Name = campName;
-      SpawnArea = campSpawnArea;
-      BuildingArea = campBuilding;
-      NearestForce = nearestForce;
-      OpposingForce = opposingForce;
+      Name = name;
+      ColorizedName = $"|c{ConstantsEx.ColorHexCode_Gold}{name}|r";
+      SpawnArea = spawnArea;
+      BuildingArea = buildingArea;
+      NearTeam = nearTeam;
+      OpposingTeam = opposingTeam;
     }
 
+    /// <summary>
+    /// Name des Söldnerlagers mit Farberweiterung.
+    /// </summary>
+    public string ColorizedName { get; init; }
     /// <summary>
     /// Name des Söldnerlagers, welcher in Nachrichten angezeigt wird.
     /// </summary>
@@ -39,11 +44,11 @@ namespace Source.Models
     /// <summary>
     /// Computer-Spieler im Quadrant
     /// </summary>
-    public ComputerPlayer NearestForce { get; init; }
+    public TeamBase NearTeam { get; init; }
     /// <summary>
     /// Computer-Spieler im gegenüberliegenden Quadrant
     /// </summary>
-    public ComputerPlayer OpposingForce { get; init; }
+    public TeamBase OpposingTeam { get; init; }
 
     /// <summary>
     /// Spawn-Gebäude, welches die Einheiten automatisch erstellt und das Hauptgebäude des Lagers ist.
@@ -55,14 +60,14 @@ namespace Source.Models
     /// </summary>
     public TeamBase OwnerTeam { get; private set; }
 
-    /// <summary>
-    /// Erstellt einen Helden im Spawn-Bereich des Söldnerlagers.
-    /// </summary>
-    /// <param name="unitTypeId"></param>
-    /// <param name="face"></param>
-    public void InitializeHero(int unitTypeId, float face = 0f)
+    public void CreateHero(int unitTypeId, int heroLevel = 1, float face = 0f)
     {
-      CreateOrReviveHero(unitTypeId, SpawnArea, Hero.HeroLevel, face);
+      CreateHero(unitTypeId, SpawnArea, heroLevel, face, AttackTargetArea);
+    }
+
+    public void ReviveHero(int heroLevel = 1, float face = 0f)
+    {
+      ReviveHero(SpawnArea, heroLevel, face, AttackTargetArea);
     }
 
     /// <summary>
@@ -78,14 +83,6 @@ namespace Source.Models
       Building.RegisterOnDies(CreepMainBuilding.OnDies);
 
       return Building;
-    }
-
-    /// <summary>
-    /// Belebt den Helden im Spawn-Bereich des Söldnerlagers wieder.
-    /// </summary>
-    public void ReviveHero()
-    {
-      CreateOrReviveHero(Hero.UnitType, SpawnArea, Hero.HeroLevel, 0f);
     }
 
     /// <summary>

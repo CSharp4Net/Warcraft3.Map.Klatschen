@@ -29,6 +29,8 @@ public static class Regions
 	public static Rectangle ElfBaseToUndeadSpawn { get; set; } = new Rectangle(-9984f, -7296f, -9728f, -7040f);
 	public static Rectangle ElfCreepToHumanSpawn { get; set; } = new Rectangle(-8192f, -1536f, -7424f, -768f);
 	public static Rectangle ElfCreepToHumanSpawnBuilding { get; set; } = new Rectangle(-7808f, -768f, -7552f, -512f);
+	public static Rectangle ElfCreepToUndeadSpawn { get; set; } = new Rectangle(-4608f, -5120f, -3840f, -4352f);
+	public static Rectangle ElfCreepToUndeadSpawnBuilding { get; set; } = new Rectangle(-4224f, -4352f, -3968f, -4096f);
 	public static Rectangle ElfToHumanInnerLine { get; set; } = new Rectangle(-10304f, -5184f, -10176f, -5056f);
 	public static Rectangle ElfToHumanOuterLine { get; set; } = new Rectangle(-10304f, -1088f, -10176f, -960f);
 	public static Rectangle ElfToOrcInnerLine { get; set; } = new Rectangle(-8768f, -5696f, -8640f, -5568f);
@@ -50,6 +52,8 @@ public static class Regions
 	public static Rectangle HumanBaseToOrcSpawn { get; set; } = new Rectangle(-9984f, 13184f, -9728f, 13440f);
 	public static Rectangle HumanCreepToElfSpawn { get; set; } = new Rectangle(-8192f, 6912f, -7424f, 7680f);
 	public static Rectangle HumanCreepToElfSpawnBuilding { get; set; } = new Rectangle(-7808f, 6656f, -7552f, 6912f);
+	public static Rectangle HumanCreepToOrcSpawn { get; set; } = new Rectangle(-4608f, 10496f, -3840f, 11264f);
+	public static Rectangle HumanCreepToOrcSpawnBuilding { get; set; } = new Rectangle(-4224f, 10240f, -3968f, 10496f);
 	public static Rectangle HumanToElfInnerLine { get; set; } = new Rectangle(-10304f, 11200f, -10176f, 11328f);
 	public static Rectangle HumanToElfOuterLine { get; set; } = new Rectangle(-10304f, 7104f, -10176f, 7232f);
 	public static Rectangle HumanToOrcInnerLine { get; set; } = new Rectangle(-8256f, 13248f, -8128f, 13376f);
@@ -68,6 +72,10 @@ public static class Regions
 	public static Rectangle OrcBaseToCenterSpawn { get; set; } = new Rectangle(9728f, 12800f, 9984f, 13056f);
 	public static Rectangle OrcBaseToHumanSpawn { get; set; } = new Rectangle(9728f, 13184f, 9984f, 13440f);
 	public static Rectangle OrcBaseToUndeadSpawn { get; set; } = new Rectangle(10112f, 12800f, 10368f, 13056f);
+	public static Rectangle OrcCreepToHumanSpawn { get; set; } = new Rectangle(3840f, 10496f, 4608f, 11264f);
+	public static Rectangle OrcCreepToHumanSpawnBuilding { get; set; } = new Rectangle(3968f, 10240f, 4224f, 10496f);
+	public static Rectangle OrcCreepToUndeadSpawn { get; set; } = new Rectangle(7296f, 6784f, 8064f, 7552f);
+	public static Rectangle OrcCreepToUndeadSpawnBuilding { get; set; } = new Rectangle(7552f, 6528f, 7808f, 6784f);
 	public static Rectangle OrcToElfInnerLine { get; set; } = new Rectangle(8640f, 11712f, 8768f, 11840f);
 	public static Rectangle OrcToElfOuterLine { get; set; } = new Rectangle(5056f, 8128f, 5184f, 8256f);
 	public static Rectangle OrcToHumanInnerLine { get; set; } = new Rectangle(8128f, 13248f, 8256f, 13376f);
@@ -75,7 +83,7 @@ public static class Regions
 	public static Rectangle OrcToUndeadInnerLine { get; set; } = new Rectangle(10176f, 11200f, 10304f, 11328f);
 	public static Rectangle OrcToUndeadOuterLine { get; set; } = new Rectangle(10176f, 7104f, 10304f, 7232f);
 	public static Rectangle TestArea { get; set; } = new Rectangle(17280f, 17280f, 17408f, 17408f);
-	public static Rectangle TestArea2 { get; set; } = new Rectangle(-9280f, -1984f, -9152f, -1856f);
+	public static Rectangle TestArea2 { get; set; } = new Rectangle(-4928f, 11712f, -4800f, 11840f);
 	public static Rectangle UndeadBarracksToCenter { get; set; } = new Rectangle(6080f, -3136f, 6208f, -3008f);
 	public static Rectangle UndeadBarracksToCenterSpawn { get; set; } = new Rectangle(5760f, -3584f, 6016f, -2560f);
 	public static Rectangle UndeadBarracksToElf { get; set; } = new Rectangle(4928f, -7232f, 5056f, -7104f);
@@ -88,6 +96,10 @@ public static class Regions
 	public static Rectangle UndeadBaseToCenterSpawn { get; set; } = new Rectangle(9728f, -6912f, 9984f, -6656f);
 	public static Rectangle UndeadBaseToElfSpawn { get; set; } = new Rectangle(9728f, -7296f, 9984f, -7040f);
 	public static Rectangle UndeadBaseToOrcSpawn { get; set; } = new Rectangle(10112f, -6912f, 10368f, -6656f);
+	public static Rectangle UndeadCreepToElfSpawn { get; set; } = new Rectangle(3840f, -5120f, 4608f, -4352f);
+	public static Rectangle UndeadCreepToElfSpawnBuilding { get; set; } = new Rectangle(3968f, -4352f, 4224f, -4096f);
+	public static Rectangle UndeadCreepToOrcSpawn { get; set; } = new Rectangle(7424f, -1536f, 8192f, -768f);
+	public static Rectangle UndeadCreepToOrcSpawnBuilding { get; set; } = new Rectangle(7552f, -768f, 7808f, -512f);
 	public static Rectangle UndeadToElfInnerLine { get; set; } = new Rectangle(8128f, -7232f, 8256f, -7104f);
 	public static Rectangle UndeadToElfOuterLine { get; set; } = new Rectangle(4032f, -7232f, 4160f, -7104f);
 	public static Rectangle UndeadToHumanInnerLine { get; set; } = new Rectangle(8640f, -5696f, 8768f, -5568f);

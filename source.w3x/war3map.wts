@@ -12329,9 +12329,9 @@ STRING 3626
 Eine Fernkampfeinheit, die Giftpfeile verschießt.|n|n|cffffcc00Kann Boden- und Lufteinheiten angreifen.|r
 }
 
-STRING 3627
+STRING 3628
 // Units: n014 (Zauberlehrling), Ubertip (Tooltip - Extended)
 {
-Eine Magieeinhei, die Feuerblitze verschießen kann.|n|n|cffffcc00Kann Boden- und Lufteinheiten angreifen.|r
+Eine Magieeinheit, die Feuerblitze verschießen kann.|n|n|cffffcc00Kann Boden- und Lufteinheiten angreifen.|r
 }
 

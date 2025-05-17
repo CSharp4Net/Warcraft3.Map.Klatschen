@@ -21,7 +21,7 @@ namespace Source.Events
         if (!unit.IsUnitOfComputer())
           return;
 
-        Logics.ComputerHero.HandleLeveled();
+        Logics.ComputerHero.HandleLeveled(unit);
       }
       catch (Exception ex)
       {

@@ -36,7 +36,7 @@ namespace Source.Models
     public void CreateHero(int unitId, Area spawnArea)
     {
       unit unit = Common.CreateUnitAtLoc(Wc3Player, unitId, spawnArea.Wc3CenterLocation, 0f);
-    
+
       if (HeroLevelCounter > 0)
         unit.HeroLevel = HeroLevelCounter;
 
