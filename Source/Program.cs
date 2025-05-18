@@ -414,7 +414,7 @@ namespace Source
       building = creepCamp.InitializeBuilding(Constants.UNIT_ZENTAURENLAGER_CREEP);
       CreepCamps.Add(creepCamp);
       creepCamp = new CreepCamp("Oger", Areas.OrcCreepToUndeadSpawnBuilding, Areas.OrcCreepToUndeadSpawn, Orcs, Undeads);
-      building = creepCamp.InitializeBuilding(Constants.UNIT_GNOLLLAGER_CREEP);
+      building = creepCamp.InitializeBuilding(Constants.UNIT_OGERLAGER_CREEP);
       CreepCamps.Add(creepCamp);
 
       // Untoten-Creeps

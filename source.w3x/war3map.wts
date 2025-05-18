@@ -12198,43 +12198,31 @@ Belagerungseinheit - Stufe 1
 }
 
 STRING 3605
-// Units: H02R (Banditenfürst), EditorSuffix (Name - Editor Suffix)
-{
-(Creep)
-}
-
-STRING 3606
-// Units: H02R (Banditenfürst), Name (Name)
-{
-Banditenfürst
-}
-
-STRING 3607
-// Units: H02R (Banditenfürst), Propernames (Proper Names)
-{
-Banditenfürst
-}
-
-STRING 3608
 // Units: n00X (Bandit), EditorSuffix (Name - Editor Suffix)
 {
 (Creep)
 }
 
-STRING 3609
+STRING 3608
 // Units: n00V (Banditenlager), EditorSuffix (Name - Editor Suffix)
 {
 (Creep)
 }
 
+STRING 3609
+// Units: n013 (Banditmarodeur), EditorSuffix (Name - Editor Suffix)
+{
+(Creep)
+}
+
 STRING 3610
-// Units: n01F (Banditenzelt), Name (Name)
+// Units: n01G (Banditenzelt), Name (Name)
 {
 Banditenzelt
 }
 
 STRING 3611
-// Units: n013 (Banditmarodeur), EditorSuffix (Name - Editor Suffix)
+// Units: n014 (Banditenzauberer), EditorSuffix (Name - Editor Suffix)
 {
 (Creep)
 }
@@ -12312,31 +12300,13 @@ Inferno [|cffffcc00Stufe %d|r] erlernen
 }
 
 STRING 3624
-// Units: n014 (Banditenzauberer), EditorSuffix (Name - Editor Suffix)
+// Units: n00P (Furbolglager), EditorSuffix (Name - Editor Suffix)
 {
 (Creep)
 }
 
-STRING 3629
-// Units: n00X (Bandit), Ubertip (Tooltip - Extended)
-{
-Wirbt eine Nahkampfeinheit an, welche von euren Forschungen profitiert. Die Einheit spawnt rythmisch und greift die Feinde deines Teams an.|n|n|cffffcc00Kann Bodeneinheiten angreifen.|r
-}
-
-STRING 3630
-// Units: n013 (Banditmarodeur), Ubertip (Tooltip - Extended)
-{
-Wirbt eine Fernkampfeinheit an, die Giftpfeile verschießt und von euren Forschungen profitiert. Die Einheit spawnt rythmisch und greift die Feinde deines Teams an.|n|n|cffffcc00Kann Boden- und Lufteinheiten angreifen.|r
-}
-
-STRING 3631
-// Units: n014 (Banditenzauberer), Ubertip (Tooltip - Extended)
-{
-Wirbt eine Magieeinheit an, die Feuerblitze verschießen kann und von euren Forschungen profitiert. Die Einheit spawnt rythmisch und greift die Feinde deines Teams an.|n|n|cffffcc00Kann Boden- und Lufteinheiten angreifen.|r
-}
-
 STRING 3632
-// Units: n00P (Furbolglager), EditorSuffix (Name - Editor Suffix)
+// Units: n01H (Zentaurenlager), EditorSuffix (Name - Editor Suffix)
 {
 (Creep)
 }
@@ -12354,7 +12324,7 @@ Banditenzauberer
 }
 
 STRING 3637
-// Units: n027 (Wildekinfallensteller), Name (Name)
+// Units: n01V (Wildekinfallensteller), Name (Name)
 {
 Wildekinfallensteller
 }
@@ -12377,12 +12347,6 @@ STRING 3641
 Furbolglager
 }
 
-STRING 3642
-// Units: n01G (Banditenzelt), Name (Name)
-{
-Banditenzelt
-}
-
 STRING 3643
 // Units: n01H (Zentaurenlager), Name (Name)
 {
@@ -12401,12 +12365,6 @@ STRING 3645
 Mur'gullager
 }
 
-STRING 3646
-// Units: n026 (Gnolllager), Name (Name)
-{
-Gnolllager
-}
-
 STRING 3648
 // Units: n00K (Furbolglhütte), Name (Name)
 {
@@ -12414,37 +12372,37 @@ Furbolglhütte
 }
 
 STRING 3649
-// Units: n01H (Zentaurenlager), EditorSuffix (Name - Editor Suffix)
-{
-(Creep)
-}
-
-STRING 3650
 // Units: n01J (Neruberlager), EditorSuffix (Name - Editor Suffix)
 {
 (Creep)
 }
 
-STRING 3651
+STRING 3650
 // Units: n024 (Mur'gullager), EditorSuffix (Name - Editor Suffix)
 {
 (Creep)
 }
 
-STRING 3652
-// Units: n026 (Gnolllager), EditorSuffix (Name - Editor Suffix)
+STRING 3651
+// Units: n026 (Ogerlager), EditorSuffix (Name - Editor Suffix)
 {
 (Creep)
 }
 
-STRING 3653
+STRING 3652
 // Units: n02D (Wildekinlager), EditorSuffix (Name - Editor Suffix)
 {
 (Creep)
 }
 
-STRING 3656
+STRING 3653
 // Units: n02F (Tuskarrlager), EditorSuffix (Name - Editor Suffix)
+{
+(Creep)
+}
+
+STRING 3656
+// Units: n01D (Furbolgursakrieger), EditorSuffix (Name - Editor Suffix)
 {
 (Creep)
 }
@@ -12471,5 +12429,443 @@ STRING 3660
 // Units: n02D (Wildekinlager), Name (Name)
 {
 Wildekinlager
+}
+
+STRING 3662
+// Units: n00X (Bandit), Ubertip (Tooltip - Extended)
+{
+Wirbt eine Nahkampfeinheit an, welche von euren Forschungen profitiert.|n|n|cffffcc00Kann nur Bodeneinheiten angreifen.|r|n|n|cffd45e19Bei Kauf schickt dieses Lager diese Einheit in einem festen Intervall los, um euer Team im Kampf zu unterstützen.|r
+}
+
+STRING 3663
+// Units: n013 (Banditmarodeur), Ubertip (Tooltip - Extended)
+{
+Wirbt eine Fernkampfeinheit an, die Giftpfeile verschießt und von euren Forschungen profitiert.|n|n|cffffcc00Kann Boden- und Lufteinheiten angreifen.|r|n|n|cffd45e19Bei Kauf schickt dieses Lager diese Einheit in einem festen Intervall los, um euer Team im Kampf zu unterstützen.|r
+}
+
+STRING 3665
+// Units: n014 (Banditenzauberer), Ubertip (Tooltip - Extended)
+{
+Wirbt eine Magieeinheit an, die Feuerblitze verschießt und Frostrüstung verteilt und von euren Forschungen profitiert.|n|n|cffffcc00Kann Boden- und Lufteinheiten angreifen.|r|n|n|cffd45e19Bei Kauf schickt dieses Lager diese Einheit in einem festen Intervall los, um euer Team im Kampf zu unterstützen.|r
+}
+
+STRING 3666
+// Units: n01D (Furbolgursakrieger), Description (Description)
+{
+Nahkampfeinheit
+}
+
+STRING 3667
+// Units: n01D (Furbolgursakrieger), Ubertip (Tooltip - Extended)
+{
+Wirbt eine Nahkampfeinheit an, welche von euren Forschungen profitiert.|n|n|cffffcc00Kann nur Bodeneinheiten angreifen.|r|n|n|cffd45e19Bei Kauf schickt dieses Lager diese Einheit in einem festen Intervall los, um euer Team im Kampf zu unterstützen.|r
+}
+
+STRING 3668
+// Units: n01D (Furbolgursakrieger), Name (Name)
+{
+Furbolgursakrieger
+}
+
+STRING 3669
+// Units: n01D (Furbolgursakrieger), Tip (Tooltip - Basic)
+{
+Furbolgursakrieger anheuern
+}
+
+STRING 3670
+// Units: n01F (Mur'gulblutkieme), EditorSuffix (Name - Editor Suffix)
+{
+(Creep)
+}
+
+STRING 3671
+// Units: n01F (Mur'gulblutkieme), Description (Description)
+{
+Nahkampfeinheit
+}
+
+STRING 3672
+// Units: n01F (Mur'gulblutkieme), Ubertip (Tooltip - Extended)
+{
+Wirbt eine Nahkampfeinheit an, welche von euren Forschungen profitiert.|n|n|cffffcc00Kann nur Bodeneinheiten angreifen.|r|n|n|cffd45e19Bei Kauf schickt dieses Lager diese Einheit in einem festen Intervall los, um euer Team im Kampf zu unterstützen.|r
+}
+
+STRING 3673
+// Units: n01F (Mur'gulblutkieme), Name (Name)
+{
+Mur'gulblutkieme
+}
+
+STRING 3674
+// Units: n01F (Mur'gulblutkieme), Tip (Tooltip - Basic)
+{
+Mur'gulblutkieme anheuern
+}
+
+STRING 3675
+// Units: n01L (Neruberkrieger), EditorSuffix (Name - Editor Suffix)
+{
+(Creep)
+}
+
+STRING 3676
+// Units: n01L (Neruberkrieger), Description (Description)
+{
+Nahkampfeinheit
+}
+
+STRING 3677
+// Units: n01L (Neruberkrieger), Ubertip (Tooltip - Extended)
+{
+Wirbt eine Nahkampfeinheit an, welche von euren Forschungen profitiert.|n|n|cffffcc00Kann nur Bodeneinheiten angreifen.|r|n|n|cffd45e19Bei Kauf schickt dieses Lager diese Einheit in einem festen Intervall los, um euer Team im Kampf zu unterstützen.|r
+}
+
+STRING 3678
+// Units: n014 (Banditenzauberer), Description (Description)
+{
+Magieeinheit
+}
+
+STRING 3679
+// Units: n01L (Neruberkrieger), Name (Name)
+{
+Neruberkrieger
+}
+
+STRING 3680
+// Units: n01L (Neruberkrieger), Tip (Tooltip - Basic)
+{
+Neruberkrieger beschwören
+}
+
+STRING 3681
+// Units: n01N (Ogerkrieger), EditorSuffix (Name - Editor Suffix)
+{
+(Creep)
+}
+
+STRING 3682
+// Units: n01N (Ogerkrieger), Description (Description)
+{
+Nahkampfeinheit
+}
+
+STRING 3683
+// Units: n01N (Ogerkrieger), Ubertip (Tooltip - Extended)
+{
+Wirbt eine Nahkampfeinheit an, welche von euren Forschungen profitiert.|n|n|cffffcc00Kann nur Bodeneinheiten angreifen.|r|n|n|cffd45e19Bei Kauf schickt dieses Lager diese Einheit in einem festen Intervall los, um euer Team im Kampf zu unterstützen.|r
+}
+
+STRING 3684
+// Units: n01N (Ogerkrieger), Name (Name)
+{
+Ogerkrieger
+}
+
+STRING 3685
+// Units: n01N (Ogerkrieger), Tip (Tooltip - Basic)
+{
+Ogerkrieger anheuern
+}
+
+STRING 3686
+// Units: n01P (Tuskarrkrieger), EditorSuffix (Name - Editor Suffix)
+{
+(Creep)
+}
+
+STRING 3687
+// Units: n01P (Tuskarrkrieger), Description (Description)
+{
+Nahkampfeinheit
+}
+
+STRING 3688
+// Units: n01P (Tuskarrkrieger), Ubertip (Tooltip - Extended)
+{
+Wirbt eine Nahkampfeinheit an, welche von euren Forschungen profitiert.|n|n|cffffcc00Kann nur Bodeneinheiten angreifen.|r|n|n|cffd45e19Bei Kauf schickt dieses Lager diese Einheit in einem festen Intervall los, um euer Team im Kampf zu unterstützen.|r
+}
+
+STRING 3689
+// Units: n01P (Tuskarrkrieger), Name (Name)
+{
+Tuskarrkrieger
+}
+
+STRING 3690
+// Units: n01P (Tuskarrkrieger), Tip (Tooltip - Basic)
+{
+Tuskarrkrieger anheuern
+}
+
+STRING 3691
+// Units: n01E (Wildekin), EditorSuffix (Name - Editor Suffix)
+{
+(Creep)
+}
+
+STRING 3692
+// Units: n01E (Wildekin), Description (Description)
+{
+Nahkampfeinheit
+}
+
+STRING 3693
+// Units: n01E (Wildekin), Ubertip (Tooltip - Extended)
+{
+Wirbt eine Nahkampfeinheit an, welche von euren Forschungen profitiert.|n|n|cffffcc00Kann nur Bodeneinheiten angreifen.|r|n|n|cffd45e19Bei Kauf schickt dieses Lager diese Einheit in einem festen Intervall los, um euer Team im Kampf zu unterstützen.|r
+}
+
+STRING 3694
+// Units: n01E (Wildekin), Name (Name)
+{
+Wildekin
+}
+
+STRING 3695
+// Units: n01E (Wildekin), Tip (Tooltip - Basic)
+{
+Wildekin beschwören
+}
+
+STRING 3696
+// Units: n01S (Zentaurenläufer), EditorSuffix (Name - Editor Suffix)
+{
+(Creep)
+}
+
+STRING 3697
+// Units: n01S (Zentaurenläufer), Ubertip (Tooltip - Extended)
+{
+Wirbt eine Nahkampfeinheit an, welche von euren Forschungen profitiert.|n|n|cffffcc00Kann nur Bodeneinheiten angreifen.|r|n|n|cffd45e19Bei Kauf schickt dieses Lager diese Einheit in einem festen Intervall los, um euer Team im Kampf zu unterstützen.|r
+}
+
+STRING 3698
+// Units: n01S (Zentaurenläufer), Name (Name)
+{
+Zentaurenläufer
+}
+
+STRING 3699
+// Units: n01S (Zentaurenläufer), Description (Description)
+{
+Nahkampfeinheit
+}
+
+STRING 3700
+// Units: n01S (Zentaurenläufer), Tip (Tooltip - Basic)
+{
+Zentaurenläufer anheuern
+}
+
+STRING 3701
+// Units: h00E (Belagerungseinheit - Stufe 1), Description (Description)
+{
+Belagerungseinheit
+}
+
+STRING 3702
+// Units: h00S (Belagerungseinheit - Stufe 2), Description (Description)
+{
+Belagerungseinheit
+}
+
+STRING 3703
+// Units: n026 (Ogerlager), Name (Name)
+{
+Ogerlager
+}
+
+STRING 3704
+// Units: n026 (Ogerlager), Tip (Tooltip - Basic)
+{
+Ogerlager errichten
+}
+
+STRING 3705
+// Units: n02A (Ogerhütte), Name (Name)
+{
+Ogerhütte
+}
+
+STRING 3706
+// Units: n02A (Ogerhütte), Tip (Tooltip - Basic)
+{
+Ogerhütte errichten
+}
+
+STRING 3707
+// Units: n01Q (Furbolgspurenleser), EditorSuffix (Name - Editor Suffix)
+{
+(Creep)
+}
+
+STRING 3708
+// Units: n01Q (Furbolgspurenleser), Description (Description)
+{
+Fernkampfeinheit
+}
+
+STRING 3709
+// Units: n01Q (Furbolgspurenleser), Ubertip (Tooltip - Extended)
+{
+Wirbt eine Fernkampfeinheit an, die Giftpfeile verschießt und von euren Forschungen profitiert.|n|n|cffffcc00Kann Boden- und Lufteinheiten angreifen.|r|n|n|cffd45e19Bei Kauf schickt dieses Lager diese Einheit in einem festen Intervall los, um euer Team im Kampf zu unterstützen.|r
+}
+
+STRING 3710
+// Units: n01Q (Furbolgspurenleser), Name (Name)
+{
+Furbolgspurenleser
+}
+
+STRING 3711
+// Units: n01Q (Furbolgspurenleser), Tip (Tooltip - Basic)
+{
+Furbolgspurenleser anheuern
+}
+
+STRING 3712
+// Units: n01U (Mur'gulgezeitenkrieger), EditorSuffix (Name - Editor Suffix)
+{
+(Creep)
+}
+
+STRING 3713
+// Units: n01U (Mur'gulgezeitenkrieger), Description (Description)
+{
+Fernkampfeinheit
+}
+
+STRING 3714
+// Units: n01U (Mur'gulgezeitenkrieger), Ubertip (Tooltip - Extended)
+{
+Wirbt eine Fernkampfeinheit an, die Giftpfeile verschießt und von euren Forschungen profitiert.|n|n|cffffcc00Kann Boden- und Lufteinheiten angreifen.|r|n|n|cffd45e19Bei Kauf schickt dieses Lager diese Einheit in einem festen Intervall los, um euer Team im Kampf zu unterstützen.|r
+}
+
+STRING 3715
+// Units: n01U (Mur'gulgezeitenkrieger), Name (Name)
+{
+Mur'gulgezeitenkrieger
+}
+
+STRING 3716
+// Units: n01U (Mur'gulgezeitenkrieger), Tip (Tooltip - Basic)
+{
+Mur'gulgezeitenkrieger anheuern
+}
+
+STRING 3717
+// Units: n01K (Nerubernetzweber), EditorSuffix (Name - Editor Suffix)
+{
+(Creep)
+}
+
+STRING 3718
+// Units: n01K (Nerubernetzweber), Description (Description)
+{
+Fernkampfeinheit
+}
+
+STRING 3719
+// Units: n01K (Nerubernetzweber), Ubertip (Tooltip - Extended)
+{
+Wirbt eine Fernkampfeinheit an, die Giftpfeile verschießt und von euren Forschungen profitiert.|n|n|cffffcc00Kann Boden- und Lufteinheiten angreifen.|r|n|n|cffd45e19Bei Kauf schickt dieses Lager diese Einheit in einem festen Intervall los, um euer Team im Kampf zu unterstützen.|r
+}
+
+STRING 3720
+// Units: n01K (Nerubernetzweber), Name (Name)
+{
+Nerubernetzweber
+}
+
+STRING 3721
+// Units: n01K (Nerubernetzweber), Tip (Tooltip - Basic)
+{
+Nerubernetzweber beschwören
+}
+
+STRING 3722
+// Units: n01W (Tuskarrfallensteller), EditorSuffix (Name - Editor Suffix)
+{
+(Creep)
+}
+
+STRING 3723
+// Units: n01W (Tuskarrfallensteller), Description (Description)
+{
+Fernkampfeinheit
+}
+
+STRING 3724
+// Units: n01W (Tuskarrfallensteller), Ubertip (Tooltip - Extended)
+{
+Wirbt eine Fernkampfeinheit an, die Giftpfeile verschießt und von euren Forschungen profitiert.|n|n|cffffcc00Kann Boden- und Lufteinheiten angreifen.|r|n|n|cffd45e19Bei Kauf schickt dieses Lager diese Einheit in einem festen Intervall los, um euer Team im Kampf zu unterstützen.|r
+}
+
+STRING 3725
+// Units: n01W (Tuskarrfallensteller), Name (Name)
+{
+Tuskarrfallensteller
+}
+
+STRING 3726
+// Units: n01W (Tuskarrfallensteller), Tip (Tooltip - Basic)
+{
+Tuskarrfallensteller anheuern
+}
+
+STRING 3727
+// Units: n01C (Ogerprügler), EditorSuffix (Name - Editor Suffix)
+{
+(Creep)
+}
+
+STRING 3728
+// Units: n01C (Ogerprügler), Description (Description)
+{
+Fernkampfeinheit
+}
+
+STRING 3729
+// Units: n01C (Ogerprügler), Ubertip (Tooltip - Extended)
+{
+Wirbt eine Fernkampfeinheit an, die Giftpfeile verschießt und von euren Forschungen profitiert.|n|n|cffffcc00Kann Boden- und Lufteinheiten angreifen.|r|n|n|cffd45e19Bei Kauf schickt dieses Lager diese Einheit in einem festen Intervall los, um euer Team im Kampf zu unterstützen.|r
+}
+
+STRING 3730
+// Units: n01C (Ogerprügler), Name (Name)
+{
+Ogerprügler
+}
+
+STRING 3731
+// Units: n01C (Ogerprügler), Tip (Tooltip - Basic)
+{
+Ogerprügler anheuern
+}
+
+STRING 3732
+// Units: n01V (Wildekinfallensteller), EditorSuffix (Name - Editor Suffix)
+{
+(Creep)
+}
+
+STRING 3733
+// Units: n01V (Wildekinfallensteller), Description (Description)
+{
+Fernkampfeinheit
+}
+
+STRING 3734
+// Units: n01V (Wildekinfallensteller), Ubertip (Tooltip - Extended)
+{
+Wirbt eine Fernkampfeinheit an, die Giftpfeile verschießt und von euren Forschungen profitiert.|n|n|cffffcc00Kann Boden- und Lufteinheiten angreifen.|r|n|n|cffd45e19Bei Kauf schickt dieses Lager diese Einheit in einem festen Intervall los, um euer Team im Kampf zu unterstützen.|r
+}
+
+STRING 3735
+// Units: n01V (Wildekinfallensteller), Tip (Tooltip - Basic)
+{
+Wildekinfallensteller beschwören
 }
 

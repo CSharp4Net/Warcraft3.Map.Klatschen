@@ -140,7 +140,7 @@ namespace Source.Events
         //if (soldUnit.IsHero())
         //  Logics.UserHero.HandleCreepHeroBuyed(buyingUnit, soldUnit, sellingUnit);
         //else
-          Logics.UserHero.HandleCreepSpawnBuyed(buyingUnit, soldUnit, sellingUnit);
+        Logics.UserHero.HandleCreepSpawnBuyed(buyingUnit, soldUnit, sellingUnit);
       }
       catch (Exception ex)
       {

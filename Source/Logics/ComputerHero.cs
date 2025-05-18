@@ -40,7 +40,6 @@ namespace Source.Logics
               return;
           }
 
-          player owner = unit.Owner;
           Area respawnArea = null;
 
           if (team.Computer.IsOwnerOfUnit(unit, out SpawnedUnit spawnedUnit))
@@ -65,7 +64,8 @@ namespace Source.Logics
     {   
       int unitId = Common.GetUnitTypeId(unit);
 
-      if (unitId == Constants.UNIT_W_CHTER_HUMAN)
+      if (unitId == Constants.UNIT_W_CHTER_HUMAN || unitId == Constants.UNIT_W_CHTER_ORC || 
+        unitId == Constants.UNIT_W_CHTER_ELF || unitId == Constants.UNIT_W_CHTER_UNDEAD)
       {
         ProcessWaechterLevelUp(unit);
       }
