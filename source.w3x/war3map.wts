@@ -12222,19 +12222,19 @@ STRING 3608
 }
 
 STRING 3609
-// Units: n00V (Banditenzelt), EditorSuffix (Name - Editor Suffix)
+// Units: n00V (Banditenlager), EditorSuffix (Name - Editor Suffix)
 {
 (Creep)
 }
 
 STRING 3610
-// Units: n00V (Banditenzelt), Name (Name)
+// Units: n01F (Banditenzelt), Name (Name)
 {
 Banditenzelt
 }
 
 STRING 3611
-// Units: n013 (Auftragsmörder), EditorSuffix (Name - Editor Suffix)
+// Units: n013 (Banditmarodeur), EditorSuffix (Name - Editor Suffix)
 {
 (Creep)
 }
@@ -12246,7 +12246,7 @@ Nahkampfeinheit
 }
 
 STRING 3613
-// Units: n013 (Auftragsmörder), Description (Description)
+// Units: n013 (Banditmarodeur), Description (Description)
 {
 Fernkampfeinheit
 }
@@ -12312,7 +12312,7 @@ Inferno [|cffffcc00Stufe %d|r] erlernen
 }
 
 STRING 3624
-// Units: n014 (Zauberlehrling), EditorSuffix (Name - Editor Suffix)
+// Units: n014 (Banditenzauberer), EditorSuffix (Name - Editor Suffix)
 {
 (Creep)
 }
@@ -12324,14 +12324,152 @@ Wirbt eine Nahkampfeinheit an, welche von euren Forschungen profitiert. Die Einh
 }
 
 STRING 3630
-// Units: n013 (Auftragsmörder), Ubertip (Tooltip - Extended)
+// Units: n013 (Banditmarodeur), Ubertip (Tooltip - Extended)
 {
 Wirbt eine Fernkampfeinheit an, die Giftpfeile verschießt und von euren Forschungen profitiert. Die Einheit spawnt rythmisch und greift die Feinde deines Teams an.|n|n|cffffcc00Kann Boden- und Lufteinheiten angreifen.|r
 }
 
 STRING 3631
-// Units: n014 (Zauberlehrling), Ubertip (Tooltip - Extended)
+// Units: n014 (Banditenzauberer), Ubertip (Tooltip - Extended)
 {
 Wirbt eine Magieeinheit an, die Feuerblitze verschießen kann und von euren Forschungen profitiert. Die Einheit spawnt rythmisch und greift die Feinde deines Teams an.|n|n|cffffcc00Kann Boden- und Lufteinheiten angreifen.|r
+}
+
+STRING 3632
+// Units: n00P (Furbolglager), EditorSuffix (Name - Editor Suffix)
+{
+(Creep)
+}
+
+STRING 3633
+// Units: n013 (Banditmarodeur), Name (Name)
+{
+Banditmarodeur
+}
+
+STRING 3634
+// Units: n014 (Banditenzauberer), Name (Name)
+{
+Banditenzauberer
+}
+
+STRING 3637
+// Units: n027 (Wildekinfallensteller), Name (Name)
+{
+Wildekinfallensteller
+}
+
+STRING 3639
+// Units: n028 (Wildekinahne), Name (Name)
+{
+Wildekinahne
+}
+
+STRING 3640
+// Units: n00V (Banditenlager), Name (Name)
+{
+Banditenlager
+}
+
+STRING 3641
+// Units: n00P (Furbolglager), Name (Name)
+{
+Furbolglager
+}
+
+STRING 3642
+// Units: n01G (Banditenzelt), Name (Name)
+{
+Banditenzelt
+}
+
+STRING 3643
+// Units: n01H (Zentaurenlager), Name (Name)
+{
+Zentaurenlager
+}
+
+STRING 3644
+// Units: n01J (Neruberlager), Name (Name)
+{
+Neruberlager
+}
+
+STRING 3645
+// Units: n024 (Mur'gullager), Name (Name)
+{
+Mur'gullager
+}
+
+STRING 3646
+// Units: n026 (Gnolllager), Name (Name)
+{
+Gnolllager
+}
+
+STRING 3648
+// Units: n00K (Furbolglhütte), Name (Name)
+{
+Furbolglhütte
+}
+
+STRING 3649
+// Units: n01H (Zentaurenlager), EditorSuffix (Name - Editor Suffix)
+{
+(Creep)
+}
+
+STRING 3650
+// Units: n01J (Neruberlager), EditorSuffix (Name - Editor Suffix)
+{
+(Creep)
+}
+
+STRING 3651
+// Units: n024 (Mur'gullager), EditorSuffix (Name - Editor Suffix)
+{
+(Creep)
+}
+
+STRING 3652
+// Units: n026 (Gnolllager), EditorSuffix (Name - Editor Suffix)
+{
+(Creep)
+}
+
+STRING 3653
+// Units: n02D (Wildekinlager), EditorSuffix (Name - Editor Suffix)
+{
+(Creep)
+}
+
+STRING 3656
+// Units: n02F (Tuskarrlager), EditorSuffix (Name - Editor Suffix)
+{
+(Creep)
+}
+
+STRING 3657
+// Units: n02F (Tuskarrlager), Name (Name)
+{
+Tuskarrlager
+}
+
+STRING 3658
+// Units: n02G (Tuskarrhütte), Name (Name)
+{
+Tuskarrhütte
+}
+
+STRING 3659
+// Units: n02B (Wildekinnest), Name (Name)
+{
+Wildekinnest
+}
+
+STRING 3660
+// Units: n02D (Wildekinlager), Name (Name)
+{
+Wildekinlager
 }
 

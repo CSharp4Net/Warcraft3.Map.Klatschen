@@ -1,18 +1,18 @@
 -- Compiled with the following packages:
---   WCSharp.Api: v3.0.3 (decompiled)
---   WCSharp.Buffs: v3.0.4 (decompiled)
---   WCSharp.DateTime: v3.0.0 (decompiled)
---   WCSharp.Dummies: v3.0.0 (decompiled)
---   WCSharp.Effects: v3.0.0 (decompiled)
---   WCSharp.Events: v3.0.4 (decompiled)
---   WCSharp.Json: v3.0.0 (decompiled)
---   WCSharp.Knockbacks: v3.0.0 (decompiled)
---   WCSharp.Lightnings: v3.0.0 (decompiled)
---   WCSharp.Missiles: v3.0.4 (decompiled)
---   WCSharp.SaveLoad: v3.0.1 (decompiled)
---   WCSharp.Shared: v3.0.3 (decompiled)
---   WCSharp.Sync: v3.0.3 (decompiled)
---   WCSharp.W3MMD: v3.0.0 (decompiled)
+--   WCSharp.Api: v3.1.1 (decompiled)
+--   WCSharp.Buffs: v3.1.4 (decompiled)
+--   WCSharp.DateTime: v3.1.1 (decompiled)
+--   WCSharp.Dummies: v3.1.4 (decompiled)
+--   WCSharp.Effects: v3.1.0 (decompiled)
+--   WCSharp.Events: v3.1.7 (decompiled)
+--   WCSharp.Json: v3.1.0 (decompiled)
+--   WCSharp.Knockbacks: v3.1.0 (decompiled)
+--   WCSharp.Lightnings: v3.1.0 (decompiled)
+--   WCSharp.Missiles: v3.1.0 (decompiled)
+--   WCSharp.SaveLoad: v3.1.0 (decompiled)
+--   WCSharp.Shared: v3.1.1 (decompiled)
+--   WCSharp.Sync: v3.1.0 (decompiled)
+--   WCSharp.W3MMD: v3.1.0 (decompiled)
 
 CSharpLuaSingleFile = true
 
@@ -20045,8 +20045,8 @@ end)
 System.namespace("Source", function (namespace)
   namespace.class("Program", function (namespace)
     local Main, ShowDebugMessage, ShowDebugMessage1, ShowErrorMessage, ShowExceptionMessage, Start, TryGetUserById, TryGetCreepCampByBuilding, 
-    TryGetCreepCampByHero, TryGetTeamByUnit, ConstructHumanBuildingAndTrigger, ConstructOrcBuildingAndTrigger, ConstructElfBuildingAndTrigger, ConstructUndeadBuildingAndTrigger, CreateComputerHeros, CreateHeroSelectorForPlayerAndAdjustCamera, 
-    GetIntervalSeconds, class, static
+    TryGetCreepCampByHero, TryGetTeamByUnit, ConstructHumanBuildingAndTrigger, ConstructOrcBuildingAndTrigger, ConstructElfBuildingAndTrigger, ConstructUndeadBuildingAndTrigger, ConstructCreepCamps, CreateComputerHeros, 
+    CreateHeroSelectorForPlayerAndAdjustCamera, GetIntervalSeconds, class, static
     static = function (this)
       this.CreepCamps = ListCreepCamp()
       this.AllActiveUsers = ListUserPlayer()
@@ -20122,6 +20122,8 @@ System.namespace("Source", function (namespace)
         ConstructElfBuildingAndTrigger()
         ConstructUndeadBuildingAndTrigger()
 
+        ConstructCreepCamps()
+
         -- Spezifische Events registrieren
         System.Console.WriteLine("Kämpft bis zum Tod, ihr Lappen!")
 
@@ -20134,38 +20136,6 @@ System.namespace("Source", function (namespace)
         FogEnable(false)
         FogMaskEnable(false)
 
-
-        -- Menschen-Creeps
-        local creepCamp = SourceModels.CreepCamp("Banditen", Areas.HumanCreepToElfSpawnBuilding, Areas.HumanCreepToElfSpawn, class.Humans, class.Elves)
-        local building = creepCamp:InitializeBuilding(1848651862 --[[Constants.UNIT_BANDITENZELT_CREEP]], 0)
-        class.CreepCamps:Add(creepCamp)
-        creepCamp = SourceModels.CreepCamp("Tuskarr", Areas.HumanCreepToOrcSpawnBuilding, Areas.HumanCreepToOrcSpawn, class.Humans, class.Orcs)
-        building = creepCamp:InitializeBuilding(1848651862 --[[Constants.UNIT_BANDITENZELT_CREEP]], 0)
-        class.CreepCamps:Add(creepCamp)
-
-        -- Elfen-Creeps
-        creepCamp = SourceModels.CreepCamp("Furbolgs", Areas.ElfCreepToHumanSpawnBuilding, Areas.ElfCreepToHumanSpawn, class.Elves, class.Humans)
-        building = creepCamp:InitializeBuilding(1848651862 --[[Constants.UNIT_BANDITENZELT_CREEP]], 0)
-        class.CreepCamps:Add(creepCamp)
-        creepCamp = SourceModels.CreepCamp("Murlocs", Areas.ElfCreepToUndeadSpawnBuilding, Areas.ElfCreepToUndeadSpawn, class.Elves, class.Undeads)
-        building = creepCamp:InitializeBuilding(1848651862 --[[Constants.UNIT_BANDITENZELT_CREEP]], 0)
-        class.CreepCamps:Add(creepCamp)
-
-        -- Orcs-Creeps
-        creepCamp = SourceModels.CreepCamp("Zentauren", Areas.OrcCreepToHumanSpawnBuilding, Areas.OrcCreepToHumanSpawn, class.Orcs, class.Humans)
-        building = creepCamp:InitializeBuilding(1848651862 --[[Constants.UNIT_BANDITENZELT_CREEP]], 0)
-        class.CreepCamps:Add(creepCamp)
-        creepCamp = SourceModels.CreepCamp("Oger", Areas.OrcCreepToUndeadSpawnBuilding, Areas.OrcCreepToUndeadSpawn, class.Orcs, class.Undeads)
-        building = creepCamp:InitializeBuilding(1848651862 --[[Constants.UNIT_BANDITENZELT_CREEP]], 0)
-        class.CreepCamps:Add(creepCamp)
-
-        -- Untoten-Creeps
-        creepCamp = SourceModels.CreepCamp("Mur'guls", Areas.UndeadCreepToOrcSpawnBuilding, Areas.UndeadCreepToOrcSpawn, class.Undeads, class.Orcs)
-        building = creepCamp:InitializeBuilding(1848651862 --[[Constants.UNIT_BANDITENZELT_CREEP]], 0)
-        class.CreepCamps:Add(creepCamp)
-        creepCamp = SourceModels.CreepCamp("Neruber", Areas.UndeadCreepToElfSpawnBuilding, Areas.UndeadCreepToElfSpawn, class.Undeads, class.Elves)
-        building = creepCamp:InitializeBuilding(1848651862 --[[Constants.UNIT_BANDITENZELT_CREEP]], 0)
-        class.CreepCamps:Add(creepCamp)
 
         local timer = CreateTimer()
         TimerStart(timer, 30, false, function ()
@@ -20342,6 +20312,39 @@ System.namespace("Source", function (namespace)
       building:AddSpawnTrigger(Areas.UndeadBarracksToOrcsSpawn, 0 --[[SpawnInterval.Short]], Areas.OrcBase, System.Array(System.Int32) { 1747988825 --[[Constants.UNIT_NAHKAMPFEINHEIT_STUFE_1_UNDEAD]], 1747988825 --[[Constants.UNIT_NAHKAMPFEINHEIT_STUFE_1_UNDEAD]] }):Run(0)
       building:AddSpawnTrigger(Areas.UndeadBarracksToOrcsSpawn, 1 --[[SpawnInterval.Middle]], Areas.OrcBase, System.Array(System.Int32) { 1747989044 --[[Constants.UNIT_FERNKAMPFEINHEIT_STUFE_1_UNDEAD]] }):Run(0.5)
     end
+    ConstructCreepCamps = function ()
+      -- Menschen-Creeps
+      local creepCamp = SourceModels.CreepCamp("Banditen", Areas.HumanCreepToElfSpawnBuilding, Areas.HumanCreepToElfSpawn, class.Humans, class.Elves)
+      local building = creepCamp:InitializeBuilding(1848651862 --[[Constants.UNIT_BANDITENZELT_CREEP]], 0)
+      class.CreepCamps:Add(creepCamp)
+      creepCamp = SourceModels.CreepCamp("Tuskarr", Areas.HumanCreepToOrcSpawnBuilding, Areas.HumanCreepToOrcSpawn, class.Humans, class.Orcs)
+      building = creepCamp:InitializeBuilding(1848651862 --[[Constants.UNIT_BANDITENZELT_CREEP]], 0)
+      class.CreepCamps:Add(creepCamp)
+
+      -- Elfen-Creeps
+      creepCamp = SourceModels.CreepCamp("Furbolgs", Areas.ElfCreepToHumanSpawnBuilding, Areas.ElfCreepToHumanSpawn, class.Elves, class.Humans)
+      building = creepCamp:InitializeBuilding(1848651862 --[[Constants.UNIT_BANDITENZELT_CREEP]], 0)
+      class.CreepCamps:Add(creepCamp)
+      creepCamp = SourceModels.CreepCamp("Murlocs", Areas.ElfCreepToUndeadSpawnBuilding, Areas.ElfCreepToUndeadSpawn, class.Elves, class.Undeads)
+      building = creepCamp:InitializeBuilding(1848651862 --[[Constants.UNIT_BANDITENZELT_CREEP]], 0)
+      class.CreepCamps:Add(creepCamp)
+
+      -- Orcs-Creeps
+      creepCamp = SourceModels.CreepCamp("Zentauren", Areas.OrcCreepToHumanSpawnBuilding, Areas.OrcCreepToHumanSpawn, class.Orcs, class.Humans)
+      building = creepCamp:InitializeBuilding(1848651862 --[[Constants.UNIT_BANDITENZELT_CREEP]], 0)
+      class.CreepCamps:Add(creepCamp)
+      creepCamp = SourceModels.CreepCamp("Oger", Areas.OrcCreepToUndeadSpawnBuilding, Areas.OrcCreepToUndeadSpawn, class.Orcs, class.Undeads)
+      building = creepCamp:InitializeBuilding(1848651862 --[[Constants.UNIT_BANDITENZELT_CREEP]], 0)
+      class.CreepCamps:Add(creepCamp)
+
+      -- Untoten-Creeps
+      creepCamp = SourceModels.CreepCamp("Mur'guls", Areas.UndeadCreepToOrcSpawnBuilding, Areas.UndeadCreepToOrcSpawn, class.Undeads, class.Orcs)
+      building = creepCamp:InitializeBuilding(1848651862 --[[Constants.UNIT_BANDITENZELT_CREEP]], 0)
+      class.CreepCamps:Add(creepCamp)
+      creepCamp = SourceModels.CreepCamp("Neruber", Areas.UndeadCreepToElfSpawnBuilding, Areas.UndeadCreepToElfSpawn, class.Undeads, class.Elves)
+      building = creepCamp:InitializeBuilding(1848651862 --[[Constants.UNIT_BANDITENZELT_CREEP]], 0)
+      class.CreepCamps:Add(creepCamp)
+    end
     CreateComputerHeros = function ()
       class.Humans.Computer:CreateUnit(1211117645 --[[Constants.UNIT_W_CHTER_HUMAN]], Areas.HumanBaseToElfSpawn, 0):AttackMove(Areas.ElfBase)
       class.Humans.Computer:CreateUnit(1211117645 --[[Constants.UNIT_W_CHTER_HUMAN]], Areas.HumanBaseToCenterSpawn, 0):AttackMove(Areas.UndeadBase)
@@ -20409,6 +20412,7 @@ System.namespace("Source", function (namespace)
             { "Undeads", 0xE, out.Source.Models.Teams.UndeadTeam }
           },
           methods = {
+            { "ConstructCreepCamps", 0x9, ConstructCreepCamps },
             { "ConstructElfBuildingAndTrigger", 0x9, ConstructElfBuildingAndTrigger },
             { "ConstructHumanBuildingAndTrigger", 0x9, ConstructHumanBuildingAndTrigger },
             { "ConstructOrcBuildingAndTrigger", 0x9, ConstructOrcBuildingAndTrigger },
@@ -21090,13 +21094,7 @@ System.namespace("Source.Events", function (namespace)
           if SourceExtensions.unitExtension.IsUnitOfUser(unit) then
             SourceLogics.UserHero.HandleDied(unit)
           elseif SourceExtensions.unitExtension.IsUnitOfComputer(unit) then
-            Source.Program.ShowDebugMessage("Computer hero " .. System.toString(GetUnitName(unit)) .. " died with race " .. System.toString(GetUnitRace(unit)) .. "!")
-            -- TODO : Code prüfen!
             SourceLogics.ComputerHero.HandleDied(unit)
-          elseif SourceExtensions.unitExtension.IsUnitOfCreep(unit) then
-            Source.Program.ShowDebugMessage("Creep hero died!")
-            -- TODO : Code prüfen!
-            SourceLogics.CreepHero.HandleDied(unit)
           else
             System.Console.WriteLine("UNKNOWN hero died!!!")
           end
@@ -21185,11 +21183,11 @@ System.namespace("Source.Events", function (namespace)
           return true
         end
 
-        if SourceExtensions.unitExtension.IsHero(soldUnit) then
-          SourceLogics.UserHero.HandleCreepHeroBuyed(buyingUnit, soldUnit, sellingUnit)
-        else
-          SourceLogics.UserHero.HandleCreepSpawnBuyed(buyingUnit, soldUnit, sellingUnit)
-        end
+        -- TODO 001
+        --if (soldUnit.IsHero())
+        --  Logics.UserHero.HandleCreepHeroBuyed(buyingUnit, soldUnit, sellingUnit);
+        --else
+        SourceLogics.UserHero.HandleCreepSpawnBuyed(buyingUnit, soldUnit, sellingUnit)
       end, function (default)
         local ex = default
         Source.Program.ShowExceptionMessage("Unit.OnBuysUnit", ex)
@@ -21827,8 +21825,6 @@ System.namespace("Source.Events.Periodic", function (namespace)
       team:IncreaseTechForAllPlayers(techId, nextTechLevel)
       SetPlayerState(computerPlayer, PLAYER_STATE_RESOURCE_GOLD, GetPlayerState(computerPlayer, PLAYER_STATE_RESOURCE_GOLD) - (goldPriceBase * nextTechLevel))
 
-      -- TODO : Name der Forschung anhand ID ermitteln und mit ausgeben?
-
       local default, spawnCommand = team:GetTechType(techId, nextTechLevel)
       local researchType = default
 
@@ -22370,80 +22366,6 @@ System.import(function (out)
   Source = out.Source
 end)
 System.namespace("Source.Logics", function (namespace)
-  namespace.class("CreepHero", function (namespace)
-    local HandleDied
-    HandleDied = function (unit)
-      local playerId = GetPlayerId(GetOwningPlayer(unit))
-      local respawnTime = 0
-
-      -- Prüfe vor Wiedergeburt-Einleitung, ob der Computer-Spieler noch unbesiegt ist
-      local default, creepCamp = Source.Program.TryGetCreepCampByHero(unit)
-      if not default then
-        Source.Program.ShowErrorMessage("CreepHero.HandleDied", "Creep camp of unit " .. System.toString(GetUnitName(unit)) .. " not found!")
-        return
-      end
-
-      respawnTime = 30
-
-      -- Verstorbenen Held nach gegebener Zeit wieder belegen
-      local timer = CreateTimer()
-
-      Source.Program.ShowDebugMessage("Start creep hero timer!")
-      -- TODO : Code prüfen!
-      TimerStart(timer, respawnTime, false, function ()
-        local default = System.try(function ()
-          -- Timer wieder zerstören
-          DestroyTimer(timer)
-          DestroyTimer(timer)
-          timer = nil
-
-          Source.Program.ShowDebugMessage("Detect creep hcampt of hero!")
-          -- TODO : Code prüfen!
-          -- Prüfe vor Wiedergeburt-Abschluss, ob der Computer-Spieler noch unbesiegt ist
-          local default, creepCamp = Source.Program.TryGetCreepCampByHero(unit)
-          if not default then
-            Source.Program.ShowErrorMessage("CreepHero.HandleDied", "Creep camp of unit " .. System.toString(GetUnitName(unit)) .. " not found!")
-            return true
-          end
-
-          Source.Program.ShowDebugMessage("Set creep hero owner to " .. System.toString(creepCamp.Name) .. "!")
-          -- TODO : Code prüfen!
-          SetUnitOwner(unit, creepCamp.OwnerTeam.Computer.Wc3Player, true)
-
-          Source.Program.ShowDebugMessage("Revive creep hero for " .. System.toString(GetPlayerName(creepCamp.OwnerTeam.Computer.Wc3Player)) .. "!")
-          -- TODO : Code prüfen!
-          creepCamp:ReviveHero1(1, 0)
-        end, function (default)
-          local ex = default
-          Source.Program.ShowExceptionMessage("ComputerHero.OnDies", ex)
-        end)
-        if default then
-          return
-        end
-      end)
-    end
-    return {
-      HandleDied = HandleDied,
-      __metadata__ = function (out)
-        return {
-          methods = {
-            { "HandleDied", 0x10C, HandleDied, out.WCSharp.Api.unit }
-          },
-          class = { "CreepHero", 0x3C }
-        }
-      end
-    }
-  end)
-end)
-
-end
-do
-local System = System
-local Source
-System.import(function (out)
-  Source = out.Source
-end)
-System.namespace("Source.Logics", function (namespace)
   namespace.class("HeroSelector", function (namespace)
     local HandleHeroBuyed
     HandleHeroBuyed = function (buyingUnit, soldUnit)
@@ -22618,7 +22540,7 @@ System.import(function (out)
 end)
 System.namespace("Source.Logics", function (namespace)
   namespace.class("UserHero", function (namespace)
-    local HandleDied, HandleItemBuyed, HandleCharmCasted, HandleAnythingCasted, HandleCreepSpawnBuyed, HandleCreepHeroBuyed
+    local HandleDied, HandleItemBuyed, HandleCharmCasted, HandleAnythingCasted, HandleCreepSpawnBuyed
     HandleDied = function (unit)
       local player = GetOwningPlayer(unit)
       local playerId = GetPlayerId(GetOwningPlayer(unit))
@@ -22848,42 +22770,16 @@ System.namespace("Source.Logics", function (namespace)
 
       creepCamp.Building:AddUnitToSpawnTrigger(soldUnitId)
     end
-    HandleCreepHeroBuyed = function (buyingUnit, soldUnit, sellingUnit)
-      local soldUnitId = GetUnitTypeId(soldUnit)
-
-      -- Gekaufte Einheit sofort entfernen
-      RemoveUnit(soldUnit)
-
-      -- Sicherheitshalber Verweis auf Einheit für GC freigeben
-      RemoveUnit(soldUnit)
-      soldUnit = nil
-
-      local playerId = GetPlayerId(GetOwningPlayer(buyingUnit))
-
-      local default, creepCamp = Source.Program.TryGetCreepCampByBuilding(sellingUnit)
-      if not default then
-        System.Console.WriteLine("HandleCreepSpawnBuyed, invalid selling creep unit " .. System.toString(GetUnitName(sellingUnit)) .. "!")
-        return
-      end
-
-      if creepCamp.Hero == nil then
-        creepCamp:CreateHero1(soldUnitId, 1, 0)
-      else
-        creepCamp:ReviveHero1(1, 0)
-      end
-    end
     return {
       HandleDied = HandleDied,
       HandleItemBuyed = HandleItemBuyed,
       HandleCharmCasted = HandleCharmCasted,
       HandleCreepSpawnBuyed = HandleCreepSpawnBuyed,
-      HandleCreepHeroBuyed = HandleCreepHeroBuyed,
       __metadata__ = function (out)
         return {
           methods = {
             { "HandleAnythingCasted", 0x109, HandleAnythingCasted, System.Int32 },
             { "HandleCharmCasted", 0x10C, HandleCharmCasted, System.Int32 },
-            { "HandleCreepHeroBuyed", 0x30C, HandleCreepHeroBuyed, out.WCSharp.Api.unit, out.WCSharp.Api.unit, out.WCSharp.Api.unit },
             { "HandleCreepSpawnBuyed", 0x30C, HandleCreepSpawnBuyed, out.WCSharp.Api.unit, out.WCSharp.Api.unit, out.WCSharp.Api.unit },
             { "HandleDied", 0x10C, HandleDied, out.WCSharp.Api.unit },
             { "HandleItemBuyed", 0x20C, HandleItemBuyed, out.WCSharp.Api.unit, out.WCSharp.Api.item }
@@ -24540,6 +24436,30 @@ local Arraytimerdialog = System.Array(WCSharpApi.timerdialog)
 System.namespace("WCSharp.Api", function (namespace)
 end)
 System.namespace("WCSharp.Api.Enums", function (namespace)
+  -- <summary>
+  -- Specifies the modifier keys that must be active.
+  -- </summary>
+  namespace.enum("MetaKey", function ()
+    return {
+      None = 0,
+      Shift = 1,
+      Control = 2,
+      Alt = 4,
+      META = 8,
+      __metadata__ = function (out)
+        return {
+          fields = {
+            { "Alt", 0xE, System.Int32 },
+            { "Control", 0xE, System.Int32 },
+            { "META", 0xE, System.Int32 },
+            { "None", 0xE, System.Int32 },
+            { "Shift", 0xE, System.Int32 }
+          },
+          class = { "MetaKey", 0x26 }
+        }
+      end
+    }
+  end)
   namespace.enum("TargetsAllowed", function ()
     return {
       None = 1,
@@ -25447,7 +25367,7 @@ System.namespace("WCSharp.Buffs", function (namespace)
     static = function (this)
       buffs = ListBuff()
       buffsByUnit = DictunitListBuff()
-      WCSharpEvents.PlayerUnitEvents.Register14(812 --[[UnitTypeEvent.Decays]], OnDeath)
+      WCSharpEvents.PlayerUnitEvents.Register14(813 --[[UnitTypeEvent.Dies]], OnDeath)
       WCSharpEvents.PeriodicEvents.AddPeriodicEvent(Action, 0.03125)
     end
     index = 0
@@ -25488,6 +25408,7 @@ System.namespace("WCSharp.Buffs", function (namespace)
     end
     OnDeath = function ()
       local triggerUnit = GetTriggerUnit()
+      local buffsOnUnit = GetBuffsOnUnit(triggerUnit)
       if index < size then
         local buff = buffs:get(index)
         if buff.Active and buff.Target == triggerUnit then
@@ -25495,12 +25416,8 @@ System.namespace("WCSharp.Buffs", function (namespace)
           buff:OnDeath(true)
         end
       end
-      local default, value = buffsByUnit:TryGetValue(triggerUnit, nil)
-      if not default then
-        return
-      end
-      for i = 0, #value - 1 do
-        local buff2 = value:get(i)
+      for i = 0, buffsOnUnit:getCount() - 1 do
+        local buff2 = buffsOnUnit:get(i)
         if buff2.Active then
           buff2.Active = false
           buff2:OnDeath(false)
@@ -26932,8 +26849,9 @@ System.namespace("WCSharp.DateTime", function (namespace)
     local getSeconds, getMinutes, getHours, getDays, getTotalSeconds, getTotalMinutes, getTotalHours, getTotalDays, 
     getZero, getMinValue, getMaxValue, getLocalPlaytime, op_UnaryNegation, op_Subtraction, op_UnaryPlus, op_Addition, 
     op_Equality, op_Inequality, op_LessThan, op_LessThanOrEqual, op_GreaterThan, op_GreaterThanOrEqual, Add, Subtract, 
-    Duration, Negate, CompareToObj, CompareTo, Equals, EqualsObj, GetHashCode, ToString, 
-    ToString1, Deserialize, Serialize, class, __ctor1__, __ctor2__, __ctor3__
+    Duration, Negate, CompareToObj, CompareTo, Equals, EqualsObj, GetHashCode, FromSeconds, 
+    FromMinutes, FromHours, FromDays, ToString, ToString1, Deserialize, Serialize, class, 
+    __ctor1__, __ctor2__, __ctor3__
     -- <summary>
     -- Creates a new <see cref="T:WCSharp.DateTime.WcTimeSpan" /> instance with a duration of the given number of seconds.
     -- </summary>
@@ -27112,6 +27030,33 @@ System.namespace("WCSharp.DateTime", function (namespace)
       return this.seconds
     end
     -- <summary>
+    -- Creates a new <see cref="T:WCSharp.DateTime.WcTimeSpan" /> with the exact number of seconds.
+    -- </summary>
+    FromSeconds = function (seconds)
+      return class(seconds)
+    end
+    -- <summary>
+    -- Creates a new <see cref="T:WCSharp.DateTime.WcTimeSpan" /> with the number of minutes.
+    -- <para>The number of seconds is floored.</para>
+    -- </summary>
+    FromMinutes = function (minutes)
+      return class(System.ToInt32(minutes * 60))
+    end
+    -- <summary>
+    -- Creates a new <see cref="T:WCSharp.DateTime.WcTimeSpan" /> with the number of hours.
+    -- <para>The number of seconds is floored.</para>
+    -- </summary>
+    FromHours = function (hours)
+      return class(System.ToInt32(hours * 3600))
+    end
+    -- <summary>
+    -- Creates a new <see cref="T:WCSharp.DateTime.WcTimeSpan" /> with the number of days.
+    -- <para>The number of seconds is floored.</para>
+    -- </summary>
+    FromDays = function (days)
+      return class(System.ToInt32(days * 86400))
+    end
+    -- <summary>
     -- Outputs this <see cref="T:WCSharp.DateTime.WcTimeSpan" /> in the standard format of "d:hh:mm:ss" or "hh:mm:ss" if less than 1 day.
     -- </summary>
     -- <returns></returns>
@@ -27204,6 +27149,10 @@ System.namespace("WCSharp.DateTime", function (namespace)
       Equals = Equals,
       EqualsObj = EqualsObj,
       GetHashCode = GetHashCode,
+      FromSeconds = FromSeconds,
+      FromMinutes = FromMinutes,
+      FromHours = FromHours,
+      FromDays = FromDays,
       ToString = ToString,
       ToString1 = ToString1,
       Deserialize = Deserialize,
@@ -27241,8 +27190,12 @@ System.namespace("WCSharp.DateTime", function (namespace)
             { "CompareTo", 0x186, CompareTo, class, System.Int32 },
             { "Deserialize", 0x18E, Deserialize, System.String, class },
             { "Duration", 0x86, Duration, class },
-            { "Equals", 0x186, Equals, class, System.Boolean },
             { "Equals", 0x186, EqualsObj, System.Object, System.Boolean },
+            { "Equals", 0x186, Equals, class, System.Boolean },
+            { "FromDays", 0x18E, FromDays, System.Single, class },
+            { "FromHours", 0x18E, FromHours, System.Single, class },
+            { "FromMinutes", 0x18E, FromMinutes, System.Single, class },
+            { "FromSeconds", 0x18E, FromSeconds, System.Int32, class },
             { "GetHashCode", 0x86, GetHashCode, System.Int32 },
             { "Negate", 0x86, Negate, class },
             { "Serialize", 0x18E, Serialize, class, System.String },
@@ -27305,7 +27258,7 @@ System.namespace("WCSharp.Dummies", function (namespace)
       periodicEvent = WCSharpEvents.PeriodicEvent(Countdown, 1.0)
       dummiesReady = Listunit()
       dummiesBeingRecycled = ListDummyBeingRecycled()
-      WCSharpEvents.PlayerUnitEvents.Register14(848 --[[UnitTypeEvent.SpellEffect]], OnDummyCast)
+      WCSharpEvents.PlayerUnitEvents.Register14(850 --[[UnitTypeEvent.SpellEndCast]], OnDummyCast)
     end
     OnDummyCast = function ()
       local triggerUnit = GetTriggerUnit()
@@ -27314,22 +27267,22 @@ System.namespace("WCSharp.Dummies", function (namespace)
       end
     end
     Countdown = function ()
-      local num = #dummiesBeingRecycled - 1
-      for num2 = num, 0, -1 do
+      local num = #dummiesBeingRecycled
+      for num2 = num - 1, 0, -1 do
         local dummyBeingRecycled = dummiesBeingRecycled:get(num2)
         if dummyBeingRecycled.TicksLeft <= 0 then
           SetUnitX(dummyBeingRecycled.Dummy, 0)
           SetUnitY(dummyBeingRecycled.Dummy, 0)
           dummiesReady:Add(dummyBeingRecycled.Dummy)
+          num = num - 1
           dummiesBeingRecycled:set(num2, dummiesBeingRecycled:get(num))
           dummiesBeingRecycled:RemoveAt(num)
-          num = num - 1
         else
           local default = dummyBeingRecycled
           default.TicksLeft = default.TicksLeft - 1
         end
       end
-      return num >= 0
+      return num > 0
     end
     -- <summary>
     -- Call this when you are done with a dummy. The dummy will become available for use again after the <paramref name="recycleTime" />.
@@ -27344,25 +27297,25 @@ System.namespace("WCSharp.Dummies", function (namespace)
     -- Requests an available dummy.
     -- </summary>
     GetDummy = function ()
-      local num = #dummiesReady - 1
-      if num == -1 then
+      local count = #dummiesReady
+      if count == 0 then
         return CreateUnit(Player(PLAYER_NEUTRAL_PASSIVE), 2021161080, 0, 0, 0)
       end
-      local result = dummiesReady:get(num)
-      dummiesReady:RemoveAt(num)
+      local result = dummiesReady:get(count - 1)
+      dummiesReady[count] = nil
       return result
     end
     -- <summary>
     -- Requests an available dummy at the given coordinates and under control of the given player.
     -- </summary>
     GetDummy1 = function (x, y, z, player)
-      local num = #dummiesReady - 1
+      local count = #dummiesReady
       local unit
-      if num == -1 then
+      if count == 0 then
         unit = CreateUnit(Player(PLAYER_NEUTRAL_PASSIVE), 2021161080, 0, 0, 0)
       else
-        unit = dummiesReady:get(num)
-        dummiesReady:RemoveAt(num)
+        unit = dummiesReady:get(count - 1)
+        dummiesReady[count] = nil
       end
       SetUnitOwner(unit, player, false)
       SetUnitPosition(unit, x, y)
@@ -27504,6 +27457,7 @@ local DictInt32EventSet
 local ListPeriodicEvent
 local DicthandleEventSet
 local TypeWrapper_1handle
+local ListIPlayerUnitEventHandler
 local DictInt32IPlayerUnitEventHandler
 local DictplayeruniteventIPlayerUnitEventHandler
 System.import(function (out)
@@ -27517,6 +27471,7 @@ System.import(function (out)
   ListPeriodicEvent = System.List(WCSharpEvents.PeriodicEvent)
   DicthandleEventSet = System.Dictionary(WCSharpApi.handle, WCSharpEventHandlers.EventSet)
   TypeWrapper_1handle = WCSharpShared.TypeWrapper_1(WCSharpApi.handle)
+  ListIPlayerUnitEventHandler = System.List(PlayerUnitEventHandlers.IPlayerUnitEventHandler)
   DictInt32IPlayerUnitEventHandler = System.Dictionary(System.Int32, PlayerUnitEventHandlers.IPlayerUnitEventHandler)
   DictplayeruniteventIPlayerUnitEventHandler = System.Dictionary(WCSharpApi.playerunitevent, PlayerUnitEventHandlers.IPlayerUnitEventHandler)
 end)
@@ -27867,8 +27822,8 @@ System.namespace("WCSharp.Events", function (namespace)
         while periodicEvent.IntervalLeft <= 0.0 do
           periodicEvent.IntervalLeft = periodicEvent.IntervalLeft + periodicEvent.Interval
           if not periodicEvent.Method() then
-            num = num - 1
             num2 = num2 - 1
+            num = num - 1
             timerEvents:set(num2, timerEvents:get(num))
             timerEvents:RemoveAt(num)
             break
@@ -28014,15 +27969,17 @@ System.namespace("WCSharp.Events", function (namespace)
   -- Manager for all Warcraft III <see cref="T:WCSharp.Api.playerunitevent" />s. Will bundle together and is able to efficiently filter on specific data.
   -- </summary>
   namespace.class("PlayerUnitEvents", function (namespace)
-    local customEventIdsByIdentifier, playerUnitEventHandlers, customPlayerUnitEventHandlers, playerUnitEventNativesById, filterFuncIdsByEvent, filterFuncHandlesByEvent, Register, Register1, 
-    Register2, Register3, Register4, Register5, Register6, Register7, Register8, Register9, 
-    Register10, Register11, Register12, Register13, Register14, Register15, Register16, Register17, 
-    Register18, Register19, Unregister, Unregister1, Unregister2, Unregister3, Unregister4, Unregister5, 
-    Unregister6, Unregister7, Unregister8, Unregister9, Unregister10, Unregister11, Unregister12, Unregister13, 
-    Unregister14, Unregister15, Unregister16, Unregister17, Unregister18, GetOrCreateHandler, AddCustomEvent, CreateCustomHandler, 
-    EnableDebug, class, static
+    local pendingUpdates, customEventIdsByIdentifier, eventHandlers, playerUnitEventHandlers, customPlayerUnitEventHandlers, playerUnitEventNativesById, filterFuncIdsByEvent, filterFuncHandlesByEvent, 
+    Register, Register1, Register2, Register3, Register4, Register5, Register6, Register7, 
+    Register8, Register9, Register10, Register11, Register12, Register13, Register14, Register15, 
+    Register16, Register17, Register18, Register19, Unregister, Unregister1, Unregister2, Unregister3, 
+    Unregister4, Unregister5, Unregister6, Unregister7, Unregister8, Unregister9, Unregister10, Unregister11, 
+    Unregister12, Unregister13, Unregister14, Unregister15, Unregister16, Unregister17, Unregister18, GetOrCreateHandler, 
+    AddCustomEvent, CreateCustomHandler, EnableDebug, ResolvePendingUpdates, class, static
     static = function (this)
+      pendingUpdates = ListDelegate()
       customEventIdsByIdentifier = DictStringInt32()
+      eventHandlers = ListIPlayerUnitEventHandler()
       playerUnitEventHandlers = DictplayeruniteventIPlayerUnitEventHandler()
       local default = DictInt32IPlayerUnitEventHandler()
       default:AddKeyValue(822, nil)
@@ -28076,6 +28033,7 @@ System.namespace("WCSharp.Events", function (namespace)
       default:AddKeyValue(707, EVENT_PLAYER_UNIT_UPGRADE_CANCEL)
       default:AddKeyValue(708, EVENT_PLAYER_UNIT_CHANGE_OWNER)
       default:AddKeyValue(709, EVENT_PLAYER_UNIT_DAMAGING)
+      default:AddKeyValue(755, EVENT_PLAYER_UNIT_DAMAGING)
       default:AddKeyValue(710, EVENT_PLAYER_UNIT_DECAY)
       default:AddKeyValue(711, EVENT_PLAYER_UNIT_DEATH)
       default:AddKeyValue(712, EVENT_PLAYER_UNIT_DROP_ITEM)
@@ -28086,6 +28044,7 @@ System.namespace("WCSharp.Events", function (namespace)
       default:AddKeyValue(717, EVENT_PLAYER_UNIT_UPGRADE_FINISH)
       default:AddKeyValue(718, EVENT_PLAYER_UNIT_ATTACKED)
       default:AddKeyValue(719, EVENT_PLAYER_UNIT_DAMAGED)
+      default:AddKeyValue(756, EVENT_PLAYER_UNIT_DAMAGED)
       default:AddKeyValue(720, EVENT_PLAYER_UNIT_DESELECTED)
       default:AddKeyValue(721, EVENT_PLAYER_UNIT_DETECTED)
       default:AddKeyValue(722, EVENT_PLAYER_UNIT_HIDDEN)
@@ -28508,6 +28467,9 @@ System.namespace("WCSharp.Events", function (namespace)
       default:AddKeyValue(709, function ()
         return GetEventDamageSource()
       end)
+      default:AddKeyValue(755, function ()
+        return GetTriggerUnit()
+      end)
       default:AddKeyValue(710, function ()
         return GetDecayingUnit()
       end)
@@ -28537,6 +28499,9 @@ System.namespace("WCSharp.Events", function (namespace)
       end)
       default:AddKeyValue(719, function ()
         return GetTriggerUnit()
+      end)
+      default:AddKeyValue(756, function ()
+        return GetEventDamageSource()
       end)
       default:AddKeyValue(720, function ()
         return GetTriggerUnit()
@@ -28752,24 +28717,45 @@ System.namespace("WCSharp.Events", function (namespace)
       end
     end
     Register17 = function (event, action)
-      local default = GetOrCreateHandler(event)
-      if default ~= nil then
-        default:Register(action)
+      if PlayerUnitEventHandlers.AbstractPlayerUnitEventHandler.Depth == 0 then
+        local default = GetOrCreateHandler(event)
+        if default ~= nil then
+          default:Register(action)
+        end
+        return
       end
+      PlayerUnitEventHandlers.AbstractPlayerUnitEventHandler.RequiresUpdate = true
+      pendingUpdates:Add(function ()
+        Register17(event, action)
+      end)
     end
     Register18 = function (event, action, filterId)
-      local filterFunc = filterFuncIdsByEvent:get(event)
-      local default = GetOrCreateHandler(event)
-      if default ~= nil then
-        default:Register1(action, event, filterFunc, filterId)
+      if PlayerUnitEventHandlers.AbstractPlayerUnitEventHandler.Depth == 0 then
+        local filterFunc = filterFuncIdsByEvent:get(event)
+        local default = GetOrCreateHandler(event)
+        if default ~= nil then
+          default:Register1(action, event, filterFunc, filterId)
+        end
+        return
       end
+      PlayerUnitEventHandlers.AbstractPlayerUnitEventHandler.RequiresUpdate = true
+      pendingUpdates:Add(function ()
+        Register18(event, action, filterId)
+      end)
     end
     Register19 = function (event, action, handle)
-      local filterFunc = filterFuncHandlesByEvent:get(event)
-      local default = GetOrCreateHandler(event)
-      if default ~= nil then
-        default:Register2(action, event, filterFunc, handle)
+      if PlayerUnitEventHandlers.AbstractPlayerUnitEventHandler.Depth == 0 then
+        local filterFunc = filterFuncHandlesByEvent:get(event)
+        local default = GetOrCreateHandler(event)
+        if default ~= nil then
+          default:Register2(action, event, filterFunc, handle)
+        end
+        return
       end
+      PlayerUnitEventHandlers.AbstractPlayerUnitEventHandler.RequiresUpdate = true
+      pendingUpdates:Add(function ()
+        Register19(event, action, handle)
+      end)
     end
     -- <summary>
     -- Unregisters <paramref name="action" /> from <paramref name="event" /> for <paramref name="unit" />.
@@ -28871,32 +28857,50 @@ System.namespace("WCSharp.Events", function (namespace)
       end
     end
     Unregister16 = function (event, action)
-      local default = GetOrCreateHandler(event)
-      if default ~= nil then
-        default:Unregister(action)
+      if PlayerUnitEventHandlers.AbstractPlayerUnitEventHandler.Depth == 0 then
+        local default = GetOrCreateHandler(event)
+        if default ~= nil then
+          default:Unregister(action)
+        end
+        return
       end
+      PlayerUnitEventHandlers.AbstractPlayerUnitEventHandler.RequiresUpdate = true
+      pendingUpdates:Add(function ()
+        Unregister16(event, action)
+      end)
     end
     Unregister17 = function (event, action, filterId)
-      local filterFunc = filterFuncIdsByEvent:get(event)
-      local default = GetOrCreateHandler(event)
-      if default ~= nil then
-        default:Unregister1(action, event, filterFunc, filterId)
+      if PlayerUnitEventHandlers.AbstractPlayerUnitEventHandler.Depth == 0 then
+        local filterFunc = filterFuncIdsByEvent:get(event)
+        local default = GetOrCreateHandler(event)
+        if default ~= nil then
+          default:Unregister1(action, event, filterFunc, filterId)
+        end
+        return
       end
+      PlayerUnitEventHandlers.AbstractPlayerUnitEventHandler.RequiresUpdate = true
+      pendingUpdates:Add(function ()
+        Unregister17(event, action, filterId)
+      end)
     end
     Unregister18 = function (event, action, handle)
-      local filterFunc = filterFuncHandlesByEvent:get(event)
-      local default = GetOrCreateHandler(event)
-      if default ~= nil then
-        default:Unregister2(action, event, filterFunc, handle)
+      if PlayerUnitEventHandlers.AbstractPlayerUnitEventHandler.Depth == 0 then
+        local filterFunc = filterFuncHandlesByEvent:get(event)
+        local default = GetOrCreateHandler(event)
+        if default ~= nil then
+          default:Unregister2(action, event, filterFunc, handle)
+        end
+        return
       end
+      PlayerUnitEventHandlers.AbstractPlayerUnitEventHandler.RequiresUpdate = true
+      pendingUpdates:Add(function ()
+        Unregister18(event, action, handle)
+      end)
     end
     GetOrCreateHandler = function (event)
       local default, value = customPlayerUnitEventHandlers:TryGetValue(event, nil)
       if default then
-        if value == nil then
-          return CreateCustomHandler(event)
-        end
-        return value
+        return value or CreateCustomHandler(event)
       end
       local extern, value2 = playerUnitEventNativesById:TryGetValue(event, nil)
       if extern then
@@ -28904,6 +28908,7 @@ System.namespace("WCSharp.Events", function (namespace)
         if not ref then
           value3 = PlayerUnitEventHandlers.PlayerUnitEventHandler(value2)
           playerUnitEventHandlers:AddKeyValue(value2, value3)
+          eventHandlers:Add(value3)
         end
         return value3
       end
@@ -28924,6 +28929,7 @@ System.namespace("WCSharp.Events", function (namespace)
         local unitCreatedHandler = PlayerUnitEventHandlers.UnitCreatedHandler()
         local unitCreatedHandler2 = unitCreatedHandler
         customPlayerUnitEventHandlers:set(event, unitCreatedHandler2)
+        eventHandlers:Add(unitCreatedHandler2)
         return unitCreatedHandler2
       end
       System.throw(System.NotImplementedException("Unexpected custom handler: " .. event))
@@ -28935,6 +28941,12 @@ System.namespace("WCSharp.Events", function (namespace)
     -- </summary>
     EnableDebug = function ()
       class.Debug = true
+    end
+    ResolvePendingUpdates = function ()
+      for _, pendingUpdate in System.each(pendingUpdates) do
+        pendingUpdate()
+      end
+      pendingUpdates:Clear()
     end
     class = {
       Debug = false,
@@ -28973,14 +28985,17 @@ System.namespace("WCSharp.Events", function (namespace)
       Unregister15 = Unregister15,
       AddCustomEvent = AddCustomEvent,
       EnableDebug = EnableDebug,
+      ResolvePendingUpdates = ResolvePendingUpdates,
       static = static,
       __metadata__ = function (out)
         return {
           fields = {
             { "customEventIdsByIdentifier", 0x9, System.Dictionary(System.String, System.Int32) },
             { "customPlayerUnitEventHandlers", 0x9, System.Dictionary(System.Int32, out.WCSharp.Events.EventHandlers.PlayerUnitEventHandlers.IPlayerUnitEventHandler) },
+            { "eventHandlers", 0x9, System.List(out.WCSharp.Events.EventHandlers.PlayerUnitEventHandlers.IPlayerUnitEventHandler) },
             { "filterFuncHandlesByEvent", 0x9, System.Dictionary(System.Int32, System.Delegate(out.WCSharp.Api.handle)) },
             { "filterFuncIdsByEvent", 0x9, System.Dictionary(System.Int32, System.Delegate(System.Int32)) },
+            { "pendingUpdates", 0x9, System.List(System.Delegate) },
             { "playerUnitEventHandlers", 0x9, System.Dictionary(out.WCSharp.Api.playerunitevent, out.WCSharp.Events.EventHandlers.PlayerUnitEventHandlers.IPlayerUnitEventHandler) },
             { "playerUnitEventNativesById", 0x9, System.Dictionary(System.Int32, out.WCSharp.Api.playerunitevent) }
           },
@@ -29000,36 +29015,37 @@ System.namespace("WCSharp.Events", function (namespace)
             { "Register", 0x20E, Register14, System.Int32, System.Delegate },
             { "Register", 0x30E, Register13, System.Int32, System.Delegate, out.WCSharp.Api.unit },
             { "Register", 0x30E, Register12, System.Int32, System.Delegate, System.Int32 },
-            { "Register", 0x30E, Register, System.Int32, System.Delegate, out.WCSharp.Api.unit },
-            { "Register", 0x30E, Register10, System.Int32, System.Delegate, System.Int32 },
             { "Register", 0x20E, Register11, System.Int32, System.Delegate },
-            { "Register", 0x30E, Register2, System.Int32, System.Delegate, System.Int32 },
-            { "Register", 0x20E, Register1, System.Int32, System.Delegate },
+            { "Register", 0x20E, Register9, System.Int32, System.Delegate },
+            { "Register", 0x30E, Register8, System.Int32, System.Delegate, System.Int32 },
+            { "Register", 0x30E, Register7, System.Int32, System.Delegate, out.WCSharp.Api.player },
+            { "Register", 0x20E, Register6, System.Int32, System.Delegate },
+            { "Register", 0x30E, Register5, System.Int32, System.Delegate, System.Int32 },
             { "Register", 0x20E, Register4, System.Int32, System.Delegate },
             { "Register", 0x30E, Register3, System.Int32, System.Delegate, out.WCSharp.Api.item },
-            { "Register", 0x20E, Register6, System.Int32, System.Delegate },
-            { "Register", 0x30E, Register7, System.Int32, System.Delegate, out.WCSharp.Api.player },
-            { "Register", 0x30E, Register8, System.Int32, System.Delegate, System.Int32 },
-            { "Register", 0x20E, Register9, System.Int32, System.Delegate },
-            { "Register", 0x30E, Register5, System.Int32, System.Delegate, System.Int32 },
-            { "Unregister", 0x20E, Unregister13, System.Int32, System.Delegate },
+            { "Register", 0x30E, Register2, System.Int32, System.Delegate, System.Int32 },
+            { "Register", 0x20E, Register1, System.Int32, System.Delegate },
+            { "Register", 0x30E, Register10, System.Int32, System.Delegate, System.Int32 },
+            { "Register", 0x30E, Register, System.Int32, System.Delegate, out.WCSharp.Api.unit },
+            { "ResolvePendingUpdates", 0xC, ResolvePendingUpdates },
+            { "Unregister", 0x30E, Unregister5, System.Int32, System.Delegate, System.Int32 },
+            { "Unregister", 0x30E, Unregister, System.Int32, System.Delegate, out.WCSharp.Api.unit },
+            { "Unregister", 0x30E, Unregister2, System.Int32, System.Delegate, System.Int32 },
+            { "Unregister", 0x30E, Unregister3, System.Int32, System.Delegate, out.WCSharp.Api.item },
             { "Unregister", 0x309, Unregister18, System.Int32, System.Delegate, out.WCSharp.Api.handle },
             { "Unregister", 0x309, Unregister17, System.Int32, System.Delegate, System.Int32 },
             { "Unregister", 0x209, Unregister16, System.Int32, System.Delegate },
             { "Unregister", 0x30E, Unregister15, System.String, System.Delegate, System.Int32 },
+            { "Unregister", 0x20E, Unregister4, System.Int32, System.Delegate },
             { "Unregister", 0x30E, Unregister14, System.Int32, System.Delegate, System.Int32 },
             { "Unregister", 0x30E, Unregister12, System.Int32, System.Delegate, out.WCSharp.Api.unit },
-            { "Unregister", 0x30E, Unregister7, System.Int32, System.Delegate, System.Int32 },
+            { "Unregister", 0x30E, Unregister11, System.Int32, System.Delegate, System.Int32 },
             { "Unregister", 0x20E, Unregister10, System.Int32, System.Delegate },
             { "Unregister", 0x30E, Unregister9, System.Int32, System.Delegate, System.Int32 },
             { "Unregister", 0x20E, Unregister8, System.Int32, System.Delegate },
+            { "Unregister", 0x30E, Unregister7, System.Int32, System.Delegate, System.Int32 },
             { "Unregister", 0x20E, Unregister6, System.Int32, System.Delegate },
-            { "Unregister", 0x30E, Unregister5, System.Int32, System.Delegate, System.Int32 },
-            { "Unregister", 0x20E, Unregister4, System.Int32, System.Delegate },
-            { "Unregister", 0x30E, Unregister3, System.Int32, System.Delegate, out.WCSharp.Api.item },
-            { "Unregister", 0x30E, Unregister2, System.Int32, System.Delegate, System.Int32 },
-            { "Unregister", 0x30E, Unregister, System.Int32, System.Delegate, out.WCSharp.Api.unit },
-            { "Unregister", 0x30E, Unregister11, System.Int32, System.Delegate, System.Int32 },
+            { "Unregister", 0x20E, Unregister13, System.Int32, System.Delegate },
             { "Unregister", 0x20E, Unregister1, System.Int32, System.Delegate }
           },
           class = { "PlayerUnitEvents", 0x3E }
@@ -29132,7 +29148,7 @@ System.namespace("WCSharp.Events", function (namespace)
               num2 = num2 - 1
               num = num - 1
               this.actions:set(num2, this.actions:get(num))
-              this.actions:RemoveAt(num2)
+              this.actions:RemoveAt(num)
             end
           end
         end
@@ -29239,7 +29255,7 @@ System.namespace("WCSharp.Events", function (namespace)
               num2 = num2 - 1
               num = num - 1
               this.actions:set(num2, this.actions:get(num))
-              this.actions:RemoveAt(num2)
+              this.actions:RemoveAt(num)
             end
           end
         end
@@ -29369,6 +29385,8 @@ System.namespace("WCSharp.Events", function (namespace)
       StartsUpgrade = 752,
       Summons = 753,
       UsesItem = 754,
+      DamagingTaken = 755,
+      IsDamagedDealt = 756,
       __metadata__ = function (out)
         return {
           fields = {
@@ -29381,6 +29399,7 @@ System.namespace("WCSharp.Events", function (namespace)
             { "CancelsUpgrade", 0xE, System.Int32 },
             { "ChangesOwner", 0xE, System.Int32 },
             { "Damaging", 0xE, System.Int32 },
+            { "DamagingTaken", 0xE, System.Int32 },
             { "Decays", 0xE, System.Int32 },
             { "Dies", 0xE, System.Int32 },
             { "DropsItem", 0xE, System.Int32 },
@@ -29391,6 +29410,7 @@ System.namespace("WCSharp.Events", function (namespace)
             { "FinishesUpgrade", 0xE, System.Int32 },
             { "IsAttacked", 0xE, System.Int32 },
             { "IsDamaged", 0xE, System.Int32 },
+            { "IsDamagedDealt", 0xE, System.Int32 },
             { "IsDeselected", 0xE, System.Int32 },
             { "IsDetected", 0xE, System.Int32 },
             { "IsHidden", 0xE, System.Int32 },
@@ -29593,33 +29613,14 @@ System.namespace("WCSharp.Events.EventHandlers", function (namespace)
       if num == -1 then
         return false
       end
-      if num < this.size then
-        if num <= this.index then
-          this.actions:RemoveAt(num)
-          this.index = this.index - 1
-          this.size = this.size - 1
-        else
-          local count = #this.actions
-          this.actions:set(num, this.actions:get(this.size - 1))
-          this.actions:set(this.size - 1, this.actions:get(count - 1))
-          this.actions:RemoveAt(num)
-          this.size = this.size - 1
-        end
-      else
-        local count2 = #this.actions
-        this.actions:set(num, this.actions:get(count2 - 1))
-        this.actions:RemoveAt(count2 - 1)
-      end
-      return true
+      local count = #this.actions
+      this.actions:set(num, this.actions:get(count - 1))
+      this.actions[count] = nil
+      return count == 1
     end
     Run = function (this)
-      this.index = 0
-      do
-        this.size = #this.actions
-        while this.index < this.size do
-          this.actions:get(this.index)()
-          this.index = this.index + 1
-        end
+      for i = 0, #this.actions - 1 do
+        this.actions:get(i)()
       end
     end
     return {
@@ -29628,8 +29629,6 @@ System.namespace("WCSharp.Events.EventHandlers", function (namespace)
           out.WCSharp.Events.EventHandlers.IEventSet
         }
       end,
-      index = 0,
-      size = 0,
       getFilterId = getFilterId,
       getCount = getCount,
       Add = Add,
@@ -29639,9 +29638,7 @@ System.namespace("WCSharp.Events.EventHandlers", function (namespace)
       __metadata__ = function (out)
         return {
           fields = {
-            { "actions", 0x3, System.List(System.Delegate) },
-            { "index", 0x3, System.Int32 },
-            { "size", 0x3, System.Int32 }
+            { "actions", 0x1, System.List(System.Delegate) }
           },
           properties = {
             { "Count", 0x206, System.Int32, getCount },
@@ -29695,11 +29692,9 @@ System.namespace("WCSharp.Events.EventHandlers", function (namespace)
       local value = ((System.as(filterObj, TypeWrapper_1handle)) or System.throw(System.ArgumentException("Unable to cast event filter to required type " .. System.toString(System.typeof(WCSharpApi.handle)), "filterObj"))).Value
       local extern, value2 = this.eventSetsByFilterId:TryGetValue(value, nil)
       if extern then
-        if value2:Remove(action, value) then
-          if value2:getCount() == 0 then
-            this.actionsByFilterId:RemoveKey(value)
-            this.eventSetsByFilterId:RemoveKey(value)
-          end
+        if value2:Remove(action) and value2:getCount() == 0 then
+          this.actionsByFilterId:RemoveKey(value)
+          this.eventSetsByFilterId:RemoveKey(value)
           return true
         end
         return false
@@ -29793,22 +29788,20 @@ System.namespace("WCSharp.Events.EventHandlers", function (namespace)
       end
     end
     Remove = function (this, action, filterObj)
-      local num = filterObj
-      if not (System.is(num, System.Int32)) then
+      local key = filterObj
+      if not (System.is(key, System.Int32)) then
         System.throw(System.ArgumentException("Unable to cast event filter to required type " .. System.toString(System.typeof(System.Int32)), "filterObj"))
       end
-      local default, value = this.eventSetsByFilterId:TryGetValue(num, nil)
+      local default, value = this.eventSetsByFilterId:TryGetValue(key, nil)
       if default then
-        if value:Remove(action, num) then
-          if value:getCount() == 0 then
-            this.actionsByFilterId:RemoveKey(num)
-            this.eventSetsByFilterId:RemoveKey(num)
-          end
+        if value:Remove(action) and value:getCount() == 0 then
+          this.actionsByFilterId:RemoveKey(key)
+          this.eventSetsByFilterId:RemoveKey(key)
           return true
         end
         return false
       end
-      return this.actionsByFilterId:RemoveKey(num)
+      return this.actionsByFilterId:RemoveKey(key)
     end
     Run = function (this)
       local default, value = this.actionsByFilterId:TryGetValue(this.filterFunc(), nil)
@@ -29864,7 +29857,7 @@ end)
 System.namespace("WCSharp.Events.EventHandlers.PlayerUnitEventHandlers", function (namespace)
   namespace.class("AbstractPlayerUnitEventHandler", function (namespace)
     local Run, Register, Register1, Register2, Unregister, Unregister1, Unregister2, TryGetEventSet, 
-    AddEventSet, RemoveEvent, __ctor__
+    AddEventSet, RemoveEvent, class, __ctor__
     __ctor__ = function (this)
       this.eventSets = ListIEventSet()
       this.trigger = CreateTrigger()
@@ -29886,14 +29879,19 @@ System.namespace("WCSharp.Events.EventHandlers.PlayerUnitEventHandlers", functio
       DisableTrigger(this.trigger)
     end
     Run = function (this)
-      this.index = 0
-      do
-        this.size = #this.eventSets
-        while this.index < this.size do
-          this.eventSets:get(this.index):Run()
-          this.index = this.index + 1
+      System.try(function ()
+        local default = class
+        default.Depth = default.Depth + 1
+        for i = 0, #this.eventSets - 1 do
+          this.eventSets:get(i):Run()
         end
-      end
+      end, nil, function ()
+        local default = class
+        default.Depth = default.Depth - 1
+        if class.Depth == 0 and class.RequiresUpdate then
+          WCSharpEvents.PlayerUnitEvents.ResolvePendingUpdates()
+        end
+      end)
       return false
     end
     Register = function (this, action)
@@ -29946,52 +29944,35 @@ System.namespace("WCSharp.Events.EventHandlers.PlayerUnitEventHandlers", functio
       return false, eventSet
     end
     AddEventSet = function (this, eventSet)
-      this.eventSets:Add(eventSet)
-      if #this.eventSets == 1 then
+      if not this.active then
+        this.active = true
         EnableTrigger(this.trigger)
       end
+      this.eventSets:Add(eventSet)
       return eventSet
     end
     RemoveEvent = function (this, eventSet)
-      local num = -1
-      for i = 0, #this.eventSets - 1 do
-        if this.eventSets:get(i) == eventSet then
-          num = i
-          break
-        end
-      end
+      local num = this.eventSets:IndexOf(eventSet)
       if num == -1 then
         System.throw(System.Exception("Attempting to remove an event that does not exist."))
       end
-      if num < this.size then
-        if num <= this.index then
-          this.eventSets:RemoveAt(num)
-          this.index = this.index - 1
-          this.size = this.size - 1
-        else
-          this.size = this.size - 1
-          local num2 = #this.eventSets - 1
-          this.eventSets:set(num, this.eventSets:get(this.size))
-          this.eventSets:set(this.size, this.eventSets:get(num2))
-          this.eventSets:RemoveAt(num2)
-        end
-      else
-        local num3 = #this.eventSets - 1
-        this.eventSets:set(num, this.eventSets:get(num3))
-        this.eventSets:RemoveAt(num3)
-      end
-      if #this.eventSets == 0 then
+      local count = #this.eventSets
+      this.eventSets:set(num, this.eventSets:get(count - 1))
+      this.eventSets[count] = nil
+      if count == 1 then
+        this.active = false
         DisableTrigger(this.trigger)
       end
     end
-    return {
+    class = {
       base = function (out)
         return {
           out.WCSharp.Events.EventHandlers.PlayerUnitEventHandlers.IPlayerUnitEventHandler
         }
       end,
-      index = 0,
-      size = 0,
+      active = false,
+      Depth = 0,
+      RequiresUpdate = false,
       Run = Run,
       Register = Register,
       Register1 = Register1,
@@ -30003,10 +29984,13 @@ System.namespace("WCSharp.Events.EventHandlers.PlayerUnitEventHandlers", functio
       __metadata__ = function (out)
         return {
           fields = {
+            { "active", 0x3, System.Boolean },
             { "eventSets", 0x3, System.List(out.WCSharp.Events.EventHandlers.IEventSet) },
-            { "index", 0x3, System.Int32 },
-            { "size", 0x3, System.Int32 },
             { "trigger", 0x3, out.WCSharp.Api.trigger }
+          },
+          properties = {
+            { "Depth", 0xE, System.Int32 },
+            { "RequiresUpdate", 0xE, System.Boolean }
           },
           methods = {
             { ".ctor", 0x6, nil },
@@ -30025,6 +30009,7 @@ System.namespace("WCSharp.Events.EventHandlers.PlayerUnitEventHandlers", functio
         }
       end
     }
+    return class
   end)
   namespace.interface("IPlayerUnitEventHandler", function ()
     return {
@@ -34267,7 +34252,7 @@ System.namespace("WCSharp.Shared.Extensions", function (namespace)
   -- Extension class that defines a number of methods to simplify working with lists, in particular within context of Warcraft III.
   -- </summary>
   namespace.class("IListExtensions", function (namespace)
-    local IterateWithRemoval
+    local IterateWithRemoval, ClearLast, ClearLast1
     -- <summary>
     -- Due to C# to Lua conversion difficulties, standard ways of enumerating a list while removing items from it may not work.
     -- This extension method will safely iterate the list, and remove any which return false.
@@ -34294,11 +34279,44 @@ System.namespace("WCSharp.Shared.Extensions", function (namespace)
         end
       end
     end
+    -- <summary>
+    -- Abuses how lists work in lua in order to cheaply remove the final elements.
+    -- </summary>
+    -- <typeparam name="T"></typeparam>
+    -- <param name="list">The list to modify.</param>
+    -- <param name="amount">The number of elements to remove.</param>
+    ClearLast = function (list, amount, T)
+      local num = #list
+      local num2 = num - amount
+      while num2 < num do
+        list[num] = nil
+        num = num - 1
+      end
+    end
+    -- <summary>
+    -- Abuses how lists work in lua in order to cheaply remove the final elements.
+    -- <para>WARNING! If <paramref name="count" /> is NOT equal to <see cref="P:System.Collections.Generic.List`1.Count" />, you WILL cause major bugs!</para>
+    -- </summary>
+    -- <typeparam name="T"></typeparam>
+    -- <param name="list">The list to modify.</param>
+    -- <param name="amount">The number of elements to remove.</param>
+    -- <param name="count">This MUST be equal to <see cref="P:System.Collections.Generic.List`1.Count" />, else you WILL cause major bugs!</param>
+    ClearLast1 = function (list, amount, count, T)
+      local num = count - amount
+      while num < count do
+        list[count] = nil
+        count = count - 1
+      end
+    end
     return {
       IterateWithRemoval = IterateWithRemoval,
+      ClearLast = ClearLast,
+      ClearLast1 = ClearLast1,
       __metadata__ = function (out)
         return {
           methods = {
+            { "ClearLast", 0x1020E, ClearLast, function (T) return System.List(T), System.Int32 end },
+            { "ClearLast", 0x1030E, ClearLast1, function (T) return System.List(T), System.Int32, System.Int32 end },
             { "IterateWithRemoval", 0x1020E, IterateWithRemoval, function (T) return System.IList_1(T), System.Delegate(T, System.Boolean) end }
           },
           class = { "IListExtensions", 0x3E }
@@ -34835,7 +34853,7 @@ System.namespace("WCSharp.Sync", function (namespace)
   -- could be skipped. But realistically, this only saves a few table lookups anyway, and the table is kept empty when not receiving, meaning the
   -- memory footprint is basically the same as well.
   namespace.class("SyncSystem", function (namespace)
-    local syncHandlers, messages, escapeChars, syncTriggers, _size, _index, RegisterForPrefix, HandleSyncHeader, 
+    local syncHandlers, messages, escapeChars, syncTriggers, size, index, RegisterForPrefix, HandleSyncHeader, 
     HandleSyncPacket, FinalizeMessage, Send, BuildPackets, Subscribe, Unsubscribe, headerAction, packetAction, 
     EnableDebug, static
     static = function (this)
@@ -34855,8 +34873,8 @@ System.namespace("WCSharp.Sync", function (namespace)
       default:Add(RegisterForPrefix(HandleSyncPacket, "__WCSharpSyncPackets"))
       syncTriggers = default
     end
-    _size = 0
-    _index = 0
+    size = 0
+    index = 0
     RegisterForPrefix = function (action, prefix)
       local trigger = CreateTrigger()
       local condition = Condition(action)
@@ -34895,20 +34913,18 @@ System.namespace("WCSharp.Sync", function (namespace)
     FinalizeMessage = function (message)
       messages:RemoveKey(message.SyncHeader.PlayerId)
       local obj = nil
-      _size = #syncHandlers
-      do
-        _index = 0
-        while _index < _size do
-          local syncHandler = syncHandlers:get(_index)
-          if syncHandler.Type:getFullName() == message.SyncHeader.TypeName then
-            if obj == nil then
-              obj = WCSharpJson.JsonConvert.Deserialize1(message:GetContents(), syncHandler.Type)
-            end
-            syncHandler.Action(obj)
+      size = #syncHandlers
+      while index < size do
+        local syncHandler = syncHandlers:get(index)
+        index = index + 1
+        if syncHandler.Type:getFullName() == message.SyncHeader.TypeName then
+          if obj == nil then
+            obj = WCSharpJson.JsonConvert.Deserialize1(message:GetContents(), syncHandler.Type)
           end
-          _index = _index + 1
+          syncHandler.Action(obj)
         end
       end
+      index = 0
     end
     -- <summary>
     -- Syncs the given data across all clients. Use <see cref="M:WCSharp.Sync.SyncSystem.Subscribe``1(System.Action{``0})" /> in order to set up receiving of certain types of messages.
@@ -34988,10 +35004,10 @@ System.namespace("WCSharp.Sync", function (namespace)
             break
           end
           syncHandlers:RemoveAt(i)
-          if i < _size then
-            _size = _size - 1
-            if i <= _index then
-              _index = _index - 1
+          if i < size then
+            size = size - 1
+            if i < index then
+              index = index - 1
             end
           end
           break
@@ -35045,10 +35061,10 @@ System.namespace("WCSharp.Sync", function (namespace)
       __metadata__ = function (out)
         return {
           fields = {
-            { "_index", 0x9, System.Int32 },
-            { "_size", 0x9, System.Int32 },
             { "escapeChars", 0x9, System.HashSet(System.Char) },
+            { "index", 0x9, System.Int32 },
             { "messages", 0x9, System.Dictionary(System.Int32, out.WCSharp.Sync.SyncMessage) },
+            { "size", 0x9, System.Int32 },
             { "syncHandlers", 0x9, System.List(out.WCSharp.Sync.SyncHandler) },
             { "syncTriggers", 0x9, System.List(out.WCSharp.Sync.SyncTrigger) }
           },
@@ -35871,8 +35887,8 @@ local InitCSharp = function ()
       "WCSharp.Missiles.HomingMissile",
       "WCSharp.Missiles.MomentumMissile",
       "WCSharp.Missiles.OrbitalMissile",
-      "WCSharp.SaveLoad.Save_1",
       "WCSharp.SaveLoad.SaveLoadedMessage_1",
+      "WCSharp.SaveLoad.Save_1",
       "WCSharp.W3MMD.IW3MmdVar",
       "Areas",
       "Constants",
@@ -35893,7 +35909,6 @@ local InitCSharp = function ()
       "Source.Extensions.unitExtension",
       "Source.Logics.ComputerHero",
       "Source.Logics.ComputerUnit",
-      "Source.Logics.CreepHero",
       "Source.Logics.HeroSelector",
       "Source.Logics.Research",
       "Source.Logics.UserHero",
@@ -35917,6 +35932,7 @@ local InitCSharp = function ()
       "Source.Models.UserPlayer",
       "Source.Program",
       "Source.Statics.SpecialEffects",
+      "WCSharp.Api.Enums.MetaKey",
       "WCSharp.Api.Enums.TargetsAllowed",
       "WCSharp.Buffs.Aura_1",
       "WCSharp.Buffs.AuraBoundBuff",
@@ -47869,7 +47885,6 @@ function CreateAllItems()
     CreateItem(1227894856, 19257.1, 17593.9)
     CreateItem(1227894856, 19257.1, 17714.0)
     CreateItem(1227894856, 19272.9, 17839.9)
-    CreateItem(1227894853, -4646.7, 11594.9)
 end
 
 function InitSounds()
