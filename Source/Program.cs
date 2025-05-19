@@ -3,6 +3,7 @@ using Source.Events;
 using Source.Events.Buildings;
 using Source.Events.Periodic;
 using Source.Events.Region;
+using Source.Extensions;
 using Source.Models;
 using Source.Models.Teams;
 using System;
@@ -39,6 +40,9 @@ namespace Source
       Common.TimerStart(timer, 0.01f, false, () =>
       {
         Common.DestroyTimer(timer);
+        timer.Dispose();
+        timer = null;
+
         Start();
       });
     }
@@ -139,6 +143,10 @@ namespace Source
         {
           try
           {
+            Common.DestroyTimer(timer);
+            timer.Dispose();
+            timer = null;
+
             CreateComputerHeros();
           }
           catch (Exception ex)
@@ -394,35 +402,26 @@ namespace Source
     private static void ConstructCreepCamps()
     {
       // Menschen-Creeps
-      CreepCamp creepCamp = new CreepCamp("Banditen", Areas.HumanCreepToElfSpawnBuilding, Areas.HumanCreepToElfSpawn, Humans, Elves);
-      SpawnCreepsBuilding building = creepCamp.InitializeBuilding(Constants.UNIT_BANDITENLAGER_CREEP);
-      CreepCamps.Add(creepCamp);
-      creepCamp = new CreepCamp("Tuskarr", Areas.HumanCreepToOrcSpawnBuilding, Areas.HumanCreepToOrcSpawn, Humans, Orcs);
-      building = creepCamp.InitializeBuilding(Constants.UNIT_TUSKARRLAGER_CREEP);
-      CreepCamps.Add(creepCamp);
+      ConstructCreepCamp("Banditen", Constants.UNIT_BANDITENLAGER_CREEP, Areas.HumanCreepToElfSpawnBuilding, Areas.HumanCreepToElfSpawn, Humans, Elves);
+      ConstructCreepCamp("Tuskarr", Constants.UNIT_TUSKARRLAGER_CREEP, Areas.HumanCreepToOrcSpawnBuilding, Areas.HumanCreepToOrcSpawn, Humans, Orcs);
 
       // Elfen-Creeps
-      creepCamp = new CreepCamp("Furbolgs", Areas.ElfCreepToHumanSpawnBuilding, Areas.ElfCreepToHumanSpawn, Elves, Humans);
-      building = creepCamp.InitializeBuilding(Constants.UNIT_FURBOLGLAGER_CREEP);
-      CreepCamps.Add(creepCamp);
-      creepCamp = new CreepCamp("Wildekins", Areas.ElfCreepToUndeadSpawnBuilding, Areas.ElfCreepToUndeadSpawn, Elves, Undeads);
-      building = creepCamp.InitializeBuilding(Constants.UNIT_WILDEKINLAGER_CREEP);
-      CreepCamps.Add(creepCamp);
+      ConstructCreepCamp("Furbolgs", Constants.UNIT_FURBOLGLAGER_CREEP, Areas.ElfCreepToHumanSpawnBuilding, Areas.ElfCreepToHumanSpawn, Elves, Humans);
+      ConstructCreepCamp("Wildekins", Constants.UNIT_WILDEKINLAGER_CREEP, Areas.ElfCreepToUndeadSpawnBuilding, Areas.ElfCreepToUndeadSpawn, Elves, Undeads);
 
       // Orcs-Creeps
-      creepCamp = new CreepCamp("Zentauren", Areas.OrcCreepToHumanSpawnBuilding, Areas.OrcCreepToHumanSpawn, Orcs, Humans);
-      building = creepCamp.InitializeBuilding(Constants.UNIT_ZENTAURENLAGER_CREEP);
-      CreepCamps.Add(creepCamp);
-      creepCamp = new CreepCamp("Oger", Areas.OrcCreepToUndeadSpawnBuilding, Areas.OrcCreepToUndeadSpawn, Orcs, Undeads);
-      building = creepCamp.InitializeBuilding(Constants.UNIT_OGERLAGER_CREEP);
-      CreepCamps.Add(creepCamp);
+      ConstructCreepCamp("Zentauren", Constants.UNIT_ZENTAURENLAGER_CREEP, Areas.OrcCreepToHumanSpawnBuilding, Areas.OrcCreepToHumanSpawn, Orcs, Humans);
+      ConstructCreepCamp("Oger", Constants.UNIT_OGERLAGER_CREEP, Areas.OrcCreepToUndeadSpawnBuilding, Areas.OrcCreepToUndeadSpawn, Orcs, Undeads);
 
       // Untoten-Creeps
-      creepCamp = new CreepCamp("Mur'guls", Areas.UndeadCreepToOrcSpawnBuilding, Areas.UndeadCreepToOrcSpawn, Undeads, Orcs);
-      building = creepCamp.InitializeBuilding(Constants.UNIT_MUR_GULLAGER_CREEP);
-      CreepCamps.Add(creepCamp);
-      creepCamp = new CreepCamp("Neruber", Areas.UndeadCreepToElfSpawnBuilding, Areas.UndeadCreepToElfSpawn, Undeads, Elves);
-      building = creepCamp.InitializeBuilding(Constants.UNIT_NERUBERLAGER_CREEP);
+      ConstructCreepCamp("Mur'guls", Constants.UNIT_MUR_GULLAGER_CREEP, Areas.UndeadCreepToOrcSpawnBuilding, Areas.UndeadCreepToOrcSpawn, Undeads, Orcs);
+      ConstructCreepCamp("Neruber", Constants.UNIT_NERUBERLAGER_CREEP, Areas.UndeadCreepToElfSpawnBuilding, Areas.UndeadCreepToElfSpawn, Undeads, Elves);
+    }
+
+    private static void ConstructCreepCamp(string name, int buildingUniType, Area buildingArea, Area spawnArea, TeamBase nearestTeam, TeamBase opposingTeam)
+    {
+      CreepCamp creepCamp = new CreepCamp(name, buildingArea, spawnArea, nearestTeam, opposingTeam);
+      SpawnCreepsBuilding building = creepCamp.InitializeBuilding(buildingUniType);
       CreepCamps.Add(creepCamp);
     }
 

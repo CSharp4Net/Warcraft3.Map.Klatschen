@@ -15,7 +15,7 @@ namespace Source.Models
     /// <summary>
     /// WC3-Einheit zu diesem Gebäude.
     /// </summary>
-    public unit Wc3Unit { get; init; }
+    public unit Wc3Unit { get; private set; }
     /// <summary>
     /// WC3-Trigger für das Sterbe-Event.
     /// </summary>

@@ -35,8 +35,11 @@ namespace Source.Logics
       Common.TimerStart(timer, 10f, false, () =>
       {
         Common.DestroyTimer(timer);
-        Common.RemoveUnit(unit);
+        timer.Dispose();
+        timer = null;
+
         // Sicherheitshalber Verweis auf Einheit für GC freigeben
+        Common.RemoveUnit(unit);
         unit.Dispose();
         unit = null;
       });

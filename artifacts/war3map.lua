@@ -20045,8 +20045,8 @@ end)
 System.namespace("Source", function (namespace)
   namespace.class("Program", function (namespace)
     local Main, ShowDebugMessage, ShowDebugMessage1, ShowErrorMessage, ShowExceptionMessage, Start, TryGetUserById, TryGetCreepCampByBuilding, 
-    TryGetCreepCampByHero, TryGetTeamByUnit, ConstructHumanBuildingAndTrigger, ConstructOrcBuildingAndTrigger, ConstructElfBuildingAndTrigger, ConstructUndeadBuildingAndTrigger, ConstructCreepCamps, CreateComputerHeros, 
-    CreateHeroSelectorForPlayerAndAdjustCamera, GetIntervalSeconds, class, static
+    TryGetCreepCampByHero, TryGetTeamByUnit, ConstructHumanBuildingAndTrigger, ConstructOrcBuildingAndTrigger, ConstructElfBuildingAndTrigger, ConstructUndeadBuildingAndTrigger, ConstructCreepCamps, ConstructCreepCamp, 
+    CreateComputerHeros, CreateHeroSelectorForPlayerAndAdjustCamera, GetIntervalSeconds, class, static
     static = function (this)
       this.CreepCamps = ListCreepCamp()
       this.AllActiveUsers = ListUserPlayer()
@@ -20056,6 +20056,9 @@ System.namespace("Source", function (namespace)
       local timer = CreateTimer()
       TimerStart(timer, 0.01, false, function ()
         DestroyTimer(timer)
+        DestroyTimer(timer)
+        timer = nil
+
         Start()
       end)
     end
@@ -20140,6 +20143,10 @@ System.namespace("Source", function (namespace)
         local timer = CreateTimer()
         TimerStart(timer, 30, false, function ()
           System.try(function ()
+            DestroyTimer(timer)
+            DestroyTimer(timer)
+            timer = nil
+
             CreateComputerHeros()
           end, function (default)
             local ex = default
@@ -20314,35 +20321,24 @@ System.namespace("Source", function (namespace)
     end
     ConstructCreepCamps = function ()
       -- Menschen-Creeps
-      local creepCamp = SourceModels.CreepCamp("Banditen", Areas.HumanCreepToElfSpawnBuilding, Areas.HumanCreepToElfSpawn, class.Humans, class.Elves)
-      local building = creepCamp:InitializeBuilding(1848651862 --[[Constants.UNIT_BANDITENLAGER_CREEP]], 0)
-      class.CreepCamps:Add(creepCamp)
-      creepCamp = SourceModels.CreepCamp("Tuskarr", Areas.HumanCreepToOrcSpawnBuilding, Areas.HumanCreepToOrcSpawn, class.Humans, class.Orcs)
-      building = creepCamp:InitializeBuilding(1848652358 --[[Constants.UNIT_TUSKARRLAGER_CREEP]], 0)
-      class.CreepCamps:Add(creepCamp)
+      ConstructCreepCamp("Banditen", 1848651862 --[[Constants.UNIT_BANDITENLAGER_CREEP]], Areas.HumanCreepToElfSpawnBuilding, Areas.HumanCreepToElfSpawn, class.Humans, class.Elves)
+      ConstructCreepCamp("Tuskarr", 1848652358 --[[Constants.UNIT_TUSKARRLAGER_CREEP]], Areas.HumanCreepToOrcSpawnBuilding, Areas.HumanCreepToOrcSpawn, class.Humans, class.Orcs)
 
       -- Elfen-Creeps
-      creepCamp = SourceModels.CreepCamp("Furbolgs", Areas.ElfCreepToHumanSpawnBuilding, Areas.ElfCreepToHumanSpawn, class.Elves, class.Humans)
-      building = creepCamp:InitializeBuilding(1848651856 --[[Constants.UNIT_FURBOLGLAGER_CREEP]], 0)
-      class.CreepCamps:Add(creepCamp)
-      creepCamp = SourceModels.CreepCamp("Wildekins", Areas.ElfCreepToUndeadSpawnBuilding, Areas.ElfCreepToUndeadSpawn, class.Elves, class.Undeads)
-      building = creepCamp:InitializeBuilding(1848652356 --[[Constants.UNIT_WILDEKINLAGER_CREEP]], 0)
-      class.CreepCamps:Add(creepCamp)
+      ConstructCreepCamp("Furbolgs", 1848651856 --[[Constants.UNIT_FURBOLGLAGER_CREEP]], Areas.ElfCreepToHumanSpawnBuilding, Areas.ElfCreepToHumanSpawn, class.Elves, class.Humans)
+      ConstructCreepCamp("Wildekins", 1848652356 --[[Constants.UNIT_WILDEKINLAGER_CREEP]], Areas.ElfCreepToUndeadSpawnBuilding, Areas.ElfCreepToUndeadSpawn, class.Elves, class.Undeads)
 
       -- Orcs-Creeps
-      creepCamp = SourceModels.CreepCamp("Zentauren", Areas.OrcCreepToHumanSpawnBuilding, Areas.OrcCreepToHumanSpawn, class.Orcs, class.Humans)
-      building = creepCamp:InitializeBuilding(1848652104 --[[Constants.UNIT_ZENTAURENLAGER_CREEP]], 0)
-      class.CreepCamps:Add(creepCamp)
-      creepCamp = SourceModels.CreepCamp("Oger", Areas.OrcCreepToUndeadSpawnBuilding, Areas.OrcCreepToUndeadSpawn, class.Orcs, class.Undeads)
-      building = creepCamp:InitializeBuilding(1848652342 --[[Constants.UNIT_GNOLLLAGER_CREEP]], 0)
-      class.CreepCamps:Add(creepCamp)
+      ConstructCreepCamp("Zentauren", 1848652104 --[[Constants.UNIT_ZENTAURENLAGER_CREEP]], Areas.OrcCreepToHumanSpawnBuilding, Areas.OrcCreepToHumanSpawn, class.Orcs, class.Humans)
+      ConstructCreepCamp("Oger", 1848652342 --[[Constants.UNIT_OGERLAGER_CREEP]], Areas.OrcCreepToUndeadSpawnBuilding, Areas.OrcCreepToUndeadSpawn, class.Orcs, class.Undeads)
 
       -- Untoten-Creeps
-      creepCamp = SourceModels.CreepCamp("Mur'guls", Areas.UndeadCreepToOrcSpawnBuilding, Areas.UndeadCreepToOrcSpawn, class.Undeads, class.Orcs)
-      building = creepCamp:InitializeBuilding(1848652340 --[[Constants.UNIT_MUR_GULLAGER_CREEP]], 0)
-      class.CreepCamps:Add(creepCamp)
-      creepCamp = SourceModels.CreepCamp("Neruber", Areas.UndeadCreepToElfSpawnBuilding, Areas.UndeadCreepToElfSpawn, class.Undeads, class.Elves)
-      building = creepCamp:InitializeBuilding(1848652106 --[[Constants.UNIT_NERUBERLAGER_CREEP]], 0)
+      ConstructCreepCamp("Mur'guls", 1848652340 --[[Constants.UNIT_MUR_GULLAGER_CREEP]], Areas.UndeadCreepToOrcSpawnBuilding, Areas.UndeadCreepToOrcSpawn, class.Undeads, class.Orcs)
+      ConstructCreepCamp("Neruber", 1848652106 --[[Constants.UNIT_NERUBERLAGER_CREEP]], Areas.UndeadCreepToElfSpawnBuilding, Areas.UndeadCreepToElfSpawn, class.Undeads, class.Elves)
+    end
+    ConstructCreepCamp = function (name, buildingUniType, buildingArea, spawnArea, nearestTeam, opposingTeam)
+      local creepCamp = SourceModels.CreepCamp(name, buildingArea, spawnArea, nearestTeam, opposingTeam)
+      local building = creepCamp:InitializeBuilding(buildingUniType, 0)
       class.CreepCamps:Add(creepCamp)
     end
     CreateComputerHeros = function ()
@@ -20412,6 +20408,7 @@ System.namespace("Source", function (namespace)
             { "Undeads", 0xE, out.Source.Models.Teams.UndeadTeam }
           },
           methods = {
+            { "ConstructCreepCamp", 0x609, ConstructCreepCamp, System.String, System.Int32, out.Source.Models.Area, out.Source.Models.Area, out.Source.Abstracts.TeamBase, out.Source.Abstracts.TeamBase },
             { "ConstructCreepCamps", 0x9, ConstructCreepCamps },
             { "ConstructElfBuildingAndTrigger", 0x9, ConstructElfBuildingAndTrigger },
             { "ConstructHumanBuildingAndTrigger", 0x9, ConstructHumanBuildingAndTrigger },
@@ -20464,11 +20461,11 @@ System.namespace("", function (namespace)
       this.CenterTop = System.new(WCSharpSharedData.Rectangle, 2, -128, 13120, 128, 13376)
       this.CenterTopComplete = System.new(WCSharpSharedData.Rectangle, 2, -384, 12864, 384, 13632)
       this.ElfBarracksToCenter = System.new(WCSharpSharedData.Rectangle, 2, -6208, -3136, -6080, -3008)
-      this.ElfBarracksToCenterSpawn = System.new(WCSharpSharedData.Rectangle, 2, -6016, -3584, -5760, -2560)
+      this.ElfBarracksToCenterSpawn = System.new(WCSharpSharedData.Rectangle, 2, -6016, -3072, -5760, -2560)
       this.ElfBarracksToHuman = System.new(WCSharpSharedData.Rectangle, 2, -10304, -1984, -10176, -1856)
-      this.ElfBarracksToHumanSpawn = System.new(WCSharpSharedData.Rectangle, 2, -10752, -1792, -9728, -1536)
+      this.ElfBarracksToHumanSpawn = System.new(WCSharpSharedData.Rectangle, 2, -10496, -1792, -9984, -1536)
       this.ElfBarracksToUndead = System.new(WCSharpSharedData.Rectangle, 2, -5056, -7232, -4928, -7104)
-      this.ElfBarracksToUndeadSpawn = System.new(WCSharpSharedData.Rectangle, 2, -4864, -7680, -4608, -6656)
+      this.ElfBarracksToUndeadSpawn = System.new(WCSharpSharedData.Rectangle, 2, -4864, -7424, -4608, -6912)
       this.ElfBase = System.new(WCSharpSharedData.Rectangle, 2, -10304, -7232, -10176, -7104)
       this.ElfBaseHeroRespawn = System.new(WCSharpSharedData.Rectangle, 2, -12032, -8832, -11904, -8704)
       this.ElfBaseHeroSpawn = System.new(WCSharpSharedData.Rectangle, 2, -11904, -8960, -11776, -8832)
@@ -20487,11 +20484,11 @@ System.namespace("", function (namespace)
       this.ElfToUndeadOuterLine = System.new(WCSharpSharedData.Rectangle, 2, -4160, -7232, -4032, -7104)
       this.HeroSelectorSpawn = System.new(WCSharpSharedData.Rectangle, 2, -18496, 18368, -18368, 18496)
       this.HumanBarracksToCenter = System.new(WCSharpSharedData.Rectangle, 2, -6208, 9152, -6080, 9280)
-      this.HumanBarracksToCenterSpawn = System.new(WCSharpSharedData.Rectangle, 2, -6016, 8704, -5760, 9728)
+      this.HumanBarracksToCenterSpawn = System.new(WCSharpSharedData.Rectangle, 2, -6016, 8704, -5760, 9216)
       this.HumanBarracksToElf = System.new(WCSharpSharedData.Rectangle, 2, -10304, 8000, -10176, 8128)
-      this.HumanBarracksToElfSpawn = System.new(WCSharpSharedData.Rectangle, 2, -10752, 7680, -9728, 7936)
+      this.HumanBarracksToElfSpawn = System.new(WCSharpSharedData.Rectangle, 2, -10496, 7680, -9984, 7936)
       this.HumanBarracksToOrc = System.new(WCSharpSharedData.Rectangle, 2, -5056, 13248, -4928, 13376)
-      this.HumanBarracksToOrcSpawn = System.new(WCSharpSharedData.Rectangle, 2, -4864, 12800, -4608, 13824)
+      this.HumanBarracksToOrcSpawn = System.new(WCSharpSharedData.Rectangle, 2, -4864, 13056, -4608, 13568)
       this.HumanBase = System.new(WCSharpSharedData.Rectangle, 2, -10304, 13248, -10176, 13376)
       this.HumanBaseHeroRespawn = System.new(WCSharpSharedData.Rectangle, 2, -11904, 14976, -11776, 15104)
       this.HumanBaseHeroSpawn = System.new(WCSharpSharedData.Rectangle, 2, -12032, 14848, -11904, 14976)
@@ -20509,11 +20506,11 @@ System.namespace("", function (namespace)
       this.HumanToUndeadInnerLine = System.new(WCSharpSharedData.Rectangle, 2, -8768, 11712, -8640, 11840)
       this.HumanToUndeadOuterLine = System.new(WCSharpSharedData.Rectangle, 2, -5184, 8128, -5056, 8256)
       this.OrcBarracksToCenter = System.new(WCSharpSharedData.Rectangle, 2, 6080, 9152, 6208, 9280)
-      this.OrcBarracksToCenterSpawn = System.new(WCSharpSharedData.Rectangle, 2, 5760, 8704, 6016, 9728)
+      this.OrcBarracksToCenterSpawn = System.new(WCSharpSharedData.Rectangle, 2, 5760, 8704, 6016, 9216)
       this.OrcBarracksToHuman = System.new(WCSharpSharedData.Rectangle, 2, 4928, 13248, 5056, 13376)
-      this.OrcBarracksToHumanSpawn = System.new(WCSharpSharedData.Rectangle, 2, 4608, 12800, 4864, 13824)
+      this.OrcBarracksToHumanSpawn = System.new(WCSharpSharedData.Rectangle, 2, 4608, 13056, 4864, 13568)
       this.OrcBarracksToUndead = System.new(WCSharpSharedData.Rectangle, 2, 10176, 8000, 10304, 8128)
-      this.OrcBarracksToUndeadSpawn = System.new(WCSharpSharedData.Rectangle, 2, 9728, 7680, 10752, 7936)
+      this.OrcBarracksToUndeadSpawn = System.new(WCSharpSharedData.Rectangle, 2, 9984, 7680, 10496, 7936)
       this.OrcBase = System.new(WCSharpSharedData.Rectangle, 2, 10176, 13248, 10304, 13376)
       this.OrcBaseHeroRespawn = System.new(WCSharpSharedData.Rectangle, 2, 11776, 14976, 11904, 15104)
       this.OrcBaseHeroSpawn = System.new(WCSharpSharedData.Rectangle, 2, 11904, 14848, 12032, 14976)
@@ -20531,13 +20528,13 @@ System.namespace("", function (namespace)
       this.OrcToUndeadInnerLine = System.new(WCSharpSharedData.Rectangle, 2, 10176, 11200, 10304, 11328)
       this.OrcToUndeadOuterLine = System.new(WCSharpSharedData.Rectangle, 2, 10176, 7104, 10304, 7232)
       this.TestArea = System.new(WCSharpSharedData.Rectangle, 2, 17280, 17280, 17408, 17408)
-      this.TestArea2 = System.new(WCSharpSharedData.Rectangle, 2, -8640, 7616, -8512, 7744)
+      this.TestArea2 = System.new(WCSharpSharedData.Rectangle, 2, 4672, 11712, 4800, 11840)
       this.UndeadBarracksToCenter = System.new(WCSharpSharedData.Rectangle, 2, 6080, -3136, 6208, -3008)
-      this.UndeadBarracksToCenterSpawn = System.new(WCSharpSharedData.Rectangle, 2, 5760, -3584, 6016, -2560)
+      this.UndeadBarracksToCenterSpawn = System.new(WCSharpSharedData.Rectangle, 2, 5760, -3072, 6016, -2560)
       this.UndeadBarracksToElf = System.new(WCSharpSharedData.Rectangle, 2, 4928, -7232, 5056, -7104)
-      this.UndeadBarracksToElfSpawn = System.new(WCSharpSharedData.Rectangle, 2, 4608, -7680, 4864, -6656)
+      this.UndeadBarracksToElfSpawn = System.new(WCSharpSharedData.Rectangle, 2, 4608, -7424, 4864, -6912)
       this.UndeadBarracksToOrc = System.new(WCSharpSharedData.Rectangle, 2, 10176, -1984, 10304, -1856)
-      this.UndeadBarracksToOrcSpawn = System.new(WCSharpSharedData.Rectangle, 2, 9728, -1792, 10752, -1536)
+      this.UndeadBarracksToOrcSpawn = System.new(WCSharpSharedData.Rectangle, 2, 9984, -1792, 10496, -1536)
       this.UndeadBase = System.new(WCSharpSharedData.Rectangle, 2, 10176, -7232, 10304, -7104)
       this.UndeadBaseHeroRespawn = System.new(WCSharpSharedData.Rectangle, 2, 11776, -8960, 11904, -8832)
       this.UndeadBaseHeroSpawn = System.new(WCSharpSharedData.Rectangle, 2, 11904, -8832, 12032, -8704)
@@ -20692,8 +20689,11 @@ System.namespace("Source.Abstracts", function (namespace)
     CreateHero = function (this, unitTypeId, spawnArea, heroLevel, delay, targetArea)
       local timer = CreateTimer()
       TimerStart(timer, delay, false, function ()
-        this.Hero = SourceModels.SpawnedCreep(this, unitTypeId, spawnArea, 0)
+        DestroyTimer(timer)
+        DestroyTimer(timer)
+        timer = nil
 
+        this.Hero = SourceModels.SpawnedCreep(this, unitTypeId, spawnArea, 0)
         SetHeroLevel(this.Hero.Wc3Unit, heroLevel, true)
 
         if targetArea ~= nil then
@@ -20711,6 +20711,10 @@ System.namespace("Source.Abstracts", function (namespace)
     ReviveHero = function (this, spawnArea, heroLevel, delay, targetArea)
       local timer = CreateTimer()
       TimerStart(timer, delay, false, function ()
+        DestroyTimer(timer)
+        DestroyTimer(timer)
+        timer = nil
+
         ReviveHero(this.Hero.Wc3Unit, spawnArea.CenterX, spawnArea.CenterY, true)
 
         SetHeroLevel(this.Hero.Wc3Unit, heroLevel, true)
@@ -21183,11 +21187,11 @@ System.namespace("Source.Events", function (namespace)
           return true
         end
 
-        if SourceExtensions.unitExtension.IsHero(soldUnit) then
-          SourceLogics.UserHero.HandleCreepHeroBuyed(buyingUnit, soldUnit, sellingUnit)
-        else
-          SourceLogics.UserHero.HandleCreepSpawnBuyed(buyingUnit, soldUnit, sellingUnit)
-        end
+        -- TODO 001
+        --if (soldUnit.IsHero())
+        --  Logics.UserHero.HandleCreepHeroBuyed(buyingUnit, soldUnit, sellingUnit);
+        --else
+        SourceLogics.UserHero.HandleCreepSpawnBuyed(buyingUnit, soldUnit, sellingUnit)
       end, function (default)
         local ex = default
         Source.Program.ShowExceptionMessage("Unit.OnBuysUnit", ex)
@@ -21287,7 +21291,7 @@ System.namespace("Source.Events.Buildings", function (namespace)
           return true
         end
 
-        local rebuildTime = 10
+        local rebuildTime = 5
 
         -- Stoppe Trigger
         creepCamp.Building:Destroy()
@@ -21300,6 +21304,7 @@ System.namespace("Source.Events.Buildings", function (namespace)
         System.Console.WriteLine("Die " .. System.toString(creepCamp.ColorizedName) .. " wurden besiegt und schließen sich der " .. System.toString(user.Team.ColorizedName) .. " an!")
         TimerStart(timer, rebuildTime, false, function ()
           local default = System.try(function ()
+            Source.Program.ShowDebugMessage("Init rebuilding of building of " .. System.toString(creepCamp.ColorizedName))
             -- Timer wieder zerstören
             DestroyTimer(timer)
             DestroyTimer(timer)
@@ -21312,6 +21317,7 @@ System.namespace("Source.Events.Buildings", function (namespace)
 
             local attackTargetArea
 
+            Source.Program.ShowDebugMessage("Detect attack target of building of " .. System.toString(creepCamp.ColorizedName))
             -- Ist der neue Eigentümer das Team im gleichen Quadranten, ist das Ziel das Team am anderen Ende
             -- der Lane, ansonsten alternativ ist es das Team im gleichen Quadrant.
             if newOwningPlayer.PlayerId == creepCamp.NearTeam.Computer.PlayerId then
@@ -21320,6 +21326,7 @@ System.namespace("Source.Events.Buildings", function (namespace)
               attackTargetArea = creepCamp.NearTeam.TeamBaseArea
             end
 
+            Source.Program.ShowDebugMessage("Set owner and rebuild building of " .. System.toString(creepCamp.ColorizedName))
             creepCamp:SetOwnerAndRebuild(user.Team, attackTargetArea)
           end, function (default)
             local ex = default
@@ -21512,7 +21519,12 @@ System.namespace("Source.Events.Periodic", function (namespace)
         local weathereffect = AddWeatherEffect(GetPlayableMapRect(), 1380739186 --[[ConstantsEx.WEATHER_Lorderon_Heavy_Rain]])
         local weatherTimer = CreateTimer()
         TimerStart(weatherTimer, 72 --[[ConstantsEx.Interval_Event_Klatschen / 5]], false, function ()
+          DestroyTimer(weatherTimer)
+          DestroyTimer(weatherTimer)
+          weatherTimer = nil
+
           RemoveWeatherEffect(weathereffect)
+
           RemoveWeatherEffect(weathereffect)
           weathereffect = nil
         end)
@@ -21621,6 +21633,8 @@ System.namespace("Source.Events.Periodic", function (namespace)
           timer1Count = timer1Count + 1
           if timer1Count >= 10 then
             PauseTimer(pentaTimer)
+
+            DestroyTimer(pentaTimer)
             DestroyTimer(pentaTimer)
             pentaTimer = nil
           end
@@ -21669,6 +21683,10 @@ System.namespace("Source.Events.Periodic", function (namespace)
       -- Dummy nach Gebrauch wieder zerstören und freigeben
       local timer = CreateTimer()
       TimerStart(timer, duration, false, function ()
+        DestroyTimer(timer)
+        DestroyTimer(timer)
+        timer = nil
+
         RemoveUnit(dummy)
         RemoveUnit(dummy)
         dummy = nil
@@ -21680,6 +21698,10 @@ System.namespace("Source.Events.Periodic", function (namespace)
     CreateAtDummyAndCastAbilityTimed1 = function (player, point, abilityId, abilityLevel, orderId, delay, duration)
       local timer = CreateTimer()
       TimerStart(timer, delay, false, function ()
+        DestroyTimer(timer)
+        DestroyTimer(timer)
+        timer = nil
+
         CreateAtDummyAndCastAbility(player, point, abilityId, abilityLevel, orderId, duration)
       end)
     end
@@ -21687,8 +21709,12 @@ System.namespace("Source.Events.Periodic", function (namespace)
       -- https://www.hiveworkshop.com/threads/beginners-guide-to-lightning-effects.220370/#herp
       local lightning = AddLightningEx("AFOD", true, caster.X, caster.Y, 50, target.X, target.Y, 50)
 
-      local timer1 = CreateTimer()
-      TimerStart(timer1, 1, true, function ()
+      local timer = CreateTimer()
+      TimerStart(timer, 1, true, function ()
+        DestroyTimer(timer)
+        DestroyTimer(timer)
+        timer = nil
+
         System.try(function ()
           DestroyLightning(lightning)
           DestroyLightning(lightning)
@@ -22107,6 +22133,32 @@ end)
 end
 do
 local System = System
+System.namespace("Source.Extensions", function (namespace)
+  namespace.class("timerExtension", function (namespace)
+    local Destroy
+    Destroy = function (timer)
+      DestroyTimer(timer)
+
+      DestroyTimer(timer)
+      timer = nil
+    end
+    return {
+      Destroy = Destroy,
+      __metadata__ = function (out)
+        return {
+          methods = {
+            { "Destroy", 0x10C, Destroy, out.WCSharp.Api.timer }
+          },
+          class = { "timerExtension", 0x3C }
+        }
+      end
+    }
+  end)
+end)
+
+end
+do
+local System = System
 local WCSharpApi = WCSharp.Api
 System.namespace("Source.Extensions", function (namespace)
   namespace.class("unitExtension", function (namespace)
@@ -22185,7 +22237,6 @@ System.namespace("Source.Logics", function (namespace)
             end
           end
 
-          local owner = GetOwningPlayer(unit)
           local respawnArea = nil
 
           local extern, spawnedUnit = team.Computer:IsOwnerOfUnit(unit)
@@ -22210,7 +22261,7 @@ System.namespace("Source.Logics", function (namespace)
     HandleLeveled = function (unit)
       local unitId = GetUnitTypeId(unit)
 
-      if unitId == 1211117645 --[[Constants.UNIT_W_CHTER_HUMAN]] then
+      if unitId == 1211117645 --[[Constants.UNIT_W_CHTER_HUMAN]] or unitId == 1211117911 --[[Constants.UNIT_W_CHTER_ORC]] or unitId == 1211118160 --[[Constants.UNIT_W_CHTER_ELF]] or unitId == 1211118161 --[[Constants.UNIT_W_CHTER_UNDEAD]] then
         ProcessWaechterLevelUp(unit)
       end
     end
@@ -22300,8 +22351,11 @@ System.namespace("Source.Logics", function (namespace)
       local timer = CreateTimer()
       TimerStart(timer, 10, false, function ()
         DestroyTimer(timer)
-        RemoveUnit(unit)
+        DestroyTimer(timer)
+        timer = nil
+
         -- Sicherheitshalber Verweis auf Einheit für GC freigeben
+        RemoveUnit(unit)
         RemoveUnit(unit)
         unit = nil
       end)
@@ -22416,7 +22470,8 @@ System.namespace("Source.Logics", function (namespace)
 
 
       spawnArea = Areas.TestArea2
-      user.HeroLevelCounter = 36
+      user.HeroLevelCounter = 50
+      SetPlayerState(user.Wc3Player, PLAYER_STATE_RESOURCE_GOLD, GetPlayerState(user.Wc3Player, PLAYER_STATE_RESOURCE_GOLD) + 50000)
 
 
       user:CreateHero(soldUnitId, spawnArea)
@@ -22540,7 +22595,7 @@ System.import(function (out)
 end)
 System.namespace("Source.Logics", function (namespace)
   namespace.class("UserHero", function (namespace)
-    local HandleDied, HandleItemBuyed, HandleCharmCasted, HandleAnythingCasted, HandleCreepSpawnBuyed, HandleCreepHeroBuyed
+    local HandleDied, HandleItemBuyed, HandleCharmCasted, HandleAnythingCasted, HandleCreepSpawnBuyed
     HandleDied = function (unit)
       local player = GetOwningPlayer(unit)
       local playerId = GetPlayerId(GetOwningPlayer(unit))
@@ -22770,42 +22825,16 @@ System.namespace("Source.Logics", function (namespace)
 
       creepCamp.Building:AddUnitToSpawnTrigger(soldUnitId)
     end
-    HandleCreepHeroBuyed = function (buyingUnit, soldUnit, sellingUnit)
-      local soldUnitId = GetUnitTypeId(soldUnit)
-
-      -- Gekaufte Einheit sofort entfernen
-      RemoveUnit(soldUnit)
-
-      -- Sicherheitshalber Verweis auf Einheit für GC freigeben
-      RemoveUnit(soldUnit)
-      soldUnit = nil
-
-      local playerId = GetPlayerId(GetOwningPlayer(buyingUnit))
-
-      local default, creepCamp = Source.Program.TryGetCreepCampByBuilding(sellingUnit)
-      if not default then
-        System.Console.WriteLine("HandleCreepSpawnBuyed, invalid selling creep unit " .. System.toString(GetUnitName(sellingUnit)) .. "!")
-        return
-      end
-
-      if creepCamp.Hero == nil then
-        creepCamp:CreateHero1(soldUnitId, 1, 0)
-      else
-        creepCamp:ReviveHero1(1, 0)
-      end
-    end
     return {
       HandleDied = HandleDied,
       HandleItemBuyed = HandleItemBuyed,
       HandleCharmCasted = HandleCharmCasted,
       HandleCreepSpawnBuyed = HandleCreepSpawnBuyed,
-      HandleCreepHeroBuyed = HandleCreepHeroBuyed,
       __metadata__ = function (out)
         return {
           methods = {
             { "HandleAnythingCasted", 0x109, HandleAnythingCasted, System.Int32 },
             { "HandleCharmCasted", 0x10C, HandleCharmCasted, System.Int32 },
-            { "HandleCreepHeroBuyed", 0x30C, HandleCreepHeroBuyed, out.WCSharp.Api.unit, out.WCSharp.Api.unit, out.WCSharp.Api.unit },
             { "HandleCreepSpawnBuyed", 0x30C, HandleCreepSpawnBuyed, out.WCSharp.Api.unit, out.WCSharp.Api.unit, out.WCSharp.Api.unit },
             { "HandleDied", 0x10C, HandleDied, out.WCSharp.Api.unit },
             { "HandleItemBuyed", 0x20C, HandleItemBuyed, out.WCSharp.Api.unit, out.WCSharp.Api.item }
@@ -22822,7 +22851,7 @@ do
 local System = System
 System.namespace("Source.Models", function (namespace)
   namespace.class("Area", function (namespace)
-    local getWc3Region, RegisterOnEnter, __ctor__
+    local getWc3Region, RegisterOnEnter, ToString1, __ctor__
     __ctor__ = function (this, wc3Rectangle)
       this.Wc3Rectangle = wc3Rectangle
       this.CenterX = wc3Rectangle:getCenter().X
@@ -22837,17 +22866,22 @@ System.namespace("Source.Models", function (namespace)
       TriggerRegisterEnterRegion(trigger, getWc3Region(this), nil)
       TriggerAddAction(trigger, eventHandler)
     end
+    ToString1 = function (this)
+      return "[" .. this.CenterX .. ":" .. this.CenterY .. "]"
+    end
     return {
       getWc3Region = getWc3Region,
       CenterX = 0,
       CenterY = 0,
       RegisterOnEnter = RegisterOnEnter,
+      ToString1 = ToString1,
       __ctor__ = __ctor__,
       __metadata__ = function (out)
         return {
           methods = {
             { ".ctor", 0x106, nil, out.WCSharp.Shared.Data.Rectangle },
-            { "RegisterOnEnter", 0x106, RegisterOnEnter, System.Delegate }
+            { "RegisterOnEnter", 0x106, RegisterOnEnter, System.Delegate },
+            { "ToString", 0x86, ToString1, System.String }
           },
           properties = {
             { "CenterX", 0x6, System.Single },
@@ -22986,9 +23020,11 @@ end
 do
 local System = System
 local WCSharpApi = WCSharp.Api
+local Source
 local SourceEventsBuildings
 local SourceModels
 System.import(function (out)
+  Source = out.Source
   SourceEventsBuildings = Source.Events.Buildings
   SourceModels = Source.Models
 end)
@@ -23017,6 +23053,8 @@ System.namespace("Source.Models", function (namespace)
     -- <param name="face"></param>
     -- <returns></returns>
     InitializeBuilding = function (this, unitTypeId, face)
+      this.BuildingUniType = unitTypeId
+
       -- Ort anhand Zentrum einer Region erstellen
       this.Building = SourceModels.SpawnCreepsBuilding(this, unitTypeId, this.BuildingArea, face)
       this.Building:RegisterOnDies(SourceEventsBuildings.CreepMainBuilding.OnDies)
@@ -23044,8 +23082,9 @@ System.namespace("Source.Models", function (namespace)
 
       this.Wc3Player = this.OwnerTeam.Computer.Wc3Player
 
+      Source.Program.ShowDebugMessage("Build building " .. this.BuildingUniType .. " at " .. System.toString(this.BuildingArea:ToString1()))
       -- Ort anhand Zentrum einer Region erstellen
-      this.Building = SourceModels.SpawnCreepsBuilding(this, GetUnitTypeId(this.Building.Wc3Unit), this.BuildingArea, 0)
+      this.Building = SourceModels.SpawnCreepsBuilding(this, this.BuildingUniType, this.BuildingArea, 0)
       this.Building:RegisterOnDies(SourceEventsBuildings.CreepMainBuilding.OnDies)
 
       -- Füge direkt SpawnTrigger hinzu, welche später durch kaufen von Söldnern um Einheiten erweitert werden
@@ -23057,6 +23096,7 @@ System.namespace("Source.Models", function (namespace)
           out.Source.Abstracts.NeutralForce
         }
       end,
+      BuildingUniType = 0,
       CreateHero1 = CreateHero1,
       ReviveHero1 = ReviveHero1,
       InitializeBuilding = InitializeBuilding,
@@ -23077,6 +23117,7 @@ System.namespace("Source.Models", function (namespace)
             { "AttackTargetArea", 0x6, out.Source.Models.Area },
             { "Building", 0x6, out.Source.Models.SpawnCreepsBuilding },
             { "BuildingArea", 0x6, out.Source.Models.Area },
+            { "BuildingUniType", 0x6, System.Int32 },
             { "ColorizedName", 0x6, System.String },
             { "Name", 0x6, System.String },
             { "NearTeam", 0x6, out.Source.Abstracts.TeamBase },
@@ -23147,6 +23188,10 @@ end
 do
 local System = System
 local WCSharpApi = WCSharp.Api
+local Source
+System.import(function (out)
+  Source = out.Source
+end)
 System.namespace("Source.Models", function (namespace)
   namespace.class("KlatschenFragtion", function (namespace)
     local CreateOrReviveHero, TrainGrubenlord, __ctor__
@@ -23161,7 +23206,19 @@ System.namespace("Source.Models", function (namespace)
       end
 
       if unitTypeId == 1311780918 --[[Constants.UNIT_GRUBENLORD_KLATSCHEN]] then
-        TrainGrubenlord(this, this.Hero.Wc3Unit, abilitiesLevel)
+        local timer = CreateTimer()
+        TimerStart(timer, delay + 1, false, function ()
+          System.try(function ()
+            DestroyTimer(timer)
+            DestroyTimer(timer)
+            timer = nil
+
+            TrainGrubenlord(this, this.Hero.Wc3Unit, abilitiesLevel)
+          end, function (default)
+            local ex = default
+            Source.Program.ShowExceptionMessage("KlatschenFragtion.CreateOrReviveHero", ex)
+          end)
+        end)
       end
     end
     TrainGrubenlord = function (this, unit, abilitiesLevel)
@@ -23337,6 +23394,9 @@ System.namespace("Source.Models", function (namespace)
       local timer = CreateTimer()
       TimerStart(timer, delay, false, function ()
         DestroyTimer(timer)
+        DestroyTimer(timer)
+        timer = nil
+
         Start(this)
       end)
     end
@@ -23728,6 +23788,9 @@ System.namespace("Source.Models", function (namespace)
       local timer = CreateTimer()
       TimerStart(timer, delay, false, function ()
         DestroyTimer(timer)
+        DestroyTimer(timer)
+        timer = nil
+
         Start(this)
       end)
     end
@@ -24428,6 +24491,10 @@ System.namespace("Source.Statics", function (namespace)
     CreateSpecialEffectTimed = function (modelPath, point, scale, delay, duration)
       local timer = CreateTimer()
       TimerStart(timer, delay, false, function ()
+        DestroyTimer(timer)
+        DestroyTimer(timer)
+        timer = nil
+
         CreateSpecialEffect(modelPath, point, scale, duration)
       end)
     end
@@ -35913,8 +35980,8 @@ local InitCSharp = function ()
       "WCSharp.Missiles.HomingMissile",
       "WCSharp.Missiles.MomentumMissile",
       "WCSharp.Missiles.OrbitalMissile",
-      "WCSharp.SaveLoad.SaveLoadedMessage_1",
       "WCSharp.SaveLoad.Save_1",
+      "WCSharp.SaveLoad.SaveLoadedMessage_1",
       "WCSharp.W3MMD.IW3MmdVar",
       "Areas",
       "Constants",
@@ -35932,6 +35999,7 @@ local InitCSharp = function ()
       "Source.Events.Region.OrcBase",
       "Source.Events.Region.UndeadBase",
       "Source.Events.Unit",
+      "Source.Extensions.timerExtension",
       "Source.Extensions.unitExtension",
       "Source.Logics.ComputerHero",
       "Source.Logics.ComputerUnit",
@@ -36373,27 +36441,27 @@ gg_unit_h02B_0120 = nil
 gg_unit_H02P_0121 = nil
 gg_unit_H02Q_0122 = nil
 gg_unit_n01G_0246 = nil
-gg_unit_n025_0295 = nil
+gg_unit_n02E_0303 = nil
 gg_unit_n025_0294 = nil
 gg_unit_n024_0293 = nil
-gg_unit_n00K_0292 = nil
+gg_unit_n02E_0304 = nil
 gg_unit_n00P_0291 = nil
 gg_unit_n00K_0290 = nil
-gg_unit_n02A_0289 = nil
+gg_unit_n02E_0305 = nil
 gg_unit_n02A_0288 = nil
 gg_unit_n00K_0285 = nil
 gg_unit_n00V_0238 = nil
-gg_unit_H02R_0237 = nil
-gg_unit_n014_0236 = nil
+gg_unit_n01G_0245 = nil
+gg_unit_n025_0301 = nil
 gg_unit_n00X_0235 = nil
 gg_unit_n013_0225 = nil
 gg_unit_n026_0287 = nil
-gg_unit_n02B_0126 = nil
+gg_unit_n02B_0306 = nil
 gg_unit_nech_0230 = nil
 gg_unit_n02B_0125 = nil
 gg_unit_n02G_0127 = nil
 gg_unit_npig_0226 = nil
-gg_unit_n02G_0128 = nil
+gg_unit_n02E_0302 = nil
 gg_unit_nshe_0227 = nil
 gg_unit_n02F_0124 = nil
 gg_unit_necr_0234 = nil
@@ -36404,43 +36472,59 @@ gg_unit_n00C_0137 = nil
 gg_unit_n00N_0191 = nil
 gg_unit_n00F_0192 = nil
 gg_unit_n00Q_0211 = nil
-gg_unit_n01K_0212 = nil
-gg_unit_n01N_0213 = nil
-gg_unit_n01M_0215 = nil
-gg_unit_n01O_0214 = nil
-gg_unit_n01Q_0216 = nil
-gg_unit_n01R_0217 = nil
-gg_unit_n01B_0218 = nil
-gg_unit_n01E_0219 = nil
-gg_unit_n01C_0220 = nil
-gg_unit_n020_0247 = nil
-gg_unit_n021_0248 = nil
-gg_unit_n022_0250 = nil
-gg_unit_n01W_0268 = nil
-gg_unit_n01Z_0269 = nil
-gg_unit_n01Y_0270 = nil
-gg_unit_n01S_0271 = nil
-gg_unit_n01T_0272 = nil
-gg_unit_n01V_0273 = nil
-gg_unit_n027_0274 = nil
-gg_unit_n028_0276 = nil
-gg_unit_n029_0275 = nil
-gg_unit_n01H_0277 = nil
-gg_unit_n01I_0278 = nil
-gg_unit_n01I_0279 = nil
-gg_unit_n01J_0280 = nil
-gg_unit_n02E_0281 = nil
-gg_unit_n02E_0282 = nil
-gg_unit_n02D_0283 = nil
-gg_unit_n01G_0129 = nil
-gg_unit_n01G_0130 = nil
-gg_unit_n01G_0131 = nil
-gg_unit_n01G_0221 = nil
-gg_unit_n00K_0229 = nil
-gg_unit_n00K_0223 = nil
-gg_unit_n00K_0224 = nil
+gg_unit_n01D_0212 = nil
 gg_unit_n00K_0228 = nil
-gg_unit_n01G_0245 = nil
+gg_unit_n00K_0224 = nil
+gg_unit_n00K_0223 = nil
+gg_unit_n00K_0229 = nil
+gg_unit_n01G_0221 = nil
+gg_unit_n01G_0131 = nil
+gg_unit_n01G_0130 = nil
+gg_unit_n01G_0129 = nil
+gg_unit_n02D_0283 = nil
+gg_unit_n02B_0307 = nil
+gg_unit_n02E_0281 = nil
+gg_unit_n01J_0280 = nil
+gg_unit_n02B_0308 = nil
+gg_unit_n01I_0278 = nil
+gg_unit_n01H_0277 = nil
+gg_unit_n01F_0213 = nil
+gg_unit_n01L_0214 = nil
+gg_unit_n01N_0215 = nil
+gg_unit_n01P_0216 = nil
+gg_unit_n01E_0217 = nil
+gg_unit_n01S_0218 = nil
+gg_unit_n01Q_0219 = nil
+gg_unit_n01U_0220 = nil
+gg_unit_n01K_0222 = nil
+gg_unit_n01C_0237 = nil
+gg_unit_n01W_0247 = nil
+gg_unit_n01V_0248 = nil
+gg_unit_n02G_0250 = nil
+gg_unit_n02G_0268 = nil
+gg_unit_n02G_0269 = nil
+gg_unit_n02G_0270 = nil
+gg_unit_n01I_0271 = nil
+gg_unit_n01I_0272 = nil
+gg_unit_n01I_0273 = nil
+gg_unit_n01I_0274 = nil
+gg_unit_n01I_0275 = nil
+gg_unit_n02A_0276 = nil
+gg_unit_n02A_0286 = nil
+gg_unit_n02A_0296 = nil
+gg_unit_n02A_0297 = nil
+gg_unit_n025_0298 = nil
+gg_unit_n025_0299 = nil
+gg_unit_n025_0300 = nil
+gg_unit_n01O_0126 = nil
+gg_unit_n014_0128 = nil
+gg_unit_n01Z_0236 = nil
+gg_unit_n01M_0279 = nil
+gg_unit_n01Y_0282 = nil
+gg_unit_n01T_0289 = nil
+gg_unit_n01B_0292 = nil
+gg_unit_n020_0295 = nil
+gg_unit_n01X_0309 = nil
 gg_dest_HEch_0019 = nil
 gg_dest_HEch_0017 = nil
 gg_dest_HEch_0016 = nil
@@ -47942,11 +48026,6 @@ gg_dest_NTtw_11497 = nil
 gg_dest_NTtw_11498 = nil
 gg_dest_LOcg_3843 = nil
 function InitGlobals()
-end
-
-function CreateAllItems()
-    local itemID = nil
-    CreateItem(1227894853, -8309.3, 7725.8)
 end
 
 function InitSounds()
@@ -59552,7 +59631,27 @@ function CreateBuildingsForPlayer0()
     gg_unit_h005_0252 = CreateUnit(p, 1747988533, -9728.0, 12288.0, 270.000)
     gg_unit_h005_0254 = CreateUnit(p, 1747988533, -12160.0, 14720.0, 270.000)
     gg_unit_h005_0264 = CreateUnit(p, 1747988533, -11648.0, 15232.0, 270.000)
+    gg_unit_n01I_0271 = CreateUnit(p, 1848652105, 4832.0, 10656.0, 270.000)
+    gg_unit_n02A_0276 = CreateUnit(p, 1848652353, 8416.0, 7200.0, 270.000)
     gg_unit_h00T_0284 = CreateUnit(p, 1747988564, -11776.0, 14336.0, 270.000)
+    gg_unit_n02A_0286 = CreateUnit(p, 1848652353, 8224.0, 6688.0, 270.000)
+    gg_unit_n02A_0296 = CreateUnit(p, 1848652353, 7328.0, 7840.0, 270.000)
+    gg_unit_n02A_0297 = CreateUnit(p, 1848652353, 6944.0, 7072.0, 270.000)
+end
+
+function CreateUnitsForPlayer0()
+    local p = Player(0)
+    local unitID = nil
+    local t = nil
+    gg_unit_n01O_0126 = CreateUnit(p, 1848652111, 17222.7, 19253.2, 338.510)
+    gg_unit_n014_0128 = CreateUnit(p, 1848652084, 17227.1, 19142.6, 193.376)
+    gg_unit_n01Z_0236 = CreateUnit(p, 1848652122, 17207.8, 18998.6, 151.660)
+    gg_unit_n01M_0279 = CreateUnit(p, 1848652109, 17222.7, 18898.2, 84.828)
+    gg_unit_n01Y_0282 = CreateUnit(p, 1848652121, 17225.7, 18764.6, 9.613)
+    gg_unit_n01T_0289 = CreateUnit(p, 1848652116, 17219.7, 18629.3, 43.386)
+    gg_unit_n01B_0292 = CreateUnit(p, 1848652098, 17216.7, 18526.0, 98.287)
+    gg_unit_n020_0295 = CreateUnit(p, 1848652336, 17209.3, 18357.3, 97.353)
+    gg_unit_n01X_0309 = CreateUnit(p, 1848652120, 17343.2, 18376.2, 331.545)
 end
 
 function CreateBuildingsForPlayer1()
@@ -59761,65 +59860,43 @@ function CreateNeutralHostile()
     local unitID = nil
     local t = nil
     gg_unit_N006_0123 = CreateUnit(p, 1311780918, 16066.9, 17967.3, 270.000)
-    gg_unit_n02F_0124 = CreateUnit(p, 1848652358, 17696.0, 17568.0, 270.000)
-    gg_unit_n02B_0125 = CreateUnit(p, 1848652354, 18048.0, 18560.0, 270.000)
-    gg_unit_n02B_0126 = CreateUnit(p, 1848652354, 18304.0, 18560.0, 270.000)
-    gg_unit_n02G_0127 = CreateUnit(p, 1848652359, 18080.0, 17568.0, 270.000)
-    gg_unit_n02G_0128 = CreateUnit(p, 1848652359, 18272.0, 17568.0, 270.000)
+    gg_unit_n02F_0124 = CreateUnit(p, 1848652358, 17760.0, 17504.0, 270.000)
+    gg_unit_n02B_0125 = CreateUnit(p, 1848652354, 18112.0, 18560.0, 270.000)
+    gg_unit_n02G_0127 = CreateUnit(p, 1848652359, 18080.0, 17504.0, 270.000)
     gg_unit_n00T_0132 = CreateUnit(p, 1848651860, 15792.4, 17981.3, 270.000)
     gg_unit_n00J_0133 = CreateUnit(p, 1848651850, 15155.2, 17991.3, 270.000)
     gg_unit_n00C_0137 = CreateUnit(p, 1848651843, 15007.8, 17982.3, 270.000)
     gg_unit_n00N_0191 = CreateUnit(p, 1848651854, 15545.3, 17974.9, 270.000)
     gg_unit_n00F_0192 = CreateUnit(p, 1848651846, 15369.1, 17991.3, 270.000)
     gg_unit_n00Q_0211 = CreateUnit(p, 1848651857, 15672.7, 17979.3, 270.000)
-    gg_unit_n01K_0212 = CreateUnit(p, 1848652107, 16956.2, 19009.7, 270.000)
-    gg_unit_n01N_0213 = CreateUnit(p, 1848652110, 17089.1, 19005.9, 270.000)
-    gg_unit_n01O_0214 = CreateUnit(p, 1848652111, 17088.9, 19132.7, 270.000)
-    gg_unit_n01M_0215 = CreateUnit(p, 1848652109, 17214.9, 18999.6, 270.000)
-    gg_unit_n01Q_0216 = CreateUnit(p, 1848652113, 16960.7, 19132.7, 270.000)
-    gg_unit_n01R_0217 = CreateUnit(p, 1848652114, 17220.3, 19146.4, 270.000)
-    gg_unit_n01B_0218 = CreateUnit(p, 1848652098, 17215.1, 18874.4, 270.000)
-    gg_unit_n01E_0219 = CreateUnit(p, 1848652101, 16960.0, 18874.4, 270.000)
-    gg_unit_n01C_0220 = CreateUnit(p, 1848652099, 17094.3, 18879.1, 270.000)
-    gg_unit_n00K_0223 = CreateUnit(p, 1848651851, -7936.0, -384.0, 270.000)
-    gg_unit_n00K_0224 = CreateUnit(p, 1848651851, -7360.0, -384.0, 270.000)
-    gg_unit_n013_0225 = CreateUnit(p, 1848652083, 17087.9, 19255.6, 270.000)
-    gg_unit_n00K_0228 = CreateUnit(p, 1848651851, -7168.0, -640.0, 270.000)
-    gg_unit_n00K_0229 = CreateUnit(p, 1848651851, -7040.0, -1280.0, 270.000)
-    gg_unit_n00X_0235 = CreateUnit(p, 1848651864, 16961.8, 19260.6, 270.000)
-    gg_unit_n014_0236 = CreateUnit(p, 1848652084, 17212.6, 19253.9, 270.000)
-    gg_unit_H02R_0237 = CreateUnit(p, 1211118162, 17347.9, 19262.3, 270.000)
+    gg_unit_n01D_0212 = CreateUnit(p, 1848652100, 17471.1, 19138.2, 266.438)
+    gg_unit_n01F_0213 = CreateUnit(p, 1848652102, 17475.6, 19004.4, 31.444)
+    gg_unit_n01L_0214 = CreateUnit(p, 1848652108, 17478.6, 18882.2, 230.731)
+    gg_unit_n01N_0215 = CreateUnit(p, 1848652110, 17481.5, 18750.0, 36.432)
+    gg_unit_n01P_0216 = CreateUnit(p, 1848652112, 17483.0, 18624.9, 239.894)
+    gg_unit_n01E_0217 = CreateUnit(p, 1848652101, 17474.1, 18496.9, 52.648)
+    gg_unit_n01S_0218 = CreateUnit(p, 1848652115, 17469.6, 18366.0, 259.802)
+    gg_unit_n01Q_0219 = CreateUnit(p, 1848652113, 17341.7, 19135.3, 143.936)
+    gg_unit_n01U_0220 = CreateUnit(p, 1848652117, 17346.2, 19001.5, 24.478)
+    gg_unit_n01K_0222 = CreateUnit(p, 1848652107, 17352.1, 18885.1, 15.931)
+    gg_unit_n013_0225 = CreateUnit(p, 1848652083, 17343.2, 19261.9, 270.000)
+    gg_unit_n00X_0235 = CreateUnit(p, 1848651864, 17468.2, 19263.4, 270.000)
+    gg_unit_n01C_0237 = CreateUnit(p, 1848652099, 17347.7, 18754.2, 250.891)
     gg_unit_n00V_0238 = CreateUnit(p, 1848651862, 17760.0, 19296.0, 270.000)
-    gg_unit_n01G_0246 = CreateUnit(p, 1848652103, 18272.0, 19296.0, 270.000)
-    gg_unit_n020_0247 = CreateUnit(p, 1848652336, 17218.9, 18741.3, 270.000)
-    gg_unit_n021_0248 = CreateUnit(p, 1848652337, 17091.4, 18746.5, 270.000)
-    gg_unit_n022_0250 = CreateUnit(p, 1848652338, 16956.1, 18745.2, 270.000)
-    gg_unit_n01W_0268 = CreateUnit(p, 1848652119, 16952.4, 18619.8, 270.000)
-    gg_unit_n01Z_0269 = CreateUnit(p, 1848652122, 17091.4, 18617.4, 270.000)
-    gg_unit_n01Y_0270 = CreateUnit(p, 1848652121, 17215.5, 18619.8, 270.000)
-    gg_unit_n01S_0271 = CreateUnit(p, 1848652115, 17098.7, 18497.2, 270.000)
-    gg_unit_n01T_0272 = CreateUnit(p, 1848652116, 17224.1, 18496.0, 270.000)
-    gg_unit_n01V_0273 = CreateUnit(p, 1848652118, 16953.7, 18493.1, 270.000)
-    gg_unit_n027_0274 = CreateUnit(p, 1848652343, 17091.4, 18363.3, 270.000)
-    gg_unit_n029_0275 = CreateUnit(p, 1848652345, 16960.9, 18363.3, 270.000)
-    gg_unit_n028_0276 = CreateUnit(p, 1848652344, 17221.7, 18360.9, 270.000)
+    gg_unit_n01G_0246 = CreateUnit(p, 1848652103, 18080.0, 19296.0, 270.000)
+    gg_unit_n01W_0247 = CreateUnit(p, 1848652119, 17349.1, 18629.1, 185.598)
+    gg_unit_n01V_0248 = CreateUnit(p, 1848652118, 17344.7, 18496.9, 301.979)
     gg_unit_n01H_0277 = CreateUnit(p, 1848652104, 17760.0, 19040.0, 270.000)
     gg_unit_n01I_0278 = CreateUnit(p, 1848652105, 18080.0, 19040.0, 270.000)
-    gg_unit_n01I_0279 = CreateUnit(p, 1848652105, 18272.0, 19040.0, 270.000)
     gg_unit_n01J_0280 = CreateUnit(p, 1848652106, 17760.0, 18784.0, 270.000)
     gg_unit_n02E_0281 = CreateUnit(p, 1848652357, 18080.0, 18784.0, 270.000)
-    gg_unit_n02E_0282 = CreateUnit(p, 1848652357, 18336.0, 18784.0, 270.000)
     gg_unit_n02D_0283 = CreateUnit(p, 1848652356, 17728.0, 18560.0, 270.000)
-    gg_unit_n00K_0285 = CreateUnit(p, 1848651851, -7232.0, -1536.0, 270.000)
     gg_unit_n026_0287 = CreateUnit(p, 1848652342, 17696.0, 18336.0, 270.000)
     gg_unit_n02A_0288 = CreateUnit(p, 1848652353, 18080.0, 18336.0, 270.000)
-    gg_unit_n02A_0289 = CreateUnit(p, 1848652353, 18272.0, 18336.0, 270.000)
     gg_unit_n00K_0290 = CreateUnit(p, 1848651851, 18048.0, 18112.0, 270.000)
     gg_unit_n00P_0291 = CreateUnit(p, 1848651856, 17728.0, 18112.0, 270.000)
-    gg_unit_n00K_0292 = CreateUnit(p, 1848651851, 18304.0, 18112.0, 270.000)
     gg_unit_n024_0293 = CreateUnit(p, 1848652340, 17760.0, 17824.0, 270.000)
     gg_unit_n025_0294 = CreateUnit(p, 1848652341, 18080.0, 17824.0, 270.000)
-    gg_unit_n025_0295 = CreateUnit(p, 1848652341, 18272.0, 17824.0, 270.000)
 end
 
 function CreateNeutralPassiveBuildings()
@@ -59840,7 +59917,24 @@ function CreateNeutralPassiveBuildings()
     gg_unit_n01G_0131 = CreateUnit(p, 1848652103, -8352.0, 6880.0, 270.000)
     gg_unit_NBDL_0135 = CreateUnit(p, 1312965708, -12032.0, -8960.0, 270.000)
     gg_unit_n01G_0221 = CreateUnit(p, 1848652103, -7968.0, 6496.0, 270.000)
+    gg_unit_n00K_0223 = CreateUnit(p, 1848651851, -7936.0, -384.0, 270.000)
+    gg_unit_n00K_0224 = CreateUnit(p, 1848651851, -7360.0, -384.0, 270.000)
+    gg_unit_n00K_0228 = CreateUnit(p, 1848651851, -7168.0, -640.0, 270.000)
+    gg_unit_n00K_0229 = CreateUnit(p, 1848651851, -7040.0, -1280.0, 270.000)
     gg_unit_n01G_0245 = CreateUnit(p, 1848652103, -7008.0, 6880.0, 270.000)
+    gg_unit_n01I_0272 = CreateUnit(p, 1848652105, 4576.0, 10208.0, 270.000)
+    gg_unit_n01I_0273 = CreateUnit(p, 1848652105, 3808.0, 10016.0, 270.000)
+    gg_unit_n01I_0274 = CreateUnit(p, 1848652105, 3552.0, 10208.0, 270.000)
+    gg_unit_n01I_0275 = CreateUnit(p, 1848652105, 3360.0, 10784.0, 270.000)
+    gg_unit_n00K_0285 = CreateUnit(p, 1848651851, -7232.0, -1536.0, 270.000)
+    gg_unit_n025_0298 = CreateUnit(p, 1848652341, 7904.0, -352.0, 270.000)
+    gg_unit_n025_0299 = CreateUnit(p, 1848652341, 8352.0, -736.0, 270.000)
+    gg_unit_n025_0300 = CreateUnit(p, 1848652341, 7072.0, -672.0, 270.000)
+    gg_unit_n025_0301 = CreateUnit(p, 1848652341, 7456.0, -1696.0, 270.000)
+    gg_unit_n02E_0302 = CreateUnit(p, 1848652357, 4384.0, -4000.0, 270.000)
+    gg_unit_n02E_0303 = CreateUnit(p, 1848652357, 4896.0, -4640.0, 270.000)
+    gg_unit_n02E_0304 = CreateUnit(p, 1848652357, 3616.0, -5088.0, 270.000)
+    gg_unit_n02E_0305 = CreateUnit(p, 1848652357, 3552.0, -4128.0, 270.000)
 end
 
 function CreateNeutralPassive()
@@ -59911,6 +60005,13 @@ function CreateNeutralPassive()
     gg_unit_nshe_0227 = CreateUnit(p, 1853057125, -9950.5, 12557.9, 337.994)
     gg_unit_nech_0230 = CreateUnit(p, 1852138344, -9501.4, 12963.4, 190.124)
     gg_unit_necr_0234 = CreateUnit(p, 1852138354, -9538.0, 12905.5, 179.984)
+    gg_unit_n02G_0250 = CreateUnit(p, 1848652359, -3552.0, 10272.0, 270.000)
+    gg_unit_n02G_0268 = CreateUnit(p, 1848652359, -3424.0, 10784.0, 270.000)
+    gg_unit_n02G_0269 = CreateUnit(p, 1848652359, -4832.0, 10912.0, 270.000)
+    gg_unit_n02G_0270 = CreateUnit(p, 1848652359, -4512.0, 10144.0, 270.000)
+    gg_unit_n02B_0306 = CreateUnit(p, 1848652354, -3392.0, -4544.0, 270.000)
+    gg_unit_n02B_0307 = CreateUnit(p, 1848652354, -4544.0, -4160.0, 270.000)
+    gg_unit_n02B_0308 = CreateUnit(p, 1848652354, -3904.0, -5184.0, 270.000)
 end
 
 function CreatePlayerBuildings()
@@ -59932,11 +60033,16 @@ function CreatePlayerBuildings()
     CreateBuildingsForPlayer15()
 end
 
+function CreatePlayerUnits()
+    CreateUnitsForPlayer0()
+end
+
 function CreateAllUnits()
     CreateNeutralPassiveBuildings()
     CreatePlayerBuildings()
     CreateNeutralHostile()
     CreateNeutralPassive()
+    CreatePlayerUnits()
 end
 
 function CreateRegions()
@@ -59951,11 +60057,11 @@ function CreateRegions()
     gg_rct_CenterTop = Rect(-128.0, 13120.0, 128.0, 13376.0)
     gg_rct_CenterTopComplete = Rect(-384.0, 12864.0, 384.0, 13632.0)
     gg_rct_ElfBarracksToCenter = Rect(-6208.0, -3136.0, -6080.0, -3008.0)
-    gg_rct_ElfBarracksToCenterSpawn = Rect(-6016.0, -3584.0, -5760.0, -2560.0)
+    gg_rct_ElfBarracksToCenterSpawn = Rect(-6016.0, -3072.0, -5760.0, -2560.0)
     gg_rct_ElfBarracksToHuman = Rect(-10304.0, -1984.0, -10176.0, -1856.0)
-    gg_rct_ElfBarracksToHumanSpawn = Rect(-10752.0, -1792.0, -9728.0, -1536.0)
+    gg_rct_ElfBarracksToHumanSpawn = Rect(-10496.0, -1792.0, -9984.0, -1536.0)
     gg_rct_ElfBarracksToUndead = Rect(-5056.0, -7232.0, -4928.0, -7104.0)
-    gg_rct_ElfBarracksToUndeadSpawn = Rect(-4864.0, -7680.0, -4608.0, -6656.0)
+    gg_rct_ElfBarracksToUndeadSpawn = Rect(-4864.0, -7424.0, -4608.0, -6912.0)
     gg_rct_ElfBase = Rect(-10304.0, -7232.0, -10176.0, -7104.0)
     gg_rct_ElfBaseHeroRespawn = Rect(-12032.0, -8832.0, -11904.0, -8704.0)
     gg_rct_ElfBaseHeroSpawn = Rect(-11904.0, -8960.0, -11776.0, -8832.0)
@@ -59974,11 +60080,11 @@ function CreateRegions()
     gg_rct_ElfToUndeadOuterLine = Rect(-4160.0, -7232.0, -4032.0, -7104.0)
     gg_rct_HeroSelectorSpawn = Rect(-18496.0, 18368.0, -18368.0, 18496.0)
     gg_rct_HumanBarracksToCenter = Rect(-6208.0, 9152.0, -6080.0, 9280.0)
-    gg_rct_HumanBarracksToCenterSpawn = Rect(-6016.0, 8704.0, -5760.0, 9728.0)
+    gg_rct_HumanBarracksToCenterSpawn = Rect(-6016.0, 8704.0, -5760.0, 9216.0)
     gg_rct_HumanBarracksToElf = Rect(-10304.0, 8000.0, -10176.0, 8128.0)
-    gg_rct_HumanBarracksToElfSpawn = Rect(-10752.0, 7680.0, -9728.0, 7936.0)
+    gg_rct_HumanBarracksToElfSpawn = Rect(-10496.0, 7680.0, -9984.0, 7936.0)
     gg_rct_HumanBarracksToOrc = Rect(-5056.0, 13248.0, -4928.0, 13376.0)
-    gg_rct_HumanBarracksToOrcSpawn = Rect(-4864.0, 12800.0, -4608.0, 13824.0)
+    gg_rct_HumanBarracksToOrcSpawn = Rect(-4864.0, 13056.0, -4608.0, 13568.0)
     gg_rct_HumanBase = Rect(-10304.0, 13248.0, -10176.0, 13376.0)
     gg_rct_HumanBaseHeroRespawn = Rect(-11904.0, 14976.0, -11776.0, 15104.0)
     gg_rct_HumanBaseHeroSpawn = Rect(-12032.0, 14848.0, -11904.0, 14976.0)
@@ -59996,11 +60102,11 @@ function CreateRegions()
     gg_rct_HumanToUndeadInnerLine = Rect(-8768.0, 11712.0, -8640.0, 11840.0)
     gg_rct_HumanToUndeadOuterLine = Rect(-5184.0, 8128.0, -5056.0, 8256.0)
     gg_rct_OrcBarracksToCenter = Rect(6080.0, 9152.0, 6208.0, 9280.0)
-    gg_rct_OrcBarracksToCenterSpawn = Rect(5760.0, 8704.0, 6016.0, 9728.0)
+    gg_rct_OrcBarracksToCenterSpawn = Rect(5760.0, 8704.0, 6016.0, 9216.0)
     gg_rct_OrcBarracksToHuman = Rect(4928.0, 13248.0, 5056.0, 13376.0)
-    gg_rct_OrcBarracksToHumanSpawn = Rect(4608.0, 12800.0, 4864.0, 13824.0)
+    gg_rct_OrcBarracksToHumanSpawn = Rect(4608.0, 13056.0, 4864.0, 13568.0)
     gg_rct_OrcBarracksToUndead = Rect(10176.0, 8000.0, 10304.0, 8128.0)
-    gg_rct_OrcBarracksToUndeadSpawn = Rect(9728.0, 7680.0, 10752.0, 7936.0)
+    gg_rct_OrcBarracksToUndeadSpawn = Rect(9984.0, 7680.0, 10496.0, 7936.0)
     gg_rct_OrcBase = Rect(10176.0, 13248.0, 10304.0, 13376.0)
     gg_rct_OrcBaseHeroRespawn = Rect(11776.0, 14976.0, 11904.0, 15104.0)
     gg_rct_OrcBaseHeroSpawn = Rect(11904.0, 14848.0, 12032.0, 14976.0)
@@ -60018,13 +60124,13 @@ function CreateRegions()
     gg_rct_OrcToUndeadInnerLine = Rect(10176.0, 11200.0, 10304.0, 11328.0)
     gg_rct_OrcToUndeadOuterLine = Rect(10176.0, 7104.0, 10304.0, 7232.0)
     gg_rct_TestArea = Rect(17280.0, 17280.0, 17408.0, 17408.0)
-    gg_rct_TestArea2 = Rect(-8640.0, 7616.0, -8512.0, 7744.0)
+    gg_rct_TestArea2 = Rect(4672.0, 11712.0, 4800.0, 11840.0)
     gg_rct_UndeadBarracksToCenter = Rect(6080.0, -3136.0, 6208.0, -3008.0)
-    gg_rct_UndeadBarracksToCenterSpawn = Rect(5760.0, -3584.0, 6016.0, -2560.0)
+    gg_rct_UndeadBarracksToCenterSpawn = Rect(5760.0, -3072.0, 6016.0, -2560.0)
     gg_rct_UndeadBarracksToElf = Rect(4928.0, -7232.0, 5056.0, -7104.0)
-    gg_rct_UndeadBarracksToElfSpawn = Rect(4608.0, -7680.0, 4864.0, -6656.0)
+    gg_rct_UndeadBarracksToElfSpawn = Rect(4608.0, -7424.0, 4864.0, -6912.0)
     gg_rct_UndeadBarracksToOrc = Rect(10176.0, -1984.0, 10304.0, -1856.0)
-    gg_rct_UndeadBarracksToOrcSpawn = Rect(9728.0, -1792.0, 10752.0, -1536.0)
+    gg_rct_UndeadBarracksToOrcSpawn = Rect(9984.0, -1792.0, 10496.0, -1536.0)
     gg_rct_UndeadBase = Rect(10176.0, -7232.0, 10304.0, -7104.0)
     gg_rct_UndeadBaseHeroRespawn = Rect(11776.0, -8960.0, 11904.0, -8832.0)
     gg_rct_UndeadBaseHeroSpawn = Rect(11904.0, -8832.0, 12032.0, -8704.0)
@@ -60441,7 +60547,6 @@ function main()
     InitSounds()
     CreateRegions()
     CreateAllDestructables()
-    CreateAllItems()
     CreateAllUnits()
     InitBlizzard()
     InitGlobals()

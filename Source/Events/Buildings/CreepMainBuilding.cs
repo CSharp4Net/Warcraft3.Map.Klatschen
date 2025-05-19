@@ -27,7 +27,7 @@ namespace Source.Events.Buildings
           return;
         }
 
-        int rebuildTime = 10;
+        int rebuildTime = 5;
 
         // Stoppe Trigger
         creepCamp.Building.Destroy();
@@ -42,6 +42,7 @@ namespace Source.Events.Buildings
         {
           try
           {
+            Program.ShowDebugMessage($"Init rebuilding of building of {creepCamp.ColorizedName}");
             // Timer wieder zerstören
             Common.DestroyTimer(timer);
             timer.Dispose();
@@ -53,6 +54,7 @@ namespace Source.Events.Buildings
 
             Area attackTargetArea;
 
+            Program.ShowDebugMessage($"Detect attack target of building of {creepCamp.ColorizedName}");
             // Ist der neue Eigentümer das Team im gleichen Quadranten, ist das Ziel das Team am anderen Ende
             // der Lane, ansonsten alternativ ist es das Team im gleichen Quadrant.
             if (newOwningPlayer.PlayerId == creepCamp.NearTeam.Computer.PlayerId)
@@ -64,6 +66,7 @@ namespace Source.Events.Buildings
               attackTargetArea = creepCamp.NearTeam.TeamBaseArea;
             }
 
+            Program.ShowDebugMessage($"Set owner and rebuild building of {creepCamp.ColorizedName}");
             creepCamp.SetOwnerAndRebuild(user.Team, attackTargetArea);
           }
           catch (Exception ex)

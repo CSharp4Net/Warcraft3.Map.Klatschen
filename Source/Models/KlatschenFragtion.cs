@@ -1,4 +1,5 @@
 ﻿using Source.Abstracts;
+using System;
 using WCSharp.Api;
 
 namespace Source.Models
@@ -19,7 +20,22 @@ namespace Source.Models
 
       if (unitTypeId == Constants.UNIT_GRUBENLORD_KLATSCHEN)
       {
-        TrainGrubenlord(Hero.Wc3Unit, abilitiesLevel);
+        var timer = Common.CreateTimer();
+        Common.TimerStart(timer, delay + 1, false, () =>
+        {
+          try
+          {
+            Common.DestroyTimer(timer);
+            timer.Dispose();
+            timer = null;
+
+            TrainGrubenlord(Hero.Wc3Unit, abilitiesLevel);
+          }
+          catch (Exception ex)
+          {
+            Program.ShowExceptionMessage("KlatschenFragtion.CreateOrReviveHero", ex);
+          }
+        });
       }
     }
 

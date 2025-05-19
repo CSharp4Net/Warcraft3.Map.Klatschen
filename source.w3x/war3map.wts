@@ -12222,7 +12222,7 @@ Banditenzelt
 }
 
 STRING 3611
-// Units: n014 (Banditenzauberer), EditorSuffix (Name - Editor Suffix)
+// Units: n014 (Furbolgahnenschamane), EditorSuffix (Name - Editor Suffix)
 {
 (Creep)
 }
@@ -12318,7 +12318,7 @@ Banditmarodeur
 }
 
 STRING 3634
-// Units: n014 (Banditenzauberer), Name (Name)
+// Units: n01O (Banditenzauberer), Name (Name)
 {
 Banditenzauberer
 }
@@ -12330,7 +12330,7 @@ Wildekinfallensteller
 }
 
 STRING 3639
-// Units: n028 (Wildekinahne), Name (Name)
+// Units: n01B (Wildekinahne), Name (Name)
 {
 Wildekinahne
 }
@@ -12444,7 +12444,7 @@ Wirbt eine Fernkampfeinheit an, die Giftpfeile verschießt und von euren Forschu
 }
 
 STRING 3665
-// Units: n014 (Banditenzauberer), Ubertip (Tooltip - Extended)
+// Units: n014 (Furbolgahnenschamane), Ubertip (Tooltip - Extended)
 {
 Wirbt eine Magieeinheit an, die Feuerblitze verschießt und Frostrüstung verteilt und von euren Forschungen profitiert.|n|n|cffffcc00Kann Boden- und Lufteinheiten angreifen.|r|n|n|cffd45e19Bei Kauf schickt dieses Lager diese Einheit in einem festen Intervall los, um euer Team im Kampf zu unterstützen.|r
 }
@@ -12522,7 +12522,7 @@ Wirbt eine Nahkampfeinheit an, welche von euren Forschungen profitiert.|n|n|cfff
 }
 
 STRING 3678
-// Units: n014 (Banditenzauberer), Description (Description)
+// Units: n014 (Furbolgahnenschamane), Description (Description)
 {
 Magieeinheit
 }
@@ -12867,5 +12867,239 @@ STRING 3735
 // Units: n01V (Wildekinfallensteller), Tip (Tooltip - Basic)
 {
 Wildekinfallensteller beschwören
+}
+
+STRING 3736
+// Units: n01X (Zentaurenbogenschütze), EditorSuffix (Name - Editor Suffix)
+{
+(Creep)
+}
+
+STRING 3737
+// Units: n01X (Zentaurenbogenschütze), Description (Description)
+{
+Fernkampfeinheit
+}
+
+STRING 3738
+// Units: n01X (Zentaurenbogenschütze), Ubertip (Tooltip - Extended)
+{
+Wirbt eine Fernkampfeinheit an, die Giftpfeile verschießt und von euren Forschungen profitiert.|n|n|cffffcc00Kann Boden- und Lufteinheiten angreifen.|r|n|n|cffd45e19Bei Kauf schickt dieses Lager diese Einheit in einem festen Intervall los, um euer Team im Kampf zu unterstützen.|r
+}
+
+STRING 3739
+// Units: n01X (Zentaurenbogenschütze), Name (Name)
+{
+Zentaurenbogenschütze
+}
+
+STRING 3740
+// Units: n01X (Zentaurenbogenschütze), Tip (Tooltip - Basic)
+{
+Zentaurenbogenschütze anheuern
+}
+
+STRING 3741
+// Units: n014 (Furbolgahnenschamane), Name (Name)
+{
+Furbolgahnenschamane
+}
+
+STRING 3742
+// Units: n014 (Furbolgahnenschamane), Tip (Tooltip - Basic)
+{
+Furbolgahnenschamane anheuern
+}
+
+STRING 3743
+// Units: n01O (Banditenzauberer), EditorSuffix (Name - Editor Suffix)
+{
+(Creep)
+}
+
+STRING 3744
+// Units: n01O (Banditenzauberer), Ubertip (Tooltip - Extended)
+{
+Wirbt eine Magieeinheit an, die Feuerblitze verschießt und Frostrüstung verteilt und von euren Forschungen profitiert.|n|n|cffffcc00Kann Boden- und Lufteinheiten angreifen.|r|n|n|cffd45e19Bei Kauf schickt dieses Lager diese Einheit in einem festen Intervall los, um euer Team im Kampf zu unterstützen.|r
+}
+
+STRING 3745
+// Units: n01O (Banditenzauberer), Description (Description)
+{
+Magieeinheit
+}
+
+STRING 3746
+// Units: n01Z (Mur'gulverlangsamer), EditorSuffix (Name - Editor Suffix)
+{
+(Creep)
+}
+
+STRING 3747
+// Units: n01Z (Mur'gulverlangsamer), Ubertip (Tooltip - Extended)
+{
+Wirbt eine Magieeinheit an, die Feuerblitze verschießt und Frostrüstung verteilt und von euren Forschungen profitiert.|n|n|cffffcc00Kann Boden- und Lufteinheiten angreifen.|r|n|n|cffd45e19Bei Kauf schickt dieses Lager diese Einheit in einem festen Intervall los, um euer Team im Kampf zu unterstützen.|r
+}
+
+STRING 3748
+// Units: n01Z (Mur'gulverlangsamer), Name (Name)
+{
+Mur'gulverlangsamer
+}
+
+STRING 3749
+// Units: n01Z (Mur'gulverlangsamer), Description (Description)
+{
+Magieeinheit
+}
+
+STRING 3750
+// Units: n01Z (Mur'gulverlangsamer), Tip (Tooltip - Basic)
+{
+Mur'gulverlangsamer anheuern
+}
+
+STRING 3751
+// Units: n01M (Neruberseher), EditorSuffix (Name - Editor Suffix)
+{
+(Creep)
+}
+
+STRING 3752
+// Units: n01M (Neruberseher), Ubertip (Tooltip - Extended)
+{
+Wirbt eine Magieeinheit an, die Feuerblitze verschießt und Frostrüstung verteilt und von euren Forschungen profitiert.|n|n|cffffcc00Kann Boden- und Lufteinheiten angreifen.|r|n|n|cffd45e19Bei Kauf schickt dieses Lager diese Einheit in einem festen Intervall los, um euer Team im Kampf zu unterstützen.|r
+}
+
+STRING 3753
+// Units: n01M (Neruberseher), Name (Name)
+{
+Neruberseher
+}
+
+STRING 3754
+// Units: n01M (Neruberseher), Description (Description)
+{
+Magieeinheit
+}
+
+STRING 3755
+// Units: n01M (Neruberseher), Tip (Tooltip - Basic)
+{
+Neruberseher beschwören
+}
+
+STRING 3756
+// Units: n01Y (Ogermagier), EditorSuffix (Name - Editor Suffix)
+{
+(Creep)
+}
+
+STRING 3757
+// Units: n01Y (Ogermagier), Ubertip (Tooltip - Extended)
+{
+Wirbt eine Magieeinheit an, die Feuerblitze verschießt und Frostrüstung verteilt und von euren Forschungen profitiert.|n|n|cffffcc00Kann Boden- und Lufteinheiten angreifen.|r|n|n|cffd45e19Bei Kauf schickt dieses Lager diese Einheit in einem festen Intervall los, um euer Team im Kampf zu unterstützen.|r
+}
+
+STRING 3758
+// Units: n01Y (Ogermagier), Name (Name)
+{
+Ogermagier
+}
+
+STRING 3759
+// Units: n01Y (Ogermagier), Description (Description)
+{
+Magieeinheit
+}
+
+STRING 3760
+// Units: n01Y (Ogermagier), Tip (Tooltip - Basic)
+{
+Ogermagier anheuern
+}
+
+STRING 3761
+// Units: n01T (Tuskarrheiler), EditorSuffix (Name - Editor Suffix)
+{
+(Creep)
+}
+
+STRING 3762
+// Units: n01T (Tuskarrheiler), Ubertip (Tooltip - Extended)
+{
+Wirbt eine Magieeinheit an, die Feuerblitze verschießt und Frostrüstung verteilt und von euren Forschungen profitiert.|n|n|cffffcc00Kann Boden- und Lufteinheiten angreifen.|r|n|n|cffd45e19Bei Kauf schickt dieses Lager diese Einheit in einem festen Intervall los, um euer Team im Kampf zu unterstützen.|r
+}
+
+STRING 3763
+// Units: n01T (Tuskarrheiler), Name (Name)
+{
+Tuskarrheiler
+}
+
+STRING 3764
+// Units: n01T (Tuskarrheiler), Description (Description)
+{
+Magieeinheit
+}
+
+STRING 3765
+// Units: n01T (Tuskarrheiler), Tip (Tooltip - Basic)
+{
+Tuskarrheiler anheuern
+}
+
+STRING 3766
+// Units: n01B (Wildekinahne), EditorSuffix (Name - Editor Suffix)
+{
+(Creep)
+}
+
+STRING 3767
+// Units: n01B (Wildekinahne), Ubertip (Tooltip - Extended)
+{
+Wirbt eine Magieeinheit an, die Feuerblitze verschießt und Frostrüstung verteilt und von euren Forschungen profitiert.|n|n|cffffcc00Kann Boden- und Lufteinheiten angreifen.|r|n|n|cffd45e19Bei Kauf schickt dieses Lager diese Einheit in einem festen Intervall los, um euer Team im Kampf zu unterstützen.|r
+}
+
+STRING 3768
+// Units: n01B (Wildekinahne), Description (Description)
+{
+Magieeinheit
+}
+
+STRING 3769
+// Units: n01B (Wildekinahne), Tip (Tooltip - Basic)
+{
+Tobendes Wildekin beschwören
+}
+
+STRING 3770
+// Units: n020 (Zentaurenzauberin), EditorSuffix (Name - Editor Suffix)
+{
+(Creep)
+}
+
+STRING 3771
+// Units: n020 (Zentaurenzauberin), Ubertip (Tooltip - Extended)
+{
+Wirbt eine Magieeinheit an, die Feuerblitze verschießt und Frostrüstung verteilt und von euren Forschungen profitiert.|n|n|cffffcc00Kann Boden- und Lufteinheiten angreifen.|r|n|n|cffd45e19Bei Kauf schickt dieses Lager diese Einheit in einem festen Intervall los, um euer Team im Kampf zu unterstützen.|r
+}
+
+STRING 3772
+// Units: n020 (Zentaurenzauberin), Name (Name)
+{
+Zentaurenzauberin
+}
+
+STRING 3773
+// Units: n020 (Zentaurenzauberin), Description (Description)
+{
+Magieeinheit
+}
+
+STRING 3774
+// Units: n020 (Zentaurenzauberin), Tip (Tooltip - Basic)
+{
+Zentaurenzauberin anheuern
 }
 

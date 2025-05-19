@@ -48,7 +48,7 @@ namespace Source.Logics
 #if DEBUG
       spawnArea = Areas.TestArea2;
       user.HeroLevelCounter = 50;
-      user.Wc3Player.Gold += 5000;
+      user.Wc3Player.Gold += 50000;
 #endif
 
       user.CreateHero(soldUnitId, spawnArea);

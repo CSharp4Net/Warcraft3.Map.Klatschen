@@ -27,5 +27,10 @@ namespace Source.Models
       trigger.RegisterEnterRegion(Wc3Region);
       trigger.AddAction(eventHandler);
     }
+
+    public new string ToString()
+    {
+      return $"[{CenterX}:{CenterY}]";
+    }
   }
 }

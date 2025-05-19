@@ -64,6 +64,9 @@ namespace Source.Models
       Common.TimerStart(timer, delay, false, () =>
       {
         Common.DestroyTimer(timer);
+        timer.Dispose();
+        timer = null;
+
         Start();
       });
     }

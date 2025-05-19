@@ -51,6 +51,10 @@ namespace Source.Models
     public TeamBase OpposingTeam { get; init; }
 
     /// <summary>
+    /// Unit-Id des Spawn-Gebäudes, welches die Einheiten automatisch erstellt und das Hauptgebäude des Lagers ist.
+    /// </summary>
+    public int BuildingUniType { get; private set; }
+    /// <summary>
     /// Spawn-Gebäude, welches die Einheiten automatisch erstellt und das Hauptgebäude des Lagers ist.
     /// </summary>
     public SpawnCreepsBuilding Building { get; private set; }
@@ -78,6 +82,8 @@ namespace Source.Models
     /// <returns></returns>
     public SpawnCreepsBuilding InitializeBuilding(int unitTypeId, float face = 0f)
     {
+      BuildingUniType = unitTypeId;
+
       // Ort anhand Zentrum einer Region erstellen
       Building = new SpawnCreepsBuilding(this, unitTypeId, BuildingArea, face);
       Building.RegisterOnDies(CreepMainBuilding.OnDies);
@@ -109,8 +115,9 @@ namespace Source.Models
 
       Wc3Player = OwnerTeam.Computer.Wc3Player;
 
+      Program.ShowDebugMessage($"Build building {BuildingUniType} at {BuildingArea.ToString()}");
       // Ort anhand Zentrum einer Region erstellen
-      Building = new SpawnCreepsBuilding(this, Building.Wc3Unit.UnitType, BuildingArea, 0f);
+      Building = new SpawnCreepsBuilding(this, BuildingUniType, BuildingArea, 0f);
       Building.RegisterOnDies(CreepMainBuilding.OnDies);
 
       // Füge direkt SpawnTrigger hinzu, welche später durch kaufen von Söldnern um Einheiten erweitert werden

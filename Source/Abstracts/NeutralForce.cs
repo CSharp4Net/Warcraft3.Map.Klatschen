@@ -26,8 +26,11 @@ namespace Source.Abstracts
       var timer = Common.CreateTimer();
       Common.TimerStart(timer, delay, false, () =>
       {
-        Hero = new SpawnedCreep(this, unitTypeId, spawnArea, 0f);
+        Common.DestroyTimer(timer);
+        timer.Dispose();
+        timer = null;
 
+        Hero = new SpawnedCreep(this, unitTypeId, spawnArea, 0f);
         Hero.Wc3Unit.HeroLevel = heroLevel;
 
         if (targetArea != null)
@@ -47,6 +50,10 @@ namespace Source.Abstracts
       var timer = Common.CreateTimer();
       Common.TimerStart(timer, delay, false, () =>
       {
+        Common.DestroyTimer(timer);
+        timer.Dispose();
+        timer = null;
+
         Common.ReviveHero(Hero.Wc3Unit, spawnArea.CenterX, spawnArea.CenterY, true);
 
         Hero.Wc3Unit.HeroLevel = heroLevel;

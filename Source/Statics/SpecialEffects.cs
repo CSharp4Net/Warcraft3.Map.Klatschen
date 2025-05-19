@@ -18,6 +18,10 @@ namespace Source.Statics
       timer timer = Common.CreateTimer();
       Common.TimerStart(timer, delay, false, () =>
       {
+        Common.DestroyTimer(timer);
+        timer.Dispose();
+        timer = null;
+
         CreateSpecialEffect(modelPath, point, scale, duration);
       });
     }

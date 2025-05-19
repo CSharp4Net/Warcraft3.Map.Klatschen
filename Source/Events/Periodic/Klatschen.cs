@@ -19,7 +19,12 @@ namespace Source.Events.Periodic
         timer weatherTimer = Common.CreateTimer();
         Common.TimerStart(weatherTimer, ConstantsEx.Interval_Event_Klatschen / 5, false, () =>
         {
+          Common.DestroyTimer(weatherTimer);
+          weatherTimer.Dispose();
+          weatherTimer = null;
+
           Common.RemoveWeatherEffect(weathereffect);
+
           weathereffect.Dispose();
           weathereffect = null;
         });
@@ -155,6 +160,8 @@ namespace Source.Events.Periodic
           if (timer1Count >= 10)
           {
             pentaTimer.Pause();
+
+            Common.DestroyTimer(pentaTimer);
             pentaTimer.Dispose();
             pentaTimer = null;
           }
@@ -207,6 +214,10 @@ namespace Source.Events.Periodic
       timer timer = Common.CreateTimer();
       Common.TimerStart(timer, duration, false, () =>
       {
+        Common.DestroyTimer(timer);
+        timer.Dispose();
+        timer = null;
+
         Common.RemoveUnit(dummy);
         dummy.Dispose();
         dummy = null;
@@ -220,6 +231,10 @@ namespace Source.Events.Periodic
       timer timer = Common.CreateTimer();
       Common.TimerStart(timer, delay, false, () =>
       {
+        Common.DestroyTimer(timer);
+        timer.Dispose();
+        timer = null;
+
         CreateAtDummyAndCastAbility(player, point, abilityId, abilityLevel, orderId, duration);
       });
     }
@@ -229,9 +244,13 @@ namespace Source.Events.Periodic
       // https://www.hiveworkshop.com/threads/beginners-guide-to-lightning-effects.220370/#herp
       var lightning = Common.AddLightningEx("AFOD", true, caster.X, caster.Y, 50, target.X, target.Y, 50);
 
-      timer timer1 = Common.CreateTimer();
-      Common.TimerStart(timer1, 1f, true, () =>
+      timer timer = Common.CreateTimer();
+      Common.TimerStart(timer, 1f, true, () =>
       {
+        Common.DestroyTimer(timer);
+        timer.Dispose();
+        timer = null;
+
         try
         {
           Common.DestroyLightning(lightning);
