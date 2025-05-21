@@ -53,7 +53,12 @@ namespace Source.Models
     /// <summary>
     /// Unit-Id des Spawn-Gebäudes, welches die Einheiten automatisch erstellt und das Hauptgebäude des Lagers ist.
     /// </summary>
-    public int BuildingUniType { get; private set; }
+    public int BuildingUnitType { get; private set; }
+    /// <summary>
+    /// Unit-Id der mächtigen Einheit, welche das Spawn-Gebäude beacht.
+    /// </summary>
+    public int DefenderUnitType { get; private set; }
+
     /// <summary>
     /// Spawn-Gebäude, welches die Einheiten automatisch erstellt und das Hauptgebäude des Lagers ist.
     /// </summary>
@@ -80,13 +85,16 @@ namespace Source.Models
     /// <param name="unitTypeId"></param>
     /// <param name="face"></param>
     /// <returns></returns>
-    public SpawnCreepsBuilding InitializeBuilding(int unitTypeId, float face = 0f)
+    public SpawnCreepsBuilding InitializeBuilding(int unitTypeId, int defenderUnitType, float face = 0f)
     {
-      BuildingUniType = unitTypeId;
+      BuildingUnitType = unitTypeId;
+      DefenderUnitType = defenderUnitType;
 
       // Ort anhand Zentrum einer Region erstellen
       Building = new SpawnCreepsBuilding(this, unitTypeId, BuildingArea, face);
       Building.RegisterOnDies(CreepMainBuilding.OnDies);
+
+      SpawnUnitInAreaAtRandomPoint(DefenderUnitType);
 
       return Building;
     }
@@ -115,10 +123,12 @@ namespace Source.Models
 
       Wc3Player = OwnerTeam.Computer.Wc3Player;
 
-      Program.ShowDebugMessage($"Build building {BuildingUniType} at {BuildingArea.ToString()}");
+      Program.ShowDebugMessage($"Build building {BuildingUnitType} at {BuildingArea.ToString()}");
       // Ort anhand Zentrum einer Region erstellen
-      Building = new SpawnCreepsBuilding(this, BuildingUniType, BuildingArea, 0f);
+      Building = new SpawnCreepsBuilding(this, BuildingUnitType, BuildingArea, 0f);
       Building.RegisterOnDies(CreepMainBuilding.OnDies);
+
+      SpawnUnitInAreaAtRandomPoint(DefenderUnitType);
 
       // Füge direkt SpawnTrigger hinzu, welche später durch kaufen von Söldnern um Einheiten erweitert werden
       Building.InitializeSpawnTrigger(Enums.SpawnInterval.Middle, AttackTargetArea)

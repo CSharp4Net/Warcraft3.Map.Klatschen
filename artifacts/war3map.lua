@@ -20321,24 +20321,24 @@ System.namespace("Source", function (namespace)
     end
     ConstructCreepCamps = function ()
       -- Menschen-Creeps
-      ConstructCreepCamp("Banditen", 1848651862 --[[Constants.UNIT_BANDITENLAGER_CREEP]], Areas.HumanCreepToElfSpawnBuilding, Areas.HumanCreepToElfSpawn, class.Humans, class.Elves)
-      ConstructCreepCamp("Tuskarr", 1848652358 --[[Constants.UNIT_TUSKARRLAGER_CREEP]], Areas.HumanCreepToOrcSpawnBuilding, Areas.HumanCreepToOrcSpawn, class.Humans, class.Orcs)
+      ConstructCreepCamp("Banditen", 1848651862 --[[Constants.UNIT_BANDITENLAGER_CREEP]], 1848652114 --[[Constants.UNIT_BANDITENF_RST_CREEP]], Areas.HumanCreepToElfSpawnBuilding, Areas.HumanCreepToElfSpawn, class.Humans, class.Elves)
+      ConstructCreepCamp("Tuskarr", 1848652358 --[[Constants.UNIT_TUSKARRLAGER_CREEP]], 1848652344 --[[Constants.UNIT_TUSKARRH_UPTLING_CREEP]], Areas.HumanCreepToOrcSpawnBuilding, Areas.HumanCreepToOrcSpawn, class.Humans, class.Orcs)
 
       -- Elfen-Creeps
-      ConstructCreepCamp("Furbolgs", 1848651856 --[[Constants.UNIT_FURBOLGLAGER_CREEP]], Areas.ElfCreepToHumanSpawnBuilding, Areas.ElfCreepToHumanSpawn, class.Elves, class.Humans)
-      ConstructCreepCamp("Wildekins", 1848652356 --[[Constants.UNIT_WILDEKINLAGER_CREEP]], Areas.ElfCreepToUndeadSpawnBuilding, Areas.ElfCreepToUndeadSpawn, class.Elves, class.Undeads)
+      ConstructCreepCamp("Furbolgs", 1848651856 --[[Constants.UNIT_FURBOLGLAGER_CREEP]], 1848652337 --[[Constants.UNIT_FURBOLGHELD_CREEP]], Areas.ElfCreepToHumanSpawnBuilding, Areas.ElfCreepToHumanSpawn, class.Elves, class.Humans)
+      ConstructCreepCamp("Wildekins", 1848652356 --[[Constants.UNIT_WILDEKINLAGER_CREEP]], 1848652355 --[[Constants.UNIT_WILDEKINALPHA_CREEP]], Areas.ElfCreepToUndeadSpawnBuilding, Areas.ElfCreepToUndeadSpawn, class.Elves, class.Undeads)
 
       -- Orcs-Creeps
-      ConstructCreepCamp("Zentauren", 1848652104 --[[Constants.UNIT_ZENTAURENLAGER_CREEP]], Areas.OrcCreepToHumanSpawnBuilding, Areas.OrcCreepToHumanSpawn, class.Orcs, class.Humans)
-      ConstructCreepCamp("Oger", 1848652342 --[[Constants.UNIT_OGERLAGER_CREEP]], Areas.OrcCreepToUndeadSpawnBuilding, Areas.OrcCreepToUndeadSpawn, class.Orcs, class.Undeads)
+      ConstructCreepCamp("Zentauren", 1848652104 --[[Constants.UNIT_ZENTAURENLAGER_CREEP]], 1848652345 --[[Constants.UNIT_ZENTAURENKHAN_CREEP]], Areas.OrcCreepToHumanSpawnBuilding, Areas.OrcCreepToHumanSpawn, class.Orcs, class.Humans)
+      ConstructCreepCamp("Oger", 1848652342 --[[Constants.UNIT_OGERLAGER_CREEP]], 1848652343 --[[Constants.UNIT_OGERLORD_CREEP]], Areas.OrcCreepToUndeadSpawnBuilding, Areas.OrcCreepToUndeadSpawn, class.Orcs, class.Undeads)
 
       -- Untoten-Creeps
-      ConstructCreepCamp("Mur'guls", 1848652340 --[[Constants.UNIT_MUR_GULLAGER_CREEP]], Areas.UndeadCreepToOrcSpawnBuilding, Areas.UndeadCreepToOrcSpawn, class.Undeads, class.Orcs)
-      ConstructCreepCamp("Neruber", 1848652106 --[[Constants.UNIT_NERUBERLAGER_CREEP]], Areas.UndeadCreepToElfSpawnBuilding, Areas.UndeadCreepToElfSpawn, class.Undeads, class.Elves)
+      ConstructCreepCamp("Mur'guls", 1848652340 --[[Constants.UNIT_MUR_GULLAGER_CREEP]], 1848652338 --[[Constants.UNIT_MUR_GULSCHATTENZAUBERER_CREEP]], Areas.UndeadCreepToOrcSpawnBuilding, Areas.UndeadCreepToOrcSpawn, class.Undeads, class.Orcs)
+      ConstructCreepCamp("Neruber", 1848652106 --[[Constants.UNIT_NERUBERLAGER_CREEP]], 1848652339 --[[Constants.UNIT_NERUBERK_NIGIN_CREEP]], Areas.UndeadCreepToElfSpawnBuilding, Areas.UndeadCreepToElfSpawn, class.Undeads, class.Elves)
     end
-    ConstructCreepCamp = function (name, buildingUniType, buildingArea, spawnArea, nearestTeam, opposingTeam)
+    ConstructCreepCamp = function (name, buildingUnitType, defenderUnitType, buildingArea, spawnArea, nearestTeam, opposingTeam)
       local creepCamp = SourceModels.CreepCamp(name, buildingArea, spawnArea, nearestTeam, opposingTeam)
-      local building = creepCamp:InitializeBuilding(buildingUniType, 0)
+      local building = creepCamp:InitializeBuilding(buildingUnitType, defenderUnitType, 0)
       class.CreepCamps:Add(creepCamp)
     end
     CreateComputerHeros = function ()
@@ -20408,7 +20408,7 @@ System.namespace("Source", function (namespace)
             { "Undeads", 0xE, out.Source.Models.Teams.UndeadTeam }
           },
           methods = {
-            { "ConstructCreepCamp", 0x609, ConstructCreepCamp, System.String, System.Int32, out.Source.Models.Area, out.Source.Models.Area, out.Source.Abstracts.TeamBase, out.Source.Abstracts.TeamBase },
+            { "ConstructCreepCamp", 0x709, ConstructCreepCamp, System.String, System.Int32, System.Int32, out.Source.Models.Area, out.Source.Models.Area, out.Source.Abstracts.TeamBase, out.Source.Abstracts.TeamBase },
             { "ConstructCreepCamps", 0x9, ConstructCreepCamps },
             { "ConstructElfBuildingAndTrigger", 0x9, ConstructElfBuildingAndTrigger },
             { "ConstructHumanBuildingAndTrigger", 0x9, ConstructHumanBuildingAndTrigger },
@@ -23052,12 +23052,15 @@ System.namespace("Source.Models", function (namespace)
     -- <param name="unitTypeId"></param>
     -- <param name="face"></param>
     -- <returns></returns>
-    InitializeBuilding = function (this, unitTypeId, face)
-      this.BuildingUniType = unitTypeId
+    InitializeBuilding = function (this, unitTypeId, defenderUnitType, face)
+      this.BuildingUnitType = unitTypeId
+      this.DefenderUnitType = defenderUnitType
 
       -- Ort anhand Zentrum einer Region erstellen
       this.Building = SourceModels.SpawnCreepsBuilding(this, unitTypeId, this.BuildingArea, face)
       this.Building:RegisterOnDies(SourceEventsBuildings.CreepMainBuilding.OnDies)
+
+      SpawnUnitInAreaAtRandomPoint(this, this.DefenderUnitType)
 
       return this.Building
     end
@@ -23082,10 +23085,12 @@ System.namespace("Source.Models", function (namespace)
 
       this.Wc3Player = this.OwnerTeam.Computer.Wc3Player
 
-      Source.Program.ShowDebugMessage("Build building " .. this.BuildingUniType .. " at " .. System.toString(this.BuildingArea:ToString1()))
+      Source.Program.ShowDebugMessage("Build building " .. this.BuildingUnitType .. " at " .. System.toString(this.BuildingArea:ToString1()))
       -- Ort anhand Zentrum einer Region erstellen
-      this.Building = SourceModels.SpawnCreepsBuilding(this, this.BuildingUniType, this.BuildingArea, 0)
+      this.Building = SourceModels.SpawnCreepsBuilding(this, this.BuildingUnitType, this.BuildingArea, 0)
       this.Building:RegisterOnDies(SourceEventsBuildings.CreepMainBuilding.OnDies)
+
+      SpawnUnitInAreaAtRandomPoint(this, this.DefenderUnitType)
 
       -- Füge direkt SpawnTrigger hinzu, welche später durch kaufen von Söldnern um Einheiten erweitert werden
       this.Building:InitializeSpawnTrigger(1 --[[SpawnInterval.Middle]], this.AttackTargetArea):Run(0)
@@ -23096,7 +23101,8 @@ System.namespace("Source.Models", function (namespace)
           out.Source.Abstracts.NeutralForce
         }
       end,
-      BuildingUniType = 0,
+      BuildingUnitType = 0,
+      DefenderUnitType = 0,
       CreateHero1 = CreateHero1,
       ReviveHero1 = ReviveHero1,
       InitializeBuilding = InitializeBuilding,
@@ -23108,7 +23114,7 @@ System.namespace("Source.Models", function (namespace)
           methods = {
             { ".ctor", 0x506, nil, System.String, out.Source.Models.Area, out.Source.Models.Area, out.Source.Abstracts.TeamBase, out.Source.Abstracts.TeamBase },
             { "CreateHero", 0x306, CreateHero1, System.Int32, System.Int32, System.Single },
-            { "InitializeBuilding", 0x286, InitializeBuilding, System.Int32, System.Single, out.Source.Models.SpawnCreepsBuilding },
+            { "InitializeBuilding", 0x386, InitializeBuilding, System.Int32, System.Int32, System.Single, out.Source.Models.SpawnCreepsBuilding },
             { "ReviveHero", 0x206, ReviveHero1, System.Int32, System.Single },
             { "SetOwnerAndRebuild", 0x206, SetOwnerAndRebuild, out.Source.Abstracts.TeamBase, out.Source.Models.Area },
             { "SpawnUnitInAreaAtRandomPoint", 0x186, SpawnUnitInAreaAtRandomPoint, System.Int32, out.Source.Models.SpawnedCreep }
@@ -23117,8 +23123,9 @@ System.namespace("Source.Models", function (namespace)
             { "AttackTargetArea", 0x6, out.Source.Models.Area },
             { "Building", 0x6, out.Source.Models.SpawnCreepsBuilding },
             { "BuildingArea", 0x6, out.Source.Models.Area },
-            { "BuildingUniType", 0x6, System.Int32 },
+            { "BuildingUnitType", 0x6, System.Int32 },
             { "ColorizedName", 0x6, System.String },
+            { "DefenderUnitType", 0x6, System.Int32 },
             { "Name", 0x6, System.String },
             { "NearTeam", 0x6, out.Source.Abstracts.TeamBase },
             { "OpposingTeam", 0x6, out.Source.Abstracts.TeamBase },
@@ -36525,6 +36532,15 @@ gg_unit_n01T_0289 = nil
 gg_unit_n01B_0292 = nil
 gg_unit_n020_0295 = nil
 gg_unit_n01X_0309 = nil
+gg_unit_n02G_0310 = nil
+gg_unit_n01R_0311 = nil
+gg_unit_n029_0312 = nil
+gg_unit_n021_0313 = nil
+gg_unit_n022_0314 = nil
+gg_unit_n023_0315 = nil
+gg_unit_n027_0316 = nil
+gg_unit_n02C_0317 = nil
+gg_unit_n028_0318 = nil
 gg_dest_HEch_0019 = nil
 gg_dest_HEch_0017 = nil
 gg_dest_HEch_0016 = nil
@@ -47341,7 +47357,7 @@ gg_dest_LTlt_10812 = nil
 gg_dest_LTlt_10813 = nil
 gg_dest_LTlt_10814 = nil
 gg_dest_LTlt_10815 = nil
-gg_dest_LTlt_10816 = nil
+gg_dest_NOfp_11503 = nil
 gg_dest_LTlt_10817 = nil
 gg_dest_LTlt_10818 = nil
 gg_dest_LTlt_10819 = nil
@@ -48025,6 +48041,237 @@ gg_dest_NTtw_11496 = nil
 gg_dest_NTtw_11497 = nil
 gg_dest_NTtw_11498 = nil
 gg_dest_LOcg_3843 = nil
+gg_dest_LOcg_6128 = nil
+gg_dest_LOcg_11501 = nil
+gg_dest_NOfp_11502 = nil
+gg_dest_LTrc_10816 = nil
+gg_dest_LTrt_11504 = nil
+gg_dest_ZPfw_11505 = nil
+gg_dest_ZPfw_11506 = nil
+gg_dest_ZPfw_11507 = nil
+gg_dest_ZPfw_11508 = nil
+gg_dest_ZPfw_11509 = nil
+gg_dest_ZPfw_11510 = nil
+gg_dest_ZPfw_11511 = nil
+gg_dest_ZPfw_11512 = nil
+gg_dest_ZPfw_11513 = nil
+gg_dest_ZPfw_11514 = nil
+gg_dest_ZPfw_11515 = nil
+gg_dest_ZPfw_11516 = nil
+gg_dest_ZPfw_11517 = nil
+gg_dest_LPrs_11518 = nil
+gg_dest_LPrs_11519 = nil
+gg_dest_LPrs_11520 = nil
+gg_dest_LPrs_11521 = nil
+gg_dest_LPrs_11522 = nil
+gg_dest_LPrs_11523 = nil
+gg_dest_LPrs_11524 = nil
+gg_dest_LRrk_11525 = nil
+gg_dest_LRrk_11526 = nil
+gg_dest_LPwh_11527 = nil
+gg_dest_LPwh_11528 = nil
+gg_dest_LPwh_11529 = nil
+gg_dest_LPwh_11530 = nil
+gg_dest_LPwh_11531 = nil
+gg_dest_LPwh_11532 = nil
+gg_dest_LPwh_11533 = nil
+gg_dest_LPwh_11534 = nil
+gg_dest_LPwb_11535 = nil
+gg_dest_LPwb_11536 = nil
+gg_dest_LPwb_11537 = nil
+gg_dest_LPwh_11538 = nil
+gg_dest_LPwh_11539 = nil
+gg_dest_LPwh_11540 = nil
+gg_dest_LPwh_11541 = nil
+gg_dest_LPwh_11542 = nil
+gg_dest_LPwh_11543 = nil
+gg_dest_LPwh_11544 = nil
+gg_dest_LPwh_11545 = nil
+gg_dest_LPwh_11546 = nil
+gg_dest_LPwh_11547 = nil
+gg_dest_LPwh_11548 = nil
+gg_dest_LPwh_11549 = nil
+gg_dest_LPwh_11550 = nil
+gg_dest_LPwh_11551 = nil
+gg_dest_LPwb_11552 = nil
+gg_dest_LPwh_11553 = nil
+gg_dest_LPwh_11554 = nil
+gg_dest_LPwh_11555 = nil
+gg_dest_LPwh_11556 = nil
+gg_dest_LPwh_11557 = nil
+gg_dest_LPwh_11558 = nil
+gg_dest_LPwh_11559 = nil
+gg_dest_LPwh_11560 = nil
+gg_dest_LPwh_11561 = nil
+gg_dest_LRrk_11562 = nil
+gg_dest_LRrk_11563 = nil
+gg_dest_LRrk_11564 = nil
+gg_dest_LRrk_11565 = nil
+gg_dest_LRrk_11566 = nil
+gg_dest_ZPf0_11567 = nil
+gg_dest_ZPf0_11568 = nil
+gg_dest_ZPf0_11569 = nil
+gg_dest_ZPf0_11570 = nil
+gg_dest_ZPf0_11571 = nil
+gg_dest_ZPf0_11572 = nil
+gg_dest_ZPf0_11573 = nil
+gg_dest_ZPf0_11574 = nil
+gg_dest_ZPf0_11575 = nil
+gg_dest_ZPf0_11576 = nil
+gg_dest_LOsc_11577 = nil
+gg_dest_YOec_11578 = nil
+gg_dest_YOec_11579 = nil
+gg_dest_YOec_11580 = nil
+gg_dest_NOfp_11581 = nil
+gg_dest_NOft_11582 = nil
+gg_dest_NOft_11583 = nil
+gg_dest_NOfg_11584 = nil
+gg_dest_NOfg_11585 = nil
+gg_dest_LOfl_11586 = nil
+gg_dest_LOfl_11587 = nil
+gg_dest_LOfl_11588 = nil
+gg_dest_LOfl_11589 = nil
+gg_dest_LOfl_11590 = nil
+gg_dest_LOic_11591 = nil
+gg_dest_LOic_11592 = nil
+gg_dest_LOic_11593 = nil
+gg_dest_LOic_11594 = nil
+gg_dest_YOec_11595 = nil
+gg_dest_YOec_11596 = nil
+gg_dest_YOec_11597 = nil
+gg_dest_YOec_11598 = nil
+gg_dest_YOec_11599 = nil
+gg_dest_YOec_11600 = nil
+gg_dest_LOsc_11601 = nil
+gg_dest_LOsc_11602 = nil
+gg_dest_LOsc_11603 = nil
+gg_dest_LOcb_11604 = nil
+gg_dest_LOsh_11605 = nil
+gg_dest_DOtp_11606 = nil
+gg_dest_DOjp_11607 = nil
+gg_dest_LOsp_11608 = nil
+gg_dest_LOsh_11609 = nil
+gg_dest_DOtp_11610 = nil
+gg_dest_LOam_11613 = nil
+gg_dest_LOam_11612 = nil
+gg_dest_LOwp_11611 = nil
+gg_dest_LOwp_11614 = nil
+gg_dest_LOwp_11615 = nil
+gg_dest_LOwp_11616 = nil
+gg_dest_LOwr_11617 = nil
+gg_dest_LOwr_11618 = nil
+gg_dest_LOt1_11619 = nil
+gg_dest_LOt1_11620 = nil
+gg_dest_LOtz_11621 = nil
+gg_dest_LOtz_11622 = nil
+gg_dest_LOtz_11623 = nil
+gg_dest_LOtz_11624 = nil
+gg_dest_LOtz_11625 = nil
+gg_dest_LOtz_11626 = nil
+gg_dest_LOtz_11627 = nil
+gg_dest_LOtz_11628 = nil
+gg_dest_LOtz_11629 = nil
+gg_dest_LOtz_11630 = nil
+gg_dest_LOtz_11631 = nil
+gg_dest_LOss_11632 = nil
+gg_dest_LOss_11633 = nil
+gg_dest_LOss_11634 = nil
+gg_dest_LOss_11635 = nil
+gg_dest_LOss_11636 = nil
+gg_dest_LOss_11637 = nil
+gg_dest_LOsk_11638 = nil
+gg_dest_LOsk_11639 = nil
+gg_dest_LOsk_11640 = nil
+gg_dest_LOsk_11641 = nil
+gg_dest_LOsk_11642 = nil
+gg_dest_LOsk_11643 = nil
+gg_dest_LOsk_11644 = nil
+gg_dest_AOsr_11645 = nil
+gg_dest_AOsr_11646 = nil
+gg_dest_AOsr_11647 = nil
+gg_dest_AOsr_11648 = nil
+gg_dest_LOrc_11649 = nil
+gg_dest_LOrc_11650 = nil
+gg_dest_LOrc_11651 = nil
+gg_dest_LOfl_11652 = nil
+gg_dest_LOfl_11653 = nil
+gg_dest_LOfl_11654 = nil
+gg_dest_LOfl_11655 = nil
+gg_dest_LOfl_11656 = nil
+gg_dest_LOfl_11657 = nil
+gg_dest_LOfl_11658 = nil
+gg_dest_LOfl_11659 = nil
+gg_dest_LOfl_11660 = nil
+gg_dest_LOss_11661 = nil
+gg_dest_LOss_11662 = nil
+gg_dest_LOss_11663 = nil
+gg_dest_LOlp_11664 = nil
+gg_dest_LOlp_11665 = nil
+gg_dest_LOlp_11666 = nil
+gg_dest_LOlp_11667 = nil
+gg_dest_LOlp_11668 = nil
+gg_dest_LOlp_11669 = nil
+gg_dest_LOlp_11670 = nil
+gg_dest_LOlp_11671 = nil
+gg_dest_LOlp_11672 = nil
+gg_dest_NOfp_11673 = nil
+gg_dest_NOfp_11674 = nil
+gg_dest_LOca_11675 = nil
+gg_dest_LOct_11676 = nil
+gg_dest_LOct_11677 = nil
+gg_dest_LOce_11678 = nil
+gg_dest_LObz_11679 = nil
+gg_dest_LObz_11680 = nil
+gg_dest_LObz_11681 = nil
+gg_dest_LObr_11682 = nil
+gg_dest_AObd_11683 = nil
+gg_dest_AObd_11684 = nil
+gg_dest_AObd_11685 = nil
+gg_dest_AObd_11686 = nil
+gg_dest_AObd_11687 = nil
+gg_dest_AObd_11688 = nil
+gg_dest_AObd_11689 = nil
+gg_dest_AObd_11690 = nil
+gg_dest_AObd_11691 = nil
+gg_dest_AObd_11692 = nil
+gg_dest_AObd_11693 = nil
+gg_dest_AObd_11694 = nil
+gg_dest_AObd_11695 = nil
+gg_dest_AObd_11696 = nil
+gg_dest_AObd_11697 = nil
+gg_dest_AObd_11698 = nil
+gg_dest_NObt_11699 = nil
+gg_dest_NObt_11700 = nil
+gg_dest_AObr_11701 = nil
+gg_dest_AObr_11702 = nil
+gg_dest_AObd_11703 = nil
+gg_dest_AObd_11704 = nil
+gg_dest_AObd_11705 = nil
+gg_dest_AObd_11706 = nil
+gg_dest_AObd_11707 = nil
+gg_dest_AObd_11708 = nil
+gg_dest_AObd_11709 = nil
+gg_dest_AObd_11710 = nil
+gg_dest_AObd_11711 = nil
+gg_dest_AObd_11712 = nil
+gg_dest_AObd_11713 = nil
+gg_dest_AObd_11714 = nil
+gg_dest_AObd_11715 = nil
+gg_dest_AObd_11716 = nil
+gg_dest_AObd_11717 = nil
+gg_dest_AObd_11718 = nil
+gg_dest_AObd_11719 = nil
+gg_dest_AObd_11720 = nil
+gg_dest_NObt_11721 = nil
+gg_dest_NObt_11722 = nil
+gg_dest_NObt_11723 = nil
+gg_dest_NObt_11724 = nil
+gg_dest_NObt_11725 = nil
+gg_dest_NObt_11726 = nil
+gg_dest_NObt_11727 = nil
+gg_dest_NObt_11728 = nil
+gg_dest_NObt_11729 = nil
+gg_dest_NObt_11730 = nil
 function InitGlobals()
 end
 
@@ -58913,7 +59160,8 @@ function CreateAllDestructables()
     gg_dest_LTlt_10813 = CreateDestructable(1280601204, -4864.0, 10240.0, 270.000, 0.827, 1)
     gg_dest_LTlt_10814 = CreateDestructable(1280601204, -4800.0, 9984.0, 270.000, 0.951, 8)
     gg_dest_LTlt_10815 = CreateDestructable(1280601204, -4800.0, 10112.0, 270.000, 1.123, 1)
-    gg_dest_LTlt_10816 = CreateDestructable(1280601204, -4736.0, 10240.0, 270.000, 1.084, 7)
+    gg_dest_NOfp_11503 = CreateDestructable(1313826416, -3648.0, 10560.0, 323.000, 1.018, 0)
+    SetDestructableLife(gg_dest_NOfp_11503, 2.55 * GetDestructableLife(gg_dest_NOfp_11503))
     gg_dest_LTlt_10817 = CreateDestructable(1280601204, -4672.0, 9920.0, 270.000, 0.926, 6)
     gg_dest_LTlt_10818 = CreateDestructable(1280601204, -4672.0, 10048.0, 270.000, 1.036, 1)
     gg_dest_LTlt_10819 = CreateDestructable(1280601204, -5376.0, 10816.0, 270.000, 1.117, 3)
@@ -59597,6 +59845,464 @@ function CreateAllDestructables()
     gg_dest_NTtw_11497 = CreateDestructable(1314157687, 7424.0, -2304.0, 270.000, 0.980, 0)
     gg_dest_NTtw_11498 = CreateDestructable(1314157687, 7104.0, -2176.0, 270.000, 0.854, 6)
     gg_dest_LOcg_3843 = CreateDestructable(1280271207, -7360.0, 6464.0, 90.000, 1.000, 0)
+    gg_dest_LOcg_6128 = CreateDestructable(1280271207, -3584.0, 11200.0, 220.000, 1.000, 0)
+    gg_dest_LOcg_11501 = CreateDestructable(1280271207, -3648.0, 11328.0, 220.000, 1.000, 0)
+    gg_dest_NOfp_11502 = CreateDestructable(1313826416, -4672.0, 10304.0, 323.000, 1.018, 0)
+    SetDestructableLife(gg_dest_NOfp_11502, 2.55 * GetDestructableLife(gg_dest_NOfp_11502))
+    gg_dest_LTrc_10816 = CreateDestructable(1280602723, -3776.0, 11456.0, 232.000, 1.000, 5)
+    gg_dest_LTrt_11504 = CreateDestructable(1280602740, -3840.0, 9984.0, 303.000, 1.000, 0)
+    gg_dest_ZPfw_11505 = CreateDestructable(1515218551, -3306.6, 10551.1, 139.000, 0.870, 2)
+    SetDestructableLife(gg_dest_ZPfw_11505, 2.55 * GetDestructableLife(gg_dest_ZPfw_11505))
+    gg_dest_ZPfw_11506 = CreateDestructable(1515218551, -3303.6, 10675.3, 161.000, 0.954, 2)
+    SetDestructableLife(gg_dest_ZPfw_11506, 2.55 * GetDestructableLife(gg_dest_ZPfw_11506))
+    gg_dest_ZPfw_11507 = CreateDestructable(1515218551, -3254.0, 10726.0, 341.000, 0.960, 4)
+    SetDestructableLife(gg_dest_ZPfw_11507, 2.55 * GetDestructableLife(gg_dest_ZPfw_11507))
+    gg_dest_ZPfw_11508 = CreateDestructable(1515218551, -3361.7, 10714.3, 288.000, 1.102, 3)
+    SetDestructableLife(gg_dest_ZPfw_11508, 2.55 * GetDestructableLife(gg_dest_ZPfw_11508))
+    gg_dest_ZPfw_11509 = CreateDestructable(1515218551, -3352.7, 10811.1, 322.000, 1.139, 2)
+    SetDestructableLife(gg_dest_ZPfw_11509, 2.55 * GetDestructableLife(gg_dest_ZPfw_11509))
+    gg_dest_ZPfw_11510 = CreateDestructable(1515218551, -3336.5, 10885.1, 124.000, 0.908, 1)
+    SetDestructableLife(gg_dest_ZPfw_11510, 2.55 * GetDestructableLife(gg_dest_ZPfw_11510))
+    gg_dest_ZPfw_11511 = CreateDestructable(1515218551, -4880.5, 10521.5, 321.000, 1.007, 1)
+    SetDestructableLife(gg_dest_ZPfw_11511, 2.55 * GetDestructableLife(gg_dest_ZPfw_11511))
+    gg_dest_ZPfw_11512 = CreateDestructable(1515218551, -4869.9, 10607.7, 344.000, 1.152, 1)
+    SetDestructableLife(gg_dest_ZPfw_11512, 2.55 * GetDestructableLife(gg_dest_ZPfw_11512))
+    gg_dest_ZPfw_11513 = CreateDestructable(1515218551, -4902.6, 10685.4, 261.000, 1.074, 3)
+    SetDestructableLife(gg_dest_ZPfw_11513, 2.55 * GetDestructableLife(gg_dest_ZPfw_11513))
+    gg_dest_ZPfw_11514 = CreateDestructable(1515218551, -4791.0, 10634.3, 23.000, 0.855, 2)
+    SetDestructableLife(gg_dest_ZPfw_11514, 2.55 * GetDestructableLife(gg_dest_ZPfw_11514))
+    gg_dest_ZPfw_11515 = CreateDestructable(1515218551, -4542.3, 10072.9, 290.000, 1.163, 4)
+    SetDestructableLife(gg_dest_ZPfw_11515, 2.55 * GetDestructableLife(gg_dest_ZPfw_11515))
+    gg_dest_ZPfw_11516 = CreateDestructable(1515218551, -4452.6, 10025.3, 109.000, 1.195, 0)
+    SetDestructableLife(gg_dest_ZPfw_11516, 2.55 * GetDestructableLife(gg_dest_ZPfw_11516))
+    gg_dest_ZPfw_11517 = CreateDestructable(1515218551, -4427.4, 10109.8, 301.000, 1.016, 2)
+    SetDestructableLife(gg_dest_ZPfw_11517, 2.55 * GetDestructableLife(gg_dest_ZPfw_11517))
+    gg_dest_LPrs_11518 = CreateDestructable(1280340595, -3982.0, 9966.8, 240.000, 0.985, 0)
+    SetDestructableLife(gg_dest_LPrs_11518, 2.55 * GetDestructableLife(gg_dest_LPrs_11518))
+    gg_dest_LPrs_11519 = CreateDestructable(1280340595, -3781.1, 10085.1, 171.000, 0.846, 0)
+    SetDestructableLife(gg_dest_LPrs_11519, 2.55 * GetDestructableLife(gg_dest_LPrs_11519))
+    gg_dest_LPrs_11520 = CreateDestructable(1280340595, -4865.6, 11248.2, 82.000, 0.885, 0)
+    SetDestructableLife(gg_dest_LPrs_11520, 2.55 * GetDestructableLife(gg_dest_LPrs_11520))
+    gg_dest_LPrs_11521 = CreateDestructable(1280340595, -4896.1, 11053.9, 325.000, 1.003, 1)
+    SetDestructableLife(gg_dest_LPrs_11521, 2.55 * GetDestructableLife(gg_dest_LPrs_11521))
+    gg_dest_LPrs_11522 = CreateDestructable(1280340595, -4109.3, 11592.3, 249.000, 0.995, 3)
+    SetDestructableLife(gg_dest_LPrs_11522, 2.55 * GetDestructableLife(gg_dest_LPrs_11522))
+    gg_dest_LPrs_11523 = CreateDestructable(1280340595, -4031.1, 11576.9, 305.000, 1.003, 3)
+    SetDestructableLife(gg_dest_LPrs_11523, 2.55 * GetDestructableLife(gg_dest_LPrs_11523))
+    gg_dest_LPrs_11524 = CreateDestructable(1280340595, -4289.7, 11548.8, 56.000, 0.919, 2)
+    SetDestructableLife(gg_dest_LPrs_11524, 2.55 * GetDestructableLife(gg_dest_LPrs_11524))
+    gg_dest_LRrk_11525 = CreateDestructable(1280471659, -4096.0, 11520.0, 205.000, 0.996, 3)
+    SetDestructableLife(gg_dest_LRrk_11525, 2.55 * GetDestructableLife(gg_dest_LRrk_11525))
+    gg_dest_LRrk_11526 = CreateDestructable(1280471659, -4864.0, 11136.0, 275.000, 1.040, 3)
+    SetDestructableLife(gg_dest_LRrk_11526, 2.55 * GetDestructableLife(gg_dest_LRrk_11526))
+    gg_dest_LPwh_11527 = CreateDestructable(1280341864, -4888.3, 10781.8, 176.000, 1.189, 0)
+    SetDestructableLife(gg_dest_LPwh_11527, 2.55 * GetDestructableLife(gg_dest_LPwh_11527))
+    gg_dest_LPwh_11528 = CreateDestructable(1280341864, -4865.9, 10390.7, 95.000, 0.975, 0)
+    SetDestructableLife(gg_dest_LPwh_11528, 2.55 * GetDestructableLife(gg_dest_LPwh_11528))
+    gg_dest_LPwh_11529 = CreateDestructable(1280341864, -3336.5, 11013.6, 170.000, 1.003, 0)
+    SetDestructableLife(gg_dest_LPwh_11529, 2.55 * GetDestructableLife(gg_dest_LPwh_11529))
+    gg_dest_LPwh_11530 = CreateDestructable(1280341864, -3365.3, 11115.7, 333.000, 1.160, 0)
+    SetDestructableLife(gg_dest_LPwh_11530, 2.55 * GetDestructableLife(gg_dest_LPwh_11530))
+    gg_dest_LPwh_11531 = CreateDestructable(1280341864, -3406.7, 11045.3, 359.000, 1.133, 0)
+    SetDestructableLife(gg_dest_LPwh_11531, 2.55 * GetDestructableLife(gg_dest_LPwh_11531))
+    gg_dest_LPwh_11532 = CreateDestructable(1280341864, -4050.8, 9951.2, 319.000, 0.962, 0)
+    SetDestructableLife(gg_dest_LPwh_11532, 2.55 * GetDestructableLife(gg_dest_LPwh_11532))
+    gg_dest_LPwh_11533 = CreateDestructable(1280341864, -3926.9, 10050.9, 254.000, 1.147, 0)
+    SetDestructableLife(gg_dest_LPwh_11533, 2.55 * GetDestructableLife(gg_dest_LPwh_11533))
+    gg_dest_LPwh_11534 = CreateDestructable(1280341864, -3889.1, 10098.4, 322.000, 1.057, 0)
+    SetDestructableLife(gg_dest_LPwh_11534, 2.55 * GetDestructableLife(gg_dest_LPwh_11534))
+    gg_dest_LPwb_11535 = CreateDestructable(1280341858, -3616.0, 10144.0, 226.000, 1.080, 0)
+    SetDestructableLife(gg_dest_LPwb_11535, 2.55 * GetDestructableLife(gg_dest_LPwb_11535))
+    gg_dest_LPwb_11536 = CreateDestructable(1280341858, 3360.0, 10912.0, 253.000, 0.951, 0)
+    SetDestructableLife(gg_dest_LPwb_11536, 2.55 * GetDestructableLife(gg_dest_LPwb_11536))
+    gg_dest_LPwb_11537 = CreateDestructable(1280341858, 3360.0, 10592.0, 158.000, 0.923, 0)
+    SetDestructableLife(gg_dest_LPwb_11537, 2.55 * GetDestructableLife(gg_dest_LPwb_11537))
+    gg_dest_LPwh_11538 = CreateDestructable(1280341864, 3387.4, 10493.6, 267.000, 0.998, 0)
+    SetDestructableLife(gg_dest_LPwh_11538, 2.55 * GetDestructableLife(gg_dest_LPwh_11538))
+    gg_dest_LPwh_11539 = CreateDestructable(1280341864, 3465.9, 10504.8, 250.000, 0.803, 0)
+    SetDestructableLife(gg_dest_LPwh_11539, 2.55 * GetDestructableLife(gg_dest_LPwh_11539))
+    gg_dest_LPwh_11540 = CreateDestructable(1280341864, 3613.2, 10533.6, 220.000, 1.047, 0)
+    SetDestructableLife(gg_dest_LPwh_11540, 2.55 * GetDestructableLife(gg_dest_LPwh_11540))
+    gg_dest_LPwh_11541 = CreateDestructable(1280341864, 3578.9, 10463.2, 253.000, 1.008, 0)
+    SetDestructableLife(gg_dest_LPwh_11541, 2.55 * GetDestructableLife(gg_dest_LPwh_11541))
+    gg_dest_LPwh_11542 = CreateDestructable(1280341864, 3470.8, 10442.4, 75.000, 1.128, 0)
+    SetDestructableLife(gg_dest_LPwh_11542, 2.55 * GetDestructableLife(gg_dest_LPwh_11542))
+    gg_dest_LPwh_11543 = CreateDestructable(1280341864, 3408.7, 10384.8, 160.000, 1.060, 0)
+    SetDestructableLife(gg_dest_LPwh_11543, 2.55 * GetDestructableLife(gg_dest_LPwh_11543))
+    gg_dest_LPwh_11544 = CreateDestructable(1280341864, 3457.8, 10325.5, 208.000, 1.055, 0)
+    SetDestructableLife(gg_dest_LPwh_11544, 2.55 * GetDestructableLife(gg_dest_LPwh_11544))
+    gg_dest_LPwh_11545 = CreateDestructable(1280341864, 3529.8, 10375.2, 89.000, 0.941, 0)
+    SetDestructableLife(gg_dest_LPwh_11545, 2.55 * GetDestructableLife(gg_dest_LPwh_11545))
+    gg_dest_LPwh_11546 = CreateDestructable(1280341864, 3523.2, 10517.6, 338.000, 0.810, 0)
+    SetDestructableLife(gg_dest_LPwh_11546, 2.55 * GetDestructableLife(gg_dest_LPwh_11546))
+    gg_dest_LPwh_11547 = CreateDestructable(1280341864, 3462.7, 10541.6, 227.000, 0.868, 0)
+    SetDestructableLife(gg_dest_LPwh_11547, 2.55 * GetDestructableLife(gg_dest_LPwh_11547))
+    gg_dest_LPwh_11548 = CreateDestructable(1280341864, 3562.5, 10584.8, 8.000, 1.074, 0)
+    SetDestructableLife(gg_dest_LPwh_11548, 2.55 * GetDestructableLife(gg_dest_LPwh_11548))
+    gg_dest_LPwh_11549 = CreateDestructable(1280341864, 3626.3, 10437.6, 107.000, 1.021, 0)
+    SetDestructableLife(gg_dest_LPwh_11549, 2.55 * GetDestructableLife(gg_dest_LPwh_11549))
+    gg_dest_LPwh_11550 = CreateDestructable(1280341864, 3438.1, 10597.6, 28.000, 1.053, 0)
+    SetDestructableLife(gg_dest_LPwh_11550, 2.55 * GetDestructableLife(gg_dest_LPwh_11550))
+    gg_dest_LPwh_11551 = CreateDestructable(1280341864, 3325.8, 10532.1, 288.000, 0.939, 0)
+    SetDestructableLife(gg_dest_LPwh_11551, 2.55 * GetDestructableLife(gg_dest_LPwh_11551))
+    gg_dest_LPwb_11552 = CreateDestructable(1280341858, 3424.0, 11168.0, 35.000, 0.869, 0)
+    SetDestructableLife(gg_dest_LPwb_11552, 2.55 * GetDestructableLife(gg_dest_LPwb_11552))
+    gg_dest_LPwh_11553 = CreateDestructable(1280341864, 3405.4, 10970.5, 86.000, 1.071, 0)
+    SetDestructableLife(gg_dest_LPwh_11553, 2.55 * GetDestructableLife(gg_dest_LPwh_11553))
+    gg_dest_LPwh_11554 = CreateDestructable(1280341864, 3382.5, 11048.9, 111.000, 1.033, 0)
+    SetDestructableLife(gg_dest_LPwh_11554, 2.55 * GetDestructableLife(gg_dest_LPwh_11554))
+    gg_dest_LPwh_11555 = CreateDestructable(1280341864, 3369.4, 11098.5, 235.000, 0.831, 0)
+    SetDestructableLife(gg_dest_LPwh_11555, 2.55 * GetDestructableLife(gg_dest_LPwh_11555))
+    gg_dest_LPwh_11556 = CreateDestructable(1280341864, 3492.1, 11103.3, 258.000, 0.892, 0)
+    SetDestructableLife(gg_dest_LPwh_11556, 2.55 * GetDestructableLife(gg_dest_LPwh_11556))
+    gg_dest_LPwh_11557 = CreateDestructable(1280341864, 3479.0, 11021.7, 208.000, 0.806, 0)
+    SetDestructableLife(gg_dest_LPwh_11557, 2.55 * GetDestructableLife(gg_dest_LPwh_11557))
+    gg_dest_LPwh_11558 = CreateDestructable(1280341864, 3531.4, 10928.8, 37.000, 1.103, 0)
+    SetDestructableLife(gg_dest_LPwh_11558, 2.55 * GetDestructableLife(gg_dest_LPwh_11558))
+    gg_dest_LPwh_11559 = CreateDestructable(1280341864, 3505.2, 10940.0, 122.000, 0.864, 0)
+    SetDestructableLife(gg_dest_LPwh_11559, 2.55 * GetDestructableLife(gg_dest_LPwh_11559))
+    gg_dest_LPwh_11560 = CreateDestructable(1280341864, 3588.7, 11007.3, 9.000, 0.819, 0)
+    SetDestructableLife(gg_dest_LPwh_11560, 2.55 * GetDestructableLife(gg_dest_LPwh_11560))
+    gg_dest_LPwh_11561 = CreateDestructable(1280341864, 3549.4, 11077.7, 172.000, 0.888, 0)
+    SetDestructableLife(gg_dest_LPwh_11561, 2.55 * GetDestructableLife(gg_dest_LPwh_11561))
+    gg_dest_LRrk_11562 = CreateDestructable(1280471659, 4736.0, 10304.0, 338.000, 0.938, 9)
+    SetDestructableLife(gg_dest_LRrk_11562, 2.55 * GetDestructableLife(gg_dest_LRrk_11562))
+    gg_dest_LRrk_11563 = CreateDestructable(1280471659, 4096.0, 9984.0, 268.000, 1.194, 9)
+    SetDestructableLife(gg_dest_LRrk_11563, 2.55 * GetDestructableLife(gg_dest_LRrk_11563))
+    gg_dest_LRrk_11564 = CreateDestructable(1280471659, 4096.0, 11584.0, 206.000, 0.830, 3)
+    SetDestructableLife(gg_dest_LRrk_11564, 2.55 * GetDestructableLife(gg_dest_LRrk_11564))
+    gg_dest_LRrk_11565 = CreateDestructable(1280471659, 4864.0, 11328.0, 22.000, 0.959, 6)
+    SetDestructableLife(gg_dest_LRrk_11565, 2.55 * GetDestructableLife(gg_dest_LRrk_11565))
+    gg_dest_LRrk_11566 = CreateDestructable(1280471659, 4416.0, 11648.0, 316.000, 1.067, 9)
+    SetDestructableLife(gg_dest_LRrk_11566, 2.55 * GetDestructableLife(gg_dest_LRrk_11566))
+    gg_dest_ZPf0_11567 = CreateDestructable(1515218480, 4320.3, 11567.2, 287.000, 1.122, 3)
+    SetDestructableLife(gg_dest_ZPf0_11567, 2.55 * GetDestructableLife(gg_dest_ZPf0_11567))
+    gg_dest_ZPf0_11568 = CreateDestructable(1515218480, 4209.5, 11534.2, 290.000, 0.962, 1)
+    SetDestructableLife(gg_dest_ZPf0_11568, 2.55 * GetDestructableLife(gg_dest_ZPf0_11568))
+    gg_dest_ZPf0_11569 = CreateDestructable(1515218480, 4889.3, 11453.0, 112.000, 1.001, 0)
+    SetDestructableLife(gg_dest_ZPf0_11569, 2.55 * GetDestructableLife(gg_dest_ZPf0_11569))
+    gg_dest_ZPf0_11570 = CreateDestructable(1515218480, 4880.6, 11194.4, 75.000, 0.883, 1)
+    SetDestructableLife(gg_dest_ZPf0_11570, 2.55 * GetDestructableLife(gg_dest_ZPf0_11570))
+    gg_dest_ZPf0_11571 = CreateDestructable(1515218480, 4810.0, 11222.2, 237.000, 1.137, 0)
+    SetDestructableLife(gg_dest_ZPf0_11571, 2.55 * GetDestructableLife(gg_dest_ZPf0_11571))
+    gg_dest_ZPf0_11572 = CreateDestructable(1515218480, 4658.9, 10312.7, 172.000, 1.028, 2)
+    SetDestructableLife(gg_dest_ZPf0_11572, 2.55 * GetDestructableLife(gg_dest_ZPf0_11572))
+    gg_dest_ZPf0_11573 = CreateDestructable(1515218480, 4776.2, 10347.7, 146.000, 1.149, 2)
+    SetDestructableLife(gg_dest_ZPf0_11573, 2.55 * GetDestructableLife(gg_dest_ZPf0_11573))
+    gg_dest_ZPf0_11574 = CreateDestructable(1515218480, 4202.2, 9978.0, 216.000, 1.063, 3)
+    SetDestructableLife(gg_dest_ZPf0_11574, 2.55 * GetDestructableLife(gg_dest_ZPf0_11574))
+    gg_dest_ZPf0_11575 = CreateDestructable(1515218480, 4117.3, 10068.0, 350.000, 0.841, 4)
+    SetDestructableLife(gg_dest_ZPf0_11575, 2.55 * GetDestructableLife(gg_dest_ZPf0_11575))
+    gg_dest_ZPf0_11576 = CreateDestructable(1515218480, 3996.4, 9951.9, 308.000, 1.078, 0)
+    SetDestructableLife(gg_dest_ZPf0_11576, 2.55 * GetDestructableLife(gg_dest_ZPf0_11576))
+    gg_dest_LOsc_11577 = CreateDestructable(1280275299, 4704.0, 10400.0, 117.000, 1.137, 0)
+    SetDestructableLife(gg_dest_LOsc_11577, 2.55 * GetDestructableLife(gg_dest_LOsc_11577))
+    gg_dest_YOec_11578 = CreateDestructable(1498375523, 3680.0, 10080.0, 51.000, 0.894, 1)
+    SetDestructableLife(gg_dest_YOec_11578, 2.55 * GetDestructableLife(gg_dest_YOec_11578))
+    gg_dest_YOec_11579 = CreateDestructable(1498375523, 3936.0, 9952.0, 139.000, 1.111, 2)
+    SetDestructableLife(gg_dest_YOec_11579, 2.55 * GetDestructableLife(gg_dest_YOec_11579))
+    gg_dest_YOec_11580 = CreateDestructable(1498375523, 4832.0, 11104.0, 178.000, 0.850, 1)
+    SetDestructableLife(gg_dest_YOec_11580, 2.55 * GetDestructableLife(gg_dest_YOec_11580))
+    gg_dest_NOfp_11581 = CreateDestructable(1313826416, 4416.0, 10368.0, 308.000, 1.113, 0)
+    SetDestructableLife(gg_dest_NOfp_11581, 2.55 * GetDestructableLife(gg_dest_NOfp_11581))
+    gg_dest_NOft_11582 = CreateDestructable(1313826420, 3648.0, 10752.0, 256.000, 1.025, 0)
+    SetDestructableLife(gg_dest_NOft_11582, 2.55 * GetDestructableLife(gg_dest_NOft_11582))
+    gg_dest_NOft_11583 = CreateDestructable(1313826420, 7936.0, 7872.0, 102.000, 1.154, 0)
+    SetDestructableLife(gg_dest_NOft_11583, 2.55 * GetDestructableLife(gg_dest_NOft_11583))
+    gg_dest_NOfg_11584 = CreateDestructable(1313826407, 8320.0, 6912.0, 156.000, 0.800, 0)
+    SetDestructableLife(gg_dest_NOfg_11584, 2.55 * GetDestructableLife(gg_dest_NOfg_11584))
+    gg_dest_NOfg_11585 = CreateDestructable(1313826407, 7040.0, 7424.0, 290.000, 1.075, 0)
+    SetDestructableLife(gg_dest_NOfg_11585, 2.55 * GetDestructableLife(gg_dest_NOfg_11585))
+    gg_dest_LOfl_11586 = CreateDestructable(1280271980, 7917.0, 7843.7, 62.000, 1.093, 0)
+    SetDestructableLife(gg_dest_LOfl_11586, 2.55 * GetDestructableLife(gg_dest_LOfl_11586))
+    gg_dest_LOfl_11587 = CreateDestructable(1280271980, 6966.5, 7090.5, 341.000, 0.921, 0)
+    SetDestructableLife(gg_dest_LOfl_11587, 2.55 * GetDestructableLife(gg_dest_LOfl_11587))
+    gg_dest_LOfl_11588 = CreateDestructable(1280271980, 7354.6, 7841.8, 255.000, 0.851, 0)
+    SetDestructableLife(gg_dest_LOfl_11588, 2.55 * GetDestructableLife(gg_dest_LOfl_11588))
+    gg_dest_LOfl_11589 = CreateDestructable(1280271980, 8425.9, 7204.7, 119.000, 1.083, 0)
+    SetDestructableLife(gg_dest_LOfl_11589, 2.55 * GetDestructableLife(gg_dest_LOfl_11589))
+    gg_dest_LOfl_11590 = CreateDestructable(1280271980, 8231.9, 6729.4, 348.000, 0.986, 0)
+    SetDestructableLife(gg_dest_LOfl_11590, 2.55 * GetDestructableLife(gg_dest_LOfl_11590))
+    gg_dest_LOic_11591 = CreateDestructable(1280272739, 8608.0, 7712.0, 295.000, 1.029, 1)
+    SetDestructableLife(gg_dest_LOic_11591, 2.55 * GetDestructableLife(gg_dest_LOic_11591))
+    gg_dest_LOic_11592 = CreateDestructable(1280272739, 8352.0, 8032.0, 84.000, 0.870, 0)
+    SetDestructableLife(gg_dest_LOic_11592, 2.55 * GetDestructableLife(gg_dest_LOic_11592))
+    gg_dest_LOic_11593 = CreateDestructable(1280272739, 8928.0, 8288.0, 234.000, 1.147, 0)
+    SetDestructableLife(gg_dest_LOic_11593, 2.55 * GetDestructableLife(gg_dest_LOic_11593))
+    gg_dest_LOic_11594 = CreateDestructable(1280272739, 8992.0, 7968.0, 257.000, 1.172, 1)
+    SetDestructableLife(gg_dest_LOic_11594, 2.55 * GetDestructableLife(gg_dest_LOic_11594))
+    gg_dest_YOec_11595 = CreateDestructable(1498375523, 8096.0, 7904.0, 255.000, 1.025, 0)
+    SetDestructableLife(gg_dest_YOec_11595, 2.55 * GetDestructableLife(gg_dest_YOec_11595))
+    gg_dest_YOec_11596 = CreateDestructable(1498375523, 6944.0, 6880.0, 25.000, 1.053, 1)
+    SetDestructableLife(gg_dest_YOec_11596, 2.55 * GetDestructableLife(gg_dest_YOec_11596))
+    gg_dest_YOec_11597 = CreateDestructable(1498375523, 7008.0, 6752.0, 128.000, 0.845, 0)
+    SetDestructableLife(gg_dest_YOec_11597, 2.55 * GetDestructableLife(gg_dest_YOec_11597))
+    gg_dest_YOec_11598 = CreateDestructable(1498375523, 7136.0, 6624.0, 120.000, 0.964, 2)
+    SetDestructableLife(gg_dest_YOec_11598, 2.55 * GetDestructableLife(gg_dest_YOec_11598))
+    gg_dest_YOec_11599 = CreateDestructable(1498375523, 7264.0, 6560.0, 286.000, 0.967, 1)
+    SetDestructableLife(gg_dest_YOec_11599, 2.55 * GetDestructableLife(gg_dest_YOec_11599))
+    gg_dest_YOec_11600 = CreateDestructable(1498375523, 7136.0, 6688.0, 210.000, 0.808, 0)
+    SetDestructableLife(gg_dest_YOec_11600, 2.55 * GetDestructableLife(gg_dest_YOec_11600))
+    gg_dest_LOsc_11601 = CreateDestructable(1280275299, 7968.0, 6432.0, 341.000, 0.966, 0)
+    SetDestructableLife(gg_dest_LOsc_11601, 2.55 * GetDestructableLife(gg_dest_LOsc_11601))
+    gg_dest_LOsc_11602 = CreateDestructable(1280275299, 7840.0, 6432.0, 61.000, 1.141, 0)
+    SetDestructableLife(gg_dest_LOsc_11602, 2.55 * GetDestructableLife(gg_dest_LOsc_11602))
+    gg_dest_LOsc_11603 = CreateDestructable(1280275299, 7904.0, 6432.0, 28.000, 1.196, 0)
+    SetDestructableLife(gg_dest_LOsc_11603, 2.55 * GetDestructableLife(gg_dest_LOsc_11603))
+    gg_dest_LOcb_11604 = CreateDestructable(1280271202, 7488.0, 6464.0, 245.000, 1.110, 0)
+    SetDestructableLife(gg_dest_LOcb_11604, 2.55 * GetDestructableLife(gg_dest_LOcb_11604))
+    gg_dest_LOsh_11605 = CreateDestructable(1280275304, 7712.0, 6432.0, 201.000, 1.035, 2)
+    SetDestructableLife(gg_dest_LOsh_11605, 2.55 * GetDestructableLife(gg_dest_LOsh_11605))
+    gg_dest_DOtp_11606 = CreateDestructable(1146057840, 7744.0, 7936.0, 179.000, 1.098, 0)
+    SetDestructableLife(gg_dest_DOtp_11606, 2.55 * GetDestructableLife(gg_dest_DOtp_11606))
+    gg_dest_DOjp_11607 = CreateDestructable(1146055280, -7232.0, 6656.0, 156.000, 1.173, 0)
+    SetDestructableLife(gg_dest_DOjp_11607, 2.55 * GetDestructableLife(gg_dest_DOjp_11607))
+    gg_dest_LOsp_11608 = CreateDestructable(1280275312, -9098.7, 8199.9, 90.000, 1.069, 0)
+    SetDestructableLife(gg_dest_LOsp_11608, 2.55 * GetDestructableLife(gg_dest_LOsp_11608))
+    gg_dest_LOsh_11609 = CreateDestructable(1280275304, -8544.0, 7392.0, 196.000, 1.164, 0)
+    SetDestructableLife(gg_dest_LOsh_11609, 2.55 * GetDestructableLife(gg_dest_LOsh_11609))
+    gg_dest_DOtp_11610 = CreateDestructable(1146057840, -8768.0, 7680.0, 233.000, 1.069, 1)
+    SetDestructableLife(gg_dest_DOtp_11610, 2.55 * GetDestructableLife(gg_dest_DOtp_11610))
+    gg_dest_LOam_11613 = CreateDestructable(1280270701, 3744.0, 11424.0, 288.000, 1.723, 0)
+    SetDestructableLife(gg_dest_LOam_11613, 2.55 * GetDestructableLife(gg_dest_LOam_11613))
+    gg_dest_LOam_11612 = CreateDestructable(1280270701, 3552.0, 11296.0, 320.000, 1.726, 0)
+    SetDestructableLife(gg_dest_LOam_11612, 2.55 * GetDestructableLife(gg_dest_LOam_11612))
+    gg_dest_LOwp_11611 = CreateDestructable(1280276336, 8160.0, -416.0, 38.000, 1.859, 0)
+    SetDestructableLife(gg_dest_LOwp_11611, 2.55 * GetDestructableLife(gg_dest_LOwp_11611))
+    gg_dest_LOwp_11614 = CreateDestructable(1280276336, 7200.0, -480.0, 345.000, 1.217, 0)
+    SetDestructableLife(gg_dest_LOwp_11614, 2.55 * GetDestructableLife(gg_dest_LOwp_11614))
+    gg_dest_LOwp_11615 = CreateDestructable(1280276336, 7328.0, -352.0, 300.000, 1.175, 0)
+    SetDestructableLife(gg_dest_LOwp_11615, 2.55 * GetDestructableLife(gg_dest_LOwp_11615))
+    gg_dest_LOwp_11616 = CreateDestructable(1280276336, 7520.0, -288.0, 79.000, 1.253, 0)
+    SetDestructableLife(gg_dest_LOwp_11616, 2.55 * GetDestructableLife(gg_dest_LOwp_11616))
+    gg_dest_LOwr_11617 = CreateDestructable(1280276338, 8448.0, -1024.0, 337.000, 1.051, 0)
+    SetDestructableLife(gg_dest_LOwr_11617, 2.55 * GetDestructableLife(gg_dest_LOwr_11617))
+    gg_dest_LOwr_11618 = CreateDestructable(1280276338, 7040.0, -1408.0, 164.000, 0.844, 0)
+    SetDestructableLife(gg_dest_LOwr_11618, 2.55 * GetDestructableLife(gg_dest_LOwr_11618))
+    gg_dest_LOt1_11619 = CreateDestructable(1280275505, 6976.0, -1216.0, 53.000, 1.199, 0)
+    SetDestructableLife(gg_dest_LOt1_11619, 2.55 * GetDestructableLife(gg_dest_LOt1_11619))
+    gg_dest_LOt1_11620 = CreateDestructable(1280275505, 6976.0, -832.0, 283.000, 0.928, 0)
+    SetDestructableLife(gg_dest_LOt1_11620, 2.55 * GetDestructableLife(gg_dest_LOt1_11620))
+    gg_dest_LOtz_11621 = CreateDestructable(1280275578, 8664.8, -1442.8, 55.000, 1.147, 0)
+    SetDestructableLife(gg_dest_LOtz_11621, 2.55 * GetDestructableLife(gg_dest_LOtz_11621))
+    gg_dest_LOtz_11622 = CreateDestructable(1280275578, 8345.2, -1917.4, 189.000, 0.889, 0)
+    SetDestructableLife(gg_dest_LOtz_11622, 2.55 * GetDestructableLife(gg_dest_LOtz_11622))
+    gg_dest_LOtz_11623 = CreateDestructable(1280275578, 8897.0, -2191.1, 65.000, 1.100, 2)
+    SetDestructableLife(gg_dest_LOtz_11623, 2.55 * GetDestructableLife(gg_dest_LOtz_11623))
+    gg_dest_LOtz_11624 = CreateDestructable(1280275578, 8945.8, -1680.9, 182.000, 0.822, 1)
+    SetDestructableLife(gg_dest_LOtz_11624, 2.55 * GetDestructableLife(gg_dest_LOtz_11624))
+    gg_dest_LOtz_11625 = CreateDestructable(1280275578, 7195.8, -662.4, 114.000, 0.819, 2)
+    SetDestructableLife(gg_dest_LOtz_11625, 2.55 * GetDestructableLife(gg_dest_LOtz_11625))
+    gg_dest_LOtz_11626 = CreateDestructable(1280275578, 8241.9, -711.0, 285.000, 1.124, 2)
+    SetDestructableLife(gg_dest_LOtz_11626, 2.55 * GetDestructableLife(gg_dest_LOtz_11626))
+    gg_dest_LOtz_11627 = CreateDestructable(1280275578, 7658.0, 6402.2, 350.000, 1.187, 2)
+    SetDestructableLife(gg_dest_LOtz_11627, 2.55 * GetDestructableLife(gg_dest_LOtz_11627))
+    gg_dest_LOtz_11628 = CreateDestructable(1280275578, 7041.1, 6873.2, 330.000, 0.986, 0)
+    SetDestructableLife(gg_dest_LOtz_11628, 2.55 * GetDestructableLife(gg_dest_LOtz_11628))
+    gg_dest_LOtz_11629 = CreateDestructable(1280275578, 7245.1, 6675.7, 230.000, 1.001, 0)
+    SetDestructableLife(gg_dest_LOtz_11629, 2.55 * GetDestructableLife(gg_dest_LOtz_11629))
+    gg_dest_LOtz_11630 = CreateDestructable(1280275578, 7617.4, 7897.2, 232.000, 0.805, 0)
+    SetDestructableLife(gg_dest_LOtz_11630, 2.55 * GetDestructableLife(gg_dest_LOtz_11630))
+    gg_dest_LOtz_11631 = CreateDestructable(1280275578, 8419.4, 7376.3, 254.000, 1.077, 0)
+    SetDestructableLife(gg_dest_LOtz_11631, 2.55 * GetDestructableLife(gg_dest_LOtz_11631))
+    gg_dest_LOss_11632 = CreateDestructable(1280275315, 7904.0, -1760.0, 336.000, 0.883, 3)
+    SetDestructableLife(gg_dest_LOss_11632, 2.55 * GetDestructableLife(gg_dest_LOss_11632))
+    gg_dest_LOss_11633 = CreateDestructable(1280275315, 8096.0, -1760.0, 112.000, 0.852, 4)
+    SetDestructableLife(gg_dest_LOss_11633, 2.55 * GetDestructableLife(gg_dest_LOss_11633))
+    gg_dest_LOss_11634 = CreateDestructable(1280275315, 8480.0, -1184.0, 214.000, 1.038, 3)
+    SetDestructableLife(gg_dest_LOss_11634, 2.55 * GetDestructableLife(gg_dest_LOss_11634))
+    gg_dest_LOss_11635 = CreateDestructable(1280275315, 6944.0, -992.0, 346.000, 0.843, 4)
+    SetDestructableLife(gg_dest_LOss_11635, 2.55 * GetDestructableLife(gg_dest_LOss_11635))
+    gg_dest_LOss_11636 = CreateDestructable(1280275315, 7712.0, -288.0, 337.000, 1.003, 0)
+    SetDestructableLife(gg_dest_LOss_11636, 2.55 * GetDestructableLife(gg_dest_LOss_11636))
+    gg_dest_LOss_11637 = CreateDestructable(1280275315, 8224.0, -544.0, 297.000, 1.170, 4)
+    SetDestructableLife(gg_dest_LOss_11637, 2.55 * GetDestructableLife(gg_dest_LOss_11637))
+    gg_dest_LOsk_11638 = CreateDestructable(1280275307, 3840.0, -5312.0, 249.000, 1.157, 2)
+    SetDestructableLife(gg_dest_LOsk_11638, 2.55 * GetDestructableLife(gg_dest_LOsk_11638))
+    gg_dest_LOsk_11639 = CreateDestructable(1280275307, 4160.0, -5376.0, 309.000, 0.955, 2)
+    SetDestructableLife(gg_dest_LOsk_11639, 2.55 * GetDestructableLife(gg_dest_LOsk_11639))
+    gg_dest_LOsk_11640 = CreateDestructable(1280275307, 4032.0, -5312.0, 264.000, 1.183, 0)
+    SetDestructableLife(gg_dest_LOsk_11640, 2.55 * GetDestructableLife(gg_dest_LOsk_11640))
+    gg_dest_LOsk_11641 = CreateDestructable(1280275307, 4800.0, -4416.0, 55.000, 0.877, 3)
+    SetDestructableLife(gg_dest_LOsk_11641, 2.55 * GetDestructableLife(gg_dest_LOsk_11641))
+    gg_dest_LOsk_11642 = CreateDestructable(1280275307, 4864.0, -4864.0, 157.000, 1.184, 2)
+    SetDestructableLife(gg_dest_LOsk_11642, 2.55 * GetDestructableLife(gg_dest_LOsk_11642))
+    gg_dest_LOsk_11643 = CreateDestructable(1280275307, 4800.0, -4288.0, 333.000, 1.054, 0)
+    SetDestructableLife(gg_dest_LOsk_11643, 2.55 * GetDestructableLife(gg_dest_LOsk_11643))
+    gg_dest_LOsk_11644 = CreateDestructable(1280275307, 4672.0, -4160.0, 259.000, 0.890, 3)
+    SetDestructableLife(gg_dest_LOsk_11644, 2.55 * GetDestructableLife(gg_dest_LOsk_11644))
+    gg_dest_AOsr_11645 = CreateDestructable(1095725938, 3543.8, -4823.6, 82.000, 0.824, 0)
+    SetDestructableLife(gg_dest_AOsr_11645, 2.55 * GetDestructableLife(gg_dest_AOsr_11645))
+    gg_dest_AOsr_11646 = CreateDestructable(1095725938, 3486.4, -4391.8, 266.000, 0.817, 1)
+    SetDestructableLife(gg_dest_AOsr_11646, 2.55 * GetDestructableLife(gg_dest_AOsr_11646))
+    gg_dest_AOsr_11647 = CreateDestructable(1095725938, 3878.5, -4035.5, 286.000, 1.159, 2)
+    SetDestructableLife(gg_dest_AOsr_11647, 2.55 * GetDestructableLife(gg_dest_AOsr_11647))
+    gg_dest_AOsr_11648 = CreateDestructable(1095725938, 4112.1, -3917.6, 134.000, 0.847, 2)
+    SetDestructableLife(gg_dest_AOsr_11648, 2.55 * GetDestructableLife(gg_dest_AOsr_11648))
+    gg_dest_LOrc_11649 = CreateDestructable(1280275043, 3392.0, -4576.0, 270.000, 0.898, 0)
+    SetDestructableLife(gg_dest_LOrc_11649, 2.55 * GetDestructableLife(gg_dest_LOrc_11649))
+    gg_dest_LOrc_11650 = CreateDestructable(1280275043, 3392.0, -4704.0, 270.000, 1.018, 0)
+    SetDestructableLife(gg_dest_LOrc_11650, 2.55 * GetDestructableLife(gg_dest_LOrc_11650))
+    gg_dest_LOrc_11651 = CreateDestructable(1280275043, 3424.0, -4864.0, 0.000, 0.845, 0)
+    SetDestructableLife(gg_dest_LOrc_11651, 2.55 * GetDestructableLife(gg_dest_LOrc_11651))
+    gg_dest_LOfl_11652 = CreateDestructable(1280271980, 3512.1, -4389.9, 350.000, 1.049, 0)
+    SetDestructableLife(gg_dest_LOfl_11652, 2.55 * GetDestructableLife(gg_dest_LOfl_11652))
+    gg_dest_LOfl_11653 = CreateDestructable(1280271980, 3870.5, -4056.8, 47.000, 1.082, 0)
+    SetDestructableLife(gg_dest_LOfl_11653, 2.55 * GetDestructableLife(gg_dest_LOfl_11653))
+    gg_dest_LOfl_11654 = CreateDestructable(1280271980, 3569.6, -4806.2, 304.000, 0.919, 0)
+    SetDestructableLife(gg_dest_LOfl_11654, 2.55 * GetDestructableLife(gg_dest_LOfl_11654))
+    gg_dest_LOfl_11655 = CreateDestructable(1280271980, 4112.1, -3909.9, 203.000, 0.925, 0)
+    SetDestructableLife(gg_dest_LOfl_11655, 2.55 * GetDestructableLife(gg_dest_LOfl_11655))
+    gg_dest_LOfl_11656 = CreateDestructable(1280271980, 4791.3, -4272.0, 85.000, 1.137, 0)
+    SetDestructableLife(gg_dest_LOfl_11656, 2.55 * GetDestructableLife(gg_dest_LOfl_11656))
+    gg_dest_LOfl_11657 = CreateDestructable(1280271980, 3997.3, -5290.5, 340.000, 0.938, 0)
+    SetDestructableLife(gg_dest_LOfl_11657, 2.55 * GetDestructableLife(gg_dest_LOfl_11657))
+    gg_dest_LOfl_11658 = CreateDestructable(1280271980, 4782.3, -5290.4, 191.000, 1.028, 0)
+    SetDestructableLife(gg_dest_LOfl_11658, 2.55 * GetDestructableLife(gg_dest_LOfl_11658))
+    gg_dest_LOfl_11659 = CreateDestructable(1280271980, 4955.5, -6021.7, 282.000, 0.837, 0)
+    SetDestructableLife(gg_dest_LOfl_11659, 2.55 * GetDestructableLife(gg_dest_LOfl_11659))
+    gg_dest_LOfl_11660 = CreateDestructable(1280271980, 4933.1, -5704.9, 193.000, 1.058, 0)
+    SetDestructableLife(gg_dest_LOfl_11660, 2.55 * GetDestructableLife(gg_dest_LOfl_11660))
+    gg_dest_LOss_11661 = CreateDestructable(1280275315, -4640.0, -5472.0, 228.000, 0.847, 4)
+    SetDestructableLife(gg_dest_LOss_11661, 2.55 * GetDestructableLife(gg_dest_LOss_11661))
+    gg_dest_LOss_11662 = CreateDestructable(1280275315, -5216.0, -5472.0, 308.000, 0.895, 5)
+    SetDestructableLife(gg_dest_LOss_11662, 2.55 * GetDestructableLife(gg_dest_LOss_11662))
+    gg_dest_LOss_11663 = CreateDestructable(1280275315, -5280.0, -5856.0, 351.000, 0.880, 5)
+    SetDestructableLife(gg_dest_LOss_11663, 2.55 * GetDestructableLife(gg_dest_LOss_11663))
+    gg_dest_LOlp_11664 = CreateDestructable(1280273520, -9184.0, -2080.0, 306.000, 0.880, 0)
+    SetDestructableLife(gg_dest_LOlp_11664, 2.55 * GetDestructableLife(gg_dest_LOlp_11664))
+    gg_dest_LOlp_11665 = CreateDestructable(1280273520, -8928.0, -1696.0, 112.000, 0.919, 1)
+    SetDestructableLife(gg_dest_LOlp_11665, 2.55 * GetDestructableLife(gg_dest_LOlp_11665))
+    gg_dest_LOlp_11666 = CreateDestructable(1280273520, -8352.0, -1888.0, 189.000, 1.150, 1)
+    SetDestructableLife(gg_dest_LOlp_11666, 2.55 * GetDestructableLife(gg_dest_LOlp_11666))
+    gg_dest_LOlp_11667 = CreateDestructable(1280273520, -8480.0, -1504.0, 153.000, 0.888, 1)
+    SetDestructableLife(gg_dest_LOlp_11667, 2.55 * GetDestructableLife(gg_dest_LOlp_11667))
+    gg_dest_LOlp_11668 = CreateDestructable(1280273520, -7264.0, -1696.0, 347.000, 0.855, 1)
+    SetDestructableLife(gg_dest_LOlp_11668, 2.55 * GetDestructableLife(gg_dest_LOlp_11668))
+    gg_dest_LOlp_11669 = CreateDestructable(1280273520, -6944.0, -1120.0, 249.000, 0.924, 1)
+    SetDestructableLife(gg_dest_LOlp_11669, 2.55 * GetDestructableLife(gg_dest_LOlp_11669))
+    gg_dest_LOlp_11670 = CreateDestructable(1280273520, -6944.0, -800.0, 300.000, 1.084, 1)
+    SetDestructableLife(gg_dest_LOlp_11670, 2.55 * GetDestructableLife(gg_dest_LOlp_11670))
+    gg_dest_LOlp_11671 = CreateDestructable(1280273520, -7520.0, -288.0, 234.000, 1.136, 0)
+    SetDestructableLife(gg_dest_LOlp_11671, 2.55 * GetDestructableLife(gg_dest_LOlp_11671))
+    gg_dest_LOlp_11672 = CreateDestructable(1280273520, -8160.0, -480.0, 39.000, 0.969, 1)
+    SetDestructableLife(gg_dest_LOlp_11672, 2.55 * GetDestructableLife(gg_dest_LOlp_11672))
+    gg_dest_NOfp_11673 = CreateDestructable(1313826416, -7680.0, -384.0, 224.000, 0.877, 0)
+    SetDestructableLife(gg_dest_NOfp_11673, 2.55 * GetDestructableLife(gg_dest_NOfp_11673))
+    gg_dest_NOfp_11674 = CreateDestructable(1313826416, -7104.0, -1024.0, 192.000, 1.059, 0)
+    SetDestructableLife(gg_dest_NOfp_11674, 2.55 * GetDestructableLife(gg_dest_NOfp_11674))
+    gg_dest_LOca_11675 = CreateDestructable(1280271201, 3680.0, -4576.0, 312.000, 1.192, 0)
+    SetDestructableLife(gg_dest_LOca_11675, 2.55 * GetDestructableLife(gg_dest_LOca_11675))
+    gg_dest_LOct_11676 = CreateDestructable(1280271220, -4352.0, -3968.0, 137.000, 1.051, 0)
+    SetDestructableLife(gg_dest_LOct_11676, 2.55 * GetDestructableLife(gg_dest_LOct_11676))
+    gg_dest_LOct_11677 = CreateDestructable(1280271220, -4032.0, -3968.0, 247.000, 1.138, 0)
+    SetDestructableLife(gg_dest_LOct_11677, 2.55 * GetDestructableLife(gg_dest_LOct_11677))
+    gg_dest_LOce_11678 = CreateDestructable(1280271205, -3584.0, -4096.0, 274.000, 1.161, 0)
+    SetDestructableLife(gg_dest_LOce_11678, 2.55 * GetDestructableLife(gg_dest_LOce_11678))
+    gg_dest_LObz_11679 = CreateDestructable(1280270970, -3616.0, -4576.0, 16.000, 0.930, 0)
+    SetDestructableLife(gg_dest_LObz_11679, 2.55 * GetDestructableLife(gg_dest_LObz_11679))
+    gg_dest_LObz_11680 = CreateDestructable(1280270970, -4384.0, -4256.0, 266.000, 0.953, 0)
+    SetDestructableLife(gg_dest_LObz_11680, 2.55 * GetDestructableLife(gg_dest_LObz_11680))
+    gg_dest_LObz_11681 = CreateDestructable(1280270970, -4192.0, -5216.0, 2.000, 0.834, 0)
+    SetDestructableLife(gg_dest_LObz_11681, 2.55 * GetDestructableLife(gg_dest_LObz_11681))
+    gg_dest_LObr_11682 = CreateDestructable(1280270962, -3744.0, -4128.0, 152.000, 1.097, 0)
+    SetDestructableLife(gg_dest_LObr_11682, 2.55 * GetDestructableLife(gg_dest_LObr_11682))
+    gg_dest_AObd_11683 = CreateDestructable(1095721572, -3691.1, -4233.1, 274.000, 1.105, 0)
+    SetDestructableLife(gg_dest_AObd_11683, 2.55 * GetDestructableLife(gg_dest_AObd_11683))
+    gg_dest_AObd_11684 = CreateDestructable(1095721572, -3540.6, -4732.7, 73.000, 0.914, 0)
+    SetDestructableLife(gg_dest_AObd_11684, 2.55 * GetDestructableLife(gg_dest_AObd_11684))
+    gg_dest_AObd_11685 = CreateDestructable(1095721572, -4483.0, -4994.1, 63.000, 1.011, 0)
+    SetDestructableLife(gg_dest_AObd_11685, 2.55 * GetDestructableLife(gg_dest_AObd_11685))
+    gg_dest_AObd_11686 = CreateDestructable(1095721572, -7232.8, -1314.2, 212.000, 1.073, 0)
+    SetDestructableLife(gg_dest_AObd_11686, 2.55 * GetDestructableLife(gg_dest_AObd_11686))
+    gg_dest_AObd_11687 = CreateDestructable(1095721572, -7462.8, -550.9, 336.000, 1.094, 0)
+    SetDestructableLife(gg_dest_AObd_11687, 2.55 * GetDestructableLife(gg_dest_AObd_11687))
+    gg_dest_AObd_11688 = CreateDestructable(1095721572, -8350.2, -1026.0, 179.000, 0.953, 0)
+    SetDestructableLife(gg_dest_AObd_11688, 2.55 * GetDestructableLife(gg_dest_AObd_11688))
+    gg_dest_AObd_11689 = CreateDestructable(1095721572, -5016.5, -5570.0, 327.000, 0.880, 0)
+    SetDestructableLife(gg_dest_AObd_11689, 2.55 * GetDestructableLife(gg_dest_AObd_11689))
+    gg_dest_AObd_11690 = CreateDestructable(1095721572, -8745.9, -1823.7, 156.000, 1.100, 0)
+    SetDestructableLife(gg_dest_AObd_11690, 2.55 * GetDestructableLife(gg_dest_AObd_11690))
+    gg_dest_AObd_11691 = CreateDestructable(1095721572, -9278.9, -4581.9, 290.000, 0.817, 0)
+    SetDestructableLife(gg_dest_AObd_11691, 2.55 * GetDestructableLife(gg_dest_AObd_11691))
+    gg_dest_AObd_11692 = CreateDestructable(1095721572, -11290.3, -6634.8, 359.000, 0.906, 0)
+    SetDestructableLife(gg_dest_AObd_11692, 2.55 * GetDestructableLife(gg_dest_AObd_11692))
+    gg_dest_AObd_11693 = CreateDestructable(1095721572, -7927.0, -6374.0, 171.000, 0.866, 0)
+    SetDestructableLife(gg_dest_AObd_11693, 2.55 * GetDestructableLife(gg_dest_AObd_11693))
+    gg_dest_AObd_11694 = CreateDestructable(1095721572, -9697.8, -8431.5, 223.000, 1.178, 0)
+    SetDestructableLife(gg_dest_AObd_11694, 2.55 * GetDestructableLife(gg_dest_AObd_11694))
+    gg_dest_AObd_11695 = CreateDestructable(1095721572, -11709.1, -9649.6, 196.000, 0.933, 0)
+    SetDestructableLife(gg_dest_AObd_11695, 2.55 * GetDestructableLife(gg_dest_AObd_11695))
+    gg_dest_AObd_11696 = CreateDestructable(1095721572, -12826.4, -8754.9, 353.000, 1.106, 0)
+    SetDestructableLife(gg_dest_AObd_11696, 2.55 * GetDestructableLife(gg_dest_AObd_11696))
+    gg_dest_AObd_11697 = CreateDestructable(1095721572, -4226.1, -6247.7, 155.000, 0.951, 0)
+    SetDestructableLife(gg_dest_AObd_11697, 2.55 * GetDestructableLife(gg_dest_AObd_11697))
+    gg_dest_AObd_11698 = CreateDestructable(1095721572, -9032.1, -1242.0, 337.000, 1.073, 0)
+    SetDestructableLife(gg_dest_AObd_11698, 2.55 * GetDestructableLife(gg_dest_AObd_11698))
+    gg_dest_NObt_11699 = CreateDestructable(1313825396, -6364.6, -5628.5, 249.000, 0.946, 0)
+    SetDestructableLife(gg_dest_NObt_11699, 2.55 * GetDestructableLife(gg_dest_NObt_11699))
+    gg_dest_NObt_11700 = CreateDestructable(1313825396, -8699.4, -3361.8, 51.000, 1.021, 0)
+    SetDestructableLife(gg_dest_NObt_11700, 2.55 * GetDestructableLife(gg_dest_NObt_11700))
+    gg_dest_AObr_11701 = CreateDestructable(1095721586, 7296.0, -1472.0, 92.000, 0.814, 0)
+    SetDestructableLife(gg_dest_AObr_11701, 2.55 * GetDestructableLife(gg_dest_AObr_11701))
+    gg_dest_AObr_11702 = CreateDestructable(1095721586, 8000.0, -640.0, 27.000, 0.935, 0)
+    SetDestructableLife(gg_dest_AObr_11702, 2.55 * GetDestructableLife(gg_dest_AObr_11702))
+    gg_dest_AObd_11703 = CreateDestructable(1095721572, 9201.3, 7208.5, 156.000, 1.018, 0)
+    SetDestructableLife(gg_dest_AObd_11703, 2.55 * GetDestructableLife(gg_dest_AObd_11703))
+    gg_dest_AObd_11704 = CreateDestructable(1095721572, 9267.0, 10548.1, 159.000, 1.064, 0)
+    SetDestructableLife(gg_dest_AObd_11704, 2.55 * GetDestructableLife(gg_dest_AObd_11704))
+    gg_dest_AObd_11705 = CreateDestructable(1095721572, 7629.4, 12050.6, 169.000, 0.884, 0)
+    SetDestructableLife(gg_dest_AObd_11705, 2.55 * GetDestructableLife(gg_dest_AObd_11705))
+    gg_dest_AObd_11706 = CreateDestructable(1095721572, 3939.0, 12050.5, 327.000, 0.853, 0)
+    SetDestructableLife(gg_dest_AObd_11706, 2.55 * GetDestructableLife(gg_dest_AObd_11706))
+    gg_dest_AObd_11707 = CreateDestructable(1095721572, 4829.5, 9791.4, 202.000, 0.889, 0)
+    SetDestructableLife(gg_dest_AObd_11707, 2.55 * GetDestructableLife(gg_dest_AObd_11707))
+    gg_dest_AObd_11708 = CreateDestructable(1095721572, 6630.1, 7870.1, 276.000, 1.069, 0)
+    SetDestructableLife(gg_dest_AObd_11708, 2.55 * GetDestructableLife(gg_dest_AObd_11708))
+    gg_dest_AObd_11709 = CreateDestructable(1095721572, -4005.0, 12209.2, 208.000, 1.101, 0)
+    SetDestructableLife(gg_dest_AObd_11709, 2.55 * GetDestructableLife(gg_dest_AObd_11709))
+    gg_dest_AObd_11710 = CreateDestructable(1095721572, -7778.6, 12334.8, 211.000, 0.910, 0)
+    SetDestructableLife(gg_dest_AObd_11710, 2.55 * GetDestructableLife(gg_dest_AObd_11710))
+    gg_dest_AObd_11711 = CreateDestructable(1095721572, -9365.8, 10960.1, 203.000, 0.860, 0)
+    SetDestructableLife(gg_dest_AObd_11711, 2.55 * GetDestructableLife(gg_dest_AObd_11711))
+    gg_dest_AObd_11712 = CreateDestructable(1095721572, -11428.6, 12929.6, 233.000, 1.125, 0)
+    SetDestructableLife(gg_dest_AObd_11712, 2.55 * GetDestructableLife(gg_dest_AObd_11712))
+    gg_dest_AObd_11713 = CreateDestructable(1095721572, -9751.6, 14432.8, 252.000, 1.030, 0)
+    SetDestructableLife(gg_dest_AObd_11713, 2.55 * GetDestructableLife(gg_dest_AObd_11713))
+    gg_dest_AObd_11714 = CreateDestructable(1095721572, -9144.3, 7321.2, 78.000, 0.864, 0)
+    SetDestructableLife(gg_dest_AObd_11714, 2.55 * GetDestructableLife(gg_dest_AObd_11714))
+    gg_dest_AObd_11715 = CreateDestructable(1095721572, -6849.4, 8141.6, 342.000, 1.169, 0)
+    SetDestructableLife(gg_dest_AObd_11715, 2.55 * GetDestructableLife(gg_dest_AObd_11715))
+    gg_dest_AObd_11716 = CreateDestructable(1095721572, -5031.6, 9878.9, 261.000, 1.099, 0)
+    SetDestructableLife(gg_dest_AObd_11716, 2.55 * GetDestructableLife(gg_dest_AObd_11716))
+    gg_dest_AObd_11717 = CreateDestructable(1095721572, -12743.2, 14117.5, 301.000, 1.040, 0)
+    SetDestructableLife(gg_dest_AObd_11717, 2.55 * GetDestructableLife(gg_dest_AObd_11717))
+    gg_dest_AObd_11718 = CreateDestructable(1095721572, -11452.3, 15835.9, 265.000, 1.072, 0)
+    SetDestructableLife(gg_dest_AObd_11718, 2.55 * GetDestructableLife(gg_dest_AObd_11718))
+    gg_dest_AObd_11719 = CreateDestructable(1095721572, 11089.8, 15806.9, 80.000, 0.906, 0)
+    SetDestructableLife(gg_dest_AObd_11719, 2.55 * GetDestructableLife(gg_dest_AObd_11719))
+    gg_dest_AObd_11720 = CreateDestructable(1095721572, 12726.6, 14382.7, 56.000, 1.034, 0)
+    SetDestructableLife(gg_dest_AObd_11720, 2.55 * GetDestructableLife(gg_dest_AObd_11720))
+    gg_dest_NObt_11721 = CreateDestructable(1313825396, 10040.5, -8338.3, 350.000, 1.089, 0)
+    SetDestructableLife(gg_dest_NObt_11721, 2.55 * GetDestructableLife(gg_dest_NObt_11721))
+    gg_dest_NObt_11722 = CreateDestructable(1313825396, 11409.4, -6919.6, 253.000, 1.197, 0)
+    SetDestructableLife(gg_dest_NObt_11722, 2.55 * GetDestructableLife(gg_dest_NObt_11722))
+    gg_dest_NObt_11723 = CreateDestructable(1313825396, 12876.6, -8394.4, 297.000, 1.023, 0)
+    SetDestructableLife(gg_dest_NObt_11723, 2.55 * GetDestructableLife(gg_dest_NObt_11723))
+    gg_dest_NObt_11724 = CreateDestructable(1313825396, 11348.6, -9630.1, 2.000, 1.050, 0)
+    SetDestructableLife(gg_dest_NObt_11724, 2.55 * GetDestructableLife(gg_dest_NObt_11724))
+    gg_dest_NObt_11725 = CreateDestructable(1313825396, 3958.3, -5815.8, 44.000, 0.828, 0)
+    SetDestructableLife(gg_dest_NObt_11725, 2.55 * GetDestructableLife(gg_dest_NObt_11725))
+    gg_dest_NObt_11726 = CreateDestructable(1313825396, 4975.4, -3446.4, 103.000, 0.822, 0)
+    SetDestructableLife(gg_dest_NObt_11726, 2.55 * GetDestructableLife(gg_dest_NObt_11726))
+    gg_dest_NObt_11727 = CreateDestructable(1313825396, 7100.5, -5637.9, 204.000, 0.954, 0)
+    SetDestructableLife(gg_dest_NObt_11727, 2.55 * GetDestructableLife(gg_dest_NObt_11727))
+    gg_dest_NObt_11728 = CreateDestructable(1313825396, 8961.1, -3769.9, 51.000, 0.960, 0)
+    SetDestructableLife(gg_dest_NObt_11728, 2.55 * GetDestructableLife(gg_dest_NObt_11728))
+    gg_dest_NObt_11729 = CreateDestructable(1313825396, 9118.2, -288.4, 144.000, 1.070, 0)
+    SetDestructableLife(gg_dest_NObt_11729, 2.55 * GetDestructableLife(gg_dest_NObt_11729))
+    gg_dest_NObt_11730 = CreateDestructable(1313825396, 6488.1, -1679.6, 236.000, 1.157, 0)
+    SetDestructableLife(gg_dest_NObt_11730, 2.55 * GetDestructableLife(gg_dest_NObt_11730))
 end
 
 function CreateBuildingsForPlayer0()
@@ -59643,15 +60349,23 @@ function CreateUnitsForPlayer0()
     local p = Player(0)
     local unitID = nil
     local t = nil
-    gg_unit_n01O_0126 = CreateUnit(p, 1848652111, 17222.7, 19253.2, 338.510)
-    gg_unit_n014_0128 = CreateUnit(p, 1848652084, 17227.1, 19142.6, 193.376)
-    gg_unit_n01Z_0236 = CreateUnit(p, 1848652122, 17207.8, 18998.6, 151.660)
-    gg_unit_n01M_0279 = CreateUnit(p, 1848652109, 17222.7, 18898.2, 84.828)
-    gg_unit_n01Y_0282 = CreateUnit(p, 1848652121, 17225.7, 18764.6, 9.613)
-    gg_unit_n01T_0289 = CreateUnit(p, 1848652116, 17219.7, 18629.3, 43.386)
-    gg_unit_n01B_0292 = CreateUnit(p, 1848652098, 17216.7, 18526.0, 98.287)
-    gg_unit_n020_0295 = CreateUnit(p, 1848652336, 17209.3, 18357.3, 97.353)
-    gg_unit_n01X_0309 = CreateUnit(p, 1848652120, 17343.2, 18376.2, 331.545)
+    gg_unit_n01O_0126 = CreateUnit(p, 1848652111, 17222.7, 19253.2, 270.000)
+    SetUnitState(gg_unit_n01O_0126, UNIT_STATE_MANA, 0)
+    gg_unit_n014_0128 = CreateUnit(p, 1848652084, 17227.1, 19142.6, 270.000)
+    SetUnitState(gg_unit_n014_0128, UNIT_STATE_MANA, 0)
+    gg_unit_n01Z_0236 = CreateUnit(p, 1848652122, 17207.8, 18998.6, 270.000)
+    SetUnitState(gg_unit_n01Z_0236, UNIT_STATE_MANA, 0)
+    gg_unit_n01M_0279 = CreateUnit(p, 1848652109, 17217.6, 18874.1, 270.000)
+    SetUnitState(gg_unit_n01M_0279, UNIT_STATE_MANA, 0)
+    gg_unit_n01Y_0282 = CreateUnit(p, 1848652121, 17225.7, 18764.6, 270.000)
+    SetUnitState(gg_unit_n01Y_0282, UNIT_STATE_MANA, 0)
+    gg_unit_n01T_0289 = CreateUnit(p, 1848652116, 17219.7, 18629.3, 270.000)
+    SetUnitState(gg_unit_n01T_0289, UNIT_STATE_MANA, 0)
+    gg_unit_n01B_0292 = CreateUnit(p, 1848652098, 17214.3, 18493.8, 270.000)
+    SetUnitState(gg_unit_n01B_0292, UNIT_STATE_MANA, 0)
+    gg_unit_n020_0295 = CreateUnit(p, 1848652336, 17222.7, 18365.8, 270.000)
+    SetUnitState(gg_unit_n020_0295, UNIT_STATE_MANA, 0)
+    gg_unit_n01X_0309 = CreateUnit(p, 1848652120, 17333.0, 18358.6, 270.000)
 end
 
 function CreateBuildingsForPlayer1()
@@ -59869,23 +60583,23 @@ function CreateNeutralHostile()
     gg_unit_n00N_0191 = CreateUnit(p, 1848651854, 15545.3, 17974.9, 270.000)
     gg_unit_n00F_0192 = CreateUnit(p, 1848651846, 15369.1, 17991.3, 270.000)
     gg_unit_n00Q_0211 = CreateUnit(p, 1848651857, 15672.7, 17979.3, 270.000)
-    gg_unit_n01D_0212 = CreateUnit(p, 1848652100, 17471.1, 19138.2, 266.438)
-    gg_unit_n01F_0213 = CreateUnit(p, 1848652102, 17475.6, 19004.4, 31.444)
-    gg_unit_n01L_0214 = CreateUnit(p, 1848652108, 17478.6, 18882.2, 230.731)
-    gg_unit_n01N_0215 = CreateUnit(p, 1848652110, 17481.5, 18750.0, 36.432)
-    gg_unit_n01P_0216 = CreateUnit(p, 1848652112, 17483.0, 18624.9, 239.894)
-    gg_unit_n01E_0217 = CreateUnit(p, 1848652101, 17474.1, 18496.9, 52.648)
-    gg_unit_n01S_0218 = CreateUnit(p, 1848652115, 17469.6, 18366.0, 259.802)
-    gg_unit_n01Q_0219 = CreateUnit(p, 1848652113, 17341.7, 19135.3, 143.936)
-    gg_unit_n01U_0220 = CreateUnit(p, 1848652117, 17346.2, 19001.5, 24.478)
-    gg_unit_n01K_0222 = CreateUnit(p, 1848652107, 17352.1, 18885.1, 15.931)
+    gg_unit_n01D_0212 = CreateUnit(p, 1848652100, 17471.1, 19138.2, 270.000)
+    gg_unit_n01F_0213 = CreateUnit(p, 1848652102, 17475.6, 19004.4, 270.000)
+    gg_unit_n01L_0214 = CreateUnit(p, 1848652108, 17478.6, 18882.2, 270.000)
+    gg_unit_n01N_0215 = CreateUnit(p, 1848652110, 17481.5, 18750.0, 270.000)
+    gg_unit_n01P_0216 = CreateUnit(p, 1848652112, 17483.0, 18624.9, 270.000)
+    gg_unit_n01E_0217 = CreateUnit(p, 1848652101, 17474.1, 18496.9, 270.000)
+    gg_unit_n01S_0218 = CreateUnit(p, 1848652115, 17469.6, 18366.0, 270.000)
+    gg_unit_n01Q_0219 = CreateUnit(p, 1848652113, 17341.7, 19135.3, 270.000)
+    gg_unit_n01U_0220 = CreateUnit(p, 1848652117, 17346.2, 19001.5, 270.000)
+    gg_unit_n01K_0222 = CreateUnit(p, 1848652107, 17346.3, 18874.1, 270.000)
     gg_unit_n013_0225 = CreateUnit(p, 1848652083, 17343.2, 19261.9, 270.000)
     gg_unit_n00X_0235 = CreateUnit(p, 1848651864, 17468.2, 19263.4, 270.000)
-    gg_unit_n01C_0237 = CreateUnit(p, 1848652099, 17347.7, 18754.2, 250.891)
+    gg_unit_n01C_0237 = CreateUnit(p, 1848652099, 17347.7, 18754.2, 270.000)
     gg_unit_n00V_0238 = CreateUnit(p, 1848651862, 17760.0, 19296.0, 270.000)
     gg_unit_n01G_0246 = CreateUnit(p, 1848652103, 18080.0, 19296.0, 270.000)
-    gg_unit_n01W_0247 = CreateUnit(p, 1848652119, 17349.1, 18629.1, 185.598)
-    gg_unit_n01V_0248 = CreateUnit(p, 1848652118, 17344.7, 18496.9, 301.979)
+    gg_unit_n01W_0247 = CreateUnit(p, 1848652119, 17349.1, 18629.1, 270.000)
+    gg_unit_n01V_0248 = CreateUnit(p, 1848652118, 17344.7, 18496.9, 270.000)
     gg_unit_n01H_0277 = CreateUnit(p, 1848652104, 17760.0, 19040.0, 270.000)
     gg_unit_n01I_0278 = CreateUnit(p, 1848652105, 18080.0, 19040.0, 270.000)
     gg_unit_n01J_0280 = CreateUnit(p, 1848652106, 17760.0, 18784.0, 270.000)
@@ -59897,6 +60611,19 @@ function CreateNeutralHostile()
     gg_unit_n00P_0291 = CreateUnit(p, 1848651856, 17728.0, 18112.0, 270.000)
     gg_unit_n024_0293 = CreateUnit(p, 1848652340, 17760.0, 17824.0, 270.000)
     gg_unit_n025_0294 = CreateUnit(p, 1848652341, 18080.0, 17824.0, 270.000)
+    gg_unit_n01R_0311 = CreateUnit(p, 1848652114, 17092.1, 19249.2, 270.000)
+    SetUnitState(gg_unit_n01R_0311, UNIT_STATE_MANA, 0)
+    gg_unit_n029_0312 = CreateUnit(p, 1848652345, 17085.6, 18367.6, 270.000)
+    SetUnitState(gg_unit_n029_0312, UNIT_STATE_MANA, 0)
+    gg_unit_n021_0313 = CreateUnit(p, 1848652337, 17101.1, 19131.3, 270.000)
+    gg_unit_n022_0314 = CreateUnit(p, 1848652338, 17086.7, 19011.6, 270.000)
+    SetUnitState(gg_unit_n022_0314, UNIT_STATE_MANA, 0)
+    gg_unit_n023_0315 = CreateUnit(p, 1848652339, 17086.7, 18891.9, 270.000)
+    SetUnitState(gg_unit_n023_0315, UNIT_STATE_MANA, 0)
+    gg_unit_n027_0316 = CreateUnit(p, 1848652343, 17077.7, 18754.6, 270.000)
+    SetUnitState(gg_unit_n027_0316, UNIT_STATE_MANA, 0)
+    gg_unit_n02C_0317 = CreateUnit(p, 1848652355, 17088.5, 18481.8, 270.000)
+    gg_unit_n028_0318 = CreateUnit(p, 1848652344, 17081.3, 18617.3, 270.000)
 end
 
 function CreateNeutralPassiveBuildings()
@@ -60005,13 +60732,14 @@ function CreateNeutralPassive()
     gg_unit_nshe_0227 = CreateUnit(p, 1853057125, -9950.5, 12557.9, 337.994)
     gg_unit_nech_0230 = CreateUnit(p, 1852138344, -9501.4, 12963.4, 190.124)
     gg_unit_necr_0234 = CreateUnit(p, 1852138354, -9538.0, 12905.5, 179.984)
-    gg_unit_n02G_0250 = CreateUnit(p, 1848652359, -3552.0, 10272.0, 270.000)
-    gg_unit_n02G_0268 = CreateUnit(p, 1848652359, -3424.0, 10784.0, 270.000)
-    gg_unit_n02G_0269 = CreateUnit(p, 1848652359, -4832.0, 10912.0, 270.000)
-    gg_unit_n02G_0270 = CreateUnit(p, 1848652359, -4512.0, 10144.0, 270.000)
+    gg_unit_n02G_0250 = CreateUnit(p, 1848652359, -3488.0, 10784.0, 270.000)
+    gg_unit_n02G_0268 = CreateUnit(p, 1848652359, -3424.0, 10592.0, 270.000)
+    gg_unit_n02G_0269 = CreateUnit(p, 1848652359, -4768.0, 10528.0, 270.000)
+    gg_unit_n02G_0270 = CreateUnit(p, 1848652359, -4512.0, 10208.0, 270.000)
     gg_unit_n02B_0306 = CreateUnit(p, 1848652354, -3392.0, -4544.0, 270.000)
     gg_unit_n02B_0307 = CreateUnit(p, 1848652354, -4544.0, -4160.0, 270.000)
     gg_unit_n02B_0308 = CreateUnit(p, 1848652354, -3904.0, -5184.0, 270.000)
+    gg_unit_n02G_0310 = CreateUnit(p, 1848652359, -3552.0, 10336.0, 270.000)
 end
 
 function CreatePlayerBuildings()

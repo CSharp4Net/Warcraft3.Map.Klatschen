@@ -10,9 +10,9 @@ All you can eat
 
 STRING 3
 {
-Kämpft mit eurem Helden für eure Fraktion und zerstört die Basen eurer Feinde. Verbessert die Streitmacht eurer Fraktion mit Forschungen und rüstet euren Helden mit mächten Artefakten aus.
+Töten... und shoppen!
 
-Version 1.0.0.1
+Version 1.0.1.0
 }
 
 STRING 4
@@ -115,9 +115,9 @@ Klatschen 2025
 
 STRING 65
 {
-Kämpft mit eurem Helden für eure Fraktion und zerstört die Basen eurer Feinde. Verbessert die Streitmacht eurer Fraktion mit Forschungen und rüstet euren Helden mit mächten Artefakten aus.
+Töten... und shoppen!
 
-Version 1.0.0.1
+Version 1.0.1.0
 }
 
 STRING 72
@@ -13101,5 +13101,185 @@ STRING 3774
 // Units: n020 (Zentaurenzauberin), Tip (Tooltip - Basic)
 {
 Zentaurenzauberin anheuern
+}
+
+STRING 3775
+// Units: n02C (Wildekinalpha), Name (Name)
+{
+Wildekinalpha
+}
+
+STRING 3776
+// Units: n01R (Banditenfürst), Ubertip (Tooltip - Extended)
+{
+Eine schwere Nahkampfeinheit. Beherrscht Aura der Hingabe und Schockwelle.|n|n|cffffcc00Kann Bodeneinheiten angreifen.|r
+}
+
+STRING 3777
+// Units: n01R (Banditenfürst), EditorSuffix (Name - Editor Suffix)
+{
+(Creep)
+}
+
+STRING 3778
+// Units: n01R (Banditenfürst), Description (Description)
+{
+Nahkampfeinheit
+}
+
+STRING 3779
+// Units: n021 (Furbolgheld), Description (Description)
+{
+Nahkampfeinheit
+}
+
+STRING 3780
+// Units: n021 (Furbolgheld), EditorSuffix (Name - Editor Suffix)
+{
+(Creep)
+}
+
+STRING 3781
+// Units: n021 (Furbolgheld), Ubertip (Tooltip - Extended)
+{
+Eine schwere Nahkampfeinheit. Beherrscht Befehlsaura und Reinkarnation.|n|n|cffffcc00Kann Bodeneinheiten angreifen.|r
+}
+
+STRING 3782
+// Units: n022 (Mur'gulschattenzauberer), Description (Description)
+{
+Fernkampfeinheit
+}
+
+STRING 3783
+// Units: n023 (Neruberkönigin), Description (Description)
+{
+Fernkampfeinheit
+}
+
+STRING 3784
+// Units: n027 (Ogerlord), Description (Description)
+{
+Nahkampfeinheit
+}
+
+STRING 3785
+// Units: n028 (Tuskarrhäuptling), Description (Description)
+{
+Nahkampfeinheit
+}
+
+STRING 3786
+// Units: n029 (Zentaurenkhan), Description (Description)
+{
+Nahkampfeinheit
+}
+
+STRING 3787
+// Units: n02C (Wildekinalpha), Description (Description)
+{
+Nahkampfeinheit
+}
+
+STRING 3788
+// Abilities: A028 (Verhexen), Ubertip (Tooltip - Normal - Extended)
+{
+Verwandelt eine gegnerische Einheit für <A028,Dur1> Sek. in ein zufälliges Tier.
+}
+
+STRING 3789
+// Abilities: A028 (Verhexen), EditorSuffix (Editor Suffix)
+{
+(Unit)
+}
+
+STRING 3790
+// Abilities: A029 (Fluch), EditorSuffix (Editor Suffix)
+{
+(Unit)
+}
+
+STRING 3791
+// Abilities: A029 (Fluch), Ubertip (Tooltip - Normal - Extended)
+{
+Verflucht die gegnerische Zieleinheit, sodass ihre Angriffe eine Chance von <A029,DataA1,%>% haben, zu verfehlen.|nHält <A029,Dur1> Sek. lang an.
+}
+
+STRING 3792
+// Abilities: A02A (Aasschwarm), Ubertip (Tooltip - Normal - Extended)
+{
+Schickt einen Schwarm Fledermäuse aus, die allen gegnerischen Bodeneinheiten in einer Linie <A02A,DataA1> Schaden zufügen, bis maximal <A02A,DataB1> Schaden.
+}
+
+STRING 3793
+// Abilities: A02A (Aasschwarm), EditorSuffix (Editor Suffix)
+{
+(Unit)
+}
+
+STRING 3794
+// Units: n022 (Mur'gulschattenzauberer), EditorSuffix (Name - Editor Suffix)
+{
+(Creep)
+}
+
+STRING 3795
+// Units: n023 (Neruberkönigin), EditorSuffix (Name - Editor Suffix)
+{
+(Creep)
+}
+
+STRING 3796
+// Units: n023 (Neruberkönigin), Ubertip (Tooltip - Extended)
+{
+Eine schwere Nahkampfeinheit. Beherrscht die Unheilige Aura und Aasschwarm.|n|n|cffffcc00Kann Bodeneinheiten angreifen.|r
+}
+
+STRING 3797
+// Units: n027 (Ogerlord), Ubertip (Tooltip - Extended)
+{
+Herr der Ogerlegion. Beherrscht Ausdaueraura und Kriegsdonner.|n|n|cffffcc00Kann Bodeneinheiten angreifen.|r
+}
+
+STRING 3798
+// Units: n027 (Ogerlord), EditorSuffix (Name - Editor Suffix)
+{
+(Creep)
+}
+
+STRING 3799
+// Units: n028 (Tuskarrhäuptling), Ubertip (Tooltip - Extended)
+{
+Eine schwere Nahkampfeinheit. Beherrscht die Befehlsaura und Frostrüstung.|n|n|cffffcc00Kann Bodeneinheiten angreifen.|r
+}
+
+STRING 3800
+// Units: n028 (Tuskarrhäuptling), EditorSuffix (Name - Editor Suffix)
+{
+(Creep)
+}
+
+STRING 3801
+// Units: n029 (Zentaurenkhan), EditorSuffix (Name - Editor Suffix)
+{
+(Creep)
+}
+
+STRING 3802
+// Units: n029 (Zentaurenkhan), Ubertip (Tooltip - Extended)
+{
+Eine schwere Nahkampfeinheit. Beherrscht die unheilige Aura und Feuerodem.|n|n|cffffcc00Kann Boden- und Lufteinheiten angreifen.|r
+}
+
+STRING 3803
+// Units: n02C (Wildekinalpha), EditorSuffix (Name - Editor Suffix)
+{
+(Creep)
+}
+
+STRING 3804
+// Units: n02C (Wildekinalpha), Ubertip (Tooltip - Extended)
+{
+Alpha im Nest. Beherrscht Volltrefferaura und Wucherwurzeln.|n|n|cffffcc00Kann Bodeneinheiten angreifen.|r
 }
 
