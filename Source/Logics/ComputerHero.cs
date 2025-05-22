@@ -64,6 +64,29 @@ namespace Source.Logics
     {   
       int unitId = Common.GetUnitTypeId(unit);
 
+      //ability ability0 = unit.GetAbilityByIndex(0);
+      //ability ability1 = unit.GetAbilityByIndex(1);
+      //ability ability2 = unit.GetAbilityByIndex(2);
+      //ability ability3 = unit.GetAbilityByIndex(3);
+      //ability ability4 = unit.GetAbilityByIndex(4);
+      //ability ability5 = unit.GetAbilityByIndex(5);
+      //ability ability6 = unit.GetAbilityByIndex(6);
+      //ability ability7 = unit.GetAbilityByIndex(7);
+      //ability ability8 = unit.GetAbilityByIndex(8);
+      //ability ability9 = unit.GetAbilityByIndex(9);
+
+      //Console.WriteLine($"Unit: {unit.HeroName} ({unit.Name}) {unit.HeroLevel}");
+      //Console.WriteLine($"Abiltity 0: {ability0} = {ability0.Name}, {ability0.HeroAbility}");
+      //Console.WriteLine($"Abiltity 1: {ability1} = {ability1.Name}, {ability1.HeroAbility}");
+      //Console.WriteLine($"Abiltity 2: {ability2} = {ability2.Name}, {ability2.HeroAbility}");
+      //Console.WriteLine($"Abiltity 3: {ability3} = {ability3.Name}, {ability3.HeroAbility}");
+      //Console.WriteLine($"Abiltity 4: {ability4} = {ability4.Name}, {ability4.HeroAbility}");
+      //Console.WriteLine($"Abiltity 5: {ability5} = {ability5.Name}, {ability5.HeroAbility}");
+      //Console.WriteLine($"Abiltity 6: {ability6} = {ability6.Name}, {ability6.HeroAbility}");
+      //Console.WriteLine($"Abiltity 7: {ability7} = {ability7.Name}, {ability7.HeroAbility}");
+      //Console.WriteLine($"Abiltity 8: {ability8} = {ability8.Name}, {ability8.HeroAbility}");
+      //Console.WriteLine($"Abiltity 9: {ability9} = {ability9.Name}, {ability9.HeroAbility}");
+
       if (unitId == Constants.UNIT_W_CHTER_HUMAN || unitId == Constants.UNIT_W_CHTER_ORC || 
         unitId == Constants.UNIT_W_CHTER_ELF || unitId == Constants.UNIT_W_CHTER_UNDEAD)
       {
