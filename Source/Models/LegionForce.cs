@@ -31,9 +31,9 @@ namespace Source.Models
     public void CreateOrReviveHero(int unitTypeId, Area spawnArea, int heroLevel, int abilitiesLevel, Area targetArea = null)
     {
       if (Hero == null)
-        CreateHero(unitTypeId, spawnArea, heroLevel, 0f, targetArea);
+        CreateHero(unitTypeId, spawnArea, heroLevel, targetArea);
       else
-        ReviveHero(spawnArea, heroLevel, 0f, targetArea);
+        ReviveHero(spawnArea, heroLevel, targetArea);
 
       SpecialEffects.CreateSpecialEffect("Objects\\Spawnmodels\\NightElf\\EntBirthTarget\\EntBirthTarget.mdl", spawnArea.Wc3Rectangle.Center, 2f, 3f);
       TrainHero(Hero.Wc3Unit, abilitiesLevel);
