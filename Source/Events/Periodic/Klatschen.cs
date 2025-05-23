@@ -1,7 +1,7 @@
-﻿using Source.Statics;
+﻿using Source.Models;
+using Source.Statics;
 using System;
 using WCSharp.Api;
-using WCSharp.Effects;
 using WCSharp.Lightnings;
 using WCSharp.Shared.Data;
 
@@ -15,16 +15,16 @@ namespace Source.Events.Periodic
     {
       try
       {
+        // Wetter für 60 Sekunden ändern
         weathereffect weathereffect = Common.AddWeatherEffect(Blizzard.GetPlayableMapRect(), ConstantsEx.WEATHER_Lorderon_Heavy_Rain);
         timer weatherTimer = Common.CreateTimer();
-        Common.TimerStart(weatherTimer, ConstantsEx.Interval_Event_Klatschen / 5, false, () =>
+        Common.TimerStart(weatherTimer, 60f, false, () =>
         {
           Common.DestroyTimer(weatherTimer);
           weatherTimer.Dispose();
           weatherTimer = null;
 
           Common.RemoveWeatherEffect(weathereffect);
-
           weathereffect.Dispose();
           weathereffect = null;
         });
@@ -32,8 +32,6 @@ namespace Source.Events.Periodic
         player player = player.NeutralAggressive;
 
         executions++;
-
-        Console.WriteLine("Klatschen!");
 
         Rectangle centerRect = Areas.CenterComplete.Wc3Rectangle;
         Rectangle CenterBottomRect = Areas.CenterBottom.Wc3Rectangle;
@@ -47,8 +45,15 @@ namespace Source.Events.Periodic
         Point centerTopPoint = CenterTopRect.Center;
         Point centerRightPoint = CenterRightRect.Center;
 
-        // Effekt für Ankündigung für 6 Sekunden
-        SpecialEffects.CreateSpecialEffect("Abilities\\Spells\\Human\\FlameStrike\\FlameStrikeTarget.mdl", centerPoint, 3f, 5f);
+        // Musik (Dauert etwa 55 Sekunden) einmal spielen
+        Common.PlayThematicMusic("war3mapImported\\blowitup_cutted.mp3");
+        Console.WriteLine($"Die {Program.Legion.ColorizedName} ist hier, lasst alle Hoffnung fahren und verzweifelt...");
+
+        LegionSpawnBuilding buildingWest = Program.Legion.CreateOrRefreshWestSpawnBuilding();
+        LegionSpawnBuilding buildingEast =  Program.Legion.CreateOrRefreshEastSpawnBuilding();
+
+        //// Effekt für Ankündigung für 6 Sekunden
+        //SpecialEffects.CreateSpecialEffect("Abilities\\Spells\\Human\\FlameStrike\\FlameStrikeTarget.mdl", centerPoint, 3f, 5f);
 
         float centerX = centerPoint.X;
         float centerY = centerPoint.Y - 100;
@@ -93,28 +98,28 @@ namespace Source.Events.Periodic
           out Point pentaRightPointLeft,
           out Point pentaRightPointRight);
 
-        // Zentrum - Nach 5 Sekunden die Schaden-Effekte anzeigen
-        SpecialEffects.CreateSpecialEffectTimed("Abilities\\Spells\\Human\\FlameStrike\\FlameStrike1.mdl", pentaCenterPointBottom, 3f, 5f, 5f);
-        SpecialEffects.CreateSpecialEffectTimed("Abilities\\Spells\\Human\\FlameStrike\\FlameStrike1.mdl", pentaCenterPointTopLeft, 3f, 5f, 5f);
-        SpecialEffects.CreateSpecialEffectTimed("Abilities\\Spells\\Human\\FlameStrike\\FlameStrike1.mdl", pentaCenterPointTopRight, 5f, 5f, 5f);
-        SpecialEffects.CreateSpecialEffectTimed("Abilities\\Spells\\Human\\FlameStrike\\FlameStrike1.mdl", pentaCenterPointLeft, 3f, 5f, 5f);
-        SpecialEffects.CreateSpecialEffectTimed("Abilities\\Spells\\Human\\FlameStrike\\FlameStrike1.mdl", pentaCenterPointRight, 3f, 5f, 5f);
-        SpecialEffects.CreateSpecialEffectTimed("Abilities\\Spells\\Demon\\DarkPortal\\DarkPortalTarget.mdl", centerPoint, 3, 5f);
+        //// Zentrum - Nach 5 Sekunden die Schaden-Effekte anzeigen
+        //SpecialEffects.CreateSpecialEffectTimed("Abilities\\Spells\\Human\\FlameStrike\\FlameStrike1.mdl", pentaCenterPointBottom, 3f, 5f, 5f);
+        //SpecialEffects.CreateSpecialEffectTimed("Abilities\\Spells\\Human\\FlameStrike\\FlameStrike1.mdl", pentaCenterPointTopLeft, 3f, 5f, 5f);
+        //SpecialEffects.CreateSpecialEffectTimed("Abilities\\Spells\\Human\\FlameStrike\\FlameStrike1.mdl", pentaCenterPointTopRight, 5f, 5f, 5f);
+        //SpecialEffects.CreateSpecialEffectTimed("Abilities\\Spells\\Human\\FlameStrike\\FlameStrike1.mdl", pentaCenterPointLeft, 3f, 5f, 5f);
+        //SpecialEffects.CreateSpecialEffectTimed("Abilities\\Spells\\Human\\FlameStrike\\FlameStrike1.mdl", pentaCenterPointRight, 3f, 5f, 5f);
+        //SpecialEffects.CreateSpecialEffectTimed("Abilities\\Spells\\Demon\\DarkPortal\\DarkPortalTarget.mdl", centerPoint, 3, 5f);
 
-        // Bottom Lange - Nach 5 Sekunden die Schaden-Effekte anzeigen
-        SpecialEffects.CreateSpecialEffectTimed("Abilities\\Spells\\Human\\FlameStrike\\FlameStrike1.mdl", centerBottomPoint, 3f, 5f, 5f);
+        //// Bottom Lange - Nach 5 Sekunden die Schaden-Effekte anzeigen
+        //SpecialEffects.CreateSpecialEffectTimed("Abilities\\Spells\\Human\\FlameStrike\\FlameStrike1.mdl", centerBottomPoint, 3f, 5f, 5f);
 
-        // Left Lange - Nach 5 Sekunden die Schaden-Effekte anzeigen
-        SpecialEffects.CreateSpecialEffectTimed("Abilities\\Spells\\Human\\FlameStrike\\FlameStrike1.mdl", centerLeftPoint, 3f, 5f, 5f);
+        //// Left Lange - Nach 5 Sekunden die Schaden-Effekte anzeigen
+        //SpecialEffects.CreateSpecialEffectTimed("Abilities\\Spells\\Human\\FlameStrike\\FlameStrike1.mdl", centerLeftPoint, 3f, 5f, 5f);
 
-        // Top Lange - Nach 5 Sekunden die Schaden-Effekte anzeigen
-        SpecialEffects.CreateSpecialEffectTimed("Abilities\\Spells\\Human\\FlameStrike\\FlameStrike1.mdl", centerTopPoint, 3f, 5f, 5f);
+        //// Top Lange - Nach 5 Sekunden die Schaden-Effekte anzeigen
+        //SpecialEffects.CreateSpecialEffectTimed("Abilities\\Spells\\Human\\FlameStrike\\FlameStrike1.mdl", centerTopPoint, 3f, 5f, 5f);
 
-        // Right Lange - Nach 5 Sekunden die Schaden-Effekte anzeigen
-        SpecialEffects.CreateSpecialEffectTimed("Abilities\\Spells\\Human\\FlameStrike\\FlameStrike1.mdl", centerRightPoint, 3f, 5f, 5f);
+        //// Right Lange - Nach 5 Sekunden die Schaden-Effekte anzeigen
+        //SpecialEffects.CreateSpecialEffectTimed("Abilities\\Spells\\Human\\FlameStrike\\FlameStrike1.mdl", centerRightPoint, 3f, 5f, 5f);
 
-        // Zentrum - Nach 5 Sekunden die Schaden-Ability zünden
-        CreateAtDummyAndCastAbilityTimed(player, centerPoint, Constants.ABILITY_PHOENIXFEUER_DUMMY, executions, Constants.ORDER_PHOENIX_FIRE, 5.5f);
+        //// Zentrum - Nach 5 Sekunden die Schaden-Ability zünden
+        //CreateAtDummyAndCastAbilityTimed(player, centerPoint, Constants.ABILITY_PHOENIXFEUER_DUMMY, executions, Constants.ORDER_PHOENIX_FIRE, 5.5f);
 
         // Pentagram zeichen nach 1,5 Sekunden für 5 Sekunden
         int timer1Count = 0;
@@ -167,32 +172,32 @@ namespace Source.Events.Periodic
           }
         });
 
-        // Zentrum - Helden beleben nach 5 Sekunden
-        Program.Legion.CreateOrReviveHero(Constants.UNIT_GRUBENLORD_KLATSCHEN, Areas.Center, executions * 10, executions, 5.5f);
+        //// Zentrum - Helden beleben nach 5 Sekunden
+        //Program.Legion.CreateOrReviveHero(Constants.UNIT_GRUBENLORD_KLATSCHEN, Areas.Center, executions * 10, executions, 5.5f);
 
-        // Zentrum - Weitere Einheiten via Cast hinzurufen
-        CreateAtDummyAndCastAbilityTimed(player, centerRect, Constants.ABILITY_H_LLENBESTIEN_KLATSCHEN, executions, Constants.ORDER_RAIN_OF_CHAOS, 4f);
-        CreateAtDummyAndCastAbilityTimed(player, centerRect, Constants.ABILITY_TEUFELSWACHEN_KLATSCHEN, executions, Constants.ORDER_RAIN_OF_CHAOS, 4f);
-        CreateAtDummyAndCastAbilityTimed(player, centerRect, Constants.ABILITY_TEUFELSFRESSERER_KLATSCHEN, executions, Constants.ORDER_RAIN_OF_CHAOS, 4f);
-        CreateAtDummyAndCastAbilityTimed(player, centerRect, Constants.ABILITY_SCH_NDLICHE_FOLTERKNECHTE_KLATSCHEN, executions, Constants.ORDER_RAIN_OF_CHAOS, 4.5f);
-        CreateAtDummyAndCastAbilityTimed(player, centerRect, Constants.ABILITY_MAIDS_DES_SCHRECKENS_KLATSCHEN, executions, Constants.ORDER_RAIN_OF_CHAOS, 4.5f);
-        CreateAtDummyAndCastAbilityTimed(player, centerRect, Constants.ABILITY_H_LLENMASCHINEN_KLATSCHEN, executions, Constants.ORDER_RAIN_OF_CHAOS, 5f);
+        //// Zentrum - Weitere Einheiten via Cast hinzurufen
+        //CreateAtDummyAndCastAbilityTimed(player, centerRect, Constants.ABILITY_H_LLENBESTIEN_KLATSCHEN, executions, Constants.ORDER_RAIN_OF_CHAOS, 4f);
+        //CreateAtDummyAndCastAbilityTimed(player, centerRect, Constants.ABILITY_TEUFELSWACHEN_KLATSCHEN, executions, Constants.ORDER_RAIN_OF_CHAOS, 4f);
+        //CreateAtDummyAndCastAbilityTimed(player, centerRect, Constants.ABILITY_TEUFELSFRESSERER_KLATSCHEN, executions, Constants.ORDER_RAIN_OF_CHAOS, 4f);
+        //CreateAtDummyAndCastAbilityTimed(player, centerRect, Constants.ABILITY_SCH_NDLICHE_FOLTERKNECHTE_KLATSCHEN, executions, Constants.ORDER_RAIN_OF_CHAOS, 4.5f);
+        //CreateAtDummyAndCastAbilityTimed(player, centerRect, Constants.ABILITY_MAIDS_DES_SCHRECKENS_KLATSCHEN, executions, Constants.ORDER_RAIN_OF_CHAOS, 4.5f);
+        //CreateAtDummyAndCastAbilityTimed(player, centerRect, Constants.ABILITY_H_LLENMASCHINEN_KLATSCHEN, executions, Constants.ORDER_RAIN_OF_CHAOS, 5f);
 
-        // Bottom Lane - Weitere Einheiten via Cast hinzurufen
-        CreateAtDummyAndCastAbilityTimed(player, CenterBottomRect, Constants.ABILITY_H_LLENBESTIEN_KLATSCHEN, executions, Constants.ORDER_RAIN_OF_CHAOS, 4f);
-        CreateAtDummyAndCastAbilityTimed(player, CenterBottomRect, Constants.ABILITY_MAIDS_DES_SCHRECKENS_KLATSCHEN, executions, Constants.ORDER_RAIN_OF_CHAOS, 4.5f);
+        //// Bottom Lane - Weitere Einheiten via Cast hinzurufen
+        //CreateAtDummyAndCastAbilityTimed(player, CenterBottomRect, Constants.ABILITY_H_LLENBESTIEN_KLATSCHEN, executions, Constants.ORDER_RAIN_OF_CHAOS, 4f);
+        //CreateAtDummyAndCastAbilityTimed(player, CenterBottomRect, Constants.ABILITY_MAIDS_DES_SCHRECKENS_KLATSCHEN, executions, Constants.ORDER_RAIN_OF_CHAOS, 4.5f);
 
-        // Left Lane - Weitere Einheiten via Cast hinzurufen
-        CreateAtDummyAndCastAbilityTimed(player, CenterLeftRect, Constants.ABILITY_H_LLENBESTIEN_KLATSCHEN, executions, Constants.ORDER_RAIN_OF_CHAOS, 4f);
-        CreateAtDummyAndCastAbilityTimed(player, CenterLeftRect, Constants.ABILITY_MAIDS_DES_SCHRECKENS_KLATSCHEN, executions, Constants.ORDER_RAIN_OF_CHAOS, 4.5f);
+        //// Left Lane - Weitere Einheiten via Cast hinzurufen
+        //CreateAtDummyAndCastAbilityTimed(player, CenterLeftRect, Constants.ABILITY_H_LLENBESTIEN_KLATSCHEN, executions, Constants.ORDER_RAIN_OF_CHAOS, 4f);
+        //CreateAtDummyAndCastAbilityTimed(player, CenterLeftRect, Constants.ABILITY_MAIDS_DES_SCHRECKENS_KLATSCHEN, executions, Constants.ORDER_RAIN_OF_CHAOS, 4.5f);
 
-        // Top Lane - Weitere Einheiten via Cast hinzurufen
-        CreateAtDummyAndCastAbilityTimed(player, CenterTopRect, Constants.ABILITY_H_LLENBESTIEN_KLATSCHEN, executions, Constants.ORDER_RAIN_OF_CHAOS, 4f);
-        CreateAtDummyAndCastAbilityTimed(player, CenterTopRect, Constants.ABILITY_MAIDS_DES_SCHRECKENS_KLATSCHEN, executions, Constants.ORDER_RAIN_OF_CHAOS, 4.5f);
+        //// Top Lane - Weitere Einheiten via Cast hinzurufen
+        //CreateAtDummyAndCastAbilityTimed(player, CenterTopRect, Constants.ABILITY_H_LLENBESTIEN_KLATSCHEN, executions, Constants.ORDER_RAIN_OF_CHAOS, 4f);
+        //CreateAtDummyAndCastAbilityTimed(player, CenterTopRect, Constants.ABILITY_MAIDS_DES_SCHRECKENS_KLATSCHEN, executions, Constants.ORDER_RAIN_OF_CHAOS, 4.5f);
 
-        // Right Lane - Weitere Einheiten via Cast hinzurufen
-        CreateAtDummyAndCastAbilityTimed(player, CenterRightRect, Constants.ABILITY_H_LLENBESTIEN_KLATSCHEN, executions, Constants.ORDER_RAIN_OF_CHAOS, 4f);
-        CreateAtDummyAndCastAbilityTimed(player, CenterRightRect, Constants.ABILITY_MAIDS_DES_SCHRECKENS_KLATSCHEN, executions, Constants.ORDER_RAIN_OF_CHAOS, 4.5f);
+        //// Right Lane - Weitere Einheiten via Cast hinzurufen
+        //CreateAtDummyAndCastAbilityTimed(player, CenterRightRect, Constants.ABILITY_H_LLENBESTIEN_KLATSCHEN, executions, Constants.ORDER_RAIN_OF_CHAOS, 4f);
+        //CreateAtDummyAndCastAbilityTimed(player, CenterRightRect, Constants.ABILITY_MAIDS_DES_SCHRECKENS_KLATSCHEN, executions, Constants.ORDER_RAIN_OF_CHAOS, 4.5f);
       }
       catch (Exception ex)
       {

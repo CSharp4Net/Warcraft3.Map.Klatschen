@@ -24,9 +24,9 @@ namespace Source
     public static ElfTeam Elves;
     public static UndeadTeam Undeads;
 
-    public static KlatschenFragtion Legion;
+    public static LegionForce Legion;
 
-    public static List<CreepCamp> CreepCamps { get; set; } = new List<CreepCamp>();
+    public static List<MercenaryForce> Mercenaries { get; set; } = new List<MercenaryForce>();
 
     /// <summary>
     /// Alle aktiven Benutzer-Spieler
@@ -93,7 +93,7 @@ namespace Source
         Elves = new ElfTeam(Common.Player(8), Areas.ElfBase);
         Undeads = new UndeadTeam(Common.Player(12), Areas.UndeadBase);
 
-        Legion = new KlatschenFragtion();
+        Legion = new LegionForce("Dämonische Legion");
 
         // Regions-Ereignisse registrieren für automatische Einheitenbewegungen:
         // Wenn feindliche Einheiten in die Regionen treten, welche von zerstörten Gebäuden freigegeben werden.
@@ -139,7 +139,7 @@ namespace Source
 #endif
 
         var timer = Common.CreateTimer();
-        Common.TimerStart(timer, 30f, false, () =>
+        Common.TimerStart(timer, 10f, false, () =>
         {
           try
           {
@@ -176,13 +176,13 @@ namespace Source
       return false;
     }
 
-    public static bool TryGetCreepCampByBuilding(unit buildingUnit, out CreepCamp creepCamp)
+    public static bool TryGetCreepCampByBuilding(unit buildingUnit, out MercenaryForce creepCamp)
     {
-      for (int i = CreepCamps.Count - 1; i >= 0; i--)
+      for (int i = Mercenaries.Count - 1; i >= 0; i--)
       {
-        if (CreepCamps[i].Building.Wc3Unit == buildingUnit)
+        if (Mercenaries[i].Building.Wc3Unit == buildingUnit)
         {
-          creepCamp = CreepCamps[i];
+          creepCamp = Mercenaries[i];
           return true;
         }
       }
@@ -191,13 +191,13 @@ namespace Source
       return false;
     }
 
-    public static bool TryGetCreepCampByHero(unit heroUnit, out CreepCamp creepCamp)
+    public static bool TryGetCreepCampByHero(unit heroUnit, out MercenaryForce creepCamp)
     {
-      for (int i = CreepCamps.Count - 1; i >= 0; i--)
+      for (int i = Mercenaries.Count - 1; i >= 0; i--)
       {
-        if (CreepCamps[i].Hero.Wc3Unit == heroUnit)
+        if (Mercenaries[i].Hero.Wc3Unit == heroUnit)
         {
-          creepCamp = CreepCamps[i];
+          creepCamp = Mercenaries[i];
           return true;
         }
       }
@@ -402,27 +402,54 @@ namespace Source
     private static void ConstructCreepCamps()
     {
       // Menschen-Creeps
-      ConstructCreepCamp("Banditen", Constants.UNIT_BANDITENLAGER_CREEP, Constants.UNIT_BANDITENF_RST_CREEP, Areas.HumanCreepToElfSpawnBuilding, Areas.HumanCreepToElfSpawn, Humans, Elves);
-      ConstructCreepCamp("Tuskarr", Constants.UNIT_TUSKARRLAGER_CREEP, Constants.UNIT_TUSKARRH_UPTLING_CREEP, Areas.HumanCreepToOrcSpawnBuilding, Areas.HumanCreepToOrcSpawn, Humans, Orcs);
+      ConstructCreepCamp("Banditen", Areas.HumanCreepToElfSpawnBuilding, Areas.HumanCreepToElfSpawn,
+        Humans, Elves, Constants.UNIT_BANDITENLAGER_CREEP, Constants.UNIT_BANDITENF_RST_CREEP,
+        Constants.UNIT_BANDIT_CREEP, Constants.UNIT_BANDIT_CREEP, Constants.UNIT_BANDIT_CREEP,
+        Constants.UNIT_BANDITMARODEUR_CREEP, Constants.UNIT_BANDITMARODEUR_CREEP, Constants.UNIT_BANDITENZAUBERER_CREEP);
+      ConstructCreepCamp("Tuskarr", Areas.HumanCreepToOrcSpawnBuilding, Areas.HumanCreepToOrcSpawn,
+        Humans, Orcs, Constants.UNIT_TUSKARRLAGER_CREEP, Constants.UNIT_TUSKARRH_UPTLING_CREEP,
+        Constants.UNIT_TUSKARRKRIEGER_CREEP, Constants.UNIT_TUSKARRKRIEGER_CREEP, Constants.UNIT_TUSKARRKRIEGER_CREEP,
+        Constants.UNIT_TUSKARRFALLENSTELLER_CREEP, Constants.UNIT_TUSKARRFALLENSTELLER_CREEP, Constants.UNIT_TUSKARRHEILER_CREEP);
 
       // Elfen-Creeps
-      ConstructCreepCamp("Furbolgs", Constants.UNIT_FURBOLGLAGER_CREEP, Constants.UNIT_FURBOLGHELD_CREEP, Areas.ElfCreepToHumanSpawnBuilding, Areas.ElfCreepToHumanSpawn, Elves, Humans);
-      ConstructCreepCamp("Wildekins", Constants.UNIT_WILDEKINLAGER_CREEP, Constants.UNIT_WILDEKINALPHA_CREEP, Areas.ElfCreepToUndeadSpawnBuilding, Areas.ElfCreepToUndeadSpawn, Elves, Undeads);
+      ConstructCreepCamp("Furbolgs", Areas.ElfCreepToHumanSpawnBuilding, Areas.ElfCreepToHumanSpawn,
+        Elves, Humans, Constants.UNIT_FURBOLGLAGER_CREEP, Constants.UNIT_FURBOLGHELD_CREEP,
+        Constants.UNIT_FURBOLGURSAKRIEGER_CREEP, Constants.UNIT_FURBOLGURSAKRIEGER_CREEP,
+        Constants.UNIT_FURBOLGSPURENLESER_CREEP, Constants.UNIT_FURBOLGSPURENLESER_CREEP, Constants.UNIT_FURBOLGAHNENSCHAMANE_CREEP);
+      ConstructCreepCamp("Wildekins", Areas.ElfCreepToUndeadSpawnBuilding, Areas.ElfCreepToUndeadSpawn,
+        Elves, Undeads, Constants.UNIT_WILDEKINLAGER_CREEP, Constants.UNIT_WILDEKINALPHA_CREEP,
+        Constants.UNIT_WILDEKIN_CREEP, Constants.UNIT_WILDEKIN_CREEP, Constants.UNIT_WILDEKIN_CREEP,
+        Constants.UNIT_WILDEKINFALLENSTELLER_CREEP, Constants.UNIT_WILDEKINFALLENSTELLER_CREEP, Constants.UNIT_WILDEKINAHNE_CREEP);
 
       // Orcs-Creeps
-      ConstructCreepCamp("Zentauren", Constants.UNIT_ZENTAURENLAGER_CREEP, Constants.UNIT_ZENTAURENKHAN_CREEP, Areas.OrcCreepToHumanSpawnBuilding, Areas.OrcCreepToHumanSpawn, Orcs, Humans);
-      ConstructCreepCamp("Oger", Constants.UNIT_OGERLAGER_CREEP, Constants.UNIT_OGERLORD_CREEP, Areas.OrcCreepToUndeadSpawnBuilding, Areas.OrcCreepToUndeadSpawn, Orcs, Undeads);
+      ConstructCreepCamp("Zentauren", Areas.OrcCreepToHumanSpawnBuilding, Areas.OrcCreepToHumanSpawn,
+        Orcs, Humans, Constants.UNIT_ZENTAURENLAGER_CREEP, Constants.UNIT_ZENTAURENKHAN_CREEP,
+        Constants.UNIT_ZENTAURENL_UFER_CREEP, Constants.UNIT_ZENTAURENL_UFER_CREEP,
+        Constants.UNIT_ZENTAURENBOGENSCH_TZE_CREEP, Constants.UNIT_ZENTAURENBOGENSCH_TZE_CREEP, Constants.UNIT_ZENTAURENZAUBERIN_CREEP);
+      ConstructCreepCamp("Oger", Areas.OrcCreepToUndeadSpawnBuilding, Areas.OrcCreepToUndeadSpawn,
+        Orcs, Undeads, Constants.UNIT_OGERLAGER_CREEP, Constants.UNIT_OGERLORD_CREEP,
+        Constants.UNIT_OGERKRIEGER_CREEP, Constants.UNIT_OGERKRIEGER_CREEP, Constants.UNIT_OGERKRIEGER_CREEP,
+        Constants.UNIT_OGERPR_GLER_CREEP, Constants.UNIT_OGERPR_GLER_CREEP, Constants.UNIT_OGERMAGIER_CREEP);
 
       // Untoten-Creeps
-      ConstructCreepCamp("Mur'guls", Constants.UNIT_MUR_GULLAGER_CREEP, Constants.UNIT_MUR_GULSCHATTENZAUBERER_CREEP, Areas.UndeadCreepToOrcSpawnBuilding, Areas.UndeadCreepToOrcSpawn, Undeads, Orcs);
-      ConstructCreepCamp("Neruber", Constants.UNIT_NERUBERLAGER_CREEP, Constants.UNIT_NERUBERK_NIGIN_CREEP, Areas.UndeadCreepToElfSpawnBuilding, Areas.UndeadCreepToElfSpawn, Undeads, Elves);
+      ConstructCreepCamp("Mur'guls", Areas.UndeadCreepToOrcSpawnBuilding, Areas.UndeadCreepToOrcSpawn,
+        Undeads, Orcs, Constants.UNIT_MUR_GULLAGER_CREEP, Constants.UNIT_MUR_GULSCHATTENZAUBERER_CREEP,
+        Constants.UNIT_MUR_GULBLUTKIEME_CREEP, Constants.UNIT_MUR_GULBLUTKIEME_CREEP, Constants.UNIT_MUR_GULBLUTKIEME_CREEP,
+        Constants.UNIT_MUR_GULGEZEITENKRIEGER_CREEP, Constants.UNIT_MUR_GULGEZEITENKRIEGER_CREEP, Constants.UNIT_MUR_GULVERLANGSAMER_CREEP);
+      ConstructCreepCamp("Neruber", Areas.UndeadCreepToElfSpawnBuilding, Areas.UndeadCreepToElfSpawn,
+        Undeads, Elves, Constants.UNIT_NERUBERLAGER_CREEP, Constants.UNIT_NERUBERK_NIGIN_CREEP,
+        Constants.UNIT_NERUBERKRIEGER_CREEP, Constants.UNIT_NERUBERKRIEGER_CREEP, Constants.UNIT_NERUBERKRIEGER_CREEP,
+        Constants.UNIT_NERUBERNETZWEBER_CREEP, Constants.UNIT_NERUBERNETZWEBER_CREEP, Constants.UNIT_NERUBERSEHER_CREEP);
     }
 
-    private static void ConstructCreepCamp(string name, int buildingUnitType, int defenderUnitType, Area buildingArea, Area spawnArea, TeamBase nearestTeam, TeamBase opposingTeam)
+    private static void ConstructCreepCamp(string name,
+      Area buildingArea, Area spawnArea,
+      TeamBase nearestTeam, TeamBase opposingTeam,
+      int buildingUnitType, params int[] defenderUnitTypeIds)
     {
-      CreepCamp creepCamp = new CreepCamp(name, buildingArea, spawnArea, nearestTeam, opposingTeam);
-      SpawnCreepsBuilding building = creepCamp.InitializeBuilding(buildingUnitType, defenderUnitType);
-      CreepCamps.Add(creepCamp);
+      MercenaryForce creepCamp = new MercenaryForce(name, buildingArea, spawnArea, nearestTeam, opposingTeam, buildingUnitType, defenderUnitTypeIds);
+      MercenarySpawnBuilding building = creepCamp.InitializeBuilding();
+      Mercenaries.Add(creepCamp);
     }
 
     private static void CreateComputerHeros()

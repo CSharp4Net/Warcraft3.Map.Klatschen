@@ -8269,43 +8269,43 @@ Lässt Flammen auf Gegner in der Nähe niedergehen und setzt sie in Brand.
 }
 
 STRING 2759
-// Units: N006 (Grubenlord), EditorSuffix (Name - Editor Suffix)
+// Abilities: AIHR (Teufelswache), EditorSuffix (Editor Suffix)
 {
 (Klatschen)
 }
 
 STRING 2760
-// Units: n00C (Teufelswache), EditorSuffix (Name - Editor Suffix)
+// Abilities: AIHM (Höllenmaschine), EditorSuffix (Editor Suffix)
 {
 (Klatschen)
 }
 
 STRING 2761
-// Units: n00J (Teufelsfresser), EditorSuffix (Name - Editor Suffix)
+// Abilities: AIHB (Höllenbestie), EditorSuffix (Editor Suffix)
 {
 (Klatschen)
 }
 
 STRING 2762
-// Units: n00N (Schändlicher Folterknecht), EditorSuffix (Name - Editor Suffix)
+// Abilities: AIHS (Maid des Schreckens), EditorSuffix (Editor Suffix)
 {
 (Klatschen)
 }
 
 STRING 2763
-// Units: n00Q (Maid des Schmerzes), EditorSuffix (Name - Editor Suffix)
+// Abilities: AIHF (Schändlicher Folterknecht), EditorSuffix (Editor Suffix)
 {
 (Klatschen)
 }
 
 STRING 2764
-// Units: n00T (Höllenmaschine), EditorSuffix (Name - Editor Suffix)
+// Abilities: AIFR (Teufelsfresser), EditorSuffix (Editor Suffix)
 {
 (Klatschen)
 }
 
 STRING 2765
-// Units: n00F (Höllenbestie), EditorSuffix (Name - Editor Suffix)
+// Abilities: ACHA (Höllenbestien), EditorSuffix (Editor Suffix)
 {
 (Klatschen)
 }
@@ -8347,43 +8347,31 @@ Teufelsfresser
 }
 
 STRING 2779
-// Abilities: AIHR (Teufelswache), EditorSuffix (Editor Suffix)
+// Abilities: A01M (Höllenmaschinen), EditorSuffix (Editor Suffix)
 {
 (Klatschen)
 }
 
 STRING 2780
-// Abilities: AIHM (Höllenmaschine), EditorSuffix (Editor Suffix)
+// Abilities: A01N (Maids des Schreckens), EditorSuffix (Editor Suffix)
 {
 (Klatschen)
 }
 
 STRING 2781
-// Abilities: AIHB (Höllenbestie), EditorSuffix (Editor Suffix)
+// Abilities: A01O (Schändliche Folterknechte), EditorSuffix (Editor Suffix)
 {
 (Klatschen)
 }
 
 STRING 2782
-// Abilities: AIHS (Maid des Schreckens), EditorSuffix (Editor Suffix)
+// Abilities: A01P (Teufelsfresserer), EditorSuffix (Editor Suffix)
 {
 (Klatschen)
 }
 
 STRING 2783
-// Abilities: AIHF (Schändlicher Folterknecht), EditorSuffix (Editor Suffix)
-{
-(Klatschen)
-}
-
-STRING 2784
-// Abilities: AIFR (Teufelsfresser), EditorSuffix (Editor Suffix)
-{
-(Klatschen)
-}
-
-STRING 2785
-// Abilities: ACHA (Höllenbestien), EditorSuffix (Editor Suffix)
+// Abilities: A01Q (Teufelswachen), EditorSuffix (Editor Suffix)
 {
 (Klatschen)
 }
@@ -8394,22 +8382,10 @@ STRING 2786
 Höllenbestien
 }
 
-STRING 2787
-// Abilities: A01M (Höllenmaschinen), EditorSuffix (Editor Suffix)
-{
-(Klatschen)
-}
-
 STRING 2788
 // Abilities: A01M (Höllenmaschinen), Name (Name)
 {
 Höllenmaschinen
-}
-
-STRING 2789
-// Abilities: A01N (Maids des Schreckens), EditorSuffix (Editor Suffix)
-{
-(Klatschen)
 }
 
 STRING 2790
@@ -8418,34 +8394,16 @@ STRING 2790
 Maids des Schreckens
 }
 
-STRING 2791
-// Abilities: A01O (Schändliche Folterknechte), EditorSuffix (Editor Suffix)
-{
-(Klatschen)
-}
-
 STRING 2792
 // Abilities: A01O (Schändliche Folterknechte), Name (Name)
 {
 Schändliche Folterknechte
 }
 
-STRING 2793
-// Abilities: A01P (Teufelsfresserer), EditorSuffix (Editor Suffix)
-{
-(Klatschen)
-}
-
 STRING 2794
 // Abilities: A01P (Teufelsfresserer), Name (Name)
 {
 Teufelsfresserer
-}
-
-STRING 2795
-// Abilities: A01Q (Teufelswachen), EditorSuffix (Editor Suffix)
-{
-(Klatschen)
 }
 
 STRING 2796
@@ -13281,5 +13239,71 @@ STRING 3804
 // Units: n02C (Wildekinalpha), Ubertip (Tooltip - Extended)
 {
 Alpha im Nest. Beherrscht Volltrefferaura und Wucherwurzeln.|n|n|cffffcc00Kann Bodeneinheiten angreifen.|r
+}
+
+STRING 3806
+// Units: N006 (Dämonenfürst), Name (Name)
+{
+Dämonenfürst
+}
+
+STRING 3807
+// Units: N006 (Dämonenfürst), Propernames (Proper Names)
+{
+Thebis-Ra,Typhis-Ahn,Anubiros,Memphis-Ahn,Horus'aman,Nephri'thos,Arak-arahm,Tuten'arak,Pharoh-moth
+}
+
+STRING 3808
+// Units: N006 (Dämonenfürst), EditorSuffix (Name - Editor Suffix)
+{
+(Legion)
+}
+
+STRING 3809
+// Units: n00C (Teufelswache), EditorSuffix (Name - Editor Suffix)
+{
+(Legion)
+}
+
+STRING 3810
+// Units: n00J (Teufelsfresser), EditorSuffix (Name - Editor Suffix)
+{
+(Legion)
+}
+
+STRING 3811
+// Units: n00N (Schändlicher Folterknecht), EditorSuffix (Name - Editor Suffix)
+{
+(Legion)
+}
+
+STRING 3812
+// Units: n00Q (Maid des Schmerzes), EditorSuffix (Name - Editor Suffix)
+{
+(Legion)
+}
+
+STRING 3813
+// Units: n00T (Höllenmaschine), EditorSuffix (Name - Editor Suffix)
+{
+(Legion)
+}
+
+STRING 3814
+// Units: n00F (Höllenbestie), EditorSuffix (Name - Editor Suffix)
+{
+(Legion)
+}
+
+STRING 3815
+// Units: n02I (Dämonenschrein), Name (Name)
+{
+Dämonenschrein
+}
+
+STRING 3816
+// Units: n02I (Dämonenschrein), EditorSuffix (Name - Editor Suffix)
+{
+(Legion)
 }
 

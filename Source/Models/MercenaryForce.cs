@@ -1,14 +1,16 @@
 ﻿using Source.Abstracts;
 using Source.Events.Buildings;
+using Source.Statics;
 using System;
+using System.Collections.Generic;
 using WCSharp.Api;
 using WCSharp.Shared.Data;
 
 namespace Source.Models
 {
-  public sealed class CreepCamp : NeutralForce
+  public sealed class MercenaryForce : NeutralForce
   {
-    public CreepCamp(string name, Area buildingArea, Area spawnArea, TeamBase nearTeam, TeamBase opposingTeam)
+    public MercenaryForce(string name, Area buildingArea, Area spawnArea, TeamBase nearTeam, TeamBase opposingTeam, int buildingUnitTypeId, params int[] defenderUnitTypeIds)
       : base(player.NeutralAggressive)
     {
       Name = name;
@@ -17,6 +19,8 @@ namespace Source.Models
       BuildingArea = buildingArea;
       NearTeam = nearTeam;
       OpposingTeam = opposingTeam;
+      BuildingUnitTypeId = buildingUnitTypeId;
+      DefenderUnitTypeIds = defenderUnitTypeIds;
     }
 
     /// <summary>
@@ -53,16 +57,18 @@ namespace Source.Models
     /// <summary>
     /// Unit-Id des Spawn-Gebäudes, welches die Einheiten automatisch erstellt und das Hauptgebäude des Lagers ist.
     /// </summary>
-    public int BuildingUnitType { get; private set; }
+    public int BuildingUnitTypeId { get; private set; }
     /// <summary>
     /// Unit-Id der mächtigen Einheit, welche das Spawn-Gebäude beacht.
     /// </summary>
-    public int DefenderUnitType { get; private set; }
+    public int[] DefenderUnitTypeIds { get; private set; }
 
     /// <summary>
     /// Spawn-Gebäude, welches die Einheiten automatisch erstellt und das Hauptgebäude des Lagers ist.
     /// </summary>
-    public SpawnCreepsBuilding Building { get; private set; }
+    public MercenarySpawnBuilding Building { get; private set; }
+
+    public List<SpawnedCreep> DefenderCreeps { get; private set; } = new List<SpawnedCreep>();
 
     /// <summary>
     /// Team, für das das Söldnerlager automatisch Einheiten erstellt.
@@ -85,30 +91,15 @@ namespace Source.Models
     /// <param name="unitTypeId"></param>
     /// <param name="face"></param>
     /// <returns></returns>
-    public SpawnCreepsBuilding InitializeBuilding(int unitTypeId, int defenderUnitType, float face = 0f)
+    public MercenarySpawnBuilding InitializeBuilding()
     {
-      BuildingUnitType = unitTypeId;
-      DefenderUnitType = defenderUnitType;
-
       // Ort anhand Zentrum einer Region erstellen
-      Building = new SpawnCreepsBuilding(this, unitTypeId, BuildingArea, face);
-      Building.RegisterOnDies(CreepMainBuilding.OnDies);
+      Building = new MercenarySpawnBuilding(this, BuildingUnitTypeId, BuildingArea, 0f);
+      Building.RegisterOnDies(MercenaryBuilding.OnDies);
 
-      SpawnUnitInAreaAtRandomPoint(DefenderUnitType);
+      CreateDefenderUnits(false);
 
       return Building;
-    }
-
-    /// <summary>
-    /// Erzeugt im Spawn-Bereich eine Einheit an einem zufällig Punkt.
-    /// </summary>
-    /// <param name="unitTypeId"></param>
-    /// <returns></returns>
-    public SpawnedCreep SpawnUnitInAreaAtRandomPoint(int unitTypeId)
-    {
-      Point point = SpawnArea.Wc3Rectangle.GetRandomPoint();
-
-      return new SpawnedCreep(this, unitTypeId, SpawnArea);
     }
 
     /// <summary>
@@ -123,16 +114,29 @@ namespace Source.Models
 
       Wc3Player = OwnerTeam.Computer.Wc3Player;
 
-      Program.ShowDebugMessage($"Build building {BuildingUnitType} at {BuildingArea.ToString()}");
+      Program.ShowDebugMessage($"Build building {BuildingUnitTypeId} at {BuildingArea.ToString()}");
       // Ort anhand Zentrum einer Region erstellen
-      Building = new SpawnCreepsBuilding(this, BuildingUnitType, BuildingArea, 0f);
-      Building.RegisterOnDies(CreepMainBuilding.OnDies);
+      Building = new MercenarySpawnBuilding(this, BuildingUnitTypeId, BuildingArea, 0f);
+      Building.RegisterOnDies(MercenaryBuilding.OnDies);
 
-      SpawnUnitInAreaAtRandomPoint(DefenderUnitType);
+      CreateDefenderUnits(true);
 
       // Füge direkt SpawnTrigger hinzu, welche später durch kaufen von Söldnern um Einheiten erweitert werden
-      Building.InitializeSpawnTrigger(Enums.SpawnInterval.Middle, AttackTargetArea)
-        .Run();
+      Building.AddSpawnTrigger(Enums.SpawnInterval.Middle, SpawnArea, AttackTargetArea).Run();
+    }
+
+    private void CreateDefenderUnits(bool withSpecialEffect)
+    {
+      Rectangle rectangle = SpawnArea.Wc3Rectangle;
+
+      foreach (int unitTypeId in DefenderUnitTypeIds)
+      {
+        Point point = rectangle.GetRandomPoint();
+        DefenderCreeps.Add(SpawnUnitAtPoint(point, unitTypeId));
+
+        if (withSpecialEffect)
+          SpecialEffects.CreateSpecialEffect("UI\\Feedback\\GoldCredit\\GoldCredit.mdl", point, 1f, 1f);
+      }
     }
   }
 }

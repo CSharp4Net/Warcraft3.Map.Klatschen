@@ -1,15 +1,16 @@
-﻿using System;
+﻿using Source.Abstracts;
+using System;
 using System.Collections.Generic;
 using WCSharp.Api;
 
 namespace Source.Models
 {
-  public sealed class SpawnCreepsBuilding
+  public sealed class MercenarySpawnBuilding
   {
-    public SpawnCreepsBuilding(CreepCamp creepCamp, int unitTypeId, Area creationArea, float face = 0f)
+    public MercenarySpawnBuilding(NeutralForce force, int unitTypeId, Area creationArea, float face = 0f)
     {
-      Wc3Unit = Common.CreateUnitAtLoc(creepCamp.Wc3Player, unitTypeId, creationArea.Wc3CenterLocation, face);
-      CreepCamp = creepCamp;
+      Wc3Unit = Common.CreateUnitAtLoc(force.Wc3Player, unitTypeId, creationArea.Wc3CenterLocation, face);
+      NeutralForce = force;
     }
 
     /// <summary>
@@ -24,9 +25,9 @@ namespace Source.Models
     /// <summary>
     /// Das CreepCamp, dem dieses Gebäude gehört.
     /// </summary>
-    private CreepCamp CreepCamp { get; init; }
+    private NeutralForce NeutralForce { get; init; }
 
-    private SpawnCreepsTrigger SpawnTrigger { get; set; }
+    private List<MercenarySpawnTrigger> SpawnTriggers { get; set; } = new List<MercenarySpawnTrigger>();
 
     /// <summary>
     /// Fügt dem Gebäude einen Spawn-Trigger hinzu, welcher solange existiert ist, bis das Gebäude via <see cref="Destroy"/> zerstört wird.
@@ -35,14 +36,19 @@ namespace Source.Models
     /// <param name="spawnArea">Spawn-Gebiet</param>
     /// <param name="unitIds">Auflistung an Einheiten-Ids</param>
     /// <returns></returns>
-    public SpawnCreepsTrigger InitializeSpawnTrigger(Enums.SpawnInterval spawnInterval, Area targetArea)
+    public MercenarySpawnTrigger AddSpawnTrigger(Enums.SpawnInterval spawnInterval, Area spawnArea, Area targetArea)
     {
-      return SpawnTrigger = new SpawnCreepsTrigger(CreepCamp, spawnInterval, targetArea);
+      MercenarySpawnTrigger spawnTrigger = new MercenarySpawnTrigger(NeutralForce, spawnInterval, spawnArea, targetArea);
+      SpawnTriggers.Add(spawnTrigger);
+      return spawnTrigger;
     }
 
-    public void AddUnitToSpawnTrigger(int unitId)
+    public void AddUnitToSpawnTriggers(int unitId)
     {
-      SpawnTrigger.AddUnit(unitId);
+      for (int i = SpawnTriggers.Count - 1; i >= 0; i--)
+      {
+        SpawnTriggers[i].AddUnit(unitId);
+      }
     }
 
     /// <summary>
@@ -52,8 +58,10 @@ namespace Source.Models
     {
       DeRegisterOnDies();
 
-      if (SpawnTrigger != null)
-        SpawnTrigger.Stop();
+      for (int i = SpawnTriggers.Count - 1; i >= 0; i--)
+      {
+        SpawnTriggers[i].Stop();
+      }
 
       if (Wc3Unit.Alive)
       {

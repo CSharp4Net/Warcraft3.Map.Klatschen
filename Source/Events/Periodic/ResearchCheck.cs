@@ -75,7 +75,7 @@ namespace Source.Events.Periodic
       if (currentTechLevel == Common.GetPlayerTechMaxAllowed(computerPlayer, techId))
       {
         // Spieler hat maximale Stufe der Forschung erreicht
-        Program.ShowDebugMessage($"Fraction has research max level of tech: {techId}");
+        //Program.ShowDebugMessage($"Fraction has research max level of tech: {techId}");
         return false;
       }
 

@@ -230,14 +230,14 @@ namespace Source.Logics
 
       int playerId = buyingUnit.Owner.Id;
 
-      if (!Program.TryGetCreepCampByBuilding(sellingUnit, out CreepCamp creepCamp))
+      if (!Program.TryGetCreepCampByBuilding(sellingUnit, out MercenaryForce creepCamp))
       {
 
         Console.WriteLine($"HandleCreepSpawnBuyed, invalid selling creep unit {sellingUnit.Name}!");
         return;
       }
 
-      creepCamp.Building.AddUnitToSpawnTrigger(soldUnitId);
+      creepCamp.Building.AddUnitToSpawnTriggers(soldUnitId);
     }
 
     // TODO 001

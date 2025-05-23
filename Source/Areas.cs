@@ -60,6 +60,8 @@ internal static class Areas
   public static Area HumanToOrcOuterLine { get; set; } = new Area(Regions.HumanToOrcOuterLine);
   public static Area HumanToUndeadInnerLine { get; set; } = new Area(Regions.HumanToUndeadInnerLine);
   public static Area HumanToUndeadOuterLine { get; set; } = new Area(Regions.HumanToUndeadOuterLine);
+  public static Area MiddleLaneSpawnEast { get; set; } = new Area(Regions.MiddleLaneSpawnEast);
+  public static Area MiddleLaneSpawnWest { get; set; } = new Area(Regions.MiddleLaneSpawnWest);
   public static Area OrcBarracksToCenter { get; set; } = new Area(Regions.OrcBarracksToCenter);
   public static Area OrcBarracksToCenterSpawn { get; set; } = new Area(Regions.OrcBarracksToCenterSpawn);
   public static Area OrcBarracksToHuman { get; set; } = new Area(Regions.OrcBarracksToHuman);

@@ -1,5 +1,6 @@
 ﻿using Source.Abstracts;
 using WCSharp.Api;
+using WCSharp.Shared.Data;
 
 namespace Source.Models
 {
@@ -12,11 +13,11 @@ namespace Source.Models
     /// <param name="unitType">Einheit-Typ</param>
     /// <param name="area">Gebiet</param>
     /// <param name="face">Blickrichtung (0 = rechts, 90 = oben, 180 = unten, 270 = links)</param>
-    public SpawnedCreep(NeutralForce owner, int unitType, Area area, float face = 0f)
+    public SpawnedCreep(NeutralForce owner, int unitType, Point point, float face = 0f)
     {
       Owner = owner;
-      SpawnArea = area;
-      Wc3Unit = Common.CreateUnitAtLoc(owner.Wc3Player, unitType, area.Wc3CenterLocation, face);
+
+      Wc3Unit = Common.CreateUnit(owner.Wc3Player, unitType, point.X, point.Y, face);
     }
 
     /// <summary>
@@ -37,20 +38,25 @@ namespace Source.Models
     /// Gebiet, welches das Ziel des letzten Angriff/Bewegen-Befehls war.
     /// </summary>
     public Area LastAreaTarget { get; private set; }
-    /// <summary>
-    /// Gebiet, in dem die Einheit initial erstellt wurde.
-    /// </summary>
-    public Area SpawnArea { get; private set; }
 
     /// <summary>
     /// Gibt der Einheit einen Angriff/Bewegen-Befehl bis zum Zentrum eines Gebiets.
     /// </summary>
     /// <param name="targetArea">Zielgebiet</param>
-    public void AttackMove(Area targetArea)
+    public void AttackMove(Area targetArea, float delay = 0f)
     {
       LastAreaTarget = targetArea;
 
-      Wc3Unit.IssueOrder(Constants.ORDER_ATTACK, LastAreaTarget.CenterX, LastAreaTarget.CenterY);
+      if (delay == 0f)
+        Wc3Unit.IssueOrder(Constants.ORDER_ATTACK, LastAreaTarget.CenterX, LastAreaTarget.CenterY);
+      else
+      {
+        var timer = Common.CreateTimer();
+        Common.TimerStart(timer, delay, false, () =>
+        {
+          Wc3Unit.IssueOrder(Constants.ORDER_ATTACK, LastAreaTarget.CenterX, LastAreaTarget.CenterY);
+        });
+      }
     }
 
     /// <summary>

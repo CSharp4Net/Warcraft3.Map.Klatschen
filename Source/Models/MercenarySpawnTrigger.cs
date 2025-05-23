@@ -1,34 +1,38 @@
 ﻿using Source.Abstracts;
+using Source.Statics;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using WCSharp.Api;
+using WCSharp.Shared.Data;
 using static Source.Models.Enums;
 
 namespace Source.Models
 {
-  public sealed class SpawnCreepsTrigger
+  public sealed class MercenarySpawnTrigger
   {
     /// <summary>
     /// Erstellt einen zeitgesteuertem Auslöser für das regelmäßige Erstellen von Einheiten.
     /// </summary>
-    /// <param name="creepCamp">Computer-Spieler, für den Einheiten erstellt werden</param>
+    /// <param name="force">Computer-Spieler, für den Einheiten erstellt werden</param>
     /// <param name="spawnInterval">Klasse der erstellten Einheiten</param>
     /// <param name="targetArea">Zielgebiet, für das erstellte Einheiten einen Angriff/Bewegen-Befehl erhalten</param>
     /// <param name="unitIds">Auflistung an Einheit-Typen zu beginn</param>
-    public SpawnCreepsTrigger(CreepCamp creepCamp, SpawnInterval spawnInterval, Area targetArea, params int[] unitIds)
+    public MercenarySpawnTrigger(NeutralForce force, SpawnInterval spawnInterval, Area spawnArea, Area targetArea, params int[] unitIds)
     {
-      CreepCamp = creepCamp;
+      Force = force;
+      SpawnArea = spawnArea;
       TargetArea = targetArea;
       UnitIds = unitIds.ToList();
       SpawnInterval = spawnInterval;
       Interval = Program.GetIntervalSeconds(spawnInterval);
     }
 
-    private CreepCamp CreepCamp { get; init; }
+    private NeutralForce Force { get; init; }
 
     private float Interval { get; init; }
 
+    private Area SpawnArea { get; init; }
     private Area TargetArea { get; init; }
 
     private List<int> UnitIds { get; init; }
@@ -72,9 +76,9 @@ namespace Source.Models
       {
         foreach (int unitId in UnitIds)
         {
-        //  Console.WriteLine($"Unit {unitId} attack target {TargetArea.CenterX}:{TargetArea.CenterY}");
-          CreepCamp.SpawnUnitInAreaAtRandomPoint(unitId)
-            .AttackMove(TargetArea);
+          Point randomPoint = SpawnArea.Wc3Rectangle.GetRandomPoint();
+          SpecialEffects.CreateSpecialEffect("UI\\Feedback\\GoldCredit\\GoldCredit.mdl", randomPoint, 1f, 1f);
+          Force.SpawnUnitAtPoint(randomPoint, unitId).AttackMove(TargetArea, 1f);
         }
       }
       catch (Exception ex)

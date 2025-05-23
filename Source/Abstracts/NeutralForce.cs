@@ -1,5 +1,6 @@
 ﻿using Source.Models;
 using WCSharp.Api;
+using WCSharp.Shared.Data;
 
 namespace Source.Abstracts
 {
@@ -30,7 +31,7 @@ namespace Source.Abstracts
         timer.Dispose();
         timer = null;
 
-        Hero = new SpawnedCreep(this, unitTypeId, spawnArea, 0f);
+        Hero = new SpawnedCreep(this, unitTypeId, spawnArea.Wc3Rectangle.Center, 0f);
         Hero.Wc3Unit.HeroLevel = heroLevel;
 
         if (targetArea != null)
@@ -62,6 +63,16 @@ namespace Source.Abstracts
         if (targetArea != null)
           Hero.AttackMove(targetArea);
       });
+    }
+
+    /// <summary>
+    /// Erzeugt im Spawn-Bereich eine Einheit an einem zufällig Punkt.
+    /// </summary>
+    /// <param name="unitTypeId"></param>
+    /// <returns></returns>
+    public virtual SpawnedCreep SpawnUnitAtPoint(Point point, int unitTypeId)
+    {
+      return new SpawnedCreep(this, unitTypeId, point);
     }
   }
 }

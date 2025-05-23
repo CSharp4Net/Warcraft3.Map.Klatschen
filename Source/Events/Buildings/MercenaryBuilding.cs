@@ -4,7 +4,7 @@ using WCSharp.Api;
 
 namespace Source.Events.Buildings
 {
-  internal static class CreepMainBuilding
+  internal static class MercenaryBuilding
   {
     internal static void OnDies()
     {
@@ -21,9 +21,9 @@ namespace Source.Events.Buildings
         int unitType = buildingUnit.UnitType;
 
         // Suche CreepCamp, zudem das zerstörte Gebäude gehört
-        if (!Program.TryGetCreepCampByBuilding(buildingUnit, out CreepCamp creepCamp))
+        if (!Program.TryGetCreepCampByBuilding(buildingUnit, out MercenaryForce creepCamp))
         {
-          Program.ShowErrorMessage("CreepMainBuilding.OnDies", $"Creep camp of creep building {buildingUnit.Name} not found!");
+          Program.ShowErrorMessage("MercenaryMainBuilding.OnDies", $"Creep camp of creep building {buildingUnit.Name} not found!");
           return;
         }
 
@@ -31,6 +31,13 @@ namespace Source.Events.Buildings
 
         // Stoppe Trigger
         creepCamp.Building.Destroy();
+
+        // Falls Verteidiger noch am Leben, dann töte diese
+        for (int i = creepCamp.DefenderCreeps.Count - 1; i >= 0; i--)
+        {
+          creepCamp.DefenderCreeps[i].Kill();
+        }
+        creepCamp.DefenderCreeps.Clear();
 
         // Verstorbenen Held nach gegebener Zeit wieder belegen
         timer timer = Common.CreateTimer();
@@ -71,13 +78,13 @@ namespace Source.Events.Buildings
           }
           catch (Exception ex)
           {
-            Program.ShowExceptionMessage("BuildingCreep.OnDies", ex);
+            Program.ShowExceptionMessage("MercenaryMainBuilding.OnDies", ex);
           }
         });
       }
       catch (Exception ex)
       {
-        Program.ShowExceptionMessage("BuildingCreep.OnDies", ex);
+        Program.ShowExceptionMessage("MercenaryMainBuilding.OnDies", ex);
       }
     }
   }
