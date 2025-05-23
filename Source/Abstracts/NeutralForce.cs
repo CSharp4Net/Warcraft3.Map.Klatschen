@@ -24,19 +24,31 @@ namespace Source.Abstracts
     /// <param name="delay"></param>
     protected void CreateHero(int unitTypeId, Area spawnArea, int heroLevel, float delay, Area targetArea = null)
     {
-      var timer = Common.CreateTimer();
-      Common.TimerStart(timer, delay, false, () =>
+      if (delay == 0f)
       {
-        Common.DestroyTimer(timer);
-        timer.Dispose();
-        timer = null;
+        CreateHero(unitTypeId, spawnArea, heroLevel, targetArea);
+      }
+      else
+      {
+        var timer = Common.CreateTimer();
+        Common.TimerStart(timer, delay, false, () =>
+        {
+          Common.DestroyTimer(timer);
+          timer.Dispose();
+          timer = null;
 
-        Hero = new SpawnedCreep(this, unitTypeId, spawnArea.Wc3Rectangle.Center, 0f);
-        Hero.Wc3Unit.HeroLevel = heroLevel;
+          CreateHero(unitTypeId, spawnArea, heroLevel, targetArea);
+        });
+      }
+    }
 
-        if (targetArea != null)
-          Hero.AttackMove(targetArea);
-      });
+    private void CreateHero(int unitTypeId, Area spawnArea, int heroLevel, Area targetArea = null)
+    {
+      Hero = new SpawnedCreep(this, unitTypeId, spawnArea.Wc3Rectangle.Center, 0f);
+      Hero.Wc3Unit.HeroLevel = heroLevel;
+
+      if (targetArea != null)
+        Hero.AttackMove(targetArea);
     }
 
     /// <summary>
@@ -48,27 +60,40 @@ namespace Source.Abstracts
     /// <param name="delay"></param>
     protected void ReviveHero(Area spawnArea, int heroLevel, float delay, Area targetArea = null)
     {
-      var timer = Common.CreateTimer();
-      Common.TimerStart(timer, delay, false, () =>
+      if (delay == 0f)
       {
-        Common.DestroyTimer(timer);
-        timer.Dispose();
-        timer = null;
+        ReviveHero(spawnArea, heroLevel, targetArea);
+      }
+      else
+      {
+        var timer = Common.CreateTimer();
+        Common.TimerStart(timer, delay, false, () =>
+        {
+          Common.DestroyTimer(timer);
+          timer.Dispose();
+          timer = null;
 
-        Common.ReviveHero(Hero.Wc3Unit, spawnArea.CenterX, spawnArea.CenterY, true);
+          ReviveHero(spawnArea, heroLevel, targetArea);
+        });
+      }
+    }
 
-        Hero.Wc3Unit.HeroLevel = heroLevel;
-        Hero.Wc3Unit.Mana = Hero.Wc3Unit.MaxMana;
+    private void ReviveHero(Area spawnArea, int heroLevel, Area targetArea = null)
+    {
+      Common.ReviveHero(Hero.Wc3Unit, spawnArea.CenterX, spawnArea.CenterY, true);
 
-        if (targetArea != null)
-          Hero.AttackMove(targetArea);
-      });
+      Hero.Wc3Unit.HeroLevel = heroLevel;
+      Hero.Wc3Unit.Mana = Hero.Wc3Unit.MaxMana;
+
+      if (targetArea != null)
+        Hero.AttackMove(targetArea);
     }
 
     /// <summary>
-    /// Erzeugt im Spawn-Bereich eine Einheit an einem zufällig Punkt.
+    /// Erzeugt im Spawn-Bereich eine Einheit an einem definierten Punkt.
     /// </summary>
-    /// <param name="unitTypeId"></param>
+    /// <param name="point">Punkt</param>
+    /// <param name="unitTypeId">Einheit-Typ</param>
     /// <returns></returns>
     public virtual SpawnedCreep SpawnUnitAtPoint(Point point, int unitTypeId)
     {

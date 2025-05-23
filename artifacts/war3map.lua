@@ -20120,7 +20120,7 @@ System.namespace("Source", function (namespace)
 
         -- Periodische Events registrieren
         WCSharpEvents.PeriodicEvents.AddPeriodicEvent(SourceEventsPeriodic.GoldIncome.OnElapsed, 5)
-        WCSharpEvents.PeriodicEvents.AddPeriodicEvent(SourceEventsPeriodic.Klatschen.OnElapsed, 25 --[[ConstantsEx.Interval_Event_Klatschen]])
+        WCSharpEvents.PeriodicEvents.AddPeriodicEvent(SourceEventsPeriodic.LegionRaid.OnElapsed, 25 --[[ConstantsEx.Interval_Event_Klatschen]])
         WCSharpEvents.PeriodicEvents.AddPeriodicEvent(SourceEventsPeriodic.ResearchCheck.OnElapsed, 10)
 
         -- Gebäude & Trigger für Computer-Spieler erstellen
@@ -20683,7 +20683,7 @@ System.import(function (out)
 end)
 System.namespace("Source.Abstracts", function (namespace)
   namespace.class("NeutralForce", function (namespace)
-    local CreateHero, ReviveHero, SpawnUnitAtPoint, __ctor__
+    local CreateHero, CreateHero1, ReviveHero, ReviveHero1, SpawnUnitAtPoint, __ctor__
     __ctor__ = function (this, wc3ComputerPlayer)
       this.Wc3Player = wc3ComputerPlayer
     end
@@ -20695,19 +20695,26 @@ System.namespace("Source.Abstracts", function (namespace)
     -- <param name="heroLevel"></param>
     -- <param name="delay"></param>
     CreateHero = function (this, unitTypeId, spawnArea, heroLevel, delay, targetArea)
-      local timer = CreateTimer()
-      TimerStart(timer, delay, false, function ()
-        DestroyTimer(timer)
-        DestroyTimer(timer)
-        timer = nil
+      if delay == 0 then
+        CreateHero1(this, unitTypeId, spawnArea, heroLevel, targetArea)
+      else
+        local timer = CreateTimer()
+        TimerStart(timer, delay, false, function ()
+          DestroyTimer(timer)
+          DestroyTimer(timer)
+          timer = nil
 
-        this.Hero = SourceModels.SpawnedCreep(this, unitTypeId, spawnArea.Wc3Rectangle:getCenter(), 0)
-        SetHeroLevel(this.Hero.Wc3Unit, heroLevel, true)
+          CreateHero1(this, unitTypeId, spawnArea, heroLevel, targetArea)
+        end)
+      end
+    end
+    CreateHero1 = function (this, unitTypeId, spawnArea, heroLevel, targetArea)
+      this.Hero = SourceModels.SpawnedCreep(this, unitTypeId, spawnArea.Wc3Rectangle:getCenter(), 0)
+      SetHeroLevel(this.Hero.Wc3Unit, heroLevel, true)
 
-        if targetArea ~= nil then
-          this.Hero:AttackMove(targetArea, 0)
-        end
-      end)
+      if targetArea ~= nil then
+        this.Hero:AttackMove(targetArea, 0)
+      end
     end
     -- <summary>
     -- Erstellt eine neue Heldeinheit oder belebt die Heldeinheit wieder und setzt das Heldenlevel.
@@ -20717,26 +20724,34 @@ System.namespace("Source.Abstracts", function (namespace)
     -- <param name="heroLevel"></param>
     -- <param name="delay"></param>
     ReviveHero = function (this, spawnArea, heroLevel, delay, targetArea)
-      local timer = CreateTimer()
-      TimerStart(timer, delay, false, function ()
-        DestroyTimer(timer)
-        DestroyTimer(timer)
-        timer = nil
+      if delay == 0 then
+        ReviveHero1(this, spawnArea, heroLevel, targetArea)
+      else
+        local timer = CreateTimer()
+        TimerStart(timer, delay, false, function ()
+          DestroyTimer(timer)
+          DestroyTimer(timer)
+          timer = nil
 
-        ReviveHero(this.Hero.Wc3Unit, spawnArea.CenterX, spawnArea.CenterY, true)
+          ReviveHero1(this, spawnArea, heroLevel, targetArea)
+        end)
+      end
+    end
+    ReviveHero1 = function (this, spawnArea, heroLevel, targetArea)
+      ReviveHero(this.Hero.Wc3Unit, spawnArea.CenterX, spawnArea.CenterY, true)
 
-        SetHeroLevel(this.Hero.Wc3Unit, heroLevel, true)
-        SetUnitState(this.Hero.Wc3Unit, UNIT_STATE_MANA, BlzGetUnitMaxMana(this.Hero.Wc3Unit))
+      SetHeroLevel(this.Hero.Wc3Unit, heroLevel, true)
+      SetUnitState(this.Hero.Wc3Unit, UNIT_STATE_MANA, BlzGetUnitMaxMana(this.Hero.Wc3Unit))
 
-        if targetArea ~= nil then
-          this.Hero:AttackMove(targetArea, 0)
-        end
-      end)
+      if targetArea ~= nil then
+        this.Hero:AttackMove(targetArea, 0)
+      end
     end
     -- <summary>
-    -- Erzeugt im Spawn-Bereich eine Einheit an einem zufällig Punkt.
+    -- Erzeugt im Spawn-Bereich eine Einheit an einem definierten Punkt.
     -- </summary>
-    -- <param name="unitTypeId"></param>
+    -- <param name="point">Punkt</param>
+    -- <param name="unitTypeId">Einheit-Typ</param>
     -- <returns></returns>
     SpawnUnitAtPoint = function (this, point, unitTypeId)
       return SourceModels.SpawnedCreep(this, unitTypeId, point, 0)
@@ -20751,7 +20766,9 @@ System.namespace("Source.Abstracts", function (namespace)
           methods = {
             { ".ctor", 0x106, nil, out.WCSharp.Api.player },
             { "CreateHero", 0x503, CreateHero, System.Int32, out.Source.Models.Area, System.Int32, System.Single, out.Source.Models.Area },
+            { "CreateHero", 0x401, CreateHero1, System.Int32, out.Source.Models.Area, System.Int32, out.Source.Models.Area },
             { "ReviveHero", 0x403, ReviveHero, out.Source.Models.Area, System.Int32, System.Single, out.Source.Models.Area },
+            { "ReviveHero", 0x301, ReviveHero1, out.Source.Models.Area, System.Int32, out.Source.Models.Area },
             { "SpawnUnitAtPoint", 0x286, SpawnUnitAtPoint, out.WCSharp.Shared.Data.Point, System.Int32, out.Source.Models.SpawnedCreep }
           },
           properties = {
@@ -21584,18 +21601,22 @@ end)
 end
 do
 local System = System
+local Linq = System.Linq.Enumerable
 local WCSharpApi = WCSharp.Api
 local Source
+local SourceStatics
 local WCSharpLightnings
 local WCSharpSharedData
 System.import(function (out)
   Source = out.Source
+  SourceStatics = Source.Statics
   WCSharpLightnings = WCSharp.Lightnings
   WCSharpSharedData = WCSharp.Shared.Data
 end)
 System.namespace("Source.Events.Periodic", function (namespace)
-  namespace.class("Klatschen", function (namespace)
-    local executions, OnElapsed, CreateAtDummyAndCastAbility, CreateAtDummyAndCastAbilityTimed, CreateAtDummyAndCastAbilityTimed1, CreateLightning, CreateLightning1, ComputePentagramPoints
+  namespace.class("LegionRaid", function (namespace)
+    local executions, OnElapsed, CreateUnitAtRandomPointWithEffect, CreateAtDummyAndCastAbilityTimed, CreateAtDummyAndCastAbilityTimed1, CreateAtDummyAndCastAbility, CreateLightning, CreateLightning1, 
+    ComputePentagramPoints
     executions = 0
     OnElapsed = function ()
       System.try(function ()
@@ -21728,10 +21749,20 @@ System.namespace("Source.Events.Periodic", function (namespace)
           end
         end)
 
-        --// Zentrum - Helden beleben nach 5 Sekunden
-        --Program.Legion.CreateOrReviveHero(Constants.UNIT_GRUBENLORD_KLATSCHEN, Areas.Center, executions * 10, executions, 5.5f);
+        -- Zentrum - Helden beleben
+        local maxHeroLevel = Linq.Max(Source.Program.AllActiveUsers, function (user)
+          return user.HeroLevelCounter
+        end, System.Int32)
+        if maxHeroLevel == 0 then
+          maxHeroLevel = executions
+        end
 
-        --// Zentrum - Weitere Einheiten via Cast hinzurufen
+        Source.Program.Legion:CreateOrReviveHero(1311780918 --[[Constants.UNIT_D_MONENF_RST_LEGION]], Areas.Center, maxHeroLevel, executions)
+
+        -- Zentrum - Weitere Einheiten via Cast hinzurufen
+        CreateUnitAtRandomPointWithEffect(centerRect, 1848651846 --[[Constants.UNIT_H_LLENBESTIE_LEGION]])
+        CreateUnitAtRandomPointWithEffect(centerRect, 1848651857 --[[Constants.UNIT_MAID_DES_SCHMERZES_LEGION]])
+        CreateUnitAtRandomPointWithEffect(centerRect, 1848651850 --[[Constants.UNIT_TEUFELSFRESSER_LEGION]])
         --CreateAtDummyAndCastAbilityTimed(player, centerRect, Constants.ABILITY_H_LLENBESTIEN_KLATSCHEN, executions, Constants.ORDER_RAIN_OF_CHAOS, 4f);
         --CreateAtDummyAndCastAbilityTimed(player, centerRect, Constants.ABILITY_TEUFELSWACHEN_KLATSCHEN, executions, Constants.ORDER_RAIN_OF_CHAOS, 4f);
         --CreateAtDummyAndCastAbilityTimed(player, centerRect, Constants.ABILITY_TEUFELSFRESSERER_KLATSCHEN, executions, Constants.ORDER_RAIN_OF_CHAOS, 4f);
@@ -21740,18 +21771,22 @@ System.namespace("Source.Events.Periodic", function (namespace)
         --CreateAtDummyAndCastAbilityTimed(player, centerRect, Constants.ABILITY_H_LLENMASCHINEN_KLATSCHEN, executions, Constants.ORDER_RAIN_OF_CHAOS, 5f);
 
         --// Bottom Lane - Weitere Einheiten via Cast hinzurufen
+        CreateUnitAtRandomPointWithEffect(CenterBottomRect, 1848651846 --[[Constants.UNIT_H_LLENBESTIE_LEGION]])
         --CreateAtDummyAndCastAbilityTimed(player, CenterBottomRect, Constants.ABILITY_H_LLENBESTIEN_KLATSCHEN, executions, Constants.ORDER_RAIN_OF_CHAOS, 4f);
         --CreateAtDummyAndCastAbilityTimed(player, CenterBottomRect, Constants.ABILITY_MAIDS_DES_SCHRECKENS_KLATSCHEN, executions, Constants.ORDER_RAIN_OF_CHAOS, 4.5f);
 
         --// Left Lane - Weitere Einheiten via Cast hinzurufen
+        CreateUnitAtRandomPointWithEffect(CenterLeftRect, 1848651846 --[[Constants.UNIT_H_LLENBESTIE_LEGION]])
         --CreateAtDummyAndCastAbilityTimed(player, CenterLeftRect, Constants.ABILITY_H_LLENBESTIEN_KLATSCHEN, executions, Constants.ORDER_RAIN_OF_CHAOS, 4f);
         --CreateAtDummyAndCastAbilityTimed(player, CenterLeftRect, Constants.ABILITY_MAIDS_DES_SCHRECKENS_KLATSCHEN, executions, Constants.ORDER_RAIN_OF_CHAOS, 4.5f);
 
         --// Top Lane - Weitere Einheiten via Cast hinzurufen
+        CreateUnitAtRandomPointWithEffect(CenterTopRect, 1848651846 --[[Constants.UNIT_H_LLENBESTIE_LEGION]])
         --CreateAtDummyAndCastAbilityTimed(player, CenterTopRect, Constants.ABILITY_H_LLENBESTIEN_KLATSCHEN, executions, Constants.ORDER_RAIN_OF_CHAOS, 4f);
         --CreateAtDummyAndCastAbilityTimed(player, CenterTopRect, Constants.ABILITY_MAIDS_DES_SCHRECKENS_KLATSCHEN, executions, Constants.ORDER_RAIN_OF_CHAOS, 4.5f);
 
         --// Right Lane - Weitere Einheiten via Cast hinzurufen
+        CreateUnitAtRandomPointWithEffect(CenterRightRect, 1848651846 --[[Constants.UNIT_H_LLENBESTIE_LEGION]])
         --CreateAtDummyAndCastAbilityTimed(player, CenterRightRect, Constants.ABILITY_H_LLENBESTIEN_KLATSCHEN, executions, Constants.ORDER_RAIN_OF_CHAOS, 4f);
         --CreateAtDummyAndCastAbilityTimed(player, CenterRightRect, Constants.ABILITY_MAIDS_DES_SCHRECKENS_KLATSCHEN, executions, Constants.ORDER_RAIN_OF_CHAOS, 4.5f);
       end, function (default)
@@ -21761,9 +21796,45 @@ System.namespace("Source.Events.Periodic", function (namespace)
 
       return true
     end
+    CreateUnitAtRandomPointWithEffect = function (rectangle, unitTypeId)
+      local point = rectangle:GetRandomPoint()
+      SourceStatics.SpecialEffects.CreateSpecialEffect("Objects\\Spawnmodels\\NightElf\\EntBirthTarget\\EntBirthTarget.mdl", point, 2, 1)
+      local creep = Source.Program.Legion:SpawnUnitAtPoint(point, unitTypeId)
+
+      repeat
+        local default = executions
+        if default == 1 or default == 2 or default == 3 or default == 4 then
+          BlzSetUnitBaseDamage(creep.Wc3Unit, BlzGetUnitBaseDamage(creep.Wc3Unit, 0) * executions, 0)
+          BlzSetUnitRealField(creep.Wc3Unit, UNIT_RF_DEFENSE, BlzGetUnitRealField(creep.Wc3Unit, UNIT_RF_DEFENSE) * executions)
+          BlzSetUnitMaxHP(creep.Wc3Unit, BlzGetUnitMaxHP(creep.Wc3Unit) * executions)
+          SetWidgetLife(creep.Wc3Unit, BlzGetUnitMaxHP(creep.Wc3Unit))
+          break
+        else
+          -- Ab Stufe 5 werden die Einheiten nicht mehr stärker, sonst werden sie (fast) unbesiegbar
+          BlzSetUnitBaseDamage(creep.Wc3Unit, BlzGetUnitBaseDamage(creep.Wc3Unit, 0) * 5, 0)
+          BlzSetUnitRealField(creep.Wc3Unit, UNIT_RF_DEFENSE, BlzGetUnitRealField(creep.Wc3Unit, UNIT_RF_DEFENSE) * 5)
+          BlzSetUnitMaxHP(creep.Wc3Unit, BlzGetUnitMaxHP(creep.Wc3Unit) * 5)
+          SetWidgetLife(creep.Wc3Unit, BlzGetUnitMaxHP(creep.Wc3Unit))
+          break
+        end
+      until 1
+    end
+    CreateAtDummyAndCastAbilityTimed = function (player, rectangle, abilityId, abilityLevel, orderId, delay, duration)
+      CreateAtDummyAndCastAbilityTimed1(player, rectangle:GetRandomPoint(), abilityId, abilityLevel, orderId, delay, duration)
+    end
+    CreateAtDummyAndCastAbilityTimed1 = function (player, point, abilityId, abilityLevel, orderId, delay, duration)
+      local timer = CreateTimer()
+      TimerStart(timer, delay, false, function ()
+        DestroyTimer(timer)
+        DestroyTimer(timer)
+        timer = nil
+
+        CreateAtDummyAndCastAbility(player, point, abilityId, abilityLevel, orderId, duration)
+      end)
+    end
     CreateAtDummyAndCastAbility = function (player, point, abilityId, abilityLevel, orderId, duration)
       local dummy = CreateUnit(player, 1848651824 --[[Constants.UNIT_DUMMY]], point.X, point.Y, 0)
-      --DummySystem.RecycleDummy(dummy, duration);
+
       UnitAddAbility(dummy, abilityId)
       SetUnitAbilityLevel(dummy, abilityId, abilityLevel)
       IssueTargetOrderById(dummy, orderId, dummy)
@@ -21778,19 +21849,6 @@ System.namespace("Source.Events.Periodic", function (namespace)
         RemoveUnit(dummy)
         RemoveUnit(dummy)
         dummy = nil
-      end)
-    end
-    CreateAtDummyAndCastAbilityTimed = function (player, rectangle, abilityId, abilityLevel, orderId, delay, duration)
-      CreateAtDummyAndCastAbilityTimed1(player, rectangle:GetRandomPoint(), abilityId, abilityLevel, orderId, delay, duration)
-    end
-    CreateAtDummyAndCastAbilityTimed1 = function (player, point, abilityId, abilityLevel, orderId, delay, duration)
-      local timer = CreateTimer()
-      TimerStart(timer, delay, false, function ()
-        DestroyTimer(timer)
-        DestroyTimer(timer)
-        timer = nil
-
-        CreateAtDummyAndCastAbility(player, point, abilityId, abilityLevel, orderId, duration)
       end)
     end
     CreateLightning = function (caster, target)
@@ -21848,9 +21906,10 @@ System.namespace("Source.Events.Periodic", function (namespace)
             { "CreateAtDummyAndCastAbilityTimed", 0x709, CreateAtDummyAndCastAbilityTimed1, out.WCSharp.Api.player, out.WCSharp.Shared.Data.Point, System.Int32, System.Int32, System.Int32, System.Single, System.Single },
             { "CreateLightning", 0x209, CreateLightning, out.WCSharp.Shared.Data.Point, out.WCSharp.Shared.Data.Point },
             { "CreateLightning", 0x409, CreateLightning1, out.WCSharp.Api.unit, out.WCSharp.Api.unit, System.Single, System.Single },
+            { "CreateUnitAtRandomPointWithEffect", 0x209, CreateUnitAtRandomPointWithEffect, out.WCSharp.Shared.Data.Rectangle, System.Int32 },
             { "OnElapsed", 0x8E, OnElapsed, System.Boolean }
           },
-          class = { "Klatschen", 0x3C }
+          class = { "LegionRaid", 0x3C }
         }
       end
     }
@@ -23183,52 +23242,37 @@ end
 do
 local System = System
 local WCSharpApi = WCSharp.Api
-local Source
 local SourceEventsBuildings
 local SourceModels
 local SourceStatics
 System.import(function (out)
-  Source = out.Source
   SourceEventsBuildings = Source.Events.Buildings
   SourceModels = Source.Models
   SourceStatics = Source.Statics
 end)
 System.namespace("Source.Models", function (namespace)
   namespace.class("LegionForce", function (namespace)
-    local CreateOrReviveHero, CreateOrRefreshEastSpawnBuilding, CreateOrRefreshWestSpawnBuilding, TrainGrubenlord, __ctor__
+    local CreateOrReviveHero, CreateOrRefreshEastSpawnBuilding, CreateOrRefreshWestSpawnBuilding, TrainHero, __ctor__
     __ctor__ = function (this, name)
       System.base(this).__ctor__(this, Player(PLAYER_NEUTRAL_AGGRESSIVE))
       this.Name = name
       this.ColorizedName = "|cffff0000" .. System.toString(name) .. "|r"
     end
-    CreateOrReviveHero = function (this, unitTypeId, spawnArea, heroLevel, abilitiesLevel, delay, targetArea)
+    CreateOrReviveHero = function (this, unitTypeId, spawnArea, heroLevel, abilitiesLevel, targetArea)
       if this.Hero == nil then
-        this:CreateHero(unitTypeId, spawnArea, heroLevel, delay, targetArea)
+        this:CreateHero(unitTypeId, spawnArea, heroLevel, 0, targetArea)
       else
-        this:ReviveHero(spawnArea, heroLevel, delay, targetArea)
+        this:ReviveHero(spawnArea, heroLevel, 0, targetArea)
       end
 
-      if unitTypeId == 1311780918 --[[Constants.UNIT_D_MONENF_RST_LEGION]] then
-        local timer = CreateTimer()
-        TimerStart(timer, delay + 1, false, function ()
-          System.try(function ()
-            DestroyTimer(timer)
-            DestroyTimer(timer)
-            timer = nil
-
-            TrainGrubenlord(this, this.Hero.Wc3Unit, abilitiesLevel)
-          end, function (default)
-            local ex = default
-            Source.Program.ShowExceptionMessage("KlatschenFragtion.CreateOrReviveHero", ex)
-          end)
-        end)
-      end
+      SourceStatics.SpecialEffects.CreateSpecialEffect("Objects\\Spawnmodels\\NightElf\\EntBirthTarget\\EntBirthTarget.mdl", spawnArea.Wc3Rectangle:getCenter(), 2, 3)
+      TrainHero(this, this.Hero.Wc3Unit, abilitiesLevel)
     end
     CreateOrRefreshEastSpawnBuilding = function (this)
       SourceStatics.SpecialEffects.CreateSpecialEffect("Objects\\Spawnmodels\\NightElf\\EntBirthTarget\\EntBirthTarget.mdl", Areas.MiddleLaneSpawnEast.Wc3Rectangle:getCenter(), 4, 3)
 
       if this.SpawnBuildingEast == nil or not UnitAlive(this.SpawnBuildingEast.Wc3Unit) then
-        this.SpawnBuildingEast = SourceModels.LegionSpawnBuilding(1848652361 --[[Constants.UNIT_D_MONENSCHREIN_LEGION]], Areas.MiddleLaneSpawnEast, 0)
+        this.SpawnBuildingEast = SourceModels.LegionSpawnBuilding(1848652361 --[[Constants.UNIT_D_MONENSCHREIN_LEGION]], Areas.MiddleLaneSpawnEast, 180)
         this.SpawnBuildingEast:RegisterOnDies(SourceEventsBuildings.LegionBuilding.OnDies)
 
         this.SpawnBuildingEast:AddSpawnTrigger(1 --[[SpawnInterval.Middle]], Areas.MiddleLaneSpawnEast, Areas.CenterRight):Run(0)
@@ -23260,7 +23304,7 @@ System.namespace("Source.Models", function (namespace)
 
       return this.SpawnBuildingWest
     end
-    TrainGrubenlord = function (this, unit, abilitiesLevel)
+    TrainHero = function (this, unit, abilitiesLevel)
       repeat
         local default = abilitiesLevel
         if default == 1 then
@@ -23299,8 +23343,8 @@ System.namespace("Source.Models", function (namespace)
             { ".ctor", 0x106, nil, System.String },
             { "CreateOrRefreshEastSpawnBuilding", 0x84, CreateOrRefreshEastSpawnBuilding, out.Source.Models.LegionSpawnBuilding },
             { "CreateOrRefreshWestSpawnBuilding", 0x84, CreateOrRefreshWestSpawnBuilding, out.Source.Models.LegionSpawnBuilding },
-            { "CreateOrReviveHero", 0x606, CreateOrReviveHero, System.Int32, out.Source.Models.Area, System.Int32, System.Int32, System.Single, out.Source.Models.Area },
-            { "TrainGrubenlord", 0x201, TrainGrubenlord, out.WCSharp.Api.unit, System.Int32 }
+            { "CreateOrReviveHero", 0x506, CreateOrReviveHero, System.Int32, out.Source.Models.Area, System.Int32, System.Int32, out.Source.Models.Area },
+            { "TrainHero", 0x201, TrainHero, out.WCSharp.Api.unit, System.Int32 }
           },
           properties = {
             { "ColorizedName", 0x6, System.String },
@@ -23469,9 +23513,9 @@ System.namespace("Source.Models", function (namespace)
     Elapsed = function (this)
       System.try(function ()
         for _, unitId in System.each(this.UnitIds) do
-          local randomPoint = this.SpawnArea.Wc3Rectangle:GetRandomPoint()
-          SourceStatics.SpecialEffects.CreateSpecialEffect("Objects\\Spawnmodels\\NightElf\\EntBirthTarget\\EntBirthTarget.mdl", randomPoint, 2, 1)
-          Source.Program.Legion:SpawnUnitAtPoint(randomPoint, unitId):AttackMove(this.TargetArea, 2)
+          local point = this.SpawnArea.Wc3Rectangle:GetRandomPoint()
+          SourceStatics.SpecialEffects.CreateSpecialEffect("Objects\\Spawnmodels\\NightElf\\EntBirthTarget\\EntBirthTarget.mdl", point, 2, 1)
+          Source.Program.Legion:SpawnUnitAtPoint(point, unitId):AttackMove(this.TargetArea, 2)
         end
       end, function (default)
         local ex = default
@@ -23539,7 +23583,7 @@ System.import(function (out)
 end)
 System.namespace("Source.Models", function (namespace)
   namespace.class("MercenaryForce", function (namespace)
-    local CreateHero1, ReviveHero1, InitializeBuilding, SetOwnerAndRebuild, CreateDefenderUnits, __ctor__
+    local CreateHero2, ReviveHero2, InitializeBuilding, SetOwnerAndRebuild, CreateDefenderUnits, __ctor__
     __ctor__ = function (this, name, buildingArea, spawnArea, nearTeam, opposingTeam, buildingUnitTypeId, defenderUnitTypeIds)
       this.DefenderCreeps = ListSpawnedCreep()
       System.base(this).__ctor__(this, Player(PLAYER_NEUTRAL_AGGRESSIVE))
@@ -23552,10 +23596,10 @@ System.namespace("Source.Models", function (namespace)
       this.BuildingUnitTypeId = buildingUnitTypeId
       this.DefenderUnitTypeIds = defenderUnitTypeIds
     end
-    CreateHero1 = function (this, unitTypeId, heroLevel, face)
+    CreateHero2 = function (this, unitTypeId, heroLevel, face)
       this:CreateHero(unitTypeId, this.SpawnArea, heroLevel, face, this.AttackTargetArea)
     end
-    ReviveHero1 = function (this, heroLevel, face)
+    ReviveHero2 = function (this, heroLevel, face)
       this:ReviveHero(this.SpawnArea, heroLevel, face, this.AttackTargetArea)
     end
     -- <summary>
@@ -23613,8 +23657,8 @@ System.namespace("Source.Models", function (namespace)
         }
       end,
       BuildingUnitTypeId = 0,
-      CreateHero1 = CreateHero1,
-      ReviveHero1 = ReviveHero1,
+      CreateHero2 = CreateHero2,
+      ReviveHero2 = ReviveHero2,
       InitializeBuilding = InitializeBuilding,
       SetOwnerAndRebuild = SetOwnerAndRebuild,
       __ctor__ = __ctor__,
@@ -23623,9 +23667,9 @@ System.namespace("Source.Models", function (namespace)
           methods = {
             { ".ctor", 0x706, nil, System.String, out.Source.Models.Area, out.Source.Models.Area, out.Source.Abstracts.TeamBase, out.Source.Abstracts.TeamBase, System.Int32, System.Array(System.Int32) },
             { "CreateDefenderUnits", 0x101, CreateDefenderUnits, System.Boolean },
-            { "CreateHero", 0x306, CreateHero1, System.Int32, System.Int32, System.Single },
+            { "CreateHero", 0x306, CreateHero2, System.Int32, System.Int32, System.Single },
             { "InitializeBuilding", 0x86, InitializeBuilding, out.Source.Models.MercenarySpawnBuilding },
-            { "ReviveHero", 0x206, ReviveHero1, System.Int32, System.Single },
+            { "ReviveHero", 0x206, ReviveHero2, System.Int32, System.Single },
             { "SetOwnerAndRebuild", 0x206, SetOwnerAndRebuild, out.Source.Abstracts.TeamBase, out.Source.Models.Area }
           },
           properties = {
@@ -36393,7 +36437,7 @@ local InitCSharp = function ()
       "Source.Events.Buildings.TeamMainBuilding",
       "Source.Events.Hero",
       "Source.Events.Periodic.GoldIncome",
-      "Source.Events.Periodic.Klatschen",
+      "Source.Events.Periodic.LegionRaid",
       "Source.Events.Periodic.ResearchCheck",
       "Source.Events.Region.ElfBase",
       "Source.Events.Region.HumanBase",
@@ -60900,16 +60944,9 @@ function CreateNeutralHostile()
     local p = Player(PLAYER_NEUTRAL_AGGRESSIVE)
     local unitID = nil
     local t = nil
-    gg_unit_N006_0123 = CreateUnit(p, 1311780918, 16059.5, 17987.9, 270.000)
     gg_unit_n02F_0124 = CreateUnit(p, 1848652358, 17760.0, 17504.0, 270.000)
     gg_unit_n02B_0125 = CreateUnit(p, 1848652354, 18112.0, 18560.0, 270.000)
     gg_unit_n02G_0127 = CreateUnit(p, 1848652359, 18080.0, 17504.0, 270.000)
-    gg_unit_n00T_0132 = CreateUnit(p, 1848651860, 15802.6, 17980.8, 270.000)
-    gg_unit_n00J_0133 = CreateUnit(p, 1848651850, 15292.0, 17986.3, 270.000)
-    gg_unit_n00C_0137 = CreateUnit(p, 1848651843, 15172.4, 17983.6, 270.000)
-    gg_unit_n00N_0191 = CreateUnit(p, 1848651854, 15545.3, 17974.9, 270.000)
-    gg_unit_n00F_0192 = CreateUnit(p, 1848651846, 15421.9, 17980.8, 270.000)
-    gg_unit_n00Q_0211 = CreateUnit(p, 1848651857, 15672.7, 17979.3, 270.000)
     gg_unit_n00V_0238 = CreateUnit(p, 1848651862, 17760.0, 19296.0, 270.000)
     gg_unit_n01G_0246 = CreateUnit(p, 1848652103, 18080.0, 19296.0, 270.000)
     gg_unit_n01H_0277 = CreateUnit(p, 1848652104, 17760.0, 19040.0, 270.000)
@@ -60923,7 +60960,6 @@ function CreateNeutralHostile()
     gg_unit_n00P_0291 = CreateUnit(p, 1848651856, 17728.0, 18112.0, 270.000)
     gg_unit_n024_0293 = CreateUnit(p, 1848652340, 17760.0, 17824.0, 270.000)
     gg_unit_n025_0294 = CreateUnit(p, 1848652341, 18080.0, 17824.0, 270.000)
-    gg_unit_n02I_0353 = CreateUnit(p, 1848652361, 16320.0, 17984.0, 270.000)
 end
 
 function CreateNeutralPassiveBuildings()
@@ -60962,6 +60998,7 @@ function CreateNeutralPassiveBuildings()
     gg_unit_n02E_0303 = CreateUnit(p, 1848652357, 4704.0, -4640.0, 270.000)
     gg_unit_n02E_0304 = CreateUnit(p, 1848652357, 3808.0, -4960.0, 270.000)
     gg_unit_n02E_0305 = CreateUnit(p, 1848652357, 3744.0, -4384.0, 270.000)
+    gg_unit_n02I_0353 = CreateUnit(p, 1848652361, 16320.0, 17984.0, 270.000)
 end
 
 function CreateNeutralPassive()
@@ -61028,10 +61065,15 @@ function CreateNeutralPassive()
     gg_unit_h02B_0120 = CreateUnit(p, 1747989058, 15051.8, 18751.7, 270.000)
     gg_unit_H02P_0121 = CreateUnit(p, 1211118160, 16060.4, 18751.7, 270.000)
     gg_unit_H02Q_0122 = CreateUnit(p, 1211118161, 16058.8, 18500.4, 270.000)
+    gg_unit_N006_0123 = CreateUnit(p, 1311780918, 16059.5, 17987.9, 270.000)
     gg_unit_n01O_0126 = CreateUnit(p, 1848652111, 17222.7, 19253.2, 270.000)
-    SetUnitState(gg_unit_n01O_0126, UNIT_STATE_MANA, 0)
     gg_unit_n014_0128 = CreateUnit(p, 1848652084, 17227.1, 19142.6, 270.000)
-    SetUnitState(gg_unit_n014_0128, UNIT_STATE_MANA, 0)
+    gg_unit_n00T_0132 = CreateUnit(p, 1848651860, 15802.6, 17980.8, 270.000)
+    gg_unit_n00J_0133 = CreateUnit(p, 1848651850, 15292.0, 17986.3, 270.000)
+    gg_unit_n00C_0137 = CreateUnit(p, 1848651843, 15172.4, 17983.6, 270.000)
+    gg_unit_n00N_0191 = CreateUnit(p, 1848651854, 15545.3, 17974.9, 270.000)
+    gg_unit_n00F_0192 = CreateUnit(p, 1848651846, 15421.9, 17980.8, 270.000)
+    gg_unit_n00Q_0211 = CreateUnit(p, 1848651857, 15672.7, 17979.3, 270.000)
     gg_unit_n01D_0212 = CreateUnit(p, 1848652100, 17471.1, 19138.2, 270.000)
     gg_unit_n01F_0213 = CreateUnit(p, 1848652102, 17475.6, 19004.4, 270.000)
     gg_unit_n01L_0214 = CreateUnit(p, 1848652108, 17478.6, 18882.2, 270.000)
@@ -61049,7 +61091,6 @@ function CreateNeutralPassive()
     gg_unit_necr_0234 = CreateUnit(p, 1852138354, -9538.0, 12905.5, 179.984)
     gg_unit_n00X_0235 = CreateUnit(p, 1848651864, 17468.2, 19263.4, 270.000)
     gg_unit_n01Z_0236 = CreateUnit(p, 1848652122, 17207.8, 18998.6, 270.000)
-    SetUnitState(gg_unit_n01Z_0236, UNIT_STATE_MANA, 0)
     gg_unit_n01C_0237 = CreateUnit(p, 1848652099, 17347.7, 18754.2, 270.000)
     gg_unit_n01W_0247 = CreateUnit(p, 1848652119, 17349.1, 18629.1, 270.000)
     gg_unit_n01V_0248 = CreateUnit(p, 1848652118, 17344.7, 18496.9, 270.000)
@@ -61058,60 +61099,35 @@ function CreateNeutralPassive()
     gg_unit_n02G_0269 = CreateUnit(p, 1848652359, -4768.0, 10528.0, 270.000)
     gg_unit_n02G_0270 = CreateUnit(p, 1848652359, -4512.0, 10208.0, 270.000)
     gg_unit_n01M_0279 = CreateUnit(p, 1848652109, 17217.6, 18874.1, 270.000)
-    SetUnitState(gg_unit_n01M_0279, UNIT_STATE_MANA, 0)
     gg_unit_n01Y_0282 = CreateUnit(p, 1848652121, 17225.7, 18764.6, 270.000)
-    SetUnitState(gg_unit_n01Y_0282, UNIT_STATE_MANA, 0)
     gg_unit_n01T_0289 = CreateUnit(p, 1848652116, 17219.7, 18629.3, 270.000)
-    SetUnitState(gg_unit_n01T_0289, UNIT_STATE_MANA, 0)
     gg_unit_n01B_0292 = CreateUnit(p, 1848652098, 17214.3, 18493.8, 270.000)
-    SetUnitState(gg_unit_n01B_0292, UNIT_STATE_MANA, 0)
     gg_unit_n020_0295 = CreateUnit(p, 1848652336, 17222.7, 18365.8, 270.000)
-    SetUnitState(gg_unit_n020_0295, UNIT_STATE_MANA, 0)
     gg_unit_n02B_0306 = CreateUnit(p, 1848652354, -3456.0, -4352.0, 270.000)
     gg_unit_n02B_0307 = CreateUnit(p, 1848652354, -4608.0, -4224.0, 270.000)
     gg_unit_n02B_0308 = CreateUnit(p, 1848652354, -4032.0, -5248.0, 270.000)
     gg_unit_n01X_0309 = CreateUnit(p, 1848652120, 17333.0, 18358.6, 270.000)
     gg_unit_n02G_0310 = CreateUnit(p, 1848652359, -3552.0, 10336.0, 270.000)
     gg_unit_n01R_0311 = CreateUnit(p, 1848652114, 17092.1, 19249.2, 270.000)
-    SetUnitState(gg_unit_n01R_0311, UNIT_STATE_MANA, 0)
     gg_unit_n029_0312 = CreateUnit(p, 1848652345, 17085.6, 18367.6, 270.000)
-    SetUnitState(gg_unit_n029_0312, UNIT_STATE_MANA, 0)
     gg_unit_n021_0313 = CreateUnit(p, 1848652337, 17101.1, 19131.3, 270.000)
-    SetUnitState(gg_unit_n021_0313, UNIT_STATE_MANA, 0)
     gg_unit_n022_0314 = CreateUnit(p, 1848652338, 17086.7, 19011.6, 270.000)
-    SetUnitState(gg_unit_n022_0314, UNIT_STATE_MANA, 0)
     gg_unit_n023_0315 = CreateUnit(p, 1848652339, 17086.7, 18891.9, 270.000)
-    SetUnitState(gg_unit_n023_0315, UNIT_STATE_MANA, 0)
     gg_unit_n027_0316 = CreateUnit(p, 1848652343, 17077.7, 18754.6, 270.000)
-    SetUnitState(gg_unit_n027_0316, UNIT_STATE_MANA, 0)
     gg_unit_n02C_0317 = CreateUnit(p, 1848652355, 17088.5, 18481.8, 270.000)
-    SetUnitState(gg_unit_n02C_0317, UNIT_STATE_MANA, 0)
     gg_unit_n028_0318 = CreateUnit(p, 1848652344, 17081.3, 18617.3, 270.000)
-    SetUnitState(gg_unit_n028_0318, UNIT_STATE_MANA, 0)
     gg_unit_E000_0319 = CreateUnit(p, 1160785968, -19270.3, 18305.4, 0.000)
-    SetUnitState(gg_unit_E000_0319, UNIT_STATE_MANA, 0)
     gg_unit_H00O_0320 = CreateUnit(p, 1211117647, -19253.9, 18618.7, 0.000)
-    SetUnitState(gg_unit_H00O_0320, UNIT_STATE_MANA, 0)
     gg_unit_O000_0321 = CreateUnit(p, 1328558128, -17590.2, 18103.6, 180.000)
-    SetUnitState(gg_unit_O000_0321, UNIT_STATE_MANA, 0)
     gg_unit_O001_0322 = CreateUnit(p, 1328558129, -19280.1, 18108.4, 0.000)
-    SetUnitState(gg_unit_O001_0322, UNIT_STATE_MANA, 0)
     gg_unit_N002_0323 = CreateUnit(p, 1311780914, -19264.0, 17877.8, 0.000)
-    SetUnitState(gg_unit_N002_0323, UNIT_STATE_MANA, 0)
     gg_unit_N007_0324 = CreateUnit(p, 1311780919, -17611.2, 18373.9, 180.000)
-    SetUnitState(gg_unit_N007_0324, UNIT_STATE_MANA, 0)
     gg_unit_N008_0325 = CreateUnit(p, 1311780920, -17603.0, 17873.0, 180.000)
-    SetUnitState(gg_unit_N008_0325, UNIT_STATE_MANA, 0)
     gg_unit_N009_0326 = CreateUnit(p, 1311780921, -19267.3, 17612.2, 0.000)
-    SetUnitState(gg_unit_N009_0326, UNIT_STATE_MANA, 0)
     gg_unit_N004_0327 = CreateUnit(p, 1311780916, -19244.4, 18896.0, 0.000)
-    SetUnitState(gg_unit_N004_0327, UNIT_STATE_MANA, 0)
     gg_unit_N00A_0328 = CreateUnit(p, 1311780929, -17613.0, 18633.6, 180.000)
-    SetUnitState(gg_unit_N00A_0328, UNIT_STATE_MANA, 0)
     gg_unit_H00N_0329 = CreateUnit(p, 1211117646, -17599.9, 18904.0, 180.000)
-    SetUnitState(gg_unit_H00N_0329, UNIT_STATE_MANA, 0)
     gg_unit_N001_0330 = CreateUnit(p, 1311780913, -17596.7, 17632.2, 180.000)
-    SetUnitState(gg_unit_N001_0330, UNIT_STATE_MANA, 0)
     gg_unit_nrac_0331 = CreateUnit(p, 1852989795, -11561.7, -7341.4, 213.306)
     gg_unit_nrac_0332 = CreateUnit(p, 1852989795, -12413.1, -8330.2, 140.904)
     gg_unit_nrac_0333 = CreateUnit(p, 1852989795, -11533.0, -9275.9, 282.709)

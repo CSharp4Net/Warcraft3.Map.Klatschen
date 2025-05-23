@@ -1,13 +1,14 @@
 ﻿using Source.Models;
 using Source.Statics;
 using System;
+using System.Linq;
 using WCSharp.Api;
 using WCSharp.Lightnings;
 using WCSharp.Shared.Data;
 
 namespace Source.Events.Periodic
 {
-  internal static class Klatschen
+  internal static class LegionRaid
   {
     private static int executions = 0;
 
@@ -172,10 +173,17 @@ namespace Source.Events.Periodic
           }
         });
 
-        //// Zentrum - Helden beleben nach 5 Sekunden
-        //Program.Legion.CreateOrReviveHero(Constants.UNIT_GRUBENLORD_KLATSCHEN, Areas.Center, executions * 10, executions, 5.5f);
+        // Zentrum - Helden beleben
+        int maxHeroLevel = Program.AllActiveUsers.Max(user => user.HeroLevelCounter);
+        if (maxHeroLevel == 0)
+          maxHeroLevel = executions;
 
-        //// Zentrum - Weitere Einheiten via Cast hinzurufen
+        Program.Legion.CreateOrReviveHero(Constants.UNIT_D_MONENF_RST_LEGION, Areas.Center, maxHeroLevel, executions);
+
+        // Zentrum - Weitere Einheiten via Cast hinzurufen
+        CreateUnitAtRandomPointWithEffect(centerRect, Constants.UNIT_H_LLENBESTIE_LEGION);
+        CreateUnitAtRandomPointWithEffect(centerRect, Constants.UNIT_MAID_DES_SCHMERZES_LEGION);
+        CreateUnitAtRandomPointWithEffect(centerRect, Constants.UNIT_TEUFELSFRESSER_LEGION);
         //CreateAtDummyAndCastAbilityTimed(player, centerRect, Constants.ABILITY_H_LLENBESTIEN_KLATSCHEN, executions, Constants.ORDER_RAIN_OF_CHAOS, 4f);
         //CreateAtDummyAndCastAbilityTimed(player, centerRect, Constants.ABILITY_TEUFELSWACHEN_KLATSCHEN, executions, Constants.ORDER_RAIN_OF_CHAOS, 4f);
         //CreateAtDummyAndCastAbilityTimed(player, centerRect, Constants.ABILITY_TEUFELSFRESSERER_KLATSCHEN, executions, Constants.ORDER_RAIN_OF_CHAOS, 4f);
@@ -184,18 +192,22 @@ namespace Source.Events.Periodic
         //CreateAtDummyAndCastAbilityTimed(player, centerRect, Constants.ABILITY_H_LLENMASCHINEN_KLATSCHEN, executions, Constants.ORDER_RAIN_OF_CHAOS, 5f);
 
         //// Bottom Lane - Weitere Einheiten via Cast hinzurufen
+        CreateUnitAtRandomPointWithEffect(CenterBottomRect, Constants.UNIT_H_LLENBESTIE_LEGION);
         //CreateAtDummyAndCastAbilityTimed(player, CenterBottomRect, Constants.ABILITY_H_LLENBESTIEN_KLATSCHEN, executions, Constants.ORDER_RAIN_OF_CHAOS, 4f);
         //CreateAtDummyAndCastAbilityTimed(player, CenterBottomRect, Constants.ABILITY_MAIDS_DES_SCHRECKENS_KLATSCHEN, executions, Constants.ORDER_RAIN_OF_CHAOS, 4.5f);
 
         //// Left Lane - Weitere Einheiten via Cast hinzurufen
+        CreateUnitAtRandomPointWithEffect(CenterLeftRect, Constants.UNIT_H_LLENBESTIE_LEGION);
         //CreateAtDummyAndCastAbilityTimed(player, CenterLeftRect, Constants.ABILITY_H_LLENBESTIEN_KLATSCHEN, executions, Constants.ORDER_RAIN_OF_CHAOS, 4f);
         //CreateAtDummyAndCastAbilityTimed(player, CenterLeftRect, Constants.ABILITY_MAIDS_DES_SCHRECKENS_KLATSCHEN, executions, Constants.ORDER_RAIN_OF_CHAOS, 4.5f);
 
         //// Top Lane - Weitere Einheiten via Cast hinzurufen
+        CreateUnitAtRandomPointWithEffect(CenterTopRect, Constants.UNIT_H_LLENBESTIE_LEGION);
         //CreateAtDummyAndCastAbilityTimed(player, CenterTopRect, Constants.ABILITY_H_LLENBESTIEN_KLATSCHEN, executions, Constants.ORDER_RAIN_OF_CHAOS, 4f);
         //CreateAtDummyAndCastAbilityTimed(player, CenterTopRect, Constants.ABILITY_MAIDS_DES_SCHRECKENS_KLATSCHEN, executions, Constants.ORDER_RAIN_OF_CHAOS, 4.5f);
 
         //// Right Lane - Weitere Einheiten via Cast hinzurufen
+        CreateUnitAtRandomPointWithEffect(CenterRightRect, Constants.UNIT_H_LLENBESTIE_LEGION);
         //CreateAtDummyAndCastAbilityTimed(player, CenterRightRect, Constants.ABILITY_H_LLENBESTIEN_KLATSCHEN, executions, Constants.ORDER_RAIN_OF_CHAOS, 4f);
         //CreateAtDummyAndCastAbilityTimed(player, CenterRightRect, Constants.ABILITY_MAIDS_DES_SCHRECKENS_KLATSCHEN, executions, Constants.ORDER_RAIN_OF_CHAOS, 4.5f);
       }
@@ -207,10 +219,52 @@ namespace Source.Events.Periodic
       return true;
     }
 
+    private static void CreateUnitAtRandomPointWithEffect(Rectangle rectangle, int unitTypeId)
+    {
+      Point point = rectangle.GetRandomPoint();
+      SpecialEffects.CreateSpecialEffect("Objects\\Spawnmodels\\NightElf\\EntBirthTarget\\EntBirthTarget.mdl", point, 2f, 1f);
+      SpawnedCreep creep = Program.Legion.SpawnUnitAtPoint(point, unitTypeId);
+
+      switch (executions)
+      {
+        case 1:
+        case 2:
+        case 3:
+        case 4:
+          creep.Wc3Unit.AttackBaseDamage1 = creep.Wc3Unit.AttackBaseDamage1 * executions;
+          creep.Wc3Unit.Defense = creep.Wc3Unit.Defense * executions;
+          creep.Wc3Unit.MaxLife = creep.Wc3Unit.MaxLife * executions;
+          creep.Wc3Unit.Life = creep.Wc3Unit.MaxLife;
+          break;
+
+        default: // Ab Stufe 5 werden die Einheiten nicht mehr stärker, sonst werden sie (fast) unbesiegbar
+          creep.Wc3Unit.AttackBaseDamage1 = creep.Wc3Unit.AttackBaseDamage1 * 5;
+          creep.Wc3Unit.Defense = creep.Wc3Unit.Defense * 5;
+          creep.Wc3Unit.MaxLife = creep.Wc3Unit.MaxLife * 5;
+          creep.Wc3Unit.Life = creep.Wc3Unit.MaxLife;
+          break;
+      }
+      
+    }
+
+    private static void CreateAtDummyAndCastAbilityTimed(player player, Rectangle rectangle, int abilityId, int abilityLevel, int orderId, float delay, float duration = 2f)
+      => CreateAtDummyAndCastAbilityTimed(player, rectangle.GetRandomPoint(), abilityId, abilityLevel, orderId, delay, duration);
+    private static void CreateAtDummyAndCastAbilityTimed(player player, Point point, int abilityId, int abilityLevel, int orderId, float delay, float duration = 2f)
+    {
+      timer timer = Common.CreateTimer();
+      Common.TimerStart(timer, delay, false, () =>
+      {
+        Common.DestroyTimer(timer);
+        timer.Dispose();
+        timer = null;
+
+        CreateAtDummyAndCastAbility(player, point, abilityId, abilityLevel, orderId, duration);
+      });
+    }
     private static void CreateAtDummyAndCastAbility(player player, Point point, int abilityId, int abilityLevel, int orderId, float duration = 2f)
     {
       unit dummy = Common.CreateUnit(player, Constants.UNIT_DUMMY, point.X, point.Y, 0f);
-      //DummySystem.RecycleDummy(dummy, duration);
+
       dummy.AddAbility(abilityId);
       dummy.SetAbilityLevel(abilityId, abilityLevel);
       dummy.IssueOrder(orderId, dummy);
@@ -229,20 +283,6 @@ namespace Source.Events.Periodic
       });
     }
 
-    private static void CreateAtDummyAndCastAbilityTimed(player player, Rectangle rectangle, int abilityId, int abilityLevel, int orderId, float delay, float duration = 2f)
-      => CreateAtDummyAndCastAbilityTimed(player, rectangle.GetRandomPoint(), abilityId, abilityLevel, orderId, delay, duration);
-    private static void CreateAtDummyAndCastAbilityTimed(player player, Point point, int abilityId, int abilityLevel, int orderId, float delay, float duration = 2f)
-    {
-      timer timer = Common.CreateTimer();
-      Common.TimerStart(timer, delay, false, () =>
-      {
-        Common.DestroyTimer(timer);
-        timer.Dispose();
-        timer = null;
-
-        CreateAtDummyAndCastAbility(player, point, abilityId, abilityLevel, orderId, duration);
-      });
-    }
 
     private static void CreateLightning(Point caster, Point target)
     {
@@ -268,7 +308,6 @@ namespace Source.Events.Periodic
         }
       });
     }
-
     private static void CreateLightning(unit caster, unit target, float duration, float fadeDuration)
     {
       var lightning = new Lightning("AFOD", caster, target)

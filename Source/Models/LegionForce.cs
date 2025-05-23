@@ -28,32 +28,15 @@ namespace Source.Models
     /// </summary>
     public string Name { get; init; }
 
-    public void CreateOrReviveHero(int unitTypeId, Area spawnArea, int heroLevel, int abilitiesLevel, float delay, Area targetArea = null)
+    public void CreateOrReviveHero(int unitTypeId, Area spawnArea, int heroLevel, int abilitiesLevel, Area targetArea = null)
     {
       if (Hero == null)
-        CreateHero(unitTypeId, spawnArea, heroLevel, delay, targetArea);
+        CreateHero(unitTypeId, spawnArea, heroLevel, 0f, targetArea);
       else
-        ReviveHero(spawnArea, heroLevel, delay, targetArea);
+        ReviveHero(spawnArea, heroLevel, 0f, targetArea);
 
-      if (unitTypeId == Constants.UNIT_D_MONENF_RST_LEGION)
-      {
-        var timer = Common.CreateTimer();
-        Common.TimerStart(timer, delay + 1, false, () =>
-        {
-          try
-          {
-            Common.DestroyTimer(timer);
-            timer.Dispose();
-            timer = null;
-
-            TrainGrubenlord(Hero.Wc3Unit, abilitiesLevel);
-          }
-          catch (Exception ex)
-          {
-            Program.ShowExceptionMessage("KlatschenFragtion.CreateOrReviveHero", ex);
-          }
-        });
-      }
+      SpecialEffects.CreateSpecialEffect("Objects\\Spawnmodels\\NightElf\\EntBirthTarget\\EntBirthTarget.mdl", spawnArea.Wc3Rectangle.Center, 2f, 3f);
+      TrainHero(Hero.Wc3Unit, abilitiesLevel);
     }
 
     internal LegionSpawnBuilding CreateOrRefreshEastSpawnBuilding()
@@ -62,7 +45,7 @@ namespace Source.Models
 
       if (SpawnBuildingEast == null || !SpawnBuildingEast.Wc3Unit.Alive)
       {
-        SpawnBuildingEast = new LegionSpawnBuilding(Constants.UNIT_D_MONENSCHREIN_LEGION, Areas.MiddleLaneSpawnEast);
+        SpawnBuildingEast = new LegionSpawnBuilding(Constants.UNIT_D_MONENSCHREIN_LEGION, Areas.MiddleLaneSpawnEast, 180f);
         SpawnBuildingEast.RegisterOnDies(LegionBuilding.OnDies);
 
         SpawnBuildingEast.AddSpawnTrigger(Enums.SpawnInterval.Middle, Areas.MiddleLaneSpawnEast, Areas.CenterRight).Run();
@@ -102,7 +85,7 @@ namespace Source.Models
       return SpawnBuildingWest;
     }
 
-    private void TrainGrubenlord(unit unit, int abilitiesLevel)
+    private void TrainHero(unit unit, int abilitiesLevel)
     {
       switch (abilitiesLevel)
       {

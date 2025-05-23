@@ -53,6 +53,8 @@ gg_rct_HumanToOrcInnerLine = nil
 gg_rct_HumanToOrcOuterLine = nil
 gg_rct_HumanToUndeadInnerLine = nil
 gg_rct_HumanToUndeadOuterLine = nil
+gg_rct_MiddleLaneSpawnEast = nil
+gg_rct_MiddleLaneSpawnWest = nil
 gg_rct_OrcBarracksToCenter = nil
 gg_rct_OrcBarracksToCenterSpawn = nil
 gg_rct_OrcBarracksToHuman = nil
@@ -99,10 +101,8 @@ gg_rct_UndeadToHumanInnerLine = nil
 gg_rct_UndeadToHumanOuterLine = nil
 gg_rct_UndeadToOrcInnerLine = nil
 gg_rct_UndeadToOrcOuterLine = nil
-gg_trg_Melee_Initialization = nil
 gg_snd_blowitup_cutted = ""
-gg_rct_MiddleLaneSpawnEast = nil
-gg_rct_MiddleLaneSpawnWest = nil
+gg_trg_Melee_Initialization = nil
 function InitGlobals()
 end
 
@@ -544,21 +544,14 @@ u = BlzCreateUnitWithSkin(p, FourCC("h02B"), 15051.8, 18751.7, 270.000, FourCC("
 u = BlzCreateUnitWithSkin(p, FourCC("H02P"), 16060.4, 18751.7, 270.000, FourCC("H02P"))
 u = BlzCreateUnitWithSkin(p, FourCC("H02Q"), 16058.8, 18500.4, 270.000, FourCC("H02Q"))
 u = BlzCreateUnitWithSkin(p, FourCC("N006"), 16059.5, 17987.9, 270.000, FourCC("N006"))
-SetUnitState(u, UNIT_STATE_MANA, 0)
 u = BlzCreateUnitWithSkin(p, FourCC("n01O"), 17222.7, 19253.2, 270.000, FourCC("n01O"))
-SetUnitState(u, UNIT_STATE_MANA, 0)
 u = BlzCreateUnitWithSkin(p, FourCC("n014"), 17227.1, 19142.6, 270.000, FourCC("n014"))
-SetUnitState(u, UNIT_STATE_MANA, 0)
 u = BlzCreateUnitWithSkin(p, FourCC("n00T"), 15802.6, 17980.8, 270.000, FourCC("n00T"))
-SetUnitState(u, UNIT_STATE_MANA, 0)
 u = BlzCreateUnitWithSkin(p, FourCC("n00J"), 15292.0, 17986.3, 270.000, FourCC("n00J"))
-SetUnitState(u, UNIT_STATE_MANA, 0)
 u = BlzCreateUnitWithSkin(p, FourCC("n00C"), 15172.4, 17983.6, 270.000, FourCC("n00C"))
 u = BlzCreateUnitWithSkin(p, FourCC("n00N"), 15545.3, 17974.9, 270.000, FourCC("n00N"))
-SetUnitState(u, UNIT_STATE_MANA, 0)
 u = BlzCreateUnitWithSkin(p, FourCC("n00F"), 15421.9, 17980.8, 270.000, FourCC("n00F"))
 u = BlzCreateUnitWithSkin(p, FourCC("n00Q"), 15672.7, 17979.3, 270.000, FourCC("n00Q"))
-SetUnitState(u, UNIT_STATE_MANA, 0)
 u = BlzCreateUnitWithSkin(p, FourCC("n01D"), 17471.1, 19138.2, 270.000, FourCC("n01D"))
 u = BlzCreateUnitWithSkin(p, FourCC("n01F"), 17475.6, 19004.4, 270.000, FourCC("n01F"))
 u = BlzCreateUnitWithSkin(p, FourCC("n01L"), 17478.6, 18882.2, 270.000, FourCC("n01L"))
@@ -576,61 +569,35 @@ u = BlzCreateUnitWithSkin(p, FourCC("nech"), -9501.4, 12963.4, 190.124, FourCC("
 u = BlzCreateUnitWithSkin(p, FourCC("necr"), -9538.0, 12905.5, 179.984, FourCC("necr"))
 u = BlzCreateUnitWithSkin(p, FourCC("n00X"), 17468.2, 19263.4, 270.000, FourCC("n00X"))
 u = BlzCreateUnitWithSkin(p, FourCC("n01Z"), 17207.8, 18998.6, 270.000, FourCC("n01Z"))
-SetUnitState(u, UNIT_STATE_MANA, 0)
 u = BlzCreateUnitWithSkin(p, FourCC("n01C"), 17347.7, 18754.2, 270.000, FourCC("n01C"))
 u = BlzCreateUnitWithSkin(p, FourCC("n01W"), 17349.1, 18629.1, 270.000, FourCC("n01W"))
 u = BlzCreateUnitWithSkin(p, FourCC("n01V"), 17344.7, 18496.9, 270.000, FourCC("n01V"))
 u = BlzCreateUnitWithSkin(p, FourCC("n01M"), 17217.6, 18874.1, 270.000, FourCC("n01M"))
-SetUnitState(u, UNIT_STATE_MANA, 0)
 u = BlzCreateUnitWithSkin(p, FourCC("n01Y"), 17225.7, 18764.6, 270.000, FourCC("n01Y"))
-SetUnitState(u, UNIT_STATE_MANA, 0)
 u = BlzCreateUnitWithSkin(p, FourCC("n01T"), 17219.7, 18629.3, 270.000, FourCC("n01T"))
-SetUnitState(u, UNIT_STATE_MANA, 0)
 u = BlzCreateUnitWithSkin(p, FourCC("n01B"), 17214.3, 18493.8, 270.000, FourCC("n01B"))
-SetUnitState(u, UNIT_STATE_MANA, 0)
 u = BlzCreateUnitWithSkin(p, FourCC("n020"), 17222.7, 18365.8, 270.000, FourCC("n020"))
-SetUnitState(u, UNIT_STATE_MANA, 0)
 u = BlzCreateUnitWithSkin(p, FourCC("n01X"), 17333.0, 18358.6, 270.000, FourCC("n01X"))
 u = BlzCreateUnitWithSkin(p, FourCC("n01R"), 17092.1, 19249.2, 270.000, FourCC("n01R"))
-SetUnitState(u, UNIT_STATE_MANA, 0)
 u = BlzCreateUnitWithSkin(p, FourCC("n029"), 17085.6, 18367.6, 270.000, FourCC("n029"))
-SetUnitState(u, UNIT_STATE_MANA, 0)
 u = BlzCreateUnitWithSkin(p, FourCC("n021"), 17101.1, 19131.3, 270.000, FourCC("n021"))
-SetUnitState(u, UNIT_STATE_MANA, 0)
 u = BlzCreateUnitWithSkin(p, FourCC("n022"), 17086.7, 19011.6, 270.000, FourCC("n022"))
-SetUnitState(u, UNIT_STATE_MANA, 0)
 u = BlzCreateUnitWithSkin(p, FourCC("n023"), 17086.7, 18891.9, 270.000, FourCC("n023"))
-SetUnitState(u, UNIT_STATE_MANA, 0)
 u = BlzCreateUnitWithSkin(p, FourCC("n027"), 17077.7, 18754.6, 270.000, FourCC("n027"))
-SetUnitState(u, UNIT_STATE_MANA, 0)
 u = BlzCreateUnitWithSkin(p, FourCC("n02C"), 17088.5, 18481.8, 270.000, FourCC("n02C"))
-SetUnitState(u, UNIT_STATE_MANA, 0)
 u = BlzCreateUnitWithSkin(p, FourCC("n028"), 17081.3, 18617.3, 270.000, FourCC("n028"))
-SetUnitState(u, UNIT_STATE_MANA, 0)
 u = BlzCreateUnitWithSkin(p, FourCC("E000"), -19270.3, 18305.4, 0.000, FourCC("E000"))
-SetUnitState(u, UNIT_STATE_MANA, 0)
 u = BlzCreateUnitWithSkin(p, FourCC("H00O"), -19253.9, 18618.7, 0.000, FourCC("H00O"))
-SetUnitState(u, UNIT_STATE_MANA, 0)
 u = BlzCreateUnitWithSkin(p, FourCC("O000"), -17590.2, 18103.6, 180.000, FourCC("O000"))
-SetUnitState(u, UNIT_STATE_MANA, 0)
 u = BlzCreateUnitWithSkin(p, FourCC("O001"), -19280.1, 18108.4, 0.000, FourCC("O001"))
-SetUnitState(u, UNIT_STATE_MANA, 0)
 u = BlzCreateUnitWithSkin(p, FourCC("N002"), -19264.0, 17877.8, 0.000, FourCC("N002"))
-SetUnitState(u, UNIT_STATE_MANA, 0)
 u = BlzCreateUnitWithSkin(p, FourCC("N007"), -17611.2, 18373.9, 180.000, FourCC("N007"))
-SetUnitState(u, UNIT_STATE_MANA, 0)
 u = BlzCreateUnitWithSkin(p, FourCC("N008"), -17603.0, 17873.0, 180.000, FourCC("N008"))
-SetUnitState(u, UNIT_STATE_MANA, 0)
 u = BlzCreateUnitWithSkin(p, FourCC("N009"), -19267.3, 17612.2, 0.000, FourCC("N009"))
-SetUnitState(u, UNIT_STATE_MANA, 0)
 u = BlzCreateUnitWithSkin(p, FourCC("N004"), -19244.4, 18896.0, 0.000, FourCC("N004"))
-SetUnitState(u, UNIT_STATE_MANA, 0)
 u = BlzCreateUnitWithSkin(p, FourCC("N00A"), -17613.0, 18633.6, 180.000, FourCC("N00A"))
-SetUnitState(u, UNIT_STATE_MANA, 0)
 u = BlzCreateUnitWithSkin(p, FourCC("H00N"), -17599.9, 18904.0, 180.000, FourCC("H00N"))
-SetUnitState(u, UNIT_STATE_MANA, 0)
 u = BlzCreateUnitWithSkin(p, FourCC("N001"), -17596.7, 17632.2, 180.000, FourCC("N001"))
-SetUnitState(u, UNIT_STATE_MANA, 0)
 u = BlzCreateUnitWithSkin(p, FourCC("nrac"), -11561.7, -7341.4, 213.306, FourCC("nrac"))
 u = BlzCreateUnitWithSkin(p, FourCC("nrac"), -12413.1, -8330.2, 140.904, FourCC("nrac"))
 u = BlzCreateUnitWithSkin(p, FourCC("nrac"), -11533.0, -9275.9, 282.709, FourCC("nrac"))

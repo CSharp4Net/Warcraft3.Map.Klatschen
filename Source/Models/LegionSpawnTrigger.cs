@@ -72,9 +72,9 @@ namespace Source.Models
       {
         foreach (int unitId in UnitIds)
         {
-          Point randomPoint = SpawnArea.Wc3Rectangle.GetRandomPoint();
-          SpecialEffects.CreateSpecialEffect("Objects\\Spawnmodels\\NightElf\\EntBirthTarget\\EntBirthTarget.mdl", randomPoint, 2f, 1f);
-          Program.Legion.SpawnUnitAtPoint(randomPoint, unitId).AttackMove(TargetArea, 2f);
+          Point point = SpawnArea.Wc3Rectangle.GetRandomPoint();
+          SpecialEffects.CreateSpecialEffect("Objects\\Spawnmodels\\NightElf\\EntBirthTarget\\EntBirthTarget.mdl", point, 2f, 1f);
+          Program.Legion.SpawnUnitAtPoint(point, unitId).AttackMove(TargetArea, 2f);
         }
       }
       catch (Exception ex)

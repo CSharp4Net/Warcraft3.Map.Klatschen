@@ -113,7 +113,7 @@ namespace Source
 
         // Periodische Events registrieren
         PeriodicEvents.AddPeriodicEvent(GoldIncome.OnElapsed, 5f);
-        PeriodicEvents.AddPeriodicEvent(Klatschen.OnElapsed, ConstantsEx.Interval_Event_Klatschen);
+        PeriodicEvents.AddPeriodicEvent(LegionRaid.OnElapsed, ConstantsEx.Interval_Event_Klatschen);
         PeriodicEvents.AddPeriodicEvent(ResearchCheck.OnElapsed, 10f);
 
         // Gebäude & Trigger für Computer-Spieler erstellen
