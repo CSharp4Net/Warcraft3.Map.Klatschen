@@ -31,7 +31,7 @@
     internal const int Interval_SpawnTime_Long = 60;
 
 #if DEBUG
-    internal const float Interval_Event_Klatschen = 25f; //360f;
+    internal const float Interval_Event_Klatschen = 60f; //360f;
 #else
     internal const float Interval_Event_Klatschen = 900f;
 #endif

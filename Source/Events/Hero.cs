@@ -18,10 +18,14 @@ namespace Source.Events
       {
         unit unit = Common.GetLevelingUnit();
 
-        if (!unit.IsUnitOfComputer())
-          return;
-
-        Logics.ComputerHero.HandleLeveled(unit);
+        if (unit.IsUnitOfComputer())
+        {
+          Logics.ComputerHero.HandleLeveled(unit);
+        }
+        else if (unit.IsUnitOfUser())
+        {
+          Logics.UserHero.HandleLeveled(unit);
+        }
       }
       catch (Exception ex)
       {

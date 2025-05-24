@@ -191,21 +191,6 @@ namespace Source
       return false;
     }
 
-    public static bool TryGetCreepCampByHero(unit heroUnit, out MercenaryForce creepCamp)
-    {
-      for (int i = Mercenaries.Count - 1; i >= 0; i--)
-      {
-        if (Mercenaries[i].Hero.Wc3Unit == heroUnit)
-        {
-          creepCamp = Mercenaries[i];
-          return true;
-        }
-      }
-
-      creepCamp = null;
-      return false;
-    }
-
     public static bool TryGetTeamByUnit(unit unit, out TeamBase team)
     {
       int playerId = unit.Owner.Id;

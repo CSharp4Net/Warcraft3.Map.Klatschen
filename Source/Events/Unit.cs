@@ -37,11 +37,11 @@ namespace Source.Events
           {
             Logics.ComputerHero.HandleDied(unit);
           }
-          // TODO 001
-          //else if (unit.IsUnitOfCreep())
-          //{
-          //  Logics.CreepHero.HandleDied(unit);
-          //}
+          else if (unit.IsUnitOfCreep())
+          {
+            // do nothing :)
+            // TODO 001
+          }
           else
           {
             Console.WriteLine("UNKNOWN hero died!!!");

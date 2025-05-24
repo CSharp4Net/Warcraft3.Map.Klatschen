@@ -74,7 +74,8 @@ namespace Source.Models
         {
           Point point = SpawnArea.Wc3Rectangle.GetRandomPoint();
           SpecialEffects.CreateSpecialEffect("Objects\\Spawnmodels\\NightElf\\EntBirthTarget\\EntBirthTarget.mdl", point, 2f, 1f);
-          Program.Legion.SpawnUnitAtPoint(point, unitId).AttackMove(TargetArea, 2f);
+          Program.Legion.SpawnUnitAtPoint(point, unitId)
+            .AttackMoveTimed(TargetArea, 2f);
         }
       }
       catch (Exception ex)

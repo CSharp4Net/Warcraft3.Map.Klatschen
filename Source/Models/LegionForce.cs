@@ -28,18 +28,50 @@ namespace Source.Models
     /// </summary>
     public string Name { get; init; }
 
-    public void CreateOrReviveHero(int unitTypeId, Area spawnArea, int heroLevel, int abilitiesLevel, Area targetArea = null)
-    {
-      if (Hero == null)
-        CreateHero(unitTypeId, spawnArea, heroLevel, targetArea);
-      else
-        ReviveHero(spawnArea, heroLevel, targetArea);
+    public SpawnedCreep Hero { get; private set; }
 
+    public void CreateOrReviveHero(int unitTypeId, Area spawnArea, int heroLevel, float face = 0f, Area targetArea = null)
+    {
       SpecialEffects.CreateSpecialEffect("Objects\\Spawnmodels\\NightElf\\EntBirthTarget\\EntBirthTarget.mdl", spawnArea.Wc3Rectangle.Center, 2f, 3f);
-      TrainHero(Hero.Wc3Unit, abilitiesLevel);
+
+      unit unit = null;
+
+      if (Hero == null)
+      {
+        Program.ShowDebugMessage("Create legion hero");
+        Hero = CreateHero(unitTypeId, spawnArea, heroLevel, face);
+        unit = Hero.Wc3Unit;
+
+        Program.ShowDebugMessage("Learn legion hero");
+        AddAbilitiesToHero(unitTypeId, unit);
+      }
+      else
+      {
+        unit = Hero.Wc3Unit;
+
+        if (!unit.Alive)
+        {
+          Program.ShowDebugMessage("Revive legion hero");
+          Hero.ReviveHero();
+
+          if (targetArea != null)
+            Hero.AttackMove(targetArea);
+        }
+        else if (unit.HeroLevel < heroLevel)
+        {
+          Program.ShowDebugMessage("Power up legion hero");
+          unit.Life = unit.MaxLife;
+        }
+      }
+
+      unit.HeroLevel = heroLevel;
+      unit.Mana = unit.MaxMana;
+
+      Program.ShowDebugMessage($"Train legion hero to level {heroLevel}");
+      TrainHero(unitTypeId, unit, heroLevel);
     }
 
-    internal LegionSpawnBuilding CreateOrRefreshEastSpawnBuilding()
+    internal void CreateOrRefreshEastSpawnBuilding()
     {
       SpecialEffects.CreateSpecialEffect("Objects\\Spawnmodels\\NightElf\\EntBirthTarget\\EntBirthTarget.mdl", Areas.MiddleLaneSpawnEast.Wc3Rectangle.Center, 4f, 3f);
 
@@ -51,18 +83,16 @@ namespace Source.Models
         SpawnBuildingEast.AddSpawnTrigger(Enums.SpawnInterval.Middle, Areas.MiddleLaneSpawnEast, Areas.CenterRight).Run();
         SpawnBuildingEast.AddSpawnTrigger(Enums.SpawnInterval.Middle, Areas.MiddleLaneSpawnEast, Areas.Center).Run();
         SpawnBuildingEast.AddUnitToSpawnTriggers(Constants.UNIT_TEUFELSWACHE_LEGION);
-        SpawnBuildingEast.AddUnitToSpawnTriggers(Constants.UNIT_TEUFELSFRESSER_LEGION);
         SpawnBuildingEast.AddUnitToSpawnTriggers(Constants.UNIT_MAID_DES_SCHMERZES_LEGION);
+        SpawnBuildingEast.AddUnitToSpawnTriggers(Constants.UNIT_SCH_NDLICHER_FOLTERKNECHT_LEGION);
       }
       else
       {
         SpawnBuildingEast.Wc3Unit.Life = SpawnBuildingEast.Wc3Unit.MaxLife;
       }
-
-      return SpawnBuildingEast;
     }
 
-    internal LegionSpawnBuilding CreateOrRefreshWestSpawnBuilding()
+    internal void CreateOrRefreshWestSpawnBuilding()
     {
       SpecialEffects.CreateSpecialEffect("Objects\\Spawnmodels\\NightElf\\EntBirthTarget\\EntBirthTarget.mdl", Areas.MiddleLaneSpawnWest.Wc3Rectangle.Center, 4f, 3f);
 
@@ -74,41 +104,46 @@ namespace Source.Models
         SpawnBuildingWest.AddSpawnTrigger(Enums.SpawnInterval.Middle, Areas.MiddleLaneSpawnWest, Areas.CenterLeft).Run();
         SpawnBuildingWest.AddSpawnTrigger(Enums.SpawnInterval.Middle, Areas.MiddleLaneSpawnWest, Areas.Center).Run();
         SpawnBuildingWest.AddUnitToSpawnTriggers(Constants.UNIT_TEUFELSWACHE_LEGION);
-        SpawnBuildingWest.AddUnitToSpawnTriggers(Constants.UNIT_TEUFELSFRESSER_LEGION);
         SpawnBuildingWest.AddUnitToSpawnTriggers(Constants.UNIT_MAID_DES_SCHMERZES_LEGION);
+        SpawnBuildingWest.AddUnitToSpawnTriggers(Constants.UNIT_SCH_NDLICHER_FOLTERKNECHT_LEGION);
       }
       else
       {
         SpawnBuildingWest.Wc3Unit.Life = SpawnBuildingWest.Wc3Unit.MaxLife;
       }
-
-      return SpawnBuildingWest;
     }
 
-    private void TrainHero(unit unit, int abilitiesLevel)
+    private void AddAbilitiesToHero(int unitTypeId, unit unit)
     {
-      switch (abilitiesLevel)
+      switch (unitTypeId)
       {
-        case 1:
-          unit.AddAbility(Constants.ABILITY_FEUERREGEN_KLATSCHEN_5);
-          unit.AddAbility(Constants.ABILITY_SPALTSCHLAG_KLATSCHEN_5);
-          unit.AddAbility(Constants.ABILITY_INFERNO_KLATSCHEN_5);
-          unit.AddAbility(Constants.ABILITY_UNHEILIGE_AURA_KLATSCHEN_5);
-
-          unit.AddAbility(Constants.ABILITY_ERH_HTE_ATTRIBUTE_HERO_50);
-          unit.SetAbilityLevel(Constants.ABILITY_ERH_HTE_ATTRIBUTE_HERO_50, 10);
+        case Constants.UNIT_D_MONENF_RST_LEGION:
+          unit.AddAbility(Constants.ABILITY_FEUERREGEN_LEGION_100);
+          unit.AddAbility(Constants.ABILITY_SPALTSCHLAG_LEGION_100);
+          unit.AddAbility(Constants.ABILITY_TODESFINGER_LEGION_100);
+          unit.AddAbility(Constants.ABILITY_UNHEILIGE_AURA_LEGION_100);
+          unit.AddAbility(Constants.ABILITY_ERH_HTE_ATTRIBUTE_LEGION_100);
           break;
-        case 2:
-        case 3:
-        case 4:
-        case 5:
-          unit.IncrementAbilityLevel(Constants.ABILITY_FEUERREGEN_KLATSCHEN_5);
-          unit.IncrementAbilityLevel(Constants.ABILITY_SPALTSCHLAG_KLATSCHEN_5);
-          unit.IncrementAbilityLevel(Constants.ABILITY_INFERNO_KLATSCHEN_5);
-          unit.IncrementAbilityLevel(Constants.ABILITY_UNHEILIGE_AURA_KLATSCHEN_5);
 
-          unit.SetAbilityLevel(Constants.ABILITY_ERH_HTE_ATTRIBUTE_HERO_50, abilitiesLevel * 10);
+        default:
+          throw new NotImplementedException($"Abilities for hero {unit.Name} (Id {unitTypeId}) not implemented yet!");
+      }
+    }
+
+    private void TrainHero(int unitTypeId, unit unit, int heroLevel)
+    {
+      switch (unitTypeId)
+      {
+        case Constants.UNIT_D_MONENF_RST_LEGION:
+          unit.SetAbilityLevel(Constants.ABILITY_FEUERREGEN_LEGION_100, heroLevel);
+          unit.SetAbilityLevel(Constants.ABILITY_SPALTSCHLAG_LEGION_100, heroLevel);
+          unit.SetAbilityLevel(Constants.ABILITY_TODESFINGER_LEGION_100, heroLevel);
+          unit.SetAbilityLevel(Constants.ABILITY_UNHEILIGE_AURA_LEGION_100, heroLevel);
+          unit.SetAbilityLevel(Constants.ABILITY_ERH_HTE_ATTRIBUTE_LEGION_100, heroLevel);
           break;
+
+        default:
+          throw new NotImplementedException($"Abilities for hero {unit.Name} (Id {unitTypeId}) not implemented yet!");
       }
     }
   }

@@ -46,19 +46,6 @@ namespace Source.Events.Periodic
         Point centerTopPoint = CenterTopRect.Center;
         Point centerRightPoint = CenterRightRect.Center;
 
-        // Musik (Dauert etwa 55 Sekunden) einmal spielen
-        Common.PlayThematicMusic("war3mapImported\\blowitup_cutted.mp3");
-        Console.WriteLine($"Die {Program.Legion.ColorizedName} ist hier, lasst alle Hoffnung fahren und verzweifelt...");
-
-        LegionSpawnBuilding buildingWest = Program.Legion.CreateOrRefreshWestSpawnBuilding();
-        LegionSpawnBuilding buildingEast =  Program.Legion.CreateOrRefreshEastSpawnBuilding();
-
-        //// Effekt für Ankündigung für 6 Sekunden
-        //SpecialEffects.CreateSpecialEffect("Abilities\\Spells\\Human\\FlameStrike\\FlameStrikeTarget.mdl", centerPoint, 3f, 5f);
-
-        float centerX = centerPoint.X;
-        float centerY = centerPoint.Y - 100;
-
         // Zentrum
         ComputePentagramPoints(centerPoint, 10f,
           out Point pentaCenterPointBottom,
@@ -99,33 +86,18 @@ namespace Source.Events.Periodic
           out Point pentaRightPointLeft,
           out Point pentaRightPointRight);
 
-        //// Zentrum - Nach 5 Sekunden die Schaden-Effekte anzeigen
-        //SpecialEffects.CreateSpecialEffectTimed("Abilities\\Spells\\Human\\FlameStrike\\FlameStrike1.mdl", pentaCenterPointBottom, 3f, 5f, 5f);
-        //SpecialEffects.CreateSpecialEffectTimed("Abilities\\Spells\\Human\\FlameStrike\\FlameStrike1.mdl", pentaCenterPointTopLeft, 3f, 5f, 5f);
-        //SpecialEffects.CreateSpecialEffectTimed("Abilities\\Spells\\Human\\FlameStrike\\FlameStrike1.mdl", pentaCenterPointTopRight, 5f, 5f, 5f);
-        //SpecialEffects.CreateSpecialEffectTimed("Abilities\\Spells\\Human\\FlameStrike\\FlameStrike1.mdl", pentaCenterPointLeft, 3f, 5f, 5f);
-        //SpecialEffects.CreateSpecialEffectTimed("Abilities\\Spells\\Human\\FlameStrike\\FlameStrike1.mdl", pentaCenterPointRight, 3f, 5f, 5f);
-        //SpecialEffects.CreateSpecialEffectTimed("Abilities\\Spells\\Demon\\DarkPortal\\DarkPortalTarget.mdl", centerPoint, 3, 5f);
+        float centerX = centerPoint.X;
+        float centerY = centerPoint.Y - 100;
 
-        //// Bottom Lange - Nach 5 Sekunden die Schaden-Effekte anzeigen
-        //SpecialEffects.CreateSpecialEffectTimed("Abilities\\Spells\\Human\\FlameStrike\\FlameStrike1.mdl", centerBottomPoint, 3f, 5f, 5f);
+        Console.WriteLine($"Die {Program.Legion.ColorizedName} naht, lasst alle Hoffnung fahren und verzweifelt...");
 
-        //// Left Lange - Nach 5 Sekunden die Schaden-Effekte anzeigen
-        //SpecialEffects.CreateSpecialEffectTimed("Abilities\\Spells\\Human\\FlameStrike\\FlameStrike1.mdl", centerLeftPoint, 3f, 5f, 5f);
-
-        //// Top Lange - Nach 5 Sekunden die Schaden-Effekte anzeigen
-        //SpecialEffects.CreateSpecialEffectTimed("Abilities\\Spells\\Human\\FlameStrike\\FlameStrike1.mdl", centerTopPoint, 3f, 5f, 5f);
-
-        //// Right Lange - Nach 5 Sekunden die Schaden-Effekte anzeigen
-        //SpecialEffects.CreateSpecialEffectTimed("Abilities\\Spells\\Human\\FlameStrike\\FlameStrike1.mdl", centerRightPoint, 3f, 5f, 5f);
-
-        //// Zentrum - Nach 5 Sekunden die Schaden-Ability zünden
-        //CreateAtDummyAndCastAbilityTimed(player, centerPoint, Constants.ABILITY_PHOENIXFEUER_DUMMY, executions, Constants.ORDER_PHOENIX_FIRE, 5.5f);
+        // Musik (Dauert etwa 55 Sekunden) einmal spielen
+        Common.PlayThematicMusic("war3mapImported\\blowitup_cutted.mp3");
 
         // Pentagram zeichen nach 1,5 Sekunden für 5 Sekunden
         int timer1Count = 0;
         timer pentaTimer = Common.CreateTimer();
-        Common.TimerStart(pentaTimer, 0.5f, true, () =>
+        Common.TimerStart(pentaTimer, 1f, true, () =>
         {
           // Zentrum
           CreateLightning(pentaCenterPointBottom, pentaCenterPointTopLeft);
@@ -173,52 +145,73 @@ namespace Source.Events.Periodic
           }
         });
 
-        // Zentrum - Helden beleben
+        // Legion-Held wird im Zentrum erzeugt, bekommt ggf. den höchsten Spielerlevel und wird traininert
         int maxHeroLevel = Program.AllActiveUsers.Max(user => user.HeroLevelCounter);
         if (maxHeroLevel == 0)
           maxHeroLevel = executions;
 
-        Program.Legion.CreateOrReviveHero(Constants.UNIT_D_MONENF_RST_LEGION, Areas.Center, maxHeroLevel, executions);
+        timer spawnTimer = Common.CreateTimer();
+        Common.TimerStart(spawnTimer, 5f, false, () =>
+        {
+          Common.DestroyTimer(spawnTimer);
+          spawnTimer.Dispose();
+          spawnTimer = null;
 
-        // Zentrum - Weitere Einheiten via Cast hinzurufen
-        CreateUnitAtRandomPointWithEffect(centerRect, Constants.UNIT_H_LLENBESTIE_LEGION);
-        CreateUnitAtRandomPointWithEffect(centerRect, Constants.UNIT_MAID_DES_SCHMERZES_LEGION);
-        CreateUnitAtRandomPointWithEffect(centerRect, Constants.UNIT_TEUFELSFRESSER_LEGION);
-        //CreateAtDummyAndCastAbilityTimed(player, centerRect, Constants.ABILITY_H_LLENBESTIEN_KLATSCHEN, executions, Constants.ORDER_RAIN_OF_CHAOS, 4f);
-        //CreateAtDummyAndCastAbilityTimed(player, centerRect, Constants.ABILITY_TEUFELSWACHEN_KLATSCHEN, executions, Constants.ORDER_RAIN_OF_CHAOS, 4f);
-        //CreateAtDummyAndCastAbilityTimed(player, centerRect, Constants.ABILITY_TEUFELSFRESSERER_KLATSCHEN, executions, Constants.ORDER_RAIN_OF_CHAOS, 4f);
-        //CreateAtDummyAndCastAbilityTimed(player, centerRect, Constants.ABILITY_SCH_NDLICHE_FOLTERKNECHTE_KLATSCHEN, executions, Constants.ORDER_RAIN_OF_CHAOS, 4.5f);
-        //CreateAtDummyAndCastAbilityTimed(player, centerRect, Constants.ABILITY_MAIDS_DES_SCHRECKENS_KLATSCHEN, executions, Constants.ORDER_RAIN_OF_CHAOS, 4.5f);
-        //CreateAtDummyAndCastAbilityTimed(player, centerRect, Constants.ABILITY_H_LLENMASCHINEN_KLATSCHEN, executions, Constants.ORDER_RAIN_OF_CHAOS, 5f);
+          try
+          {
+            Program.Legion.CreateOrRefreshWestSpawnBuilding();
+            Program.Legion.CreateOrRefreshEastSpawnBuilding();
 
-        //// Bottom Lane - Weitere Einheiten via Cast hinzurufen
-        CreateUnitAtRandomPointWithEffect(CenterBottomRect, Constants.UNIT_H_LLENBESTIE_LEGION);
-        //CreateAtDummyAndCastAbilityTimed(player, CenterBottomRect, Constants.ABILITY_H_LLENBESTIEN_KLATSCHEN, executions, Constants.ORDER_RAIN_OF_CHAOS, 4f);
-        //CreateAtDummyAndCastAbilityTimed(player, CenterBottomRect, Constants.ABILITY_MAIDS_DES_SCHRECKENS_KLATSCHEN, executions, Constants.ORDER_RAIN_OF_CHAOS, 4.5f);
+            Program.Legion.CreateOrReviveHero(Constants.UNIT_D_MONENF_RST_LEGION, Areas.Center, maxHeroLevel, executions);
 
-        //// Left Lane - Weitere Einheiten via Cast hinzurufen
-        CreateUnitAtRandomPointWithEffect(CenterLeftRect, Constants.UNIT_H_LLENBESTIE_LEGION);
-        //CreateAtDummyAndCastAbilityTimed(player, CenterLeftRect, Constants.ABILITY_H_LLENBESTIEN_KLATSCHEN, executions, Constants.ORDER_RAIN_OF_CHAOS, 4f);
-        //CreateAtDummyAndCastAbilityTimed(player, CenterLeftRect, Constants.ABILITY_MAIDS_DES_SCHRECKENS_KLATSCHEN, executions, Constants.ORDER_RAIN_OF_CHAOS, 4.5f);
+            // Zentrum - Weitere Einheiten via Cast hinzurufen
+            CreateUnitAtRandomPointWithEffectTimed(centerRect, Constants.UNIT_H_LLENBESTIE_LEGION, 1f);
+            CreateUnitAtRandomPointWithEffectTimed(centerRect, Constants.UNIT_H_LLENBESTIE_LEGION, 1f);
+            CreateUnitAtRandomPointWithEffectTimed(centerRect, Constants.UNIT_H_LLENBESTIE_LEGION, 1f);
+            CreateUnitAtRandomPointWithEffectTimed(centerRect, Constants.UNIT_H_LLENBESTIE_LEGION, 1f);
 
-        //// Top Lane - Weitere Einheiten via Cast hinzurufen
-        CreateUnitAtRandomPointWithEffect(CenterTopRect, Constants.UNIT_H_LLENBESTIE_LEGION);
-        //CreateAtDummyAndCastAbilityTimed(player, CenterTopRect, Constants.ABILITY_H_LLENBESTIEN_KLATSCHEN, executions, Constants.ORDER_RAIN_OF_CHAOS, 4f);
-        //CreateAtDummyAndCastAbilityTimed(player, CenterTopRect, Constants.ABILITY_MAIDS_DES_SCHRECKENS_KLATSCHEN, executions, Constants.ORDER_RAIN_OF_CHAOS, 4.5f);
+            // Bottom Lane - Weitere Einheiten via Cast hinzurufen
+            CreateUnitAtRandomPointWithEffect(CenterBottomRect, Constants.UNIT_H_LLENBESTIE_LEGION);
+            CreateUnitAtRandomPointWithEffect(CenterBottomRect, Constants.UNIT_H_LLENBESTIE_LEGION);
 
-        //// Right Lane - Weitere Einheiten via Cast hinzurufen
-        CreateUnitAtRandomPointWithEffect(CenterRightRect, Constants.UNIT_H_LLENBESTIE_LEGION);
-        //CreateAtDummyAndCastAbilityTimed(player, CenterRightRect, Constants.ABILITY_H_LLENBESTIEN_KLATSCHEN, executions, Constants.ORDER_RAIN_OF_CHAOS, 4f);
-        //CreateAtDummyAndCastAbilityTimed(player, CenterRightRect, Constants.ABILITY_MAIDS_DES_SCHRECKENS_KLATSCHEN, executions, Constants.ORDER_RAIN_OF_CHAOS, 4.5f);
+            // Left Lane - Weitere Einheiten via Cast hinzurufen
+            CreateUnitAtRandomPointWithEffect(CenterLeftRect, Constants.UNIT_H_LLENBESTIE_LEGION);
+            CreateUnitAtRandomPointWithEffect(CenterLeftRect, Constants.UNIT_H_LLENBESTIE_LEGION);
+
+            // Top Lane - Weitere Einheiten via Cast hinzurufen
+            CreateUnitAtRandomPointWithEffect(CenterTopRect, Constants.UNIT_H_LLENBESTIE_LEGION);
+            CreateUnitAtRandomPointWithEffect(CenterTopRect, Constants.UNIT_H_LLENBESTIE_LEGION);
+
+            // Right Lane - Weitere Einheiten via Cast hinzurufen
+            CreateUnitAtRandomPointWithEffect(CenterRightRect, Constants.UNIT_H_LLENBESTIE_LEGION);
+            CreateUnitAtRandomPointWithEffect(CenterRightRect, Constants.UNIT_H_LLENBESTIE_LEGION);
+          }
+          catch (Exception ex)
+          {
+            Program.ShowExceptionMessage("LegionRaid.OnElapsed", ex);
+          }
+        });
       }
       catch (Exception ex)
       {
-        Program.ShowExceptionMessage("SlapAround.OnElapsed", ex);
+        Program.ShowExceptionMessage("LegionRaid.OnElapsed", ex);
       }
 
       return true;
     }
 
+    private static void CreateUnitAtRandomPointWithEffectTimed(Rectangle rectangle, int unitTypeId, float delay)
+    {
+      timer timer = Common.CreateTimer();
+      Common.TimerStart(timer, delay, false, () =>
+      {
+        Common.DestroyTimer(timer);
+        timer.Dispose();
+        timer = null;
+
+        CreateUnitAtRandomPointWithEffect(rectangle, unitTypeId);
+      });
+    }
     private static void CreateUnitAtRandomPointWithEffect(Rectangle rectangle, int unitTypeId)
     {
       Point point = rectangle.GetRandomPoint();
@@ -231,20 +224,24 @@ namespace Source.Events.Periodic
         case 2:
         case 3:
         case 4:
-          creep.Wc3Unit.AttackBaseDamage1 = creep.Wc3Unit.AttackBaseDamage1 * executions;
-          creep.Wc3Unit.Defense = creep.Wc3Unit.Defense * executions;
-          creep.Wc3Unit.MaxLife = creep.Wc3Unit.MaxLife * executions;
-          creep.Wc3Unit.Life = creep.Wc3Unit.MaxLife;
+        case 6:
+        case 7:
+        case 8:
+        case 9:
+        case 10:
+          creep.Wc3Unit.AttackBaseDamage1 = creep.Wc3Unit.AttackBaseDamage1 + (10 * executions);
+          creep.Wc3Unit.Defense = creep.Wc3Unit.Defense + (2 * executions);
+          creep.Wc3Unit.MaxLife = creep.Wc3Unit.MaxLife + ((creep.Wc3Unit.MaxLife / 10) * executions);
           break;
 
-        default: // Ab Stufe 5 werden die Einheiten nicht mehr stärker, sonst werden sie (fast) unbesiegbar
-          creep.Wc3Unit.AttackBaseDamage1 = creep.Wc3Unit.AttackBaseDamage1 * 5;
-          creep.Wc3Unit.Defense = creep.Wc3Unit.Defense * 5;
-          creep.Wc3Unit.MaxLife = creep.Wc3Unit.MaxLife * 5;
-          creep.Wc3Unit.Life = creep.Wc3Unit.MaxLife;
+        default: // Ab Stufe 10 werden die Einheiten nicht mehr stärker, sonst werden sie (fast) unbesiegbar
+          creep.Wc3Unit.AttackBaseDamage1 = creep.Wc3Unit.AttackBaseDamage1 + 100;
+          creep.Wc3Unit.Defense = creep.Wc3Unit.Defense + 20;
+          creep.Wc3Unit.MaxLife = creep.Wc3Unit.MaxLife + (creep.Wc3Unit.MaxLife);
           break;
       }
-      
+
+      creep.Wc3Unit.Life = creep.Wc3Unit.MaxLife;
     }
 
     private static void CreateAtDummyAndCastAbilityTimed(player player, Rectangle rectangle, int abilityId, int abilityLevel, int orderId, float delay, float duration = 2f)

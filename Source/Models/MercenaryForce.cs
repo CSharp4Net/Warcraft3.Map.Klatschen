@@ -67,23 +67,15 @@ namespace Source.Models
     /// Spawn-Gebäude, welches die Einheiten automatisch erstellt und das Hauptgebäude des Lagers ist.
     /// </summary>
     public MercenarySpawnBuilding Building { get; private set; }
-
+    /// <summary>
+    /// Auflistung von verteidigenden Einheiten.
+    /// </summary>
     public List<SpawnedCreep> DefenderCreeps { get; private set; } = new List<SpawnedCreep>();
 
     /// <summary>
     /// Team, für das das Söldnerlager automatisch Einheiten erstellt.
     /// </summary>
     public TeamBase OwnerTeam { get; private set; }
-
-    public void CreateHero(int unitTypeId, int heroLevel = 1, float face = 0f)
-    {
-      CreateHero(unitTypeId, SpawnArea, heroLevel, face, AttackTargetArea);
-    }
-
-    public void ReviveHero(int heroLevel = 1, float face = 0f)
-    {
-      ReviveHero(SpawnArea, heroLevel, face, AttackTargetArea);
-    }
 
     /// <summary>
     /// Erstellt das Spawn-Gebäude des Söldnerlagers.

@@ -9,7 +9,7 @@ namespace Source.Logics
     internal static void HandleDied(unit unit)
     {
       player player = unit.Owner;
-      int playerId = unit.Owner.Id;
+      int playerId = player.Id;
       Area respawnArea = null;
 
       if (Program.Humans.ContainsPlayer(playerId, out UserPlayer user))
@@ -99,7 +99,7 @@ namespace Source.Logics
 
         // Stufe & Reichweite des Zaubers
         int spellLevel = castingUnit.GetAbilityLevel(castedAbilityId);
-        int spellRange = 250 + spellLevel * 50;
+        int spellRange = 500 + (spellLevel * 50);
 
         // Ziel & Position des Zauberziels
         unit targetUnit = Common.GetSpellTargetUnit();
@@ -238,6 +238,28 @@ namespace Source.Logics
       }
 
       creepCamp.Building.AddUnitToSpawnTriggers(soldUnitId);
+    }
+
+    internal static void HandleLeveled(unit unit)
+    {
+      int playerId = unit.Owner.Id;
+
+      if (Program.Humans.ContainsPlayer(playerId, out UserPlayer user))
+      {
+        user.HeroLevelCounter = unit.HeroLevel;
+      }
+      else if (Program.Orcs.ContainsPlayer(playerId, out user))
+      {
+        user.HeroLevelCounter = unit.HeroLevel;
+      }
+      else if (Program.Elves.ContainsPlayer(playerId, out user))
+      {
+        user.HeroLevelCounter = unit.HeroLevel;
+      }
+      else if (Program.Undeads.ContainsPlayer(playerId, out user))
+      {
+        user.HeroLevelCounter = unit.HeroLevel;
+      }
     }
 
     // TODO 001

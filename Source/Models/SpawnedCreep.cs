@@ -13,11 +13,11 @@ namespace Source.Models
     /// <param name="unitType">Einheit-Typ</param>
     /// <param name="area">Gebiet</param>
     /// <param name="face">Blickrichtung (0 = rechts, 90 = oben, 180 = unten, 270 = links)</param>
-    public SpawnedCreep(NeutralForce owner, int unitType, Point point, float face = 0f)
+    public SpawnedCreep(NeutralForce owner, int unitType, Point spawnPoint, float face = 0f)
     {
       Owner = owner;
-
-      Wc3Unit = Common.CreateUnit(owner.Wc3Player, unitType, point.X, point.Y, face);
+      SpawnPoint = spawnPoint;
+      Wc3Unit = Common.CreateUnit(owner.Wc3Player, unitType, spawnPoint.X, spawnPoint.Y, face);
     }
 
     /// <summary>
@@ -33,6 +33,10 @@ namespace Source.Models
     /// Warcraft-Verweis auf Einheit
     /// </summary>
     public unit Wc3Unit { get; init; }
+    /// <summary>
+    /// Warcraft-Verweis auf Einheit
+    /// </summary>
+    public Point SpawnPoint { get; init; }
 
     /// <summary>
     /// Gebiet, welches das Ziel des letzten Angriff/Bewegen-Befehls war.
@@ -43,20 +47,21 @@ namespace Source.Models
     /// Gibt der Einheit einen Angriff/Bewegen-Befehl bis zum Zentrum eines Gebiets.
     /// </summary>
     /// <param name="targetArea">Zielgebiet</param>
-    public void AttackMove(Area targetArea, float delay = 0f)
+    public void AttackMoveTimed(Area targetArea, float delay)
     {
       LastAreaTarget = targetArea;
 
-      if (delay == 0f)
-        Wc3Unit.IssueOrder(Constants.ORDER_ATTACK, LastAreaTarget.CenterX, LastAreaTarget.CenterY);
-      else
+      var timer = Common.CreateTimer();
+      Common.TimerStart(timer, delay, false, () =>
       {
-        var timer = Common.CreateTimer();
-        Common.TimerStart(timer, delay, false, () =>
-        {
-          Wc3Unit.IssueOrder(Constants.ORDER_ATTACK, LastAreaTarget.CenterX, LastAreaTarget.CenterY);
-        });
-      }
+        Wc3Unit.IssueOrder(Constants.ORDER_ATTACK, LastAreaTarget.CenterX, LastAreaTarget.CenterY);
+      });
+    }
+    public void AttackMove(Area targetArea)
+    {
+      LastAreaTarget = targetArea;
+
+      Wc3Unit.IssueOrder(Constants.ORDER_ATTACK, LastAreaTarget.CenterX, LastAreaTarget.CenterY);
     }
 
     /// <summary>
@@ -77,6 +82,11 @@ namespace Source.Models
     {
       if (Wc3Unit.Alive)
         Wc3Unit.Kill();
+    }
+
+    public void ReviveHero()
+    {
+      Common.ReviveHero(Wc3Unit, SpawnPoint.X, SpawnPoint.Y, true);
     }
   }
 }
