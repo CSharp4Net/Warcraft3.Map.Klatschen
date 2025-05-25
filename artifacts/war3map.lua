@@ -20916,21 +20916,18 @@ System.namespace("Source.Events", function (namespace)
 
 
     OnLevels = function ()
-      local default = System.try(function ()
+      System.try(function ()
         local unit = GetLevelingUnit()
 
-        if not SourceExtensions.unitExtension.IsUnitOfComputer(unit) then
-          return true
+        if SourceExtensions.unitExtension.IsUnitOfComputer(unit) then
+          SourceLogics.ComputerHero.HandleLeveled(unit)
+        elseif SourceExtensions.unitExtension.IsUnitOfUser(unit) then
+          SourceLogics.UserHero.HandleLeveled(unit)
         end
-
-        SourceLogics.ComputerHero.HandleLeveled(unit)
       end, function (default)
         local ex = default
         Source.Program.ShowExceptionMessage("Hero.OnLevels", ex)
       end)
-      if default then
-        return
-      end
     end
     return {
       OnLevels = OnLevels,
@@ -21257,7 +21254,6 @@ System.namespace("Source.Events.Buildings", function (namespace)
         System.Console.WriteLine("Die " .. System.toString(creepCamp.ColorizedName) .. " wurden besiegt und schließen sich der " .. System.toString(user.Team.ColorizedName) .. " an!")
         TimerStart(timer, rebuildTime, false, function ()
           local default = System.try(function ()
-            Source.Program.ShowDebugMessage("Init rebuilding of building of " .. System.toString(creepCamp.ColorizedName))
 
             DestroyTimer(timer)
             DestroyTimer(timer)
@@ -21270,7 +21266,6 @@ System.namespace("Source.Events.Buildings", function (namespace)
 
             local attackTargetArea
 
-            Source.Program.ShowDebugMessage("Detect attack target of building of " .. System.toString(creepCamp.ColorizedName))
 
 
             if newOwningPlayer.PlayerId == creepCamp.NearTeam.Computer.PlayerId then
@@ -21279,7 +21274,6 @@ System.namespace("Source.Events.Buildings", function (namespace)
               attackTargetArea = creepCamp.NearTeam.TeamBaseArea
             end
 
-            Source.Program.ShowDebugMessage("Set owner and rebuild building of " .. System.toString(creepCamp.ColorizedName))
             creepCamp:SetOwnerAndRebuild(user.Team, attackTargetArea)
           end, function (default)
             local ex = default
@@ -21472,7 +21466,7 @@ System.namespace("Source.Events.Periodic", function (namespace)
     OnElapsed = function ()
       System.try(function ()
 
-        local weathereffect = AddWeatherEffect(GetPlayableMapRect(), 1380739186)
+        local weathereffect = AddWeatherEffect(GetPlayableMapRect(), 1280467297)
         local weatherTimer = CreateTimer()
         TimerStart(weatherTimer, 60, false, function ()
           DestroyTimer(weatherTimer)
@@ -21563,7 +21557,7 @@ System.namespace("Source.Events.Periodic", function (namespace)
           CreateLightning(pentaRightPointTopRight, pentaRightPointBottom)
 
           timer1Count = timer1Count + 1
-          if timer1Count >= 10 then
+          if timer1Count >= 5 then
             PauseTimer(pentaTimer)
 
             DestroyTimer(pentaTimer)
@@ -21576,6 +21570,7 @@ System.namespace("Source.Events.Periodic", function (namespace)
         local maxHeroLevel = Linq.Max(Source.Program.AllActiveUsers, function (user)
           return user.HeroLevelCounter
         end, System.Int32)
+
         if maxHeroLevel == 0 then
           maxHeroLevel = executions
         end
@@ -21593,10 +21588,10 @@ System.namespace("Source.Events.Periodic", function (namespace)
             Source.Program.Legion:CreateOrReviveHero(1311780918, Areas.Center, maxHeroLevel, executions)
 
 
-            CreateUnitAtRandomPointWithEffectTimed(centerRect, 1848651846, 1)
-            CreateUnitAtRandomPointWithEffectTimed(centerRect, 1848651846, 1)
-            CreateUnitAtRandomPointWithEffectTimed(centerRect, 1848651846, 1)
-            CreateUnitAtRandomPointWithEffectTimed(centerRect, 1848651846, 1)
+            CreateUnitAtRandomPointWithEffect(centerRect, 1848651846)
+            CreateUnitAtRandomPointWithEffect(centerRect, 1848651846)
+            CreateUnitAtRandomPointWithEffect(centerRect, 1848651846)
+            CreateUnitAtRandomPointWithEffect(centerRect, 1848651846)
 
 
             CreateUnitAtRandomPointWithEffect(CenterBottomRect, 1848651846)
@@ -21638,25 +21633,27 @@ System.namespace("Source.Events.Periodic", function (namespace)
     CreateUnitAtRandomPointWithEffect = function (rectangle, unitTypeId)
       local point = rectangle:GetRandomPoint()
       SourceStatics.SpecialEffects.CreateSpecialEffect("Objects\\Spawnmodels\\NightElf\\EntBirthTarget\\EntBirthTarget.mdl", point, 2, 1)
-      local creep = Source.Program.Legion:SpawnUnitAtPoint(point, unitTypeId)
+      local result = Source.Program.Legion:SpawnUnitAtPoint(point, unitTypeId)
 
       repeat
         local default = executions
         if default == 1 or default == 2 or default == 3 or default == 4 or default == 6 or default == 7 or default == 8 or default == 9 or default == 10 then
-          BlzSetUnitBaseDamage(creep.Wc3Unit, BlzGetUnitBaseDamage(creep.Wc3Unit, 0) + (10 * executions), 0)
-          BlzSetUnitRealField(creep.Wc3Unit, UNIT_RF_DEFENSE, BlzGetUnitRealField(creep.Wc3Unit, UNIT_RF_DEFENSE) + (2 * executions))
-          BlzSetUnitMaxHP(creep.Wc3Unit, BlzGetUnitMaxHP(creep.Wc3Unit) + ((System.div(BlzGetUnitMaxHP(creep.Wc3Unit), 10)) * executions))
+          BlzSetUnitBaseDamage(result.Wc3Unit, BlzGetUnitBaseDamage(result.Wc3Unit, 0) + (10 * executions), 0)
+          BlzSetUnitRealField(result.Wc3Unit, UNIT_RF_DEFENSE, BlzGetUnitRealField(result.Wc3Unit, UNIT_RF_DEFENSE) + (2 * executions))
+          BlzSetUnitMaxHP(result.Wc3Unit, BlzGetUnitMaxHP(result.Wc3Unit) + ((System.div(BlzGetUnitMaxHP(result.Wc3Unit), 10)) * executions))
           break
         else
 
-          BlzSetUnitBaseDamage(creep.Wc3Unit, BlzGetUnitBaseDamage(creep.Wc3Unit, 0) + 100, 0)
-          BlzSetUnitRealField(creep.Wc3Unit, UNIT_RF_DEFENSE, BlzGetUnitRealField(creep.Wc3Unit, UNIT_RF_DEFENSE) + 20)
-          BlzSetUnitMaxHP(creep.Wc3Unit, BlzGetUnitMaxHP(creep.Wc3Unit) + (BlzGetUnitMaxHP(creep.Wc3Unit)))
+          BlzSetUnitBaseDamage(result.Wc3Unit, BlzGetUnitBaseDamage(result.Wc3Unit, 0) + 100, 0)
+          BlzSetUnitRealField(result.Wc3Unit, UNIT_RF_DEFENSE, BlzGetUnitRealField(result.Wc3Unit, UNIT_RF_DEFENSE) + 20)
+          BlzSetUnitMaxHP(result.Wc3Unit, BlzGetUnitMaxHP(result.Wc3Unit) + (BlzGetUnitMaxHP(result.Wc3Unit)))
           break
         end
       until 1
 
-      SetWidgetLife(creep.Wc3Unit, BlzGetUnitMaxHP(creep.Wc3Unit))
+      SetWidgetLife(result.Wc3Unit, BlzGetUnitMaxHP(result.Wc3Unit))
+
+      return result
     end
     CreateAtDummyAndCastAbilityTimed = function (player, rectangle, abilityId, abilityLevel, orderId, delay, duration)
       CreateAtDummyAndCastAbilityTimed1(player, rectangle:GetRandomPoint(), abilityId, abilityLevel, orderId, delay, duration)
@@ -21733,6 +21730,7 @@ System.namespace("Source.Events.Periodic", function (namespace)
     end
     return {
       OnElapsed = OnElapsed,
+      CreateUnitAtRandomPointWithEffect = CreateUnitAtRandomPointWithEffect,
       __metadata__ = function (out)
         return {
           fields = {
@@ -21745,7 +21743,7 @@ System.namespace("Source.Events.Periodic", function (namespace)
             { "CreateAtDummyAndCastAbilityTimed", 0x709, CreateAtDummyAndCastAbilityTimed1, out.WCSharp.Api.player, out.WCSharp.Shared.Data.Point, System.Int32, System.Int32, System.Int32, System.Single, System.Single },
             { "CreateLightning", 0x209, CreateLightning, out.WCSharp.Shared.Data.Point, out.WCSharp.Shared.Data.Point },
             { "CreateLightning", 0x409, CreateLightning1, out.WCSharp.Api.unit, out.WCSharp.Api.unit, System.Single, System.Single },
-            { "CreateUnitAtRandomPointWithEffect", 0x209, CreateUnitAtRandomPointWithEffect, out.WCSharp.Shared.Data.Rectangle, System.Int32 },
+            { "CreateUnitAtRandomPointWithEffect", 0x28C, CreateUnitAtRandomPointWithEffect, out.WCSharp.Shared.Data.Rectangle, System.Int32, out.Source.Models.SpawnedCreep },
             { "CreateUnitAtRandomPointWithEffectTimed", 0x309, CreateUnitAtRandomPointWithEffectTimed, out.WCSharp.Shared.Data.Rectangle, System.Int32, System.Single },
             { "OnElapsed", 0x8E, OnElapsed, System.Boolean }
           },
@@ -22577,10 +22575,10 @@ System.import(function (out)
 end)
 System.namespace("Source.Logics", function (namespace)
   namespace.class("UserHero", function (namespace)
-    local HandleDied, HandleItemBuyed, HandleCharmCasted, HandleAnythingCasted, HandleCreepSpawnBuyed
+    local HandleDied, HandleItemBuyed, HandleCharmCasted, HandleAnythingCasted, HandleCreepSpawnBuyed, HandleLeveled
     HandleDied = function (unit)
       local player = GetOwningPlayer(unit)
-      local playerId = GetPlayerId(GetOwningPlayer(unit))
+      local playerId = GetPlayerId(player)
       local respawnArea = nil
 
       local default, user = Source.Program.Humans:ContainsPlayer(playerId)
@@ -22668,7 +22666,7 @@ System.namespace("Source.Logics", function (namespace)
 
 
         local spellLevel = GetUnitAbilityLevel(castingUnit, castedAbilityId)
-        local spellRange = 250 + spellLevel * 50
+        local spellRange = 500 + (spellLevel * 50)
 
 
         local targetUnit = GetSpellTargetUnit()
@@ -22807,11 +22805,38 @@ System.namespace("Source.Logics", function (namespace)
 
       creepCamp.Building:AddUnitToSpawnTriggers(soldUnitId)
     end
+    HandleLeveled = function (unit)
+      local playerId = GetPlayerId(GetOwningPlayer(unit))
+
+      local default, user = Source.Program.Humans:ContainsPlayer(playerId)
+      if default then
+        user.HeroLevelCounter = GetHeroLevel(unit)
+      else
+        local extern
+        extern, user = Source.Program.Orcs:ContainsPlayer(playerId)
+        if extern then
+          user.HeroLevelCounter = GetHeroLevel(unit)
+        else
+          local extern
+          extern, user = Source.Program.Elves:ContainsPlayer(playerId)
+          if extern then
+            user.HeroLevelCounter = GetHeroLevel(unit)
+          else
+            local extern
+            extern, user = Source.Program.Undeads:ContainsPlayer(playerId)
+            if extern then
+              user.HeroLevelCounter = GetHeroLevel(unit)
+            end
+          end
+        end
+      end
+    end
     return {
       HandleDied = HandleDied,
       HandleItemBuyed = HandleItemBuyed,
       HandleCharmCasted = HandleCharmCasted,
       HandleCreepSpawnBuyed = HandleCreepSpawnBuyed,
+      HandleLeveled = HandleLeveled,
       __metadata__ = function (out)
         return {
           methods = {
@@ -22819,7 +22844,8 @@ System.namespace("Source.Logics", function (namespace)
             { "HandleCharmCasted", 0x10C, HandleCharmCasted, System.Int32 },
             { "HandleCreepSpawnBuyed", 0x30C, HandleCreepSpawnBuyed, out.WCSharp.Api.unit, out.WCSharp.Api.unit, out.WCSharp.Api.unit },
             { "HandleDied", 0x10C, HandleDied, out.WCSharp.Api.unit },
-            { "HandleItemBuyed", 0x20C, HandleItemBuyed, out.WCSharp.Api.unit, out.WCSharp.Api.item }
+            { "HandleItemBuyed", 0x20C, HandleItemBuyed, out.WCSharp.Api.unit, out.WCSharp.Api.item },
+            { "HandleLeveled", 0x10C, HandleLeveled, out.WCSharp.Api.unit }
           },
           class = { "UserHero", 0x3C }
         }
@@ -23054,12 +23080,10 @@ end
 do
 local System = System
 local WCSharpApi = WCSharp.Api
-local Source
 local SourceEventsBuildings
 local SourceModels
 local SourceStatics
 System.import(function (out)
-  Source = out.Source
   SourceEventsBuildings = Source.Events.Buildings
   SourceModels = Source.Models
   SourceStatics = Source.Statics
@@ -23073,29 +23097,27 @@ System.namespace("Source.Models", function (namespace)
       this.ColorizedName = "|cffff0000" .. System.toString(name) .. "|r"
     end
     CreateOrReviveHero = function (this, unitTypeId, spawnArea, heroLevel, face, targetArea)
-      SourceStatics.SpecialEffects.CreateSpecialEffect("Objects\\Spawnmodels\\NightElf\\EntBirthTarget\\EntBirthTarget.mdl", spawnArea.Wc3Rectangle:getCenter(), 2, 3)
-
       local unit = nil
 
       if this.Hero == nil then
-        Source.Program.ShowDebugMessage("Create legion hero")
+        SourceStatics.SpecialEffects.CreateSpecialEffect("Objects\\Spawnmodels\\NightElf\\EntBirthTarget\\EntBirthTarget.mdl", spawnArea.Wc3Rectangle:getCenter(), 2, 3)
         this.Hero = this:CreateHero(unitTypeId, spawnArea, heroLevel, face)
         unit = this.Hero.Wc3Unit
 
-        Source.Program.ShowDebugMessage("Learn legion hero")
         AddAbilitiesToHero(this, unitTypeId, unit)
       else
         unit = this.Hero.Wc3Unit
 
         if not UnitAlive(unit) then
-          Source.Program.ShowDebugMessage("Revive legion hero")
-          this.Hero:ReviveHero()
+          SourceStatics.SpecialEffects.CreateSpecialEffect("Objects\\Spawnmodels\\NightElf\\EntBirthTarget\\EntBirthTarget.mdl", spawnArea.Wc3Rectangle:getCenter(), 2, 3)
+          local point = spawnArea.Wc3Rectangle:getCenter()
+          ReviveHero(unit, point.X, point.Y, true)
 
           if targetArea ~= nil then
             this.Hero:AttackMove(targetArea)
           end
-        elseif GetHeroLevel(unit) < heroLevel then
-          Source.Program.ShowDebugMessage("Power up legion hero")
+        else
+          SourceStatics.SpecialEffects.CreateSpecialEffect1("Objects\\Spawnmodels\\NightElf\\EntBirthTarget\\EntBirthTarget.mdl", GetUnitX(unit), GetUnitY(unit), 2, 3)
           SetWidgetLife(unit, BlzGetUnitMaxHP(unit))
         end
       end
@@ -23103,7 +23125,6 @@ System.namespace("Source.Models", function (namespace)
       SetHeroLevel(unit, heroLevel, true)
       SetUnitState(unit, UNIT_STATE_MANA, BlzGetUnitMaxMana(unit))
 
-      Source.Program.ShowDebugMessage("Train legion hero to level " .. heroLevel)
       TrainHero(this, unitTypeId, unit, heroLevel)
     end
     CreateOrRefreshEastSpawnBuilding = function (this)
@@ -23310,10 +23331,10 @@ do
 local System = System
 local Linq = System.Linq.Enumerable
 local Source
-local SourceStatics
+local SourceEventsPeriodic
 System.import(function (out)
   Source = out.Source
-  SourceStatics = Source.Statics
+  SourceEventsPeriodic = Source.Events.Periodic
 end)
 System.namespace("Source.Models", function (namespace)
   namespace.class("LegionSpawnTrigger", function (namespace)
@@ -23356,9 +23377,7 @@ System.namespace("Source.Models", function (namespace)
     Elapsed = function (this)
       System.try(function ()
         for _, unitId in System.each(this.UnitIds) do
-          local point = this.SpawnArea.Wc3Rectangle:GetRandomPoint()
-          SourceStatics.SpecialEffects.CreateSpecialEffect("Objects\\Spawnmodels\\NightElf\\EntBirthTarget\\EntBirthTarget.mdl", point, 2, 1)
-          Source.Program.Legion:SpawnUnitAtPoint(point, unitId):AttackMoveTimed(this.TargetArea, 2)
+          SourceEventsPeriodic.LegionRaid.CreateUnitAtRandomPointWithEffect(this.SpawnArea.Wc3Rectangle, unitId):AttackMoveTimed(this.TargetArea, 2)
         end
       end, function (default)
         local ex = default
@@ -23412,13 +23431,11 @@ end
 do
 local System = System
 local WCSharpApi = WCSharp.Api
-local Source
 local SourceEventsBuildings
 local SourceModels
 local SourceStatics
 local ListSpawnedCreep
 System.import(function (out)
-  Source = out.Source
   SourceEventsBuildings = Source.Events.Buildings
   SourceModels = Source.Models
   SourceStatics = Source.Statics
@@ -23465,7 +23482,6 @@ System.namespace("Source.Models", function (namespace)
 
       this.Wc3Player = this.OwnerTeam.Computer.Wc3Player
 
-      Source.Program.ShowDebugMessage("Build building " .. this.BuildingUnitTypeId .. " at " .. System.toString(this.BuildingArea:ToString1()))
 
       this.Building = SourceModels.MercenarySpawnBuilding(this, this.BuildingUnitTypeId, this.BuildingArea, 0)
       this.Building:RegisterOnDies(SourceEventsBuildings.MercenaryBuilding.OnDies)
@@ -23735,6 +23751,10 @@ end)
 end
 do
 local System = System
+local Source
+System.import(function (out)
+  Source = out.Source
+end)
 System.namespace("Source.Models", function (namespace)
   namespace.class("SpawnedCreep", function (namespace)
     local AttackMoveTimed, AttackMove, RepeatAttackMove, Kill, ReviveHero, __ctor__
@@ -23783,8 +23803,10 @@ System.namespace("Source.Models", function (namespace)
         KillUnit(this.Wc3Unit)
       end
     end
-    ReviveHero = function (this)
-      ReviveHero(this.Wc3Unit, this.SpawnPoint.X, this.SpawnPoint.Y, true)
+    ReviveHero = function (this, unit)
+      Source.Program.ShowDebugMessage("Respawn " .. System.toString(GetUnitName(unit)))
+      Source.Program.ShowDebugMessage("Respawn " .. this.SpawnPoint.X .. ":" .. this.SpawnPoint.Y)
+      ReviveHero(unit, this.SpawnPoint.X, this.SpawnPoint.Y, true)
     end
     return {
       Wc3UnitTypeId = 0,
@@ -23802,7 +23824,7 @@ System.namespace("Source.Models", function (namespace)
             { "AttackMoveTimed", 0x206, AttackMoveTimed, out.Source.Models.Area, System.Single },
             { "Kill", 0x6, Kill },
             { "RepeatAttackMove", 0x6, RepeatAttackMove },
-            { "ReviveHero", 0x6, ReviveHero }
+            { "ReviveHero", 0x106, ReviveHero, out.WCSharp.Api.unit }
           },
           properties = {
             { "LastAreaTarget", 0x6, out.Source.Models.Area },
@@ -24768,9 +24790,12 @@ System.import(function (out)
 end)
 System.namespace("Source.Statics", function (namespace)
   namespace.class("SpecialEffects", function (namespace)
-    local CreateSpecialEffect, CreateSpecialEffectTimed
+    local CreateSpecialEffect, CreateSpecialEffect1, CreateSpecialEffectTimed
     CreateSpecialEffect = function (modelPath, point, scale, duration)
-      local e = AddSpecialEffect(modelPath, point.X, point.Y)
+      CreateSpecialEffect1(modelPath, point.X, point.Y, scale, duration)
+    end
+    CreateSpecialEffect1 = function (modelPath, x, y, scale, duration)
+      local e = AddSpecialEffect(modelPath, x, y)
       BlzSetSpecialEffectScale(e, scale)
       WCSharpEffects.EffectSystem.Add(e, duration)
     end
@@ -24786,11 +24811,13 @@ System.namespace("Source.Statics", function (namespace)
     end
     return {
       CreateSpecialEffect = CreateSpecialEffect,
+      CreateSpecialEffect1 = CreateSpecialEffect1,
       CreateSpecialEffectTimed = CreateSpecialEffectTimed,
       __metadata__ = function (out)
         return {
           methods = {
             { "CreateSpecialEffect", 0x40C, CreateSpecialEffect, System.String, out.WCSharp.Shared.Data.Point, System.Single, System.Single },
+            { "CreateSpecialEffect", 0x50C, CreateSpecialEffect1, System.String, System.Single, System.Single, System.Single, System.Single },
             { "CreateSpecialEffectTimed", 0x50C, CreateSpecialEffectTimed, System.String, out.WCSharp.Shared.Data.Point, System.Single, System.Single, System.Single }
           },
           class = { "SpecialEffects", 0x3C }
@@ -36266,8 +36293,8 @@ local InitCSharp = function ()
       "WCSharp.Missiles.HomingMissile",
       "WCSharp.Missiles.MomentumMissile",
       "WCSharp.Missiles.OrbitalMissile",
-      "WCSharp.SaveLoad.Save_1",
       "WCSharp.SaveLoad.SaveLoadedMessage_1",
+      "WCSharp.SaveLoad.Save_1",
       "WCSharp.W3MMD.IW3MmdVar",
       "Areas",
       "Constants",

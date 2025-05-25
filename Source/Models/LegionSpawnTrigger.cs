@@ -1,4 +1,5 @@
-﻿using Source.Statics;
+﻿using Source.Events.Periodic;
+using Source.Statics;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -72,9 +73,9 @@ namespace Source.Models
       {
         foreach (int unitId in UnitIds)
         {
-          Point point = SpawnArea.Wc3Rectangle.GetRandomPoint();
-          SpecialEffects.CreateSpecialEffect("Objects\\Spawnmodels\\NightElf\\EntBirthTarget\\EntBirthTarget.mdl", point, 2f, 1f);
-          Program.Legion.SpawnUnitAtPoint(point, unitId)
+           
+          LegionRaid
+            .CreateUnitAtRandomPointWithEffect(SpawnArea.Wc3Rectangle, unitId)
             .AttackMoveTimed(TargetArea, 2f);
         }
       }

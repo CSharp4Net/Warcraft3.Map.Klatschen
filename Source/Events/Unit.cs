@@ -22,7 +22,7 @@ namespace Source.Events
 
         if (unit.IsABuilding)
         {
-          // Wenn Gebäude sterben, haben diese wenn überhaupt eigene Trigger - TODO ??
+          // Wenn Gebäude sterben, haben diese wenn überhaupt eigene Trigger
           return;
         }
 

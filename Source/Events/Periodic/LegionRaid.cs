@@ -17,7 +17,7 @@ namespace Source.Events.Periodic
       try
       {
         // Wetter für 60 Sekunden ändern
-        weathereffect weathereffect = Common.AddWeatherEffect(Blizzard.GetPlayableMapRect(), ConstantsEx.WEATHER_Lorderon_Heavy_Rain);
+        weathereffect weathereffect = Common.AddWeatherEffect(Blizzard.GetPlayableMapRect(), ConstantsEx.WEATHER_Rays_of_Sunlight);
         timer weatherTimer = Common.CreateTimer();
         Common.TimerStart(weatherTimer, 60f, false, () =>
         {
@@ -135,7 +135,7 @@ namespace Source.Events.Periodic
           CreateLightning(pentaRightPointTopRight, pentaRightPointBottom);
 
           timer1Count++;
-          if (timer1Count >= 10)
+          if (timer1Count >= 5)
           {
             pentaTimer.Pause();
 
@@ -146,7 +146,11 @@ namespace Source.Events.Periodic
         });
 
         // Legion-Held wird im Zentrum erzeugt, bekommt ggf. den höchsten Spielerlevel und wird traininert
+#if DEBUG
+        int maxHeroLevel = 0; // TODO Program.AllActiveUsers.Max(user => user.HeroLevelCounter);
+#else
         int maxHeroLevel = Program.AllActiveUsers.Max(user => user.HeroLevelCounter);
+#endif
         if (maxHeroLevel == 0)
           maxHeroLevel = executions;
 
@@ -165,10 +169,10 @@ namespace Source.Events.Periodic
             Program.Legion.CreateOrReviveHero(Constants.UNIT_D_MONENF_RST_LEGION, Areas.Center, maxHeroLevel, executions);
 
             // Zentrum - Weitere Einheiten via Cast hinzurufen
-            CreateUnitAtRandomPointWithEffectTimed(centerRect, Constants.UNIT_H_LLENBESTIE_LEGION, 1f);
-            CreateUnitAtRandomPointWithEffectTimed(centerRect, Constants.UNIT_H_LLENBESTIE_LEGION, 1f);
-            CreateUnitAtRandomPointWithEffectTimed(centerRect, Constants.UNIT_H_LLENBESTIE_LEGION, 1f);
-            CreateUnitAtRandomPointWithEffectTimed(centerRect, Constants.UNIT_H_LLENBESTIE_LEGION, 1f);
+            CreateUnitAtRandomPointWithEffect(centerRect, Constants.UNIT_H_LLENBESTIE_LEGION);
+            CreateUnitAtRandomPointWithEffect(centerRect, Constants.UNIT_H_LLENBESTIE_LEGION);
+            CreateUnitAtRandomPointWithEffect(centerRect, Constants.UNIT_H_LLENBESTIE_LEGION);
+            CreateUnitAtRandomPointWithEffect(centerRect, Constants.UNIT_H_LLENBESTIE_LEGION);
 
             // Bottom Lane - Weitere Einheiten via Cast hinzurufen
             CreateUnitAtRandomPointWithEffect(CenterBottomRect, Constants.UNIT_H_LLENBESTIE_LEGION);
@@ -212,11 +216,11 @@ namespace Source.Events.Periodic
         CreateUnitAtRandomPointWithEffect(rectangle, unitTypeId);
       });
     }
-    private static void CreateUnitAtRandomPointWithEffect(Rectangle rectangle, int unitTypeId)
+    internal static SpawnedCreep CreateUnitAtRandomPointWithEffect(Rectangle rectangle, int unitTypeId)
     {
       Point point = rectangle.GetRandomPoint();
       SpecialEffects.CreateSpecialEffect("Objects\\Spawnmodels\\NightElf\\EntBirthTarget\\EntBirthTarget.mdl", point, 2f, 1f);
-      SpawnedCreep creep = Program.Legion.SpawnUnitAtPoint(point, unitTypeId);
+      SpawnedCreep result = Program.Legion.SpawnUnitAtPoint(point, unitTypeId);
 
       switch (executions)
       {
@@ -229,19 +233,21 @@ namespace Source.Events.Periodic
         case 8:
         case 9:
         case 10:
-          creep.Wc3Unit.AttackBaseDamage1 = creep.Wc3Unit.AttackBaseDamage1 + (10 * executions);
-          creep.Wc3Unit.Defense = creep.Wc3Unit.Defense + (2 * executions);
-          creep.Wc3Unit.MaxLife = creep.Wc3Unit.MaxLife + ((creep.Wc3Unit.MaxLife / 10) * executions);
+          result.Wc3Unit.AttackBaseDamage1 = result.Wc3Unit.AttackBaseDamage1 + (10 * executions);
+          result.Wc3Unit.Defense = result.Wc3Unit.Defense + (2 * executions);
+          result.Wc3Unit.MaxLife = result.Wc3Unit.MaxLife + ((result.Wc3Unit.MaxLife / 10) * executions);
           break;
 
         default: // Ab Stufe 10 werden die Einheiten nicht mehr stärker, sonst werden sie (fast) unbesiegbar
-          creep.Wc3Unit.AttackBaseDamage1 = creep.Wc3Unit.AttackBaseDamage1 + 100;
-          creep.Wc3Unit.Defense = creep.Wc3Unit.Defense + 20;
-          creep.Wc3Unit.MaxLife = creep.Wc3Unit.MaxLife + (creep.Wc3Unit.MaxLife);
+          result.Wc3Unit.AttackBaseDamage1 = result.Wc3Unit.AttackBaseDamage1 + 100;
+          result.Wc3Unit.Defense = result.Wc3Unit.Defense + 20;
+          result.Wc3Unit.MaxLife = result.Wc3Unit.MaxLife + (result.Wc3Unit.MaxLife);
           break;
       }
 
-      creep.Wc3Unit.Life = creep.Wc3Unit.MaxLife;
+      result.Wc3Unit.Life = result.Wc3Unit.MaxLife;
+
+      return result;
     }
 
     private static void CreateAtDummyAndCastAbilityTimed(player player, Rectangle rectangle, int abilityId, int abilityLevel, int orderId, float delay, float duration = 2f)

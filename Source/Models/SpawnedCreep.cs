@@ -84,9 +84,11 @@ namespace Source.Models
         Wc3Unit.Kill();
     }
 
-    public void ReviveHero()
+    public void ReviveHero(unit unit)
     {
-      Common.ReviveHero(Wc3Unit, SpawnPoint.X, SpawnPoint.Y, true);
+      Program.ShowDebugMessage($"Respawn {unit.Name}");
+      Program.ShowDebugMessage($"Respawn {SpawnPoint.X}:{SpawnPoint.Y}");
+      Common.ReviveHero(unit, SpawnPoint.X, SpawnPoint.Y, true);
     }
   }
 }

@@ -2,9 +2,8 @@
 using Source.Events.Buildings;
 using Source.Statics;
 using System;
-using System.Xml.Linq;
 using WCSharp.Api;
-using WCSharp.Shared.Extensions;
+using WCSharp.Shared.Data;
 
 namespace Source.Models
 {
@@ -32,17 +31,15 @@ namespace Source.Models
 
     public void CreateOrReviveHero(int unitTypeId, Area spawnArea, int heroLevel, float face = 0f, Area targetArea = null)
     {
-      SpecialEffects.CreateSpecialEffect("Objects\\Spawnmodels\\NightElf\\EntBirthTarget\\EntBirthTarget.mdl", spawnArea.Wc3Rectangle.Center, 2f, 3f);
 
       unit unit = null;
 
       if (Hero == null)
       {
-        Program.ShowDebugMessage("Create legion hero");
+        SpecialEffects.CreateSpecialEffect("Objects\\Spawnmodels\\NightElf\\EntBirthTarget\\EntBirthTarget.mdl", spawnArea.Wc3Rectangle.Center, 2f, 3f);
         Hero = CreateHero(unitTypeId, spawnArea, heroLevel, face);
         unit = Hero.Wc3Unit;
 
-        Program.ShowDebugMessage("Learn legion hero");
         AddAbilitiesToHero(unitTypeId, unit);
       }
       else
@@ -51,15 +48,16 @@ namespace Source.Models
 
         if (!unit.Alive)
         {
-          Program.ShowDebugMessage("Revive legion hero");
-          Hero.ReviveHero();
+          SpecialEffects.CreateSpecialEffect("Objects\\Spawnmodels\\NightElf\\EntBirthTarget\\EntBirthTarget.mdl", spawnArea.Wc3Rectangle.Center, 2f, 3f);
+          Point point = spawnArea.Wc3Rectangle.Center;
+          Common.ReviveHero(unit, point.X, point.Y, true);
 
           if (targetArea != null)
             Hero.AttackMove(targetArea);
         }
-        else if (unit.HeroLevel < heroLevel)
+        else
         {
-          Program.ShowDebugMessage("Power up legion hero");
+          SpecialEffects.CreateSpecialEffect("Objects\\Spawnmodels\\NightElf\\EntBirthTarget\\EntBirthTarget.mdl", unit.X, unit.Y, 2f, 3f);
           unit.Life = unit.MaxLife;
         }
       }
@@ -67,7 +65,6 @@ namespace Source.Models
       unit.HeroLevel = heroLevel;
       unit.Mana = unit.MaxMana;
 
-      Program.ShowDebugMessage($"Train legion hero to level {heroLevel}");
       TrainHero(unitTypeId, unit, heroLevel);
     }
 

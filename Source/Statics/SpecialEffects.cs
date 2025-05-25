@@ -7,8 +7,10 @@ namespace Source.Statics
   internal static class SpecialEffects
   {
     internal static void CreateSpecialEffect(string modelPath, Point point, float scale, float duration = 0.03125f)
+      => CreateSpecialEffect(modelPath, point.X, point.Y, scale, duration);
+    internal static void CreateSpecialEffect(string modelPath, float x, float y, float scale, float duration = 0.03125f)
     {
-      effect e = Common.AddSpecialEffect(modelPath, point.X, point.Y);
+      effect e = Common.AddSpecialEffect(modelPath, x, y);
       e.Scale = scale;
       EffectSystem.Add(e, duration);
     }

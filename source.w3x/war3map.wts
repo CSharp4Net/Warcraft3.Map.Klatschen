@@ -12,7 +12,7 @@ STRING 3
 {
 Schinken!
 
-Version 1.1.0.0
+Version 1.1.0
 }
 
 STRING 4
@@ -117,7 +117,7 @@ STRING 65
 {
 Schinken!
 
-Version 1.1.0.0
+Version 1.1.0
 }
 
 STRING 72
@@ -361,7 +361,7 @@ H
 }
 
 STRING 250
-// Upgrades: R006 (Leuchtfeuer), class (Class)
+// Upgrades: R009 (Kampftierausbildung), class (Class)
 {
 ranged
 }
@@ -379,7 +379,7 @@ ratx
 }
 
 STRING 289
-// Upgrades: R009 (Kampftierausbildung), class (Class)
+// Upgrades: R00C (Kampftierausbildung), class (Class)
 {
 ranged
 }
@@ -9151,13 +9151,13 @@ Magier aufwerten auf [|cffffcc00Stufe 3|r]
 }
 
 STRING 3021
-// Upgrades: R008 (Kampftierausbildung), class (Class)
+// Upgrades: R006 (Leuchtfeuer), class (Class)
 {
 artillery
 }
 
 STRING 3022
-// Upgrades: R00C (Kampftierausbildung), class (Class)
+// Upgrades: R004 (Leuchtfeuer), class (Class)
 {
 ranged
 }
@@ -9172,12 +9172,6 @@ STRING 3024
 // Upgrades: R00E (Kampftierausbildung), class (Class)
 {
 caster
-}
-
-STRING 3025
-// Upgrades: R004 (Leuchtfeuer), class (Class)
-{
-ranged
 }
 
 STRING 3026
@@ -11808,7 +11802,7 @@ Nahkampfeinheit
 }
 
 STRING 3613
-// Units: h002 (Fernkampfeinheit - Stufe 1), Description (Description)
+// Units: h01L (Fernkampfeinheit - Stufe 1), Description (Description)
 {
 Fernkampfeinheit
 }
@@ -11868,13 +11862,13 @@ Gelassenheit [|cffffcc00Stufe %d|r] erlernen
 }
 
 STRING 3624
-// Units: n00P (Furbolglager), EditorSuffix (Name - Editor Suffix)
+// Units: n00K (Furbolglhütte), EditorSuffix (Name - Editor Suffix)
 {
 (Creep)
 }
 
 STRING 3632
-// Units: n01H (Zentaurenlager), EditorSuffix (Name - Editor Suffix)
+// Units: n00P (Furbolglager), EditorSuffix (Name - Editor Suffix)
 {
 (Creep)
 }
@@ -11940,37 +11934,37 @@ Furbolglhütte
 }
 
 STRING 3649
-// Units: n01J (Neruberlager), EditorSuffix (Name - Editor Suffix)
+// Units: n01G (Banditenzelt), EditorSuffix (Name - Editor Suffix)
 {
 (Creep)
 }
 
 STRING 3650
-// Units: n024 (Mur'gullager), EditorSuffix (Name - Editor Suffix)
+// Units: n01H (Zentaurenlager), EditorSuffix (Name - Editor Suffix)
 {
 (Creep)
 }
 
 STRING 3651
-// Units: n026 (Ogerlager), EditorSuffix (Name - Editor Suffix)
+// Units: n01I (Zentaurenzelt), EditorSuffix (Name - Editor Suffix)
 {
 (Creep)
 }
 
 STRING 3652
-// Units: n02D (Wildekinlager), EditorSuffix (Name - Editor Suffix)
+// Units: n01J (Neruberlager), EditorSuffix (Name - Editor Suffix)
 {
 (Creep)
 }
 
 STRING 3653
-// Units: n02F (Tuskarrlager), EditorSuffix (Name - Editor Suffix)
+// Units: n024 (Mur'gullager), EditorSuffix (Name - Editor Suffix)
 {
 (Creep)
 }
 
 STRING 3656
-// Units: n01D (Furbolgursakrieger), EditorSuffix (Name - Editor Suffix)
+// Units: n025 (Mur'gulhütte), EditorSuffix (Name - Editor Suffix)
 {
 (Creep)
 }
@@ -12042,7 +12036,7 @@ Furbolgursakrieger anheuern
 }
 
 STRING 3670
-// Units: n01F (Mur'gulblutkieme), EditorSuffix (Name - Editor Suffix)
+// Units: n026 (Ogerlager), EditorSuffix (Name - Editor Suffix)
 {
 (Creep)
 }
@@ -12072,7 +12066,7 @@ Mur'gulblutkieme anheuern
 }
 
 STRING 3675
-// Units: n01L (Neruberkrieger), EditorSuffix (Name - Editor Suffix)
+// Units: n02A (Ogerhütte), EditorSuffix (Name - Editor Suffix)
 {
 (Creep)
 }
@@ -12108,7 +12102,7 @@ Neruberkrieger beschwören
 }
 
 STRING 3681
-// Units: n01N (Ogerkrieger), EditorSuffix (Name - Editor Suffix)
+// Units: n02B (Wildekinnest), EditorSuffix (Name - Editor Suffix)
 {
 (Creep)
 }
@@ -12138,7 +12132,7 @@ Ogerkrieger anheuern
 }
 
 STRING 3686
-// Units: n01P (Tuskarrkrieger), EditorSuffix (Name - Editor Suffix)
+// Units: n02D (Wildekinlager), EditorSuffix (Name - Editor Suffix)
 {
 (Creep)
 }
@@ -12168,7 +12162,7 @@ Tuskarrkrieger anheuern
 }
 
 STRING 3691
-// Units: n01E (Wildekin), EditorSuffix (Name - Editor Suffix)
+// Units: n02E (Neruberziggurat), EditorSuffix (Name - Editor Suffix)
 {
 (Creep)
 }
@@ -12198,7 +12192,7 @@ Wildekin beschwören
 }
 
 STRING 3696
-// Units: n01S (Zentaurenläufer), EditorSuffix (Name - Editor Suffix)
+// Units: n02F (Tuskarrlager), EditorSuffix (Name - Editor Suffix)
 {
 (Creep)
 }
@@ -12227,18 +12221,6 @@ STRING 3700
 Zentaurenläufer anheuern
 }
 
-STRING 3701
-// Units: h00E (Belagerungseinheit - Stufe 1), Description (Description)
-{
-Belagerungseinheit
-}
-
-STRING 3702
-// Units: h00S (Belagerungseinheit - Stufe 2), Description (Description)
-{
-Belagerungseinheit
-}
-
 STRING 3703
 // Units: n026 (Ogerlager), Name (Name)
 {
@@ -12264,13 +12246,13 @@ Ogerhütte errichten
 }
 
 STRING 3707
-// Units: n01Q (Furbolgspurenleser), EditorSuffix (Name - Editor Suffix)
+// Units: n02G (Tuskarrhütte), EditorSuffix (Name - Editor Suffix)
 {
 (Creep)
 }
 
 STRING 3708
-// Units: h00F (Fernkampfeinheit - Stufe 2), Description (Description)
+// Units: h01M (Fernkampfeinheit - Stufe 2), Description (Description)
 {
 Fernkampfeinheit
 }
@@ -12294,13 +12276,13 @@ Furbolgspurenleser anheuern
 }
 
 STRING 3712
-// Units: n01U (Mur'gulgezeitenkrieger), EditorSuffix (Name - Editor Suffix)
+// Units: n01D (Furbolgursakrieger), EditorSuffix (Name - Editor Suffix)
 {
 (Creep)
 }
 
 STRING 3713
-// Units: h00G (Fernkampfeinheit - Stufe 3), Description (Description)
+// Units: h01N (Fernkampfeinheit - Stufe 3), Description (Description)
 {
 Fernkampfeinheit
 }
@@ -12324,13 +12306,13 @@ Mur'gulgezeitenkrieger anheuern
 }
 
 STRING 3717
-// Units: n01K (Nerubernetzweber), EditorSuffix (Name - Editor Suffix)
+// Units: n01F (Mur'gulblutkieme), EditorSuffix (Name - Editor Suffix)
 {
 (Creep)
 }
 
 STRING 3718
-// Units: h01L (Fernkampfeinheit - Stufe 1), Description (Description)
+// Units: n013 (Banditmarodeur), Description (Description)
 {
 Fernkampfeinheit
 }
@@ -12354,13 +12336,13 @@ Nerubernetzweber beschwören
 }
 
 STRING 3722
-// Units: n01W (Tuskarrfallensteller), EditorSuffix (Name - Editor Suffix)
+// Units: n01L (Neruberkrieger), EditorSuffix (Name - Editor Suffix)
 {
 (Creep)
 }
 
 STRING 3723
-// Units: h01M (Fernkampfeinheit - Stufe 2), Description (Description)
+// Units: n01Q (Furbolgspurenleser), Description (Description)
 {
 Fernkampfeinheit
 }
@@ -12384,13 +12366,13 @@ Tuskarrfallensteller anheuern
 }
 
 STRING 3727
-// Units: n01C (Ogerprügler), EditorSuffix (Name - Editor Suffix)
+// Units: n01N (Ogerkrieger), EditorSuffix (Name - Editor Suffix)
 {
 (Creep)
 }
 
 STRING 3728
-// Units: h01N (Fernkampfeinheit - Stufe 3), Description (Description)
+// Units: n01U (Mur'gulgezeitenkrieger), Description (Description)
 {
 Fernkampfeinheit
 }
@@ -12414,13 +12396,13 @@ Ogerprügler anheuern
 }
 
 STRING 3732
-// Units: n01V (Wildekinfallensteller), EditorSuffix (Name - Editor Suffix)
+// Units: n01P (Tuskarrkrieger), EditorSuffix (Name - Editor Suffix)
 {
 (Creep)
 }
 
 STRING 3733
-// Units: n013 (Banditmarodeur), Description (Description)
+// Units: n01K (Nerubernetzweber), Description (Description)
 {
 Fernkampfeinheit
 }
@@ -12438,13 +12420,13 @@ Wildekinfallensteller beschwören
 }
 
 STRING 3736
-// Units: n01X (Zentaurenbogenschütze), EditorSuffix (Name - Editor Suffix)
+// Units: n01E (Wildekin), EditorSuffix (Name - Editor Suffix)
 {
 (Creep)
 }
 
 STRING 3737
-// Units: n01Q (Furbolgspurenleser), Description (Description)
+// Units: n01W (Tuskarrfallensteller), Description (Description)
 {
 Fernkampfeinheit
 }
@@ -12480,7 +12462,7 @@ Furbolgahnenschamane anheuern
 }
 
 STRING 3743
-// Units: n01O (Banditenzauberer), EditorSuffix (Name - Editor Suffix)
+// Units: n01S (Zentaurenläufer), EditorSuffix (Name - Editor Suffix)
 {
 (Creep)
 }
@@ -12498,7 +12480,7 @@ Magieeinheit
 }
 
 STRING 3746
-// Units: n01Z (Mur'gulverlangsamer), EditorSuffix (Name - Editor Suffix)
+// Units: n01Q (Furbolgspurenleser), EditorSuffix (Name - Editor Suffix)
 {
 (Creep)
 }
@@ -12528,7 +12510,7 @@ Mur'gulverlangsamer anheuern
 }
 
 STRING 3751
-// Units: n01M (Neruberseher), EditorSuffix (Name - Editor Suffix)
+// Units: n01U (Mur'gulgezeitenkrieger), EditorSuffix (Name - Editor Suffix)
 {
 (Creep)
 }
@@ -12558,7 +12540,7 @@ Neruberseher beschwören
 }
 
 STRING 3756
-// Units: n01Y (Ogermagier), EditorSuffix (Name - Editor Suffix)
+// Units: n01K (Nerubernetzweber), EditorSuffix (Name - Editor Suffix)
 {
 (Creep)
 }
@@ -12588,7 +12570,7 @@ Ogermagier anheuern
 }
 
 STRING 3761
-// Units: n01T (Tuskarrheiler), EditorSuffix (Name - Editor Suffix)
+// Units: n01W (Tuskarrfallensteller), EditorSuffix (Name - Editor Suffix)
 {
 (Creep)
 }
@@ -12618,7 +12600,7 @@ Tuskarrheiler anheuern
 }
 
 STRING 3766
-// Units: n01B (Wildekinahne), EditorSuffix (Name - Editor Suffix)
+// Units: n01C (Ogerprügler), EditorSuffix (Name - Editor Suffix)
 {
 (Creep)
 }
@@ -12642,7 +12624,7 @@ Tobendes Wildekin beschwören
 }
 
 STRING 3770
-// Units: n020 (Zentaurenzauberin), EditorSuffix (Name - Editor Suffix)
+// Units: n01V (Wildekinfallensteller), EditorSuffix (Name - Editor Suffix)
 {
 (Creep)
 }
@@ -12684,7 +12666,7 @@ Eine schwere Nahkampfeinheit. Beherrscht Aura der Hingabe und Schockwelle.|n|n|c
 }
 
 STRING 3777
-// Units: n01R (Banditenfürst), EditorSuffix (Name - Editor Suffix)
+// Units: n01X (Zentaurenbogenschütze), EditorSuffix (Name - Editor Suffix)
 {
 (Creep)
 }
@@ -12702,7 +12684,7 @@ Nahkampfeinheit
 }
 
 STRING 3780
-// Units: n021 (Furbolgheld), EditorSuffix (Name - Editor Suffix)
+// Units: n01O (Banditenzauberer), EditorSuffix (Name - Editor Suffix)
 {
 (Creep)
 }
@@ -12714,13 +12696,13 @@ Eine schwere Nahkampfeinheit. Beherrscht Befehlsaura und Reinkarnation.|n|n|cfff
 }
 
 STRING 3782
-// Units: n01U (Mur'gulgezeitenkrieger), Description (Description)
+// Units: n01C (Ogerprügler), Description (Description)
 {
 Fernkampfeinheit
 }
 
 STRING 3783
-// Units: n01K (Nerubernetzweber), Description (Description)
+// Units: n01V (Wildekinfallensteller), Description (Description)
 {
 Fernkampfeinheit
 }
@@ -12786,13 +12768,13 @@ STRING 3793
 }
 
 STRING 3794
-// Units: n022 (Mur'gulschattenzauberer), EditorSuffix (Name - Editor Suffix)
+// Units: n01Z (Mur'gulverlangsamer), EditorSuffix (Name - Editor Suffix)
 {
 (Creep)
 }
 
 STRING 3795
-// Units: n023 (Neruberkönigin), EditorSuffix (Name - Editor Suffix)
+// Units: n01M (Neruberseher), EditorSuffix (Name - Editor Suffix)
 {
 (Creep)
 }
@@ -12810,7 +12792,7 @@ Herr der Ogerlegion. Beherrscht Ausdaueraura und Kriegsdonner.|n|n|cffffcc00Kann
 }
 
 STRING 3798
-// Units: n027 (Ogerlord), EditorSuffix (Name - Editor Suffix)
+// Units: n01Y (Ogermagier), EditorSuffix (Name - Editor Suffix)
 {
 (Creep)
 }
@@ -12822,13 +12804,13 @@ Eine schwere Nahkampfeinheit. Beherrscht die Befehlsaura und Frostrüstung.|n|n|
 }
 
 STRING 3800
-// Units: n028 (Tuskarrhäuptling), EditorSuffix (Name - Editor Suffix)
+// Units: n01T (Tuskarrheiler), EditorSuffix (Name - Editor Suffix)
 {
 (Creep)
 }
 
 STRING 3801
-// Units: n029 (Zentaurenkhan), EditorSuffix (Name - Editor Suffix)
+// Units: n01B (Wildekinahne), EditorSuffix (Name - Editor Suffix)
 {
 (Creep)
 }
@@ -12840,7 +12822,7 @@ Eine schwere Nahkampfeinheit. Beherrscht die unheilige Aura und Feuerodem.|n|n|c
 }
 
 STRING 3803
-// Units: n02C (Wildekinalpha), EditorSuffix (Name - Editor Suffix)
+// Units: n020 (Zentaurenzauberin), EditorSuffix (Name - Editor Suffix)
 {
 (Creep)
 }
@@ -14148,38 +14130,86 @@ Erhöht die Rüstung und Trefferpunkte von Belagerungseinheiten.
 }
 
 STRING 4119
-// Units: n01W (Tuskarrfallensteller), Description (Description)
-{
-Fernkampfeinheit
-}
-
-STRING 4120
-// Units: n01C (Ogerprügler), Description (Description)
-{
-Fernkampfeinheit
-}
-
-STRING 4121
-// Units: n01V (Wildekinfallensteller), Description (Description)
-{
-Fernkampfeinheit
-}
-
-STRING 4122
 // Units: n01X (Zentaurenbogenschütze), Description (Description)
 {
 Fernkampfeinheit
 }
 
-STRING 4123
+STRING 4120
 // Units: n022 (Mur'gulschattenzauberer), Description (Description)
 {
 Fernkampfeinheit
 }
 
-STRING 4124
+STRING 4121
 // Units: n023 (Neruberkönigin), Description (Description)
 {
 Fernkampfeinheit
+}
+
+STRING 4125
+// Upgrades: R008 (Kampftierausbildung), class (Class)
+{
+artillery
+}
+
+STRING 4127
+// Upgrades: R00D (Schwarzes Schießpulver,Angereichertes Schießpulver,Magisches Schießpulver), class (Class)
+{
+armor
+}
+
+STRING 4128
+// Units: n01R (Banditenfürst), EditorSuffix (Name - Editor Suffix)
+{
+(Creep)
+}
+
+STRING 4129
+// Units: n021 (Furbolgheld), EditorSuffix (Name - Editor Suffix)
+{
+(Creep)
+}
+
+STRING 4130
+// Units: n022 (Mur'gulschattenzauberer), EditorSuffix (Name - Editor Suffix)
+{
+(Creep)
+}
+
+STRING 4131
+// Units: n023 (Neruberkönigin), EditorSuffix (Name - Editor Suffix)
+{
+(Creep)
+}
+
+STRING 4132
+// Units: n027 (Ogerlord), EditorSuffix (Name - Editor Suffix)
+{
+(Creep)
+}
+
+STRING 4133
+// Units: n028 (Tuskarrhäuptling), EditorSuffix (Name - Editor Suffix)
+{
+(Creep)
+}
+
+STRING 4134
+// Units: n029 (Zentaurenkhan), EditorSuffix (Name - Editor Suffix)
+{
+(Creep)
+}
+
+STRING 4135
+// Units: n02C (Wildekinalpha), EditorSuffix (Name - Editor Suffix)
+{
+(Creep)
+}
+
+STRING 4136
+// Units: N006 (Dämonenfürst), Propernames (Proper Names)
+{
+Lichtbringer
 }
 

@@ -106,7 +106,6 @@ namespace Source.Models
 
       Wc3Player = OwnerTeam.Computer.Wc3Player;
 
-      Program.ShowDebugMessage($"Build building {BuildingUnitTypeId} at {BuildingArea.ToString()}");
       // Ort anhand Zentrum einer Region erstellen
       Building = new MercenarySpawnBuilding(this, BuildingUnitTypeId, BuildingArea, 0f);
       Building.RegisterOnDies(MercenaryBuilding.OnDies);
