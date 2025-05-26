@@ -30,6 +30,10 @@
     internal const int Interval_SpawnTime_Middle = 30;
     internal const int Interval_SpawnTime_Long = 60;
 
+    internal const string ForceName_DemonLegion = "Demon Legion";
+
+    internal const string Message_FightToTheDeath = "Fight to the death, you rags!";
+
 #if DEBUG
     internal const float Interval_Event_Klatschen = 60f; //360f;
 #else

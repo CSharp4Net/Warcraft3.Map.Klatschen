@@ -23,7 +23,6 @@ namespace Source.Models
       TargetArea = targetArea;
       UnitSpawnType = spawnInterval;
       UnitIds = unitIds.ToList();
-      IsNeutralPlayer = false;
       Interval = Program.GetIntervalSeconds(spawnInterval);
     }
 
@@ -32,22 +31,26 @@ namespace Source.Models
     /// </summary>
     private ComputerPlayer Player { get; init; }
 
-    ///// <summary>
-    ///// Gebäude, an das der Auslöser gebunden ist.
-    ///// Stirbt das Gebäude, werden gebundene Auslöser gestoppt.
-    ///// </summary>
-    //private SpawnBuilding Building { get; init; }
-
+    /// <summary>
+    /// Intervall in Sekunden
+    /// </summary>
     private float Interval { get; init; }
 
+    /// <summary>
+    /// Gebiet, in dem Einheiten ryhtmisch erstellt werden.
+    /// </summary>
     private Area SpawnArea { get; init; }
+    /// <summary>
+    /// Zielgebiet, für das erstellte Einheiten einen Angriff/Bewegen-Befehl bekommen.
+    /// </summary>
     private Area TargetArea { get; init; }
 
     private List<int> UnitIds { get; init; }
 
+    /// <summary>
+    /// Timer, welcher die Erstellung rythmisch auslöst.
+    /// </summary>
     private timer Timer { get; set; }
-
-    public bool IsNeutralPlayer { get; init; }
 
     /// <summary>
     /// Typ der erstellenden Einheiten.
@@ -71,6 +74,9 @@ namespace Source.Models
       });
     }
 
+    /// <summary>
+    /// Startet den Timer zum ryhtmischen Erstellen von Einheiten.
+    /// </summary>
     private void Start()
     {
       Timer = timer.Create();
@@ -98,7 +104,7 @@ namespace Source.Models
     }
 
     /// <summary>
-    /// Stoppt den Trigger und zerstört ihn für den GC.
+    /// Stoppt den Timer und zerstört ihn für den GC.
     /// </summary>
     public void Stop()
     {
@@ -107,11 +113,19 @@ namespace Source.Models
       Timer = null;
     }
 
+    /// <summary>
+    /// Fügt der Auflistung von Einheitentyp-Ids einen Eintrag hinzu.
+    /// </summary>
+    /// <param name="spawnCommand"></param>
     public void Add(SpawnUnitCommand spawnCommand)
     {
       UnitIds.Add(spawnCommand.UnitId);
     }
 
+    /// <summary>
+    /// Aktualisiert einen oder mehrere Einträge in der Auflistung von Einheitentyp-Ids.
+    /// </summary>
+    /// <param name="spawnCommand"></param>
     public void Upgrade(SpawnUnitCommand spawnCommand)
     {
       for (int i = 0; i < UnitIds.Count; i++)

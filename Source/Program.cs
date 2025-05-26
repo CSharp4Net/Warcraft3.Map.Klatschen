@@ -93,7 +93,7 @@ namespace Source
         Elves = new ElfTeam(Common.Player(8), Areas.ElfBase);
         Undeads = new UndeadTeam(Common.Player(12), Areas.UndeadBase);
 
-        Legion = new LegionForce("Dämonische Legion");
+        Legion = new LegionForce(ConstantsEx.ForceName_DemonLegion);
 
         // Regions-Ereignisse registrieren für automatische Einheitenbewegungen:
         // Wenn feindliche Einheiten in die Regionen treten, welche von zerstörten Gebäuden freigegeben werden.
@@ -125,7 +125,7 @@ namespace Source
         ConstructCreepCamps();
 
         // Spezifische Events registrieren
-        Console.WriteLine("Kämpft bis zum Tod, ihr Lappen!");
+        Console.WriteLine(ConstantsEx.Message_FightToTheDeath);
 
         // Für alle Benutzer-Spieler einen Hero-Selector generieren
         foreach (UserPlayer user in AllActiveUsers)
@@ -387,7 +387,7 @@ namespace Source
     private static void ConstructCreepCamps()
     {
       // Menschen-Creeps
-      ConstructCreepCamp("Banditen", Areas.HumanCreepToElfSpawnBuilding, Areas.HumanCreepToElfSpawn,
+      ConstructCreepCamp("Bandits", Areas.HumanCreepToElfSpawnBuilding, Areas.HumanCreepToElfSpawn,
         Humans, Elves, Constants.UNIT_BANDITENLAGER_CREEP, Constants.UNIT_BANDITENF_RST_CREEP,
         Constants.UNIT_BANDIT_CREEP, Constants.UNIT_BANDIT_CREEP, Constants.UNIT_BANDIT_CREEP,
         Constants.UNIT_BANDITMARODEUR_CREEP, Constants.UNIT_BANDITMARODEUR_CREEP, Constants.UNIT_BANDITENZAUBERER_CREEP);
@@ -407,11 +407,11 @@ namespace Source
         Constants.UNIT_WILDEKINFALLENSTELLER_CREEP, Constants.UNIT_WILDEKINFALLENSTELLER_CREEP, Constants.UNIT_WILDEKINAHNE_CREEP);
 
       // Orcs-Creeps
-      ConstructCreepCamp("Zentauren", Areas.OrcCreepToHumanSpawnBuilding, Areas.OrcCreepToHumanSpawn,
+      ConstructCreepCamp("Centaurs", Areas.OrcCreepToHumanSpawnBuilding, Areas.OrcCreepToHumanSpawn,
         Orcs, Humans, Constants.UNIT_ZENTAURENLAGER_CREEP, Constants.UNIT_ZENTAURENKHAN_CREEP,
         Constants.UNIT_ZENTAURENL_UFER_CREEP, Constants.UNIT_ZENTAURENL_UFER_CREEP,
         Constants.UNIT_ZENTAURENBOGENSCH_TZE_CREEP, Constants.UNIT_ZENTAURENBOGENSCH_TZE_CREEP, Constants.UNIT_ZENTAURENZAUBERIN_CREEP);
-      ConstructCreepCamp("Oger", Areas.OrcCreepToUndeadSpawnBuilding, Areas.OrcCreepToUndeadSpawn,
+      ConstructCreepCamp("Ogres", Areas.OrcCreepToUndeadSpawnBuilding, Areas.OrcCreepToUndeadSpawn,
         Orcs, Undeads, Constants.UNIT_OGERLAGER_CREEP, Constants.UNIT_OGERLORD_CREEP,
         Constants.UNIT_OGERKRIEGER_CREEP, Constants.UNIT_OGERKRIEGER_CREEP, Constants.UNIT_OGERKRIEGER_CREEP,
         Constants.UNIT_OGERPR_GLER_CREEP, Constants.UNIT_OGERPR_GLER_CREEP, Constants.UNIT_OGERMAGIER_CREEP);
@@ -421,7 +421,7 @@ namespace Source
         Undeads, Orcs, Constants.UNIT_MUR_GULLAGER_CREEP, Constants.UNIT_MUR_GULSCHATTENZAUBERER_CREEP,
         Constants.UNIT_MUR_GULBLUTKIEME_CREEP, Constants.UNIT_MUR_GULBLUTKIEME_CREEP, Constants.UNIT_MUR_GULBLUTKIEME_CREEP,
         Constants.UNIT_MUR_GULGEZEITENKRIEGER_CREEP, Constants.UNIT_MUR_GULGEZEITENKRIEGER_CREEP, Constants.UNIT_MUR_GULVERLANGSAMER_CREEP);
-      ConstructCreepCamp("Neruber", Areas.UndeadCreepToElfSpawnBuilding, Areas.UndeadCreepToElfSpawn,
+      ConstructCreepCamp("Nerubs", Areas.UndeadCreepToElfSpawnBuilding, Areas.UndeadCreepToElfSpawn,
         Undeads, Elves, Constants.UNIT_NERUBERLAGER_CREEP, Constants.UNIT_NERUBERK_NIGIN_CREEP,
         Constants.UNIT_NERUBERKRIEGER_CREEP, Constants.UNIT_NERUBERKRIEGER_CREEP, Constants.UNIT_NERUBERKRIEGER_CREEP,
         Constants.UNIT_NERUBERNETZWEBER_CREEP, Constants.UNIT_NERUBERNETZWEBER_CREEP, Constants.UNIT_NERUBERSEHER_CREEP);
