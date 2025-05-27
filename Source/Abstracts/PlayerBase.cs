@@ -36,7 +36,7 @@ namespace Source.Abstracts
     /// <returns></returns>
     public SpawnedUnit CreateUnit(int unitTypeId, Area area, float face = 0f)
     {
-      SpawnedUnit unit = new SpawnedUnit(this, unitTypeId, area, face);
+      SpawnedUnit unit = new SpawnedUnit(Wc3Player, unitTypeId, area, face);
       Units.Add(unit);
       return unit;
     }

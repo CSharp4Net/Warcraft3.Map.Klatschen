@@ -44,7 +44,7 @@ namespace Source.Events.Buildings
 
         ComputerPlayer newOwningPlayer = user.Team.Computer;
 
-        Console.WriteLine($"Die {creepCamp.ColorizedName} wurden besiegt und schließen sich der {user.Team.ColorizedName} an!");
+        Console.WriteLine($"The {creepCamp.ColorizedName} have been defeated and join the {user.Team.ColorizedName}!");
         Common.TimerStart(timer, rebuildTime, false, () =>
         {
           try
@@ -75,13 +75,13 @@ namespace Source.Events.Buildings
           }
           catch (Exception ex)
           {
-            Program.ShowExceptionMessage("MercenaryMainBuilding.OnDies", ex);
+            Program.ShowExceptionMessage("MercenaryBuilding.OnDies", ex);
           }
         });
       }
       catch (Exception ex)
       {
-        Program.ShowExceptionMessage("MercenaryMainBuilding.OnDies", ex);
+        Program.ShowExceptionMessage("MercenaryBuilding.OnDies", ex);
       }
     }
   }

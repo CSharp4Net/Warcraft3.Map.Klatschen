@@ -64,7 +64,7 @@ namespace Source.Logics
     {   
       int unitId = Common.GetUnitTypeId(unit);
 
-      if (unitId == Constants.UNIT_W_CHTER_HUMAN || unitId == Constants.UNIT_W_CHTER_ORC || 
+      if (unitId == Constants.UNIT_GUARDIAN_HUMAN || unitId == Constants.UNIT_W_CHTER_ORC || 
         unitId == Constants.UNIT_W_CHTER_ELF || unitId == Constants.UNIT_W_CHTER_UNDEAD)
       {
         ProcessWaechterLevelUp(unit);
@@ -78,23 +78,23 @@ namespace Source.Logics
 
       if (level.EndsWith("1") || level.EndsWith("6"))
       {
-        abilityId = Constants.ABILITY_SPOTT_GUARD_20;
+        abilityId = Constants.ABILITY_TAUNT_GUARD_20;
       }
       else if (level.EndsWith("2") || level.EndsWith("7"))
       {
-        abilityId = Constants.ABILITY_BEFEHLSAURA_GUARD_20;
+        abilityId = Constants.ABILITY_COMMAND_AURA_GUARD_20;
       }
       else if (level.EndsWith("3") || level.EndsWith("8"))
       {
-        abilityId = Constants.ABILITY_DONNERSCHLAG_GUARD_20;
+        abilityId = Constants.ABILITY_THUNDER_CLAP_GUARD_20;
       }
       else if (level.EndsWith("4") || level.EndsWith("9"))
       {
-        abilityId = Constants.ABILITY_AUSDAUERAURA_GUARD_20;
+        abilityId = Constants.ABILITY_ENDURANCE_AURA_GUARD_20;
       }
       else // 5 oder 0
       {
-        abilityId = Constants.ABILITY_ERH_HTE_ATTRIBUTE_HERO_50;
+        abilityId = Constants.ABILITY_ATTRIBUTE_BONUS_HERO_50;
       }
 
       ability ability = unit.GetAbility(abilityId);

@@ -8,10 +8,9 @@ using WCSharp.Shared.Data;
 
 namespace Source.Models
 {
-  public sealed class MercenaryForce : NeutralForce
+  public sealed class MercenaryForce
   {
     public MercenaryForce(string name, Area buildingArea, Area spawnArea, TeamBase nearTeam, TeamBase opposingTeam, int buildingUnitTypeId, params int[] defenderUnitTypeIds)
-      : base(player.NeutralAggressive)
     {
       Name = name;
       ColorizedName = $"|c{ConstantsEx.ColorHexCode_Gold}{name}|r";
@@ -21,6 +20,7 @@ namespace Source.Models
       OpposingTeam = opposingTeam;
       BuildingUnitTypeId = buildingUnitTypeId;
       DefenderUnitTypeIds = defenderUnitTypeIds;
+      Wc3Player = player.NeutralAggressive;
     }
 
     /// <summary>
@@ -77,6 +77,8 @@ namespace Source.Models
     /// </summary>
     public TeamBase OwnerTeam { get; private set; }
 
+    public player Wc3Player { get; private set; }
+
     /// <summary>
     /// Erstellt das Spawn-Gebäude des Söldnerlagers.
     /// </summary>
@@ -128,6 +130,17 @@ namespace Source.Models
         if (withSpecialEffect)
           SpecialEffects.CreateSpecialEffect("UI\\Feedback\\GoldCredit\\GoldCredit.mdl", point, 1f, 1f);
       }
+    }
+
+    /// <summary>
+    /// Erzeugt im Spawn-Bereich eine Einheit an einem definierten Punkt.
+    /// </summary>
+    /// <param name="point">Punkt</param>
+    /// <param name="unitTypeId">Einheit-Typ</param>
+    /// <returns></returns>
+    public SpawnedCreep SpawnUnitAtPoint(Point point, int unitTypeId)
+    {
+      return new SpawnedCreep(Wc3Player, unitTypeId, point);
     }
   }
 }

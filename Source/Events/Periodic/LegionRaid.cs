@@ -89,7 +89,7 @@ namespace Source.Events.Periodic
         float centerX = centerPoint.X;
         float centerY = centerPoint.Y - 100;
 
-        Console.WriteLine($"Die {Program.Legion.ColorizedName} naht, lasst alle Hoffnung fahren und verzweifelt...");
+        Console.WriteLine($"The {Program.Legion.ColorizedName} is approaching, abandon all hope and despair...");
 
         // Musik (Dauert etwa 55 Sekunden) einmal spielen
         Common.PlayThematicMusic("war3mapImported\\blowitup_cutted.mp3");
@@ -169,26 +169,26 @@ namespace Source.Events.Periodic
             Program.Legion.CreateOrReviveHero(Constants.UNIT_D_MONENF_RST_LEGION, Areas.Center, maxHeroLevel, executions);
 
             // Zentrum - Weitere Einheiten via Cast hinzurufen
-            CreateUnitAtRandomPointWithEffect(centerRect, Constants.UNIT_H_LLENBESTIE_LEGION);
-            CreateUnitAtRandomPointWithEffect(centerRect, Constants.UNIT_H_LLENBESTIE_LEGION);
-            CreateUnitAtRandomPointWithEffect(centerRect, Constants.UNIT_H_LLENBESTIE_LEGION);
-            CreateUnitAtRandomPointWithEffect(centerRect, Constants.UNIT_H_LLENBESTIE_LEGION);
+            CreateUnitAtRandomPointWithEffect(centerRect, Constants.UNIT_INFERNAL_LEGION);
+            CreateUnitAtRandomPointWithEffect(centerRect, Constants.UNIT_INFERNAL_LEGION);
+            CreateUnitAtRandomPointWithEffect(centerRect, Constants.UNIT_INFERNAL_LEGION);
+            CreateUnitAtRandomPointWithEffect(centerRect, Constants.UNIT_INFERNAL_LEGION);
 
             // Bottom Lane - Weitere Einheiten via Cast hinzurufen
-            CreateUnitAtRandomPointWithEffect(CenterBottomRect, Constants.UNIT_H_LLENBESTIE_LEGION);
-            CreateUnitAtRandomPointWithEffect(CenterBottomRect, Constants.UNIT_H_LLENBESTIE_LEGION);
+            CreateUnitAtRandomPointWithEffect(CenterBottomRect, Constants.UNIT_INFERNAL_LEGION);
+            CreateUnitAtRandomPointWithEffect(CenterBottomRect, Constants.UNIT_INFERNAL_LEGION);
 
             // Left Lane - Weitere Einheiten via Cast hinzurufen
-            CreateUnitAtRandomPointWithEffect(CenterLeftRect, Constants.UNIT_H_LLENBESTIE_LEGION);
-            CreateUnitAtRandomPointWithEffect(CenterLeftRect, Constants.UNIT_H_LLENBESTIE_LEGION);
+            CreateUnitAtRandomPointWithEffect(CenterLeftRect, Constants.UNIT_INFERNAL_LEGION);
+            CreateUnitAtRandomPointWithEffect(CenterLeftRect, Constants.UNIT_INFERNAL_LEGION);
 
             // Top Lane - Weitere Einheiten via Cast hinzurufen
-            CreateUnitAtRandomPointWithEffect(CenterTopRect, Constants.UNIT_H_LLENBESTIE_LEGION);
-            CreateUnitAtRandomPointWithEffect(CenterTopRect, Constants.UNIT_H_LLENBESTIE_LEGION);
+            CreateUnitAtRandomPointWithEffect(CenterTopRect, Constants.UNIT_INFERNAL_LEGION);
+            CreateUnitAtRandomPointWithEffect(CenterTopRect, Constants.UNIT_INFERNAL_LEGION);
 
             // Right Lane - Weitere Einheiten via Cast hinzurufen
-            CreateUnitAtRandomPointWithEffect(CenterRightRect, Constants.UNIT_H_LLENBESTIE_LEGION);
-            CreateUnitAtRandomPointWithEffect(CenterRightRect, Constants.UNIT_H_LLENBESTIE_LEGION);
+            CreateUnitAtRandomPointWithEffect(CenterRightRect, Constants.UNIT_INFERNAL_LEGION);
+            CreateUnitAtRandomPointWithEffect(CenterRightRect, Constants.UNIT_INFERNAL_LEGION);
           }
           catch (Exception ex)
           {

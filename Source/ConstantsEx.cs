@@ -33,6 +33,9 @@
     internal const string ForceName_DemonLegion = "Demon Legion";
 
     internal const string Message_FightToTheDeath = "Fight to the death, you rags!";
+    internal const string Message_CollectedGoldForMoreUnits = "The gold collected was used to add more units to the army.";
+    internal const string Message_CollectedGoldToUpgradeUnits = "The gold collected was used to upgrade units of the armed forces.";
+    internal const string Message_CollectedGoldToResearchTech = "The gold collected was used to complete a research project.";
 
 #if DEBUG
     internal const float Interval_Event_Klatschen = 60f; //360f;

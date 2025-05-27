@@ -1,4 +1,5 @@
 ﻿using Source.Abstracts;
+using System.Drawing;
 using WCSharp.Api;
 
 namespace Source.Models
@@ -12,17 +13,12 @@ namespace Source.Models
     /// <param name="unitType">Einheit-Typ</param>
     /// <param name="area">Gebiet</param>
     /// <param name="face">Blickrichtung (0 = rechts, 90 = oben, 180 = unten, 270 = links)</param>
-    public SpawnedUnit(PlayerBase owner, int unitType, Area area, float face = 0f)
+    public SpawnedUnit(player owner, int unitType, Area area, float face = 0f)
     {
-      Owner = owner;
       SpawnArea = area;
-      Wc3Unit = Common.CreateUnitAtLoc(owner.Wc3Player, unitType, area.Wc3CenterLocation, face);
-    }
+      Wc3Unit = Common.CreateUnitAtLoc(owner, unitType, area.Wc3CenterLocation, face);
 
-    /// <summary>
-    /// Besitzer der Einheit
-    /// </summary>
-    public PlayerBase Owner { get; init; }
+    }
 
     /// <summary>
     /// Typ der erstellten Einheit

@@ -26,12 +26,12 @@ namespace Source.Events.Buildings
         }
 
         building.Destroy();
-        Console.WriteLine($"Die {team.ColorizedName} hat einen ihrer Vorposten verloren!");
+        Console.WriteLine($"{team.ColorizedName} has lost one of its outposts!");
         Program.Humans.Computer.RemoveBuilding(building);
       }
       catch (Exception ex)
       {
-        Program.ShowExceptionMessage("BarracksBuilding.OnDies", ex);
+        Program.ShowExceptionMessage("TeamBarracksBuilding.OnDies", ex);
       }
     }
   }

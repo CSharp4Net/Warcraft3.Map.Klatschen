@@ -14,13 +14,13 @@ namespace Source.Models
     /// <summary>
     /// Erstellt einen zeitgesteuertem Auslöser für das regelmäßige Erstellen von Einheiten.
     /// </summary>
-    /// <param name="force">Computer-Spieler, für den Einheiten erstellt werden</param>
+    /// <param name="owner">Computer-Spieler, für den Einheiten erstellt werden</param>
     /// <param name="spawnInterval">Klasse der erstellten Einheiten</param>
     /// <param name="targetArea">Zielgebiet, für das erstellte Einheiten einen Angriff/Bewegen-Befehl erhalten</param>
     /// <param name="unitIds">Auflistung an Einheit-Typen zu beginn</param>
-    public MercenarySpawnTrigger(NeutralForce force, SpawnInterval spawnInterval, Area spawnArea, Area targetArea, params int[] unitIds)
+    public MercenarySpawnTrigger(MercenaryForce owner, SpawnInterval spawnInterval, Area spawnArea, Area targetArea, params int[] unitIds)
     {
-      Force = force;
+      Owner = owner;
       SpawnArea = spawnArea;
       TargetArea = targetArea;
       UnitIds = unitIds.ToList();
@@ -28,7 +28,7 @@ namespace Source.Models
       Interval = Program.GetIntervalSeconds(spawnInterval);
     }
 
-    private NeutralForce Force { get; init; }
+    private MercenaryForce Owner { get; init; }
 
     private float Interval { get; init; }
 
@@ -78,7 +78,7 @@ namespace Source.Models
         {
           Point randomPoint = SpawnArea.Wc3Rectangle.GetRandomPoint();
           SpecialEffects.CreateSpecialEffect("UI\\Feedback\\GoldCredit\\GoldCredit.mdl", randomPoint, 1f, 1f);
-          Force.SpawnUnitAtPoint(randomPoint, unitId)
+          Owner.SpawnUnitAtPoint(randomPoint, unitId)
             .AttackMoveTimed(TargetArea, 1f);
         }
       }

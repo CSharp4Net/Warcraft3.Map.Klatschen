@@ -41,7 +41,7 @@ namespace Source.Events.Buildings
       }
       catch (Exception ex)
       {
-        Program.ShowExceptionMessage("MainBuilding.OnDies", ex);
+        Program.ShowExceptionMessage("TeamMainBuilding.OnDies", ex);
       }
     }
   }

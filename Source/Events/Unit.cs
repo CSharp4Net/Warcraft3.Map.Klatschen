@@ -44,7 +44,7 @@ namespace Source.Events
           }
           else
           {
-            Console.WriteLine("UNKNOWN hero died!!!");
+            Console.WriteLine($"UNKNOWN hero {unit.Name} died!!!");
           }
         }
         else
@@ -107,7 +107,7 @@ namespace Source.Events
 
         switch (abilityId)
         {
-          case Constants.ABILITY_BEZAUBERUNG_HERO_10:
+          case Constants.ABILITY_CHARM_HERO_10:
             Logics.UserHero.HandleCharmCasted(abilityId);
             break;
         }

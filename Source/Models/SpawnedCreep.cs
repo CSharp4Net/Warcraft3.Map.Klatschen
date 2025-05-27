@@ -13,17 +13,11 @@ namespace Source.Models
     /// <param name="unitType">Einheit-Typ</param>
     /// <param name="area">Gebiet</param>
     /// <param name="face">Blickrichtung (0 = rechts, 90 = oben, 180 = unten, 270 = links)</param>
-    public SpawnedCreep(NeutralForce owner, int unitType, Point spawnPoint, float face = 0f)
+    public SpawnedCreep(player player, int unitType, Point spawnPoint, float face = 0f)
     {
-      Owner = owner;
       SpawnPoint = spawnPoint;
-      Wc3Unit = Common.CreateUnit(owner.Wc3Player, unitType, spawnPoint.X, spawnPoint.Y, face);
+      Wc3Unit = Common.CreateUnit(player, unitType, spawnPoint.X, spawnPoint.Y, face);
     }
-
-    /// <summary>
-    /// Besitzer der Einheit
-    /// </summary>
-    public NeutralForce Owner { get; init; }
 
     /// <summary>
     /// Typ der erstellten Einheit

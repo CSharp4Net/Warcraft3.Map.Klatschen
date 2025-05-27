@@ -5,3 +5,10 @@ nicht mehr als Creep-Hero erkannt werden, da er kein entsprechendes Flag besitzt
 wird die Erstellung und Wiedergeburt bis auf weiteres nicht implementiert.
 
 Idee : Ggf. kann die Race der Unit einen Hinweis darauf geben?!
+
+Umbennen:
+=========
+Undead units + buildings
+Orc units + buildings
+Elf units + buildings
+Hero spells

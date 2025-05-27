@@ -71,7 +71,7 @@ namespace Source.Logics
     {
       int itemId = soldItem.TypeId;
 
-      if (itemId == Constants.ITEM_GLYPHE_DER_OPFERUNG)
+      if (itemId == Constants.ITEM_GLYPH_OF_SACRIFICE)
       {
         int playerId = buyingUnit.Owner.Id;
         if (Program.TryGetUserById(playerId, out UserPlayer user))
@@ -124,7 +124,7 @@ namespace Source.Logics
           {
             unit dummyUnit = Common.CreateUnitAtLoc(castingUnit.Owner, Constants.UNIT_DUMMY, targetLocation, 0f);
 
-            dummyUnit.AddAbility(Constants.ABILITY_BEZAUBERUNG_DUMMY);
+            dummyUnit.AddAbility(Constants.ABILITY_CHARM_DUMMY);
             dummyUnit.IssueOrder(Constants.ORDER_CHARM, groupUnit);
 
             // Dummy nach Gebrauch sofort wieder zerstören und freigeben
@@ -188,7 +188,7 @@ namespace Source.Logics
           {
             // Dummy erstellen
             unit dummyUnit = Common.CreateUnitAtLoc(castingUnit.Owner, Constants.UNIT_DUMMY, targetLocation, 0f);
-            dummyUnit.AddAbility(Constants.ABILITY_BEZAUBERUNG_DUMMY);
+            dummyUnit.AddAbility(Constants.ABILITY_CHARM_DUMMY);
 
             // Dummy einen Dummy-Zauber (keine Manakosten) ausführen lassen
             dummyUnit.IssueOrder(Constants.ORDER_CHARM, groupUnit);

@@ -7,10 +7,10 @@ namespace Source.Models
 {
   public sealed class MercenarySpawnBuilding
   {
-    public MercenarySpawnBuilding(NeutralForce force, int unitTypeId, Area creationArea, float face = 0f)
+    public MercenarySpawnBuilding(MercenaryForce owner, int unitTypeId, Area creationArea, float face = 0f)
     {
-      Wc3Unit = Common.CreateUnitAtLoc(force.Wc3Player, unitTypeId, creationArea.Wc3CenterLocation, face);
-      NeutralForce = force;
+      Wc3Unit = Common.CreateUnitAtLoc(owner.Wc3Player, unitTypeId, creationArea.Wc3CenterLocation, face);
+      Owner = owner;
     }
 
     /// <summary>
@@ -25,7 +25,7 @@ namespace Source.Models
     /// <summary>
     /// Das CreepCamp, dem dieses Gebäude gehört.
     /// </summary>
-    private NeutralForce NeutralForce { get; init; }
+    private MercenaryForce Owner { get; init; }
 
     private List<MercenarySpawnTrigger> SpawnTriggers { get; set; } = new List<MercenarySpawnTrigger>();
 
@@ -38,7 +38,7 @@ namespace Source.Models
     /// <returns></returns>
     public MercenarySpawnTrigger AddSpawnTrigger(Enums.SpawnInterval spawnInterval, Area spawnArea, Area targetArea)
     {
-      MercenarySpawnTrigger spawnTrigger = new MercenarySpawnTrigger(NeutralForce, spawnInterval, spawnArea, targetArea);
+      MercenarySpawnTrigger spawnTrigger = new MercenarySpawnTrigger(Owner, spawnInterval, spawnArea, targetArea);
       SpawnTriggers.Add(spawnTrigger);
       return spawnTrigger;
     }
