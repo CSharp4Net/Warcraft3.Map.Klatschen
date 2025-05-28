@@ -25,13 +25,13 @@ namespace Source.Models.Teams
           switch (techLevel)
           {
             case 1:
-              spawnCommand.UnitId = Constants.UNIT_SOLDIER_IMPROVED_HUMAN;
+              spawnCommand.UnitId = Constants.UNIT_CAPTIAN_HUMAN;
               spawnCommand.UnitIdToUpgrade = Constants.UNIT_PRIEST_HUMAN;
               return Enums.ResearchType.UpgradeUnit;
 
             default:
-              spawnCommand.UnitId = Constants.UNIT_SOLDIER_ELITE_HUMAN;
-              spawnCommand.UnitIdToUpgrade = Constants.UNIT_SOLDIER_IMPROVED_HUMAN;
+              spawnCommand.UnitId = Constants.UNIT_KNIGHT_HUMAN;
+              spawnCommand.UnitIdToUpgrade = Constants.UNIT_CAPTIAN_HUMAN;
               return Enums.ResearchType.UpgradeUnit;
           }
 
@@ -45,13 +45,13 @@ namespace Source.Models.Teams
           switch (techLevel)
           {
             case 1:
-              spawnCommand.UnitId = Constants.UNIT_RIFLEMAN_IMPROVED_HUMAN;
+              spawnCommand.UnitId = Constants.UNIT_RIFLEMAN_BESERK_HUMAN;
               spawnCommand.UnitIdToUpgrade = Constants.UNIT_RIFLEMAN_HUMAN;
               return Enums.ResearchType.UpgradeUnit;
 
             default:
               spawnCommand.UnitId = Constants.UNIT_RIFLEMAN_ELITE_HUMAN;
-              spawnCommand.UnitIdToUpgrade = Constants.UNIT_RIFLEMAN_IMPROVED_HUMAN;
+              spawnCommand.UnitIdToUpgrade = Constants.UNIT_RIFLEMAN_BESERK_HUMAN;
               return Enums.ResearchType.UpgradeUnit;
           }
 

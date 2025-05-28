@@ -64,7 +64,7 @@ namespace Source.Logics
     {   
       int unitId = Common.GetUnitTypeId(unit);
 
-      if (unitId == Constants.UNIT_GUARDIAN_HUMAN || unitId == Constants.UNIT_W_CHTER_ORC || 
+      if (unitId == Constants.UNIT_GUARDIAN_HUMAN || unitId == Constants.UNIT_GUARDIAN_ORC || 
         unitId == Constants.UNIT_W_CHTER_ELF || unitId == Constants.UNIT_W_CHTER_UNDEAD)
       {
         ProcessWaechterLevelUp(unit);

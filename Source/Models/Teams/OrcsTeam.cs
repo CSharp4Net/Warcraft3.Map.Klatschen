@@ -25,13 +25,13 @@ namespace Source.Models.Teams
           switch (techLevel)
           {
             case 1:
-              spawnCommand.UnitId = Constants.UNIT_NAHKAMPFEINHEIT_STUFE_2_ORC;
-              spawnCommand.UnitIdToUpgrade = Constants.UNIT_NAHKAMPFEINHEIT_STUFE_1_ORC;
+              spawnCommand.UnitId = Constants.UNIT_BESERK_ORC;
+              spawnCommand.UnitIdToUpgrade = Constants.UNIT_GRUNT_ORC;
               return Enums.ResearchType.UpgradeUnit;
 
             default:
-              spawnCommand.UnitId = Constants.UNIT_NAHKAMPFEINHEIT_STUFE_3_ORC;
-              spawnCommand.UnitIdToUpgrade = Constants.UNIT_NAHKAMPFEINHEIT_STUFE_2_ORC;
+              spawnCommand.UnitId = Constants.UNIT_TAUREN_ORC;
+              spawnCommand.UnitIdToUpgrade = Constants.UNIT_BESERK_ORC;
               return Enums.ResearchType.UpgradeUnit;
           }
 
@@ -45,13 +45,13 @@ namespace Source.Models.Teams
           switch (techLevel)
           {
             case 1:
-              spawnCommand.UnitId = Constants.UNIT_FERNKAMPFEINHEIT_STUFE_2_ORC;
-              spawnCommand.UnitIdToUpgrade = Constants.UNIT_FERNKAMPFEINHEIT_STUFE_1_ORC;
+              spawnCommand.UnitId = Constants.UNIT_HEADHUNTER_BESERK_ORC;
+              spawnCommand.UnitIdToUpgrade = Constants.UNIT_HEADHUNTER_ORC;
               return Enums.ResearchType.UpgradeUnit;
 
             default:
-              spawnCommand.UnitId = Constants.UNIT_FERNKAMPFEINHEIT_STUFE_3_ORC;
-              spawnCommand.UnitIdToUpgrade = Constants.UNIT_FERNKAMPFEINHEIT_STUFE_2_ORC;
+              spawnCommand.UnitId = Constants.UNIT_HEADHUNTER_ELITE_ORC;
+              spawnCommand.UnitIdToUpgrade = Constants.UNIT_HEADHUNTER_BESERK_ORC;
               return Enums.ResearchType.UpgradeUnit;
           }
 
@@ -59,19 +59,19 @@ namespace Source.Models.Teams
           spawnCommand = new SpawnUnitCommand()
           {
             UnitSpawnType = Enums.SpawnInterval.Middle,
-            UnitIdOfBuilding = Constants.UNIT_FESTUNG_ORC,
+            UnitIdOfBuilding = Constants.UNIT_FORTRESS_ORC,
           };
 
           switch (techLevel)
           {
             case 1:
-              spawnCommand.UnitId = Constants.UNIT_FLUGEINHEIT_STUFE_2_ORC;
-              spawnCommand.UnitIdToUpgrade = Constants.UNIT_FLUGEINHEIT_STUFE_1_ORC;
+              spawnCommand.UnitId = Constants.UNIT_WIND_RIDER_ORC;
+              spawnCommand.UnitIdToUpgrade = Constants.UNIT_BATRIDER_ORC;
               return Enums.ResearchType.UpgradeUnit;
 
             default:
-              spawnCommand.UnitId = Constants.UNIT_FLUGEINHEIT_STUFE_3_ORC;
-              spawnCommand.UnitIdToUpgrade = Constants.UNIT_FLUGEINHEIT_STUFE_2_ORC;
+              spawnCommand.UnitId = Constants.UNIT_SPIRIT_WIND_RIDER_ORC;
+              spawnCommand.UnitIdToUpgrade = Constants.UNIT_WIND_RIDER_ORC;
               return Enums.ResearchType.UpgradeUnit;
           }
 
@@ -79,19 +79,19 @@ namespace Source.Models.Teams
           spawnCommand = new SpawnUnitCommand()
           {
             UnitSpawnType = Enums.SpawnInterval.Middle,
-            UnitIdOfBuilding = Constants.UNIT_FESTUNG_ORC
+            UnitIdOfBuilding = Constants.UNIT_FORTRESS_ORC
           };
 
           switch (techLevel)
           {
             case 1:
-              spawnCommand.UnitId = Constants.UNIT_MAGIEEINHEIT_STUFE_2_ORC;
-              spawnCommand.UnitIdToUpgrade = Constants.UNIT_MAGIEEINHEIT_STUFE_1_ORC;
+              spawnCommand.UnitId = Constants.UNIT_SHAMAN_ORC;
+              spawnCommand.UnitIdToUpgrade = Constants.UNIT_WITCH_DOCTOR_ORC;
               return Enums.ResearchType.UpgradeUnit;
 
             default:
-              spawnCommand.UnitId = Constants.UNIT_MAGIEEINHEIT_STUFE_3_ORC;
-              spawnCommand.UnitIdToUpgrade = Constants.UNIT_MAGIEEINHEIT_STUFE_2_ORC;
+              spawnCommand.UnitId = Constants.UNIT_WARLOCK_ORC;
+              spawnCommand.UnitIdToUpgrade = Constants.UNIT_SHAMAN_ORC;
               return Enums.ResearchType.UpgradeUnit;
           }
 
@@ -99,18 +99,18 @@ namespace Source.Models.Teams
           spawnCommand = new SpawnUnitCommand()
           {
             UnitSpawnType = Enums.SpawnInterval.Long,
-            UnitIdOfBuilding = Constants.UNIT_FESTUNG_ORC
+            UnitIdOfBuilding = Constants.UNIT_FORTRESS_ORC
           };
 
           switch (techLevel)
           {
             case 1:
-              spawnCommand.UnitId = Constants.UNIT_BELAGERUNGSEINHEIT_STUFE_1_ORC;
+              spawnCommand.UnitId = Constants.UNIT_KODO_BEAST_ORC;
               return Enums.ResearchType.AddUnit;
 
             default:
-              spawnCommand.UnitId = Constants.UNIT_BELAGERUNGSEINHEIT_STUFE_2_ORC;
-              spawnCommand.UnitIdToUpgrade = Constants.UNIT_BELAGERUNGSEINHEIT_STUFE_1_ORC;
+              spawnCommand.UnitId = Constants.UNIT_DEMOLISHER_ORC;
+              spawnCommand.UnitIdToUpgrade = Constants.UNIT_KODO_BEAST_ORC;
               return Enums.ResearchType.UpgradeUnit;
           }
 

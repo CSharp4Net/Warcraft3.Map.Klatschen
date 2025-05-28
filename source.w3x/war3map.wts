@@ -153,13 +153,13 @@ STRING 97
 }
 
 STRING 115
-// Units: h00B (Soldier elite), EditorSuffix (Name - Editor Suffix)
+// Units: h00B (Knight), EditorSuffix (Name - Editor Suffix)
 {
 (Human)
 }
 
 STRING 116
-// Units: h00C (Soldier improved), EditorSuffix (Name - Editor Suffix)
+// Units: h00C (Captian), EditorSuffix (Name - Editor Suffix)
 {
 (Human)
 }
@@ -183,7 +183,7 @@ STRING 119
 }
 
 STRING 120
-// Units: h00F (Rifleman improved), EditorSuffix (Name - Editor Suffix)
+// Units: h00F (Rifleman beserk), EditorSuffix (Name - Editor Suffix)
 {
 (Human)
 }
@@ -255,7 +255,7 @@ ratx
 }
 
 STRING 223
-// Units: h00C (Soldier improved), Hotkey (Hotkey)
+// Units: h00C (Captian), Hotkey (Hotkey)
 {
 H
 }
@@ -369,7 +369,7 @@ B
 }
 
 STRING 694
-// Units: h01J (Nahkampfeinheit - Stufe 2), Hotkey (Hotkey)
+// Units: h01J (Beserk), Hotkey (Hotkey)
 {
 H
 }
@@ -390,162 +390,6 @@ STRING 706
 // Upgrades: R00G (Improved Masonry,Advanced Masonry,Imbued Masonry), Hotkey (Hotkey)
 {
 B
-}
-
-STRING 714
-// Abilities: A002 (Attribute Bonus), Tip (Tooltip - Normal)
-{
-Erhöhte Attribute [|cffffcc00Stufe 5|r]
-}
-
-STRING 715
-// Abilities: A002 (Attribute Bonus), Tip (Tooltip - Normal)
-{
-Erhöhte Attribute [|cffffcc00Stufe 6|r]
-}
-
-STRING 716
-// Abilities: A002 (Attribute Bonus), Tip (Tooltip - Normal)
-{
-Erhöhte Attribute [|cffffcc00Stufe 7|r]
-}
-
-STRING 717
-// Abilities: A002 (Attribute Bonus), Tip (Tooltip - Normal)
-{
-Erhöhte Attribute [|cffffcc00Stufe 8|r]
-}
-
-STRING 718
-// Abilities: A002 (Attribute Bonus), Tip (Tooltip - Normal)
-{
-Erhöhte Attribute [|cffffcc00Stufe 9|r]
-}
-
-STRING 719
-// Abilities: A002 (Attribute Bonus), Tip (Tooltip - Normal)
-{
-Erhöhte Attribute [|cffffcc00Stufe 10|r]
-}
-
-STRING 720
-// Abilities: A002 (Attribute Bonus), Tip (Tooltip - Normal)
-{
-Erhöhte Attribute [|cffffcc00Stufe 11|r]
-}
-
-STRING 721
-// Abilities: A002 (Attribute Bonus), Tip (Tooltip - Normal)
-{
-Erhöhte Attribute [|cffffcc00Stufe 12|r]
-}
-
-STRING 722
-// Abilities: A002 (Attribute Bonus), Tip (Tooltip - Normal)
-{
-Erhöhte Attribute [|cffffcc00Stufe 13|r]
-}
-
-STRING 723
-// Abilities: A002 (Attribute Bonus), Tip (Tooltip - Normal)
-{
-Erhöhte Attribute [|cffffcc00Stufe 14|r]
-}
-
-STRING 724
-// Abilities: A002 (Attribute Bonus), Tip (Tooltip - Normal)
-{
-Erhöhte Attribute [|cffffcc00Stufe 15|r]
-}
-
-STRING 725
-// Abilities: A002 (Attribute Bonus), Tip (Tooltip - Normal)
-{
-Erhöhte Attribute [|cffffcc00Stufe 16|r]
-}
-
-STRING 726
-// Abilities: A002 (Attribute Bonus), Tip (Tooltip - Normal)
-{
-Erhöhte Attribute [|cffffcc00Stufe 17|r]
-}
-
-STRING 727
-// Abilities: A002 (Attribute Bonus), Tip (Tooltip - Normal)
-{
-Erhöhte Attribute [|cffffcc00Stufe 18|r]
-}
-
-STRING 728
-// Abilities: A002 (Attribute Bonus), Tip (Tooltip - Normal)
-{
-Erhöhte Attribute [|cffffcc00Stufe 19|r]
-}
-
-STRING 729
-// Abilities: A002 (Attribute Bonus), Tip (Tooltip - Normal)
-{
-Erhöhte Attribute [|cffffcc00Stufe 20|r]
-}
-
-STRING 730
-// Abilities: A002 (Attribute Bonus), Tip (Tooltip - Normal)
-{
-Erhöhte Attribute [|cffffcc00Stufe 21|r]
-}
-
-STRING 731
-// Abilities: A002 (Attribute Bonus), Tip (Tooltip - Normal)
-{
-Erhöhte Attribute [|cffffcc00Stufe 22|r]
-}
-
-STRING 732
-// Abilities: A002 (Attribute Bonus), Tip (Tooltip - Normal)
-{
-Erhöhte Attribute [|cffffcc00Stufe 23|r]
-}
-
-STRING 733
-// Abilities: A002 (Attribute Bonus), Tip (Tooltip - Normal)
-{
-Erhöhte Attribute [|cffffcc00Stufe 24|r]
-}
-
-STRING 734
-// Abilities: A002 (Attribute Bonus), Tip (Tooltip - Normal)
-{
-Erhöhte Attribute [|cffffcc00Stufe 25|r]
-}
-
-STRING 735
-// Abilities: A002 (Attribute Bonus), Tip (Tooltip - Normal)
-{
-Erhöhte Attribute [|cffffcc00Stufe 26|r]
-}
-
-STRING 736
-// Abilities: A002 (Attribute Bonus), Tip (Tooltip - Normal)
-{
-Erhöhte Attribute [|cffffcc00Stufe 27|r]
-}
-
-STRING 737
-// Abilities: A002 (Attribute Bonus), Tip (Tooltip - Normal)
-{
-Erhöhte Attribute [|cffffcc00Stufe 28|r]
-}
-
-STRING 738
-// Abilities: A002 (Attribute Bonus), Tip (Tooltip - Normal)
-{
-Erhöhte Attribute [|cffffcc00Stufe 29|r]
-}
-
-STRING 739
-// Abilities: A002 (Attribute Bonus), Tip (Tooltip - Normal)
-{
-Erhöhte Attribute [|cffffcc00Stufe 30|r]
 }
 
 STRING 771
@@ -609,7 +453,7 @@ STRING 812
 }
 
 STRING 813
-// Units: H01W (Wächter), Name (Name)
+// Units: H02P (Wächter), Name (Name)
 {
 Wächter
 }
@@ -806,66 +650,6 @@ STRING 876
 Versprüht Wellen aus Heilnebel, der Einheiten im Zielgebiet heilt.|n|n|cffffcc00Stufe 1|r - <A00E,DataF1> Wellen, die je <A00E,DataA1> Trefferpunkte heilen.|n|cffffcc00Stufe 2|r - <A00E,DataF2> Wellen, die je <A00E,DataA2> Trefferpunkte heilen.|n|cffffcc00Stufe 3|r - <A00E,DataF3> Wellen, die je <A00E,DataA3> Trefferpunkte heilen.
 }
 
-STRING 878
-// Abilities: A00F (Acid Bomb), Ubertip (Tooltip - Normal - Extended)
-{
-Schleudert eine Säureflasche auf ein Ziel, die beim Aufprall zerbricht und nahe gegnerische Einheiten mit starker Säure bespritzt.|n|nDie Säure verringert die Rüstung um <A00F,DataC1>, fügt dem Primärziel <A00F,DataD1> Schaden pro Sekunde und Zielen in der Nähe leicht weniger Schaden zu.|nHält <A00F,Dur1> Sek. lang an.
-}
-
-STRING 879
-// Abilities: A00F (Acid Bomb), Ubertip (Tooltip - Normal - Extended)
-{
-Schleudert eine Säureflasche auf ein Ziel, die beim Aufprall zerbricht und nahe gegnerische Einheiten mit starker Säure bespritzt.|n|nDie Säure verringert die Rüstung um <A00F,DataC2>, fügt dem Primärziel <A00F,DataD2> Schaden pro Sekunde und Zielen in der Nähe leicht weniger Schaden zu.|nHält <A00F,Dur2> Sek. lang an.
-}
-
-STRING 880
-// Abilities: A00F (Acid Bomb), Ubertip (Tooltip - Normal - Extended)
-{
-Schleudert eine Säureflasche auf ein Ziel, die beim Aufprall zerbricht und nahe gegnerische Einheiten mit starker Säure bespritzt.|n|nDie Säure verringert die Rüstung um <A00F,DataC3>, fügt dem Primärziel <A00F,DataD3> Schaden pro Sekunde und Zielen in der Nähe leicht weniger Schaden zu.|nHält <A00F,Dur3> Sek. lang an.
-}
-
-STRING 881
-// Abilities: A00F (Acid Bomb), Ubertip (Tooltip - Normal - Extended)
-{
-Schleudert eine Säureflasche auf ein Ziel, die beim Aufprall zerbricht und nahe gegnerische Einheiten mit starker Säure bespritzt.|n|nDie Säure verringert die Rüstung um <A00F,DataC4>, fügt dem Primärziel <A00F,DataD4> Schaden pro Sekunde und Zielen in der Nähe leicht weniger Schaden zu.|nHält <A00F,Dur4> Sek. lang an.
-}
-
-STRING 882
-// Abilities: A00F (Acid Bomb), Ubertip (Tooltip - Normal - Extended)
-{
-Schleudert eine Säureflasche auf ein Ziel, die beim Aufprall zerbricht und nahe gegnerische Einheiten mit starker Säure bespritzt.|n|nDie Säure verringert die Rüstung um <A00F,DataC5>, fügt dem Primärziel <A00F,DataD5> Schaden pro Sekunde und Zielen in der Nähe leicht weniger Schaden zu.|nHält <A00F,Dur5> Sek. lang an.
-}
-
-STRING 883
-// Abilities: A00F (Acid Bomb), Ubertip (Tooltip - Normal - Extended)
-{
-Schleudert eine Säureflasche auf ein Ziel, die beim Aufprall zerbricht und nahe gegnerische Einheiten mit starker Säure bespritzt.|n|nDie Säure verringert die Rüstung um <A00F,DataC6>, fügt dem Primärziel <A00F,DataD6> Schaden pro Sekunde und Zielen in der Nähe leicht weniger Schaden zu.|nHält <A00F,Dur6> Sek. lang an.
-}
-
-STRING 884
-// Abilities: A00F (Acid Bomb), Ubertip (Tooltip - Normal - Extended)
-{
-Schleudert eine Säureflasche auf ein Ziel, die beim Aufprall zerbricht und nahe gegnerische Einheiten mit starker Säure bespritzt.|n|nDie Säure verringert die Rüstung um <A00F,DataC7>, fügt dem Primärziel <A00F,DataD7> Schaden pro Sekunde und Zielen in der Nähe leicht weniger Schaden zu.|nHält <A00F,Dur7> Sek. lang an.
-}
-
-STRING 885
-// Abilities: A00F (Acid Bomb), Ubertip (Tooltip - Normal - Extended)
-{
-Schleudert eine Säureflasche auf ein Ziel, die beim Aufprall zerbricht und nahe gegnerische Einheiten mit starker Säure bespritzt.|n|nDie Säure verringert die Rüstung um <A00F,DataC8>, fügt dem Primärziel <A00F,DataD8> Schaden pro Sekunde und Zielen in der Nähe leicht weniger Schaden zu.|nHält <A00F,Dur8> Sek. lang an.
-}
-
-STRING 886
-// Abilities: A00F (Acid Bomb), Ubertip (Tooltip - Normal - Extended)
-{
-Schleudert eine Säureflasche auf ein Ziel, die beim Aufprall zerbricht und nahe gegnerische Einheiten mit starker Säure bespritzt.|n|nDie Säure verringert die Rüstung um <A00F,DataC9>, fügt dem Primärziel <A00F,DataD9> Schaden pro Sekunde und Zielen in der Nähe leicht weniger Schaden zu.|nHält <A00F,Dur9> Sek. lang an.
-}
-
-STRING 887
-// Abilities: A00F (Acid Bomb), Ubertip (Tooltip - Normal - Extended)
-{
-Schleudert eine Säureflasche auf ein Ziel, die beim Aufprall zerbricht und nahe gegnerische Einheiten mit starker Säure bespritzt.|n|nDie Säure verringert die Rüstung um <A00F,DataC10>, fügt dem Primärziel <A00F,DataD10> Schaden pro Sekunde und Zielen in der Nähe leicht weniger Schaden zu.|nHält <A00F,Dur10> Sek. lang an.
-}
-
 STRING 888
 // Abilities: A00F (Acid Bomb), Ubertip (Tooltip - Normal - Extended)
 {
@@ -926,48 +710,6 @@ STRING 897
 Schleudert eine Säureflasche auf ein Ziel, die beim Aufprall zerbricht und nahe gegnerische Einheiten mit starker Säure bespritzt.|n|nDie Säure verringert die Rüstung um <A00F,DataC20>, fügt dem Primärziel <A00F,DataD20> Schaden pro Sekunde und Zielen in der Nähe leicht weniger Schaden zu.|nHält <A00F,Dur20> Sek. lang an.
 }
 
-STRING 898
-// Abilities: A00F (Acid Bomb), Tip (Tooltip - Normal)
-{
-Säurebombe [|cffffcc00Stufe 4|r]
-}
-
-STRING 899
-// Abilities: A00F (Acid Bomb), Tip (Tooltip - Normal)
-{
-Säurebombe [|cffffcc00Stufe 5|r]
-}
-
-STRING 900
-// Abilities: A00F (Acid Bomb), Tip (Tooltip - Normal)
-{
-Säurebombe [|cffffcc00Stufe 6|r]
-}
-
-STRING 901
-// Abilities: A00F (Acid Bomb), Tip (Tooltip - Normal)
-{
-Säurebombe [|cffffcc00Stufe 7|r]
-}
-
-STRING 902
-// Abilities: A00F (Acid Bomb), Tip (Tooltip - Normal)
-{
-Säurebombe [|cffffcc00Stufe 8|r]
-}
-
-STRING 903
-// Abilities: A00F (Acid Bomb), Tip (Tooltip - Normal)
-{
-Säurebombe [|cffffcc00Stufe 9|r]
-}
-
-STRING 904
-// Abilities: A00F (Acid Bomb), Tip (Tooltip - Normal)
-{
-Säurebombe [|cffffcc00Stufe 10|r]
-}
-
 STRING 905
 // Abilities: A00F (Acid Bomb), Tip (Tooltip - Normal)
 {
@@ -1026,12 +768,6 @@ STRING 914
 // Abilities: A00F (Acid Bomb), Tip (Tooltip - Normal)
 {
 Säurebombe [|cffffcc00Stufe 20|r]
-}
-
-STRING 915
-// Abilities: A00F (Acid Bomb), Researchubertip (Tooltip - Learn - Extended)
-{
-Schleudert eine Säureflasche auf ein Ziel, die beim Aufprall zerbricht und nahe gegnerische Einheiten mit starker Säure bespritzt.|n|nDie Säure verringert die Rüstung, fügt dem Primärziel hohen periodischen Schaden und Zielen in der Nähe leicht weniger periodischen Schaden zu.|nHält <A00F,Dur1> Sek. lang an.|n|n|cffffcc00Stufe 1|r - Maximal <A00F,DataD1> Schaden pro Sekunde, verringert die Rüstung um <A00F,DataC1>.|n|cffffcc00Stufe 2|r - Maximal <A00F,DataD2> Schaden pro Sekunde, verringert die Rüstung um <A00F,DataC2>.|n|cffffcc00Stufe 3|r - Maximal <A00F,DataD3> Schaden pro Sekunde, verringert die Rüstung um <A00F,DataC3>.
 }
 
 STRING 917
@@ -1116,126 +852,6 @@ STRING 932
 // Abilities: A00G (Transmute), Ubertip (Tooltip - Normal - Extended)
 {
 Tötet eine Zieleinheit sofort und wandelt sie in Gold um, das zum Gold des Spielers hinzugefügt wird!|nKann nicht gegen Helden eingesetzt werden.
-}
-
-STRING 937
-// Abilities: A002 (Attribute Bonus), Tip (Tooltip - Normal)
-{
-Erhöhte Attribute [|cffffcc00Stufe 31|r]
-}
-
-STRING 938
-// Abilities: A002 (Attribute Bonus), Tip (Tooltip - Normal)
-{
-Erhöhte Attribute [|cffffcc00Stufe 32|r]
-}
-
-STRING 939
-// Abilities: A002 (Attribute Bonus), Tip (Tooltip - Normal)
-{
-Erhöhte Attribute [|cffffcc00Stufe 33|r]
-}
-
-STRING 940
-// Abilities: A002 (Attribute Bonus), Tip (Tooltip - Normal)
-{
-Erhöhte Attribute [|cffffcc00Stufe 34|r]
-}
-
-STRING 941
-// Abilities: A002 (Attribute Bonus), Tip (Tooltip - Normal)
-{
-Erhöhte Attribute [|cffffcc00Stufe 35|r]
-}
-
-STRING 942
-// Abilities: A002 (Attribute Bonus), Tip (Tooltip - Normal)
-{
-Erhöhte Attribute [|cffffcc00Stufe 36|r]
-}
-
-STRING 943
-// Abilities: A002 (Attribute Bonus), Tip (Tooltip - Normal)
-{
-Erhöhte Attribute [|cffffcc00Stufe 37|r]
-}
-
-STRING 944
-// Abilities: A002 (Attribute Bonus), Tip (Tooltip - Normal)
-{
-Erhöhte Attribute [|cffffcc00Stufe 38|r]
-}
-
-STRING 945
-// Abilities: A002 (Attribute Bonus), Tip (Tooltip - Normal)
-{
-Erhöhte Attribute [|cffffcc00Stufe 39|r]
-}
-
-STRING 946
-// Abilities: A002 (Attribute Bonus), Tip (Tooltip - Normal)
-{
-Erhöhte Attribute [|cffffcc00Stufe 40|r]
-}
-
-STRING 947
-// Abilities: A002 (Attribute Bonus), Tip (Tooltip - Normal)
-{
-Erhöhte Attribute [|cffffcc00Stufe 41|r]
-}
-
-STRING 948
-// Abilities: A002 (Attribute Bonus), Tip (Tooltip - Normal)
-{
-Erhöhte Attribute [|cffffcc00Stufe 42|r]
-}
-
-STRING 949
-// Abilities: A002 (Attribute Bonus), Tip (Tooltip - Normal)
-{
-Erhöhte Attribute [|cffffcc00Stufe 43|r]
-}
-
-STRING 950
-// Abilities: A002 (Attribute Bonus), Tip (Tooltip - Normal)
-{
-Erhöhte Attribute [|cffffcc00Stufe 44|r]
-}
-
-STRING 951
-// Abilities: A002 (Attribute Bonus), Tip (Tooltip - Normal)
-{
-Erhöhte Attribute [|cffffcc00Stufe 45|r]
-}
-
-STRING 952
-// Abilities: A002 (Attribute Bonus), Tip (Tooltip - Normal)
-{
-Erhöhte Attribute [|cffffcc00Stufe 46|r]
-}
-
-STRING 953
-// Abilities: A002 (Attribute Bonus), Tip (Tooltip - Normal)
-{
-Erhöhte Attribute [|cffffcc00Stufe 47|r]
-}
-
-STRING 954
-// Abilities: A002 (Attribute Bonus), Tip (Tooltip - Normal)
-{
-Erhöhte Attribute [|cffffcc00Stufe 48|r]
-}
-
-STRING 955
-// Abilities: A002 (Attribute Bonus), Tip (Tooltip - Normal)
-{
-Erhöhte Attribute [|cffffcc00Stufe 49|r]
-}
-
-STRING 956
-// Abilities: A002 (Attribute Bonus), Tip (Tooltip - Normal)
-{
-Erhöhte Attribute [|cffffcc00Stufe 50|r]
 }
 
 STRING 978
@@ -3144,312 +2760,6 @@ STRING 1398
 // Abilities: A00E (Healing Spray), Ubertip (Tooltip - Normal - Extended)
 {
 Versprüht <A00E,DataF10> Wellen aus Heilnebel. Jede Welle stellt bei allen verbündeten Einheiten in einem Gebiet <A00E,DataA10> Trefferpunkte wieder her.
-}
-
-STRING 1549
-// Abilities: A002 (Attribute Bonus), Ubertip (Tooltip - Normal - Extended)
-{
-Erhöht die Beweglichkeit, Stärke und Intelligenz jeweils um <A002,DataA5> Punkte.
-}
-
-STRING 1550
-// Abilities: A002 (Attribute Bonus), Ubertip (Tooltip - Normal - Extended)
-{
-Erhöht die Beweglichkeit, Stärke und Intelligenz jeweils um <A002,DataA6> Punkte.
-}
-
-STRING 1551
-// Abilities: A002 (Attribute Bonus), Ubertip (Tooltip - Normal - Extended)
-{
-Erhöht die Beweglichkeit, Stärke und Intelligenz jeweils um <A002,DataA7> Punkte.
-}
-
-STRING 1552
-// Abilities: A002 (Attribute Bonus), Ubertip (Tooltip - Normal - Extended)
-{
-Erhöht die Beweglichkeit, Stärke und Intelligenz jeweils um <A002,DataA8> Punkte.
-}
-
-STRING 1553
-// Abilities: A002 (Attribute Bonus), Ubertip (Tooltip - Normal - Extended)
-{
-Erhöht die Beweglichkeit, Stärke und Intelligenz jeweils um <A002,DataA9> Punkte.
-}
-
-STRING 1554
-// Abilities: A002 (Attribute Bonus), Ubertip (Tooltip - Normal - Extended)
-{
-Erhöht die Beweglichkeit, Stärke und Intelligenz jeweils um <A002,DataA10> Punkte.
-}
-
-STRING 1555
-// Abilities: A002 (Attribute Bonus), Ubertip (Tooltip - Normal - Extended)
-{
-Erhöht die Beweglichkeit, Stärke und Intelligenz jeweils um <A002,DataA11> Punkte.
-}
-
-STRING 1556
-// Abilities: A002 (Attribute Bonus), Ubertip (Tooltip - Normal - Extended)
-{
-Erhöht die Beweglichkeit, Stärke und Intelligenz jeweils um <A002,DataA12> Punkte.
-}
-
-STRING 1557
-// Abilities: A002 (Attribute Bonus), Ubertip (Tooltip - Normal - Extended)
-{
-Erhöht die Beweglichkeit, Stärke und Intelligenz jeweils um <A002,DataA13> Punkte.
-}
-
-STRING 1558
-// Abilities: A002 (Attribute Bonus), Ubertip (Tooltip - Normal - Extended)
-{
-Erhöht die Beweglichkeit, Stärke und Intelligenz jeweils um <A002,DataA14> Punkte.
-}
-
-STRING 1559
-// Abilities: A002 (Attribute Bonus), Ubertip (Tooltip - Normal - Extended)
-{
-Erhöht die Beweglichkeit, Stärke und Intelligenz jeweils um <A002,DataA15> Punkte.
-}
-
-STRING 1560
-// Abilities: A002 (Attribute Bonus), Ubertip (Tooltip - Normal - Extended)
-{
-Erhöht die Beweglichkeit, Stärke und Intelligenz jeweils um <A002,DataA16> Punkte.
-}
-
-STRING 1561
-// Abilities: A002 (Attribute Bonus), Ubertip (Tooltip - Normal - Extended)
-{
-Erhöht die Beweglichkeit, Stärke und Intelligenz jeweils um <A002,DataA17> Punkte.
-}
-
-STRING 1562
-// Abilities: A002 (Attribute Bonus), Ubertip (Tooltip - Normal - Extended)
-{
-Erhöht die Beweglichkeit, Stärke und Intelligenz jeweils um <A002,DataA18> Punkte.
-}
-
-STRING 1563
-// Abilities: A002 (Attribute Bonus), Ubertip (Tooltip - Normal - Extended)
-{
-Erhöht die Beweglichkeit, Stärke und Intelligenz jeweils um <A002,DataA19> Punkte.
-}
-
-STRING 1564
-// Abilities: A002 (Attribute Bonus), Ubertip (Tooltip - Normal - Extended)
-{
-Erhöht die Beweglichkeit, Stärke und Intelligenz jeweils um <A002,DataA20> Punkte.
-}
-
-STRING 1565
-// Abilities: A002 (Attribute Bonus), Ubertip (Tooltip - Normal - Extended)
-{
-Erhöht die Beweglichkeit, Stärke und Intelligenz jeweils um <A002,DataA21> Punkte.
-}
-
-STRING 1566
-// Abilities: A002 (Attribute Bonus), Ubertip (Tooltip - Normal - Extended)
-{
-Erhöht die Beweglichkeit, Stärke und Intelligenz jeweils um <A002,DataA22> Punkte.
-}
-
-STRING 1567
-// Abilities: A002 (Attribute Bonus), Ubertip (Tooltip - Normal - Extended)
-{
-Erhöht die Beweglichkeit, Stärke und Intelligenz jeweils um <A002,DataA23> Punkte.
-}
-
-STRING 1568
-// Abilities: A002 (Attribute Bonus), Ubertip (Tooltip - Normal - Extended)
-{
-Erhöht die Beweglichkeit, Stärke und Intelligenz jeweils um <A002,DataA24> Punkte.
-}
-
-STRING 1569
-// Abilities: A002 (Attribute Bonus), Ubertip (Tooltip - Normal - Extended)
-{
-Erhöht die Beweglichkeit, Stärke und Intelligenz jeweils um <A002,DataA25> Punkte.
-}
-
-STRING 1570
-// Abilities: A002 (Attribute Bonus), Ubertip (Tooltip - Normal - Extended)
-{
-Erhöht die Beweglichkeit, Stärke und Intelligenz jeweils um <A002,DataA26> Punkte.
-}
-
-STRING 1571
-// Abilities: A002 (Attribute Bonus), Ubertip (Tooltip - Normal - Extended)
-{
-Erhöht die Beweglichkeit, Stärke und Intelligenz jeweils um <A002,DataA27> Punkte.
-}
-
-STRING 1572
-// Abilities: A002 (Attribute Bonus), Ubertip (Tooltip - Normal - Extended)
-{
-Erhöht die Beweglichkeit, Stärke und Intelligenz jeweils um <A002,DataA28> Punkte.
-}
-
-STRING 1573
-// Abilities: A002 (Attribute Bonus), Ubertip (Tooltip - Normal - Extended)
-{
-Erhöht die Beweglichkeit, Stärke und Intelligenz jeweils um <A002,DataA29> Punkte.
-}
-
-STRING 1574
-// Abilities: A002 (Attribute Bonus), Ubertip (Tooltip - Normal - Extended)
-{
-Erhöht die Beweglichkeit, Stärke und Intelligenz jeweils um <A002,DataA30> Punkte.
-}
-
-STRING 1575
-// Abilities: A002 (Attribute Bonus), Ubertip (Tooltip - Normal - Extended)
-{
-Erhöht die Beweglichkeit, Stärke und Intelligenz jeweils um <A002,DataA2> Punkte.
-}
-
-STRING 1576
-// Abilities: A002 (Attribute Bonus), Ubertip (Tooltip - Normal - Extended)
-{
-Erhöht die Beweglichkeit, Stärke und Intelligenz jeweils um <A002,DataA4> Punkte.
-}
-
-STRING 1577
-// Abilities: A002 (Attribute Bonus), Ubertip (Tooltip - Normal - Extended)
-{
-Erhöht die Beweglichkeit, Stärke und Intelligenz jeweils um <A002,DataA3> Punkte.
-}
-
-STRING 1578
-// Abilities: A002 (Attribute Bonus), Ubertip (Tooltip - Normal - Extended)
-{
-Erhöht die Beweglichkeit, Stärke und Intelligenz jeweils um <A002,DataA31> Punkte.
-}
-
-STRING 1579
-// Abilities: A002 (Attribute Bonus), Ubertip (Tooltip - Normal - Extended)
-{
-Erhöht die Beweglichkeit, Stärke und Intelligenz jeweils um <A002,DataA32> Punkte.
-}
-
-STRING 1580
-// Abilities: A002 (Attribute Bonus), Ubertip (Tooltip - Normal - Extended)
-{
-Erhöht die Beweglichkeit, Stärke und Intelligenz jeweils um <A002,DataA33> Punkte.
-}
-
-STRING 1581
-// Abilities: A002 (Attribute Bonus), Ubertip (Tooltip - Normal - Extended)
-{
-Erhöht die Beweglichkeit, Stärke und Intelligenz jeweils um <A002,DataA34> Punkte.
-}
-
-STRING 1582
-// Abilities: A002 (Attribute Bonus), Ubertip (Tooltip - Normal - Extended)
-{
-Erhöht die Beweglichkeit, Stärke und Intelligenz jeweils um <A002,DataA35> Punkte.
-}
-
-STRING 1583
-// Abilities: A002 (Attribute Bonus), Ubertip (Tooltip - Normal - Extended)
-{
-Erhöht die Beweglichkeit, Stärke und Intelligenz jeweils um <A002,DataA36> Punkte.
-}
-
-STRING 1584
-// Abilities: A002 (Attribute Bonus), Ubertip (Tooltip - Normal - Extended)
-{
-Erhöht die Beweglichkeit, Stärke und Intelligenz jeweils um <A002,DataA37> Punkte.
-}
-
-STRING 1585
-// Abilities: A002 (Attribute Bonus), Ubertip (Tooltip - Normal - Extended)
-{
-Erhöht die Beweglichkeit, Stärke und Intelligenz jeweils um <A002,DataA38> Punkte.
-}
-
-STRING 1586
-// Abilities: A002 (Attribute Bonus), Ubertip (Tooltip - Normal - Extended)
-{
-Erhöht die Beweglichkeit, Stärke und Intelligenz jeweils um <A002,DataA39> Punkte.
-}
-
-STRING 1587
-// Abilities: A002 (Attribute Bonus), Ubertip (Tooltip - Normal - Extended)
-{
-Erhöht die Beweglichkeit, Stärke und Intelligenz jeweils um <A002,DataA40> Punkte.
-}
-
-STRING 1588
-// Abilities: A002 (Attribute Bonus), Ubertip (Tooltip - Normal - Extended)
-{
-Erhöht die Beweglichkeit, Stärke und Intelligenz jeweils um <A002,DataA41> Punkte.
-}
-
-STRING 1589
-// Abilities: A002 (Attribute Bonus), Ubertip (Tooltip - Normal - Extended)
-{
-Erhöht die Beweglichkeit, Stärke und Intelligenz jeweils um <A002,DataA42> Punkte.
-}
-
-STRING 1590
-// Abilities: A002 (Attribute Bonus), Ubertip (Tooltip - Normal - Extended)
-{
-Erhöht die Beweglichkeit, Stärke und Intelligenz jeweils um <A002,DataA43> Punkte.
-}
-
-STRING 1591
-// Abilities: A002 (Attribute Bonus), Ubertip (Tooltip - Normal - Extended)
-{
-Erhöht die Beweglichkeit, Stärke und Intelligenz jeweils um <A002,DataA44> Punkte.
-}
-
-STRING 1592
-// Abilities: A002 (Attribute Bonus), Ubertip (Tooltip - Normal - Extended)
-{
-Erhöht die Beweglichkeit, Stärke und Intelligenz jeweils um <A002,DataA45> Punkte.
-}
-
-STRING 1593
-// Abilities: A002 (Attribute Bonus), Ubertip (Tooltip - Normal - Extended)
-{
-Erhöht die Beweglichkeit, Stärke und Intelligenz jeweils um <A002,DataA46> Punkte.
-}
-
-STRING 1594
-// Abilities: A002 (Attribute Bonus), Ubertip (Tooltip - Normal - Extended)
-{
-Erhöht die Beweglichkeit, Stärke und Intelligenz jeweils um <A002,DataA47> Punkte.
-}
-
-STRING 1595
-// Abilities: A002 (Attribute Bonus), Ubertip (Tooltip - Normal - Extended)
-{
-Erhöht die Beweglichkeit, Stärke und Intelligenz jeweils um <A002,DataA48> Punkte.
-}
-
-STRING 1596
-// Abilities: A002 (Attribute Bonus), Ubertip (Tooltip - Normal - Extended)
-{
-Erhöht die Beweglichkeit, Stärke und Intelligenz jeweils um <A002,DataA49> Punkte.
-}
-
-STRING 1597
-// Abilities: A002 (Attribute Bonus), Ubertip (Tooltip - Normal - Extended)
-{
-Erhöht die Beweglichkeit, Stärke und Intelligenz jeweils um <A002,DataA50> Punkte.
-}
-
-STRING 1599
-// Abilities: A002 (Attribute Bonus), Ubertip (Tooltip - Normal - Extended)
-{
-Erhöht die Beweglichkeit, Stärke und Intelligenz jeweils um <A002,DataA1> Punkte.
-}
-
-STRING 1600
-// Abilities: A002 (Attribute Bonus), Researchubertip (Tooltip - Learn - Extended)
-{
-Erhöht die Beweglichkeit, Stärke und Intelligenz um drei zusätzliche 3 Punkte pro Stufe.
 }
 
 STRING 1601
@@ -6464,42 +5774,6 @@ STRING 2226
 Vulkan [|cffffcc00Stufe 1|r]
 }
 
-STRING 2227
-// Abilities: A015 (Avatar), Tip (Tooltip - Normal)
-{
-Avatar  [|cffffcc00Stufe 2|r] aktivieren
-}
-
-STRING 2228
-// Abilities: A015 (Avatar), Tip (Tooltip - Normal)
-{
-Avatar  [|cffffcc00Stufe 3|r] aktivieren
-}
-
-STRING 2229
-// Abilities: A015 (Avatar), Untip (Tooltip - Turn Off)
-{
-Avatar [|cffffcc00Stufe 2|r] deaktivieren
-}
-
-STRING 2230
-// Abilities: A015 (Avatar), Untip (Tooltip - Turn Off)
-{
-Avatar [|cffffcc00Stufe 3|r] deaktivieren
-}
-
-STRING 2231
-// Abilities: A015 (Avatar), Tip (Tooltip - Normal)
-{
-Avatar  [|cffffcc00Stufe 1|r] aktivieren
-}
-
-STRING 2232
-// Abilities: A015 (Avatar), Untip (Tooltip - Turn Off)
-{
-Avatar [|cffffcc00Stufe 1|r] deaktivieren
-}
-
 STRING 2233
 // Abilities: AGBV (Big Bad Voodoo), Tip (Tooltip - Normal)
 {
@@ -7526,18 +6800,6 @@ STRING 2819
 (Unit)
 }
 
-STRING 2843
-// Abilities: A015 (Avatar), Ubertip (Tooltip - Normal - Extended)
-{
-|cffff0000Ultimative Fähigkeit|r - Aktivieren, um die Rüstung des Bergkönigs um <A015,DataA2>, seine Trefferpunkte um <A015,DataB2> und seinen Schaden um <A015,DataC2> zu erhöhen und ihm Zauberimmunität zu gewähren.|nHält <A015,Dur2> Sek. lang an.
-}
-
-STRING 2844
-// Abilities: A015 (Avatar), Ubertip (Tooltip - Normal - Extended)
-{
-|cffff0000Ultimative Fähigkeit|r - Aktivieren, um die Rüstung des Bergkönigs um <A015,DataA3>, seine Trefferpunkte um <A015,DataB3> und seinen Schaden um <A015,DataC3> zu erhöhen und ihm Zauberimmunität zu gewähren.|nHält <A015,Dur3> Sek. lang an.
-}
-
 STRING 2857
 // Abilities: A0SR (Silence), EditorSuffix (Editor Suffix)
 {
@@ -7653,55 +6915,55 @@ STRING 2911
 }
 
 STRING 2912
-// Units: h00V (Energieturm), EditorSuffix (Name - Editor Suffix)
+// Units: h00V (Energy tower), EditorSuffix (Name - Editor Suffix)
 {
 (Orc)
 }
 
 STRING 2913
-// Units: h00V (Energieturm), Name (Name)
-{
-Energieturm
-}
-
-STRING 2914
 // Units: h011 (Energieturm), Name (Name)
 {
 Energieturm
 }
 
+STRING 2914
+// Units: h019 (Energieturm), Name (Name)
+{
+Energieturm
+}
+
 STRING 2915
-// Units: h00W (Tränke und Allerlei), Name (Name)
-{
-Tränke und Allerlei
-}
-
-STRING 2916
-// Units: h00X (Waffen und Artefakte), Name (Name)
-{
-Waffen und Artefakte
-}
-
-STRING 2917
-// Units: h00W (Tränke und Allerlei), EditorSuffix (Name - Editor Suffix)
-{
-(Orc)
-}
-
-STRING 2918
 // Units: h012 (Tränke und Allerlei), Name (Name)
 {
 Tränke und Allerlei
 }
 
+STRING 2916
+// Units: h013 (Waffen und Artefakte), Name (Name)
+{
+Waffen und Artefakte
+}
+
+STRING 2917
+// Units: h00W (Potions and sundries), EditorSuffix (Name - Editor Suffix)
+{
+(Orc)
+}
+
+STRING 2918
+// Units: h01C (Tränke und Allerlei), Name (Name)
+{
+Tränke und Allerlei
+}
+
 STRING 2919
-// Units: h00X (Waffen und Artefakte), EditorSuffix (Name - Editor Suffix)
+// Units: h00X (Weapons and artifacts), EditorSuffix (Name - Editor Suffix)
 {
 (Orc)
 }
 
 STRING 2920
-// Units: h013 (Waffen und Artefakte), Name (Name)
+// Units: h01D (Waffen und Artefakte), Name (Name)
 {
 Waffen und Artefakte
 }
@@ -7713,15 +6975,9 @@ STRING 2921
 }
 
 STRING 2922
-// Units: h00Z (Festung), EditorSuffix (Name - Editor Suffix)
+// Units: h00Z (Fortress), EditorSuffix (Name - Editor Suffix)
 {
 (Orc)
-}
-
-STRING 2923
-// Units: h00Z (Festung), Name (Name)
-{
-Festung
 }
 
 STRING 2924
@@ -7736,34 +6992,16 @@ STRING 2925
 (Elf)
 }
 
-STRING 2926
-// Units: h019 (Energieturm), Name (Name)
-{
-Energieturm
-}
-
 STRING 2927
 // Units: h012 (Tränke und Allerlei), EditorSuffix (Name - Editor Suffix)
 {
 (Elf)
 }
 
-STRING 2928
-// Units: h01C (Tränke und Allerlei), Name (Name)
-{
-Tränke und Allerlei
-}
-
 STRING 2929
 // Units: h013 (Waffen und Artefakte), EditorSuffix (Name - Editor Suffix)
 {
 (Elf)
-}
-
-STRING 2930
-// Units: h01D (Waffen und Artefakte), Name (Name)
-{
-Waffen und Artefakte
 }
 
 STRING 2931
@@ -7791,15 +7029,9 @@ STRING 2934
 }
 
 STRING 2935
-// Units: h017 (Kriegswerkstatt), EditorSuffix (Name - Editor Suffix)
+// Units: h017 (War Mill), EditorSuffix (Name - Editor Suffix)
 {
 (Orc)
-}
-
-STRING 2936
-// Units: h017 (Kriegswerkstatt), Name (Name)
-{
-Kriegswerkstatt
 }
 
 STRING 2937
@@ -7851,7 +7083,7 @@ STRING 2952
 }
 
 STRING 2953
-// Units: H02P (Wächter), Name (Name)
+// Units: H02Q (Wächter), Name (Name)
 {
 Wächter
 }
@@ -8046,18 +7278,6 @@ STRING 2996
 // Abilities: A0LB (Summon Lava Spawn), Ubertip (Tooltip - Normal - Extended)
 {
 |cffff0000Ultimative Fähigkeit|r|n|nBeschwört eine Lavabrut, eine zähe und tödliche Feuerkreatur. Mit ihren Angriffen verzehrt die Lavabrut das Fleisch des Ziels, um ihr eigenes Feuer zu nähren. Sie teilt sich schließlich in zwei gesunde Lavabruten.|n|nHat <n01A,realHP> Trefferpunkte und verursacht <n01A,mindmg3>-<n01A,maxdmg3> Schaden.|nBleibt <A0LB,Dur3> Sek. lang bestehen.|n|n|cffffcc00Kann Boden- und Lufteinheiten angreifen.|r
-}
-
-STRING 2997
-// Abilities: A015 (Avatar), Researchubertip (Tooltip - Learn - Extended)
-{
-|cffff0000Ultimative Fähigkeit|r|n|nAvatar erhöht die Rüstung des Bergkönigs um <A015,DataA1>, seine Trefferpunkte um <A015,DataB1>, seinen Schaden um <A015,DataC1> und gewährt ihm Zauberimmunität.|n|nHält <A015,Dur1> Sek. lang an.
-}
-
-STRING 2998
-// Abilities: A015 (Avatar), Ubertip (Tooltip - Normal - Extended)
-{
-|cffff0000Ultimative Fähigkeit|r|n|nAktivieren, um die Rüstung des Bergkönigs um <A015,DataA1>, seine Trefferpunkte um <A015,DataB1> und seinen Schaden um <A015,DataC1> zu erhöhen und ihm Zauberimmunität zu gewähren.|n|nHält <A015,Dur1> Sek. lang an.
 }
 
 STRING 2999
@@ -9272,14 +8492,8 @@ STRING 3231
 Altar der Dunkelheit
 }
 
-STRING 3232
-// Units: h01G (Altar der Stürme), Name (Name)
-{
-Altar der Stürme
-}
-
 STRING 3233
-// Units: h01G (Altar der Stürme), EditorSuffix (Name - Editor Suffix)
+// Units: h01G (Altar of storms), EditorSuffix (Name - Editor Suffix)
 {
 (Orc)
 }
@@ -9297,93 +8511,87 @@ STRING 3235
 }
 
 STRING 3238
-// Units: h01I (Nahkampfeinheit - Stufe 1), EditorSuffix (Name - Editor Suffix)
+// Units: h01I (Grunt), EditorSuffix (Name - Editor Suffix)
 {
 (Orc)
 }
 
 STRING 3240
-// Units: h01J (Nahkampfeinheit - Stufe 2), EditorSuffix (Name - Editor Suffix)
+// Units: h01J (Beserk), EditorSuffix (Name - Editor Suffix)
 {
 (Orc)
 }
 
 STRING 3242
-// Units: h01K (Nahkampfeinheit - Stufe 3), EditorSuffix (Name - Editor Suffix)
+// Units: h01K (Tauren), EditorSuffix (Name - Editor Suffix)
 {
 (Orc)
 }
 
 STRING 3245
-// Units: h01L (Fernkampfeinheit - Stufe 1), EditorSuffix (Name - Editor Suffix)
+// Units: h01L (Headhunter), EditorSuffix (Name - Editor Suffix)
 {
 (Orc)
 }
 
 STRING 3247
-// Units: h01M (Fernkampfeinheit - Stufe 2), EditorSuffix (Name - Editor Suffix)
+// Units: h01M (Headhunter beserk), EditorSuffix (Name - Editor Suffix)
 {
 (Orc)
 }
 
 STRING 3249
-// Units: h01N (Fernkampfeinheit - Stufe 3), EditorSuffix (Name - Editor Suffix)
+// Units: h01N (Headhunter elite), EditorSuffix (Name - Editor Suffix)
 {
 (Orc)
 }
 
 STRING 3251
-// Units: h01O (Flugeinheit - Stufe 1), EditorSuffix (Name - Editor Suffix)
+// Units: h01O (Batrider), EditorSuffix (Name - Editor Suffix)
 {
 (Orc)
 }
 
 STRING 3254
-// Units: h01P (Flugeinheit - Stufe 2), EditorSuffix (Name - Editor Suffix)
+// Units: h01P (Wind Rider), EditorSuffix (Name - Editor Suffix)
 {
 (Orc)
 }
 
 STRING 3256
-// Units: h01Q (Flugeinheit - Stufe 3), EditorSuffix (Name - Editor Suffix)
+// Units: h01Q (Spirit Wind Rider), EditorSuffix (Name - Editor Suffix)
 {
 (Orc)
 }
 
 STRING 3257
-// Units: h01R (Magieeinheit - Stufe 1), EditorSuffix (Name - Editor Suffix)
+// Units: h01R (Witch Doctor), EditorSuffix (Name - Editor Suffix)
 {
 (Orc)
 }
 
 STRING 3259
-// Units: h01S (Magieeinheit - Stufe 2), EditorSuffix (Name - Editor Suffix)
+// Units: h01S (Shaman), EditorSuffix (Name - Editor Suffix)
 {
 (Orc)
 }
 
 STRING 3261
-// Units: h01T (Magieeinheit - Stufe 3), EditorSuffix (Name - Editor Suffix)
+// Units: h01T (Warlock), EditorSuffix (Name - Editor Suffix)
 {
 (Orc)
 }
 
 STRING 3263
-// Units: h01U (Belagerungseinheit - Stufe 1), EditorSuffix (Name - Editor Suffix)
+// Units: h01U (Kodo Beast), EditorSuffix (Name - Editor Suffix)
 {
 (Orc)
 }
 
 STRING 3265
-// Units: h01V (Belagerungseinheit - Stufe 2), EditorSuffix (Name - Editor Suffix)
+// Units: h01V (Demolisher), EditorSuffix (Name - Editor Suffix)
 {
 (Orc)
-}
-
-STRING 3268
-// Units: H02Q (Wächter), Name (Name)
-{
-Wächter
 }
 
 STRING 3327
@@ -9555,7 +8763,7 @@ STRING 3354
 }
 
 STRING 3355
-// Units: H01W (Wächter), EditorSuffix (Name - Editor Suffix)
+// Units: H01W (Guardian), EditorSuffix (Name - Editor Suffix)
 {
 (Orc)
 }
@@ -9588,12 +8796,6 @@ STRING 3363
 // Abilities: A00K (Mana Shield), Researchubertip (Tooltip - Learn - Extended)
 {
 Erschafft einen Schild, der das Mana der Meerhexe verwendet, um Schaden zu absorbieren.|n|n|cffffcc00Stufe 1|r - Absorbiert 3 Schaden pro Mana.|n|cffffcc00Stufe 2|r - Absorbiert 3,5 Schaden pro Mana.|n|cffffcc00Stufe 3|r - Absorbiert 4 Schaden pro Mana.|nusw.
-}
-
-STRING 3364
-// Units: H01W (Wächter), Propernames (Proper Names)
-{
-Gar'dal Grimmsicht,Negal Feuerauge,Kazil Finsterauge,Magis Kaltauge,Bale Trübblick,Gorr Grimmwolf,Kag'ar Winterfang,Nazgrel,Morg Wolfssänger,Kazragor,Fenris'ar Gul
 }
 
 STRING 3365
@@ -10010,255 +9212,171 @@ Fight to the death!
 }
 
 STRING 3549
-// Units: h01I (Nahkampfeinheit - Stufe 1), Name (Name)
-{
-Nahkampfeinheit - Stufe 1
-}
-
-STRING 3550
-// Units: h01K (Nahkampfeinheit - Stufe 3), Name (Name)
-{
-Nahkampfeinheit - Stufe 3
-}
-
-STRING 3551
-// Units: h01J (Nahkampfeinheit - Stufe 2), Name (Name)
-{
-Nahkampfeinheit - Stufe 2
-}
-
-STRING 3552
-// Units: h01L (Fernkampfeinheit - Stufe 1), Name (Name)
-{
-Fernkampfeinheit - Stufe 1
-}
-
-STRING 3553
-// Units: h01U (Belagerungseinheit - Stufe 1), Name (Name)
-{
-Belagerungseinheit - Stufe 1
-}
-
-STRING 3554
-// Units: h01M (Fernkampfeinheit - Stufe 2), Name (Name)
-{
-Fernkampfeinheit - Stufe 2
-}
-
-STRING 3555
-// Units: h01N (Fernkampfeinheit - Stufe 3), Name (Name)
-{
-Fernkampfeinheit - Stufe 3
-}
-
-STRING 3556
-// Units: h01V (Belagerungseinheit - Stufe 2), Name (Name)
-{
-Belagerungseinheit - Stufe 2
-}
-
-STRING 3557
-// Units: h01R (Magieeinheit - Stufe 1), Name (Name)
-{
-Magieeinheit - Stufe 1
-}
-
-STRING 3558
-// Units: h01S (Magieeinheit - Stufe 2), Name (Name)
-{
-Magieeinheit - Stufe 2
-}
-
-STRING 3559
-// Units: h01T (Magieeinheit - Stufe 3), Name (Name)
-{
-Magieeinheit - Stufe 3
-}
-
-STRING 3560
-// Units: h01O (Flugeinheit - Stufe 1), Name (Name)
-{
-Flugeinheit - Stufe 1
-}
-
-STRING 3561
-// Units: h01P (Flugeinheit - Stufe 2), Name (Name)
-{
-Flugeinheit - Stufe 2
-}
-
-STRING 3562
-// Units: h01Q (Flugeinheit - Stufe 3), Name (Name)
-{
-Flugeinheit - Stufe 3
-}
-
-STRING 3563
 // Units: h01X (Nahkampfeinheit - Stufe 1), Name (Name)
 {
 Nahkampfeinheit - Stufe 1
 }
 
-STRING 3564
-// Units: h01Z (Nahkampfeinheit - Stufe 2), Name (Name)
-{
-Nahkampfeinheit - Stufe 2
-}
-
-STRING 3565
+STRING 3550
 // Units: h021 (Nahkampfeinheit - Stufe 3), Name (Name)
 {
 Nahkampfeinheit - Stufe 3
 }
 
-STRING 3566
+STRING 3551
+// Units: h01Z (Nahkampfeinheit - Stufe 2), Name (Name)
+{
+Nahkampfeinheit - Stufe 2
+}
+
+STRING 3552
 // Units: h023 (Fernkampfeinheit - Stufe 1), Name (Name)
 {
 Fernkampfeinheit - Stufe 1
 }
 
-STRING 3567
-// Units: h025 (Fernkampfeinheit - Stufe 2), Name (Name)
-{
-Fernkampfeinheit - Stufe 2
-}
-
-STRING 3568
-// Units: h027 (Fernkampfeinheit - Stufe 3), Name (Name)
-{
-Fernkampfeinheit - Stufe 3
-}
-
-STRING 3569
-// Units: h02D (Flugeinheit - Stufe 1), Name (Name)
-{
-Flugeinheit - Stufe 1
-}
-
-STRING 3570
-// Units: h02B (Flugeinheit - Stufe 2), Name (Name)
-{
-Flugeinheit - Stufe 2
-}
-
-STRING 3571
-// Units: h029 (Flugeinheit - Stufe 3), Name (Name)
-{
-Flugeinheit - Stufe 3
-}
-
-STRING 3572
-// Units: h02J (Magieeinheit - Stufe 1), Name (Name)
-{
-Magieeinheit - Stufe 1
-}
-
-STRING 3573
-// Units: h02H (Magieeinheit - Stufe 2), Name (Name)
-{
-Magieeinheit - Stufe 2
-}
-
-STRING 3574
-// Units: h02F (Magieeinheit - Stufe 3), Name (Name)
-{
-Magieeinheit - Stufe 3
-}
-
-STRING 3575
+STRING 3553
 // Units: h02N (Belagerungseinheit - Stufe 1), Name (Name)
 {
 Belagerungseinheit - Stufe 1
 }
 
-STRING 3576
+STRING 3554
+// Units: h025 (Fernkampfeinheit - Stufe 2), Name (Name)
+{
+Fernkampfeinheit - Stufe 2
+}
+
+STRING 3555
+// Units: h027 (Fernkampfeinheit - Stufe 3), Name (Name)
+{
+Fernkampfeinheit - Stufe 3
+}
+
+STRING 3556
 // Units: h02L (Belagerungseinheit - Stufe 2), Name (Name)
 {
 Belagerungseinheit - Stufe 2
 }
 
-STRING 3577
+STRING 3557
+// Units: h02J (Magieeinheit - Stufe 1), Name (Name)
+{
+Magieeinheit - Stufe 1
+}
+
+STRING 3558
+// Units: h02H (Magieeinheit - Stufe 2), Name (Name)
+{
+Magieeinheit - Stufe 2
+}
+
+STRING 3559
+// Units: h02F (Magieeinheit - Stufe 3), Name (Name)
+{
+Magieeinheit - Stufe 3
+}
+
+STRING 3560
+// Units: h02D (Flugeinheit - Stufe 1), Name (Name)
+{
+Flugeinheit - Stufe 1
+}
+
+STRING 3561
+// Units: h02B (Flugeinheit - Stufe 2), Name (Name)
+{
+Flugeinheit - Stufe 2
+}
+
+STRING 3562
+// Units: h029 (Flugeinheit - Stufe 3), Name (Name)
+{
+Flugeinheit - Stufe 3
+}
+
+STRING 3563
 // Units: h01Y (Nahkampfeinheit - Stufe 1), Name (Name)
 {
 Nahkampfeinheit - Stufe 1
 }
 
-STRING 3579
+STRING 3564
 // Units: h020 (Nahkampfeinheit - Stufe 2), Name (Name)
 {
 Nahkampfeinheit - Stufe 2
 }
 
-STRING 3581
+STRING 3565
 // Units: h022 (Nahkampfeinheit - Stufe 3), Name (Name)
 {
 Nahkampfeinheit - Stufe 3
 }
 
-STRING 3583
+STRING 3566
 // Units: h024 (Fernkampfeinheit - Stufe 1), Name (Name)
 {
 Fernkampfeinheit - Stufe 1
 }
 
-STRING 3585
+STRING 3567
 // Units: h026 (Fernkampfeinheit - Stufe 2), Name (Name)
 {
 Fernkampfeinheit - Stufe 2
 }
 
-STRING 3587
+STRING 3568
 // Units: h028 (Fernkampfeinheit - Stufe 3), Name (Name)
 {
 Fernkampfeinheit - Stufe 3
 }
 
-STRING 3589
-// Units: h02A (Flugeinheit - Stufe 3), Name (Name)
-{
-Flugeinheit - Stufe 3
-}
-
-STRING 3591
-// Units: h02C (Flugeinheit - Stufe 2), Name (Name)
-{
-Flugeinheit - Stufe 2
-}
-
-STRING 3593
+STRING 3569
 // Units: h02E (Flugeinheit - Stufe 1), Name (Name)
 {
 Flugeinheit - Stufe 1
 }
 
-STRING 3595
-// Units: h02G (Magieeinheit - Stufe 3), Name (Name)
+STRING 3570
+// Units: h02C (Flugeinheit - Stufe 2), Name (Name)
 {
-Magieeinheit - Stufe 3
+Flugeinheit - Stufe 2
 }
 
-STRING 3597
-// Units: h02I (Magieeinheit - Stufe 2), Name (Name)
+STRING 3571
+// Units: h02A (Flugeinheit - Stufe 3), Name (Name)
 {
-Magieeinheit - Stufe 2
+Flugeinheit - Stufe 3
 }
 
-STRING 3599
+STRING 3572
 // Units: h02K (Magieeinheit - Stufe 1), Name (Name)
 {
 Magieeinheit - Stufe 1
 }
 
-STRING 3601
-// Units: h02M (Belagerungseinheit - Stufe 2), Name (Name)
+STRING 3573
+// Units: h02I (Magieeinheit - Stufe 2), Name (Name)
 {
-Belagerungseinheit - Stufe 2
+Magieeinheit - Stufe 2
 }
 
-STRING 3603
+STRING 3574
+// Units: h02G (Magieeinheit - Stufe 3), Name (Name)
+{
+Magieeinheit - Stufe 3
+}
+
+STRING 3575
 // Units: h02O (Belagerungseinheit - Stufe 1), Name (Name)
 {
 Belagerungseinheit - Stufe 1
+}
+
+STRING 3576
+// Units: h02M (Belagerungseinheit - Stufe 2), Name (Name)
+{
+Belagerungseinheit - Stufe 2
 }
 
 STRING 3605
@@ -10298,7 +9416,7 @@ Nahkampfeinheit
 }
 
 STRING 3613
-// Units: h01L (Fernkampfeinheit - Stufe 1), Description (Description)
+// Units: h01L (Headhunter), Description (Description)
 {
 Fernkampfeinheit
 }
@@ -10331,12 +9449,6 @@ STRING 3618
 // Abilities: A0VK (Volcano), Researchtip (Tooltip - Learn)
 {
 Vulkan [|cffffcc00Stufe %d|r] erlernen
-}
-
-STRING 3619
-// Abilities: A015 (Avatar), Researchtip (Tooltip - Learn)
-{
-Avatar [|cffffcc00Stufe %d|r] erlernen
 }
 
 STRING 3620
@@ -10748,7 +9860,7 @@ STRING 3707
 }
 
 STRING 3708
-// Units: h01M (Fernkampfeinheit - Stufe 2), Description (Description)
+// Units: h01M (Headhunter beserk), Description (Description)
 {
 Fernkampfeinheit
 }
@@ -10778,7 +9890,7 @@ STRING 3712
 }
 
 STRING 3713
-// Units: h01N (Fernkampfeinheit - Stufe 3), Description (Description)
+// Units: h01N (Headhunter elite), Description (Description)
 {
 Fernkampfeinheit
 }
@@ -11387,12 +10499,6 @@ STRING 3874
 // Abilities: A02B (Attribute Bonus), EditorSuffix (Editor Suffix)
 {
 (Legion 100)
-}
-
-STRING 3916
-// Abilities: A02B (Attribute Bonus), Researchubertip (Tooltip - Learn - Extended)
-{
-Erhöht die Beweglichkeit, Stärke und Intelligenz um drei zusätzliche 3 Punkte pro Stufe.
 }
 
 STRING 3918
@@ -12219,12 +11325,6 @@ STRING 4167
 Rifleman
 }
 
-STRING 4168
-// Units: h00F (Rifleman improved), Name (Name)
-{
-Rifleman improved
-}
-
 STRING 4169
 // Units: h00G (Rifleman elite), Name (Name)
 {
@@ -12309,26 +11409,14 @@ STRING 4182
 Magic unit
 }
 
-STRING 4183
-// Units: h00B (Soldier elite), Name (Name)
-{
-Soldier elite
-}
-
 STRING 4184
-// Units: h00B (Soldier elite), Description (Description)
+// Units: h00B (Knight), Description (Description)
 {
 Melee unit
 }
 
-STRING 4185
-// Units: h00C (Soldier improved), Name (Name)
-{
-Soldier improved
-}
-
 STRING 4186
-// Units: h00C (Soldier improved), Description (Description)
+// Units: h00C (Captian), Description (Description)
 {
 Melee unit
 }
@@ -12340,7 +11428,7 @@ Siege squad
 }
 
 STRING 4188
-// Units: h00F (Rifleman improved), Description (Description)
+// Units: h00F (Rifleman beserk), Description (Description)
 {
 Ranged unit
 }
@@ -14233,5 +13321,911 @@ STRING 4545
 // Abilities: A005 (Feedback), Ubertip (Tooltip - Normal - Extended)
 {
 Spellbreaker attacks destroy <A005,DataA1> mana per hit. The mana combusts, dealing damage to the attacked unit.
+}
+
+STRING 4546
+// Units: h01L (Headhunter), Name (Name)
+{
+Headhunter
+}
+
+STRING 4548
+// Units: h01N (Headhunter elite), Name (Name)
+{
+Headhunter elite
+}
+
+STRING 4549
+// Units: h01U (Kodo Beast), Name (Name)
+{
+Kodo Beast
+}
+
+STRING 4550
+// Units: h01V (Demolisher), Name (Name)
+{
+Demolisher
+}
+
+STRING 4551
+// Units: H01W (Guardian), Name (Name)
+{
+Guardian
+}
+
+STRING 4552
+// Units: H01W (Guardian), Propernames (Proper Names)
+{
+Gar'dal Grimsight,Negal Fireye,Kazil Darkeye,Magis Coldeye,Bale Bleakstare,Gorr Grimwolf,Kag'ar Winterfang,Nazgrel,Morg Wolfsong,Kazragore,Fenris'ar Gul
+}
+
+STRING 4553
+// Units: h01O (Batrider), Name (Name)
+{
+Batrider
+}
+
+STRING 4554
+// Units: h01P (Wind Rider), Name (Name)
+{
+Wind Rider
+}
+
+STRING 4555
+// Units: h01Q (Spirit Wind Rider), Name (Name)
+{
+Spirit Wind Rider
+}
+
+STRING 4556
+// Units: h01R (Witch Doctor), Name (Name)
+{
+Witch Doctor
+}
+
+STRING 4557
+// Units: h01S (Shaman), Name (Name)
+{
+Shaman
+}
+
+STRING 4559
+// Units: h01I (Grunt), Name (Name)
+{
+Grunt
+}
+
+STRING 4560
+// Units: h01K (Tauren), Name (Name)
+{
+Tauren
+}
+
+STRING 4563
+// Units: h00F (Rifleman beserk), Name (Name)
+{
+Rifleman beserk
+}
+
+STRING 4564
+// Units: h01M (Headhunter beserk), Name (Name)
+{
+Headhunter beserk
+}
+
+STRING 4565
+// Units: h01J (Beserk), Name (Name)
+{
+Beserk
+}
+
+STRING 4566
+// Units: h01T (Warlock), Name (Name)
+{
+Warlock
+}
+
+STRING 4567
+// Units: h00C (Captian), Name (Name)
+{
+Captian
+}
+
+STRING 4568
+// Units: h00V (Energy tower), Name (Name)
+{
+Energy tower
+}
+
+STRING 4569
+// Units: h00W (Potions and sundries), Name (Name)
+{
+Potions and sundries
+}
+
+STRING 4570
+// Units: h00X (Weapons and artifacts), Name (Name)
+{
+Weapons and artifacts
+}
+
+STRING 4571
+// Units: h00Z (Fortress), Name (Name)
+{
+Fortress
+}
+
+STRING 4572
+// Units: h017 (War Mill), Name (Name)
+{
+War Mill
+}
+
+STRING 4573
+// Units: h01G (Altar of storms), Name (Name)
+{
+Altar of storms
+}
+
+STRING 4574
+// Abilities: A002 (Attribute Bonus), Tip (Tooltip - Normal)
+{
+Attribute Bonus - [|cffffcc00Level 5|r]
+}
+
+STRING 4575
+// Abilities: A002 (Attribute Bonus), Tip (Tooltip - Normal)
+{
+Attribute Bonus - [|cffffcc00Level 6|r]
+}
+
+STRING 4576
+// Abilities: A002 (Attribute Bonus), Tip (Tooltip - Normal)
+{
+Attribute Bonus - [|cffffcc00Level 7|r]
+}
+
+STRING 4577
+// Abilities: A002 (Attribute Bonus), Tip (Tooltip - Normal)
+{
+Attribute Bonus - [|cffffcc00Level 8|r]
+}
+
+STRING 4578
+// Abilities: A002 (Attribute Bonus), Tip (Tooltip - Normal)
+{
+Attribute Bonus - [|cffffcc00Level 9|r]
+}
+
+STRING 4579
+// Abilities: A002 (Attribute Bonus), Tip (Tooltip - Normal)
+{
+Attribute Bonus - [|cffffcc00Level 10|r]
+}
+
+STRING 4580
+// Abilities: A002 (Attribute Bonus), Tip (Tooltip - Normal)
+{
+Attribute Bonus - [|cffffcc00Level 11|r]
+}
+
+STRING 4581
+// Abilities: A002 (Attribute Bonus), Tip (Tooltip - Normal)
+{
+Attribute Bonus - [|cffffcc00Level 12|r]
+}
+
+STRING 4582
+// Abilities: A002 (Attribute Bonus), Tip (Tooltip - Normal)
+{
+Attribute Bonus - [|cffffcc00Level 13|r]
+}
+
+STRING 4583
+// Abilities: A002 (Attribute Bonus), Tip (Tooltip - Normal)
+{
+Attribute Bonus - [|cffffcc00Level 14|r]
+}
+
+STRING 4584
+// Abilities: A002 (Attribute Bonus), Tip (Tooltip - Normal)
+{
+Attribute Bonus - [|cffffcc00Level 15|r]
+}
+
+STRING 4585
+// Abilities: A002 (Attribute Bonus), Tip (Tooltip - Normal)
+{
+Attribute Bonus - [|cffffcc00Level 16|r]
+}
+
+STRING 4586
+// Abilities: A002 (Attribute Bonus), Tip (Tooltip - Normal)
+{
+Attribute Bonus - [|cffffcc00Level 17|r]
+}
+
+STRING 4587
+// Abilities: A002 (Attribute Bonus), Tip (Tooltip - Normal)
+{
+Attribute Bonus - [|cffffcc00Level 18|r]
+}
+
+STRING 4588
+// Abilities: A002 (Attribute Bonus), Tip (Tooltip - Normal)
+{
+Attribute Bonus - [|cffffcc00Level 19|r]
+}
+
+STRING 4589
+// Abilities: A002 (Attribute Bonus), Tip (Tooltip - Normal)
+{
+Attribute Bonus - [|cffffcc00Level 20|r]
+}
+
+STRING 4590
+// Abilities: A002 (Attribute Bonus), Tip (Tooltip - Normal)
+{
+Attribute Bonus - [|cffffcc00Level 21|r]
+}
+
+STRING 4591
+// Abilities: A002 (Attribute Bonus), Tip (Tooltip - Normal)
+{
+Attribute Bonus - [|cffffcc00Level 22|r]
+}
+
+STRING 4592
+// Abilities: A002 (Attribute Bonus), Tip (Tooltip - Normal)
+{
+Attribute Bonus - [|cffffcc00Level 23|r]
+}
+
+STRING 4593
+// Abilities: A002 (Attribute Bonus), Tip (Tooltip - Normal)
+{
+Attribute Bonus - [|cffffcc00Level 24|r]
+}
+
+STRING 4594
+// Abilities: A002 (Attribute Bonus), Tip (Tooltip - Normal)
+{
+Attribute Bonus - [|cffffcc00Level 25|r]
+}
+
+STRING 4595
+// Abilities: A002 (Attribute Bonus), Tip (Tooltip - Normal)
+{
+Attribute Bonus - [|cffffcc00Level 26|r]
+}
+
+STRING 4596
+// Abilities: A002 (Attribute Bonus), Tip (Tooltip - Normal)
+{
+Attribute Bonus - [|cffffcc00Level 27|r]
+}
+
+STRING 4597
+// Abilities: A002 (Attribute Bonus), Tip (Tooltip - Normal)
+{
+Attribute Bonus - [|cffffcc00Level 28|r]
+}
+
+STRING 4598
+// Abilities: A002 (Attribute Bonus), Tip (Tooltip - Normal)
+{
+Attribute Bonus - [|cffffcc00Level 29|r]
+}
+
+STRING 4599
+// Abilities: A002 (Attribute Bonus), Tip (Tooltip - Normal)
+{
+Attribute Bonus - [|cffffcc00Level 30|r]
+}
+
+STRING 4600
+// Abilities: A002 (Attribute Bonus), Ubertip (Tooltip - Normal - Extended)
+{
+Increases agility, strength and intelligence by <A002,DataA5> points each.
+}
+
+STRING 4601
+// Abilities: A002 (Attribute Bonus), Ubertip (Tooltip - Normal - Extended)
+{
+Increases agility, strength and intelligence by <A002,DataA6> points each.
+}
+
+STRING 4602
+// Abilities: A002 (Attribute Bonus), Ubertip (Tooltip - Normal - Extended)
+{
+Increases agility, strength and intelligence by <A002,DataA7> points each.
+}
+
+STRING 4603
+// Abilities: A002 (Attribute Bonus), Ubertip (Tooltip - Normal - Extended)
+{
+Increases agility, strength and intelligence by <A002,DataA8> points each.
+}
+
+STRING 4604
+// Abilities: A002 (Attribute Bonus), Ubertip (Tooltip - Normal - Extended)
+{
+Increases agility, strength and intelligence by <A002,DataA9> points each.
+}
+
+STRING 4605
+// Abilities: A002 (Attribute Bonus), Ubertip (Tooltip - Normal - Extended)
+{
+Increases agility, strength and intelligence by <A002,DataA10> points each.
+}
+
+STRING 4606
+// Abilities: A002 (Attribute Bonus), Ubertip (Tooltip - Normal - Extended)
+{
+Increases agility, strength and intelligence by <A002,DataA11> points each.
+}
+
+STRING 4607
+// Abilities: A002 (Attribute Bonus), Ubertip (Tooltip - Normal - Extended)
+{
+Increases agility, strength and intelligence by <A002,DataA12> points each.
+}
+
+STRING 4608
+// Abilities: A002 (Attribute Bonus), Ubertip (Tooltip - Normal - Extended)
+{
+Increases agility, strength and intelligence by <A002,DataA13> points each.
+}
+
+STRING 4609
+// Abilities: A002 (Attribute Bonus), Ubertip (Tooltip - Normal - Extended)
+{
+Increases agility, strength and intelligence by <A002,DataA14> points each.
+}
+
+STRING 4610
+// Abilities: A002 (Attribute Bonus), Ubertip (Tooltip - Normal - Extended)
+{
+Increases agility, strength and intelligence by <A002,DataA15> points each.
+}
+
+STRING 4611
+// Abilities: A002 (Attribute Bonus), Ubertip (Tooltip - Normal - Extended)
+{
+Increases agility, strength and intelligence by <A002,DataA16> points each.
+}
+
+STRING 4612
+// Abilities: A002 (Attribute Bonus), Ubertip (Tooltip - Normal - Extended)
+{
+Increases agility, strength and intelligence by <A002,DataA17> points each.
+}
+
+STRING 4613
+// Abilities: A002 (Attribute Bonus), Ubertip (Tooltip - Normal - Extended)
+{
+Increases agility, strength and intelligence by <A002,DataA18> points each.
+}
+
+STRING 4614
+// Abilities: A002 (Attribute Bonus), Ubertip (Tooltip - Normal - Extended)
+{
+Increases agility, strength and intelligence by <A002,DataA19> points each.
+}
+
+STRING 4615
+// Abilities: A002 (Attribute Bonus), Ubertip (Tooltip - Normal - Extended)
+{
+Increases agility, strength and intelligence by <A002,DataA20> points each.
+}
+
+STRING 4616
+// Abilities: A002 (Attribute Bonus), Ubertip (Tooltip - Normal - Extended)
+{
+Increases agility, strength and intelligence by <A002,DataA21> points each.
+}
+
+STRING 4617
+// Abilities: A002 (Attribute Bonus), Ubertip (Tooltip - Normal - Extended)
+{
+Increases agility, strength and intelligence by <A002,DataA22> points each.
+}
+
+STRING 4618
+// Abilities: A002 (Attribute Bonus), Ubertip (Tooltip - Normal - Extended)
+{
+Increases agility, strength and intelligence by <A002,DataA23> points each.
+}
+
+STRING 4619
+// Abilities: A002 (Attribute Bonus), Ubertip (Tooltip - Normal - Extended)
+{
+Increases agility, strength and intelligence by <A002,DataA24> points each.
+}
+
+STRING 4620
+// Abilities: A002 (Attribute Bonus), Ubertip (Tooltip - Normal - Extended)
+{
+Increases agility, strength and intelligence by <A002,DataA25> points each.
+}
+
+STRING 4621
+// Abilities: A002 (Attribute Bonus), Ubertip (Tooltip - Normal - Extended)
+{
+Increases agility, strength and intelligence by <A002,DataA26> points each.
+}
+
+STRING 4622
+// Abilities: A002 (Attribute Bonus), Ubertip (Tooltip - Normal - Extended)
+{
+Increases agility, strength and intelligence by <A002,DataA27> points each.
+}
+
+STRING 4623
+// Abilities: A002 (Attribute Bonus), Ubertip (Tooltip - Normal - Extended)
+{
+Increases agility, strength and intelligence by <A002,DataA28> points each.
+}
+
+STRING 4624
+// Abilities: A002 (Attribute Bonus), Ubertip (Tooltip - Normal - Extended)
+{
+Increases agility, strength and intelligence by <A002,DataA29> points each.
+}
+
+STRING 4625
+// Abilities: A002 (Attribute Bonus), Ubertip (Tooltip - Normal - Extended)
+{
+Increases agility, strength and intelligence by <A002,DataA30> points each.
+}
+
+STRING 4626
+// Abilities: A002 (Attribute Bonus), Ubertip (Tooltip - Normal - Extended)
+{
+Increases agility, strength and intelligence by <A002,DataA2> points each.
+}
+
+STRING 4627
+// Abilities: A002 (Attribute Bonus), Ubertip (Tooltip - Normal - Extended)
+{
+Increases agility, strength and intelligence by <A002,DataA4> points each.
+}
+
+STRING 4628
+// Abilities: A002 (Attribute Bonus), Ubertip (Tooltip - Normal - Extended)
+{
+Increases agility, strength and intelligence by <A002,DataA3> points each.
+}
+
+STRING 4629
+// Abilities: A002 (Attribute Bonus), Tip (Tooltip - Normal)
+{
+Attribute Bonus - [|cffffcc00Level 31|r]
+}
+
+STRING 4630
+// Abilities: A002 (Attribute Bonus), Tip (Tooltip - Normal)
+{
+Attribute Bonus - [|cffffcc00Level 32|r]
+}
+
+STRING 4631
+// Abilities: A002 (Attribute Bonus), Tip (Tooltip - Normal)
+{
+Attribute Bonus - [|cffffcc00Level 33|r]
+}
+
+STRING 4632
+// Abilities: A002 (Attribute Bonus), Tip (Tooltip - Normal)
+{
+Attribute Bonus - [|cffffcc00Level 34|r]
+}
+
+STRING 4633
+// Abilities: A002 (Attribute Bonus), Tip (Tooltip - Normal)
+{
+Attribute Bonus - [|cffffcc00Level 35|r]
+}
+
+STRING 4634
+// Abilities: A002 (Attribute Bonus), Tip (Tooltip - Normal)
+{
+Attribute Bonus - [|cffffcc00Level 36|r]
+}
+
+STRING 4635
+// Abilities: A002 (Attribute Bonus), Tip (Tooltip - Normal)
+{
+Attribute Bonus - [|cffffcc00Level 37|r]
+}
+
+STRING 4636
+// Abilities: A002 (Attribute Bonus), Tip (Tooltip - Normal)
+{
+Attribute Bonus - [|cffffcc00Level 38|r]
+}
+
+STRING 4637
+// Abilities: A002 (Attribute Bonus), Tip (Tooltip - Normal)
+{
+Attribute Bonus - [|cffffcc00Level 39|r]
+}
+
+STRING 4638
+// Abilities: A002 (Attribute Bonus), Tip (Tooltip - Normal)
+{
+Attribute Bonus - [|cffffcc00Level 40|r]
+}
+
+STRING 4639
+// Abilities: A002 (Attribute Bonus), Tip (Tooltip - Normal)
+{
+Attribute Bonus - [|cffffcc00Level 41|r]
+}
+
+STRING 4640
+// Abilities: A002 (Attribute Bonus), Tip (Tooltip - Normal)
+{
+Attribute Bonus - [|cffffcc00Level 42|r]
+}
+
+STRING 4641
+// Abilities: A002 (Attribute Bonus), Tip (Tooltip - Normal)
+{
+Attribute Bonus - [|cffffcc00Level 43|r]
+}
+
+STRING 4642
+// Abilities: A002 (Attribute Bonus), Tip (Tooltip - Normal)
+{
+Attribute Bonus - [|cffffcc00Level 44|r]
+}
+
+STRING 4643
+// Abilities: A002 (Attribute Bonus), Tip (Tooltip - Normal)
+{
+Attribute Bonus - [|cffffcc00Level 45|r]
+}
+
+STRING 4644
+// Abilities: A002 (Attribute Bonus), Tip (Tooltip - Normal)
+{
+Attribute Bonus - [|cffffcc00Level 46|r]
+}
+
+STRING 4645
+// Abilities: A002 (Attribute Bonus), Tip (Tooltip - Normal)
+{
+Attribute Bonus - [|cffffcc00Level 47|r]
+}
+
+STRING 4646
+// Abilities: A002 (Attribute Bonus), Tip (Tooltip - Normal)
+{
+Attribute Bonus - [|cffffcc00Level 48|r]
+}
+
+STRING 4647
+// Abilities: A002 (Attribute Bonus), Tip (Tooltip - Normal)
+{
+Attribute Bonus - [|cffffcc00Level 49|r]
+}
+
+STRING 4648
+// Abilities: A002 (Attribute Bonus), Tip (Tooltip - Normal)
+{
+Attribute Bonus - [|cffffcc00Level 50|r]
+}
+
+STRING 4649
+// Abilities: A002 (Attribute Bonus), Ubertip (Tooltip - Normal - Extended)
+{
+Increases agility, strength and intelligence by <A002,DataA31> points each.
+}
+
+STRING 4650
+// Abilities: A002 (Attribute Bonus), Ubertip (Tooltip - Normal - Extended)
+{
+Increases agility, strength and intelligence by <A002,DataA32> points each.
+}
+
+STRING 4651
+// Abilities: A002 (Attribute Bonus), Ubertip (Tooltip - Normal - Extended)
+{
+Increases agility, strength and intelligence by <A002,DataA33> points each.
+}
+
+STRING 4652
+// Abilities: A002 (Attribute Bonus), Ubertip (Tooltip - Normal - Extended)
+{
+Increases agility, strength and intelligence by <A002,DataA34> points each.
+}
+
+STRING 4653
+// Abilities: A002 (Attribute Bonus), Ubertip (Tooltip - Normal - Extended)
+{
+Increases agility, strength and intelligence by <A002,DataA35> points each.
+}
+
+STRING 4654
+// Abilities: A002 (Attribute Bonus), Ubertip (Tooltip - Normal - Extended)
+{
+Increases agility, strength and intelligence by <A002,DataA36> points each.
+}
+
+STRING 4655
+// Abilities: A002 (Attribute Bonus), Ubertip (Tooltip - Normal - Extended)
+{
+Increases agility, strength and intelligence by <A002,DataA37> points each.
+}
+
+STRING 4656
+// Abilities: A002 (Attribute Bonus), Ubertip (Tooltip - Normal - Extended)
+{
+Increases agility, strength and intelligence by <A002,DataA38> points each.
+}
+
+STRING 4657
+// Abilities: A002 (Attribute Bonus), Ubertip (Tooltip - Normal - Extended)
+{
+Increases agility, strength and intelligence by <A002,DataA39> points each.
+}
+
+STRING 4658
+// Abilities: A002 (Attribute Bonus), Ubertip (Tooltip - Normal - Extended)
+{
+Increases agility, strength and intelligence by <A002,DataA40> points each.
+}
+
+STRING 4659
+// Abilities: A002 (Attribute Bonus), Ubertip (Tooltip - Normal - Extended)
+{
+Increases agility, strength and intelligence by <A002,DataA41> points each.
+}
+
+STRING 4660
+// Abilities: A002 (Attribute Bonus), Ubertip (Tooltip - Normal - Extended)
+{
+Increases agility, strength and intelligence by <A002,DataA42> points each.
+}
+
+STRING 4661
+// Abilities: A002 (Attribute Bonus), Ubertip (Tooltip - Normal - Extended)
+{
+Increases agility, strength and intelligence by <A002,DataA43> points each.
+}
+
+STRING 4662
+// Abilities: A002 (Attribute Bonus), Ubertip (Tooltip - Normal - Extended)
+{
+Increases agility, strength and intelligence by <A002,DataA44> points each.
+}
+
+STRING 4663
+// Abilities: A002 (Attribute Bonus), Ubertip (Tooltip - Normal - Extended)
+{
+Increases agility, strength and intelligence by <A002,DataA45> points each.
+}
+
+STRING 4664
+// Abilities: A002 (Attribute Bonus), Ubertip (Tooltip - Normal - Extended)
+{
+Increases agility, strength and intelligence by <A002,DataA46> points each.
+}
+
+STRING 4665
+// Abilities: A002 (Attribute Bonus), Ubertip (Tooltip - Normal - Extended)
+{
+Increases agility, strength and intelligence by <A002,DataA47> points each.
+}
+
+STRING 4666
+// Abilities: A002 (Attribute Bonus), Ubertip (Tooltip - Normal - Extended)
+{
+Increases agility, strength and intelligence by <A002,DataA48> points each.
+}
+
+STRING 4667
+// Abilities: A002 (Attribute Bonus), Ubertip (Tooltip - Normal - Extended)
+{
+Increases agility, strength and intelligence by <A002,DataA49> points each.
+}
+
+STRING 4668
+// Abilities: A002 (Attribute Bonus), Ubertip (Tooltip - Normal - Extended)
+{
+Increases agility, strength and intelligence by <A002,DataA50> points each.
+}
+
+STRING 4669
+// Abilities: A002 (Attribute Bonus), Researchubertip (Tooltip - Learn - Extended)
+{
+Increases agility, strength and intelligence by three additional points per level.
+}
+
+STRING 4670
+// Abilities: A002 (Attribute Bonus), Ubertip (Tooltip - Normal - Extended)
+{
+Increases agility, strength and intelligence by <A002,DataA1> points each.
+}
+
+STRING 4671
+// Abilities: A00F (Acid Bomb), Ubertip (Tooltip - Normal - Extended)
+{
+Hurls a bottle of acid at a target, shattering on impact and splattering nearby enemy units with powerful acid.|n|nThe acid reduces armor by <A00F,DataC1>, dealing <A00F,DataD1> damage per second to the primary target and slightly less damage to nearby targets.|nLasts <A00F,Dur1> sec.
+}
+
+STRING 4672
+// Abilities: A00F (Acid Bomb), Ubertip (Tooltip - Normal - Extended)
+{
+Hurls a bottle of acid at a target, shattering on impact and splattering nearby enemy units with powerful acid.|n|nThe acid reduces armor by <A00F,DataC2>, dealing <A00F,DataD2> damage per second to the primary target and slightly less damage to nearby targets.|nLasts <A00F,Dur2> sec.
+}
+
+STRING 4673
+// Abilities: A00F (Acid Bomb), Ubertip (Tooltip - Normal - Extended)
+{
+Hurls a bottle of acid at a target, shattering on impact and splattering nearby enemy units with powerful acid.|n|nThe acid reduces armor by <A00F,DataC3>, dealing <A00F,DataD3> damage per second to the primary target and slightly less damage to nearby targets.|nLasts <A00F,Dur3> sec.
+}
+
+STRING 4674
+// Abilities: A00F (Acid Bomb), Ubertip (Tooltip - Normal - Extended)
+{
+Hurls a bottle of acid at a target, shattering on impact and splattering nearby enemy units with powerful acid.|n|nThe acid reduces armor by <A00F,DataC4>, dealing <A00F,DataD4> damage per second to the primary target and slightly less damage to nearby targets.|nLasts <A00F,Dur4> sec.
+}
+
+STRING 4675
+// Abilities: A00F (Acid Bomb), Ubertip (Tooltip - Normal - Extended)
+{
+Hurls a bottle of acid at a target, shattering on impact and splattering nearby enemy units with powerful acid.|n|nThe acid reduces armor by <A00F,DataC5>, dealing <A00F,DataD5> damage per second to the primary target and slightly less damage to nearby targets.|nLasts <A00F,Dur5> sec.
+}
+
+STRING 4676
+// Abilities: A00F (Acid Bomb), Ubertip (Tooltip - Normal - Extended)
+{
+Hurls a bottle of acid at a target, shattering on impact and splattering nearby enemy units with powerful acid.|n|nThe acid reduces armor by <A00F,DataC6>, dealing <A00F,DataD6> damage per second to the primary target and slightly less damage to nearby targets.|nLasts <A00F,Dur6> sec.
+}
+
+STRING 4677
+// Abilities: A00F (Acid Bomb), Ubertip (Tooltip - Normal - Extended)
+{
+Hurls a bottle of acid at a target, shattering on impact and splattering nearby enemy units with powerful acid.|n|nThe acid reduces armor by <A00F,DataC7>, dealing <A00F,DataD7> damage per second to the primary target and slightly less damage to nearby targets.|nLasts <A00F,Dur7> sec.
+}
+
+STRING 4678
+// Abilities: A00F (Acid Bomb), Ubertip (Tooltip - Normal - Extended)
+{
+Hurls a bottle of acid at a target, shattering on impact and splattering nearby enemy units with powerful acid.|n|nThe acid reduces armor by <A00F,DataC8>, dealing <A00F,DataD8> damage per second to the primary target and slightly less damage to nearby targets.|nLasts <A00F,Dur8> sec.
+}
+
+STRING 4679
+// Abilities: A00F (Acid Bomb), Ubertip (Tooltip - Normal - Extended)
+{
+Hurls a bottle of acid at a target, shattering on impact and splattering nearby enemy units with powerful acid.|n|nThe acid reduces armor by <A00F,DataC9>, dealing <A00F,DataD9> damage per second to the primary target and slightly less damage to nearby targets.|nLasts <A00F,Dur9> sec.
+}
+
+STRING 4680
+// Abilities: A00F (Acid Bomb), Ubertip (Tooltip - Normal - Extended)
+{
+Hurls a bottle of acid at a target, shattering on impact and splattering nearby enemy units with powerful acid.|n|nThe acid reduces armor by <A00F,DataC10>, dealing <A00F,DataD10> damage per second to the primary target and slightly less damage to nearby targets.|nLasts <A00F,Dur10> sec.
+}
+
+STRING 4681
+// Abilities: A00F (Acid Bomb), Tip (Tooltip - Normal)
+{
+Acid Bomb - [|cffffcc00Level 4|r]
+}
+
+STRING 4682
+// Abilities: A00F (Acid Bomb), Tip (Tooltip - Normal)
+{
+Acid Bomb - [|cffffcc00Level 5|r]
+}
+
+STRING 4683
+// Abilities: A00F (Acid Bomb), Tip (Tooltip - Normal)
+{
+Acid Bomb - [|cffffcc00Level 6|r]
+}
+
+STRING 4684
+// Abilities: A00F (Acid Bomb), Tip (Tooltip - Normal)
+{
+Acid Bomb - [|cffffcc00Level 7|r]
+}
+
+STRING 4685
+// Abilities: A00F (Acid Bomb), Tip (Tooltip - Normal)
+{
+Acid Bomb - [|cffffcc00Level 8|r]
+}
+
+STRING 4686
+// Abilities: A00F (Acid Bomb), Tip (Tooltip - Normal)
+{
+Acid Bomb - [|cffffcc00Level 9|r]
+}
+
+STRING 4687
+// Abilities: A00F (Acid Bomb), Tip (Tooltip - Normal)
+{
+Acid Bomb - [|cffffcc00Level 10|r]
+}
+
+STRING 4688
+// Abilities: A00F (Acid Bomb), Researchubertip (Tooltip - Learn - Extended)
+{
+Hurls a bottle of acid at a target, shattering on impact and splattering nearby enemy units with powerful acid.|n|nThe acid reduces armor, dealing high periodic damage to the primary target and slightly less periodic damage to nearby targets.|nLasts <A00F,Dur1> sec. |n|n|cffffcc00Level 1|r - Maximum <A00F,DataD1> damage per second, reduces armor by <A00F,DataC1>. |n|cffffcc00Level 2|r - Maximum <A00F,DataD2> damage per second, reduces armor by <A00F,DataC2>.|n|cffffcc00Level 3|r - Maximum <A00F,DataD3> damage per second, reduces armor by <A00F,DataC3>.
+}
+
+STRING 4689
+// Abilities: A015 (Avatar), Researchubertip (Tooltip - Learn - Extended)
+{
+|cffff0000Ultimative Ability|r|n|nAvatar increases the Mountain King's armor by <A015,DataA1>, his hit points by <A015,DataB1>, his damage by <A015,DataC1>, and grants him spell immunity.|n|nLasts <A015,Dur1> sec.
+}
+
+STRING 4690
+// Abilities: A015 (Avatar), Tip (Tooltip - Normal)
+{
+Activate avatar [|cffffcc00level 2|r
+}
+
+STRING 4691
+// Abilities: A015 (Avatar), Tip (Tooltip - Normal)
+{
+Activate avatar [|cffffcc00level 3|r
+}
+
+STRING 4692
+// Abilities: A015 (Avatar), Untip (Tooltip - Turn Off)
+{
+Deactivate avatar [|cffffcc00level 2|r
+}
+
+STRING 4693
+// Abilities: A015 (Avatar), Untip (Tooltip - Turn Off)
+{
+Deactivate avatar [|cffffcc00level 3|r
+}
+
+STRING 4694
+// Abilities: A015 (Avatar), Ubertip (Tooltip - Normal - Extended)
+{
+|cffff0000Ultimative Ability|r|n|nActivate to increase the Mountain King's armor by <A015,DataA1>, his hit points by <A015,DataB1>, his damage by <A015,DataC1>, and grant him spell immunity.|n|nLasts <A015,Dur1> sec.
+}
+
+STRING 4695
+// Abilities: A015 (Avatar), Ubertip (Tooltip - Normal - Extended)
+{
+|cffff0000Ultimative Ability|r|n|nActivate to increase the Mountain King's armor by <A015,DataA2>, his hit points by <A015,DataB2>, his damage by <A015,DataC2>, and grant him spell immunity.|n|nLasts <A015,Dur2> sec.
+}
+
+STRING 4696
+// Abilities: A015 (Avatar), Ubertip (Tooltip - Normal - Extended)
+{
+|cffff0000Ultimative Ability|r|n|nActivate to increase the Mountain King's armor by <A015,DataA3>, his hit points by <A015,DataB3>, his damage by <A015,DataC3>, and grant him spell immunity.|n|nLasts <A015,Dur3> sec.
+}
+
+STRING 4697
+// Abilities: A015 (Avatar), Tip (Tooltip - Normal)
+{
+Activate avatar [|cffffcc00level 1|r
+}
+
+STRING 4698
+// Abilities: A015 (Avatar), Untip (Tooltip - Turn Off)
+{
+Deactivate avatar [|cffffcc00level 1|r
+}
+
+STRING 4699
+// Abilities: A015 (Avatar), Researchtip (Tooltip - Learn)
+{
+Learn avatar [|cffffcc00level %d|r]
+}
+
+STRING 4700
+// Abilities: A02B (Attribute Bonus), Researchubertip (Tooltip - Learn - Extended)
+{
+Increases agility, strength and intelligence by one additional point per level.
 }
 
