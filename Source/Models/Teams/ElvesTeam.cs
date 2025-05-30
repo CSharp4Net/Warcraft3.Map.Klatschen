@@ -19,19 +19,19 @@ namespace Source.Models.Teams
           spawnCommand = new SpawnUnitCommand()
           {
             UnitSpawnType = Enums.SpawnInterval.Short,
-            UnitIdOfBuilding = Constants.UNIT_BARRACKS_ELF,
+            UnitIdOfBuilding = Constants.UNIT_ANCIENT_OF_WAR_ELF,
           };
 
           switch (techLevel)
           {
             case 1:
-              spawnCommand.UnitId = Constants.UNIT_NAHKAMPFEINHEIT_STUFE_2_ELF;
-              spawnCommand.UnitIdToUpgrade = Constants.UNIT_NAHKAMPFEINHEIT_STUFE_1_ELF;
+              spawnCommand.UnitId = Constants.UNIT_DRUID_OF_THE_CLAW_ELF;
+              spawnCommand.UnitIdToUpgrade = Constants.UNIT_SENTRY_ELF;
               return Enums.ResearchType.UpgradeUnit;
 
             default:
-              spawnCommand.UnitId = Constants.UNIT_NAHKAMPFEINHEIT_STUFE_3_ELF;
-              spawnCommand.UnitIdToUpgrade = Constants.UNIT_NAHKAMPFEINHEIT_STUFE_2_ELF;
+              spawnCommand.UnitId = Constants.UNIT_MOUNTAIN_GIANT_ELF;
+              spawnCommand.UnitIdToUpgrade = Constants.UNIT_DRUID_OF_THE_CLAW_ELF;
               return Enums.ResearchType.UpgradeUnit;
           }
 
@@ -39,19 +39,19 @@ namespace Source.Models.Teams
           spawnCommand = new SpawnUnitCommand()
           {
             UnitSpawnType = Enums.SpawnInterval.Middle,
-            UnitIdOfBuilding = Constants.UNIT_BARRACKS_ELF,
+            UnitIdOfBuilding = Constants.UNIT_ANCIENT_OF_WAR_ELF,
           };
 
           switch (techLevel)
           {
             case 1:
-              spawnCommand.UnitId = Constants.UNIT_FERNKAMPFEINHEIT_STUFE_2_ELF;
-              spawnCommand.UnitIdToUpgrade = Constants.UNIT_FERNKAMPFEINHEIT_STUFE_1_ELF;
+              spawnCommand.UnitId = Constants.UNIT_ARCHER_BESERK_ELF;
+              spawnCommand.UnitIdToUpgrade = Constants.UNIT_ARCHER_ELF;
               return Enums.ResearchType.UpgradeUnit;
 
             default:
-              spawnCommand.UnitId = Constants.UNIT_FERNKAMPFEINHEIT_STUFE_3_ELF;
-              spawnCommand.UnitIdToUpgrade = Constants.UNIT_FERNKAMPFEINHEIT_STUFE_2_ELF;
+              spawnCommand.UnitId = Constants.UNIT_ARCHER_ELITE_ELF;
+              spawnCommand.UnitIdToUpgrade = Constants.UNIT_ARCHER_BESERK_ELF;
               return Enums.ResearchType.UpgradeUnit;
           }
 
@@ -59,19 +59,19 @@ namespace Source.Models.Teams
           spawnCommand = new SpawnUnitCommand()
           {
             UnitSpawnType = Enums.SpawnInterval.Middle,
-            UnitIdOfBuilding = Constants.UNIT_TELDRASSIL_ELF,
+            UnitIdOfBuilding = Constants.UNIT_TREE_OF_ETERNITY_ELF,
           };
 
           switch (techLevel)
           {
             case 1:
-              spawnCommand.UnitId = Constants.UNIT_FLUGEINHEIT_STUFE_2_ELF;
-              spawnCommand.UnitIdToUpgrade = Constants.UNIT_FLUGEINHEIT_STUFE_1_ELF;
+              spawnCommand.UnitId = Constants.UNIT_HIPPOGRYPH_RIDER_ELF;
+              spawnCommand.UnitIdToUpgrade = Constants.UNIT_FAERIE_DRAGON_ELF;
               return Enums.ResearchType.UpgradeUnit;
 
             default:
-              spawnCommand.UnitId = Constants.UNIT_FLUGEINHEIT_STUFE_3_ELF;
-              spawnCommand.UnitIdToUpgrade = Constants.UNIT_FLUGEINHEIT_STUFE_2_ELF;
+              spawnCommand.UnitId = Constants.UNIT_CHIMAERA_ELF;
+              spawnCommand.UnitIdToUpgrade = Constants.UNIT_HIPPOGRYPH_RIDER_ELF;
               return Enums.ResearchType.UpgradeUnit;
           }
 
@@ -79,19 +79,19 @@ namespace Source.Models.Teams
           spawnCommand = new SpawnUnitCommand()
           {
             UnitSpawnType = Enums.SpawnInterval.Middle,
-            UnitIdOfBuilding = Constants.UNIT_TELDRASSIL_ELF
+            UnitIdOfBuilding = Constants.UNIT_TREE_OF_ETERNITY_ELF
           };
 
           switch (techLevel)
           {
             case 1:
-              spawnCommand.UnitId = Constants.UNIT_MAGIEEINHEIT_STUFE_2_ELF;
-              spawnCommand.UnitIdToUpgrade = Constants.UNIT_MAGIEEINHEIT_STUFE_1_ELF;
+              spawnCommand.UnitId = Constants.UNIT_WARDEN_ELF;
+              spawnCommand.UnitIdToUpgrade = Constants.UNIT_DRUID_OF_THE_TALON_ELF;
               return Enums.ResearchType.UpgradeUnit;
 
             default:
-              spawnCommand.UnitId = Constants.UNIT_MAGIEEINHEIT_STUFE_3_ELF;
-              spawnCommand.UnitIdToUpgrade = Constants.UNIT_MAGIEEINHEIT_STUFE_2_ELF;
+              spawnCommand.UnitId = Constants.UNIT_SPIRIT_OF_VENGEANCE_ELF;
+              spawnCommand.UnitIdToUpgrade = Constants.UNIT_WARDEN_ELF;
               return Enums.ResearchType.UpgradeUnit;
           }
 
@@ -99,18 +99,18 @@ namespace Source.Models.Teams
           spawnCommand = new SpawnUnitCommand()
           {
             UnitSpawnType = Enums.SpawnInterval.Long,
-            UnitIdOfBuilding = Constants.UNIT_TELDRASSIL_ELF
+            UnitIdOfBuilding = Constants.UNIT_TREE_OF_ETERNITY_ELF
           };
 
           switch (techLevel)
           {
             case 1:
-              spawnCommand.UnitId = Constants.UNIT_BELAGERUNGSEINHEIT_STUFE_1_ELF;
+              spawnCommand.UnitId = Constants.UNIT_PRISON_WAGON_ELF;
               return Enums.ResearchType.AddUnit;
 
             default:
-              spawnCommand.UnitId = Constants.UNIT_BELAGERUNGSEINHEIT_STUFE_2_ELF;
-              spawnCommand.UnitIdToUpgrade = Constants.UNIT_BELAGERUNGSEINHEIT_STUFE_1_ELF;
+              spawnCommand.UnitId = Constants.UNIT_GLAIVE_THROWER_ELF;
+              spawnCommand.UnitIdToUpgrade = Constants.UNIT_PRISON_WAGON_ELF;
               return Enums.ResearchType.UpgradeUnit;
           }
 

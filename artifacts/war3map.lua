@@ -20244,101 +20244,101 @@ System.namespace("Source", function (namespace)
     end
     ConstructOrcBuildingAndTrigger = function ()
       -- Hauptgebäude
-      local building = class.Orcs.Computer:CreateBuilding(1747988570 --[[Constants.UNIT_FESTUNG_ORC]], Areas.OrcBase, 0)
+      local building = class.Orcs.Computer:CreateBuilding(1747988570 --[[Constants.UNIT_FORTRESS_ORC]], Areas.OrcBase, 0)
       building:RegisterOnDies(SourceEventsBuildings.TeamMainBuilding.OnDies)
-      building:AddSpawnTrigger(Areas.OrcBaseToCenterSpawn, 1 --[[SpawnInterval.Middle]], Areas.ElfBase, System.Array(System.Int32) { 1747988818 --[[Constants.UNIT_MAGIEEINHEIT_STUFE_1_ORC]], 1747988815 --[[Constants.UNIT_FLUGEINHEIT_STUFE_1_ORC]] }):Run(5.5)
+      building:AddSpawnTrigger(Areas.OrcBaseToCenterSpawn, 1 --[[SpawnInterval.Middle]], Areas.ElfBase, System.Array(System.Int32) { 1747988818 --[[Constants.UNIT_WITCH_DOCTOR_ORC]], 1747988815 --[[Constants.UNIT_BATRIDER_ORC]] }):Run(5.5)
       building:AddSpawnTrigger(Areas.OrcBaseToCenterSpawn, 2 --[[SpawnInterval.Long]], Areas.ElfBase, System.Array.Empty(System.Int32)):Run(7.5)
-      building:AddSpawnTrigger(Areas.OrcBaseToHumanSpawn, 1 --[[SpawnInterval.Middle]], Areas.HumanBase, System.Array(System.Int32) { 1747988818 --[[Constants.UNIT_MAGIEEINHEIT_STUFE_1_ORC]], 1747988815 --[[Constants.UNIT_FLUGEINHEIT_STUFE_1_ORC]] }):Run(5.5)
+      building:AddSpawnTrigger(Areas.OrcBaseToHumanSpawn, 1 --[[SpawnInterval.Middle]], Areas.HumanBase, System.Array(System.Int32) { 1747988818 --[[Constants.UNIT_WITCH_DOCTOR_ORC]], 1747988815 --[[Constants.UNIT_BATRIDER_ORC]] }):Run(5.5)
       building:AddSpawnTrigger(Areas.OrcBaseToHumanSpawn, 2 --[[SpawnInterval.Long]], Areas.HumanBase, System.Array.Empty(System.Int32)):Run(7.5)
-      building:AddSpawnTrigger(Areas.OrcBaseToUndeadSpawn, 1 --[[SpawnInterval.Middle]], Areas.UndeadBase, System.Array(System.Int32) { 1747988818 --[[Constants.UNIT_MAGIEEINHEIT_STUFE_1_ORC]], 1747988815 --[[Constants.UNIT_FLUGEINHEIT_STUFE_1_ORC]] }):Run(5.5)
+      building:AddSpawnTrigger(Areas.OrcBaseToUndeadSpawn, 1 --[[SpawnInterval.Middle]], Areas.UndeadBase, System.Array(System.Int32) { 1747988818 --[[Constants.UNIT_WITCH_DOCTOR_ORC]], 1747988815 --[[Constants.UNIT_BATRIDER_ORC]] }):Run(5.5)
       building:AddSpawnTrigger(Areas.OrcBaseToUndeadSpawn, 2 --[[SpawnInterval.Long]], Areas.UndeadBase, System.Array.Empty(System.Int32)):Run(7.5)
 
       -- Kasernen
-      building = class.Orcs.Computer:CreateBuilding(1747988569 --[[Constants.UNIT_KASERNE_ORC]], Areas.OrcBarracksToCenter, 0)
+      building = class.Orcs.Computer:CreateBuilding(1747988569 --[[Constants.UNIT_BARRACKS_ORC]], Areas.OrcBarracksToCenter, 0)
       building:RegisterOnDies(SourceEventsBuildings.TeamBarracksBuilding.OnDies)
       building:AddSpawnTrigger(Areas.OrcBarracksToCenterSpawn, 0 --[[SpawnInterval.Short]], Areas.ElfBase, System.Array(System.Int32) { 1747988809 --[[Constants.UNIT_GRUNT_ORC]], 1747988809 --[[Constants.UNIT_GRUNT_ORC]] }):Run(0)
       building:AddSpawnTrigger(Areas.OrcBarracksToCenterSpawn, 1 --[[SpawnInterval.Middle]], Areas.ElfBase, System.Array(System.Int32) { 1747988812 --[[Constants.UNIT_HEADHUNTER_ORC]] }):Run(0.5)
 
-      building = class.Orcs.Computer:CreateBuilding(1747988569 --[[Constants.UNIT_KASERNE_ORC]], Areas.OrcBarracksToHuman, 0)
+      building = class.Orcs.Computer:CreateBuilding(1747988569 --[[Constants.UNIT_BARRACKS_ORC]], Areas.OrcBarracksToHuman, 0)
       building:RegisterOnDies(SourceEventsBuildings.TeamBarracksBuilding.OnDies)
       building:AddSpawnTrigger(Areas.OrcBarracksToHumanSpawn, 0 --[[SpawnInterval.Short]], Areas.HumanBase, System.Array(System.Int32) { 1747988809 --[[Constants.UNIT_GRUNT_ORC]], 1747988809 --[[Constants.UNIT_GRUNT_ORC]] }):Run(0)
       building:AddSpawnTrigger(Areas.OrcBarracksToHumanSpawn, 1 --[[SpawnInterval.Middle]], Areas.HumanBase, System.Array(System.Int32) { 1747988812 --[[Constants.UNIT_HEADHUNTER_ORC]] }):Run(0.5)
 
-      building = class.Orcs.Computer:CreateBuilding(1747988569 --[[Constants.UNIT_KASERNE_ORC]], Areas.OrcBarracksToUndead, 0)
+      building = class.Orcs.Computer:CreateBuilding(1747988569 --[[Constants.UNIT_BARRACKS_ORC]], Areas.OrcBarracksToUndead, 0)
       building:RegisterOnDies(SourceEventsBuildings.TeamBarracksBuilding.OnDies)
       building:AddSpawnTrigger(Areas.OrcBarracksToUndeadSpawn, 0 --[[SpawnInterval.Short]], Areas.UndeadBase, System.Array(System.Int32) { 1747988809 --[[Constants.UNIT_GRUNT_ORC]], 1747988809 --[[Constants.UNIT_GRUNT_ORC]] }):Run(0)
       building:AddSpawnTrigger(Areas.OrcBarracksToUndeadSpawn, 1 --[[SpawnInterval.Middle]], Areas.UndeadBase, System.Array(System.Int32) { 1747988812 --[[Constants.UNIT_HEADHUNTER_ORC]] }):Run(0.5)
     end
     ConstructElfBuildingAndTrigger = function ()
       -- Hauptgebäude
-      local building = class.Elves.Computer:CreateBuilding(1747988789 --[[Constants.UNIT_TELDRASSIL_ELF]], Areas.ElfBase, 0)
+      local building = class.Elves.Computer:CreateBuilding(1747988789 --[[Constants.UNIT_TREE_OF_ETERNITY_ELF]], Areas.ElfBase, 0)
       building:RegisterOnDies(SourceEventsBuildings.TeamMainBuilding.OnDies)
-      building:AddSpawnTrigger(Areas.ElfBaseToCenterSpawn, 1 --[[SpawnInterval.Middle]], Areas.OrcBase, System.Array(System.Int32) { 1747989066 --[[Constants.UNIT_MAGIEEINHEIT_STUFE_1_ELF]], 1747989060 --[[Constants.UNIT_FLUGEINHEIT_STUFE_1_ELF]] }):Run(5.5)
+      building:AddSpawnTrigger(Areas.ElfBaseToCenterSpawn, 1 --[[SpawnInterval.Middle]], Areas.OrcBase, System.Array(System.Int32) { 1747989066 --[[Constants.UNIT_DRUID_OF_THE_TALON_ELF]], 1747989060 --[[Constants.UNIT_FAERIE_DRAGON_ELF]] }):Run(5.5)
       building:AddSpawnTrigger(Areas.ElfBaseToCenterSpawn, 2 --[[SpawnInterval.Long]], Areas.OrcBase, System.Array.Empty(System.Int32)):Run(7.5)
-      building:AddSpawnTrigger(Areas.ElfBaseToHumanSpawn, 1 --[[SpawnInterval.Middle]], Areas.HumanBase, System.Array(System.Int32) { 1747989066 --[[Constants.UNIT_MAGIEEINHEIT_STUFE_1_ELF]], 1747989060 --[[Constants.UNIT_FLUGEINHEIT_STUFE_1_ELF]] }):Run(5.5)
+      building:AddSpawnTrigger(Areas.ElfBaseToHumanSpawn, 1 --[[SpawnInterval.Middle]], Areas.HumanBase, System.Array(System.Int32) { 1747989066 --[[Constants.UNIT_DRUID_OF_THE_TALON_ELF]], 1747989060 --[[Constants.UNIT_FAERIE_DRAGON_ELF]] }):Run(5.5)
       building:AddSpawnTrigger(Areas.ElfBaseToHumanSpawn, 2 --[[SpawnInterval.Long]], Areas.HumanBase, System.Array.Empty(System.Int32)):Run(7.5)
-      building:AddSpawnTrigger(Areas.ElfBaseToUndeadSpawn, 1 --[[SpawnInterval.Middle]], Areas.UndeadBase, System.Array(System.Int32) { 1747989066 --[[Constants.UNIT_MAGIEEINHEIT_STUFE_1_ELF]], 1747989060 --[[Constants.UNIT_FLUGEINHEIT_STUFE_1_ELF]] }):Run(5.5)
+      building:AddSpawnTrigger(Areas.ElfBaseToUndeadSpawn, 1 --[[SpawnInterval.Middle]], Areas.UndeadBase, System.Array(System.Int32) { 1747989066 --[[Constants.UNIT_DRUID_OF_THE_TALON_ELF]], 1747989060 --[[Constants.UNIT_FAERIE_DRAGON_ELF]] }):Run(5.5)
       building:AddSpawnTrigger(Areas.ElfBaseToUndeadSpawn, 2 --[[SpawnInterval.Long]], Areas.UndeadBase, System.Array.Empty(System.Int32)):Run(7.5)
 
       -- Kasernen
-      building = class.Elves.Computer:CreateBuilding(1747988788 --[[Constants.UNIT_KASERNE_ELF]], Areas.ElfBarracksToCenter, 0)
+      building = class.Elves.Computer:CreateBuilding(1747988788 --[[Constants.UNIT_ANCIENT_OF_WAR_ELF]], Areas.ElfBarracksToCenter, 0)
       building:RegisterOnDies(SourceEventsBuildings.TeamBarracksBuilding.OnDies)
-      building:AddSpawnTrigger(Areas.ElfBarracksToCenterSpawn, 0 --[[SpawnInterval.Short]], Areas.OrcBase, System.Array(System.Int32) { 1747988824 --[[Constants.UNIT_NAHKAMPFEINHEIT_STUFE_1_ELF]], 1747988824 --[[Constants.UNIT_NAHKAMPFEINHEIT_STUFE_1_ELF]] }):Run(0)
-      building:AddSpawnTrigger(Areas.ElfBarracksToCenterSpawn, 1 --[[SpawnInterval.Middle]], Areas.OrcBase, System.Array(System.Int32) { 1747989043 --[[Constants.UNIT_FERNKAMPFEINHEIT_STUFE_1_ELF]] }):Run(0.5)
+      building:AddSpawnTrigger(Areas.ElfBarracksToCenterSpawn, 0 --[[SpawnInterval.Short]], Areas.OrcBase, System.Array(System.Int32) { 1747988824 --[[Constants.UNIT_SENTRY_ELF]], 1747988824 --[[Constants.UNIT_SENTRY_ELF]] }):Run(0)
+      building:AddSpawnTrigger(Areas.ElfBarracksToCenterSpawn, 1 --[[SpawnInterval.Middle]], Areas.OrcBase, System.Array(System.Int32) { 1747988824 --[[Constants.UNIT_SENTRY_ELF]] }):Run(0.5)
 
-      building = class.Elves.Computer:CreateBuilding(1747988788 --[[Constants.UNIT_KASERNE_ELF]], Areas.ElfBarracksToHuman, 0)
+      building = class.Elves.Computer:CreateBuilding(1747988788 --[[Constants.UNIT_ANCIENT_OF_WAR_ELF]], Areas.ElfBarracksToHuman, 0)
       building:RegisterOnDies(SourceEventsBuildings.TeamBarracksBuilding.OnDies)
-      building:AddSpawnTrigger(Areas.ElfBarracksToHumanSpawn, 0 --[[SpawnInterval.Short]], Areas.HumanBase, System.Array(System.Int32) { 1747988824 --[[Constants.UNIT_NAHKAMPFEINHEIT_STUFE_1_ELF]], 1747988824 --[[Constants.UNIT_NAHKAMPFEINHEIT_STUFE_1_ELF]] }):Run(0)
-      building:AddSpawnTrigger(Areas.ElfBarracksToHumanSpawn, 1 --[[SpawnInterval.Middle]], Areas.HumanBase, System.Array(System.Int32) { 1747989043 --[[Constants.UNIT_FERNKAMPFEINHEIT_STUFE_1_ELF]] }):Run(0.5)
+      building:AddSpawnTrigger(Areas.ElfBarracksToHumanSpawn, 0 --[[SpawnInterval.Short]], Areas.HumanBase, System.Array(System.Int32) { 1747988824 --[[Constants.UNIT_SENTRY_ELF]], 1747988824 --[[Constants.UNIT_SENTRY_ELF]] }):Run(0)
+      building:AddSpawnTrigger(Areas.ElfBarracksToHumanSpawn, 1 --[[SpawnInterval.Middle]], Areas.HumanBase, System.Array(System.Int32) { 1747989043 --[[Constants.UNIT_ARCHER_ELF]] }):Run(0.5)
 
-      building = class.Elves.Computer:CreateBuilding(1747988788 --[[Constants.UNIT_KASERNE_ELF]], Areas.ElfBarracksToUndead, 0)
+      building = class.Elves.Computer:CreateBuilding(1747988788 --[[Constants.UNIT_ANCIENT_OF_WAR_ELF]], Areas.ElfBarracksToUndead, 0)
       building:RegisterOnDies(SourceEventsBuildings.TeamBarracksBuilding.OnDies)
-      building:AddSpawnTrigger(Areas.ElfBarracksToUndeadSpawn, 0 --[[SpawnInterval.Short]], Areas.UndeadBase, System.Array(System.Int32) { 1747988824 --[[Constants.UNIT_NAHKAMPFEINHEIT_STUFE_1_ELF]], 1747988824 --[[Constants.UNIT_NAHKAMPFEINHEIT_STUFE_1_ELF]] }):Run(0)
-      building:AddSpawnTrigger(Areas.ElfBarracksToUndeadSpawn, 1 --[[SpawnInterval.Middle]], Areas.UndeadBase, System.Array(System.Int32) { 1747989043 --[[Constants.UNIT_FERNKAMPFEINHEIT_STUFE_1_ELF]] }):Run(0.5)
+      building:AddSpawnTrigger(Areas.ElfBarracksToUndeadSpawn, 0 --[[SpawnInterval.Short]], Areas.UndeadBase, System.Array(System.Int32) { 1747988824 --[[Constants.UNIT_SENTRY_ELF]], 1747988824 --[[Constants.UNIT_SENTRY_ELF]] }):Run(0)
+      building:AddSpawnTrigger(Areas.ElfBarracksToUndeadSpawn, 1 --[[SpawnInterval.Middle]], Areas.UndeadBase, System.Array(System.Int32) { 1747989043 --[[Constants.UNIT_ARCHER_ELF]] }):Run(0.5)
     end
     ConstructUndeadBuildingAndTrigger = function ()
       -- Hauptgebäude
-      local building = class.Undeads.Computer:CreateBuilding(1747988801 --[[Constants.UNIT_SCHWARZE_ZITADELLE_UNDEAD]], Areas.UndeadBase, 0)
+      local building = class.Undeads.Computer:CreateBuilding(1747988801 --[[Constants.UNIT_BLACK_CITADEL_UNDEAD]], Areas.UndeadBase, 0)
       building:RegisterOnDies(SourceEventsBuildings.TeamMainBuilding.OnDies)
-      building:AddSpawnTrigger(Areas.UndeadBaseToCenterSpawn, 1 --[[SpawnInterval.Middle]], Areas.HumanBase, System.Array(System.Int32) { 1747989067 --[[Constants.UNIT_MAGIEEINHEIT_STUFE_1_UNDEAD]], 1747989061 --[[Constants.UNIT_FLUGEINHEIT_STUFE_1_UNDEAD]] }):Run(5.5)
+      building:AddSpawnTrigger(Areas.UndeadBaseToCenterSpawn, 1 --[[SpawnInterval.Middle]], Areas.HumanBase, System.Array(System.Int32) { 1747989067 --[[Constants.UNIT_SKELETAL_MAGE_UNDEAD]], 1747989061 --[[Constants.UNIT_GARGOYLE_UNDEAD]] }):Run(5.5)
       building:AddSpawnTrigger(Areas.UndeadBaseToCenterSpawn, 2 --[[SpawnInterval.Long]], Areas.HumanBase, System.Array.Empty(System.Int32)):Run(7.5)
-      building:AddSpawnTrigger(Areas.UndeadBaseToElfSpawn, 1 --[[SpawnInterval.Middle]], Areas.ElfBase, System.Array(System.Int32) { 1747989067 --[[Constants.UNIT_MAGIEEINHEIT_STUFE_1_UNDEAD]], 1747989061 --[[Constants.UNIT_FLUGEINHEIT_STUFE_1_UNDEAD]] }):Run(5.5)
+      building:AddSpawnTrigger(Areas.UndeadBaseToElfSpawn, 1 --[[SpawnInterval.Middle]], Areas.ElfBase, System.Array(System.Int32) { 1747989067 --[[Constants.UNIT_SKELETAL_MAGE_UNDEAD]], 1747989061 --[[Constants.UNIT_GARGOYLE_UNDEAD]] }):Run(5.5)
       building:AddSpawnTrigger(Areas.UndeadBaseToElfSpawn, 2 --[[SpawnInterval.Long]], Areas.ElfBase, System.Array.Empty(System.Int32)):Run(7.5)
-      building:AddSpawnTrigger(Areas.UndeadBaseToOrcsSpawn, 1 --[[SpawnInterval.Middle]], Areas.OrcBase, System.Array(System.Int32) { 1747989067 --[[Constants.UNIT_MAGIEEINHEIT_STUFE_1_UNDEAD]], 1747989061 --[[Constants.UNIT_FLUGEINHEIT_STUFE_1_UNDEAD]] }):Run(5.5)
+      building:AddSpawnTrigger(Areas.UndeadBaseToOrcsSpawn, 1 --[[SpawnInterval.Middle]], Areas.OrcBase, System.Array(System.Int32) { 1747989067 --[[Constants.UNIT_SKELETAL_MAGE_UNDEAD]], 1747989061 --[[Constants.UNIT_GARGOYLE_UNDEAD]] }):Run(5.5)
       building:AddSpawnTrigger(Areas.UndeadBaseToOrcsSpawn, 2 --[[SpawnInterval.Long]], Areas.OrcBase, System.Array.Empty(System.Int32)):Run(7.5)
 
       -- Kasernen
-      building = class.Undeads.Computer:CreateBuilding(1747988805 --[[Constants.UNIT_GRUFT_UNDEAD]], Areas.UndeadBarracksToCenter, 0)
+      building = class.Undeads.Computer:CreateBuilding(1747988805 --[[Constants.UNIT_CRYPT_UNDEAD]], Areas.UndeadBarracksToCenter, 0)
       building:RegisterOnDies(SourceEventsBuildings.TeamBarracksBuilding.OnDies)
-      building:AddSpawnTrigger(Areas.UndeadBarracksToCenterSpawn, 0 --[[SpawnInterval.Short]], Areas.HumanBase, System.Array(System.Int32) { 1747988825 --[[Constants.UNIT_NAHKAMPFEINHEIT_STUFE_1_UNDEAD]], 1747988825 --[[Constants.UNIT_NAHKAMPFEINHEIT_STUFE_1_UNDEAD]] }):Run(0)
-      building:AddSpawnTrigger(Areas.UndeadBarracksToCenterSpawn, 1 --[[SpawnInterval.Middle]], Areas.HumanBase, System.Array(System.Int32) { 1747989044 --[[Constants.UNIT_FERNKAMPFEINHEIT_STUFE_1_UNDEAD]] }):Run(0.5)
+      building:AddSpawnTrigger(Areas.UndeadBarracksToCenterSpawn, 0 --[[SpawnInterval.Short]], Areas.HumanBase, System.Array(System.Int32) { 1747988825 --[[Constants.UNIT_GHOUL_UNDEAD]], 1747988825 --[[Constants.UNIT_GHOUL_UNDEAD]] }):Run(0)
+      building:AddSpawnTrigger(Areas.UndeadBarracksToCenterSpawn, 1 --[[SpawnInterval.Middle]], Areas.HumanBase, System.Array(System.Int32) { 1747989044 --[[Constants.UNIT_CRYPT_FIEND_UNDEAD]] }):Run(0.5)
 
-      building = class.Undeads.Computer:CreateBuilding(1747988805 --[[Constants.UNIT_GRUFT_UNDEAD]], Areas.UndeadBarracksToElf, 0)
+      building = class.Undeads.Computer:CreateBuilding(1747988805 --[[Constants.UNIT_CRYPT_UNDEAD]], Areas.UndeadBarracksToElf, 0)
       building:RegisterOnDies(SourceEventsBuildings.TeamBarracksBuilding.OnDies)
-      building:AddSpawnTrigger(Areas.UndeadBarracksToElfSpawn, 0 --[[SpawnInterval.Short]], Areas.ElfBase, System.Array(System.Int32) { 1747988825 --[[Constants.UNIT_NAHKAMPFEINHEIT_STUFE_1_UNDEAD]], 1747988825 --[[Constants.UNIT_NAHKAMPFEINHEIT_STUFE_1_UNDEAD]] }):Run(0)
-      building:AddSpawnTrigger(Areas.UndeadBarracksToElfSpawn, 1 --[[SpawnInterval.Middle]], Areas.ElfBase, System.Array(System.Int32) { 1747989044 --[[Constants.UNIT_FERNKAMPFEINHEIT_STUFE_1_UNDEAD]] }):Run(0.5)
+      building:AddSpawnTrigger(Areas.UndeadBarracksToElfSpawn, 0 --[[SpawnInterval.Short]], Areas.ElfBase, System.Array(System.Int32) { 1747988825 --[[Constants.UNIT_GHOUL_UNDEAD]], 1747988825 --[[Constants.UNIT_GHOUL_UNDEAD]] }):Run(0)
+      building:AddSpawnTrigger(Areas.UndeadBarracksToElfSpawn, 1 --[[SpawnInterval.Middle]], Areas.ElfBase, System.Array(System.Int32) { 1747989044 --[[Constants.UNIT_CRYPT_FIEND_UNDEAD]] }):Run(0.5)
 
-      building = class.Undeads.Computer:CreateBuilding(1747988805 --[[Constants.UNIT_GRUFT_UNDEAD]], Areas.UndeadBarracksToOrcs, 0)
+      building = class.Undeads.Computer:CreateBuilding(1747988805 --[[Constants.UNIT_CRYPT_UNDEAD]], Areas.UndeadBarracksToOrcs, 0)
       building:RegisterOnDies(SourceEventsBuildings.TeamBarracksBuilding.OnDies)
-      building:AddSpawnTrigger(Areas.UndeadBarracksToOrcsSpawn, 0 --[[SpawnInterval.Short]], Areas.OrcBase, System.Array(System.Int32) { 1747988825 --[[Constants.UNIT_NAHKAMPFEINHEIT_STUFE_1_UNDEAD]], 1747988825 --[[Constants.UNIT_NAHKAMPFEINHEIT_STUFE_1_UNDEAD]] }):Run(0)
-      building:AddSpawnTrigger(Areas.UndeadBarracksToOrcsSpawn, 1 --[[SpawnInterval.Middle]], Areas.OrcBase, System.Array(System.Int32) { 1747989044 --[[Constants.UNIT_FERNKAMPFEINHEIT_STUFE_1_UNDEAD]] }):Run(0.5)
+      building:AddSpawnTrigger(Areas.UndeadBarracksToOrcsSpawn, 0 --[[SpawnInterval.Short]], Areas.OrcBase, System.Array(System.Int32) { 1747988825 --[[Constants.UNIT_GHOUL_UNDEAD]], 1747988825 --[[Constants.UNIT_GHOUL_UNDEAD]] }):Run(0)
+      building:AddSpawnTrigger(Areas.UndeadBarracksToOrcsSpawn, 1 --[[SpawnInterval.Middle]], Areas.OrcBase, System.Array(System.Int32) { 1747989044 --[[Constants.UNIT_CRYPT_FIEND_UNDEAD]] }):Run(0.5)
     end
     ConstructCreepCamps = function ()
       -- Menschen-Creeps
-      ConstructCreepCamp("Bandits", Areas.HumanCreepToElfSpawnBuilding, Areas.HumanCreepToElfSpawn, class.Humans, class.Elves, 1848651862 --[[Constants.UNIT_BANDITENLAGER_CREEP]], System.Array(System.Int32) { 1848652114 --[[Constants.UNIT_BANDITENF_RST_CREEP]], 1848651864 --[[Constants.UNIT_BANDIT_CREEP]], 1848651864 --[[Constants.UNIT_BANDIT_CREEP]], 1848651864 --[[Constants.UNIT_BANDIT_CREEP]], 1848652083 --[[Constants.UNIT_BANDITMARODEUR_CREEP]], 1848652083 --[[Constants.UNIT_BANDITMARODEUR_CREEP]], 1848652111 --[[Constants.UNIT_BANDITENZAUBERER_CREEP]] })
-      ConstructCreepCamp("Tuskarr", Areas.HumanCreepToOrcSpawnBuilding, Areas.HumanCreepToOrcSpawn, class.Humans, class.Orcs, 1848652358 --[[Constants.UNIT_TUSKARRLAGER_CREEP]], System.Array(System.Int32) { 1848652344 --[[Constants.UNIT_TUSKARRH_UPTLING_CREEP]], 1848652112 --[[Constants.UNIT_TUSKARRKRIEGER_CREEP]], 1848652112 --[[Constants.UNIT_TUSKARRKRIEGER_CREEP]], 1848652112 --[[Constants.UNIT_TUSKARRKRIEGER_CREEP]], 1848652119 --[[Constants.UNIT_TUSKARRFALLENSTELLER_CREEP]], 1848652119 --[[Constants.UNIT_TUSKARRFALLENSTELLER_CREEP]], 1848652116 --[[Constants.UNIT_TUSKARRHEILER_CREEP]] })
+      ConstructCreepCamp("Bandits", Areas.HumanCreepToElfSpawnBuilding, Areas.HumanCreepToElfSpawn, class.Humans, class.Elves, 1848651862 --[[Constants.UNIT_BANDITENLAGER_CREEP]], System.Array(System.Int32) { 1848652114 --[[Constants.UNIT_BANDIT_LORD_CREEP]], 1848651864 --[[Constants.UNIT_BANDIT_CREEP]], 1848651864 --[[Constants.UNIT_BANDIT_CREEP]], 1848651864 --[[Constants.UNIT_BANDIT_CREEP]], 1848652083 --[[Constants.UNIT_BANDITMARODEUR_CREEP]], 1848652083 --[[Constants.UNIT_BANDITMARODEUR_CREEP]], 1848652111 --[[Constants.UNIT_BANDITENZAUBERER_CREEP]] })
+      ConstructCreepCamp("Tuskarr", Areas.HumanCreepToOrcSpawnBuilding, Areas.HumanCreepToOrcSpawn, class.Humans, class.Orcs, 1848652358 --[[Constants.UNIT_TUSKARRLAGER_CREEP]], System.Array(System.Int32) { 1848652344 --[[Constants.UNIT_TUSKARR_CHIEFTAIN_CREEP]], 1848652112 --[[Constants.UNIT_TUSKARRKRIEGER_CREEP]], 1848652112 --[[Constants.UNIT_TUSKARRKRIEGER_CREEP]], 1848652112 --[[Constants.UNIT_TUSKARRKRIEGER_CREEP]], 1848652119 --[[Constants.UNIT_TUSKARRFALLENSTELLER_CREEP]], 1848652119 --[[Constants.UNIT_TUSKARRFALLENSTELLER_CREEP]], 1848652116 --[[Constants.UNIT_TUSKARRHEILER_CREEP]] })
 
       -- Elfen-Creeps
-      ConstructCreepCamp("Furbolgs", Areas.ElfCreepToHumanSpawnBuilding, Areas.ElfCreepToHumanSpawn, class.Elves, class.Humans, 1848651856 --[[Constants.UNIT_FURBOLGLAGER_CREEP]], System.Array(System.Int32) { 1848652337 --[[Constants.UNIT_FURBOLGHELD_CREEP]], 1848652100 --[[Constants.UNIT_FURBOLGURSAKRIEGER_CREEP]], 1848652100 --[[Constants.UNIT_FURBOLGURSAKRIEGER_CREEP]], 1848652113 --[[Constants.UNIT_FURBOLGSPURENLESER_CREEP]], 1848652113 --[[Constants.UNIT_FURBOLGSPURENLESER_CREEP]], 1848652084 --[[Constants.UNIT_FURBOLGAHNENSCHAMANE_CREEP]] })
+      ConstructCreepCamp("Furbolgs", Areas.ElfCreepToHumanSpawnBuilding, Areas.ElfCreepToHumanSpawn, class.Elves, class.Humans, 1848651856 --[[Constants.UNIT_FURBOLGLAGER_CREEP]], System.Array(System.Int32) { 1848652337 --[[Constants.UNIT_FURBOLG_CHAMPION_CREEP]], 1848652100 --[[Constants.UNIT_FURBOLGURSAKRIEGER_CREEP]], 1848652100 --[[Constants.UNIT_FURBOLGURSAKRIEGER_CREEP]], 1848652113 --[[Constants.UNIT_FURBOLGSPURENLESER_CREEP]], 1848652113 --[[Constants.UNIT_FURBOLGSPURENLESER_CREEP]], 1848652084 --[[Constants.UNIT_FURBOLGAHNENSCHAMANE_CREEP]] })
       ConstructCreepCamp("Wildekins", Areas.ElfCreepToUndeadSpawnBuilding, Areas.ElfCreepToUndeadSpawn, class.Elves, class.Undeads, 1848652356 --[[Constants.UNIT_WILDEKINLAGER_CREEP]], System.Array(System.Int32) { 1848652355 --[[Constants.UNIT_WILDEKINALPHA_CREEP]], 1848652101 --[[Constants.UNIT_WILDEKIN_CREEP]], 1848652101 --[[Constants.UNIT_WILDEKIN_CREEP]], 1848652101 --[[Constants.UNIT_WILDEKIN_CREEP]], 1848652118 --[[Constants.UNIT_WILDEKINFALLENSTELLER_CREEP]], 1848652118 --[[Constants.UNIT_WILDEKINFALLENSTELLER_CREEP]], 1848652098 --[[Constants.UNIT_WILDEKINAHNE_CREEP]] })
 
       -- Orcs-Creeps
-      ConstructCreepCamp("Centaurs", Areas.OrcCreepToHumanSpawnBuilding, Areas.OrcCreepToHumanSpawn, class.Orcs, class.Humans, 1848652104 --[[Constants.UNIT_ZENTAURENLAGER_CREEP]], System.Array(System.Int32) { 1848652345 --[[Constants.UNIT_ZENTAURENKHAN_CREEP]], 1848652115 --[[Constants.UNIT_ZENTAURENL_UFER_CREEP]], 1848652115 --[[Constants.UNIT_ZENTAURENL_UFER_CREEP]], 1848652120 --[[Constants.UNIT_ZENTAURENBOGENSCH_TZE_CREEP]], 1848652120 --[[Constants.UNIT_ZENTAURENBOGENSCH_TZE_CREEP]], 1848652336 --[[Constants.UNIT_ZENTAURENZAUBERIN_CREEP]] })
-      ConstructCreepCamp("Ogres", Areas.OrcCreepToUndeadSpawnBuilding, Areas.OrcCreepToUndeadSpawn, class.Orcs, class.Undeads, 1848652342 --[[Constants.UNIT_OGERLAGER_CREEP]], System.Array(System.Int32) { 1848652343 --[[Constants.UNIT_OGERLORD_CREEP]], 1848652110 --[[Constants.UNIT_OGERKRIEGER_CREEP]], 1848652110 --[[Constants.UNIT_OGERKRIEGER_CREEP]], 1848652110 --[[Constants.UNIT_OGERKRIEGER_CREEP]], 1848652099 --[[Constants.UNIT_OGERPR_GLER_CREEP]], 1848652099 --[[Constants.UNIT_OGERPR_GLER_CREEP]], 1848652121 --[[Constants.UNIT_OGERMAGIER_CREEP]] })
+      ConstructCreepCamp("Centaurs", Areas.OrcCreepToHumanSpawnBuilding, Areas.OrcCreepToHumanSpawn, class.Orcs, class.Humans, 1848652104 --[[Constants.UNIT_ZENTAURENLAGER_CREEP]], System.Array(System.Int32) { 1848652345 --[[Constants.UNIT_CENTAUR_KHAN_CREEP]], 1848652115 --[[Constants.UNIT_ZENTAURENL_UFER_CREEP]], 1848652115 --[[Constants.UNIT_ZENTAURENL_UFER_CREEP]], 1848652120 --[[Constants.UNIT_ZENTAURENBOGENSCH_TZE_CREEP]], 1848652120 --[[Constants.UNIT_ZENTAURENBOGENSCH_TZE_CREEP]], 1848652336 --[[Constants.UNIT_ZENTAURENZAUBERIN_CREEP]] })
+      ConstructCreepCamp("Ogres", Areas.OrcCreepToUndeadSpawnBuilding, Areas.OrcCreepToUndeadSpawn, class.Orcs, class.Undeads, 1848652342 --[[Constants.UNIT_OGERLAGER_CREEP]], System.Array(System.Int32) { 1848652343 --[[Constants.UNIT_OGRE_LORD_CREEP]], 1848652110 --[[Constants.UNIT_OGERKRIEGER_CREEP]], 1848652110 --[[Constants.UNIT_OGERKRIEGER_CREEP]], 1848652110 --[[Constants.UNIT_OGERKRIEGER_CREEP]], 1848652099 --[[Constants.UNIT_OGERPR_GLER_CREEP]], 1848652099 --[[Constants.UNIT_OGERPR_GLER_CREEP]], 1848652121 --[[Constants.UNIT_OGERMAGIER_CREEP]] })
 
       -- Untoten-Creeps
-      ConstructCreepCamp("Mur'guls", Areas.UndeadCreepToOrcSpawnBuilding, Areas.UndeadCreepToOrcSpawn, class.Undeads, class.Orcs, 1848652340 --[[Constants.UNIT_MUR_GULLAGER_CREEP]], System.Array(System.Int32) { 1848652338 --[[Constants.UNIT_MUR_GULSCHATTENZAUBERER_CREEP]], 1848652102 --[[Constants.UNIT_MUR_GULBLUTKIEME_CREEP]], 1848652102 --[[Constants.UNIT_MUR_GULBLUTKIEME_CREEP]], 1848652102 --[[Constants.UNIT_MUR_GULBLUTKIEME_CREEP]], 1848652117 --[[Constants.UNIT_MUR_GULGEZEITENKRIEGER_CREEP]], 1848652117 --[[Constants.UNIT_MUR_GULGEZEITENKRIEGER_CREEP]], 1848652122 --[[Constants.UNIT_MUR_GULVERLANGSAMER_CREEP]] })
-      ConstructCreepCamp("Nerubs", Areas.UndeadCreepToElfSpawnBuilding, Areas.UndeadCreepToElfSpawn, class.Undeads, class.Elves, 1848652106 --[[Constants.UNIT_NERUBERLAGER_CREEP]], System.Array(System.Int32) { 1848652339 --[[Constants.UNIT_NERUBERK_NIGIN_CREEP]], 1848652108 --[[Constants.UNIT_NERUBERKRIEGER_CREEP]], 1848652108 --[[Constants.UNIT_NERUBERKRIEGER_CREEP]], 1848652108 --[[Constants.UNIT_NERUBERKRIEGER_CREEP]], 1848652107 --[[Constants.UNIT_NERUBERNETZWEBER_CREEP]], 1848652107 --[[Constants.UNIT_NERUBERNETZWEBER_CREEP]], 1848652109 --[[Constants.UNIT_NERUBERSEHER_CREEP]] })
+      ConstructCreepCamp("Mur'guls", Areas.UndeadCreepToOrcSpawnBuilding, Areas.UndeadCreepToOrcSpawn, class.Undeads, class.Orcs, 1848652340 --[[Constants.UNIT_MUR_GULLAGER_CREEP]], System.Array(System.Int32) { 1848652338 --[[Constants.UNIT_MUR_GUL_SHADOWCASTER_CREEP]], 1848652102 --[[Constants.UNIT_MUR_GULBLUTKIEME_CREEP]], 1848652102 --[[Constants.UNIT_MUR_GULBLUTKIEME_CREEP]], 1848652102 --[[Constants.UNIT_MUR_GULBLUTKIEME_CREEP]], 1848652117 --[[Constants.UNIT_MUR_GULGEZEITENKRIEGER_CREEP]], 1848652117 --[[Constants.UNIT_MUR_GULGEZEITENKRIEGER_CREEP]], 1848652122 --[[Constants.UNIT_MUR_GULVERLANGSAMER_CREEP]] })
+      ConstructCreepCamp("Nerubians", Areas.UndeadCreepToElfSpawnBuilding, Areas.UndeadCreepToElfSpawn, class.Undeads, class.Elves, 1848652106 --[[Constants.UNIT_NERUBERLAGER_CREEP]], System.Array(System.Int32) { 1848652339 --[[Constants.UNIT_NERUBIAN_QUEEN_CREEP]], 1848652108 --[[Constants.UNIT_NERUBERKRIEGER_CREEP]], 1848652108 --[[Constants.UNIT_NERUBERKRIEGER_CREEP]], 1848652108 --[[Constants.UNIT_NERUBERKRIEGER_CREEP]], 1848652107 --[[Constants.UNIT_NERUBERNETZWEBER_CREEP]], 1848652107 --[[Constants.UNIT_NERUBERNETZWEBER_CREEP]], 1848652109 --[[Constants.UNIT_NERUBENSEHER_CREEP]] })
     end
     ConstructCreepCamp = function (name, buildingArea, spawnArea, nearestTeam, opposingTeam, buildingUnitType, defenderUnitTypeIds)
       local creepCamp = SourceModels.MercenaryForce(name, buildingArea, spawnArea, nearestTeam, opposingTeam, buildingUnitType, defenderUnitTypeIds)
@@ -20354,13 +20354,13 @@ System.namespace("Source", function (namespace)
       class.Orcs.Computer:CreateUnit(1211117911 --[[Constants.UNIT_GUARDIAN_ORC]], Areas.OrcBaseToUndeadSpawn, 0):AttackMove(Areas.UndeadBase)
       class.Orcs.Computer:CreateUnit(1211117911 --[[Constants.UNIT_GUARDIAN_ORC]], Areas.OrcBaseToHumanSpawn, 0):AttackMove(Areas.HumanBase)
 
-      class.Elves.Computer:CreateUnit(1211118160 --[[Constants.UNIT_W_CHTER_ELF]], Areas.ElfBaseToHumanSpawn, 0):AttackMove(Areas.HumanBase)
-      class.Elves.Computer:CreateUnit(1211118160 --[[Constants.UNIT_W_CHTER_ELF]], Areas.ElfBaseToUndeadSpawn, 0):AttackMove(Areas.UndeadBase)
-      class.Elves.Computer:CreateUnit(1211118160 --[[Constants.UNIT_W_CHTER_ELF]], Areas.ElfBaseToCenterSpawn, 0):AttackMove(Areas.OrcBase)
+      class.Elves.Computer:CreateUnit(1211118160 --[[Constants.UNIT_GUARDIAN_ELF]], Areas.ElfBaseToHumanSpawn, 0):AttackMove(Areas.HumanBase)
+      class.Elves.Computer:CreateUnit(1211118160 --[[Constants.UNIT_GUARDIAN_ELF]], Areas.ElfBaseToUndeadSpawn, 0):AttackMove(Areas.UndeadBase)
+      class.Elves.Computer:CreateUnit(1211118160 --[[Constants.UNIT_GUARDIAN_ELF]], Areas.ElfBaseToCenterSpawn, 0):AttackMove(Areas.OrcBase)
 
-      class.Undeads.Computer:CreateUnit(1211118161 --[[Constants.UNIT_W_CHTER_UNDEAD]], Areas.UndeadBaseToElfSpawn, 0):AttackMove(Areas.ElfBase)
-      class.Undeads.Computer:CreateUnit(1211118161 --[[Constants.UNIT_W_CHTER_UNDEAD]], Areas.UndeadBaseToCenterSpawn, 0):AttackMove(Areas.HumanBase)
-      class.Undeads.Computer:CreateUnit(1211118161 --[[Constants.UNIT_W_CHTER_UNDEAD]], Areas.UndeadBaseToOrcsSpawn, 0):AttackMove(Areas.OrcBase)
+      class.Undeads.Computer:CreateUnit(1211118161 --[[Constants.UNIT_GUARDIAN_UNDEAD]], Areas.UndeadBaseToElfSpawn, 0):AttackMove(Areas.ElfBase)
+      class.Undeads.Computer:CreateUnit(1211118161 --[[Constants.UNIT_GUARDIAN_UNDEAD]], Areas.UndeadBaseToCenterSpawn, 0):AttackMove(Areas.HumanBase)
+      class.Undeads.Computer:CreateUnit(1211118161 --[[Constants.UNIT_GUARDIAN_UNDEAD]], Areas.UndeadBaseToOrcsSpawn, 0):AttackMove(Areas.OrcBase)
     end
     CreateHeroSelectorForPlayerAndAdjustCamera = function (user)
       local unit = user:CreateUnit(1966092342 --[[Constants.UNIT_HELDENSEELE_HERO_SELECTOR]], Areas.HeroSelectorSpawn, 0)
@@ -21110,7 +21110,7 @@ System.namespace("Source.Events", function (namespace)
 
         repeat
           local default = abilityId
-          if default == 1093681456 --[[Constants.ABILITY_BEZAUBERUNG_HERO_10]] then
+          if default == 1093681456 --[[Constants.ABILITY_CHARM_HERO_10]] then
             SourceLogics.UserHero.HandleCharmCasted(abilityId)
             break
           end
@@ -21491,7 +21491,7 @@ System.namespace("Source.Events.Periodic", function (namespace)
         local user = Source.Program.AllActiveUsers:get(i)
 
         if not user.Defeated then
-          SetPlayerState(user.Wc3Player, PLAYER_STATE_RESOURCE_GOLD, GetPlayerState(user.Wc3Player, PLAYER_STATE_RESOURCE_GOLD) + 1)
+          SetPlayerState(user.Wc3Player, PLAYER_STATE_RESOURCE_GOLD, GetPlayerState(user.Wc3Player, PLAYER_STATE_RESOURCE_GOLD) + 100)
         end
       end
 
@@ -21651,7 +21651,7 @@ System.namespace("Source.Events.Periodic", function (namespace)
             Source.Program.Legion:CreateOrRefreshWestSpawnBuilding()
             Source.Program.Legion:CreateOrRefreshEastSpawnBuilding()
 
-            Source.Program.Legion:CreateOrReviveHero(1311780918 --[[Constants.UNIT_D_MONENF_RST_LEGION]], Areas.Center, maxHeroLevel, executions)
+            Source.Program.Legion:CreateOrReviveHero(1311780918 --[[Constants.UNIT_DEMON_LORD_LEGION]], Areas.Center, maxHeroLevel, executions)
 
             -- Zentrum - Weitere Einheiten via Cast hinzurufen
             CreateUnitAtRandomPointWithEffect(centerRect, 1848651846 --[[Constants.UNIT_INFERNAL_LEGION]])
@@ -22312,7 +22312,7 @@ System.namespace("Source.Logics", function (namespace)
     HandleLeveled = function (unit)
       local unitId = GetUnitTypeId(unit)
 
-      if unitId == 1211117645 --[[Constants.UNIT_GUARDIAN_HUMAN]] or unitId == 1211117911 --[[Constants.UNIT_GUARDIAN_ORC]] or unitId == 1211118160 --[[Constants.UNIT_W_CHTER_ELF]] or unitId == 1211118161 --[[Constants.UNIT_W_CHTER_UNDEAD]] then
+      if unitId == 1211117645 --[[Constants.UNIT_GUARDIAN_HUMAN]] or unitId == 1211117911 --[[Constants.UNIT_GUARDIAN_ORC]] or unitId == 1211118160 --[[Constants.UNIT_GUARDIAN_ELF]] or unitId == 1211118161 --[[Constants.UNIT_GUARDIAN_UNDEAD]] then
         ProcessWaechterLevelUp(unit)
       end
     end
@@ -22321,15 +22321,15 @@ System.namespace("Source.Logics", function (namespace)
       local abilityId = 0
 
       if level:EndsWith("1") or level:EndsWith("6") then
-        abilityId = 1093677619 --[[Constants.ABILITY_SPOTT_GUARD_20]]
+        abilityId = 1093677619 --[[Constants.ABILITY_TAUNT_GUARD_20]]
       elseif level:EndsWith("2") or level:EndsWith("7") then
-        abilityId = 1094862401 --[[Constants.ABILITY_BEFEHLSAURA_GUARD_20]]
+        abilityId = 1094862401 --[[Constants.ABILITY_COMMAND_AURA_GUARD_20]]
       elseif level:EndsWith("3") or level:EndsWith("8") then
-        abilityId = 1094996803 --[[Constants.ABILITY_DONNERSCHLAG_GUARD_20]]
+        abilityId = 1094996803 --[[Constants.ABILITY_THUNDER_CLAP_GUARD_20]]
       elseif level:EndsWith("4") or level:EndsWith("9") then
-        abilityId = 1094796353 --[[Constants.ABILITY_AUSDAUERAURA_GUARD_20]]
+        abilityId = 1094796353 --[[Constants.ABILITY_ENDURANCE_AURA_GUARD_20]]
       else
-        abilityId = 1093677106 --[[Constants.ABILITY_ERH_HTE_ATTRIBUTE_HERO_50]]
+        abilityId = 1093677106 --[[Constants.ABILITY_ATTRIBUTE_BONUS_HERO_50]]
       end
 
       local ability = BlzGetUnitAbility(unit, abilityId)
@@ -22713,7 +22713,7 @@ System.namespace("Source.Logics", function (namespace)
     HandleItemBuyed = function (buyingUnit, soldItem)
       local itemId = GetItemTypeId(soldItem)
 
-      if itemId == 1227894832 --[[Constants.ITEM_GLYPHE_DER_OPFERUNG]] then
+      if itemId == 1227894832 --[[Constants.ITEM_GLYPH_OF_SACRIFICE]] then
         local playerId = GetPlayerId(GetOwningPlayer(buyingUnit))
         local default, user = Source.Program.TryGetUserById(playerId)
         if default then
@@ -22766,7 +22766,7 @@ System.namespace("Source.Logics", function (namespace)
             if IsPlayerEnemy(GetOwningPlayer(groupUnit), GetOwningPlayer(castingUnit)) or GetPlayerController(GetOwningPlayer(groupUnit)) == MAP_CONTROL_CREEP then
               local dummyUnit = CreateUnitAtLoc(GetOwningPlayer(castingUnit), 1848651824 --[[Constants.UNIT_DUMMY]], targetLocation, 0)
 
-              UnitAddAbility(dummyUnit, 1093681473 --[[Constants.ABILITY_BEZAUBERUNG_DUMMY]])
+              UnitAddAbility(dummyUnit, 1093681473 --[[Constants.ABILITY_CHARM_DUMMY]])
               IssueTargetOrderById(dummyUnit, 852581 --[[Constants.ORDER_CHARM]], groupUnit)
 
               -- Dummy nach Gebrauch sofort wieder zerstören und freigeben
@@ -22829,7 +22829,7 @@ System.namespace("Source.Logics", function (namespace)
           if IsPlayerEnemy(GetOwningPlayer(groupUnit), GetOwningPlayer(castingUnit)) then
             -- Dummy erstellen
             local dummyUnit = CreateUnitAtLoc(GetOwningPlayer(castingUnit), 1848651824 --[[Constants.UNIT_DUMMY]], targetLocation, 0)
-            UnitAddAbility(dummyUnit, 1093681473 --[[Constants.ABILITY_BEZAUBERUNG_DUMMY]])
+            UnitAddAbility(dummyUnit, 1093681473 --[[Constants.ABILITY_CHARM_DUMMY]])
 
             -- Dummy einen Dummy-Zauber (keine Manakosten) ausführen lassen
             IssueTargetOrderById(dummyUnit, 852581 --[[Constants.ORDER_CHARM]], groupUnit)
@@ -23201,7 +23201,7 @@ System.namespace("Source.Models", function (namespace)
       SourceStatics.SpecialEffects.CreateSpecialEffect("Objects\\Spawnmodels\\NightElf\\EntBirthTarget\\EntBirthTarget.mdl", Areas.MiddleLaneSpawnEast.Wc3Rectangle:getCenter(), 4, 3)
 
       if this.SpawnBuildingEast == nil or not UnitAlive(this.SpawnBuildingEast.Wc3Unit) then
-        this.SpawnBuildingEast = SourceModels.LegionSpawnBuilding(1848652361 --[[Constants.UNIT_D_MONENSCHREIN_LEGION]], Areas.MiddleLaneSpawnEast, 180)
+        this.SpawnBuildingEast = SourceModels.LegionSpawnBuilding(1848652361 --[[Constants.UNIT_DEMON_SHRINE_LEGION]], Areas.MiddleLaneSpawnEast, 180)
         this.SpawnBuildingEast:RegisterOnDies(SourceEventsBuildings.LegionBuilding.OnDies)
 
         this.SpawnBuildingEast:AddSpawnTrigger(1 --[[SpawnInterval.Middle]], Areas.MiddleLaneSpawnEast, Areas.CenterRight):Run(0)
@@ -23217,7 +23217,7 @@ System.namespace("Source.Models", function (namespace)
       SourceStatics.SpecialEffects.CreateSpecialEffect("Objects\\Spawnmodels\\NightElf\\EntBirthTarget\\EntBirthTarget.mdl", Areas.MiddleLaneSpawnWest.Wc3Rectangle:getCenter(), 4, 3)
 
       if this.SpawnBuildingWest == nil or not UnitAlive(this.SpawnBuildingWest.Wc3Unit) then
-        this.SpawnBuildingWest = SourceModels.LegionSpawnBuilding(1848652361 --[[Constants.UNIT_D_MONENSCHREIN_LEGION]], Areas.MiddleLaneSpawnWest, 0)
+        this.SpawnBuildingWest = SourceModels.LegionSpawnBuilding(1848652361 --[[Constants.UNIT_DEMON_SHRINE_LEGION]], Areas.MiddleLaneSpawnWest, 0)
         this.SpawnBuildingWest:RegisterOnDies(SourceEventsBuildings.LegionBuilding.OnDies)
 
         this.SpawnBuildingWest:AddSpawnTrigger(1 --[[SpawnInterval.Middle]], Areas.MiddleLaneSpawnWest, Areas.CenterLeft):Run(0)
@@ -23232,12 +23232,12 @@ System.namespace("Source.Models", function (namespace)
     AddAbilitiesToHero = function (this, unitTypeId, unit)
       repeat
         local default = unitTypeId
-        if default == 1311780918 --[[Constants.UNIT_D_MONENF_RST_LEGION]] then
-          UnitAddAbility(unit, 1093677623 --[[Constants.ABILITY_FEUERREGEN_LEGION_100]])
-          UnitAddAbility(unit, 1093677620 --[[Constants.ABILITY_SPALTSCHLAG_LEGION_100]])
-          UnitAddAbility(unit, 1093677635 --[[Constants.ABILITY_TODESFINGER_LEGION_100]])
-          UnitAddAbility(unit, 1093677621 --[[Constants.ABILITY_UNHEILIGE_AURA_LEGION_100]])
-          UnitAddAbility(unit, 1093677634 --[[Constants.ABILITY_ERH_HTE_ATTRIBUTE_LEGION_100]])
+        if default == 1311780918 --[[Constants.UNIT_DEMON_LORD_LEGION]] then
+          UnitAddAbility(unit, 1093677623 --[[Constants.ABILITY_RAIN_OF_FIRE_LEGION_100]])
+          UnitAddAbility(unit, 1093677620 --[[Constants.ABILITY_CLEAVING_ATTACK_LEGION_100]])
+          UnitAddAbility(unit, 1093677635 --[[Constants.ABILITY_FINGER_OF_DEATH_LEGION_100]])
+          UnitAddAbility(unit, 1093677621 --[[Constants.ABILITY_UNHOLY_AURA_LEGION_100]])
+          UnitAddAbility(unit, 1093677634 --[[Constants.ABILITY_ATTRIBUTE_BONUS_LEGION_100]])
           break
         else
           System.throw(System.NotImplementedException("Abilities for hero " .. System.toString(GetUnitName(unit)) .. " (Id " .. unitTypeId .. ") not implemented yet!"))
@@ -23247,12 +23247,12 @@ System.namespace("Source.Models", function (namespace)
     TrainHero = function (this, unitTypeId, unit, heroLevel)
       repeat
         local default = unitTypeId
-        if default == 1311780918 --[[Constants.UNIT_D_MONENF_RST_LEGION]] then
-          SetUnitAbilityLevel(unit, 1093677623 --[[Constants.ABILITY_FEUERREGEN_LEGION_100]], heroLevel)
-          SetUnitAbilityLevel(unit, 1093677620 --[[Constants.ABILITY_SPALTSCHLAG_LEGION_100]], heroLevel)
-          SetUnitAbilityLevel(unit, 1093677635 --[[Constants.ABILITY_TODESFINGER_LEGION_100]], heroLevel)
-          SetUnitAbilityLevel(unit, 1093677621 --[[Constants.ABILITY_UNHEILIGE_AURA_LEGION_100]], heroLevel)
-          SetUnitAbilityLevel(unit, 1093677634 --[[Constants.ABILITY_ERH_HTE_ATTRIBUTE_LEGION_100]], heroLevel)
+        if default == 1311780918 --[[Constants.UNIT_DEMON_LORD_LEGION]] then
+          SetUnitAbilityLevel(unit, 1093677623 --[[Constants.ABILITY_RAIN_OF_FIRE_LEGION_100]], heroLevel)
+          SetUnitAbilityLevel(unit, 1093677620 --[[Constants.ABILITY_CLEAVING_ATTACK_LEGION_100]], heroLevel)
+          SetUnitAbilityLevel(unit, 1093677635 --[[Constants.ABILITY_FINGER_OF_DEATH_LEGION_100]], heroLevel)
+          SetUnitAbilityLevel(unit, 1093677621 --[[Constants.ABILITY_UNHOLY_AURA_LEGION_100]], heroLevel)
+          SetUnitAbilityLevel(unit, 1093677634 --[[Constants.ABILITY_ATTRIBUTE_BONUS_LEGION_100]], heroLevel)
           break
         else
           System.throw(System.NotImplementedException("Abilities for hero " .. System.toString(GetUnitName(unit)) .. " (Id " .. unitTypeId .. ") not implemented yet!"))
@@ -24356,89 +24356,89 @@ System.namespace("Source.Models.Teams", function (namespace)
         if default == 1378889781 --[[Constants.UPGRADE_MELEE_UNIT_TEAM]] then
           local extern = SourceModels.SpawnUnitCommand()
           extern.UnitSpawnType = 0 --[[SpawnInterval.Short]]
-          extern.UnitIdOfBuilding = 1747988788 --[[Constants.UNIT_KASERNE_ELF]]
+          extern.UnitIdOfBuilding = 1747988788 --[[Constants.UNIT_ANCIENT_OF_WAR_ELF]]
           spawnCommand = extern
 
           repeat
             local extern = techLevel
             if extern == 1 then
-              spawnCommand.UnitId = 1747988826 --[[Constants.UNIT_NAHKAMPFEINHEIT_STUFE_2_ELF]]
-              spawnCommand.UnitIdToUpgrade = 1747988824 --[[Constants.UNIT_NAHKAMPFEINHEIT_STUFE_1_ELF]]
+              spawnCommand.UnitId = 1747988826 --[[Constants.UNIT_DRUID_OF_THE_CLAW_ELF]]
+              spawnCommand.UnitIdToUpgrade = 1747988824 --[[Constants.UNIT_SENTRY_ELF]]
               return 2 --[[ResearchType.UpgradeUnit]], spawnCommand
             else
-              spawnCommand.UnitId = 1747989041 --[[Constants.UNIT_NAHKAMPFEINHEIT_STUFE_3_ELF]]
-              spawnCommand.UnitIdToUpgrade = 1747988826 --[[Constants.UNIT_NAHKAMPFEINHEIT_STUFE_2_ELF]]
+              spawnCommand.UnitId = 1747989041 --[[Constants.UNIT_MOUNTAIN_GIANT_ELF]]
+              spawnCommand.UnitIdToUpgrade = 1747988826 --[[Constants.UNIT_DRUID_OF_THE_CLAW_ELF]]
               return 2 --[[ResearchType.UpgradeUnit]], spawnCommand
             end
           until 1
         elseif default == 1378889785 --[[Constants.UPGRADE_DISTANCE_UNIT_TEAM]] then
           local extern = SourceModels.SpawnUnitCommand()
           extern.UnitSpawnType = 1 --[[SpawnInterval.Middle]]
-          extern.UnitIdOfBuilding = 1747988788 --[[Constants.UNIT_KASERNE_ELF]]
+          extern.UnitIdOfBuilding = 1747988788 --[[Constants.UNIT_ANCIENT_OF_WAR_ELF]]
           spawnCommand = extern
 
           repeat
             local extern = techLevel
             if extern == 1 then
-              spawnCommand.UnitId = 1747989045 --[[Constants.UNIT_FERNKAMPFEINHEIT_STUFE_2_ELF]]
-              spawnCommand.UnitIdToUpgrade = 1747989043 --[[Constants.UNIT_FERNKAMPFEINHEIT_STUFE_1_ELF]]
+              spawnCommand.UnitId = 1747989045 --[[Constants.UNIT_ARCHER_BESERK_ELF]]
+              spawnCommand.UnitIdToUpgrade = 1747989043 --[[Constants.UNIT_ARCHER_ELF]]
               return 2 --[[ResearchType.UpgradeUnit]], spawnCommand
             else
-              spawnCommand.UnitId = 1747989047 --[[Constants.UNIT_FERNKAMPFEINHEIT_STUFE_3_ELF]]
-              spawnCommand.UnitIdToUpgrade = 1747989045 --[[Constants.UNIT_FERNKAMPFEINHEIT_STUFE_2_ELF]]
+              spawnCommand.UnitId = 1747989047 --[[Constants.UNIT_ARCHER_ELITE_ELF]]
+              spawnCommand.UnitIdToUpgrade = 1747989045 --[[Constants.UNIT_ARCHER_BESERK_ELF]]
               return 2 --[[ResearchType.UpgradeUnit]], spawnCommand
             end
           until 1
         elseif default == 1378889795 --[[Constants.UPGRADE_FLIGHT_UNIT_TEAM]] then
           local extern = SourceModels.SpawnUnitCommand()
           extern.UnitSpawnType = 1 --[[SpawnInterval.Middle]]
-          extern.UnitIdOfBuilding = 1747988789 --[[Constants.UNIT_TELDRASSIL_ELF]]
+          extern.UnitIdOfBuilding = 1747988789 --[[Constants.UNIT_TREE_OF_ETERNITY_ELF]]
           spawnCommand = extern
 
           repeat
             local extern = techLevel
             if extern == 1 then
-              spawnCommand.UnitId = 1747989058 --[[Constants.UNIT_FLUGEINHEIT_STUFE_2_ELF]]
-              spawnCommand.UnitIdToUpgrade = 1747989060 --[[Constants.UNIT_FLUGEINHEIT_STUFE_1_ELF]]
+              spawnCommand.UnitId = 1747989058 --[[Constants.UNIT_HIPPOGRYPH_RIDER_ELF]]
+              spawnCommand.UnitIdToUpgrade = 1747989060 --[[Constants.UNIT_FAERIE_DRAGON_ELF]]
               return 2 --[[ResearchType.UpgradeUnit]], spawnCommand
             else
-              spawnCommand.UnitId = 1747989049 --[[Constants.UNIT_FLUGEINHEIT_STUFE_3_ELF]]
-              spawnCommand.UnitIdToUpgrade = 1747989058 --[[Constants.UNIT_FLUGEINHEIT_STUFE_2_ELF]]
+              spawnCommand.UnitId = 1747989049 --[[Constants.UNIT_CHIMAERA_ELF]]
+              spawnCommand.UnitIdToUpgrade = 1747989058 --[[Constants.UNIT_HIPPOGRYPH_RIDER_ELF]]
               return 2 --[[ResearchType.UpgradeUnit]], spawnCommand
             end
           until 1
         elseif default == 1378889797 --[[Constants.UPGRADE_MAGE_UNIT_TEAM]] then
           local extern = SourceModels.SpawnUnitCommand()
           extern.UnitSpawnType = 1 --[[SpawnInterval.Middle]]
-          extern.UnitIdOfBuilding = 1747988789 --[[Constants.UNIT_TELDRASSIL_ELF]]
+          extern.UnitIdOfBuilding = 1747988789 --[[Constants.UNIT_TREE_OF_ETERNITY_ELF]]
           spawnCommand = extern
 
           repeat
             local extern = techLevel
             if extern == 1 then
-              spawnCommand.UnitId = 1747989064 --[[Constants.UNIT_MAGIEEINHEIT_STUFE_2_ELF]]
-              spawnCommand.UnitIdToUpgrade = 1747989066 --[[Constants.UNIT_MAGIEEINHEIT_STUFE_1_ELF]]
+              spawnCommand.UnitId = 1747989064 --[[Constants.UNIT_WARDEN_ELF]]
+              spawnCommand.UnitIdToUpgrade = 1747989066 --[[Constants.UNIT_DRUID_OF_THE_TALON_ELF]]
               return 2 --[[ResearchType.UpgradeUnit]], spawnCommand
             else
-              spawnCommand.UnitId = 1747989062 --[[Constants.UNIT_MAGIEEINHEIT_STUFE_3_ELF]]
-              spawnCommand.UnitIdToUpgrade = 1747989064 --[[Constants.UNIT_MAGIEEINHEIT_STUFE_2_ELF]]
+              spawnCommand.UnitId = 1747989062 --[[Constants.UNIT_SPIRIT_OF_VENGEANCE_ELF]]
+              spawnCommand.UnitIdToUpgrade = 1747989064 --[[Constants.UNIT_WARDEN_ELF]]
               return 2 --[[ResearchType.UpgradeUnit]], spawnCommand
             end
           until 1
         elseif default == 1378889784 --[[Constants.UPGRADE_SIEGE_UNIT_TEAM]] then
           local extern = SourceModels.SpawnUnitCommand()
           extern.UnitSpawnType = 2 --[[SpawnInterval.Long]]
-          extern.UnitIdOfBuilding = 1747988789 --[[Constants.UNIT_TELDRASSIL_ELF]]
+          extern.UnitIdOfBuilding = 1747988789 --[[Constants.UNIT_TREE_OF_ETERNITY_ELF]]
           spawnCommand = extern
 
           repeat
             local extern = techLevel
             if extern == 1 then
-              spawnCommand.UnitId = 1747989070 --[[Constants.UNIT_BELAGERUNGSEINHEIT_STUFE_1_ELF]]
+              spawnCommand.UnitId = 1747989070 --[[Constants.UNIT_PRISON_WAGON_ELF]]
               return 1 --[[ResearchType.AddUnit]], spawnCommand
             else
-              spawnCommand.UnitId = 1747989068 --[[Constants.UNIT_BELAGERUNGSEINHEIT_STUFE_2_ELF]]
-              spawnCommand.UnitIdToUpgrade = 1747989070 --[[Constants.UNIT_BELAGERUNGSEINHEIT_STUFE_1_ELF]]
+              spawnCommand.UnitId = 1747989068 --[[Constants.UNIT_GLAIVE_THROWER_ELF]]
+              spawnCommand.UnitIdToUpgrade = 1747989070 --[[Constants.UNIT_PRISON_WAGON_ELF]]
               return 2 --[[ResearchType.UpgradeUnit]], spawnCommand
             end
           until 1
@@ -24495,12 +24495,12 @@ System.namespace("Source.Models.Teams", function (namespace)
           repeat
             local extern = techLevel
             if extern == 1 then
-              spawnCommand.UnitId = 1747988547 --[[Constants.UNIT_SOLDIER_IMPROVED_HUMAN]]
+              spawnCommand.UnitId = 1747988547 --[[Constants.UNIT_CAPTIAN_HUMAN]]
               spawnCommand.UnitIdToUpgrade = 1747988536 --[[Constants.UNIT_PRIEST_HUMAN]]
               return 2 --[[ResearchType.UpgradeUnit]], spawnCommand
             else
-              spawnCommand.UnitId = 1747988546 --[[Constants.UNIT_SOLDIER_ELITE_HUMAN]]
-              spawnCommand.UnitIdToUpgrade = 1747988547 --[[Constants.UNIT_SOLDIER_IMPROVED_HUMAN]]
+              spawnCommand.UnitId = 1747988546 --[[Constants.UNIT_KNIGHT_HUMAN]]
+              spawnCommand.UnitIdToUpgrade = 1747988547 --[[Constants.UNIT_CAPTIAN_HUMAN]]
               return 2 --[[ResearchType.UpgradeUnit]], spawnCommand
             end
           until 1
@@ -24513,12 +24513,12 @@ System.namespace("Source.Models.Teams", function (namespace)
           repeat
             local extern = techLevel
             if extern == 1 then
-              spawnCommand.UnitId = 1747988550 --[[Constants.UNIT_RIFLEMAN_IMPROVED_HUMAN]]
+              spawnCommand.UnitId = 1747988550 --[[Constants.UNIT_RIFLEMAN_BESERK_HUMAN]]
               spawnCommand.UnitIdToUpgrade = 1747988530 --[[Constants.UNIT_RIFLEMAN_HUMAN]]
               return 2 --[[ResearchType.UpgradeUnit]], spawnCommand
             else
               spawnCommand.UnitId = 1747988551 --[[Constants.UNIT_RIFLEMAN_ELITE_HUMAN]]
-              spawnCommand.UnitIdToUpgrade = 1747988550 --[[Constants.UNIT_RIFLEMAN_IMPROVED_HUMAN]]
+              spawnCommand.UnitIdToUpgrade = 1747988550 --[[Constants.UNIT_RIFLEMAN_BESERK_HUMAN]]
               return 2 --[[ResearchType.UpgradeUnit]], spawnCommand
             end
           until 1
@@ -24623,89 +24623,89 @@ System.namespace("Source.Models.Teams", function (namespace)
         if default == 1378889781 --[[Constants.UPGRADE_MELEE_UNIT_TEAM]] then
           local extern = SourceModels.SpawnUnitCommand()
           extern.UnitSpawnType = 0 --[[SpawnInterval.Short]]
-          extern.UnitIdOfBuilding = 1747988569 --[[Constants.UNIT_KASERNE_ORC]]
+          extern.UnitIdOfBuilding = 1747988569 --[[Constants.UNIT_BARRACKS_ORC]]
           spawnCommand = extern
 
           repeat
             local extern = techLevel
             if extern == 1 then
-              spawnCommand.UnitId = 1747988810 --[[Constants.UNIT_NAHKAMPFEINHEIT_STUFE_2_ORC]]
+              spawnCommand.UnitId = 1747988810 --[[Constants.UNIT_BESERK_ORC]]
               spawnCommand.UnitIdToUpgrade = 1747988809 --[[Constants.UNIT_GRUNT_ORC]]
               return 2 --[[ResearchType.UpgradeUnit]], spawnCommand
             else
-              spawnCommand.UnitId = 1747988811 --[[Constants.UNIT_NAHKAMPFEINHEIT_STUFE_3_ORC]]
-              spawnCommand.UnitIdToUpgrade = 1747988810 --[[Constants.UNIT_NAHKAMPFEINHEIT_STUFE_2_ORC]]
+              spawnCommand.UnitId = 1747988811 --[[Constants.UNIT_TAUREN_ORC]]
+              spawnCommand.UnitIdToUpgrade = 1747988810 --[[Constants.UNIT_BESERK_ORC]]
               return 2 --[[ResearchType.UpgradeUnit]], spawnCommand
             end
           until 1
         elseif default == 1378889785 --[[Constants.UPGRADE_DISTANCE_UNIT_TEAM]] then
           local extern = SourceModels.SpawnUnitCommand()
           extern.UnitSpawnType = 1 --[[SpawnInterval.Middle]]
-          extern.UnitIdOfBuilding = 1747988569 --[[Constants.UNIT_KASERNE_ORC]]
+          extern.UnitIdOfBuilding = 1747988569 --[[Constants.UNIT_BARRACKS_ORC]]
           spawnCommand = extern
 
           repeat
             local extern = techLevel
             if extern == 1 then
-              spawnCommand.UnitId = 1747988813 --[[Constants.UNIT_FERNKAMPFEINHEIT_STUFE_2_ORC]]
+              spawnCommand.UnitId = 1747988813 --[[Constants.UNIT_HEADHUNTER_BESERK_ORC]]
               spawnCommand.UnitIdToUpgrade = 1747988812 --[[Constants.UNIT_HEADHUNTER_ORC]]
               return 2 --[[ResearchType.UpgradeUnit]], spawnCommand
             else
-              spawnCommand.UnitId = 1747988814 --[[Constants.UNIT_FERNKAMPFEINHEIT_STUFE_3_ORC]]
-              spawnCommand.UnitIdToUpgrade = 1747988813 --[[Constants.UNIT_FERNKAMPFEINHEIT_STUFE_2_ORC]]
+              spawnCommand.UnitId = 1747988814 --[[Constants.UNIT_HEADHUNTER_ELITE_ORC]]
+              spawnCommand.UnitIdToUpgrade = 1747988813 --[[Constants.UNIT_HEADHUNTER_BESERK_ORC]]
               return 2 --[[ResearchType.UpgradeUnit]], spawnCommand
             end
           until 1
         elseif default == 1378889795 --[[Constants.UPGRADE_FLIGHT_UNIT_TEAM]] then
           local extern = SourceModels.SpawnUnitCommand()
           extern.UnitSpawnType = 1 --[[SpawnInterval.Middle]]
-          extern.UnitIdOfBuilding = 1747988570 --[[Constants.UNIT_FESTUNG_ORC]]
+          extern.UnitIdOfBuilding = 1747988570 --[[Constants.UNIT_FORTRESS_ORC]]
           spawnCommand = extern
 
           repeat
             local extern = techLevel
             if extern == 1 then
-              spawnCommand.UnitId = 1747988816 --[[Constants.UNIT_FLUGEINHEIT_STUFE_2_ORC]]
-              spawnCommand.UnitIdToUpgrade = 1747988815 --[[Constants.UNIT_FLUGEINHEIT_STUFE_1_ORC]]
+              spawnCommand.UnitId = 1747988816 --[[Constants.UNIT_WIND_RIDER_ORC]]
+              spawnCommand.UnitIdToUpgrade = 1747988815 --[[Constants.UNIT_BATRIDER_ORC]]
               return 2 --[[ResearchType.UpgradeUnit]], spawnCommand
             else
-              spawnCommand.UnitId = 1747988817 --[[Constants.UNIT_FLUGEINHEIT_STUFE_3_ORC]]
-              spawnCommand.UnitIdToUpgrade = 1747988816 --[[Constants.UNIT_FLUGEINHEIT_STUFE_2_ORC]]
+              spawnCommand.UnitId = 1747988817 --[[Constants.UNIT_SPIRIT_WIND_RIDER_ORC]]
+              spawnCommand.UnitIdToUpgrade = 1747988816 --[[Constants.UNIT_WIND_RIDER_ORC]]
               return 2 --[[ResearchType.UpgradeUnit]], spawnCommand
             end
           until 1
         elseif default == 1378889797 --[[Constants.UPGRADE_MAGE_UNIT_TEAM]] then
           local extern = SourceModels.SpawnUnitCommand()
           extern.UnitSpawnType = 1 --[[SpawnInterval.Middle]]
-          extern.UnitIdOfBuilding = 1747988570 --[[Constants.UNIT_FESTUNG_ORC]]
+          extern.UnitIdOfBuilding = 1747988570 --[[Constants.UNIT_FORTRESS_ORC]]
           spawnCommand = extern
 
           repeat
             local extern = techLevel
             if extern == 1 then
-              spawnCommand.UnitId = 1747988819 --[[Constants.UNIT_MAGIEEINHEIT_STUFE_2_ORC]]
-              spawnCommand.UnitIdToUpgrade = 1747988818 --[[Constants.UNIT_MAGIEEINHEIT_STUFE_1_ORC]]
+              spawnCommand.UnitId = 1747988819 --[[Constants.UNIT_SHAMAN_ORC]]
+              spawnCommand.UnitIdToUpgrade = 1747988818 --[[Constants.UNIT_WITCH_DOCTOR_ORC]]
               return 2 --[[ResearchType.UpgradeUnit]], spawnCommand
             else
-              spawnCommand.UnitId = 1747988820 --[[Constants.UNIT_MAGIEEINHEIT_STUFE_3_ORC]]
-              spawnCommand.UnitIdToUpgrade = 1747988819 --[[Constants.UNIT_MAGIEEINHEIT_STUFE_2_ORC]]
+              spawnCommand.UnitId = 1747988820 --[[Constants.UNIT_WARLOCK_ORC]]
+              spawnCommand.UnitIdToUpgrade = 1747988819 --[[Constants.UNIT_SHAMAN_ORC]]
               return 2 --[[ResearchType.UpgradeUnit]], spawnCommand
             end
           until 1
         elseif default == 1378889784 --[[Constants.UPGRADE_SIEGE_UNIT_TEAM]] then
           local extern = SourceModels.SpawnUnitCommand()
           extern.UnitSpawnType = 2 --[[SpawnInterval.Long]]
-          extern.UnitIdOfBuilding = 1747988570 --[[Constants.UNIT_FESTUNG_ORC]]
+          extern.UnitIdOfBuilding = 1747988570 --[[Constants.UNIT_FORTRESS_ORC]]
           spawnCommand = extern
 
           repeat
             local extern = techLevel
             if extern == 1 then
-              spawnCommand.UnitId = 1747988821 --[[Constants.UNIT_BELAGERUNGSEINHEIT_STUFE_1_ORC]]
+              spawnCommand.UnitId = 1747988821 --[[Constants.UNIT_KODO_BEAST_ORC]]
               return 1 --[[ResearchType.AddUnit]], spawnCommand
             else
-              spawnCommand.UnitId = 1747988822 --[[Constants.UNIT_BELAGERUNGSEINHEIT_STUFE_2_ORC]]
-              spawnCommand.UnitIdToUpgrade = 1747988821 --[[Constants.UNIT_BELAGERUNGSEINHEIT_STUFE_1_ORC]]
+              spawnCommand.UnitId = 1747988822 --[[Constants.UNIT_DEMOLISHER_ORC]]
+              spawnCommand.UnitIdToUpgrade = 1747988821 --[[Constants.UNIT_KODO_BEAST_ORC]]
               return 2 --[[ResearchType.UpgradeUnit]], spawnCommand
             end
           until 1
@@ -24756,89 +24756,89 @@ System.namespace("Source.Models.Teams", function (namespace)
         if default == 1378889781 --[[Constants.UPGRADE_MELEE_UNIT_TEAM]] then
           local extern = SourceModels.SpawnUnitCommand()
           extern.UnitSpawnType = 0 --[[SpawnInterval.Short]]
-          extern.UnitIdOfBuilding = 1747988805 --[[Constants.UNIT_GRUFT_UNDEAD]]
+          extern.UnitIdOfBuilding = 1747988805 --[[Constants.UNIT_CRYPT_UNDEAD]]
           spawnCommand = extern
 
           repeat
             local extern = techLevel
             if extern == 1 then
-              spawnCommand.UnitId = 1747989040 --[[Constants.UNIT_NAHKAMPFEINHEIT_STUFE_2_UNDEAD]]
-              spawnCommand.UnitIdToUpgrade = 1747988825 --[[Constants.UNIT_NAHKAMPFEINHEIT_STUFE_1_UNDEAD]]
+              spawnCommand.UnitId = 1747989040 --[[Constants.UNIT_SKELETON_WARRIOR_UNDEAD]]
+              spawnCommand.UnitIdToUpgrade = 1747988825 --[[Constants.UNIT_GHOUL_UNDEAD]]
               return 2 --[[ResearchType.UpgradeUnit]], spawnCommand
             else
-              spawnCommand.UnitId = 1747989042 --[[Constants.UNIT_NAHKAMPFEINHEIT_STUFE_3_UNDEAD]]
-              spawnCommand.UnitIdToUpgrade = 1747989040 --[[Constants.UNIT_NAHKAMPFEINHEIT_STUFE_2_UNDEAD]]
+              spawnCommand.UnitId = 1747989042 --[[Constants.UNIT_ABOMINATION_UNDEAD]]
+              spawnCommand.UnitIdToUpgrade = 1747989040 --[[Constants.UNIT_SKELETON_WARRIOR_UNDEAD]]
               return 2 --[[ResearchType.UpgradeUnit]], spawnCommand
             end
           until 1
         elseif default == 1378889785 --[[Constants.UPGRADE_DISTANCE_UNIT_TEAM]] then
           local extern = SourceModels.SpawnUnitCommand()
           extern.UnitSpawnType = 1 --[[SpawnInterval.Middle]]
-          extern.UnitIdOfBuilding = 1747988805 --[[Constants.UNIT_GRUFT_UNDEAD]]
+          extern.UnitIdOfBuilding = 1747988805 --[[Constants.UNIT_CRYPT_UNDEAD]]
           spawnCommand = extern
 
           repeat
             local extern = techLevel
             if extern == 1 then
-              spawnCommand.UnitId = 1747989046 --[[Constants.UNIT_FERNKAMPFEINHEIT_STUFE_2_UNDEAD]]
-              spawnCommand.UnitIdToUpgrade = 1747989044 --[[Constants.UNIT_FERNKAMPFEINHEIT_STUFE_1_UNDEAD]]
+              spawnCommand.UnitId = 1747989046 --[[Constants.UNIT_CRYPT_FIEND_BESERK_UNDEAD]]
+              spawnCommand.UnitIdToUpgrade = 1747989044 --[[Constants.UNIT_CRYPT_FIEND_UNDEAD]]
               return 2 --[[ResearchType.UpgradeUnit]], spawnCommand
             else
-              spawnCommand.UnitId = 1747989048 --[[Constants.UNIT_FERNKAMPFEINHEIT_STUFE_3_UNDEAD]]
-              spawnCommand.UnitIdToUpgrade = 1747989046 --[[Constants.UNIT_FERNKAMPFEINHEIT_STUFE_2_UNDEAD]]
+              spawnCommand.UnitId = 1747989048 --[[Constants.UNIT_CRYPT_FIEND_ELITE_UNDEAD]]
+              spawnCommand.UnitIdToUpgrade = 1747989046 --[[Constants.UNIT_CRYPT_FIEND_BESERK_UNDEAD]]
               return 2 --[[ResearchType.UpgradeUnit]], spawnCommand
             end
           until 1
         elseif default == 1378889795 --[[Constants.UPGRADE_FLIGHT_UNIT_TEAM]] then
           local extern = SourceModels.SpawnUnitCommand()
           extern.UnitSpawnType = 1 --[[SpawnInterval.Middle]]
-          extern.UnitIdOfBuilding = 1747988801 --[[Constants.UNIT_SCHWARZE_ZITADELLE_UNDEAD]]
+          extern.UnitIdOfBuilding = 1747988801 --[[Constants.UNIT_BLACK_CITADEL_UNDEAD]]
           spawnCommand = extern
 
           repeat
             local extern = techLevel
             if extern == 1 then
-              spawnCommand.UnitId = 1747989059 --[[Constants.UNIT_FLUGEINHEIT_STUFE_2_UNDEAD]]
-              spawnCommand.UnitIdToUpgrade = 1747989061 --[[Constants.UNIT_FLUGEINHEIT_STUFE_1_UNDEAD]]
+              spawnCommand.UnitId = 1747989059 --[[Constants.UNIT_DESTROYER_UNDEAD]]
+              spawnCommand.UnitIdToUpgrade = 1747989061 --[[Constants.UNIT_GARGOYLE_UNDEAD]]
               return 2 --[[ResearchType.UpgradeUnit]], spawnCommand
             else
-              spawnCommand.UnitId = 1747989057 --[[Constants.UNIT_FLUGEINHEIT_STUFE_3_UNDEAD]]
-              spawnCommand.UnitIdToUpgrade = 1747989059 --[[Constants.UNIT_FLUGEINHEIT_STUFE_2_UNDEAD]]
+              spawnCommand.UnitId = 1747989057 --[[Constants.UNIT_FROST_WYRM_UNDEAD]]
+              spawnCommand.UnitIdToUpgrade = 1747989059 --[[Constants.UNIT_DESTROYER_UNDEAD]]
               return 2 --[[ResearchType.UpgradeUnit]], spawnCommand
             end
           until 1
         elseif default == 1378889797 --[[Constants.UPGRADE_MAGE_UNIT_TEAM]] then
           local extern = SourceModels.SpawnUnitCommand()
           extern.UnitSpawnType = 1 --[[SpawnInterval.Middle]]
-          extern.UnitIdOfBuilding = 1747988801 --[[Constants.UNIT_SCHWARZE_ZITADELLE_UNDEAD]]
+          extern.UnitIdOfBuilding = 1747988801 --[[Constants.UNIT_BLACK_CITADEL_UNDEAD]]
           spawnCommand = extern
 
           repeat
             local extern = techLevel
             if extern == 1 then
-              spawnCommand.UnitId = 1747989065 --[[Constants.UNIT_MAGIEEINHEIT_STUFE_2_UNDEAD]]
-              spawnCommand.UnitIdToUpgrade = 1747989067 --[[Constants.UNIT_MAGIEEINHEIT_STUFE_1_UNDEAD]]
+              spawnCommand.UnitId = 1747989065 --[[Constants.UNIT_NECROMANCER_UNDEAD]]
+              spawnCommand.UnitIdToUpgrade = 1747989067 --[[Constants.UNIT_SKELETAL_MAGE_UNDEAD]]
               return 2 --[[ResearchType.UpgradeUnit]], spawnCommand
             else
-              spawnCommand.UnitId = 1747989063 --[[Constants.UNIT_MAGIEEINHEIT_STUFE_3_UNDEAD]]
-              spawnCommand.UnitIdToUpgrade = 1747989065 --[[Constants.UNIT_MAGIEEINHEIT_STUFE_2_UNDEAD]]
+              spawnCommand.UnitId = 1747989063 --[[Constants.UNIT_BANSHEE_UNDEAD]]
+              spawnCommand.UnitIdToUpgrade = 1747989065 --[[Constants.UNIT_NECROMANCER_UNDEAD]]
               return 2 --[[ResearchType.UpgradeUnit]], spawnCommand
             end
           until 1
         elseif default == 1378889784 --[[Constants.UPGRADE_SIEGE_UNIT_TEAM]] then
           local extern = SourceModels.SpawnUnitCommand()
           extern.UnitSpawnType = 2 --[[SpawnInterval.Long]]
-          extern.UnitIdOfBuilding = 1747988801 --[[Constants.UNIT_SCHWARZE_ZITADELLE_UNDEAD]]
+          extern.UnitIdOfBuilding = 1747988801 --[[Constants.UNIT_BLACK_CITADEL_UNDEAD]]
           spawnCommand = extern
 
           repeat
             local extern = techLevel
             if extern == 1 then
-              spawnCommand.UnitId = 1747989071 --[[Constants.UNIT_BELAGERUNGSEINHEIT_STUFE_1_UNDEAD]]
+              spawnCommand.UnitId = 1747989071 --[[Constants.UNIT_OBSIDIAN_STATUE_UNDEAD]]
               return 1 --[[ResearchType.AddUnit]], spawnCommand
             else
-              spawnCommand.UnitId = 1747989069 --[[Constants.UNIT_BELAGERUNGSEINHEIT_STUFE_2_UNDEAD]]
-              spawnCommand.UnitIdToUpgrade = 1747989071 --[[Constants.UNIT_BELAGERUNGSEINHEIT_STUFE_1_UNDEAD]]
+              spawnCommand.UnitId = 1747989069 --[[Constants.UNIT_MEAT_WAGON_UNDEAD]]
+              spawnCommand.UnitIdToUpgrade = 1747989071 --[[Constants.UNIT_OBSIDIAN_STATUE_UNDEAD]]
               return 2 --[[ResearchType.UpgradeUnit]], spawnCommand
             end
           until 1
@@ -36380,8 +36380,8 @@ local InitCSharp = function ()
       "WCSharp.Missiles.HomingMissile",
       "WCSharp.Missiles.MomentumMissile",
       "WCSharp.Missiles.OrbitalMissile",
-      "WCSharp.SaveLoad.SaveLoadedMessage_1",
       "WCSharp.SaveLoad.Save_1",
+      "WCSharp.SaveLoad.SaveLoadedMessage_1",
       "WCSharp.W3MMD.IW3MmdVar",
       "Areas",
       "Constants",

@@ -77,7 +77,7 @@ namespace Source.Models
 
       if (SpawnBuildingEast == null || !SpawnBuildingEast.Wc3Unit.Alive)
       {
-        SpawnBuildingEast = new LegionSpawnBuilding(Constants.UNIT_D_MONENSCHREIN_LEGION, Areas.MiddleLaneSpawnEast, 180f);
+        SpawnBuildingEast = new LegionSpawnBuilding(Constants.UNIT_DEMON_SHRINE_LEGION, Areas.MiddleLaneSpawnEast, 180f);
         SpawnBuildingEast.RegisterOnDies(LegionBuilding.OnDies);
 
         SpawnBuildingEast.AddSpawnTrigger(Enums.SpawnInterval.Middle, Areas.MiddleLaneSpawnEast, Areas.CenterRight).Run();
@@ -98,7 +98,7 @@ namespace Source.Models
 
       if (SpawnBuildingWest == null || !SpawnBuildingWest.Wc3Unit.Alive)
       {
-        SpawnBuildingWest = new LegionSpawnBuilding(Constants.UNIT_D_MONENSCHREIN_LEGION, Areas.MiddleLaneSpawnWest);
+        SpawnBuildingWest = new LegionSpawnBuilding(Constants.UNIT_DEMON_SHRINE_LEGION, Areas.MiddleLaneSpawnWest);
         SpawnBuildingWest.RegisterOnDies(LegionBuilding.OnDies);
 
         SpawnBuildingWest.AddSpawnTrigger(Enums.SpawnInterval.Middle, Areas.MiddleLaneSpawnWest, Areas.CenterLeft).Run();
@@ -117,7 +117,7 @@ namespace Source.Models
     {
       switch (unitTypeId)
       {
-        case Constants.UNIT_D_MONENF_RST_LEGION:
+        case Constants.UNIT_DEMON_LORD_LEGION:
           unit.AddAbility(Constants.ABILITY_RAIN_OF_FIRE_LEGION_100);
           unit.AddAbility(Constants.ABILITY_CLEAVING_ATTACK_LEGION_100);
           unit.AddAbility(Constants.ABILITY_FINGER_OF_DEATH_LEGION_100);
@@ -134,7 +134,7 @@ namespace Source.Models
     {
       switch (unitTypeId)
       {
-        case Constants.UNIT_D_MONENF_RST_LEGION:
+        case Constants.UNIT_DEMON_LORD_LEGION:
           unit.SetAbilityLevel(Constants.ABILITY_RAIN_OF_FIRE_LEGION_100, heroLevel);
           unit.SetAbilityLevel(Constants.ABILITY_CLEAVING_ATTACK_LEGION_100, heroLevel);
           unit.SetAbilityLevel(Constants.ABILITY_FINGER_OF_DEATH_LEGION_100, heroLevel);

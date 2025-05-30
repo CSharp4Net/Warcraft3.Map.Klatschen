@@ -19,6 +19,12 @@ namespace Source.Logics
           return;
       }
 
+      if (team == null)
+      {
+        // Helden neutrale Spieler (Legion) nicht automatisch wieder beleben
+        return;
+      }
+
       respawnTime = 30;
 
       // Verstorbenen Held nach gegebener Zeit wieder belegen
@@ -65,7 +71,7 @@ namespace Source.Logics
       int unitId = Common.GetUnitTypeId(unit);
 
       if (unitId == Constants.UNIT_GUARDIAN_HUMAN || unitId == Constants.UNIT_GUARDIAN_ORC || 
-        unitId == Constants.UNIT_W_CHTER_ELF || unitId == Constants.UNIT_W_CHTER_UNDEAD)
+        unitId == Constants.UNIT_GUARDIAN_ELF || unitId == Constants.UNIT_GUARDIAN_UNDEAD)
       {
         ProcessWaechterLevelUp(unit);
       }

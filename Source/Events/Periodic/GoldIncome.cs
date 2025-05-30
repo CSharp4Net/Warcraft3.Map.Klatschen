@@ -12,7 +12,11 @@ namespace Source.Events.Periodic
 
         if (!user.Defeated)
         {
+#if DEBUG
+          user.Wc3Player.Gold += 100;
+#else
           user.Wc3Player.Gold += 1;
+#endif
         }
       }
 

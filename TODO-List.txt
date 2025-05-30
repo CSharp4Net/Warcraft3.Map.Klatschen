@@ -6,8 +6,8 @@ wird die Erstellung und Wiedergeburt bis auf weiteres nicht implementiert.
 
 Idee : Ggf. kann die Race der Unit einen Hinweis darauf geben?!
 
-Umbennen:
+Umbenennen:
 =========
-Undead units + buildings
-Elf units + buildings
-Hero spells
+Neutrale Einheiten
+Neutrale Gebäude
+Spezial Einheiten (Zauber)

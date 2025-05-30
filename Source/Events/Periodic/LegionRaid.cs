@@ -166,7 +166,7 @@ namespace Source.Events.Periodic
             Program.Legion.CreateOrRefreshWestSpawnBuilding();
             Program.Legion.CreateOrRefreshEastSpawnBuilding();
 
-            Program.Legion.CreateOrReviveHero(Constants.UNIT_D_MONENF_RST_LEGION, Areas.Center, maxHeroLevel, executions);
+            Program.Legion.CreateOrReviveHero(Constants.UNIT_DEMON_LORD_LEGION, Areas.Center, maxHeroLevel, executions);
 
             // Zentrum - Weitere Einheiten via Cast hinzurufen
             CreateUnitAtRandomPointWithEffect(centerRect, Constants.UNIT_INFERNAL_LEGION);
