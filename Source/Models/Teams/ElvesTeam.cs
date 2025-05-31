@@ -5,8 +5,8 @@ namespace Source.Models.Teams
 {
   public sealed class ElvesTeam : TeamBase
   {
-    public ElvesTeam(player wc3ComputerPlayer, Area teamBaseArea)
-      : base(wc3ComputerPlayer, teamBaseArea)
+    public ElvesTeam(player wc3ComputerPlayer)
+      : base(wc3ComputerPlayer, Areas.ElfBase)
     {
       ColorizedName = $"|c{ConstantsEx.ColorHexCode_Gray}{wc3ComputerPlayer.Name}|r";
     }

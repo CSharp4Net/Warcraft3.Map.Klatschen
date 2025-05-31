@@ -129,7 +129,7 @@ namespace Source.Events
         unit soldUnit = Common.GetSoldUnit();
         unit sellingUnit = Common.GetSellingUnit();
 
-        if (Common.GetUnitTypeId(buyingUnit) == Constants.UNIT_HELDENSEELE_HERO_SELECTOR)
+        if (Common.GetUnitTypeId(buyingUnit) == Constants.UNIT_HEROIC_SOUL_HERO_SELECTOR)
         {
           // Helden-Selector kauft Benutzerhelden
           Logics.HeroSelector.HandleHeroBuyed(buyingUnit, soldUnit);

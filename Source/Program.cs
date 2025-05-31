@@ -88,10 +88,10 @@ namespace Source
         Blizzard.SetTimeOfDay(0f);
 
         // Teams initialisieren
-        Humans = new HumansTeam(Common.Player(0), Areas.HumanBase);
-        Orcs = new OrcsTeam(Common.Player(4), Areas.OrcBase);
-        Elves = new ElvesTeam(Common.Player(8), Areas.ElfBase);
-        Undeads = new UndeadsTeam(Common.Player(12), Areas.UndeadBase);
+        Humans = new HumansTeam(Common.Player(0));
+        Orcs = new OrcsTeam(Common.Player(4));
+        Elves = new ElvesTeam(Common.Player(8));
+        Undeads = new UndeadsTeam(Common.Player(12));
 
         Legion = new LegionForce(ConstantsEx.ForceName_DemonLegion);
 
@@ -388,43 +388,43 @@ namespace Source
     {
       // Menschen-Creeps
       ConstructCreepCamp("Bandits", Areas.HumanCreepToElfSpawnBuilding, Areas.HumanCreepToElfSpawn,
-        Humans, Elves, Constants.UNIT_BANDITENLAGER_CREEP, Constants.UNIT_BANDIT_LORD_CREEP,
+        Humans, Elves, Constants.UNIT_BANDIT_CAMP_CREEP, Constants.UNIT_BANDIT_LORD_CREEP,
         Constants.UNIT_BANDIT_CREEP, Constants.UNIT_BANDIT_CREEP, Constants.UNIT_BANDIT_CREEP,
-        Constants.UNIT_BANDITMARODEUR_CREEP, Constants.UNIT_BANDITMARODEUR_CREEP, Constants.UNIT_BANDITENZAUBERER_CREEP);
+        Constants.UNIT_BANDIT_ASSASSIN_CREEP, Constants.UNIT_BANDIT_ASSASSIN_CREEP, Constants.UNIT_BANDIT_WIZARD_CREEP);
       ConstructCreepCamp("Tuskarr", Areas.HumanCreepToOrcSpawnBuilding, Areas.HumanCreepToOrcSpawn,
-        Humans, Orcs, Constants.UNIT_TUSKARRLAGER_CREEP, Constants.UNIT_TUSKARR_CHIEFTAIN_CREEP,
-        Constants.UNIT_TUSKARRKRIEGER_CREEP, Constants.UNIT_TUSKARRKRIEGER_CREEP, Constants.UNIT_TUSKARRKRIEGER_CREEP,
-        Constants.UNIT_TUSKARRFALLENSTELLER_CREEP, Constants.UNIT_TUSKARRFALLENSTELLER_CREEP, Constants.UNIT_TUSKARRHEILER_CREEP);
+        Humans, Orcs, Constants.UNIT_TUSKARR_CAMP_CREEP, Constants.UNIT_TUSKARR_CHIEFTAIN_CREEP,
+        Constants.UNIT_TUSKARR_WARRIOR_CREEP, Constants.UNIT_TUSKARR_WARRIOR_CREEP, Constants.UNIT_TUSKARR_WARRIOR_CREEP,
+        Constants.UNIT_TUSKARR_HUNTER_CREEP, Constants.UNIT_TUSKARR_HUNTER_CREEP, Constants.UNIT_TUSKARR_HEALER_CREEP);
 
       // Elfen-Creeps
       ConstructCreepCamp("Furbolgs", Areas.ElfCreepToHumanSpawnBuilding, Areas.ElfCreepToHumanSpawn,
-        Elves, Humans, Constants.UNIT_FURBOLGLAGER_CREEP, Constants.UNIT_FURBOLG_CHAMPION_CREEP,
-        Constants.UNIT_FURBOLGURSAKRIEGER_CREEP, Constants.UNIT_FURBOLGURSAKRIEGER_CREEP,
-        Constants.UNIT_FURBOLGSPURENLESER_CREEP, Constants.UNIT_FURBOLGSPURENLESER_CREEP, Constants.UNIT_FURBOLGAHNENSCHAMANE_CREEP);
+        Elves, Humans, Constants.UNIT_FURBOLG_CAMP_CREEP, Constants.UNIT_FURBOLG_CHAMPION_CREEP,
+        Constants.UNIT_FURBOLG_WARRIOR_CREEP, Constants.UNIT_FURBOLG_WARRIOR_CREEP,
+        Constants.UNIT_FURBOLG_HUNTER_CREEP, Constants.UNIT_FURBOLG_HUNTER_CREEP, Constants.UNIT_FURBOLG_WIZARD_CREEP);
       ConstructCreepCamp("Wildekins", Areas.ElfCreepToUndeadSpawnBuilding, Areas.ElfCreepToUndeadSpawn,
-        Elves, Undeads, Constants.UNIT_WILDEKINLAGER_CREEP, Constants.UNIT_WILDEKINALPHA_CREEP,
+        Elves, Undeads, Constants.UNIT_WILDEKIN_CAMP_CREEP, Constants.UNIT_WILDEKIN_ALPHA_CREEP,
         Constants.UNIT_WILDEKIN_CREEP, Constants.UNIT_WILDEKIN_CREEP, Constants.UNIT_WILDEKIN_CREEP,
-        Constants.UNIT_WILDEKINFALLENSTELLER_CREEP, Constants.UNIT_WILDEKINFALLENSTELLER_CREEP, Constants.UNIT_WILDEKINAHNE_CREEP);
+        Constants.UNIT_WILDEKIN_TRAPPER_CREEP, Constants.UNIT_WILDEKIN_TRAPPER_CREEP, Constants.UNIT_WILDEKIN_ANCESTOR_CREEP);
 
       // Orcs-Creeps
       ConstructCreepCamp("Centaurs", Areas.OrcCreepToHumanSpawnBuilding, Areas.OrcCreepToHumanSpawn,
-        Orcs, Humans, Constants.UNIT_ZENTAURENLAGER_CREEP, Constants.UNIT_CENTAUR_KHAN_CREEP,
-        Constants.UNIT_ZENTAURENL_UFER_CREEP, Constants.UNIT_ZENTAURENL_UFER_CREEP,
-        Constants.UNIT_ZENTAURENBOGENSCH_TZE_CREEP, Constants.UNIT_ZENTAURENBOGENSCH_TZE_CREEP, Constants.UNIT_ZENTAURENZAUBERIN_CREEP);
+        Orcs, Humans, Constants.UNIT_CENTAUR_CAMP_CREEP, Constants.UNIT_CENTAUR_KHAN_CREEP,
+        Constants.UNIT_CENTAUR_RUNNER_CREEP, Constants.UNIT_CENTAUR_RUNNER_CREEP, Constants.UNIT_CENTAUR_RUNNER_CREEP,
+        Constants.UNIT_CENTAUR_ARCHER_CREEP, Constants.UNIT_CENTAUR_ARCHER_CREEP, Constants.UNIT_CENTAUR_SORCERESS_CREEP);
       ConstructCreepCamp("Ogres", Areas.OrcCreepToUndeadSpawnBuilding, Areas.OrcCreepToUndeadSpawn,
-        Orcs, Undeads, Constants.UNIT_OGERLAGER_CREEP, Constants.UNIT_OGRE_LORD_CREEP,
-        Constants.UNIT_OGERKRIEGER_CREEP, Constants.UNIT_OGERKRIEGER_CREEP, Constants.UNIT_OGERKRIEGER_CREEP,
-        Constants.UNIT_OGERPR_GLER_CREEP, Constants.UNIT_OGERPR_GLER_CREEP, Constants.UNIT_OGERMAGIER_CREEP);
+        Orcs, Undeads, Constants.UNIT_OGRE_CAMP_CREEP, Constants.UNIT_OGRE_LORD_CREEP,
+        Constants.UNIT_OGRE_WARRIOR_CREEP, Constants.UNIT_OGRE_WARRIOR_CREEP, Constants.UNIT_OGRE_WARRIOR_CREEP,
+        Constants.UNIT_OGRE_THIEF_CREEP, Constants.UNIT_OGRE_THIEF_CREEP, Constants.UNIT_OGRE_MAGE_CREEP);
 
       // Untoten-Creeps
       ConstructCreepCamp("Mur'guls", Areas.UndeadCreepToOrcSpawnBuilding, Areas.UndeadCreepToOrcSpawn,
-        Undeads, Orcs, Constants.UNIT_MUR_GULLAGER_CREEP, Constants.UNIT_MUR_GUL_SHADOWCASTER_CREEP,
-        Constants.UNIT_MUR_GULBLUTKIEME_CREEP, Constants.UNIT_MUR_GULBLUTKIEME_CREEP, Constants.UNIT_MUR_GULBLUTKIEME_CREEP,
-        Constants.UNIT_MUR_GULGEZEITENKRIEGER_CREEP, Constants.UNIT_MUR_GULGEZEITENKRIEGER_CREEP, Constants.UNIT_MUR_GULVERLANGSAMER_CREEP);
+        Undeads, Orcs, Constants.UNIT_MUR_GUL_CAMP_CREEP, Constants.UNIT_MUR_GUL_SHADOWCASTER_CREEP,
+        Constants.UNIT_MUR_GUL_WARRIOR_CREEP, Constants.UNIT_MUR_GUL_WARRIOR_CREEP, Constants.UNIT_MUR_GUL_WARRIOR_CREEP,
+        Constants.UNIT_MUR_GUL_TRAPPER_CREEP, Constants.UNIT_MUR_GUL_TRAPPER_CREEP, Constants.UNIT_MUR_GUL_WIZARD_CREEP);
       ConstructCreepCamp("Nerubians", Areas.UndeadCreepToElfSpawnBuilding, Areas.UndeadCreepToElfSpawn,
-        Undeads, Elves, Constants.UNIT_NERUBERLAGER_CREEP, Constants.UNIT_NERUBIAN_QUEEN_CREEP,
-        Constants.UNIT_NERUBERKRIEGER_CREEP, Constants.UNIT_NERUBERKRIEGER_CREEP, Constants.UNIT_NERUBERKRIEGER_CREEP,
-        Constants.UNIT_NERUBERNETZWEBER_CREEP, Constants.UNIT_NERUBERNETZWEBER_CREEP, Constants.UNIT_NERUBENSEHER_CREEP);
+        Undeads, Elves, Constants.UNIT_NERUBIAN_CAMP_CREEP, Constants.UNIT_NERUBIAN_QUEEN_CREEP,
+        Constants.UNIT_NERUBIAN_WARRIOR_CREEP, Constants.UNIT_NERUBIAN_WARRIOR_CREEP, Constants.UNIT_NERUBIAN_WARRIOR_CREEP,
+        Constants.UNIT_NERUBIAN_SPINNER_CREEP, Constants.UNIT_NERUBIAN_SPINNER_CREEP, Constants.UNIT_NERUBIAN_WIZARD_CREEP);
     }
 
     private static void ConstructCreepCamp(string name,
@@ -458,7 +458,7 @@ namespace Source
 
     internal static void CreateHeroSelectorForPlayerAndAdjustCamera(UserPlayer user)
     {
-      SpawnedUnit unit = user.CreateUnit(Constants.UNIT_HELDENSEELE_HERO_SELECTOR, Areas.HeroSelectorSpawn);
+      SpawnedUnit unit = user.CreateUnit(Constants.UNIT_HEROIC_SOUL_HERO_SELECTOR, Areas.HeroSelectorSpawn);
       user.ApplyCamera(Areas.HeroSelectorSpawn);
 
       Blizzard.SelectUnitForPlayerSingle(unit.Wc3Unit, user.Wc3Player);

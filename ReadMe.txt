@@ -22,3 +22,7 @@ https://docs.google.com/spreadsheets/d/1bRamhxKJxNGxLzvVDOOfo8QPEs3pA9wyux10pITT
 Startup-Arguments für Editor-Shortcut:
 --------------------------------------
 "<Wo auch immer>"\World Editor.exe" -launch -loadfile "<Wo auch immer>\Warcraft3.Map.Klatschen\source.w3x"
+
+Upload der Map im HIVE-Workshop:
+--------------------------------
+https://www.hiveworkshop.com/threads/klatschen-2025.360118/

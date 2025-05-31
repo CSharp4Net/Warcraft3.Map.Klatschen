@@ -5,8 +5,8 @@ namespace Source.Models.Teams
 {
   public sealed class UndeadsTeam : TeamBase
   {
-    public UndeadsTeam(player wc3ComputerPlayer, Area teamBaseArea)
-      : base(wc3ComputerPlayer, teamBaseArea)
+    public UndeadsTeam(player wc3ComputerPlayer)
+      : base(wc3ComputerPlayer, Areas.UndeadBase)
     {
       ColorizedName = $"|c{ConstantsEx.ColorHexCode_Maroon}{wc3ComputerPlayer.Name}|r";
     }

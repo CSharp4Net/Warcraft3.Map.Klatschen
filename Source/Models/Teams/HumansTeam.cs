@@ -5,8 +5,8 @@ namespace Source.Models.Teams
 {
   public sealed class HumansTeam : TeamBase
   {
-    public HumansTeam(player wc3ComputerPlayer, Area teamBaseArea)
-      : base(wc3ComputerPlayer, teamBaseArea)
+    public HumansTeam(player wc3ComputerPlayer)
+      : base(Common.Player(0), Areas.HumanBase)
     {
       ColorizedName = $"|c{ConstantsEx.ColorHexCode_Red}{wc3ComputerPlayer.Name}|r";
     }
@@ -26,7 +26,7 @@ namespace Source.Models.Teams
           {
             case 1:
               spawnCommand.UnitId = Constants.UNIT_CAPTIAN_HUMAN;
-              spawnCommand.UnitIdToUpgrade = Constants.UNIT_PRIEST_HUMAN;
+              spawnCommand.UnitIdToUpgrade = Constants.UNIT_SOLDIER_HUMAN;
               return Enums.ResearchType.UpgradeUnit;
 
             default:
