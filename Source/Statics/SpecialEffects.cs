@@ -1,4 +1,5 @@
-﻿using WCSharp.Api;
+﻿using System;
+using WCSharp.Api;
 using WCSharp.Effects;
 using WCSharp.Shared.Data;
 
@@ -28,5 +29,29 @@ namespace Source.Statics
       });
     }
 
+    internal static void CreateLightning(Point caster, Point target)
+    {
+      // https://www.hiveworkshop.com/threads/beginners-guide-to-lightning-effects.220370/#herp
+      var lightning = Common.AddLightningEx("AFOD", true, caster.X, caster.Y, 50, target.X, target.Y, 50);
+
+      timer timer = Common.CreateTimer();
+      Common.TimerStart(timer, 1f, true, () =>
+      {
+        Common.DestroyTimer(timer);
+        timer.Dispose();
+        timer = null;
+
+        try
+        {
+          Common.DestroyLightning(lightning);
+          lightning.Dispose();
+          lightning = null;
+        }
+        catch (Exception ex)
+        {
+          Program.ShowExceptionMessage("SpecialEffects.CreateLightning", ex);
+        }
+      });
+    }
   }
 }

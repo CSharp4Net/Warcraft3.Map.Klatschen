@@ -1635,7 +1635,7 @@ STRING 2128
 }
 
 STRING 2143
-// Abilities: A00M (Townportal), EditorSuffix (Editor Suffix)
+// Units: N02H (Blood Mage), EditorSuffix (Name - Editor Suffix)
 {
 (Hero)
 }
@@ -13861,5 +13861,23 @@ STRING 5746
 // Upgrades: R005 (Animal War Training), Ubertip (Tooltip - Extended)
 {
 Upgrade the melee fighters in your army to the next level, making them much more effective.
+}
+
+STRING 5747
+// Units: N02H (Blood Mage), Name (Name)
+{
+Blood Mage
+}
+
+STRING 5748
+// Units: N02H (Blood Mage), Propernames (Proper Names)
+{
+Eldin Sunstrider,Tanin Hawkwing,Lorn Bloodseeker,Aldos Firestar,Gilaras Drakeson,Hale Magefire,Kath'ranis Remar,Tyoril Sunchaser,Sylvos Windrunner,Tenris Mirkblood,Marakanis Starfury,Geldor Earthfire,Halendor Burnkin,Kelen the Destroyer
+}
+
+STRING 5749
+// Abilities: A00M (Townportal), EditorSuffix (Editor Suffix)
+{
+(Hero)
 }
 

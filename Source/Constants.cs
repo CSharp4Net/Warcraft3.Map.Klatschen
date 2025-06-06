@@ -231,6 +231,7 @@ public static class Constants
 	public const int UNIT_BLADEMASTER_HERO = 1328558128;
 	public const int UNIT_SHADOW_HUNTER_HERO = 1328558129;
 	public const int UNIT_KEEPER_OF_THE_GROVE_HERO = 1160785968;
+	public const int UNIT_BLOOD_MAGE_HERO = 1311781448;
 	public const int UNIT_GUARD_TOWER_ORC = 1747988565;
 	public const int UNIT_ENERGY_TOWER_ORC = 1747988566;
 	public const int UNIT_POTIONS_AND_SUNDRIES_ORC = 1747988567;
