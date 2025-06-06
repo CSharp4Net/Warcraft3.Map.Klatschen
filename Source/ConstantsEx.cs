@@ -19,6 +19,8 @@
     internal const int PlayerId_Elves = 8;
     internal const int PlayerId_Undeads = 12;
 
+    internal const int PlayerId_Legion = 20;
+
     internal const string ColorHexCode_Gold = "ffffcc00";
     internal const string ColorHexCode_Red = "ffff0000";
     internal const string ColorHexCode_Yellow = "ffffff00";

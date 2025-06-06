@@ -3,8 +3,15 @@ using WCSharp.Api;
 
 namespace Source.Logics
 {
+  /// <summary>
+  /// Stellt statische Methoden für die Logik von automatisch erstellten Einheiten bereit.
+  /// </summary>
   internal static class ComputerUnit
   {
+    /// <summary>
+    /// Behandelt den Tod einer Einheit.
+    /// </summary>
+    /// <param name="unit">Einheit</param>
     internal static void HandleDied(unit unit)
     {
       player owner = unit.Owner;
@@ -26,6 +33,10 @@ namespace Source.Logics
       {
         Program.Undeads.Computer.RemoveUnit(spawnedUnit);
       }
+      else if (Program.Legion.IsOwnerOfUnit(unit, out spawnedUnit))
+      {
+        Program.Legion.RemoveUnit(spawnedUnit);
+      }
       //else
       //  Bspw. der Tod der Heldenseele bei Kauf löst diesen Fall aus.
       //  Program.ShowDebugMessage("Unit.OnDies", $"Unit {unit.Name} not found in unit lists of computer players!");
@@ -45,6 +56,10 @@ namespace Source.Logics
       });
     }
 
+    /// <summary>
+    /// Behandelt das Ereignis, wenn eine Einheit vom System einen Befehl bekommt.
+    /// </summary>
+    /// <param name="unit">Einheit</param>
     internal static void HandleOrderReceived(unit unit)
     {
       // Wenn eine gespawnte Einheit ihren Angriffsbefehl verliert, erteilen wir ihr diesen erneut
@@ -60,6 +75,10 @@ namespace Source.Logics
       }
     }
 
+    /// <summary>
+    /// Ermittelt den Eigentümer der Einheit und wiederholt deren letzten (Angriffs-)Befehl.
+    /// </summary>
+    /// <param name="unit">Einheit</param>
     private static void RepeatAttackMove(unit unit)
     {
       if (Program.Humans.Computer.IsOwnerOfUnit(unit, out SpawnedUnit spawnedUnit))
@@ -75,6 +94,10 @@ namespace Source.Logics
         spawnedUnit.RepeatAttackMove();
       }
       else if (Program.Undeads.Computer.IsOwnerOfUnit(unit, out spawnedUnit))
+      {
+        spawnedUnit.RepeatAttackMove();
+      }
+      else if (Program.Legion.IsOwnerOfUnit(unit, out spawnedUnit))
       {
         spawnedUnit.RepeatAttackMove();
       }

@@ -33,11 +33,11 @@ namespace Source.Events.Buildings
         creepCamp.Building.Destroy();
 
         // Falls Verteidiger noch am Leben, dann töte diese
-        for (int i = creepCamp.DefenderCreeps.Count - 1; i >= 0; i--)
+        for (int i = creepCamp.DefendingUnits.Count - 1; i >= 0; i--)
         {
-          creepCamp.DefenderCreeps[i].Kill();
+          creepCamp.DefendingUnits[i].Kill();
         }
-        creepCamp.DefenderCreeps.Clear();
+        creepCamp.DefendingUnits.Clear();
 
         // Verstorbenen Held nach gegebener Zeit wieder belegen
         timer timer = Common.CreateTimer();

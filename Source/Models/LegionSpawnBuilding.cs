@@ -49,7 +49,7 @@ namespace Source.Models
     }
 
     /// <summary>
-    /// Deregistriert das Sterbe-Event, stoppt alle Spawn-Trigger und tötet (falls noch nötig) die WC3-Einheit.
+    /// Deregistriert das Sterbe-Event, stoppt alle Spawn-Trigger und entfernt die WC3-Einheit.
     /// </summary>
     public void Destroy()
     {
@@ -60,12 +60,9 @@ namespace Source.Models
         SpawnTriggers[i].Stop();
       }
 
-      if (Wc3Unit.Alive)
-      {
-        // Da diese Funktion auch beim Tod des Gebäudes ausgelöst werden kann,
-        // töte Gebäude bei Bedarf, d.h. wenn Team verliert und Spieler entfernt werden.
-        Wc3Unit.Kill();
-      }
+      Common.RemoveUnit(Wc3Unit);
+      Wc3Unit.Dispose();
+      Wc3Unit = null;
     }
 
     /// <summary>

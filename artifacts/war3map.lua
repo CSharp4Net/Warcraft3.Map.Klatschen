@@ -21235,18 +21235,11 @@ System.namespace("Source.Events.Buildings", function (namespace)
           return true
         end
 
-        local unitType = GetUnitTypeId(buildingUnit)
-
-
-        -- Stoppe Trigger
-        if Source.Program.Legion.SpawnBuildingWest.Wc3Unit == buildingUnit then
-          System.Console.WriteLine("The " .. System.toString(GetUnitName(Source.Program.Legion.SpawnBuildingEast.Wc3Unit)) .. " in the west has been destroyed!")
-          SourceStatics.SpecialEffects.CreateSpecialEffect("Abilities\\Spells\\Other\\Doom\\DoomDeath.mdl", Source.Program.Legion.SpawnBuildingWest.CreationArea.Wc3Rectangle:getCenter(), 2, 3)
-          Source.Program.Legion.SpawnBuildingWest:Destroy()
-        elseif Source.Program.Legion.SpawnBuildingEast.Wc3Unit == buildingUnit then
-          System.Console.WriteLine("The " .. System.toString(GetUnitName(Source.Program.Legion.SpawnBuildingEast.Wc3Unit)) .. " in the east has been destroyed!")
-          SourceStatics.SpecialEffects.CreateSpecialEffect("Abilities\\Spells\\Other\\Doom\\DoomDeath.mdl", Source.Program.Legion.SpawnBuildingEast.CreationArea.Wc3Rectangle:getCenter(), 2, 31)
-          Source.Program.Legion.SpawnBuildingEast:Destroy()
+        local extern, building = Source.Program.Legion:TryGetSpawnBuilding(buildingUnit)
+        if extern then
+          System.Console.WriteLine("A " .. System.toString(GetUnitName(building.Wc3Unit)) .. " of the " .. System.toString(Source.Program.Legion.ColorizedName) .. " has been destroyed!")
+          SourceStatics.SpecialEffects.CreateSpecialEffect("Abilities\\Spells\\Other\\Doom\\DoomDeath.mdl", building.CreationArea.Wc3Rectangle:getCenter(), 2, 3)
+          Source.Program.Legion:RemoveSpawnBuilding(building)
         else
           Source.Program.ShowErrorMessage("LegionBuilding.OnDies", "Unhandled legion building destroyed: " .. System.toString(GetUnitName(buildingUnit)))
         end
@@ -21309,10 +21302,10 @@ System.namespace("Source.Events.Buildings", function (namespace)
         creepCamp.Building:Destroy()
 
         -- Falls Verteidiger noch am Leben, dann töte diese
-        for i = #creepCamp.DefenderCreeps - 1, 0, -1 do
-          creepCamp.DefenderCreeps:get(i):Kill()
+        for i = #creepCamp.DefendingUnits - 1, 0, -1 do
+          creepCamp.DefendingUnits:get(i):Kill()
         end
-        creepCamp.DefenderCreeps:Clear()
+        creepCamp.DefendingUnits:Clear()
 
         -- Verstorbenen Held nach gegebener Zeit wieder belegen
         local timer = CreateTimer()
@@ -21517,18 +21510,15 @@ local System = System
 local WCSharpApi = WCSharp.Api
 local Source
 local SourceModels
-local SourceStatics
 local WCSharpLightnings
 System.import(function (out)
   Source = out.Source
   SourceModels = Source.Models
-  SourceStatics = Source.Statics
   WCSharpLightnings = WCSharp.Lightnings
 end)
 System.namespace("Source.Events.Periodic", function (namespace)
   namespace.class("LegionRaid", function (namespace)
-    local executions, OnElapsed, CreateUnitAtRandomPointWithEffectTimed, CreateUnitAtRandomPointWithEffect, CreateAtDummyAndCastAbilityTimed, CreateAtDummyAndCastAbilityTimed1, CreateAtDummyAndCastAbility, CreateLightning
-    executions = 0
+    local OnElapsed, CreateUnitAtRandomPointWithEffectTimed, CreateAtDummyAndCastAbilityTimed, CreateAtDummyAndCastAbilityTimed1, CreateAtDummyAndCastAbility, CreateLightning, class
     OnElapsed = function ()
       System.try(function ()
         -- Wetter für 60 Sekunden ändern
@@ -21546,13 +21536,14 @@ System.namespace("Source.Events.Periodic", function (namespace)
 
         local player = Player(PLAYER_NEUTRAL_AGGRESSIVE)
 
-        executions = executions + 1
+        local default = class
+        default.RaidCounts = default.RaidCounts + 1
 
         local centerRect = Areas.CenterComplete.Wc3Rectangle
         local CenterBottomRect = Areas.CenterBottom.Wc3Rectangle
-        local CenterLeftRect = Areas.CenterLeft.Wc3Rectangle
+        local CenterLeftRect = Areas.MiddleLaneSpawnEast.Wc3Rectangle
         local CenterTopRect = Areas.CenterTop.Wc3Rectangle
-        local CenterRightRect = Areas.CenterRight.Wc3Rectangle
+        local CenterRightRect = Areas.MiddleLaneSpawnWest.Wc3Rectangle
 
         System.Console.WriteLine("The " .. System.toString(Source.Program.Legion.ColorizedName) .. " is approaching, abandon all hope and despair...")
 
@@ -21589,9 +21580,8 @@ System.namespace("Source.Events.Periodic", function (namespace)
         -- Legion-Held wird im Zentrum erzeugt, bekommt ggf. den höchsten Spielerlevel und wird traininert
 
         local maxHeroLevel = 0
-        -- TODO Program.AllActiveUsers.Max(user => user.HeroLevelCounter);
         if maxHeroLevel == 0 then
-          maxHeroLevel = executions
+          maxHeroLevel = class.RaidCounts
         end
 
         local spawnTimer = CreateTimer()
@@ -21601,32 +21591,30 @@ System.namespace("Source.Events.Periodic", function (namespace)
           spawnTimer = nil
 
           System.try(function ()
-            Source.Program.Legion:CreateOrRefreshWestSpawnBuilding()
-            Source.Program.Legion:CreateOrRefreshEastSpawnBuilding()
-
-            Source.Program.Legion:CreateOrReviveHero(1311780918 --[[Constants.UNIT_DEMON_LORD_LEGION]], Areas.Center, maxHeroLevel, executions)
+            Source.Program.Legion:CreateOrRefreshSpawnBuildings(class.RaidCounts)
+            Source.Program.Legion:CreateOrReviveHero(1311780918 --[[Constants.UNIT_DEMON_LORD_LEGION]], Areas.Center, maxHeroLevel, class.RaidCounts)
 
             -- Zentrum - Weitere Einheiten via Cast hinzurufen
-            CreateUnitAtRandomPointWithEffect(centerRect, 1848651846 --[[Constants.UNIT_INFERNAL_LEGION]])
-            CreateUnitAtRandomPointWithEffect(centerRect, 1848651846 --[[Constants.UNIT_INFERNAL_LEGION]])
-            CreateUnitAtRandomPointWithEffect(centerRect, 1848651846 --[[Constants.UNIT_INFERNAL_LEGION]])
-            CreateUnitAtRandomPointWithEffect(centerRect, 1848651846 --[[Constants.UNIT_INFERNAL_LEGION]])
+            Source.Program.Legion:CreateUnit(centerRect, 1848651846 --[[Constants.UNIT_INFERNAL_LEGION]], class.RaidCounts, 0)
+            Source.Program.Legion:CreateUnit(centerRect, 1848651846 --[[Constants.UNIT_INFERNAL_LEGION]], class.RaidCounts, 0)
+            Source.Program.Legion:CreateUnit(centerRect, 1848651846 --[[Constants.UNIT_INFERNAL_LEGION]], class.RaidCounts, 0)
+            Source.Program.Legion:CreateUnit(centerRect, 1848651846 --[[Constants.UNIT_INFERNAL_LEGION]], class.RaidCounts, 0)
 
             -- Bottom Lane - Weitere Einheiten via Cast hinzurufen
-            CreateUnitAtRandomPointWithEffect(CenterBottomRect, 1848651846 --[[Constants.UNIT_INFERNAL_LEGION]])
-            CreateUnitAtRandomPointWithEffect(CenterBottomRect, 1848651846 --[[Constants.UNIT_INFERNAL_LEGION]])
+            Source.Program.Legion:CreateUnit(CenterBottomRect, 1848651846 --[[Constants.UNIT_INFERNAL_LEGION]], class.RaidCounts, 0)
+            Source.Program.Legion:CreateUnit(CenterBottomRect, 1848651846 --[[Constants.UNIT_INFERNAL_LEGION]], class.RaidCounts, 0)
 
             -- Left Lane - Weitere Einheiten via Cast hinzurufen
-            CreateUnitAtRandomPointWithEffect(CenterLeftRect, 1848651846 --[[Constants.UNIT_INFERNAL_LEGION]])
-            CreateUnitAtRandomPointWithEffect(CenterLeftRect, 1848651846 --[[Constants.UNIT_INFERNAL_LEGION]])
+            Source.Program.Legion:CreateUnit(CenterLeftRect, 1848651846 --[[Constants.UNIT_INFERNAL_LEGION]], class.RaidCounts, 0)
+            Source.Program.Legion:CreateUnit(CenterLeftRect, 1848651846 --[[Constants.UNIT_INFERNAL_LEGION]], class.RaidCounts, 0)
 
             -- Top Lane - Weitere Einheiten via Cast hinzurufen
-            CreateUnitAtRandomPointWithEffect(CenterTopRect, 1848651846 --[[Constants.UNIT_INFERNAL_LEGION]])
-            CreateUnitAtRandomPointWithEffect(CenterTopRect, 1848651846 --[[Constants.UNIT_INFERNAL_LEGION]])
+            Source.Program.Legion:CreateUnit(CenterTopRect, 1848651846 --[[Constants.UNIT_INFERNAL_LEGION]], class.RaidCounts, 0)
+            Source.Program.Legion:CreateUnit(CenterTopRect, 1848651846 --[[Constants.UNIT_INFERNAL_LEGION]], class.RaidCounts, 0)
 
             -- Right Lane - Weitere Einheiten via Cast hinzurufen
-            CreateUnitAtRandomPointWithEffect(CenterRightRect, 1848651846 --[[Constants.UNIT_INFERNAL_LEGION]])
-            CreateUnitAtRandomPointWithEffect(CenterRightRect, 1848651846 --[[Constants.UNIT_INFERNAL_LEGION]])
+            Source.Program.Legion:CreateUnit(CenterRightRect, 1848651846 --[[Constants.UNIT_INFERNAL_LEGION]], class.RaidCounts, 0)
+            Source.Program.Legion:CreateUnit(CenterRightRect, 1848651846 --[[Constants.UNIT_INFERNAL_LEGION]], class.RaidCounts, 0)
           end, function (default)
             local ex = default
             Source.Program.ShowExceptionMessage("LegionRaid.OnElapsed", ex)
@@ -21646,33 +21634,8 @@ System.namespace("Source.Events.Periodic", function (namespace)
         DestroyTimer(timer)
         timer = nil
 
-        CreateUnitAtRandomPointWithEffect(rectangle, unitTypeId)
+        Source.Program.Legion:CreateUnit(rectangle, unitTypeId, class.RaidCounts, 0)
       end)
-    end
-    CreateUnitAtRandomPointWithEffect = function (rectangle, unitTypeId)
-      local point = rectangle:GetRandomPoint()
-      SourceStatics.SpecialEffects.CreateSpecialEffect("Objects\\Spawnmodels\\NightElf\\EntBirthTarget\\EntBirthTarget.mdl", point, 2, 1)
-      local result = Source.Program.Legion:SpawnUnitAtPoint(point, unitTypeId)
-
-      repeat
-        local default = executions
-        if default == 1 or default == 2 or default == 3 or default == 4 or default == 6 or default == 7 or default == 8 or default == 9 or default == 10 then
-          BlzSetUnitBaseDamage(result.Wc3Unit, BlzGetUnitBaseDamage(result.Wc3Unit, 0) + (10 * executions), 0)
-          BlzSetUnitRealField(result.Wc3Unit, UNIT_RF_DEFENSE, BlzGetUnitRealField(result.Wc3Unit, UNIT_RF_DEFENSE) + (2 * executions))
-          BlzSetUnitMaxHP(result.Wc3Unit, BlzGetUnitMaxHP(result.Wc3Unit) + ((System.div(BlzGetUnitMaxHP(result.Wc3Unit), 10)) * executions))
-          break
-        else
-          -- Ab Stufe 10 werden die Einheiten nicht mehr stärker, sonst werden sie (fast) unbesiegbar
-          BlzSetUnitBaseDamage(result.Wc3Unit, BlzGetUnitBaseDamage(result.Wc3Unit, 0) + 100, 0)
-          BlzSetUnitRealField(result.Wc3Unit, UNIT_RF_DEFENSE, BlzGetUnitRealField(result.Wc3Unit, UNIT_RF_DEFENSE) + 20)
-          BlzSetUnitMaxHP(result.Wc3Unit, BlzGetUnitMaxHP(result.Wc3Unit) + (BlzGetUnitMaxHP(result.Wc3Unit)))
-          break
-        end
-      until 1
-
-      SetWidgetLife(result.Wc3Unit, BlzGetUnitMaxHP(result.Wc3Unit))
-
-      return result
     end
     CreateAtDummyAndCastAbilityTimed = function (player, rectangle, abilityId, abilityLevel, orderId, delay, duration)
       CreateAtDummyAndCastAbilityTimed1(player, rectangle:GetRandomPoint(), abilityId, abilityLevel, orderId, delay, duration)
@@ -21716,20 +21679,19 @@ System.namespace("Source.Events.Periodic", function (namespace)
 
       WCSharpLightnings.LightningSystem.Add(lightning)
     end
-    return {
+    class = {
+      RaidCounts = 0,
       OnElapsed = OnElapsed,
-      CreateUnitAtRandomPointWithEffect = CreateUnitAtRandomPointWithEffect,
       __metadata__ = function (out)
         return {
           fields = {
-            { "executions", 0x9, System.Int32 }
+            { "RaidCounts", 0xE, System.Int32 }
           },
           methods = {
             { "CreateAtDummyAndCastAbility", 0x609, CreateAtDummyAndCastAbility, out.WCSharp.Api.player, out.WCSharp.Shared.Data.Point, System.Int32, System.Int32, System.Int32, System.Single },
             { "CreateAtDummyAndCastAbilityTimed", 0x709, CreateAtDummyAndCastAbilityTimed, out.WCSharp.Api.player, out.WCSharp.Shared.Data.Rectangle, System.Int32, System.Int32, System.Int32, System.Single, System.Single },
             { "CreateAtDummyAndCastAbilityTimed", 0x709, CreateAtDummyAndCastAbilityTimed1, out.WCSharp.Api.player, out.WCSharp.Shared.Data.Point, System.Int32, System.Int32, System.Int32, System.Single, System.Single },
             { "CreateLightning", 0x409, CreateLightning, out.WCSharp.Api.unit, out.WCSharp.Api.unit, System.Single, System.Single },
-            { "CreateUnitAtRandomPointWithEffect", 0x28C, CreateUnitAtRandomPointWithEffect, out.WCSharp.Shared.Data.Rectangle, System.Int32, out.Source.Models.SpawnedCreep },
             { "CreateUnitAtRandomPointWithEffectTimed", 0x309, CreateUnitAtRandomPointWithEffectTimed, out.WCSharp.Shared.Data.Rectangle, System.Int32, System.Single },
             { "OnElapsed", 0x8E, OnElapsed, System.Boolean }
           },
@@ -21737,6 +21699,7 @@ System.namespace("Source.Events.Periodic", function (namespace)
         }
       end
     }
+    return class
   end)
 end)
 
@@ -22366,6 +22329,14 @@ System.namespace("Source.Logics", function (namespace)
             extern, spawnedUnit = Source.Program.Undeads.Computer:IsOwnerOfUnit(unit)
             if extern then
               spawnedUnit:RepeatAttackMove()
+            else
+              local extern
+              extern, spawnedUnit = Source.Program.Legion:IsOwnerOfUnit(unit)
+              if extern then
+                spawnedUnit:RepeatAttackMove()
+              else
+                Source.Program.ShowDebugMessage("Repeat attack move failed, because no owner found for unit " .. System.toString(GetUnitName(unit)) .. "!")
+              end
             end
           end
         end
@@ -23078,18 +23049,25 @@ local System = System
 local SourceEventsBuildings
 local SourceModels
 local SourceStatics
+local ListSpawnedUnit
+local ListLegionSpawnBuilding
 System.import(function (out)
   SourceEventsBuildings = Source.Events.Buildings
   SourceModels = Source.Models
   SourceStatics = Source.Statics
+  ListSpawnedUnit = System.List(SourceModels.SpawnedUnit)
+  ListLegionSpawnBuilding = System.List(SourceModels.LegionSpawnBuilding)
 end)
 System.namespace("Source.Models", function (namespace)
   namespace.class("LegionForce", function (namespace)
-    local CreateOrReviveHero, CreateOrRefreshEastSpawnBuilding, CreateOrRefreshWestSpawnBuilding, AddAbilitiesToHero, TrainHero, CreateHero, SpawnUnitAtPoint, __ctor__
+    local CreateOrReviveHero, CreateOrRefreshSpawnBuildings, CreateOrRefreshSpawnBuilding, TryGetSpawnBuilding, RemoveSpawnBuilding, AddAbilitiesToHero, TrainHero, CreateHero, 
+    CreateUnit, IsOwnerOfUnit, __ctor__
     __ctor__ = function (this, name)
+      this.SpawnBuildings = ListLegionSpawnBuilding()
+      this.Units = ListSpawnedUnit()
       this.Name = name
       this.ColorizedName = "|cffff0000" .. System.toString(name) .. "|r"
-      this.Wc3Player = Player(20)
+      this.Wc3Player = Player(20 --[[ConstantsEx.PlayerId_Legion]])
     end
     CreateOrReviveHero = function (this, unitTypeId, spawnArea, heroLevel, face, targetArea)
       local unit = nil
@@ -23122,37 +23100,51 @@ System.namespace("Source.Models", function (namespace)
 
       TrainHero(this, unitTypeId, unit, heroLevel)
     end
-    CreateOrRefreshEastSpawnBuilding = function (this)
-      SourceStatics.SpecialEffects.CreateSpecialEffect("Objects\\Spawnmodels\\NightElf\\EntBirthTarget\\EntBirthTarget.mdl", Areas.MiddleLaneSpawnEast.Wc3Rectangle:getCenter(), 4, 3)
-
-      if this.SpawnBuildingEast == nil or not UnitAlive(this.SpawnBuildingEast.Wc3Unit) then
-        this.SpawnBuildingEast = SourceModels.LegionSpawnBuilding(1848652361 --[[Constants.UNIT_DEMON_SHRINE_LEGION]], Areas.MiddleLaneSpawnEast, 180)
-        this.SpawnBuildingEast:RegisterOnDies(SourceEventsBuildings.LegionBuilding.OnDies)
-
-        this.SpawnBuildingEast:AddSpawnTrigger(1 --[[SpawnInterval.Middle]], Areas.MiddleLaneSpawnEast, Areas.CenterRight):Run(0)
-        this.SpawnBuildingEast:AddSpawnTrigger(1 --[[SpawnInterval.Middle]], Areas.MiddleLaneSpawnEast, Areas.Center):Run(0)
-        this.SpawnBuildingEast:AddUnitToSpawnTriggers(1848651843 --[[Constants.UNIT_FELGUARD_LEGION]])
-        this.SpawnBuildingEast:AddUnitToSpawnTriggers(1848651857 --[[Constants.UNIT_MAIDEN_OF_PAIN_LEGION]])
-        this.SpawnBuildingEast:AddUnitToSpawnTriggers(1848651854 --[[Constants.UNIT_VILE_TORMENTOR_LEGION]])
-      else
-        SetWidgetLife(this.SpawnBuildingEast.Wc3Unit, BlzGetUnitMaxHP(this.SpawnBuildingEast.Wc3Unit))
-      end
+    CreateOrRefreshSpawnBuildings = function (this, raidCounts)
+      CreateOrRefreshSpawnBuilding(this, Areas.MiddleLaneSpawnWest, Areas.HumanBase, Areas.ElfBase, raidCounts)
+      CreateOrRefreshSpawnBuilding(this, Areas.MiddleLaneSpawnEast, Areas.OrcBase, Areas.UndeadBase, raidCounts)
     end
-    CreateOrRefreshWestSpawnBuilding = function (this)
-      SourceStatics.SpecialEffects.CreateSpecialEffect("Objects\\Spawnmodels\\NightElf\\EntBirthTarget\\EntBirthTarget.mdl", Areas.MiddleLaneSpawnWest.Wc3Rectangle:getCenter(), 4, 3)
+    CreateOrRefreshSpawnBuilding = function (this, creationArea, target1, target2, raidCounts)
+      for _, spawnBuilding in System.each(this.SpawnBuildings) do
+        if spawnBuilding.CreationArea == creationArea then
+          SetWidgetLife(spawnBuilding.Wc3Unit, BlzGetUnitMaxHP(spawnBuilding.Wc3Unit))
 
-      if this.SpawnBuildingWest == nil or not UnitAlive(this.SpawnBuildingWest.Wc3Unit) then
-        this.SpawnBuildingWest = SourceModels.LegionSpawnBuilding(1848652361 --[[Constants.UNIT_DEMON_SHRINE_LEGION]], Areas.MiddleLaneSpawnWest, 0)
-        this.SpawnBuildingWest:RegisterOnDies(SourceEventsBuildings.LegionBuilding.OnDies)
+          -- TODO : Increase power and bounty by raid Counts or so!
 
-        this.SpawnBuildingWest:AddSpawnTrigger(1 --[[SpawnInterval.Middle]], Areas.MiddleLaneSpawnWest, Areas.CenterLeft):Run(0)
-        this.SpawnBuildingWest:AddSpawnTrigger(1 --[[SpawnInterval.Middle]], Areas.MiddleLaneSpawnWest, Areas.Center):Run(0)
-        this.SpawnBuildingWest:AddUnitToSpawnTriggers(1848651843 --[[Constants.UNIT_FELGUARD_LEGION]])
-        this.SpawnBuildingWest:AddUnitToSpawnTriggers(1848651857 --[[Constants.UNIT_MAIDEN_OF_PAIN_LEGION]])
-        this.SpawnBuildingWest:AddUnitToSpawnTriggers(1848651854 --[[Constants.UNIT_VILE_TORMENTOR_LEGION]])
-      else
-        SetWidgetLife(this.SpawnBuildingWest.Wc3Unit, BlzGetUnitMaxHP(this.SpawnBuildingWest.Wc3Unit))
+          return
+        end
       end
+
+      local building = SourceModels.LegionSpawnBuilding(1848652361 --[[Constants.UNIT_DEMON_SHRINE_LEGION]], creationArea, 180)
+      SourceStatics.SpecialEffects.CreateSpecialEffect("Abilities\\Spells\\Other\\Doom\\DoomDeath.mdl", building.CreationArea.Wc3Rectangle:getCenter(), 2, 3)
+      building:RegisterOnDies(SourceEventsBuildings.LegionBuilding.OnDies)
+
+      building:AddSpawnTrigger(1 --[[SpawnInterval.Middle]], creationArea, target2):Run(0)
+      building:AddSpawnTrigger(1 --[[SpawnInterval.Middle]], creationArea, target1):Run(0)
+      building:AddUnitToSpawnTriggers(1848651843 --[[Constants.UNIT_FELGUARD_LEGION]])
+      building:AddUnitToSpawnTriggers(1848651857 --[[Constants.UNIT_MAIDEN_OF_PAIN_LEGION]])
+      building:AddUnitToSpawnTriggers(1848651854 --[[Constants.UNIT_VILE_TORMENTOR_LEGION]])
+
+      -- TODO : Increase power and bounty by raid Counts or so!
+
+      this.SpawnBuildings:Add(building)
+    end
+    TryGetSpawnBuilding = function (this, wc3Unit, building)
+      for _, spawnBuilding in System.each(this.SpawnBuildings) do
+        if spawnBuilding.Wc3Unit == wc3Unit then
+          building = spawnBuilding
+          return true, building
+        end
+      end
+
+      building = nil
+      return false, building
+    end
+    RemoveSpawnBuilding = function (this, building)
+      building:Destroy()
+      building = nil
+
+      this.SpawnBuildings:Remove(building)
     end
     AddAbilitiesToHero = function (this, unitTypeId, unit)
       repeat
@@ -23185,37 +23177,93 @@ System.namespace("Source.Models", function (namespace)
       until 1
     end
     CreateHero = function (this, unitTypeId, point, heroLevel, face)
-      local result = SourceModels.SpawnedCreep(this.Wc3Player, unitTypeId, point, face)
+      local result = System.new(SourceModels.SpawnedUnit, 2, this.Wc3Player, unitTypeId, point, face)
       SetHeroLevel(result.Wc3Unit, heroLevel, true)
       return result
     end
-    SpawnUnitAtPoint = function (this, point, unitTypeId)
-      return SourceModels.SpawnedCreep(this.Wc3Player, unitTypeId, point, 0)
+    CreateUnit = function (this, rectangle, unitTypeId, executions, face)
+      local point = rectangle:GetRandomPoint()
+      SourceStatics.SpecialEffects.CreateSpecialEffect("Objects\\Spawnmodels\\NightElf\\EntBirthTarget\\EntBirthTarget.mdl", point, 2, 1)
+      local result = System.new(SourceModels.SpawnedUnit, 2, this.Wc3Player, unitTypeId, point, face)
+
+      this.Units:Add(result)
+
+      repeat
+        local default = executions
+        if default == 1 or default == 2 or default == 3 or default == 4 or default == 6 or default == 7 or default == 8 or default == 9 or default == 10 then
+          BlzSetUnitBaseDamage(result.Wc3Unit, BlzGetUnitBaseDamage(result.Wc3Unit, 0) + (10 * executions), 0)
+          BlzSetUnitRealField(result.Wc3Unit, UNIT_RF_DEFENSE, BlzGetUnitRealField(result.Wc3Unit, UNIT_RF_DEFENSE) + (2 * executions))
+          BlzSetUnitMaxHP(result.Wc3Unit, BlzGetUnitMaxHP(result.Wc3Unit) + ((System.div(BlzGetUnitMaxHP(result.Wc3Unit), 10)) * executions))
+          break
+        else
+          -- Ab Stufe 10 werden die Einheiten nicht mehr stärker, sonst werden sie (fast) unbesiegbar
+          BlzSetUnitBaseDamage(result.Wc3Unit, BlzGetUnitBaseDamage(result.Wc3Unit, 0) + 100, 0)
+          BlzSetUnitRealField(result.Wc3Unit, UNIT_RF_DEFENSE, BlzGetUnitRealField(result.Wc3Unit, UNIT_RF_DEFENSE) + 20)
+          BlzSetUnitMaxHP(result.Wc3Unit, BlzGetUnitMaxHP(result.Wc3Unit) + (BlzGetUnitMaxHP(result.Wc3Unit)))
+          break
+        end
+      until 1
+
+      SetWidgetLife(result.Wc3Unit, BlzGetUnitMaxHP(result.Wc3Unit))
+
+      return result
+    end
+    -- <summary>
+    -- Gibt True zurück, wenn die übergebene Einheit in der Auflistung aller Einheiten enthalten ist
+    -- </summary>
+    -- <param name="wc3Unit"></param>
+    -- <returns></returns>
+    IsOwnerOfUnit = function (this, wc3Unit, unit)
+      if GetPlayerId(GetOwningPlayer(wc3Unit)) ~= 20 --[[ConstantsEx.PlayerId_Legion]] then
+        unit = nil
+        return false, unit
+      end
+
+      local unitId = GetUnitTypeId(wc3Unit)
+
+      for _, spawnedUnit in System.each(this.Units) do
+        -- Prüfe primär die Einheit-Id, da ein UNIT-Vergleich nicht empfohlen wird!
+        -- Ein Einheitenvergleich wird zwar nicht empfohlen, ist aber die einzige Möglichkeit diesselbe Einheit zu ermitteln
+        if GetUnitTypeId(spawnedUnit.Wc3Unit) == unitId and spawnedUnit.Wc3Unit == wc3Unit then
+          unit = spawnedUnit
+          return true, unit
+        end
+      end
+
+      -- Dieser Fall kann eintreten, wenn eine statische Computer-Einheit das Event auslöst
+      unit = nil
+      return false, unit
     end
     return {
       CreateOrReviveHero = CreateOrReviveHero,
-      CreateOrRefreshEastSpawnBuilding = CreateOrRefreshEastSpawnBuilding,
-      CreateOrRefreshWestSpawnBuilding = CreateOrRefreshWestSpawnBuilding,
-      SpawnUnitAtPoint = SpawnUnitAtPoint,
+      CreateOrRefreshSpawnBuildings = CreateOrRefreshSpawnBuildings,
+      CreateOrRefreshSpawnBuilding = CreateOrRefreshSpawnBuilding,
+      TryGetSpawnBuilding = TryGetSpawnBuilding,
+      RemoveSpawnBuilding = RemoveSpawnBuilding,
+      CreateUnit = CreateUnit,
+      IsOwnerOfUnit = IsOwnerOfUnit,
       __ctor__ = __ctor__,
       __metadata__ = function (out)
         return {
           methods = {
             { ".ctor", 0x106, nil, System.String },
             { "AddAbilitiesToHero", 0x201, AddAbilitiesToHero, System.Int32, out.WCSharp.Api.unit },
-            { "CreateHero", 0x481, CreateHero, System.Int32, out.WCSharp.Shared.Data.Point, System.Int32, System.Single, out.Source.Models.SpawnedCreep },
-            { "CreateOrRefreshEastSpawnBuilding", 0x4, CreateOrRefreshEastSpawnBuilding },
-            { "CreateOrRefreshWestSpawnBuilding", 0x4, CreateOrRefreshWestSpawnBuilding },
+            { "CreateHero", 0x481, CreateHero, System.Int32, out.WCSharp.Shared.Data.Point, System.Int32, System.Single, out.Source.Models.SpawnedUnit },
+            { "CreateOrRefreshSpawnBuilding", 0x404, CreateOrRefreshSpawnBuilding, out.Source.Models.Area, out.Source.Models.Area, out.Source.Models.Area, System.Int32 },
+            { "CreateOrRefreshSpawnBuildings", 0x104, CreateOrRefreshSpawnBuildings, System.Int32 },
             { "CreateOrReviveHero", 0x506, CreateOrReviveHero, System.Int32, out.Source.Models.Area, System.Int32, System.Single, out.Source.Models.Area },
-            { "SpawnUnitAtPoint", 0x284, SpawnUnitAtPoint, out.WCSharp.Shared.Data.Point, System.Int32, out.Source.Models.SpawnedCreep },
-            { "TrainHero", 0x301, TrainHero, System.Int32, out.WCSharp.Api.unit, System.Int32 }
+            { "CreateUnit", 0x484, CreateUnit, out.WCSharp.Shared.Data.Rectangle, System.Int32, System.Int32, System.Single, out.Source.Models.SpawnedUnit },
+            { "IsOwnerOfUnit", 0x286, IsOwnerOfUnit, out.WCSharp.Api.unit, out.Source.Models.SpawnedUnit, System.Boolean },
+            { "RemoveSpawnBuilding", 0x106, RemoveSpawnBuilding, out.Source.Models.LegionSpawnBuilding },
+            { "TrainHero", 0x301, TrainHero, System.Int32, out.WCSharp.Api.unit, System.Int32 },
+            { "TryGetSpawnBuilding", 0x286, TryGetSpawnBuilding, out.WCSharp.Api.unit, out.Source.Models.LegionSpawnBuilding, System.Boolean }
           },
           properties = {
             { "ColorizedName", 0x6, System.String },
-            { "Hero", 0x6, out.Source.Models.SpawnedCreep },
+            { "Hero", 0x6, out.Source.Models.SpawnedUnit },
             { "Name", 0x6, System.String },
-            { "SpawnBuildingEast", 0x6, out.Source.Models.LegionSpawnBuilding },
-            { "SpawnBuildingWest", 0x6, out.Source.Models.LegionSpawnBuilding },
+            { "SpawnBuildings", 0x1, System.List(out.Source.Models.LegionSpawnBuilding) },
+            { "Units", 0x1, System.List(out.Source.Models.SpawnedUnit) },
             { "Wc3Player", 0x6, out.WCSharp.Api.player }
           },
           class = { "LegionForce", 0x26 }
@@ -23263,7 +23311,7 @@ System.namespace("Source.Models", function (namespace)
       end
     end
     -- <summary>
-    -- Deregistriert das Sterbe-Event, stoppt alle Spawn-Trigger und tötet (falls noch nötig) die WC3-Einheit.
+    -- Deregistriert das Sterbe-Event, stoppt alle Spawn-Trigger und entfernt die WC3-Einheit.
     -- </summary>
     Destroy = function (this)
       DeRegisterOnDies(this)
@@ -23272,11 +23320,9 @@ System.namespace("Source.Models", function (namespace)
         this.SpawnTriggers:get(i):Stop()
       end
 
-      if UnitAlive(this.Wc3Unit) then
-        -- Da diese Funktion auch beim Tod des Gebäudes ausgelöst werden kann,
-        -- töte Gebäude bei Bedarf, d.h. wenn Team verliert und Spieler entfernt werden.
-        KillUnit(this.Wc3Unit)
-      end
+      RemoveUnit(this.Wc3Unit)
+      RemoveUnit(this.Wc3Unit)
+      this.Wc3Unit = nil
     end
     -- <summary>
     -- Registriert das Sterbe-Event.
@@ -23379,7 +23425,7 @@ System.namespace("Source.Models", function (namespace)
     Elapsed = function (this)
       System.try(function ()
         for _, unitId in System.each(this.UnitIds) do
-          SourceEventsPeriodic.LegionRaid.CreateUnitAtRandomPointWithEffect(this.SpawnArea.Wc3Rectangle, unitId):AttackMoveTimed(this.TargetArea, 2)
+          Source.Program.Legion:CreateUnit(this.SpawnArea.Wc3Rectangle, unitId, SourceEventsPeriodic.LegionRaid.RaidCounts, 0):AttackMoveTimed(this.TargetArea, 2)
         end
       end, function (default)
         local ex = default
@@ -23436,18 +23482,18 @@ local WCSharpApi = WCSharp.Api
 local SourceEventsBuildings
 local SourceModels
 local SourceStatics
-local ListSpawnedCreep
+local ListSpawnedUnit
 System.import(function (out)
   SourceEventsBuildings = Source.Events.Buildings
   SourceModels = Source.Models
   SourceStatics = Source.Statics
-  ListSpawnedCreep = System.List(SourceModels.SpawnedCreep)
+  ListSpawnedUnit = System.List(SourceModels.SpawnedUnit)
 end)
 System.namespace("Source.Models", function (namespace)
   namespace.class("MercenaryForce", function (namespace)
-    local InitializeBuilding, SetOwnerAndRebuild, CreateDefenderUnits, SpawnUnitAtPoint, __ctor__
+    local InitializeBuilding, SetOwnerAndRebuild, CreateDefendingUnits, SpawnUnitAtPoint, __ctor__
     __ctor__ = function (this, name, buildingArea, spawnArea, nearTeam, opposingTeam, buildingUnitTypeId, defenderUnitTypeIds)
-      this.DefenderCreeps = ListSpawnedCreep()
+      this.DefendingUnits = ListSpawnedUnit()
       this.Name = name
       this.ColorizedName = "|c" .. System.toString("ffffcc00" --[[ConstantsEx.ColorHexCode_Gold]]) .. System.toString(name) .. "|r"
       this.SpawnArea = spawnArea
@@ -23469,7 +23515,7 @@ System.namespace("Source.Models", function (namespace)
       this.Building = SourceModels.MercenarySpawnBuilding(this, this.BuildingUnitTypeId, this.BuildingArea, 0)
       this.Building:RegisterOnDies(SourceEventsBuildings.MercenaryBuilding.OnDies)
 
-      CreateDefenderUnits(this, false)
+      CreateDefendingUnits(this, false)
 
       return this.Building
     end
@@ -23488,17 +23534,17 @@ System.namespace("Source.Models", function (namespace)
       this.Building = SourceModels.MercenarySpawnBuilding(this, this.BuildingUnitTypeId, this.BuildingArea, 0)
       this.Building:RegisterOnDies(SourceEventsBuildings.MercenaryBuilding.OnDies)
 
-      CreateDefenderUnits(this, true)
+      CreateDefendingUnits(this, true)
 
       -- Füge direkt SpawnTrigger hinzu, welche später durch kaufen von Söldnern um Einheiten erweitert werden
       this.Building:AddSpawnTrigger(1 --[[SpawnInterval.Middle]], this.SpawnArea, this.AttackTargetArea):Run(0)
     end
-    CreateDefenderUnits = function (this, withSpecialEffect)
+    CreateDefendingUnits = function (this, withSpecialEffect)
       local rectangle = this.SpawnArea.Wc3Rectangle
 
       for _, unitTypeId in System.each(this.DefenderUnitTypeIds) do
         local point = rectangle:GetRandomPoint()
-        this.DefenderCreeps:Add(SpawnUnitAtPoint(this, point, unitTypeId))
+        this.DefendingUnits:Add(SpawnUnitAtPoint(this, point, unitTypeId, 0))
 
         if withSpecialEffect then
           SourceStatics.SpecialEffects.CreateSpecialEffect("UI\\Feedback\\GoldCredit\\GoldCredit.mdl", point, 1, 1)
@@ -23511,8 +23557,8 @@ System.namespace("Source.Models", function (namespace)
     -- <param name="point">Punkt</param>
     -- <param name="unitTypeId">Einheit-Typ</param>
     -- <returns></returns>
-    SpawnUnitAtPoint = function (this, point, unitTypeId)
-      return SourceModels.SpawnedCreep(this.Wc3Player, unitTypeId, point, 0)
+    SpawnUnitAtPoint = function (this, point, unitTypeId, face)
+      return System.new(SourceModels.SpawnedUnit, 2, this.Wc3Player, unitTypeId, point, face)
     end
     return {
       BuildingUnitTypeId = 0,
@@ -23524,10 +23570,10 @@ System.namespace("Source.Models", function (namespace)
         return {
           methods = {
             { ".ctor", 0x706, nil, System.String, out.Source.Models.Area, out.Source.Models.Area, out.Source.Abstracts.TeamBase, out.Source.Abstracts.TeamBase, System.Int32, System.Array(System.Int32) },
-            { "CreateDefenderUnits", 0x101, CreateDefenderUnits, System.Boolean },
+            { "CreateDefendingUnits", 0x101, CreateDefendingUnits, System.Boolean },
             { "InitializeBuilding", 0x86, InitializeBuilding, out.Source.Models.MercenarySpawnBuilding },
             { "SetOwnerAndRebuild", 0x206, SetOwnerAndRebuild, out.Source.Abstracts.TeamBase, out.Source.Models.Area },
-            { "SpawnUnitAtPoint", 0x286, SpawnUnitAtPoint, out.WCSharp.Shared.Data.Point, System.Int32, out.Source.Models.SpawnedCreep }
+            { "SpawnUnitAtPoint", 0x386, SpawnUnitAtPoint, out.WCSharp.Shared.Data.Point, System.Int32, System.Single, out.Source.Models.SpawnedUnit }
           },
           properties = {
             { "AttackTargetArea", 0x6, out.Source.Models.Area },
@@ -23535,8 +23581,8 @@ System.namespace("Source.Models", function (namespace)
             { "BuildingArea", 0x6, out.Source.Models.Area },
             { "BuildingUnitTypeId", 0x6, System.Int32 },
             { "ColorizedName", 0x6, System.String },
-            { "DefenderCreeps", 0x6, System.List(out.Source.Models.SpawnedCreep) },
             { "DefenderUnitTypeIds", 0x6, System.Array(System.Int32) },
+            { "DefendingUnits", 0x6, System.List(out.Source.Models.SpawnedUnit) },
             { "Name", 0x6, System.String },
             { "NearTeam", 0x6, out.Source.Abstracts.TeamBase },
             { "OpposingTeam", 0x6, out.Source.Abstracts.TeamBase },
@@ -23706,7 +23752,7 @@ System.namespace("Source.Models", function (namespace)
         for _, unitId in System.each(this.UnitIds) do
           local randomPoint = this.SpawnArea.Wc3Rectangle:GetRandomPoint()
           SourceStatics.SpecialEffects.CreateSpecialEffect("UI\\Feedback\\GoldCredit\\GoldCredit.mdl", randomPoint, 1, 1)
-          this.Owner:SpawnUnitAtPoint(randomPoint, unitId):AttackMoveTimed(this.TargetArea, 1)
+          this.Owner:SpawnUnitAtPoint(randomPoint, unitId, 0):AttackMoveTimed(this.TargetArea, 1)
         end
       end, function (default)
         local ex = default
@@ -23812,13 +23858,9 @@ end)
 end
 do
 local System = System
-local Source
-System.import(function (out)
-  Source = out.Source
-end)
 System.namespace("Source.Models", function (namespace)
-  namespace.class("SpawnedCreep", function (namespace)
-    local AttackMoveTimed, AttackMove, RepeatAttackMove, Kill, ReviveHero, __ctor__
+  namespace.class("SpawnedUnit", function (namespace)
+    local AttackMoveTimed, AttackMove, RepeatAttackMove, Kill, __ctor1__, __ctor2__
     -- <summary>
     -- Erstellt eine neue Einheit im Zentrum eines Gebiets.
     -- </summary>
@@ -23826,14 +23868,21 @@ System.namespace("Source.Models", function (namespace)
     -- <param name="unitType">Einheit-Typ</param>
     -- <param name="area">Gebiet</param>
     -- <param name="face">Blickrichtung (0 = rechts, 90 = oben, 180 = unten, 270 = links)</param>
-    __ctor__ = function (this, player, unitType, spawnPoint, face)
-      this.SpawnPoint = spawnPoint
-      this.Wc3Unit = CreateUnit(player, unitType, spawnPoint.X, spawnPoint.Y, face)
+    __ctor1__ = function (this, owner, unitType, area, face)
+      this.SpawnArea = area
+      this.Wc3Unit = CreateUnitAtLoc(owner, unitType, area.Wc3CenterLocation, face)
     end
     -- <summary>
-    -- Gibt der Einheit einen Angriff/Bewegen-Befehl bis zum Zentrum eines Gebiets.
+    -- Erstellt eine neue Einheit im Zentrum eines Gebiets.
     -- </summary>
-    -- <param name="targetArea">Zielgebiet</param>
+    -- <param name="owner">Besitzer</param>
+    -- <param name="unitType">Einheit-Typ</param>
+    -- <param name="area">Gebiet</param>
+    -- <param name="face">Blickrichtung (0 = rechts, 90 = oben, 180 = unten, 270 = links)</param>
+    __ctor2__ = function (this, owner, unitType, spawnPoint, face)
+      this.SpawnPoint = spawnPoint
+      this.Wc3Unit = CreateUnit(owner, unitType, spawnPoint.X, spawnPoint.Y, face)
+    end
     AttackMoveTimed = function (this, targetArea, delay)
       this.LastAreaTarget = targetArea
 
@@ -23842,80 +23891,6 @@ System.namespace("Source.Models", function (namespace)
         IssuePointOrderById(this.Wc3Unit, 851983 --[[Constants.ORDER_ATTACK]], this.LastAreaTarget.CenterX, this.LastAreaTarget.CenterY)
       end)
     end
-    AttackMove = function (this, targetArea)
-      this.LastAreaTarget = targetArea
-
-      IssuePointOrderById(this.Wc3Unit, 851983 --[[Constants.ORDER_ATTACK]], this.LastAreaTarget.CenterX, this.LastAreaTarget.CenterY)
-    end
-    -- <summary>
-    -- Gibt der Einheit erneut einen Angriff/Bewegen-Befehl zum letzten Zielgebiet, falls bekannt.
-    -- </summary>
-    RepeatAttackMove = function (this)
-      if this.LastAreaTarget ~= nil then
-        IssuePointOrderById(this.Wc3Unit, 851983 --[[Constants.ORDER_ATTACK]], this.LastAreaTarget.CenterX, this.LastAreaTarget.CenterY)
-      end
-    end
-    -- <summary>
-    -- Tötet die Einheit, falls diese noch am Leben ist.
-    -- </summary>
-    Kill = function (this)
-      if UnitAlive(this.Wc3Unit) then
-        KillUnit(this.Wc3Unit)
-      end
-    end
-    ReviveHero = function (this, unit)
-      Source.Program.ShowDebugMessage("Respawn " .. System.toString(GetUnitName(unit)))
-      Source.Program.ShowDebugMessage("Respawn " .. this.SpawnPoint.X .. ":" .. this.SpawnPoint.Y)
-      ReviveHero(unit, this.SpawnPoint.X, this.SpawnPoint.Y, true)
-    end
-    return {
-      Wc3UnitTypeId = 0,
-      AttackMoveTimed = AttackMoveTimed,
-      AttackMove = AttackMove,
-      RepeatAttackMove = RepeatAttackMove,
-      Kill = Kill,
-      ReviveHero = ReviveHero,
-      __ctor__ = __ctor__,
-      __metadata__ = function (out)
-        return {
-          methods = {
-            { ".ctor", 0x406, nil, out.WCSharp.Api.player, System.Int32, out.WCSharp.Shared.Data.Point, System.Single },
-            { "AttackMove", 0x106, AttackMove, out.Source.Models.Area },
-            { "AttackMoveTimed", 0x206, AttackMoveTimed, out.Source.Models.Area, System.Single },
-            { "Kill", 0x6, Kill },
-            { "RepeatAttackMove", 0x6, RepeatAttackMove },
-            { "ReviveHero", 0x106, ReviveHero, out.WCSharp.Api.unit }
-          },
-          properties = {
-            { "LastAreaTarget", 0x6, out.Source.Models.Area },
-            { "SpawnPoint", 0x6, out.WCSharp.Shared.Data.Point },
-            { "Wc3Unit", 0x6, out.WCSharp.Api.unit },
-            { "Wc3UnitTypeId", 0x6, System.Int32 }
-          },
-          class = { "SpawnedCreep", 0x26 }
-        }
-      end
-    }
-  end)
-end)
-
-end
-do
-local System = System
-System.namespace("Source.Models", function (namespace)
-  namespace.class("SpawnedUnit", function (namespace)
-    local AttackMove, RepeatAttackMove, Kill, __ctor__
-    -- <summary>
-    -- Erstellt eine neue Einheit im Zentrum eines Gebiets.
-    -- </summary>
-    -- <param name="owner">Besitzer</param>
-    -- <param name="unitType">Einheit-Typ</param>
-    -- <param name="area">Gebiet</param>
-    -- <param name="face">Blickrichtung (0 = rechts, 90 = oben, 180 = unten, 270 = links)</param>
-    __ctor__ = function (this, owner, unitType, area, face)
-      this.SpawnArea = area
-      this.Wc3Unit = CreateUnitAtLoc(owner, unitType, area.Wc3CenterLocation, face)
-    end
     -- <summary>
     -- Gibt der Einheit einen Angriff/Bewegen-Befehl bis zum Zentrum eines Gebiets.
     -- </summary>
@@ -23943,21 +23918,28 @@ System.namespace("Source.Models", function (namespace)
     end
     return {
       Wc3UnitTypeId = 0,
+      AttackMoveTimed = AttackMoveTimed,
       AttackMove = AttackMove,
       RepeatAttackMove = RepeatAttackMove,
       Kill = Kill,
-      __ctor__ = __ctor__,
+      __ctor__ = {
+        __ctor1__,
+        __ctor2__
+      },
       __metadata__ = function (out)
         return {
           methods = {
-            { ".ctor", 0x406, nil, out.WCSharp.Api.player, System.Int32, out.Source.Models.Area, System.Single },
+            { ".ctor", 0x406, __ctor1__, out.WCSharp.Api.player, System.Int32, out.Source.Models.Area, System.Single },
+            { ".ctor", 0x406, __ctor2__, out.WCSharp.Api.player, System.Int32, out.WCSharp.Shared.Data.Point, System.Single },
             { "AttackMove", 0x106, AttackMove, out.Source.Models.Area },
+            { "AttackMoveTimed", 0x206, AttackMoveTimed, out.Source.Models.Area, System.Single },
             { "Kill", 0x6, Kill },
             { "RepeatAttackMove", 0x6, RepeatAttackMove }
           },
           properties = {
             { "LastAreaTarget", 0x6, out.Source.Models.Area },
             { "SpawnArea", 0x6, out.Source.Models.Area },
+            { "SpawnPoint", 0x6, out.WCSharp.Shared.Data.Point },
             { "Wc3Unit", 0x6, out.WCSharp.Api.unit },
             { "Wc3UnitTypeId", 0x6, System.Int32 }
           },
@@ -36381,8 +36363,8 @@ local InitCSharp = function ()
       "WCSharp.Missiles.HomingMissile",
       "WCSharp.Missiles.MomentumMissile",
       "WCSharp.Missiles.OrbitalMissile",
-      "WCSharp.SaveLoad.Save_1",
       "WCSharp.SaveLoad.SaveLoadedMessage_1",
+      "WCSharp.SaveLoad.Save_1",
       "WCSharp.W3MMD.IW3MmdVar",
       "Areas",
       "Constants",
@@ -36423,7 +36405,6 @@ local InitCSharp = function ()
       "Source.Models.SpawnUnitCommand",
       "Source.Models.SpawnUnitsBuilding",
       "Source.Models.SpawnUnitsTrigger",
-      "Source.Models.SpawnedCreep",
       "Source.Models.SpawnedUnit",
       "Source.Models.Teams.ElvesTeam",
       "Source.Models.Teams.HumansTeam",

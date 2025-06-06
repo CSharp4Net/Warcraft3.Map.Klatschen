@@ -70,13 +70,16 @@ namespace Source.Models
     /// <summary>
     /// Auflistung von verteidigenden Einheiten.
     /// </summary>
-    public List<SpawnedCreep> DefenderCreeps { get; private set; } = new List<SpawnedCreep>();
+    public List<SpawnedUnit> DefendingUnits { get; private set; } = new List<SpawnedUnit>();
 
     /// <summary>
     /// Team, für das das Söldnerlager automatisch Einheiten erstellt.
     /// </summary>
     public TeamBase OwnerTeam { get; private set; }
 
+    /// <summary>
+    /// WC3-Spielerobjekt
+    /// </summary>
     public player Wc3Player { get; private set; }
 
     /// <summary>
@@ -91,7 +94,7 @@ namespace Source.Models
       Building = new MercenarySpawnBuilding(this, BuildingUnitTypeId, BuildingArea, 0f);
       Building.RegisterOnDies(MercenaryBuilding.OnDies);
 
-      CreateDefenderUnits(false);
+      CreateDefendingUnits(false);
 
       return Building;
     }
@@ -112,20 +115,20 @@ namespace Source.Models
       Building = new MercenarySpawnBuilding(this, BuildingUnitTypeId, BuildingArea, 0f);
       Building.RegisterOnDies(MercenaryBuilding.OnDies);
 
-      CreateDefenderUnits(true);
+      CreateDefendingUnits(true);
 
       // Füge direkt SpawnTrigger hinzu, welche später durch kaufen von Söldnern um Einheiten erweitert werden
       Building.AddSpawnTrigger(Enums.SpawnInterval.Middle, SpawnArea, AttackTargetArea).Run();
     }
 
-    private void CreateDefenderUnits(bool withSpecialEffect)
+    private void CreateDefendingUnits(bool withSpecialEffect)
     {
       Rectangle rectangle = SpawnArea.Wc3Rectangle;
 
       foreach (int unitTypeId in DefenderUnitTypeIds)
       {
         Point point = rectangle.GetRandomPoint();
-        DefenderCreeps.Add(SpawnUnitAtPoint(point, unitTypeId));
+        DefendingUnits.Add(SpawnUnitAtPoint(point, unitTypeId));
 
         if (withSpecialEffect)
           SpecialEffects.CreateSpecialEffect("UI\\Feedback\\GoldCredit\\GoldCredit.mdl", point, 1f, 1f);
@@ -138,9 +141,9 @@ namespace Source.Models
     /// <param name="point">Punkt</param>
     /// <param name="unitTypeId">Einheit-Typ</param>
     /// <returns></returns>
-    public SpawnedCreep SpawnUnitAtPoint(Point point, int unitTypeId)
+    public SpawnedUnit SpawnUnitAtPoint(Point point, int unitTypeId, float face = 0f)
     {
-      return new SpawnedCreep(Wc3Player, unitTypeId, point);
+      return new SpawnedUnit(Wc3Player, unitTypeId, point, face);
     }
   }
 }

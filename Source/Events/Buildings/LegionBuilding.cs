@@ -19,21 +19,11 @@ namespace Source.Events.Buildings
         if (!Program.TryGetUserById(player.Id, out UserPlayer user))
           return;
 
-        int unitType = buildingUnit.UnitType;
-
-
-        // Stoppe Trigger
-        if (Program.Legion.SpawnBuildingWest.Wc3Unit == buildingUnit)
+        if (Program.Legion.TryGetSpawnBuilding(buildingUnit, out LegionSpawnBuilding building))
         {
-          Console.WriteLine($"The {Program.Legion.SpawnBuildingEast.Wc3Unit.Name} in the west has been destroyed!");
-          SpecialEffects.CreateSpecialEffect("Abilities\\Spells\\Other\\Doom\\DoomDeath.mdl", Program.Legion.SpawnBuildingWest.CreationArea.Wc3Rectangle.Center, 2f, 3f);
-          Program.Legion.SpawnBuildingWest.Destroy();
-        }
-        else if (Program.Legion.SpawnBuildingEast.Wc3Unit == buildingUnit)
-        {
-          Console.WriteLine($"The {Program.Legion.SpawnBuildingEast.Wc3Unit.Name} in the east has been destroyed!");
-          SpecialEffects.CreateSpecialEffect("Abilities\\Spells\\Other\\Doom\\DoomDeath.mdl", Program.Legion.SpawnBuildingEast.CreationArea.Wc3Rectangle.Center, 2f, 31f);
-          Program.Legion.SpawnBuildingEast.Destroy();
+          Console.WriteLine($"A {building.Wc3Unit.Name} of the {Program.Legion.ColorizedName} has been destroyed!");
+          SpecialEffects.CreateSpecialEffect("Abilities\\Spells\\Other\\Doom\\DoomDeath.mdl", building.CreationArea.Wc3Rectangle.Center, 2f, 3f);
+          Program.Legion.RemoveSpawnBuilding(building);
         }
         else
           Program.ShowErrorMessage("LegionBuilding.OnDies", $"Unhandled legion building destroyed: {buildingUnit.Name}");

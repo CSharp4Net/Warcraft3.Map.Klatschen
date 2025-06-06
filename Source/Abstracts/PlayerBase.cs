@@ -13,6 +13,9 @@ namespace Source.Abstracts
       Wc3Player = wc3Player;
     }
 
+    /// <summary>
+    /// Id des WC3-Spielerobjekt
+    /// </summary>
     public int PlayerId { get; init; }
 
     /// <summary>
@@ -25,6 +28,9 @@ namespace Source.Abstracts
     /// </summary>
     protected List<SpawnedUnit> Units { get; init; } = new List<SpawnedUnit>();
 
+    /// <summary>
+    /// Spieler wurde besiegt.
+    /// </summary>
     public bool Defeated { get; private set; }
 
     /// <summary>
@@ -92,7 +98,7 @@ namespace Source.Abstracts
     }
 
     /// <summary>
-    /// Entfernt eine Einhaut aus der Auflistung aller Einheiten.
+    /// Entfernt eine Einheit aus der Auflistung aller Einheiten.
     /// </summary>
     /// <param name="unit"></param>
     public void RemoveUnit(SpawnedUnit unit)

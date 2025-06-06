@@ -10,7 +10,7 @@ namespace Source.Events.Periodic
 {
   internal static class LegionRaid
   {
-    private static int executions = 0;
+    public static int RaidCounts = 0;
 
     public static bool OnElapsed()
     {
@@ -32,13 +32,13 @@ namespace Source.Events.Periodic
 
         player player = player.NeutralAggressive;
 
-        executions++;
+        RaidCounts++;
 
         Rectangle centerRect = Areas.CenterComplete.Wc3Rectangle;
         Rectangle CenterBottomRect = Areas.CenterBottom.Wc3Rectangle;
-        Rectangle CenterLeftRect = Areas.CenterLeft.Wc3Rectangle;
+        Rectangle CenterLeftRect = Areas.MiddleLaneSpawnEast.Wc3Rectangle;
         Rectangle CenterTopRect = Areas.CenterTop.Wc3Rectangle;
-        Rectangle CenterRightRect = Areas.CenterRight.Wc3Rectangle;
+        Rectangle CenterRightRect = Areas.MiddleLaneSpawnWest.Wc3Rectangle;
 
         Console.WriteLine($"The {Program.Legion.ColorizedName} is approaching, abandon all hope and despair...");
 
@@ -81,7 +81,7 @@ namespace Source.Events.Periodic
         int maxHeroLevel = Program.AllActiveUsers.Max(user => user.HeroLevelCounter);
 #endif
         if (maxHeroLevel == 0)
-          maxHeroLevel = executions;
+          maxHeroLevel = RaidCounts;
 
         timer spawnTimer = Common.CreateTimer();
         Common.TimerStart(spawnTimer, 5f, false, () =>
@@ -92,32 +92,30 @@ namespace Source.Events.Periodic
 
           try
           {
-            Program.Legion.CreateOrRefreshWestSpawnBuilding();
-            Program.Legion.CreateOrRefreshEastSpawnBuilding();
-
-            Program.Legion.CreateOrReviveHero(Constants.UNIT_DEMON_LORD_LEGION, Areas.Center, maxHeroLevel, executions);
+            Program.Legion.CreateOrRefreshSpawnBuildings(RaidCounts);
+            Program.Legion.CreateOrReviveHero(Constants.UNIT_DEMON_LORD_LEGION, Areas.Center, maxHeroLevel, RaidCounts);
 
             // Zentrum - Weitere Einheiten via Cast hinzurufen
-            CreateUnitAtRandomPointWithEffect(centerRect, Constants.UNIT_INFERNAL_LEGION);
-            CreateUnitAtRandomPointWithEffect(centerRect, Constants.UNIT_INFERNAL_LEGION);
-            CreateUnitAtRandomPointWithEffect(centerRect, Constants.UNIT_INFERNAL_LEGION);
-            CreateUnitAtRandomPointWithEffect(centerRect, Constants.UNIT_INFERNAL_LEGION);
+            Program.Legion.CreateUnit(centerRect, Constants.UNIT_INFERNAL_LEGION, RaidCounts);
+            Program.Legion.CreateUnit(centerRect, Constants.UNIT_INFERNAL_LEGION, RaidCounts);
+            Program.Legion.CreateUnit(centerRect, Constants.UNIT_INFERNAL_LEGION, RaidCounts);
+            Program.Legion.CreateUnit(centerRect, Constants.UNIT_INFERNAL_LEGION, RaidCounts);
 
             // Bottom Lane - Weitere Einheiten via Cast hinzurufen
-            CreateUnitAtRandomPointWithEffect(CenterBottomRect, Constants.UNIT_INFERNAL_LEGION);
-            CreateUnitAtRandomPointWithEffect(CenterBottomRect, Constants.UNIT_INFERNAL_LEGION);
+            Program.Legion.CreateUnit(CenterBottomRect, Constants.UNIT_INFERNAL_LEGION, RaidCounts);
+            Program.Legion.CreateUnit(CenterBottomRect, Constants.UNIT_INFERNAL_LEGION, RaidCounts);
 
             // Left Lane - Weitere Einheiten via Cast hinzurufen
-            CreateUnitAtRandomPointWithEffect(CenterLeftRect, Constants.UNIT_INFERNAL_LEGION);
-            CreateUnitAtRandomPointWithEffect(CenterLeftRect, Constants.UNIT_INFERNAL_LEGION);
+            Program.Legion.CreateUnit(CenterLeftRect, Constants.UNIT_INFERNAL_LEGION, RaidCounts);
+            Program.Legion.CreateUnit(CenterLeftRect, Constants.UNIT_INFERNAL_LEGION, RaidCounts);
 
             // Top Lane - Weitere Einheiten via Cast hinzurufen
-            CreateUnitAtRandomPointWithEffect(CenterTopRect, Constants.UNIT_INFERNAL_LEGION);
-            CreateUnitAtRandomPointWithEffect(CenterTopRect, Constants.UNIT_INFERNAL_LEGION);
+            Program.Legion.CreateUnit(CenterTopRect, Constants.UNIT_INFERNAL_LEGION, RaidCounts);
+            Program.Legion.CreateUnit(CenterTopRect, Constants.UNIT_INFERNAL_LEGION, RaidCounts);
 
             // Right Lane - Weitere Einheiten via Cast hinzurufen
-            CreateUnitAtRandomPointWithEffect(CenterRightRect, Constants.UNIT_INFERNAL_LEGION);
-            CreateUnitAtRandomPointWithEffect(CenterRightRect, Constants.UNIT_INFERNAL_LEGION);
+            Program.Legion.CreateUnit(CenterRightRect, Constants.UNIT_INFERNAL_LEGION, RaidCounts);
+            Program.Legion.CreateUnit(CenterRightRect, Constants.UNIT_INFERNAL_LEGION, RaidCounts);
           }
           catch (Exception ex)
           {
@@ -142,41 +140,8 @@ namespace Source.Events.Periodic
         timer.Dispose();
         timer = null;
 
-        CreateUnitAtRandomPointWithEffect(rectangle, unitTypeId);
+        Program.Legion.CreateUnit(rectangle, unitTypeId, RaidCounts, 0f);
       });
-    }
-    internal static SpawnedCreep CreateUnitAtRandomPointWithEffect(Rectangle rectangle, int unitTypeId)
-    {
-      Point point = rectangle.GetRandomPoint();
-      SpecialEffects.CreateSpecialEffect("Objects\\Spawnmodels\\NightElf\\EntBirthTarget\\EntBirthTarget.mdl", point, 2f, 1f);
-      SpawnedCreep result = Program.Legion.SpawnUnitAtPoint(point, unitTypeId);
-
-      switch (executions)
-      {
-        case 1:
-        case 2:
-        case 3:
-        case 4:
-        case 6:
-        case 7:
-        case 8:
-        case 9:
-        case 10:
-          result.Wc3Unit.AttackBaseDamage1 = result.Wc3Unit.AttackBaseDamage1 + (10 * executions);
-          result.Wc3Unit.Defense = result.Wc3Unit.Defense + (2 * executions);
-          result.Wc3Unit.MaxLife = result.Wc3Unit.MaxLife + ((result.Wc3Unit.MaxLife / 10) * executions);
-          break;
-
-        default: // Ab Stufe 10 werden die Einheiten nicht mehr stärker, sonst werden sie (fast) unbesiegbar
-          result.Wc3Unit.AttackBaseDamage1 = result.Wc3Unit.AttackBaseDamage1 + 100;
-          result.Wc3Unit.Defense = result.Wc3Unit.Defense + 20;
-          result.Wc3Unit.MaxLife = result.Wc3Unit.MaxLife + (result.Wc3Unit.MaxLife);
-          break;
-      }
-
-      result.Wc3Unit.Life = result.Wc3Unit.MaxLife;
-
-      return result;
     }
 
     private static void CreateAtDummyAndCastAbilityTimed(player player, Rectangle rectangle, int abilityId, int abilityLevel, int orderId, float delay, float duration = 2f)

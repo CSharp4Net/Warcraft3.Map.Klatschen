@@ -15,14 +15,14 @@ namespace Source.Models
     /// <param name="spawnArea">Gebiet, in dem die Einheiten erstellt werden</param>
     /// <param name="spawnInterval">Klasse der erstellten Einheiten</param>
     /// <param name="targetArea">Zielgebiet, für das erstellte Einheiten einen Angriff/Bewegen-Befehl erhalten</param>
-    /// <param name="unitIds">Auflistung an Einheit-Typen zu beginn</param>
-    public SpawnUnitsTrigger(ComputerPlayer player, Area spawnArea, SpawnInterval spawnInterval, Area targetArea, params int[] unitIds)
+    /// <param name="unitTypeIds">Auflistung an Einheit-Typen zu beginn</param>
+    public SpawnUnitsTrigger(ComputerPlayer player, Area spawnArea, SpawnInterval spawnInterval, Area targetArea, params int[] unitTypeIds)
     {
       Player = player;
       SpawnArea = spawnArea;
       TargetArea = targetArea;
       UnitSpawnType = spawnInterval;
-      UnitIds = unitIds.ToList();
+      UnitTypeIds = unitTypeIds.ToList();
       Interval = Program.GetIntervalSeconds(spawnInterval);
     }
 
@@ -45,7 +45,10 @@ namespace Source.Models
     /// </summary>
     private Area TargetArea { get; init; }
 
-    private List<int> UnitIds { get; init; }
+    /// <summary>
+    /// Auflistung von Einheittyp-Ids, welche beim Auslösen erstelltt werden.
+    /// </summary>
+    private List<int> UnitTypeIds { get; init; }
 
     /// <summary>
     /// Timer, welcher die Erstellung rythmisch auslöst.
@@ -90,7 +93,7 @@ namespace Source.Models
     {
       try
       {
-        foreach (int unitId in UnitIds)
+        foreach (int unitId in UnitTypeIds)
         {
           SpawnedUnit unit = Player.CreateUnit(unitId, SpawnArea);
 
@@ -119,7 +122,7 @@ namespace Source.Models
     /// <param name="spawnCommand"></param>
     public void Add(SpawnUnitCommand spawnCommand)
     {
-      UnitIds.Add(spawnCommand.UnitId);
+      UnitTypeIds.Add(spawnCommand.UnitId);
     }
 
     /// <summary>
@@ -128,10 +131,10 @@ namespace Source.Models
     /// <param name="spawnCommand"></param>
     public void Upgrade(SpawnUnitCommand spawnCommand)
     {
-      for (int i = 0; i < UnitIds.Count; i++)
+      for (int i = 0; i < UnitTypeIds.Count; i++)
       {
-        if (UnitIds[i] == spawnCommand.UnitIdToUpgrade)
-          UnitIds[i] = spawnCommand.UnitId;
+        if (UnitTypeIds[i] == spawnCommand.UnitIdToUpgrade)
+          UnitTypeIds[i] = spawnCommand.UnitId;
       }
     }
   }
