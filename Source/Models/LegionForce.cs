@@ -1,10 +1,8 @@
-﻿using Source.Abstracts;
-using Source.Events;
-using Source.Events.Buildings;
+﻿using Source.Events.Buildings;
+using Source.Events.Periodic;
 using Source.Statics;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using WCSharp.Api;
 using WCSharp.Shared.Data;
 
@@ -77,8 +75,10 @@ namespace Source.Models
 
     internal void CreateOrRefreshSpawnBuildings(int raidCounts)
     {
-      CreateOrRefreshSpawnBuilding(Areas.MiddleLaneSpawnWest, Areas.HumanBase, Areas.ElfBase, raidCounts);
-      CreateOrRefreshSpawnBuilding(Areas.MiddleLaneSpawnEast, Areas.OrcBase, Areas.UndeadBase, raidCounts);
+      CreateOrRefreshSpawnBuilding(Areas.LegionSpawnBottom, Areas.ElfBase, Areas.UndeadBase, raidCounts);
+      CreateOrRefreshSpawnBuilding(Areas.LegionSpawnEast, Areas.OrcBase, Areas.UndeadBase, raidCounts);
+      CreateOrRefreshSpawnBuilding(Areas.LegionSpawnTop, Areas.OrcBase, Areas.HumanBase, raidCounts);
+      CreateOrRefreshSpawnBuilding(Areas.LegionSpawnWest, Areas.HumanBase, Areas.ElfBase, raidCounts);
     }
     internal void CreateOrRefreshSpawnBuilding(Area creationArea, Area target1, Area target2, int raidCounts)
     {
@@ -98,11 +98,27 @@ namespace Source.Models
       SpecialEffects.CreateSpecialEffect("Abilities\\Spells\\Other\\Doom\\DoomDeath.mdl", building.CreationArea.Wc3Rectangle.Center, 2f, 3f);
       building.RegisterOnDies(LegionBuilding.OnDies);
 
-      building.AddSpawnTrigger(Enums.SpawnInterval.Middle, creationArea, target2).Run();
-      building.AddSpawnTrigger(Enums.SpawnInterval.Middle, creationArea, target1).Run();
+      building.AddSpawnTrigger(Enums.SpawnInterval.Long, creationArea, target2).Run();
+      building.AddSpawnTrigger(Enums.SpawnInterval.Long, creationArea, target1).Run();
+
       building.AddUnitToSpawnTriggers(Constants.UNIT_FELGUARD_LEGION);
-      building.AddUnitToSpawnTriggers(Constants.UNIT_MAIDEN_OF_PAIN_LEGION);
-      building.AddUnitToSpawnTriggers(Constants.UNIT_VILE_TORMENTOR_LEGION);
+
+      if (LegionRaid.RaidRound >= 2)
+        building.AddUnitToSpawnTriggers(Constants.UNIT_FEL_RAVAGER_LEGION);
+      if (LegionRaid.RaidRound >= 3)
+        building.AddUnitToSpawnTriggers(Constants.UNIT_MAIDEN_OF_PAIN_LEGION);
+      if (LegionRaid.RaidRound >= 4)
+        building.AddUnitToSpawnTriggers(Constants.UNIT_FELGUARD_LEGION);
+      if (LegionRaid.RaidRound >= 5)
+        building.AddUnitToSpawnTriggers(Constants.UNIT_FEL_RAVAGER_LEGION);
+      if (LegionRaid.RaidRound >= 6)
+        building.AddUnitToSpawnTriggers(Constants.UNIT_VILE_TORMENTOR_LEGION);
+      if (LegionRaid.RaidRound >= 7)
+        building.AddUnitToSpawnTriggers(Constants.UNIT_INFERNAL_LEGION);
+      if (LegionRaid.RaidRound >= 8)
+        building.AddUnitToSpawnTriggers(Constants.UNIT_INFERNAL_LEGION);
+      if (LegionRaid.RaidRound >= 9)
+        building.AddUnitToSpawnTriggers(Constants.UNIT_INFERNAL_MACHINE_LEGION);
 
       // TODO : Increase power and bounty by raid Counts or so!
 
@@ -173,15 +189,27 @@ namespace Source.Models
       return result;
     }
 
-    internal SpawnedUnit CreateUnit(Rectangle rectangle, int unitTypeId, int executions, float face = 0f)
+    internal SpawnedUnit CreateUnitInArea(Area area, int unitTypeId, float face = 0f)
+    {
+      return CreateUnitAtPoint(area.Wc3Rectangle.Center, unitTypeId, face);
+    }
+    internal SpawnedUnit CreateUnitAtRandomPoint(Rectangle rectangle, int unitTypeId, float face = 0f)
     {
       Point point = rectangle.GetRandomPoint();
+      return CreateUnitAtPoint(point, unitTypeId, face);
+    }
+    internal SpawnedUnit CreateUnitAtPoint(Point point, int unitTypeId, float face = 0f)
+    {
       SpecialEffects.CreateSpecialEffect("Objects\\Spawnmodels\\NightElf\\EntBirthTarget\\EntBirthTarget.mdl", point, 2f, 1f);
       SpawnedUnit result = new SpawnedUnit(Wc3Player, unitTypeId, point, face);
-
       Units.Add(result);
+      ManipulateSpawnedUnit(result.Wc3Unit, LegionRaid.RaidRound);
+      return result;
+    }
 
-      switch (executions)
+    private void ManipulateSpawnedUnit(unit unit, int raidCount)
+    {
+      switch (raidCount)
       {
         case 1:
         case 2:
@@ -192,21 +220,19 @@ namespace Source.Models
         case 8:
         case 9:
         case 10:
-          result.Wc3Unit.AttackBaseDamage1 = result.Wc3Unit.AttackBaseDamage1 + (10 * executions);
-          result.Wc3Unit.Defense = result.Wc3Unit.Defense + (2 * executions);
-          result.Wc3Unit.MaxLife = result.Wc3Unit.MaxLife + ((result.Wc3Unit.MaxLife / 10) * executions);
+          unit.AttackBaseDamage1 = unit.AttackBaseDamage1 + (10 * raidCount);
+          unit.Defense = unit.Defense + (2 * raidCount);
+          unit.MaxLife = unit.MaxLife + ((unit.MaxLife / 10) * raidCount);
           break;
 
         default: // Ab Stufe 10 werden die Einheiten nicht mehr stärker, sonst werden sie (fast) unbesiegbar
-          result.Wc3Unit.AttackBaseDamage1 = result.Wc3Unit.AttackBaseDamage1 + 100;
-          result.Wc3Unit.Defense = result.Wc3Unit.Defense + 20;
-          result.Wc3Unit.MaxLife = result.Wc3Unit.MaxLife + (result.Wc3Unit.MaxLife);
+          unit.AttackBaseDamage1 = unit.AttackBaseDamage1 + 100;
+          unit.Defense = unit.Defense + 20;
+          unit.MaxLife = unit.MaxLife + (unit.MaxLife);
           break;
       }
 
-      result.Wc3Unit.Life = result.Wc3Unit.MaxLife;
-
-      return result;
+      unit.Life = unit.MaxLife;
     }
 
     /// <summary>

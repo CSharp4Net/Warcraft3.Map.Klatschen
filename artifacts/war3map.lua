@@ -1,22 +1,5 @@
--- Compiled with the following packages:
---   WCSharp.Api: v3.1.1 (decompiled)
---   WCSharp.Buffs: v3.1.4 (decompiled)
---   WCSharp.DateTime: v3.1.1 (decompiled)
---   WCSharp.Dummies: v3.1.4 (decompiled)
---   WCSharp.Effects: v3.1.0 (decompiled)
---   WCSharp.Events: v3.1.7 (decompiled)
---   WCSharp.Json: v3.1.0 (decompiled)
---   WCSharp.Knockbacks: v3.1.0 (decompiled)
---   WCSharp.Lightnings: v3.1.0 (decompiled)
---   WCSharp.Missiles: v3.1.0 (decompiled)
---   WCSharp.SaveLoad: v3.1.0 (decompiled)
---   WCSharp.Shared: v3.1.1 (decompiled)
---   WCSharp.Sync: v3.1.0 (decompiled)
---   WCSharp.W3MMD: v3.1.0 (decompiled)
-
 CSharpLuaSingleFile = true
 
--- CoreSystemLib: Natives.lua
 do
 -- math functions are faster than natives, but may return different results when incorrect input values are given.
 Deg2Rad = math.deg
@@ -36,7 +19,6 @@ Pow = function(x,power) return x ^ power end
 
 end
 
--- CoreSystemLib: Core.lua
 do
 local setmetatable = setmetatable
 local getmetatable = getmetatable
@@ -1685,7 +1667,6 @@ end
 System.config = {}
 end
 
--- CoreSystemLib: Interfaces.lua
 do
 local System = System
 local defInf = System.defInf
@@ -1785,7 +1766,6 @@ defInf("System.IEqualityComparer_1", emptyFn)
 System.enumMetatable.interface = { IComparable, IFormattable, IConvertible }
 end
 
--- CoreSystemLib: Exception.lua
 do
 local System = System
 local define = System.define
@@ -2128,7 +2108,6 @@ System.SwitchExpressionException = define("System.Runtime.CompilerServices", {
 })
 end
 
--- CoreSystemLib: Number.lua
 do
 local System = System
 local throw = System.throw
@@ -2543,7 +2522,6 @@ if not debugsetmetatable then
 end
 end
 
--- CoreSystemLib: Char.lua
 do
 local System = System
 local throw = System.throw
@@ -2761,7 +2739,6 @@ local charMetaTable = setmetatable({ __index = ValueType, __call = Char.default 
 setmetatable(Char, charMetaTable)
 end
 
--- CoreSystemLib: String.lua
 do
 local System = System
 local Char = System.Char
@@ -3511,7 +3488,6 @@ else
 end
 end
 
--- CoreSystemLib: Boolean.lua
 do
 local System = System
 local throw = System.throw
@@ -3615,7 +3591,6 @@ local boolMetaTable = setmetatable({ __index = ValueType, __call = Boolean.defau
 setmetatable(Boolean, boolMetaTable)
 end
 
--- CoreSystemLib: Delegate.lua
 do
 local System = System
 local throw = System.throw
@@ -3942,7 +3917,6 @@ local EventArgs = System.define("System.EventArgs")
 EventArgs.Empty = setmetatable({}, EventArgs)
 end
 
--- CoreSystemLib: Enum.lua
 do
 local System = System
 local throw = System.throw
@@ -4097,7 +4071,6 @@ System.define("System.Enum", {
 })
 end
 
--- CoreSystemLib: TimeSpan.lua
 do
 local System = System
 local throw = System.throw
@@ -4387,7 +4360,6 @@ TimeSpan.MaxValue = TimeSpan(9223372036854775807)
 TimeSpan.MinValue = TimeSpan((-9223372036854775807 - 1))
 end
 
--- CoreSystemLib: DateTime.lua
 do
 local System = System
 local throw = System.throw
@@ -5024,7 +4996,6 @@ System.defEnum("System.DayOfWeek", {
 })
 end
 
--- CoreSystemLib: Collections\EqualityComparer.lua
 do
 local System = System
 local define = System.define
@@ -5177,7 +5148,6 @@ Comparer = define("System.Comparer_1", function (T)
 end)
 end
 
--- CoreSystemLib: Array.lua
 do
 local System = System
 local define = System.define
@@ -6990,7 +6960,6 @@ define("System.ReadOnlyCollection", function (T)
 end, ReadOnlyCollection, 1)
 end
 
--- CoreSystemLib: Type.lua
 do
 local System = System
 local throw = System.throw
@@ -7487,7 +7456,6 @@ function System.castWithNullable(cls, obj)
 end
 end
 
--- CoreSystemLib: Collections\List.lua
 do
 local System = System
 local falseFn = System.falseFn
@@ -7550,7 +7518,6 @@ System.List = ListFn
 System.ArrayList = ListFn(System.Object)
 end
 
--- CoreSystemLib: Collections\Dictionary.lua
 do
 local System = System
 local define = System.define
@@ -8258,7 +8225,6 @@ local Object = System.Object
 System.Hashtable = DictionaryFn(Object, Object)
 end
 
--- CoreSystemLib: Collections\Queue.lua
 do
 local System = System
 local Array = System.Array
@@ -8300,7 +8266,6 @@ System.Queue = QueueFn
 System.queue = QueueFn(System.Object)
 end
 
--- CoreSystemLib: Collections\Stack.lua
 do
 local System = System
 local Array = System.Array
@@ -8333,7 +8298,6 @@ System.Stack = StackFn
 System.stack = StackFn(System.Object)
 end
 
--- CoreSystemLib: Collections\HashSet.lua
 do
 local System = System
 local throw = System.throw
@@ -8637,7 +8601,6 @@ System.HashSet = System.define("System.Collections.Generic.HashSet", function(T)
 end, HashSet, 1)
 end
 
--- CoreSystemLib: Collections\LinkedList.lua
 do
 local System = System
 local define = System.define
@@ -8971,7 +8934,6 @@ System.LinkedList = define("System.Collections.Generic.LinkedList", function(T)
 end, LinkedList, 1)
 end
 
--- CoreSystemLib: Collections\Linq.lua
 do
 local System = System
 local define = System.define
@@ -10241,7 +10203,6 @@ function Enumerable.Average(source, ...)
 end
 end
 
--- CoreSystemLib: Collections\SortedSet.lua
 do
 local System = System
 local Array = System.Array
@@ -10285,7 +10246,6 @@ end, SortedSet, 1)
 System.SortedSet = SortedSetFn
 end
 
--- CoreSystemLib: Convert.lua
 do
 local System = System
 local throw = System.throw
@@ -11271,7 +11231,6 @@ define("System.BitConverter", {
 })
 end
 
--- CoreSystemLib: Math.lua
 do
 local System = System
 local trunc = System.trunc
@@ -11507,7 +11466,6 @@ System.define("System.Math", Math)
 System.define("System.MathF", Math)
 end
 
--- CoreSystemLib: Random.lua
 do
 -- Compiled from https://github.com/dotnet/corefx/blob/master/src/Common/src/CoreLib/System/Random.cs
 -- Generated by CSharp.lua Compiler
@@ -11675,7 +11633,6 @@ end)())
 
 end
 
--- CoreSystemLib: Text\StringBuilder.lua
 do
 local System = System
 local throw = System.throw
@@ -11875,7 +11832,6 @@ local StringBuilder = System.define("System.Text.StringBuilder", {
 System.StringBuilder = StringBuilder
 end
 
--- CoreSystemLib: Console.lua
 do
 local System = System
 local toString = System.toString
@@ -11929,7 +11885,6 @@ if io then
 end
 end
 
--- CoreSystemLib: IO\File.lua
 do
 local io = io
 if io then
@@ -12020,7 +11975,6 @@ define("System.IO.File", {
 end
 end
 
--- CoreSystemLib: Reflection\Assembly.lua
 do
 local System = System
 local define = System.define
@@ -13138,7 +13092,6 @@ System.Delegate.CreateDelegate = function (delegateType, ...)
 end
 end
 
--- CoreSystemLib: Threading\Timer.lua
 do
 local System = System
 local define = System.define
@@ -13324,7 +13277,6 @@ System.Timer = define("System.Threading.Timer", {
 })
 end
 
--- CoreSystemLib: Threading\Thread.lua
 do
 local System = System
 local define = System.define
@@ -13514,7 +13466,6 @@ System.ThreadAbortException = ThreadAbortException
 System.Thread = Thread
 end
 
--- CoreSystemLib: Threading\Task.lua
 do
 local System = System
 local define = System.define
@@ -14470,7 +14421,6 @@ end
 System.asynceach = each
 end
 
--- CoreSystemLib: Utilities.lua
 do
 local System = System
 local throw = System.throw
@@ -14671,7 +14621,6 @@ define("System.Guid", {})
 define("System.ArraySegment", {})
 end
 
--- CoreSystemLib: Globalization\Globalization.lua
 do
 local System = System
 local emptyFn = System.emptyFn
@@ -14691,7 +14640,6 @@ define("System.Globalization.DateTimeFormatInfo", {
 })
 end
 
--- CoreSystemLib: Numerics\HashCodeHelper.lua
 do
 local System = System
 local bitLShift = System.sl
@@ -14706,7 +14654,6 @@ end
 System.define("System.Numerics.HashCodeHelper", HashCodeHelper)
 end
 
--- CoreSystemLib: Numerics\Complex.lua
 do
 -- Compiled from https://github.com/dotnet/corefx/blob/master/src/System.Runtime.Numerics/src/System/Numerics/Complex.cs
 -- Generated by CSharp.lua Compiler
@@ -15350,7 +15297,6 @@ end)())
 
 end
 
--- CoreSystemLib: Numerics\Vector2.lua
 do
 local System = System
 local SystemNumerics = System.Numerics
@@ -15629,7 +15575,6 @@ Vector2.TransformNormal = function (normal, matrix)
 System.defStc("System.Numerics.Vector2", Vector2)
 end
 
--- CoreSystemLib: Numerics\Vector3.lua
 do
 local System = System
 local SystemNumerics = System.Numerics
@@ -15949,7 +15894,6 @@ System.defStc("System.Numerics.Vector3", Vector3)
 
 end
 
--- CoreSystemLib: Numerics\Vector4.lua
 do
 local System = System
 local SystemNumerics = System.Numerics
@@ -16314,7 +16258,6 @@ System.defStc("System.Numerics.Vector4", Vector4)
 
 end
 
--- CoreSystemLib: Numerics\Matrix3x2.lua
 do
 local System = System
 local SystemNumerics = System.Numerics
@@ -16872,7 +16815,6 @@ end
 System.defStc("System.Numerics.Matrix3x2", Matrix3x2)
 end
 
--- CoreSystemLib: Numerics\Matrix4x4.lua
 do
 local System = System
 local SystemNumerics = System.Numerics
@@ -18483,7 +18425,6 @@ end
 System.defStc("System.Numerics.Matrix4x4", Matrix4x4)
 end
 
--- CoreSystemLib: Numerics\Plane.lua
 do
 local System = System
 local SystemNumerics = System.Numerics
@@ -18650,7 +18591,6 @@ end
 System.defStc("System.Numerics.Plane", Plane)
 end
 
--- CoreSystemLib: Numerics\Quaternion.lua
 do
 local System = System
 local SystemNumerics = System.Numerics
@@ -19071,7 +19011,6 @@ end
 System.defStc("System.Numerics.Quaternion", Quaternion)
 end
 
--- CoreSystemLib: WCSharp.lua
 do
 local define = System.defStc
 local setmetatable = setmetatable
@@ -19483,7 +19422,6 @@ local commandbuttoneffect = define("WCSharp.Api.commandbuttoneffect", {
 
 end
 
--- CoreSystemLib: eue.lua
 do
 local System = System
 local throw = System.throw
@@ -19656,7 +19594,6 @@ end, PriorityQueue, 2)
 System.PriorityQueue = PriorityQueueFn
 end
 
--- CoreSystemLib: ionary.lua
 do
 local System = System
 local Array = System.Array
@@ -19698,7 +19635,6 @@ end, SortedDictionary, 2)
 System.SortedDictionary = SortedDictionaryFn
 end
 
--- CoreSystemLib: .lua
 do
 local System = System
 local lengthFn = System.lengthFn
@@ -19745,7 +19681,6 @@ end, SortedList, 2)
 System.SortedList = SortedListFn
 end
 
--- Generated by CSharp.lua Compiler
 do
 local System = System
 local SourceModels
@@ -19753,9 +19688,9 @@ System.import(function (out)
   SourceModels = Source.Models
 end)
 System.namespace("", function (namespace)
-  -- <summary>
-  -- This class is manual-generated by NozzNazz and based on <see cref="Regions"/>.
-  -- </summary>
+
+
+
   namespace.class("Areas", function (namespace)
     local static
     static = function (this)
@@ -19814,8 +19749,18 @@ System.namespace("", function (namespace)
       this.HumanToOrcOuterLine = SourceModels.Area(Regions.HumanToOrcOuterLine)
       this.HumanToUndeadInnerLine = SourceModels.Area(Regions.HumanToUndeadInnerLine)
       this.HumanToUndeadOuterLine = SourceModels.Area(Regions.HumanToUndeadOuterLine)
-      this.MiddleLaneSpawnEast = SourceModels.Area(Regions.MiddleLaneSpawnEast)
-      this.MiddleLaneSpawnWest = SourceModels.Area(Regions.MiddleLaneSpawnWest)
+      this.LegionSpawnBottom = SourceModels.Area(Regions.LegionSpawnBottom)
+      this.LegionSpawnBottom1 = SourceModels.Area(Regions.LegionSpawnBottom1)
+      this.LegionSpawnBottom2 = SourceModels.Area(Regions.LegionSpawnBottom2)
+      this.LegionSpawnEast = SourceModels.Area(Regions.LegionSpawnEast)
+      this.LegionSpawnEast1 = SourceModels.Area(Regions.LegionSpawnEast1)
+      this.LegionSpawnEast2 = SourceModels.Area(Regions.LegionSpawnEast2)
+      this.LegionSpawnTop = SourceModels.Area(Regions.LegionSpawnTop)
+      this.LegionSpawnTop1 = SourceModels.Area(Regions.LegionSpawnTop1)
+      this.LegionSpawnTop2 = SourceModels.Area(Regions.LegionSpawnTop2)
+      this.LegionSpawnWest = SourceModels.Area(Regions.LegionSpawnWest)
+      this.LegionSpawnWest1 = SourceModels.Area(Regions.LegionSpawnWest1)
+      this.LegionSpawnWest2 = SourceModels.Area(Regions.LegionSpawnWest2)
       this.OrcBarracksToCenter = SourceModels.Area(Regions.OrcBarracksToCenter)
       this.OrcBarracksToCenterSpawn = SourceModels.Area(Regions.OrcBarracksToCenterSpawn)
       this.OrcBarracksToHuman = SourceModels.Area(Regions.OrcBarracksToHuman)
@@ -19923,8 +19868,18 @@ System.namespace("", function (namespace)
             { "HumanToOrcOuterLine", 0xE, out.Source.Models.Area },
             { "HumanToUndeadInnerLine", 0xE, out.Source.Models.Area },
             { "HumanToUndeadOuterLine", 0xE, out.Source.Models.Area },
-            { "MiddleLaneSpawnEast", 0xE, out.Source.Models.Area },
-            { "MiddleLaneSpawnWest", 0xE, out.Source.Models.Area },
+            { "LegionSpawnBottom", 0xE, out.Source.Models.Area },
+            { "LegionSpawnBottom1", 0xE, out.Source.Models.Area },
+            { "LegionSpawnBottom2", 0xE, out.Source.Models.Area },
+            { "LegionSpawnEast", 0xE, out.Source.Models.Area },
+            { "LegionSpawnEast1", 0xE, out.Source.Models.Area },
+            { "LegionSpawnEast2", 0xE, out.Source.Models.Area },
+            { "LegionSpawnTop", 0xE, out.Source.Models.Area },
+            { "LegionSpawnTop1", 0xE, out.Source.Models.Area },
+            { "LegionSpawnTop2", 0xE, out.Source.Models.Area },
+            { "LegionSpawnWest", 0xE, out.Source.Models.Area },
+            { "LegionSpawnWest1", 0xE, out.Source.Models.Area },
+            { "LegionSpawnWest2", 0xE, out.Source.Models.Area },
             { "OrcBarracksToCenter", 0xE, out.Source.Models.Area },
             { "OrcBarracksToCenterSpawn", 0xE, out.Source.Models.Area },
             { "OrcBarracksToHuman", 0xE, out.Source.Models.Area },
@@ -19983,13 +19938,13 @@ end
 do
 local System = System
 System.namespace("", function (namespace)
-  -- <summary>
-  -- This class is auto-generated by WCSharp.ConstantGenerator.
-  -- <para>To ensure that custom units, abilities etc. are picked up, you should either change
-  -- the name from the default of the spell or give it an editor suffix.</para>
-  -- <para>If you have issues with duplicate names, you can give everything a unique name using
-  -- the IncludeCode property in the ConstantGeneratorOptions (see Launcher/Program.cs in the WCSharp template).</para>
-  -- </summary>
+
+
+
+
+
+
+
   namespace.class("Constants", function (namespace)
     return {
       __metadata__ = function (out)
@@ -20005,9 +19960,9 @@ end
 do
 local System = System
 System.namespace("Source", function (namespace)
-  -- <summary>
-  -- This class is manual-generated by NozzNazz />.
-  -- </summary>
+
+
+
   namespace.class("ConstantsEx", function (namespace)
     local Message_FightToTheDeath, Message_CollectedGoldForMoreUnits, Message_CollectedGoldToUpgradeUnits, Message_CollectedGoldToResearchTech
     Message_FightToTheDeath = "Fight to the death, you rags!"
@@ -20039,8 +19994,6 @@ local SourceEventsRegion
 local SourceModels
 local SourceModelsTeams
 local WCSharpEvents
-local WCSharpShared
-local WCSharpSync
 local ListUserPlayer
 local ListMercenaryForce
 System.import(function (out)
@@ -20052,8 +20005,6 @@ System.import(function (out)
   SourceModels = Source.Models
   SourceModelsTeams = Source.Models.Teams
   WCSharpEvents = WCSharp.Events
-  WCSharpShared = WCSharp.Shared
-  WCSharpSync = WCSharp.Sync
   ListUserPlayer = System.List(SourceModels.UserPlayer)
   ListMercenaryForce = System.List(SourceModels.MercenaryForce)
 end)
@@ -20067,7 +20018,7 @@ System.namespace("Source", function (namespace)
       this.AllActiveUsers = ListUserPlayer()
     end
     Main = function ()
-      -- Delay a little since some stuff can break otherwise
+
       local timer = CreateTimer()
       TimerStart(timer, 0.01, false, function ()
         DestroyTimer(timer)
@@ -20078,63 +20029,50 @@ System.namespace("Source", function (namespace)
       end)
     end
     ShowDebugMessage = function (message)
-      System.Console.WriteLine(message)
     end
     ShowDebugMessage1 = function (sender, message)
-      System.Console.WriteLine(System.toString(sender) .. ": " .. System.toString(message))
     end
     ShowErrorMessage = function (sender, message)
-      System.Console.WriteLine("|c" .. System.toString("ffff0000" --[[ConstantsEx.ColorHexCode_Red]]) .. System.toString(sender) .. ": " .. System.toString(message) .. "|r")
+      System.Console.WriteLine("|c" .. System.toString("ffff0000") .. System.toString(sender) .. ": " .. System.toString(message) .. "|r")
     end
     ShowExceptionMessage = function (sender, ex)
-      System.Console.WriteLine("|c" .. System.toString("ffff0000" --[[ConstantsEx.ColorHexCode_Red]]) .. System.toString(sender) .. ": " .. System.toString(ex:ToString()) .. "|r")
+      System.Console.WriteLine("|c" .. System.toString("ffff0000") .. System.toString(sender) .. ": " .. System.toString(ex:ToString()) .. "|r")
     end
     Start = function ()
       System.try(function ()
-        -- This part of the code will only run if the map is compiled in Debug mode
-        class.Debug = true
-        ShowDebugMessage1("Start", "Running in debug mode...")
-
-        -- By calling these methods, whenever these systems call external code (i.e. your code),
-        -- they will wrap the call in a try-catch and output any errors to the chat for easier debugging
-        WCSharpEvents.PeriodicEvents.EnableDebug()
-        WCSharpEvents.PlayerUnitEvents.EnableDebug()
-        WCSharpSync.SyncSystem.EnableDebug()
-        WCSharpShared.Delay.EnableDebug()
-
 
         SetTimeOfDay(0)
 
-        -- Teams initialisieren
+
         class.Humans = SourceModelsTeams.HumansTeam(Player(0))
         class.Orcs = SourceModelsTeams.OrcsTeam(Player(4))
         class.Elves = SourceModelsTeams.ElvesTeam(Player(8))
         class.Undeads = SourceModelsTeams.UndeadsTeam(Player(12))
 
-        class.Legion = SourceModels.LegionForce("Demon Legion" --[[ConstantsEx.ForceName_DemonLegion]])
+        class.Legion = SourceModels.LegionForce("Demon Legion")
 
-        -- Regions-Ereignisse registrieren für automatische Einheitenbewegungen:
-        -- Wenn feindliche Einheiten in die Regionen treten, welche von zerstörten Gebäuden freigegeben werden.
+
+
         Areas.HumanBase:RegisterOnEnter(SourceEventsRegion.HumanBase.OnEnter)
         Areas.OrcBase:RegisterOnEnter(SourceEventsRegion.OrcBase.OnEnter)
         Areas.ElfBase:RegisterOnEnter(SourceEventsRegion.ElfBase.OnEnter)
         Areas.UndeadBase:RegisterOnEnter(SourceEventsRegion.UndeadBase.OnEnter)
 
-        -- Allgemeine Events registrieren
-        WCSharpEvents.PlayerUnitEvents.Register14(802 --[[UnitTypeEvent.BuysUnit]], SourceEvents.Unit.OnBuysUnit)
-        WCSharpEvents.PlayerUnitEvents.Register14(818 --[[UnitTypeEvent.FinishesResearch]], SourceEvents.Unit.OnFinishesResearch)
-        WCSharpEvents.PlayerUnitEvents.Register14(842 --[[UnitTypeEvent.SellsItem]], SourceEvents.Unit.OnSellsItem)
-        WCSharpEvents.PlayerUnitEvents.Register14(813 --[[UnitTypeEvent.Dies]], SourceEvents.Unit.OnDies)
-        WCSharpEvents.PlayerUnitEvents.Register14(837 --[[UnitTypeEvent.ReceivesOrder]], SourceEvents.Unit.OnReceivesOrder)
-        WCSharpEvents.PlayerUnitEvents.Register14(848 --[[UnitTypeEvent.SpellEffect]], SourceEvents.Unit.OnSpellEffect)
-        WCSharpEvents.PlayerUnitEvents.Register1(105 --[[HeroTypeEvent.Levels]], SourceEvents.Hero.OnLevels)
 
-        -- Periodische Events registrieren
+        WCSharpEvents.PlayerUnitEvents.Register14(802, SourceEvents.Unit.OnBuysUnit)
+        WCSharpEvents.PlayerUnitEvents.Register14(818, SourceEvents.Unit.OnFinishesResearch)
+        WCSharpEvents.PlayerUnitEvents.Register14(842, SourceEvents.Unit.OnSellsItem)
+        WCSharpEvents.PlayerUnitEvents.Register14(813, SourceEvents.Unit.OnDies)
+        WCSharpEvents.PlayerUnitEvents.Register14(837, SourceEvents.Unit.OnReceivesOrder)
+        WCSharpEvents.PlayerUnitEvents.Register14(848, SourceEvents.Unit.OnSpellEffect)
+        WCSharpEvents.PlayerUnitEvents.Register1(105, SourceEvents.Hero.OnLevels)
+
+
         WCSharpEvents.PeriodicEvents.AddPeriodicEvent(SourceEventsPeriodic.GoldIncome.OnElapsed, 5)
-        WCSharpEvents.PeriodicEvents.AddPeriodicEvent(SourceEventsPeriodic.LegionRaid.OnElapsed, 60 --[[ConstantsEx.Interval_Event_Klatschen]])
+        WCSharpEvents.PeriodicEvents.AddPeriodicEvent(SourceEventsPeriodic.LegionRaid.OnElapsed, 900)
         WCSharpEvents.PeriodicEvents.AddPeriodicEvent(SourceEventsPeriodic.ResearchCheck.OnElapsed, 10)
 
-        -- Gebäude & Trigger für Computer-Spieler erstellen
+
         ConstructHumanBuildingAndTrigger()
         ConstructOrcBuildingAndTrigger()
         ConstructElfBuildingAndTrigger()
@@ -20142,17 +20080,13 @@ System.namespace("Source", function (namespace)
 
         ConstructCreepCamps()
 
-        -- Spezifische Events registrieren
+
         System.Console.WriteLine(Source.ConstantsEx.Message_FightToTheDeath)
 
-        -- Für alle Benutzer-Spieler einen Hero-Selector generieren
+
         for _, user in System.each(class.AllActiveUsers) do
           CreateHeroSelectorForPlayerAndAdjustCamera(user)
         end
-
-
-        FogEnable(false)
-        FogMaskEnable(false)
 
 
         local timer = CreateTimer()
@@ -20216,129 +20150,129 @@ System.namespace("Source", function (namespace)
       return false, team
     end
     ConstructHumanBuildingAndTrigger = function ()
-      -- Hauptgebäude
-      local building = class.Humans.Computer:CreateBuilding(1747988531 --[[Constants.UNIT_CASTLE_HUMAN]], Areas.HumanBase, 0)
+
+      local building = class.Humans.Computer:CreateBuilding(1747988531, Areas.HumanBase, 0)
       building:RegisterOnDies(SourceEventsBuildings.TeamMainBuilding.OnDies)
-      building:AddSpawnTrigger(Areas.HumanBaseToCenterSpawn, 1 --[[SpawnInterval.Middle]], Areas.UndeadBase, System.Array(System.Int32) { 1747988536 --[[Constants.UNIT_PRIEST_HUMAN]], 1747988554 --[[Constants.UNIT_FLYING_MACHINE_HUMAN]] }):Run(5.5)
-      building:AddSpawnTrigger(Areas.HumanBaseToCenterSpawn, 2 --[[SpawnInterval.Long]], Areas.UndeadBase, System.Array.Empty(System.Int32)):Run(7.5)
-      building:AddSpawnTrigger(Areas.HumanBaseToElfSpawn, 1 --[[SpawnInterval.Middle]], Areas.ElfBase, System.Array(System.Int32) { 1747988536 --[[Constants.UNIT_PRIEST_HUMAN]], 1747988554 --[[Constants.UNIT_FLYING_MACHINE_HUMAN]] }):Run(5.5)
-      building:AddSpawnTrigger(Areas.HumanBaseToElfSpawn, 2 --[[SpawnInterval.Long]], Areas.ElfBase, System.Array.Empty(System.Int32)):Run(7.5)
-      building:AddSpawnTrigger(Areas.HumanBaseToOrcsSpawn, 1 --[[SpawnInterval.Middle]], Areas.OrcBase, System.Array(System.Int32) { 1747988536 --[[Constants.UNIT_PRIEST_HUMAN]], 1747988554 --[[Constants.UNIT_FLYING_MACHINE_HUMAN]] }):Run(5.5)
-      building:AddSpawnTrigger(Areas.HumanBaseToOrcsSpawn, 2 --[[SpawnInterval.Long]], Areas.OrcBase, System.Array.Empty(System.Int32)):Run(7.5)
+      building:AddSpawnTrigger(Areas.HumanBaseToCenterSpawn, 1, Areas.UndeadBase, System.Array(System.Int32) { 1747988536, 1747988554 }):Run(5.5)
+      building:AddSpawnTrigger(Areas.HumanBaseToCenterSpawn, 2, Areas.UndeadBase, System.Array.Empty(System.Int32)):Run(7.5)
+      building:AddSpawnTrigger(Areas.HumanBaseToElfSpawn, 1, Areas.ElfBase, System.Array(System.Int32) { 1747988536, 1747988554 }):Run(5.5)
+      building:AddSpawnTrigger(Areas.HumanBaseToElfSpawn, 2, Areas.ElfBase, System.Array.Empty(System.Int32)):Run(7.5)
+      building:AddSpawnTrigger(Areas.HumanBaseToOrcsSpawn, 1, Areas.OrcBase, System.Array(System.Int32) { 1747988536, 1747988554 }):Run(5.5)
+      building:AddSpawnTrigger(Areas.HumanBaseToOrcsSpawn, 2, Areas.OrcBase, System.Array.Empty(System.Int32)):Run(7.5)
 
-      -- Kasernen
-      building = class.Humans.Computer:CreateBuilding(1747988535 --[[Constants.UNIT_BARRACKS_HUMAN]], Areas.HumanBarracksToCenter, 0)
-      building:RegisterOnDies(SourceEventsBuildings.TeamBarracksBuilding.OnDies)
-      building:AddSpawnTrigger(Areas.HumanBarracksToCenterSpawn, 0 --[[SpawnInterval.Short]], Areas.UndeadBase, System.Array(System.Int32) { 1747988529 --[[Constants.UNIT_SOLDIER_HUMAN]], 1747988529 --[[Constants.UNIT_SOLDIER_HUMAN]] }):Run(0)
-      building:AddSpawnTrigger(Areas.HumanBarracksToCenterSpawn, 1 --[[SpawnInterval.Middle]], Areas.UndeadBase, System.Array(System.Int32) { 1747988530 --[[Constants.UNIT_RIFLEMAN_HUMAN]] }):Run(1)
 
-      building = class.Humans.Computer:CreateBuilding(1747988535 --[[Constants.UNIT_BARRACKS_HUMAN]], Areas.HumanBarracksToElf, 0)
+      building = class.Humans.Computer:CreateBuilding(1747988535, Areas.HumanBarracksToCenter, 0)
       building:RegisterOnDies(SourceEventsBuildings.TeamBarracksBuilding.OnDies)
-      building:AddSpawnTrigger(Areas.HumanBarracksToElfSpawn, 0 --[[SpawnInterval.Short]], Areas.ElfBase, System.Array(System.Int32) { 1747988529 --[[Constants.UNIT_SOLDIER_HUMAN]], 1747988529 --[[Constants.UNIT_SOLDIER_HUMAN]] }):Run(0)
-      building:AddSpawnTrigger(Areas.HumanBarracksToElfSpawn, 1 --[[SpawnInterval.Middle]], Areas.ElfBase, System.Array(System.Int32) { 1747988530 --[[Constants.UNIT_RIFLEMAN_HUMAN]] }):Run(1)
+      building:AddSpawnTrigger(Areas.HumanBarracksToCenterSpawn, 0, Areas.UndeadBase, System.Array(System.Int32) { 1747988529, 1747988529 }):Run(0)
+      building:AddSpawnTrigger(Areas.HumanBarracksToCenterSpawn, 1, Areas.UndeadBase, System.Array(System.Int32) { 1747988530 }):Run(1)
 
-      building = class.Humans.Computer:CreateBuilding(1747988535 --[[Constants.UNIT_BARRACKS_HUMAN]], Areas.HumanBarracksToOrcs, 0)
+      building = class.Humans.Computer:CreateBuilding(1747988535, Areas.HumanBarracksToElf, 0)
       building:RegisterOnDies(SourceEventsBuildings.TeamBarracksBuilding.OnDies)
-      building:AddSpawnTrigger(Areas.HumanBarracksToOrcsSpawn, 0 --[[SpawnInterval.Short]], Areas.OrcBase, System.Array(System.Int32) { 1747988529 --[[Constants.UNIT_SOLDIER_HUMAN]], 1747988529 --[[Constants.UNIT_SOLDIER_HUMAN]] }):Run(0)
-      building:AddSpawnTrigger(Areas.HumanBarracksToOrcsSpawn, 1 --[[SpawnInterval.Middle]], Areas.OrcBase, System.Array(System.Int32) { 1747988530 --[[Constants.UNIT_RIFLEMAN_HUMAN]] }):Run(1)
+      building:AddSpawnTrigger(Areas.HumanBarracksToElfSpawn, 0, Areas.ElfBase, System.Array(System.Int32) { 1747988529, 1747988529 }):Run(0)
+      building:AddSpawnTrigger(Areas.HumanBarracksToElfSpawn, 1, Areas.ElfBase, System.Array(System.Int32) { 1747988530 }):Run(1)
+
+      building = class.Humans.Computer:CreateBuilding(1747988535, Areas.HumanBarracksToOrcs, 0)
+      building:RegisterOnDies(SourceEventsBuildings.TeamBarracksBuilding.OnDies)
+      building:AddSpawnTrigger(Areas.HumanBarracksToOrcsSpawn, 0, Areas.OrcBase, System.Array(System.Int32) { 1747988529, 1747988529 }):Run(0)
+      building:AddSpawnTrigger(Areas.HumanBarracksToOrcsSpawn, 1, Areas.OrcBase, System.Array(System.Int32) { 1747988530 }):Run(1)
     end
     ConstructOrcBuildingAndTrigger = function ()
-      -- Hauptgebäude
-      local building = class.Orcs.Computer:CreateBuilding(1747988570 --[[Constants.UNIT_FORTRESS_ORC]], Areas.OrcBase, 0)
+
+      local building = class.Orcs.Computer:CreateBuilding(1747988570, Areas.OrcBase, 0)
       building:RegisterOnDies(SourceEventsBuildings.TeamMainBuilding.OnDies)
-      building:AddSpawnTrigger(Areas.OrcBaseToCenterSpawn, 1 --[[SpawnInterval.Middle]], Areas.ElfBase, System.Array(System.Int32) { 1747988818 --[[Constants.UNIT_WITCH_DOCTOR_ORC]], 1747988815 --[[Constants.UNIT_BATRIDER_ORC]] }):Run(5.5)
-      building:AddSpawnTrigger(Areas.OrcBaseToCenterSpawn, 2 --[[SpawnInterval.Long]], Areas.ElfBase, System.Array.Empty(System.Int32)):Run(7.5)
-      building:AddSpawnTrigger(Areas.OrcBaseToHumanSpawn, 1 --[[SpawnInterval.Middle]], Areas.HumanBase, System.Array(System.Int32) { 1747988818 --[[Constants.UNIT_WITCH_DOCTOR_ORC]], 1747988815 --[[Constants.UNIT_BATRIDER_ORC]] }):Run(5.5)
-      building:AddSpawnTrigger(Areas.OrcBaseToHumanSpawn, 2 --[[SpawnInterval.Long]], Areas.HumanBase, System.Array.Empty(System.Int32)):Run(7.5)
-      building:AddSpawnTrigger(Areas.OrcBaseToUndeadSpawn, 1 --[[SpawnInterval.Middle]], Areas.UndeadBase, System.Array(System.Int32) { 1747988818 --[[Constants.UNIT_WITCH_DOCTOR_ORC]], 1747988815 --[[Constants.UNIT_BATRIDER_ORC]] }):Run(5.5)
-      building:AddSpawnTrigger(Areas.OrcBaseToUndeadSpawn, 2 --[[SpawnInterval.Long]], Areas.UndeadBase, System.Array.Empty(System.Int32)):Run(7.5)
+      building:AddSpawnTrigger(Areas.OrcBaseToCenterSpawn, 1, Areas.ElfBase, System.Array(System.Int32) { 1747988818, 1747988815 }):Run(5.5)
+      building:AddSpawnTrigger(Areas.OrcBaseToCenterSpawn, 2, Areas.ElfBase, System.Array.Empty(System.Int32)):Run(7.5)
+      building:AddSpawnTrigger(Areas.OrcBaseToHumanSpawn, 1, Areas.HumanBase, System.Array(System.Int32) { 1747988818, 1747988815 }):Run(5.5)
+      building:AddSpawnTrigger(Areas.OrcBaseToHumanSpawn, 2, Areas.HumanBase, System.Array.Empty(System.Int32)):Run(7.5)
+      building:AddSpawnTrigger(Areas.OrcBaseToUndeadSpawn, 1, Areas.UndeadBase, System.Array(System.Int32) { 1747988818, 1747988815 }):Run(5.5)
+      building:AddSpawnTrigger(Areas.OrcBaseToUndeadSpawn, 2, Areas.UndeadBase, System.Array.Empty(System.Int32)):Run(7.5)
 
-      -- Kasernen
-      building = class.Orcs.Computer:CreateBuilding(1747988569 --[[Constants.UNIT_BARRACKS_ORC]], Areas.OrcBarracksToCenter, 0)
-      building:RegisterOnDies(SourceEventsBuildings.TeamBarracksBuilding.OnDies)
-      building:AddSpawnTrigger(Areas.OrcBarracksToCenterSpawn, 0 --[[SpawnInterval.Short]], Areas.ElfBase, System.Array(System.Int32) { 1747988809 --[[Constants.UNIT_GRUNT_ORC]], 1747988809 --[[Constants.UNIT_GRUNT_ORC]] }):Run(0)
-      building:AddSpawnTrigger(Areas.OrcBarracksToCenterSpawn, 1 --[[SpawnInterval.Middle]], Areas.ElfBase, System.Array(System.Int32) { 1747988812 --[[Constants.UNIT_HEADHUNTER_ORC]] }):Run(0.5)
 
-      building = class.Orcs.Computer:CreateBuilding(1747988569 --[[Constants.UNIT_BARRACKS_ORC]], Areas.OrcBarracksToHuman, 0)
+      building = class.Orcs.Computer:CreateBuilding(1747988569, Areas.OrcBarracksToCenter, 0)
       building:RegisterOnDies(SourceEventsBuildings.TeamBarracksBuilding.OnDies)
-      building:AddSpawnTrigger(Areas.OrcBarracksToHumanSpawn, 0 --[[SpawnInterval.Short]], Areas.HumanBase, System.Array(System.Int32) { 1747988809 --[[Constants.UNIT_GRUNT_ORC]], 1747988809 --[[Constants.UNIT_GRUNT_ORC]] }):Run(0)
-      building:AddSpawnTrigger(Areas.OrcBarracksToHumanSpawn, 1 --[[SpawnInterval.Middle]], Areas.HumanBase, System.Array(System.Int32) { 1747988812 --[[Constants.UNIT_HEADHUNTER_ORC]] }):Run(0.5)
+      building:AddSpawnTrigger(Areas.OrcBarracksToCenterSpawn, 0, Areas.ElfBase, System.Array(System.Int32) { 1747988809, 1747988809 }):Run(0)
+      building:AddSpawnTrigger(Areas.OrcBarracksToCenterSpawn, 1, Areas.ElfBase, System.Array(System.Int32) { 1747988812 }):Run(0.5)
 
-      building = class.Orcs.Computer:CreateBuilding(1747988569 --[[Constants.UNIT_BARRACKS_ORC]], Areas.OrcBarracksToUndead, 0)
+      building = class.Orcs.Computer:CreateBuilding(1747988569, Areas.OrcBarracksToHuman, 0)
       building:RegisterOnDies(SourceEventsBuildings.TeamBarracksBuilding.OnDies)
-      building:AddSpawnTrigger(Areas.OrcBarracksToUndeadSpawn, 0 --[[SpawnInterval.Short]], Areas.UndeadBase, System.Array(System.Int32) { 1747988809 --[[Constants.UNIT_GRUNT_ORC]], 1747988809 --[[Constants.UNIT_GRUNT_ORC]] }):Run(0)
-      building:AddSpawnTrigger(Areas.OrcBarracksToUndeadSpawn, 1 --[[SpawnInterval.Middle]], Areas.UndeadBase, System.Array(System.Int32) { 1747988812 --[[Constants.UNIT_HEADHUNTER_ORC]] }):Run(0.5)
+      building:AddSpawnTrigger(Areas.OrcBarracksToHumanSpawn, 0, Areas.HumanBase, System.Array(System.Int32) { 1747988809, 1747988809 }):Run(0)
+      building:AddSpawnTrigger(Areas.OrcBarracksToHumanSpawn, 1, Areas.HumanBase, System.Array(System.Int32) { 1747988812 }):Run(0.5)
+
+      building = class.Orcs.Computer:CreateBuilding(1747988569, Areas.OrcBarracksToUndead, 0)
+      building:RegisterOnDies(SourceEventsBuildings.TeamBarracksBuilding.OnDies)
+      building:AddSpawnTrigger(Areas.OrcBarracksToUndeadSpawn, 0, Areas.UndeadBase, System.Array(System.Int32) { 1747988809, 1747988809 }):Run(0)
+      building:AddSpawnTrigger(Areas.OrcBarracksToUndeadSpawn, 1, Areas.UndeadBase, System.Array(System.Int32) { 1747988812 }):Run(0.5)
     end
     ConstructElfBuildingAndTrigger = function ()
-      -- Hauptgebäude
-      local building = class.Elves.Computer:CreateBuilding(1747988789 --[[Constants.UNIT_TREE_OF_ETERNITY_ELF]], Areas.ElfBase, 0)
+
+      local building = class.Elves.Computer:CreateBuilding(1747988789, Areas.ElfBase, 0)
       building:RegisterOnDies(SourceEventsBuildings.TeamMainBuilding.OnDies)
-      building:AddSpawnTrigger(Areas.ElfBaseToCenterSpawn, 1 --[[SpawnInterval.Middle]], Areas.OrcBase, System.Array(System.Int32) { 1747989066 --[[Constants.UNIT_DRUID_OF_THE_TALON_ELF]], 1747989060 --[[Constants.UNIT_FAERIE_DRAGON_ELF]] }):Run(5.5)
-      building:AddSpawnTrigger(Areas.ElfBaseToCenterSpawn, 2 --[[SpawnInterval.Long]], Areas.OrcBase, System.Array.Empty(System.Int32)):Run(7.5)
-      building:AddSpawnTrigger(Areas.ElfBaseToHumanSpawn, 1 --[[SpawnInterval.Middle]], Areas.HumanBase, System.Array(System.Int32) { 1747989066 --[[Constants.UNIT_DRUID_OF_THE_TALON_ELF]], 1747989060 --[[Constants.UNIT_FAERIE_DRAGON_ELF]] }):Run(5.5)
-      building:AddSpawnTrigger(Areas.ElfBaseToHumanSpawn, 2 --[[SpawnInterval.Long]], Areas.HumanBase, System.Array.Empty(System.Int32)):Run(7.5)
-      building:AddSpawnTrigger(Areas.ElfBaseToUndeadSpawn, 1 --[[SpawnInterval.Middle]], Areas.UndeadBase, System.Array(System.Int32) { 1747989066 --[[Constants.UNIT_DRUID_OF_THE_TALON_ELF]], 1747989060 --[[Constants.UNIT_FAERIE_DRAGON_ELF]] }):Run(5.5)
-      building:AddSpawnTrigger(Areas.ElfBaseToUndeadSpawn, 2 --[[SpawnInterval.Long]], Areas.UndeadBase, System.Array.Empty(System.Int32)):Run(7.5)
+      building:AddSpawnTrigger(Areas.ElfBaseToCenterSpawn, 1, Areas.OrcBase, System.Array(System.Int32) { 1747989066, 1747989060 }):Run(5.5)
+      building:AddSpawnTrigger(Areas.ElfBaseToCenterSpawn, 2, Areas.OrcBase, System.Array.Empty(System.Int32)):Run(7.5)
+      building:AddSpawnTrigger(Areas.ElfBaseToHumanSpawn, 1, Areas.HumanBase, System.Array(System.Int32) { 1747989066, 1747989060 }):Run(5.5)
+      building:AddSpawnTrigger(Areas.ElfBaseToHumanSpawn, 2, Areas.HumanBase, System.Array.Empty(System.Int32)):Run(7.5)
+      building:AddSpawnTrigger(Areas.ElfBaseToUndeadSpawn, 1, Areas.UndeadBase, System.Array(System.Int32) { 1747989066, 1747989060 }):Run(5.5)
+      building:AddSpawnTrigger(Areas.ElfBaseToUndeadSpawn, 2, Areas.UndeadBase, System.Array.Empty(System.Int32)):Run(7.5)
 
-      -- Kasernen
-      building = class.Elves.Computer:CreateBuilding(1747988788 --[[Constants.UNIT_ANCIENT_OF_WAR_ELF]], Areas.ElfBarracksToCenter, 0)
-      building:RegisterOnDies(SourceEventsBuildings.TeamBarracksBuilding.OnDies)
-      building:AddSpawnTrigger(Areas.ElfBarracksToCenterSpawn, 0 --[[SpawnInterval.Short]], Areas.OrcBase, System.Array(System.Int32) { 1747988824 --[[Constants.UNIT_SENTRY_ELF]], 1747988824 --[[Constants.UNIT_SENTRY_ELF]] }):Run(0)
-      building:AddSpawnTrigger(Areas.ElfBarracksToCenterSpawn, 1 --[[SpawnInterval.Middle]], Areas.OrcBase, System.Array(System.Int32) { 1747988824 --[[Constants.UNIT_SENTRY_ELF]] }):Run(0.5)
 
-      building = class.Elves.Computer:CreateBuilding(1747988788 --[[Constants.UNIT_ANCIENT_OF_WAR_ELF]], Areas.ElfBarracksToHuman, 0)
+      building = class.Elves.Computer:CreateBuilding(1747988788, Areas.ElfBarracksToCenter, 0)
       building:RegisterOnDies(SourceEventsBuildings.TeamBarracksBuilding.OnDies)
-      building:AddSpawnTrigger(Areas.ElfBarracksToHumanSpawn, 0 --[[SpawnInterval.Short]], Areas.HumanBase, System.Array(System.Int32) { 1747988824 --[[Constants.UNIT_SENTRY_ELF]], 1747988824 --[[Constants.UNIT_SENTRY_ELF]] }):Run(0)
-      building:AddSpawnTrigger(Areas.ElfBarracksToHumanSpawn, 1 --[[SpawnInterval.Middle]], Areas.HumanBase, System.Array(System.Int32) { 1747989043 --[[Constants.UNIT_ARCHER_ELF]] }):Run(0.5)
+      building:AddSpawnTrigger(Areas.ElfBarracksToCenterSpawn, 0, Areas.OrcBase, System.Array(System.Int32) { 1747988824, 1747988824 }):Run(0)
+      building:AddSpawnTrigger(Areas.ElfBarracksToCenterSpawn, 1, Areas.OrcBase, System.Array(System.Int32) { 1747988824 }):Run(0.5)
 
-      building = class.Elves.Computer:CreateBuilding(1747988788 --[[Constants.UNIT_ANCIENT_OF_WAR_ELF]], Areas.ElfBarracksToUndead, 0)
+      building = class.Elves.Computer:CreateBuilding(1747988788, Areas.ElfBarracksToHuman, 0)
       building:RegisterOnDies(SourceEventsBuildings.TeamBarracksBuilding.OnDies)
-      building:AddSpawnTrigger(Areas.ElfBarracksToUndeadSpawn, 0 --[[SpawnInterval.Short]], Areas.UndeadBase, System.Array(System.Int32) { 1747988824 --[[Constants.UNIT_SENTRY_ELF]], 1747988824 --[[Constants.UNIT_SENTRY_ELF]] }):Run(0)
-      building:AddSpawnTrigger(Areas.ElfBarracksToUndeadSpawn, 1 --[[SpawnInterval.Middle]], Areas.UndeadBase, System.Array(System.Int32) { 1747989043 --[[Constants.UNIT_ARCHER_ELF]] }):Run(0.5)
+      building:AddSpawnTrigger(Areas.ElfBarracksToHumanSpawn, 0, Areas.HumanBase, System.Array(System.Int32) { 1747988824, 1747988824 }):Run(0)
+      building:AddSpawnTrigger(Areas.ElfBarracksToHumanSpawn, 1, Areas.HumanBase, System.Array(System.Int32) { 1747989043 }):Run(0.5)
+
+      building = class.Elves.Computer:CreateBuilding(1747988788, Areas.ElfBarracksToUndead, 0)
+      building:RegisterOnDies(SourceEventsBuildings.TeamBarracksBuilding.OnDies)
+      building:AddSpawnTrigger(Areas.ElfBarracksToUndeadSpawn, 0, Areas.UndeadBase, System.Array(System.Int32) { 1747988824, 1747988824 }):Run(0)
+      building:AddSpawnTrigger(Areas.ElfBarracksToUndeadSpawn, 1, Areas.UndeadBase, System.Array(System.Int32) { 1747989043 }):Run(0.5)
     end
     ConstructUndeadBuildingAndTrigger = function ()
-      -- Hauptgebäude
-      local building = class.Undeads.Computer:CreateBuilding(1747988801 --[[Constants.UNIT_BLACK_CITADEL_UNDEAD]], Areas.UndeadBase, 0)
+
+      local building = class.Undeads.Computer:CreateBuilding(1747988801, Areas.UndeadBase, 0)
       building:RegisterOnDies(SourceEventsBuildings.TeamMainBuilding.OnDies)
-      building:AddSpawnTrigger(Areas.UndeadBaseToCenterSpawn, 1 --[[SpawnInterval.Middle]], Areas.HumanBase, System.Array(System.Int32) { 1747989067 --[[Constants.UNIT_SKELETAL_MAGE_UNDEAD]], 1747989061 --[[Constants.UNIT_GARGOYLE_UNDEAD]] }):Run(5.5)
-      building:AddSpawnTrigger(Areas.UndeadBaseToCenterSpawn, 2 --[[SpawnInterval.Long]], Areas.HumanBase, System.Array.Empty(System.Int32)):Run(7.5)
-      building:AddSpawnTrigger(Areas.UndeadBaseToElfSpawn, 1 --[[SpawnInterval.Middle]], Areas.ElfBase, System.Array(System.Int32) { 1747989067 --[[Constants.UNIT_SKELETAL_MAGE_UNDEAD]], 1747989061 --[[Constants.UNIT_GARGOYLE_UNDEAD]] }):Run(5.5)
-      building:AddSpawnTrigger(Areas.UndeadBaseToElfSpawn, 2 --[[SpawnInterval.Long]], Areas.ElfBase, System.Array.Empty(System.Int32)):Run(7.5)
-      building:AddSpawnTrigger(Areas.UndeadBaseToOrcsSpawn, 1 --[[SpawnInterval.Middle]], Areas.OrcBase, System.Array(System.Int32) { 1747989067 --[[Constants.UNIT_SKELETAL_MAGE_UNDEAD]], 1747989061 --[[Constants.UNIT_GARGOYLE_UNDEAD]] }):Run(5.5)
-      building:AddSpawnTrigger(Areas.UndeadBaseToOrcsSpawn, 2 --[[SpawnInterval.Long]], Areas.OrcBase, System.Array.Empty(System.Int32)):Run(7.5)
+      building:AddSpawnTrigger(Areas.UndeadBaseToCenterSpawn, 1, Areas.HumanBase, System.Array(System.Int32) { 1747989067, 1747989061 }):Run(5.5)
+      building:AddSpawnTrigger(Areas.UndeadBaseToCenterSpawn, 2, Areas.HumanBase, System.Array.Empty(System.Int32)):Run(7.5)
+      building:AddSpawnTrigger(Areas.UndeadBaseToElfSpawn, 1, Areas.ElfBase, System.Array(System.Int32) { 1747989067, 1747989061 }):Run(5.5)
+      building:AddSpawnTrigger(Areas.UndeadBaseToElfSpawn, 2, Areas.ElfBase, System.Array.Empty(System.Int32)):Run(7.5)
+      building:AddSpawnTrigger(Areas.UndeadBaseToOrcsSpawn, 1, Areas.OrcBase, System.Array(System.Int32) { 1747989067, 1747989061 }):Run(5.5)
+      building:AddSpawnTrigger(Areas.UndeadBaseToOrcsSpawn, 2, Areas.OrcBase, System.Array.Empty(System.Int32)):Run(7.5)
 
-      -- Kasernen
-      building = class.Undeads.Computer:CreateBuilding(1747988805 --[[Constants.UNIT_CRYPT_UNDEAD]], Areas.UndeadBarracksToCenter, 0)
-      building:RegisterOnDies(SourceEventsBuildings.TeamBarracksBuilding.OnDies)
-      building:AddSpawnTrigger(Areas.UndeadBarracksToCenterSpawn, 0 --[[SpawnInterval.Short]], Areas.HumanBase, System.Array(System.Int32) { 1747988825 --[[Constants.UNIT_GHOUL_UNDEAD]], 1747988825 --[[Constants.UNIT_GHOUL_UNDEAD]] }):Run(0)
-      building:AddSpawnTrigger(Areas.UndeadBarracksToCenterSpawn, 1 --[[SpawnInterval.Middle]], Areas.HumanBase, System.Array(System.Int32) { 1747989044 --[[Constants.UNIT_CRYPT_FIEND_UNDEAD]] }):Run(0.5)
 
-      building = class.Undeads.Computer:CreateBuilding(1747988805 --[[Constants.UNIT_CRYPT_UNDEAD]], Areas.UndeadBarracksToElf, 0)
+      building = class.Undeads.Computer:CreateBuilding(1747988805, Areas.UndeadBarracksToCenter, 0)
       building:RegisterOnDies(SourceEventsBuildings.TeamBarracksBuilding.OnDies)
-      building:AddSpawnTrigger(Areas.UndeadBarracksToElfSpawn, 0 --[[SpawnInterval.Short]], Areas.ElfBase, System.Array(System.Int32) { 1747988825 --[[Constants.UNIT_GHOUL_UNDEAD]], 1747988825 --[[Constants.UNIT_GHOUL_UNDEAD]] }):Run(0)
-      building:AddSpawnTrigger(Areas.UndeadBarracksToElfSpawn, 1 --[[SpawnInterval.Middle]], Areas.ElfBase, System.Array(System.Int32) { 1747989044 --[[Constants.UNIT_CRYPT_FIEND_UNDEAD]] }):Run(0.5)
+      building:AddSpawnTrigger(Areas.UndeadBarracksToCenterSpawn, 0, Areas.HumanBase, System.Array(System.Int32) { 1747988825, 1747988825 }):Run(0)
+      building:AddSpawnTrigger(Areas.UndeadBarracksToCenterSpawn, 1, Areas.HumanBase, System.Array(System.Int32) { 1747989044 }):Run(0.5)
 
-      building = class.Undeads.Computer:CreateBuilding(1747988805 --[[Constants.UNIT_CRYPT_UNDEAD]], Areas.UndeadBarracksToOrcs, 0)
+      building = class.Undeads.Computer:CreateBuilding(1747988805, Areas.UndeadBarracksToElf, 0)
       building:RegisterOnDies(SourceEventsBuildings.TeamBarracksBuilding.OnDies)
-      building:AddSpawnTrigger(Areas.UndeadBarracksToOrcsSpawn, 0 --[[SpawnInterval.Short]], Areas.OrcBase, System.Array(System.Int32) { 1747988825 --[[Constants.UNIT_GHOUL_UNDEAD]], 1747988825 --[[Constants.UNIT_GHOUL_UNDEAD]] }):Run(0)
-      building:AddSpawnTrigger(Areas.UndeadBarracksToOrcsSpawn, 1 --[[SpawnInterval.Middle]], Areas.OrcBase, System.Array(System.Int32) { 1747989044 --[[Constants.UNIT_CRYPT_FIEND_UNDEAD]] }):Run(0.5)
+      building:AddSpawnTrigger(Areas.UndeadBarracksToElfSpawn, 0, Areas.ElfBase, System.Array(System.Int32) { 1747988825, 1747988825 }):Run(0)
+      building:AddSpawnTrigger(Areas.UndeadBarracksToElfSpawn, 1, Areas.ElfBase, System.Array(System.Int32) { 1747989044 }):Run(0.5)
+
+      building = class.Undeads.Computer:CreateBuilding(1747988805, Areas.UndeadBarracksToOrcs, 0)
+      building:RegisterOnDies(SourceEventsBuildings.TeamBarracksBuilding.OnDies)
+      building:AddSpawnTrigger(Areas.UndeadBarracksToOrcsSpawn, 0, Areas.OrcBase, System.Array(System.Int32) { 1747988825, 1747988825 }):Run(0)
+      building:AddSpawnTrigger(Areas.UndeadBarracksToOrcsSpawn, 1, Areas.OrcBase, System.Array(System.Int32) { 1747989044 }):Run(0.5)
     end
     ConstructCreepCamps = function ()
-      -- Menschen-Creeps
-      ConstructCreepCamp("Bandits", Areas.HumanCreepToElfSpawnBuilding, Areas.HumanCreepToElfSpawn, class.Humans, class.Elves, 1848651862 --[[Constants.UNIT_BANDIT_CAMP_CREEP]], System.Array(System.Int32) { 1848652114 --[[Constants.UNIT_BANDIT_LORD_CREEP]], 1848651864 --[[Constants.UNIT_BANDIT_CREEP]], 1848651864 --[[Constants.UNIT_BANDIT_CREEP]], 1848651864 --[[Constants.UNIT_BANDIT_CREEP]], 1848652083 --[[Constants.UNIT_BANDIT_ASSASSIN_CREEP]], 1848652083 --[[Constants.UNIT_BANDIT_ASSASSIN_CREEP]], 1848652111 --[[Constants.UNIT_BANDIT_WIZARD_CREEP]] })
-      ConstructCreepCamp("Tuskarr", Areas.HumanCreepToOrcSpawnBuilding, Areas.HumanCreepToOrcSpawn, class.Humans, class.Orcs, 1848652358 --[[Constants.UNIT_TUSKARR_CAMP_CREEP]], System.Array(System.Int32) { 1848652344 --[[Constants.UNIT_TUSKARR_CHIEFTAIN_CREEP]], 1848652112 --[[Constants.UNIT_TUSKARR_WARRIOR_CREEP]], 1848652112 --[[Constants.UNIT_TUSKARR_WARRIOR_CREEP]], 1848652112 --[[Constants.UNIT_TUSKARR_WARRIOR_CREEP]], 1848652119 --[[Constants.UNIT_TUSKARR_HUNTER_CREEP]], 1848652119 --[[Constants.UNIT_TUSKARR_HUNTER_CREEP]], 1848652116 --[[Constants.UNIT_TUSKARR_HEALER_CREEP]] })
 
-      -- Elfen-Creeps
-      ConstructCreepCamp("Furbolgs", Areas.ElfCreepToHumanSpawnBuilding, Areas.ElfCreepToHumanSpawn, class.Elves, class.Humans, 1848651856 --[[Constants.UNIT_FURBOLG_CAMP_CREEP]], System.Array(System.Int32) { 1848652337 --[[Constants.UNIT_FURBOLG_CHAMPION_CREEP]], 1848652100 --[[Constants.UNIT_FURBOLG_WARRIOR_CREEP]], 1848652100 --[[Constants.UNIT_FURBOLG_WARRIOR_CREEP]], 1848652113 --[[Constants.UNIT_FURBOLG_HUNTER_CREEP]], 1848652113 --[[Constants.UNIT_FURBOLG_HUNTER_CREEP]], 1848652084 --[[Constants.UNIT_FURBOLG_WIZARD_CREEP]] })
-      ConstructCreepCamp("Wildekins", Areas.ElfCreepToUndeadSpawnBuilding, Areas.ElfCreepToUndeadSpawn, class.Elves, class.Undeads, 1848652356 --[[Constants.UNIT_WILDEKIN_CAMP_CREEP]], System.Array(System.Int32) { 1848652355 --[[Constants.UNIT_WILDEKIN_ALPHA_CREEP]], 1848652101 --[[Constants.UNIT_WILDEKIN_CREEP]], 1848652101 --[[Constants.UNIT_WILDEKIN_CREEP]], 1848652101 --[[Constants.UNIT_WILDEKIN_CREEP]], 1848652118 --[[Constants.UNIT_WILDEKIN_TRAPPER_CREEP]], 1848652118 --[[Constants.UNIT_WILDEKIN_TRAPPER_CREEP]], 1848652098 --[[Constants.UNIT_WILDEKIN_ANCESTOR_CREEP]] })
+      ConstructCreepCamp("Bandits", Areas.HumanCreepToElfSpawnBuilding, Areas.HumanCreepToElfSpawn, class.Humans, class.Elves, 1848651862, System.Array(System.Int32) { 1848652114, 1848651864, 1848651864, 1848651864, 1848652083, 1848652083, 1848652111 })
+      ConstructCreepCamp("Tuskarr", Areas.HumanCreepToOrcSpawnBuilding, Areas.HumanCreepToOrcSpawn, class.Humans, class.Orcs, 1848652358, System.Array(System.Int32) { 1848652344, 1848652112, 1848652112, 1848652112, 1848652119, 1848652119, 1848652116 })
 
-      -- Orcs-Creeps
-      ConstructCreepCamp("Centaurs", Areas.OrcCreepToHumanSpawnBuilding, Areas.OrcCreepToHumanSpawn, class.Orcs, class.Humans, 1848652104 --[[Constants.UNIT_CENTAUR_CAMP_CREEP]], System.Array(System.Int32) { 1848652345 --[[Constants.UNIT_CENTAUR_KHAN_CREEP]], 1848652115 --[[Constants.UNIT_CENTAUR_RUNNER_CREEP]], 1848652115 --[[Constants.UNIT_CENTAUR_RUNNER_CREEP]], 1848652115 --[[Constants.UNIT_CENTAUR_RUNNER_CREEP]], 1848652120 --[[Constants.UNIT_CENTAUR_ARCHER_CREEP]], 1848652120 --[[Constants.UNIT_CENTAUR_ARCHER_CREEP]], 1848652336 --[[Constants.UNIT_CENTAUR_SORCERESS_CREEP]] })
-      ConstructCreepCamp("Ogres", Areas.OrcCreepToUndeadSpawnBuilding, Areas.OrcCreepToUndeadSpawn, class.Orcs, class.Undeads, 1848652342 --[[Constants.UNIT_OGRE_CAMP_CREEP]], System.Array(System.Int32) { 1848652343 --[[Constants.UNIT_OGRE_LORD_CREEP]], 1848652110 --[[Constants.UNIT_OGRE_WARRIOR_CREEP]], 1848652110 --[[Constants.UNIT_OGRE_WARRIOR_CREEP]], 1848652110 --[[Constants.UNIT_OGRE_WARRIOR_CREEP]], 1848652099 --[[Constants.UNIT_OGRE_THIEF_CREEP]], 1848652099 --[[Constants.UNIT_OGRE_THIEF_CREEP]], 1848652121 --[[Constants.UNIT_OGRE_MAGE_CREEP]] })
 
-      -- Untoten-Creeps
-      ConstructCreepCamp("Mur'guls", Areas.UndeadCreepToOrcSpawnBuilding, Areas.UndeadCreepToOrcSpawn, class.Undeads, class.Orcs, 1848652340 --[[Constants.UNIT_MUR_GUL_CAMP_CREEP]], System.Array(System.Int32) { 1848652338 --[[Constants.UNIT_MUR_GUL_SHADOWCASTER_CREEP]], 1848652102 --[[Constants.UNIT_MUR_GUL_WARRIOR_CREEP]], 1848652102 --[[Constants.UNIT_MUR_GUL_WARRIOR_CREEP]], 1848652102 --[[Constants.UNIT_MUR_GUL_WARRIOR_CREEP]], 1848652117 --[[Constants.UNIT_MUR_GUL_TRAPPER_CREEP]], 1848652117 --[[Constants.UNIT_MUR_GUL_TRAPPER_CREEP]], 1848652122 --[[Constants.UNIT_MUR_GUL_WIZARD_CREEP]] })
-      ConstructCreepCamp("Nerubians", Areas.UndeadCreepToElfSpawnBuilding, Areas.UndeadCreepToElfSpawn, class.Undeads, class.Elves, 1848652106 --[[Constants.UNIT_NERUBIAN_CAMP_CREEP]], System.Array(System.Int32) { 1848652339 --[[Constants.UNIT_NERUBIAN_QUEEN_CREEP]], 1848652108 --[[Constants.UNIT_NERUBIAN_WARRIOR_CREEP]], 1848652108 --[[Constants.UNIT_NERUBIAN_WARRIOR_CREEP]], 1848652108 --[[Constants.UNIT_NERUBIAN_WARRIOR_CREEP]], 1848652107 --[[Constants.UNIT_NERUBIAN_SPINNER_CREEP]], 1848652107 --[[Constants.UNIT_NERUBIAN_SPINNER_CREEP]], 1848652109 --[[Constants.UNIT_NERUBIAN_WIZARD_CREEP]] })
+      ConstructCreepCamp("Furbolgs", Areas.ElfCreepToHumanSpawnBuilding, Areas.ElfCreepToHumanSpawn, class.Elves, class.Humans, 1848651856, System.Array(System.Int32) { 1848652337, 1848652100, 1848652100, 1848652113, 1848652113, 1848652084 })
+      ConstructCreepCamp("Wildekins", Areas.ElfCreepToUndeadSpawnBuilding, Areas.ElfCreepToUndeadSpawn, class.Elves, class.Undeads, 1848652356, System.Array(System.Int32) { 1848652355, 1848652101, 1848652101, 1848652101, 1848652118, 1848652118, 1848652098 })
+
+
+      ConstructCreepCamp("Centaurs", Areas.OrcCreepToHumanSpawnBuilding, Areas.OrcCreepToHumanSpawn, class.Orcs, class.Humans, 1848652104, System.Array(System.Int32) { 1848652345, 1848652115, 1848652115, 1848652115, 1848652120, 1848652120, 1848652336 })
+      ConstructCreepCamp("Ogres", Areas.OrcCreepToUndeadSpawnBuilding, Areas.OrcCreepToUndeadSpawn, class.Orcs, class.Undeads, 1848652342, System.Array(System.Int32) { 1848652343, 1848652110, 1848652110, 1848652110, 1848652099, 1848652099, 1848652121 })
+
+
+      ConstructCreepCamp("Mur'guls", Areas.UndeadCreepToOrcSpawnBuilding, Areas.UndeadCreepToOrcSpawn, class.Undeads, class.Orcs, 1848652340, System.Array(System.Int32) { 1848652338, 1848652102, 1848652102, 1848652102, 1848652117, 1848652117, 1848652122 })
+      ConstructCreepCamp("Nerubians", Areas.UndeadCreepToElfSpawnBuilding, Areas.UndeadCreepToElfSpawn, class.Undeads, class.Elves, 1848652106, System.Array(System.Int32) { 1848652339, 1848652108, 1848652108, 1848652108, 1848652107, 1848652107, 1848652109 })
     end
     ConstructCreepCamp = function (name, buildingArea, spawnArea, nearestTeam, opposingTeam, buildingUnitType, defenderUnitTypeIds)
       local creepCamp = SourceModels.MercenaryForce(name, buildingArea, spawnArea, nearestTeam, opposingTeam, buildingUnitType, defenderUnitTypeIds)
@@ -20346,24 +20280,24 @@ System.namespace("Source", function (namespace)
       class.Mercenaries:Add(creepCamp)
     end
     CreateComputerHeros = function ()
-      class.Humans.Computer:CreateUnit(1211117645 --[[Constants.UNIT_GUARDIAN_HUMAN]], Areas.HumanBaseToElfSpawn, 0):AttackMove(Areas.ElfBase)
-      class.Humans.Computer:CreateUnit(1211117645 --[[Constants.UNIT_GUARDIAN_HUMAN]], Areas.HumanBaseToCenterSpawn, 0):AttackMove(Areas.UndeadBase)
-      class.Humans.Computer:CreateUnit(1211117645 --[[Constants.UNIT_GUARDIAN_HUMAN]], Areas.HumanBaseToOrcsSpawn, 0):AttackMove(Areas.OrcBase)
+      class.Humans.Computer:CreateUnit(1211117645, Areas.HumanBaseToElfSpawn, 0):AttackMove(Areas.ElfBase)
+      class.Humans.Computer:CreateUnit(1211117645, Areas.HumanBaseToCenterSpawn, 0):AttackMove(Areas.UndeadBase)
+      class.Humans.Computer:CreateUnit(1211117645, Areas.HumanBaseToOrcsSpawn, 0):AttackMove(Areas.OrcBase)
 
-      class.Orcs.Computer:CreateUnit(1211117911 --[[Constants.UNIT_GUARDIAN_ORC]], Areas.OrcBaseToCenterSpawn, 0):AttackMove(Areas.ElfBase)
-      class.Orcs.Computer:CreateUnit(1211117911 --[[Constants.UNIT_GUARDIAN_ORC]], Areas.OrcBaseToUndeadSpawn, 0):AttackMove(Areas.UndeadBase)
-      class.Orcs.Computer:CreateUnit(1211117911 --[[Constants.UNIT_GUARDIAN_ORC]], Areas.OrcBaseToHumanSpawn, 0):AttackMove(Areas.HumanBase)
+      class.Orcs.Computer:CreateUnit(1211117911, Areas.OrcBaseToCenterSpawn, 0):AttackMove(Areas.ElfBase)
+      class.Orcs.Computer:CreateUnit(1211117911, Areas.OrcBaseToUndeadSpawn, 0):AttackMove(Areas.UndeadBase)
+      class.Orcs.Computer:CreateUnit(1211117911, Areas.OrcBaseToHumanSpawn, 0):AttackMove(Areas.HumanBase)
 
-      class.Elves.Computer:CreateUnit(1211118160 --[[Constants.UNIT_GUARDIAN_ELF]], Areas.ElfBaseToHumanSpawn, 0):AttackMove(Areas.HumanBase)
-      class.Elves.Computer:CreateUnit(1211118160 --[[Constants.UNIT_GUARDIAN_ELF]], Areas.ElfBaseToUndeadSpawn, 0):AttackMove(Areas.UndeadBase)
-      class.Elves.Computer:CreateUnit(1211118160 --[[Constants.UNIT_GUARDIAN_ELF]], Areas.ElfBaseToCenterSpawn, 0):AttackMove(Areas.OrcBase)
+      class.Elves.Computer:CreateUnit(1211118160, Areas.ElfBaseToHumanSpawn, 0):AttackMove(Areas.HumanBase)
+      class.Elves.Computer:CreateUnit(1211118160, Areas.ElfBaseToUndeadSpawn, 0):AttackMove(Areas.UndeadBase)
+      class.Elves.Computer:CreateUnit(1211118160, Areas.ElfBaseToCenterSpawn, 0):AttackMove(Areas.OrcBase)
 
-      class.Undeads.Computer:CreateUnit(1211118161 --[[Constants.UNIT_GUARDIAN_UNDEAD]], Areas.UndeadBaseToElfSpawn, 0):AttackMove(Areas.ElfBase)
-      class.Undeads.Computer:CreateUnit(1211118161 --[[Constants.UNIT_GUARDIAN_UNDEAD]], Areas.UndeadBaseToCenterSpawn, 0):AttackMove(Areas.HumanBase)
-      class.Undeads.Computer:CreateUnit(1211118161 --[[Constants.UNIT_GUARDIAN_UNDEAD]], Areas.UndeadBaseToOrcsSpawn, 0):AttackMove(Areas.OrcBase)
+      class.Undeads.Computer:CreateUnit(1211118161, Areas.UndeadBaseToElfSpawn, 0):AttackMove(Areas.ElfBase)
+      class.Undeads.Computer:CreateUnit(1211118161, Areas.UndeadBaseToCenterSpawn, 0):AttackMove(Areas.HumanBase)
+      class.Undeads.Computer:CreateUnit(1211118161, Areas.UndeadBaseToOrcsSpawn, 0):AttackMove(Areas.OrcBase)
     end
     CreateHeroSelectorForPlayerAndAdjustCamera = function (user)
-      local unit = user:CreateUnit(1966092342 --[[Constants.UNIT_HEROIC_SOUL_HERO_SELECTOR]], Areas.HeroSelectorSpawn, 0)
+      local unit = user:CreateUnit(1966092342, Areas.HeroSelectorSpawn, 0)
       user:ApplyCamera(Areas.HeroSelectorSpawn)
 
       SelectUnitForPlayerSingle(unit.Wc3Unit, user.Wc3Player)
@@ -20371,12 +20305,12 @@ System.namespace("Source", function (namespace)
     GetIntervalSeconds = function (spawnInterval)
       repeat
         local default = spawnInterval
-        if default == 0 --[[SpawnInterval.Short]] then
-          return 15 --[[ConstantsEx.Interval_SpawnTime_Short]]
-        elseif default == 1 --[[SpawnInterval.Middle]] then
-          return 30 --[[ConstantsEx.Interval_SpawnTime_Middle]]
-        elseif default == 2 --[[SpawnInterval.Long]] then
-          return 60 --[[ConstantsEx.Interval_SpawnTime_Long]]
+        if default == 0 then
+          return 15
+        elseif default == 1 then
+          return 30
+        elseif default == 2 then
+          return 60
         else
           System.Console.WriteLine("Unsupported SpawnInterval!")
           return 999
@@ -20446,9 +20380,9 @@ System.import(function (out)
   WCSharpSharedData = WCSharp.Shared.Data
 end)
 System.namespace("", function (namespace)
-  -- <summary>
-  -- This class is auto-generated by WCSharp.ConstantGenerator.
-  -- </summary>
+
+
+
   namespace.class("Regions", function (namespace)
     local static
     static = function (this)
@@ -20507,8 +20441,18 @@ System.namespace("", function (namespace)
       this.HumanToOrcOuterLine = System.new(WCSharpSharedData.Rectangle, 2, -4160, 13248, -4032, 13376)
       this.HumanToUndeadInnerLine = System.new(WCSharpSharedData.Rectangle, 2, -8768, 11712, -8640, 11840)
       this.HumanToUndeadOuterLine = System.new(WCSharpSharedData.Rectangle, 2, -5184, 8128, -5056, 8256)
-      this.MiddleLaneSpawnEast = System.new(WCSharpSharedData.Rectangle, 2, 5248, 2688, 6016, 3456)
-      this.MiddleLaneSpawnWest = System.new(WCSharpSharedData.Rectangle, 2, -6016, 2688, -5248, 3456)
+      this.LegionSpawnBottom = System.new(WCSharpSharedData.Rectangle, 2, -384, -3456, 384, -2688)
+      this.LegionSpawnBottom1 = System.new(WCSharpSharedData.Rectangle, 2, -448, -3136, -320, -3008)
+      this.LegionSpawnBottom2 = System.new(WCSharpSharedData.Rectangle, 2, 320, -3136, 448, -3008)
+      this.LegionSpawnEast = System.new(WCSharpSharedData.Rectangle, 2, 5760, 2688, 6528, 3456)
+      this.LegionSpawnEast1 = System.new(WCSharpSharedData.Rectangle, 2, 6080, 3392, 6208, 3520)
+      this.LegionSpawnEast2 = System.new(WCSharpSharedData.Rectangle, 2, 6080, 2624, 6208, 2752)
+      this.LegionSpawnTop = System.new(WCSharpSharedData.Rectangle, 2, -384, 8832, 384, 9600)
+      this.LegionSpawnTop1 = System.new(WCSharpSharedData.Rectangle, 2, -448, 9152, -320, 9280)
+      this.LegionSpawnTop2 = System.new(WCSharpSharedData.Rectangle, 2, 320, 9152, 448, 9280)
+      this.LegionSpawnWest = System.new(WCSharpSharedData.Rectangle, 2, -6528, 2688, -5760, 3456)
+      this.LegionSpawnWest1 = System.new(WCSharpSharedData.Rectangle, 2, -6208, 3392, -6080, 3520)
+      this.LegionSpawnWest2 = System.new(WCSharpSharedData.Rectangle, 2, -6208, 2624, -6080, 2752)
       this.OrcBarracksToCenter = System.new(WCSharpSharedData.Rectangle, 2, 6080, 9152, 6208, 9280)
       this.OrcBarracksToCenterSpawn = System.new(WCSharpSharedData.Rectangle, 2, 5760, 8704, 6016, 9216)
       this.OrcBarracksToHuman = System.new(WCSharpSharedData.Rectangle, 2, 4928, 13248, 5056, 13376)
@@ -20616,8 +20560,18 @@ System.namespace("", function (namespace)
             { "HumanToOrcOuterLine", 0xE, out.WCSharp.Shared.Data.Rectangle },
             { "HumanToUndeadInnerLine", 0xE, out.WCSharp.Shared.Data.Rectangle },
             { "HumanToUndeadOuterLine", 0xE, out.WCSharp.Shared.Data.Rectangle },
-            { "MiddleLaneSpawnEast", 0xE, out.WCSharp.Shared.Data.Rectangle },
-            { "MiddleLaneSpawnWest", 0xE, out.WCSharp.Shared.Data.Rectangle },
+            { "LegionSpawnBottom", 0xE, out.WCSharp.Shared.Data.Rectangle },
+            { "LegionSpawnBottom1", 0xE, out.WCSharp.Shared.Data.Rectangle },
+            { "LegionSpawnBottom2", 0xE, out.WCSharp.Shared.Data.Rectangle },
+            { "LegionSpawnEast", 0xE, out.WCSharp.Shared.Data.Rectangle },
+            { "LegionSpawnEast1", 0xE, out.WCSharp.Shared.Data.Rectangle },
+            { "LegionSpawnEast2", 0xE, out.WCSharp.Shared.Data.Rectangle },
+            { "LegionSpawnTop", 0xE, out.WCSharp.Shared.Data.Rectangle },
+            { "LegionSpawnTop1", 0xE, out.WCSharp.Shared.Data.Rectangle },
+            { "LegionSpawnTop2", 0xE, out.WCSharp.Shared.Data.Rectangle },
+            { "LegionSpawnWest", 0xE, out.WCSharp.Shared.Data.Rectangle },
+            { "LegionSpawnWest1", 0xE, out.WCSharp.Shared.Data.Rectangle },
+            { "LegionSpawnWest2", 0xE, out.WCSharp.Shared.Data.Rectangle },
             { "OrcBarracksToCenter", 0xE, out.WCSharp.Shared.Data.Rectangle },
             { "OrcBarracksToCenterSpawn", 0xE, out.WCSharp.Shared.Data.Rectangle },
             { "OrcBarracksToHuman", 0xE, out.WCSharp.Shared.Data.Rectangle },
@@ -20715,38 +20669,38 @@ System.namespace("Source.Abstracts", function (namespace)
       this.PlayerId = GetPlayerId(wc3Player)
       this.Wc3Player = wc3Player
     end
-    -- <summary>
-    -- Erstellt eine Einheit in einem Bereich und fügt sie der Auflist <see cref="Units"/> hinzu.
-    -- </summary>
-    -- <param name="unitTypeId"></param>
-    -- <param name="area"></param>
-    -- <param name="face"></param>
-    -- <returns></returns>
+
+
+
+
+
+
+
     CreateUnit = function (this, unitTypeId, area, face)
       local unit = SourceModels.SpawnedUnit(this.Wc3Player, unitTypeId, area, face)
       this.Units:Add(unit)
       return unit
     end
-    -- <summary>
-    -- Tötet alle Einheiten des Spielers und setzt diesen auf "Besiegt"
-    -- </summary>
+
+
+
     Defeat = function (this)
       MeleeDoDefeat(this.Wc3Player)
 
       this.Defeated = true
     end
-    -- <summary>
-    -- Setzt den Spieler auf "Gewonnen"
-    -- </summary>
+
+
+
     Win = function (this)
-      --Program.ShowDebugMessage("PlayerBase.Defeat", $"Win WC3 player");
+
       MeleeVictoryDialogBJ(this.Wc3Player, true)
     end
-    -- <summary>
-    -- Gibt True zurück, wenn die übergebene Einheit in der Auflistung aller Einheiten enthalten ist
-    -- </summary>
-    -- <param name="wc3Unit"></param>
-    -- <returns></returns>
+
+
+
+
+
     IsOwnerOfUnit = function (this, wc3Unit, unit)
       if GetPlayerId(GetOwningPlayer(wc3Unit)) ~= this.PlayerId then
         unit = nil
@@ -20756,22 +20710,22 @@ System.namespace("Source.Abstracts", function (namespace)
       local unitId = GetUnitTypeId(wc3Unit)
 
       for _, spawnedUnit in System.each(this.Units) do
-        -- Prüfe primär die Einheit-Id, da ein UNIT-Vergleich nicht empfohlen wird!
-        -- Ein Einheitenvergleich wird zwar nicht empfohlen, ist aber die einzige Möglichkeit diesselbe Einheit zu ermitteln
+
+
         if GetUnitTypeId(spawnedUnit.Wc3Unit) == unitId and spawnedUnit.Wc3Unit == wc3Unit then
           unit = spawnedUnit
           return true, unit
         end
       end
 
-      -- Dieser Fall kann eintreten, wenn eine statische Computer-Einheit das Event auslöst
+
       unit = nil
       return false, unit
     end
-    -- <summary>
-    -- Entfernt eine Einhaut aus der Auflistung aller Einheiten.
-    -- </summary>
-    -- <param name="unit"></param>
+
+
+
+
     RemoveUnit = function (this, unit)
       this.Units:Remove(unit)
     end
@@ -20832,14 +20786,14 @@ System.namespace("Source.Abstracts", function (namespace)
 
       this.Users = ListUserPlayer()
 
-      -- Alle Spieler der Streitmacht vom Computer-Spiler abrufen
+
       local force = GetPlayersAllies(this.Computer.Wc3Player)
       ForForce(force, function ()
         local player = GetEnumPlayer()
 
-        -- Aktive echte Spieler in die Liste aufnehmen
+
         if GetPlayerController(player) == MAP_CONTROL_USER and GetPlayerSlotState(player) == PLAYER_SLOT_STATE_PLAYING then
-          -- Einmalige Eigenschaften aktivieren/setzen
+
           SetPlayerState(player, PLAYER_STATE_GIVES_BOUNTY, 1)
 
           local user = SourceModels.UserPlayer(player, this)
@@ -20848,38 +20802,38 @@ System.namespace("Source.Abstracts", function (namespace)
         end
       end)
     end
-    -- <summary>
-    -- Löst für alle Spieler dieser Streitmacht die Niederlage aus.
-    -- </summary>
+
+
+
     Defeat = function (this)
-      -- Töte alle Computer-Einheiten
+
       this.Computer:Defeat()
 
-      -- Alle echten Spieler durchlaufen
+
       for _, player in System.each(this.Users) do
         player:Defeat()
       end
 
       this.Defeated = true
     end
-    -- <summary>
-    -- Löst für alle Spieler dieser Streitmacht den Sieg aus.
-    -- </summary>
+
+
+
     Win = function (this)
-      -- Töte alle Computer-Einheiten
+
       this.Computer:Win()
 
-      -- Alle echten Spieler durchlaufen
+
       for _, player in System.each(this.Users) do
         player:Win()
       end
     end
-    -- <summary>
-    -- Gibt True zurück, wenn der <paramref name="wc3Player"/> zu einem menschlichen Spieler in diesem Team gehört.
-    -- </summary>
-    -- <param name="wc3Player">Wacraft-Spieler</param>
-    -- <param name="userOfPlayer">Gefundener Benutzer</param>
-    -- <returns></returns>
+
+
+
+
+
+
     ContainsPlayer = function (this, playerId, userOfPlayer)
       for _, user in System.each(this.Users) do
         if user.PlayerId == playerId then
@@ -20891,11 +20845,11 @@ System.namespace("Source.Abstracts", function (namespace)
       userOfPlayer = nil
       return false, userOfPlayer
     end
-    -- <summary>
-    -- Erhöht die Stufe einer Forschung für alle Spieler im Team.
-    -- </summary>
-    -- <param name="techId">Forschung-Id</param>
-    -- <param name="techLevel">Forschung-Stufe</param>
+
+
+
+
+
     IncreaseTechForAllPlayers = function (this, techId, techLevel)
       SetPlayerTechResearched(this.Computer.Wc3Player, techId, techLevel)
 
@@ -20905,28 +20859,28 @@ System.namespace("Source.Abstracts", function (namespace)
         end
       end
     end
-    -- <summary>
-    -- Zeigt allen menschlichen Mitspielern des Teams eine Chat-Nachricht an.
-    -- </summary>
-    -- <param name="message">Nachricht</param>
+
+
+
+
     DisplayChatMessage = function (this, message)
       for _, user in System.each(this.Users) do
         BlzDisplayChatMessage(this.Computer.Wc3Player, user.PlayerId, message)
       end
     end
-    -- <summary>
-    -- Virtuelle Methode für das Auswerten einer Technologie und der daraus resultierenden Spawn-Befehle.
-    -- Dieser Methode liefert keine verwertbaren Daten und muss pro Streitmacht überschrieben werden!
-    -- </summary>
-    -- <param name="techId">Technologie-Id</param>
-    -- <param name="techLevel">Technologie-Stufe</param>
-    -- <param name="spawnCommand">Spawn-Befehl, welcher sich aus dieser Konstellation ergibt.</param>
-    -- <returns></returns>
+
+
+
+
+
+
+
+
     GetTechType = function (this, techId, techLevel, spawnCommand)
       Source.Program.ShowErrorMessage("TeamBase.GetTechType", "Method not implemented yet for player " .. System.toString(this.ColorizedName) .. "!")
 
       spawnCommand = nil
-      return 0 --[[ResearchType.CommonUpgrade]], spawnCommand
+      return 0, spawnCommand
     end
     return {
       Defeated = false,
@@ -20975,14 +20929,14 @@ System.import(function (out)
   SourceLogics = Source.Logics
 end)
 System.namespace("Source.Events", function (namespace)
-  -- <summary>
-  -- Stellt statische Methoden zum Behandeln von Helden-Events bereit.
-  -- </summary>
+
+
+
   namespace.class("Hero", function (namespace)
     local OnLevels
-    -- <summary>
-    -- Behandelt den Levelaufsteig einer Heldeneinheit.
-    -- </summary>
+
+
+
     OnLevels = function ()
       System.try(function ()
         local unit = GetLevelingUnit()
@@ -21024,32 +20978,32 @@ System.import(function (out)
   SourceLogics = Source.Logics
 end)
 System.namespace("Source.Events", function (namespace)
-  -- <summary>
-  -- Stellt statische Methoden zum Behandeln von Einheiten-Events bereit.
-  -- </summary>
+
+
+
   namespace.class("Unit", function (namespace)
     local OnDies, OnReceivesOrder, OnSpellEffect, OnBuysUnit, OnSellsItem, OnFinishesResearch
-    -- <summary>
-    -- Behandelt den Tod einer Einheit.
-    -- </summary>
+
+
+
     OnDies = function ()
       local default = System.try(function ()
         local unit = GetTriggerUnit()
 
         if BlzGetUnitBooleanField(unit, UNIT_BF_IS_A_BUILDING) then
-          -- Wenn Gebäude sterben, haben diese wenn überhaupt eigene Trigger
+
           return true
         end
 
         if IsUnitType(unit, UNIT_TYPE_HERO) then
-          -- Wenn Helden sterben, werden diese abhängig vom SlotStatus gesondert behandelt
+
           if SourceExtensions.unitExtension.IsUnitOfUser(unit) then
             SourceLogics.UserHero.HandleDied(unit)
           elseif SourceExtensions.unitExtension.IsUnitOfComputer(unit) then
             SourceLogics.ComputerHero.HandleDied(unit)
           elseif SourceExtensions.unitExtension.IsUnitOfCreep(unit) then
-            -- do nothing :)
-            -- TODO 001
+
+
           else
             System.Console.WriteLine("UNKNOWN hero " .. System.toString(GetUnitName(unit)) .. " died!!!")
           end
@@ -21064,25 +21018,25 @@ System.namespace("Source.Events", function (namespace)
         return
       end
     end
-    -- <summary>
-    -- Behandelt den Befehlswechsel einer Einheit.
-    -- </summary>
+
+
+
     OnReceivesOrder = function ()
       local default = System.try(function ()
         local unit = GetTriggerUnit()
 
         if BlzGetUnitBooleanField(unit, UNIT_BF_IS_A_BUILDING) then
-          -- Befehle für Gebäude nicht behandeln
+
           return true
         end
 
         if SourceExtensions.unitExtension.IsHero(unit) and SourceExtensions.unitExtension.IsUnitOfUser(unit) then
-          -- Befehle für Benutzer-Helden nicht behandeln
+
           return true
         end
 
-        if GetUnitTypeId(unit) == 1848651824 --[[Constants.UNIT_DUMMY]] then
-          -- Befehle für Dummy-Units nicht behandeln
+        if GetUnitTypeId(unit) == 1848651824 then
+
           return true
         end
 
@@ -21095,9 +21049,9 @@ System.namespace("Source.Events", function (namespace)
         return
       end
     end
-    -- <summary>
-    -- Behandelt den Zaubervorgang einer Einheit.
-    -- </summary>
+
+
+
     OnSpellEffect = function ()
       local default = System.try(function ()
         local unit = GetTriggerUnit()
@@ -21110,7 +21064,7 @@ System.namespace("Source.Events", function (namespace)
 
         repeat
           local default = abilityId
-          if default == 1093681456 --[[Constants.ABILITY_CHARM_HERO_10]] then
+          if default == 1093681456 then
             SourceLogics.UserHero.HandleCharmCasted(abilityId)
             break
           end
@@ -21123,25 +21077,25 @@ System.namespace("Source.Events", function (namespace)
         return
       end
     end
-    -- <summary>
-    -- Behandelt den Kaufvorgang einer Einheit.
-    -- </summary>
+
+
+
     OnBuysUnit = function ()
       local default = System.try(function ()
         local buyingUnit = GetBuyingUnit()
         local soldUnit = GetSoldUnit()
         local sellingUnit = GetSellingUnit()
 
-        if GetUnitTypeId(buyingUnit) == 1966092342 --[[Constants.UNIT_HEROIC_SOUL_HERO_SELECTOR]] then
-          -- Helden-Selector kauft Benutzerhelden
+        if GetUnitTypeId(buyingUnit) == 1966092342 then
+
           SourceLogics.HeroSelector.HandleHeroBuyed(buyingUnit, soldUnit)
           return true
         end
 
-        -- TODO 001
-        --if (soldUnit.IsHero())
-        --  Logics.UserHero.HandleCreepHeroBuyed(buyingUnit, soldUnit, sellingUnit);
-        --else
+
+
+
+
         SourceLogics.UserHero.HandleCreepSpawnBuyed(buyingUnit, soldUnit, sellingUnit)
       end, function (default)
         local ex = default
@@ -21151,9 +21105,9 @@ System.namespace("Source.Events", function (namespace)
         return
       end
     end
-    -- <summary>
-    -- Behandelt den Gegenstandskauf einer Einheit.
-    -- </summary>
+
+
+
     OnSellsItem = function ()
       local default = System.try(function ()
         local buyingUnit = GetBuyingUnit()
@@ -21173,9 +21127,9 @@ System.namespace("Source.Events", function (namespace)
         return
       end
     end
-    -- <summary>
-    -- Behandelt den Forschungsabschluss einer Einheit.
-    -- </summary>
+
+
+
     OnFinishesResearch = function ()
       System.try(function ()
         local researchingUnit = GetResearchingUnit()
@@ -21289,7 +21243,7 @@ System.namespace("Source.Events.Buildings", function (namespace)
 
         local unitType = GetUnitTypeId(buildingUnit)
 
-        -- Suche CreepCamp, zudem das zerstörte Gebäude gehört
+
         local extern, creepCamp = Source.Program.TryGetCreepCampByBuilding(buildingUnit)
         if not extern then
           Source.Program.ShowErrorMessage("MercenaryMainBuilding.OnDies", "Creep camp of creep building " .. System.toString(GetUnitName(buildingUnit)) .. " not found!")
@@ -21298,16 +21252,16 @@ System.namespace("Source.Events.Buildings", function (namespace)
 
         local rebuildTime = 5
 
-        -- Stoppe Trigger
+
         creepCamp.Building:Destroy()
 
-        -- Falls Verteidiger noch am Leben, dann töte diese
+
         for i = #creepCamp.DefendingUnits - 1, 0, -1 do
           creepCamp.DefendingUnits:get(i):Kill()
         end
         creepCamp.DefendingUnits:Clear()
 
-        -- Verstorbenen Held nach gegebener Zeit wieder belegen
+
         local timer = CreateTimer()
 
         local newOwningPlayer = user.Team.Computer
@@ -21315,20 +21269,20 @@ System.namespace("Source.Events.Buildings", function (namespace)
         System.Console.WriteLine("The " .. System.toString(creepCamp.ColorizedName) .. " have been defeated and join the " .. System.toString(user.Team.ColorizedName) .. "!")
         TimerStart(timer, rebuildTime, false, function ()
           local default = System.try(function ()
-            -- Timer wieder zerstören
+
             DestroyTimer(timer)
             DestroyTimer(timer)
             timer = nil
 
-            -- Prüfe vor Übernahme, ob der Computer-Spieler noch unbesiegt ist
+
             if newOwningPlayer.Defeated then
               return true
             end
 
             local attackTargetArea
 
-            -- Ist der neue Eigentümer das Team im gleichen Quadranten, ist das Ziel das Team am anderen Ende
-            -- der Lane, ansonsten alternativ ist es das Team im gleichen Quadrant.
+
+
             if newOwningPlayer.PlayerId == creepCamp.NearTeam.Computer.PlayerId then
               attackTargetArea = creepCamp.OpposingTeam.TeamBaseArea
             else
@@ -21440,7 +21394,7 @@ System.namespace("Source.Events.Buildings", function (namespace)
           Source.Program.ShowDebugMessage1("MainBuilding.OnDies", "Unit of building " .. System.toString(GetUnitName(unit)) .. " not found in computer players!")
         end
 
-        -- Ist nur noch ein Team übrig, gewinnen alle Spieler im Team
+
         if Source.Program.Elves.Defeated and Source.Program.Orcs.Defeated and Source.Program.Undeads.Defeated then
           Source.Program.Humans:Win()
         elseif Source.Program.Humans.Defeated and Source.Program.Elves.Defeated and Source.Program.Undeads.Defeated then
@@ -21484,7 +21438,7 @@ System.namespace("Source.Events.Periodic", function (namespace)
         local user = Source.Program.AllActiveUsers:get(i)
 
         if not user.Defeated then
-          SetPlayerState(user.Wc3Player, PLAYER_STATE_RESOURCE_GOLD, GetPlayerState(user.Wc3Player, PLAYER_STATE_RESOURCE_GOLD) + 100)
+          SetPlayerState(user.Wc3Player, PLAYER_STATE_RESOURCE_GOLD, GetPlayerState(user.Wc3Player, PLAYER_STATE_RESOURCE_GOLD) + 1)
         end
       end
 
@@ -21507,6 +21461,7 @@ end)
 end
 do
 local System = System
+local Linq = System.Linq.Enumerable
 local WCSharpApi = WCSharp.Api
 local Source
 local SourceModels
@@ -21521,8 +21476,8 @@ System.namespace("Source.Events.Periodic", function (namespace)
     local OnElapsed, CreateUnitAtRandomPointWithEffectTimed, CreateAtDummyAndCastAbilityTimed, CreateAtDummyAndCastAbilityTimed1, CreateAtDummyAndCastAbility, CreateLightning, class
     OnElapsed = function ()
       System.try(function ()
-        -- Wetter für 60 Sekunden ändern
-        local weathereffect = AddWeatherEffect(GetPlayableMapRect(), 1280467297 --[[ConstantsEx.WEATHER_Rays_of_Sunlight]])
+
+        local weathereffect = AddWeatherEffect(GetPlayableMapRect(), 1280467297)
         local weatherTimer = CreateTimer()
         TimerStart(weatherTimer, 60, false, function ()
           DestroyTimer(weatherTimer)
@@ -21537,13 +21492,13 @@ System.namespace("Source.Events.Periodic", function (namespace)
         local player = Player(PLAYER_NEUTRAL_AGGRESSIVE)
 
         local default = class
-        default.RaidCounts = default.RaidCounts + 1
+        default.RaidRound = default.RaidRound + 1
 
         local centerRect = Areas.CenterComplete.Wc3Rectangle
-        local CenterBottomRect = Areas.CenterBottom.Wc3Rectangle
-        local CenterLeftRect = Areas.MiddleLaneSpawnEast.Wc3Rectangle
-        local CenterTopRect = Areas.CenterTop.Wc3Rectangle
-        local CenterRightRect = Areas.MiddleLaneSpawnWest.Wc3Rectangle
+        local CenterBottomRect = Areas.LegionSpawnBottom.Wc3Rectangle
+        local CenterLeftRect = Areas.LegionSpawnEast.Wc3Rectangle
+        local CenterTopRect = Areas.LegionSpawnTop.Wc3Rectangle
+        local CenterRightRect = Areas.LegionSpawnWest.Wc3Rectangle
 
         System.Console.WriteLine("The " .. System.toString(Source.Program.Legion.ColorizedName) .. " is approaching, abandon all hope and despair...")
 
@@ -21553,14 +21508,14 @@ System.namespace("Source.Events.Periodic", function (namespace)
         local pentaTop = SourceModels.Pentagram(CenterTopRect:getCenter(), 5)
         local pentaRight = SourceModels.Pentagram(CenterRightRect:getCenter(), 5)
 
-        -- Musik (Dauert etwa 55 Sekunden) einmal spielen
+
         PlayThematicMusic("war3mapImported\\blowitup_cutted.mp3")
 
-        -- Pentagram zeichen nach 1,5 Sekunden für 5 Sekunden
+
         local timer1Count = 0
         local pentaTimer = CreateTimer()
         TimerStart(pentaTimer, 1, true, function ()
-          -- Zentrum
+
           pentaCenter:CreateLightning()
           pentaBottom:CreateLightning()
           pentaLeft:CreateLightning()
@@ -21577,11 +21532,13 @@ System.namespace("Source.Events.Periodic", function (namespace)
           end
         end)
 
-        -- Legion-Held wird im Zentrum erzeugt, bekommt ggf. den höchsten Spielerlevel und wird traininert
 
-        local maxHeroLevel = 0
+        local maxHeroLevel = Linq.Max(Source.Program.AllActiveUsers, function (user)
+          return user.HeroLevelCounter
+        end, System.Int32)
+
         if maxHeroLevel == 0 then
-          maxHeroLevel = class.RaidCounts
+          maxHeroLevel = class.RaidRound
         end
 
         local spawnTimer = CreateTimer()
@@ -21591,30 +21548,30 @@ System.namespace("Source.Events.Periodic", function (namespace)
           spawnTimer = nil
 
           System.try(function ()
-            Source.Program.Legion:CreateOrRefreshSpawnBuildings(class.RaidCounts)
-            Source.Program.Legion:CreateOrReviveHero(1311780918 --[[Constants.UNIT_DEMON_LORD_LEGION]], Areas.Center, maxHeroLevel, class.RaidCounts)
+            Source.Program.Legion:CreateOrRefreshSpawnBuildings(class.RaidRound)
+            Source.Program.Legion:CreateOrReviveHero(1311780918, Areas.Center, maxHeroLevel, class.RaidRound)
 
-            -- Zentrum - Weitere Einheiten via Cast hinzurufen
-            Source.Program.Legion:CreateUnit(centerRect, 1848651846 --[[Constants.UNIT_INFERNAL_LEGION]], class.RaidCounts, 0)
-            Source.Program.Legion:CreateUnit(centerRect, 1848651846 --[[Constants.UNIT_INFERNAL_LEGION]], class.RaidCounts, 0)
-            Source.Program.Legion:CreateUnit(centerRect, 1848651846 --[[Constants.UNIT_INFERNAL_LEGION]], class.RaidCounts, 0)
-            Source.Program.Legion:CreateUnit(centerRect, 1848651846 --[[Constants.UNIT_INFERNAL_LEGION]], class.RaidCounts, 0)
 
-            -- Bottom Lane - Weitere Einheiten via Cast hinzurufen
-            Source.Program.Legion:CreateUnit(CenterBottomRect, 1848651846 --[[Constants.UNIT_INFERNAL_LEGION]], class.RaidCounts, 0)
-            Source.Program.Legion:CreateUnit(CenterBottomRect, 1848651846 --[[Constants.UNIT_INFERNAL_LEGION]], class.RaidCounts, 0)
+            Source.Program.Legion:CreateUnitAtRandomPoint(centerRect, 1848651846, 0):AttackMoveTimed(Areas.HumanBase, 1)
+            Source.Program.Legion:CreateUnitAtRandomPoint(centerRect, 1848651846, 0):AttackMoveTimed(Areas.OrcBase, 1)
+            Source.Program.Legion:CreateUnitAtRandomPoint(centerRect, 1848651846, 0):AttackMoveTimed(Areas.ElfBase, 1)
+            Source.Program.Legion:CreateUnitAtRandomPoint(centerRect, 1848651846, 0):AttackMoveTimed(Areas.UndeadBase, 1)
 
-            -- Left Lane - Weitere Einheiten via Cast hinzurufen
-            Source.Program.Legion:CreateUnit(CenterLeftRect, 1848651846 --[[Constants.UNIT_INFERNAL_LEGION]], class.RaidCounts, 0)
-            Source.Program.Legion:CreateUnit(CenterLeftRect, 1848651846 --[[Constants.UNIT_INFERNAL_LEGION]], class.RaidCounts, 0)
 
-            -- Top Lane - Weitere Einheiten via Cast hinzurufen
-            Source.Program.Legion:CreateUnit(CenterTopRect, 1848651846 --[[Constants.UNIT_INFERNAL_LEGION]], class.RaidCounts, 0)
-            Source.Program.Legion:CreateUnit(CenterTopRect, 1848651846 --[[Constants.UNIT_INFERNAL_LEGION]], class.RaidCounts, 0)
+            Source.Program.Legion:CreateUnitInArea(Areas.LegionSpawnBottom1, 1848651846, 0):AttackMoveTimed(Areas.ElfBase, 1)
+            Source.Program.Legion:CreateUnitInArea(Areas.LegionSpawnBottom2, 1848651846, 180):AttackMoveTimed(Areas.UndeadBase, 1)
 
-            -- Right Lane - Weitere Einheiten via Cast hinzurufen
-            Source.Program.Legion:CreateUnit(CenterRightRect, 1848651846 --[[Constants.UNIT_INFERNAL_LEGION]], class.RaidCounts, 0)
-            Source.Program.Legion:CreateUnit(CenterRightRect, 1848651846 --[[Constants.UNIT_INFERNAL_LEGION]], class.RaidCounts, 0)
+
+            Source.Program.Legion:CreateUnitInArea(Areas.LegionSpawnEast1, 1848651846, 270):AttackMoveTimed(Areas.OrcBase, 1)
+            Source.Program.Legion:CreateUnitInArea(Areas.LegionSpawnEast2, 1848651846, 90):AttackMoveTimed(Areas.UndeadBase, 1)
+
+
+            Source.Program.Legion:CreateUnitInArea(Areas.LegionSpawnTop1, 1848651846, 0):AttackMoveTimed(Areas.HumanBase, 1)
+            Source.Program.Legion:CreateUnitInArea(Areas.LegionSpawnTop2, 1848651846, 180):AttackMoveTimed(Areas.OrcBase, 1)
+
+
+            Source.Program.Legion:CreateUnitInArea(Areas.LegionSpawnWest1, 1848651846, 270):AttackMoveTimed(Areas.HumanBase, 1)
+            Source.Program.Legion:CreateUnitInArea(Areas.LegionSpawnWest2, 1848651846, 90):AttackMoveTimed(Areas.ElfBase, 1)
           end, function (default)
             local ex = default
             Source.Program.ShowExceptionMessage("LegionRaid.OnElapsed", ex)
@@ -21634,7 +21591,7 @@ System.namespace("Source.Events.Periodic", function (namespace)
         DestroyTimer(timer)
         timer = nil
 
-        Source.Program.Legion:CreateUnit(rectangle, unitTypeId, class.RaidCounts, 0)
+        Source.Program.Legion:CreateUnitAtRandomPoint(rectangle, unitTypeId, 0)
       end)
     end
     CreateAtDummyAndCastAbilityTimed = function (player, rectangle, abilityId, abilityLevel, orderId, delay, duration)
@@ -21651,13 +21608,13 @@ System.namespace("Source.Events.Periodic", function (namespace)
       end)
     end
     CreateAtDummyAndCastAbility = function (player, point, abilityId, abilityLevel, orderId, duration)
-      local dummy = CreateUnit(player, 1848651824 --[[Constants.UNIT_DUMMY]], point.X, point.Y, 0)
+      local dummy = CreateUnit(player, 1848651824, point.X, point.Y, 0)
 
       UnitAddAbility(dummy, abilityId)
       SetUnitAbilityLevel(dummy, abilityId, abilityLevel)
       IssueTargetOrderById(dummy, orderId, dummy)
 
-      -- Dummy nach Gebrauch wieder zerstören und freigeben
+
       local timer = CreateTimer()
       TimerStart(timer, duration, false, function ()
         DestroyTimer(timer)
@@ -21680,12 +21637,12 @@ System.namespace("Source.Events.Periodic", function (namespace)
       WCSharpLightnings.LightningSystem.Add(lightning)
     end
     class = {
-      RaidCounts = 0,
+      RaidRound = 0,
       OnElapsed = OnElapsed,
       __metadata__ = function (out)
         return {
           fields = {
-            { "RaidCounts", 0xE, System.Int32 }
+            { "RaidRound", 0xE, System.Int32 }
           },
           methods = {
             { "CreateAtDummyAndCastAbility", 0x609, CreateAtDummyAndCastAbility, out.WCSharp.Api.player, out.WCSharp.Shared.Data.Point, System.Int32, System.Int32, System.Int32, System.Single },
@@ -21736,27 +21693,27 @@ System.namespace("Source.Events.Periodic", function (namespace)
       local default, extern = System.try(function ()
         local player = team.Computer.Wc3Player
 
-        IncreaseTechIfAffordable(team, player, 1378889778 --[[Constants.UPGRADE_MELEE_ATTACK_TEAM]], 250 --[[ResearchCheck.BaseGoldPriceUnitResearch]])
-        IncreaseTechIfAffordable(team, player, 1378889794 --[[Constants.UPGRADE_MELEE_DEFENSE_TEAM]], 250 --[[ResearchCheck.BaseGoldPriceUnitResearch]])
-        IncreaseTechIfAffordable(team, player, 1378889779 --[[Constants.UPGRADE_DISTANCE_ATTACK_TEAM]], 250 --[[ResearchCheck.BaseGoldPriceUnitResearch]])
-        IncreaseTechIfAffordable(team, player, 1378889798 --[[Constants.UPGRADE_DISTANCE_DEFENSE_TEAM]], 250 --[[ResearchCheck.BaseGoldPriceUnitResearch]])
-        IncreaseTechIfAffordable(team, player, 1378889793 --[[Constants.UPGRADE_MAGE_ATTACK_TEAM]], 250 --[[ResearchCheck.BaseGoldPriceUnitResearch]])
-        IncreaseTechIfAffordable(team, player, 1378889796 --[[Constants.UPGRADE_MAGE_DEFENSE_TEAM]], 250 --[[ResearchCheck.BaseGoldPriceUnitResearch]])
+        IncreaseTechIfAffordable(team, player, 1378889778, 250)
+        IncreaseTechIfAffordable(team, player, 1378889794, 250)
+        IncreaseTechIfAffordable(team, player, 1378889779, 250)
+        IncreaseTechIfAffordable(team, player, 1378889798, 250)
+        IncreaseTechIfAffordable(team, player, 1378889793, 250)
+        IncreaseTechIfAffordable(team, player, 1378889796, 250)
 
-        IncreaseTechIfAffordable(team, player, 1378889780 --[[Constants.UPGRADE_BUILDING_ATTACK_TEAM]], 500 --[[ResearchCheck.BaseGoldPriceUnitResearchBuilding]])
-        IncreaseTechIfAffordable(team, player, 1378889776 --[[Constants.UPGRADE_BUILDING_DEFENSE_TEAM]], 500 --[[ResearchCheck.BaseGoldPriceUnitResearchBuilding]])
+        IncreaseTechIfAffordable(team, player, 1378889780, 500)
+        IncreaseTechIfAffordable(team, player, 1378889776, 500)
 
-        IncreaseTechIfAffordable(team, player, 1378889781 --[[Constants.UPGRADE_MELEE_UNIT_TEAM]], 500 --[[ResearchCheck.BaseGoldPriceUnitUpgrade]])
-        IncreaseTechIfAffordable(team, player, 1378889785 --[[Constants.UPGRADE_DISTANCE_UNIT_TEAM]], 500 --[[ResearchCheck.BaseGoldPriceUnitUpgrade]])
-        IncreaseTechIfAffordable(team, player, 1378889795 --[[Constants.UPGRADE_FLIGHT_UNIT_TEAM]], 500 --[[ResearchCheck.BaseGoldPriceUnitUpgrade]])
-        IncreaseTechIfAffordable(team, player, 1378889797 --[[Constants.UPGRADE_MAGE_UNIT_TEAM]], 500 --[[ResearchCheck.BaseGoldPriceUnitUpgrade]])
+        IncreaseTechIfAffordable(team, player, 1378889781, 500)
+        IncreaseTechIfAffordable(team, player, 1378889785, 500)
+        IncreaseTechIfAffordable(team, player, 1378889795, 500)
+        IncreaseTechIfAffordable(team, player, 1378889797, 500)
 
-        IncreaseTechIfAffordable(team, player, 1378889782 --[[Constants.UPGRADE_SIEGE_ATTACK_TEAM]], 625 --[[ResearchCheck.BaseGoldPriceUnitResearchArtillery]])
-        IncreaseTechIfAffordable(team, player, 1378889799 --[[Constants.UPGRADE_SIEGE_DEFENSE_TEAM]], 625 --[[ResearchCheck.BaseGoldPriceUnitResearchArtillery]])
+        IncreaseTechIfAffordable(team, player, 1378889782, 625)
+        IncreaseTechIfAffordable(team, player, 1378889799, 625)
 
-        IncreaseTechIfAffordable(team, player, 1378889784 --[[Constants.UPGRADE_SIEGE_UNIT_TEAM]], 1250 --[[ResearchCheck.BaseGoldPriceUnitUpgradeArtillery]])
+        IncreaseTechIfAffordable(team, player, 1378889784, 1250)
 
-        -- Keine bezahlbare Forschung übrig
+
         return true, true
       end, function (default)
         local ex = default
@@ -21771,8 +21728,8 @@ System.namespace("Source.Events.Periodic", function (namespace)
     IncreaseTechIfAffordable = function (team, computerPlayer, techId, goldPriceBase)
       local currentTechLevel = GetPlayerTechCount(computerPlayer, techId, true)
       if currentTechLevel == GetPlayerTechMaxAllowed(computerPlayer, techId) then
-        -- Spieler hat maximale Stufe der Forschung erreicht
-        --Program.ShowDebugMessage($"Fraction has research max level of tech: {techId}");
+
+
         return false
       end
 
@@ -21788,10 +21745,10 @@ System.namespace("Source.Events.Periodic", function (namespace)
       local default, spawnCommand = team:GetTechType(techId, nextTechLevel)
       local researchType = default
 
-      if researchType == 1 --[[ResearchType.AddUnit]] then
+      if researchType == 1 then
         team.Computer:AddSpawnUnit(spawnCommand)
         team:DisplayChatMessage(Source.ConstantsEx.Message_CollectedGoldForMoreUnits)
-      elseif researchType == 2 --[[ResearchType.UpgradeUnit]] then
+      elseif researchType == 2 then
         team.Computer:UpgradeSpawnUnit(spawnCommand)
         team:DisplayChatMessage(Source.ConstantsEx.Message_CollectedGoldToUpgradeUnits)
       else
@@ -21834,7 +21791,7 @@ System.namespace("Source.Events.Region", function (namespace)
         return
       end
 
-      -- Feindliche Einheit zur Basis eines anderen Spielers schicken
+
       local default, spawnedUnit = Source.Program.Humans.Computer:IsOwnerOfUnit(unit)
       if default then
         if not Source.Program.Undeads.Defeated then
@@ -21896,7 +21853,7 @@ System.namespace("Source.Events.Region", function (namespace)
         return
       end
 
-      -- Feindliche Einheit zur Basis des anderen Spielers schicken
+
       local default, spawnedUnit = Source.Program.Orcs.Computer:IsOwnerOfUnit(unit)
       if default then
         if not Source.Program.Elves.Defeated then
@@ -21958,7 +21915,7 @@ System.namespace("Source.Events.Region", function (namespace)
         return
       end
 
-      -- Feindliche Einheit zur Basis des anderen Spielers schicken
+
       local default, spawnedUnit = Source.Program.Humans.Computer:IsOwnerOfUnit(unit)
       if default then
         if not Source.Program.Undeads.Defeated then
@@ -22020,7 +21977,7 @@ System.namespace("Source.Events.Region", function (namespace)
         return
       end
 
-      -- Feindliche Einheit zur Basis des anderen Spielers schicken
+
       local default, spawnedUnit = Source.Program.Humans.Computer:IsOwnerOfUnit(unit)
       if default then
         if not Source.Program.Orcs.Defeated then
@@ -22143,7 +22100,7 @@ System.namespace("Source.Logics", function (namespace)
       local playerId = GetPlayerId(GetOwningPlayer(unit))
       local respawnTime = 0
 
-      -- Prüfe vor Wiedergeburt-Einleitung, ob der Computer-Spieler noch unbesiegt ist
+
       local default, team = Source.Program.TryGetTeamByUnit(unit)
       if default then
         if team.Computer.Defeated then
@@ -22152,23 +22109,23 @@ System.namespace("Source.Logics", function (namespace)
       end
 
       if team == nil then
-        -- Helden neutrale Spieler (Legion) nicht automatisch wieder beleben
+
         return
       end
 
       respawnTime = 30
 
-      -- Verstorbenen Held nach gegebener Zeit wieder belegen
+
       local timer = CreateTimer()
 
       TimerStart(timer, respawnTime, false, function ()
         local default = System.try(function ()
-          -- Timer wieder zerstören
+
           DestroyTimer(timer)
           DestroyTimer(timer)
           timer = nil
 
-          -- Prüfe vor Wiedergeburt-Abschluss, ob der Computer-Spieler noch unbesiegt ist
+
           local default, team = Source.Program.TryGetTeamByUnit(unit)
           if default then
             if team.Computer.Defeated then
@@ -22183,7 +22140,7 @@ System.namespace("Source.Logics", function (namespace)
             respawnArea = spawnedUnit.SpawnArea
             ReviveHero(unit, respawnArea.CenterX, respawnArea.CenterY, true)
 
-            -- Computer-Helden starten stets mit vollem Mana
+
             SetUnitState(unit, UNIT_STATE_MANA, BlzGetUnitMaxMana(unit))
 
             spawnedUnit:RepeatAttackMove()
@@ -22200,7 +22157,7 @@ System.namespace("Source.Logics", function (namespace)
     HandleLeveled = function (unit)
       local unitId = GetUnitTypeId(unit)
 
-      if unitId == 1211117645 --[[Constants.UNIT_GUARDIAN_HUMAN]] or unitId == 1211117911 --[[Constants.UNIT_GUARDIAN_ORC]] or unitId == 1211118160 --[[Constants.UNIT_GUARDIAN_ELF]] or unitId == 1211118161 --[[Constants.UNIT_GUARDIAN_UNDEAD]] then
+      if unitId == 1211117645 or unitId == 1211117911 or unitId == 1211118160 or unitId == 1211118161 then
         ProcessWaechterLevelUp(unit)
       end
     end
@@ -22209,23 +22166,23 @@ System.namespace("Source.Logics", function (namespace)
       local abilityId = 0
 
       if level:EndsWith("1") or level:EndsWith("6") then
-        abilityId = 1093677619 --[[Constants.ABILITY_TAUNT_GUARD_20]]
+        abilityId = 1093677619
       elseif level:EndsWith("2") or level:EndsWith("7") then
-        abilityId = 1094862401 --[[Constants.ABILITY_COMMAND_AURA_GUARD_20]]
+        abilityId = 1094862401
       elseif level:EndsWith("3") or level:EndsWith("8") then
-        abilityId = 1094996803 --[[Constants.ABILITY_THUNDER_CLAP_GUARD_20]]
+        abilityId = 1094996803
       elseif level:EndsWith("4") or level:EndsWith("9") then
-        abilityId = 1094796353 --[[Constants.ABILITY_ENDURANCE_AURA_GUARD_20]]
+        abilityId = 1094796353
       else
-        abilityId = 1093677106 --[[Constants.ABILITY_ATTRIBUTE_BONUS_HERO_50]]
+        abilityId = 1093677106
       end
 
       local ability = BlzGetUnitAbility(unit, abilityId)
       if BlzGetAbilityId(ability) == 0 then
-        -- Held hat Fähigkeit noch nicht gelernt
+
         UnitAddAbility(unit, abilityId)
       else
-        -- Skill kann verbessert werden
+
         local abilityLevel = IncUnitAbilityLevel(unit, abilityId)
       end
     end
@@ -22254,12 +22211,19 @@ System.import(function (out)
   Source = out.Source
 end)
 System.namespace("Source.Logics", function (namespace)
+
+
+
   namespace.class("ComputerUnit", function (namespace)
     local HandleDied, HandleOrderReceived, RepeatAttackMove
+
+
+
+
     HandleDied = function (unit)
       local owner = GetOwningPlayer(unit)
 
-      -- Getötete Einheit von Spieler entfernen
+
       local default, spawnedUnit = Source.Program.Humans.Computer:IsOwnerOfUnit(unit)
       if default then
         Source.Program.Humans.Computer:RemoveUnit(spawnedUnit)
@@ -22278,38 +22242,52 @@ System.namespace("Source.Logics", function (namespace)
             extern, spawnedUnit = Source.Program.Undeads.Computer:IsOwnerOfUnit(unit)
             if extern then
               Source.Program.Undeads.Computer:RemoveUnit(spawnedUnit)
+            else
+              local extern
+              extern, spawnedUnit = Source.Program.Legion:IsOwnerOfUnit(unit)
+              if extern then
+                Source.Program.Legion:RemoveUnit(spawnedUnit)
+              end
             end
           end
         end
       end
-      --else
-      --  Bspw. der Tod der Heldenseele bei Kauf löst diesen Fall aus.
-      --  Program.ShowDebugMessage("Unit.OnDies", $"Unit {unit.Name} not found in unit lists of computer players!");
 
-      -- Verstorbene Einheit nach kurzer Zeit aus Spiel entfernen um RAM zu sparen
+
+
+
+
       local timer = CreateTimer()
       TimerStart(timer, 10, false, function ()
         DestroyTimer(timer)
         DestroyTimer(timer)
         timer = nil
 
-        -- Sicherheitshalber Verweis auf Einheit für GC freigeben
+
         RemoveUnit(unit)
         RemoveUnit(unit)
         unit = nil
       end)
     end
+
+
+
+
     HandleOrderReceived = function (unit)
-      -- Wenn eine gespawnte Einheit ihren Angriffsbefehl verliert, erteilen wir ihr diesen erneut
-      -- Befehl 851974 ist die Heimkehr zum Ausgangspunkt und fehlt in der Constants.
+
+
       repeat
         local default = GetUnitCurrentOrder(unit)
-        if default == 851974 or default == 851976 --[[Constants.ORDER_CANCEL]] or default == 851973 --[[Constants.ORDER_STUNNED]] or default == 851972 --[[Constants.ORDER_STOP]] then
+        if default == 851974 or default == 851976 or default == 851973 or default == 851972 then
           RepeatAttackMove(unit)
           break
         end
       until 1
     end
+
+
+
+
     RepeatAttackMove = function (unit)
       local default, spawnedUnit = Source.Program.Humans.Computer:IsOwnerOfUnit(unit)
       if default then
@@ -22334,8 +22312,6 @@ System.namespace("Source.Logics", function (namespace)
               extern, spawnedUnit = Source.Program.Legion:IsOwnerOfUnit(unit)
               if extern then
                 spawnedUnit:RepeatAttackMove()
-              else
-                Source.Program.ShowDebugMessage("Repeat attack move failed, because no owner found for unit " .. System.toString(GetUnitName(unit)) .. "!")
               end
             end
           end
@@ -22374,13 +22350,13 @@ System.namespace("Source.Logics", function (namespace)
       local player = GetOwningPlayer(buyingUnit)
       local playerId = GetPlayerId(player)
 
-      -- Käufer-Einheit töten
+
       KillUnit(buyingUnit)
 
-      -- Gekaufte Einheit sofort wieder entfernen und in Player-Base neu erstellen!
+
       RemoveUnit(soldUnit)
 
-      -- Sicherheitshalber Verweis auf Einheit für GC freigeben
+
       RemoveUnit(soldUnit)
       soldUnit = nil
 
@@ -22414,11 +22390,6 @@ System.namespace("Source.Logics", function (namespace)
       if user == nil then
         return
       end
-
-
-      spawnArea = Areas.TestArea2
-      user.HeroLevelCounter = 50
-      SetPlayerState(user.Wc3Player, PLAYER_STATE_RESOURCE_GOLD, GetPlayerState(user.Wc3Player, PLAYER_STATE_RESOURCE_GOLD) + 50000)
 
 
       user:CreateHero(soldUnitId, spawnArea)
@@ -22462,9 +22433,9 @@ System.namespace("Source.Logics", function (namespace)
 
           Source.Program.Humans:IncreaseTechForAllPlayers(researchedTechId, researchedTechIdCount)
 
-          if researchType == 1 --[[ResearchType.AddUnit]] then
+          if researchType == 1 then
             Source.Program.Humans.Computer:AddSpawnUnit(spawnCommand)
-          elseif researchType == 2 --[[ResearchType.UpgradeUnit]] then
+          elseif researchType == 2 then
             Source.Program.Humans.Computer:UpgradeSpawnUnit(spawnCommand)
           end
         else
@@ -22476,9 +22447,9 @@ System.namespace("Source.Logics", function (namespace)
 
             Source.Program.Orcs:IncreaseTechForAllPlayers(researchedTechId, researchedTechIdCount)
 
-            if researchType == 1 --[[ResearchType.AddUnit]] then
+            if researchType == 1 then
               Source.Program.Orcs.Computer:AddSpawnUnit(spawnCommand)
-            elseif researchType == 2 --[[ResearchType.UpgradeUnit]] then
+            elseif researchType == 2 then
               Source.Program.Orcs.Computer:UpgradeSpawnUnit(spawnCommand)
             end
           else
@@ -22490,9 +22461,9 @@ System.namespace("Source.Logics", function (namespace)
 
               Source.Program.Elves:IncreaseTechForAllPlayers(researchedTechId, researchedTechIdCount)
 
-              if researchType == 1 --[[ResearchType.AddUnit]] then
+              if researchType == 1 then
                 Source.Program.Elves.Computer:AddSpawnUnit(spawnCommand)
-              elseif researchType == 2 --[[ResearchType.UpgradeUnit]] then
+              elseif researchType == 2 then
                 Source.Program.Elves.Computer:UpgradeSpawnUnit(spawnCommand)
               end
             else
@@ -22504,9 +22475,9 @@ System.namespace("Source.Logics", function (namespace)
 
                 Source.Program.Undeads:IncreaseTechForAllPlayers(researchedTechId, researchedTechIdCount)
 
-                if researchType == 1 --[[ResearchType.AddUnit]] then
+                if researchType == 1 then
                   Source.Program.Undeads.Computer:AddSpawnUnit(spawnCommand)
-                elseif researchType == 2 --[[ResearchType.UpgradeUnit]] then
+                elseif researchType == 2 then
                   Source.Program.Undeads.Computer:UpgradeSpawnUnit(spawnCommand)
                 end
               end
@@ -22577,21 +22548,21 @@ System.namespace("Source.Logics", function (namespace)
         return
       end
 
-      -- Verstorbenen Held nach gegebener Zeit wieder belegen
+
       local timer = CreateTimer()
-      -- Währenddessen Timer-Dialog anzeigen
+
       local timerdialog = CreateTimerDialog(timer)
       TimerDialogSetTitle(timerdialog, System.toString(GetUnitName(unit)) .. " erscheint erneut...")
       TimerDialogDisplay(timerdialog, true)
 
       TimerStart(timer, GetHeroLevel(unit) + 2, false, function ()
         System.try(function ()
-          -- Timer wieder zerstören
+
           DestroyTimer(timer)
           DestroyTimer(timer)
           timer = nil
 
-          -- Timer-Dialog wieder zerstören
+
           DestroyTimerDialog(timerdialog)
           timerdialog = nil
 
@@ -22609,37 +22580,37 @@ System.namespace("Source.Logics", function (namespace)
     HandleItemBuyed = function (buyingUnit, soldItem)
       local itemId = GetItemTypeId(soldItem)
 
-      if itemId == 1227894832 --[[Constants.ITEM_GLYPH_OF_SACRIFICE]] then
+      if itemId == 1227894832 then
         local playerId = GetPlayerId(GetOwningPlayer(buyingUnit))
         local default, user = Source.Program.TryGetUserById(playerId)
         if default then
-          -- Merke Heldenstufe
+
           user.HeroLevelCounter = GetHeroLevel(buyingUnit)
-          -- Entferne Käufer/Helden aus Spiel
+
           RemoveUnit(buyingUnit)
 
-          -- Heldenseele erstellen und Kamera verschieben
+
           Source.Program.CreateHeroSelectorForPlayerAndAdjustCamera(user)
         end
       end
     end
     HandleCharmCasted = function (castedAbilityId)
       System.try(function ()
-        -- Zauberdefinition
+
         local ability = GetSpellAbility()
 
-        -- Zaubernde Einheit
+
         local castingUnit = GetSpellAbilityUnit()
 
-        -- Stufe & Reichweite des Zaubers
+
         local spellLevel = GetUnitAbilityLevel(castingUnit, castedAbilityId)
         local spellRange = 500 + (spellLevel * 50)
 
-        -- Ziel & Position des Zauberziels
+
         local targetUnit = GetSpellTargetUnit()
         local targetLocation = GetUnitLoc(targetUnit)
 
-        -- Alle Einheiten um die Position des Ziels durchlaufen
+
         local group = GetUnitsInRangeOfLocAll(spellRange, targetLocation)
 
         local charmedUnits = 0
@@ -22658,14 +22629,14 @@ System.namespace("Source.Logics", function (namespace)
               break
             end
 
-            -- Einheit in Gruppe ist Feind (oder Neutral) der Zaubernden Einheit?
+
             if IsPlayerEnemy(GetOwningPlayer(groupUnit), GetOwningPlayer(castingUnit)) or GetPlayerController(GetOwningPlayer(groupUnit)) == MAP_CONTROL_CREEP then
-              local dummyUnit = CreateUnitAtLoc(GetOwningPlayer(castingUnit), 1848651824 --[[Constants.UNIT_DUMMY]], targetLocation, 0)
+              local dummyUnit = CreateUnitAtLoc(GetOwningPlayer(castingUnit), 1848651824, targetLocation, 0)
 
-              UnitAddAbility(dummyUnit, 1093681473 --[[Constants.ABILITY_CHARM_DUMMY]])
-              IssueTargetOrderById(dummyUnit, 852581 --[[Constants.ORDER_CHARM]], groupUnit)
+              UnitAddAbility(dummyUnit, 1093681473)
+              IssueTargetOrderById(dummyUnit, 852581, groupUnit)
 
-              -- Dummy nach Gebrauch sofort wieder zerstören und freigeben
+
               RemoveUnit(dummyUnit)
               RemoveUnit(dummyUnit)
               dummyUnit = nil
@@ -22693,24 +22664,24 @@ System.namespace("Source.Logics", function (namespace)
     end
     HandleAnythingCasted = function (castedAbilityId)
       System.try(function ()
-        -- Zauberdefinition
+
         local ability = GetSpellAbility()
 
-        -- Zaubernde Einheit
+
         local castingUnit = GetSpellAbilityUnit()
 
-        -- Stufe des Zaubers
+
         local spellLevel = GetUnitAbilityLevel(castingUnit, castedAbilityId)
         local spellRange = 100 * spellLevel
         Source.Program.ShowDebugMessage("Ability " .. System.toString(BlzGetAbilityStringField(ability, ABILITY_SF_NAME)) .. " with level: " .. spellLevel)
 
-        -- Ziel des Zaubers
+
         local targetUnit = GetSpellTargetUnit()
 
-        -- Position des Ziels
+
         local targetLocation = GetUnitLoc(targetUnit)
 
-        -- Alle Einheiten um die Position des Ziels durchlaufen
+
         local group = GetUnitsInRangeOfLocAll(spellRange, targetLocation)
 
         local charmedUnits = 0
@@ -22721,23 +22692,23 @@ System.namespace("Source.Logics", function (namespace)
 
           local groupUnit = BlzGroupUnitAt(group, i)
 
-          -- Einheit in Gruppe ist Feind der Zaubernden Einheit?
+
           if IsPlayerEnemy(GetOwningPlayer(groupUnit), GetOwningPlayer(castingUnit)) then
-            -- Dummy erstellen
-            local dummyUnit = CreateUnitAtLoc(GetOwningPlayer(castingUnit), 1848651824 --[[Constants.UNIT_DUMMY]], targetLocation, 0)
-            UnitAddAbility(dummyUnit, 1093681473 --[[Constants.ABILITY_CHARM_DUMMY]])
 
-            -- Dummy einen Dummy-Zauber (keine Manakosten) ausführen lassen
-            IssueTargetOrderById(dummyUnit, 852581 --[[Constants.ORDER_CHARM]], groupUnit)
+            local dummyUnit = CreateUnitAtLoc(GetOwningPlayer(castingUnit), 1848651824, targetLocation, 0)
+            UnitAddAbility(dummyUnit, 1093681473)
 
-            -- Effekt erstellen
+
+            IssueTargetOrderById(dummyUnit, 852581, groupUnit)
+
+
             local effect = AddSpecialEffectTarget("Abilities\\Spells\\Other\\Charm\\CharmTarget.mdl", groupUnit, "overhead")
 
-            -- Effekte sofort wieder zerstören, um RAM freizugeben
+
             DestroyEffect(effect)
             effect = nil
 
-            -- Dummy sofort wieder zerstören, um RAM freizuegeben
+
             Source.Program.ShowDebugMessage("- Destroy dummy" .. "")
             RemoveUnit(dummyUnit)
             dummyUnit = nil
@@ -22755,10 +22726,10 @@ System.namespace("Source.Logics", function (namespace)
     HandleCreepSpawnBuyed = function (buyingUnit, soldUnit, sellingUnit)
       local soldUnitId = GetUnitTypeId(soldUnit)
 
-      -- Gekaufte Einheit sofort entfernen
+
       RemoveUnit(soldUnit)
 
-      -- Sicherheitshalber Verweis auf Einheit für GC freigeben
+
       RemoveUnit(soldUnit)
       soldUnit = nil
 
@@ -22889,25 +22860,25 @@ System.namespace("Source.Models", function (namespace)
       System.base(this).__ctor__(this, player)
       this.Team = team
     end
-    -- <summary>
-    -- Erzeugt ein Gebäude für den Spieler und fügt es der Auflistung aller Gebäude hinzu.
-    -- </summary>
-    -- <param name="unitTypeId"></param>
-    -- <param name="creationArea"></param>
-    -- <param name="face"></param>
-    -- <returns></returns>
+
+
+
+
+
+
+
     CreateBuilding = function (this, unitTypeId, creationArea, face)
-      -- Ort anhand Zentrum einer Region erstellen
+
       local building = SourceModels.SpawnUnitsBuilding(this, unitTypeId, creationArea, face)
       this.Buildings:Add(building)
       return building
     end
-    -- <summary>
-    -- Gibt True zurück, wenn der Spieler der Eigentümer der übergebenen Einheit ist.
-    -- </summary>
-    -- <param name="wc3Unit">WC3-Einheit</param>
-    -- <param name="foundBuilding">Wird gesetzt, wenn True zurück gegeben wurde.</param>
-    -- <returns></returns>
+
+
+
+
+
+
     IsOwnerOfBuilding = function (this, wc3Unit, foundBuilding)
       for _, building in System.each(this.Buildings) do
         if building.Wc3Unit == wc3Unit then
@@ -22919,19 +22890,19 @@ System.namespace("Source.Models", function (namespace)
       foundBuilding = nil
       return false, foundBuilding
     end
-    -- <summary>
-    -- Entfernt ein Gebäude aus der Auflistung aller Gebäude.
-    -- </summary>
-    -- <param name="building"></param>
+
+
+
+
     RemoveBuilding = function (this, building)
-      --Program.ShowDebugMessage("ComputerPlayer.RemoveBuilding", $"Remove building {building.Wc3Unit.Name}");
+
       this.Buildings:Remove(building)
     end
-    -- <summary>
-    -- Zerstört und entfernt alle Gebäude des Computer-Spielers und setzt diesen auf "Besiegt".
-    -- </summary>
+
+
+
     Defeat = function (this)
-      -- Alle gespawnten Gebäude zerstören
+
       for i = #this.Buildings - 1, 0, -1 do
         local building = this.Buildings:get(i)
 
@@ -23013,9 +22984,9 @@ System.namespace("Source.Models", function (namespace)
         end
       }
     end)
-    -- <summary>
-    -- Stellt die verschiedenen Zeitintervalle dar, in denen Einheiten automatisch gespawned werden.
-    -- </summary>
+
+
+
     namespace.enum("SpawnInterval", function ()
       return {
         Short = 0,
@@ -23047,12 +23018,14 @@ end
 do
 local System = System
 local SourceEventsBuildings
+local SourceEventsPeriodic
 local SourceModels
 local SourceStatics
 local ListSpawnedUnit
 local ListLegionSpawnBuilding
 System.import(function (out)
   SourceEventsBuildings = Source.Events.Buildings
+  SourceEventsPeriodic = Source.Events.Periodic
   SourceModels = Source.Models
   SourceStatics = Source.Statics
   ListSpawnedUnit = System.List(SourceModels.SpawnedUnit)
@@ -23061,13 +23034,13 @@ end)
 System.namespace("Source.Models", function (namespace)
   namespace.class("LegionForce", function (namespace)
     local CreateOrReviveHero, CreateOrRefreshSpawnBuildings, CreateOrRefreshSpawnBuilding, TryGetSpawnBuilding, RemoveSpawnBuilding, AddAbilitiesToHero, TrainHero, CreateHero, 
-    CreateUnit, IsOwnerOfUnit, __ctor__
+    CreateUnitInArea, CreateUnitAtRandomPoint, CreateUnitAtPoint, ManipulateSpawnedUnit, IsOwnerOfUnit, RemoveUnit, __ctor__
     __ctor__ = function (this, name)
       this.SpawnBuildings = ListLegionSpawnBuilding()
       this.Units = ListSpawnedUnit()
       this.Name = name
       this.ColorizedName = "|cffff0000" .. System.toString(name) .. "|r"
-      this.Wc3Player = Player(20 --[[ConstantsEx.PlayerId_Legion]])
+      this.Wc3Player = Player(20)
     end
     CreateOrReviveHero = function (this, unitTypeId, spawnArea, heroLevel, face, targetArea)
       local unit = nil
@@ -23101,31 +23074,57 @@ System.namespace("Source.Models", function (namespace)
       TrainHero(this, unitTypeId, unit, heroLevel)
     end
     CreateOrRefreshSpawnBuildings = function (this, raidCounts)
-      CreateOrRefreshSpawnBuilding(this, Areas.MiddleLaneSpawnWest, Areas.HumanBase, Areas.ElfBase, raidCounts)
-      CreateOrRefreshSpawnBuilding(this, Areas.MiddleLaneSpawnEast, Areas.OrcBase, Areas.UndeadBase, raidCounts)
+      CreateOrRefreshSpawnBuilding(this, Areas.LegionSpawnBottom, Areas.ElfBase, Areas.UndeadBase, raidCounts)
+      CreateOrRefreshSpawnBuilding(this, Areas.LegionSpawnEast, Areas.OrcBase, Areas.UndeadBase, raidCounts)
+      CreateOrRefreshSpawnBuilding(this, Areas.LegionSpawnTop, Areas.OrcBase, Areas.HumanBase, raidCounts)
+      CreateOrRefreshSpawnBuilding(this, Areas.LegionSpawnWest, Areas.HumanBase, Areas.ElfBase, raidCounts)
     end
     CreateOrRefreshSpawnBuilding = function (this, creationArea, target1, target2, raidCounts)
       for _, spawnBuilding in System.each(this.SpawnBuildings) do
         if spawnBuilding.CreationArea == creationArea then
           SetWidgetLife(spawnBuilding.Wc3Unit, BlzGetUnitMaxHP(spawnBuilding.Wc3Unit))
 
-          -- TODO : Increase power and bounty by raid Counts or so!
+
 
           return
         end
       end
 
-      local building = SourceModels.LegionSpawnBuilding(1848652361 --[[Constants.UNIT_DEMON_SHRINE_LEGION]], creationArea, 180)
+      local building = SourceModels.LegionSpawnBuilding(1848652361, creationArea, 180)
       SourceStatics.SpecialEffects.CreateSpecialEffect("Abilities\\Spells\\Other\\Doom\\DoomDeath.mdl", building.CreationArea.Wc3Rectangle:getCenter(), 2, 3)
       building:RegisterOnDies(SourceEventsBuildings.LegionBuilding.OnDies)
 
-      building:AddSpawnTrigger(1 --[[SpawnInterval.Middle]], creationArea, target2):Run(0)
-      building:AddSpawnTrigger(1 --[[SpawnInterval.Middle]], creationArea, target1):Run(0)
-      building:AddUnitToSpawnTriggers(1848651843 --[[Constants.UNIT_FELGUARD_LEGION]])
-      building:AddUnitToSpawnTriggers(1848651857 --[[Constants.UNIT_MAIDEN_OF_PAIN_LEGION]])
-      building:AddUnitToSpawnTriggers(1848651854 --[[Constants.UNIT_VILE_TORMENTOR_LEGION]])
+      building:AddSpawnTrigger(2, creationArea, target2):Run(0)
+      building:AddSpawnTrigger(2, creationArea, target1):Run(0)
 
-      -- TODO : Increase power and bounty by raid Counts or so!
+      building:AddUnitToSpawnTriggers(1848651843)
+
+      if SourceEventsPeriodic.LegionRaid.RaidRound >= 2 then
+        building:AddUnitToSpawnTriggers(1848651850)
+      end
+      if SourceEventsPeriodic.LegionRaid.RaidRound >= 3 then
+        building:AddUnitToSpawnTriggers(1848651857)
+      end
+      if SourceEventsPeriodic.LegionRaid.RaidRound >= 4 then
+        building:AddUnitToSpawnTriggers(1848651843)
+      end
+      if SourceEventsPeriodic.LegionRaid.RaidRound >= 5 then
+        building:AddUnitToSpawnTriggers(1848651850)
+      end
+      if SourceEventsPeriodic.LegionRaid.RaidRound >= 6 then
+        building:AddUnitToSpawnTriggers(1848651854)
+      end
+      if SourceEventsPeriodic.LegionRaid.RaidRound >= 7 then
+        building:AddUnitToSpawnTriggers(1848651846)
+      end
+      if SourceEventsPeriodic.LegionRaid.RaidRound >= 8 then
+        building:AddUnitToSpawnTriggers(1848651846)
+      end
+      if SourceEventsPeriodic.LegionRaid.RaidRound >= 9 then
+        building:AddUnitToSpawnTriggers(1848651860)
+      end
+
+
 
       this.SpawnBuildings:Add(building)
     end
@@ -23149,12 +23148,12 @@ System.namespace("Source.Models", function (namespace)
     AddAbilitiesToHero = function (this, unitTypeId, unit)
       repeat
         local default = unitTypeId
-        if default == 1311780918 --[[Constants.UNIT_DEMON_LORD_LEGION]] then
-          UnitAddAbility(unit, 1093677623 --[[Constants.ABILITY_RAIN_OF_FIRE_LEGION_100]])
-          UnitAddAbility(unit, 1093677620 --[[Constants.ABILITY_CLEAVING_ATTACK_LEGION_100]])
-          UnitAddAbility(unit, 1093677635 --[[Constants.ABILITY_FINGER_OF_DEATH_LEGION_100]])
-          UnitAddAbility(unit, 1093677621 --[[Constants.ABILITY_UNHOLY_AURA_LEGION_100]])
-          UnitAddAbility(unit, 1093677634 --[[Constants.ABILITY_ATTRIBUTE_BONUS_LEGION_100]])
+        if default == 1311780918 then
+          UnitAddAbility(unit, 1093677623)
+          UnitAddAbility(unit, 1093677620)
+          UnitAddAbility(unit, 1093677635)
+          UnitAddAbility(unit, 1093677621)
+          UnitAddAbility(unit, 1093677634)
           break
         else
           System.throw(System.NotImplementedException("Abilities for hero " .. System.toString(GetUnitName(unit)) .. " (Id " .. unitTypeId .. ") not implemented yet!"))
@@ -23164,12 +23163,12 @@ System.namespace("Source.Models", function (namespace)
     TrainHero = function (this, unitTypeId, unit, heroLevel)
       repeat
         local default = unitTypeId
-        if default == 1311780918 --[[Constants.UNIT_DEMON_LORD_LEGION]] then
-          SetUnitAbilityLevel(unit, 1093677623 --[[Constants.ABILITY_RAIN_OF_FIRE_LEGION_100]], heroLevel)
-          SetUnitAbilityLevel(unit, 1093677620 --[[Constants.ABILITY_CLEAVING_ATTACK_LEGION_100]], heroLevel)
-          SetUnitAbilityLevel(unit, 1093677635 --[[Constants.ABILITY_FINGER_OF_DEATH_LEGION_100]], heroLevel)
-          SetUnitAbilityLevel(unit, 1093677621 --[[Constants.ABILITY_UNHOLY_AURA_LEGION_100]], heroLevel)
-          SetUnitAbilityLevel(unit, 1093677634 --[[Constants.ABILITY_ATTRIBUTE_BONUS_LEGION_100]], heroLevel)
+        if default == 1311780918 then
+          SetUnitAbilityLevel(unit, 1093677623, heroLevel)
+          SetUnitAbilityLevel(unit, 1093677620, heroLevel)
+          SetUnitAbilityLevel(unit, 1093677635, heroLevel)
+          SetUnitAbilityLevel(unit, 1093677621, heroLevel)
+          SetUnitAbilityLevel(unit, 1093677634, heroLevel)
           break
         else
           System.throw(System.NotImplementedException("Abilities for hero " .. System.toString(GetUnitName(unit)) .. " (Id " .. unitTypeId .. ") not implemented yet!"))
@@ -23181,40 +23180,46 @@ System.namespace("Source.Models", function (namespace)
       SetHeroLevel(result.Wc3Unit, heroLevel, true)
       return result
     end
-    CreateUnit = function (this, rectangle, unitTypeId, executions, face)
+    CreateUnitInArea = function (this, area, unitTypeId, face)
+      return CreateUnitAtPoint(this, area.Wc3Rectangle:getCenter(), unitTypeId, face)
+    end
+    CreateUnitAtRandomPoint = function (this, rectangle, unitTypeId, face)
       local point = rectangle:GetRandomPoint()
+      return CreateUnitAtPoint(this, point, unitTypeId, face)
+    end
+    CreateUnitAtPoint = function (this, point, unitTypeId, face)
       SourceStatics.SpecialEffects.CreateSpecialEffect("Objects\\Spawnmodels\\NightElf\\EntBirthTarget\\EntBirthTarget.mdl", point, 2, 1)
       local result = System.new(SourceModels.SpawnedUnit, 2, this.Wc3Player, unitTypeId, point, face)
-
       this.Units:Add(result)
-
+      ManipulateSpawnedUnit(this, result.Wc3Unit, SourceEventsPeriodic.LegionRaid.RaidRound)
+      return result
+    end
+    ManipulateSpawnedUnit = function (this, unit, raidCount)
       repeat
-        local default = executions
+        local default = raidCount
         if default == 1 or default == 2 or default == 3 or default == 4 or default == 6 or default == 7 or default == 8 or default == 9 or default == 10 then
-          BlzSetUnitBaseDamage(result.Wc3Unit, BlzGetUnitBaseDamage(result.Wc3Unit, 0) + (10 * executions), 0)
-          BlzSetUnitRealField(result.Wc3Unit, UNIT_RF_DEFENSE, BlzGetUnitRealField(result.Wc3Unit, UNIT_RF_DEFENSE) + (2 * executions))
-          BlzSetUnitMaxHP(result.Wc3Unit, BlzGetUnitMaxHP(result.Wc3Unit) + ((System.div(BlzGetUnitMaxHP(result.Wc3Unit), 10)) * executions))
+          BlzSetUnitBaseDamage(unit, BlzGetUnitBaseDamage(unit, 0) + (10 * raidCount), 0)
+          BlzSetUnitRealField(unit, UNIT_RF_DEFENSE, BlzGetUnitRealField(unit, UNIT_RF_DEFENSE) + (2 * raidCount))
+          BlzSetUnitMaxHP(unit, BlzGetUnitMaxHP(unit) + ((System.div(BlzGetUnitMaxHP(unit), 10)) * raidCount))
           break
         else
-          -- Ab Stufe 10 werden die Einheiten nicht mehr stärker, sonst werden sie (fast) unbesiegbar
-          BlzSetUnitBaseDamage(result.Wc3Unit, BlzGetUnitBaseDamage(result.Wc3Unit, 0) + 100, 0)
-          BlzSetUnitRealField(result.Wc3Unit, UNIT_RF_DEFENSE, BlzGetUnitRealField(result.Wc3Unit, UNIT_RF_DEFENSE) + 20)
-          BlzSetUnitMaxHP(result.Wc3Unit, BlzGetUnitMaxHP(result.Wc3Unit) + (BlzGetUnitMaxHP(result.Wc3Unit)))
+
+          BlzSetUnitBaseDamage(unit, BlzGetUnitBaseDamage(unit, 0) + 100, 0)
+          BlzSetUnitRealField(unit, UNIT_RF_DEFENSE, BlzGetUnitRealField(unit, UNIT_RF_DEFENSE) + 20)
+          BlzSetUnitMaxHP(unit, BlzGetUnitMaxHP(unit) + (BlzGetUnitMaxHP(unit)))
           break
         end
       until 1
 
-      SetWidgetLife(result.Wc3Unit, BlzGetUnitMaxHP(result.Wc3Unit))
-
-      return result
+      SetWidgetLife(unit, BlzGetUnitMaxHP(unit))
     end
-    -- <summary>
-    -- Gibt True zurück, wenn die übergebene Einheit in der Auflistung aller Einheiten enthalten ist
-    -- </summary>
-    -- <param name="wc3Unit"></param>
-    -- <returns></returns>
+
+
+
+
+
     IsOwnerOfUnit = function (this, wc3Unit, unit)
-      if GetPlayerId(GetOwningPlayer(wc3Unit)) ~= 20 --[[ConstantsEx.PlayerId_Legion]] then
+      if GetPlayerId(GetOwningPlayer(wc3Unit)) ~= 20 then
         unit = nil
         return false, unit
       end
@@ -23222,17 +23227,24 @@ System.namespace("Source.Models", function (namespace)
       local unitId = GetUnitTypeId(wc3Unit)
 
       for _, spawnedUnit in System.each(this.Units) do
-        -- Prüfe primär die Einheit-Id, da ein UNIT-Vergleich nicht empfohlen wird!
-        -- Ein Einheitenvergleich wird zwar nicht empfohlen, ist aber die einzige Möglichkeit diesselbe Einheit zu ermitteln
+
+
         if GetUnitTypeId(spawnedUnit.Wc3Unit) == unitId and spawnedUnit.Wc3Unit == wc3Unit then
           unit = spawnedUnit
           return true, unit
         end
       end
 
-      -- Dieser Fall kann eintreten, wenn eine statische Computer-Einheit das Event auslöst
+
       unit = nil
       return false, unit
+    end
+
+
+
+
+    RemoveUnit = function (this, unit)
+      this.Units:Remove(unit)
     end
     return {
       CreateOrReviveHero = CreateOrReviveHero,
@@ -23240,8 +23252,11 @@ System.namespace("Source.Models", function (namespace)
       CreateOrRefreshSpawnBuilding = CreateOrRefreshSpawnBuilding,
       TryGetSpawnBuilding = TryGetSpawnBuilding,
       RemoveSpawnBuilding = RemoveSpawnBuilding,
-      CreateUnit = CreateUnit,
+      CreateUnitInArea = CreateUnitInArea,
+      CreateUnitAtRandomPoint = CreateUnitAtRandomPoint,
+      CreateUnitAtPoint = CreateUnitAtPoint,
       IsOwnerOfUnit = IsOwnerOfUnit,
+      RemoveUnit = RemoveUnit,
       __ctor__ = __ctor__,
       __metadata__ = function (out)
         return {
@@ -23252,9 +23267,13 @@ System.namespace("Source.Models", function (namespace)
             { "CreateOrRefreshSpawnBuilding", 0x404, CreateOrRefreshSpawnBuilding, out.Source.Models.Area, out.Source.Models.Area, out.Source.Models.Area, System.Int32 },
             { "CreateOrRefreshSpawnBuildings", 0x104, CreateOrRefreshSpawnBuildings, System.Int32 },
             { "CreateOrReviveHero", 0x506, CreateOrReviveHero, System.Int32, out.Source.Models.Area, System.Int32, System.Single, out.Source.Models.Area },
-            { "CreateUnit", 0x484, CreateUnit, out.WCSharp.Shared.Data.Rectangle, System.Int32, System.Int32, System.Single, out.Source.Models.SpawnedUnit },
+            { "CreateUnitAtPoint", 0x384, CreateUnitAtPoint, out.WCSharp.Shared.Data.Point, System.Int32, System.Single, out.Source.Models.SpawnedUnit },
+            { "CreateUnitAtRandomPoint", 0x384, CreateUnitAtRandomPoint, out.WCSharp.Shared.Data.Rectangle, System.Int32, System.Single, out.Source.Models.SpawnedUnit },
+            { "CreateUnitInArea", 0x384, CreateUnitInArea, out.Source.Models.Area, System.Int32, System.Single, out.Source.Models.SpawnedUnit },
             { "IsOwnerOfUnit", 0x286, IsOwnerOfUnit, out.WCSharp.Api.unit, out.Source.Models.SpawnedUnit, System.Boolean },
+            { "ManipulateSpawnedUnit", 0x201, ManipulateSpawnedUnit, out.WCSharp.Api.unit, System.Int32 },
             { "RemoveSpawnBuilding", 0x106, RemoveSpawnBuilding, out.Source.Models.LegionSpawnBuilding },
+            { "RemoveUnit", 0x106, RemoveUnit, out.Source.Models.SpawnedUnit },
             { "TrainHero", 0x301, TrainHero, System.Int32, out.WCSharp.Api.unit, System.Int32 },
             { "TryGetSpawnBuilding", 0x286, TryGetSpawnBuilding, out.WCSharp.Api.unit, out.Source.Models.LegionSpawnBuilding, System.Boolean }
           },
@@ -23293,13 +23312,13 @@ System.namespace("Source.Models", function (namespace)
       this.CreationArea = creationArea
       this.Wc3Unit = CreateUnitAtLoc(Source.Program.Legion.Wc3Player, unitTypeId, creationArea.Wc3CenterLocation, face)
     end
-    -- <summary>
-    -- Fügt dem Gebäude einen Spawn-Trigger hinzu, welcher solange existiert ist, bis das Gebäude via <see cref="Destroy"/> zerstört wird.
-    -- </summary>
-    -- <param name="interval">Sekunden</param>
-    -- <param name="spawnArea">Spawn-Gebiet</param>
-    -- <param name="unitIds">Auflistung an Einheiten-Ids</param>
-    -- <returns></returns>
+
+
+
+
+
+
+
     AddSpawnTrigger = function (this, spawnInterval, spawnArea, targetArea)
       local spawnTrigger = SourceModels.LegionSpawnTrigger(spawnInterval, spawnArea, targetArea, System.Array.Empty(System.Int32))
       this.SpawnTriggers:Add(spawnTrigger)
@@ -23310,9 +23329,9 @@ System.namespace("Source.Models", function (namespace)
         this.SpawnTriggers:get(i):AddUnit(unitId)
       end
     end
-    -- <summary>
-    -- Deregistriert das Sterbe-Event, stoppt alle Spawn-Trigger und entfernt die WC3-Einheit.
-    -- </summary>
+
+
+
     Destroy = function (this)
       DeRegisterOnDies(this)
 
@@ -23324,18 +23343,18 @@ System.namespace("Source.Models", function (namespace)
       RemoveUnit(this.Wc3Unit)
       this.Wc3Unit = nil
     end
-    -- <summary>
-    -- Registriert das Sterbe-Event.
-    -- </summary>
-    -- <param name="eventHandler"></param>
+
+
+
+
     RegisterOnDies = function (this, eventHandler)
       this.Wc3Trigger = CreateTrigger()
       TriggerRegisterUnitEvent(this.Wc3Trigger, this.Wc3Unit, EVENT_UNIT_DEATH)
       TriggerAddAction(this.Wc3Trigger, eventHandler)
     end
-    -- <summary>
-    -- Deregistriert das Sterbe-Event.
-    -- </summary>
+
+
+
     DeRegisterOnDies = function (this)
       if this.Wc3Trigger == nil then
         return
@@ -23379,21 +23398,19 @@ do
 local System = System
 local Linq = System.Linq.Enumerable
 local Source
-local SourceEventsPeriodic
 System.import(function (out)
   Source = out.Source
-  SourceEventsPeriodic = Source.Events.Periodic
 end)
 System.namespace("Source.Models", function (namespace)
   namespace.class("LegionSpawnTrigger", function (namespace)
     local Run, Start, Elapsed, Stop, AddUnit, __ctor__
-    -- <summary>
-    -- Erstellt einen zeitgesteuertem Auslöser für das regelmäßige Erstellen von Einheiten.
-    -- </summary>
-    -- <param name="force">Computer-Spieler, für den Einheiten erstellt werden</param>
-    -- <param name="spawnInterval">Klasse der erstellten Einheiten</param>
-    -- <param name="targetArea">Zielgebiet, für das erstellte Einheiten einen Angriff/Bewegen-Befehl erhalten</param>
-    -- <param name="unitIds">Auflistung an Einheit-Typen zu beginn</param>
+
+
+
+
+
+
+
     __ctor__ = function (this, spawnInterval, spawnArea, targetArea, unitIds)
       this.SpawnArea = spawnArea
       this.TargetArea = targetArea
@@ -23401,11 +23418,11 @@ System.namespace("Source.Models", function (namespace)
       this.SpawnInterval = spawnInterval
       this.Interval = Source.Program.GetIntervalSeconds(spawnInterval)
     end
-    -- <summary>
-    -- Startet den Trigger im angegebenen Interval
-    -- </summary>
+
+
+
     Run = function (this, delay)
-      -- Delay a little since some stuff can break otherwise
+
       local timer = CreateTimer()
       TimerStart(timer, delay, false, function ()
         DestroyTimer(timer)
@@ -23419,22 +23436,22 @@ System.namespace("Source.Models", function (namespace)
       this.Timer = CreateTimer()
       TimerStart(this.Timer, this.Interval, true, System.fn(this, Elapsed))
     end
-    -- <summary>
-    -- Wird vom Trigger im angegeben Interval abgearbeitet.
-    -- </summary>
+
+
+
     Elapsed = function (this)
       System.try(function ()
         for _, unitId in System.each(this.UnitIds) do
-          Source.Program.Legion:CreateUnit(this.SpawnArea.Wc3Rectangle, unitId, SourceEventsPeriodic.LegionRaid.RaidCounts, 0):AttackMoveTimed(this.TargetArea, 2)
+          Source.Program.Legion:CreateUnitAtRandomPoint(this.SpawnArea.Wc3Rectangle, unitId, 0):AttackMoveTimed(this.TargetArea, 2)
         end
       end, function (default)
         local ex = default
         System.Console.WriteLine(ex:getMessage())
       end)
     end
-    -- <summary>
-    -- Stoppt den Trigger und zerstört ihn für den GC.
-    -- </summary>
+
+
+
     Stop = function (this)
       PauseTimer(this.Timer)
       DestroyTimer(this.Timer)
@@ -23495,7 +23512,7 @@ System.namespace("Source.Models", function (namespace)
     __ctor__ = function (this, name, buildingArea, spawnArea, nearTeam, opposingTeam, buildingUnitTypeId, defenderUnitTypeIds)
       this.DefendingUnits = ListSpawnedUnit()
       this.Name = name
-      this.ColorizedName = "|c" .. System.toString("ffffcc00" --[[ConstantsEx.ColorHexCode_Gold]]) .. System.toString(name) .. "|r"
+      this.ColorizedName = "|c" .. System.toString("ffffcc00") .. System.toString(name) .. "|r"
       this.SpawnArea = spawnArea
       this.BuildingArea = buildingArea
       this.NearTeam = nearTeam
@@ -23504,14 +23521,14 @@ System.namespace("Source.Models", function (namespace)
       this.DefenderUnitTypeIds = defenderUnitTypeIds
       this.Wc3Player = Player(PLAYER_NEUTRAL_AGGRESSIVE)
     end
-    -- <summary>
-    -- Erstellt das Spawn-Gebäude des Söldnerlagers.
-    -- </summary>
-    -- <param name="unitTypeId"></param>
-    -- <param name="face"></param>
-    -- <returns></returns>
+
+
+
+
+
+
     InitializeBuilding = function (this)
-      -- Ort anhand Zentrum einer Region erstellen
+
       this.Building = SourceModels.MercenarySpawnBuilding(this, this.BuildingUnitTypeId, this.BuildingArea, 0)
       this.Building:RegisterOnDies(SourceEventsBuildings.MercenaryBuilding.OnDies)
 
@@ -23519,25 +23536,25 @@ System.namespace("Source.Models", function (namespace)
 
       return this.Building
     end
-    -- <summary>
-    -- Setzt den Eigentümer des Söldnerlagers und erstellt ein neues Spawn-Gebäude.
-    -- </summary>
-    -- <param name="team">Neues Eigentümer-Team</param>
-    -- <param name="attackTargetForSpawn">Gebiet, welches das Angriff/Bewegen-Befehl der automatisch erstellten Einheiten ist.</param>
+
+
+
+
+
     SetOwnerAndRebuild = function (this, team, attackTargetForSpawn)
       this.OwnerTeam = team
       this.AttackTargetArea = attackTargetForSpawn
 
       this.Wc3Player = this.OwnerTeam.Computer.Wc3Player
 
-      -- Ort anhand Zentrum einer Region erstellen
+
       this.Building = SourceModels.MercenarySpawnBuilding(this, this.BuildingUnitTypeId, this.BuildingArea, 0)
       this.Building:RegisterOnDies(SourceEventsBuildings.MercenaryBuilding.OnDies)
 
       CreateDefendingUnits(this, true)
 
-      -- Füge direkt SpawnTrigger hinzu, welche später durch kaufen von Söldnern um Einheiten erweitert werden
-      this.Building:AddSpawnTrigger(1 --[[SpawnInterval.Middle]], this.SpawnArea, this.AttackTargetArea):Run(0)
+
+      this.Building:AddSpawnTrigger(1, this.SpawnArea, this.AttackTargetArea):Run(0)
     end
     CreateDefendingUnits = function (this, withSpecialEffect)
       local rectangle = this.SpawnArea.Wc3Rectangle
@@ -23551,12 +23568,12 @@ System.namespace("Source.Models", function (namespace)
         end
       end
     end
-    -- <summary>
-    -- Erzeugt im Spawn-Bereich eine Einheit an einem definierten Punkt.
-    -- </summary>
-    -- <param name="point">Punkt</param>
-    -- <param name="unitTypeId">Einheit-Typ</param>
-    -- <returns></returns>
+
+
+
+
+
+
     SpawnUnitAtPoint = function (this, point, unitTypeId, face)
       return System.new(SourceModels.SpawnedUnit, 2, this.Wc3Player, unitTypeId, point, face)
     end
@@ -23615,13 +23632,13 @@ System.namespace("Source.Models", function (namespace)
       this.Wc3Unit = CreateUnitAtLoc(owner.Wc3Player, unitTypeId, creationArea.Wc3CenterLocation, face)
       this.Owner = owner
     end
-    -- <summary>
-    -- Fügt dem Gebäude einen Spawn-Trigger hinzu, welcher solange existiert ist, bis das Gebäude via <see cref="Destroy"/> zerstört wird.
-    -- </summary>
-    -- <param name="interval">Sekunden</param>
-    -- <param name="spawnArea">Spawn-Gebiet</param>
-    -- <param name="unitIds">Auflistung an Einheiten-Ids</param>
-    -- <returns></returns>
+
+
+
+
+
+
+
     AddSpawnTrigger = function (this, spawnInterval, spawnArea, targetArea)
       local spawnTrigger = SourceModels.MercenarySpawnTrigger(this.Owner, spawnInterval, spawnArea, targetArea, System.Array.Empty(System.Int32))
       this.SpawnTriggers:Add(spawnTrigger)
@@ -23632,9 +23649,9 @@ System.namespace("Source.Models", function (namespace)
         this.SpawnTriggers:get(i):AddUnit(unitId)
       end
     end
-    -- <summary>
-    -- Deregistriert das Sterbe-Event, stoppt alle Spawn-Trigger und tötet (falls noch nötig) die WC3-Einheit.
-    -- </summary>
+
+
+
     Destroy = function (this)
       DeRegisterOnDies(this)
 
@@ -23643,23 +23660,23 @@ System.namespace("Source.Models", function (namespace)
       end
 
       if UnitAlive(this.Wc3Unit) then
-        -- Da diese Funktion auch beim Tod des Gebäudes ausgelöst werden kann,
-        -- töte Gebäude bei Bedarf, d.h. wenn Team verliert und Spieler entfernt werden.
+
+
         KillUnit(this.Wc3Unit)
       end
     end
-    -- <summary>
-    -- Registriert das Sterbe-Event.
-    -- </summary>
-    -- <param name="eventHandler"></param>
+
+
+
+
     RegisterOnDies = function (this, eventHandler)
       this.Wc3Trigger = CreateTrigger()
       TriggerRegisterUnitEvent(this.Wc3Trigger, this.Wc3Unit, EVENT_UNIT_DEATH)
       TriggerAddAction(this.Wc3Trigger, eventHandler)
     end
-    -- <summary>
-    -- Deregistriert das Sterbe-Event.
-    -- </summary>
+
+
+
     DeRegisterOnDies = function (this)
       if this.Wc3Trigger == nil then
         return
@@ -23711,13 +23728,13 @@ end)
 System.namespace("Source.Models", function (namespace)
   namespace.class("MercenarySpawnTrigger", function (namespace)
     local Run, Start, Elapsed, Stop, AddUnit, __ctor__
-    -- <summary>
-    -- Erstellt einen zeitgesteuertem Auslöser für das regelmäßige Erstellen von Einheiten.
-    -- </summary>
-    -- <param name="owner">Computer-Spieler, für den Einheiten erstellt werden</param>
-    -- <param name="spawnInterval">Klasse der erstellten Einheiten</param>
-    -- <param name="targetArea">Zielgebiet, für das erstellte Einheiten einen Angriff/Bewegen-Befehl erhalten</param>
-    -- <param name="unitIds">Auflistung an Einheit-Typen zu beginn</param>
+
+
+
+
+
+
+
     __ctor__ = function (this, owner, spawnInterval, spawnArea, targetArea, unitIds)
       this.Owner = owner
       this.SpawnArea = spawnArea
@@ -23726,11 +23743,11 @@ System.namespace("Source.Models", function (namespace)
       this.SpawnInterval = spawnInterval
       this.Interval = Source.Program.GetIntervalSeconds(spawnInterval)
     end
-    -- <summary>
-    -- Startet den Trigger im angegebenen Interval
-    -- </summary>
+
+
+
     Run = function (this, delay)
-      -- Delay a little since some stuff can break otherwise
+
       local timer = CreateTimer()
       TimerStart(timer, delay, false, function ()
         DestroyTimer(timer)
@@ -23744,9 +23761,9 @@ System.namespace("Source.Models", function (namespace)
       this.Timer = CreateTimer()
       TimerStart(this.Timer, this.Interval, true, System.fn(this, Elapsed))
     end
-    -- <summary>
-    -- Wird vom Trigger im angegeben Interval abgearbeitet.
-    -- </summary>
+
+
+
     Elapsed = function (this)
       System.try(function ()
         for _, unitId in System.each(this.UnitIds) do
@@ -23759,9 +23776,9 @@ System.namespace("Source.Models", function (namespace)
         System.Console.WriteLine(ex:getMessage())
       end)
     end
-    -- <summary>
-    -- Stoppt den Trigger und zerstört ihn für den GC.
-    -- </summary>
+
+
+
     Stop = function (this)
       PauseTimer(this.Timer)
       DestroyTimer(this.Timer)
@@ -23859,58 +23876,66 @@ end
 do
 local System = System
 System.namespace("Source.Models", function (namespace)
+
+
+
   namespace.class("SpawnedUnit", function (namespace)
     local AttackMoveTimed, AttackMove, RepeatAttackMove, Kill, __ctor1__, __ctor2__
-    -- <summary>
-    -- Erstellt eine neue Einheit im Zentrum eines Gebiets.
-    -- </summary>
-    -- <param name="owner">Besitzer</param>
-    -- <param name="unitType">Einheit-Typ</param>
-    -- <param name="area">Gebiet</param>
-    -- <param name="face">Blickrichtung (0 = rechts, 90 = oben, 180 = unten, 270 = links)</param>
+
+
+
+
+
+
+
     __ctor1__ = function (this, owner, unitType, area, face)
       this.SpawnArea = area
       this.Wc3Unit = CreateUnitAtLoc(owner, unitType, area.Wc3CenterLocation, face)
     end
-    -- <summary>
-    -- Erstellt eine neue Einheit im Zentrum eines Gebiets.
-    -- </summary>
-    -- <param name="owner">Besitzer</param>
-    -- <param name="unitType">Einheit-Typ</param>
-    -- <param name="area">Gebiet</param>
-    -- <param name="face">Blickrichtung (0 = rechts, 90 = oben, 180 = unten, 270 = links)</param>
+
+
+
+
+
+
+
     __ctor2__ = function (this, owner, unitType, spawnPoint, face)
       this.SpawnPoint = spawnPoint
       this.Wc3Unit = CreateUnit(owner, unitType, spawnPoint.X, spawnPoint.Y, face)
     end
+
+
+
+
+
     AttackMoveTimed = function (this, targetArea, delay)
       this.LastAreaTarget = targetArea
 
       local timer = CreateTimer()
       TimerStart(timer, delay, false, function ()
-        IssuePointOrderById(this.Wc3Unit, 851983 --[[Constants.ORDER_ATTACK]], this.LastAreaTarget.CenterX, this.LastAreaTarget.CenterY)
+        IssuePointOrderById(this.Wc3Unit, 851983, this.LastAreaTarget.CenterX, this.LastAreaTarget.CenterY)
       end)
     end
-    -- <summary>
-    -- Gibt der Einheit einen Angriff/Bewegen-Befehl bis zum Zentrum eines Gebiets.
-    -- </summary>
-    -- <param name="targetArea">Zielgebiet</param>
+
+
+
+
     AttackMove = function (this, targetArea)
       this.LastAreaTarget = targetArea
 
-      IssuePointOrderById(this.Wc3Unit, 851983 --[[Constants.ORDER_ATTACK]], this.LastAreaTarget.CenterX, this.LastAreaTarget.CenterY)
+      IssuePointOrderById(this.Wc3Unit, 851983, this.LastAreaTarget.CenterX, this.LastAreaTarget.CenterY)
     end
-    -- <summary>
-    -- Gibt der Einheit erneut einen Angriff/Bewegen-Befehl zum letzten Zielgebiet, falls bekannt.
-    -- </summary>
+
+
+
     RepeatAttackMove = function (this)
       if this.LastAreaTarget ~= nil then
-        IssuePointOrderById(this.Wc3Unit, 851983 --[[Constants.ORDER_ATTACK]], this.LastAreaTarget.CenterX, this.LastAreaTarget.CenterY)
+        IssuePointOrderById(this.Wc3Unit, 851983, this.LastAreaTarget.CenterX, this.LastAreaTarget.CenterY)
       end
     end
-    -- <summary>
-    -- Tötet die Einheit, falls diese noch am Leben ist.
-    -- </summary>
+
+
+
     Kill = function (this)
       if UnitAlive(this.Wc3Unit) then
         KillUnit(this.Wc3Unit)
@@ -23993,21 +24018,21 @@ System.namespace("Source.Models", function (namespace)
       this.Computer = computer
       this.SpawnTriggers = ListSpawnUnitsTrigger()
     end
-    -- <summary>
-    -- Fügt dem Gebäude einen Spawn-Trigger hinzu, welcher solange existiert ist, bis das Gebäude via <see cref="Destroy"/> zerstört wird.
-    -- </summary>
-    -- <param name="interval">Sekunden</param>
-    -- <param name="spawnArea">Spawn-Gebiet</param>
-    -- <param name="unitIds">Auflistung an Einheiten-Ids</param>
-    -- <returns></returns>
+
+
+
+
+
+
+
     AddSpawnTrigger = function (this, spawnArea, spawnInterval, targetArea, unitIds)
       local trigger = SourceModels.SpawnUnitsTrigger(this.Computer, spawnArea, spawnInterval, targetArea, unitIds)
       this.SpawnTriggers:Add(trigger)
       return trigger
     end
-    -- <summary>
-    -- Deregistriert das Sterbe-Event, stoppt alle Spawn-Trigger und tötet (falls noch nötig) die WC3-Einheit.
-    -- </summary>
+
+
+
     Destroy = function (this)
       DeRegisterOnDies(this)
 
@@ -24020,23 +24045,23 @@ System.namespace("Source.Models", function (namespace)
       end
 
       if UnitAlive(this.Wc3Unit) then
-        -- Da diese Funktion auch beim Tod des Gebäudes ausgelöst werden kann,
-        -- töte Gebäude bei Bedarf, d.h. wenn Team verliert und Spieler entfernt werden.
+
+
         KillUnit(this.Wc3Unit)
       end
     end
-    -- <summary>
-    -- Registriert das Sterbe-Event.
-    -- </summary>
-    -- <param name="eventHandler"></param>
+
+
+
+
     RegisterOnDies = function (this, eventHandler)
       this.Wc3Trigger = CreateTrigger()
       TriggerRegisterUnitEvent(this.Wc3Trigger, this.Wc3Unit, EVENT_UNIT_DEATH)
       TriggerAddAction(this.Wc3Trigger, eventHandler)
     end
-    -- <summary>
-    -- Deregistriert das Sterbe-Event.
-    -- </summary>
+
+
+
     DeRegisterOnDies = function (this)
       if this.Wc3Trigger == nil then
         return
@@ -24046,10 +24071,10 @@ System.namespace("Source.Models", function (namespace)
       DestroyTrigger(this.Wc3Trigger)
       this.Wc3Trigger = nil
     end
-    -- <summary>
-    -- Fügt passenden Spawn-Triggern von diesem Gebäude eine neue Einheit hinzu.
-    -- </summary>
-    -- <param name="spawnCommand"></param>
+
+
+
+
     AddUnitSpawn = function (this, spawnCommand)
       for _, trigger in System.each(this.SpawnTriggers) do
         if trigger.UnitSpawnType == spawnCommand.UnitSpawnType then
@@ -24057,10 +24082,10 @@ System.namespace("Source.Models", function (namespace)
         end
       end
     end
-    -- <summary>
-    -- Überschreibt eine bestehende Einheit in passenden Spawn-Triggern.
-    -- </summary>
-    -- <param name="spawnCommand"></param>
+
+
+
+
     UpgradeUnitSpawn = function (this, spawnCommand)
       for _, trigger in System.each(this.SpawnTriggers) do
         if trigger.UnitSpawnType == spawnCommand.UnitSpawnType then
@@ -24110,27 +24135,27 @@ end)
 System.namespace("Source.Models", function (namespace)
   namespace.class("SpawnUnitsTrigger", function (namespace)
     local Run, Start, Elapsed, Stop, Add, Upgrade, __ctor__
-    -- <summary>
-    -- Erstellt einen zeitgesteuertem Auslöser für das regelmäßige Erstellen von Einheiten.
-    -- </summary>
-    -- <param name="player">Computer-Spieler, für den Einheiten erstellt werden</param>
-    -- <param name="spawnArea">Gebiet, in dem die Einheiten erstellt werden</param>
-    -- <param name="spawnInterval">Klasse der erstellten Einheiten</param>
-    -- <param name="targetArea">Zielgebiet, für das erstellte Einheiten einen Angriff/Bewegen-Befehl erhalten</param>
-    -- <param name="unitIds">Auflistung an Einheit-Typen zu beginn</param>
-    __ctor__ = function (this, player, spawnArea, spawnInterval, targetArea, unitIds)
+
+
+
+
+
+
+
+
+    __ctor__ = function (this, player, spawnArea, spawnInterval, targetArea, unitTypeIds)
       this.Player = player
       this.SpawnArea = spawnArea
       this.TargetArea = targetArea
       this.UnitSpawnType = spawnInterval
-      this.UnitIds = Linq.ToList(unitIds)
+      this.UnitTypeIds = Linq.ToList(unitTypeIds)
       this.Interval = Source.Program.GetIntervalSeconds(spawnInterval)
     end
-    -- <summary>
-    -- Startet den Trigger im angegebenen Interval
-    -- </summary>
+
+
+
     Run = function (this, delay)
-      -- Delay a little since some stuff can break otherwise
+
       local timer = CreateTimer()
       TimerStart(timer, delay, false, function ()
         DestroyTimer(timer)
@@ -24140,19 +24165,19 @@ System.namespace("Source.Models", function (namespace)
         Start(this)
       end)
     end
-    -- <summary>
-    -- Startet den Timer zum ryhtmischen Erstellen von Einheiten.
-    -- </summary>
+
+
+
     Start = function (this)
       this.Timer = CreateTimer()
       TimerStart(this.Timer, this.Interval, true, System.fn(this, Elapsed))
     end
-    -- <summary>
-    -- Wird vom Trigger im angegeben Interval abgearbeitet.
-    -- </summary>
+
+
+
     Elapsed = function (this)
       System.try(function ()
-        for _, unitId in System.each(this.UnitIds) do
+        for _, unitId in System.each(this.UnitTypeIds) do
           local unit = this.Player:CreateUnit(unitId, this.SpawnArea, 0)
 
           unit:AttackMove(this.TargetArea)
@@ -24162,29 +24187,29 @@ System.namespace("Source.Models", function (namespace)
         System.Console.WriteLine(ex:getMessage())
       end)
     end
-    -- <summary>
-    -- Stoppt den Timer und zerstört ihn für den GC.
-    -- </summary>
+
+
+
     Stop = function (this)
       PauseTimer(this.Timer)
       DestroyTimer(this.Timer)
       this.Timer = nil
     end
-    -- <summary>
-    -- Fügt der Auflistung von Einheitentyp-Ids einen Eintrag hinzu.
-    -- </summary>
-    -- <param name="spawnCommand"></param>
+
+
+
+
     Add = function (this, spawnCommand)
-      this.UnitIds:Add(spawnCommand.UnitId)
+      this.UnitTypeIds:Add(spawnCommand.UnitId)
     end
-    -- <summary>
-    -- Aktualisiert einen oder mehrere Einträge in der Auflistung von Einheitentyp-Ids.
-    -- </summary>
-    -- <param name="spawnCommand"></param>
+
+
+
+
     Upgrade = function (this, spawnCommand)
-      for i = 0, #this.UnitIds - 1 do
-        if this.UnitIds:get(i) == spawnCommand.UnitIdToUpgrade then
-          this.UnitIds:set(i, spawnCommand.UnitId)
+      for i = 0, #this.UnitTypeIds - 1 do
+        if this.UnitTypeIds:get(i) == spawnCommand.UnitIdToUpgrade then
+          this.UnitTypeIds:set(i, spawnCommand.UnitId)
         end
       end
     end
@@ -24213,8 +24238,8 @@ System.namespace("Source.Models", function (namespace)
             { "SpawnArea", 0x1, out.Source.Models.Area },
             { "TargetArea", 0x1, out.Source.Models.Area },
             { "Timer", 0x1, out.WCSharp.Api.timer },
-            { "UnitIds", 0x1, System.List(System.Int32) },
-            { "UnitSpawnType", 0x6, System.Int32 }
+            { "UnitSpawnType", 0x6, System.Int32 },
+            { "UnitTypeIds", 0x1, System.List(System.Int32) }
           },
           class = { "SpawnUnitsTrigger", 0x26 }
         }
@@ -24240,11 +24265,11 @@ System.namespace("Source.Models", function (namespace)
 
       CameraSetupApplyForPlayer(true, setup, this.Wc3Player, 0.0)
     end
-    -- <summary>
-    -- Erstellt eine Held für den Benutzer im angegebenen Gebiet.
-    -- </summary>
-    -- <param name="unitId"></param>
-    -- <param name="spawnArea"></param>
+
+
+
+
+
     CreateHero = function (this, unitId, spawnArea)
       local unit = CreateUnitAtLoc(this.Wc3Player, unitId, spawnArea.Wc3CenterLocation, 0)
 
@@ -24255,9 +24280,9 @@ System.namespace("Source.Models", function (namespace)
       ApplyCamera(this, spawnArea)
       SelectUnitForPlayerSingle(unit, this.Wc3Player)
     end
-    -- <summary>
-    -- Zerstört und entfernt alle Gebäude und Einheiten des Spielers und setzt diesen auf "Besiegt".
-    -- </summary>
+
+
+
     Defeat = function (this)
       for i = #this.Units - 1, 0, -1 do
         this.Units:get(i):Kill()
@@ -24307,103 +24332,103 @@ System.namespace("Source.Models.Teams", function (namespace)
     local GetTechType, __ctor__
     __ctor__ = function (this, wc3ComputerPlayer)
       System.base(this).__ctor__(this, wc3ComputerPlayer, Areas.ElfBase)
-      this.ColorizedName = "|c" .. System.toString("ff808080" --[[ConstantsEx.ColorHexCode_Gray]]) .. System.toString(GetPlayerName(wc3ComputerPlayer)) .. "|r"
+      this.ColorizedName = "|c" .. System.toString("ff808080") .. System.toString(GetPlayerName(wc3ComputerPlayer)) .. "|r"
     end
     GetTechType = function (this, techId, techLevel, spawnCommand)
       repeat
         local default = techId
-        if default == 1378889781 --[[Constants.UPGRADE_MELEE_UNIT_TEAM]] then
+        if default == 1378889781 then
           local extern = SourceModels.SpawnUnitCommand()
-          extern.UnitSpawnType = 0 --[[SpawnInterval.Short]]
-          extern.UnitIdOfBuilding = 1747988788 --[[Constants.UNIT_ANCIENT_OF_WAR_ELF]]
+          extern.UnitSpawnType = 0
+          extern.UnitIdOfBuilding = 1747988788
           spawnCommand = extern
 
           repeat
             local extern = techLevel
             if extern == 1 then
-              spawnCommand.UnitId = 1747988826 --[[Constants.UNIT_DRUID_OF_THE_CLAW_ELF]]
-              spawnCommand.UnitIdToUpgrade = 1747988824 --[[Constants.UNIT_SENTRY_ELF]]
-              return 2 --[[ResearchType.UpgradeUnit]], spawnCommand
+              spawnCommand.UnitId = 1747988826
+              spawnCommand.UnitIdToUpgrade = 1747988824
+              return 2, spawnCommand
             else
-              spawnCommand.UnitId = 1747989041 --[[Constants.UNIT_MOUNTAIN_GIANT_ELF]]
-              spawnCommand.UnitIdToUpgrade = 1747988826 --[[Constants.UNIT_DRUID_OF_THE_CLAW_ELF]]
-              return 2 --[[ResearchType.UpgradeUnit]], spawnCommand
+              spawnCommand.UnitId = 1747989041
+              spawnCommand.UnitIdToUpgrade = 1747988826
+              return 2, spawnCommand
             end
           until 1
-        elseif default == 1378889785 --[[Constants.UPGRADE_DISTANCE_UNIT_TEAM]] then
+        elseif default == 1378889785 then
           local extern = SourceModels.SpawnUnitCommand()
-          extern.UnitSpawnType = 1 --[[SpawnInterval.Middle]]
-          extern.UnitIdOfBuilding = 1747988788 --[[Constants.UNIT_ANCIENT_OF_WAR_ELF]]
+          extern.UnitSpawnType = 1
+          extern.UnitIdOfBuilding = 1747988788
           spawnCommand = extern
 
           repeat
             local extern = techLevel
             if extern == 1 then
-              spawnCommand.UnitId = 1747989045 --[[Constants.UNIT_ARCHER_BESERK_ELF]]
-              spawnCommand.UnitIdToUpgrade = 1747989043 --[[Constants.UNIT_ARCHER_ELF]]
-              return 2 --[[ResearchType.UpgradeUnit]], spawnCommand
+              spawnCommand.UnitId = 1747989045
+              spawnCommand.UnitIdToUpgrade = 1747989043
+              return 2, spawnCommand
             else
-              spawnCommand.UnitId = 1747989047 --[[Constants.UNIT_ARCHER_ELITE_ELF]]
-              spawnCommand.UnitIdToUpgrade = 1747989045 --[[Constants.UNIT_ARCHER_BESERK_ELF]]
-              return 2 --[[ResearchType.UpgradeUnit]], spawnCommand
+              spawnCommand.UnitId = 1747989047
+              spawnCommand.UnitIdToUpgrade = 1747989045
+              return 2, spawnCommand
             end
           until 1
-        elseif default == 1378889795 --[[Constants.UPGRADE_FLIGHT_UNIT_TEAM]] then
+        elseif default == 1378889795 then
           local extern = SourceModels.SpawnUnitCommand()
-          extern.UnitSpawnType = 1 --[[SpawnInterval.Middle]]
-          extern.UnitIdOfBuilding = 1747988789 --[[Constants.UNIT_TREE_OF_ETERNITY_ELF]]
+          extern.UnitSpawnType = 1
+          extern.UnitIdOfBuilding = 1747988789
           spawnCommand = extern
 
           repeat
             local extern = techLevel
             if extern == 1 then
-              spawnCommand.UnitId = 1747989058 --[[Constants.UNIT_HIPPOGRYPH_RIDER_ELF]]
-              spawnCommand.UnitIdToUpgrade = 1747989060 --[[Constants.UNIT_FAERIE_DRAGON_ELF]]
-              return 2 --[[ResearchType.UpgradeUnit]], spawnCommand
+              spawnCommand.UnitId = 1747989058
+              spawnCommand.UnitIdToUpgrade = 1747989060
+              return 2, spawnCommand
             else
-              spawnCommand.UnitId = 1747989049 --[[Constants.UNIT_CHIMAERA_ELF]]
-              spawnCommand.UnitIdToUpgrade = 1747989058 --[[Constants.UNIT_HIPPOGRYPH_RIDER_ELF]]
-              return 2 --[[ResearchType.UpgradeUnit]], spawnCommand
+              spawnCommand.UnitId = 1747989049
+              spawnCommand.UnitIdToUpgrade = 1747989058
+              return 2, spawnCommand
             end
           until 1
-        elseif default == 1378889797 --[[Constants.UPGRADE_MAGE_UNIT_TEAM]] then
+        elseif default == 1378889797 then
           local extern = SourceModels.SpawnUnitCommand()
-          extern.UnitSpawnType = 1 --[[SpawnInterval.Middle]]
-          extern.UnitIdOfBuilding = 1747988789 --[[Constants.UNIT_TREE_OF_ETERNITY_ELF]]
+          extern.UnitSpawnType = 1
+          extern.UnitIdOfBuilding = 1747988789
           spawnCommand = extern
 
           repeat
             local extern = techLevel
             if extern == 1 then
-              spawnCommand.UnitId = 1747989064 --[[Constants.UNIT_WARDEN_ELF]]
-              spawnCommand.UnitIdToUpgrade = 1747989066 --[[Constants.UNIT_DRUID_OF_THE_TALON_ELF]]
-              return 2 --[[ResearchType.UpgradeUnit]], spawnCommand
+              spawnCommand.UnitId = 1747989064
+              spawnCommand.UnitIdToUpgrade = 1747989066
+              return 2, spawnCommand
             else
-              spawnCommand.UnitId = 1747989062 --[[Constants.UNIT_SPIRIT_OF_VENGEANCE_ELF]]
-              spawnCommand.UnitIdToUpgrade = 1747989064 --[[Constants.UNIT_WARDEN_ELF]]
-              return 2 --[[ResearchType.UpgradeUnit]], spawnCommand
+              spawnCommand.UnitId = 1747989062
+              spawnCommand.UnitIdToUpgrade = 1747989064
+              return 2, spawnCommand
             end
           until 1
-        elseif default == 1378889784 --[[Constants.UPGRADE_SIEGE_UNIT_TEAM]] then
+        elseif default == 1378889784 then
           local extern = SourceModels.SpawnUnitCommand()
-          extern.UnitSpawnType = 2 --[[SpawnInterval.Long]]
-          extern.UnitIdOfBuilding = 1747988789 --[[Constants.UNIT_TREE_OF_ETERNITY_ELF]]
+          extern.UnitSpawnType = 2
+          extern.UnitIdOfBuilding = 1747988789
           spawnCommand = extern
 
           repeat
             local extern = techLevel
             if extern == 1 then
-              spawnCommand.UnitId = 1747989070 --[[Constants.UNIT_PRISON_WAGON_ELF]]
-              return 1 --[[ResearchType.AddUnit]], spawnCommand
+              spawnCommand.UnitId = 1747989070
+              return 1, spawnCommand
             else
-              spawnCommand.UnitId = 1747989068 --[[Constants.UNIT_GLAIVE_THROWER_ELF]]
-              spawnCommand.UnitIdToUpgrade = 1747989070 --[[Constants.UNIT_PRISON_WAGON_ELF]]
-              return 2 --[[ResearchType.UpgradeUnit]], spawnCommand
+              spawnCommand.UnitId = 1747989068
+              spawnCommand.UnitIdToUpgrade = 1747989070
+              return 2, spawnCommand
             end
           until 1
         else
           spawnCommand = nil
-          return 0 --[[ResearchType.CommonUpgrade]], spawnCommand
+          return 0, spawnCommand
         end
       until 1
     end
@@ -24440,104 +24465,104 @@ System.namespace("Source.Models.Teams", function (namespace)
     local GetTechType, __ctor__
     __ctor__ = function (this, wc3ComputerPlayer)
       System.base(this).__ctor__(this, Player(0), Areas.HumanBase)
-      this.ColorizedName = "|c" .. System.toString("ffff0000" --[[ConstantsEx.ColorHexCode_Red]]) .. System.toString(GetPlayerName(wc3ComputerPlayer)) .. "|r"
+      this.ColorizedName = "|c" .. System.toString("ffff0000") .. System.toString(GetPlayerName(wc3ComputerPlayer)) .. "|r"
     end
     GetTechType = function (this, techId, techLevel, spawnCommand)
       repeat
         local default = techId
-        if default == 1378889781 --[[Constants.UPGRADE_MELEE_UNIT_TEAM]] then
+        if default == 1378889781 then
           local extern = SourceModels.SpawnUnitCommand()
-          extern.UnitSpawnType = 0 --[[SpawnInterval.Short]]
-          extern.UnitIdOfBuilding = 1747988535 --[[Constants.UNIT_BARRACKS_HUMAN]]
+          extern.UnitSpawnType = 0
+          extern.UnitIdOfBuilding = 1747988535
           spawnCommand = extern
 
           repeat
             local extern = techLevel
             if extern == 1 then
-              spawnCommand.UnitId = 1747988547 --[[Constants.UNIT_CAPTIAN_HUMAN]]
-              spawnCommand.UnitIdToUpgrade = 1747988529 --[[Constants.UNIT_SOLDIER_HUMAN]]
-              return 2 --[[ResearchType.UpgradeUnit]], spawnCommand
+              spawnCommand.UnitId = 1747988547
+              spawnCommand.UnitIdToUpgrade = 1747988529
+              return 2, spawnCommand
             else
-              spawnCommand.UnitId = 1747988546 --[[Constants.UNIT_KNIGHT_HUMAN]]
-              spawnCommand.UnitIdToUpgrade = 1747988547 --[[Constants.UNIT_CAPTIAN_HUMAN]]
-              return 2 --[[ResearchType.UpgradeUnit]], spawnCommand
+              spawnCommand.UnitId = 1747988546
+              spawnCommand.UnitIdToUpgrade = 1747988547
+              return 2, spawnCommand
             end
           until 1
-        elseif default == 1378889785 --[[Constants.UPGRADE_DISTANCE_UNIT_TEAM]] then
+        elseif default == 1378889785 then
           local extern = SourceModels.SpawnUnitCommand()
-          extern.UnitSpawnType = 1 --[[SpawnInterval.Middle]]
-          extern.UnitIdOfBuilding = 1747988535 --[[Constants.UNIT_BARRACKS_HUMAN]]
+          extern.UnitSpawnType = 1
+          extern.UnitIdOfBuilding = 1747988535
           spawnCommand = extern
 
           repeat
             local extern = techLevel
             if extern == 1 then
-              spawnCommand.UnitId = 1747988550 --[[Constants.UNIT_RIFLEMAN_BESERK_HUMAN]]
-              spawnCommand.UnitIdToUpgrade = 1747988530 --[[Constants.UNIT_RIFLEMAN_HUMAN]]
-              return 2 --[[ResearchType.UpgradeUnit]], spawnCommand
+              spawnCommand.UnitId = 1747988550
+              spawnCommand.UnitIdToUpgrade = 1747988530
+              return 2, spawnCommand
             else
-              spawnCommand.UnitId = 1747988551 --[[Constants.UNIT_RIFLEMAN_ELITE_HUMAN]]
-              spawnCommand.UnitIdToUpgrade = 1747988550 --[[Constants.UNIT_RIFLEMAN_BESERK_HUMAN]]
-              return 2 --[[ResearchType.UpgradeUnit]], spawnCommand
+              spawnCommand.UnitId = 1747988551
+              spawnCommand.UnitIdToUpgrade = 1747988550
+              return 2, spawnCommand
             end
           until 1
-        elseif default == 1378889795 --[[Constants.UPGRADE_FLIGHT_UNIT_TEAM]] then
+        elseif default == 1378889795 then
           local extern = SourceModels.SpawnUnitCommand()
-          extern.UnitSpawnType = 1 --[[SpawnInterval.Middle]]
-          extern.UnitIdOfBuilding = 1747988531 --[[Constants.UNIT_CASTLE_HUMAN]]
+          extern.UnitSpawnType = 1
+          extern.UnitIdOfBuilding = 1747988531
           spawnCommand = extern
 
           repeat
             local extern = techLevel
             if extern == 1 then
-              spawnCommand.UnitId = 1747988555 --[[Constants.UNIT_FALCON_RIDER_HUMAN]]
-              spawnCommand.UnitIdToUpgrade = 1747988554 --[[Constants.UNIT_FLYING_MACHINE_HUMAN]]
-              return 2 --[[ResearchType.UpgradeUnit]], spawnCommand
+              spawnCommand.UnitId = 1747988555
+              spawnCommand.UnitIdToUpgrade = 1747988554
+              return 2, spawnCommand
             else
-              spawnCommand.UnitId = 1747988556 --[[Constants.UNIT_GRIFFIN_RIDER_HUMAN]]
-              spawnCommand.UnitIdToUpgrade = 1747988555 --[[Constants.UNIT_FALCON_RIDER_HUMAN]]
-              return 2 --[[ResearchType.UpgradeUnit]], spawnCommand
+              spawnCommand.UnitId = 1747988556
+              spawnCommand.UnitIdToUpgrade = 1747988555
+              return 2, spawnCommand
             end
           until 1
-        elseif default == 1378889797 --[[Constants.UPGRADE_MAGE_UNIT_TEAM]] then
+        elseif default == 1378889797 then
           local extern = SourceModels.SpawnUnitCommand()
-          extern.UnitSpawnType = 1 --[[SpawnInterval.Middle]]
-          extern.UnitIdOfBuilding = 1747988531 --[[Constants.UNIT_CASTLE_HUMAN]]
+          extern.UnitSpawnType = 1
+          extern.UnitIdOfBuilding = 1747988531
           spawnCommand = extern
 
           repeat
             local extern = techLevel
             if extern == 1 then
-              spawnCommand.UnitId = 1747988552 --[[Constants.UNIT_SORCERESS_HUMAN]]
-              spawnCommand.UnitIdToUpgrade = 1747988536 --[[Constants.UNIT_PRIEST_HUMAN]]
-              return 2 --[[ResearchType.UpgradeUnit]], spawnCommand
+              spawnCommand.UnitId = 1747988552
+              spawnCommand.UnitIdToUpgrade = 1747988536
+              return 2, spawnCommand
             else
-              spawnCommand.UnitId = 1747988553 --[[Constants.UNIT_SPELLBREAKER_HUMAN]]
-              spawnCommand.UnitIdToUpgrade = 1747988552 --[[Constants.UNIT_SORCERESS_HUMAN]]
-              return 2 --[[ResearchType.UpgradeUnit]], spawnCommand
+              spawnCommand.UnitId = 1747988553
+              spawnCommand.UnitIdToUpgrade = 1747988552
+              return 2, spawnCommand
             end
           until 1
-        elseif default == 1378889784 --[[Constants.UPGRADE_SIEGE_UNIT_TEAM]] then
+        elseif default == 1378889784 then
           local extern = SourceModels.SpawnUnitCommand()
-          extern.UnitSpawnType = 2 --[[SpawnInterval.Long]]
-          extern.UnitIdOfBuilding = 1747988531 --[[Constants.UNIT_CASTLE_HUMAN]]
+          extern.UnitSpawnType = 2
+          extern.UnitIdOfBuilding = 1747988531
           spawnCommand = extern
 
           repeat
             local extern = techLevel
             if extern == 1 then
-              spawnCommand.UnitId = 1747988549 --[[Constants.UNIT_SIEGE_SQUAD_HUMAN]]
-              return 1 --[[ResearchType.AddUnit]], spawnCommand
+              spawnCommand.UnitId = 1747988549
+              return 1, spawnCommand
             else
-              spawnCommand.UnitId = 1747988563 --[[Constants.UNIT_SIEGE_ENGINE_HUMAN]]
-              spawnCommand.UnitIdToUpgrade = 1747988549 --[[Constants.UNIT_SIEGE_SQUAD_HUMAN]]
-              return 2 --[[ResearchType.UpgradeUnit]], spawnCommand
+              spawnCommand.UnitId = 1747988563
+              spawnCommand.UnitIdToUpgrade = 1747988549
+              return 2, spawnCommand
             end
           until 1
         else
-          -- Einfache Verbeserungen bestehender Einheiten
+
           spawnCommand = nil
-          return 0 --[[ResearchType.CommonUpgrade]], spawnCommand
+          return 0, spawnCommand
         end
       until 1
     end
@@ -24574,103 +24599,103 @@ System.namespace("Source.Models.Teams", function (namespace)
     local GetTechType, __ctor__
     __ctor__ = function (this, wc3ComputerPlayer)
       System.base(this).__ctor__(this, wc3ComputerPlayer, Areas.OrcBase)
-      this.ColorizedName = "|c" .. System.toString("ffffff00" --[[ConstantsEx.ColorHexCode_Yellow]]) .. System.toString(GetPlayerName(wc3ComputerPlayer)) .. "|r"
+      this.ColorizedName = "|c" .. System.toString("ffffff00") .. System.toString(GetPlayerName(wc3ComputerPlayer)) .. "|r"
     end
     GetTechType = function (this, techId, techLevel, spawnCommand)
       repeat
         local default = techId
-        if default == 1378889781 --[[Constants.UPGRADE_MELEE_UNIT_TEAM]] then
+        if default == 1378889781 then
           local extern = SourceModels.SpawnUnitCommand()
-          extern.UnitSpawnType = 0 --[[SpawnInterval.Short]]
-          extern.UnitIdOfBuilding = 1747988569 --[[Constants.UNIT_BARRACKS_ORC]]
+          extern.UnitSpawnType = 0
+          extern.UnitIdOfBuilding = 1747988569
           spawnCommand = extern
 
           repeat
             local extern = techLevel
             if extern == 1 then
-              spawnCommand.UnitId = 1747988810 --[[Constants.UNIT_BESERK_ORC]]
-              spawnCommand.UnitIdToUpgrade = 1747988809 --[[Constants.UNIT_GRUNT_ORC]]
-              return 2 --[[ResearchType.UpgradeUnit]], spawnCommand
+              spawnCommand.UnitId = 1747988810
+              spawnCommand.UnitIdToUpgrade = 1747988809
+              return 2, spawnCommand
             else
-              spawnCommand.UnitId = 1747988811 --[[Constants.UNIT_TAUREN_ORC]]
-              spawnCommand.UnitIdToUpgrade = 1747988810 --[[Constants.UNIT_BESERK_ORC]]
-              return 2 --[[ResearchType.UpgradeUnit]], spawnCommand
+              spawnCommand.UnitId = 1747988811
+              spawnCommand.UnitIdToUpgrade = 1747988810
+              return 2, spawnCommand
             end
           until 1
-        elseif default == 1378889785 --[[Constants.UPGRADE_DISTANCE_UNIT_TEAM]] then
+        elseif default == 1378889785 then
           local extern = SourceModels.SpawnUnitCommand()
-          extern.UnitSpawnType = 1 --[[SpawnInterval.Middle]]
-          extern.UnitIdOfBuilding = 1747988569 --[[Constants.UNIT_BARRACKS_ORC]]
+          extern.UnitSpawnType = 1
+          extern.UnitIdOfBuilding = 1747988569
           spawnCommand = extern
 
           repeat
             local extern = techLevel
             if extern == 1 then
-              spawnCommand.UnitId = 1747988813 --[[Constants.UNIT_HEADHUNTER_BESERK_ORC]]
-              spawnCommand.UnitIdToUpgrade = 1747988812 --[[Constants.UNIT_HEADHUNTER_ORC]]
-              return 2 --[[ResearchType.UpgradeUnit]], spawnCommand
+              spawnCommand.UnitId = 1747988813
+              spawnCommand.UnitIdToUpgrade = 1747988812
+              return 2, spawnCommand
             else
-              spawnCommand.UnitId = 1747988814 --[[Constants.UNIT_HEADHUNTER_ELITE_ORC]]
-              spawnCommand.UnitIdToUpgrade = 1747988813 --[[Constants.UNIT_HEADHUNTER_BESERK_ORC]]
-              return 2 --[[ResearchType.UpgradeUnit]], spawnCommand
+              spawnCommand.UnitId = 1747988814
+              spawnCommand.UnitIdToUpgrade = 1747988813
+              return 2, spawnCommand
             end
           until 1
-        elseif default == 1378889795 --[[Constants.UPGRADE_FLIGHT_UNIT_TEAM]] then
+        elseif default == 1378889795 then
           local extern = SourceModels.SpawnUnitCommand()
-          extern.UnitSpawnType = 1 --[[SpawnInterval.Middle]]
-          extern.UnitIdOfBuilding = 1747988570 --[[Constants.UNIT_FORTRESS_ORC]]
+          extern.UnitSpawnType = 1
+          extern.UnitIdOfBuilding = 1747988570
           spawnCommand = extern
 
           repeat
             local extern = techLevel
             if extern == 1 then
-              spawnCommand.UnitId = 1747988816 --[[Constants.UNIT_WIND_RIDER_ORC]]
-              spawnCommand.UnitIdToUpgrade = 1747988815 --[[Constants.UNIT_BATRIDER_ORC]]
-              return 2 --[[ResearchType.UpgradeUnit]], spawnCommand
+              spawnCommand.UnitId = 1747988816
+              spawnCommand.UnitIdToUpgrade = 1747988815
+              return 2, spawnCommand
             else
-              spawnCommand.UnitId = 1747988817 --[[Constants.UNIT_SPIRIT_WIND_RIDER_ORC]]
-              spawnCommand.UnitIdToUpgrade = 1747988816 --[[Constants.UNIT_WIND_RIDER_ORC]]
-              return 2 --[[ResearchType.UpgradeUnit]], spawnCommand
+              spawnCommand.UnitId = 1747988817
+              spawnCommand.UnitIdToUpgrade = 1747988816
+              return 2, spawnCommand
             end
           until 1
-        elseif default == 1378889797 --[[Constants.UPGRADE_MAGE_UNIT_TEAM]] then
+        elseif default == 1378889797 then
           local extern = SourceModels.SpawnUnitCommand()
-          extern.UnitSpawnType = 1 --[[SpawnInterval.Middle]]
-          extern.UnitIdOfBuilding = 1747988570 --[[Constants.UNIT_FORTRESS_ORC]]
+          extern.UnitSpawnType = 1
+          extern.UnitIdOfBuilding = 1747988570
           spawnCommand = extern
 
           repeat
             local extern = techLevel
             if extern == 1 then
-              spawnCommand.UnitId = 1747988819 --[[Constants.UNIT_SHAMAN_ORC]]
-              spawnCommand.UnitIdToUpgrade = 1747988818 --[[Constants.UNIT_WITCH_DOCTOR_ORC]]
-              return 2 --[[ResearchType.UpgradeUnit]], spawnCommand
+              spawnCommand.UnitId = 1747988819
+              spawnCommand.UnitIdToUpgrade = 1747988818
+              return 2, spawnCommand
             else
-              spawnCommand.UnitId = 1747988820 --[[Constants.UNIT_WARLOCK_ORC]]
-              spawnCommand.UnitIdToUpgrade = 1747988819 --[[Constants.UNIT_SHAMAN_ORC]]
-              return 2 --[[ResearchType.UpgradeUnit]], spawnCommand
+              spawnCommand.UnitId = 1747988820
+              spawnCommand.UnitIdToUpgrade = 1747988819
+              return 2, spawnCommand
             end
           until 1
-        elseif default == 1378889784 --[[Constants.UPGRADE_SIEGE_UNIT_TEAM]] then
+        elseif default == 1378889784 then
           local extern = SourceModels.SpawnUnitCommand()
-          extern.UnitSpawnType = 2 --[[SpawnInterval.Long]]
-          extern.UnitIdOfBuilding = 1747988570 --[[Constants.UNIT_FORTRESS_ORC]]
+          extern.UnitSpawnType = 2
+          extern.UnitIdOfBuilding = 1747988570
           spawnCommand = extern
 
           repeat
             local extern = techLevel
             if extern == 1 then
-              spawnCommand.UnitId = 1747988821 --[[Constants.UNIT_KODO_BEAST_ORC]]
-              return 1 --[[ResearchType.AddUnit]], spawnCommand
+              spawnCommand.UnitId = 1747988821
+              return 1, spawnCommand
             else
-              spawnCommand.UnitId = 1747988822 --[[Constants.UNIT_DEMOLISHER_ORC]]
-              spawnCommand.UnitIdToUpgrade = 1747988821 --[[Constants.UNIT_KODO_BEAST_ORC]]
-              return 2 --[[ResearchType.UpgradeUnit]], spawnCommand
+              spawnCommand.UnitId = 1747988822
+              spawnCommand.UnitIdToUpgrade = 1747988821
+              return 2, spawnCommand
             end
           until 1
         else
           spawnCommand = nil
-          return 0 --[[ResearchType.CommonUpgrade]], spawnCommand
+          return 0, spawnCommand
         end
       until 1
     end
@@ -24707,103 +24732,103 @@ System.namespace("Source.Models.Teams", function (namespace)
     local GetTechType, __ctor__
     __ctor__ = function (this, wc3ComputerPlayer)
       System.base(this).__ctor__(this, wc3ComputerPlayer, Areas.UndeadBase)
-      this.ColorizedName = "|c" .. System.toString("ff800000" --[[ConstantsEx.ColorHexCode_Maroon]]) .. System.toString(GetPlayerName(wc3ComputerPlayer)) .. "|r"
+      this.ColorizedName = "|c" .. System.toString("ff800000") .. System.toString(GetPlayerName(wc3ComputerPlayer)) .. "|r"
     end
     GetTechType = function (this, techId, techLevel, spawnCommand)
       repeat
         local default = techId
-        if default == 1378889781 --[[Constants.UPGRADE_MELEE_UNIT_TEAM]] then
+        if default == 1378889781 then
           local extern = SourceModels.SpawnUnitCommand()
-          extern.UnitSpawnType = 0 --[[SpawnInterval.Short]]
-          extern.UnitIdOfBuilding = 1747988805 --[[Constants.UNIT_CRYPT_UNDEAD]]
+          extern.UnitSpawnType = 0
+          extern.UnitIdOfBuilding = 1747988805
           spawnCommand = extern
 
           repeat
             local extern = techLevel
             if extern == 1 then
-              spawnCommand.UnitId = 1747989040 --[[Constants.UNIT_SKELETON_WARRIOR_UNDEAD]]
-              spawnCommand.UnitIdToUpgrade = 1747988825 --[[Constants.UNIT_GHOUL_UNDEAD]]
-              return 2 --[[ResearchType.UpgradeUnit]], spawnCommand
+              spawnCommand.UnitId = 1747989040
+              spawnCommand.UnitIdToUpgrade = 1747988825
+              return 2, spawnCommand
             else
-              spawnCommand.UnitId = 1747989042 --[[Constants.UNIT_ABOMINATION_UNDEAD]]
-              spawnCommand.UnitIdToUpgrade = 1747989040 --[[Constants.UNIT_SKELETON_WARRIOR_UNDEAD]]
-              return 2 --[[ResearchType.UpgradeUnit]], spawnCommand
+              spawnCommand.UnitId = 1747989042
+              spawnCommand.UnitIdToUpgrade = 1747989040
+              return 2, spawnCommand
             end
           until 1
-        elseif default == 1378889785 --[[Constants.UPGRADE_DISTANCE_UNIT_TEAM]] then
+        elseif default == 1378889785 then
           local extern = SourceModels.SpawnUnitCommand()
-          extern.UnitSpawnType = 1 --[[SpawnInterval.Middle]]
-          extern.UnitIdOfBuilding = 1747988805 --[[Constants.UNIT_CRYPT_UNDEAD]]
+          extern.UnitSpawnType = 1
+          extern.UnitIdOfBuilding = 1747988805
           spawnCommand = extern
 
           repeat
             local extern = techLevel
             if extern == 1 then
-              spawnCommand.UnitId = 1747989046 --[[Constants.UNIT_CRYPT_FIEND_BESERK_UNDEAD]]
-              spawnCommand.UnitIdToUpgrade = 1747989044 --[[Constants.UNIT_CRYPT_FIEND_UNDEAD]]
-              return 2 --[[ResearchType.UpgradeUnit]], spawnCommand
+              spawnCommand.UnitId = 1747989046
+              spawnCommand.UnitIdToUpgrade = 1747989044
+              return 2, spawnCommand
             else
-              spawnCommand.UnitId = 1747989048 --[[Constants.UNIT_CRYPT_FIEND_ELITE_UNDEAD]]
-              spawnCommand.UnitIdToUpgrade = 1747989046 --[[Constants.UNIT_CRYPT_FIEND_BESERK_UNDEAD]]
-              return 2 --[[ResearchType.UpgradeUnit]], spawnCommand
+              spawnCommand.UnitId = 1747989048
+              spawnCommand.UnitIdToUpgrade = 1747989046
+              return 2, spawnCommand
             end
           until 1
-        elseif default == 1378889795 --[[Constants.UPGRADE_FLIGHT_UNIT_TEAM]] then
+        elseif default == 1378889795 then
           local extern = SourceModels.SpawnUnitCommand()
-          extern.UnitSpawnType = 1 --[[SpawnInterval.Middle]]
-          extern.UnitIdOfBuilding = 1747988801 --[[Constants.UNIT_BLACK_CITADEL_UNDEAD]]
+          extern.UnitSpawnType = 1
+          extern.UnitIdOfBuilding = 1747988801
           spawnCommand = extern
 
           repeat
             local extern = techLevel
             if extern == 1 then
-              spawnCommand.UnitId = 1747989059 --[[Constants.UNIT_DESTROYER_UNDEAD]]
-              spawnCommand.UnitIdToUpgrade = 1747989061 --[[Constants.UNIT_GARGOYLE_UNDEAD]]
-              return 2 --[[ResearchType.UpgradeUnit]], spawnCommand
+              spawnCommand.UnitId = 1747989059
+              spawnCommand.UnitIdToUpgrade = 1747989061
+              return 2, spawnCommand
             else
-              spawnCommand.UnitId = 1747989057 --[[Constants.UNIT_FROST_WYRM_UNDEAD]]
-              spawnCommand.UnitIdToUpgrade = 1747989059 --[[Constants.UNIT_DESTROYER_UNDEAD]]
-              return 2 --[[ResearchType.UpgradeUnit]], spawnCommand
+              spawnCommand.UnitId = 1747989057
+              spawnCommand.UnitIdToUpgrade = 1747989059
+              return 2, spawnCommand
             end
           until 1
-        elseif default == 1378889797 --[[Constants.UPGRADE_MAGE_UNIT_TEAM]] then
+        elseif default == 1378889797 then
           local extern = SourceModels.SpawnUnitCommand()
-          extern.UnitSpawnType = 1 --[[SpawnInterval.Middle]]
-          extern.UnitIdOfBuilding = 1747988801 --[[Constants.UNIT_BLACK_CITADEL_UNDEAD]]
+          extern.UnitSpawnType = 1
+          extern.UnitIdOfBuilding = 1747988801
           spawnCommand = extern
 
           repeat
             local extern = techLevel
             if extern == 1 then
-              spawnCommand.UnitId = 1747989065 --[[Constants.UNIT_NECROMANCER_UNDEAD]]
-              spawnCommand.UnitIdToUpgrade = 1747989067 --[[Constants.UNIT_SKELETAL_MAGE_UNDEAD]]
-              return 2 --[[ResearchType.UpgradeUnit]], spawnCommand
+              spawnCommand.UnitId = 1747989065
+              spawnCommand.UnitIdToUpgrade = 1747989067
+              return 2, spawnCommand
             else
-              spawnCommand.UnitId = 1747989063 --[[Constants.UNIT_BANSHEE_UNDEAD]]
-              spawnCommand.UnitIdToUpgrade = 1747989065 --[[Constants.UNIT_NECROMANCER_UNDEAD]]
-              return 2 --[[ResearchType.UpgradeUnit]], spawnCommand
+              spawnCommand.UnitId = 1747989063
+              spawnCommand.UnitIdToUpgrade = 1747989065
+              return 2, spawnCommand
             end
           until 1
-        elseif default == 1378889784 --[[Constants.UPGRADE_SIEGE_UNIT_TEAM]] then
+        elseif default == 1378889784 then
           local extern = SourceModels.SpawnUnitCommand()
-          extern.UnitSpawnType = 2 --[[SpawnInterval.Long]]
-          extern.UnitIdOfBuilding = 1747988801 --[[Constants.UNIT_BLACK_CITADEL_UNDEAD]]
+          extern.UnitSpawnType = 2
+          extern.UnitIdOfBuilding = 1747988801
           spawnCommand = extern
 
           repeat
             local extern = techLevel
             if extern == 1 then
-              spawnCommand.UnitId = 1747989071 --[[Constants.UNIT_OBSIDIAN_STATUE_UNDEAD]]
-              return 1 --[[ResearchType.AddUnit]], spawnCommand
+              spawnCommand.UnitId = 1747989071
+              return 1, spawnCommand
             else
-              spawnCommand.UnitId = 1747989069 --[[Constants.UNIT_MEAT_WAGON_UNDEAD]]
-              spawnCommand.UnitIdToUpgrade = 1747989071 --[[Constants.UNIT_OBSIDIAN_STATUE_UNDEAD]]
-              return 2 --[[ResearchType.UpgradeUnit]], spawnCommand
+              spawnCommand.UnitId = 1747989069
+              spawnCommand.UnitIdToUpgrade = 1747989071
+              return 2, spawnCommand
             end
           until 1
         else
           spawnCommand = nil
-          return 0 --[[ResearchType.CommonUpgrade]], spawnCommand
+          return 0, spawnCommand
         end
       until 1
     end
@@ -24859,7 +24884,7 @@ System.namespace("Source.Statics", function (namespace)
       end)
     end
     CreateLightning = function (caster, target)
-      -- https://www.hiveworkshop.com/threads/beginners-guide-to-lightning-effects.220370/#herp
+
       local lightning = AddLightningEx("AFOD", true, caster.X, caster.Y, 50, target.X, target.Y, 50)
 
       local timer = CreateTimer()
@@ -24913,9 +24938,9 @@ local Arraytimerdialog = System.Array(WCSharpApi.timerdialog)
 System.namespace("WCSharp.Api", function (namespace)
 end)
 System.namespace("WCSharp.Api.Enums", function (namespace)
-  -- <summary>
-  -- Specifies the modifier keys that must be active.
-  -- </summary>
+
+
+
   namespace.enum("MetaKey", function ()
     return {
       None = 0,
@@ -25035,10 +25060,10 @@ System.import(function (out)
   PeriodicDisposableTrigger_1IAura = WCSharpEvents.PeriodicDisposableTrigger_1(WCSharpBuffs.IAura)
 end)
 System.namespace("WCSharp.Buffs", function (namespace)
-  -- <summary>
-  -- Auras constantly apply/refresh a linked <see cref="T:WCSharp.Buffs.Buff" /> on valid targets in range.
-  -- </summary>
-  -- <typeparam name="T">The buff that will be applied by this aura.</typeparam>
+
+
+
+
   namespace.class("Aura_1", function (namespace)
     return function (T)
       local group, getActive, setActive, getCaster, setCaster, getCastingPlayer, setCastingPlayer, getRadius, 
@@ -25050,9 +25075,9 @@ System.namespace("WCSharp.Buffs", function (namespace)
       static = function (this)
         group = CreateGroup()
       end
-      -- <summary>
-      -- Creates a new aura centered around the given caster.
-      -- </summary>
+
+
+
       __ctor__ = function (this, caster)
         this.Caster = caster
         this.CastingPlayer = GetOwningPlayer(caster)
@@ -25117,20 +25142,20 @@ System.namespace("WCSharp.Buffs", function (namespace)
         this.effectScale = value
       end
       getEffect, setEffect = System.property("Effect")
-      -- <inheritdoc />
+
       Apply = function (this)
         if this.effectString ~= nil then
           this.Effect = AddSpecialEffectTarget(this.effectString, this.Caster, this.effectAttachmentPoint)
           BlzSetSpecialEffectScale(this.Effect, this.effectScale)
         end
       end
-      -- <inheritdoc />
+
       Action = function (this)
         if not UnitAlive(this.Caster) then
           this.Active = false
           return
         end
-        if this.SearchIntervalLeft <= 0.03125 --[[1f / 32f]] then
+        if this.SearchIntervalLeft <= 0.03125 then
           this.SearchIntervalLeft = this.SearchInterval
           GroupEnumUnitsInRange(group, GetUnitX(this.Caster), GetUnitY(this.Caster), this.Radius, nil)
           local list = WCSharpSharedExtensions.GroupExtensions.ToList(group)
@@ -25149,7 +25174,7 @@ System.namespace("WCSharp.Buffs", function (namespace)
             end
           end
         else
-          this.SearchIntervalLeft = this.SearchIntervalLeft - (0.03125 --[[1f / 32f]])
+          this.SearchIntervalLeft = this.SearchIntervalLeft - (0.03125)
         end
         for num = #this.activeBuffs - 1, 0, -1 do
           local auraBuffDuration2 = this.activeBuffs:get(num)
@@ -25159,17 +25184,17 @@ System.namespace("WCSharp.Buffs", function (namespace)
             default.Stacks = default.Stacks - 1
             this.activeBuffs:RemoveAt(num)
           else
-            auraBuffDuration2.Duration = auraBuffDuration2.Duration - (0.03125 --[[1f / 32f]])
+            auraBuffDuration2.Duration = auraBuffDuration2.Duration - (0.03125)
           end
         end
       end
-      -- <inheritdoc />
+
       GetActiveBuffs = function (this)
         return Linq.Select(this.activeBuffs, function (x)
           return x.Buff
         end, T)
       end
-      -- <inheritdoc />
+
       Dispose = function (this)
         if this.Effect ~= nil then
           DestroyEffect(this.Effect)
@@ -25256,24 +25281,24 @@ System.namespace("WCSharp.Buffs", function (namespace)
       }
     end
   end)
-  -- <summary>
-  -- This class is identical to <see cref="T:WCSharp.Buffs.BoundBuff" />, except that it implements a default <see cref="M:WCSharp.Buffs.AuraBoundBuff.OnStack(WCSharp.Buffs.Buff)" /> behaviour that better
-  -- matches standard aura behaviour.
-  -- <para>The <see cref="P:WCSharp.Buffs.Buff.Stacks" /> property will be set to the number of aura bearers applying the aura.</para>
-  -- </summary>
+
+
+
+
+
   namespace.class("AuraBoundBuff", function (namespace)
     local OnStack, __ctor__
-    -- <inheritdoc />
+
     __ctor__ = function (this, caster, target)
       System.base(this).__ctor__(this, caster, target)
     end
-    -- <summary>
-    -- Executes whenever this buff receives a new stack via <see cref="M:WCSharp.Buffs.BuffSystem.Add(WCSharp.Buffs.Buff,WCSharp.Buffs.StackBehaviour)" />.
-    -- <para>AuraBoundBuffs will always have their <see cref="P:WCSharp.Buffs.Buff.Stacks" /> property set to the number of aura bearers applying the aura.</para>
-    -- </summary>
+
+
+
+
     OnStack = function (this, newStack)
       this.Stacks = this.Stacks + 1
-      return 1 --[[StackResult.Stack]]
+      return 1
     end
     return {
       base = function (out)
@@ -25294,10 +25319,10 @@ System.namespace("WCSharp.Buffs", function (namespace)
       end
     }
   end)
-  -- <summary>
-  -- Helper class to track the duration of a buff specific to an aura applying it. Used to handle the case of multiple auras applying the same buff to a single unit.
-  -- </summary>
-  -- <typeparam name="T">The specific type of the buff being tracked.</typeparam>
+
+
+
+
   namespace.class("AuraBuffDuration_1", function (namespace)
     return function (T)
       local __ctor__
@@ -25325,31 +25350,31 @@ System.namespace("WCSharp.Buffs", function (namespace)
       }
     end
   end)
-  -- <summary>
-  -- Tracks and runs all active <see cref="T:WCSharp.Buffs.IAura" /> instances.
-  -- </summary>
+
+
+
   namespace.class("AuraSystem", function (namespace)
     local periodicTrigger, getAuras, Add, RegisterForOwnershipChanges, OnUnitTypeChangesOwner, static
     static = function (this)
-      periodicTrigger = PeriodicDisposableTrigger_1IAura(0.03125 --[[1f / 32f]])
+      periodicTrigger = PeriodicDisposableTrigger_1IAura(0.03125)
     end
     getAuras = function ()
       return periodicTrigger:getActions()
     end
-    -- <summary>
-    -- Adds the given <paramref name="aura" /> to the system.
-    -- </summary>
+
+
+
     Add = function (aura)
       aura:Apply()
       periodicTrigger:Add(aura)
     end
-    -- <summary>
-    -- By default, <see cref="P:WCSharp.Buffs.IAura.CastingPlayer" /> is not updated when a unit changes owner.
-    -- <para>This adds an event to pass over all auras and update <see cref="P:WCSharp.Buffs.IAura.CastingPlayer" /> on ownership changes.</para>
-    -- <para>This will ignore ownership changes of unit type 'xxxx' (<see cref="F:WCSharp.Dummies.DummySystem.UNIT_TYPE_DUMMY" />).</para>
-    -- </summary>
+
+
+
+
+
     RegisterForOwnershipChanges = function ()
-      WCSharpEvents.PlayerUnitEvents.Register14(809 --[[UnitTypeEvent.ChangesOwner]], OnUnitTypeChangesOwner)
+      WCSharpEvents.PlayerUnitEvents.Register14(809, OnUnitTypeChangesOwner)
     end
     OnUnitTypeChangesOwner = function ()
       local triggerUnit = GetTriggerUnit()
@@ -25385,17 +25410,17 @@ System.namespace("WCSharp.Buffs", function (namespace)
       end
     }
   end)
-  -- <summary>
-  -- AutoBuffs are buffs which automatically tick for a specified damage/healing amount.
-  -- <para>If automatic damage/healing is not required, it is recommended to use <see cref="T:WCSharp.Buffs.TickingBuff" /> instead.</para>
-  -- </summary>
+
+
+
+
   namespace.class("AutoBuff", function (namespace)
     local Apply, Action, OnTick, Dispose, __ctor__
-    -- <inheritdoc />
+
     __ctor__ = function (this, caster, target)
       System.base(this).__ctor__(this, caster, target)
     end
-    -- <inheritdoc />
+
     Apply = function (this)
       if this.effectString ~= nil then
         this.Effect = AddSpecialEffectTarget(this.effectString, this.Target, this.effectAttachmentPoint)
@@ -25407,10 +25432,10 @@ System.namespace("WCSharp.Buffs", function (namespace)
       this.IntervalLeft = this.Interval
       this:OnApply()
     end
-    -- <inheritdoc />
+
     Action = function (this)
       if this.Interval > 0 then
-        while this.IntervalLeft <= 0.03125 --[[1f / 32f]] do
+        while this.IntervalLeft <= 0.03125 do
           this.IntervalLeft = this.IntervalLeft + this.Interval
           OnTick(this)
           if this.Active then
@@ -25428,22 +25453,22 @@ System.namespace("WCSharp.Buffs", function (namespace)
             end
           end
         end
-        this.IntervalLeft = this.IntervalLeft - (0.03125 --[[1f / 32f]])
+        this.IntervalLeft = this.IntervalLeft - (0.03125)
       end
-      if this.Duration <= 0.03125 --[[1f / 32f]] then
+      if this.Duration <= 0.03125 then
         this.Active = false
         this:OnExpire()
       else
-        this.Duration = this.Duration - (0.03125 --[[1f / 32f]])
+        this.Duration = this.Duration - (0.03125)
       end
     end
-    -- <summary>
-    -- Executes every <see cref="P:WCSharp.Buffs.AutoBuff.Interval" />.
-    -- <para>This is called BEFORE the automatic damage/healing occurs.</para>
-    -- </summary>
+
+
+
+
     OnTick = function (this)
     end
-    -- <inheritdoc />
+
     Dispose = function (this)
       this:OnDispose()
       if this.Effect ~= nil then
@@ -25486,25 +25511,25 @@ System.namespace("WCSharp.Buffs", function (namespace)
       end
     }
   end)
-  -- <summary>
-  -- BoundBuffs have additional logic for binding the buff to an in-game buff with support of the <see cref="T:WCSharp.Dummies.DummySystem" />.
-  -- <para>As a result, this buff works a little differently, and you should read the wiki in order to see how you should handle these buffs.</para>
-  -- </summary>
+
+
+
+
   namespace.class("BoundBuff", function (namespace)
     local Bind, Bind1, Apply, Action, OnTick, OnStack, Dispose, class, 
     __ctor__
-    -- <inheritdoc />
+
     __ctor__ = function (this, caster, target)
       WCSharpBuffs.Buff.__ctor__(this, caster, target)
     end
-    -- <summary>
-    -- Will use the <see cref="T:WCSharp.Dummies.DummySystem" /> to cast the given buffing ability on the target and then track it to synchronise removal.
-    -- </summary>
-    -- <param name="abilityId">The ability ID which applies the buff that should be tracked</param>
-    -- <param name="buffId">The buff ID to track</param>
-    -- <param name="orderId">The order ID of the ability to cast</param>
-    -- <param name="level">The level of the ability to cast</param>
-    -- <param name="dummyPlayer">Who the owner of the dummy should be set to, defaults to Neutral Passive</param>
+
+
+
+
+
+
+
+
     Bind = function (this, abilityId, buffId, orderId, level, dummyPlayer)
       if dummyPlayer == nil then
         dummyPlayer = Player(PLAYER_NEUTRAL_PASSIVE)
@@ -25519,13 +25544,13 @@ System.namespace("WCSharp.Buffs", function (namespace)
       WCSharpDummies.DummySystem.RecycleDummy(dummy, 2)
       this.buffId = buffId
     end
-    -- <summary>
-    -- Will add the given aura to the unit if necessary and set its level accordingly. The aura will automatically be hidden from the command UI
-    -- and removed when the buff is removed.
-    -- </summary>
-    -- <param name="auraId"></param>
-    -- <param name="buffId"></param>
-    -- <param name="level"></param>
+
+
+
+
+
+
+
     Bind1 = function (this, auraId, buffId, level)
       if GetUnitAbilityLevel(this.Target, auraId) == 0 then
         UnitAddAbility(this.Target, auraId)
@@ -25535,7 +25560,7 @@ System.namespace("WCSharp.Buffs", function (namespace)
       this.auraId = auraId
       this.buffId = buffId
     end
-    -- <inheritdoc />
+
     Apply = function (this)
       if this.effectString ~= nil then
         this.Effect = AddSpecialEffectTarget(this.effectString, this.Target, this.effectAttachmentPoint)
@@ -25547,7 +25572,7 @@ System.namespace("WCSharp.Buffs", function (namespace)
       this.IntervalLeft = this.Interval
       this:OnApply()
     end
-    -- <inheritdoc />
+
     Action = function (this)
       if this.BindLeeway <= 0 then
         if GetUnitAbilityLevel(this.Target, this.buffId) == 0 then
@@ -25558,32 +25583,32 @@ System.namespace("WCSharp.Buffs", function (namespace)
         this.BindLeeway = this.BindLeeway - 1
       end
       if this.Interval > 0 then
-        while this.IntervalLeft <= 0.03125 --[[1f / 32f]] do
+        while this.IntervalLeft <= 0.03125 do
           this.IntervalLeft = this.IntervalLeft + this.Interval
           this:OnTick()
         end
-        this.IntervalLeft = this.IntervalLeft - (0.03125 --[[1f / 32f]])
+        this.IntervalLeft = this.IntervalLeft - (0.03125)
       end
-      if this.Duration <= 0.03125 --[[1f / 32f]] then
+      if this.Duration <= 0.03125 then
         this.Active = false
         this:OnExpire()
       else
-        this.Duration = this.Duration - (0.03125 --[[1f / 32f]])
+        this.Duration = this.Duration - (0.03125)
       end
     end
-    -- <summary>
-    -- Executes every <see cref="P:WCSharp.Buffs.BoundBuff.Interval" />.
-    -- </summary>
+
+
+
     OnTick = function (this)
     end
-    -- <summary>
-    -- Executes whenever this buff receives a new stack via <see cref="M:WCSharp.Buffs.BuffSystem.Add(WCSharp.Buffs.Buff,WCSharp.Buffs.StackBehaviour)" />.
-    -- <para>By default, BoundBuff will return <see cref="F:WCSharp.Buffs.StackResult.Consume" />.</para>
-    -- </summary>
+
+
+
+
     OnStack = function (this, newStack)
-      return 2 --[[StackResult.Consume]]
+      return 2
     end
-    -- <inheritdoc />
+
     Dispose = function (this)
       this:OnDispose()
       if this.Effect ~= nil then
@@ -25649,16 +25674,16 @@ System.namespace("WCSharp.Buffs", function (namespace)
     }
     return class
   end)
-  -- <summary>
-  -- The most basic buff implementation, with almost all logic undefined.
-  -- <para>It is recommended to use one of the more concrete types instead, such as <see cref="T:WCSharp.Buffs.PassiveBuff" />.</para>
-  -- </summary>
+
+
+
+
   namespace.class("Buff", function (namespace)
     local getEffectString, setEffectString, getEffectAttachmentPoint, setEffectAttachmentPoint, getEffectScale, setEffectScale, OnApply, OnStack, 
     OnDeath, OnDispel, OnDispose, OnExpire, RemoveInstantly, class, __ctor__
-    -- <summary>
-    -- Will set Caster, CastingPlayer, Target and TargetPlayer accordingly.
-    -- </summary>
+
+
+
     __ctor__ = function (this, caster, target)
       this.BuffTypes = ListString()
       this.Caster = caster
@@ -25720,52 +25745,52 @@ System.namespace("WCSharp.Buffs", function (namespace)
       end
       this.effectScale = value
     end
-    -- <summary>
-    -- Executes immediately upon application of the buff.
-    -- </summary>
+
+
+
     OnApply = function (this)
     end
-    -- <summary>
-    -- Executes whenever this buff receives a new stack via <see cref="M:WCSharp.Buffs.BuffSystem.Add(WCSharp.Buffs.Buff,WCSharp.Buffs.StackBehaviour)" />.
-    -- <para>By default, the stacks of <paramref name="newStack" /> are added to this buff and <see cref="F:WCSharp.Buffs.StackResult.Stack" /> is returned.</para>
-    -- </summary>
+
+
+
+
     OnStack = function (this, newStack)
       this.Stacks = this.Stacks + newStack.Stacks
       this.Duration = math.Max(this.Duration, newStack.Duration)
-      return 1 --[[StackResult.Stack]]
+      return 1
     end
-    -- <summary>
-    -- Executes immediately after <see cref="P:WCSharp.Buffs.Buff.Target" /> dies.
-    -- <para>Note: <paramref name="killingBlow" /> will be true if the unit dies while the buffs actions are being evaluated.
-    -- It may not be directly responsible for the death due to asynchronous events.</para>
-    -- </summary>
-    -- <param name="killingBlow"></param>
-    -- <returns></returns>
+
+
+
+
+
+
+
     OnDeath = function (this, killingBlow)
     end
-    -- <summary>
-    -- Executes when an attempt is made to dispel the target. Return the number of dispel charges consmed.
-    -- <para>If after this method is called the Stacks is at 0, the buff is automatically disposed.</para>
-    -- </summary>
+
+
+
+
     OnDispel = function (this, dispeller, dispelCharges)
       local num = math.Min(this.Stacks, dispelCharges)
       this.Stacks = this.Stacks - num
       return num
     end
-    -- <summary>
-    -- Executes when the buff is removed for any reason whatsoever.
-    -- </summary>
+
+
+
     OnDispose = function (this)
     end
-    -- <summary>
-    -- Executes when the buff expires by reaching the end of its duration. Does not trigger when the buff is removed via a dispel or target dies.
-    -- </summary>
+
+
+
     OnExpire = function (this)
     end
-    -- <summary>
-    -- Will instantly remove this buff from the unit, including calling <see cref="M:WCSharp.Buffs.Buff.OnDispose" /> and any other relevant steps.
-    -- <para>It's recommended to just set <see cref="P:WCSharp.Buffs.Buff.Active" /> to false unless the removal should not be delayed for some reason.</para>
-    -- </summary>
+
+
+
+
     RemoveInstantly = function (this)
       if this.Active then
         this.Active = false
@@ -25834,9 +25859,9 @@ System.namespace("WCSharp.Buffs", function (namespace)
     }
     return class
   end)
-  -- <summary>
-  -- Tracks and runs all active <see cref="T:WCSharp.Buffs.Buff" /> instances.
-  -- </summary>
+
+
+
   namespace.class("BuffSystem", function (namespace)
     local buffs, buffsByUnit, index, size, getBuffs, Action, OnDeath, Add, 
     Remove, RegisterForOwnershipChanges, OnUnitTypeChangesOwner, GetBuffsOnUnit, Dispel, Dispel1, Dispel2, Dispel3, 
@@ -25844,7 +25869,7 @@ System.namespace("WCSharp.Buffs", function (namespace)
     static = function (this)
       buffs = ListBuff()
       buffsByUnit = DictunitListBuff()
-      WCSharpEvents.PlayerUnitEvents.Register14(813 --[[UnitTypeEvent.Dies]], OnDeath)
+      WCSharpEvents.PlayerUnitEvents.Register14(813, OnDeath)
       WCSharpEvents.PeriodicEvents.AddPeriodicEvent(Action, 0.03125)
     end
     index = 0
@@ -25901,10 +25926,10 @@ System.namespace("WCSharp.Buffs", function (namespace)
         end
       end
     end
-    -- <summary>
-    -- Adds the given <paramref name="buff" /> to the system. If addition is successful, will invoke <see cref="M:WCSharp.Buffs.Buff.OnApply" />.
-    -- </summary>
-    -- <returns>The buff that was applied, or the buff whose stacks were added to.</returns>
+
+
+
+
     Add = function (buff, stackBehaviour)
       local default, value = buffsByUnit:TryGetValue(buff.Target, nil)
       if default then
@@ -25912,12 +25937,12 @@ System.namespace("WCSharp.Buffs", function (namespace)
           local type = System.ObjectGetType(buff)
           for i = 0, #value - 1 do
             local buff2 = value:get(i)
-            if buff2.Active and System.ObjectGetType(buff2) == type and (stackBehaviour == 1 --[[StackBehaviour.Stack]] or (stackBehaviour == 2 --[[StackBehaviour.StackCaster]] and buff.Caster == buff2.Caster) or buff.CastingPlayer == buff2.CastingPlayer) then
+            if buff2.Active and System.ObjectGetType(buff2) == type and (stackBehaviour == 1 or (stackBehaviour == 2 and buff.Caster == buff2.Caster) or buff.CastingPlayer == buff2.CastingPlayer) then
               repeat
                 local extern = buff2:OnStack(buff)
-                if extern == 1 --[[StackResult.Stack]] then
+                if extern == 1 then
                   return buff2
-                elseif extern == 2 --[[StackResult.Consume]] then
+                elseif extern == 2 then
                   buff2.Active = false
                   break
                 end
@@ -25946,13 +25971,13 @@ System.namespace("WCSharp.Buffs", function (namespace)
         end
       end
     end
-    -- <summary>
-    -- By default, <see cref="P:WCSharp.Buffs.Buff.CastingPlayer" /> and <see cref="P:WCSharp.Buffs.Buff.TargetPlayer" /> are not updated when a unit changes owner.
-    -- <para>This adds an event to pass over all auras and update <see cref="P:WCSharp.Buffs.Buff.CastingPlayer" /> and <see cref="P:WCSharp.Buffs.Buff.TargetPlayer" /> on ownership changes.</para>
-    -- <para>This will ignore ownership changes of unit type 'xxxx' (<see cref="F:WCSharp.Dummies.DummySystem.UNIT_TYPE_DUMMY" />).</para>
-    -- </summary>
+
+
+
+
+
     RegisterForOwnershipChanges = function ()
-      WCSharpEvents.PlayerUnitEvents.Register14(809 --[[UnitTypeEvent.ChangesOwner]], OnUnitTypeChangesOwner)
+      WCSharpEvents.PlayerUnitEvents.Register14(809, OnUnitTypeChangesOwner)
     end
     OnUnitTypeChangesOwner = function ()
       local triggerUnit = GetTriggerUnit()
@@ -25970,9 +25995,9 @@ System.namespace("WCSharp.Buffs", function (namespace)
         buffsOnUnit:get(j).TargetPlayer = owningPlayer
       end
     end
-    -- <summary>
-    -- Uses a dictionary to quickly find all buffs attached to the given unit.
-    -- </summary>
+
+
+
     GetBuffsOnUnit = function (unit)
       local default, value = buffsByUnit:TryGetValue(unit, nil)
       if not default then
@@ -25982,14 +26007,14 @@ System.namespace("WCSharp.Buffs", function (namespace)
         return x.Active
       end))
     end
-    -- <summary>
-    -- Attempts to dispel buffs from the target. Buff types are ignored.
-    -- </summary>
-    -- <param name="target">The target to dispel from.</param>
-    -- <param name="dispeller">The caster of the dispel effect.</param>
-    -- <param name="isBeneficial">Whether to dispel beneficial or detrimental buffs.</param>
-    -- <param name="dispelAmount">The maximum number of buffs to dispel.</param>
-    -- <returns>All dispels.</returns>
+
+
+
+
+
+
+
+
     Dispel = function (target, dispeller, isBeneficial, dispelAmount)
       local list = ListDispel()
       local buffsOnUnit = GetBuffsOnUnit(target)
@@ -26010,15 +26035,15 @@ System.namespace("WCSharp.Buffs", function (namespace)
       end
       return list
     end
-    -- <summary>
-    -- Attempts to dispel buffs from the target with the given dispel type.
-    -- </summary>
-    -- <param name="target">The target to dispel from.</param>
-    -- <param name="dispeller">The caster of the dispel effect.</param>
-    -- <param name="isBeneficial">Whether to dispel beneficial or detrimental buffs.</param>
-    -- <param name="dispelAmount">The maximum number of buffs to dispel.</param>
-    -- <param name="dispelType">The type of buffs that can be dispelled.</param>
-    -- <returns>All dispels.</returns>
+
+
+
+
+
+
+
+
+
     Dispel1 = function (target, dispeller, isBeneficial, dispelAmount, dispelType)
       local list = ListDispel()
       local buffsOnUnit = GetBuffsOnUnit(target)
@@ -26039,15 +26064,15 @@ System.namespace("WCSharp.Buffs", function (namespace)
       end
       return list
     end
-    -- <summary>
-    -- Attempts to dispel buffs with any of the given dispel types.
-    -- </summary>
-    -- <param name="target">The target to dispel from.</param>
-    -- <param name="dispeller">The caster of the dispel effect.</param>
-    -- <param name="isBeneficial">Whether to dispel beneficial or detrimental buffs.</param>
-    -- <param name="dispelAmount">The maximum number of buffs to dispel.</param>
-    -- <param name="dispelTypes">The buff types that can be dispelled.</param>
-    -- <returns>All dispels.</returns>
+
+
+
+
+
+
+
+
+
     Dispel2 = function (target, dispeller, isBeneficial, dispelAmount, dispelTypes)
       local list = ListDispel()
       local buffsOnUnit = GetBuffsOnUnit(target)
@@ -26070,16 +26095,16 @@ System.namespace("WCSharp.Buffs", function (namespace)
       end
       return list
     end
-    -- <summary>
-    -- For more complex buff hierarchies. Attempts to dispel buffs with any of the given dispel types, unless it has an excluded type.
-    -- </summary>
-    -- <param name="target">The target to dispel from.</param>
-    -- <param name="dispeller">The caster of the dispel effect.</param>
-    -- <param name="isBeneficial">Whether to dispel beneficial or detrimental buffs.</param>
-    -- <param name="dispelAmount">The maximum number of buffs to dispel.</param>
-    -- <param name="dispelTypes">The buff types that can be dispelled.</param>
-    -- <param name="exclusions">Will not dispel buffs with any of the given exclusion types.</param>
-    -- <returns>All dispels.</returns>
+
+
+
+
+
+
+
+
+
+
     Dispel3 = function (target, dispeller, isBeneficial, dispelAmount, dispelTypes, exclusions)
       local list = ListDispel()
       local buffsOnUnit = GetBuffsOnUnit(target)
@@ -26144,9 +26169,9 @@ System.namespace("WCSharp.Buffs", function (namespace)
       end
     }
   end)
-  -- <summary>
-  -- Represents a dispel attempt on a buff. Will be returned even if the dispel was resisted (i.e. no stacks were dispelled).
-  -- </summary>
+
+
+
   namespace.class("Dispel", function (namespace)
     local __ctor__
     __ctor__ = function (this, buff, dispelChargesConsumed, buffStacksDispelled)
@@ -26176,9 +26201,9 @@ System.namespace("WCSharp.Buffs", function (namespace)
       end
     }
   end)
-  -- <summary>
-  -- Backing interface for auras, since different auras can otherwise not be stored in a generic way.
-  -- </summary>
+
+
+
   namespace.interface("IAura", function ()
     return {
       base = function (out)
@@ -26193,16 +26218,16 @@ System.namespace("WCSharp.Buffs", function (namespace)
       end
     }
   end)
-  -- <summary>
-  -- A very basic buff implementation that simply applies and removes itself according to its duration.
-  -- </summary>
+
+
+
   namespace.class("PassiveBuff", function (namespace)
     local Apply, Action, Dispose, __ctor__
-    -- <inheritdoc />
+
     __ctor__ = function (this, caster, target)
       System.base(this).__ctor__(this, caster, target)
     end
-    -- <inheritdoc />
+
     Apply = function (this)
       if this.effectString ~= nil then
         this.Effect = AddSpecialEffectTarget(this.effectString, this.Target, this.effectAttachmentPoint)
@@ -26213,16 +26238,16 @@ System.namespace("WCSharp.Buffs", function (namespace)
       this.Disposed = false
       this:OnApply()
     end
-    -- <inheritdoc />
+
     Action = function (this)
-      if this.Duration <= 0.03125 --[[1f / 32f]] then
+      if this.Duration <= 0.03125 then
         this.Active = false
         this:OnExpire()
       else
-        this.Duration = this.Duration - (0.03125 --[[1f / 32f]])
+        this.Duration = this.Duration - (0.03125)
       end
     end
-    -- <inheritdoc />
+
     Dispose = function (this)
       this:OnDispose()
       if this.Effect ~= nil then
@@ -26253,15 +26278,15 @@ System.namespace("WCSharp.Buffs", function (namespace)
       end
     }
   end)
-  -- <summary>
-  -- A specialized buff for handling multiple underlying buffs, each with their own duration. The buff will tick only once, but the durations of all underlying buffs are managed individually.
-  -- </summary>
-  -- <typeparam name="T">This should be the type implementing this abstract.</typeparam>
+
+
+
+
   namespace.class("RollingBuff_1", function (namespace)
     return function (T)
       local getBuffs, OnStack, Apply, Action, OnExpireStack, OnTick, Dispose, __ctor__
       local ListT = System.List(T)
-      -- <inheritdoc />
+
       __ctor__ = function (this, caster, target)
         System.base(this).__ctor__(this, caster, target)
         this.buffs = ListT()
@@ -26269,17 +26294,17 @@ System.namespace("WCSharp.Buffs", function (namespace)
       getBuffs = function (this)
         return this.buffs
       end
-      -- <summary>
-      -- Executes whenever this buff receives a new stack via <see cref="M:WCSharp.Buffs.BuffSystem.Add(WCSharp.Buffs.Buff,WCSharp.Buffs.StackBehaviour)" />.
-      -- When overriding this method, you should always invoke base.OnStack(newStack).
-      -- </summary>
+
+
+
+
       OnStack = function (this, newStack)
         local val = System.cast(T, newStack)
         this.buffs:Add(val)
         this.Stacks = this.Stacks + val.Stacks
-        return 1 --[[StackResult.Stack]]
+        return 1
       end
-      -- <inheritdoc />
+
       Apply = function (this)
         if this.effectString ~= nil then
           this.Effect = AddSpecialEffectTarget(this.effectString, this.Target, this.effectAttachmentPoint)
@@ -26292,17 +26317,17 @@ System.namespace("WCSharp.Buffs", function (namespace)
         this.buffs:Add(System.cast(T, this))
         this:OnApply()
       end
-      -- <inheritdoc />
+
       Action = function (this)
         if this.Interval > 0 then
-          while this.IntervalLeft <= 0.03125 --[[1f / 32f]] do
+          while this.IntervalLeft <= 0.03125 do
             this.IntervalLeft = this.Interval
             OnTick(this)
           end
         end
-        this.IntervalLeft = this.IntervalLeft - (0.03125 --[[1f / 32f]])
+        this.IntervalLeft = this.IntervalLeft - (0.03125)
         WCSharpSharedExtensions.IListExtensions.IterateWithRemoval(this.buffs, function (x)
-          if x.Duration <= 0.03125 --[[1f / 32f]] then
+          if x.Duration <= 0.03125 then
             this.Stacks = this.Stacks - x.Stacks
             OnExpireStack(this, x)
             x:OnExpire()
@@ -26310,7 +26335,7 @@ System.namespace("WCSharp.Buffs", function (namespace)
             return false
           end
           local val = x
-          val.Duration = x.Duration - 0.03125 --[[1f / 32f]]
+          val.Duration = x.Duration - 0.03125
           return true
         end, T)
         if #this.buffs == 0 then
@@ -26322,18 +26347,18 @@ System.namespace("WCSharp.Buffs", function (namespace)
           end, System.Single)
         end
       end
-      -- <summary>
-      -- Executes whenever a stack expires (executed from the main stack).
-      -- </summary>
-      -- <param name="expiredStack">The stack that expired.</param>
+
+
+
+
       OnExpireStack = function (this, expiredStack)
       end
-      -- <summary>
-      -- Executes every <see cref="P:WCSharp.Buffs.RollingBuff`1.Interval" />.
-      -- </summary>
+
+
+
       OnTick = function (this)
       end
-      -- <inheritdoc />
+
       Dispose = function (this)
         this:OnDispose()
         if this.Effect ~= nil then
@@ -26384,9 +26409,9 @@ System.namespace("WCSharp.Buffs", function (namespace)
       }
     end
   end)
-  -- <summary>
-  -- An enum to indicate how buffs should be stacked.
-  -- </summary>
+
+
+
   namespace.enum("StackBehaviour", function ()
     return {
       None = 0,
@@ -26406,9 +26431,9 @@ System.namespace("WCSharp.Buffs", function (namespace)
       end
     }
   end)
-  -- <summary>
-  -- An enum to indicate how the buffs were stacked.
-  -- </summary>
+
+
+
   namespace.enum("StackResult", function ()
     return {
       Reject = 0,
@@ -26426,17 +26451,17 @@ System.namespace("WCSharp.Buffs", function (namespace)
       end
     }
   end)
-  -- <summary>
-  -- A simple buff that only adds a ticking behaviour, allowing an action to be performed every interval.
-  -- If you simply want to damage/heal every tick, you can use <see cref="T:WCSharp.Buffs.AutoBuff" /> instead to simplify the process.
-  -- </summary>
+
+
+
+
   namespace.class("TickingBuff", function (namespace)
     local Apply, Action, Dispose, __ctor__
-    -- <inheritdoc />
+
     __ctor__ = function (this, caster, target)
       System.base(this).__ctor__(this, caster, target)
     end
-    -- <inheritdoc />
+
     Apply = function (this)
       if this.effectString ~= nil then
         this.Effect = AddSpecialEffectTarget(this.effectString, this.Target, this.effectAttachmentPoint)
@@ -26448,23 +26473,23 @@ System.namespace("WCSharp.Buffs", function (namespace)
       this.IntervalLeft = this.Interval
       this:OnApply()
     end
-    -- <inheritdoc />
+
     Action = function (this)
       if this.Interval > 0 then
-        while this.IntervalLeft <= 0.03125 --[[1f / 32f]] do
+        while this.IntervalLeft <= 0.03125 do
           this.IntervalLeft = this.IntervalLeft + this.Interval
           OnTick(this)
         end
       end
-      this.IntervalLeft = this.IntervalLeft - (0.03125 --[[1f / 32f]])
-      if this.Duration <= 0.03125 --[[1f / 32f]] then
+      this.IntervalLeft = this.IntervalLeft - (0.03125)
+      if this.Duration <= 0.03125 then
         this.Active = false
         this:OnExpire()
       else
-        this.Duration = this.Duration - (0.03125 --[[1f / 32f]])
+        this.Duration = this.Duration - (0.03125)
       end
     end
-    -- <inheritdoc />
+
     Dispose = function (this)
       this:OnDispose()
       if this.Effect ~= nil then
@@ -26538,9 +26563,9 @@ System.namespace("WCSharp.DateTime", function (namespace)
       end
     }
   end)
-  -- <summary>
-  -- Defines a number of different methods by which a synchronised <see cref="T:WCSharp.DateTime.WcDateTime" /> can be calculated.
-  -- </summary>
+
+
+
   namespace.enum("DateTimeSyncMethod", function ()
     return {
       Earliest = 0,
@@ -26582,11 +26607,11 @@ System.namespace("WCSharp.DateTime", function (namespace)
       end) then
         local default
         local extern = this.method
-        if extern == 0 --[[DateTimeSyncMethod.Earliest]] then
+        if extern == 0 then
           default = ResolveEarliest(this)
-        elseif extern == 1 --[[DateTimeSyncMethod.Latest]] then
+        elseif extern == 1 then
           default = ResolveLatest(this)
-        elseif extern == 2 --[[DateTimeSyncMethod.Average]] then
+        elseif extern == 2 then
           default = ResolveAverage(this)
         else
           default = ResolveBestFit(this)
@@ -26668,9 +26693,9 @@ System.namespace("WCSharp.DateTime", function (namespace)
       end
     }
   end)
-  -- <summary>
-  -- Represents an instant in time, with a precision in seconds.
-  -- </summary>
+
+
+
   namespace.class("WcDateTime", function (namespace)
     local daysToMonth365, daysToMonth366, baseTime, offsetByMethod, getSecond, getMinute, getHour, getDay, 
     getMonth, getYear, getDayOfWeek, getDayOfYear, getDate, getTimeOfDay, getZero, getMinValue, 
@@ -26704,35 +26729,35 @@ System.namespace("WCSharp.DateTime", function (namespace)
       daysToMonth366 = ArrayInt32 { 0, 31, 60, 91, 121, 152, 182, 213, 244, 274, 305, 335, 366 }
       offsetByMethod = DictInt32Int32()
     end
-    -- <summary>
-    -- Creates a new <see cref="T:WCSharp.DateTime.WcDateTime" /> with the given number of seconds since January 1st, 1970, 00:00:00.
-    -- </summary>
-    -- <param name="seconds"></param>
+
+
+
+
     __ctor1__ = function (this, seconds)
       this.TotalSeconds = seconds
     end
-    -- <summary>
-    -- Creates a new <see cref="T:WCSharp.DateTime.WcDateTime" /> with the given year, month and day.
-    -- <para>The given date must be between January 1st, 1970, 00:00:00 and January 19, 2038, 03:14:07.</para>
-    -- </summary>
-    -- <param name="year">The year. Must be between 1970 and 2038.</param>
-    -- <param name="month">The month of the year. Must be between 1 and 12.</param>
-    -- <param name="day">The day of the month.</param>
+
+
+
+
+
+
+
     __ctor2__ = function (this, year, month, day)
       this.TotalSeconds = GetSeconds(year, month, day, 0, 0, 0)
     end
     __ctor3__ = function (this, table)
       this.TotalSeconds = GetSeconds(System.cast(System.Int32, table:get("year")), System.cast(System.Int32, table:get("month")), System.cast(System.Int32, table:get("day")), System.cast(System.Int32, table:get("hour")), System.cast(System.Int32, table:get("min")), System.cast(System.Int32, table:get("sec")))
     end
-    -- <summary>
-    -- 
-    -- </summary>
-    -- <param name="year">The year. Must be between 1970 and 2038.</param>
-    -- <param name="month">The month of the year. Must be between 1 and 12.</param>
-    -- <param name="day">The day of the month.</param>
-    -- <param name="hour">The hour of the day. Must be between 0 and 23.</param>
-    -- <param name="minute">The minute of the hour. Must be between 0 and 59.</param>
-    -- <param name="second">The second of the minute. Must be between 0 and 59.</param>
+
+
+
+
+
+
+
+
+
     __ctor4__ = function (this, year, month, day, hour, minute, second)
       this.TotalSeconds = GetSeconds(year, month, day, hour, minute, second)
     end
@@ -26747,13 +26772,13 @@ System.namespace("WCSharp.DateTime", function (namespace)
       return System.div(System.mod(this.TotalSeconds, 86400), 3600)
     end
     getDay = function (this)
-      return GetDatePart(this, 3 --[[DatePart.Day]])
+      return GetDatePart(this, 3)
     end
     getMonth = function (this)
-      return GetDatePart(this, 2 --[[DatePart.Month]])
+      return GetDatePart(this, 2)
     end
     getYear = function (this)
-      return GetDatePart(this, 0 --[[DatePart.Year]])
+      return GetDatePart(this, 0)
     end
     getDayOfWeek = function (this)
       local num = System.mod(System.div(this.TotalSeconds, 86400), 7)
@@ -26763,7 +26788,7 @@ System.namespace("WCSharp.DateTime", function (namespace)
       return (System.mod((num + 4), 7))
     end
     getDayOfYear = function (this)
-      return GetDatePart(this, 1 --[[DatePart.DayOfYear]]) + 1
+      return GetDatePart(this, 1) + 1
     end
     getDate = function (this)
       local year, month, day = GetDatePart1(this)
@@ -26776,10 +26801,10 @@ System.namespace("WCSharp.DateTime", function (namespace)
       return class(0)
     end
     getMinValue = function ()
-      return class(-2147483648 --[[Int32.MinValue]])
+      return class(-2147483648)
     end
     getMaxValue = function ()
-      return class(2147483647 --[[Int32.MaxValue]])
+      return class(2147483647)
     end
     getLocalTime = function ()
       return System.new(class, 3, WCSharpShared.LuaTable(os.date("*t")))
@@ -26819,69 +26844,69 @@ System.namespace("WCSharp.DateTime", function (namespace)
       end
       return num + array:get(month - 1) * 86400 + (day - 1) * 86400 + hour * 3600 + minute * 60 + second
     end
-    -- <summary>
-    -- Returns a new <see cref="T:WCSharp.DateTime.WcDateTime" /> that is equal to <paramref name="a" /> plus the number of seconds in <paramref name="b" />.
-    -- </summary>
+
+
+
     op_Addition = function (a, b)
       return class(a.TotalSeconds + b.seconds)
     end
-    -- <summary>
-    -- Returns a new <see cref="T:WCSharp.DateTime.WcDateTime" /> that is equal to <paramref name="a" /> minus the number of seconds in <paramref name="b" />.
-    -- </summary>
+
+
+
     op_Subtraction = function (a, b)
       return class(a.TotalSeconds - b.seconds)
     end
-    -- <summary>
-    -- Returns a <see cref="T:WCSharp.DateTime.WcTimeSpan" /> representing the time from <paramref name="a" /> to <paramref name="b" />.
-    -- </summary>
+
+
+
     op_Subtraction1 = function (a, b)
       return WCSharpDateTime.WcTimeSpan(a.TotalSeconds - b.TotalSeconds)
     end
-    -- <summary>
-    -- Returns true if <paramref name="a" /> is the same time as <paramref name="b" />.
-    -- </summary>
+
+
+
     op_Equality = function (a, b)
       if a ~= nil then
         return a.TotalSeconds == b.TotalSeconds
       end
       return b == nil
     end
-    -- <summary>
-    -- Returns true if <paramref name="a" /> is not the same time as <paramref name="b" />.
-    -- </summary>
+
+
+
     op_Inequality = function (a, b)
       return not (op_Equality(a, b))
     end
-    -- <summary>
-    -- Returns true if <paramref name="a" /> is earlier than <paramref name="b" />.
-    -- </summary>
+
+
+
     op_LessThan = function (a, b)
       if a ~= nil and b ~= nil then
         return a.TotalSeconds < b.TotalSeconds
       end
       return false
     end
-    -- <summary>
-    -- Returns true if <paramref name="a" /> is earlier than or equal to <paramref name="b" />.
-    -- </summary>
+
+
+
     op_LessThanOrEqual = function (a, b)
       if a ~= nil and b ~= nil then
         return a.TotalSeconds <= b.TotalSeconds
       end
       return false
     end
-    -- <summary>
-    -- Returns true if <paramref name="a" /> is later than <paramref name="b" />.
-    -- </summary>
+
+
+
     op_GreaterThan = function (a, b)
       if a ~= nil and b ~= nil then
         return a.TotalSeconds > b.TotalSeconds
       end
       return false
     end
-    -- <summary>
-    -- Returns true if <paramref name="a" /> is later than or equal to <paramref name="b" />.
-    -- </summary>
+
+
+
     op_GreaterThanOrEqual = function (a, b)
       if a ~= nil and b ~= nil then
         return a.TotalSeconds >= b.TotalSeconds
@@ -26897,11 +26922,11 @@ System.namespace("WCSharp.DateTime", function (namespace)
         num3 = 3
       end
       local result = 1970 + num2 * 4 + num3
-      if part == 0 --[[DatePart.Year]] then
+      if part == 0 then
         return result
       end
       num = num - ((num >= 1096) and (num3 * 365 + 1) or (num3 * 365))
-      if part == 1 --[[DatePart.DayOfYear]] then
+      if part == 1 then
         return num
       end
       local default
@@ -26918,7 +26943,7 @@ System.namespace("WCSharp.DateTime", function (namespace)
           i = i + 1
         end
       end
-      if part ~= 2 --[[DatePart.Month]] then
+      if part ~= 2 then
         return num - array:get(i - 1) + 1
       end
       return i
@@ -26947,52 +26972,52 @@ System.namespace("WCSharp.DateTime", function (namespace)
       day = num - array:get(month - 1) + 1
       return year, month, day
     end
-    -- <summary>
-    -- Returns a new <see cref="T:WCSharp.DateTime.WcDateTime" /> that is an amount of time indicated by <paramref name="value" /> into the future.
-    -- </summary>
-    -- <param name="value">The amount of time to move this instance into the future.</param>
+
+
+
+
     Add = function (this, value)
       return class(this.TotalSeconds + value.seconds)
     end
-    -- <summary>
-    -- Returns a new <see cref="T:WCSharp.DateTime.WcDateTime" /> that is an amount of time indicated by <paramref name="value" /> into the past.
-    -- </summary>
-    -- <param name="value">The amount of time to move this instance into the past.</param>
+
+
+
+
     Subtract = function (this, value)
       return op_Subtraction1(this, value)
     end
-    -- <summary>
-    -- Returns a new <see cref="T:WCSharp.DateTime.WcDateTime" /> that is a given number of seconds into the future.
-    -- </summary>
-    -- <param name="seconds">The amount of seconds to move this instance into the future.</param>
+
+
+
+
     AddSeconds = function (this, seconds)
       return class(this.TotalSeconds + seconds)
     end
-    -- <summary>
-    -- Returns a new <see cref="T:WCSharp.DateTime.WcDateTime" /> that is a given number of minutes into the future.
-    -- </summary>
-    -- <param name="minutes">The amount of minutes to move this instance into the future.</param>
+
+
+
+
     AddMinutes = function (this, minutes)
       return class(this.TotalSeconds + minutes * 60)
     end
-    -- <summary>
-    -- Returns a new <see cref="T:WCSharp.DateTime.WcDateTime" /> that is a given number of hours into the future.
-    -- </summary>
-    -- <param name="hours">The amount of hours to move this instance into the future.</param>
+
+
+
+
     AddHours = function (this, hours)
       return class(this.TotalSeconds + hours * 3600)
     end
-    -- <summary>
-    -- Returns a new <see cref="T:WCSharp.DateTime.WcDateTime" /> that is a given number of days into the future.
-    -- </summary>
-    -- <param name="days">The amount of days to move this instance into the future.</param>
+
+
+
+
     AddDays = function (this, days)
       return class(this.TotalSeconds + days * 86400)
     end
-    -- <summary>
-    -- Returns a new <see cref="T:WCSharp.DateTime.WcDateTime" /> that is a given number of months into the future.
-    -- </summary>
-    -- <param name="months">The amount of months to move this instance into the future.</param>
+
+
+
+
     AddMonths = function (this, months)
       local year, month, day = GetDatePart1(this)
       year = year + (System.div((month + months), 12))
@@ -27006,14 +27031,14 @@ System.namespace("WCSharp.DateTime", function (namespace)
       day = math.Min(default:get(month), day)
       return System.new(class, 4, year, month, day, getHour(this), getMinute(this), getSecond(this))
     end
-    -- <summary>
-    -- Returns a new <see cref="T:WCSharp.DateTime.WcDateTime" /> that is a given number of years into the future.
-    -- </summary>
-    -- <param name="years">The amount of years to move this instance into the future.</param>
+
+
+
+
     AddYears = function (this, years)
       return AddMonths(this, years * 12)
     end
-    -- <inheritdoc />
+
     CompareToObj = function (this, obj)
       local other = obj
       if not (System.is(other, class)) then
@@ -27021,21 +27046,21 @@ System.namespace("WCSharp.DateTime", function (namespace)
       end
       return CompareTo(this, other)
     end
-    -- <inheritdoc />
+
     CompareTo = function (this, other)
       if other ~= nil then
         return System.Int32.CompareTo(this.TotalSeconds, other.TotalSeconds)
       end
       return 1
     end
-    -- <inheritdoc />
+
     Equals = function (this, other)
       if other ~= nil then
         return this.TotalSeconds == other.TotalSeconds
       end
       return false
     end
-    -- <inheritdoc />
+
     EqualsObj = function (this, obj)
       local wcDateTime = obj
       if System.is(wcDateTime, class) then
@@ -27043,23 +27068,23 @@ System.namespace("WCSharp.DateTime", function (namespace)
       end
       return false
     end
-    -- <inheritdoc />
+
     GetHashCode = function (this)
       return this.TotalSeconds
     end
-    -- <summary>
-    -- Outputs this <see cref="T:WCSharp.DateTime.WcDateTime" /> in the default format of "yyyy-MM-dd HH:mm:ss".
-    -- </summary>
+
+
+
     ToString = function (this)
       return ToString1(this, "yyyy-MM-dd HH:mm:ss")
     end
-    -- <summary>
-    -- Returns a string representation using the given format.
-    -- <para>Supports standard C# format specifiers for year, month, day, hour, minute and second.</para>
-    -- <para>See the wiki for more information on the format specification.</para>
-    -- <para>Alternatively, use <see cref="M:WCSharp.DateTime.WcDateTime.Format(System.String)" /> for a C/Lua style format.</para>
-    -- </summary>
-    -- <param name="format">The format to print the date in.</param>
+
+
+
+
+
+
+
     ToString1 = function (this, format)
       local year, _, day = GetDatePart1(this)
       if format:Contains("yyyyy") then
@@ -27070,39 +27095,39 @@ System.namespace("WCSharp.DateTime", function (namespace)
         format = format:Replace("yyy", ZeroPad(System.mod(year, 1000), 3))
       elseif format:Contains("yy") then
         format = format:Replace("yy", ZeroPad(System.mod(year, 100), 2))
-      elseif format:Contains(121 --[['y']]) then
+      elseif format:Contains(121) then
         format = format:Replace("y", System.Int32.ToString((System.mod(year, 100))))
       end
       if format:Contains("MM") then
         format = format:Replace("MM", ZeroPad(getMonth(this), 2))
-      elseif format:Contains(77 --[['M']]) then
+      elseif format:Contains(77) then
         format = format:Replace("M", System.Int32.ToString(getMonth(this)))
       end
       if format:Contains("dd") then
         format = format:Replace("dd", ZeroPad(day, 2))
-      elseif format:Contains(100 --[['d']]) then
+      elseif format:Contains(100) then
         format = format:Replace("d", System.Int32.ToString(day))
       end
       if format:Contains("hh") then
         format = format:Replace("hh", ZeroPad(System.mod((getHour(this) + 1), 12), 2))
-      elseif format:Contains(104 --[['h']]) then
+      elseif format:Contains(104) then
         format = format:Replace("h", System.Int32.ToString((System.mod((getHour(this) + 1), 12))))
       elseif format:Contains("HH") then
         format = format:Replace("HH", ZeroPad(getHour(this), 2))
-      elseif format:Contains(72 --[['H']]) then
+      elseif format:Contains(72) then
         format = format:Replace("H", System.Int32.ToString(getHour(this)))
       end
       if format:Contains("mm") then
         format = format:Replace("mm", ZeroPad(getMinute(this), 2))
-      elseif format:Contains(109 --[['m']]) then
+      elseif format:Contains(109) then
         format = format:Replace("m", System.Int32.ToString(getMinute(this)))
       end
       if format:Contains("ss") then
         format = format:Replace("ss", ZeroPad(getSecond(this), 2))
-      elseif format:Contains(115 --[['s']]) then
+      elseif format:Contains(115) then
         format = format:Replace("s", System.Int32.ToString(getSecond(this)))
       end
-      if format:Contains(116 --[['t']]) then
+      if format:Contains(116) then
         format = format:Replace("t", (getHour(this) >= 12) and "P" or "A")
       elseif format:Contains("tt") then
         format = format:Replace("tt", (getHour(this) >= 12) and "PM" or "AM")
@@ -27116,23 +27141,23 @@ System.namespace("WCSharp.DateTime", function (namespace)
       end
       return text
     end
-    -- <summary>
-    -- Formats the given time in seconds according to the given format.
-    -- <para>For more information regarding the format, see <see href="http://www.cplusplus.com/reference/ctime/strftime/" />.</para>
-    -- <para>Alternatively, use <see cref="M:WCSharp.DateTime.WcDateTime.ToString(System.String)" /> for a C# style format.</para>
-    -- </summary>
-    -- <param name="format">The format to print the date in.</param>
-    -- <returns></returns>
+
+
+
+
+
+
+
     Format = function (this, format)
       if not (format == "*t") and not (format == "!*t") then
         return os.date(format, this.TotalSeconds)
       end
       return format
     end
-    -- <summary>
-    -- Attempts to parse the given string as the number of seconds since January 1st, 1970.
-    -- </summary>
-    -- <returns>Null if <paramref name="string" /> is not a valid integer.</returns>
+
+
+
+
     Deserialize = function (string)
       local default, result = System.Int32.TryParse(string, nil)
       if not default then
@@ -27140,18 +27165,18 @@ System.namespace("WCSharp.DateTime", function (namespace)
       end
       return class(result)
     end
-    -- <summary>
-    -- Returns a string representing the number of seconds since January 1st, 1970 contained in <paramref name="wcDateTime" />.
-    -- </summary>
+
+
+
     Serialize = function (wcDateTime)
       return System.Int32.ToString(wcDateTime.TotalSeconds)
     end
-    -- <summary>
-    -- This will produce a synchronised time for all players. The given action will be called once a synchronised time has been determined.
-    -- <para>This is done by individually querying the time, synchronizing this data across all players, and then deciding an overall time.</para>
-    -- </summary>
-    -- <param name="action">This action will be called when the synchronised time is determined.</param>
-    -- <param name="method">The method it should use for determining the synchronised time.</param>
+
+
+
+
+
+
     GetCurrentTime = function (action, method)
       local default, value = offsetByMethod:TryGetValue(method, nil)
       if default then
@@ -27163,14 +27188,14 @@ System.namespace("WCSharp.DateTime", function (namespace)
         WCSharpDateTime.DateTimeSystem(method, action):Run()
       end
     end
-    -- <summary>
-    -- This will attempt to immediately return a synchronised time for all players, if it has already been calculated.
-    -- If it has not been calculated, this will return false.
-    -- <para>If it has not been calculated, will start a calculation procedure behind the scenes, but this will take some time.</para>
-    -- </summary>
-    -- <param name="wcDateTime">The synchronised time, if available.</param>
-    -- <param name="method">The method it should use for determining the synchronised time.</param>
-    -- <returns>Whether the retrieval was successful.</returns>
+
+
+
+
+
+
+
+
     TryGetCurrentTime = function (wcDateTime, method)
       local default, value = offsetByMethod:TryGetValue(method, nil)
       if default then
@@ -27319,9 +27344,9 @@ System.namespace("WCSharp.DateTime", function (namespace)
     }
     return class
   end)
-  -- <summary>
-  -- Represents a duration of time, with a precision in seconds.
-  -- </summary>
+
+
+
   namespace.class("WcTimeSpan", function (namespace)
     local getSeconds, getMinutes, getHours, getDays, getTotalSeconds, getTotalMinutes, getTotalHours, getTotalDays, 
     getZero, getMinValue, getMaxValue, getLocalPlaytime, op_UnaryNegation, op_Subtraction, op_UnaryPlus, op_Addition, 
@@ -27329,21 +27354,21 @@ System.namespace("WCSharp.DateTime", function (namespace)
     Duration, Negate, CompareToObj, CompareTo, Equals, EqualsObj, GetHashCode, FromSeconds, 
     FromMinutes, FromHours, FromDays, ToString, ToString1, Deserialize, Serialize, class, 
     __ctor1__, __ctor2__, __ctor3__
-    -- <summary>
-    -- Creates a new <see cref="T:WCSharp.DateTime.WcTimeSpan" /> instance with a duration of the given number of seconds.
-    -- </summary>
+
+
+
     __ctor1__ = function (this, seconds)
       this.seconds = seconds
     end
-    -- <summary>
-    -- Creates a new <see cref="T:WCSharp.DateTime.WcTimeSpan" /> instance with a duration of the given number of hours, minutes and seconds.
-    -- </summary>
+
+
+
     __ctor2__ = function (this, hours, minutes, seconds)
       this.seconds = hours * 3600 + minutes * 60 + seconds
     end
-    -- <summary>
-    -- Creates a new <see cref="T:WCSharp.DateTime.WcTimeSpan" /> instance with a duration of the given number of days, hours, minutes and seconds.
-    -- </summary>
+
+
+
     __ctor3__ = function (this, days, hours, minutes, seconds)
       this.seconds = days * 86400 + hours * 3600 + minutes * 60 + seconds
     end
@@ -27375,104 +27400,104 @@ System.namespace("WCSharp.DateTime", function (namespace)
       return class(0)
     end
     getMinValue = function ()
-      return class(-2147483648 --[[Int32.MinValue]])
+      return class(-2147483648)
     end
     getMaxValue = function ()
-      return class(2147483647 --[[Int32.MaxValue]])
+      return class(2147483647)
     end
     getLocalPlaytime = function ()
       return class(System.ToInt32(os.clock()))
     end
-    -- <summary>
-    -- Returns a new <see cref="T:WCSharp.DateTime.WcTimeSpan" /> that is the negation of the time represented by <paramref name="a" />.
-    -- </summary>
+
+
+
     op_UnaryNegation = function (a)
       return class(-a.seconds)
     end
-    -- <summary>
-    -- Returns a new <see cref="T:WCSharp.DateTime.WcTimeSpan" /> that is equal to <paramref name="a" /> minus <paramref name="b" />.
-    -- </summary>
+
+
+
     op_Subtraction = function (a, b)
       return class(a.seconds - b.seconds)
     end
-    -- <summary>
-    -- Since no changes are required, simply returns the given <see cref="T:WCSharp.DateTime.WcTimeSpan" />.
-    -- </summary>
+
+
+
     op_UnaryPlus = function (a)
       return a
     end
-    -- <summary>
-    -- Returns a new <see cref="T:WCSharp.DateTime.WcTimeSpan" /> that is equal to <paramref name="a" /> plus <paramref name="b" />.
-    -- </summary>
+
+
+
     op_Addition = function (a, b)
       return class(a.seconds + b.seconds)
     end
-    -- <summary>
-    -- Returns true if <paramref name="a" /> represents an equally long time as <paramref name="b" />.
-    -- </summary>
+
+
+
     op_Equality = function (a, b)
       if a ~= nil then
         return a.seconds == b.seconds
       end
       return b == nil
     end
-    -- Returns true if <paramref name="a" /> does not represent an equally long time as <paramref name="b" />.
+
     op_Inequality = function (a, b)
       return not (op_Equality(a, b))
     end
-    -- Returns true if <paramref name="a" /> represents a shorter time than <paramref name="b" />.
+
     op_LessThan = function (a, b)
       if a ~= nil and b ~= nil then
         return a.seconds < b.seconds
       end
       return false
     end
-    -- Returns true if <paramref name="a" /> represents a shorter or equivalent time as <paramref name="b" />.
+
     op_LessThanOrEqual = function (a, b)
       if a ~= nil and b ~= nil then
         return a.seconds <= b.seconds
       end
       return false
     end
-    -- Returns true if <paramref name="a" /> represents a longer time than <paramref name="b" />.
+
     op_GreaterThan = function (a, b)
       if a ~= nil and b ~= nil then
         return a.seconds > b.seconds
       end
       return false
     end
-    -- Returns true if <paramref name="a" /> represents a longer or equivalent time as <paramref name="b" />.
+
     op_GreaterThanOrEqual = function (a, b)
       if a ~= nil and b ~= nil then
         return a.seconds >= b.seconds
       end
       return false
     end
-    -- <summary>
-    -- Returns a new <see cref="T:WCSharp.DateTime.WcTimeSpan" /> whose value is the sum of this instance and the given object.
-    -- </summary>
+
+
+
     Add = function (this, value)
       return class(this.seconds + value.seconds)
     end
-    -- <summary>
-    -- Returns a new <see cref="T:WCSharp.DateTime.WcTimeSpan" /> whose value is the difference of this instance and the given object.
-    -- </summary>
+
+
+
     Subtract = function (this, value)
       return class(this.seconds - value.seconds)
     end
-    -- <summary>
-    -- Returns a new <see cref="T:WCSharp.DateTime.WcTimeSpan" /> whose value is the absolute value of this instance.
-    -- </summary>
+
+
+
     Duration = function (this)
       return class(math.Abs(this.seconds))
     end
-    -- <summary>
-    -- Returns a new <see cref="T:WCSharp.DateTime.WcTimeSpan" /> whose value is the negated value of this instance.
-    -- </summary>
+
+
+
     Negate = function (this)
       return class(-this.seconds)
     end
-    -- <inheritdoc />
+
     CompareToObj = function (this, obj)
       local obj2 = obj
       if not (System.is(obj2, WCSharpDateTime.WcDateTime)) then
@@ -27480,21 +27505,21 @@ System.namespace("WCSharp.DateTime", function (namespace)
       end
       return CompareToObj(this, obj2)
     end
-    -- <inheritdoc />
+
     CompareTo = function (this, other)
       if other ~= nil then
         return System.Int32.CompareTo(this.seconds, other.seconds)
       end
       return 1
     end
-    -- <inheritdoc />
+
     Equals = function (this, other)
       if other ~= nil then
         return this.seconds == other.seconds
       end
       return false
     end
-    -- <inheritdoc />S
+
     EqualsObj = function (this, obj)
       local wcTimeSpan = obj
       if System.is(wcTimeSpan, class) then
@@ -27502,77 +27527,77 @@ System.namespace("WCSharp.DateTime", function (namespace)
       end
       return false
     end
-    -- <inheritdoc />
+
     GetHashCode = function (this)
       return this.seconds
     end
-    -- <summary>
-    -- Creates a new <see cref="T:WCSharp.DateTime.WcTimeSpan" /> with the exact number of seconds.
-    -- </summary>
+
+
+
     FromSeconds = function (seconds)
       return class(seconds)
     end
-    -- <summary>
-    -- Creates a new <see cref="T:WCSharp.DateTime.WcTimeSpan" /> with the number of minutes.
-    -- <para>The number of seconds is floored.</para>
-    -- </summary>
+
+
+
+
     FromMinutes = function (minutes)
       return class(System.ToInt32(minutes * 60))
     end
-    -- <summary>
-    -- Creates a new <see cref="T:WCSharp.DateTime.WcTimeSpan" /> with the number of hours.
-    -- <para>The number of seconds is floored.</para>
-    -- </summary>
+
+
+
+
     FromHours = function (hours)
       return class(System.ToInt32(hours * 3600))
     end
-    -- <summary>
-    -- Creates a new <see cref="T:WCSharp.DateTime.WcTimeSpan" /> with the number of days.
-    -- <para>The number of seconds is floored.</para>
-    -- </summary>
+
+
+
+
     FromDays = function (days)
       return class(System.ToInt32(days * 86400))
     end
-    -- <summary>
-    -- Outputs this <see cref="T:WCSharp.DateTime.WcTimeSpan" /> in the standard format of "d:hh:mm:ss" or "hh:mm:ss" if less than 1 day.
-    -- </summary>
-    -- <returns></returns>
+
+
+
+
     ToString = function (this)
       if getDays(this) <= 0 then
         return ToString1(this, "hh:mm:ss")
       end
       return ToString1(this, "d:hh:mm:ss")
     end
-    -- <summary>
-    -- Returns a string representation using the given format.
-    -- <para>See the wiki for more information on the format specification.</para>
-    -- </summary>
-    -- <param name="format">The format to print the string in.</param>
+
+
+
+
+
     ToString1 = function (this, format)
-      if format:Contains(100 --[['d']]) then
+      if format:Contains(100) then
         format = format:Replace("d", System.Int32.ToString(getDays(this)))
       end
       if format:Contains("hh") then
         format = format:Replace("hh", WCSharpDateTime.WcDateTime.ZeroPad(getHours(this), 2))
-      elseif format:Contains(104 --[['h']]) then
+      elseif format:Contains(104) then
         format = format:Replace("h", System.Int32.ToString(getHours(this)))
       end
       if format:Contains("mm") then
         format = format:Replace("mm", WCSharpDateTime.WcDateTime.ZeroPad(getMinutes(this), 2))
-      elseif format:Contains(109 --[['m']]) then
+      elseif format:Contains(109) then
         format = format:Replace("m", System.Int32.ToString(getMinutes(this)))
       end
       if format:Contains("ss") then
         format = format:Replace("ss", WCSharpDateTime.WcDateTime.ZeroPad(getSeconds(this), 2))
-      elseif format:Contains(115 --[['s']]) then
+      elseif format:Contains(115) then
         format = format:Replace("s", System.Int32.ToString(getSeconds(this)))
       end
       return format
     end
-    -- <summary>
-    -- Attempts to parse the given string as the number of seconds.
-    -- </summary>
-    -- <returns>Null if <paramref name="string" /> is not a valid integer.</returns>
+
+
+
+
     Deserialize = function (string)
       local default, result = System.Int32.TryParse(string, nil)
       if not default then
@@ -27580,9 +27605,9 @@ System.namespace("WCSharp.DateTime", function (namespace)
       end
       return class(result)
     end
-    -- <summary>
-    -- Returns a string representing the number of seconds contained in <paramref name="wcTimeSpan" />.
-    -- </summary>
+
+
+
     Serialize = function (wcTimeSpan)
       return System.Int32.ToString(wcTimeSpan.seconds)
     end
@@ -27725,9 +27750,9 @@ System.namespace("WCSharp.Dummies", function (namespace)
       end
     }
   end)
-  -- <summary>
-  -- Tracks and recycles all dummy units on the map. Will automatically create more if necessary.
-  -- </summary>
+
+
+
   namespace.class("DummySystem", function (namespace)
     local periodicEvent, dummiesReady, dummiesBeingRecycled, OnDummyCast, Countdown, RecycleDummy, GetDummy, GetDummy1, 
     static
@@ -27735,7 +27760,7 @@ System.namespace("WCSharp.Dummies", function (namespace)
       periodicEvent = WCSharpEvents.PeriodicEvent(Countdown, 1.0)
       dummiesReady = Listunit()
       dummiesBeingRecycled = ListDummyBeingRecycled()
-      WCSharpEvents.PlayerUnitEvents.Register14(850 --[[UnitTypeEvent.SpellEndCast]], OnDummyCast)
+      WCSharpEvents.PlayerUnitEvents.Register14(850, OnDummyCast)
     end
     OnDummyCast = function ()
       local triggerUnit = GetTriggerUnit()
@@ -27761,18 +27786,18 @@ System.namespace("WCSharp.Dummies", function (namespace)
       end
       return num > 0
     end
-    -- <summary>
-    -- Call this when you are done with a dummy. The dummy will become available for use again after the <paramref name="recycleTime" />.
-    -- </summary>
+
+
+
     RecycleDummy = function (dummy, recycleTime)
       if #dummiesBeingRecycled == 0 then
         WCSharpEvents.PeriodicEvents.AddPeriodicEvent1(periodicEvent)
       end
-      dummiesBeingRecycled:Add(WCSharpDummies.DummyBeingRecycled(dummy, System.ToInt32(recycleTime / (0.03125 --[[1f / 32f]]))))
+      dummiesBeingRecycled:Add(WCSharpDummies.DummyBeingRecycled(dummy, System.ToInt32(recycleTime / (0.03125))))
     end
-    -- <summary>
-    -- Requests an available dummy.
-    -- </summary>
+
+
+
     GetDummy = function ()
       local count = #dummiesReady
       if count == 0 then
@@ -27782,9 +27807,9 @@ System.namespace("WCSharp.Dummies", function (namespace)
       dummiesReady[count] = nil
       return result
     end
-    -- <summary>
-    -- Requests an available dummy at the given coordinates and under control of the given player.
-    -- </summary>
+
+
+
     GetDummy1 = function (x, y, z, player)
       local count = #dummiesReady
       local unit
@@ -27837,20 +27862,20 @@ System.import(function (out)
   PeriodicTrigger_1TimedEffect = WCSharpEvents.PeriodicTrigger_1(WCSharpEffects.TimedEffect)
 end)
 System.namespace("WCSharp.Effects", function (namespace)
-  -- <summary>
-  -- Simple system for destroying effects after a given duration.
-  -- <para>This circumvents issues with certain special effects not showing up if deleted immediately in Reforged.</para>
-  -- </summary>
+
+
+
+
   namespace.class("EffectSystem", function (namespace)
     local periodicTrigger, Add, static
     static = function (this)
-      periodicTrigger = PeriodicTrigger_1TimedEffect(0.03125 --[[1f / 32f]])
+      periodicTrigger = PeriodicTrigger_1TimedEffect(0.03125)
     end
-    -- <summary>
-    -- Adds an effect for removal after the given duration.
-    -- </summary>
-    -- <param name="effect"></param>
-    -- <param name="duration">In seconds.</param>
+
+
+
+
+
     Add = function (effect, duration)
       periodicTrigger:Add(WCSharpEffects.TimedEffect(effect, duration))
     end
@@ -27878,7 +27903,7 @@ System.namespace("WCSharp.Effects", function (namespace)
     end
     getActive, setActive = System.property("Active")
     Action = function (this)
-      this.Duration = this.Duration - (0.03125 --[[1f / 32f]])
+      this.Duration = this.Duration - (0.03125)
       if this.Duration <= 0 then
         DestroyEffect(this.Effect)
         this.Active = false
@@ -27953,11 +27978,11 @@ System.import(function (out)
   DictplayeruniteventIPlayerUnitEventHandler = System.Dictionary(WCSharpApi.playerunitevent, PlayerUnitEventHandlers.IPlayerUnitEventHandler)
 end)
 System.namespace("WCSharp.Events", function (namespace)
-  -- <summary>
-  -- Defines all built-in HeroEvents supported by <see cref="T:WCSharp.Events.PlayerUnitEvents" />.
-  -- <para>All of these events fire based on a unit handle filter.</para>
-  -- <para>Custom events can also be specified via <see cref="M:WCSharp.Events.PlayerUnitEvents.AddCustomEvent(System.String,System.Func{System.Int32},WCSharp.Api.playerunitevent)" />.</para>
-  -- </summary>
+
+
+
+
+
   namespace.enum("HeroEvent", function ()
     return {
       BecomesRevivable = 1,
@@ -27981,11 +28006,11 @@ System.namespace("WCSharp.Events", function (namespace)
       end
     }
   end)
-  -- <summary>
-  -- Defines all built-in HeroTypeEvents supported by <see cref="T:WCSharp.Events.PlayerUnitEvents" />.
-  -- <para>All of these events fire based on a unit type id filter.</para>
-  -- <para>Custom events can also be specified via <see cref="M:WCSharp.Events.PlayerUnitEvents.AddCustomEvent(System.String,System.Func{System.Int32},WCSharp.Api.playerunitevent)" />.</para>
-  -- </summary>
+
+
+
+
+
   namespace.enum("HeroTypeEvent", function ()
     return {
       BecomesRevivable = 101,
@@ -28009,9 +28034,9 @@ System.namespace("WCSharp.Events", function (namespace)
       end
     }
   end)
-  -- <summary>
-  -- Interface for defining periodic actions. If your periodic action has actions that it should perform when ended, use <see cref="T:WCSharp.Events.IPeriodicDisposableAction" /> instead.
-  -- </summary>
+
+
+
   namespace.interface("IPeriodicAction", function ()
     return {
       __metadata__ = function (out)
@@ -28021,9 +28046,9 @@ System.namespace("WCSharp.Events", function (namespace)
       end
     }
   end)
-  -- <summary>
-  -- Interface for defining periodic actions. If your periodic action does not have actions that it should perform when ended, use <see cref="T:WCSharp.Events.IPeriodicAction" /> instead.
-  -- </summary>
+
+
+
   namespace.interface("IPeriodicDisposableAction", function ()
     return {
       __metadata__ = function (out)
@@ -28033,9 +28058,9 @@ System.namespace("WCSharp.Events", function (namespace)
       end
     }
   end)
-  -- <summary>
-  -- Interface for defining smooth actions. If your smooth action has actions that it should perform when ended, use <see cref="T:WCSharp.Events.ISmoothDisposableAction" /> instead.
-  -- </summary>
+
+
+
   namespace.interface("ISmoothAction", function ()
     return {
       __metadata__ = function (out)
@@ -28045,9 +28070,9 @@ System.namespace("WCSharp.Events", function (namespace)
       end
     }
   end)
-  -- <summary>
-  -- Interface for defining smooth actions. If your smooth action does not have actions that it should perform when ended, use <see cref="T:WCSharp.Events.ISmoothAction" /> instead.
-  -- </summary>
+
+
+
   namespace.interface("ISmoothDisposableAction", function ()
     return {
       __metadata__ = function (out)
@@ -28057,11 +28082,11 @@ System.namespace("WCSharp.Events", function (namespace)
       end
     }
   end)
-  -- <summary>
-  -- Defines all built-in ItemEvents supported by <see cref="T:WCSharp.Events.PlayerUnitEvents" />.
-  -- <para>All of these events fire based on an item filter.</para>
-  -- <para>Custom events can also be specified via <see cref="M:WCSharp.Events.PlayerUnitEvents.AddCustomEvent(System.String,System.Func{System.Int32},WCSharp.Api.playerunitevent)" />.</para>
-  -- </summary>
+
+
+
+
+
   namespace.enum("ItemEvent", function ()
     return {
       IsAbsorbed = 201,
@@ -28087,11 +28112,11 @@ System.namespace("WCSharp.Events", function (namespace)
       end
     }
   end)
-  -- <summary>
-  -- Defines all built-in ItemTypeEvents supported by <see cref="T:WCSharp.Events.PlayerUnitEvents" />.
-  -- <para>All of these events fire based on an item type id filter.</para>
-  -- <para>Custom events can also be specified via <see cref="M:WCSharp.Events.PlayerUnitEvents.AddCustomEvent(System.String,System.Func{System.Int32},WCSharp.Api.playerunitevent)" />.</para>
-  -- </summary>
+
+
+
+
+
   namespace.enum("ItemTypeEvent", function ()
     return {
       IsAbsorbed = 301,
@@ -28117,19 +28142,19 @@ System.namespace("WCSharp.Events", function (namespace)
       end
     }
   end)
-  -- <summary>
-  -- Helpful class that can be used to batch together multiple periodic events of the same type. Will automatically remove inactive triggers, and
-  -- subscribe/unsubscribe from <see cref="T:WCSharp.Events.PeriodicEvents" /> based on whether any triggers are active.
-  -- <para>Has additional functionality for disposing of actions when they end.</para>
-  -- </summary>
+
+
+
+
+
   namespace.class("PeriodicDisposableTrigger_1", function (namespace)
     return function (T)
       local getActions, Add, Periodic, __ctor__
       local ListT = System.List(T)
-      -- <summary>
-      -- Creates a new periodic trigger which will trigger all supplied actions every given <paramref name="period" />.
-      -- </summary>
-      -- <param name="period">How frequently this trigger should fire.</param>
+
+
+
+
       __ctor__ = function (this, period)
         this.actions = ListT()
         this.timerEvent = WCSharpEvents.PeriodicEvent(System.fn(this, Periodic), period)
@@ -28139,9 +28164,9 @@ System.namespace("WCSharp.Events", function (namespace)
           return x:getActive()
         end)
       end
-      -- <summary>
-      -- Adds the given <paramref name="periodicDisposableTrigger" /> to automatic management.
-      -- </summary>
+
+
+
       Add = function (this, periodicDisposableTrigger)
         if not this.active then
           WCSharpEvents.PeriodicEvents.AddPeriodicEvent1(this.timerEvent)
@@ -28206,15 +28231,15 @@ System.namespace("WCSharp.Events", function (namespace)
       }
     end
   end)
-  -- <summary>
-  -- Represents a single periodic event that will invoke <see cref="P:WCSharp.Events.PeriodicEvent.Method" /> every <see cref="P:WCSharp.Events.PeriodicEvent.Interval" />.
-  -- </summary>
+
+
+
   namespace.class("PeriodicEvent", function (namespace)
     local __ctor__
-    -- <summary>
-    -- Creates a new periodic event that will call the given method every interval.
-    -- Must be added to <see cref="T:WCSharp.Events.PeriodicEvents" /> in order to be active.
-    -- </summary>
+
+
+
+
     __ctor__ = function (this, method, interval)
       this.Method = method
       this.Interval = interval
@@ -28239,9 +28264,9 @@ System.namespace("WCSharp.Events", function (namespace)
       end
     }
   end)
-  -- <summary>
-  -- Keeps track of all periodic events. The system runs at an interval defined by <see cref="F:WCSharp.Events.PeriodicEvents.SYSTEM_INTERVAL" /> (0.03125).
-  -- </summary>
+
+
+
   namespace.class("PeriodicEvents", function (namespace)
     local timerEvents, timer, Start, EnableDebug, AddPeriodicEvent, AddPeriodicEvent1, Tick, static
     static = function (this)
@@ -28250,14 +28275,14 @@ System.namespace("WCSharp.Events", function (namespace)
     end
     Start = function (action)
       local obj = CreateTimer()
-      TimerStart(obj, 0.03125 --[[1f / 32f]], true, action)
+      TimerStart(obj, 0.03125, true, action)
       return obj
     end
-    -- <summary>
-    -- Call this method to automatically wrap your actions in a try/catch, so that exceptions that lead back to <see cref="T:WCSharp.Events.PeriodicEvents" /> will automatically output
-    -- information.
-    -- <para>It is recommended to use compilation time conditions to not call this on release mode.</para>
-    -- </summary>
+
+
+
+
+
     EnableDebug = function ()
       DestroyTimer(timer)
       timer = Start(function ()
@@ -28270,22 +28295,22 @@ System.namespace("WCSharp.Events", function (namespace)
         end)
       end)
     end
-    -- <summary>
-    -- Adds the given method to the periodic system. In most cases, you can ignore the return value.
-    -- </summary>
-    -- <param name="method">The method to execute. Must return a boolean to indicate whether to continue looping or abort the periodic event.</param>
-    -- <param name="period">
-    -- The speed at which this event should fire.
-    -- <para>Periods below <see cref="F:WCSharp.Events.PeriodicEvents.SYSTEM_INTERVAL" /> (0.03125) will run multiple times on certain ticks.</para>
-    -- </param>
+
+
+
+
+
+
+
+
     AddPeriodicEvent = function (method, period)
       local periodicEvent = WCSharpEvents.PeriodicEvent(method, period)
       timerEvents:Add(periodicEvent)
       return periodicEvent
     end
-    -- <summary>
-    -- Shorthand in case you already have an existing PeriodicEvent to resume.
-    -- </summary>
+
+
+
     AddPeriodicEvent1 = function (timerEvent)
       timerEvents:Add(timerEvent)
     end
@@ -28295,7 +28320,7 @@ System.namespace("WCSharp.Events", function (namespace)
       while num2 < num do
         local periodicEvent = timerEvents:get(num2)
         num2 = num2 + 1
-        periodicEvent.IntervalLeft = periodicEvent.IntervalLeft - (0.03125 --[[1.0 / 32.0]])
+        periodicEvent.IntervalLeft = periodicEvent.IntervalLeft - (0.03125)
         while periodicEvent.IntervalLeft <= 0.0 do
           periodicEvent.IntervalLeft = periodicEvent.IntervalLeft + periodicEvent.Interval
           if not periodicEvent.Method() then
@@ -28331,18 +28356,18 @@ System.namespace("WCSharp.Events", function (namespace)
       end
     }
   end)
-  -- <summary>
-  -- Helpful class that can be used to batch together multiple periodic events of the same type. Will automatically remove inactive triggers, and
-  -- subscribe/unsubscribe from <see cref="T:WCSharp.Events.PeriodicEvents" /> based on whether any triggers are active.
-  -- </summary>
+
+
+
+
   namespace.class("PeriodicTrigger_1", function (namespace)
     return function (T)
       local getActions, Add, Periodic, __ctor__
       local ListT = System.List(T)
-      -- <summary>
-      -- Creates a new periodic trigger which will trigger all supplied actions every given <paramref name="period" />.
-      -- </summary>
-      -- <param name="period">How frequently this trigger should fire.</param>
+
+
+
+
       __ctor__ = function (this, period)
         this.actions = ListT()
         this.timerEvent = WCSharpEvents.PeriodicEvent(System.fn(this, Periodic), period)
@@ -28352,9 +28377,9 @@ System.namespace("WCSharp.Events", function (namespace)
           return x:getActive()
         end)
       end
-      -- <summary>
-      -- Adds the given <paramref name="periodicTrigger" /> to automatic management.
-      -- </summary>
+
+
+
       Add = function (this, periodicTrigger)
         if not this.active then
           WCSharpEvents.PeriodicEvents.AddPeriodicEvent1(this.timerEvent)
@@ -28418,11 +28443,11 @@ System.namespace("WCSharp.Events", function (namespace)
       }
     end
   end)
-  -- <summary>
-  -- Defines all built-in PlayerEvents supported by <see cref="T:WCSharp.Events.PlayerUnitEvents" />.
-  -- <para>All of these events fire based on a player id.</para>
-  -- <para>Custom events can also be specified via <see cref="M:WCSharp.Events.PlayerUnitEvents.AddCustomEvent(System.String,System.Func{System.Int32},WCSharp.Api.playerunitevent)" />.</para>
-  -- </summary>
+
+
+
+
+
   namespace.enum("PlayerEvent", function ()
     return {
       DeselectsUnit = 401,
@@ -28442,9 +28467,9 @@ System.namespace("WCSharp.Events", function (namespace)
       end
     }
   end)
-  -- <summary>
-  -- Manager for all Warcraft III <see cref="T:WCSharp.Api.playerunitevent" />s. Will bundle together and is able to efficiently filter on specific data.
-  -- </summary>
+
+
+
   namespace.class("PlayerUnitEvents", function (namespace)
     local pendingUpdates, customEventIdsByIdentifier, eventHandlers, playerUnitEventHandlers, customPlayerUnitEventHandlers, playerUnitEventNativesById, filterFuncIdsByEvent, filterFuncHandlesByEvent, 
     Register, Register1, Register2, Register3, Register4, Register5, Register6, Register7, 
@@ -29087,106 +29112,106 @@ System.namespace("WCSharp.Events", function (namespace)
       end)
       filterFuncHandlesByEvent = default
     end
-    -- <summary>
-    -- Registers <paramref name="action" /> to fire when <paramref name="event" /> is triggered for <paramref name="unit" />.
-    -- </summary>
+
+
+
     Register = function (event, action, unit)
       Register19(event, action, unit)
     end
-    -- <summary>
-    -- Registers <paramref name="action" /> to fire when <paramref name="event" /> is triggered for any hero.
-    -- </summary>
+
+
+
     Register1 = function (event, action)
       Register17(event, action)
     end
-    -- <summary>
-    -- Registers <paramref name="action" /> to fire when <paramref name="event" /> is triggered for any hero of <paramref name="unitTypeId" />.
-    -- </summary>
+
+
+
     Register2 = function (event, action, unitTypeId)
       Register18(event, action, unitTypeId)
     end
-    -- <summary>
-    -- Registers <paramref name="action" /> to fire when <paramref name="event" /> is triggered for <paramref name="item" />.
-    -- </summary>
+
+
+
     Register3 = function (event, action, item)
       Register19(event, action, item)
     end
-    -- <summary>
-    -- Registers <paramref name="action" /> to fire when <paramref name="event" /> is triggered for any item.
-    -- </summary>
+
+
+
     Register4 = function (event, action)
       Register17(event, action)
     end
-    -- <summary>
-    -- Registers <paramref name="action" /> to fire when <paramref name="event" /> is triggered for any item of <paramref name="itemTypeId" />.
-    -- </summary>
+
+
+
     Register5 = function (event, action, itemTypeId)
       Register18(event, action, itemTypeId)
     end
-    -- <summary>
-    -- Registers <paramref name="action" /> to fire when <paramref name="event" /> is triggered for any player.
-    -- </summary>
+
+
+
     Register6 = function (event, action)
       Register17(event, action)
     end
-    -- <summary>
-    -- Registers <paramref name="action" /> to fire when <paramref name="event" /> is triggered for <paramref name="player" />.
-    -- </summary>
+
+
+
     Register7 = function (event, action, player)
       Register18(event, action, GetPlayerId(player))
     end
-    -- <summary>
-    -- Registers <paramref name="action" /> to fire when <paramref name="event" /> is triggered for <paramref name="playerId" />.
-    -- <para>Note: <paramref name="playerId" /> start at 0. So player 1 (red) is 0.</para>
-    -- </summary>
+
+
+
+
     Register8 = function (event, action, playerId)
       Register18(event, action, playerId)
     end
-    -- <summary>
-    -- Registers <paramref name="action" /> to fire when <paramref name="event" /> is triggered for any research.
-    -- </summary>
+
+
+
     Register9 = function (event, action)
       Register17(event, action)
     end
-    -- <summary>
-    -- Registers <paramref name="action" /> to fire when <paramref name="event" /> is triggered for any research of <paramref name="researchId" />.
-    -- </summary>
+
+
+
     Register10 = function (event, action, researchId)
       Register18(event, action, researchId)
     end
-    -- <summary>
-    -- Registers <paramref name="action" /> to fire when <paramref name="event" /> is triggered for any spell.
-    -- </summary>
+
+
+
     Register11 = function (event, action)
       Register17(event, action)
     end
-    -- <summary>
-    -- Registers <paramref name="action" /> to fire when <paramref name="event" /> is triggered for any spell of <paramref name="abilityId" />.
-    -- </summary>
+
+
+
     Register12 = function (event, action, abilityId)
       Register18(event, action, abilityId)
     end
-    -- <summary>
-    -- Registers <paramref name="action" /> to fire when <paramref name="event" /> is triggered for <paramref name="unit" />.
-    -- </summary>
+
+
+
     Register13 = function (event, action, unit)
       Register19(event, action, unit)
     end
-    -- <summary>
-    -- Registers <paramref name="action" /> to fire when <paramref name="event" /> is triggered for any unit.
-    -- </summary>
+
+
+
     Register14 = function (event, action)
       Register17(event, action)
     end
-    -- <summary>
-    -- Registers <paramref name="action" /> to fire when <paramref name="event" /> is triggered for any unit.
-    -- </summary>
+
+
+
     Register15 = function (event, action, unitTypeId)
       Register18(event, action, unitTypeId)
     end
-    -- <summary>
-    -- Registers <paramref name="action" /> to fire when the custom event with <paramref name="identifier" /> is triggered for <paramref name="filterId" />.
-    -- </summary>
+
+
+
     Register16 = function (identifier, action, filterId)
       local default, value = customEventIdsByIdentifier:TryGetValue(identifier, nil)
       if default then
@@ -29234,99 +29259,99 @@ System.namespace("WCSharp.Events", function (namespace)
         Register19(event, action, handle)
       end)
     end
-    -- <summary>
-    -- Unregisters <paramref name="action" /> from <paramref name="event" /> for <paramref name="unit" />.
-    -- </summary>
+
+
+
     Unregister = function (event, action, unit)
       Unregister18(event, action, unit)
     end
-    -- <summary>
-    -- Unregisters <paramref name="action" /> from <paramref name="event" /> for any hero.
-    -- </summary>
+
+
+
     Unregister1 = function (event, action)
       Unregister16(event, action)
     end
-    -- <summary>
-    -- Unregisters <paramref name="action" /> from <paramref name="event" /> for any hero of <paramref name="unitTypeId" />.
-    -- </summary>
+
+
+
     Unregister2 = function (event, action, unitTypeId)
       Unregister17(event, action, unitTypeId)
     end
-    -- <summary>
-    -- Unregisters <paramref name="action" /> from <paramref name="event" /> for <paramref name="item" />.
-    -- </summary>
+
+
+
     Unregister3 = function (event, action, item)
       Unregister18(event, action, item)
     end
-    -- <summary>
-    -- Unregisters <paramref name="action" /> from <paramref name="event" /> for any item.
-    -- </summary>
+
+
+
     Unregister4 = function (event, action)
       Unregister16(event, action)
     end
-    -- <summary>
-    -- Unregisters <paramref name="action" /> from <paramref name="event" /> for any item of <paramref name="itemTypeId" />.
-    -- </summary>
+
+
+
     Unregister5 = function (event, action, itemTypeId)
       Unregister17(event, action, itemTypeId)
     end
-    -- <summary>
-    -- Unregisters <paramref name="action" /> from <paramref name="event" /> for any player.
-    -- </summary>
+
+
+
     Unregister6 = function (event, action)
       Unregister16(event, action)
     end
-    -- <summary>
-    -- Unregisters <paramref name="action" /> from <paramref name="event" /> for <paramref name="playerId" />.
-    -- </summary>
+
+
+
     Unregister7 = function (event, action, playerId)
       Unregister17(event, action, playerId)
     end
-    -- <summary>
-    -- Unregisters <paramref name="action" /> from <paramref name="event" /> for any research.
-    -- </summary>
+
+
+
     Unregister8 = function (event, action)
       Unregister16(event, action)
     end
-    -- <summary>
-    -- Unregisters <paramref name="action" /> from <paramref name="event" /> for any research of <paramref name="researchId" />.
-    -- </summary>
+
+
+
     Unregister9 = function (event, action, researchId)
       Unregister17(event, action, researchId)
     end
-    -- <summary>
-    -- Unregisters <paramref name="action" /> from <paramref name="event" /> for any spell.
-    -- </summary>
+
+
+
     Unregister10 = function (event, action)
       Unregister16(event, action)
     end
-    -- <summary>
-    -- Unregisters <paramref name="action" /> from <paramref name="event" /> for any spell of <paramref name="abilityId" />.
-    -- </summary>
+
+
+
     Unregister11 = function (event, action, abilityId)
       Unregister17(event, action, abilityId)
     end
-    -- <summary>
-    -- Unregisters <paramref name="action" /> from <paramref name="event" /> for <paramref name="unit" />.
-    -- </summary>
+
+
+
     Unregister12 = function (event, action, unit)
       Unregister18(event, action, unit)
     end
-    -- <summary>
-    -- Unregisters <paramref name="action" /> from <paramref name="event" /> for any unit.
-    -- </summary>
+
+
+
     Unregister13 = function (event, action)
       Unregister16(event, action)
     end
-    -- <summary>
-    -- Unregisters <paramref name="action" /> from <paramref name="event" /> for any unit of <paramref name="unitTypeId" />.
-    -- </summary>
+
+
+
     Unregister14 = function (event, action, unitTypeId)
       Unregister17(event, action, unitTypeId)
     end
-    -- <summary>
-    -- Registers <paramref name="action" /> to fire when the custom event with <paramref name="identifier" /> is triggered for <paramref name="filterId" />.
-    -- </summary>
+
+
+
     Unregister15 = function (identifier, action, filterId)
       local default, value = customEventIdsByIdentifier:TryGetValue(identifier, nil)
       if default then
@@ -29391,10 +29416,10 @@ System.namespace("WCSharp.Events", function (namespace)
       end
       return nil
     end
-    -- <summary>
-    -- Defines a custom event with the given <paramref name="identifier" /> and <paramref name="filter" /> that responds to events of
-    -- the given <paramref name="nativeEvent" />.
-    -- </summary>
+
+
+
+
     AddCustomEvent = function (identifier, filter, nativeEvent)
       local num = customEventIdsByIdentifier:getCount() + 1001
       customEventIdsByIdentifier:AddKeyValue(identifier, num)
@@ -29411,11 +29436,11 @@ System.namespace("WCSharp.Events", function (namespace)
       end
       System.throw(System.NotImplementedException("Unexpected custom handler: " .. event))
     end
-    -- <summary>
-    -- Call this method to automatically wrap your actions in a try/catch, so that exceptions that lead back to <see cref="T:WCSharp.Events.PeriodicEvents" /> will automatically output
-    -- information.
-    -- <para>It is recommended to use compilation time conditions to not call this on release mode.</para>
-    -- </summary>
+
+
+
+
+
     EnableDebug = function ()
       class.Debug = true
     end
@@ -29531,11 +29556,11 @@ System.namespace("WCSharp.Events", function (namespace)
     }
     return class
   end)
-  -- <summary>
-  -- Defines all built-in ResearchEvents supported by <see cref="T:WCSharp.Events.PlayerUnitEvents" />.
-  -- <para>All of these events fire based on a research id filter.</para>
-  -- <para>Custom events can also be specified via <see cref="M:WCSharp.Events.PlayerUnitEvents.AddCustomEvent(System.String,System.Func{System.Int32},WCSharp.Api.playerunitevent)" />.</para>
-  -- </summary>
+
+
+
+
+
   namespace.enum("ResearchEvent", function ()
     return {
       IsCancelled = 501,
@@ -29553,37 +29578,37 @@ System.namespace("WCSharp.Events", function (namespace)
       end
     }
   end)
-  -- <summary>
-  -- Helpful class that can be used to batch together multiple smooth events of the same type. Will automatically remove inactive triggers, and
-  -- subscribe/unsubscribe from <see cref="T:WCSharp.Events.PeriodicEvents" /> based on whether any triggers are active.
-  -- </summary>
-  -- <summary>
-  -- Helpful class that can be used to batch together multiple smooth events of the same type. Will automatically remove inactive triggers, and
-  -- subscribe/unsubscribe from <see cref="T:WCSharp.Events.PeriodicEvents" /> based on whether any triggers are active.
-  -- <para>Has additional functionality for disposing of actions when they end.</para>
-  -- <para>Unlike <see cref="T:WCSharp.Events.PeriodicDisposableTrigger`1" />, all actions will not trigger simultaneously, since each action is counted down separately.</para>
-  -- </summary>
+
+
+
+
+
+
+
+
+
+
   namespace.class("SmoothDisposableTrigger_1", function (namespace)
     return function (T)
       local getActions, Add, Periodic, __ctor1__, __ctor2__
       local ListT = System.List(T)
-      -- <summary>
-      -- Creates a new smooth trigger which will individually trigger supplied actions every given interval.
-      -- <para><paramref name="tickInterval" /> will be rounded to the nearest multiple of <paramref name="tickRate" /></para>
-      -- </summary>
-      -- <param name="tickInterval">The amount of time between each <see cref="M:WCSharp.Events.ISmoothDisposableAction.Action" /> call.</param>
-      -- <param name="tickRate">Expresses the smoothness of the trigger. Ideally use multiples of <see cref="F:WCSharp.Events.PeriodicEvents.SYSTEM_INTERVAL" />.</param>
+
+
+
+
+
+
       __ctor1__ = function (this, tickInterval, tickRate)
         this.ticksPerAction = MathRound(tickInterval / tickRate)
         this.actions = ListT()
         this.timerEvent = WCSharpEvents.PeriodicEvent(System.fn(this, Periodic), tickRate)
       end
-      -- <summary>
-      -- Creates a new smooth trigger which will individually trigger supplied actions every given interval.
-      -- <para>Interval is equal to <paramref name="ticksPerAction" />*<paramref name="tickRate" />.</para>
-      -- </summary>
-      -- <param name="ticksPerAction">The number of times that <paramref name="tickRate" /> should pass between each <see cref="M:WCSharp.Events.ISmoothDisposableAction.Action" /> call.</param>
-      -- <param name="tickRate">Expresses the smoothness of the trigger. Ideally use multiples of <see cref="F:WCSharp.Events.PeriodicEvents.SYSTEM_INTERVAL" />.</param>
+
+
+
+
+
+
       __ctor2__ = function (this, ticksPerAction, tickRate)
         this.ticksPerAction = ticksPerAction
         this.actions = ListT()
@@ -29594,10 +29619,10 @@ System.namespace("WCSharp.Events", function (namespace)
           return x:getActive()
         end)
       end
-      -- <summary>
-      -- Adds the given <paramref name="smoothDisposableTrigger" /> to automatic management.
-      -- <para>The first action call will occur after the tick interval. If this isn't desired, adjust <see cref="P:WCSharp.Events.ISmoothDisposableAction.TicksLeft" /> after calling this.</para>
-      -- </summary>
+
+
+
+
       Add = function (this, smoothDisposableTrigger)
         if not this.active then
           WCSharpEvents.PeriodicEvents.AddPeriodicEvent1(this.timerEvent)
@@ -29666,32 +29691,32 @@ System.namespace("WCSharp.Events", function (namespace)
       }
     end
   end)
-  -- <summary>
-  -- Helpful class that can be used to batch together multiple smooth events of the same type. Will automatically remove inactive triggers, and
-  -- subscribe/unsubscribe from <see cref="T:WCSharp.Events.PeriodicEvents" /> based on whether any triggers are active.
-  -- <para>Unlike <see cref="T:WCSharp.Events.PeriodicTrigger`1" />, all actions will not trigger simultaneously, since each action is counted down separately.</para>
-  -- </summary>
+
+
+
+
+
   namespace.class("SmoothTrigger_1", function (namespace)
     return function (T)
       local getActions, Add, Periodic, __ctor1__, __ctor2__
       local ListT = System.List(T)
-      -- <summary>
-      -- Creates a new smooth trigger which will individually trigger supplied actions every given interval.
-      -- <para><paramref name="tickInterval" /> will be rounded to the nearest multiple of <paramref name="tickRate" /></para>
-      -- </summary>
-      -- <param name="tickInterval">The amount of time between each <see cref="M:WCSharp.Events.ISmoothAction.Action" /> call.</param>
-      -- <param name="tickRate">Expresses the smoothness of the trigger. Ideally use multiples of <see cref="F:WCSharp.Events.PeriodicEvents.SYSTEM_INTERVAL" />.</param>
+
+
+
+
+
+
       __ctor1__ = function (this, tickInterval, tickRate)
         this.ticksPerAction = MathRound(tickInterval / tickRate)
         this.actions = ListT()
         this.timerEvent = WCSharpEvents.PeriodicEvent(System.fn(this, Periodic), tickRate)
       end
-      -- <summary>
-      -- Creates a new smooth trigger which will individually trigger supplied actions every given interval.
-      -- <para>Interval is equal to <paramref name="ticksPerAction" />*<paramref name="tickRate" />.</para>
-      -- </summary>
-      -- <param name="ticksPerAction">The number of times that <paramref name="tickRate" /> should pass between each <see cref="M:WCSharp.Events.ISmoothAction.Action" /> call.</param>
-      -- <param name="tickRate">Expresses the smoothness of the trigger. Ideally use multiples of <see cref="F:WCSharp.Events.PeriodicEvents.SYSTEM_INTERVAL" />.</param>
+
+
+
+
+
+
       __ctor2__ = function (this, ticksPerAction, tickRate)
         this.ticksPerAction = ticksPerAction
         this.actions = ListT()
@@ -29702,10 +29727,10 @@ System.namespace("WCSharp.Events", function (namespace)
           return x:getActive()
         end)
       end
-      -- <summary>
-      -- Adds the given <paramref name="smoothTrigger" /> to automatic management.
-      -- <para>The first action call will occur after the tick interval. If this isn't desired, adjust <see cref="P:WCSharp.Events.ISmoothAction.TicksLeft" /> after calling this.</para>
-      -- </summary>
+
+
+
+
       Add = function (this, smoothTrigger)
         if not this.active then
           WCSharpEvents.PeriodicEvents.AddPeriodicEvent1(this.timerEvent)
@@ -29773,11 +29798,11 @@ System.namespace("WCSharp.Events", function (namespace)
       }
     end
   end)
-  -- <summary>
-  -- Defines all built-in SpellEvents supported by <see cref="T:WCSharp.Events.PlayerUnitEvents" />.
-  -- <para>All of these events fire based on a ability id filter.</para>
-  -- <para>Custom events can also be specified via <see cref="M:WCSharp.Events.PlayerUnitEvents.AddCustomEvent(System.String,System.Func{System.Int32},WCSharp.Api.playerunitevent)" />.</para>
-  -- </summary>
+
+
+
+
+
   namespace.enum("SpellEvent", function ()
     return {
       Cast = 601,
@@ -29801,11 +29826,11 @@ System.namespace("WCSharp.Events", function (namespace)
       end
     }
   end)
-  -- <summary>
-  -- Defines all built-in UnitEvents supported by <see cref="T:WCSharp.Events.PlayerUnitEvents" />.
-  -- <para>All of these events fire based on a unit handle filter.</para>
-  -- <para>Custom events can also be specified via <see cref="M:WCSharp.Events.PlayerUnitEvents.AddCustomEvent(System.String,System.Func{System.Int32},WCSharp.Api.playerunitevent)" />.</para>
-  -- </summary>
+
+
+
+
+
   namespace.enum("UnitEvent", function ()
     return {
       Attacks = 701,
@@ -29929,11 +29954,11 @@ System.namespace("WCSharp.Events", function (namespace)
       end
     }
   end)
-  -- <summary>
-  -- Defines all built-in UnitTypeEvents supported by <see cref="T:WCSharp.Events.PlayerUnitEvents" />.
-  -- <para>All of these events fire based on an unit type id filter.</para>
-  -- <para>Custom events can also be specified via <see cref="M:WCSharp.Events.PlayerUnitEvents.AddCustomEvent(System.String,System.Func{System.Int32},WCSharp.Api.playerunitevent)" />.</para>
-  -- </summary>
+
+
+
+
+
   namespace.enum("UnitTypeEvent", function ()
     return {
       Attacks = 801,
@@ -30077,7 +30102,7 @@ System.namespace("WCSharp.Events.EventHandlers", function (namespace)
       this.actions = ListDelegate()
     end
     getFilterId = function (this)
-      return -2147483648 --[[Int32.MinValue]]
+      return -2147483648
     end
     getCount = function (this)
       return #this.actions
@@ -30372,7 +30397,7 @@ System.namespace("WCSharp.Events.EventHandlers.PlayerUnitEventHandlers", functio
       return false
     end
     Register = function (this, action)
-      local default, eventSet = TryGetEventSet(this, -2147483648 --[[Int32.MinValue]])
+      local default, eventSet = TryGetEventSet(this, -2147483648)
       if not default then
         eventSet = AddEventSet(this, WCSharpEventHandlers.EventSet())
       end
@@ -30393,7 +30418,7 @@ System.namespace("WCSharp.Events.EventHandlers.PlayerUnitEventHandlers", functio
       eventSet:Add(action, TypeWrapper_1handle(filterValue))
     end
     Unregister = function (this, action)
-      local ref, eventSet = TryGetEventSet(this, -2147483648 --[[Int32.MinValue]])
+      local ref, eventSet = TryGetEventSet(this, -2147483648)
       if ref and eventSet:Remove(action) and eventSet:getCount() == 0 then
         RemoveEvent(this, eventSet)
       end
@@ -30743,18 +30768,18 @@ System.namespace("WCSharp.Json", function (namespace)
       end
     }
   end)
-  -- <summary>
-  -- Entry point for converting classes to and from JSON files.
-  -- </summary>
+
+
+
   namespace.class("JsonConvert", function (namespace)
     local parser, TryDeserialize, TryDeserialize1, Deserialize, Deserialize1, Serialize, static
     static = function (this)
       parser = load("\r\n--\r\n-- json.lua\r\n--\r\n-- Copyright (c) 2020 rxi\r\n--\r\n-- Permission is hereby granted, free of charge, to any person obtaining a copy of\r\n-- this software and associated documentation files (the \"Software\"), to deal in\r\n-- the Software without restriction, including without limitation the rights to\r\n-- use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies\r\n-- of the Software, and to permit persons to whom the Software is furnished to do\r\n-- so, subject to the following conditions:\r\n--\r\n-- The above copyright notice and this permission notice shall be included in all\r\n-- copies or substantial portions of the Software.\r\n--\r\n-- THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\r\n-- IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\r\n-- FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\r\n-- AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\r\n-- LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\r\n-- OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\r\n-- SOFTWARE.\r\n--\r\n\r\nlocal json = { _version = \"0.1.2\" }\r\n\r\n-------------------------------------------------------------------------------\r\n-- Encode\r\n-------------------------------------------------------------------------------\r\n\r\nlocal encode\r\n\r\nlocal escape_char_map = {\r\n  [ \"\\\\\" ] = \"\\\\\",\r\n  [ \"\\\"\" ] = \"\\\"\",\r\n  [ \"\\b\" ] = \"b\",\r\n  [ \"\\f\" ] = \"f\",\r\n  [ \"\\n\" ] = \"n\",\r\n  [ \"\\r\" ] = \"r\",\r\n  [ \"\\t\" ] = \"t\",\r\n}\r\n\r\nlocal escape_char_map_inv = { [ \"/\" ] = \"/\" }\r\nfor k, v in pairs(escape_char_map) do\r\n  escape_char_map_inv[v] = k\r\nend\r\n\r\n\r\nlocal function escape_char(c)\r\n  return \"\\\\\" .. (escape_char_map[c] or string.format(\"u%04x\", c:byte()))\r\nend\r\n\r\n\r\nlocal function encode_nil(val)\r\n  return \"null\"\r\nend\r\n\r\n\r\nlocal function encode_table(val, stack)\r\n  local res = {}\r\n  stack = stack or {}\r\n\r\n  -- Circular reference?\r\n  if stack[val] then error(\"circular reference\") end\r\n\r\n  stack[val] = true\r\n\r\n  if rawget(val, 1) ~= nil or next(val) == nil then\r\n    -- Treat as array -- check keys are valid and it is not sparse\r\n    local n = 0\r\n    for k in pairs(val) do\r\n      if type(k) ~= \"number\" then\r\n        error(\"invalid table: mixed or invalid key types\")\r\n      end\r\n      n = n + 1\r\n    end\r\n    if n ~= #val then\r\n      error(\"invalid table: sparse array\")\r\n    end\r\n    -- Encode\r\n    for i, v in ipairs(val) do\r\n      table.insert(res, encode(v, stack))\r\n    end\r\n    stack[val] = nil\r\n    return \"[\" .. table.concat(res, \",\") .. \"]\"\r\n\r\n  else\r\n    -- Treat as an object\r\n    for k, v in pairs(val) do\r\n      if type(k) ~= \"string\" then\r\n        error(\"invalid table: mixed or invalid key types\")\r\n      end\r\n      table.insert(res, encode(k, stack) .. \":\" .. encode(v, stack))\r\n    end\r\n    stack[val] = nil\r\n    return \"{\" .. table.concat(res, \",\") .. \"}\"\r\n  end\r\nend\r\n\r\n\r\nlocal function encode_string(val)\r\n  return '\"' .. val:gsub('[%z\\1-\\31\\\\\"]', escape_char) .. '\"'\r\nend\r\n\r\n\r\nlocal function encode_number(val)\r\n  -- Check for NaN, -inf and inf\r\n  if val ~= val or val <= -math.huge or val >= math.huge then\r\n    error(\"unexpected number value '\" .. tostring(val) .. \"'\")\r\n  end\r\n  return tostring(val)\r\nend\r\n\r\n\r\nlocal type_func_map = {\r\n  [ \"nil\"     ] = encode_nil,\r\n  [ \"table\"   ] = encode_table,\r\n  [ \"string\"  ] = encode_string,\r\n  [ \"number\"  ] = encode_number,\r\n  [ \"boolean\" ] = tostring,\r\n}\r\n\r\n\r\nencode = function(val, stack)\r\n  local t = type(val)\r\n  local f = type_func_map[t]\r\n  if f then\r\n    return f(val, stack)\r\n  end\r\n  error(\"unexpected type '\" .. t .. \"'\")\r\nend\r\n\r\n\r\nfunction json.encode(val)\r\n  return ( encode(val) )\r\nend\r\n\r\n\r\n-------------------------------------------------------------------------------\r\n-- Decode\r\n-------------------------------------------------------------------------------\r\n\r\nlocal parse\r\n\r\nlocal function create_set(...)\r\n  local res = {}\r\n  for i = 1, select(\"#\", ...) do\r\n    res[ select(i, ...) ] = true\r\n  end\r\n  return res\r\nend\r\n\r\nlocal space_chars   = create_set(\" \", \"\\t\", \"\\r\", \"\\n\")\r\nlocal delim_chars   = create_set(\" \", \"\\t\", \"\\r\", \"\\n\", \"]\", \"}\", \",\")\r\nlocal escape_chars  = create_set(\"\\\\\", \"/\", '\"', \"b\", \"f\", \"n\", \"r\", \"t\", \"u\")\r\nlocal literals      = create_set(\"true\", \"false\", \"null\")\r\n\r\nlocal literal_map = {\r\n  [ \"true\"  ] = true,\r\n  [ \"false\" ] = false,\r\n  [ \"null\"  ] = nil,\r\n}\r\n\r\n\r\nlocal function next_char(str, idx, set, negate)\r\n  for i = idx, #str do\r\n    if set[str:sub(i, i)] ~= negate then\r\n      return i\r\n    end\r\n  end\r\n  return #str + 1\r\nend\r\n\r\n\r\nlocal function decode_error(str, idx, msg)\r\n  local line_count = 1\r\n  local col_count = 1\r\n  for i = 1, idx - 1 do\r\n    col_count = col_count + 1\r\n    if str:sub(i, i) == \"\\n\" then\r\n      line_count = line_count + 1\r\n      col_count = 1\r\n    end\r\n  end\r\n  error( string.format(\"%s at line %d col %d\", msg, line_count, col_count) )\r\nend\r\n\r\n\r\nlocal function codepoint_to_utf8(n)\r\n  -- http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=iws-appendixa\r\n  local f = math.floor\r\n  if n <= 0x7f then\r\n    return string.char(n)\r\n  elseif n <= 0x7ff then\r\n    return string.char(f(n / 64) + 192, n % 64 + 128)\r\n  elseif n <= 0xffff then\r\n    return string.char(f(n / 4096) + 224, f(n % 4096 / 64) + 128, n % 64 + 128)\r\n  elseif n <= 0x10ffff then\r\n    return string.char(f(n / 262144) + 240, f(n % 262144 / 4096) + 128,\r\n                       f(n % 4096 / 64) + 128, n % 64 + 128)\r\n  end\r\n  error( string.format(\"invalid unicode codepoint '%x'\", n) )\r\nend\r\n\r\n\r\nlocal function parse_unicode_escape(s)\r\n  local n1 = tonumber( s:sub(1, 4),  16 )\r\n  local n2 = tonumber( s:sub(7, 10), 16 )\r\n   -- Surrogate pair?\r\n  if n2 then\r\n    return codepoint_to_utf8((n1 - 0xd800) * 0x400 + (n2 - 0xdc00) + 0x10000)\r\n  else\r\n    return codepoint_to_utf8(n1)\r\n  end\r\nend\r\n\r\n\r\nlocal function parse_string(str, i)\r\n  local res = \"\"\r\n  local j = i + 1\r\n  local k = j\r\n\r\n  while j <= #str do\r\n    local x = str:byte(j)\r\n\r\n    if x < 32 then\r\n      decode_error(str, j, \"control character in string\")\r\n\r\n    elseif x == 92 then -- `\\`: Escape\r\n      res = res .. str:sub(k, j - 1)\r\n      j = j + 1\r\n      local c = str:sub(j, j)\r\n      if c == \"u\" then\r\n        local hex = str:match(\"^[dD][89aAbB]%x%x\\\\u%x%x%x%x\", j + 1)\r\n                 or str:match(\"^%x%x%x%x\", j + 1)\r\n                 or decode_error(str, j - 1, \"invalid unicode escape in string\")\r\n        res = res .. parse_unicode_escape(hex)\r\n        j = j + #hex\r\n      else\r\n        if not escape_chars[c] then\r\n          decode_error(str, j - 1, \"invalid escape char '\" .. c .. \"' in string\")\r\n        end\r\n        res = res .. escape_char_map_inv[c]\r\n      end\r\n      k = j + 1\r\n\r\n    elseif x == 34 then -- `\"`: End of string\r\n      res = res .. str:sub(k, j - 1)\r\n      return res, j + 1\r\n    end\r\n\r\n    j = j + 1\r\n  end\r\n\r\n  decode_error(str, i, \"expected closing quote for string\")\r\nend\r\n\r\n\r\nlocal function parse_number(str, i)\r\n  local x = next_char(str, i, delim_chars)\r\n  local s = str:sub(i, x - 1)\r\n  local n = tonumber(s)\r\n  if not n then\r\n    decode_error(str, i, \"invalid number '\" .. s .. \"'\")\r\n  end\r\n  return n, x\r\nend\r\n\r\n\r\nlocal function parse_literal(str, i)\r\n  local x = next_char(str, i, delim_chars)\r\n  local word = str:sub(i, x - 1)\r\n  if not literals[word] then\r\n    decode_error(str, i, \"invalid literal '\" .. word .. \"'\")\r\n  end\r\n  return literal_map[word], x\r\nend\r\n\r\n\r\nlocal function parse_array(str, i)\r\n  local res = {}\r\n  local n = 1\r\n  i = i + 1\r\n  while 1 do\r\n    local x\r\n    i = next_char(str, i, space_chars, true)\r\n    -- Empty / end of array?\r\n    if str:sub(i, i) == \"]\" then\r\n      i = i + 1\r\n      break\r\n    end\r\n    -- Read token\r\n    x, i = parse(str, i)\r\n    res[n] = x\r\n    n = n + 1\r\n    -- Next token\r\n    i = next_char(str, i, space_chars, true)\r\n    local chr = str:sub(i, i)\r\n    i = i + 1\r\n    if chr == \"]\" then break end\r\n    if chr ~= \",\" then decode_error(str, i, \"expected ']' or ','\") end\r\n  end\r\n  return res, i\r\nend\r\n\r\n\r\nlocal function parse_object(str, i)\r\n  local res = {}\r\n  i = i + 1\r\n  while 1 do\r\n    local key, val\r\n    i = next_char(str, i, space_chars, true)\r\n    -- Empty / end of object?\r\n    if str:sub(i, i) == \"}\" then\r\n      i = i + 1\r\n      break\r\n    end\r\n    -- Read key\r\n    if str:sub(i, i) ~= '\"' then\r\n      decode_error(str, i, \"expected string for key\")\r\n    end\r\n    key, i = parse(str, i)\r\n    -- Read ':' delimiter\r\n    i = next_char(str, i, space_chars, true)\r\n    if str:sub(i, i) ~= \":\" then\r\n      decode_error(str, i, \"expected ':' after key\")\r\n    end\r\n    i = next_char(str, i + 1, space_chars, true)\r\n    -- Read value\r\n    val, i = parse(str, i)\r\n    -- Set\r\n    res[key] = val\r\n    -- Next token\r\n    i = next_char(str, i, space_chars, true)\r\n    local chr = str:sub(i, i)\r\n    i = i + 1\r\n    if chr == \"}\" then break end\r\n    if chr ~= \",\" then decode_error(str, i, \"expected '}' or ','\") end\r\n  end\r\n  return res, i\r\nend\r\n\r\n\r\nlocal char_func_map = {\r\n  [ '\"' ] = parse_string,\r\n  [ \"0\" ] = parse_number,\r\n  [ \"1\" ] = parse_number,\r\n  [ \"2\" ] = parse_number,\r\n  [ \"3\" ] = parse_number,\r\n  [ \"4\" ] = parse_number,\r\n  [ \"5\" ] = parse_number,\r\n  [ \"6\" ] = parse_number,\r\n  [ \"7\" ] = parse_number,\r\n  [ \"8\" ] = parse_number,\r\n  [ \"9\" ] = parse_number,\r\n  [ \"-\" ] = parse_number,\r\n  [ \"t\" ] = parse_literal,\r\n  [ \"f\" ] = parse_literal,\r\n  [ \"n\" ] = parse_literal,\r\n  [ \"[\" ] = parse_array,\r\n  [ \"{\" ] = parse_object,\r\n}\r\n\r\n\r\nparse = function(str, idx)\r\n  local chr = str:sub(idx, idx)\r\n  local f = char_func_map[chr]\r\n  if f then\r\n    return f(str, idx)\r\n  end\r\n  decode_error(str, idx, \"unexpected character '\" .. chr .. \"'\")\r\nend\r\n\r\n\r\nfunction json.decode(str)\r\n  if type(str) ~= \"string\" then\r\n    error(\"expected argument of type string, got \" .. type(str))\r\n  end\r\n  local res, idx = parse(str, next_char(str, 1, space_chars, true))\r\n  idx = next_char(str, idx, space_chars, true)\r\n  if idx <= #str then\r\n    decode_error(str, idx, \"trailing garbage\")\r\n  end\r\n  return res\r\nend\r\n\r\n\r\nreturn json\r\n")()
     end
-    -- <summary>
-    -- Attempts to convert the given JSON string into the specified generic class.
-    -- <para>Please read the documentation for details on what can and cannot be (de)serialized.</para>
-    -- </summary>
+
+
+
+
     TryDeserialize = function (input, data, T)
       local default, data2 = TryDeserialize1(input, System.typeof(T))
       if default then
@@ -30764,10 +30789,10 @@ System.namespace("WCSharp.Json", function (namespace)
       data = System.default(T)
       return false, data
     end
-    -- <summary>
-    -- Attempts to convert the given JSON string into the specified generic class.
-    -- <para>Please read the documentation for details on what can and cannot be (de)serialized.</para>
-    -- </summary>
+
+
+
+
     TryDeserialize1 = function (input, deserializeType, data)
       local default, extern = System.try(function ()
         data = Deserialize1(input, deserializeType)
@@ -30780,24 +30805,24 @@ System.namespace("WCSharp.Json", function (namespace)
         return extern, data
       end
     end
-    -- <summary>
-    -- Converts the given JSON string into the specified generic class.
-    -- <para>Please read the documentation for details on what can and cannot be (de)serialized.</para>
-    -- </summary>
+
+
+
+
     Deserialize = function (input, T)
       return System.cast(T, Deserialize1(input, System.typeof(T)))
     end
-    -- <summary>
-    -- Converts the given JSON string into the specified generic class.
-    -- <para>Please read the documentation for details on what can and cannot be (de)serialized.</para>
-    -- </summary>
+
+
+
+
     Deserialize1 = function (input, deserializeType)
       return WCSharpJson.Deserialization.DeserializeLuaTable(WCSharpShared.LuaTable(parser.decode(input)), deserializeType)
     end
-    -- <summary>
-    -- Converts the given generic class into a JSON string.
-    -- <para>Please read the documentation for details on what can and cannot be (de)serialized.</para>
-    -- </summary>
+
+
+
+
     Serialize = function (input, T)
       return parser.encode(WCSharpJson.Serialization.SerializeClass(input, System.typeof(T)))
     end
@@ -30951,30 +30976,30 @@ System.import(function (out)
   PeriodicTrigger_1Knockback = WCSharpEvents.PeriodicTrigger_1(WCSharpKnockbacks.Knockback)
 end)
 System.namespace("WCSharp.Knockbacks", function (namespace)
-  -- <summary>
-  -- Represents a single knockback instance. Add to <see cref="T:WCSharp.Knockbacks.KnockbackSystem" /> to activate.
-  -- </summary>
+
+
+
   namespace.class("Knockback", function (namespace)
     local getActive, setActive, Action, Merge, class, __ctor1__, __ctor2__, __ctor3__
     __ctor1__ = function (this, target, distance, duration)
       this.Target = target
-      this.Speed = distance / duration * (0.03125 --[[1f / 32f]])
-      this.SpeedDropoff = this.Speed / duration * (0.03125 --[[1f / 32f]])
+      this.Speed = distance / duration * (0.03125)
+      this.SpeedDropoff = this.Speed / duration * (0.03125)
     end
-    -- <summary>
-    -- Knocks the target the given distance towards the given angle (in degrees) over the given duration.
-    -- </summary>
-    -- <param name="target">The target to perform the knockback on</param>
-    -- <param name="distance">The distance in units to knock the target back</param>
-    -- <param name="duration">The duration in seconds over which the target should be knocked back</param>
-    -- <param name="angle">In degrees.</param>
+
+
+
+
+
+
+
     __ctor2__ = function (this, target, distance, duration, angle)
       __ctor1__(this, target, distance, duration)
-      this.Angle = angle * (0.0174532924 --[[(float)Math.PI / 180f]])
+      this.Angle = angle * (0.0174532924)
     end
-    -- <summary>
-    -- Knocks the target the given distance towards the given location over the given duration.
-    -- </summary>
+
+
+
     __ctor3__ = function (this, target, distance, duration, targetX, targetY)
       __ctor1__(this, target, distance, duration)
       local unitX = GetUnitX(this.Target)
@@ -30982,9 +31007,9 @@ System.namespace("WCSharp.Knockbacks", function (namespace)
       this.Angle = (180 + (57.2957764 * Atan2(unitY - targetY, unitX - targetX)))
     end
     getActive, setActive = System.property("Active")
-    -- <summary>
-    -- Called by the system. Do not call yourself.
-    -- </summary>
+
+
+
     Action = function (this)
       local newX = GetUnitX(this.Target) + this.Speed * Cos(this.Angle)
       local newY = GetUnitY(this.Target) + this.Speed * Sin(this.Angle)
@@ -30995,23 +31020,23 @@ System.namespace("WCSharp.Knockbacks", function (namespace)
         return
       end
       if this.Effect1 ~= nil then
-        this.effect1Interval = this.effect1Interval - (0.03125 --[[1f / 32f]])
+        this.effect1Interval = this.effect1Interval - (0.03125)
         if this.effect1Interval <= 0 then
           this.effect1Interval = 1
           DestroyEffect(AddSpecialEffectTarget(this.Effect1, this.Target, this.Effect1AttachmentPoint))
         end
       end
       if this.Effect2 ~= nil then
-        this.effect2Interval = this.effect2Interval - (0.03125 --[[1f / 32f]])
+        this.effect2Interval = this.effect2Interval - (0.03125)
         if this.effect2Interval <= 0 then
           this.effect2Interval = 0.125
           DestroyEffect(AddSpecialEffectTarget(this.Effect1, this.Target, this.Effect1AttachmentPoint))
         end
       end
     end
-    -- <summary>
-    -- Merges the force of the given knockback into this knockback. Typically though, you can also just have both knockbacks active simultaneously and achieve the same effect.
-    -- </summary>
+
+
+
     Merge = function (this, knockback)
       local num = this.Speed * Cos(this.Angle) + knockback.Speed * Cos(knockback.Angle)
       local num2 = this.Speed * Sin(this.Angle) + knockback.Speed * Sin(knockback.Angle)
@@ -31069,20 +31094,20 @@ System.namespace("WCSharp.Knockbacks", function (namespace)
     }
     return class
   end)
-  -- <summary>
-  -- Keeps track of all active knockbacks.
-  -- </summary>
+
+
+
   namespace.class("KnockbackSystem", function (namespace)
     local periodicTrigger, getKnockbacks, Add, static
     static = function (this)
-      periodicTrigger = PeriodicTrigger_1Knockback(0.03125 --[[1f / 32f]])
+      periodicTrigger = PeriodicTrigger_1Knockback(0.03125)
     end
     getKnockbacks = function ()
       return periodicTrigger:getActions()
     end
-    -- <summary>
-    -- Adds the given knockback to the system. This will also initialise or alter some values according to the knockbacks' properties.
-    -- </summary>
+
+
+
     Add = function (knockback)
       periodicTrigger:Add(knockback)
     end
@@ -31122,19 +31147,19 @@ System.import(function (out)
   PeriodicDisposableTrigger_1Lightning = WCSharpEvents.PeriodicDisposableTrigger_1(WCSharpLightnings.Lightning)
 end)
 System.namespace("WCSharp.Lightnings", function (namespace)
-  -- <summary>
-  -- Represents a single lightning instance. Add to <see cref="T:WCSharp.Lightnings.LightningSystem" /> to activate.
-  -- </summary>
+
+
+
   namespace.class("Lightning", function (namespace)
     local getActive, setActive, Start, Action, StartFade, Dispose, __ctor1__, __ctor2__, 
     __ctor3__, __ctor4__
-    -- <summary>
-    -- Creates a new <see cref="T:WCSharp.Lightnings.Lightning" /> instance with the given parameters.
-    -- <para>Will automatically set <see cref="P:WCSharp.Lightnings.Lightning.CasterX" />, <see cref="P:WCSharp.Lightnings.Lightning.CasterY" />, <see cref="P:WCSharp.Lightnings.Lightning.TargetX" /> and <see cref="P:WCSharp.Lightnings.Lightning.TargetY" />.</para>
-    -- </summary>
-    -- <param name="name">The name of the lightning effect. See <see href="https://www.hiveworkshop.com/threads/beginners-guide-to-lightning-effects.220370/" />.</param>
-    -- <param name="caster">The source of the lightning. Will automatically update the position when <paramref name="caster" /> moves.</param>
-    -- <param name="target">The target of the lightning. Will automatically update the position when <paramref name="target" /> moves.</param>
+
+
+
+
+
+
+
     __ctor1__ = function (this, name, caster, target)
       this.name = name
       this.casterZ = BlzGetUnitZ(caster) + GetUnitFlyHeight(caster)
@@ -31146,14 +31171,14 @@ System.namespace("WCSharp.Lightnings", function (namespace)
       this.TargetX = GetUnitX(target)
       this.TargetY = GetUnitY(target)
     end
-    -- <summary>
-    -- Creates a new <see cref="T:WCSharp.Lightnings.Lightning" /> instance with the given parameters.
-    -- <para>Will automatically set <see cref="P:WCSharp.Lightnings.Lightning.CasterX" /> and <see cref="P:WCSharp.Lightnings.Lightning.CasterY" />.</para>
-    -- </summary>
-    -- <param name="name">The name of the lightning effect. See <see href="https://www.hiveworkshop.com/threads/beginners-guide-to-lightning-effects.220370/" />.</param>
-    -- <param name="caster">The source of the lightning. Will automatically update the position when <paramref name="caster" /> moves.</param>
-    -- <param name="targetX"></param>
-    -- <param name="targetY"></param>
+
+
+
+
+
+
+
+
     __ctor2__ = function (this, name, caster, targetX, targetY)
       this.name = name
       this.casterZ = BlzGetUnitZ(caster) + GetUnitFlyHeight(caster)
@@ -31164,14 +31189,14 @@ System.namespace("WCSharp.Lightnings", function (namespace)
       this.TargetX = targetX
       this.TargetY = targetY
     end
-    -- <summary>
-    -- Creates a new <see cref="T:WCSharp.Lightnings.Lightning" /> instance with the given parameters.
-    -- <para>Will automatically set <see cref="P:WCSharp.Lightnings.Lightning.TargetX" /> and <see cref="P:WCSharp.Lightnings.Lightning.TargetY" />.</para>
-    -- </summary>
-    -- <param name="name">The name of the lightning effect. See <see href="https://www.hiveworkshop.com/threads/beginners-guide-to-lightning-effects.220370/" />.</param>
-    -- <param name="casterX"></param>
-    -- <param name="casterY"></param>
-    -- <param name="target">The target of the lightning. Will automatically update the position when <paramref name="target" /> moves.</param>
+
+
+
+
+
+
+
+
     __ctor3__ = function (this, name, casterX, casterY, target)
       this.name = name
       this.casterZ = WCSharpShared.Util.GetZ(casterX, casterY)
@@ -31182,14 +31207,14 @@ System.namespace("WCSharp.Lightnings", function (namespace)
       this.TargetX = GetUnitX(target)
       this.TargetY = GetUnitY(target)
     end
-    -- <summary>
-    -- Creates a new <see cref="T:WCSharp.Lightnings.Lightning" /> instance with the given parameters.
-    -- </summary>
-    -- <param name="name">The name of the lightning effect. See <see href="https://www.hiveworkshop.com/threads/beginners-guide-to-lightning-effects.220370/" />.</param>
-    -- <param name="casterX"></param>
-    -- <param name="casterY"></param>
-    -- <param name="targetX"></param>
-    -- <param name="targetY"></param>
+
+
+
+
+
+
+
+
     __ctor4__ = function (this, name, casterX, casterY, targetX, targetY)
       this.name = name
       this.casterZ = WCSharpShared.Util.GetZ(casterX, casterY)
@@ -31204,12 +31229,12 @@ System.namespace("WCSharp.Lightnings", function (namespace)
       this.lightning = AddLightning(this.name, true, this.CasterX, this.CasterY, this.TargetX, this.TargetY)
       MoveLightningEx(this.lightning, true, this.CasterX, this.CasterY, this.casterZ + this.CasterHeightOffset, this.TargetX, this.TargetY, this.casterZ + this.TargetHeightOffset)
       SetLightningColor(this.lightning, this.Red, this.Green, this.Blue, this.Alpha)
-      this.transparencyRate = ((this.FadeDuration > 0) and (this.Alpha / this.FadeDuration * (0.03125 --[[1f / 32f]])) or this.Alpha)
+      this.transparencyRate = ((this.FadeDuration > 0) and (this.Alpha / this.FadeDuration * (0.03125)) or this.Alpha)
       this.age = 0
     end
-    -- <summary>
-    -- Called by the system. Do not call yourself.
-    -- </summary>
+
+
+
     Action = function (this)
       if this.Caster ~= nil then
         if UnitAlive(this.Caster) then
@@ -31230,7 +31255,7 @@ System.namespace("WCSharp.Lightnings", function (namespace)
         end
       end
       MoveLightningEx(this.lightning, true, this.CasterX, this.CasterY, this.casterZ + this.CasterHeightOffset, this.TargetX, this.TargetY, this.targetZ + this.TargetHeightOffset)
-      this.age = this.age + (0.03125 --[[1f / 32f]])
+      this.age = this.age + (0.03125)
       if this.age > this.Duration - this.FadeDuration then
         this.Alpha = this.Alpha - this.transparencyRate
         SetLightningColor(this.lightning, this.Red, this.Green, this.Blue, this.Alpha)
@@ -31239,13 +31264,13 @@ System.namespace("WCSharp.Lightnings", function (namespace)
         this.Active = false
       end
     end
-    -- <summary>
-    -- For lightnings that last until cancelled (meaning duration is excessively high), this method can be used to start the fade out process when desired.
-    -- </summary>
+
+
+
     StartFade = function (this)
       this.age = this.Duration - this.FadeDuration
     end
-    -- <inheritdoc />
+
     Dispose = function (this)
       DestroyLightning(this.lightning)
     end
@@ -31326,20 +31351,20 @@ System.namespace("WCSharp.Lightnings", function (namespace)
       end
     }
   end)
-  -- <summary>
-  -- Tracks and runs all active <see cref="T:WCSharp.Lightnings.Lightning" /> instances.
-  -- </summary>
+
+
+
   namespace.class("LightningSystem", function (namespace)
     local periodicTrigger, getMissiles, Add, static
     static = function (this)
-      periodicTrigger = PeriodicDisposableTrigger_1Lightning(0.03125 --[[1f / 32f]])
+      periodicTrigger = PeriodicDisposableTrigger_1Lightning(0.03125)
     end
     getMissiles = function ()
       return periodicTrigger:getActions()
     end
-    -- <summary>
-    -- Adds the given <paramref name="lightning" /> to the system. This will also initialise or alter some values according to the lightnings' properties.
-    -- </summary>
+
+
+
     Add = function (lightning)
       lightning:Start()
       periodicTrigger:Add(lightning)
@@ -31386,17 +31411,17 @@ System.import(function (out)
   PeriodicDisposableTrigger_1Missile = WCSharpEvents.PeriodicDisposableTrigger_1(WCSharpMissiles.Missile)
 end)
 System.namespace("WCSharp.Missiles", function (namespace)
-  -- <summary>
-  -- Basic missile that will go from unit/location A to unit/location B.
-  -- <para>The main feature for this missile is that missiles can arc.</para>
-  -- </summary>
+
+
+
+
   namespace.class("BasicMissile", function (namespace)
     local getCasterZ, setCasterZ, getTargetZ, setTargetZ, getMissileZ, setMissileZ, getSpeedPerTick, setSpeedPerTick, 
     getSpeed, setSpeed, getMode, setMode, getIsArcing, setIsArcing, SetFlightMode, Launch, 
     Action, __ctor1__, __ctor2__, __ctor3__, __ctor4__
-    -- <summary>
-    -- The flight modes of this missile type.
-    -- </summary>
+
+
+
     namespace.enum("FlightMode", function ()
       return {
         Default = 0,
@@ -31414,48 +31439,48 @@ System.namespace("WCSharp.Missiles", function (namespace)
         end
       }
     end)
-    -- <inheritdoc />
+
     __ctor1__ = function (this, caster, target)
       System.base(this).__ctor__[3](this, caster, target)
     end
-    -- <inheritdoc />
+
     __ctor2__ = function (this, caster, targetX, targetY)
       System.base(this).__ctor__[4](this, caster, targetX, targetY)
     end
-    -- <inheritdoc />
+
     __ctor3__ = function (this, castingPlayer, casterX, casterY, target)
       System.base(this).__ctor__[5](this, castingPlayer, casterX, casterY, target)
     end
-    -- <inheritdoc />
+
     __ctor4__ = function (this, castingPlayer, casterX, casterY, targetX, targetY)
       System.base(this).__ctor__[6](this, castingPlayer, casterX, casterY, targetX, targetY)
     end
     getCasterZ = function (this)
-      if this.mode ~= 1 --[[FlightMode.FollowTerrain]] then
+      if this.mode ~= 1 then
         return this.InternalCasterZ
       end
       return this.InternalCasterZ + WCSharpShared.Util.GetZ(this.CasterX, this.CasterY)
     end
     setCasterZ = function (this, value)
-      this.InternalCasterZ = ((this.mode == 1 --[[FlightMode.FollowTerrain]]) and (value - WCSharpShared.Util.GetZ(this.CasterX, this.CasterY)) or value)
+      this.InternalCasterZ = ((this.mode == 1) and (value - WCSharpShared.Util.GetZ(this.CasterX, this.CasterY)) or value)
     end
     getTargetZ = function (this)
-      if this.mode ~= 1 --[[FlightMode.FollowTerrain]] then
+      if this.mode ~= 1 then
         return this.InternalTargetZ
       end
       return this.InternalTargetZ + WCSharpShared.Util.GetZ(this.TargetX, this.TargetY)
     end
     setTargetZ = function (this, value)
-      this.InternalTargetZ = ((this.mode == 1 --[[FlightMode.FollowTerrain]]) and (value - WCSharpShared.Util.GetZ(this.TargetX, this.TargetY)) or value)
+      this.InternalTargetZ = ((this.mode == 1) and (value - WCSharpShared.Util.GetZ(this.TargetX, this.TargetY)) or value)
     end
     getMissileZ = function (this)
-      if this.mode ~= 1 --[[FlightMode.FollowTerrain]] then
+      if this.mode ~= 1 then
         return this.InternalMissileZ
       end
       return this.InternalMissileZ + WCSharpShared.Util.GetZ(this.MissileX, this.MissileY)
     end
     setMissileZ = function (this, value)
-      this.InternalMissileZ = ((this.mode == 1 --[[FlightMode.FollowTerrain]]) and (value - WCSharpShared.Util.GetZ(this.MissileX, this.MissileY)) or value)
+      this.InternalMissileZ = ((this.mode == 1) and (value - WCSharpShared.Util.GetZ(this.MissileX, this.MissileY)) or value)
     end
     getSpeedPerTick = function (this)
       return this.speed
@@ -31464,10 +31489,10 @@ System.namespace("WCSharp.Missiles", function (namespace)
       this.speed = value
     end
     getSpeed = function (this)
-      return this.speed / (0.03125 --[[1f / 32f]])
+      return this.speed / (0.03125)
     end
     setSpeed = function (this, value)
-      this.speed = value * (0.03125 --[[1f / 32f]])
+      this.speed = value * (0.03125)
     end
     getMode = function (this)
       return this.mode
@@ -31493,23 +31518,23 @@ System.namespace("WCSharp.Missiles", function (namespace)
       this.isArcing = value
     end
     SetFlightMode = function (this, value)
-      if value == 0 --[[FlightMode.Default]] then
-        value = ((this.Arc == 0 and not (GetUnitFlyHeight(this.Caster) + this.CasterLaunchZ >= 300)) and 1 --[[FlightMode.FollowTerrain]] or 2 --[[FlightMode.Direct]])
+      if value == 0 then
+        value = ((this.Arc == 0 and not (GetUnitFlyHeight(this.Caster) + this.CasterLaunchZ >= 300)) and 1 or 2)
       end
-      if this.mode == 2 --[[FlightMode.Direct]] then
-        if value == 1 --[[FlightMode.FollowTerrain]] then
+      if this.mode == 2 then
+        if value == 1 then
           this.InternalCasterZ = this.InternalCasterZ - WCSharpShared.Util.GetZ(this.CasterX, this.CasterY)
           this.InternalMissileZ = this.InternalMissileZ - WCSharpShared.Util.GetZ(this.MissileX, this.MissileY)
           this.InternalTargetZ = this.InternalTargetZ - WCSharpShared.Util.GetZ(this.TargetX, this.TargetY)
         end
-      elseif value == 2 --[[FlightMode.Direct]] then
+      elseif value == 2 then
         this.InternalCasterZ = this.InternalCasterZ + WCSharpShared.Util.GetZ(this.CasterX, this.CasterY)
         this.InternalMissileZ = this.InternalMissileZ + WCSharpShared.Util.GetZ(this.MissileX, this.MissileY)
         this.InternalTargetZ = this.InternalTargetZ + WCSharpShared.Util.GetZ(this.TargetX, this.TargetY)
       end
       this.mode = value
     end
-    -- <inheritdoc />
+
     Launch = function (this)
       this.InternalCasterZ = this.InternalCasterZ + this.CasterLaunchZ
       this.InternalTargetZ = this.InternalTargetZ + this.TargetImpactZ
@@ -31519,11 +31544,11 @@ System.namespace("WCSharp.Missiles", function (namespace)
       this.MissileY = this.CasterY
       this.isArcing = this.Arc ~= 0
       this.totalDistanceToTarget = SquareRoot(((this.CasterX - this.TargetX) * (this.CasterX - this.TargetX)) + ((this.CasterY - this.TargetY) * (this.CasterY - this.TargetY)))
-      if this.mode == 0 --[[FlightMode.Default]] then
+      if this.mode == 0 then
         SetFlightMode(this, 0)
       else
         local flightMode = this.mode
-        this.mode = 0 --[[FlightMode.Default]]
+        this.mode = 0
         SetFlightMode(this, 0)
         SetFlightMode(this, flightMode)
       end
@@ -31535,14 +31560,14 @@ System.namespace("WCSharp.Missiles", function (namespace)
         end
       end
     end
-    -- <inheritdoc />
+
     Action = function (this)
       if this.Target ~= nil then
         if UnitAlive(this.Target) then
           this.TargetX = GetUnitX(this.Target)
           this.TargetY = GetUnitY(this.Target)
           this.InternalTargetZ = GetUnitFlyHeight(this.Target) + this.TargetImpactZ
-          if this.mode ~= 1 --[[FlightMode.FollowTerrain]] then
+          if this.mode ~= 1 then
             this.InternalTargetZ = this.InternalTargetZ + WCSharpShared.Util.GetZ(this.TargetX, this.TargetY)
           end
         else
@@ -31562,7 +31587,7 @@ System.namespace("WCSharp.Missiles", function (namespace)
         else
           this.totalDistanceToTarget = num2
           local num3 = SquareRoot(((this.CasterX - this.MissileX) * (this.CasterX - this.MissileX)) + ((this.CasterY - this.MissileY) * (this.CasterY - this.MissileY))) / num2
-          this.InternalMissileZ = this.InternalCasterZ + num3 * (this.InternalTargetZ - this.InternalCasterZ) + num2 * this.Arc * Sin(num3 * 3.14159274 --[[(float)Math.PI]])
+          this.InternalMissileZ = this.InternalCasterZ + num3 * (this.InternalTargetZ - this.InternalCasterZ) + num2 * this.Arc * Sin(num3 * 3.14159274)
         end
       else
         this.InternalMissileZ = this.InternalMissileZ + ((this.InternalTargetZ - this.InternalMissileZ) * (this.speed / num))
@@ -31655,19 +31680,19 @@ System.namespace("WCSharp.Missiles", function (namespace)
       end
     }
   end)
-  -- <summary>
-  -- Advanced missile that allows for arcing/curving motions, i.e. a boomerang motion.
-  -- <para>If you do not use the <see cref="P:WCSharp.Missiles.CurveMissile.Curve" /> property, you should use <see cref="T:WCSharp.Missiles.BasicMissile" /> instead for greater performance and
-  -- identical features.</para>
-  -- </summary>
+
+
+
+
+
   namespace.class("CurveMissile", function (namespace)
     local getCasterZ, setCasterZ, getTargetZ, setTargetZ, getMissileZ, setMissileZ, getSpeedPerTick, setSpeedPerTick, 
     getSpeed, setSpeed, getCurve, setCurve, getMode, setMode, getIsArcingOrCurving, setIsArcingOrCurving, 
     SetFlightMode, Launch, Action, DirectAction, ArcAction, __ctor1__, __ctor2__, __ctor3__, 
     __ctor4__
-    -- <summary>
-    -- The flight modes of this missile type.
-    -- </summary>
+
+
+
     namespace.enum("FlightMode", function ()
       return {
         Default = 0,
@@ -31685,48 +31710,48 @@ System.namespace("WCSharp.Missiles", function (namespace)
         end
       }
     end)
-    -- <inheritdoc />
+
     __ctor1__ = function (this, caster, target)
       System.base(this).__ctor__[3](this, caster, target)
     end
-    -- <inheritdoc />
+
     __ctor2__ = function (this, caster, targetX, targetY)
       System.base(this).__ctor__[4](this, caster, targetX, targetY)
     end
-    -- <inheritdoc />
+
     __ctor3__ = function (this, castingPlayer, casterX, casterY, target)
       System.base(this).__ctor__[5](this, castingPlayer, casterX, casterY, target)
     end
-    -- <inheritdoc />
+
     __ctor4__ = function (this, castingPlayer, casterX, casterY, targetX, targetY)
       System.base(this).__ctor__[6](this, castingPlayer, casterX, casterY, targetX, targetY)
     end
     getCasterZ = function (this)
-      if this.mode ~= 1 --[[FlightMode.FollowTerrain]] then
+      if this.mode ~= 1 then
         return this.InternalCasterZ
       end
       return this.InternalCasterZ + WCSharpShared.Util.GetZ(this.CasterX, this.CasterY)
     end
     setCasterZ = function (this, value)
-      this.InternalCasterZ = ((this.mode == 1 --[[FlightMode.FollowTerrain]]) and (value - WCSharpShared.Util.GetZ(this.CasterX, this.CasterY)) or value)
+      this.InternalCasterZ = ((this.mode == 1) and (value - WCSharpShared.Util.GetZ(this.CasterX, this.CasterY)) or value)
     end
     getTargetZ = function (this)
-      if this.mode ~= 1 --[[FlightMode.FollowTerrain]] then
+      if this.mode ~= 1 then
         return this.InternalTargetZ
       end
       return this.InternalTargetZ + WCSharpShared.Util.GetZ(this.TargetX, this.TargetY)
     end
     setTargetZ = function (this, value)
-      this.InternalTargetZ = ((this.mode == 1 --[[FlightMode.FollowTerrain]]) and (value - WCSharpShared.Util.GetZ(this.TargetX, this.TargetY)) or value)
+      this.InternalTargetZ = ((this.mode == 1) and (value - WCSharpShared.Util.GetZ(this.TargetX, this.TargetY)) or value)
     end
     getMissileZ = function (this)
-      if this.mode ~= 1 --[[FlightMode.FollowTerrain]] then
+      if this.mode ~= 1 then
         return this.InternalMissileZ
       end
       return this.InternalMissileZ + WCSharpShared.Util.GetZ(this.MissileX, this.MissileY)
     end
     setMissileZ = function (this, value)
-      this.InternalMissileZ = ((this.mode == 1 --[[FlightMode.FollowTerrain]]) and (value - WCSharpShared.Util.GetZ(this.MissileX, this.MissileY)) or value)
+      this.InternalMissileZ = ((this.mode == 1) and (value - WCSharpShared.Util.GetZ(this.MissileX, this.MissileY)) or value)
     end
     getSpeedPerTick = function (this)
       return this.speed
@@ -31735,16 +31760,16 @@ System.namespace("WCSharp.Missiles", function (namespace)
       this.speed = value
     end
     getSpeed = function (this)
-      return this.speed / (0.03125 --[[1f / 32f]])
+      return this.speed / (0.03125)
     end
     setSpeed = function (this, value)
-      this.speed = value * (0.03125 --[[1f / 32f]])
+      this.speed = value * (0.03125)
     end
     getCurve = function (this)
-      return this.CurveRad * (57.2957764 --[[180f / (float)Math.PI]])
+      return this.CurveRad * (57.2957764)
     end
     setCurve = function (this, value)
-      this.CurveRad = value * (0.0174532924 --[[(float)Math.PI / 180f]])
+      this.CurveRad = value * (0.0174532924)
     end
     getMode = function (this)
       return this.mode
@@ -31773,23 +31798,23 @@ System.namespace("WCSharp.Missiles", function (namespace)
       this.isArcingOrCurving = value
     end
     SetFlightMode = function (this, value)
-      if value == 0 --[[FlightMode.Default]] then
-        value = ((this.Arc == 0 and not (GetUnitFlyHeight(this.Caster) + this.CasterLaunchZ >= 300)) and 1 --[[FlightMode.FollowTerrain]] or 2 --[[FlightMode.Direct]])
+      if value == 0 then
+        value = ((this.Arc == 0 and not (GetUnitFlyHeight(this.Caster) + this.CasterLaunchZ >= 300)) and 1 or 2)
       end
-      if this.mode == 2 --[[FlightMode.Direct]] then
-        if value == 1 --[[FlightMode.FollowTerrain]] then
+      if this.mode == 2 then
+        if value == 1 then
           this.InternalCasterZ = this.InternalCasterZ - WCSharpShared.Util.GetZ(this.CasterX, this.CasterY)
           this.InternalMissileZ = this.InternalMissileZ - WCSharpShared.Util.GetZ(this.MissileX, this.MissileY)
           this.InternalTargetZ = this.InternalTargetZ - WCSharpShared.Util.GetZ(this.TargetX, this.TargetY)
         end
-      elseif value == 2 --[[FlightMode.Direct]] then
+      elseif value == 2 then
         this.InternalCasterZ = this.InternalCasterZ + WCSharpShared.Util.GetZ(this.CasterX, this.CasterY)
         this.InternalMissileZ = this.InternalMissileZ + WCSharpShared.Util.GetZ(this.MissileX, this.MissileY)
         this.InternalTargetZ = this.InternalTargetZ + WCSharpShared.Util.GetZ(this.TargetX, this.TargetY)
       end
       this.mode = value
     end
-    -- <inheritdoc />
+
     Launch = function (this)
       this.InternalCasterZ = this.InternalCasterZ + this.CasterLaunchZ
       this.InternalTargetZ = this.InternalTargetZ + this.TargetImpactZ
@@ -31803,11 +31828,11 @@ System.namespace("WCSharp.Missiles", function (namespace)
       this.RollRad = this.CurveRad
       this.isArcingOrCurving = this.Arc ~= 0 or getCurve(this) ~= 0
       this.totalDistanceToTarget = SquareRoot(((this.CasterX - this.TargetX) * (this.CasterX - this.TargetX)) + ((this.CasterY - this.TargetY) * (this.CasterY - this.TargetY)))
-      if this.mode == 0 --[[FlightMode.Default]] then
+      if this.mode == 0 then
         SetFlightMode(this, 0)
       else
         local flightMode = this.mode
-        this.mode = 0 --[[FlightMode.Default]]
+        this.mode = 0
         SetFlightMode(this, 0)
         SetFlightMode(this, flightMode)
       end
@@ -31819,7 +31844,7 @@ System.namespace("WCSharp.Missiles", function (namespace)
         end
       end
     end
-    -- <inheritdoc />
+
     Action = function (this)
       if this.Target ~= nil then
         if UnitAlive(this.Target) then
@@ -31895,7 +31920,7 @@ System.namespace("WCSharp.Missiles", function (namespace)
       local missileX = this.MissileX
       local missileY = this.MissileY
       local missileZ = getMissileZ(this)
-      local num5 = num * this.Arc * Sin(num2 / num * 3.14159274 --[[(float)Math.PI]])
+      local num5 = num * this.Arc * Sin(num2 / num * 3.14159274)
       local num6 = Cos(radians)
       local num7 = Sin(radians)
       local num8 = Cos(this.CurveRad)
@@ -31998,18 +32023,18 @@ System.namespace("WCSharp.Missiles", function (namespace)
       end
     }
   end)
-  -- <summary>
-  -- Homing missile with a fixed speed that will attempt to aim itself at the target, restricted by turn speed.
-  -- <para>Note: Does not have any behaviour to avoid endlessly circling the enemy.
-  -- I recommend using it with a collision radius or such so that exact collisions aren't required.</para>
-  -- </summary>
+
+
+
+
+
   namespace.class("HomingMissile", function (namespace)
     local getCasterZ, setCasterZ, getTargetZ, setTargetZ, getMissileZ, setMissileZ, getSpeedPerTick, setSpeedPerTick, 
     getSpeed, setSpeed, getTurnRate, setTurnRate, getTurnPeriod, setTurnPeriod, getMode, setMode, 
     SetFlightMode, Launch, Action, __ctor1__, __ctor2__, __ctor3__, __ctor4__
-    -- <summary>
-    -- The flight modes of this missile type.
-    -- </summary>
+
+
+
     namespace.enum("FlightMode", function ()
       return {
         Default = 0,
@@ -32027,48 +32052,48 @@ System.namespace("WCSharp.Missiles", function (namespace)
         end
       }
     end)
-    -- <inheritdoc />
+
     __ctor1__ = function (this, caster, target)
       System.base(this).__ctor__[3](this, caster, target)
     end
-    -- <inheritdoc />
+
     __ctor2__ = function (this, caster, targetX, targetY)
       System.base(this).__ctor__[4](this, caster, targetX, targetY)
     end
-    -- <inheritdoc />
+
     __ctor3__ = function (this, castingPlayer, casterX, casterY, target)
       System.base(this).__ctor__[5](this, castingPlayer, casterX, casterY, target)
     end
-    -- <inheritdoc />
+
     __ctor4__ = function (this, castingPlayer, casterX, casterY, targetX, targetY)
       System.base(this).__ctor__[6](this, castingPlayer, casterX, casterY, targetX, targetY)
     end
     getCasterZ = function (this)
-      if this.mode ~= 1 --[[FlightMode.FollowTerrain]] then
+      if this.mode ~= 1 then
         return this.InternalCasterZ
       end
       return this.InternalCasterZ + WCSharpShared.Util.GetZ(this.CasterX, this.CasterY)
     end
     setCasterZ = function (this, value)
-      this.InternalCasterZ = ((this.mode == 1 --[[FlightMode.FollowTerrain]]) and (value - WCSharpShared.Util.GetZ(this.CasterX, this.CasterY)) or value)
+      this.InternalCasterZ = ((this.mode == 1) and (value - WCSharpShared.Util.GetZ(this.CasterX, this.CasterY)) or value)
     end
     getTargetZ = function (this)
-      if this.mode ~= 1 --[[FlightMode.FollowTerrain]] then
+      if this.mode ~= 1 then
         return this.InternalTargetZ
       end
       return this.InternalTargetZ + WCSharpShared.Util.GetZ(this.TargetX, this.TargetY)
     end
     setTargetZ = function (this, value)
-      this.InternalTargetZ = ((this.mode == 1 --[[FlightMode.FollowTerrain]]) and (value - WCSharpShared.Util.GetZ(this.TargetX, this.TargetY)) or value)
+      this.InternalTargetZ = ((this.mode == 1) and (value - WCSharpShared.Util.GetZ(this.TargetX, this.TargetY)) or value)
     end
     getMissileZ = function (this)
-      if this.mode ~= 1 --[[FlightMode.FollowTerrain]] then
+      if this.mode ~= 1 then
         return this.InternalMissileZ
       end
       return this.InternalMissileZ + WCSharpShared.Util.GetZ(this.MissileX, this.MissileY)
     end
     setMissileZ = function (this, value)
-      this.InternalMissileZ = ((this.mode == 1 --[[FlightMode.FollowTerrain]]) and (value - WCSharpShared.Util.GetZ(this.MissileX, this.MissileY)) or value)
+      this.InternalMissileZ = ((this.mode == 1) and (value - WCSharpShared.Util.GetZ(this.MissileX, this.MissileY)) or value)
     end
     getSpeedPerTick = function (this)
       return this.speed
@@ -32077,25 +32102,25 @@ System.namespace("WCSharp.Missiles", function (namespace)
       this.speed = value
     end
     getSpeed = function (this)
-      return this.speed / (0.03125 --[[1f / 32f]])
+      return this.speed / (0.03125)
     end
     setSpeed = function (this, value)
-      this.speed = value * (0.03125 --[[1f / 32f]])
+      this.speed = value * (0.03125)
     end
     getTurnRate = function (this)
-      return this.TurnVelocityRad * (57.2957764 --[[180f / (float)Math.PI]]) / (0.03125 --[[1f / 32f]])
+      return this.TurnVelocityRad * (57.2957764) / (0.03125)
     end
     setTurnRate = function (this, value)
-      this.TurnVelocityRad = value * (0.0174532924 --[[(float)Math.PI / 180f]]) * (0.03125 --[[1f / 32f]])
+      this.TurnVelocityRad = value * (0.0174532924) * (0.03125)
     end
     getTurnPeriod = function (this)
       if this.TurnVelocityRad ~= 0 then
-        return 0.196349546 --[[(float)Math.PI / 16f]] / this.TurnVelocityRad
+        return 0.196349546 / this.TurnVelocityRad
       end
       return 0
     end
     setTurnPeriod = function (this, value)
-      this.TurnVelocityRad = ((value == 0) and 0 or (0.196349546 --[[(float)Math.PI / 16f]] / value))
+      this.TurnVelocityRad = ((value == 0) and 0 or (0.196349546 / value))
     end
     getMode = function (this)
       return this.mode
@@ -32108,23 +32133,23 @@ System.namespace("WCSharp.Missiles", function (namespace)
       end
     end
     SetFlightMode = function (this, value)
-      if value == 0 --[[FlightMode.Default]] then
-        value = 1 --[[FlightMode.FollowTerrain]]
+      if value == 0 then
+        value = 1
       end
-      if this.mode == 2 --[[FlightMode.Direct]] then
-        if value == 1 --[[FlightMode.FollowTerrain]] then
+      if this.mode == 2 then
+        if value == 1 then
           this.InternalCasterZ = this.InternalCasterZ - WCSharpShared.Util.GetZ(this.CasterX, this.CasterY)
           this.InternalMissileZ = this.InternalMissileZ - WCSharpShared.Util.GetZ(this.MissileX, this.MissileY)
           this.InternalTargetZ = this.InternalTargetZ - WCSharpShared.Util.GetZ(this.TargetX, this.TargetY)
         end
-      elseif value == 2 --[[FlightMode.Direct]] then
+      elseif value == 2 then
         this.InternalCasterZ = this.InternalCasterZ + WCSharpShared.Util.GetZ(this.CasterX, this.CasterY)
         this.InternalMissileZ = this.InternalMissileZ + WCSharpShared.Util.GetZ(this.MissileX, this.MissileY)
         this.InternalTargetZ = this.InternalTargetZ + WCSharpShared.Util.GetZ(this.TargetX, this.TargetY)
       end
       this.mode = value
     end
-    -- <inheritdoc />
+
     Launch = function (this)
       this.InternalCasterZ = this.InternalCasterZ + this.CasterLaunchZ
       this.InternalTargetZ = this.InternalTargetZ + this.TargetImpactZ
@@ -32132,20 +32157,20 @@ System.namespace("WCSharp.Missiles", function (namespace)
       this.IntervalLeft = this.Interval
       this.MissileX = this.CasterX
       this.MissileY = this.CasterY
-      if this.mode == 0 --[[FlightMode.Default]] then
+      if this.mode == 0 then
         SetFlightMode(this, 0)
       else
         local flightMode = this.mode
-        this.mode = 0 --[[FlightMode.Default]]
+        this.mode = 0
         SetFlightMode(this, 0)
         SetFlightMode(this, flightMode)
       end
       if (this.InitialAngle ~= nil) then
-        this.YawRad = System.Nullable.Value(this.InitialAngle) * (0.0174532924 --[[(float)Math.PI / 180f]])
+        this.YawRad = System.Nullable.Value(this.InitialAngle) * (0.0174532924)
         if this.YawRad < 0 then
-          this.YawRad = this.YawRad + (6.28318548 --[[(float)Math.PI * 2f]])
-        elseif this.YawRad > 6.28318548 --[[(float)Math.PI * 2f]] then
-          this.YawRad = this.YawRad - (6.28318548 --[[(float)Math.PI * 2f]])
+          this.YawRad = this.YawRad + (6.28318548)
+        elseif this.YawRad > 6.28318548 then
+          this.YawRad = this.YawRad - (6.28318548)
         end
       else
         this.YawRad = (3.14159274 + Atan2(this.CasterY - this.TargetY, this.CasterX - this.TargetX))
@@ -32158,7 +32183,7 @@ System.namespace("WCSharp.Missiles", function (namespace)
         end
       end
     end
-    -- <inheritdoc />
+
     Action = function (this)
       if this.Target ~= nil then
         if UnitAlive(this.Target) then
@@ -32177,15 +32202,15 @@ System.namespace("WCSharp.Missiles", function (namespace)
       local num = (3.14159274 + Atan2(this.MissileY - this.TargetY, this.MissileX - this.TargetX))
       if math.Abs(num - this.YawRad) < this.TurnVelocityRad then
         this.YawRad = num
-      elseif (this.YawRad < num and num < this.YawRad + 3.14159274 --[[(float)Math.PI]]) or num < this.YawRad - 3.14159274 --[[(float)Math.PI]] then
+      elseif (this.YawRad < num and num < this.YawRad + 3.14159274) or num < this.YawRad - 3.14159274 then
         this.YawRad = this.YawRad + this.TurnVelocityRad
       else
         this.YawRad = this.YawRad - this.TurnVelocityRad
       end
       if this.YawRad < 0 then
-        this.YawRad = this.YawRad + (6.28318548 --[[(float)Math.PI * 2f]])
-      elseif this.YawRad > 6.28318548 --[[(float)Math.PI * 2f]] then
-        this.YawRad = this.YawRad - (6.28318548 --[[(float)Math.PI * 2f]])
+        this.YawRad = this.YawRad + (6.28318548)
+      elseif this.YawRad > 6.28318548 then
+        this.YawRad = this.YawRad - (6.28318548)
       end
       local num2 = this.speed * Cos(this.YawRad)
       this.MissileX = this.MissileX + num2
@@ -32275,10 +32300,10 @@ System.namespace("WCSharp.Missiles", function (namespace)
       end
     }
   end)
-  -- <summary>
-  -- Fundamental missile class that provides the properties and methods that are shared by (virtually) all missiles.
-  -- <para>Unless you wish to define a new movement pattern for missiles, you should use one of the derived classes instead.</para>
-  -- </summary>
+
+
+
+
   namespace.class("Missile", function (namespace)
     local group, getActive, setActive, getCasterZ, setCasterZ, getTargetZ, setTargetZ, getMissileZ, 
     setMissileZ, getCollisionRadius, setCollisionRadius, getSpinPeriod, setSpinPeriod, getYaw, setYaw, getPitch, 
@@ -32301,11 +32326,11 @@ System.namespace("WCSharp.Missiles", function (namespace)
       this.CasterX = casterX
       this.CasterY = casterY
     end
-    -- <summary>
-    -- Creates a new missile instance with the given parameters.
-    -- <para>Will automatically set <see cref="P:WCSharp.Missiles.Missile.CastingPlayer" />, <see cref="P:WCSharp.Missiles.Missile.CasterX" />, <see cref="P:WCSharp.Missiles.Missile.CasterY" />,
-    -- <see cref="P:WCSharp.Missiles.Missile.TargetPlayer" />, <see cref="P:WCSharp.Missiles.Missile.TargetX" /> and <see cref="P:WCSharp.Missiles.Missile.TargetY" />.</para>
-    -- </summary>
+
+
+
+
+
     __ctor3__ = function (this, caster, target)
       __ctor1__(this, caster)
       this.Target = target
@@ -32314,19 +32339,19 @@ System.namespace("WCSharp.Missiles", function (namespace)
       this.TargetY = GetUnitY(target)
       this.InternalTargetZ = GetUnitFlyHeight(target)
     end
-    -- <summary>
-    -- Creates a new missile instance with the given parameters.
-    -- <para>Will automatically set <see cref="P:WCSharp.Missiles.Missile.CastingPlayer" />, <see cref="P:WCSharp.Missiles.Missile.CasterX" /> and <see cref="P:WCSharp.Missiles.Missile.CasterY" />.</para>
-    -- </summary>
+
+
+
+
     __ctor4__ = function (this, caster, targetX, targetY)
       __ctor1__(this, caster)
       this.TargetX = targetX
       this.TargetY = targetY
     end
-    -- <summary>
-    -- Creates a new missile instance with the given parameters.
-    -- <para>Will automatically set <see cref="P:WCSharp.Missiles.Missile.TargetPlayer" />, <see cref="P:WCSharp.Missiles.Missile.TargetX" /> and <see cref="P:WCSharp.Missiles.Missile.TargetY" />.</para>
-    -- </summary>
+
+
+
+
     __ctor5__ = function (this, castingPlayer, casterX, casterY, target)
       __ctor2__(this, castingPlayer, casterX, casterY)
       this.Target = target
@@ -32335,9 +32360,9 @@ System.namespace("WCSharp.Missiles", function (namespace)
       this.TargetY = GetUnitY(target)
       this.InternalTargetZ = GetUnitFlyHeight(target)
     end
-    -- <summary>
-    -- Creates a new missile instance with the given parameters.
-    -- </summary>
+
+
+
     __ctor6__ = function (this, castingPlayer, casterX, casterY, targetX, targetY)
       __ctor2__(this, castingPlayer, casterX, casterY)
       this.TargetX = targetX
@@ -32373,36 +32398,36 @@ System.namespace("WCSharp.Missiles", function (namespace)
     end
     getSpinPeriod = function (this)
       if this.SpinVelocityRad ~= 0 then
-        return 0.196349546 --[[(float)Math.PI / 16f]] / this.SpinVelocityRad
+        return 0.196349546 / this.SpinVelocityRad
       end
       return 0
     end
     setSpinPeriod = function (this, value)
-      this.SpinVelocityRad = ((value == 0) and 0 or (0.196349546 --[[(float)Math.PI / 16f]] / value))
+      this.SpinVelocityRad = ((value == 0) and 0 or (0.196349546 / value))
     end
     getYaw = function (this)
-      return this.YawRad * (57.2957764 --[[180f / (float)Math.PI]])
+      return this.YawRad * (57.2957764)
     end
     setYaw = function (this, value)
-      this.YawRad = value * (0.0174532924 --[[(float)Math.PI / 180f]])
+      this.YawRad = value * (0.0174532924)
     end
     getPitch = function (this)
-      return this.PitchRad * (57.2957764 --[[180f / (float)Math.PI]])
+      return this.PitchRad * (57.2957764)
     end
     setPitch = function (this, value)
-      this.PitchRad = value * (0.0174532924 --[[(float)Math.PI / 180f]])
+      this.PitchRad = value * (0.0174532924)
     end
     getRoll = function (this)
-      return this.RollRad * (57.2957764 --[[180f / (float)Math.PI]])
+      return this.RollRad * (57.2957764)
     end
     setRoll = function (this, value)
-      this.RollRad = value * (0.0174532924 --[[(float)Math.PI / 180f]])
+      this.RollRad = value * (0.0174532924)
     end
     getCurrentAngle = function (this)
-      return this.YawRad * (57.2957764 --[[180f / (float)Math.PI]])
+      return this.YawRad * (57.2957764)
     end
     setCurrentAngle = function (this, value)
-      this.YawRad = value * (0.0174532924 --[[(float)Math.PI / 180f]])
+      this.YawRad = value * (0.0174532924)
     end
     getEffectString = function (this)
       return this.effectString
@@ -32438,9 +32463,9 @@ System.namespace("WCSharp.Missiles", function (namespace)
       end
       this.effectScale = value
     end
-    -- <summary>
-    -- Should be called when the missile would exit world bounds.
-    -- </summary>
+
+
+
     ExitWorldBounds = function (this)
       if this.Effect ~= nil then
         this.MissileX = BlzGetLocalSpecialEffectX(this.Effect)
@@ -32456,20 +32481,20 @@ System.namespace("WCSharp.Missiles", function (namespace)
       this.Active = false
       this:OnImpact()
     end
-    -- <summary>
-    -- Runs the Interval related code. Do not call if <see cref="P:WCSharp.Missiles.Missile.Interval" /> is 0 (will cause an infinite loop!).
-    -- </summary>
+
+
+
     RunInterval = function (this)
-      this.IntervalLeft = this.IntervalLeft - (0.03125 --[[1f / 32f]])
+      this.IntervalLeft = this.IntervalLeft - (0.03125)
       while this.IntervalLeft <= 0 do
         this.IntervalLeft = this.IntervalLeft + this.Interval
         this:OnPeriodic()
       end
     end
-    -- <summary>
-    -- Runs the Collision related code. Do not call if <see cref="P:WCSharp.Missiles.Missile.CollisionRadius" /> is 0.
-    -- <para>Can be overridden in case you want to provide your own unit search code (e.g. using spatial hashing).</para>
-    -- </summary>
+
+
+
+
     RunCollisions = function (this)
       GroupEnumUnitsInRange(group, this.MissileX, this.MissileY, this.collisionRadius, nil)
       local list = WCSharpSharedExtensions.GroupExtensions.ToList(group)
@@ -32480,9 +32505,9 @@ System.namespace("WCSharp.Missiles", function (namespace)
         end
       end
     end
-    -- <summary>
-    -- Sets the missile position to that of the target and runs the interval, collision and impact code.
-    -- </summary>
+
+
+
     Impact = function (this)
       this.MissileX = this.TargetX
       this.MissileY = this.TargetY
@@ -32498,32 +32523,32 @@ System.namespace("WCSharp.Missiles", function (namespace)
       this.Active = false
       this:OnImpact()
     end
-    -- <summary>
-    -- <para>Override this method if your missile has an effect that should trigger when colliding with another unit.</para>
-    -- <para>For this to be active, <see cref="P:WCSharp.Missiles.Missile.CollisionRadius" /> must be greater than 0.</para>
-    -- <para>Note that there is no filter on this collision. This is called whenever it collides with anything not in <see cref="P:WCSharp.Missiles.Missile.TargetsHit" />.</para>
-    -- <para>Before this method is called, the <paramref name="unit" /> is added to <see cref="P:WCSharp.Missiles.Missile.TargetsHit" />.</para>
-    -- </summary>
+
+
+
+
+
+
     OnCollision = function (this, unit)
     end
-    -- <summary>
-    -- Override this method if your missile has an effect that should trigger when it is destroyed for any reason.
-    -- </summary>
+
+
+
     OnDispose = function (this)
     end
-    -- <summary>
-    -- Override this method if your missile has an impact effect.
-    -- <para><see cref="P:WCSharp.Missiles.Missile.Active" /> is automatically set to false prior to calling this method. If you do not want the missile to end, you need to set <see cref="P:WCSharp.Missiles.Missile.Active" /> back to true.</para>
-    -- </summary>
+
+
+
+
     OnImpact = function (this)
     end
-    -- <summary>
-    -- <para>Override this method if your missile has a periodic effect.</para>
-    -- <para>For this to be active, <see cref="P:WCSharp.Missiles.Missile.Interval" /> must be greater than 0.</para>
-    -- </summary>
+
+
+
+
     OnPeriodic = function (this)
     end
-    -- <inheritdoc />
+
     Dispose = function (this)
       this:OnDispose()
       if this.Effect ~= nil then
@@ -32667,32 +32692,32 @@ System.namespace("WCSharp.Missiles", function (namespace)
       end
     }
   end)
-  -- <summary>
-  -- Tracks and runs all active <see cref="T:WCSharp.Missiles.Missile" /> instances.
-  -- </summary>
+
+
+
   namespace.class("MissileSystem", function (namespace)
     local periodicTrigger, getMissiles, Add, RegisterForOwnershipChanges, OnUnitTypeChangesOwner, static
     static = function (this)
-      periodicTrigger = PeriodicDisposableTrigger_1Missile(0.03125 --[[1f / 32f]])
+      periodicTrigger = PeriodicDisposableTrigger_1Missile(0.03125)
     end
     getMissiles = function ()
       return periodicTrigger:getActions()
     end
-    -- <summary>
-    -- Adds the given <paramref name="missile" /> to the system.
-    -- </summary>
+
+
+
     Add = function (missile)
       missile:Launch()
       periodicTrigger:Add(missile)
       missile:Action()
     end
-    -- <summary>
-    -- By default, <see cref="P:WCSharp.Missiles.Missile.CastingPlayer" /> and <see cref="P:WCSharp.Missiles.Missile.TargetPlayer" /> are not updated when a unit changes owner.
-    -- <para>This adds an event to pass over all missiles and update <see cref="P:WCSharp.Missiles.Missile.CastingPlayer" /> and <see cref="P:WCSharp.Missiles.Missile.TargetPlayer" /> on ownership changes.</para>
-    -- <para>This will ignore ownership changes of unit type 'xxxx' (WCSharp's dummy unit type).</para>
-    -- </summary>
+
+
+
+
+
     RegisterForOwnershipChanges = function ()
-      WCSharpEvents.PlayerUnitEvents.Register14(809 --[[UnitTypeEvent.ChangesOwner]], OnUnitTypeChangesOwner)
+      WCSharpEvents.PlayerUnitEvents.Register14(809, OnUnitTypeChangesOwner)
     end
     OnUnitTypeChangesOwner = function ()
       local triggerUnit = GetTriggerUnit()
@@ -32731,18 +32756,18 @@ System.namespace("WCSharp.Missiles", function (namespace)
       end
     }
   end)
-  -- <summary>
-  -- Homing-type missile that is based on momentum. Every tick, it will accelerate itself towards the target, up to a maximum speed.
-  -- <para>Note that the actual acceleration when adjusting its angle towards the target can be significantly less than specified.</para>
-  -- <para>It is recommended to use at least a little bit of <see cref="P:WCSharp.Missiles.Missile.ImpactLeeway" /> when using this missile.</para>
-  -- </summary>
+
+
+
+
+
   namespace.class("MomentumMissile", function (namespace)
     local getCasterZ, setCasterZ, getTargetZ, setTargetZ, getMissileZ, setMissileZ, getSpeedPerTick, setSpeedPerTick, 
     getSpeed, setSpeed, getAcceleration, setAcceleration, getMaximumSpeed, setMaximumSpeed, getMode, setMode, 
     SetFlightMode, Launch, Action, __ctor1__, __ctor2__, __ctor3__, __ctor4__
-    -- <summary>
-    -- The flight modes of this missile type.
-    -- </summary>
+
+
+
     namespace.enum("FlightMode", function ()
       return {
         Default = 0,
@@ -32760,48 +32785,48 @@ System.namespace("WCSharp.Missiles", function (namespace)
         end
       }
     end)
-    -- <inheritdoc />
+
     __ctor1__ = function (this, caster, target)
       System.base(this).__ctor__[3](this, caster, target)
     end
-    -- <inheritdoc />
+
     __ctor2__ = function (this, caster, targetX, targetY)
       System.base(this).__ctor__[4](this, caster, targetX, targetY)
     end
-    -- <inheritdoc />
+
     __ctor3__ = function (this, castingPlayer, casterX, casterY, target)
       System.base(this).__ctor__[5](this, castingPlayer, casterX, casterY, target)
     end
-    -- <inheritdoc />
+
     __ctor4__ = function (this, castingPlayer, casterX, casterY, targetX, targetY)
       System.base(this).__ctor__[6](this, castingPlayer, casterX, casterY, targetX, targetY)
     end
     getCasterZ = function (this)
-      if this.mode ~= 1 --[[FlightMode.FollowTerrain]] then
+      if this.mode ~= 1 then
         return this.InternalCasterZ
       end
       return this.InternalCasterZ + WCSharpShared.Util.GetZ(this.CasterX, this.CasterY)
     end
     setCasterZ = function (this, value)
-      this.InternalCasterZ = ((this.mode == 1 --[[FlightMode.FollowTerrain]]) and (value - WCSharpShared.Util.GetZ(this.CasterX, this.CasterY)) or value)
+      this.InternalCasterZ = ((this.mode == 1) and (value - WCSharpShared.Util.GetZ(this.CasterX, this.CasterY)) or value)
     end
     getTargetZ = function (this)
-      if this.mode ~= 1 --[[FlightMode.FollowTerrain]] then
+      if this.mode ~= 1 then
         return this.InternalTargetZ
       end
       return this.InternalTargetZ + WCSharpShared.Util.GetZ(this.TargetX, this.TargetY)
     end
     setTargetZ = function (this, value)
-      this.InternalTargetZ = ((this.mode == 1 --[[FlightMode.FollowTerrain]]) and (value - WCSharpShared.Util.GetZ(this.TargetX, this.TargetY)) or value)
+      this.InternalTargetZ = ((this.mode == 1) and (value - WCSharpShared.Util.GetZ(this.TargetX, this.TargetY)) or value)
     end
     getMissileZ = function (this)
-      if this.mode ~= 1 --[[FlightMode.FollowTerrain]] then
+      if this.mode ~= 1 then
         return this.InternalMissileZ
       end
       return this.InternalMissileZ + WCSharpShared.Util.GetZ(this.MissileX, this.MissileY)
     end
     setMissileZ = function (this, value)
-      this.InternalMissileZ = ((this.mode == 1 --[[FlightMode.FollowTerrain]]) and (value - WCSharpShared.Util.GetZ(this.MissileX, this.MissileY)) or value)
+      this.InternalMissileZ = ((this.mode == 1) and (value - WCSharpShared.Util.GetZ(this.MissileX, this.MissileY)) or value)
     end
     getSpeedPerTick = function (this)
       return this.speed
@@ -32810,22 +32835,22 @@ System.namespace("WCSharp.Missiles", function (namespace)
       this.speed = value
     end
     getSpeed = function (this)
-      return this.speed / (0.03125 --[[1f / 32f]])
+      return this.speed / (0.03125)
     end
     setSpeed = function (this, value)
-      this.speed = value * (0.03125 --[[1f / 32f]])
+      this.speed = value * (0.03125)
     end
     getAcceleration = function (this)
-      return this.AccelerationPerTick / (0.03125 --[[1f / 32f]])
+      return this.AccelerationPerTick / (0.03125)
     end
     setAcceleration = function (this, value)
-      this.AccelerationPerTick = value * (0.03125 --[[1f / 32f]])
+      this.AccelerationPerTick = value * (0.03125)
     end
     getMaximumSpeed = function (this)
-      return this.MaximumSpeedPerTick / (0.03125 --[[1f / 32f]])
+      return this.MaximumSpeedPerTick / (0.03125)
     end
     setMaximumSpeed = function (this, value)
-      this.MaximumSpeedPerTick = value * (0.03125 --[[1f / 32f]])
+      this.MaximumSpeedPerTick = value * (0.03125)
     end
     getMode = function (this)
       return this.mode
@@ -32838,23 +32863,23 @@ System.namespace("WCSharp.Missiles", function (namespace)
       end
     end
     SetFlightMode = function (this, value)
-      if value == 0 --[[FlightMode.Default]] then
-        value = 1 --[[FlightMode.FollowTerrain]]
+      if value == 0 then
+        value = 1
       end
-      if this.mode == 2 --[[FlightMode.Direct]] then
-        if value == 1 --[[FlightMode.FollowTerrain]] then
+      if this.mode == 2 then
+        if value == 1 then
           this.InternalCasterZ = this.InternalCasterZ - WCSharpShared.Util.GetZ(this.CasterX, this.CasterY)
           this.InternalMissileZ = this.InternalMissileZ - WCSharpShared.Util.GetZ(this.MissileX, this.MissileY)
           this.InternalTargetZ = this.InternalTargetZ - WCSharpShared.Util.GetZ(this.TargetX, this.TargetY)
         end
-      elseif value == 2 --[[FlightMode.Direct]] then
+      elseif value == 2 then
         this.InternalCasterZ = this.InternalCasterZ + WCSharpShared.Util.GetZ(this.CasterX, this.CasterY)
         this.InternalMissileZ = this.InternalMissileZ + WCSharpShared.Util.GetZ(this.MissileX, this.MissileY)
         this.InternalTargetZ = this.InternalTargetZ + WCSharpShared.Util.GetZ(this.TargetX, this.TargetY)
       end
       this.mode = value
     end
-    -- <inheritdoc />
+
     Launch = function (this)
       this.InternalCasterZ = this.InternalCasterZ + this.CasterLaunchZ
       this.InternalTargetZ = this.InternalTargetZ + this.TargetImpactZ
@@ -32862,16 +32887,16 @@ System.namespace("WCSharp.Missiles", function (namespace)
       this.IntervalLeft = this.Interval
       this.MissileX = this.CasterX
       this.MissileY = this.CasterY
-      if this.mode == 0 --[[FlightMode.Default]] then
+      if this.mode == 0 then
         SetFlightMode(this, 0)
       else
         local flightMode = this.mode
-        this.mode = 0 --[[FlightMode.Default]]
+        this.mode = 0
         SetFlightMode(this, 0)
         SetFlightMode(this, flightMode)
       end
       if (this.InitialAngle ~= nil) then
-        this.YawRad = System.Nullable.Value(this.InitialAngle) * (0.0174532924 --[[(float)Math.PI / 180f]])
+        this.YawRad = System.Nullable.Value(this.InitialAngle) * (0.0174532924)
       else
         this.YawRad = (3.14159274 + Atan2(this.CasterY - this.TargetY, this.CasterX - this.TargetX))
       end
@@ -32883,7 +32908,7 @@ System.namespace("WCSharp.Missiles", function (namespace)
         end
       end
     end
-    -- <inheritdoc />
+
     Action = function (this)
       if this.Target ~= nil then
         if UnitAlive(this.Target) then
@@ -32900,12 +32925,12 @@ System.namespace("WCSharp.Missiles", function (namespace)
       end
       local missileZ = getMissileZ(this)
       local num = (3.14159274 + Atan2(this.MissileY - this.TargetY, this.MissileX - this.TargetX))
-      local radians = (((this.YawRad < num and num < this.YawRad + 3.14159274 --[[(float)Math.PI]]) or num < this.YawRad - 3.14159274 --[[(float)Math.PI]]) and math.Min(this.YawRad + 3.14159274 --[[(float)Math.PI]], num + 0.785398185 --[[(float)Math.PI / 4f]]) or math.Max(this.YawRad - 3.14159274 --[[(float)Math.PI]], num - 0.785398185 --[[(float)Math.PI / 4f]]))
+      local radians = (((this.YawRad < num and num < this.YawRad + 3.14159274) or num < this.YawRad - 3.14159274) and math.Min(this.YawRad + 3.14159274, num + 0.785398185) or math.Max(this.YawRad - 3.14159274, num - 0.785398185))
       local num2 = this.speed * Cos(this.YawRad) + this.AccelerationPerTick * Cos(radians)
       this.MissileX = this.MissileX + num2
       local num3 = this.speed * Sin(this.YawRad) + this.AccelerationPerTick * Sin(radians)
       this.MissileY = this.MissileY + num3
-      local num4 = 3.14159274 --[[(float)Math.PI]] + Atan2(0 - num3, 0 - num2)
+      local num4 = 3.14159274 + Atan2(0 - num3, 0 - num2)
       if (num4 < num and num < this.YawRad) or (this.YawRad < num and num < num4) then
         this.YawRad = num
         this.speed = math.Min(this.MaximumSpeedPerTick, this.speed + this.AccelerationPerTick)
@@ -32999,18 +33024,18 @@ System.namespace("WCSharp.Missiles", function (namespace)
       end
     }
   end)
-  -- <summary>
-  -- Missile that will orbit the specified target.
-  -- <para>Note: this missile calls <see cref="M:WCSharp.Missiles.Missile.OnImpact" /> when the target dies.</para>
-  -- </summary>
+
+
+
+
   namespace.class("OrbitalMissile", function (namespace)
     local getCasterZ, setCasterZ, getTargetZ, setTargetZ, getMissileZ, setMissileZ, getSpeedPerTick, setSpeedPerTick, 
     getSpeed, setSpeed, getRange, setRange, getOrbitalVelocityRad, setOrbitalVelocityRad, getOrbitalPeriod, setOrbitalPeriod, 
     getOrbitalAngle, setOrbitalAngle, getMode, setMode, SetFlightMode, Launch, Action, AdjustMissileZ, 
     internal, __ctor1__, __ctor2__, __ctor3__, __ctor4__
-    -- <summary>
-    -- The flight modes of this missile type.
-    -- </summary>
+
+
+
     namespace.enum("FlightMode", function ()
       return {
         Default = 0,
@@ -33033,24 +33058,24 @@ System.namespace("WCSharp.Missiles", function (namespace)
       }
     end)
     internal = function (this)
-      this.OrbitalAngleRad = GetRandomReal(0, 6.28318548 --[[(float)Math.PI * 2f]])
+      this.OrbitalAngleRad = GetRandomReal(0, 6.28318548)
     end
-    -- <inheritdoc />
+
     __ctor1__ = function (this, caster, target)
       internal(this)
       System.base(this).__ctor__[3](this, caster, target)
     end
-    -- <inheritdoc />
+
     __ctor2__ = function (this, caster, targetX, targetY)
       internal(this)
       System.base(this).__ctor__[4](this, caster, targetX, targetY)
     end
-    -- <inheritdoc />
+
     __ctor3__ = function (this, castingPlayer, casterX, casterY, target)
       internal(this)
       System.base(this).__ctor__[5](this, castingPlayer, casterX, casterY, target)
     end
-    -- <inheritdoc />
+
     __ctor4__ = function (this, castingPlayer, casterX, casterY, targetX, targetY)
       internal(this)
       System.base(this).__ctor__[6](this, castingPlayer, casterX, casterY, targetX, targetY)
@@ -33086,7 +33111,7 @@ System.namespace("WCSharp.Missiles", function (namespace)
       return 64 * this.orbitalVelocity * this.range
     end
     setSpeed = function (this, value)
-      this.speed = value * (0.03125 --[[1f / 32f]])
+      this.speed = value * (0.03125)
       if this.range ~= 0 then
         this.orbitalVelocity = 0.0625 * value / this.range
       end
@@ -33109,19 +33134,19 @@ System.namespace("WCSharp.Missiles", function (namespace)
     end
     getOrbitalPeriod = function (this)
       if this.orbitalVelocity ~= 0 then
-        return 0.196349546 --[[(float)Math.PI / 16f]] / this.orbitalVelocity
+        return 0.196349546 / this.orbitalVelocity
       end
       return 0
     end
     setOrbitalPeriod = function (this, value)
       this.speed = 0
-      this.orbitalVelocity = ((value == 0) and 0 or (0.196349546 --[[(float)Math.PI / 16f]] / value))
+      this.orbitalVelocity = ((value == 0) and 0 or (0.196349546 / value))
     end
     getOrbitalAngle = function (this)
-      return this.OrbitalAngleRad * (57.2957764 --[[180f / (float)Math.PI]])
+      return this.OrbitalAngleRad * (57.2957764)
     end
     setOrbitalAngle = function (this, value)
-      this.OrbitalAngleRad = value * (0.0174532924 --[[(float)Math.PI / 180f]])
+      this.OrbitalAngleRad = value * (0.0174532924)
     end
     getMode = function (this)
       return this.mode
@@ -33134,15 +33159,15 @@ System.namespace("WCSharp.Missiles", function (namespace)
       end
     end
     SetFlightMode = function (this, value)
-      if value == 0 --[[FlightMode.Default]] then
-        value = 3 --[[FlightMode.BestFit]]
+      if value == 0 then
+        value = 3
       end
       if this:getActive() then
         AdjustMissileZ(this)
       end
       this.mode = value
     end
-    -- <inheritdoc />
+
     Launch = function (this)
       this.InternalCasterZ = this.InternalCasterZ + this.CasterLaunchZ
       this.InternalTargetZ = this.InternalTargetZ + this.TargetImpactZ
@@ -33159,7 +33184,7 @@ System.namespace("WCSharp.Missiles", function (namespace)
         end
       end
     end
-    -- <inheritdoc />
+
     Action = function (this)
       if this.Target ~= nil then
         if UnitAlive(this.Target) then
@@ -33178,10 +33203,10 @@ System.namespace("WCSharp.Missiles", function (namespace)
         end
       end
       this.OrbitalAngleRad = this.OrbitalAngleRad + this.orbitalVelocity
-      if this.OrbitalAngleRad >= 6.28318548 --[[(float)Math.PI * 2f]] then
-        this.OrbitalAngleRad = this.OrbitalAngleRad - (6.28318548 --[[(float)Math.PI * 2f]])
+      if this.OrbitalAngleRad >= 6.28318548 then
+        this.OrbitalAngleRad = this.OrbitalAngleRad - (6.28318548)
       elseif this.OrbitalAngleRad < 0 then
-        this.OrbitalAngleRad = this.OrbitalAngleRad + (6.28318548 --[[(float)Math.PI * 2f]])
+        this.OrbitalAngleRad = this.OrbitalAngleRad + (6.28318548)
       end
       local missileX = this.MissileX
       local missileY = this.MissileY
@@ -33194,7 +33219,7 @@ System.namespace("WCSharp.Missiles", function (namespace)
       if this.Effect ~= nil then
         local internalMissileZ = this.InternalMissileZ
         AdjustMissileZ(this)
-        this.YawRad = ((this.orbitalVelocity > 0) and (this.OrbitalAngleRad + 1.57079637 --[[(float)Math.PI / 2f]]) or (this.OrbitalAngleRad - 1.57079637 --[[(float)Math.PI / 2f]]))
+        this.YawRad = ((this.orbitalVelocity > 0) and (this.OrbitalAngleRad + 1.57079637) or (this.OrbitalAngleRad - 1.57079637))
         this.RollRad = this.RollRad + this.SpinVelocityRad
         local num = missileX - this.MissileX
         local num2 = missileY - this.MissileY
@@ -33211,11 +33236,11 @@ System.namespace("WCSharp.Missiles", function (namespace)
       end
     end
     AdjustMissileZ = function (this)
-      if this.mode == 1 --[[FlightMode.MissileBased]] then
+      if this.mode == 1 then
         this.InternalMissileZ = this.InternalTargetZ + WCSharpShared.Util.GetZ(this.MissileX, this.MissileY)
-      elseif this.mode == 2 --[[FlightMode.TargetBased]] then
+      elseif this.mode == 2 then
         this.InternalMissileZ = this.InternalTargetZ + WCSharpShared.Util.GetZ(this.TargetX, this.TargetY)
-      elseif this.mode == 3 --[[FlightMode.BestFit]] then
+      elseif this.mode == 3 then
         this.InternalMissileZ = this.InternalTargetZ + math.Max(WCSharpShared.Util.GetZ(this.MissileX, this.MissileY), WCSharpShared.Util.GetZ(this.TargetX, this.TargetY))
       end
     end
@@ -33312,9 +33337,9 @@ System.import(function (out)
   WCSharpSync = WCSharp.Sync
 end)
 System.namespace("WCSharp.SaveLoad", function (namespace)
-  -- <summary>
-  -- Indicates the state of the loaded save file.
-  -- </summary>
+
+
+
   namespace.enum("LoadResult", function ()
     return {
       NewSave = 0,
@@ -33336,17 +33361,17 @@ System.namespace("WCSharp.SaveLoad", function (namespace)
       end
     }
   end)
-  -- <summary>
-  -- Extension class for <see cref="T:WCSharp.SaveLoad.LoadResult" />s.
-  -- </summary>
+
+
+
   namespace.class("LoadResultExtensions", function (namespace)
     local Failed
-    -- <summary>
-    -- Extension method for determining whether the load result is any of the failed states.
-    -- </summary>
+
+
+
     Failed = function (r)
       if r ~= 0 then
-        return r ~= 4 --[[LoadResult.Success]]
+        return r ~= 4
       end
       return false
     end
@@ -33381,34 +33406,34 @@ System.namespace("WCSharp.SaveLoad", function (namespace)
       }
     end
   end)
-  -- <summary>
-  -- Abstract class containing the definitions that the SaveSystem needs in order to save and load your custom save data.
-  -- </summary>
+
+
+
   namespace.class("Saveable", function (namespace)
     local GetPlayer, GetSaveSlot, SetPlayer, SetSaveSlot
-    -- <summary>
-    -- Returns the player object that this save is bound to.
-    -- </summary>
+
+
+
     GetPlayer = function (this)
       return this.player
     end
-    -- <summary>
-    -- Returns the save slot that this save is bound to.
-    -- </summary>
+
+
+
     GetSaveSlot = function (this)
       return this.saveSlot
     end
-    -- <summary>
-    -- Sets the player that this save is bound to.
-    -- </summary>
-    -- <param name="player"></param>
+
+
+
+
     SetPlayer = function (this, player)
       this.player = player
     end
-    -- <summary>
-    -- Sets the save slot that this save is bound to.
-    -- </summary>
-    -- <param name="saveSlot"></param>
+
+
+
+
     SetSaveSlot = function (this, saveSlot)
       this.saveSlot = saveSlot
     end
@@ -33435,15 +33460,15 @@ System.namespace("WCSharp.SaveLoad", function (namespace)
       end
     }
   end)
-  -- <summary>
-  -- Provides some type-explicit extension methods for <see cref="T:WCSharp.SaveLoad.Saveable" />s.
-  -- </summary>
+
+
+
   namespace.class("SaveableExtensions", function (namespace)
     local Clone
-    -- <summary>
-    -- Creates a clone of the given save by converting it to JSON and back, and re-sets the player and save slot.
-    -- <para>Useful for if you want to create a clone to compare save data before and after a game.</para>
-    -- </summary>
+
+
+
+
     Clone = function (saveable, T)
       local val = WCSharpJson.JsonConvert.Deserialize(WCSharpJson.JsonConvert.Serialize(saveable, T), T)
       val:SetPlayer(saveable:GetPlayer())
@@ -33514,9 +33539,9 @@ System.namespace("WCSharp.SaveLoad", function (namespace)
       }
     end
   end)
-  -- <summary>
-  -- Contains logic shared between all different generic <see cref="T:WCSharp.SaveLoad.SaveSystem`1" /> instances.
-  -- </summary>
+
+
+
   namespace.class("SaveSystem", function (namespace)
     local NextId, OriginalTooltips, AbilityIds, AddAbilityId, Init, GetNextId, static
     static = function (this)
@@ -33557,15 +33582,15 @@ System.namespace("WCSharp.SaveLoad", function (namespace)
       this.AbilityIds = AbilityIds
     end
     NextId = 0
-    -- <summary>
-    -- Adds an additional ability id for use as temporary data storage.
-    -- <para>By default, you have 6000 characters to use as storage. If you approach that limit, expand the ability ids used at the start of the game using this method.</para>
-    -- <para>This should be done upon map start, before anything attempts to use the SaveSystem.</para>
-    -- <para>The default includes most of the Human abilities:</para>
-    -- <para>Amls, Ahan, Aroc, Amic, Amil, Aclf, Acmg, Adef, Adis, Afbt, Afbk, Aflk, Afla, Agyb, Afsh,
-    -- Ahea, Ahlh, Ainf, Aivs, Ahri, Amdf, Adts, Apxf, Aply, Ahrp, AHta, Aslo, Asps, Asth, Ahsb</para>
-    -- </summary>
-    -- <param name="abilityId"></param>
+
+
+
+
+
+
+
+
+
     AddAbilityId = function (abilityId)
       if OriginalTooltips == nil then
         if AbilityIds:Contains(abilityId) then
@@ -33619,19 +33644,19 @@ System.namespace("WCSharp.SaveLoad", function (namespace)
       end
     }
   end)
-  -- <summary>
-  -- System capable of saving C# data structures on a players local files to create save files that can be loaded at a later date/map.
-  -- </summary>
-  -- <typeparam name="T">The <see cref="T:WCSharp.SaveLoad.Saveable" /> type that this instance will be saving/loading</typeparam>
+
+
+
+
   namespace.class("SaveSystem_1", function (namespace)
     return function (T)
       local HandleSaveLoadedMessage, Save, Load, TryDecode, TryDeserialize, GetFileName, GetSaveHash, HashString, 
       Dispose, __ctor__
       local Save_1T = WCSharp.SaveLoad.Save_1(T)
       local SaveLoadedMessage_1T = WCSharp.SaveLoad.SaveLoadedMessage_1(T)
-      -- <summary>
-      -- Creates a new <see cref="T:WCSharp.SaveLoad.SaveSystem`1" /> instance with the given <paramref name="options" />.
-      -- </summary>
+
+
+
       __ctor__ = function (this, options)
         if #WCSharpSaveLoad.SaveSystem.OriginalTooltips == 0 then
           WCSharpSaveLoad.SaveSystem.Init()
@@ -33657,7 +33682,7 @@ System.namespace("WCSharp.SaveLoad", function (namespace)
         if this.hash2 <= 0 then
           System.throw(System.ArgumentException("ERROR: Must define a positive non-zero hash2 for the SaveSystem."))
         end
-        local array = ArrayChar { 60 --[['<']], 62 --[['>']], 58 --[[':']], 34 --[['"']], 47 --[['/']], 92 --[['\\']], 124 --[['|']], 63 --[['?']], 42 --[['*']] }
+        local array = ArrayChar { 60, 62, 58, 34, 47, 92, 124, 63, 42 }
         for _, value in System.each(array) do
           if this.saveFolder:Contains(value) then
             System.throw(System.ArgumentException("ERROR: SaveFolder cannot contain " .. string.char(value) .. " as this is an illegal filename character."))
@@ -33682,10 +33707,10 @@ System.namespace("WCSharp.SaveLoad", function (namespace)
           end
         end
       end
-      -- <summary>
-      -- Writes the given saveable to file for the player who owns the save.
-      -- </summary>
-      -- <param name="saveable">The saveable to save.</param>
+
+
+
+
       Save = function (this, saveable)
         if GetLocalPlayer() == saveable.player then
           local text = WCSharpJson.JsonConvert.Serialize(saveable, T)
@@ -33711,13 +33736,13 @@ System.namespace("WCSharp.SaveLoad", function (namespace)
           PreloadGenEnd(fileName)
         end
       end
-      -- <summary>
-      -- Loads a save for the given player on the given save slot.
-      -- <para>If no save exists on the given slot, or if loading failed for any reason, a new, empty save will be returned.</para>
-      -- <para>Use <see cref="E:WCSharp.SaveLoad.SaveSystem`1.OnSaveLoaded" /> to receive the save.</para>
-      -- </summary>
-      -- <param name="player">The player to create the save for.</param>
-      -- <param name="saveSlot">The slot to save to.</param>
+
+
+
+
+
+
+
       Load = function (this, player, saveSlot)
         if GetLocalPlayer() ~= player then
           return
@@ -33750,7 +33775,7 @@ System.namespace("WCSharp.SaveLoad", function (namespace)
               if save.HashCode == GetSaveHash(this, WCSharpJson.JsonConvert.Serialize(save.SaveData, T), player) then
                 saveLoadedMessage.SaveData = save.SaveData
               else
-                saveLoadedMessage.LoadResult = 3 --[[LoadResult.FailedHash]]
+                saveLoadedMessage.LoadResult = 3
               end
             end
           elseif save.Version == 2 or this.attemptToLoadNewerVersions then
@@ -33762,7 +33787,7 @@ System.namespace("WCSharp.SaveLoad", function (namespace)
               if extern then
                 saveLoadedMessage.SaveData = saveDataObject
               else
-                saveLoadedMessage.LoadResult = 2 --[[LoadResult.FailedDeserialize]]
+                saveLoadedMessage.LoadResult = 2
               end
             end
           else
@@ -33775,14 +33800,14 @@ System.namespace("WCSharp.SaveLoad", function (namespace)
         local text = sb:ToString()
         if System.String.IsNullOrEmpty(text) then
           save = nil
-          return 0 --[[LoadResult.NewSave]], save
+          return 0, save
         end
-        local result = 1 --[[LoadResult.FailedDecode]]
+        local result = 1
         local default, extern = System.try(function ()
           local input = this.base64:Decode(text)
-          result = 2 --[[LoadResult.FailedDeserialize]]
+          result = 2
           save = WCSharpJson.JsonConvert.Deserialize(input, Save_1T)
-          return true, 4 --[[LoadResult.Success]]
+          return true, 4
         end, function (default)
           save = nil
           return true, result
@@ -33822,7 +33847,7 @@ System.namespace("WCSharp.SaveLoad", function (namespace)
         end
         return hash
       end
-      -- <inheritdoc />
+
       Dispose = function (this)
         WCSharpSync.SyncSystem.Unsubscribe(System.fn(this, HandleSaveLoadedMessage), SaveLoadedMessage_1T)
       end
@@ -33875,10 +33900,10 @@ System.namespace("WCSharp.SaveLoad", function (namespace)
       }
     end
   end)
-  -- <summary>
-  -- Defines a set of options for a <see cref="T:WCSharp.SaveLoad.SaveSystem`1" />.
-  -- <para>The <see cref="P:WCSharp.SaveLoad.SaveSystemOptions.SaveFolder" />, <see cref="P:WCSharp.SaveLoad.SaveSystemOptions.Salt" />, <see cref="P:WCSharp.SaveLoad.SaveSystemOptions.Hash1" /> and <see cref="P:WCSharp.SaveLoad.SaveSystemOptions.Hash2" /> properties are required.</para>
-  -- </summary>
+
+
+
+
   namespace.class("SaveSystemOptions", function (namespace)
     return {
       Hash1 = 0,
@@ -33919,9 +33944,9 @@ System.import(function (out)
   WCSharpSharedData = WCSharp.Shared.Data
 end)
 System.namespace("WCSharp.Shared", function (namespace)
-  -- <summary>
-  -- Conversion courtesy of http://lua-users.org/wiki/BaseSixtyFour
-  -- </summary>
+
+
+
   namespace.class("Base64", function (namespace)
     local BASE64_CHARSET, default, encode, decode, ToBase64, FromBase64, Encode, Decode, 
     class, static, __ctor__
@@ -33930,12 +33955,12 @@ System.namespace("WCSharp.Shared", function (namespace)
       encode = load("\r\nreturn function(data, b)\r\n    return ((data:gsub('.', function(x) \r\n        local r,b='',x:byte()\r\n        for i=8,1,-1 do r=r..(b%2^i-b%2^(i-1)>0 and '1' or '0') end\r\n        return r;\r\n    end)..'0000'):gsub('%d%d%d?%d?%d?%d?', function(x)\r\n        if (#x < 6) then return '' end\r\n        local c=0\r\n        for i=1,6 do c=c+(x:sub(i,i)=='1' and 2^(6-i) or 0) end\r\n        return b:sub(c+1,c+1)\r\n    end)..({ '', '==', '=' })[#data%3+1])\r\nend\r\n")()
       decode = load("\r\nreturn function(data, b)\r\n    data = string.gsub(data, '[^'..b..'=]', '')\r\n    return (data:gsub('.', function(x)\r\n        if (x == '=') then return '' end\r\n        local r,f='',(b:find(x)-1)\r\n        for i=6,1,-1 do r=r..(f%2^i-f%2^(i-1)>0 and '1' or '0') end\r\n        return r;\r\n    end):gsub('%d%d%d?%d?%d?%d?%d?%d?', function(x)\r\n        if (#x ~= 8) then return '' end\r\n        local c=0\r\n        for i=1,8 do c=c+(x:sub(i,i)=='1' and 2^(8-i) or 0) end\r\n        return string.char(c)\r\n    end))\r\nend\r\n")()
     end
-    -- <summary>
-    -- Creates a new Base64 generator with the given character set.
-    -- <para>A custom character set must be exactly 64 characters long and use the same set of characters as regular Base64. You can only change the order.</para>
-    -- <para>Default: ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/</para>
-    -- </summary>
-    -- <param name="charset"></param>
+
+
+
+
+
+
     __ctor__ = function (this, charset)
       if charset == nil or #charset ~= #("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/") or Linq.Any("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/", function (x)
         return not charset:Contains(x)
@@ -33946,27 +33971,27 @@ System.namespace("WCSharp.Shared", function (namespace)
       end
     end
     BASE64_CHARSET = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/"
-    -- <summary>
-    -- Converts the given text to Base64 with the default character set.
-    -- </summary>
+
+
+
     ToBase64 = function (data)
       return Encode(default, data)
     end
-    -- <summary>
-    -- Converts the given Base64 to text with the default character set.
-    -- </summary>
+
+
+
     FromBase64 = function (data)
       return Decode(default, data)
     end
-    -- <summary>
-    -- Converts the given string into a Base64 string.
-    -- </summary>
+
+
+
     Encode = function (this, data)
       return System.cast(System.String, encode(data, this.charset))
     end
-    -- <summary>
-    -- Converts the given Base64 string into a regular string.
-    -- </summary>
+
+
+
     Decode = function (this, data)
       return System.cast(System.String, decode(data, this.charset))
     end
@@ -33998,10 +34023,10 @@ System.namespace("WCSharp.Shared", function (namespace)
     }
     return class
   end)
-  -- <summary>
-  -- Basic helper class to create 0 second delays on executing actions.
-  -- <para>This can be used to circumvent various issues, such as unit AI locking up if you give them a new order at the same time as they start an attack.</para>
-  -- </summary>
+
+
+
+
   namespace.class("Delay", function (namespace)
     local timer, funcs, execute, EnableDebug, Add, ExecuteAll, ExecuteAllDebug, static
     static = function (this)
@@ -34009,17 +34034,17 @@ System.namespace("WCSharp.Shared", function (namespace)
       funcs = ListDelegate()
       execute = ExecuteAll
     end
-    -- <summary>
-    -- Call this method to automatically wrap your actions in a try/catch, so that exceptions that lead back to <see cref="T:WCSharp.Shared.Delay" /> will automatically output information.
-    -- <para>It is recommended to use compilation time conditions to not call this on release mode.</para>
-    -- </summary>
+
+
+
+
     EnableDebug = function ()
       execute = ExecuteAllDebug
     end
-    -- <summary>
-    -- <para>Will execute the given action after a 0 second delay, which translates to a single frame.</para>
-    -- <para>This can be used to circumvent various issues, such as unit AI locking up if you give them a new order at the same time as they start an attack.</para>
-    -- </summary>
+
+
+
+
     Add = function (func)
       if #funcs == 0 then
         TimerStart(timer, 0, false, execute)
@@ -34066,18 +34091,18 @@ System.namespace("WCSharp.Shared", function (namespace)
       end
     }
   end)
-  -- <summary>
-  -- Represents a table in Lua in a way that is easier to work with from C#.
-  -- </summary>
-  -- Unfortunately this can't just extend <see cref="T:System.Collections.Generic.Dictionary`2" /> because
-  -- adding properties/fields messes with the enumeration after transpilation to Lua.
+
+
+
+
+
   namespace.class("LuaTable", function (namespace)
     local getKeys, getValues, getCount, getIsReadOnly, get, set, AddKeyValue, ContainsKey, 
     RemoveKey, TryGetValue, Clear, GetEnumerator, GetEnumerator1, Add, Contains, CopyTo, 
     Remove, __ctor__
-    -- <summary>
-    -- Initialises a new <see cref="T:WCSharp.Shared.LuaTable" /> and adds all pairs located on the table into the dictionary.
-    -- </summary>
+
+
+
     __ctor__ = function (this, table)
       this.dict = DictObjectObject()
       this.Table = table
@@ -34105,29 +34130,29 @@ System.namespace("WCSharp.Shared", function (namespace)
     set = function (this, key, value)
       this.dict:set(key, value)
     end
-    -- <inheritdoc />
+
     AddKeyValue = function (this, key, value)
       this.dict:AddKeyValue(key, value)
     end
-    -- <inheritdoc />
+
     ContainsKey = function (this, key)
       return this.dict:ContainsKey(key)
     end
-    -- <inheritdoc />
+
     RemoveKey = function (this, key)
       return this.dict:RemoveKey(key)
     end
-    -- <inheritdoc />
+
     TryGetValue = function (this, key, value)
       local default
       default, value = this.dict:TryGetValue(key, nil)
       return default, value
     end
-    -- <inheritdoc />
+
     Clear = function (this)
       this.dict:Clear()
     end
-    -- <inheritdoc />
+
     GetEnumerator = function (this)
       return this.dict:GetEnumerator()
     end
@@ -34205,17 +34230,17 @@ System.namespace("WCSharp.Shared", function (namespace)
       end
     }
   end)
-  -- <summary>
-  -- Wrapper for WC3 handles to pass type inspection.
-  -- <para>Sometimes some type casts or pattern matching is required for handles, however this doesn't work as they are not proper objects.</para>
-  -- <para>By wrapping them in a C# object like this, we can properly cast and match handles.</para>
-  -- </summary>
+
+
+
+
+
   namespace.class("TypeWrapper_1", function (namespace)
     return function (T)
       local __ctor__
-      -- <summary>
-      -- Wraps the given value in a C# type.
-      -- </summary>
+
+
+
       __ctor__ = function (this, value)
         this.Value = System.default(T)
         this.Value = value
@@ -34236,9 +34261,9 @@ System.namespace("WCSharp.Shared", function (namespace)
       }
     end
   end)
-  -- <summary>
-  -- Defines a number of miscellaneous useful methods and constants.
-  -- </summary>
+
+
+
   namespace.class("Util", function (namespace)
     local location, Debug, DistanceBetweenPoints, DistanceBetweenPoints1, DistanceBetweenPoints2, DistanceBetweenPoints3, IsInRange, IsInRange1, 
     IsInRange2, IsInRange3, AngleBetweenPoints1, AngleBetweenPoints2, AngleBetweenPoints3, AngleBetweenPointsRad1, AngleBetweenPointsRad2, AngleBetweenPointsRad3, 
@@ -34247,156 +34272,156 @@ System.namespace("WCSharp.Shared", function (namespace)
     static = function (this)
       location = Location(0, 0)
     end
-    -- <summary>
-    -- Outputs the given data as text to the local player at the default position.
-    -- </summary>
+
+
+
     Debug = function (obj)
       DisplayTextToPlayer(GetLocalPlayer(), 0, 0, System.ObjectToString(obj))
     end
-    -- <summary>
-    -- Calculates the distance from (<paramref name="x1" />, <paramref name="y1" />) to (<paramref name="x2" />, <paramref name="y2" />).
-    -- </summary>
+
+
+
     DistanceBetweenPoints = function (x1, y1, x2, y2)
       local num = x1 - x2
       local num2 = y1 - y2
       return SquareRoot(num * num + num2 * num2)
     end
-    -- <summary>
-    -- Calculates the distance from <paramref name="source" /> unit to (<paramref name="x2" />, <paramref name="y2" />).
-    -- </summary>
+
+
+
     DistanceBetweenPoints1 = function (source, x2, y2)
       local num = GetUnitX(source) - x2
       local num2 = GetUnitY(source) - y2
       return SquareRoot(num * num + num2 * num2)
     end
-    -- <summary>
-    -- Calculates the distance from (<paramref name="x1" />, <paramref name="y1" />) to <paramref name="target" /> unit.
-    -- </summary>
+
+
+
     DistanceBetweenPoints2 = function (x1, y1, target)
       local num = x1 - GetUnitX(target)
       local num2 = y1 - GetUnitY(target)
       return SquareRoot(num * num + num2 * num2)
     end
-    -- <summary>
-    -- Calculates the distance from <paramref name="source" /> unit to <paramref name="target" /> unit.
-    -- </summary>
+
+
+
     DistanceBetweenPoints3 = function (source, target)
       local num = GetUnitX(source) - GetUnitX(target)
       local num2 = GetUnitY(source) - GetUnitY(target)
       return SquareRoot(num * num + num2 * num2)
     end
-    -- <summary>
-    -- Determines whether the distance from (<paramref name="x1" />, <paramref name="y1" />) to (<paramref name="x2" />, <paramref name="y2" />) is less than <paramref name="range" />.
-    -- <para>Performance is a little better than DistanceBetweenPoints if you don't care about the exact distance.</para>
-    -- </summary>
+
+
+
+
     IsInRange = function (x1, y1, x2, y2, range)
       local num = x1 - x2
       local num2 = y1 - y2
       return num * num + num2 * num2 <= range * range
     end
-    -- <summary>
-    -- Determines whether the distance from <paramref name="source" /> unit to (<paramref name="x2" />, <paramref name="y2" />) is less than <paramref name="range" />.
-    -- <para>Performance is a little better than DistanceBetweenPoints if you don't care about the exact distance.</para>
-    -- </summary>
+
+
+
+
     IsInRange1 = function (source, x2, y2, range)
       local num = GetUnitX(source) - x2
       local num2 = GetUnitY(source) - y2
       return num * num + num2 * num2 <= range * range
     end
-    -- <summary>
-    -- Determines whether the distance from (<paramref name="x1" />, <paramref name="y1" />) to <paramref name="target" /> unit is less than <paramref name="range" />.
-    -- <para>Performance is a little better than DistanceBetweenPoints if you don't care about the exact distance.</para>
-    -- </summary>
+
+
+
+
     IsInRange2 = function (x1, y1, target, range)
       local num = x1 - GetUnitX(target)
       local num2 = y1 - GetUnitY(target)
       return num * num + num2 * num2 <= range * range
     end
-    -- <summary>
-    -- Determines whether the distance from <paramref name="source" /> unit to <paramref name="target" /> unit is less than <paramref name="range" />.
-    -- <para>Performance is a little better than DistanceBetweenPoints if you don't care about the exact distance.</para>
-    -- </summary>
+
+
+
+
     IsInRange3 = function (source, target, range)
       local num = GetUnitX(source) - GetUnitX(target)
       local num2 = GetUnitY(source) - GetUnitY(target)
       return num * num + num2 * num2 <= range * range
     end
-    -- <summary>
-    -- Calculates the angle in degrees from <paramref name="source" /> unit to (<paramref name="x2" />, <paramref name="y2" />).
-    -- </summary>
+
+
+
     AngleBetweenPoints1 = function (source, x2, y2)
-      return 180 + 57.2957764 --[[180f / (float)Math.PI]] * Atan2(GetUnitY(source) - y2, GetUnitX(source) - x2)
+      return 180 + 57.2957764 * Atan2(GetUnitY(source) - y2, GetUnitX(source) - x2)
     end
-    -- <summary>
-    -- Calculates the angle in degrees from (<paramref name="x1" />, <paramref name="y1" />) to <paramref name="target" /> unit.
-    -- </summary>
+
+
+
     AngleBetweenPoints2 = function (x1, y1, target)
-      return 180 + 57.2957764 --[[180f / (float)Math.PI]] * Atan2(y1 - GetUnitY(target), x1 - GetUnitX(target))
+      return 180 + 57.2957764 * Atan2(y1 - GetUnitY(target), x1 - GetUnitX(target))
     end
-    -- <summary>
-    -- Calculates the angle in degrees from <paramref name="source" /> unit to <paramref name="target" /> unit.
-    -- </summary>
+
+
+
     AngleBetweenPoints3 = function (source, target)
-      return 180 + 57.2957764 --[[180f / (float)Math.PI]] * Atan2(GetUnitY(source) - GetUnitY(target), GetUnitX(source) - GetUnitX(target))
+      return 180 + 57.2957764 * Atan2(GetUnitY(source) - GetUnitY(target), GetUnitX(source) - GetUnitX(target))
     end
-    -- <summary>
-    -- Calculates the angle in radians from <paramref name="source" /> unit to (<paramref name="x2" />, <paramref name="y2" />).
-    -- </summary>
+
+
+
     AngleBetweenPointsRad1 = function (source, x2, y2)
-      return 3.14159274 --[[(float)Math.PI]] + Atan2(GetUnitY(source) - y2, GetUnitX(source) - x2)
+      return 3.14159274 + Atan2(GetUnitY(source) - y2, GetUnitX(source) - x2)
     end
-    -- <summary>
-    -- Calculates the angle in radians from (<paramref name="x1" />, <paramref name="y1" />) to <paramref name="target" /> unit.
-    -- </summary>
+
+
+
     AngleBetweenPointsRad2 = function (x1, y1, target)
-      return 3.14159274 --[[(float)Math.PI]] + Atan2(y1 - GetUnitY(target), x1 - GetUnitX(target))
+      return 3.14159274 + Atan2(y1 - GetUnitY(target), x1 - GetUnitX(target))
     end
-    -- <summary>
-    -- Calculates the angle in radians from <paramref name="source" /> unit to <paramref name="target" /> unit.
-    -- </summary>
+
+
+
     AngleBetweenPointsRad3 = function (source, target)
-      return 3.14159274 --[[(float)Math.PI]] + Atan2(GetUnitY(source) - GetUnitY(target), GetUnitX(source) - GetUnitX(target))
+      return 3.14159274 + Atan2(GetUnitY(source) - GetUnitY(target), GetUnitX(source) - GetUnitX(target))
     end
-    -- <summary>
-    -- Calculates a point that is the given <paramref name="offset" /> away from (<paramref name="x" />, <paramref name="y" />) at the target <paramref name="degrees" />.
-    -- </summary>
+
+
+
     PositionWithPolarOffset = function (x, y, offset, degrees)
-      return System.ValueTuple(x + offset * Cos(0.0174532924 --[[(float)Math.PI / 180f]] * degrees), y + offset * Sin(0.0174532924 --[[(float)Math.PI / 180f]] * degrees))
+      return System.ValueTuple(x + offset * Cos(0.0174532924 * degrees), y + offset * Sin(0.0174532924 * degrees))
     end
-    -- <summary>
-    -- Calculates a point that is the given <paramref name="offset" /> away from (<paramref name="x" />, <paramref name="y" />) at the target <paramref name="radians" />.
-    -- </summary>
+
+
+
     PositionWithPolarOffsetRad = function (x, y, offset, radians)
       return System.ValueTuple(x + offset * Cos(radians), y + offset * Sin(radians))
     end
-    -- <summary>
-    -- <para>Determines whether the attacker is behind the attacked with the given tolerance in degrees.</para>
-    -- <para>A tolerance of 360 would mean the target can be attacked from anywhere while being considered "behind".</para>
-    -- </summary>
-    -- <param name="attacker">The unit performing the attack.</param>
-    -- <param name="attacked">The unit being attacked.</param>
-    -- <param name="tolerance">In degrees.</param>
+
+
+
+
+
+
+
     IsAttackerBehindUnit = function (attacker, attacked, tolerance)
       return IsAttackerBehindUnit1(GetUnitX(attacker), GetUnitY(attacker), attacked, tolerance)
     end
-    -- <summary>
-    -- <para>Determines whether the attacker is behind the attacked with the given tolerance in degrees.</para>
-    -- <para>A tolerance of 360 would mean the target can be attacked from anywhere while being considered "behind".</para>
-    -- </summary>
-    -- <param name="attackerX">The X position of the attacker.</param>
-    -- <param name="attackerY">The Y position of the attacker.</param>
-    -- <param name="attacked">The unit being attacked.</param>
-    -- <param name="tolerance">In degrees.</param>
+
+
+
+
+
+
+
+
     IsAttackerBehindUnit1 = function (attackerX, attackerY, attacked, tolerance)
       return IsAttackerBehindUnit2((180 + (57.2957764 * Atan2(attackerY - GetUnitY(attacked), attackerX - GetUnitX(attacked)))), attacked, tolerance)
     end
-    -- <summary>
-    -- <para>Determines whether the attacker is behind the attacked with the given tolerance in degrees.</para>
-    -- <para>A tolerance of 360 would mean the target can be attacked from anywhere while being considered "behind".</para>
-    -- </summary>
-    -- <param name="attackerAngle">The angle of the attacker.</param>
-    -- <param name="attacked">The unit being attacked.</param>
-    -- <param name="tolerance">In degrees.</param>
+
+
+
+
+
+
+
     IsAttackerBehindUnit2 = function (attackerAngle, attacked, tolerance)
       local unitFacing = GetUnitFacing(attacked)
       local num = 360 - 0.5 * tolerance
@@ -34407,13 +34432,13 @@ System.namespace("WCSharp.Shared", function (namespace)
       end
       return true
     end
-    -- <summary>
-    -- <para>Determines whether the attacker is in front of the attacked with the given tolerance in degrees.</para>
-    -- <para>A tolerance of 360 means the target can be attacked from anywhere while being considered "infront".</para>
-    -- </summary>
-    -- <param name="attacker">The unit performing the attack.</param>
-    -- <param name="attacked">The unit being attacked.</param>
-    -- <param name="tolerance">In degrees.</param>
+
+
+
+
+
+
+
     IsAttackerInfrontUnit = function (attacker, attacked, tolerance)
       local num = (180 + (57.2957764 * Atan2(GetUnitY(attacked) - GetUnitY(attacker), GetUnitX(attacked) - GetUnitX(attacker))))
       local unitFacing = GetUnitFacing(attacked)
@@ -34425,12 +34450,12 @@ System.namespace("WCSharp.Shared", function (namespace)
       end
       return true
     end
-    -- <summary>
-    -- Returns all players matching the given <paramref name="playerslotstate" /> and <paramref name="mapcontrol" />.
-    -- </summary>
-    -- <param name="playerslotstate">The <see cref="T:WCSharp.Api.playerslotstate" /> that players should have. Defaults to <see cref="F:WCSharp.Api.Common.PLAYER_SLOT_STATE_PLAYING" />.</param>
-    -- <param name="mapcontrol">The <see cref="T:WCSharp.Api.mapcontrol" /> that players should have. Defaults to <see cref="F:WCSharp.Api.Common.MAP_CONTROL_USER" />.</param>
-    -- <returns></returns>
+
+
+
+
+
+
     EnumeratePlayers = function (playerslotstate, mapcontrol)
       return System.yieldIEnumerable(function (playerslotstate, mapcontrol)
         if playerslotstate == nil then
@@ -34448,9 +34473,9 @@ System.namespace("WCSharp.Shared", function (namespace)
         end
       end, WCSharpApi.player, playerslotstate, mapcontrol)
     end
-    -- <summary>
-    -- Returns all players.
-    -- </summary>
+
+
+
     EnumeratePlayers1 = function ()
       return System.yieldIEnumerable(function ()
         local maxPlayers = GetBJMaxPlayers()
@@ -34459,18 +34484,18 @@ System.namespace("WCSharp.Shared", function (namespace)
         end
       end, WCSharpApi.player)
     end
-    -- <summary>
-    -- Creates a "damage text" style of floating text at the target location.
-    -- <para>Size is expected to be GUI-like values (it gets multiplied by <see cref="F:WCSharp.Shared.Util.TEXT_SIZE_MULTIPLIER" />).</para>
-    -- <para>By default, the text will start to fade after 2 seconds, and be fully removed after 4 seconds.</para>
-    -- </summary>
-    -- <param name="damage">The damage number to display (will round to whole numbers).</param>
-    -- <param name="isHeal">If true, will color green.</param>
-    -- <param name="isCritical">If true, will add an exclamation mark.</param>
-    -- <param name="size">The size of the text. See GUI.</param>
-    -- <param name="x">The x position that the text should be created at.</param>
-    -- <param name="y">The y position that the text should be created at.</param>
-    -- <param name="height">The height that the text should be created at, relative to the target (x, y) position.</param>
+
+
+
+
+
+
+
+
+
+
+
+
     CreateDamageText = function (damage, isHeal, isCritical, size, x, y, height)
       local texttag = CreateTextTag()
       local text = MathRound(damage) .. ""
@@ -34493,19 +34518,19 @@ System.namespace("WCSharp.Shared", function (namespace)
       SetTextTagVisibility(texttag, true)
       return texttag
     end
-    -- <summary>
-    -- Creates a floating text at the target location.
-    -- <para>Size is expected to be GUI-like values (it gets multiplied by <see cref="F:WCSharp.Shared.Util.TEXT_SIZE_MULTIPLIER" />).</para>
-    -- <para>By default, the text will start to fade after 2 seconds, and be fully removed after 4 seconds.</para>
-    -- </summary>
-    -- <param name="text">The text to display.</param>
-    -- <param name="size">The size of the text. See GUI.</param>
-    -- <param name="x">The x position that the text should be created at.</param>
-    -- <param name="y">The y position that the text should be created at.</param>
-    -- <param name="height">The height that the text should be created at, relative to the target (x, y) position.</param>
-    -- <param name="red">The red value of the text. Should be in the range of 0 (none) to 255 (pure red).</param>
-    -- <param name="green">The green value of the text. Should be in the range of 0 (none) to 255 (pure green).</param>
-    -- <param name="blue">The blue value of the text. Should be in the range of 0 (none) to 255 (pure blue).</param>
+
+
+
+
+
+
+
+
+
+
+
+
+
     CreateFloatText = function (text, size, x, y, height, red, green, blue)
       local texttag = CreateTextTag()
       SetTextTagText(texttag, text, size * 0.0023)
@@ -34519,10 +34544,10 @@ System.namespace("WCSharp.Shared", function (namespace)
       SetTextTagVisibility(texttag, true)
       return texttag
     end
-    -- <summary>
-    -- Retrieves the LocationZ at the given (X, Y) coordinates.
-    -- <para>Re-uses an internal location to provide a faster and easier solution to <see cref="M:WCSharp.Api.Common.GetLocationZ(WCSharp.Api.location)" />.</para>
-    -- </summary>
+
+
+
+
     GetZ = function (x, y)
       MoveLocation(location, x, y)
       return GetLocationZ(location)
@@ -34595,14 +34620,14 @@ System.namespace("WCSharp.Shared", function (namespace)
   end)
 end)
 System.namespace("WCSharp.Shared.Extensions", function (namespace)
-  -- <summary>
-  -- Extension class that defines a number of methods to simplify working with Warcraft III groups.
-  -- </summary>
+
+
+
   namespace.class("GroupExtensions", function (namespace)
     local Enumerate, Enumerate1, FirstOrDefault, ToList, ToList1, ToHashSet, ToHashSet1
-    -- <summary>
-    -- Enumerates all units within the <paramref name="group" />. This will empty the group in the process.
-    -- </summary>
+
+
+
     Enumerate = function (group)
       return System.yieldIEnumerable(function (group)
         while true do
@@ -34615,9 +34640,9 @@ System.namespace("WCSharp.Shared.Extensions", function (namespace)
         end
       end, WCSharpApi.unit, group)
     end
-    -- <summary>
-    -- Enumerates all units within the group that match the given filter. This will empty the group in the process.
-    -- </summary>
+
+
+
     Enumerate1 = function (group, filter)
       return System.yieldIEnumerable(function (group, filter)
         while true do
@@ -34632,10 +34657,10 @@ System.namespace("WCSharp.Shared.Extensions", function (namespace)
         end
       end, WCSharpApi.unit, group, filter)
     end
-    -- <summary>
-    -- Finds the first unit in the <paramref name="group" /> that matches the given <paramref name="predicate" />.
-    -- <para>If you need to call this more than once, use ToList and Linq methods instead.</para>
-    -- </summary>
+
+
+
+
     FirstOrDefault = function (group, predicate)
       local num = 0
       local unit
@@ -34651,9 +34676,9 @@ System.namespace("WCSharp.Shared.Extensions", function (namespace)
       end
       return unit
     end
-    -- <summary>
-    -- Returns a <see cref="T:System.Collections.Generic.List`1" /> containing all units within the given <paramref name="group" />.
-    -- </summary>
+
+
+
     ToList = function (group)
       local num = BlzGroupGetSize(group)
       local list = Listunit()
@@ -34662,9 +34687,9 @@ System.namespace("WCSharp.Shared.Extensions", function (namespace)
       end
       return list
     end
-    -- <summary>
-    -- Returns a <see cref="T:System.Collections.Generic.List`1" /> containing all units within the given <paramref name="group" /> that match the <paramref name="predicate" />.
-    -- </summary>
+
+
+
     ToList1 = function (group, predicate)
       local num = BlzGroupGetSize(group)
       local list = Listunit()
@@ -34676,9 +34701,9 @@ System.namespace("WCSharp.Shared.Extensions", function (namespace)
       end
       return list
     end
-    -- <summary>
-    -- Returns a <see cref="T:System.Collections.Generic.HashSet`1" /> containing all units within the given <paramref name="group" />.
-    -- </summary>
+
+
+
     ToHashSet = function (group)
       local num = BlzGroupGetSize(group)
       local hashSet = HashSetunit()
@@ -34687,9 +34712,9 @@ System.namespace("WCSharp.Shared.Extensions", function (namespace)
       end
       return hashSet
     end
-    -- <summary>
-    -- Returns a <see cref="T:System.Collections.Generic.HashSet`1" /> containing all units within the given <paramref name="group" /> that match the <paramref name="predicate" />.
-    -- </summary>
+
+
+
     ToHashSet1 = function (group, predicate)
       local num = BlzGroupGetSize(group)
       local hashSet = HashSetunit()
@@ -34725,16 +34750,16 @@ System.namespace("WCSharp.Shared.Extensions", function (namespace)
       end
     }
   end)
-  -- <summary>
-  -- Extension class that defines a number of methods to simplify working with lists, in particular within context of Warcraft III.
-  -- </summary>
+
+
+
   namespace.class("IListExtensions", function (namespace)
     local IterateWithRemoval, ClearLast, ClearLast1
-    -- <summary>
-    -- Due to C# to Lua conversion difficulties, standard ways of enumerating a list while removing items from it may not work.
-    -- This extension method will safely iterate the list, and remove any which return false.
-    -- <para>Alternatively, you can use a standard reverse order iteration, as this will still work correctly.</para>
-    -- </summary>
+
+
+
+
+
     IterateWithRemoval = function (list, func, T)
       local num = list:getCount()
       local num2 = 0
@@ -34756,12 +34781,12 @@ System.namespace("WCSharp.Shared.Extensions", function (namespace)
         end
       end
     end
-    -- <summary>
-    -- Abuses how lists work in lua in order to cheaply remove the final elements.
-    -- </summary>
-    -- <typeparam name="T"></typeparam>
-    -- <param name="list">The list to modify.</param>
-    -- <param name="amount">The number of elements to remove.</param>
+
+
+
+
+
+
     ClearLast = function (list, amount, T)
       local num = #list
       local num2 = num - amount
@@ -34770,14 +34795,14 @@ System.namespace("WCSharp.Shared.Extensions", function (namespace)
         num = num - 1
       end
     end
-    -- <summary>
-    -- Abuses how lists work in lua in order to cheaply remove the final elements.
-    -- <para>WARNING! If <paramref name="count" /> is NOT equal to <see cref="P:System.Collections.Generic.List`1.Count" />, you WILL cause major bugs!</para>
-    -- </summary>
-    -- <typeparam name="T"></typeparam>
-    -- <param name="list">The list to modify.</param>
-    -- <param name="amount">The number of elements to remove.</param>
-    -- <param name="count">This MUST be equal to <see cref="P:System.Collections.Generic.List`1.Count" />, else you WILL cause major bugs!</param>
+
+
+
+
+
+
+
+
     ClearLast1 = function (list, amount, count, T)
       local num = count - amount
       while num < count do
@@ -34803,21 +34828,21 @@ System.namespace("WCSharp.Shared.Extensions", function (namespace)
   end)
 end)
 System.namespace("WCSharp.Shared.Data", function (namespace)
-  -- <summary>
-  -- Data class for a simple point coordinate.
-  -- </summary>
+
+
+
   namespace.class("Point", function (namespace)
     local op_Equality, op_Inequality, Equals, EqualsObj, GetHashCode, class, __ctor__
-    -- <summary>
-    -- Creates a new point at the given X and Y cooridnates.
-    -- </summary>
+
+
+
     __ctor__ = function (this, x, y)
       this.X = x
       this.Y = y
     end
-    -- <summary>
-    -- True if the X and Y coordinates of the two points match.
-    -- </summary>
+
+
+
     op_Equality = function (point1, point2)
       local default = point1
       if default ~= nil then
@@ -34829,20 +34854,20 @@ System.namespace("WCSharp.Shared.Data", function (namespace)
       end
       return extern
     end
-    -- <summary>
-    -- True if the X and Y coordinates of the two points do not match.
-    -- </summary>
+
+
+
     op_Inequality = function (point1, point2)
       return not (op_Equality(point1, point2))
     end
-    -- <inheritdoc />
+
     Equals = function (this, other)
       if other ~= nil and this.X == other.X then
         return this.Y == other.Y
       end
       return false
     end
-    -- <inheritdoc />
+
     EqualsObj = function (this, obj)
       local other = obj
       if System.is(other, class) then
@@ -34850,7 +34875,7 @@ System.namespace("WCSharp.Shared.Data", function (namespace)
       end
       return false
     end
-    -- <inheritdoc />
+
     GetHashCode = function (this)
       return System.HashCode.Combine(this.X, this.Y, System.Single, System.Single)
     end
@@ -34886,9 +34911,9 @@ System.namespace("WCSharp.Shared.Data", function (namespace)
     }
     return class
   end)
-  -- <summary>
-  -- Data class that mimics the functions of the standard Rect.cs while providing access to WC3 rect and region representations.
-  -- </summary>
+
+
+
   namespace.class("Rectangle", function (namespace)
     local WorldBounds, getRect, getRegion, getWidth, getHeight, getTopLeft, getTopRight, getBottomLeft, 
     getBottomRight, getCenter, getIsEmpty, op_Equality, op_Inequality, GetRandomPoint, Contains, Contains1, 
@@ -34898,9 +34923,9 @@ System.namespace("WCSharp.Shared.Data", function (namespace)
       WorldBounds = class(GetWorldBounds())
       this.WorldBounds = WorldBounds
     end
-    -- <summary>
-    -- Creates a new rectangle using the given Warcraft III rect as a base.
-    -- </summary>
+
+
+
     __ctor1__ = function (this, rect)
       this.Left = GetRectMinX(rect)
       this.Bottom = GetRectMinY(rect)
@@ -34908,18 +34933,18 @@ System.namespace("WCSharp.Shared.Data", function (namespace)
       this.Top = GetRectMaxY(rect)
       this.rect = rect
     end
-    -- <summary>
-    -- Creates a new rectangle with the given set of coordinates.
-    -- </summary>
+
+
+
     __ctor2__ = function (this, left, bottom, right, top)
       this.Left = math.Min(left, right)
       this.Bottom = math.Min(bottom, top)
       this.Right = right
       this.Top = top
     end
-    -- <summary>
-    -- Creates a Rectangle that encompasses all of the given points within its surface area.
-    -- </summary>
+
+
+
     __ctor3__ = function (this, points)
       local list = Linq.ToList(points)
       if #list ~= 0 then
@@ -34976,9 +35001,9 @@ System.namespace("WCSharp.Shared.Data", function (namespace)
       end
       return true
     end
-    -- <summary>
-    -- True if all coordinates of <paramref name="rect1" /> match those of <paramref name="rect2" />.
-    -- </summary>
+
+
+
     op_Equality = function (rect1, rect2)
       local default = rect1
       if default ~= nil then
@@ -34990,90 +35015,90 @@ System.namespace("WCSharp.Shared.Data", function (namespace)
       end
       return extern
     end
-    -- <summary>
-    -- True if any coordinates of <paramref name="rect1" /> do not match those of <paramref name="rect2" />.
-    -- </summary>
+
+
+
     op_Inequality = function (rect1, rect2)
       return not (op_Equality(rect1, rect2))
     end
-    -- <summary>
-    -- Retrieves a random (inclusive) point in this rectangle.
-    -- </summary>
+
+
+
     GetRandomPoint = function (this)
       return WCSharpSharedData.Point(GetRandomReal(this.Left, this.Right), GetRandomReal(this.Bottom, this.Top))
     end
-    -- <summary>
-    -- Returns whether the given coordinates are located within this Rectangle.
-    -- </summary>
-    -- <param name="x"></param>
-    -- <param name="y"></param>
-    -- <returns></returns>
+
+
+
+
+
+
     Contains = function (this, x, y)
       if this.Left <= x and this.Bottom <= y and this.Right >= x then
         return this.Top >= y
       end
       return false
     end
-    -- <summary>
-    -- Returns whether the given Point is located within this Rectangle.
-    -- </summary>
-    -- <param name="point"></param>
-    -- <returns></returns>
+
+
+
+
+
     Contains1 = function (this, point)
       return Contains(this, point.X, point.Y)
     end
-    -- <summary>
-    -- Returns whether the given Rectangle is located fully within this Rectangle.
-    -- </summary>
+
+
+
     Contains2 = function (this, rect)
       if this.Left <= rect.Left and this.Bottom <= rect.Bottom and this.Right >= rect.Right then
         return this.Top >= rect.Top
       end
       return false
     end
-    -- <summary>
-    -- Returns whether this Rectangle has any point where it touches or overlaps with the given Rectangle.
-    -- </summary>
+
+
+
     IntersectsWith = function (this, rect)
       if rect.Left <= this.Right and rect.Right >= this.Left and rect.Top <= this.Bottom then
         return rect.Bottom >= this.Top
       end
       return false
     end
-    -- <summary>
-    -- Returns a new Rectangle that represents the union of the two given Rectangles. Meaning, a new square that can encompass both.
-    -- </summary>
+
+
+
     Union = function (rect1, rect2)
       return System.new(class, 2, math.Min(rect1.Left, rect2.Left), math.Min(rect1.Bottom, rect2.Bottom), math.Max(rect1.Right, rect2.Right), math.Max(rect1.Top, rect2.Top))
     end
-    -- <summary>
-    -- Returns a new Rectangle that represents the intersection of the two given Rectangles. Meaning, the area in which they overlap.
-    -- </summary>
+
+
+
     Intersect = function (rect1, rect2)
       return System.new(class, 2, math.Max(rect1.Left, rect2.Left), math.Max(rect1.Bottom, rect2.Bottom), math.Min(rect1.Right, rect2.Right), math.Min(rect1.Top, rect2.Top))
     end
-    -- <summary>
-    -- Returns a new Rectangle that is offset by the given coordinates, using <see cref="P:WCSharp.Shared.Data.Rectangle.TopLeft" /> as the origin for movement.
-    -- </summary>
+
+
+
     Offset = function (rect, x, y)
       return System.new(class, 2, rect.Left + x, rect.Bottom + y, rect.Right + x, rect.Top + y)
     end
-    -- <summary>
-    -- Returns a new Rectangle that is inflated by the given width and height in all directions.
-    -- <para>The increase on each side is half the width/height.</para>
-    -- </summary>
+
+
+
+
     Inflate = function (rect, width, height)
       return System.new(class, 2, rect.Left - width / 2, rect.Bottom - height / 2, rect.Right + width / 2, rect.Top + height / 2)
     end
-    -- <summary>
-    -- Returns a new Rectangle that is scaled up by the given scaling factors.
-    -- </summary>
+
+
+
     Scale = function (rect, scaleWidth, scaleHeight)
       return Inflate(rect, getWidth(rect) * scaleWidth / 2, getWidth(rect) * scaleHeight / 2)
     end
-    -- <summary>
-    -- Must be called in order to safely garbage collect <see cref="P:WCSharp.Shared.Data.Rectangle.Rect" /> and <see cref="P:WCSharp.Shared.Data.Rectangle.Region" />.
-    -- </summary>
+
+
+
     Dispose = function (this)
       if this.rect ~= nil then
         RemoveRect(this.rect)
@@ -35084,14 +35109,14 @@ System.namespace("WCSharp.Shared.Data", function (namespace)
         this.region = nil
       end
     end
-    -- <inheritdoc />
+
     Equals = function (this, other)
       if other ~= nil and this.Left == other.Left and this.Bottom == other.Bottom and this.Right == other.Right then
         return this.Top == other.Top
       end
       return false
     end
-    -- <inheritdoc />
+
     EqualsObj = function (this, obj)
       local other = obj
       if System.is(other, class) then
@@ -35099,7 +35124,7 @@ System.namespace("WCSharp.Shared.Data", function (namespace)
       end
       return false
     end
-    -- <inheritdoc />
+
     GetHashCode = function (this)
       return System.HashCode.Combine(this.Left, this.Bottom, this.Right, this.Top, System.Single, System.Single, System.Single, System.Single)
     end
@@ -35299,9 +35324,9 @@ System.namespace("WCSharp.Sync", function (namespace)
       end
     }
   end)
-  -- <summary>
-  -- Represents a single packet of 255 characters being sent via sync. To send as much as possible per packet, the property names are shortened.
-  -- </summary>
+
+
+
   namespace.class("SyncPacket", function (namespace)
     return {
       P = 0,
@@ -35316,19 +35341,19 @@ System.namespace("WCSharp.Sync", function (namespace)
       end
     }
   end)
-  -- <summary>
-  -- The <see cref="T:WCSharp.Sync.SyncSystem" /> sets up a communication channel via the BlzSync functions and allows for the transfer of generically typed data
-  -- across it. Data is automatically split into packets to allow for any amount of data to be transferred across.
-  -- </summary>
-  -- <remarks>
-  -- This system reserves the sync prefixes __WCSharpSyncHeaders and __WCSharpSyncPackets. Nothing else should use these prefixes to send data.
-  -- </remarks>
-  -- This system is set up so that it can process a single message type per player simultaneously. This is based on the assumption that messages
-  -- will never be interrupted midway during sending, and always arrive in the same order as they were sent (tests seem to confirm this).
-  -- Tests also seem to confirm that messages from different players do not get mixed, but since it's hard to be certain without large scale tests
-  -- the system is set up to process one message for each player at any time. If it is true that the player sequence is always the same, this
-  -- could be skipped. But realistically, this only saves a few table lookups anyway, and the table is kept empty when not receiving, meaning the
-  -- memory footprint is basically the same as well.
+
+
+
+
+
+
+
+
+
+
+
+
+
   namespace.class("SyncSystem", function (namespace)
     local syncHandlers, messages, escapeChars, syncTriggers, size, index, RegisterForPrefix, HandleSyncHeader, 
     HandleSyncPacket, FinalizeMessage, Send, BuildPackets, Subscribe, Unsubscribe, headerAction, packetAction, 
@@ -35337,13 +35362,13 @@ System.namespace("WCSharp.Sync", function (namespace)
       syncHandlers = ListSyncHandler()
       messages = DictInt32SyncMessage()
       local default = HashSetChar()
-      default:Add(34 --[['"']])
-      default:Add(92 --[['\\']])
-      default:Add(8 --[['\b']])
-      default:Add(12 --[['\f']])
-      default:Add(10 --[['\n']])
-      default:Add(13 --[['\r']])
-      default:Add(9 --[['\t']])
+      default:Add(34)
+      default:Add(92)
+      default:Add(8)
+      default:Add(12)
+      default:Add(10)
+      default:Add(13)
+      default:Add(9)
       escapeChars = default
       local default = ListSyncTrigger()
       default:Add(RegisterForPrefix(HandleSyncHeader, "__WCSharpSyncHeaders"))
@@ -35403,9 +35428,9 @@ System.namespace("WCSharp.Sync", function (namespace)
       end
       index = 0
     end
-    -- <summary>
-    -- Syncs the given data across all clients. Use <see cref="M:WCSharp.Sync.SyncSystem.Subscribe``1(System.Action{``0})" /> in order to set up receiving of certain types of messages.
-    -- </summary>
+
+
+
     Send = function (message, T)
       if message ~= nil then
         local content = WCSharpJson.JsonConvert.Serialize(message, T)
@@ -35423,9 +35448,9 @@ System.namespace("WCSharp.Sync", function (namespace)
         end
       end
     end
-    -- <summary>
-    -- Splits packets, taking into account added length from escaping the message data.
-    -- </summary>
+
+
+
     BuildPackets = function (content, playerId)
       return System.yieldIEnumerable(function (content, playerId)
         local num = 0
@@ -35461,17 +35486,17 @@ System.namespace("WCSharp.Sync", function (namespace)
         end
       end, WCSharpSync.SyncPacket, content, playerId)
     end
-    -- <summary>
-    -- Subscribes the given <paramref name="handler" /> to be called when messages of type <typeparamref name="T" /> are sent across the <see cref="T:WCSharp.Sync.SyncSystem" />.
-    -- </summary>
+
+
+
     Subscribe = function (handler, T)
       if handler ~= nil then
         syncHandlers:Add(WCSharpSync.SyncHandler.Create(handler, T))
       end
     end
-    -- <summary>
-    -- Unsubscribes the given <paramref name="handler" /> from the <see cref="T:WCSharp.Sync.SyncSystem" />.
-    -- </summary>
+
+
+
     Unsubscribe = function (handler, T)
       for i = 0, #syncHandlers - 1 do
         local continue
@@ -35514,10 +35539,10 @@ System.namespace("WCSharp.Sync", function (namespace)
       end)
       return false
     end
-    -- <summary>
-    -- Call this method to automatically wrap your actions in a try/catch, so that exceptions that lead back to the SyncSystem will automatically output information.
-    -- <para>It is recommended to use compilation time conditions to not call this on release mode.</para>
-    -- </summary>
+
+
+
+
     EnableDebug = function ()
       for i = 0, #syncTriggers - 1 do
         local syncTrigger = syncTriggers:get(i)
@@ -35586,9 +35611,9 @@ System.import(function (out)
   WCSharpW3MMD = WCSharp.W3MMD
 end)
 System.namespace("WCSharp.W3MMD", function (namespace)
-  -- <summary>
-  -- An arbitrary W3MMD variable of any type.
-  -- </summary>
+
+
+
   namespace.interface("IW3MmdVar", function ()
     return {
       __metadata__ = function (out)
@@ -35598,10 +35623,10 @@ System.namespace("WCSharp.W3MMD", function (namespace)
       end
     }
   end)
-  -- <summary>
-  -- The main class responsible for creating and managing W3MMD variable and data emissions.
-  -- <para>Note: You should define your variables and events a few seconds before interacting with them.</para>
-  -- </summary>
+
+
+
+
   namespace.class("W3Mmd", function (namespace)
     local cache, messageId, Init, ForceInit, GetEmitter, DefineVar, Emit, SetPlayerFlag, 
     SetPlayerFlag1, EmitCustom, DefineEvent, DefineFloat, DefineInt, DefineString, static
@@ -35625,15 +35650,15 @@ System.namespace("WCSharp.W3MMD", function (namespace)
       end
       return gamecache
     end
-    -- <summary>
-    -- <para>W3MMD is automatically initialised when defining any event or variable.</para>
-    -- As such, this method is only necessary to call if you exclusively use SetPlayerFlag and/or EmitCustom.
-    -- </summary>
+
+
+
+
     ForceInit = function ()
     end
-    -- <summary>
-    -- Select a player to emit the message.
-    -- </summary>
+
+
+
     GetEmitter = function ()
       local bJMaxPlayers = GetBJMaxPlayers()
       for i = 0, 999 do
@@ -35647,9 +35672,9 @@ System.namespace("WCSharp.W3MMD", function (namespace)
     DefineVar = function (packedName, variableType, goalType, suggestionType)
       Emit("DefVarP " .. System.toString(packedName) .. " " .. System.toString(WCSharpW3MMD.W3MmdExtensions.Pack4(variableType)) .. " " .. System.toString(WCSharpW3MMD.W3MmdExtensions.Pack2(goalType)) .. " " .. System.toString(WCSharpW3MMD.W3MmdExtensions.Pack3(suggestionType)))
     end
-    -- <summary>
-    -- Emits a message to be consumed by a parser.
-    -- </summary>
+
+
+
     Emit = function (message, mmdCache)
       local default = messageId
       messageId = default + 1
@@ -35662,75 +35687,75 @@ System.namespace("WCSharp.W3MMD", function (namespace)
         SyncStoredInteger(mmdCache, "val:" .. num, message)
       end
     end
-    -- <summary>
-    -- Sets a player's flag to be consumed by a parser.
-    -- </summary>
-    -- <param name="player">Player for who the flag is set.</param>
-    -- <param name="flag">The flag value to set.</param>
+
+
+
+
+
     SetPlayerFlag = function (player, flag)
       SetPlayerFlag1(GetPlayerId(player), flag)
     end
-    -- <summary>
-    -- Sets a player's flag to be consumed by a parser.
-    -- </summary>
-    -- <param name="playerId">PlayerId for who the flag is set.</param>
-    -- <param name="flag">The flag value to set.</param>
+
+
+
+
+
     SetPlayerFlag1 = function (playerId, flag)
       Emit("FlagP " .. playerId .. " " .. System.toString(WCSharpW3MMD.W3MmdExtensions.Pack1(flag)))
     end
-    -- <summary>
-    -- Emits custom data that may be used by parsers/viewers.
-    -- <para>See the W3MMD.spec at https://github.com/PBug90/w3gPlus for more information.</para>
-    -- </summary>
-    -- <param name="key">A key to identify the data.</param>
-    -- <param name="data">The data emitted.</param>
+
+
+
+
+
+
     EmitCustom = function (key, data)
       Emit("custom " .. System.toString(WCSharpW3MMD.W3MmdExtensions.Pack(key)) .. " " .. System.toString(WCSharpW3MMD.W3MmdExtensions.Pack(data)))
     end
-    -- <summary>
-    -- Defines an event that can occur multiple times.
-    -- <para>Equivalent to creating a new <see cref="T:WCSharp.W3MMD.W3MmdEvent" />.</para>
-    -- </summary>
-    -- <param name="name">Name of the event.</param>
-    -- <param name="format">
-    -- String to format an event into a user-consumable string.
-    -- <para>e.g., for a player kills player event, we'd do "{0} killed {1}" where {0} is the first argument (the killer) and {1} is the second argument (the victim).</para>
-    -- </param>
-    -- <param name="arguments">Name of the arguments. e.g., ["killer", "victim"].</param>
-    -- <exception cref="T:System.Exception">If the name is not between 1 and 32 characters long.</exception>
+
+
+
+
+
+
+
+
+
+
+
     DefineEvent = function (name, format, arguments)
       return WCSharpW3MMD.W3MmdEvent(name, format, arguments)
     end
-    -- <summary>
-    -- Defines a player float variable that can be mutated throughout the game.
-    -- <para>Equivalent to creating a new <see cref="T:WCSharp.W3MMD.W3MmdFloatVar" />.</para>
-    -- </summary>
-    -- <param name="name">Name of the variable.</param>
-    -- <param name="goalType">Whether the player is trying to get a high or low value (or none).</param>
-    -- <param name="suggestionType">A suggestion for how a parser/viewer should treat the output values.</param>
-    -- <exception cref="T:System.Exception">If the name is not between 1 and 32 characters long.</exception>
+
+
+
+
+
+
+
+
     DefineFloat = function (name, goalType, suggestionType)
       return WCSharpW3MMD.W3MmdFloatVar(name, goalType, suggestionType)
     end
-    -- <summary>
-    -- Defines a player int variable that can be mutated throughout the game.
-    -- <para>Equivalent to creating a new <see cref="T:WCSharp.W3MMD.W3MmdIntVar" />.</para>
-    -- </summary>
-    -- <param name="name">Name of the variable.</param>
-    -- <param name="goalType">Whether the player is trying to get a high or low value (or none).</param>
-    -- <param name="suggestionType">A suggestion for how a parser/viewer should treat the output values.</param>
-    -- <exception cref="T:System.Exception">If the name is not between 1 and 32 characters long.</exception>
+
+
+
+
+
+
+
+
     DefineInt = function (name, goalType, suggestionType)
       return WCSharpW3MMD.W3MmdIntVar(name, goalType, suggestionType)
     end
-    -- <summary>
-    -- Defines a player string variable that can be mutated throughout the game.
-    -- <para>Useful for classifications.</para>
-    -- <para>Equivalent to creating a new <see cref="T:WCSharp.W3MMD.W3MmdStringVar" />.</para>
-    -- </summary>
-    -- <param name="name">Name of the variable.</param>
-    -- <param name="suggestionType">A suggestion for how a parser/viewer should treat the value.</param>
-    -- <exception cref="T:System.Exception">If the name is not between 1 and 32 characters long.</exception>
+
+
+
+
+
+
+
+
     DefineString = function (name, suggestionType)
       return WCSharpW3MMD.W3MmdStringVar(name, suggestionType)
     end
@@ -35771,21 +35796,21 @@ System.namespace("WCSharp.W3MMD", function (namespace)
       end
     }
   end)
-  -- <summary>
-  -- Represents a W3MMD event. For example, "X killed Y".
-  -- </summary>
+
+
+
   namespace.class("W3MmdEvent", function (namespace)
     local getArguments, getArgumentCount, Emit, __ctor__
-    -- <summary>
-    -- Defines an event that can occur multiple times.
-    -- </summary>
-    -- <param name="name">Name of the event.</param>
-    -- <param name="format">
-    -- String to format an event into a user-consumable string.
-    -- <para>e.g., for a player kills player event, we'd do "{0} killed {1}" where {0} is the first argument (the killer) and {1} is the second argument (the victim).</para>
-    -- </param>
-    -- <param name="arguments">Name of the arguments. e.g., ["killer", "victim"].</param>
-    -- <exception cref="T:System.Exception">If the name is not between 1 and 32 characters long.</exception>
+
+
+
+
+
+
+
+
+
+
     __ctor__ = function (this, name, format, arguments)
       if #name < 1 or #name > 32 then
         System.throw(System.Exception("w3mmd: invalid name (" .. System.toString(name) .. "), must be between 1 and 32 characters long"))
@@ -35794,7 +35819,7 @@ System.namespace("WCSharp.W3MMD", function (namespace)
       this.Format = format
       this.arguments = Linq.ToList(arguments)
       this.packedName = WCSharpW3MMD.W3MmdExtensions.Pack(name)
-      this.packedArguments = System.String.JoinEnumerable(32 --[[' ']], Linq.Select(this.arguments, function (x)
+      this.packedArguments = System.String.JoinEnumerable(32, Linq.Select(this.arguments, function (x)
         return WCSharpW3MMD.W3MmdExtensions.Pack(x)
       end, System.String))
       local default
@@ -35812,16 +35837,16 @@ System.namespace("WCSharp.W3MMD", function (namespace)
     getArgumentCount = function (this)
       return #this.arguments
     end
-    -- <summary>
-    -- Emits a new event with the given parameters.
-    -- </summary>
-    -- <param name="args">A number of arguments equal to <see cref="P:WCSharp.W3MMD.W3MmdEvent.ArgumentCount" />.</param>
-    -- <exception cref="T:System.Exception">If the number of arguments provided does not match <see cref="P:WCSharp.W3MMD.W3MmdEvent.ArgumentCount" />.</exception>
+
+
+
+
+
     Emit = function (this, args)
       if #args ~= getArgumentCount(this) then
         System.throw(System.Exception("w3mmd: event " .. System.toString(this.Name) .. " with " .. getArgumentCount(this) .. " arguments tried to emit with " .. #args .. " arguments."))
       end
-      local text = System.String.JoinParams(32 --[[' ']], args)
+      local text = System.String.JoinParams(32, args)
       if #text > 0 then
         text = " " .. System.toString(text)
       end
@@ -35857,11 +35882,11 @@ System.namespace("WCSharp.W3MMD", function (namespace)
   namespace.class("W3MmdExtensions", function (namespace)
     local escapedChars, Pack, Pack1, Pack2, Pack3, Pack4, static
     static = function (this)
-      escapedChars = ArrayChar { 32 --[[' ']], 92 --[['\\']] }
+      escapedChars = ArrayChar { 32, 92 }
     end
-    -- <summary>
-    -- Escapes the W3MMD control characters.
-    -- </summary>
+
+
+
     Pack = function (value)
       local text = ""
       for i = 0, #value - 1 do
@@ -35878,15 +35903,15 @@ System.namespace("WCSharp.W3MMD", function (namespace)
     Pack1 = function (f)
       local default
       local extern = f
-      if extern == 0 --[[W3MmdFlag.Drawer]] then
+      if extern == 0 then
         default = "drawer"
-      elseif extern == 1 --[[W3MmdFlag.Loser]] then
+      elseif extern == 1 then
         default = "loser"
-      elseif extern == 2 --[[W3MmdFlag.Winner]] then
+      elseif extern == 2 then
         default = "winner"
-      elseif extern == 3 --[[W3MmdFlag.Leaver]] then
+      elseif extern == 3 then
         default = "leaver"
-      elseif extern == 4 --[[W3MmdFlag.Practicing]] then
+      elseif extern == 4 then
         default = "practicing"
       else
         default = System.throw(System.NotImplementedException("w3mmd: unknown flag " .. System.EnumToString(f, WCSharpW3MMD.W3MmdFlag)))
@@ -35896,11 +35921,11 @@ System.namespace("WCSharp.W3MMD", function (namespace)
     Pack2 = function (gt)
       local default
       local extern = gt
-      if extern == 0 --[[W3MmdGoalType.None]] then
+      if extern == 0 then
         default = "none"
-      elseif extern == 1 --[[W3MmdGoalType.High]] then
+      elseif extern == 1 then
         default = "high"
-      elseif extern == 2 --[[W3MmdGoalType.Low]] then
+      elseif extern == 2 then
         default = "low"
       else
         default = System.throw(System.NotImplementedException("w3mmd: unknown goal type " .. System.EnumToString(gt, WCSharpW3MMD.W3MmdGoalType)))
@@ -35910,11 +35935,11 @@ System.namespace("WCSharp.W3MMD", function (namespace)
     Pack3 = function (st)
       local default
       local extern = st
-      if extern == 0 --[[W3MmdSuggestionType.None]] then
+      if extern == 0 then
         default = "none"
-      elseif extern == 1 --[[W3MmdSuggestionType.Track]] then
+      elseif extern == 1 then
         default = "track"
-      elseif extern == 2 --[[W3MmdSuggestionType.Leaderboard]] then
+      elseif extern == 2 then
         default = "leaderboard"
       else
         default = System.throw(System.NotImplementedException("w3mmd: unknown suggestion type " .. System.EnumToString(st, WCSharpW3MMD.W3MmdSuggestionType)))
@@ -35924,11 +35949,11 @@ System.namespace("WCSharp.W3MMD", function (namespace)
     Pack4 = function (vt)
       local default
       local extern = vt
-      if extern == 0 --[[W3MmdVariableType.String]] then
+      if extern == 0 then
         default = "string"
-      elseif extern == 1 --[[W3MmdVariableType.Integer]] then
+      elseif extern == 1 then
         default = "int"
-      elseif extern == 2 --[[W3MmdVariableType.Float]] then
+      elseif extern == 2 then
         default = "real"
       else
         default = System.throw(System.NotImplementedException("w3mmd: unknown variable type " .. System.EnumToString(vt, WCSharpW3MMD.W3MmdVariableType)))
@@ -35959,10 +35984,10 @@ System.namespace("WCSharp.W3MMD", function (namespace)
       end
     }
   end)
-  -- <summary>
-  -- Represents the state of the player.
-  -- <para>For any particular player, only the last value set over the course of a game matters.</para>
-  -- </summary>
+
+
+
+
   namespace.enum("W3MmdFlag", function ()
     return {
       Drawer = 0,
@@ -35984,19 +36009,19 @@ System.namespace("WCSharp.W3MMD", function (namespace)
       end
     }
   end)
-  -- <summary>
-  -- Controls a W3MMD variable of type <see cref="F:WCSharp.W3MMD.W3MmdVariableType.Float" />.
-  -- </summary>
+
+
+
   namespace.class("W3MmdFloatVar", function (namespace)
     local getName, getVariableType, getGoalType, getSuggestionType, Set, Set1, Add, Add1, 
     Subtract, Subtract1, __ctor__
-    -- <summary>
-    -- Defines a player float variable that can be mutated throughout the game.
-    -- </summary>
-    -- <param name="name">Name of the variable.</param>
-    -- <param name="goalType">Whether the player is trying to get a high or low value (or none).</param>
-    -- <param name="suggestionType">A suggestion for how a parser/viewer should treat the output values.</param>
-    -- <exception cref="T:System.Exception">If the name is not between 1 and 32 characters long.</exception>
+
+
+
+
+
+
+
     __ctor__ = function (this, name, goalType, suggestionType)
       if #name < 1 or #name > 32 then
         System.throw(System.Exception("w3mmd: invalid name (" .. System.toString(name) .. "), must be between 1 and 32 characters long"))
@@ -36009,43 +36034,43 @@ System.namespace("WCSharp.W3MMD", function (namespace)
     end
     getName = System.property("Name", true)
     getVariableType = function (this)
-      return 2 --[[W3MmdVariableType.Float]]
+      return 2
     end
     getGoalType = System.property("GoalType", true)
     getSuggestionType = System.property("SuggestionType", true)
-    -- <summary>
-    -- Sets this variable to the given <paramref name="value" /> for the given <paramref name="player" />.
-    -- </summary>
+
+
+
     Set = function (this, player, value)
       Set1(this, GetPlayerId(player), value)
     end
-    -- <summary>
-    -- Sets this variable to the given <paramref name="value" /> for the given <paramref name="playerId" />.
-    -- </summary>
+
+
+
     Set1 = function (this, playerId, value)
       WCSharpW3MMD.W3Mmd.Emit("VarP " .. playerId .. " " .. System.toString(this.packedName) .. " = " .. value)
     end
-    -- <summary>
-    -- Adds the given <paramref name="value" /> to this variable for the given <paramref name="player" />.
-    -- </summary>
+
+
+
     Add = function (this, player, value)
       Add1(this, GetPlayerId(player), value)
     end
-    -- <summary>
-    -- Adds the given <paramref name="value" /> to this variable for the given <paramref name="playerId" />.
-    -- </summary>
+
+
+
     Add1 = function (this, playerId, value)
       WCSharpW3MMD.W3Mmd.Emit("VarP " .. playerId .. " " .. System.toString(this.packedName) .. " += " .. value)
     end
-    -- <summary>
-    -- Subtracts the given <paramref name="value" /> to this variable for the given <paramref name="player" />.
-    -- </summary>
+
+
+
     Subtract = function (this, player, value)
       Subtract1(this, GetPlayerId(player), value)
     end
-    -- <summary>
-    -- Subtracts the given <paramref name="value" /> to this variable for the given <paramref name="playerId" />.
-    -- </summary>
+
+
+
     Subtract1 = function (this, playerId, value)
       WCSharpW3MMD.W3Mmd.Emit("VarP " .. playerId .. " " .. System.toString(this.packedName) .. " -= " .. value)
     end
@@ -36093,9 +36118,9 @@ System.namespace("WCSharp.W3MMD", function (namespace)
       end
     }
   end)
-  -- <summary>
-  -- Defines the sort order on the variable, i.e. whether it's better to have high or low values.
-  -- </summary>
+
+
+
   namespace.enum("W3MmdGoalType", function ()
     return {
       None = 0,
@@ -36113,19 +36138,19 @@ System.namespace("WCSharp.W3MMD", function (namespace)
       end
     }
   end)
-  -- <summary>
-  -- Controls a W3MMD variable of type <see cref="F:WCSharp.W3MMD.W3MmdVariableType.Integer" />.
-  -- </summary>
+
+
+
   namespace.class("W3MmdIntVar", function (namespace)
     local getName, getVariableType, getGoalType, getSuggestionType, Set, Set1, Add, Add1, 
     Subtract, Subtract1, __ctor__
-    -- <summary>
-    -- Defines a player int variable that can be mutated throughout the game.
-    -- </summary>
-    -- <param name="name">Name of the variable.</param>
-    -- <param name="goalType">Whether the player is trying to get a high or low value (or none).</param>
-    -- <param name="suggestionType">A suggestion for how a parser/viewer should treat the output values.</param>
-    -- <exception cref="T:System.Exception">If the name is not between 1 and 32 characters long.</exception>
+
+
+
+
+
+
+
     __ctor__ = function (this, name, goalType, suggestionType)
       if #name < 1 or #name > 32 then
         System.throw(System.Exception("w3mmd: invalid name (" .. System.toString(name) .. "), must be between 1 and 32 characters long"))
@@ -36138,43 +36163,43 @@ System.namespace("WCSharp.W3MMD", function (namespace)
     end
     getName = System.property("Name", true)
     getVariableType = function (this)
-      return 1 --[[W3MmdVariableType.Integer]]
+      return 1
     end
     getGoalType = System.property("GoalType", true)
     getSuggestionType = System.property("SuggestionType", true)
-    -- <summary>
-    -- Sets this variable to the given <paramref name="value" /> for the given <paramref name="player" />.
-    -- </summary>
+
+
+
     Set = function (this, player, value)
       Set1(this, GetPlayerId(player), value)
     end
-    -- <summary>
-    -- Sets this variable to the given <paramref name="value" /> for the given <paramref name="playerId" />.
-    -- </summary>
+
+
+
     Set1 = function (this, playerId, value)
       WCSharpW3MMD.W3Mmd.Emit("VarP " .. playerId .. " " .. System.toString(this.packedName) .. " = " .. value)
     end
-    -- <summary>
-    -- Adds the given <paramref name="value" /> to this variable for the given <paramref name="player" />.
-    -- </summary>
+
+
+
     Add = function (this, player, value)
       Add1(this, GetPlayerId(player), value)
     end
-    -- <summary>
-    -- Adds the given <paramref name="value" /> to this variable for the given <paramref name="playerId" />.
-    -- </summary>
+
+
+
     Add1 = function (this, playerId, value)
       WCSharpW3MMD.W3Mmd.Emit("VarP " .. playerId .. " " .. System.toString(this.packedName) .. " += " .. value)
     end
-    -- <summary>
-    -- Subtracts the given <paramref name="value" /> to this variable for the given <paramref name="player" />.
-    -- </summary>
+
+
+
     Subtract = function (this, player, value)
       Subtract1(this, GetPlayerId(player), value)
     end
-    -- <summary>
-    -- Subtracts the given <paramref name="value" /> to this variable for the given <paramref name="playerId" />.
-    -- </summary>
+
+
+
     Subtract1 = function (this, playerId, value)
       WCSharpW3MMD.W3Mmd.Emit("VarP " .. playerId .. " " .. System.toString(this.packedName) .. " -= " .. value)
     end
@@ -36222,18 +36247,18 @@ System.namespace("WCSharp.W3MMD", function (namespace)
       end
     }
   end)
-  -- <summary>
-  -- Controls a W3MMD variable of type <see cref="F:WCSharp.W3MMD.W3MmdVariableType.String" />.
-  -- </summary>
+
+
+
   namespace.class("W3MmdStringVar", function (namespace)
     local getName, getVariableType, getGoalType, getSuggestionType, Set, Set1, __ctor__
-    -- <summary>
-    -- Defines a player string variable that can be mutated throughout the game.
-    -- <para>Useful to classifications.</para>
-    -- </summary>
-    -- <param name="name">Name of the variable.</param>
-    -- <param name="suggestionType">A suggestion for how a parser/viewer should treat the output values.</param>
-    -- <exception cref="T:System.Exception">If the name is not between 1 and 32 characters long.</exception>
+
+
+
+
+
+
+
     __ctor__ = function (this, name, suggestionType)
       if #name < 1 or #name > 32 then
         System.throw(System.Exception("w3mmd: invalid name (" .. System.toString(name) .. "), must be between 1 and 32 characters long"))
@@ -36245,21 +36270,21 @@ System.namespace("WCSharp.W3MMD", function (namespace)
     end
     getName = System.property("Name", true)
     getVariableType = function (this)
-      return 0 --[[W3MmdVariableType.String]]
+      return 0
     end
     getGoalType = function (this)
-      return 0 --[[W3MmdGoalType.None]]
+      return 0
     end
     getSuggestionType = System.property("SuggestionType", true)
-    -- <summary>
-    -- Sets this variable to the given <paramref name="value" /> for the given <paramref name="player" />.
-    -- </summary>
+
+
+
     Set = function (this, player, value)
       Set1(this, GetPlayerId(player), value)
     end
-    -- <summary>
-    -- Sets this variable to the given <paramref name="value" /> for the given <paramref name="playerId" />.
-    -- </summary>
+
+
+
     Set1 = function (this, playerId, value)
       WCSharpW3MMD.W3Mmd.Emit("VarP " .. playerId .. " " .. System.toString(this.packedName) .. " = " .. System.toString(WCSharpW3MMD.W3MmdExtensions.Pack(value)))
     end
@@ -36298,9 +36323,9 @@ System.namespace("WCSharp.W3MMD", function (namespace)
       end
     }
   end)
-  -- <summary>
-  -- A suggestion for what the parser should do for tracking the variable.
-  -- </summary>
+
+
+
   namespace.enum("W3MmdSuggestionType", function ()
     return {
       None = 0,
@@ -36318,9 +36343,9 @@ System.namespace("WCSharp.W3MMD", function (namespace)
       end
     }
   end)
-  -- <summary>
-  -- The type of the W3MMD variable.
-  -- </summary>
+
+
+
   namespace.enum("W3MmdVariableType", function ()
     return {
       String = 0,
@@ -36566,8 +36591,18 @@ gg_rct_HumanToOrcInnerLine = nil
 gg_rct_HumanToOrcOuterLine = nil
 gg_rct_HumanToUndeadInnerLine = nil
 gg_rct_HumanToUndeadOuterLine = nil
-gg_rct_MiddleLaneSpawnEast = nil
-gg_rct_MiddleLaneSpawnWest = nil
+gg_rct_LegionSpawnBottom = nil
+gg_rct_LegionSpawnBottom1 = nil
+gg_rct_LegionSpawnBottom2 = nil
+gg_rct_LegionSpawnEast = nil
+gg_rct_LegionSpawnEast1 = nil
+gg_rct_LegionSpawnEast2 = nil
+gg_rct_LegionSpawnTop = nil
+gg_rct_LegionSpawnTop1 = nil
+gg_rct_LegionSpawnTop2 = nil
+gg_rct_LegionSpawnWest = nil
+gg_rct_LegionSpawnWest1 = nil
+gg_rct_LegionSpawnWest2 = nil
 gg_rct_OrcBarracksToCenter = nil
 gg_rct_OrcBarracksToCenterSpawn = nil
 gg_rct_OrcBarracksToHuman = nil
@@ -36616,26 +36651,26 @@ gg_rct_UndeadToOrcInnerLine = nil
 gg_rct_UndeadToOrcOuterLine = nil
 gg_snd_blowitup_cutted = nil
 gg_trg_Melee_Initialization = nil
-gg_unit_h011_0267 = nil
+gg_unit_h02U_0244 = nil
 gg_unit_NBDB_0134 = nil
 gg_unit_h00U_0179 = nil
 gg_unit_n005_0044 = nil
 gg_unit_h00U_0232 = nil
 gg_unit_h005_0039 = nil
-gg_unit_h00V_0256 = nil
+gg_unit_H00O_0329 = nil
 gg_unit_h005_0040 = nil
-gg_unit_h005_0055 = nil
-gg_unit_h011_0266 = nil
-gg_unit_h00V_0042 = nil
-gg_unit_h019_0262 = nil
+gg_unit_N004_0357 = nil
+gg_unit_h02U_0204 = nil
+gg_unit_N002_0354 = nil
+gg_unit_h02T_0265 = nil
 gg_unit_n003_0010 = nil
-gg_unit_h00V_0261 = nil
-gg_unit_h00V_0041 = nil
+gg_unit_h02R_0249 = nil
+gg_unit_h02S_0055 = nil
 gg_unit_NEBL_0009 = nil
 gg_unit_h019_0172 = nil
-gg_unit_h011_0258 = nil
-gg_unit_h011_0155 = nil
-gg_unit_h019_0170 = nil
+gg_unit_N009_0324 = nil
+gg_unit_E000_0328 = nil
+gg_unit_h02T_0264 = nil
 gg_unit_h00A_0015 = nil
 gg_unit_h00U_0180 = nil
 gg_unit_h00U_0233 = nil
@@ -36660,16 +36695,16 @@ gg_unit_h00D_0029 = nil
 gg_unit_h00A_0030 = nil
 gg_unit_h00D_0051 = nil
 gg_unit_h00W_0045 = nil
-gg_unit_h00V_0257 = nil
-gg_unit_h005_0054 = nil
-gg_unit_h005_0254 = nil
-gg_unit_h00V_0253 = nil
-gg_unit_h005_0252 = nil
-gg_unit_h00V_0251 = nil
+gg_unit_h02S_0042 = nil
+gg_unit_h02R_0358 = nil
+gg_unit_h02S_0256 = nil
+gg_unit_h02S_0041 = nil
+gg_unit_N009_0356 = nil
+gg_unit_h02R_0054 = nil
 gg_unit_h01G_0194 = nil
-gg_unit_h005_0264 = nil
-gg_unit_h019_0259 = nil
-gg_unit_h019_0260 = nil
+gg_unit_h02S_0253 = nil
+gg_unit_h02T_0170 = nil
+gg_unit_h02R_0243 = nil
 gg_unit_h011_0241 = nil
 gg_unit_h011_0160 = nil
 gg_unit_h011_0242 = nil
@@ -36682,9 +36717,9 @@ gg_unit_h01F_0201 = nil
 gg_unit_h011_0185 = nil
 gg_unit_h011_0153 = nil
 gg_unit_h00D_0008 = nil
-gg_unit_h011_0190 = nil
-gg_unit_h011_0197 = nil
-gg_unit_h005_0204 = nil
+gg_unit_N001_0327 = nil
+gg_unit_N00A_0326 = nil
+gg_unit_h02S_0251 = nil
 gg_unit_h01F_0208 = nil
 gg_unit_h01H_0205 = nil
 gg_unit_h011_0154 = nil
@@ -36706,23 +36741,23 @@ gg_unit_h004_0177 = nil
 gg_unit_h004_0178 = nil
 gg_unit_h00U_0047 = nil
 gg_unit_h00U_0181 = nil
-gg_unit_h005_0243 = nil
-gg_unit_h019_0244 = nil
+gg_unit_h02T_0210 = nil
+gg_unit_h02T_0169 = nil
 gg_unit_h01B_0199 = nil
 gg_unit_h01B_0200 = nil
 gg_unit_h010_0187 = nil
 gg_unit_h018_0202 = nil
 gg_unit_h018_0203 = nil
 gg_unit_h018_0198 = nil
-gg_unit_h011_0156 = nil
-gg_unit_h019_0169 = nil
+gg_unit_h02U_0252 = nil
+gg_unit_h02R_0257 = nil
 gg_unit_h010_0164 = nil
-gg_unit_h00V_0265 = nil
-gg_unit_h011_0263 = nil
+gg_unit_O001_0330 = nil
+gg_unit_N004_0325 = nil
 gg_unit_h017_0157 = nil
 gg_unit_h017_0026 = nil
 gg_unit_h016_0161 = nil
-gg_unit_h019_0255 = nil
+gg_unit_h02R_0254 = nil
 gg_unit_NBDL_0135 = nil
 gg_unit_h01B_0136 = nil
 gg_unit_h010_0166 = nil
@@ -36733,9 +36768,9 @@ gg_unit_h01H_0206 = nil
 gg_unit_h01H_0207 = nil
 gg_unit_h01G_0195 = nil
 gg_unit_h009_0053 = nil
-gg_unit_h005_0249 = nil
+gg_unit_N02H_0355 = nil
 gg_unit_h01D_0171 = nil
-gg_unit_h019_0210 = nil
+gg_unit_h02T_0261 = nil
 gg_unit_h013_0188 = nil
 gg_unit_h016_0159 = nil
 gg_unit_h005_0138 = nil
@@ -36946,10 +36981,9 @@ gg_unit_O001_0320 = nil
 gg_unit_N002_0321 = nil
 gg_unit_N007_0322 = nil
 gg_unit_N008_0323 = nil
-gg_unit_N009_0324 = nil
-gg_unit_N004_0325 = nil
-gg_unit_N00A_0326 = nil
-gg_unit_N001_0327 = nil
+gg_unit_h02U_0155 = nil
+gg_unit_h02U_0156 = nil
+gg_unit_h02U_0190 = nil
 gg_dest_HEch_0019 = nil
 gg_dest_HEch_0017 = nil
 gg_dest_HEch_0016 = nil
@@ -36969,28 +37003,28 @@ gg_dest_CTtr_6030 = nil
 gg_dest_CTtr_6029 = nil
 gg_dest_CTtr_6028 = nil
 gg_dest_CTtr_6027 = nil
-gg_dest_CTtr_6026 = nil
+gg_dest_LOcg_11501 = nil
 gg_dest_CTtr_6025 = nil
-gg_dest_CTtr_6024 = nil
-gg_dest_CTtr_6023 = nil
-gg_dest_CTtr_6022 = nil
+gg_dest_LOcg_6128 = nil
+gg_dest_KOst_6279 = nil
+gg_dest_NTtw_11498 = nil
 gg_dest_IOob_1207 = nil
 gg_dest_IOob_1204 = nil
 gg_dest_IOob_1201 = nil
-gg_dest_CTtr_6021 = nil
-gg_dest_CTtr_6020 = nil
-gg_dest_CTtr_6019 = nil
+gg_dest_NTtw_11497 = nil
+gg_dest_NTtw_11496 = nil
+gg_dest_NTtw_11495 = nil
 gg_dest_LOtz_1187 = nil
 gg_dest_LOtz_1178 = nil
-gg_dest_CTtr_6018 = nil
+gg_dest_NTtw_11494 = nil
 gg_dest_IOob_4715 = nil
-gg_dest_CTtr_6017 = nil
+gg_dest_NTtw_11493 = nil
 gg_dest_CTtr_6472 = nil
 gg_dest_LTlt_10584 = nil
-gg_dest_CTtr_6016 = nil
+gg_dest_NTtw_11492 = nil
 gg_dest_NTtw_5960 = nil
-gg_dest_CTtr_6015 = nil
-gg_dest_CTtr_6014 = nil
+gg_dest_NTtw_11491 = nil
+gg_dest_NTtw_11490 = nil
 gg_dest_NTtw_5959 = nil
 gg_dest_NTtw_5958 = nil
 gg_dest_NTtw_5957 = nil
@@ -37000,7 +37034,7 @@ gg_dest_NTtw_5954 = nil
 gg_dest_NTtw_5953 = nil
 gg_dest_NTtw_5952 = nil
 gg_dest_NTtw_5951 = nil
-gg_dest_CTtr_6013 = nil
+gg_dest_NTtw_11489 = nil
 gg_dest_NTtw_5950 = nil
 gg_dest_NTtw_5949 = nil
 gg_dest_NTtw_5948 = nil
@@ -37025,27 +37059,27 @@ gg_dest_NTtw_5932 = nil
 gg_dest_NTtw_5931 = nil
 gg_dest_NTtw_5930 = nil
 gg_dest_LTlt_10581 = nil
-gg_dest_CTtr_6012 = nil
-gg_dest_CTtr_6011 = nil
-gg_dest_CTtr_6010 = nil
+gg_dest_NTtw_11488 = nil
+gg_dest_NTtw_11487 = nil
+gg_dest_NTtw_11486 = nil
 gg_dest_NTtw_5929 = nil
-gg_dest_CTtr_6009 = nil
+gg_dest_NTtw_11485 = nil
 gg_dest_NTtw_5928 = nil
 gg_dest_NTtw_5927 = nil
-gg_dest_CTtr_6008 = nil
-gg_dest_CTtr_6007 = nil
-gg_dest_CTtr_6006 = nil
-gg_dest_CTtr_6005 = nil
-gg_dest_CTtr_6004 = nil
-gg_dest_CTtr_6003 = nil
-gg_dest_CTtr_6002 = nil
-gg_dest_CTtr_6001 = nil
-gg_dest_CTtr_6000 = nil
-gg_dest_CTtr_5999 = nil
+gg_dest_NTtw_11484 = nil
+gg_dest_NTtw_11483 = nil
+gg_dest_NTtw_11482 = nil
+gg_dest_NTtw_11481 = nil
+gg_dest_NTtw_11480 = nil
+gg_dest_NTtw_11479 = nil
+gg_dest_NTtw_11478 = nil
+gg_dest_NTtw_11477 = nil
+gg_dest_NTtw_11476 = nil
+gg_dest_NTtw_11475 = nil
 gg_dest_NTtw_5926 = nil
-gg_dest_CTtr_5998 = nil
+gg_dest_NTtw_11474 = nil
 gg_dest_NTtw_5925 = nil
-gg_dest_CTtr_5997 = nil
+gg_dest_NTtw_11473 = nil
 gg_dest_NTtw_5924 = nil
 gg_dest_NTtw_5923 = nil
 gg_dest_NTtw_5922 = nil
@@ -37065,16 +37099,16 @@ gg_dest_NTtw_5909 = nil
 gg_dest_NTtw_5908 = nil
 gg_dest_NTtw_5907 = nil
 gg_dest_NTtw_5906 = nil
-gg_dest_CTtr_5996 = nil
-gg_dest_CTtr_5995 = nil
-gg_dest_CTtr_5994 = nil
-gg_dest_CTtr_5993 = nil
-gg_dest_CTtr_5992 = nil
-gg_dest_CTtr_5991 = nil
-gg_dest_CTtr_5990 = nil
-gg_dest_CTtr_5989 = nil
-gg_dest_CTtr_5988 = nil
-gg_dest_CTtr_5987 = nil
+gg_dest_NTtw_11472 = nil
+gg_dest_NTtw_11471 = nil
+gg_dest_NTtw_11470 = nil
+gg_dest_NTtw_11469 = nil
+gg_dest_NTtw_11468 = nil
+gg_dest_NTtw_11467 = nil
+gg_dest_NTtw_11466 = nil
+gg_dest_NTtw_11465 = nil
+gg_dest_NTtw_11464 = nil
+gg_dest_NTtw_11463 = nil
 gg_dest_CTtr_5986 = nil
 gg_dest_CTtr_5985 = nil
 gg_dest_CTtr_5984 = nil
@@ -37621,8 +37655,8 @@ gg_dest_CTtr_4634 = nil
 gg_dest_CTtr_10599 = nil
 gg_dest_CTtr_4632 = nil
 gg_dest_ORmk_2140 = nil
-gg_dest_LOic_6548 = nil
-gg_dest_LOic_6287 = nil
+gg_dest_LTlt_11761 = nil
+gg_dest_LTlt_11760 = nil
 gg_dest_CTtr_10619 = nil
 gg_dest_CTtr_10618 = nil
 gg_dest_CTtr_10617 = nil
@@ -37776,25 +37810,25 @@ gg_dest_FTtw_2168 = nil
 gg_dest_FTtw_2167 = nil
 gg_dest_CTtr_4477 = nil
 gg_dest_FTtw_2166 = nil
-gg_dest_FTtw_2165 = nil
+gg_dest_NTtw_11424 = nil
 gg_dest_CTtr_4474 = nil
 gg_dest_FTtw_2164 = nil
-gg_dest_FTtw_2163 = nil
+gg_dest_NTtw_11423 = nil
 gg_dest_CTtr_4471 = nil
-gg_dest_FTtw_2162 = nil
-gg_dest_FTtw_2161 = nil
+gg_dest_NTtw_11422 = nil
+gg_dest_NTtw_11421 = nil
 gg_dest_CTtr_4468 = nil
-gg_dest_FTtw_2160 = nil
-gg_dest_FTtw_2159 = nil
-gg_dest_FTtw_2158 = nil
-gg_dest_FTtw_2157 = nil
+gg_dest_NTtw_11444 = nil
+gg_dest_NTtw_11420 = nil
+gg_dest_NTtw_1246 = nil
+gg_dest_NTtw_0214 = nil
 gg_dest_FTtw_7864 = nil
-gg_dest_FTtw_2156 = nil
+gg_dest_NTtw_11443 = nil
 gg_dest_NObt_11730 = nil
 gg_dest_LTlt_3535 = nil
-gg_dest_FTtw_2154 = nil
-gg_dest_FTtw_2153 = nil
-gg_dest_FTtw_2152 = nil
+gg_dest_NTtw_0213 = nil
+gg_dest_NTtw_0239 = nil
+gg_dest_NTtw_0241 = nil
 gg_dest_AObd_11711 = nil
 gg_dest_FTtw_7861 = nil
 gg_dest_FTtw_0841 = nil
@@ -37831,7 +37865,7 @@ gg_dest_CTtr_4424 = nil
 gg_dest_CTtr_4423 = nil
 gg_dest_CTtr_4422 = nil
 gg_dest_CTtr_4421 = nil
-gg_dest_FTtw_2150 = nil
+gg_dest_NTtw_11442 = nil
 gg_dest_AObd_11712 = nil
 gg_dest_CTtr_4418 = nil
 gg_dest_AObd_11713 = nil
@@ -37847,19 +37881,19 @@ gg_dest_CTtr_4408 = nil
 gg_dest_AObd_11709 = nil
 gg_dest_CTtr_4406 = nil
 gg_dest_CTtr_4405 = nil
-gg_dest_FTtw_2142 = nil
+gg_dest_NTtw_11441 = nil
 gg_dest_CTtr_4403 = nil
 gg_dest_CTtr_4402 = nil
-gg_dest_FTtw_2141 = nil
+gg_dest_NTtw_11440 = nil
 gg_dest_CTtr_4400 = nil
 gg_dest_CTtr_4399 = nil
 gg_dest_NObt_11729 = nil
 gg_dest_CTtr_4397 = nil
 gg_dest_FTtw_2139 = nil
 gg_dest_CTtr_4395 = nil
-gg_dest_FTtw_2138 = nil
+gg_dest_NTtw_11439 = nil
 gg_dest_CTtr_4393 = nil
-gg_dest_FTtw_2137 = nil
+gg_dest_NTtw_11438 = nil
 gg_dest_FTtw_2136 = nil
 gg_dest_FTtw_2135 = nil
 gg_dest_CTtr_4389 = nil
@@ -38279,7 +38313,7 @@ gg_dest_CTtr_2450 = nil
 gg_dest_NTtw_5030 = nil
 gg_dest_FTtw_2069 = nil
 gg_dest_CTtr_2448 = nil
-gg_dest_NTtw_5029 = nil
+gg_dest_ZPfw_11510 = nil
 gg_dest_CTtr_2447 = nil
 gg_dest_NTtw_5028 = nil
 gg_dest_LWw0_0037 = nil
@@ -38303,21 +38337,21 @@ gg_dest_LTlt_1441 = nil
 gg_dest_FTtw_2064 = nil
 gg_dest_NTtw_5027 = nil
 gg_dest_NTtw_5026 = nil
-gg_dest_NTtw_5025 = nil
-gg_dest_NTtw_5024 = nil
-gg_dest_NTtw_5023 = nil
-gg_dest_NTtw_5022 = nil
-gg_dest_NTtw_5021 = nil
-gg_dest_NTtw_5020 = nil
-gg_dest_NTtw_5019 = nil
-gg_dest_NTtw_5018 = nil
-gg_dest_NTtw_5017 = nil
-gg_dest_NTtw_5016 = nil
-gg_dest_NTtw_5015 = nil
-gg_dest_NTtw_5014 = nil
-gg_dest_NTtw_5013 = nil
-gg_dest_NTtw_5012 = nil
-gg_dest_NTtw_5011 = nil
+gg_dest_ZPfw_11509 = nil
+gg_dest_ZPfw_11511 = nil
+gg_dest_ZPfw_11512 = nil
+gg_dest_ZPfw_11513 = nil
+gg_dest_ZPfw_11514 = nil
+gg_dest_ZPfw_11515 = nil
+gg_dest_LPwh_11558 = nil
+gg_dest_LPwh_11557 = nil
+gg_dest_LPwh_11556 = nil
+gg_dest_LPwh_11555 = nil
+gg_dest_LPwh_11554 = nil
+gg_dest_LPwh_11553 = nil
+gg_dest_ZPfw_11516 = nil
+gg_dest_ZPfw_11517 = nil
+gg_dest_LPrs_11518 = nil
 gg_dest_NTtw_5010 = nil
 gg_dest_NTtw_5009 = nil
 gg_dest_NTtw_5008 = nil
@@ -38430,24 +38464,24 @@ gg_dest_CTtr_2375 = nil
 gg_dest_CTtr_2374 = nil
 gg_dest_CTtr_2373 = nil
 gg_dest_NTtw_4956 = nil
-gg_dest_NTtw_4955 = nil
+gg_dest_NTtw_11419 = nil
 gg_dest_NTtw_4954 = nil
-gg_dest_NTtw_4953 = nil
-gg_dest_NTtw_4952 = nil
+gg_dest_NTtw_11418 = nil
+gg_dest_NTtw_11417 = nil
 gg_dest_NTtw_4951 = nil
 gg_dest_NTtw_4950 = nil
-gg_dest_NTtw_4949 = nil
-gg_dest_NTtw_4948 = nil
-gg_dest_NTtw_4947 = nil
-gg_dest_NTtw_4946 = nil
-gg_dest_NTtw_4945 = nil
-gg_dest_NTtw_4944 = nil
-gg_dest_NTtw_4943 = nil
-gg_dest_NTtw_4942 = nil
-gg_dest_NTtw_4941 = nil
+gg_dest_NTtw_11416 = nil
+gg_dest_NTtw_11415 = nil
+gg_dest_NTtw_11414 = nil
+gg_dest_NTtw_11413 = nil
+gg_dest_NTtw_11412 = nil
+gg_dest_NTtw_11411 = nil
+gg_dest_NTtw_11410 = nil
+gg_dest_LTlt_11769 = nil
+gg_dest_LTlt_11770 = nil
 gg_dest_CTtr_2372 = nil
-gg_dest_NTtw_4940 = nil
-gg_dest_NTtw_4939 = nil
+gg_dest_NTtw_11409 = nil
+gg_dest_NOfg_3843 = nil
 gg_dest_CTtr_2371 = nil
 gg_dest_CTtr_2370 = nil
 gg_dest_CTtr_2369 = nil
@@ -38595,16 +38629,16 @@ gg_dest_CTtr_2236 = nil
 gg_dest_CTtr_2235 = nil
 gg_dest_FTtw_2039 = nil
 gg_dest_CTtr_2233 = nil
-gg_dest_NTtw_4938 = nil
-gg_dest_NTtw_4937 = nil
+gg_dest_NTtw_11408 = nil
+gg_dest_KOst_6277 = nil
 gg_dest_NObt_11699 = nil
-gg_dest_NTtw_4935 = nil
+gg_dest_NTtw_11407 = nil
 gg_dest_AObd_11698 = nil
-gg_dest_NTtw_4933 = nil
+gg_dest_NTtw_11406 = nil
 gg_dest_AObd_11697 = nil
-gg_dest_NTtw_4931 = nil
+gg_dest_NTtw_11405 = nil
 gg_dest_AObd_11696 = nil
-gg_dest_NTtw_4929 = nil
+gg_dest_NTtw_11404 = nil
 gg_dest_AObd_11695 = nil
 gg_dest_AObd_11687 = nil
 gg_dest_AObd_11694 = nil
@@ -39144,8 +39178,8 @@ gg_dest_CTtr_1677 = nil
 gg_dest_CTtr_1676 = nil
 gg_dest_LTlt_5429 = nil
 gg_dest_LWw0_0109 = nil
-gg_dest_CTtr_6261 = nil
-gg_dest_CTtr_6260 = nil
+gg_dest_NTtw_11325 = nil
+gg_dest_NTtw_11326 = nil
 gg_dest_LTlt_5443 = nil
 gg_dest_LTlt_5445 = nil
 gg_dest_CTtr_6221 = nil
@@ -39204,7 +39238,7 @@ gg_dest_NTtw_3906 = nil
 gg_dest_NTtw_3905 = nil
 gg_dest_NTtw_3904 = nil
 gg_dest_FTtw_1442 = nil
-gg_dest_FTtw_7448 = nil
+gg_dest_NTtw_11437 = nil
 gg_dest_NTtw_3901 = nil
 gg_dest_NTtw_3900 = nil
 gg_dest_NTtw_3899 = nil
@@ -39226,11 +39260,11 @@ gg_dest_FTtw_1632 = nil
 gg_dest_FTtw_7437 = nil
 gg_dest_NTtw_3882 = nil
 gg_dest_FTtw_0060 = nil
-gg_dest_FTtw_7447 = nil
+gg_dest_NTtw_11436 = nil
 gg_dest_NTtw_3879 = nil
 gg_dest_FTtw_8579 = nil
-gg_dest_FTtw_7446 = nil
-gg_dest_FTtw_7445 = nil
+gg_dest_NTtw_11403 = nil
+gg_dest_NTtw_11435 = nil
 gg_dest_FTtw_7444 = nil
 gg_dest_FTtw_1444 = nil
 gg_dest_FTtw_7853 = nil
@@ -39289,13 +39323,13 @@ gg_dest_FTtw_2001 = nil
 gg_dest_FTtw_7430 = nil
 gg_dest_FTtw_7429 = nil
 gg_dest_NTtw_3818 = nil
-gg_dest_FTtw_7459 = nil
+gg_dest_NTtw_11434 = nil
 gg_dest_FTtw_1348 = nil
 gg_dest_NTtw_3815 = nil
 gg_dest_FTtw_2000 = nil
 gg_dest_NTtw_3813 = nil
 gg_dest_NTtw_3812 = nil
-gg_dest_FTtw_7457 = nil
+gg_dest_NTtw_11433 = nil
 gg_dest_LWw0_0055 = nil
 gg_dest_NTtw_3809 = nil
 gg_dest_NTtw_3808 = nil
@@ -39823,14 +39857,14 @@ gg_dest_FTtw_7626 = nil
 gg_dest_NTtw_2598 = nil
 gg_dest_CTtr_6110 = nil
 gg_dest_CTtr_6230 = nil
-gg_dest_CTtr_6251 = nil
+gg_dest_NTtw_11327 = nil
 gg_dest_CTtr_6109 = nil
 gg_dest_CTtr_6108 = nil
 gg_dest_CTtr_6107 = nil
-gg_dest_CTtr_6252 = nil
+gg_dest_NTtw_11328 = nil
 gg_dest_CTtr_6106 = nil
-gg_dest_CTtr_6253 = nil
-gg_dest_CTtr_6254 = nil
+gg_dest_NTtw_11329 = nil
+gg_dest_NTtw_11330 = nil
 gg_dest_CTtr_6105 = nil
 gg_dest_CTtr_6104 = nil
 gg_dest_NTtw_2597 = nil
@@ -39838,10 +39872,10 @@ gg_dest_LWw0_0038 = nil
 gg_dest_NTtw_3657 = nil
 gg_dest_FTtw_1976 = nil
 gg_dest_FTtw_1975 = nil
-gg_dest_CTtr_6255 = nil
+gg_dest_NTtw_11331 = nil
 gg_dest_CTtr_6102 = nil
 gg_dest_CTtr_6101 = nil
-gg_dest_CTtr_6256 = nil
+gg_dest_NTtw_11332 = nil
 gg_dest_CTtr_6100 = nil
 gg_dest_CTtr_6099 = nil
 gg_dest_CTtr_6098 = nil
@@ -39851,10 +39885,10 @@ gg_dest_NTtw_2596 = nil
 gg_dest_CTtr_6095 = nil
 gg_dest_CTtr_6050 = nil
 gg_dest_FTtw_1798 = nil
-gg_dest_CTtr_6257 = nil
-gg_dest_CTtr_6258 = nil
+gg_dest_NTtw_11333 = nil
+gg_dest_NTtw_11334 = nil
 gg_dest_NTtw_2594 = nil
-gg_dest_CTtr_6259 = nil
+gg_dest_NTtw_5115 = nil
 gg_dest_CTtr_6094 = nil
 gg_dest_CTtr_6093 = nil
 gg_dest_CTtr_6049 = nil
@@ -40167,7 +40201,7 @@ gg_dest_NTtw_1636 = nil
 gg_dest_NTtw_1635 = nil
 gg_dest_NTtw_1628 = nil
 gg_dest_CTtr_6245 = nil
-gg_dest_CTtr_6246 = nil
+gg_dest_NTtw_11370 = nil
 gg_dest_NTtw_1629 = nil
 gg_dest_NTtw_1630 = nil
 gg_dest_NTtw_1631 = nil
@@ -40176,7 +40210,7 @@ gg_dest_CTtr_6092 = nil
 gg_dest_NTtw_1634 = nil
 gg_dest_CTtr_6247 = nil
 gg_dest_CTtr_6091 = nil
-gg_dest_CTtr_6248 = nil
+gg_dest_NTtw_11369 = nil
 gg_dest_NTtw_1615 = nil
 gg_dest_CTtr_6090 = nil
 gg_dest_NTtw_1616 = nil
@@ -40184,7 +40218,7 @@ gg_dest_FTtw_7762 = nil
 gg_dest_NTtw_1617 = nil
 gg_dest_NTtw_1618 = nil
 gg_dest_CTtr_6249 = nil
-gg_dest_CTtr_6250 = nil
+gg_dest_NTtw_11368 = nil
 gg_dest_NTtw_1619 = nil
 gg_dest_CTtr_6235 = nil
 gg_dest_NTtw_1620 = nil
@@ -40565,30 +40599,30 @@ gg_dest_CTtr_6289 = nil
 gg_dest_CTtr_6288 = nil
 gg_dest_LOrc_11650 = nil
 gg_dest_CTtr_6286 = nil
-gg_dest_CTtr_6285 = nil
-gg_dest_CTtr_6284 = nil
+gg_dest_NTtw_11317 = nil
+gg_dest_NTtw_11316 = nil
 gg_dest_LOlp_11666 = nil
 gg_dest_LOlp_11665 = nil
 gg_dest_LOrc_11649 = nil
 gg_dest_LOss_11662 = nil
 gg_dest_LOss_11661 = nil
-gg_dest_CTtr_6278 = nil
+gg_dest_NTtw_11367 = nil
 gg_dest_LOfl_11660 = nil
-gg_dest_CTtr_6276 = nil
+gg_dest_NTtw_11366 = nil
 gg_dest_LOlp_11664 = nil
 gg_dest_AOsr_11648 = nil
 gg_dest_LOfl_11659 = nil
-gg_dest_CTtr_6272 = nil
+gg_dest_NTtw_11365 = nil
 gg_dest_LOfl_11658 = nil
-gg_dest_CTtr_6270 = nil
+gg_dest_NTtw_11364 = nil
 gg_dest_FTtw_7623 = nil
 gg_dest_AOsr_11647 = nil
-gg_dest_CTtr_6267 = nil
-gg_dest_CTtr_6266 = nil
-gg_dest_CTtr_6265 = nil
+gg_dest_NTtw_11363 = nil
+gg_dest_NTtw_11362 = nil
+gg_dest_NTtw_11361 = nil
 gg_dest_FTtw_7622 = nil
-gg_dest_CTtr_6263 = nil
-gg_dest_CTtr_6262 = nil
+gg_dest_NTtw_11360 = nil
+gg_dest_NTtw_11359 = nil
 gg_dest_FTtw_0000 = nil
 gg_dest_FTtw_0001 = nil
 gg_dest_FTtw_0002 = nil
@@ -40784,15 +40818,15 @@ gg_dest_FTtw_0225 = nil
 gg_dest_FTtw_7467 = nil
 gg_dest_FTtw_1346 = nil
 gg_dest_FTtw_0228 = nil
-gg_dest_FTtw_7456 = nil
+gg_dest_NTtw_11432 = nil
 gg_dest_FTtw_0230 = nil
 gg_dest_FTtw_1956 = nil
 gg_dest_FTtw_1952 = nil
 gg_dest_FTtw_1951 = nil
 gg_dest_FTtw_1349 = nil
-gg_dest_FTtw_7465 = nil
+gg_dest_NTtw_11402 = nil
 gg_dest_FTtw_8577 = nil
-gg_dest_FTtw_7464 = nil
+gg_dest_NTtw_11401 = nil
 gg_dest_FTtw_1347 = nil
 gg_dest_FTtw_0067 = nil
 gg_dest_LTlt_0246 = nil
@@ -40809,15 +40843,15 @@ gg_dest_FTtw_7768 = nil
 gg_dest_FTtw_1959 = nil
 gg_dest_FTtw_7767 = nil
 gg_dest_FTtw_0253 = nil
-gg_dest_FTtw_7462 = nil
+gg_dest_NTtw_11400 = nil
 gg_dest_FTtw_0908 = nil
-gg_dest_FTtw_7461 = nil
-gg_dest_FTtw_7454 = nil
+gg_dest_NTtw_11399 = nil
+gg_dest_NTtw_11431 = nil
 gg_dest_FTtw_0258 = nil
-gg_dest_FTtw_7453 = nil
+gg_dest_NTtw_11430 = nil
 gg_dest_FTtw_1353 = nil
-gg_dest_FTtw_7451 = nil
-gg_dest_FTtw_7450 = nil
+gg_dest_NTtw_11429 = nil
+gg_dest_NTtw_11428 = nil
 gg_dest_FTtw_0263 = nil
 gg_dest_NTtw_3282 = nil
 gg_dest_FTtw_0265 = nil
@@ -41628,58 +41662,58 @@ gg_dest_FTtw_1081 = nil
 gg_dest_FTtw_1082 = nil
 gg_dest_FTtw_1083 = nil
 gg_dest_FTtw_1084 = nil
-gg_dest_FTtw_1085 = nil
+gg_dest_ORmk_2151 = nil
 gg_dest_FTtw_1086 = nil
 gg_dest_FTtw_1087 = nil
 gg_dest_FTtw_1088 = nil
 gg_dest_FTtw_1089 = nil
-gg_dest_FTtw_1090 = nil
-gg_dest_FTtw_1091 = nil
-gg_dest_FTtw_1092 = nil
-gg_dest_FTtw_1093 = nil
-gg_dest_FTtw_1094 = nil
-gg_dest_FTtw_1095 = nil
-gg_dest_FTtw_1096 = nil
-gg_dest_FTtw_1097 = nil
-gg_dest_FTtw_1098 = nil
-gg_dest_FTtw_1099 = nil
-gg_dest_FTtw_1100 = nil
-gg_dest_FTtw_1101 = nil
-gg_dest_FTtw_1102 = nil
-gg_dest_FTtw_1103 = nil
-gg_dest_FTtw_1104 = nil
-gg_dest_FTtw_1105 = nil
-gg_dest_FTtw_1106 = nil
-gg_dest_FTtw_1107 = nil
-gg_dest_FTtw_1108 = nil
-gg_dest_FTtw_1109 = nil
-gg_dest_FTtw_1110 = nil
-gg_dest_FTtw_1111 = nil
-gg_dest_FTtw_1112 = nil
-gg_dest_FTtw_1113 = nil
-gg_dest_FTtw_1114 = nil
-gg_dest_FTtw_1115 = nil
-gg_dest_FTtw_1116 = nil
-gg_dest_FTtw_1117 = nil
-gg_dest_FTtw_1118 = nil
-gg_dest_FTtw_1119 = nil
-gg_dest_FTtw_1120 = nil
-gg_dest_FTtw_1121 = nil
-gg_dest_FTtw_1122 = nil
-gg_dest_FTtw_1123 = nil
-gg_dest_FTtw_1124 = nil
-gg_dest_FTtw_1125 = nil
-gg_dest_FTtw_1126 = nil
-gg_dest_FTtw_1127 = nil
-gg_dest_FTtw_1128 = nil
-gg_dest_FTtw_1129 = nil
-gg_dest_FTtw_1130 = nil
-gg_dest_FTtw_1131 = nil
-gg_dest_FTtw_1132 = nil
-gg_dest_FTtw_1133 = nil
-gg_dest_FTtw_1134 = nil
-gg_dest_FTtw_1135 = nil
-gg_dest_FTtw_1136 = nil
+gg_dest_FTtw_5014 = nil
+gg_dest_LPwh_11559 = nil
+gg_dest_ORmk_2149 = nil
+gg_dest_LPwh_11560 = nil
+gg_dest_ORmk_2148 = nil
+gg_dest_LPwh_11561 = nil
+gg_dest_LRrk_11562 = nil
+gg_dest_LRrk_11563 = nil
+gg_dest_LOwp_11614 = nil
+gg_dest_ORmk_2147 = nil
+gg_dest_ORmk_5504 = nil
+gg_dest_ORmk_5502 = nil
+gg_dest_LOwp_11611 = nil
+gg_dest_LOam_11612 = nil
+gg_dest_LOam_11613 = nil
+gg_dest_ORmk_5500 = nil
+gg_dest_LTlt_11774 = nil
+gg_dest_LTlt_11775 = nil
+gg_dest_DOtp_11610 = nil
+gg_dest_LOsh_11609 = nil
+gg_dest_LTlt_11771 = nil
+gg_dest_LTlt_11773 = nil
+gg_dest_ORmk_11779 = nil
+gg_dest_ORmk_11778 = nil
+gg_dest_LTlt_11776 = nil
+gg_dest_LTlt_11772 = nil
+gg_dest_ORmk_11777 = nil
+gg_dest_LOsp_11608 = nil
+gg_dest_DOjp_11607 = nil
+gg_dest_DOtp_11606 = nil
+gg_dest_ORmk_11780 = nil
+gg_dest_LOsh_11605 = nil
+gg_dest_LOcb_11604 = nil
+gg_dest_LOsc_11603 = nil
+gg_dest_LOsc_11602 = nil
+gg_dest_ORmk_2146 = nil
+gg_dest_LOsc_11601 = nil
+gg_dest_NTtw_11324 = nil
+gg_dest_NTtw_11323 = nil
+gg_dest_NTtw_11322 = nil
+gg_dest_NTtw_11321 = nil
+gg_dest_NTtw_11320 = nil
+gg_dest_LTlt_11757 = nil
+gg_dest_LTlt_11756 = nil
+gg_dest_LTlt_11755 = nil
+gg_dest_LTlt_11754 = nil
+gg_dest_LTlt_11753 = nil
 gg_dest_FTtw_1137 = nil
 gg_dest_FTtw_1138 = nil
 gg_dest_FTtw_1139 = nil
@@ -42937,49 +42971,49 @@ gg_dest_LTlt_4254 = nil
 gg_dest_LTlt_4255 = nil
 gg_dest_LTlt_4256 = nil
 gg_dest_LTlt_4257 = nil
-gg_dest_LTlt_4258 = nil
-gg_dest_LTlt_4259 = nil
-gg_dest_LTlt_4260 = nil
-gg_dest_LTlt_4261 = nil
-gg_dest_LTlt_4262 = nil
-gg_dest_LTlt_4263 = nil
-gg_dest_LTlt_4264 = nil
-gg_dest_LTlt_4265 = nil
-gg_dest_LTlt_4266 = nil
-gg_dest_LTlt_4267 = nil
-gg_dest_LTlt_4268 = nil
-gg_dest_LTlt_4269 = nil
-gg_dest_LTlt_4270 = nil
-gg_dest_LTlt_4271 = nil
-gg_dest_LTlt_4272 = nil
-gg_dest_LTlt_4273 = nil
-gg_dest_LTlt_4274 = nil
-gg_dest_LTlt_4275 = nil
-gg_dest_LTlt_4276 = nil
-gg_dest_LTlt_4277 = nil
-gg_dest_LTlt_4278 = nil
-gg_dest_LTlt_4279 = nil
-gg_dest_LTlt_4280 = nil
-gg_dest_LTlt_4281 = nil
-gg_dest_LTlt_4282 = nil
-gg_dest_LTlt_4283 = nil
-gg_dest_LTlt_4284 = nil
-gg_dest_LTlt_4285 = nil
-gg_dest_LTlt_4286 = nil
-gg_dest_LTlt_4287 = nil
-gg_dest_LTlt_4288 = nil
-gg_dest_LTlt_4289 = nil
-gg_dest_LTlt_4290 = nil
-gg_dest_LTlt_4291 = nil
-gg_dest_LTlt_4292 = nil
-gg_dest_LTlt_4293 = nil
-gg_dest_LTlt_4294 = nil
-gg_dest_LTlt_4295 = nil
-gg_dest_LTlt_4296 = nil
-gg_dest_LTlt_4297 = nil
-gg_dest_LTlt_4298 = nil
-gg_dest_LTlt_4299 = nil
-gg_dest_LTlt_4300 = nil
+gg_dest_YOec_11600 = nil
+gg_dest_YOec_11599 = nil
+gg_dest_YOec_11598 = nil
+gg_dest_YOec_11597 = nil
+gg_dest_YOec_11596 = nil
+gg_dest_YOec_11595 = nil
+gg_dest_LOic_11594 = nil
+gg_dest_LOic_11593 = nil
+gg_dest_LOic_11592 = nil
+gg_dest_LOic_11591 = nil
+gg_dest_NOfg_6280 = nil
+gg_dest_LOfl_11590 = nil
+gg_dest_LTlt_11762 = nil
+gg_dest_NOfg_6281 = nil
+gg_dest_ORmk_4926 = nil
+gg_dest_ORmk_4923 = nil
+gg_dest_LOfl_11589 = nil
+gg_dest_LTlt_11766 = nil
+gg_dest_LTlt_11765 = nil
+gg_dest_LTlt_11764 = nil
+gg_dest_LTlt_11763 = nil
+gg_dest_ORmk_4927 = nil
+gg_dest_LOfl_11588 = nil
+gg_dest_ORmk_2145 = nil
+gg_dest_ORmk_2144 = nil
+gg_dest_ORmk_2143 = nil
+gg_dest_LOfl_11587 = nil
+gg_dest_LOfl_11586 = nil
+gg_dest_LTlt_11758 = nil
+gg_dest_NOfg_11585 = nil
+gg_dest_NOfg_11584 = nil
+gg_dest_LOsk_11639 = nil
+gg_dest_LOsk_11638 = nil
+gg_dest_NOft_11583 = nil
+gg_dest_LOss_11637 = nil
+gg_dest_NOft_11582 = nil
+gg_dest_NOfp_11581 = nil
+gg_dest_YOec_11580 = nil
+gg_dest_YOec_11579 = nil
+gg_dest_YOec_11578 = nil
+gg_dest_LOsc_11577 = nil
+gg_dest_ZPf0_11576 = nil
+gg_dest_ZPf0_11575 = nil
 gg_dest_LTlt_4301 = nil
 gg_dest_LTlt_4302 = nil
 gg_dest_LTlt_4303 = nil
@@ -42999,7 +43033,7 @@ gg_dest_LTlt_4316 = nil
 gg_dest_LTlt_4317 = nil
 gg_dest_LTlt_4318 = nil
 gg_dest_LTlt_4319 = nil
-gg_dest_LTlt_4320 = nil
+gg_dest_FTtw_5012 = nil
 gg_dest_LTlt_4321 = nil
 gg_dest_LTlt_4322 = nil
 gg_dest_LTlt_4323 = nil
@@ -43414,30 +43448,30 @@ gg_dest_CTtr_10526 = nil
 gg_dest_CTtr_10525 = nil
 gg_dest_CTtr_10524 = nil
 gg_dest_CTtr_10523 = nil
-gg_dest_LTlt_5484 = nil
+gg_dest_NTtw_5127 = nil
 gg_dest_CTtr_10522 = nil
 gg_dest_CTtr_10521 = nil
-gg_dest_LTlt_5487 = nil
-gg_dest_LTlt_5488 = nil
-gg_dest_LTlt_5489 = nil
-gg_dest_LTlt_5490 = nil
-gg_dest_LTlt_5491 = nil
-gg_dest_LTlt_5492 = nil
+gg_dest_NTtw_11358 = nil
+gg_dest_NTtw_11357 = nil
+gg_dest_NTtw_11356 = nil
+gg_dest_NTtw_11355 = nil
+gg_dest_NTtw_11354 = nil
+gg_dest_NTtw_11353 = nil
 gg_dest_AOsr_11646 = nil
-gg_dest_LTlt_5494 = nil
-gg_dest_LTlt_5495 = nil
+gg_dest_NTtw_11352 = nil
+gg_dest_NTtw_11351 = nil
 gg_dest_AObd_11683 = nil
 gg_dest_AOsr_11645 = nil
-gg_dest_LTlt_5498 = nil
-gg_dest_LOic_8208 = nil
+gg_dest_NTtw_11350 = nil
+gg_dest_LTlt_11759 = nil
 gg_dest_LOlp_11667 = nil
-gg_dest_LTlt_5501 = nil
+gg_dest_NTtw_11349 = nil
 gg_dest_LObz_11681 = nil
-gg_dest_LTlt_5503 = nil
+gg_dest_NTtw_11348 = nil
 gg_dest_LOsk_11644 = nil
 gg_dest_LObz_11680 = nil
 gg_dest_LOlp_11668 = nil
-gg_dest_LTlt_5507 = nil
+gg_dest_NTtw_11347 = nil
 gg_dest_LObz_11679 = nil
 gg_dest_LOlp_11670 = nil
 gg_dest_LOce_11678 = nil
@@ -43619,7 +43653,7 @@ gg_dest_LTbr_4544 = nil
 gg_dest_CTtr_10518 = nil
 gg_dest_LTbs_4545 = nil
 gg_dest_LTbr_4541 = nil
-gg_dest_CTtr_10517 = nil
+gg_dest_NTtw_11315 = nil
 gg_dest_LOss_11663 = nil
 gg_dest_LOfl_11657 = nil
 gg_dest_LOfl_11656 = nil
@@ -43632,12 +43666,12 @@ gg_dest_LOfl_11653 = nil
 gg_dest_LOfl_11652 = nil
 gg_dest_LOrc_11651 = nil
 gg_dest_LOsk_11642 = nil
-gg_dest_CTtr_10507 = nil
-gg_dest_CTtr_10506 = nil
-gg_dest_CTtr_10505 = nil
+gg_dest_NTtw_11346 = nil
+gg_dest_NTtw_11345 = nil
+gg_dest_NTtw_11344 = nil
 gg_dest_CTtr_10543 = nil
-gg_dest_CTtr_10504 = nil
-gg_dest_CTtr_10503 = nil
+gg_dest_NTtw_11343 = nil
+gg_dest_NTtw_11342 = nil
 gg_dest_LTlt_6691 = nil
 gg_dest_LTlt_6689 = nil
 gg_dest_CTtr_5387 = nil
@@ -43929,33 +43963,33 @@ gg_dest_NTtw_6975 = nil
 gg_dest_NTtw_6976 = nil
 gg_dest_NTtw_6977 = nil
 gg_dest_NTtw_6978 = nil
-gg_dest_NTtw_6979 = nil
+gg_dest_LPrs_11519 = nil
 gg_dest_NTtw_6980 = nil
 gg_dest_NTtw_6981 = nil
-gg_dest_NTtw_6982 = nil
-gg_dest_NTtw_6983 = nil
-gg_dest_NTtw_6984 = nil
-gg_dest_NTtw_6985 = nil
-gg_dest_NTtw_6986 = nil
-gg_dest_NTtw_6987 = nil
-gg_dest_NTtw_6988 = nil
-gg_dest_NTtw_6989 = nil
-gg_dest_NTtw_6990 = nil
-gg_dest_NTtw_6991 = nil
-gg_dest_NTtw_6992 = nil
-gg_dest_NTtw_6993 = nil
-gg_dest_NTtw_6994 = nil
-gg_dest_NTtw_6995 = nil
-gg_dest_NTtw_6996 = nil
-gg_dest_NTtw_6997 = nil
-gg_dest_NTtw_6998 = nil
-gg_dest_NTtw_6999 = nil
+gg_dest_LPrs_11520 = nil
+gg_dest_LPrs_11521 = nil
+gg_dest_LPrs_11522 = nil
+gg_dest_LPrs_11523 = nil
+gg_dest_LPwb_11552 = nil
+gg_dest_LPwh_11551 = nil
+gg_dest_LPrs_11524 = nil
+gg_dest_LPwh_11550 = nil
+gg_dest_LRrk_11525 = nil
+gg_dest_LPwh_11549 = nil
+gg_dest_LPwh_11548 = nil
+gg_dest_LPwh_11547 = nil
+gg_dest_LRrk_11526 = nil
+gg_dest_LPwh_11527 = nil
+gg_dest_LPwh_11528 = nil
+gg_dest_LPwh_11529 = nil
+gg_dest_LPwh_11538 = nil
+gg_dest_ZPfw_11508 = nil
 gg_dest_FTtw_0031 = nil
-gg_dest_NTtw_7001 = nil
-gg_dest_NTtw_7002 = nil
-gg_dest_NTtw_7003 = nil
-gg_dest_NTtw_7004 = nil
-gg_dest_NTtw_7005 = nil
+gg_dest_ZPfw_11507 = nil
+gg_dest_ZPfw_11506 = nil
+gg_dest_ZPfw_11505 = nil
+gg_dest_LTrt_11504 = nil
+gg_dest_LTrc_10816 = nil
 gg_dest_NTtw_7006 = nil
 gg_dest_NTtw_7007 = nil
 gg_dest_NTtw_7008 = nil
@@ -44065,7 +44099,7 @@ gg_dest_FTtw_2192 = nil
 gg_dest_NTtw_7112 = nil
 gg_dest_NTtw_1238 = nil
 gg_dest_LWw0_0108 = nil
-gg_dest_FTtw_7460 = nil
+gg_dest_NTtw_11398 = nil
 gg_dest_FTtw_7484 = nil
 gg_dest_NTtw_7117 = nil
 gg_dest_NTtw_7118 = nil
@@ -44199,7 +44233,7 @@ gg_dest_CTtr_10647 = nil
 gg_dest_FTtw_7754 = nil
 gg_dest_NTtw_7247 = nil
 gg_dest_NTtw_7248 = nil
-gg_dest_FTtw_7693 = nil
+gg_dest_FTtw_5016 = nil
 gg_dest_FTtw_7577 = nil
 gg_dest_FTtw_7755 = nil
 gg_dest_FTtw_0211 = nil
@@ -44274,7 +44308,7 @@ gg_dest_NTtw_7320 = nil
 gg_dest_NTtw_7321 = nil
 gg_dest_NTtw_7322 = nil
 gg_dest_NTtw_7323 = nil
-gg_dest_FTtw_7722 = nil
+gg_dest_NTtw_11319 = nil
 gg_dest_NTtw_7325 = nil
 gg_dest_NTtw_7326 = nil
 gg_dest_FTtw_0917 = nil
@@ -44300,20 +44334,20 @@ gg_dest_FTtw_7567 = nil
 gg_dest_NTtw_7347 = nil
 gg_dest_NTtw_7348 = nil
 gg_dest_FTtw_7740 = nil
-gg_dest_NTtw_7350 = nil
+gg_dest_NTtw_11397 = nil
 gg_dest_AObd_11688 = nil
-gg_dest_FTtw_7712 = nil
-gg_dest_NTtw_7353 = nil
-gg_dest_FTtw_7711 = nil
-gg_dest_NTtw_7355 = nil
-gg_dest_NTtw_7356 = nil
+gg_dest_LTlt_11752 = nil
+gg_dest_NTtw_11396 = nil
+gg_dest_NTtw_11318 = nil
+gg_dest_NTtw_11395 = nil
+gg_dest_NTtw_11394 = nil
 gg_dest_FTtw_0240 = nil
-gg_dest_NTtw_7358 = nil
-gg_dest_NTtw_7359 = nil
+gg_dest_KOst_6275 = nil
+gg_dest_NTtw_11393 = nil
 gg_dest_FTtw_7742 = nil
-gg_dest_NTtw_7361 = nil
+gg_dest_NTtw_11392 = nil
 gg_dest_FTtw_7743 = nil
-gg_dest_NTtw_7363 = nil
+gg_dest_NTtw_11391 = nil
 gg_dest_FTtw_7566 = nil
 gg_dest_NTtw_7365 = nil
 gg_dest_NTtw_7366 = nil
@@ -44325,7 +44359,7 @@ gg_dest_NTtw_7371 = nil
 gg_dest_NTtw_7372 = nil
 gg_dest_NTtw_7373 = nil
 gg_dest_NTtw_7374 = nil
-gg_dest_FTtw_7706 = nil
+gg_dest_LTlt_11751 = nil
 gg_dest_NTtw_7376 = nil
 gg_dest_NTtw_7377 = nil
 gg_dest_NTtw_7378 = nil
@@ -44407,8 +44441,8 @@ gg_dest_FTtw_1674 = nil
 gg_dest_FTtw_1671 = nil
 gg_dest_FTtw_1670 = nil
 gg_dest_NTtw_0238 = nil
-gg_dest_LOic_6283 = nil
-gg_dest_LOic_6282 = nil
+gg_dest_LTlt_11768 = nil
+gg_dest_LTlt_11767 = nil
 gg_dest_FTtw_1669 = nil
 gg_dest_NTtw_0254 = nil
 gg_dest_NTtw_0256 = nil
@@ -44528,13 +44562,13 @@ gg_dest_FTtw_3839 = nil
 gg_dest_FTtw_3840 = nil
 gg_dest_FTtw_3841 = nil
 gg_dest_NOfp_4838 = nil
-gg_dest_CTtr_10502 = nil
+gg_dest_NTtw_11341 = nil
 gg_dest_LOar_4834 = nil
 gg_dest_LOar_4836 = nil
 gg_dest_LOar_4835 = nil
-gg_dest_CTtr_10501 = nil
-gg_dest_CTtr_10500 = nil
-gg_dest_CTtr_10499 = nil
+gg_dest_NTtw_11340 = nil
+gg_dest_NTtw_11339 = nil
+gg_dest_NTtw_11338 = nil
 gg_dest_CTtr_10498 = nil
 gg_dest_CTtr_10497 = nil
 gg_dest_CTtr_10496 = nil
@@ -44548,7 +44582,7 @@ gg_dest_CTtr_10489 = nil
 gg_dest_CTtr_10488 = nil
 gg_dest_CTtr_10487 = nil
 gg_dest_LTbx_4832 = nil
-gg_dest_LTlt_10550 = nil
+gg_dest_NTtw_11337 = nil
 gg_dest_CTtr_10486 = nil
 gg_dest_CTtr_10485 = nil
 gg_dest_CTtr_10484 = nil
@@ -45011,24 +45045,24 @@ gg_dest_LTlt_8057 = nil
 gg_dest_LTlt_8058 = nil
 gg_dest_LTlt_8059 = nil
 gg_dest_LTlt_8060 = nil
-gg_dest_LTlt_8061 = nil
-gg_dest_LTlt_8062 = nil
-gg_dest_LTlt_8063 = nil
-gg_dest_LTlt_8064 = nil
-gg_dest_LTlt_8065 = nil
-gg_dest_LTlt_8066 = nil
-gg_dest_LTlt_8067 = nil
-gg_dest_LTlt_8068 = nil
-gg_dest_LTlt_8069 = nil
-gg_dest_LTlt_8070 = nil
-gg_dest_LTlt_8071 = nil
-gg_dest_LTlt_8072 = nil
-gg_dest_LTlt_8073 = nil
-gg_dest_LTlt_8074 = nil
-gg_dest_LTlt_8075 = nil
-gg_dest_LTlt_8076 = nil
-gg_dest_LTlt_8077 = nil
-gg_dest_LTlt_8078 = nil
+gg_dest_ZPf0_11574 = nil
+gg_dest_ZPf0_11573 = nil
+gg_dest_ZPf0_11572 = nil
+gg_dest_ZPf0_11571 = nil
+gg_dest_LOss_11636 = nil
+gg_dest_LOss_11635 = nil
+gg_dest_LOss_11634 = nil
+gg_dest_LOss_11633 = nil
+gg_dest_LOss_11632 = nil
+gg_dest_LOtz_11631 = nil
+gg_dest_LOtz_11630 = nil
+gg_dest_LOtz_11629 = nil
+gg_dest_LOtz_11628 = nil
+gg_dest_LOtz_11627 = nil
+gg_dest_LOtz_11626 = nil
+gg_dest_ZPf0_11570 = nil
+gg_dest_ZPf0_11569 = nil
+gg_dest_ZPf0_11568 = nil
 gg_dest_LTlt_8079 = nil
 gg_dest_LTlt_8080 = nil
 gg_dest_LTlt_8081 = nil
@@ -45168,8 +45202,8 @@ gg_dest_NOfp_11673 = nil
 gg_dest_LOlp_11672 = nil
 gg_dest_AObd_11685 = nil
 gg_dest_LOsk_11640 = nil
-gg_dest_LTlt_8218 = nil
-gg_dest_LTlt_8219 = nil
+gg_dest_NTtw_5126 = nil
+gg_dest_NTtw_5125 = nil
 gg_dest_LTlt_8220 = nil
 gg_dest_LTlt_8221 = nil
 gg_dest_LTlt_8222 = nil
@@ -45618,26 +45652,26 @@ gg_dest_FTtw_8664 = nil
 gg_dest_FTtw_8665 = nil
 gg_dest_FTtw_8666 = nil
 gg_dest_FTtw_8667 = nil
-gg_dest_FTtw_8668 = nil
-gg_dest_FTtw_8669 = nil
-gg_dest_FTtw_8670 = nil
-gg_dest_FTtw_8671 = nil
-gg_dest_FTtw_8672 = nil
-gg_dest_FTtw_8673 = nil
-gg_dest_FTtw_8674 = nil
-gg_dest_FTtw_8675 = nil
-gg_dest_FTtw_8676 = nil
-gg_dest_FTtw_8677 = nil
-gg_dest_FTtw_8678 = nil
-gg_dest_FTtw_8679 = nil
-gg_dest_FTtw_8680 = nil
-gg_dest_FTtw_8681 = nil
-gg_dest_FTtw_8682 = nil
-gg_dest_FTtw_8683 = nil
-gg_dest_FTtw_8684 = nil
-gg_dest_FTtw_8685 = nil
-gg_dest_FTtw_8686 = nil
-gg_dest_FTtw_8687 = nil
+gg_dest_LTlt_11750 = nil
+gg_dest_ZPf0_11567 = nil
+gg_dest_LRrk_11566 = nil
+gg_dest_LOtz_11625 = nil
+gg_dest_LOtz_11624 = nil
+gg_dest_LOtz_11623 = nil
+gg_dest_LOtz_11622 = nil
+gg_dest_LOtz_11621 = nil
+gg_dest_LOt1_11620 = nil
+gg_dest_LOt1_11619 = nil
+gg_dest_LOwr_11618 = nil
+gg_dest_LOwr_11617 = nil
+gg_dest_LOwp_11616 = nil
+gg_dest_LOwp_11615 = nil
+gg_dest_LRrk_11565 = nil
+gg_dest_LRrk_11564 = nil
+gg_dest_LTlt_11749 = nil
+gg_dest_LTlt_11748 = nil
+gg_dest_LTlt_11747 = nil
+gg_dest_LTlt_11746 = nil
 gg_dest_FTtw_8688 = nil
 gg_dest_FTtw_8689 = nil
 gg_dest_FTtw_8690 = nil
@@ -45916,16 +45950,16 @@ gg_dest_FTtw_8962 = nil
 gg_dest_FTtw_8963 = nil
 gg_dest_FTtw_8964 = nil
 gg_dest_FTtw_8965 = nil
-gg_dest_FTtw_8966 = nil
-gg_dest_FTtw_8967 = nil
-gg_dest_FTtw_8968 = nil
-gg_dest_FTtw_8969 = nil
-gg_dest_FTtw_8970 = nil
-gg_dest_FTtw_8971 = nil
-gg_dest_FTtw_8972 = nil
-gg_dest_FTtw_8973 = nil
-gg_dest_FTtw_8974 = nil
-gg_dest_FTtw_8975 = nil
+gg_dest_NTtw_11390 = nil
+gg_dest_NTtw_11389 = nil
+gg_dest_NTtw_11388 = nil
+gg_dest_NTtw_11427 = nil
+gg_dest_NTtw_9463 = nil
+gg_dest_KOst_6274 = nil
+gg_dest_AOob_6273 = nil
+gg_dest_AOob_6271 = nil
+gg_dest_AOob_5511 = nil
+gg_dest_AOob_5510 = nil
 gg_dest_NObt_11728 = nil
 gg_dest_AObd_11710 = nil
 gg_dest_NObt_11727 = nil
@@ -45939,9 +45973,9 @@ gg_dest_AObd_11720 = nil
 gg_dest_AObd_11719 = nil
 gg_dest_AObd_11718 = nil
 gg_dest_AObd_11708 = nil
-gg_dest_FTtw_8989 = nil
+gg_dest_NTtw_11426 = nil
 gg_dest_FTtw_8990 = nil
-gg_dest_FTtw_8991 = nil
+gg_dest_NTtw_11425 = nil
 gg_dest_FTtw_8992 = nil
 gg_dest_FTtw_8993 = nil
 gg_dest_FTtw_8994 = nil
@@ -46097,7 +46131,7 @@ gg_dest_NTtw_9143 = nil
 gg_dest_NTtw_9144 = nil
 gg_dest_NTtw_9145 = nil
 gg_dest_NTtw_9146 = nil
-gg_dest_NTtw_9147 = nil
+gg_dest_NTtw_9462 = nil
 gg_dest_AObd_11707 = nil
 gg_dest_AObd_11706 = nil
 gg_dest_AObd_11705 = nil
@@ -46109,16 +46143,16 @@ gg_dest_AObd_11690 = nil
 gg_dest_AObr_11702 = nil
 gg_dest_AObd_11689 = nil
 gg_dest_AObr_11701 = nil
-gg_dest_NTtw_9159 = nil
+gg_dest_AOob_5509 = nil
 gg_dest_NObt_11700 = nil
-gg_dest_NTtw_9161 = nil
-gg_dest_NTtw_9162 = nil
-gg_dest_NTtw_9163 = nil
-gg_dest_NTtw_9164 = nil
-gg_dest_NTtw_9165 = nil
-gg_dest_NTtw_9166 = nil
-gg_dest_NTtw_9167 = nil
-gg_dest_NTtw_9168 = nil
+gg_dest_AOob_5508 = nil
+gg_dest_AOob_5506 = nil
+gg_dest_AOob_6268 = nil
+gg_dest_NTtw_9461 = nil
+gg_dest_ORmk_5505 = nil
+gg_dest_NTtw_9460 = nil
+gg_dest_NTtw_7061 = nil
+gg_dest_NTtw_7059 = nil
 gg_dest_NTtw_9169 = nil
 gg_dest_NTtw_9170 = nil
 gg_dest_NTtw_9171 = nil
@@ -46342,24 +46376,24 @@ gg_dest_NTtw_9388 = nil
 gg_dest_NTtw_9389 = nil
 gg_dest_NTtw_9390 = nil
 gg_dest_NTtw_9391 = nil
-gg_dest_NTtw_9392 = nil
-gg_dest_NTtw_9393 = nil
+gg_dest_LPwb_11537 = nil
+gg_dest_LPwb_11536 = nil
 gg_dest_NTtw_9394 = nil
-gg_dest_NTtw_9395 = nil
-gg_dest_NTtw_9396 = nil
-gg_dest_NTtw_9397 = nil
-gg_dest_NTtw_9398 = nil
-gg_dest_NTtw_9399 = nil
-gg_dest_NTtw_9400 = nil
-gg_dest_NTtw_9401 = nil
-gg_dest_NTtw_9402 = nil
-gg_dest_NTtw_9403 = nil
-gg_dest_NTtw_9404 = nil
-gg_dest_NTtw_9405 = nil
-gg_dest_NTtw_9406 = nil
-gg_dest_NTtw_9407 = nil
-gg_dest_NTtw_9408 = nil
-gg_dest_NTtw_9409 = nil
+gg_dest_LPwb_11535 = nil
+gg_dest_LPwh_11546 = nil
+gg_dest_LPwh_11534 = nil
+gg_dest_LPwh_11545 = nil
+gg_dest_LPwh_11544 = nil
+gg_dest_LPwh_11543 = nil
+gg_dest_LPwh_11542 = nil
+gg_dest_LPwh_11541 = nil
+gg_dest_LPwh_11533 = nil
+gg_dest_LPwh_11532 = nil
+gg_dest_LPwh_11540 = nil
+gg_dest_LPwh_11539 = nil
+gg_dest_LPwh_11531 = nil
+gg_dest_LPwh_11530 = nil
+gg_dest_NOfp_11502 = nil
 gg_dest_NTtw_9410 = nil
 gg_dest_NTtw_9411 = nil
 gg_dest_NTtw_9412 = nil
@@ -46778,28 +46812,28 @@ gg_dest_CTtr_9824 = nil
 gg_dest_CTtr_9825 = nil
 gg_dest_CTtr_9826 = nil
 gg_dest_CTtr_9827 = nil
-gg_dest_CTtr_9828 = nil
+gg_dest_NTtw_11462 = nil
 gg_dest_CTtr_9829 = nil
 gg_dest_CTtr_9830 = nil
 gg_dest_CTtr_9831 = nil
-gg_dest_CTtr_9832 = nil
-gg_dest_CTtr_9833 = nil
-gg_dest_CTtr_9834 = nil
-gg_dest_CTtr_9835 = nil
-gg_dest_CTtr_9836 = nil
+gg_dest_NTtw_11461 = nil
+gg_dest_NTtw_11460 = nil
+gg_dest_NTtw_11459 = nil
+gg_dest_NTtw_11458 = nil
+gg_dest_NTtw_11457 = nil
 gg_dest_CTtr_9837 = nil
-gg_dest_CTtr_9838 = nil
-gg_dest_CTtr_9839 = nil
-gg_dest_CTtr_9840 = nil
-gg_dest_CTtr_9841 = nil
-gg_dest_CTtr_9842 = nil
-gg_dest_CTtr_9843 = nil
-gg_dest_CTtr_9844 = nil
-gg_dest_CTtr_9845 = nil
-gg_dest_CTtr_9846 = nil
-gg_dest_CTtr_9847 = nil
-gg_dest_CTtr_9848 = nil
-gg_dest_CTtr_9849 = nil
+gg_dest_NTtw_11456 = nil
+gg_dest_NTtw_11455 = nil
+gg_dest_NTtw_11454 = nil
+gg_dest_NTtw_11453 = nil
+gg_dest_NTtw_11452 = nil
+gg_dest_NTtw_11451 = nil
+gg_dest_NTtw_11450 = nil
+gg_dest_NTtw_11449 = nil
+gg_dest_NTtw_11448 = nil
+gg_dest_NTtw_11447 = nil
+gg_dest_NTtw_11446 = nil
+gg_dest_NTtw_11445 = nil
 gg_dest_CTtr_9850 = nil
 gg_dest_CTtr_9851 = nil
 gg_dest_CTtr_9852 = nil
@@ -47413,15 +47447,15 @@ gg_dest_CTtr_10459 = nil
 gg_dest_CTtr_10460 = nil
 gg_dest_CTtr_10461 = nil
 gg_dest_CTtr_10462 = nil
-gg_dest_LTlt_3844 = nil
-gg_dest_LTlt_3849 = nil
-gg_dest_LTlt_3850 = nil
-gg_dest_LTlt_3851 = nil
-gg_dest_LTlt_3857 = nil
-gg_dest_LTlt_3858 = nil
-gg_dest_LTlt_3859 = nil
-gg_dest_LTlt_3860 = nil
-gg_dest_LTlt_3861 = nil
+gg_dest_NTtw_5124 = nil
+gg_dest_NTtw_5123 = nil
+gg_dest_NTtw_5122 = nil
+gg_dest_NTtw_5121 = nil
+gg_dest_NTtw_5120 = nil
+gg_dest_NTtw_5119 = nil
+gg_dest_NTtw_5118 = nil
+gg_dest_NTtw_11336 = nil
+gg_dest_NTtw_11335 = nil
 gg_dest_LTlt_3862 = nil
 gg_dest_LTlt_3863 = nil
 gg_dest_AObd_11684 = nil
@@ -48265,378 +48299,478 @@ gg_dest_NTtw_11311 = nil
 gg_dest_NTtw_11312 = nil
 gg_dest_NTtw_11313 = nil
 gg_dest_NTtw_11314 = nil
-gg_dest_NTtw_11315 = nil
-gg_dest_NTtw_11316 = nil
-gg_dest_NTtw_11317 = nil
-gg_dest_NTtw_11318 = nil
-gg_dest_NTtw_11319 = nil
-gg_dest_NTtw_11320 = nil
-gg_dest_NTtw_11321 = nil
-gg_dest_NTtw_11322 = nil
-gg_dest_NTtw_11323 = nil
-gg_dest_NTtw_11324 = nil
-gg_dest_NTtw_11325 = nil
-gg_dest_NTtw_11326 = nil
-gg_dest_NTtw_11327 = nil
-gg_dest_NTtw_11328 = nil
-gg_dest_NTtw_11329 = nil
-gg_dest_NTtw_11330 = nil
-gg_dest_NTtw_11331 = nil
-gg_dest_NTtw_11332 = nil
-gg_dest_NTtw_11333 = nil
-gg_dest_NTtw_11334 = nil
-gg_dest_NTtw_11335 = nil
-gg_dest_NTtw_11336 = nil
-gg_dest_NTtw_11337 = nil
-gg_dest_NTtw_11338 = nil
-gg_dest_NTtw_11339 = nil
-gg_dest_NTtw_11340 = nil
-gg_dest_NTtw_11341 = nil
-gg_dest_NTtw_11342 = nil
-gg_dest_NTtw_11343 = nil
-gg_dest_NTtw_11344 = nil
-gg_dest_NTtw_11345 = nil
-gg_dest_NTtw_11346 = nil
-gg_dest_NTtw_11347 = nil
-gg_dest_NTtw_11348 = nil
-gg_dest_NTtw_11349 = nil
-gg_dest_NTtw_11350 = nil
-gg_dest_NTtw_11351 = nil
-gg_dest_NTtw_11352 = nil
-gg_dest_NTtw_11353 = nil
-gg_dest_NTtw_11354 = nil
-gg_dest_NTtw_11355 = nil
-gg_dest_NTtw_11356 = nil
-gg_dest_NTtw_11357 = nil
-gg_dest_NTtw_11358 = nil
-gg_dest_NTtw_11359 = nil
-gg_dest_NTtw_11360 = nil
-gg_dest_NTtw_11361 = nil
-gg_dest_NTtw_11362 = nil
-gg_dest_NTtw_11363 = nil
-gg_dest_NTtw_11364 = nil
-gg_dest_NTtw_11365 = nil
-gg_dest_NTtw_11366 = nil
-gg_dest_NTtw_11367 = nil
-gg_dest_NTtw_11368 = nil
-gg_dest_NTtw_11369 = nil
-gg_dest_NTtw_11370 = nil
-gg_dest_NTtw_5115 = nil
-gg_dest_NTtw_5118 = nil
-gg_dest_NTtw_5119 = nil
-gg_dest_NTtw_5120 = nil
-gg_dest_NTtw_5121 = nil
-gg_dest_NTtw_5122 = nil
-gg_dest_NTtw_5123 = nil
-gg_dest_NTtw_5124 = nil
-gg_dest_NTtw_5125 = nil
-gg_dest_NTtw_5126 = nil
-gg_dest_NTtw_5127 = nil
-gg_dest_NTtw_7059 = nil
-gg_dest_NTtw_7061 = nil
-gg_dest_NTtw_9460 = nil
-gg_dest_NTtw_9461 = nil
-gg_dest_NTtw_9462 = nil
-gg_dest_NTtw_9463 = nil
-gg_dest_NTtw_11388 = nil
-gg_dest_NTtw_11389 = nil
-gg_dest_NTtw_11390 = nil
-gg_dest_NTtw_11391 = nil
-gg_dest_NTtw_11392 = nil
-gg_dest_NTtw_11393 = nil
-gg_dest_NTtw_11394 = nil
-gg_dest_NTtw_11395 = nil
-gg_dest_NTtw_11396 = nil
-gg_dest_NTtw_11397 = nil
-gg_dest_NTtw_11398 = nil
-gg_dest_NTtw_11399 = nil
-gg_dest_NTtw_11400 = nil
-gg_dest_NTtw_11401 = nil
-gg_dest_NTtw_11402 = nil
-gg_dest_NTtw_11403 = nil
-gg_dest_NTtw_11404 = nil
-gg_dest_NTtw_11405 = nil
-gg_dest_NTtw_11406 = nil
-gg_dest_NTtw_11407 = nil
-gg_dest_NTtw_11408 = nil
-gg_dest_NTtw_11409 = nil
-gg_dest_NTtw_11410 = nil
-gg_dest_NTtw_11411 = nil
-gg_dest_NTtw_11412 = nil
-gg_dest_NTtw_11413 = nil
-gg_dest_NTtw_11414 = nil
-gg_dest_NTtw_11415 = nil
-gg_dest_NTtw_11416 = nil
-gg_dest_NTtw_11417 = nil
-gg_dest_NTtw_11418 = nil
-gg_dest_NTtw_11419 = nil
-gg_dest_NTtw_11420 = nil
-gg_dest_NTtw_11421 = nil
-gg_dest_NTtw_11422 = nil
-gg_dest_NTtw_11423 = nil
-gg_dest_NTtw_11424 = nil
-gg_dest_NTtw_11425 = nil
-gg_dest_NTtw_11426 = nil
-gg_dest_NTtw_11427 = nil
-gg_dest_NTtw_11428 = nil
-gg_dest_NTtw_11429 = nil
-gg_dest_NTtw_11430 = nil
-gg_dest_NTtw_11431 = nil
-gg_dest_NTtw_11432 = nil
-gg_dest_NTtw_11433 = nil
-gg_dest_NTtw_11434 = nil
-gg_dest_NTtw_11435 = nil
-gg_dest_NTtw_11436 = nil
-gg_dest_NTtw_11437 = nil
-gg_dest_NTtw_11438 = nil
-gg_dest_NTtw_11439 = nil
-gg_dest_NTtw_11440 = nil
-gg_dest_NTtw_11441 = nil
-gg_dest_NTtw_11442 = nil
-gg_dest_NTtw_11443 = nil
-gg_dest_NTtw_11444 = nil
-gg_dest_NTtw_11445 = nil
-gg_dest_NTtw_11446 = nil
-gg_dest_NTtw_11447 = nil
-gg_dest_NTtw_11448 = nil
-gg_dest_NTtw_11449 = nil
-gg_dest_NTtw_11450 = nil
-gg_dest_NTtw_11451 = nil
-gg_dest_NTtw_11452 = nil
-gg_dest_NTtw_11453 = nil
-gg_dest_NTtw_11454 = nil
-gg_dest_NTtw_11455 = nil
-gg_dest_NTtw_11456 = nil
-gg_dest_NTtw_11457 = nil
-gg_dest_NTtw_11458 = nil
-gg_dest_NTtw_11459 = nil
-gg_dest_NTtw_11460 = nil
-gg_dest_NTtw_11461 = nil
-gg_dest_NTtw_11462 = nil
-gg_dest_NTtw_11463 = nil
-gg_dest_NTtw_11464 = nil
-gg_dest_NTtw_11465 = nil
-gg_dest_NTtw_11466 = nil
-gg_dest_NTtw_11467 = nil
-gg_dest_NTtw_11468 = nil
-gg_dest_NTtw_11469 = nil
-gg_dest_NTtw_11470 = nil
-gg_dest_NTtw_11471 = nil
-gg_dest_NTtw_11472 = nil
-gg_dest_NTtw_11473 = nil
-gg_dest_NTtw_11474 = nil
-gg_dest_NTtw_11475 = nil
-gg_dest_NTtw_11476 = nil
-gg_dest_NTtw_11477 = nil
-gg_dest_NTtw_11478 = nil
-gg_dest_NTtw_11479 = nil
-gg_dest_NTtw_11480 = nil
-gg_dest_NTtw_11481 = nil
-gg_dest_NTtw_11482 = nil
-gg_dest_NTtw_11483 = nil
-gg_dest_NTtw_11484 = nil
-gg_dest_NTtw_11485 = nil
-gg_dest_NTtw_11486 = nil
-gg_dest_NTtw_11487 = nil
-gg_dest_NTtw_11488 = nil
-gg_dest_NTtw_11489 = nil
-gg_dest_NTtw_11490 = nil
-gg_dest_NTtw_11491 = nil
-gg_dest_NTtw_11492 = nil
-gg_dest_NTtw_11493 = nil
-gg_dest_NTtw_11494 = nil
-gg_dest_NTtw_11495 = nil
-gg_dest_NTtw_11496 = nil
-gg_dest_NTtw_11497 = nil
-gg_dest_NTtw_11498 = nil
-gg_dest_KOst_6279 = nil
-gg_dest_LOcg_6128 = nil
-gg_dest_LOcg_11501 = nil
-gg_dest_NOfp_11502 = nil
-gg_dest_LTrc_10816 = nil
-gg_dest_LTrt_11504 = nil
-gg_dest_ZPfw_11505 = nil
-gg_dest_ZPfw_11506 = nil
-gg_dest_ZPfw_11507 = nil
-gg_dest_ZPfw_11508 = nil
-gg_dest_ZPfw_11509 = nil
-gg_dest_ZPfw_11510 = nil
-gg_dest_ZPfw_11511 = nil
-gg_dest_ZPfw_11512 = nil
-gg_dest_ZPfw_11513 = nil
-gg_dest_ZPfw_11514 = nil
-gg_dest_ZPfw_11515 = nil
-gg_dest_ZPfw_11516 = nil
-gg_dest_ZPfw_11517 = nil
-gg_dest_LPrs_11518 = nil
-gg_dest_LPrs_11519 = nil
-gg_dest_LPrs_11520 = nil
-gg_dest_LPrs_11521 = nil
-gg_dest_LPrs_11522 = nil
-gg_dest_LPrs_11523 = nil
-gg_dest_LPrs_11524 = nil
-gg_dest_LRrk_11525 = nil
-gg_dest_LRrk_11526 = nil
-gg_dest_LPwh_11527 = nil
-gg_dest_LPwh_11528 = nil
-gg_dest_LPwh_11529 = nil
-gg_dest_LPwh_11530 = nil
-gg_dest_LPwh_11531 = nil
-gg_dest_LPwh_11532 = nil
-gg_dest_LPwh_11533 = nil
-gg_dest_LPwh_11534 = nil
-gg_dest_LPwb_11535 = nil
-gg_dest_LPwb_11536 = nil
-gg_dest_LPwb_11537 = nil
-gg_dest_LPwh_11538 = nil
-gg_dest_LPwh_11539 = nil
-gg_dest_LPwh_11540 = nil
-gg_dest_LPwh_11541 = nil
-gg_dest_LPwh_11542 = nil
-gg_dest_LPwh_11543 = nil
-gg_dest_LPwh_11544 = nil
-gg_dest_LPwh_11545 = nil
-gg_dest_LPwh_11546 = nil
-gg_dest_LPwh_11547 = nil
-gg_dest_LPwh_11548 = nil
-gg_dest_LPwh_11549 = nil
-gg_dest_LPwh_11550 = nil
-gg_dest_LPwh_11551 = nil
-gg_dest_LPwb_11552 = nil
-gg_dest_LPwh_11553 = nil
-gg_dest_LPwh_11554 = nil
-gg_dest_LPwh_11555 = nil
-gg_dest_LPwh_11556 = nil
-gg_dest_LPwh_11557 = nil
-gg_dest_LPwh_11558 = nil
-gg_dest_LPwh_11559 = nil
-gg_dest_LPwh_11560 = nil
-gg_dest_LPwh_11561 = nil
-gg_dest_LRrk_11562 = nil
-gg_dest_LRrk_11563 = nil
-gg_dest_LRrk_11564 = nil
-gg_dest_LRrk_11565 = nil
-gg_dest_LRrk_11566 = nil
-gg_dest_ZPf0_11567 = nil
-gg_dest_ZPf0_11568 = nil
-gg_dest_ZPf0_11569 = nil
-gg_dest_ZPf0_11570 = nil
-gg_dest_ZPf0_11571 = nil
-gg_dest_ZPf0_11572 = nil
-gg_dest_ZPf0_11573 = nil
-gg_dest_ZPf0_11574 = nil
-gg_dest_ZPf0_11575 = nil
-gg_dest_ZPf0_11576 = nil
-gg_dest_LOsc_11577 = nil
-gg_dest_YOec_11578 = nil
-gg_dest_YOec_11579 = nil
-gg_dest_YOec_11580 = nil
-gg_dest_NOfp_11581 = nil
-gg_dest_NOft_11582 = nil
-gg_dest_NOft_11583 = nil
-gg_dest_NOfg_11584 = nil
-gg_dest_NOfg_11585 = nil
-gg_dest_LOfl_11586 = nil
-gg_dest_LOfl_11587 = nil
-gg_dest_LOfl_11588 = nil
-gg_dest_LOfl_11589 = nil
-gg_dest_LOfl_11590 = nil
-gg_dest_LOic_11591 = nil
-gg_dest_LOic_11592 = nil
-gg_dest_LOic_11593 = nil
-gg_dest_LOic_11594 = nil
-gg_dest_YOec_11595 = nil
-gg_dest_YOec_11596 = nil
-gg_dest_YOec_11597 = nil
-gg_dest_YOec_11598 = nil
-gg_dest_YOec_11599 = nil
-gg_dest_YOec_11600 = nil
-gg_dest_LOsc_11601 = nil
-gg_dest_LOsc_11602 = nil
-gg_dest_LOsc_11603 = nil
-gg_dest_LOcb_11604 = nil
-gg_dest_LOsh_11605 = nil
-gg_dest_DOtp_11606 = nil
-gg_dest_DOjp_11607 = nil
-gg_dest_LOsp_11608 = nil
-gg_dest_LOsh_11609 = nil
-gg_dest_DOtp_11610 = nil
-gg_dest_LOam_11613 = nil
-gg_dest_LOam_11612 = nil
-gg_dest_LOwp_11611 = nil
-gg_dest_LOwp_11614 = nil
-gg_dest_LOwp_11615 = nil
-gg_dest_LOwp_11616 = nil
-gg_dest_LOwr_11617 = nil
-gg_dest_LOwr_11618 = nil
-gg_dest_LOt1_11619 = nil
-gg_dest_LOt1_11620 = nil
-gg_dest_LOtz_11621 = nil
-gg_dest_LOtz_11622 = nil
-gg_dest_LOtz_11623 = nil
-gg_dest_LOtz_11624 = nil
-gg_dest_LOtz_11625 = nil
-gg_dest_LOtz_11626 = nil
-gg_dest_LOtz_11627 = nil
-gg_dest_LOtz_11628 = nil
-gg_dest_LOtz_11629 = nil
-gg_dest_LOtz_11630 = nil
-gg_dest_LOtz_11631 = nil
-gg_dest_LOss_11632 = nil
-gg_dest_LOss_11633 = nil
-gg_dest_LOss_11634 = nil
-gg_dest_LOss_11635 = nil
-gg_dest_LOss_11636 = nil
-gg_dest_LOss_11637 = nil
-gg_dest_LOsk_11638 = nil
-gg_dest_LOsk_11639 = nil
-gg_dest_LOic_7351 = nil
-gg_dest_ORmk_2143 = nil
-gg_dest_ORmk_2144 = nil
-gg_dest_ORmk_2145 = nil
-gg_dest_OPop_2146 = nil
-gg_dest_OPop_2147 = nil
-gg_dest_OPop_2148 = nil
-gg_dest_OPop_2149 = nil
-gg_dest_OPop_2151 = nil
-gg_dest_OPop_2155 = nil
-gg_dest_OPop_3865 = nil
-gg_dest_NOfg_6281 = nil
-gg_dest_OPop_4924 = nil
-gg_dest_NOfg_6280 = nil
-gg_dest_OPop_4927 = nil
-gg_dest_OPop_4928 = nil
-gg_dest_OPop_4930 = nil
-gg_dest_OPop_4932 = nil
-gg_dest_OPop_4934 = nil
-gg_dest_OPop_4936 = nil
-gg_dest_OPop_5493 = nil
-gg_dest_OPop_5496 = nil
-gg_dest_OPop_5497 = nil
-gg_dest_OPop_5499 = nil
-gg_dest_ORmk_5500 = nil
-gg_dest_ORmk_5502 = nil
-gg_dest_ORmk_5504 = nil
-gg_dest_ORmk_5505 = nil
-gg_dest_AOob_6268 = nil
-gg_dest_AOob_5506 = nil
-gg_dest_AOob_5508 = nil
-gg_dest_AOob_5509 = nil
-gg_dest_AOob_5510 = nil
-gg_dest_AOob_5511 = nil
-gg_dest_AOob_6271 = nil
-gg_dest_AOob_6273 = nil
-gg_dest_KOst_6274 = nil
-gg_dest_KOst_6275 = nil
-gg_dest_KOst_6277 = nil
-gg_dest_NOfg_3843 = nil
-gg_dest_LOic_4923 = nil
-gg_dest_LOic_4926 = nil
-gg_dest_NTtw_0241 = nil
-gg_dest_NTtw_0239 = nil
-gg_dest_NTtw_0213 = nil
-gg_dest_NTtw_0214 = nil
-gg_dest_NTtw_1246 = nil
+gg_dest_LTlt_1091 = nil
+gg_dest_LTlt_1093 = nil
+gg_dest_LTlt_1095 = nil
+gg_dest_LTlt_1096 = nil
+gg_dest_LTlt_1097 = nil
+gg_dest_LTlt_1098 = nil
+gg_dest_LTlt_1100 = nil
+gg_dest_LTlt_1101 = nil
+gg_dest_LTlt_1102 = nil
+gg_dest_LTlt_1103 = nil
+gg_dest_LTlt_1104 = nil
+gg_dest_LTlt_1105 = nil
+gg_dest_LTlt_1106 = nil
+gg_dest_LTlt_1107 = nil
+gg_dest_LTlt_1108 = nil
+gg_dest_LTlt_1109 = nil
+gg_dest_LTlt_1110 = nil
+gg_dest_LTlt_1111 = nil
+gg_dest_LTlt_1112 = nil
+gg_dest_LTlt_1113 = nil
+gg_dest_LTlt_1114 = nil
+gg_dest_LTlt_1115 = nil
+gg_dest_LTlt_1116 = nil
+gg_dest_LTlt_1117 = nil
+gg_dest_LTlt_1118 = nil
+gg_dest_LTlt_1119 = nil
+gg_dest_LTlt_1120 = nil
+gg_dest_LTlt_1121 = nil
+gg_dest_LTlt_1122 = nil
+gg_dest_LTlt_1123 = nil
+gg_dest_LTlt_1124 = nil
+gg_dest_LTlt_1126 = nil
+gg_dest_LTlt_1127 = nil
+gg_dest_LTlt_1128 = nil
+gg_dest_LTlt_1129 = nil
+gg_dest_LTlt_1130 = nil
+gg_dest_LTlt_1131 = nil
+gg_dest_LTlt_2137 = nil
+gg_dest_LTlt_2138 = nil
+gg_dest_LTlt_2141 = nil
+gg_dest_LTlt_2142 = nil
+gg_dest_LTlt_2150 = nil
+gg_dest_LTlt_2152 = nil
+gg_dest_LTlt_2153 = nil
+gg_dest_LTlt_2154 = nil
+gg_dest_LTlt_2156 = nil
+gg_dest_LTlt_2157 = nil
+gg_dest_LTlt_2158 = nil
+gg_dest_LTlt_2159 = nil
+gg_dest_LTlt_2160 = nil
+gg_dest_LTlt_2161 = nil
+gg_dest_LTlt_2162 = nil
+gg_dest_LTlt_2163 = nil
+gg_dest_LTlt_2165 = nil
+gg_dest_LTlt_3844 = nil
+gg_dest_LTlt_3849 = nil
+gg_dest_LTlt_3850 = nil
+gg_dest_LTlt_3851 = nil
+gg_dest_LTlt_3857 = nil
+gg_dest_LTlt_3858 = nil
+gg_dest_LTlt_3859 = nil
+gg_dest_LTlt_3860 = nil
+gg_dest_LTlt_3861 = nil
+gg_dest_LTlt_4258 = nil
+gg_dest_LTlt_4259 = nil
+gg_dest_LTlt_4260 = nil
+gg_dest_LTlt_4261 = nil
+gg_dest_LTlt_4262 = nil
+gg_dest_LTlt_4263 = nil
+gg_dest_LTlt_4264 = nil
+gg_dest_LTlt_4265 = nil
+gg_dest_LTlt_4266 = nil
+gg_dest_FTtw_4267 = nil
+gg_dest_FTtw_4268 = nil
+gg_dest_FTtw_4269 = nil
+gg_dest_FTtw_4270 = nil
+gg_dest_FTtw_4271 = nil
+gg_dest_FTtw_4272 = nil
+gg_dest_FTtw_4273 = nil
+gg_dest_LTlt_11745 = nil
+gg_dest_FTtw_4275 = nil
+gg_dest_LTlt_11744 = nil
+gg_dest_LTlt_11743 = nil
+gg_dest_LTlt_11742 = nil
+gg_dest_LTlt_11741 = nil
+gg_dest_LTlt_11740 = nil
+gg_dest_LTlt_11739 = nil
+gg_dest_LTlt_11738 = nil
+gg_dest_LTlt_11737 = nil
+gg_dest_LTlt_11736 = nil
+gg_dest_LTlt_11735 = nil
+gg_dest_LTlt_11734 = nil
+gg_dest_LTlt_11733 = nil
+gg_dest_LTlt_11732 = nil
+gg_dest_LTlt_11731 = nil
+gg_dest_LTlt_11682 = nil
+gg_dest_LTlt_10550 = nil
+gg_dest_LTlt_10517 = nil
+gg_dest_CTtr_10516 = nil
+gg_dest_CTtr_10515 = nil
+gg_dest_CTtr_10514 = nil
+gg_dest_CTtr_10513 = nil
+gg_dest_CTtr_10512 = nil
+gg_dest_CTtr_10511 = nil
+gg_dest_CTtr_10510 = nil
+gg_dest_CTtr_10509 = nil
+gg_dest_CTtr_10508 = nil
+gg_dest_CTtr_10507 = nil
+gg_dest_CTtr_10506 = nil
+gg_dest_CTtr_10505 = nil
+gg_dest_CTtr_10504 = nil
+gg_dest_CTtr_10503 = nil
+gg_dest_CTtr_10502 = nil
+gg_dest_CTtr_10501 = nil
+gg_dest_CTtr_10500 = nil
+gg_dest_CTtr_10499 = nil
+gg_dest_CTtr_9849 = nil
+gg_dest_CTtr_9848 = nil
+gg_dest_CTtr_9847 = nil
+gg_dest_CTtr_9846 = nil
+gg_dest_CTtr_9845 = nil
+gg_dest_CTtr_9844 = nil
+gg_dest_CTtr_9843 = nil
+gg_dest_CTtr_9842 = nil
+gg_dest_CTtr_9841 = nil
+gg_dest_CTtr_9840 = nil
+gg_dest_CTtr_9839 = nil
+gg_dest_CTtr_9838 = nil
+gg_dest_CTtr_9836 = nil
+gg_dest_CTtr_9835 = nil
+gg_dest_CTtr_9834 = nil
+gg_dest_CTtr_9833 = nil
+gg_dest_CTtr_9832 = nil
+gg_dest_CTtr_9828 = nil
+gg_dest_FTtw_5013 = nil
+gg_dest_CTtr_9409 = nil
+gg_dest_CTtr_9408 = nil
+gg_dest_FTtw_5018 = nil
+gg_dest_FTtw_5017 = nil
+gg_dest_FTtw_5015 = nil
+gg_dest_FTtw_5025 = nil
+gg_dest_FTtw_5029 = nil
+gg_dest_FTtw_5484 = nil
+gg_dest_FTtw_5487 = nil
+gg_dest_FTtw_5488 = nil
+gg_dest_FTtw_5489 = nil
+gg_dest_FTtw_5490 = nil
+gg_dest_FTtw_5491 = nil
+gg_dest_FTtw_5492 = nil
+gg_dest_FTtw_5494 = nil
+gg_dest_FTtw_5495 = nil
+gg_dest_FTtw_5498 = nil
+gg_dest_FTtw_5501 = nil
+gg_dest_FTtw_5503 = nil
+gg_dest_FTtw_5507 = nil
+gg_dest_FTtw_5987 = nil
+gg_dest_FTtw_5988 = nil
+gg_dest_FTtw_5989 = nil
+gg_dest_FTtw_5990 = nil
+gg_dest_FTtw_5991 = nil
+gg_dest_FTtw_5992 = nil
+gg_dest_FTtw_5993 = nil
+gg_dest_FTtw_5994 = nil
+gg_dest_FTtw_5995 = nil
+gg_dest_FTtw_5996 = nil
+gg_dest_FTtw_5997 = nil
+gg_dest_FTtw_5998 = nil
+gg_dest_FTtw_5999 = nil
+gg_dest_FTtw_6000 = nil
+gg_dest_FTtw_6001 = nil
+gg_dest_FTtw_6002 = nil
+gg_dest_FTtw_6003 = nil
+gg_dest_FTtw_6004 = nil
+gg_dest_FTtw_6005 = nil
+gg_dest_FTtw_6006 = nil
+gg_dest_FTtw_6007 = nil
+gg_dest_FTtw_6008 = nil
+gg_dest_FTtw_6009 = nil
+gg_dest_FTtw_6010 = nil
+gg_dest_FTtw_6011 = nil
+gg_dest_FTtw_6012 = nil
+gg_dest_FTtw_6013 = nil
+gg_dest_FTtw_6014 = nil
+gg_dest_FTtw_6015 = nil
+gg_dest_FTtw_6016 = nil
+gg_dest_FTtw_6017 = nil
+gg_dest_FTtw_6018 = nil
+gg_dest_FTtw_6019 = nil
+gg_dest_FTtw_6020 = nil
+gg_dest_FTtw_6021 = nil
+gg_dest_FTtw_6022 = nil
+gg_dest_FTtw_6023 = nil
+gg_dest_FTtw_6024 = nil
+gg_dest_FTtw_6026 = nil
+gg_dest_FTtw_6246 = nil
+gg_dest_FTtw_6248 = nil
+gg_dest_FTtw_6250 = nil
+gg_dest_FTtw_6251 = nil
+gg_dest_NTtw_6252 = nil
+gg_dest_NTtw_6253 = nil
+gg_dest_NTtw_6254 = nil
+gg_dest_NTtw_6255 = nil
+gg_dest_NTtw_6256 = nil
+gg_dest_NTtw_6257 = nil
+gg_dest_NTtw_6258 = nil
+gg_dest_NTtw_6259 = nil
+gg_dest_NTtw_6260 = nil
+gg_dest_NTtw_6261 = nil
+gg_dest_NTtw_6262 = nil
+gg_dest_NTtw_6263 = nil
+gg_dest_NTtw_6265 = nil
+gg_dest_NTtw_6266 = nil
+gg_dest_NTtw_6267 = nil
+gg_dest_NTtw_6270 = nil
+gg_dest_NTtw_6272 = nil
+gg_dest_NTtw_6276 = nil
+gg_dest_NTtw_6278 = nil
+gg_dest_NTtw_6284 = nil
+gg_dest_NTtw_6285 = nil
+gg_dest_NTtw_6979 = nil
+gg_dest_NTtw_6982 = nil
+gg_dest_NTtw_6983 = nil
+gg_dest_NTtw_6984 = nil
+gg_dest_NTtw_6985 = nil
+gg_dest_NTtw_6986 = nil
+gg_dest_NTtw_6987 = nil
+gg_dest_NTtw_6988 = nil
+gg_dest_NTtw_6989 = nil
+gg_dest_NTtw_6990 = nil
+gg_dest_NTtw_6991 = nil
+gg_dest_NTtw_6992 = nil
+gg_dest_NTtw_6993 = nil
+gg_dest_NTtw_6994 = nil
+gg_dest_NTtw_6995 = nil
+gg_dest_NTtw_6996 = nil
+gg_dest_NTtw_6997 = nil
+gg_dest_NTtw_6998 = nil
+gg_dest_NTtw_6999 = nil
+gg_dest_NTtw_7001 = nil
+gg_dest_NTtw_7002 = nil
+gg_dest_NTtw_7003 = nil
+gg_dest_NTtw_7004 = nil
+gg_dest_NTtw_7005 = nil
+gg_dest_NTtw_7350 = nil
+gg_dest_NTtw_7353 = nil
+gg_dest_NTtw_7355 = nil
+gg_dest_NTtw_7356 = nil
+gg_dest_NTtw_7358 = nil
+gg_dest_NTtw_7359 = nil
+gg_dest_NTtw_7361 = nil
+gg_dest_NTtw_7363 = nil
+gg_dest_NTtw_7445 = nil
+gg_dest_NTtw_7446 = nil
+gg_dest_NTtw_7447 = nil
+gg_dest_NTtw_7448 = nil
+gg_dest_NTtw_7450 = nil
+gg_dest_NTtw_7451 = nil
+gg_dest_NTtw_7453 = nil
+gg_dest_NTtw_7454 = nil
+gg_dest_NTtw_7456 = nil
+gg_dest_NTtw_7457 = nil
+gg_dest_NTtw_7459 = nil
+gg_dest_NTtw_7460 = nil
+gg_dest_NTtw_7461 = nil
+gg_dest_NTtw_7462 = nil
+gg_dest_NTtw_7464 = nil
+gg_dest_NTtw_7465 = nil
+gg_dest_NTtw_7711 = nil
+gg_dest_NTtw_7722 = nil
+gg_dest_NTtw_8061 = nil
+gg_dest_NTtw_8062 = nil
+gg_dest_NTtw_8063 = nil
+gg_dest_NTtw_8064 = nil
+gg_dest_NTtw_8065 = nil
+gg_dest_NTtw_8066 = nil
+gg_dest_NTtw_8067 = nil
+gg_dest_NTtw_8068 = nil
+gg_dest_NTtw_8069 = nil
+gg_dest_NTtw_8070 = nil
+gg_dest_NTtw_8071 = nil
+gg_dest_NTtw_8072 = nil
+gg_dest_NTtw_8073 = nil
+gg_dest_NTtw_8074 = nil
+gg_dest_NTtw_8075 = nil
+gg_dest_NTtw_8076 = nil
+gg_dest_NTtw_8077 = nil
+gg_dest_NTtw_8078 = nil
+gg_dest_NTtw_8209 = nil
+gg_dest_NTtw_8210 = nil
+gg_dest_NTtw_8211 = nil
+gg_dest_NTtw_8212 = nil
+gg_dest_NTtw_8213 = nil
+gg_dest_NTtw_8214 = nil
+gg_dest_NTtw_8215 = nil
+gg_dest_NTtw_8216 = nil
+gg_dest_NTtw_8217 = nil
+gg_dest_NTtw_8218 = nil
+gg_dest_NTtw_8219 = nil
+gg_dest_NTtw_8669 = nil
+gg_dest_NTtw_8670 = nil
+gg_dest_NTtw_8671 = nil
+gg_dest_NTtw_8672 = nil
+gg_dest_CTtr_8673 = nil
+gg_dest_CTtr_8674 = nil
+gg_dest_CTtr_8675 = nil
+gg_dest_CTtr_8676 = nil
+gg_dest_CTtr_8677 = nil
+gg_dest_CTtr_8678 = nil
+gg_dest_CTtr_8679 = nil
+gg_dest_CTtr_8680 = nil
+gg_dest_CTtr_8681 = nil
+gg_dest_CTtr_8682 = nil
+gg_dest_CTtr_8683 = nil
+gg_dest_CTtr_8966 = nil
+gg_dest_CTtr_8967 = nil
+gg_dest_CTtr_8968 = nil
+gg_dest_CTtr_8969 = nil
+gg_dest_CTtr_8970 = nil
+gg_dest_CTtr_8971 = nil
+gg_dest_CTtr_8972 = nil
+gg_dest_CTtr_8973 = nil
+gg_dest_CTtr_8974 = nil
+gg_dest_CTtr_8975 = nil
+gg_dest_CTtr_8976 = nil
+gg_dest_CTtr_8977 = nil
+gg_dest_CTtr_8978 = nil
+gg_dest_CTtr_8979 = nil
+gg_dest_CTtr_8980 = nil
+gg_dest_CTtr_8981 = nil
+gg_dest_CTtr_8982 = nil
+gg_dest_CTtr_8983 = nil
+gg_dest_CTtr_8984 = nil
+gg_dest_CTtr_8985 = nil
+gg_dest_CTtr_8986 = nil
+gg_dest_CTtr_8987 = nil
+gg_dest_CTtr_8988 = nil
+gg_dest_CTtr_8989 = nil
+gg_dest_CTtr_8991 = nil
+gg_dest_CTtr_9147 = nil
+gg_dest_CTtr_9148 = nil
+gg_dest_CTtr_9149 = nil
+gg_dest_CTtr_9150 = nil
+gg_dest_CTtr_9151 = nil
+gg_dest_CTtr_9152 = nil
+gg_dest_CTtr_9153 = nil
+gg_dest_CTtr_9154 = nil
+gg_dest_CTtr_9155 = nil
+gg_dest_CTtr_9156 = nil
+gg_dest_CTtr_9157 = nil
+gg_dest_CTtr_9158 = nil
+gg_dest_CTtr_9159 = nil
+gg_dest_CTtr_9160 = nil
+gg_dest_CTtr_9161 = nil
+gg_dest_CTtr_9162 = nil
+gg_dest_CTtr_9163 = nil
+gg_dest_CTtr_9164 = nil
+gg_dest_CTtr_9165 = nil
+gg_dest_CTtr_9166 = nil
+gg_dest_CTtr_9167 = nil
+gg_dest_CTtr_9168 = nil
+gg_dest_CTtr_9392 = nil
+gg_dest_CTtr_9393 = nil
+gg_dest_CTtr_9395 = nil
+gg_dest_CTtr_9396 = nil
+gg_dest_CTtr_9397 = nil
+gg_dest_CTtr_9398 = nil
+gg_dest_CTtr_9399 = nil
+gg_dest_CTtr_9400 = nil
+gg_dest_CTtr_9401 = nil
+gg_dest_CTtr_9402 = nil
+gg_dest_CTtr_9403 = nil
+gg_dest_CTtr_9404 = nil
+gg_dest_CTtr_9405 = nil
+gg_dest_CTtr_9406 = nil
+gg_dest_CTtr_9407 = nil
+gg_dest_FTtw_1085 = nil
+gg_dest_FTtw_1092 = nil
+gg_dest_FTtw_1094 = nil
+gg_dest_FTtw_1099 = nil
+gg_dest_FTtw_1125 = nil
+gg_dest_FTtw_1132 = nil
+gg_dest_FTtw_1133 = nil
+gg_dest_FTtw_1134 = nil
+gg_dest_FTtw_1135 = nil
+gg_dest_FTtw_1136 = nil
+gg_dest_FTtw_2155 = nil
+gg_dest_FTtw_3865 = nil
+gg_dest_FTtw_4274 = nil
+gg_dest_FTtw_4276 = nil
+gg_dest_FTtw_4277 = nil
+gg_dest_FTtw_4278 = nil
+gg_dest_FTtw_4279 = nil
+gg_dest_FTtw_4280 = nil
+gg_dest_FTtw_4281 = nil
+gg_dest_FTtw_4282 = nil
+gg_dest_FTtw_4283 = nil
+gg_dest_FTtw_4284 = nil
+gg_dest_FTtw_4285 = nil
+gg_dest_FTtw_4286 = nil
+gg_dest_FTtw_4287 = nil
+gg_dest_FTtw_4288 = nil
+gg_dest_FTtw_4289 = nil
+gg_dest_FTtw_4290 = nil
+gg_dest_FTtw_4291 = nil
+gg_dest_FTtw_4292 = nil
+gg_dest_FTtw_4293 = nil
+gg_dest_FTtw_4294 = nil
+gg_dest_FTtw_4295 = nil
+gg_dest_FTtw_4296 = nil
+gg_dest_FTtw_4297 = nil
+gg_dest_FTtw_4298 = nil
+gg_dest_FTtw_4299 = nil
+gg_dest_FTtw_4300 = nil
+gg_dest_FTtw_4924 = nil
+gg_dest_FTtw_4928 = nil
+gg_dest_FTtw_4929 = nil
+gg_dest_FTtw_4930 = nil
+gg_dest_FTtw_4931 = nil
+gg_dest_FTtw_4932 = nil
+gg_dest_FTtw_4933 = nil
+gg_dest_FTtw_4934 = nil
+gg_dest_FTtw_4935 = nil
+gg_dest_FTtw_4936 = nil
+gg_dest_FTtw_4937 = nil
+gg_dest_FTtw_4938 = nil
+gg_dest_FTtw_4939 = nil
+gg_dest_FTtw_4940 = nil
+gg_dest_FTtw_4941 = nil
+gg_dest_FTtw_4942 = nil
+gg_dest_FTtw_4943 = nil
+gg_dest_FTtw_4944 = nil
+gg_dest_FTtw_4945 = nil
+gg_dest_FTtw_4946 = nil
+gg_dest_FTtw_4947 = nil
+gg_dest_FTtw_4948 = nil
+gg_dest_FTtw_4949 = nil
+gg_dest_FTtw_4952 = nil
+gg_dest_FTtw_4953 = nil
+gg_dest_FTtw_4955 = nil
+gg_dest_FTtw_5011 = nil
+gg_dest_ORmk_1090 = nil
+gg_dest_ORmk_4320 = nil
+gg_dest_ORmk_5019 = nil
+gg_dest_ORmk_5020 = nil
+gg_dest_ORmk_5021 = nil
+gg_dest_ORmk_5022 = nil
+gg_dest_ORmk_5023 = nil
+gg_dest_ORmk_5024 = nil
+gg_dest_ORmk_5493 = nil
+gg_dest_ORmk_5496 = nil
+gg_dest_ORmk_5497 = nil
+gg_dest_AOob_5499 = nil
+gg_dest_AOob_6282 = nil
+gg_dest_AOob_6283 = nil
+gg_dest_AOob_6287 = nil
+gg_dest_AOob_6548 = nil
+gg_dest_AOob_7351 = nil
+gg_dest_AOob_7693 = nil
+gg_dest_AOob_7706 = nil
+gg_dest_KOst_7712 = nil
+gg_dest_KOst_8208 = nil
+gg_dest_KOst_8668 = nil
+gg_dest_KOst_8684 = nil
+gg_dest_LTlt_8685 = nil
+gg_dest_LTlt_8686 = nil
+gg_dest_LTlt_8687 = nil
+gg_dest_LTlt_11781 = nil
+gg_dest_LTlt_11782 = nil
+gg_dest_LTlt_11783 = nil
+gg_dest_LTlt_11784 = nil
+gg_dest_LTlt_11785 = nil
+gg_dest_LTlt_11786 = nil
 function InitGlobals()
 end
 
@@ -48668,34 +48802,35 @@ function CreateAllDestructables()
     gg_dest_CTtr_6029 = CreateDestructable(1129608306, -960.0, -4288.0, 270.000, 0.838, 0)
     gg_dest_CTtr_6028 = CreateDestructable(1129608306, -768.0, -4160.0, 270.000, 0.893, 4)
     gg_dest_CTtr_6027 = CreateDestructable(1129608306, -704.0, -4288.0, 270.000, 0.974, 4)
-    gg_dest_CTtr_6026 = CreateDestructable(1129608306, -832.0, -4032.0, 270.000, 0.839, 1)
+    gg_dest_LOcg_11501 = CreateDestructable(1280271207, -3648.0, 11328.0, 220.000, 1.000, 0)
     gg_dest_CTtr_6025 = CreateDestructable(1129608306, -896.0, -4160.0, 270.000, 1.192, 4)
-    gg_dest_CTtr_6024 = CreateDestructable(1129608306, -960.0, -4032.0, 270.000, 1.132, 4)
-    gg_dest_CTtr_6023 = CreateDestructable(1129608306, -768.0, -3840.0, 270.000, 0.837, 1)
-    gg_dest_CTtr_6022 = CreateDestructable(1129608306, -704.0, -3968.0, 270.000, 0.999, 2)
+    gg_dest_LOcg_6128 = CreateDestructable(1280271207, -3584.0, 11200.0, 220.000, 1.000, 0)
+    gg_dest_KOst_6279 = CreateDestructable(1263498100, 6144.0, 2432.0, 90.000, 1.038, 0)
+    SetDestructableLife(gg_dest_KOst_6279, 2.55 * GetDestructableLife(gg_dest_KOst_6279))
+    gg_dest_NTtw_11498 = CreateDestructable(1314157687, 7104.0, -2176.0, 270.000, 0.854, 6)
     gg_dest_IOob_1207 = CreateDestructable(1229942626, -18688.0, 19200.0, 297.000, 0.969, 2)
     SetDestructableLife(gg_dest_IOob_1207, 2.55 * GetDestructableLife(gg_dest_IOob_1207))
     gg_dest_IOob_1204 = CreateDestructable(1229942626, -18176.0, 19200.0, 297.000, 0.969, 2)
     SetDestructableLife(gg_dest_IOob_1204, 2.55 * GetDestructableLife(gg_dest_IOob_1204))
     gg_dest_IOob_1201 = CreateDestructable(1229942626, -18176.0, 18688.0, 297.000, 0.969, 2)
     SetDestructableLife(gg_dest_IOob_1201, 2.55 * GetDestructableLife(gg_dest_IOob_1201))
-    gg_dest_CTtr_6021 = CreateDestructable(1129608306, -832.0, -3712.0, 270.000, 0.841, 0)
-    gg_dest_CTtr_6020 = CreateDestructable(1129608306, -896.0, -3840.0, 270.000, 1.101, 0)
-    gg_dest_CTtr_6019 = CreateDestructable(1129608306, -960.0, -3712.0, 270.000, 1.124, 3)
+    gg_dest_NTtw_11497 = CreateDestructable(1314157687, 7424.0, -2304.0, 270.000, 0.980, 0)
+    gg_dest_NTtw_11496 = CreateDestructable(1314157687, 7296.0, -2304.0, 270.000, 0.885, 2)
+    gg_dest_NTtw_11495 = CreateDestructable(1314157687, 8960.0, -2496.0, 270.000, 0.870, 3)
     gg_dest_LOtz_1187 = CreateDestructable(1280275578, -18524.7, 18686.2, 315.000, 0.850, 0)
     SetDestructableLife(gg_dest_LOtz_1187, 2.55 * GetDestructableLife(gg_dest_LOtz_1187))
     gg_dest_LOtz_1178 = CreateDestructable(1280275578, -18336.7, 18688.8, 66.000, 0.825, 0)
     SetDestructableLife(gg_dest_LOtz_1178, 2.55 * GetDestructableLife(gg_dest_LOtz_1178))
-    gg_dest_CTtr_6018 = CreateDestructable(1129608306, -768.0, -3520.0, 270.000, 1.109, 4)
+    gg_dest_NTtw_11494 = CreateDestructable(1314157687, 8832.0, -2560.0, 270.000, 1.057, 3)
     gg_dest_IOob_4715 = CreateDestructable(1229942626, -18688.0, 18688.0, 297.000, 0.969, 2)
     SetDestructableLife(gg_dest_IOob_4715, 2.55 * GetDestructableLife(gg_dest_IOob_4715))
-    gg_dest_CTtr_6017 = CreateDestructable(1129608306, -704.0, -3648.0, 270.000, 1.150, 4)
+    gg_dest_NTtw_11493 = CreateDestructable(1314157687, 8768.0, -2368.0, 270.000, 0.807, 8)
     gg_dest_CTtr_6472 = CreateDestructable(1129608306, -7744.0, -3264.0, 270.000, 0.909, 3)
     gg_dest_LTlt_10584 = CreateDestructable(1280601204, -8192.0, 8256.0, 270.000, 0.890, 1)
-    gg_dest_CTtr_6016 = CreateDestructable(1129608306, -832.0, -3392.0, 270.000, 0.953, 1)
+    gg_dest_NTtw_11492 = CreateDestructable(1314157687, 8704.0, -2496.0, 270.000, 1.141, 9)
     gg_dest_NTtw_5960 = CreateDestructable(1314157687, 1088.0, 1024.0, 270.000, 1.094, 4)
-    gg_dest_CTtr_6015 = CreateDestructable(1129608306, -896.0, -3520.0, 270.000, 0.865, 0)
-    gg_dest_CTtr_6014 = CreateDestructable(1129608306, -960.0, -3392.0, 270.000, 1.044, 4)
+    gg_dest_NTtw_11491 = CreateDestructable(1314157687, 8640.0, -2176.0, 270.000, 0.813, 8)
+    gg_dest_NTtw_11490 = CreateDestructable(1314157687, 8640.0, -2304.0, 270.000, 1.085, 7)
     gg_dest_NTtw_5959 = CreateDestructable(1314157687, 1408.0, 832.0, 270.000, 1.133, 7)
     gg_dest_NTtw_5958 = CreateDestructable(1314157687, 1216.0, 960.0, 270.000, 1.088, 0)
     gg_dest_NTtw_5957 = CreateDestructable(1314157687, 960.0, 640.0, 270.000, 0.939, 4)
@@ -48705,7 +48840,7 @@ function CreateAllDestructables()
     gg_dest_NTtw_5953 = CreateDestructable(1314157687, 1216.0, 384.0, 270.000, 1.102, 6)
     gg_dest_NTtw_5952 = CreateDestructable(1314157687, 1536.0, 576.0, 270.000, 0.849, 6)
     gg_dest_NTtw_5951 = CreateDestructable(1314157687, 1344.0, 256.0, 270.000, 1.175, 4)
-    gg_dest_CTtr_6013 = CreateDestructable(1129608306, -768.0, -3264.0, 270.000, 0.956, 0)
+    gg_dest_NTtw_11489 = CreateDestructable(1314157687, 8576.0, -2432.0, 270.000, 1.008, 4)
     gg_dest_NTtw_5950 = CreateDestructable(1314157687, 1472.0, 320.0, 270.000, 0.890, 9)
     gg_dest_NTtw_5949 = CreateDestructable(1314157687, 1728.0, 384.0, 270.000, 1.191, 9)
     gg_dest_NTtw_5948 = CreateDestructable(1314157687, 1472.0, 128.0, 270.000, 0.823, 2)
@@ -48730,27 +48865,27 @@ function CreateAllDestructables()
     gg_dest_NTtw_5931 = CreateDestructable(1314157687, 2816.0, -576.0, 270.000, 1.052, 6)
     gg_dest_NTtw_5930 = CreateDestructable(1314157687, 2624.0, -448.0, 270.000, 0.900, 4)
     gg_dest_LTlt_10581 = CreateDestructable(1280601204, -8064.0, 8064.0, 270.000, 1.153, 4)
-    gg_dest_CTtr_6012 = CreateDestructable(1129608306, -704.0, -3392.0, 270.000, 1.059, 2)
-    gg_dest_CTtr_6011 = CreateDestructable(1129608306, -832.0, -3136.0, 270.000, 0.977, 1)
-    gg_dest_CTtr_6010 = CreateDestructable(1129608306, -896.0, -3264.0, 270.000, 0.847, 3)
+    gg_dest_NTtw_11488 = CreateDestructable(1314157687, 8512.0, -2240.0, 270.000, 0.917, 0)
+    gg_dest_NTtw_11487 = CreateDestructable(1314157687, 8448.0, -2368.0, 270.000, 0.911, 8)
+    gg_dest_NTtw_11486 = CreateDestructable(1314157687, 8320.0, -2368.0, 270.000, 0.851, 9)
     gg_dest_NTtw_5929 = CreateDestructable(1314157687, 2368.0, -768.0, 270.000, 1.068, 5)
-    gg_dest_CTtr_6009 = CreateDestructable(1129608306, -960.0, -3136.0, 270.000, 0.819, 4)
+    gg_dest_NTtw_11485 = CreateDestructable(1314157687, 8320.0, -1984.0, 270.000, 0.972, 7)
     gg_dest_NTtw_5928 = CreateDestructable(1314157687, 2880.0, -704.0, 270.000, 1.127, 3)
     gg_dest_NTtw_5927 = CreateDestructable(1314157687, 2752.0, -704.0, 270.000, 0.896, 9)
-    gg_dest_CTtr_6008 = CreateDestructable(1129608306, -448.0, -2880.0, 270.000, 1.052, 3)
-    gg_dest_CTtr_6007 = CreateDestructable(1129608306, -768.0, -2944.0, 270.000, 1.174, 1)
-    gg_dest_CTtr_6006 = CreateDestructable(1129608306, -704.0, -3072.0, 270.000, 0.866, 2)
-    gg_dest_CTtr_6005 = CreateDestructable(1129608306, -832.0, -2816.0, 270.000, 0.978, 0)
-    gg_dest_CTtr_6004 = CreateDestructable(1129608306, -896.0, -2944.0, 270.000, 1.033, 2)
-    gg_dest_CTtr_6003 = CreateDestructable(1129608306, -960.0, -2816.0, 270.000, 0.823, 4)
-    gg_dest_CTtr_6002 = CreateDestructable(1129608306, -768.0, -2688.0, 270.000, 0.829, 0)
-    gg_dest_CTtr_6001 = CreateDestructable(1129608306, -704.0, -2816.0, 270.000, 0.968, 2)
-    gg_dest_CTtr_6000 = CreateDestructable(1129608306, -832.0, -2560.0, 270.000, 0.876, 2)
-    gg_dest_CTtr_5999 = CreateDestructable(1129608306, -896.0, -2688.0, 270.000, 1.172, 4)
+    gg_dest_NTtw_11484 = CreateDestructable(1314157687, 8384.0, -2112.0, 270.000, 1.157, 0)
+    gg_dest_NTtw_11483 = CreateDestructable(1314157687, 8320.0, -2240.0, 270.000, 1.084, 9)
+    gg_dest_NTtw_11482 = CreateDestructable(1314157687, 8256.0, -2112.0, 270.000, 1.123, 2)
+    gg_dest_NTtw_11481 = CreateDestructable(1314157687, 8192.0, -2240.0, 270.000, 0.939, 7)
+    gg_dest_NTtw_11480 = CreateDestructable(1314157687, 8064.0, -1920.0, 270.000, 0.959, 0)
+    gg_dest_NTtw_11479 = CreateDestructable(1314157687, 8128.0, -2048.0, 270.000, 0.990, 0)
+    gg_dest_NTtw_11478 = CreateDestructable(1314157687, 8064.0, -2176.0, 270.000, 0.864, 3)
+    gg_dest_NTtw_11477 = CreateDestructable(1314157687, 7936.0, -1920.0, 270.000, 1.077, 1)
+    gg_dest_NTtw_11476 = CreateDestructable(1314157687, 7936.0, -2176.0, 270.000, 1.085, 6)
+    gg_dest_NTtw_11475 = CreateDestructable(1314157687, 7936.0, -2048.0, 270.000, 0.893, 6)
     gg_dest_NTtw_5926 = CreateDestructable(1314157687, 2688.0, -576.0, 270.000, 0.930, 9)
-    gg_dest_CTtr_5998 = CreateDestructable(1129608306, -960.0, -2560.0, 270.000, 0.818, 3)
+    gg_dest_NTtw_11474 = CreateDestructable(1314157687, 7808.0, -1920.0, 270.000, 0.996, 8)
     gg_dest_NTtw_5925 = CreateDestructable(1314157687, 2496.0, -1024.0, 270.000, 1.112, 5)
-    gg_dest_CTtr_5997 = CreateDestructable(1129608306, -768.0, -2368.0, 270.000, 1.050, 1)
+    gg_dest_NTtw_11473 = CreateDestructable(1314157687, 7808.0, -2112.0, 270.000, 1.090, 1)
     gg_dest_NTtw_5924 = CreateDestructable(1314157687, 2432.0, -896.0, 270.000, 1.091, 0)
     gg_dest_NTtw_5923 = CreateDestructable(1314157687, 3008.0, -960.0, 270.000, 0.914, 7)
     gg_dest_NTtw_5922 = CreateDestructable(1314157687, 2752.0, -960.0, 270.000, 0.869, 7)
@@ -48770,16 +48905,16 @@ function CreateAllDestructables()
     gg_dest_NTtw_5908 = CreateDestructable(1314157687, 3136.0, -1600.0, 270.000, 0.975, 7)
     gg_dest_NTtw_5907 = CreateDestructable(1314157687, 3520.0, -1472.0, 270.000, 0.910, 9)
     gg_dest_NTtw_5906 = CreateDestructable(1314157687, 3328.0, -1792.0, 270.000, 0.987, 4)
-    gg_dest_CTtr_5996 = CreateDestructable(1129608306, -704.0, -2496.0, 270.000, 1.111, 0)
-    gg_dest_CTtr_5995 = CreateDestructable(1129608306, -832.0, -2240.0, 270.000, 0.975, 3)
-    gg_dest_CTtr_5994 = CreateDestructable(1129608306, -896.0, -2368.0, 270.000, 1.014, 1)
-    gg_dest_CTtr_5993 = CreateDestructable(1129608306, -960.0, -2240.0, 270.000, 1.133, 0)
-    gg_dest_CTtr_5992 = CreateDestructable(1129608306, -768.0, -2048.0, 270.000, 0.973, 0)
-    gg_dest_CTtr_5991 = CreateDestructable(1129608306, -704.0, -2176.0, 270.000, 1.079, 2)
-    gg_dest_CTtr_5990 = CreateDestructable(1129608306, -832.0, -1920.0, 270.000, 1.055, 0)
-    gg_dest_CTtr_5989 = CreateDestructable(1129608306, -896.0, -2048.0, 270.000, 1.099, 4)
-    gg_dest_CTtr_5988 = CreateDestructable(1129608306, -960.0, -1920.0, 270.000, 0.850, 2)
-    gg_dest_CTtr_5987 = CreateDestructable(1129608306, -704.0, -1856.0, 270.000, 1.131, 3)
+    gg_dest_NTtw_11472 = CreateDestructable(1314157687, 7744.0, -2240.0, 270.000, 0.817, 7)
+    gg_dest_NTtw_11471 = CreateDestructable(1314157687, 7616.0, -1920.0, 270.000, 0.918, 8)
+    gg_dest_NTtw_11470 = CreateDestructable(1314157687, 7680.0, -2048.0, 270.000, 0.841, 3)
+    gg_dest_NTtw_11469 = CreateDestructable(1314157687, 7616.0, -2176.0, 270.000, 1.048, 3)
+    gg_dest_NTtw_11468 = CreateDestructable(1314157687, 7488.0, -1984.0, 270.000, 0.878, 8)
+    gg_dest_NTtw_11467 = CreateDestructable(1314157687, 7424.0, -2112.0, 270.000, 0.814, 6)
+    gg_dest_NTtw_11466 = CreateDestructable(1314157687, 7360.0, -1856.0, 270.000, 0.876, 6)
+    gg_dest_NTtw_11465 = CreateDestructable(1314157687, 7360.0, -1984.0, 270.000, 1.036, 8)
+    gg_dest_NTtw_11464 = CreateDestructable(1314157687, 7296.0, -2112.0, 270.000, 1.080, 4)
+    gg_dest_NTtw_11463 = CreateDestructable(1314157687, 7232.0, -1792.0, 270.000, 0.913, 8)
     gg_dest_CTtr_5986 = CreateDestructable(1129608306, -896.0, -1728.0, 270.000, 1.014, 0)
     gg_dest_CTtr_5985 = CreateDestructable(1129608306, -768.0, -1600.0, 270.000, 0.895, 3)
     gg_dest_CTtr_5984 = CreateDestructable(1129608306, -704.0, -1728.0, 270.000, 0.809, 1)
@@ -49325,12 +49460,10 @@ function CreateAllDestructables()
     gg_dest_CTtr_4634 = CreateDestructable(1129608306, -5504.0, -6016.0, 270.000, 1.011, 2)
     gg_dest_CTtr_10599 = CreateDestructable(1129608306, -8256.0, -2176.0, 270.000, 1.058, 2)
     gg_dest_CTtr_4632 = CreateDestructable(1129608306, -5696.0, -6144.0, 270.000, 0.821, 2)
-    gg_dest_ORmk_2140 = CreateDestructable(1330802027, 5184.0, 3712.0, 270.000, 0.963, 3)
+    gg_dest_ORmk_2140 = CreateDestructable(1330802027, 7168.0, 2560.0, 270.000, 0.963, 3)
     SetDestructableLife(gg_dest_ORmk_2140, 2.55 * GetDestructableLife(gg_dest_ORmk_2140))
-    gg_dest_LOic_6548 = CreateDestructable(1280272739, 5792.0, 3680.0, 145.000, 0.905, 0)
-    SetDestructableLife(gg_dest_LOic_6548, 2.55 * GetDestructableLife(gg_dest_LOic_6548))
-    gg_dest_LOic_6287 = CreateDestructable(1280272739, 5472.0, 3680.0, 243.000, 0.854, 1)
-    SetDestructableLife(gg_dest_LOic_6287, 2.55 * GetDestructableLife(gg_dest_LOic_6287))
+    gg_dest_LTlt_11761 = CreateDestructable(1280601204, -7168.0, 4160.0, 270.000, 0.836, 0)
+    gg_dest_LTlt_11760 = CreateDestructable(1280601204, -6912.0, 3968.0, 270.000, 1.021, 7)
     gg_dest_CTtr_10619 = CreateDestructable(1129608306, -7360.0, -2112.0, 270.000, 1.035, 3)
     gg_dest_CTtr_10618 = CreateDestructable(1129608306, -7360.0, -1984.0, 270.000, 0.852, 3)
     gg_dest_CTtr_10617 = CreateDestructable(1129608306, -7488.0, -1856.0, 270.000, 1.049, 1)
@@ -49484,26 +49617,26 @@ function CreateAllDestructables()
     gg_dest_FTtw_2167 = CreateDestructable(1179939959, 7424.0, 3840.0, 270.000, 1.187, 6)
     gg_dest_CTtr_4477 = CreateDestructable(1129608306, -1344.0, -8448.0, 270.000, 0.815, 0)
     gg_dest_FTtw_2166 = CreateDestructable(1179939959, 7232.0, 3840.0, 270.000, 1.068, 9)
-    gg_dest_FTtw_2165 = CreateDestructable(1179939959, 7104.0, 3840.0, 270.000, 0.812, 9)
+    gg_dest_NTtw_11424 = CreateDestructable(1314157687, 6912.0, -384.0, 270.000, 0.989, 3)
     gg_dest_CTtr_4474 = CreateDestructable(1129608306, -1152.0, -8448.0, 270.000, 0.907, 2)
     gg_dest_FTtw_2164 = CreateDestructable(1179939959, 7040.0, 3968.0, 270.000, 1.005, 2)
-    gg_dest_FTtw_2163 = CreateDestructable(1179939959, 6976.0, 3840.0, 270.000, 0.867, 5)
+    gg_dest_NTtw_11423 = CreateDestructable(1314157687, 6912.0, -192.0, 270.000, 0.964, 9)
     gg_dest_CTtr_4471 = CreateDestructable(1129608306, -1024.0, -8448.0, 270.000, 0.970, 4)
-    gg_dest_FTtw_2162 = CreateDestructable(1179939959, 6784.0, 3968.0, 270.000, 0.923, 5)
-    gg_dest_FTtw_2161 = CreateDestructable(1179939959, 6848.0, 3840.0, 270.000, 0.837, 2)
+    gg_dest_NTtw_11422 = CreateDestructable(1314157687, 7040.0, 0.0, 270.000, 1.150, 8)
+    gg_dest_NTtw_11421 = CreateDestructable(1314157687, 7040.0, -256.0, 270.000, 0.827, 7)
     gg_dest_CTtr_4468 = CreateDestructable(1129608306, -896.0, -8448.0, 270.000, 0.980, 0)
-    gg_dest_FTtw_2160 = CreateDestructable(1179939959, 6720.0, 3840.0, 270.000, 0.845, 0)
-    gg_dest_FTtw_2159 = CreateDestructable(1179939959, 6656.0, 3968.0, 270.000, 1.133, 9)
-    gg_dest_FTtw_2158 = CreateDestructable(1179939959, 6592.0, 3840.0, 270.000, 1.033, 6)
-    gg_dest_FTtw_2157 = CreateDestructable(1179939959, 6464.0, 3840.0, 270.000, 1.110, 5)
+    gg_dest_NTtw_11444 = CreateDestructable(1314157687, 6720.0, -1280.0, 270.000, 1.090, 3)
+    gg_dest_NTtw_11420 = CreateDestructable(1314157687, 7040.0, -128.0, 270.000, 0.894, 0)
+    gg_dest_NTtw_1246 = CreateDestructable(1314157687, 11072.0, 2240.0, 270.000, 1.146, 9)
+    gg_dest_NTtw_0214 = CreateDestructable(1314157687, 11200.0, 1984.0, 270.000, 1.188, 5)
     gg_dest_FTtw_7864 = CreateDestructable(1179939959, 12992.0, 12864.0, 270.000, 0.948, 9)
-    gg_dest_FTtw_2156 = CreateDestructable(1179939959, 6272.0, 3968.0, 270.000, 1.024, 1)
+    gg_dest_NTtw_11443 = CreateDestructable(1314157687, 6592.0, -1280.0, 270.000, 0.856, 2)
     gg_dest_NObt_11730 = CreateDestructable(1313825396, 6488.1, -1679.6, 236.000, 1.157, 0)
     SetDestructableLife(gg_dest_NObt_11730, 2.55 * GetDestructableLife(gg_dest_NObt_11730))
     gg_dest_LTlt_3535 = CreateDestructable(1280601204, -768.0, 12672.0, 270.000, 1.010, 6)
-    gg_dest_FTtw_2154 = CreateDestructable(1179939959, 6336.0, 3840.0, 270.000, 1.137, 0)
-    gg_dest_FTtw_2153 = CreateDestructable(1179939959, 6144.0, 3968.0, 270.000, 0.842, 6)
-    gg_dest_FTtw_2152 = CreateDestructable(1179939959, 6144.0, 3840.0, 270.000, 1.170, 8)
+    gg_dest_NTtw_0213 = CreateDestructable(1314157687, 11200.0, 1856.0, 270.000, 0.884, 9)
+    gg_dest_NTtw_0239 = CreateDestructable(1314157687, 11328.0, 1920.0, 270.000, 1.061, 6)
+    gg_dest_NTtw_0241 = CreateDestructable(1314157687, 11328.0, 2048.0, 270.000, 1.132, 6)
     gg_dest_AObd_11711 = CreateDestructable(1095721572, -9365.8, 10960.1, 203.000, 0.860, 0)
     SetDestructableLife(gg_dest_AObd_11711, 2.55 * GetDestructableLife(gg_dest_AObd_11711))
     gg_dest_FTtw_7861 = CreateDestructable(1179939959, 11840.0, 12608.0, 270.000, 0.946, 3)
@@ -49541,7 +49674,7 @@ function CreateAllDestructables()
     gg_dest_CTtr_4423 = CreateDestructable(1129608306, -3456.0, -8320.0, 270.000, 1.031, 1)
     gg_dest_CTtr_4422 = CreateDestructable(1129608306, -3584.0, -8320.0, 270.000, 0.909, 4)
     gg_dest_CTtr_4421 = CreateDestructable(1129608306, -3328.0, -8448.0, 270.000, 0.895, 1)
-    gg_dest_FTtw_2150 = CreateDestructable(1179939959, 5952.0, 3968.0, 270.000, 1.109, 7)
+    gg_dest_NTtw_11442 = CreateDestructable(1314157687, 6720.0, -1152.0, 270.000, 1.123, 8)
     gg_dest_AObd_11712 = CreateDestructable(1095721572, -11428.6, 12929.6, 233.000, 1.125, 0)
     SetDestructableLife(gg_dest_AObd_11712, 2.55 * GetDestructableLife(gg_dest_AObd_11712))
     gg_dest_CTtr_4418 = CreateDestructable(1129608306, -3520.0, -8448.0, 270.000, 1.097, 1)
@@ -49564,10 +49697,10 @@ function CreateAllDestructables()
     SetDestructableLife(gg_dest_AObd_11709, 2.55 * GetDestructableLife(gg_dest_AObd_11709))
     gg_dest_CTtr_4406 = CreateDestructable(1129608306, -4224.0, -8384.0, 270.000, 1.115, 4)
     gg_dest_CTtr_4405 = CreateDestructable(1129608306, -4160.0, -8512.0, 270.000, 0.811, 2)
-    gg_dest_FTtw_2142 = CreateDestructable(1179939959, 5184.0, 3968.0, 270.000, 0.877, 8)
+    gg_dest_NTtw_11441 = CreateDestructable(1314157687, 6592.0, -1152.0, 270.000, 0.963, 7)
     gg_dest_CTtr_4403 = CreateDestructable(1129608306, -4416.0, -8384.0, 270.000, 1.043, 2)
     gg_dest_CTtr_4402 = CreateDestructable(1129608306, -4352.0, -8512.0, 270.000, 0.886, 0)
-    gg_dest_FTtw_2141 = CreateDestructable(1179939959, 5056.0, 3904.0, 270.000, 1.160, 6)
+    gg_dest_NTtw_11440 = CreateDestructable(1314157687, 6528.0, -960.0, 270.000, 0.997, 5)
     gg_dest_CTtr_4400 = CreateDestructable(1129608306, -4608.0, -8384.0, 270.000, 1.180, 3)
     gg_dest_CTtr_4399 = CreateDestructable(1129608306, -4544.0, -8512.0, 270.000, 0.876, 0)
     gg_dest_NObt_11729 = CreateDestructable(1313825396, 9118.2, -288.4, 144.000, 1.070, 0)
@@ -49575,9 +49708,9 @@ function CreateAllDestructables()
     gg_dest_CTtr_4397 = CreateDestructable(1129608306, -4672.0, -8512.0, 270.000, 1.162, 1)
     gg_dest_FTtw_2139 = CreateDestructable(1179939959, 4864.0, 4032.0, 270.000, 1.018, 8)
     gg_dest_CTtr_4395 = CreateDestructable(1129608306, -4800.0, -8512.0, 270.000, 0.887, 3)
-    gg_dest_FTtw_2138 = CreateDestructable(1179939959, 4928.0, 3904.0, 270.000, 1.151, 2)
+    gg_dest_NTtw_11439 = CreateDestructable(1314157687, 6784.0, -1024.0, 270.000, 1.193, 0)
     gg_dest_CTtr_4393 = CreateDestructable(1129608306, -4928.0, -8512.0, 270.000, 0.808, 2)
-    gg_dest_FTtw_2137 = CreateDestructable(1179939959, 4992.0, 3776.0, 270.000, 1.003, 7)
+    gg_dest_NTtw_11438 = CreateDestructable(1314157687, 6656.0, -1024.0, 270.000, 1.175, 1)
     gg_dest_FTtw_2136 = CreateDestructable(1179939959, 4736.0, 4032.0, 270.000, 1.018, 8)
     gg_dest_FTtw_2135 = CreateDestructable(1179939959, 3840.0, 3520.0, 270.000, 1.089, 6)
     gg_dest_CTtr_4389 = CreateDestructable(1129608306, -5440.0, -8256.0, 270.000, 1.067, 1)
@@ -49997,7 +50130,8 @@ function CreateAllDestructables()
     gg_dest_NTtw_5030 = CreateDestructable(1314157687, 704.0, -4672.0, 270.000, 1.191, 2)
     gg_dest_FTtw_2069 = CreateDestructable(1179939959, 3264.0, 4736.0, 270.000, 0.999, 7)
     gg_dest_CTtr_2448 = CreateDestructable(1129608306, -12800.0, -6272.0, 270.000, 1.069, 0)
-    gg_dest_NTtw_5029 = CreateDestructable(1314157687, 448.0, -3904.0, 270.000, 1.009, 4)
+    gg_dest_ZPfw_11510 = CreateDestructable(1515218551, -3336.5, 10885.1, 124.000, 0.908, 1)
+    SetDestructableLife(gg_dest_ZPfw_11510, 2.55 * GetDestructableLife(gg_dest_ZPfw_11510))
     gg_dest_CTtr_2447 = CreateDestructable(1129608306, -12864.0, -6400.0, 270.000, 1.098, 2)
     gg_dest_NTtw_5028 = CreateDestructable(1314157687, 832.0, -4288.0, 270.000, 0.960, 9)
     gg_dest_LWw0_0037 = CreateDestructable(1280800560, 11194.1, 2675.9, 180.000, 1.434, 0)
@@ -50022,21 +50156,36 @@ function CreateAllDestructables()
     gg_dest_FTtw_2064 = CreateDestructable(1179939959, 3136.0, 5376.0, 270.000, 1.055, 7)
     gg_dest_NTtw_5027 = CreateDestructable(1314157687, 768.0, -4416.0, 270.000, 1.130, 8)
     gg_dest_NTtw_5026 = CreateDestructable(1314157687, 704.0, -4224.0, 270.000, 0.830, 6)
-    gg_dest_NTtw_5025 = CreateDestructable(1314157687, 704.0, -4032.0, 270.000, 1.024, 4)
-    gg_dest_NTtw_5024 = CreateDestructable(1314157687, 448.0, -4032.0, 270.000, 1.078, 5)
-    gg_dest_NTtw_5023 = CreateDestructable(1314157687, 768.0, -3712.0, 270.000, 1.047, 5)
-    gg_dest_NTtw_5022 = CreateDestructable(1314157687, 704.0, -3840.0, 270.000, 1.186, 2)
-    gg_dest_NTtw_5021 = CreateDestructable(1314157687, 768.0, -3456.0, 270.000, 1.029, 3)
-    gg_dest_NTtw_5020 = CreateDestructable(1314157687, 704.0, -3584.0, 270.000, 1.079, 2)
-    gg_dest_NTtw_5019 = CreateDestructable(1314157687, 768.0, -3200.0, 270.000, 0.831, 8)
-    gg_dest_NTtw_5018 = CreateDestructable(1314157687, 704.0, -3328.0, 270.000, 1.024, 9)
-    gg_dest_NTtw_5017 = CreateDestructable(1314157687, 768.0, -2944.0, 270.000, 0.966, 6)
-    gg_dest_NTtw_5016 = CreateDestructable(1314157687, 704.0, -3072.0, 270.000, 1.192, 9)
-    gg_dest_NTtw_5015 = CreateDestructable(1314157687, 704.0, -2752.0, 270.000, 1.009, 9)
-    gg_dest_NTtw_5014 = CreateDestructable(1314157687, 704.0, -2560.0, 270.000, 1.147, 2)
-    gg_dest_NTtw_5013 = CreateDestructable(1314157687, 704.0, -2304.0, 270.000, 1.085, 0)
-    gg_dest_NTtw_5012 = CreateDestructable(1314157687, 320.0, -1984.0, 270.000, 0.900, 9)
-    gg_dest_NTtw_5011 = CreateDestructable(1314157687, 448.0, -1984.0, 270.000, 1.179, 1)
+    gg_dest_ZPfw_11509 = CreateDestructable(1515218551, -3352.7, 10811.1, 322.000, 1.139, 2)
+    SetDestructableLife(gg_dest_ZPfw_11509, 2.55 * GetDestructableLife(gg_dest_ZPfw_11509))
+    gg_dest_ZPfw_11511 = CreateDestructable(1515218551, -4880.5, 10521.5, 321.000, 1.007, 1)
+    SetDestructableLife(gg_dest_ZPfw_11511, 2.55 * GetDestructableLife(gg_dest_ZPfw_11511))
+    gg_dest_ZPfw_11512 = CreateDestructable(1515218551, -4869.9, 10607.7, 344.000, 1.152, 1)
+    SetDestructableLife(gg_dest_ZPfw_11512, 2.55 * GetDestructableLife(gg_dest_ZPfw_11512))
+    gg_dest_ZPfw_11513 = CreateDestructable(1515218551, -4902.6, 10685.4, 261.000, 1.074, 3)
+    SetDestructableLife(gg_dest_ZPfw_11513, 2.55 * GetDestructableLife(gg_dest_ZPfw_11513))
+    gg_dest_ZPfw_11514 = CreateDestructable(1515218551, -4791.0, 10634.3, 23.000, 0.855, 2)
+    SetDestructableLife(gg_dest_ZPfw_11514, 2.55 * GetDestructableLife(gg_dest_ZPfw_11514))
+    gg_dest_ZPfw_11515 = CreateDestructable(1515218551, -4542.3, 10072.9, 290.000, 1.163, 4)
+    SetDestructableLife(gg_dest_ZPfw_11515, 2.55 * GetDestructableLife(gg_dest_ZPfw_11515))
+    gg_dest_LPwh_11558 = CreateDestructable(1280341864, 3531.4, 10928.8, 37.000, 1.103, 0)
+    SetDestructableLife(gg_dest_LPwh_11558, 2.55 * GetDestructableLife(gg_dest_LPwh_11558))
+    gg_dest_LPwh_11557 = CreateDestructable(1280341864, 3479.0, 11021.7, 208.000, 0.806, 0)
+    SetDestructableLife(gg_dest_LPwh_11557, 2.55 * GetDestructableLife(gg_dest_LPwh_11557))
+    gg_dest_LPwh_11556 = CreateDestructable(1280341864, 3492.1, 11103.3, 258.000, 0.892, 0)
+    SetDestructableLife(gg_dest_LPwh_11556, 2.55 * GetDestructableLife(gg_dest_LPwh_11556))
+    gg_dest_LPwh_11555 = CreateDestructable(1280341864, 3369.4, 11098.5, 235.000, 0.831, 0)
+    SetDestructableLife(gg_dest_LPwh_11555, 2.55 * GetDestructableLife(gg_dest_LPwh_11555))
+    gg_dest_LPwh_11554 = CreateDestructable(1280341864, 3382.5, 11048.9, 111.000, 1.033, 0)
+    SetDestructableLife(gg_dest_LPwh_11554, 2.55 * GetDestructableLife(gg_dest_LPwh_11554))
+    gg_dest_LPwh_11553 = CreateDestructable(1280341864, 3405.4, 10970.5, 86.000, 1.071, 0)
+    SetDestructableLife(gg_dest_LPwh_11553, 2.55 * GetDestructableLife(gg_dest_LPwh_11553))
+    gg_dest_ZPfw_11516 = CreateDestructable(1515218551, -4452.6, 10025.3, 109.000, 1.195, 0)
+    SetDestructableLife(gg_dest_ZPfw_11516, 2.55 * GetDestructableLife(gg_dest_ZPfw_11516))
+    gg_dest_ZPfw_11517 = CreateDestructable(1515218551, -4427.4, 10109.8, 301.000, 1.016, 2)
+    SetDestructableLife(gg_dest_ZPfw_11517, 2.55 * GetDestructableLife(gg_dest_ZPfw_11517))
+    gg_dest_LPrs_11518 = CreateDestructable(1280340595, -3982.0, 9966.8, 240.000, 0.985, 0)
+    SetDestructableLife(gg_dest_LPrs_11518, 2.55 * GetDestructableLife(gg_dest_LPrs_11518))
     gg_dest_NTtw_5010 = CreateDestructable(1314157687, 832.0, -1920.0, 270.000, 1.078, 6)
     gg_dest_NTtw_5009 = CreateDestructable(1314157687, 768.0, -2048.0, 270.000, 1.181, 8)
     gg_dest_NTtw_5008 = CreateDestructable(1314157687, 704.0, -1920.0, 270.000, 0.862, 7)
@@ -50149,24 +50298,25 @@ function CreateAllDestructables()
     gg_dest_CTtr_2374 = CreateDestructable(1129608306, -10880.0, -5888.0, 270.000, 0.869, 0)
     gg_dest_CTtr_2373 = CreateDestructable(1129608306, -10944.0, -6016.0, 270.000, 1.141, 4)
     gg_dest_NTtw_4956 = CreateDestructable(1314157687, 7296.0, 2240.0, 270.000, 1.021, 7)
-    gg_dest_NTtw_4955 = CreateDestructable(1314157687, 7360.0, 2624.0, 270.000, 1.168, 6)
+    gg_dest_NTtw_11419 = CreateDestructable(1314157687, 7168.0, 64.0, 270.000, 1.092, 8)
     gg_dest_NTtw_4954 = CreateDestructable(1314157687, 7360.0, 2368.0, 270.000, 0.858, 0)
-    gg_dest_NTtw_4953 = CreateDestructable(1314157687, 7232.0, 2624.0, 270.000, 0.809, 3)
-    gg_dest_NTtw_4952 = CreateDestructable(1314157687, 7104.0, 2624.0, 270.000, 1.125, 8)
+    gg_dest_NTtw_11418 = CreateDestructable(1314157687, 7168.0, -192.0, 270.000, 1.166, 6)
+    gg_dest_NTtw_11417 = CreateDestructable(1314157687, 7168.0, -64.0, 270.000, 1.012, 2)
     gg_dest_NTtw_4951 = CreateDestructable(1314157687, 7168.0, 2368.0, 270.000, 0.985, 3)
     gg_dest_NTtw_4950 = CreateDestructable(1314157687, 7104.0, 2240.0, 270.000, 1.172, 6)
-    gg_dest_NTtw_4949 = CreateDestructable(1314157687, 7040.0, 2368.0, 270.000, 1.165, 5)
-    gg_dest_NTtw_4948 = CreateDestructable(1314157687, 6976.0, 2240.0, 270.000, 0.899, 3)
-    gg_dest_NTtw_4947 = CreateDestructable(1314157687, 6528.0, 2176.0, 270.000, 0.902, 5)
-    gg_dest_NTtw_4946 = CreateDestructable(1314157687, 6848.0, 2304.0, 270.000, 0.895, 7)
-    gg_dest_NTtw_4945 = CreateDestructable(1314157687, 6784.0, 2176.0, 270.000, 0.841, 1)
-    gg_dest_NTtw_4944 = CreateDestructable(1314157687, 6720.0, 2304.0, 270.000, 1.195, 3)
-    gg_dest_NTtw_4943 = CreateDestructable(1314157687, 6656.0, 2176.0, 270.000, 1.044, 9)
-    gg_dest_NTtw_4942 = CreateDestructable(1314157687, 6592.0, 2304.0, 270.000, 0.891, 0)
-    gg_dest_NTtw_4941 = CreateDestructable(1314157687, 6464.0, 2304.0, 270.000, 0.927, 8)
+    gg_dest_NTtw_11416 = CreateDestructable(1314157687, 7296.0, -192.0, 270.000, 1.062, 1)
+    gg_dest_NTtw_11415 = CreateDestructable(1314157687, 7360.0, 128.0, 270.000, 0.854, 5)
+    gg_dest_NTtw_11414 = CreateDestructable(1314157687, 7296.0, 0.0, 270.000, 0.939, 2)
+    gg_dest_NTtw_11413 = CreateDestructable(1314157687, 7424.0, -128.0, 270.000, 0.977, 4)
+    gg_dest_NTtw_11412 = CreateDestructable(1314157687, 7488.0, 128.0, 270.000, 1.140, 1)
+    gg_dest_NTtw_11411 = CreateDestructable(1314157687, 7424.0, 0.0, 270.000, 1.024, 4)
+    gg_dest_NTtw_11410 = CreateDestructable(1314157687, 7552.0, -128.0, 270.000, 1.136, 2)
+    gg_dest_LTlt_11769 = CreateDestructable(1280601204, -5696.0, 4416.0, 270.000, 0.868, 8)
+    gg_dest_LTlt_11770 = CreateDestructable(1280601204, -5760.0, 4544.0, 270.000, 0.918, 8)
     gg_dest_CTtr_2372 = CreateDestructable(1129608306, -11328.0, -6272.0, 270.000, 1.074, 0)
-    gg_dest_NTtw_4940 = CreateDestructable(1314157687, 6400.0, 2176.0, 270.000, 0.834, 6)
-    gg_dest_NTtw_4939 = CreateDestructable(1314157687, 6336.0, 2304.0, 270.000, 0.969, 0)
+    gg_dest_NTtw_11409 = CreateDestructable(1314157687, 7616.0, 128.0, 270.000, 0.870, 9)
+    gg_dest_NOfg_3843 = CreateDestructable(1313826407, -7424.0, 6592.0, 270.000, 1.091, 0)
+    SetDestructableLife(gg_dest_NOfg_3843, 2.55 * GetDestructableLife(gg_dest_NOfg_3843))
     gg_dest_CTtr_2371 = CreateDestructable(1129608306, -11264.0, -6400.0, 270.000, 1.044, 4)
     gg_dest_CTtr_2370 = CreateDestructable(1129608306, -11456.0, -6272.0, 270.000, 1.068, 4)
     gg_dest_CTtr_2369 = CreateDestructable(1129608306, -11392.0, -6400.0, 270.000, 1.133, 4)
@@ -50314,20 +50464,21 @@ function CreateAllDestructables()
     gg_dest_CTtr_2235 = CreateDestructable(1129608306, -11648.0, -3328.0, 270.000, 1.101, 4)
     gg_dest_FTtw_2039 = CreateDestructable(1179939959, 4032.0, 6208.0, 270.000, 1.140, 5)
     gg_dest_CTtr_2233 = CreateDestructable(1129608306, -11712.0, -3200.0, 270.000, 1.140, 3)
-    gg_dest_NTtw_4938 = CreateDestructable(1314157687, 6272.0, 2176.0, 270.000, 0.939, 8)
-    gg_dest_NTtw_4937 = CreateDestructable(1314157687, 6208.0, 2304.0, 270.000, 0.841, 7)
+    gg_dest_NTtw_11408 = CreateDestructable(1314157687, 7552.0, 0.0, 270.000, 0.814, 7)
+    gg_dest_KOst_6277 = CreateDestructable(1263498100, 6144.0, 3712.0, 270.000, 1.038, 0)
+    SetDestructableLife(gg_dest_KOst_6277, 2.55 * GetDestructableLife(gg_dest_KOst_6277))
     gg_dest_NObt_11699 = CreateDestructable(1313825396, -6364.6, -5628.5, 249.000, 0.946, 0)
     SetDestructableLife(gg_dest_NObt_11699, 2.55 * GetDestructableLife(gg_dest_NObt_11699))
-    gg_dest_NTtw_4935 = CreateDestructable(1314157687, 6016.0, 2176.0, 270.000, 0.895, 7)
+    gg_dest_NTtw_11407 = CreateDestructable(1314157687, 7680.0, -128.0, 270.000, 0.882, 4)
     gg_dest_AObd_11698 = CreateDestructable(1095721572, -9032.1, -1242.0, 337.000, 1.073, 0)
     SetDestructableLife(gg_dest_AObd_11698, 2.55 * GetDestructableLife(gg_dest_AObd_11698))
-    gg_dest_NTtw_4933 = CreateDestructable(1314157687, 5888.0, 2176.0, 270.000, 1.009, 1)
+    gg_dest_NTtw_11406 = CreateDestructable(1314157687, 7744.0, 128.0, 270.000, 0.863, 7)
     gg_dest_AObd_11697 = CreateDestructable(1095721572, -4226.1, -6247.7, 155.000, 0.951, 0)
     SetDestructableLife(gg_dest_AObd_11697, 2.55 * GetDestructableLife(gg_dest_AObd_11697))
-    gg_dest_NTtw_4931 = CreateDestructable(1314157687, 5760.0, 2176.0, 270.000, 1.140, 5)
+    gg_dest_NTtw_11405 = CreateDestructable(1314157687, 7680.0, 0.0, 270.000, 1.045, 2)
     gg_dest_AObd_11696 = CreateDestructable(1095721572, -12826.4, -8754.9, 353.000, 1.106, 0)
     SetDestructableLife(gg_dest_AObd_11696, 2.55 * GetDestructableLife(gg_dest_AObd_11696))
-    gg_dest_NTtw_4929 = CreateDestructable(1314157687, 5312.0, 2176.0, 270.000, 0.978, 9)
+    gg_dest_NTtw_11404 = CreateDestructable(1314157687, 7872.0, 64.0, 270.000, 0.816, 2)
     gg_dest_AObd_11695 = CreateDestructable(1095721572, -11709.1, -9649.6, 196.000, 0.933, 0)
     SetDestructableLife(gg_dest_AObd_11695, 2.55 * GetDestructableLife(gg_dest_AObd_11695))
     gg_dest_AObd_11687 = CreateDestructable(1095721572, -7462.8, -550.9, 336.000, 1.094, 0)
@@ -50873,8 +51024,8 @@ function CreateAllDestructables()
     gg_dest_LTlt_5429 = CreateDestructable(1280601204, -9088.0, 3840.0, 270.000, 0.870, 9)
     gg_dest_LWw0_0109 = CreateDestructable(1280800560, -10977.6, 2797.1, 0.000, 1.434, 0)
     SetDestructableLife(gg_dest_LWw0_0109, 2.55 * GetDestructableLife(gg_dest_LWw0_0109))
-    gg_dest_CTtr_6261 = CreateDestructable(1129608306, -6528.0, 2368.0, 270.000, 0.896, 4)
-    gg_dest_CTtr_6260 = CreateDestructable(1129608306, -6592.0, 2240.0, 270.000, 0.899, 0)
+    gg_dest_NTtw_11325 = CreateDestructable(1314157687, 3712.0, -3648.0, 270.000, 1.103, 4)
+    gg_dest_NTtw_11326 = CreateDestructable(1314157687, 3840.0, -3776.0, 270.000, 1.153, 3)
     gg_dest_LTlt_5443 = CreateDestructable(1280601204, -8704.0, 3776.0, 270.000, 0.875, 2)
     gg_dest_LTlt_5445 = CreateDestructable(1280601204, -8576.0, 3776.0, 270.000, 0.846, 0)
     gg_dest_CTtr_6221 = CreateDestructable(1129608306, -8640.0, 2304.0, 270.000, 0.991, 1)
@@ -50933,7 +51084,7 @@ function CreateAllDestructables()
     gg_dest_NTtw_3905 = CreateDestructable(1314157687, 9408.0, 832.0, 270.000, 0.947, 4)
     gg_dest_NTtw_3904 = CreateDestructable(1314157687, 9216.0, 960.0, 270.000, 0.840, 4)
     gg_dest_FTtw_1442 = CreateDestructable(1179939959, 8576.0, 4096.0, 270.000, 1.184, 7)
-    gg_dest_FTtw_7448 = CreateDestructable(1179939959, 5440.0, 4096.0, 270.000, 0.950, 3)
+    gg_dest_NTtw_11437 = CreateDestructable(1314157687, 6784.0, -896.0, 270.000, 0.901, 7)
     gg_dest_NTtw_3901 = CreateDestructable(1314157687, 9664.0, 1216.0, 270.000, 1.007, 7)
     gg_dest_NTtw_3900 = CreateDestructable(1314157687, 9408.0, 960.0, 270.000, 0.964, 0)
     gg_dest_NTtw_3899 = CreateDestructable(1314157687, 9216.0, 1088.0, 270.000, 1.118, 5)
@@ -50955,11 +51106,11 @@ function CreateAllDestructables()
     gg_dest_FTtw_7437 = CreateDestructable(1179939959, 4352.0, 4096.0, 270.000, 1.141, 0)
     gg_dest_NTtw_3882 = CreateDestructable(1314157687, 9664.0, 2112.0, 270.000, 0.995, 4)
     gg_dest_FTtw_0060 = CreateDestructable(1179939959, 9280.0, 9664.0, 270.000, 1.134, 3)
-    gg_dest_FTtw_7447 = CreateDestructable(1179939959, 5504.0, 3968.0, 270.000, 0.870, 8)
+    gg_dest_NTtw_11436 = CreateDestructable(1314157687, 6656.0, -896.0, 270.000, 0.993, 6)
     gg_dest_NTtw_3879 = CreateDestructable(1314157687, 9664.0, 2240.0, 270.000, 0.941, 8)
     gg_dest_FTtw_8579 = CreateDestructable(1179939959, 11328.0, 5184.0, 270.000, 1.066, 3)
-    gg_dest_FTtw_7446 = CreateDestructable(1179939959, 5312.0, 4096.0, 270.000, 0.852, 0)
-    gg_dest_FTtw_7445 = CreateDestructable(1179939959, 5376.0, 3968.0, 270.000, 1.049, 3)
+    gg_dest_NTtw_11403 = CreateDestructable(1314157687, 7808.0, -64.0, 270.000, 1.072, 0)
+    gg_dest_NTtw_11435 = CreateDestructable(1314157687, 6592.0, -704.0, 270.000, 0.834, 5)
     gg_dest_FTtw_7444 = CreateDestructable(1179939959, 5184.0, 4096.0, 270.000, 1.007, 4)
     gg_dest_FTtw_1444 = CreateDestructable(1179939959, 8384.0, 3968.0, 270.000, 1.173, 7)
     gg_dest_FTtw_7853 = CreateDestructable(1179939959, 11648.0, 12224.0, 270.000, 1.135, 7)
@@ -51023,13 +51174,13 @@ function CreateAllDestructables()
     gg_dest_FTtw_7430 = CreateDestructable(1179939959, 3712.0, 4096.0, 270.000, 0.947, 7)
     gg_dest_FTtw_7429 = CreateDestructable(1179939959, 3584.0, 4096.0, 270.000, 0.806, 5)
     gg_dest_NTtw_3818 = CreateDestructable(1314157687, 11456.0, 832.0, 270.000, 1.095, 4)
-    gg_dest_FTtw_7459 = CreateDestructable(1179939959, 6400.0, 3968.0, 270.000, 0.803, 8)
+    gg_dest_NTtw_11434 = CreateDestructable(1314157687, 6848.0, -768.0, 270.000, 0.898, 3)
     gg_dest_FTtw_1348 = CreateDestructable(1179939959, 8704.0, 4096.0, 270.000, 0.853, 8)
     gg_dest_NTtw_3815 = CreateDestructable(1314157687, 11648.0, 384.0, 270.000, 0.810, 8)
     gg_dest_FTtw_2000 = CreateDestructable(1179939959, 6336.0, 7872.0, 270.000, 1.191, 8)
     gg_dest_NTtw_3813 = CreateDestructable(1314157687, 11520.0, 384.0, 270.000, 0.920, 1)
     gg_dest_NTtw_3812 = CreateDestructable(1314157687, 11456.0, 512.0, 270.000, 1.173, 8)
-    gg_dest_FTtw_7457 = CreateDestructable(1179939959, 6144.0, 4096.0, 270.000, 0.950, 5)
+    gg_dest_NTtw_11433 = CreateDestructable(1314157687, 6720.0, -768.0, 270.000, 0.986, 1)
     gg_dest_LWw0_0055 = CreateDestructable(1280800560, 11212.0, 3281.1, 180.000, 1.434, 0)
     SetDestructableLife(gg_dest_LWw0_0055, 2.55 * GetDestructableLife(gg_dest_LWw0_0055))
     gg_dest_NTtw_3809 = CreateDestructable(1314157687, 11072.0, 64.0, 270.000, 0.917, 4)
@@ -51558,14 +51709,14 @@ function CreateAllDestructables()
     gg_dest_NTtw_2598 = CreateDestructable(1314157687, 10240.0, -9792.0, 270.000, 0.863, 6)
     gg_dest_CTtr_6110 = CreateDestructable(1129608306, -9152.0, -3136.0, 270.000, 0.946, 1)
     gg_dest_CTtr_6230 = CreateDestructable(1129608306, -8192.0, 2176.0, 270.000, 0.993, 1)
-    gg_dest_CTtr_6251 = CreateDestructable(1129608306, -7040.0, 2368.0, 270.000, 0.961, 0)
+    gg_dest_NTtw_11327 = CreateDestructable(1314157687, 3840.0, -3584.0, 270.000, 0.967, 4)
     gg_dest_CTtr_6109 = CreateDestructable(1129608306, -9280.0, -3136.0, 270.000, 0.888, 2)
     gg_dest_CTtr_6108 = CreateDestructable(1129608306, -9600.0, -3008.0, 270.000, 1.118, 4)
     gg_dest_CTtr_6107 = CreateDestructable(1129608306, -9536.0, -3136.0, 270.000, 0.984, 4)
-    gg_dest_CTtr_6252 = CreateDestructable(1129608306, -6976.0, 2240.0, 270.000, 0.865, 2)
+    gg_dest_NTtw_11328 = CreateDestructable(1314157687, 3968.0, -3712.0, 270.000, 0.855, 3)
     gg_dest_CTtr_6106 = CreateDestructable(1129608306, -9664.0, -3136.0, 270.000, 0.980, 1)
-    gg_dest_CTtr_6253 = CreateDestructable(1129608306, -6912.0, 2368.0, 270.000, 1.060, 0)
-    gg_dest_CTtr_6254 = CreateDestructable(1129608306, -6912.0, 2112.0, 270.000, 1.042, 1)
+    gg_dest_NTtw_11329 = CreateDestructable(1314157687, 3968.0, -3520.0, 270.000, 1.190, 9)
+    gg_dest_NTtw_11330 = CreateDestructable(1314157687, 4096.0, -3648.0, 270.000, 0.847, 4)
     gg_dest_CTtr_6105 = CreateDestructable(1129608306, -9152.0, -3264.0, 270.000, 0.861, 2)
     gg_dest_CTtr_6104 = CreateDestructable(1129608306, -9088.0, -3392.0, 270.000, 0.928, 2)
     gg_dest_NTtw_2597 = CreateDestructable(1314157687, 10304.0, -9920.0, 270.000, 1.073, 3)
@@ -51574,10 +51725,10 @@ function CreateAllDestructables()
     gg_dest_NTtw_3657 = CreateDestructable(1314157687, 11520.0, -4416.0, 270.000, 1.122, 2)
     gg_dest_FTtw_1976 = CreateDestructable(1179939959, 7552.0, 9088.0, 270.000, 0.903, 4)
     gg_dest_FTtw_1975 = CreateDestructable(1179939959, 7744.0, 9216.0, 270.000, 1.142, 7)
-    gg_dest_CTtr_6255 = CreateDestructable(1129608306, -6848.0, 2240.0, 270.000, 0.819, 3)
+    gg_dest_NTtw_11331 = CreateDestructable(1314157687, 4096.0, -3776.0, 270.000, 0.929, 5)
     gg_dest_CTtr_6102 = CreateDestructable(1129608306, -9216.0, -3392.0, 270.000, 0.811, 2)
     gg_dest_CTtr_6101 = CreateDestructable(1129608306, -9536.0, -3264.0, 270.000, 1.096, 0)
-    gg_dest_CTtr_6256 = CreateDestructable(1129608306, -6784.0, 2368.0, 270.000, 0.903, 3)
+    gg_dest_NTtw_11332 = CreateDestructable(1314157687, 4096.0, -3520.0, 270.000, 0.822, 3)
     gg_dest_CTtr_6100 = CreateDestructable(1129608306, -9600.0, -3392.0, 270.000, 1.126, 3)
     gg_dest_CTtr_6099 = CreateDestructable(1129608306, -9152.0, -3520.0, 270.000, 0.846, 2)
     gg_dest_CTtr_6098 = CreateDestructable(1129608306, -9088.0, -3648.0, 270.000, 0.890, 0)
@@ -51587,10 +51738,10 @@ function CreateAllDestructables()
     gg_dest_CTtr_6095 = CreateDestructable(1129608306, -9536.0, -3520.0, 270.000, 1.164, 4)
     gg_dest_CTtr_6050 = CreateDestructable(1129608306, -896.0, -5568.0, 270.000, 1.183, 1)
     gg_dest_FTtw_1798 = CreateDestructable(1179939959, 7616.0, 11456.0, 270.000, 1.090, 9)
-    gg_dest_CTtr_6257 = CreateDestructable(1129608306, -6720.0, 2240.0, 270.000, 1.176, 3)
-    gg_dest_CTtr_6258 = CreateDestructable(1129608306, -6656.0, 2368.0, 270.000, 1.163, 3)
+    gg_dest_NTtw_11333 = CreateDestructable(1314157687, 4224.0, -3648.0, 270.000, 1.113, 1)
+    gg_dest_NTtw_11334 = CreateDestructable(1314157687, 4224.0, -3776.0, 270.000, 1.171, 2)
     gg_dest_NTtw_2594 = CreateDestructable(1314157687, 10112.0, -9920.0, 270.000, 1.148, 0)
-    gg_dest_CTtr_6259 = CreateDestructable(1129608306, -6656.0, 2112.0, 270.000, 0.867, 3)
+    gg_dest_NTtw_5115 = CreateDestructable(1314157687, 8768.0, -1280.0, 270.000, 0.830, 1)
     gg_dest_CTtr_6094 = CreateDestructable(1129608306, -9600.0, -3648.0, 270.000, 0.990, 4)
     gg_dest_CTtr_6093 = CreateDestructable(1129608306, -9152.0, -3776.0, 270.000, 0.817, 3)
     gg_dest_CTtr_6049 = CreateDestructable(1129608306, -960.0, -5440.0, 270.000, 0.963, 2)
@@ -51903,7 +52054,7 @@ function CreateAllDestructables()
     gg_dest_NTtw_1635 = CreateDestructable(1314157687, 8384.0, -7872.0, 270.000, 0.891, 0)
     gg_dest_NTtw_1628 = CreateDestructable(1314157687, 7872.0, -7744.0, 270.000, 0.948, 6)
     gg_dest_CTtr_6245 = CreateDestructable(1129608306, -7360.0, 2240.0, 270.000, 1.144, 3)
-    gg_dest_CTtr_6246 = CreateDestructable(1129608306, -7296.0, 2368.0, 270.000, 0.980, 3)
+    gg_dest_NTtw_11370 = CreateDestructable(1314157687, 5184.0, -5056.0, 270.000, 1.104, 0)
     gg_dest_NTtw_1629 = CreateDestructable(1314157687, 8064.0, -7872.0, 270.000, 1.005, 5)
     gg_dest_NTtw_1630 = CreateDestructable(1314157687, 8064.0, -7744.0, 270.000, 1.006, 7)
     gg_dest_NTtw_1631 = CreateDestructable(1314157687, 8256.0, -7872.0, 270.000, 1.165, 2)
@@ -51912,7 +52063,7 @@ function CreateAllDestructables()
     gg_dest_NTtw_1634 = CreateDestructable(1314157687, 8192.0, -7744.0, 270.000, 0.932, 8)
     gg_dest_CTtr_6247 = CreateDestructable(1129608306, -7232.0, 2240.0, 270.000, 0.809, 1)
     gg_dest_CTtr_6091 = CreateDestructable(1129608306, -9280.0, -3776.0, 270.000, 0.824, 4)
-    gg_dest_CTtr_6248 = CreateDestructable(1129608306, -7168.0, 2368.0, 270.000, 1.114, 0)
+    gg_dest_NTtw_11369 = CreateDestructable(1314157687, 5248.0, -4928.0, 270.000, 0.853, 2)
     gg_dest_NTtw_1615 = CreateDestructable(1314157687, 8896.0, -8384.0, 270.000, 1.162, 2)
     gg_dest_CTtr_6090 = CreateDestructable(1129608306, -9216.0, -3904.0, 270.000, 0.915, 1)
     gg_dest_NTtw_1616 = CreateDestructable(1314157687, 8832.0, -8256.0, 270.000, 0.979, 2)
@@ -51920,7 +52071,7 @@ function CreateAllDestructables()
     gg_dest_NTtw_1617 = CreateDestructable(1314157687, 7424.0, -8512.0, 270.000, 1.110, 3)
     gg_dest_NTtw_1618 = CreateDestructable(1314157687, 7488.0, -7872.0, 270.000, 0.920, 3)
     gg_dest_CTtr_6249 = CreateDestructable(1129608306, -7168.0, 2112.0, 270.000, 0.924, 2)
-    gg_dest_CTtr_6250 = CreateDestructable(1129608306, -7104.0, 2240.0, 270.000, 1.086, 1)
+    gg_dest_NTtw_11368 = CreateDestructable(1314157687, 5120.0, -4928.0, 270.000, 1.189, 7)
     gg_dest_NTtw_1619 = CreateDestructable(1314157687, 7296.0, -7872.0, 270.000, 0.979, 6)
     gg_dest_CTtr_6235 = CreateDestructable(1129608306, -7936.0, 2176.0, 270.000, 0.953, 4)
     gg_dest_NTtw_1620 = CreateDestructable(1314157687, 7168.0, -7808.0, 270.000, 1.114, 7)
@@ -52302,8 +52453,8 @@ function CreateAllDestructables()
     gg_dest_LOrc_11650 = CreateDestructable(1280275043, 3392.0, -4704.0, 270.000, 1.018, 0)
     SetDestructableLife(gg_dest_LOrc_11650, 2.55 * GetDestructableLife(gg_dest_LOrc_11650))
     gg_dest_CTtr_6286 = CreateDestructable(1129608306, -5120.0, 2240.0, 270.000, 1.021, 3)
-    gg_dest_CTtr_6285 = CreateDestructable(1129608306, -5376.0, 1984.0, 270.000, 1.182, 1)
-    gg_dest_CTtr_6284 = CreateDestructable(1129608306, -5312.0, 2112.0, 270.000, 0.892, 0)
+    gg_dest_NTtw_11317 = CreateDestructable(1314157687, 3328.0, -3904.0, 270.000, 0.889, 1)
+    gg_dest_NTtw_11316 = CreateDestructable(1314157687, 3328.0, -4032.0, 270.000, 0.959, 6)
     gg_dest_LOlp_11666 = CreateDestructable(1280273520, -8352.0, -1888.0, 189.000, 1.150, 1)
     SetDestructableLife(gg_dest_LOlp_11666, 2.55 * GetDestructableLife(gg_dest_LOlp_11666))
     gg_dest_LOlp_11665 = CreateDestructable(1280273520, -8928.0, -1696.0, 112.000, 0.919, 1)
@@ -52314,29 +52465,29 @@ function CreateAllDestructables()
     SetDestructableLife(gg_dest_LOss_11662, 2.55 * GetDestructableLife(gg_dest_LOss_11662))
     gg_dest_LOss_11661 = CreateDestructable(1280275315, -4640.0, -5472.0, 228.000, 0.847, 4)
     SetDestructableLife(gg_dest_LOss_11661, 2.55 * GetDestructableLife(gg_dest_LOss_11661))
-    gg_dest_CTtr_6278 = CreateDestructable(1129608306, -5760.0, 1984.0, 270.000, 0.821, 2)
+    gg_dest_NTtw_11367 = CreateDestructable(1314157687, 5248.0, -4800.0, 270.000, 1.133, 0)
     gg_dest_LOfl_11660 = CreateDestructable(1280271980, 4933.1, -5704.9, 193.000, 1.058, 0)
     SetDestructableLife(gg_dest_LOfl_11660, 2.55 * GetDestructableLife(gg_dest_LOfl_11660))
-    gg_dest_CTtr_6276 = CreateDestructable(1129608306, -5440.0, 2112.0, 270.000, 1.065, 3)
+    gg_dest_NTtw_11366 = CreateDestructable(1314157687, 5120.0, -4800.0, 270.000, 0.858, 4)
     gg_dest_LOlp_11664 = CreateDestructable(1280273520, -9184.0, -2080.0, 306.000, 0.880, 0)
     SetDestructableLife(gg_dest_LOlp_11664, 2.55 * GetDestructableLife(gg_dest_LOlp_11664))
     gg_dest_AOsr_11648 = CreateDestructable(1095725938, 4112.1, -3917.6, 134.000, 0.847, 2)
     SetDestructableLife(gg_dest_AOsr_11648, 2.55 * GetDestructableLife(gg_dest_AOsr_11648))
     gg_dest_LOfl_11659 = CreateDestructable(1280271980, 4955.5, -6021.7, 282.000, 0.837, 0)
     SetDestructableLife(gg_dest_LOfl_11659, 2.55 * GetDestructableLife(gg_dest_LOfl_11659))
-    gg_dest_CTtr_6272 = CreateDestructable(1129608306, -5824.0, 2176.0, 270.000, 0.993, 1)
+    gg_dest_NTtw_11365 = CreateDestructable(1314157687, 5248.0, -4672.0, 270.000, 0.977, 0)
     gg_dest_LOfl_11658 = CreateDestructable(1280271980, 4782.3, -5290.4, 191.000, 1.028, 0)
     SetDestructableLife(gg_dest_LOfl_11658, 2.55 * GetDestructableLife(gg_dest_LOfl_11658))
-    gg_dest_CTtr_6270 = CreateDestructable(1129608306, -5952.0, 2176.0, 270.000, 1.163, 2)
+    gg_dest_NTtw_11364 = CreateDestructable(1314157687, 5120.0, -4672.0, 270.000, 1.005, 6)
     gg_dest_FTtw_7623 = CreateDestructable(1179939959, 7232.0, 12032.0, 270.000, 1.019, 6)
     gg_dest_AOsr_11647 = CreateDestructable(1095725938, 3878.5, -4035.5, 286.000, 1.159, 2)
     SetDestructableLife(gg_dest_AOsr_11647, 2.55 * GetDestructableLife(gg_dest_AOsr_11647))
-    gg_dest_CTtr_6267 = CreateDestructable(1129608306, -6144.0, 2176.0, 270.000, 0.983, 1)
-    gg_dest_CTtr_6266 = CreateDestructable(1129608306, -6208.0, 2304.0, 270.000, 1.050, 3)
-    gg_dest_CTtr_6265 = CreateDestructable(1129608306, -6272.0, 2176.0, 270.000, 1.063, 3)
+    gg_dest_NTtw_11363 = CreateDestructable(1314157687, 5312.0, -4480.0, 270.000, 0.977, 6)
+    gg_dest_NTtw_11362 = CreateDestructable(1314157687, 5184.0, -4544.0, 270.000, 0.837, 1)
+    gg_dest_NTtw_11361 = CreateDestructable(1314157687, 5056.0, -4544.0, 270.000, 0.893, 8)
     gg_dest_FTtw_7622 = CreateDestructable(1179939959, 7104.0, 12032.0, 270.000, 1.126, 2)
-    gg_dest_CTtr_6263 = CreateDestructable(1129608306, -6400.0, 2368.0, 270.000, 0.831, 0)
-    gg_dest_CTtr_6262 = CreateDestructable(1129608306, -6464.0, 2240.0, 270.000, 0.938, 3)
+    gg_dest_NTtw_11360 = CreateDestructable(1314157687, 5248.0, -4288.0, 270.000, 1.011, 1)
+    gg_dest_NTtw_11359 = CreateDestructable(1314157687, 5184.0, -4416.0, 270.000, 0.936, 2)
     gg_dest_FTtw_0000 = CreateDestructable(1179939959, 9664.0, 12096.0, 270.000, 1.063, 4)
     gg_dest_FTtw_0001 = CreateDestructable(1179939959, 9792.0, 11776.0, 270.000, 1.066, 4)
     gg_dest_FTtw_0002 = CreateDestructable(1179939959, 9856.0, 11904.0, 270.000, 0.894, 4)
@@ -52532,15 +52683,15 @@ function CreateAllDestructables()
     gg_dest_FTtw_7467 = CreateDestructable(1179939959, 6912.0, 4096.0, 270.000, 1.070, 1)
     gg_dest_FTtw_1346 = CreateDestructable(1179939959, 8640.0, 3968.0, 270.000, 0.914, 6)
     gg_dest_FTtw_0228 = CreateDestructable(1179939959, 10944.0, 4736.0, 270.000, 1.091, 1)
-    gg_dest_FTtw_7456 = CreateDestructable(1179939959, 6016.0, 4096.0, 270.000, 0.965, 3)
+    gg_dest_NTtw_11432 = CreateDestructable(1314157687, 6656.0, -576.0, 270.000, 1.022, 7)
     gg_dest_FTtw_0230 = CreateDestructable(1179939959, 11328.0, 4736.0, 270.000, 0.980, 8)
     gg_dest_FTtw_1956 = CreateDestructable(1179939959, 11072.0, 5056.0, 270.000, 1.063, 4)
     gg_dest_FTtw_1952 = CreateDestructable(1179939959, 11072.0, 4800.0, 270.000, 0.840, 0)
     gg_dest_FTtw_1951 = CreateDestructable(1179939959, 11008.0, 4928.0, 270.000, 1.108, 0)
     gg_dest_FTtw_1349 = CreateDestructable(1179939959, 8512.0, 3968.0, 270.000, 0.840, 5)
-    gg_dest_FTtw_7465 = CreateDestructable(1179939959, 6720.0, 4096.0, 270.000, 1.186, 5)
+    gg_dest_NTtw_11402 = CreateDestructable(1314157687, 7936.0, -192.0, 270.000, 1.113, 9)
     gg_dest_FTtw_8577 = CreateDestructable(1179939959, 11200.0, 3840.0, 270.000, 1.054, 5)
-    gg_dest_FTtw_7464 = CreateDestructable(1179939959, 6592.0, 4096.0, 270.000, 0.950, 6)
+    gg_dest_NTtw_11401 = CreateDestructable(1314157687, 8000.0, 64.0, 270.000, 0.934, 4)
     gg_dest_FTtw_1347 = CreateDestructable(1179939959, 8704.0, 3840.0, 270.000, 1.157, 3)
     gg_dest_FTtw_0067 = CreateDestructable(1179939959, 9408.0, 9216.0, 270.000, 0.853, 0)
     gg_dest_LTlt_0246 = CreateDestructable(1280601204, -11648.0, 3712.0, 270.000, 1.108, 4)
@@ -52557,15 +52708,15 @@ function CreateAllDestructables()
     gg_dest_FTtw_1959 = CreateDestructable(1179939959, 8256.0, 9728.0, 270.000, 1.107, 8)
     gg_dest_FTtw_7767 = CreateDestructable(1179939959, 8960.0, 6208.0, 270.000, 1.169, 9)
     gg_dest_FTtw_0253 = CreateDestructable(1179939959, 11456.0, 4736.0, 270.000, 1.175, 1)
-    gg_dest_FTtw_7462 = CreateDestructable(1179939959, 6464.0, 4096.0, 270.000, 1.002, 7)
+    gg_dest_NTtw_11400 = CreateDestructable(1314157687, 7936.0, -64.0, 270.000, 0.952, 1)
     gg_dest_FTtw_0908 = CreateDestructable(1179939959, 8128.0, 9792.0, 270.000, 1.048, 9)
-    gg_dest_FTtw_7461 = CreateDestructable(1179939959, 6528.0, 3968.0, 270.000, 0.861, 0)
-    gg_dest_FTtw_7454 = CreateDestructable(1179939959, 5888.0, 4096.0, 270.000, 1.172, 0)
+    gg_dest_NTtw_11399 = CreateDestructable(1314157687, 8128.0, 0.0, 270.000, 0.930, 2)
+    gg_dest_NTtw_11431 = CreateDestructable(1314157687, 6912.0, -640.0, 270.000, 1.164, 9)
     gg_dest_FTtw_0258 = CreateDestructable(1179939959, 11200.0, 5120.0, 270.000, 1.050, 0)
-    gg_dest_FTtw_7453 = CreateDestructable(1179939959, 5824.0, 3968.0, 270.000, 1.192, 7)
+    gg_dest_NTtw_11430 = CreateDestructable(1314157687, 6784.0, -640.0, 270.000, 0.973, 2)
     gg_dest_FTtw_1353 = CreateDestructable(1179939959, 8576.0, 3840.0, 270.000, 1.141, 7)
-    gg_dest_FTtw_7451 = CreateDestructable(1179939959, 5696.0, 4096.0, 270.000, 1.037, 7)
-    gg_dest_FTtw_7450 = CreateDestructable(1179939959, 5568.0, 4096.0, 270.000, 0.922, 8)
+    gg_dest_NTtw_11429 = CreateDestructable(1314157687, 6720.0, -448.0, 270.000, 0.974, 2)
+    gg_dest_NTtw_11428 = CreateDestructable(1314157687, 6976.0, -512.0, 270.000, 0.875, 6)
     gg_dest_FTtw_0263 = CreateDestructable(1179939959, 10944.0, 5504.0, 270.000, 0.982, 5)
     gg_dest_NTtw_3282 = CreateDestructable(1314157687, 11520.0, 2496.0, 270.000, 1.139, 9)
     gg_dest_FTtw_0265 = CreateDestructable(1179939959, 11200.0, 5504.0, 270.000, 1.032, 2)
@@ -53376,58 +53527,89 @@ function CreateAllDestructables()
     gg_dest_FTtw_1082 = CreateDestructable(1179939959, 896.0, 10880.0, 270.000, 0.985, 2)
     gg_dest_FTtw_1083 = CreateDestructable(1179939959, 960.0, 11008.0, 270.000, 0.882, 8)
     gg_dest_FTtw_1084 = CreateDestructable(1179939959, 896.0, 11136.0, 270.000, 1.119, 3)
-    gg_dest_FTtw_1085 = CreateDestructable(1179939959, 768.0, 10432.0, 270.000, 0.937, 4)
+    gg_dest_ORmk_2151 = CreateDestructable(1330802027, -896.0, 9472.0, 270.000, 1.057, 4)
+    SetDestructableLife(gg_dest_ORmk_2151, 2.55 * GetDestructableLife(gg_dest_ORmk_2151))
     gg_dest_FTtw_1086 = CreateDestructable(1179939959, 704.0, 10560.0, 270.000, 0.855, 6)
     gg_dest_FTtw_1087 = CreateDestructable(1179939959, 832.0, 10560.0, 270.000, 0.971, 8)
     gg_dest_FTtw_1088 = CreateDestructable(1179939959, 896.0, 10688.0, 270.000, 0.962, 5)
     gg_dest_FTtw_1089 = CreateDestructable(1179939959, 960.0, 10560.0, 270.000, 0.846, 5)
-    gg_dest_FTtw_1090 = CreateDestructable(1179939959, 1024.0, 10688.0, 270.000, 0.841, 1)
-    gg_dest_FTtw_1091 = CreateDestructable(1179939959, 704.0, 10304.0, 270.000, 0.860, 9)
-    gg_dest_FTtw_1092 = CreateDestructable(1179939959, 896.0, 10432.0, 270.000, 1.190, 1)
-    gg_dest_FTtw_1093 = CreateDestructable(1179939959, 704.0, 10176.0, 270.000, 1.081, 2)
-    gg_dest_FTtw_1094 = CreateDestructable(1179939959, 896.0, 10304.0, 270.000, 0.947, 8)
-    gg_dest_FTtw_1095 = CreateDestructable(1179939959, 704.0, 9856.0, 270.000, 1.152, 9)
-    gg_dest_FTtw_1096 = CreateDestructable(1179939959, 768.0, 9984.0, 270.000, 1.100, 2)
-    gg_dest_FTtw_1097 = CreateDestructable(1179939959, 832.0, 10112.0, 270.000, 1.053, 8)
-    gg_dest_FTtw_1098 = CreateDestructable(1179939959, 896.0, 9984.0, 270.000, 0.966, 5)
-    gg_dest_FTtw_1099 = CreateDestructable(1179939959, 960.0, 10112.0, 270.000, 1.008, 9)
-    gg_dest_FTtw_1100 = CreateDestructable(1179939959, 704.0, 9536.0, 270.000, 1.074, 2)
-    gg_dest_FTtw_1101 = CreateDestructable(1179939959, 768.0, 9664.0, 270.000, 1.021, 9)
-    gg_dest_FTtw_1102 = CreateDestructable(1179939959, 832.0, 9792.0, 270.000, 1.108, 0)
-    gg_dest_FTtw_1103 = CreateDestructable(1179939959, 896.0, 9664.0, 270.000, 0.947, 6)
-    gg_dest_FTtw_1104 = CreateDestructable(1179939959, 960.0, 9792.0, 270.000, 0.816, 4)
-    gg_dest_FTtw_1105 = CreateDestructable(1179939959, 704.0, 9280.0, 270.000, 1.181, 8)
-    gg_dest_FTtw_1106 = CreateDestructable(1179939959, 768.0, 9408.0, 270.000, 1.006, 5)
-    gg_dest_FTtw_1107 = CreateDestructable(1179939959, 832.0, 9536.0, 270.000, 0.875, 4)
-    gg_dest_FTtw_1108 = CreateDestructable(1179939959, 896.0, 9408.0, 270.000, 1.186, 5)
-    gg_dest_FTtw_1109 = CreateDestructable(1179939959, 960.0, 9536.0, 270.000, 1.139, 1)
-    gg_dest_FTtw_1110 = CreateDestructable(1179939959, 704.0, 9024.0, 270.000, 0.958, 6)
-    gg_dest_FTtw_1111 = CreateDestructable(1179939959, 768.0, 9152.0, 270.000, 0.926, 9)
-    gg_dest_FTtw_1112 = CreateDestructable(1179939959, 832.0, 9280.0, 270.000, 0.924, 5)
-    gg_dest_FTtw_1113 = CreateDestructable(1179939959, 896.0, 9152.0, 270.000, 1.130, 8)
-    gg_dest_FTtw_1114 = CreateDestructable(1179939959, 960.0, 9280.0, 270.000, 1.031, 5)
-    gg_dest_FTtw_1115 = CreateDestructable(1179939959, 448.0, 9920.0, 270.000, 1.057, 0)
-    gg_dest_FTtw_1116 = CreateDestructable(1179939959, 704.0, 8896.0, 270.000, 0.878, 6)
-    gg_dest_FTtw_1117 = CreateDestructable(1179939959, 896.0, 9024.0, 270.000, 0.847, 9)
-    gg_dest_FTtw_1118 = CreateDestructable(1179939959, 704.0, 8576.0, 270.000, 1.025, 3)
-    gg_dest_FTtw_1119 = CreateDestructable(1179939959, 768.0, 8704.0, 270.000, 0.810, 9)
-    gg_dest_FTtw_1120 = CreateDestructable(1179939959, 832.0, 8832.0, 270.000, 0.829, 1)
-    gg_dest_FTtw_1121 = CreateDestructable(1179939959, 896.0, 8704.0, 270.000, 1.107, 6)
-    gg_dest_FTtw_1122 = CreateDestructable(1179939959, 960.0, 8832.0, 270.000, 0.943, 8)
-    gg_dest_FTtw_1123 = CreateDestructable(1179939959, 704.0, 8448.0, 270.000, 0.960, 2)
-    gg_dest_FTtw_1124 = CreateDestructable(1179939959, 896.0, 8576.0, 270.000, 0.939, 9)
-    gg_dest_FTtw_1125 = CreateDestructable(1179939959, 704.0, 8064.0, 270.000, 0.893, 1)
-    gg_dest_FTtw_1126 = CreateDestructable(1179939959, 704.0, 8320.0, 270.000, 0.843, 8)
-    gg_dest_FTtw_1127 = CreateDestructable(1179939959, 768.0, 8192.0, 270.000, 1.052, 4)
-    gg_dest_FTtw_1128 = CreateDestructable(1179939959, 832.0, 8320.0, 270.000, 0.998, 4)
-    gg_dest_FTtw_1129 = CreateDestructable(1179939959, 896.0, 8192.0, 270.000, 0.973, 0)
-    gg_dest_FTtw_1130 = CreateDestructable(1179939959, 960.0, 8320.0, 270.000, 0.839, 8)
-    gg_dest_FTtw_1131 = CreateDestructable(1179939959, 896.0, 8448.0, 270.000, 0.840, 1)
-    gg_dest_FTtw_1132 = CreateDestructable(1179939959, 704.0, 7808.0, 270.000, 0.834, 9)
-    gg_dest_FTtw_1133 = CreateDestructable(1179939959, 768.0, 7936.0, 270.000, 0.999, 6)
-    gg_dest_FTtw_1134 = CreateDestructable(1179939959, 832.0, 8064.0, 270.000, 0.969, 8)
-    gg_dest_FTtw_1135 = CreateDestructable(1179939959, 896.0, 7936.0, 270.000, 0.843, 1)
-    gg_dest_FTtw_1136 = CreateDestructable(1179939959, 960.0, 8064.0, 270.000, 1.121, 9)
+    gg_dest_FTtw_5014 = CreateDestructable(1179939959, 832.0, 10432.0, 270.000, 0.894, 9)
+    gg_dest_LPwh_11559 = CreateDestructable(1280341864, 3505.2, 10940.0, 122.000, 0.864, 0)
+    SetDestructableLife(gg_dest_LPwh_11559, 2.55 * GetDestructableLife(gg_dest_LPwh_11559))
+    gg_dest_ORmk_2149 = CreateDestructable(1330802027, 6144.0, 4032.0, 270.000, 1.057, 4)
+    SetDestructableLife(gg_dest_ORmk_2149, 2.55 * GetDestructableLife(gg_dest_ORmk_2149))
+    gg_dest_LPwh_11560 = CreateDestructable(1280341864, 3588.7, 11007.3, 9.000, 0.819, 0)
+    SetDestructableLife(gg_dest_LPwh_11560, 2.55 * GetDestructableLife(gg_dest_LPwh_11560))
+    gg_dest_ORmk_2148 = CreateDestructable(1330802027, 5504.0, 2496.0, 270.000, 1.000, 0)
+    SetDestructableLife(gg_dest_ORmk_2148, 2.55 * GetDestructableLife(gg_dest_ORmk_2148))
+    gg_dest_LPwh_11561 = CreateDestructable(1280341864, 3549.4, 11077.7, 172.000, 0.888, 0)
+    SetDestructableLife(gg_dest_LPwh_11561, 2.55 * GetDestructableLife(gg_dest_LPwh_11561))
+    gg_dest_LRrk_11562 = CreateDestructable(1280471659, 4736.0, 10304.0, 338.000, 0.938, 9)
+    SetDestructableLife(gg_dest_LRrk_11562, 2.55 * GetDestructableLife(gg_dest_LRrk_11562))
+    gg_dest_LRrk_11563 = CreateDestructable(1280471659, 4096.0, 9984.0, 268.000, 1.194, 9)
+    SetDestructableLife(gg_dest_LRrk_11563, 2.55 * GetDestructableLife(gg_dest_LRrk_11563))
+    gg_dest_LOwp_11614 = CreateDestructable(1280276336, 7200.0, -480.0, 345.000, 1.217, 0)
+    SetDestructableLife(gg_dest_LOwp_11614, 2.55 * GetDestructableLife(gg_dest_LOwp_11614))
+    gg_dest_ORmk_2147 = CreateDestructable(1330802027, 4160.0, 3392.0, 270.000, 1.000, 0)
+    SetDestructableLife(gg_dest_ORmk_2147, 2.55 * GetDestructableLife(gg_dest_ORmk_2147))
+    gg_dest_ORmk_5504 = CreateDestructable(1330802027, -7296.0, 2560.0, 270.000, 1.000, 0)
+    SetDestructableLife(gg_dest_ORmk_5504, 2.55 * GetDestructableLife(gg_dest_ORmk_5504))
+    gg_dest_ORmk_5502 = CreateDestructable(1330802027, -5312.0, 3584.0, 270.000, 0.997, 4)
+    SetDestructableLife(gg_dest_ORmk_5502, 2.55 * GetDestructableLife(gg_dest_ORmk_5502))
+    gg_dest_LOwp_11611 = CreateDestructable(1280276336, 8160.0, -416.0, 38.000, 1.859, 0)
+    SetDestructableLife(gg_dest_LOwp_11611, 2.55 * GetDestructableLife(gg_dest_LOwp_11611))
+    gg_dest_LOam_11612 = CreateDestructable(1280270701, 3552.0, 11296.0, 320.000, 1.726, 0)
+    SetDestructableLife(gg_dest_LOam_11612, 2.55 * GetDestructableLife(gg_dest_LOam_11612))
+    gg_dest_LOam_11613 = CreateDestructable(1280270701, 3744.0, 11424.0, 288.000, 1.723, 0)
+    SetDestructableLife(gg_dest_LOam_11613, 2.55 * GetDestructableLife(gg_dest_LOam_11613))
+    gg_dest_ORmk_5500 = CreateDestructable(1330802027, -6720.0, 3904.0, 270.000, 1.171, 0)
+    SetDestructableLife(gg_dest_ORmk_5500, 2.55 * GetDestructableLife(gg_dest_ORmk_5500))
+    gg_dest_LTlt_11774 = CreateDestructable(1280601204, -5184.0, 4224.0, 270.000, 0.978, 9)
+    gg_dest_LTlt_11775 = CreateDestructable(1280601204, -5248.0, 4352.0, 270.000, 1.195, 7)
+    gg_dest_DOtp_11610 = CreateDestructable(1146057840, -8768.0, 7680.0, 233.000, 1.069, 1)
+    SetDestructableLife(gg_dest_DOtp_11610, 2.55 * GetDestructableLife(gg_dest_DOtp_11610))
+    gg_dest_LOsh_11609 = CreateDestructable(1280275304, -8544.0, 7392.0, 196.000, 1.164, 0)
+    SetDestructableLife(gg_dest_LOsh_11609, 2.55 * GetDestructableLife(gg_dest_LOsh_11609))
+    gg_dest_LTlt_11771 = CreateDestructable(1280601204, -5568.0, 4416.0, 270.000, 1.036, 5)
+    gg_dest_LTlt_11773 = CreateDestructable(1280601204, -5440.0, 4480.0, 270.000, 1.045, 5)
+    gg_dest_ORmk_11779 = CreateDestructable(1330802027, -4224.0, 3392.0, 270.000, 0.893, 2)
+    SetDestructableLife(gg_dest_ORmk_11779, 2.55 * GetDestructableLife(gg_dest_ORmk_11779))
+    gg_dest_ORmk_11778 = CreateDestructable(1330802027, -5504.0, 2304.0, 270.000, 0.893, 2)
+    SetDestructableLife(gg_dest_ORmk_11778, 2.55 * GetDestructableLife(gg_dest_ORmk_11778))
+    gg_dest_LTlt_11776 = CreateDestructable(1280601204, -5056.0, 4224.0, 270.000, 1.025, 9)
+    gg_dest_LTlt_11772 = CreateDestructable(1280601204, -5376.0, 4352.0, 270.000, 1.192, 1)
+    gg_dest_ORmk_11777 = CreateDestructable(1330802027, -6080.0, 4032.0, 270.000, 0.893, 2)
+    SetDestructableLife(gg_dest_ORmk_11777, 2.55 * GetDestructableLife(gg_dest_ORmk_11777))
+    gg_dest_LOsp_11608 = CreateDestructable(1280275312, -9098.7, 8199.9, 90.000, 1.069, 0)
+    SetDestructableLife(gg_dest_LOsp_11608, 2.55 * GetDestructableLife(gg_dest_LOsp_11608))
+    gg_dest_DOjp_11607 = CreateDestructable(1146055280, -7232.0, 6656.0, 156.000, 1.173, 0)
+    SetDestructableLife(gg_dest_DOjp_11607, 2.55 * GetDestructableLife(gg_dest_DOjp_11607))
+    gg_dest_DOtp_11606 = CreateDestructable(1146057840, 7744.0, 7936.0, 179.000, 1.098, 0)
+    SetDestructableLife(gg_dest_DOtp_11606, 2.55 * GetDestructableLife(gg_dest_DOtp_11606))
+    gg_dest_ORmk_11780 = CreateDestructable(1330802027, -8256.0, 3392.0, 270.000, 0.893, 2)
+    SetDestructableLife(gg_dest_ORmk_11780, 2.55 * GetDestructableLife(gg_dest_ORmk_11780))
+    gg_dest_LOsh_11605 = CreateDestructable(1280275304, 7712.0, 6432.0, 201.000, 1.035, 2)
+    SetDestructableLife(gg_dest_LOsh_11605, 2.55 * GetDestructableLife(gg_dest_LOsh_11605))
+    gg_dest_LOcb_11604 = CreateDestructable(1280271202, 7488.0, 6464.0, 245.000, 1.110, 0)
+    SetDestructableLife(gg_dest_LOcb_11604, 2.55 * GetDestructableLife(gg_dest_LOcb_11604))
+    gg_dest_LOsc_11603 = CreateDestructable(1280275299, 7904.0, 6432.0, 28.000, 1.196, 0)
+    SetDestructableLife(gg_dest_LOsc_11603, 2.55 * GetDestructableLife(gg_dest_LOsc_11603))
+    gg_dest_LOsc_11602 = CreateDestructable(1280275299, 7840.0, 6432.0, 61.000, 1.141, 0)
+    SetDestructableLife(gg_dest_LOsc_11602, 2.55 * GetDestructableLife(gg_dest_LOsc_11602))
+    gg_dest_ORmk_2146 = CreateDestructable(1330802027, 6592.0, 3904.0, 270.000, 1.000, 0)
+    SetDestructableLife(gg_dest_ORmk_2146, 2.55 * GetDestructableLife(gg_dest_ORmk_2146))
+    gg_dest_LOsc_11601 = CreateDestructable(1280275299, 7968.0, 6432.0, 341.000, 0.966, 0)
+    SetDestructableLife(gg_dest_LOsc_11601, 2.55 * GetDestructableLife(gg_dest_LOsc_11601))
+    gg_dest_NTtw_11324 = CreateDestructable(1314157687, 3712.0, -3840.0, 270.000, 0.929, 8)
+    gg_dest_NTtw_11323 = CreateDestructable(1314157687, 3584.0, -3712.0, 270.000, 1.099, 1)
+    gg_dest_NTtw_11322 = CreateDestructable(1314157687, 3584.0, -3904.0, 270.000, 1.163, 4)
+    gg_dest_NTtw_11321 = CreateDestructable(1314157687, 3456.0, -3776.0, 270.000, 1.187, 8)
+    gg_dest_NTtw_11320 = CreateDestructable(1314157687, 3328.0, -3776.0, 270.000, 0.973, 5)
+    gg_dest_LTlt_11757 = CreateDestructable(1280601204, -6656.0, 4416.0, 270.000, 1.075, 4)
+    gg_dest_LTlt_11756 = CreateDestructable(1280601204, -6848.0, 4288.0, 270.000, 0.988, 1)
+    gg_dest_LTlt_11755 = CreateDestructable(1280601204, -6912.0, 4160.0, 270.000, 0.825, 8)
+    gg_dest_LTlt_11754 = CreateDestructable(1280601204, -6528.0, 4416.0, 270.000, 0.801, 2)
+    gg_dest_LTlt_11753 = CreateDestructable(1280601204, -6720.0, 4288.0, 270.000, 1.017, 2)
     gg_dest_FTtw_1137 = CreateDestructable(1179939959, 704.0, 7488.0, 270.000, 1.027, 5)
     gg_dest_FTtw_1138 = CreateDestructable(1179939959, 768.0, 7616.0, 270.000, 1.163, 7)
     gg_dest_FTtw_1139 = CreateDestructable(1179939959, 832.0, 7744.0, 270.000, 0.817, 3)
@@ -54685,49 +54867,86 @@ function CreateAllDestructables()
     gg_dest_LTlt_4255 = CreateDestructable(1280601204, -960.0, 7680.0, 270.000, 0.987, 7)
     gg_dest_LTlt_4256 = CreateDestructable(1280601204, -768.0, 7808.0, 270.000, 1.038, 7)
     gg_dest_LTlt_4257 = CreateDestructable(1280601204, -960.0, 7872.0, 270.000, 1.193, 4)
-    gg_dest_LTlt_4258 = CreateDestructable(1280601204, -768.0, 8000.0, 270.000, 1.050, 2)
-    gg_dest_LTlt_4259 = CreateDestructable(1280601204, -896.0, 8064.0, 270.000, 1.037, 7)
-    gg_dest_LTlt_4260 = CreateDestructable(1280601204, -704.0, 8192.0, 270.000, 1.199, 3)
-    gg_dest_LTlt_4261 = CreateDestructable(1280601204, -896.0, 8192.0, 270.000, 1.119, 6)
-    gg_dest_LTlt_4262 = CreateDestructable(1280601204, -704.0, 8320.0, 270.000, 1.055, 6)
-    gg_dest_LTlt_4263 = CreateDestructable(1280601204, -896.0, 8320.0, 270.000, 1.157, 1)
-    gg_dest_LTlt_4264 = CreateDestructable(1280601204, -704.0, 8448.0, 270.000, 1.156, 2)
-    gg_dest_LTlt_4265 = CreateDestructable(1280601204, -896.0, 8448.0, 270.000, 0.957, 7)
-    gg_dest_LTlt_4266 = CreateDestructable(1280601204, -704.0, 8576.0, 270.000, 1.021, 9)
-    gg_dest_LTlt_4267 = CreateDestructable(1280601204, -832.0, 8576.0, 270.000, 0.945, 4)
-    gg_dest_LTlt_4268 = CreateDestructable(1280601204, -384.0, 8640.0, 270.000, 0.987, 0)
-    gg_dest_LTlt_4269 = CreateDestructable(1280601204, -768.0, 8704.0, 270.000, 1.021, 2)
-    gg_dest_LTlt_4270 = CreateDestructable(1280601204, -384.0, 8768.0, 270.000, 0.850, 6)
-    gg_dest_LTlt_4271 = CreateDestructable(1280601204, -768.0, 8832.0, 270.000, 1.059, 9)
-    gg_dest_LTlt_4272 = CreateDestructable(1280601204, -384.0, 8896.0, 270.000, 1.134, 0)
-    gg_dest_LTlt_4273 = CreateDestructable(1280601204, -768.0, 8960.0, 270.000, 1.092, 2)
-    gg_dest_LTlt_4274 = CreateDestructable(1280601204, -896.0, 8960.0, 270.000, 0.839, 9)
-    gg_dest_LTlt_4275 = CreateDestructable(1280601204, -832.0, 9088.0, 270.000, 0.973, 5)
-    gg_dest_LTlt_4276 = CreateDestructable(1280601204, -704.0, 9088.0, 270.000, 0.818, 9)
-    gg_dest_LTlt_4277 = CreateDestructable(1280601204, -448.0, 9088.0, 270.000, 1.121, 6)
-    gg_dest_LTlt_4278 = CreateDestructable(1280601204, -960.0, 9280.0, 270.000, 1.073, 8)
-    gg_dest_LTlt_4279 = CreateDestructable(1280601204, -832.0, 9280.0, 270.000, 0.835, 1)
-    gg_dest_LTlt_4280 = CreateDestructable(1280601204, -896.0, 9408.0, 270.000, 1.175, 4)
-    gg_dest_LTlt_4281 = CreateDestructable(1280601204, -704.0, 9280.0, 270.000, 1.089, 7)
-    gg_dest_LTlt_4282 = CreateDestructable(1280601204, -768.0, 9408.0, 270.000, 1.033, 1)
-    gg_dest_LTlt_4283 = CreateDestructable(1280601204, -704.0, 9536.0, 270.000, 0.928, 7)
-    gg_dest_LTlt_4284 = CreateDestructable(1280601204, -960.0, 8832.0, 270.000, 1.155, 0)
-    gg_dest_LTlt_4285 = CreateDestructable(1280601204, -896.0, 8704.0, 270.000, 1.034, 7)
-    gg_dest_LTlt_4286 = CreateDestructable(1280601204, -960.0, 9152.0, 270.000, 0.995, 4)
-    gg_dest_LTlt_4287 = CreateDestructable(1280601204, -1024.0, 9408.0, 270.000, 1.149, 6)
-    gg_dest_LTlt_4288 = CreateDestructable(1280601204, -960.0, 9536.0, 270.000, 1.089, 9)
-    gg_dest_LTlt_4289 = CreateDestructable(1280601204, -832.0, 9536.0, 270.000, 1.169, 1)
-    gg_dest_LTlt_4290 = CreateDestructable(1280601204, -768.0, 9664.0, 270.000, 0.822, 1)
-    gg_dest_LTlt_4291 = CreateDestructable(1280601204, -896.0, 9664.0, 270.000, 1.155, 1)
-    gg_dest_LTlt_4292 = CreateDestructable(1280601204, -704.0, 9792.0, 270.000, 0.897, 8)
-    gg_dest_LTlt_4293 = CreateDestructable(1280601204, -1024.0, 9664.0, 270.000, 1.071, 4)
-    gg_dest_LTlt_4294 = CreateDestructable(1280601204, -960.0, 9792.0, 270.000, 1.188, 0)
-    gg_dest_LTlt_4295 = CreateDestructable(1280601204, -832.0, 9792.0, 270.000, 0.847, 8)
-    gg_dest_LTlt_4296 = CreateDestructable(1280601204, -768.0, 9920.0, 270.000, 1.179, 9)
-    gg_dest_LTlt_4297 = CreateDestructable(1280601204, -960.0, 9920.0, 270.000, 0.805, 3)
-    gg_dest_LTlt_4298 = CreateDestructable(1280601204, -768.0, 10048.0, 270.000, 1.020, 3)
-    gg_dest_LTlt_4299 = CreateDestructable(1280601204, -960.0, 10048.0, 270.000, 1.049, 1)
-    gg_dest_LTlt_4300 = CreateDestructable(1280601204, -768.0, 10176.0, 270.000, 0.944, 9)
+    gg_dest_YOec_11600 = CreateDestructable(1498375523, 7136.0, 6688.0, 210.000, 0.808, 0)
+    SetDestructableLife(gg_dest_YOec_11600, 2.55 * GetDestructableLife(gg_dest_YOec_11600))
+    gg_dest_YOec_11599 = CreateDestructable(1498375523, 7264.0, 6560.0, 286.000, 0.967, 1)
+    SetDestructableLife(gg_dest_YOec_11599, 2.55 * GetDestructableLife(gg_dest_YOec_11599))
+    gg_dest_YOec_11598 = CreateDestructable(1498375523, 7136.0, 6624.0, 120.000, 0.964, 2)
+    SetDestructableLife(gg_dest_YOec_11598, 2.55 * GetDestructableLife(gg_dest_YOec_11598))
+    gg_dest_YOec_11597 = CreateDestructable(1498375523, 7008.0, 6752.0, 128.000, 0.845, 0)
+    SetDestructableLife(gg_dest_YOec_11597, 2.55 * GetDestructableLife(gg_dest_YOec_11597))
+    gg_dest_YOec_11596 = CreateDestructable(1498375523, 6944.0, 6880.0, 25.000, 1.053, 1)
+    SetDestructableLife(gg_dest_YOec_11596, 2.55 * GetDestructableLife(gg_dest_YOec_11596))
+    gg_dest_YOec_11595 = CreateDestructable(1498375523, 8096.0, 7904.0, 255.000, 1.025, 0)
+    SetDestructableLife(gg_dest_YOec_11595, 2.55 * GetDestructableLife(gg_dest_YOec_11595))
+    gg_dest_LOic_11594 = CreateDestructable(1280272739, 8992.0, 7968.0, 257.000, 1.172, 1)
+    SetDestructableLife(gg_dest_LOic_11594, 2.55 * GetDestructableLife(gg_dest_LOic_11594))
+    gg_dest_LOic_11593 = CreateDestructable(1280272739, 8928.0, 8288.0, 234.000, 1.147, 0)
+    SetDestructableLife(gg_dest_LOic_11593, 2.55 * GetDestructableLife(gg_dest_LOic_11593))
+    gg_dest_LOic_11592 = CreateDestructable(1280272739, 8352.0, 8032.0, 84.000, 0.870, 0)
+    SetDestructableLife(gg_dest_LOic_11592, 2.55 * GetDestructableLife(gg_dest_LOic_11592))
+    gg_dest_LOic_11591 = CreateDestructable(1280272739, 8608.0, 7712.0, 295.000, 1.029, 1)
+    SetDestructableLife(gg_dest_LOic_11591, 2.55 * GetDestructableLife(gg_dest_LOic_11591))
+    gg_dest_NOfg_6280 = CreateDestructable(1313826407, 4800.0, 10944.0, 88.000, 1.004, 0)
+    SetDestructableLife(gg_dest_NOfg_6280, 2.55 * GetDestructableLife(gg_dest_NOfg_6280))
+    gg_dest_LOfl_11590 = CreateDestructable(1280271980, 8231.9, 6729.4, 348.000, 0.986, 0)
+    SetDestructableLife(gg_dest_LOfl_11590, 2.55 * GetDestructableLife(gg_dest_LOfl_11590))
+    gg_dest_LTlt_11762 = CreateDestructable(1280601204, -7232.0, 3840.0, 270.000, 1.060, 8)
+    gg_dest_NOfg_6281 = CreateDestructable(1313826407, 3968.0, 11392.0, 38.000, 0.840, 0)
+    SetDestructableLife(gg_dest_NOfg_6281, 2.55 * GetDestructableLife(gg_dest_NOfg_6281))
+    gg_dest_ORmk_4926 = CreateDestructable(1330802027, -320.0, 10816.0, 270.000, 1.000, 0)
+    SetDestructableLife(gg_dest_ORmk_4926, 2.55 * GetDestructableLife(gg_dest_ORmk_4926))
+    gg_dest_ORmk_4923 = CreateDestructable(1330802027, -832.0, 8704.0, 270.000, 1.000, 0)
+    SetDestructableLife(gg_dest_ORmk_4923, 2.55 * GetDestructableLife(gg_dest_ORmk_4923))
+    gg_dest_LOfl_11589 = CreateDestructable(1280271980, 8425.9, 7204.7, 119.000, 1.083, 0)
+    SetDestructableLife(gg_dest_LOfl_11589, 2.55 * GetDestructableLife(gg_dest_LOfl_11589))
+    gg_dest_LTlt_11766 = CreateDestructable(1280601204, -7296.0, 4160.0, 270.000, 0.884, 2)
+    gg_dest_LTlt_11765 = CreateDestructable(1280601204, -7296.0, 3584.0, 270.000, 0.800, 7)
+    gg_dest_LTlt_11764 = CreateDestructable(1280601204, -7168.0, 3648.0, 270.000, 0.840, 8)
+    gg_dest_LTlt_11763 = CreateDestructable(1280601204, -7104.0, 3840.0, 270.000, 0.819, 4)
+    gg_dest_ORmk_4927 = CreateDestructable(1330802027, 320.0, 7744.0, 270.000, 1.000, 0)
+    SetDestructableLife(gg_dest_ORmk_4927, 2.55 * GetDestructableLife(gg_dest_ORmk_4927))
+    gg_dest_LOfl_11588 = CreateDestructable(1280271980, 7354.6, 7841.8, 255.000, 0.851, 0)
+    SetDestructableLife(gg_dest_LOfl_11588, 2.55 * GetDestructableLife(gg_dest_LOfl_11588))
+    gg_dest_ORmk_2145 = CreateDestructable(1330802027, 7744.0, 3392.0, 270.000, 1.057, 4)
+    SetDestructableLife(gg_dest_ORmk_2145, 2.55 * GetDestructableLife(gg_dest_ORmk_2145))
+    gg_dest_ORmk_2144 = CreateDestructable(1330802027, 5696.0, 3904.0, 270.000, 1.000, 3)
+    SetDestructableLife(gg_dest_ORmk_2144, 2.55 * GetDestructableLife(gg_dest_ORmk_2144))
+    gg_dest_ORmk_2143 = CreateDestructable(1330802027, 6208.0, 2112.0, 270.000, 0.969, 1)
+    SetDestructableLife(gg_dest_ORmk_2143, 2.55 * GetDestructableLife(gg_dest_ORmk_2143))
+    gg_dest_LOfl_11587 = CreateDestructable(1280271980, 6966.5, 7090.5, 341.000, 0.921, 0)
+    SetDestructableLife(gg_dest_LOfl_11587, 2.55 * GetDestructableLife(gg_dest_LOfl_11587))
+    gg_dest_LOfl_11586 = CreateDestructable(1280271980, 7917.0, 7843.7, 62.000, 1.093, 0)
+    SetDestructableLife(gg_dest_LOfl_11586, 2.55 * GetDestructableLife(gg_dest_LOfl_11586))
+    gg_dest_LTlt_11758 = CreateDestructable(1280601204, -7040.0, 4096.0, 270.000, 1.023, 3)
+    gg_dest_NOfg_11585 = CreateDestructable(1313826407, 7040.0, 7424.0, 290.000, 1.075, 0)
+    SetDestructableLife(gg_dest_NOfg_11585, 2.55 * GetDestructableLife(gg_dest_NOfg_11585))
+    gg_dest_NOfg_11584 = CreateDestructable(1313826407, 8320.0, 6912.0, 156.000, 0.800, 0)
+    SetDestructableLife(gg_dest_NOfg_11584, 2.55 * GetDestructableLife(gg_dest_NOfg_11584))
+    gg_dest_LOsk_11639 = CreateDestructable(1280275307, 4160.0, -5376.0, 309.000, 0.955, 2)
+    SetDestructableLife(gg_dest_LOsk_11639, 2.55 * GetDestructableLife(gg_dest_LOsk_11639))
+    gg_dest_LOsk_11638 = CreateDestructable(1280275307, 3840.0, -5312.0, 249.000, 1.157, 2)
+    SetDestructableLife(gg_dest_LOsk_11638, 2.55 * GetDestructableLife(gg_dest_LOsk_11638))
+    gg_dest_NOft_11583 = CreateDestructable(1313826420, 7936.0, 7872.0, 102.000, 1.154, 0)
+    SetDestructableLife(gg_dest_NOft_11583, 2.55 * GetDestructableLife(gg_dest_NOft_11583))
+    gg_dest_LOss_11637 = CreateDestructable(1280275315, 8224.0, -544.0, 297.000, 1.170, 4)
+    SetDestructableLife(gg_dest_LOss_11637, 2.55 * GetDestructableLife(gg_dest_LOss_11637))
+    gg_dest_NOft_11582 = CreateDestructable(1313826420, 3584.0, 10752.0, 256.000, 1.025, 0)
+    SetDestructableLife(gg_dest_NOft_11582, 2.55 * GetDestructableLife(gg_dest_NOft_11582))
+    gg_dest_NOfp_11581 = CreateDestructable(1313826416, 4288.0, 10176.0, 308.000, 1.113, 0)
+    SetDestructableLife(gg_dest_NOfp_11581, 2.55 * GetDestructableLife(gg_dest_NOfp_11581))
+    gg_dest_YOec_11580 = CreateDestructable(1498375523, 4832.0, 11104.0, 178.000, 0.850, 1)
+    SetDestructableLife(gg_dest_YOec_11580, 2.55 * GetDestructableLife(gg_dest_YOec_11580))
+    gg_dest_YOec_11579 = CreateDestructable(1498375523, 3936.0, 9952.0, 139.000, 1.111, 2)
+    SetDestructableLife(gg_dest_YOec_11579, 2.55 * GetDestructableLife(gg_dest_YOec_11579))
+    gg_dest_YOec_11578 = CreateDestructable(1498375523, 3680.0, 10080.0, 51.000, 0.894, 1)
+    SetDestructableLife(gg_dest_YOec_11578, 2.55 * GetDestructableLife(gg_dest_YOec_11578))
+    gg_dest_LOsc_11577 = CreateDestructable(1280275299, 4704.0, 10400.0, 117.000, 1.137, 0)
+    SetDestructableLife(gg_dest_LOsc_11577, 2.55 * GetDestructableLife(gg_dest_LOsc_11577))
+    gg_dest_ZPf0_11576 = CreateDestructable(1515218480, 3996.4, 9951.9, 308.000, 1.078, 0)
+    SetDestructableLife(gg_dest_ZPf0_11576, 2.55 * GetDestructableLife(gg_dest_ZPf0_11576))
+    gg_dest_ZPf0_11575 = CreateDestructable(1515218480, 4117.3, 10068.0, 350.000, 0.841, 4)
+    SetDestructableLife(gg_dest_ZPf0_11575, 2.55 * GetDestructableLife(gg_dest_ZPf0_11575))
     gg_dest_LTlt_4301 = CreateDestructable(1280601204, -960.0, 10240.0, 270.000, 0.897, 0)
     gg_dest_LTlt_4302 = CreateDestructable(1280601204, -768.0, 10368.0, 270.000, 1.116, 4)
     gg_dest_LTlt_4303 = CreateDestructable(1280601204, -960.0, 10368.0, 270.000, 1.143, 5)
@@ -54747,7 +54966,7 @@ function CreateAllDestructables()
     gg_dest_LTlt_4317 = CreateDestructable(1280601204, -704.0, 11392.0, 270.000, 1.067, 0)
     gg_dest_LTlt_4318 = CreateDestructable(1280601204, -960.0, 11200.0, 270.000, 1.066, 2)
     gg_dest_LTlt_4319 = CreateDestructable(1280601204, -896.0, 11328.0, 270.000, 0.945, 8)
-    gg_dest_LTlt_4320 = CreateDestructable(1280601204, -1024.0, 11328.0, 270.000, 1.168, 1)
+    gg_dest_FTtw_5012 = CreateDestructable(1179939959, 640.0, 10304.0, 270.000, 1.036, 2)
     gg_dest_LTlt_4321 = CreateDestructable(1280601204, -960.0, 11456.0, 270.000, 1.009, 6)
     gg_dest_LTlt_4322 = CreateDestructable(1280601204, -832.0, 11456.0, 270.000, 0.926, 6)
     gg_dest_LTlt_4323 = CreateDestructable(1280601204, -768.0, 11584.0, 270.000, 1.151, 7)
@@ -55163,39 +55382,38 @@ function CreateAllDestructables()
     gg_dest_CTtr_10525 = CreateDestructable(1129608306, -4096.0, 2496.0, 270.000, 1.103, 3)
     gg_dest_CTtr_10524 = CreateDestructable(1129608306, -4224.0, 2496.0, 270.000, 0.944, 0)
     gg_dest_CTtr_10523 = CreateDestructable(1129608306, -4416.0, 2496.0, 270.000, 0.896, 3)
-    gg_dest_LTlt_5484 = CreateDestructable(1280601204, -6720.0, 3776.0, 270.000, 1.045, 8)
+    gg_dest_NTtw_5127 = CreateDestructable(1314157687, 8640.0, -832.0, 270.000, 0.863, 3)
     gg_dest_CTtr_10522 = CreateDestructable(1129608306, -4544.0, 2496.0, 270.000, 1.078, 1)
     gg_dest_CTtr_10521 = CreateDestructable(1129608306, -4672.0, 2496.0, 270.000, 1.151, 3)
-    gg_dest_LTlt_5487 = CreateDestructable(1280601204, -6528.0, 3776.0, 270.000, 1.025, 7)
-    gg_dest_LTlt_5488 = CreateDestructable(1280601204, -6592.0, 3904.0, 270.000, 1.091, 3)
-    gg_dest_LTlt_5489 = CreateDestructable(1280601204, -6656.0, 4032.0, 270.000, 0.828, 3)
-    gg_dest_LTlt_5490 = CreateDestructable(1280601204, -6400.0, 3776.0, 270.000, 0.976, 9)
-    gg_dest_LTlt_5491 = CreateDestructable(1280601204, -6464.0, 3904.0, 270.000, 1.194, 9)
-    gg_dest_LTlt_5492 = CreateDestructable(1280601204, -6464.0, 4032.0, 270.000, 0.861, 9)
+    gg_dest_NTtw_11358 = CreateDestructable(1314157687, 5056.0, -4416.0, 270.000, 1.006, 3)
+    gg_dest_NTtw_11357 = CreateDestructable(1314157687, 5184.0, -4160.0, 270.000, 1.157, 7)
+    gg_dest_NTtw_11356 = CreateDestructable(1314157687, 5120.0, -4288.0, 270.000, 1.167, 2)
+    gg_dest_NTtw_11355 = CreateDestructable(1314157687, 4992.0, -4288.0, 270.000, 0.878, 2)
+    gg_dest_NTtw_11354 = CreateDestructable(1314157687, 5056.0, -4160.0, 270.000, 1.153, 5)
+    gg_dest_NTtw_11353 = CreateDestructable(1314157687, 4928.0, -4160.0, 270.000, 1.084, 6)
     gg_dest_AOsr_11646 = CreateDestructable(1095725938, 3486.4, -4391.8, 266.000, 0.817, 1)
     SetDestructableLife(gg_dest_AOsr_11646, 2.55 * GetDestructableLife(gg_dest_AOsr_11646))
-    gg_dest_LTlt_5494 = CreateDestructable(1280601204, -6272.0, 3904.0, 270.000, 1.015, 8)
-    gg_dest_LTlt_5495 = CreateDestructable(1280601204, -6272.0, 4032.0, 270.000, 0.900, 5)
+    gg_dest_NTtw_11352 = CreateDestructable(1314157687, 5056.0, -3968.0, 270.000, 1.199, 9)
+    gg_dest_NTtw_11351 = CreateDestructable(1314157687, 4928.0, -4032.0, 270.000, 0.918, 7)
     gg_dest_AObd_11683 = CreateDestructable(1095721572, -3691.1, -4233.1, 274.000, 1.105, 0)
     SetDestructableLife(gg_dest_AObd_11683, 2.55 * GetDestructableLife(gg_dest_AObd_11683))
     gg_dest_AOsr_11645 = CreateDestructable(1095725938, 3543.8, -4823.6, 82.000, 0.824, 0)
     SetDestructableLife(gg_dest_AOsr_11645, 2.55 * GetDestructableLife(gg_dest_AOsr_11645))
-    gg_dest_LTlt_5498 = CreateDestructable(1280601204, -6080.0, 4032.0, 270.000, 0.953, 2)
-    gg_dest_LOic_8208 = CreateDestructable(1280272739, 5728.0, 2464.0, 354.000, 1.016, 0)
-    SetDestructableLife(gg_dest_LOic_8208, 2.55 * GetDestructableLife(gg_dest_LOic_8208))
+    gg_dest_NTtw_11350 = CreateDestructable(1314157687, 4736.0, -3968.0, 270.000, 0.891, 6)
+    gg_dest_LTlt_11759 = CreateDestructable(1280601204, -7040.0, 4224.0, 270.000, 0.909, 7)
     gg_dest_LOlp_11667 = CreateDestructable(1280273520, -8480.0, -1504.0, 153.000, 0.888, 1)
     SetDestructableLife(gg_dest_LOlp_11667, 2.55 * GetDestructableLife(gg_dest_LOlp_11667))
-    gg_dest_LTlt_5501 = CreateDestructable(1280601204, -5888.0, 4032.0, 270.000, 0.873, 6)
+    gg_dest_NTtw_11349 = CreateDestructable(1314157687, 4864.0, -3904.0, 270.000, 0.982, 8)
     gg_dest_LObz_11681 = CreateDestructable(1280270970, -4192.0, -5216.0, 2.000, 0.834, 0)
     SetDestructableLife(gg_dest_LObz_11681, 2.55 * GetDestructableLife(gg_dest_LObz_11681))
-    gg_dest_LTlt_5503 = CreateDestructable(1280601204, -5312.0, 3968.0, 270.000, 0.969, 8)
+    gg_dest_NTtw_11348 = CreateDestructable(1314157687, 4864.0, -3776.0, 270.000, 0.860, 0)
     gg_dest_LOsk_11644 = CreateDestructable(1280275307, 4672.0, -4160.0, 259.000, 0.890, 3)
     SetDestructableLife(gg_dest_LOsk_11644, 2.55 * GetDestructableLife(gg_dest_LOsk_11644))
     gg_dest_LObz_11680 = CreateDestructable(1280270970, -4448.0, -4128.0, 266.000, 0.953, 0)
     SetDestructableLife(gg_dest_LObz_11680, 2.55 * GetDestructableLife(gg_dest_LObz_11680))
     gg_dest_LOlp_11668 = CreateDestructable(1280273520, -7264.0, -1696.0, 347.000, 0.855, 1)
     SetDestructableLife(gg_dest_LOlp_11668, 2.55 * GetDestructableLife(gg_dest_LOlp_11668))
-    gg_dest_LTlt_5507 = CreateDestructable(1280601204, -5440.0, 4032.0, 270.000, 0.803, 5)
+    gg_dest_NTtw_11347 = CreateDestructable(1314157687, 4736.0, -3584.0, 270.000, 1.112, 6)
     gg_dest_LObz_11679 = CreateDestructable(1280270970, -3488.0, -4576.0, 16.000, 0.930, 0)
     SetDestructableLife(gg_dest_LObz_11679, 2.55 * GetDestructableLife(gg_dest_LObz_11679))
     gg_dest_LOlp_11670 = CreateDestructable(1280273520, -6944.0, -800.0, 300.000, 1.084, 1)
@@ -55382,7 +55600,7 @@ function CreateAllDestructables()
     gg_dest_CTtr_10518 = CreateDestructable(1129608306, -4736.0, 2112.0, 270.000, 1.084, 4)
     gg_dest_LTbs_4545 = CreateDestructable(1280598643, -7648.0, 6368.0, 159.000, 1.499, 0)
     gg_dest_LTbr_4541 = CreateDestructable(1280598642, -7840.0, 7904.0, 12.000, 1.233, 0)
-    gg_dest_CTtr_10517 = CreateDestructable(1129608306, -5632.0, 1984.0, 270.000, 0.876, 4)
+    gg_dest_NTtw_11315 = CreateDestructable(1314157687, 3200.0, -3968.0, 270.000, 1.014, 6)
     gg_dest_LOss_11663 = CreateDestructable(1280275315, -5280.0, -5856.0, 351.000, 0.880, 5)
     SetDestructableLife(gg_dest_LOss_11663, 2.55 * GetDestructableLife(gg_dest_LOss_11663))
     gg_dest_LOfl_11657 = CreateDestructable(1280271980, 3997.3, -5290.5, 340.000, 0.938, 0)
@@ -55404,12 +55622,12 @@ function CreateAllDestructables()
     SetDestructableLife(gg_dest_LOrc_11651, 2.55 * GetDestructableLife(gg_dest_LOrc_11651))
     gg_dest_LOsk_11642 = CreateDestructable(1280275307, 4864.0, -4864.0, 157.000, 1.184, 2)
     SetDestructableLife(gg_dest_LOsk_11642, 2.55 * GetDestructableLife(gg_dest_LOsk_11642))
-    gg_dest_CTtr_10507 = CreateDestructable(1129608306, -6272.0, 2432.0, 270.000, 1.000, 4)
-    gg_dest_CTtr_10506 = CreateDestructable(1129608306, -6528.0, 2560.0, 270.000, 1.001, 2)
-    gg_dest_CTtr_10505 = CreateDestructable(1129608306, -6656.0, 2496.0, 270.000, 1.052, 2)
+    gg_dest_NTtw_11346 = CreateDestructable(1314157687, 4736.0, -3840.0, 270.000, 1.105, 7)
+    gg_dest_NTtw_11345 = CreateDestructable(1314157687, 4736.0, -3712.0, 270.000, 1.010, 3)
+    gg_dest_NTtw_11344 = CreateDestructable(1314157687, 4608.0, -3520.0, 270.000, 1.145, 2)
     gg_dest_CTtr_10543 = CreateDestructable(1129608306, -9152.0, 2560.0, 270.000, 0.939, 1)
-    gg_dest_CTtr_10504 = CreateDestructable(1129608306, -6848.0, 2496.0, 270.000, 1.127, 2)
-    gg_dest_CTtr_10503 = CreateDestructable(1129608306, -6976.0, 2496.0, 270.000, 1.101, 1)
+    gg_dest_NTtw_11343 = CreateDestructable(1314157687, 4608.0, -3776.0, 270.000, 1.121, 5)
+    gg_dest_NTtw_11342 = CreateDestructable(1314157687, 4608.0, -3648.0, 270.000, 0.834, 9)
     gg_dest_LTlt_6691 = CreateDestructable(1280601204, -9600.0, 5568.0, 270.000, 0.910, 1)
     gg_dest_LTlt_6689 = CreateDestructable(1280601204, -9536.0, 5376.0, 270.000, 1.154, 6)
     gg_dest_CTtr_5387 = CreateDestructable(1129608306, -8960.0, -4160.0, 270.000, 1.022, 1)
@@ -55701,33 +55919,55 @@ function CreateAllDestructables()
     gg_dest_NTtw_6976 = CreateDestructable(1314157687, 1024.0, -1408.0, 270.000, 1.025, 1)
     gg_dest_NTtw_6977 = CreateDestructable(1314157687, 960.0, -1792.0, 270.000, 1.057, 3)
     gg_dest_NTtw_6978 = CreateDestructable(1314157687, 1024.0, -1664.0, 270.000, 1.194, 0)
-    gg_dest_NTtw_6979 = CreateDestructable(1314157687, 768.0, -2176.0, 270.000, 0.939, 8)
+    gg_dest_LPrs_11519 = CreateDestructable(1280340595, -3781.1, 10085.1, 171.000, 0.846, 0)
+    SetDestructableLife(gg_dest_LPrs_11519, 2.55 * GetDestructableLife(gg_dest_LPrs_11519))
     gg_dest_NTtw_6980 = CreateDestructable(1314157687, 960.0, -2048.0, 270.000, 0.878, 3)
     gg_dest_NTtw_6981 = CreateDestructable(1314157687, 1024.0, -1920.0, 270.000, 1.141, 5)
-    gg_dest_NTtw_6982 = CreateDestructable(1314157687, 832.0, -2368.0, 270.000, 0.838, 0)
-    gg_dest_NTtw_6983 = CreateDestructable(1314157687, 896.0, -2240.0, 270.000, 0.952, 2)
-    gg_dest_NTtw_6984 = CreateDestructable(1314157687, 960.0, -2368.0, 270.000, 1.171, 5)
-    gg_dest_NTtw_6985 = CreateDestructable(1314157687, 1024.0, -2240.0, 270.000, 0.970, 1)
-    gg_dest_NTtw_6986 = CreateDestructable(1314157687, 704.0, -2432.0, 270.000, 1.001, 5)
-    gg_dest_NTtw_6987 = CreateDestructable(1314157687, 832.0, -2688.0, 270.000, 1.171, 5)
-    gg_dest_NTtw_6988 = CreateDestructable(1314157687, 896.0, -2560.0, 270.000, 1.027, 9)
-    gg_dest_NTtw_6989 = CreateDestructable(1314157687, 960.0, -2688.0, 270.000, 1.089, 4)
-    gg_dest_NTtw_6990 = CreateDestructable(1314157687, 1024.0, -2560.0, 270.000, 1.102, 7)
-    gg_dest_NTtw_6991 = CreateDestructable(1314157687, 960.0, -2880.0, 270.000, 1.110, 7)
-    gg_dest_NTtw_6992 = CreateDestructable(1314157687, 896.0, -3008.0, 270.000, 0.949, 3)
-    gg_dest_NTtw_6993 = CreateDestructable(1314157687, 960.0, -3136.0, 270.000, 1.021, 7)
-    gg_dest_NTtw_6994 = CreateDestructable(1314157687, 1024.0, -3008.0, 270.000, 1.182, 9)
-    gg_dest_NTtw_6995 = CreateDestructable(1314157687, 896.0, -3328.0, 270.000, 1.011, 2)
-    gg_dest_NTtw_6996 = CreateDestructable(1314157687, 960.0, -3456.0, 270.000, 0.837, 3)
-    gg_dest_NTtw_6997 = CreateDestructable(1314157687, 1024.0, -3328.0, 270.000, 0.801, 6)
-    gg_dest_NTtw_6998 = CreateDestructable(1314157687, 832.0, -3584.0, 270.000, 1.018, 5)
-    gg_dest_NTtw_6999 = CreateDestructable(1314157687, 1024.0, -3648.0, 270.000, 1.066, 1)
+    gg_dest_LPrs_11520 = CreateDestructable(1280340595, -4865.6, 11248.2, 82.000, 0.885, 0)
+    SetDestructableLife(gg_dest_LPrs_11520, 2.55 * GetDestructableLife(gg_dest_LPrs_11520))
+    gg_dest_LPrs_11521 = CreateDestructable(1280340595, -4896.1, 11053.9, 325.000, 1.003, 1)
+    SetDestructableLife(gg_dest_LPrs_11521, 2.55 * GetDestructableLife(gg_dest_LPrs_11521))
+    gg_dest_LPrs_11522 = CreateDestructable(1280340595, -4109.3, 11592.3, 249.000, 0.995, 3)
+    SetDestructableLife(gg_dest_LPrs_11522, 2.55 * GetDestructableLife(gg_dest_LPrs_11522))
+    gg_dest_LPrs_11523 = CreateDestructable(1280340595, -4031.1, 11576.9, 305.000, 1.003, 3)
+    SetDestructableLife(gg_dest_LPrs_11523, 2.55 * GetDestructableLife(gg_dest_LPrs_11523))
+    gg_dest_LPwb_11552 = CreateDestructable(1280341858, 3424.0, 11168.0, 35.000, 0.869, 0)
+    SetDestructableLife(gg_dest_LPwb_11552, 2.55 * GetDestructableLife(gg_dest_LPwb_11552))
+    gg_dest_LPwh_11551 = CreateDestructable(1280341864, 3325.8, 10532.1, 288.000, 0.939, 0)
+    SetDestructableLife(gg_dest_LPwh_11551, 2.55 * GetDestructableLife(gg_dest_LPwh_11551))
+    gg_dest_LPrs_11524 = CreateDestructable(1280340595, -4289.7, 11548.8, 56.000, 0.919, 2)
+    SetDestructableLife(gg_dest_LPrs_11524, 2.55 * GetDestructableLife(gg_dest_LPrs_11524))
+    gg_dest_LPwh_11550 = CreateDestructable(1280341864, 3438.1, 10597.6, 28.000, 1.053, 0)
+    SetDestructableLife(gg_dest_LPwh_11550, 2.55 * GetDestructableLife(gg_dest_LPwh_11550))
+    gg_dest_LRrk_11525 = CreateDestructable(1280471659, -4096.0, 11520.0, 205.000, 0.996, 3)
+    SetDestructableLife(gg_dest_LRrk_11525, 2.55 * GetDestructableLife(gg_dest_LRrk_11525))
+    gg_dest_LPwh_11549 = CreateDestructable(1280341864, 3626.3, 10437.6, 107.000, 1.021, 0)
+    SetDestructableLife(gg_dest_LPwh_11549, 2.55 * GetDestructableLife(gg_dest_LPwh_11549))
+    gg_dest_LPwh_11548 = CreateDestructable(1280341864, 3562.5, 10584.8, 8.000, 1.074, 0)
+    SetDestructableLife(gg_dest_LPwh_11548, 2.55 * GetDestructableLife(gg_dest_LPwh_11548))
+    gg_dest_LPwh_11547 = CreateDestructable(1280341864, 3462.7, 10541.6, 227.000, 0.868, 0)
+    SetDestructableLife(gg_dest_LPwh_11547, 2.55 * GetDestructableLife(gg_dest_LPwh_11547))
+    gg_dest_LRrk_11526 = CreateDestructable(1280471659, -4864.0, 11136.0, 275.000, 1.040, 3)
+    SetDestructableLife(gg_dest_LRrk_11526, 2.55 * GetDestructableLife(gg_dest_LRrk_11526))
+    gg_dest_LPwh_11527 = CreateDestructable(1280341864, -4888.3, 10781.8, 176.000, 1.189, 0)
+    SetDestructableLife(gg_dest_LPwh_11527, 2.55 * GetDestructableLife(gg_dest_LPwh_11527))
+    gg_dest_LPwh_11528 = CreateDestructable(1280341864, -4865.9, 10390.7, 95.000, 0.975, 0)
+    SetDestructableLife(gg_dest_LPwh_11528, 2.55 * GetDestructableLife(gg_dest_LPwh_11528))
+    gg_dest_LPwh_11529 = CreateDestructable(1280341864, -3336.5, 11013.6, 170.000, 1.003, 0)
+    SetDestructableLife(gg_dest_LPwh_11529, 2.55 * GetDestructableLife(gg_dest_LPwh_11529))
+    gg_dest_LPwh_11538 = CreateDestructable(1280341864, 3387.4, 10493.6, 267.000, 0.998, 0)
+    SetDestructableLife(gg_dest_LPwh_11538, 2.55 * GetDestructableLife(gg_dest_LPwh_11538))
+    gg_dest_ZPfw_11508 = CreateDestructable(1515218551, -3361.7, 10714.3, 288.000, 1.102, 3)
+    SetDestructableLife(gg_dest_ZPfw_11508, 2.55 * GetDestructableLife(gg_dest_ZPfw_11508))
     gg_dest_FTtw_0031 = CreateDestructable(1179939959, 6656.0, 12288.0, 270.000, 0.855, 3)
-    gg_dest_NTtw_7001 = CreateDestructable(1314157687, 832.0, -3840.0, 270.000, 0.810, 8)
-    gg_dest_NTtw_7002 = CreateDestructable(1314157687, 896.0, -3712.0, 270.000, 1.044, 2)
-    gg_dest_NTtw_7003 = CreateDestructable(1314157687, 832.0, -3968.0, 270.000, 1.053, 5)
-    gg_dest_NTtw_7004 = CreateDestructable(1314157687, 960.0, -3968.0, 270.000, 1.123, 0)
-    gg_dest_NTtw_7005 = CreateDestructable(1314157687, 1024.0, -3840.0, 270.000, 0.949, 1)
+    gg_dest_ZPfw_11507 = CreateDestructable(1515218551, -3254.0, 10726.0, 341.000, 0.960, 4)
+    SetDestructableLife(gg_dest_ZPfw_11507, 2.55 * GetDestructableLife(gg_dest_ZPfw_11507))
+    gg_dest_ZPfw_11506 = CreateDestructable(1515218551, -3303.6, 10675.3, 161.000, 0.954, 2)
+    SetDestructableLife(gg_dest_ZPfw_11506, 2.55 * GetDestructableLife(gg_dest_ZPfw_11506))
+    gg_dest_ZPfw_11505 = CreateDestructable(1515218551, -3306.6, 10551.1, 139.000, 0.870, 2)
+    SetDestructableLife(gg_dest_ZPfw_11505, 2.55 * GetDestructableLife(gg_dest_ZPfw_11505))
+    gg_dest_LTrt_11504 = CreateDestructable(1280602740, -3840.0, 9984.0, 303.000, 1.000, 0)
+    gg_dest_LTrc_10816 = CreateDestructable(1280602723, -3776.0, 11456.0, 232.000, 1.000, 5)
     gg_dest_NTtw_7006 = CreateDestructable(1314157687, 896.0, -4096.0, 270.000, 1.121, 1)
     gg_dest_NTtw_7007 = CreateDestructable(1314157687, 960.0, -4224.0, 270.000, 1.057, 7)
     gg_dest_NTtw_7008 = CreateDestructable(1314157687, 1024.0, -4096.0, 270.000, 1.127, 3)
@@ -55838,7 +56078,7 @@ function CreateAllDestructables()
     gg_dest_NTtw_1238 = CreateDestructable(1314157687, 5184.0, -3584.0, 270.000, 1.013, 9)
     gg_dest_LWw0_0108 = CreateDestructable(1280800560, -11007.0, 3321.9, 0.000, 1.434, 0)
     SetDestructableLife(gg_dest_LWw0_0108, 2.55 * GetDestructableLife(gg_dest_LWw0_0108))
-    gg_dest_FTtw_7460 = CreateDestructable(1179939959, 6336.0, 4096.0, 270.000, 1.064, 0)
+    gg_dest_NTtw_11398 = CreateDestructable(1314157687, 8064.0, -128.0, 270.000, 0.841, 8)
     gg_dest_FTtw_7484 = CreateDestructable(1179939959, 8064.0, 4096.0, 270.000, 1.167, 7)
     gg_dest_NTtw_7117 = CreateDestructable(1314157687, 4032.0, -2688.0, 270.000, 0.904, 9)
     gg_dest_NTtw_7118 = CreateDestructable(1314157687, 4096.0, -2816.0, 270.000, 0.936, 1)
@@ -55972,7 +56212,7 @@ function CreateAllDestructables()
     gg_dest_FTtw_7754 = CreateDestructable(1179939959, 8960.0, 7616.0, 270.000, 0.890, 3)
     gg_dest_NTtw_7247 = CreateDestructable(1314157687, 8960.0, -2688.0, 270.000, 0.830, 5)
     gg_dest_NTtw_7248 = CreateDestructable(1314157687, 8640.0, -2752.0, 270.000, 0.832, 7)
-    gg_dest_FTtw_7693 = CreateDestructable(1179939959, 1024.0, 11264.0, 270.000, 1.136, 6)
+    gg_dest_FTtw_5016 = CreateDestructable(1179939959, 576.0, 10432.0, 270.000, 0.836, 5)
     gg_dest_FTtw_7577 = CreateDestructable(1179939959, 8576.0, 9792.0, 270.000, 0.969, 0)
     gg_dest_FTtw_7755 = CreateDestructable(1179939959, 8960.0, 7424.0, 270.000, 0.957, 0)
     gg_dest_FTtw_0211 = CreateDestructable(1179939959, 7488.0, 12224.0, 270.000, 0.984, 0)
@@ -56047,7 +56287,7 @@ function CreateAllDestructables()
     gg_dest_NTtw_7321 = CreateDestructable(1314157687, 3008.0, 2048.0, 270.000, 1.108, 8)
     gg_dest_NTtw_7322 = CreateDestructable(1314157687, 3072.0, 2176.0, 270.000, 0.807, 8)
     gg_dest_NTtw_7323 = CreateDestructable(1314157687, 3200.0, 2048.0, 270.000, 0.889, 5)
-    gg_dest_FTtw_7722 = CreateDestructable(1179939959, 1024.0, 8448.0, 270.000, 1.141, 5)
+    gg_dest_NTtw_11319 = CreateDestructable(1314157687, 3456.0, -3968.0, 270.000, 1.049, 4)
     gg_dest_NTtw_7325 = CreateDestructable(1314157687, 3328.0, 2048.0, 270.000, 1.143, 6)
     gg_dest_NTtw_7326 = CreateDestructable(1314157687, 3456.0, 2048.0, 270.000, 0.951, 3)
     gg_dest_FTtw_0917 = CreateDestructable(1179939959, 8768.0, 10432.0, 270.000, 0.859, 0)
@@ -56073,21 +56313,22 @@ function CreateAllDestructables()
     gg_dest_NTtw_7347 = CreateDestructable(1314157687, 5248.0, 2048.0, 270.000, 1.114, 8)
     gg_dest_NTtw_7348 = CreateDestructable(1314157687, 5376.0, 2048.0, 270.000, 0.813, 8)
     gg_dest_FTtw_7740 = CreateDestructable(1179939959, 9088.0, 9536.0, 270.000, 1.031, 2)
-    gg_dest_NTtw_7350 = CreateDestructable(1314157687, 5568.0, 2048.0, 270.000, 0.879, 1)
+    gg_dest_NTtw_11397 = CreateDestructable(1314157687, 8384.0, -64.0, 270.000, 0.822, 4)
     gg_dest_AObd_11688 = CreateDestructable(1095721572, -8350.2, -1026.0, 179.000, 0.953, 0)
     SetDestructableLife(gg_dest_AObd_11688, 2.55 * GetDestructableLife(gg_dest_AObd_11688))
-    gg_dest_FTtw_7712 = CreateDestructable(1179939959, 1024.0, 10240.0, 270.000, 0.828, 2)
-    gg_dest_NTtw_7353 = CreateDestructable(1314157687, 5760.0, 2048.0, 270.000, 0.966, 1)
-    gg_dest_FTtw_7711 = CreateDestructable(1179939959, 1024.0, 9984.0, 270.000, 0.891, 3)
-    gg_dest_NTtw_7355 = CreateDestructable(1314157687, 5888.0, 2048.0, 270.000, 1.129, 7)
-    gg_dest_NTtw_7356 = CreateDestructable(1314157687, 6016.0, 2048.0, 270.000, 0.899, 5)
+    gg_dest_LTlt_11752 = CreateDestructable(1280601204, -6784.0, 4160.0, 270.000, 1.008, 6)
+    gg_dest_NTtw_11396 = CreateDestructable(1314157687, 8256.0, -64.0, 270.000, 0.817, 0)
+    gg_dest_NTtw_11318 = CreateDestructable(1314157687, 3200.0, -3840.0, 270.000, 0.981, 4)
+    gg_dest_NTtw_11395 = CreateDestructable(1314157687, 8192.0, -192.0, 270.000, 1.192, 2)
+    gg_dest_NTtw_11394 = CreateDestructable(1314157687, 8512.0, -192.0, 270.000, 1.058, 8)
     gg_dest_FTtw_0240 = CreateDestructable(1179939959, 7488.0, 12352.0, 270.000, 1.153, 4)
-    gg_dest_NTtw_7358 = CreateDestructable(1314157687, 6144.0, 2176.0, 270.000, 1.038, 9)
-    gg_dest_NTtw_7359 = CreateDestructable(1314157687, 6208.0, 2048.0, 270.000, 1.089, 9)
+    gg_dest_KOst_6275 = CreateDestructable(1263498100, -6144.0, 2432.0, 90.000, 1.038, 0)
+    SetDestructableLife(gg_dest_KOst_6275, 2.55 * GetDestructableLife(gg_dest_KOst_6275))
+    gg_dest_NTtw_11393 = CreateDestructable(1314157687, 8384.0, -192.0, 270.000, 1.015, 8)
     gg_dest_FTtw_7742 = CreateDestructable(1179939959, 9088.0, 9408.0, 270.000, 1.010, 6)
-    gg_dest_NTtw_7361 = CreateDestructable(1314157687, 6400.0, 2048.0, 270.000, 0.861, 9)
+    gg_dest_NTtw_11392 = CreateDestructable(1314157687, 8320.0, -320.0, 270.000, 1.046, 6)
     gg_dest_FTtw_7743 = CreateDestructable(1179939959, 8960.0, 9408.0, 270.000, 1.163, 3)
-    gg_dest_NTtw_7363 = CreateDestructable(1314157687, 6592.0, 2048.0, 270.000, 0.953, 0)
+    gg_dest_NTtw_11391 = CreateDestructable(1314157687, 8512.0, -320.0, 270.000, 0.895, 1)
     gg_dest_FTtw_7566 = CreateDestructable(1179939959, 7424.0, 8768.0, 270.000, 1.018, 9)
     gg_dest_NTtw_7365 = CreateDestructable(1314157687, 6784.0, 2048.0, 270.000, 1.099, 3)
     gg_dest_NTtw_7366 = CreateDestructable(1314157687, 6976.0, 2112.0, 270.000, 1.044, 9)
@@ -56099,7 +56340,7 @@ function CreateAllDestructables()
     gg_dest_NTtw_7372 = CreateDestructable(1314157687, 7616.0, 2112.0, 270.000, 1.005, 8)
     gg_dest_NTtw_7373 = CreateDestructable(1314157687, 7616.0, 1984.0, 270.000, 1.042, 3)
     gg_dest_NTtw_7374 = CreateDestructable(1314157687, 7808.0, 2048.0, 270.000, 0.990, 3)
-    gg_dest_FTtw_7706 = CreateDestructable(1179939959, 1024.0, 10368.0, 270.000, 0.981, 2)
+    gg_dest_LTlt_11751 = CreateDestructable(1280601204, -6400.0, 4416.0, 270.000, 0.925, 5)
     gg_dest_NTtw_7376 = CreateDestructable(1314157687, 7936.0, 2048.0, 270.000, 0.948, 4)
     gg_dest_NTtw_7377 = CreateDestructable(1314157687, 8064.0, 2048.0, 270.000, 0.982, 1)
     gg_dest_NTtw_7378 = CreateDestructable(1314157687, 8192.0, 2048.0, 270.000, 1.001, 3)
@@ -56181,10 +56422,8 @@ function CreateAllDestructables()
     gg_dest_FTtw_1671 = CreateDestructable(1179939959, 11392.0, 4544.0, 270.000, 0.985, 4)
     gg_dest_FTtw_1670 = CreateDestructable(1179939959, 11072.0, 4288.0, 270.000, 0.817, 0)
     gg_dest_NTtw_0238 = CreateDestructable(1314157687, 11328.0, 1792.0, 270.000, 1.004, 1)
-    gg_dest_LOic_6283 = CreateDestructable(1280272739, -5472.0, 3680.0, 68.000, 1.198, 1)
-    SetDestructableLife(gg_dest_LOic_6283, 2.55 * GetDestructableLife(gg_dest_LOic_6283))
-    gg_dest_LOic_6282 = CreateDestructable(1280272739, -5792.0, 3680.0, 173.000, 1.132, 0)
-    SetDestructableLife(gg_dest_LOic_6282, 2.55 * GetDestructableLife(gg_dest_LOic_6282))
+    gg_dest_LTlt_11768 = CreateDestructable(1280601204, -5888.0, 4544.0, 270.000, 1.000, 5)
+    gg_dest_LTlt_11767 = CreateDestructable(1280601204, -6144.0, 4544.0, 270.000, 1.144, 9)
     gg_dest_FTtw_1669 = CreateDestructable(1179939959, 11328.0, 4224.0, 270.000, 0.985, 8)
     gg_dest_NTtw_0254 = CreateDestructable(1314157687, 11456.0, 1728.0, 270.000, 0.922, 6)
     gg_dest_NTtw_0256 = CreateDestructable(1314157687, 11456.0, 1856.0, 270.000, 0.828, 3)
@@ -56305,16 +56544,16 @@ function CreateAllDestructables()
     gg_dest_FTtw_3841 = CreateDestructable(1179939959, 12480.0, 14528.0, 270.000, 0.934, 2)
     gg_dest_NOfp_4838 = CreateDestructable(1313826416, -7040.0, 7488.0, 323.000, 1.018, 0)
     SetDestructableLife(gg_dest_NOfp_4838, 2.55 * GetDestructableLife(gg_dest_NOfp_4838))
-    gg_dest_CTtr_10502 = CreateDestructable(1129608306, -7104.0, 2560.0, 270.000, 1.071, 2)
+    gg_dest_NTtw_11341 = CreateDestructable(1314157687, 4480.0, -3520.0, 270.000, 1.041, 4)
     gg_dest_LOar_4834 = CreateDestructable(1280270706, -7968.0, 7904.0, 307.000, 0.801, 0)
     SetDestructableLife(gg_dest_LOar_4834, 2.55 * GetDestructableLife(gg_dest_LOar_4834))
     gg_dest_LOar_4836 = CreateDestructable(1280270706, -8480.0, 7136.0, 34.000, 1.160, 0)
     SetDestructableLife(gg_dest_LOar_4836, 2.55 * GetDestructableLife(gg_dest_LOar_4836))
     gg_dest_LOar_4835 = CreateDestructable(1280270706, -7712.0, 7904.0, 270.000, 1.160, 0)
     SetDestructableLife(gg_dest_LOar_4835, 2.55 * GetDestructableLife(gg_dest_LOar_4835))
-    gg_dest_CTtr_10501 = CreateDestructable(1129608306, -7232.0, 2560.0, 270.000, 1.180, 2)
-    gg_dest_CTtr_10500 = CreateDestructable(1129608306, -7360.0, 2560.0, 270.000, 0.864, 0)
-    gg_dest_CTtr_10499 = CreateDestructable(1129608306, -7488.0, 2496.0, 270.000, 0.981, 2)
+    gg_dest_NTtw_11340 = CreateDestructable(1314157687, 4480.0, -3776.0, 270.000, 0.830, 4)
+    gg_dest_NTtw_11339 = CreateDestructable(1314157687, 4480.0, -3648.0, 270.000, 0.980, 9)
+    gg_dest_NTtw_11338 = CreateDestructable(1314157687, 4352.0, -3520.0, 270.000, 0.891, 2)
     gg_dest_CTtr_10498 = CreateDestructable(1129608306, -7616.0, 2496.0, 270.000, 1.127, 2)
     gg_dest_CTtr_10497 = CreateDestructable(1129608306, -7744.0, 2496.0, 270.000, 0.968, 2)
     gg_dest_CTtr_10496 = CreateDestructable(1129608306, -7872.0, 2432.0, 270.000, 1.131, 1)
@@ -56328,7 +56567,7 @@ function CreateAllDestructables()
     gg_dest_CTtr_10488 = CreateDestructable(1129608306, -8640.0, 2432.0, 270.000, 0.989, 1)
     gg_dest_CTtr_10487 = CreateDestructable(1129608306, -8768.0, 2432.0, 270.000, 0.810, 3)
     gg_dest_LTbx_4832 = CreateDestructable(1280598648, -8416.0, 7008.0, 151.000, 1.363, 0)
-    gg_dest_LTlt_10550 = CreateDestructable(1280601204, -6784.0, 3968.0, 270.000, 1.013, 5)
+    gg_dest_NTtw_11337 = CreateDestructable(1314157687, 4352.0, -3776.0, 270.000, 0.944, 7)
     gg_dest_CTtr_10486 = CreateDestructable(1129608306, -8896.0, 2432.0, 270.000, 1.065, 1)
     gg_dest_CTtr_10485 = CreateDestructable(1129608306, -896.0, -8000.0, 270.000, 1.118, 3)
     gg_dest_CTtr_10484 = CreateDestructable(1129608306, -1024.0, -8000.0, 270.000, 0.823, 2)
@@ -56791,24 +57030,42 @@ function CreateAllDestructables()
     gg_dest_LTlt_8058 = CreateDestructable(1280601204, -640.0, 7616.0, 270.000, 0.866, 4)
     gg_dest_LTlt_8059 = CreateDestructable(1280601204, -512.0, 7616.0, 270.000, 0.971, 7)
     gg_dest_LTlt_8060 = CreateDestructable(1280601204, -576.0, 7744.0, 270.000, 1.016, 3)
-    gg_dest_LTlt_8061 = CreateDestructable(1280601204, -640.0, 7936.0, 270.000, 0.963, 8)
-    gg_dest_LTlt_8062 = CreateDestructable(1280601204, -576.0, 8128.0, 270.000, 0.935, 6)
-    gg_dest_LTlt_8063 = CreateDestructable(1280601204, -576.0, 8256.0, 270.000, 1.119, 1)
-    gg_dest_LTlt_8064 = CreateDestructable(1280601204, -576.0, 8384.0, 270.000, 1.001, 3)
-    gg_dest_LTlt_8065 = CreateDestructable(1280601204, -640.0, 8704.0, 270.000, 1.038, 7)
-    gg_dest_LTlt_8066 = CreateDestructable(1280601204, -576.0, 8832.0, 270.000, 0.924, 0)
-    gg_dest_LTlt_8067 = CreateDestructable(1280601204, -640.0, 8960.0, 270.000, 1.151, 2)
-    gg_dest_LTlt_8068 = CreateDestructable(1280601204, -512.0, 8960.0, 270.000, 0.906, 0)
-    gg_dest_LTlt_8069 = CreateDestructable(1280601204, -576.0, 9088.0, 270.000, 1.054, 7)
-    gg_dest_LTlt_8070 = CreateDestructable(1280601204, -576.0, 8576.0, 270.000, 1.006, 8)
-    gg_dest_LTlt_8071 = CreateDestructable(1280601204, -512.0, 8704.0, 270.000, 0.899, 1)
-    gg_dest_LTlt_8072 = CreateDestructable(1280601204, -576.0, 9344.0, 270.000, 1.045, 1)
-    gg_dest_LTlt_8073 = CreateDestructable(1280601204, -576.0, 9472.0, 270.000, 1.060, 9)
-    gg_dest_LTlt_8074 = CreateDestructable(1280601204, -576.0, 9664.0, 270.000, 0.984, 6)
-    gg_dest_LTlt_8075 = CreateDestructable(1280601204, -576.0, 9792.0, 270.000, 1.024, 5)
-    gg_dest_LTlt_8076 = CreateDestructable(1280601204, -640.0, 9920.0, 270.000, 0.858, 8)
-    gg_dest_LTlt_8077 = CreateDestructable(1280601204, -640.0, 10048.0, 270.000, 0.845, 7)
-    gg_dest_LTlt_8078 = CreateDestructable(1280601204, -640.0, 10240.0, 270.000, 1.149, 4)
+    gg_dest_ZPf0_11574 = CreateDestructable(1515218480, 4202.2, 9978.0, 216.000, 1.063, 3)
+    SetDestructableLife(gg_dest_ZPf0_11574, 2.55 * GetDestructableLife(gg_dest_ZPf0_11574))
+    gg_dest_ZPf0_11573 = CreateDestructable(1515218480, 4776.2, 10347.7, 146.000, 1.149, 2)
+    SetDestructableLife(gg_dest_ZPf0_11573, 2.55 * GetDestructableLife(gg_dest_ZPf0_11573))
+    gg_dest_ZPf0_11572 = CreateDestructable(1515218480, 4658.9, 10312.7, 172.000, 1.028, 2)
+    SetDestructableLife(gg_dest_ZPf0_11572, 2.55 * GetDestructableLife(gg_dest_ZPf0_11572))
+    gg_dest_ZPf0_11571 = CreateDestructable(1515218480, 4810.0, 11222.2, 237.000, 1.137, 0)
+    SetDestructableLife(gg_dest_ZPf0_11571, 2.55 * GetDestructableLife(gg_dest_ZPf0_11571))
+    gg_dest_LOss_11636 = CreateDestructable(1280275315, 7712.0, -288.0, 337.000, 1.003, 0)
+    SetDestructableLife(gg_dest_LOss_11636, 2.55 * GetDestructableLife(gg_dest_LOss_11636))
+    gg_dest_LOss_11635 = CreateDestructable(1280275315, 6944.0, -992.0, 346.000, 0.843, 4)
+    SetDestructableLife(gg_dest_LOss_11635, 2.55 * GetDestructableLife(gg_dest_LOss_11635))
+    gg_dest_LOss_11634 = CreateDestructable(1280275315, 8480.0, -1184.0, 214.000, 1.038, 3)
+    SetDestructableLife(gg_dest_LOss_11634, 2.55 * GetDestructableLife(gg_dest_LOss_11634))
+    gg_dest_LOss_11633 = CreateDestructable(1280275315, 8096.0, -1760.0, 112.000, 0.852, 4)
+    SetDestructableLife(gg_dest_LOss_11633, 2.55 * GetDestructableLife(gg_dest_LOss_11633))
+    gg_dest_LOss_11632 = CreateDestructable(1280275315, 7904.0, -1760.0, 336.000, 0.883, 3)
+    SetDestructableLife(gg_dest_LOss_11632, 2.55 * GetDestructableLife(gg_dest_LOss_11632))
+    gg_dest_LOtz_11631 = CreateDestructable(1280275578, 8419.4, 7376.3, 254.000, 1.077, 0)
+    SetDestructableLife(gg_dest_LOtz_11631, 2.55 * GetDestructableLife(gg_dest_LOtz_11631))
+    gg_dest_LOtz_11630 = CreateDestructable(1280275578, 7617.4, 7897.2, 232.000, 0.805, 0)
+    SetDestructableLife(gg_dest_LOtz_11630, 2.55 * GetDestructableLife(gg_dest_LOtz_11630))
+    gg_dest_LOtz_11629 = CreateDestructable(1280275578, 7245.1, 6675.7, 230.000, 1.001, 0)
+    SetDestructableLife(gg_dest_LOtz_11629, 2.55 * GetDestructableLife(gg_dest_LOtz_11629))
+    gg_dest_LOtz_11628 = CreateDestructable(1280275578, 7041.1, 6873.2, 330.000, 0.986, 0)
+    SetDestructableLife(gg_dest_LOtz_11628, 2.55 * GetDestructableLife(gg_dest_LOtz_11628))
+    gg_dest_LOtz_11627 = CreateDestructable(1280275578, 7658.0, 6402.2, 350.000, 1.187, 0)
+    SetDestructableLife(gg_dest_LOtz_11627, 2.55 * GetDestructableLife(gg_dest_LOtz_11627))
+    gg_dest_LOtz_11626 = CreateDestructable(1280275578, 8241.9, -711.0, 285.000, 1.124, 0)
+    SetDestructableLife(gg_dest_LOtz_11626, 2.55 * GetDestructableLife(gg_dest_LOtz_11626))
+    gg_dest_ZPf0_11570 = CreateDestructable(1515218480, 4880.6, 11194.4, 75.000, 0.883, 1)
+    SetDestructableLife(gg_dest_ZPf0_11570, 2.55 * GetDestructableLife(gg_dest_ZPf0_11570))
+    gg_dest_ZPf0_11569 = CreateDestructable(1515218480, 4889.3, 11453.0, 112.000, 1.001, 0)
+    SetDestructableLife(gg_dest_ZPf0_11569, 2.55 * GetDestructableLife(gg_dest_ZPf0_11569))
+    gg_dest_ZPf0_11568 = CreateDestructable(1515218480, 4209.5, 11534.2, 290.000, 0.962, 1)
+    SetDestructableLife(gg_dest_ZPf0_11568, 2.55 * GetDestructableLife(gg_dest_ZPf0_11568))
     gg_dest_LTlt_8079 = CreateDestructable(1280601204, -640.0, 10432.0, 270.000, 0.953, 7)
     gg_dest_LTlt_8080 = CreateDestructable(1280601204, -640.0, 10560.0, 270.000, 1.059, 5)
     gg_dest_LTlt_8081 = CreateDestructable(1280601204, -640.0, 10688.0, 270.000, 0.904, 7)
@@ -56958,8 +57215,8 @@ function CreateAllDestructables()
     SetDestructableLife(gg_dest_AObd_11685, 2.55 * GetDestructableLife(gg_dest_AObd_11685))
     gg_dest_LOsk_11640 = CreateDestructable(1280275307, 4032.0, -5312.0, 264.000, 1.183, 0)
     SetDestructableLife(gg_dest_LOsk_11640, 2.55 * GetDestructableLife(gg_dest_LOsk_11640))
-    gg_dest_LTlt_8218 = CreateDestructable(1280601204, -6528.0, 3648.0, 270.000, 1.084, 9)
-    gg_dest_LTlt_8219 = CreateDestructable(1280601204, -6656.0, 3584.0, 270.000, 0.990, 1)
+    gg_dest_NTtw_5126 = CreateDestructable(1314157687, 8768.0, -896.0, 270.000, 1.155, 6)
+    gg_dest_NTtw_5125 = CreateDestructable(1314157687, 8640.0, -960.0, 270.000, 1.156, 0)
     gg_dest_LTlt_8220 = CreateDestructable(1280601204, -7616.0, 3648.0, 270.000, 0.811, 5)
     gg_dest_LTlt_8221 = CreateDestructable(1280601204, -7488.0, 3648.0, 270.000, 1.103, 7)
     gg_dest_LTlt_8222 = CreateDestructable(1280601204, -7744.0, 3584.0, 270.000, 1.180, 0)
@@ -57408,26 +57665,41 @@ function CreateAllDestructables()
     gg_dest_FTtw_8665 = CreateDestructable(1179939959, 576.0, 11008.0, 270.000, 1.176, 9)
     gg_dest_FTtw_8666 = CreateDestructable(1179939959, 576.0, 10816.0, 270.000, 1.179, 3)
     gg_dest_FTtw_8667 = CreateDestructable(1179939959, 576.0, 10624.0, 270.000, 1.192, 5)
-    gg_dest_FTtw_8668 = CreateDestructable(1179939959, 640.0, 10432.0, 270.000, 1.025, 6)
-    gg_dest_FTtw_8669 = CreateDestructable(1179939959, 576.0, 10240.0, 270.000, 0.989, 2)
-    gg_dest_FTtw_8670 = CreateDestructable(1179939959, 640.0, 10048.0, 270.000, 1.190, 9)
-    gg_dest_FTtw_8671 = CreateDestructable(1179939959, 576.0, 9792.0, 270.000, 1.166, 0)
-    gg_dest_FTtw_8672 = CreateDestructable(1179939959, 576.0, 9664.0, 270.000, 0.873, 6)
-    gg_dest_FTtw_8673 = CreateDestructable(1179939959, 576.0, 9920.0, 270.000, 1.058, 1)
-    gg_dest_FTtw_8674 = CreateDestructable(1179939959, 576.0, 9536.0, 270.000, 0.955, 3)
-    gg_dest_FTtw_8675 = CreateDestructable(1179939959, 640.0, 9408.0, 270.000, 1.060, 2)
-    gg_dest_FTtw_8676 = CreateDestructable(1179939959, 512.0, 9344.0, 270.000, 0.816, 4)
-    gg_dest_FTtw_8677 = CreateDestructable(1179939959, 576.0, 9216.0, 270.000, 1.107, 6)
-    gg_dest_FTtw_8678 = CreateDestructable(1179939959, 576.0, 9088.0, 270.000, 0.976, 7)
-    gg_dest_FTtw_8679 = CreateDestructable(1179939959, 576.0, 8896.0, 270.000, 0.957, 6)
-    gg_dest_FTtw_8680 = CreateDestructable(1179939959, 640.0, 8768.0, 270.000, 0.840, 1)
-    gg_dest_FTtw_8681 = CreateDestructable(1179939959, 576.0, 8640.0, 270.000, 1.092, 3)
-    gg_dest_FTtw_8682 = CreateDestructable(1179939959, 576.0, 8448.0, 270.000, 0.824, 3)
-    gg_dest_FTtw_8683 = CreateDestructable(1179939959, 576.0, 8320.0, 270.000, 0.854, 9)
-    gg_dest_FTtw_8684 = CreateDestructable(1179939959, 576.0, 8192.0, 270.000, 0.908, 8)
-    gg_dest_FTtw_8685 = CreateDestructable(1179939959, 576.0, 8064.0, 270.000, 0.927, 7)
-    gg_dest_FTtw_8686 = CreateDestructable(1179939959, 576.0, 7936.0, 270.000, 0.889, 9)
-    gg_dest_FTtw_8687 = CreateDestructable(1179939959, 576.0, 7808.0, 270.000, 1.050, 9)
+    gg_dest_LTlt_11750 = CreateDestructable(1280601204, -6592.0, 4288.0, 270.000, 1.111, 0)
+    gg_dest_ZPf0_11567 = CreateDestructable(1515218480, 4320.3, 11567.2, 287.000, 1.122, 3)
+    SetDestructableLife(gg_dest_ZPf0_11567, 2.55 * GetDestructableLife(gg_dest_ZPf0_11567))
+    gg_dest_LRrk_11566 = CreateDestructable(1280471659, 4416.0, 11648.0, 316.000, 1.067, 9)
+    SetDestructableLife(gg_dest_LRrk_11566, 2.55 * GetDestructableLife(gg_dest_LRrk_11566))
+    gg_dest_LOtz_11625 = CreateDestructable(1280275578, 7195.8, -662.4, 114.000, 0.819, 0)
+    SetDestructableLife(gg_dest_LOtz_11625, 2.55 * GetDestructableLife(gg_dest_LOtz_11625))
+    gg_dest_LOtz_11624 = CreateDestructable(1280275578, 8945.8, -1680.9, 182.000, 0.822, 0)
+    SetDestructableLife(gg_dest_LOtz_11624, 2.55 * GetDestructableLife(gg_dest_LOtz_11624))
+    gg_dest_LOtz_11623 = CreateDestructable(1280275578, 8897.0, -2191.1, 65.000, 1.100, 0)
+    SetDestructableLife(gg_dest_LOtz_11623, 2.55 * GetDestructableLife(gg_dest_LOtz_11623))
+    gg_dest_LOtz_11622 = CreateDestructable(1280275578, 8345.2, -1917.4, 189.000, 0.889, 0)
+    SetDestructableLife(gg_dest_LOtz_11622, 2.55 * GetDestructableLife(gg_dest_LOtz_11622))
+    gg_dest_LOtz_11621 = CreateDestructable(1280275578, 8664.8, -1442.8, 55.000, 1.147, 0)
+    SetDestructableLife(gg_dest_LOtz_11621, 2.55 * GetDestructableLife(gg_dest_LOtz_11621))
+    gg_dest_LOt1_11620 = CreateDestructable(1280275505, 6976.0, -832.0, 283.000, 0.928, 0)
+    SetDestructableLife(gg_dest_LOt1_11620, 2.55 * GetDestructableLife(gg_dest_LOt1_11620))
+    gg_dest_LOt1_11619 = CreateDestructable(1280275505, 6976.0, -1216.0, 53.000, 1.199, 0)
+    SetDestructableLife(gg_dest_LOt1_11619, 2.55 * GetDestructableLife(gg_dest_LOt1_11619))
+    gg_dest_LOwr_11618 = CreateDestructable(1280276338, 7040.0, -1408.0, 164.000, 0.844, 0)
+    SetDestructableLife(gg_dest_LOwr_11618, 2.55 * GetDestructableLife(gg_dest_LOwr_11618))
+    gg_dest_LOwr_11617 = CreateDestructable(1280276338, 8448.0, -1024.0, 337.000, 1.051, 0)
+    SetDestructableLife(gg_dest_LOwr_11617, 2.55 * GetDestructableLife(gg_dest_LOwr_11617))
+    gg_dest_LOwp_11616 = CreateDestructable(1280276336, 7520.0, -288.0, 79.000, 1.253, 0)
+    SetDestructableLife(gg_dest_LOwp_11616, 2.55 * GetDestructableLife(gg_dest_LOwp_11616))
+    gg_dest_LOwp_11615 = CreateDestructable(1280276336, 7328.0, -352.0, 300.000, 1.175, 0)
+    SetDestructableLife(gg_dest_LOwp_11615, 2.55 * GetDestructableLife(gg_dest_LOwp_11615))
+    gg_dest_LRrk_11565 = CreateDestructable(1280471659, 4864.0, 11328.0, 22.000, 0.959, 6)
+    SetDestructableLife(gg_dest_LRrk_11565, 2.55 * GetDestructableLife(gg_dest_LRrk_11565))
+    gg_dest_LRrk_11564 = CreateDestructable(1280471659, 4096.0, 11584.0, 206.000, 0.830, 3)
+    SetDestructableLife(gg_dest_LRrk_11564, 2.55 * GetDestructableLife(gg_dest_LRrk_11564))
+    gg_dest_LTlt_11749 = CreateDestructable(1280601204, -6656.0, 4160.0, 270.000, 0.873, 9)
+    gg_dest_LTlt_11748 = CreateDestructable(1280601204, -6208.0, 4416.0, 270.000, 0.839, 1)
+    gg_dest_LTlt_11747 = CreateDestructable(1280601204, -6400.0, 4288.0, 270.000, 1.143, 9)
+    gg_dest_LTlt_11746 = CreateDestructable(1280601204, -6464.0, 4160.0, 270.000, 0.998, 0)
     gg_dest_FTtw_8688 = CreateDestructable(1179939959, 576.0, 7680.0, 270.000, 0.854, 8)
     gg_dest_FTtw_8689 = CreateDestructable(1179939959, 512.0, 7552.0, 270.000, 1.013, 7)
     gg_dest_FTtw_8690 = CreateDestructable(1179939959, 576.0, 7424.0, 270.000, 0.904, 9)
@@ -57706,16 +57978,21 @@ function CreateAllDestructables()
     gg_dest_FTtw_8963 = CreateDestructable(1179939959, 7744.0, 3648.0, 270.000, 0.910, 3)
     gg_dest_FTtw_8964 = CreateDestructable(1179939959, 7616.0, 3648.0, 270.000, 1.065, 1)
     gg_dest_FTtw_8965 = CreateDestructable(1179939959, 7488.0, 3648.0, 270.000, 1.130, 3)
-    gg_dest_FTtw_8966 = CreateDestructable(1179939959, 7296.0, 3648.0, 270.000, 0.932, 4)
-    gg_dest_FTtw_8967 = CreateDestructable(1179939959, 7168.0, 3712.0, 270.000, 0.892, 8)
-    gg_dest_FTtw_8968 = CreateDestructable(1179939959, 6976.0, 3712.0, 270.000, 0.997, 0)
-    gg_dest_FTtw_8969 = CreateDestructable(1179939959, 6848.0, 3712.0, 270.000, 0.954, 3)
-    gg_dest_FTtw_8970 = CreateDestructable(1179939959, 6912.0, 3968.0, 270.000, 0.896, 4)
-    gg_dest_FTtw_8971 = CreateDestructable(1179939959, 6656.0, 3648.0, 270.000, 0.996, 4)
-    gg_dest_FTtw_8972 = CreateDestructable(1179939959, 6464.0, 3712.0, 270.000, 0.863, 6)
-    gg_dest_FTtw_8973 = CreateDestructable(1179939959, 6528.0, 3584.0, 270.000, 0.822, 9)
-    gg_dest_FTtw_8974 = CreateDestructable(1179939959, 6336.0, 3712.0, 270.000, 1.022, 2)
-    gg_dest_FTtw_8975 = CreateDestructable(1179939959, 6400.0, 3584.0, 270.000, 0.945, 3)
+    gg_dest_NTtw_11390 = CreateDestructable(1314157687, 8448.0, -448.0, 270.000, 0.960, 0)
+    gg_dest_NTtw_11389 = CreateDestructable(1314157687, 8704.0, -384.0, 270.000, 0.881, 4)
+    gg_dest_NTtw_11388 = CreateDestructable(1314157687, 8576.0, -448.0, 270.000, 1.145, 3)
+    gg_dest_NTtw_11427 = CreateDestructable(1314157687, 6848.0, -512.0, 270.000, 1.138, 7)
+    gg_dest_NTtw_9463 = CreateDestructable(1314157687, 8512.0, -576.0, 270.000, 1.147, 8)
+    gg_dest_KOst_6274 = CreateDestructable(1263498100, -6144.0, 3712.0, 270.000, 1.038, 0)
+    SetDestructableLife(gg_dest_KOst_6274, 2.55 * GetDestructableLife(gg_dest_KOst_6274))
+    gg_dest_AOob_6273 = CreateDestructable(1095724898, -5760.0, 3456.0, 303.000, 0.875, 2)
+    SetDestructableLife(gg_dest_AOob_6273, 2.55 * GetDestructableLife(gg_dest_AOob_6273))
+    gg_dest_AOob_6271 = CreateDestructable(1095724898, -6528.0, 3456.0, 303.000, 0.875, 2)
+    SetDestructableLife(gg_dest_AOob_6271, 2.55 * GetDestructableLife(gg_dest_AOob_6271))
+    gg_dest_AOob_5511 = CreateDestructable(1095724898, -5760.0, 2688.0, 303.000, 0.875, 2)
+    SetDestructableLife(gg_dest_AOob_5511, 2.55 * GetDestructableLife(gg_dest_AOob_5511))
+    gg_dest_AOob_5510 = CreateDestructable(1095724898, -6528.0, 2688.0, 303.000, 0.875, 2)
+    SetDestructableLife(gg_dest_AOob_5510, 2.55 * GetDestructableLife(gg_dest_AOob_5510))
     gg_dest_NObt_11728 = CreateDestructable(1313825396, 8961.1, -3769.9, 51.000, 0.960, 0)
     SetDestructableLife(gg_dest_NObt_11728, 2.55 * GetDestructableLife(gg_dest_NObt_11728))
     gg_dest_AObd_11710 = CreateDestructable(1095721572, -7778.6, 12334.8, 211.000, 0.910, 0)
@@ -57742,9 +58019,9 @@ function CreateAllDestructables()
     SetDestructableLife(gg_dest_AObd_11718, 2.55 * GetDestructableLife(gg_dest_AObd_11718))
     gg_dest_AObd_11708 = CreateDestructable(1095721572, 6630.1, 7870.1, 276.000, 1.069, 0)
     SetDestructableLife(gg_dest_AObd_11708, 2.55 * GetDestructableLife(gg_dest_AObd_11708))
-    gg_dest_FTtw_8989 = CreateDestructable(1179939959, 4800.0, 3648.0, 270.000, 0.859, 4)
+    gg_dest_NTtw_11426 = CreateDestructable(1314157687, 6784.0, -320.0, 270.000, 1.191, 5)
     gg_dest_FTtw_8990 = CreateDestructable(1179939959, 4608.0, 3712.0, 270.000, 1.186, 4)
-    gg_dest_FTtw_8991 = CreateDestructable(1179939959, 4672.0, 3584.0, 270.000, 1.080, 1)
+    gg_dest_NTtw_11425 = CreateDestructable(1314157687, 7040.0, -384.0, 270.000, 1.033, 8)
     gg_dest_FTtw_8992 = CreateDestructable(1179939959, 4416.0, 3712.0, 270.000, 1.182, 8)
     gg_dest_FTtw_8993 = CreateDestructable(1179939959, 4480.0, 3584.0, 270.000, 0.863, 1)
     gg_dest_FTtw_8994 = CreateDestructable(1179939959, 4288.0, 3648.0, 270.000, 0.989, 5)
@@ -57900,7 +58177,7 @@ function CreateAllDestructables()
     gg_dest_NTtw_9144 = CreateDestructable(1314157687, 4480.0, 2560.0, 270.000, 1.128, 3)
     gg_dest_NTtw_9145 = CreateDestructable(1314157687, 4736.0, 2432.0, 270.000, 1.084, 9)
     gg_dest_NTtw_9146 = CreateDestructable(1314157687, 4672.0, 2560.0, 270.000, 1.086, 3)
-    gg_dest_NTtw_9147 = CreateDestructable(1314157687, 4864.0, 2496.0, 270.000, 1.194, 1)
+    gg_dest_NTtw_9462 = CreateDestructable(1314157687, 8768.0, -512.0, 270.000, 1.170, 6)
     gg_dest_AObd_11707 = CreateDestructable(1095721572, 4829.5, 9791.4, 202.000, 0.889, 0)
     SetDestructableLife(gg_dest_AObd_11707, 2.55 * GetDestructableLife(gg_dest_AObd_11707))
     gg_dest_AObd_11706 = CreateDestructable(1095721572, 3939.0, 12050.5, 327.000, 0.853, 0)
@@ -57923,17 +58200,22 @@ function CreateAllDestructables()
     SetDestructableLife(gg_dest_AObd_11689, 2.55 * GetDestructableLife(gg_dest_AObd_11689))
     gg_dest_AObr_11701 = CreateDestructable(1095721586, 7488.0, -512.0, 92.000, 0.814, 0)
     SetDestructableLife(gg_dest_AObr_11701, 2.55 * GetDestructableLife(gg_dest_AObr_11701))
-    gg_dest_NTtw_9159 = CreateDestructable(1314157687, 6272.0, 2432.0, 270.000, 0.939, 7)
+    gg_dest_AOob_5509 = CreateDestructable(1095724898, 5760.0, 3456.0, 303.000, 0.875, 2)
+    SetDestructableLife(gg_dest_AOob_5509, 2.55 * GetDestructableLife(gg_dest_AOob_5509))
     gg_dest_NObt_11700 = CreateDestructable(1313825396, -8699.4, -3361.8, 51.000, 1.021, 0)
     SetDestructableLife(gg_dest_NObt_11700, 2.55 * GetDestructableLife(gg_dest_NObt_11700))
-    gg_dest_NTtw_9161 = CreateDestructable(1314157687, 6400.0, 2496.0, 270.000, 1.056, 5)
-    gg_dest_NTtw_9162 = CreateDestructable(1314157687, 6528.0, 2496.0, 270.000, 0.869, 4)
-    gg_dest_NTtw_9163 = CreateDestructable(1314157687, 6656.0, 2496.0, 270.000, 1.042, 8)
-    gg_dest_NTtw_9164 = CreateDestructable(1314157687, 6848.0, 2432.0, 270.000, 0.966, 0)
-    gg_dest_NTtw_9165 = CreateDestructable(1314157687, 6784.0, 2560.0, 270.000, 1.037, 9)
-    gg_dest_NTtw_9166 = CreateDestructable(1314157687, 6912.0, 2560.0, 270.000, 1.182, 1)
-    gg_dest_NTtw_9167 = CreateDestructable(1314157687, 7104.0, 2496.0, 270.000, 1.064, 8)
-    gg_dest_NTtw_9168 = CreateDestructable(1314157687, 7232.0, 2496.0, 270.000, 0.970, 4)
+    gg_dest_AOob_5508 = CreateDestructable(1095724898, 5760.0, 2688.0, 303.000, 0.875, 2)
+    SetDestructableLife(gg_dest_AOob_5508, 2.55 * GetDestructableLife(gg_dest_AOob_5508))
+    gg_dest_AOob_5506 = CreateDestructable(1095724898, 6528.0, 3456.0, 303.000, 0.875, 2)
+    SetDestructableLife(gg_dest_AOob_5506, 2.55 * GetDestructableLife(gg_dest_AOob_5506))
+    gg_dest_AOob_6268 = CreateDestructable(1095724898, 6528.0, 2688.0, 303.000, 0.875, 2)
+    SetDestructableLife(gg_dest_AOob_6268, 2.55 * GetDestructableLife(gg_dest_AOob_6268))
+    gg_dest_NTtw_9461 = CreateDestructable(1314157687, 8640.0, -576.0, 270.000, 1.165, 0)
+    gg_dest_ORmk_5505 = CreateDestructable(1330802027, -6592.0, 2176.0, 270.000, 0.893, 2)
+    SetDestructableLife(gg_dest_ORmk_5505, 2.55 * GetDestructableLife(gg_dest_ORmk_5505))
+    gg_dest_NTtw_9460 = CreateDestructable(1314157687, 8768.0, -640.0, 270.000, 0.901, 1)
+    gg_dest_NTtw_7061 = CreateDestructable(1314157687, 8640.0, -704.0, 270.000, 1.127, 5)
+    gg_dest_NTtw_7059 = CreateDestructable(1314157687, 8768.0, -768.0, 270.000, 0.979, 4)
     gg_dest_NTtw_9169 = CreateDestructable(1314157687, 7360.0, 2496.0, 270.000, 0.944, 8)
     gg_dest_NTtw_9170 = CreateDestructable(1314157687, 7488.0, 2496.0, 270.000, 0.883, 2)
     gg_dest_NTtw_9171 = CreateDestructable(1314157687, 7616.0, 2432.0, 270.000, 0.936, 0)
@@ -58157,24 +58439,41 @@ function CreateAllDestructables()
     gg_dest_NTtw_9389 = CreateDestructable(1314157687, 640.0, -1408.0, 270.000, 1.073, 6)
     gg_dest_NTtw_9390 = CreateDestructable(1314157687, 640.0, -1152.0, 270.000, 0.874, 6)
     gg_dest_NTtw_9391 = CreateDestructable(1314157687, 576.0, -1600.0, 270.000, 0.826, 2)
-    gg_dest_NTtw_9392 = CreateDestructable(1314157687, 576.0, -1984.0, 270.000, 1.092, 2)
-    gg_dest_NTtw_9393 = CreateDestructable(1314157687, 640.0, -2112.0, 270.000, 0.945, 0)
+    gg_dest_LPwb_11537 = CreateDestructable(1280341858, 3360.0, 10592.0, 158.000, 0.923, 0)
+    SetDestructableLife(gg_dest_LPwb_11537, 2.55 * GetDestructableLife(gg_dest_LPwb_11537))
+    gg_dest_LPwb_11536 = CreateDestructable(1280341858, 3360.0, 10912.0, 253.000, 0.951, 0)
+    SetDestructableLife(gg_dest_LPwb_11536, 2.55 * GetDestructableLife(gg_dest_LPwb_11536))
     gg_dest_NTtw_9394 = CreateDestructable(1314157687, 576.0, -1792.0, 270.000, 0.853, 7)
-    gg_dest_NTtw_9395 = CreateDestructable(1314157687, 512.0, -2240.0, 270.000, 0.816, 9)
-    gg_dest_NTtw_9396 = CreateDestructable(1314157687, 576.0, -2368.0, 270.000, 0.813, 0)
-    gg_dest_NTtw_9397 = CreateDestructable(1314157687, 512.0, -2112.0, 270.000, 1.055, 4)
-    gg_dest_NTtw_9398 = CreateDestructable(1314157687, 512.0, -2752.0, 270.000, 0.944, 4)
-    gg_dest_NTtw_9399 = CreateDestructable(1314157687, 576.0, -2624.0, 270.000, 0.810, 6)
-    gg_dest_NTtw_9400 = CreateDestructable(1314157687, 512.0, -2496.0, 270.000, 0.986, 1)
-    gg_dest_NTtw_9401 = CreateDestructable(1314157687, 576.0, -2880.0, 270.000, 1.102, 6)
-    gg_dest_NTtw_9402 = CreateDestructable(1314157687, 576.0, -3072.0, 270.000, 0.985, 5)
-    gg_dest_NTtw_9403 = CreateDestructable(1314157687, 512.0, -3328.0, 270.000, 1.148, 2)
-    gg_dest_NTtw_9404 = CreateDestructable(1314157687, 576.0, -3456.0, 270.000, 0.955, 0)
-    gg_dest_NTtw_9405 = CreateDestructable(1314157687, 576.0, -3200.0, 270.000, 0.815, 0)
-    gg_dest_NTtw_9406 = CreateDestructable(1314157687, 576.0, -3584.0, 270.000, 0.848, 9)
-    gg_dest_NTtw_9407 = CreateDestructable(1314157687, 576.0, -4032.0, 270.000, 1.104, 9)
-    gg_dest_NTtw_9408 = CreateDestructable(1314157687, 576.0, -3776.0, 270.000, 0.888, 7)
-    gg_dest_NTtw_9409 = CreateDestructable(1314157687, 576.0, -4288.0, 270.000, 0.823, 6)
+    gg_dest_LPwb_11535 = CreateDestructable(1280341858, -3616.0, 10144.0, 226.000, 1.080, 0)
+    SetDestructableLife(gg_dest_LPwb_11535, 2.55 * GetDestructableLife(gg_dest_LPwb_11535))
+    gg_dest_LPwh_11546 = CreateDestructable(1280341864, 3523.2, 10517.6, 338.000, 0.810, 0)
+    SetDestructableLife(gg_dest_LPwh_11546, 2.55 * GetDestructableLife(gg_dest_LPwh_11546))
+    gg_dest_LPwh_11534 = CreateDestructable(1280341864, -3889.1, 10098.4, 322.000, 1.057, 0)
+    SetDestructableLife(gg_dest_LPwh_11534, 2.55 * GetDestructableLife(gg_dest_LPwh_11534))
+    gg_dest_LPwh_11545 = CreateDestructable(1280341864, 3529.8, 10375.2, 89.000, 0.941, 0)
+    SetDestructableLife(gg_dest_LPwh_11545, 2.55 * GetDestructableLife(gg_dest_LPwh_11545))
+    gg_dest_LPwh_11544 = CreateDestructable(1280341864, 3457.8, 10325.5, 208.000, 1.055, 0)
+    SetDestructableLife(gg_dest_LPwh_11544, 2.55 * GetDestructableLife(gg_dest_LPwh_11544))
+    gg_dest_LPwh_11543 = CreateDestructable(1280341864, 3408.7, 10384.8, 160.000, 1.060, 0)
+    SetDestructableLife(gg_dest_LPwh_11543, 2.55 * GetDestructableLife(gg_dest_LPwh_11543))
+    gg_dest_LPwh_11542 = CreateDestructable(1280341864, 3470.8, 10442.4, 75.000, 1.128, 0)
+    SetDestructableLife(gg_dest_LPwh_11542, 2.55 * GetDestructableLife(gg_dest_LPwh_11542))
+    gg_dest_LPwh_11541 = CreateDestructable(1280341864, 3578.9, 10463.2, 253.000, 1.008, 0)
+    SetDestructableLife(gg_dest_LPwh_11541, 2.55 * GetDestructableLife(gg_dest_LPwh_11541))
+    gg_dest_LPwh_11533 = CreateDestructable(1280341864, -3926.9, 10050.9, 254.000, 1.147, 0)
+    SetDestructableLife(gg_dest_LPwh_11533, 2.55 * GetDestructableLife(gg_dest_LPwh_11533))
+    gg_dest_LPwh_11532 = CreateDestructable(1280341864, -4050.8, 9951.2, 319.000, 0.962, 0)
+    SetDestructableLife(gg_dest_LPwh_11532, 2.55 * GetDestructableLife(gg_dest_LPwh_11532))
+    gg_dest_LPwh_11540 = CreateDestructable(1280341864, 3613.2, 10533.6, 220.000, 1.047, 0)
+    SetDestructableLife(gg_dest_LPwh_11540, 2.55 * GetDestructableLife(gg_dest_LPwh_11540))
+    gg_dest_LPwh_11539 = CreateDestructable(1280341864, 3465.9, 10504.8, 250.000, 0.803, 0)
+    SetDestructableLife(gg_dest_LPwh_11539, 2.55 * GetDestructableLife(gg_dest_LPwh_11539))
+    gg_dest_LPwh_11531 = CreateDestructable(1280341864, -3406.7, 11045.3, 359.000, 1.133, 0)
+    SetDestructableLife(gg_dest_LPwh_11531, 2.55 * GetDestructableLife(gg_dest_LPwh_11531))
+    gg_dest_LPwh_11530 = CreateDestructable(1280341864, -3365.3, 11115.7, 333.000, 1.160, 0)
+    SetDestructableLife(gg_dest_LPwh_11530, 2.55 * GetDestructableLife(gg_dest_LPwh_11530))
+    gg_dest_NOfp_11502 = CreateDestructable(1313826416, -4672.0, 10304.0, 323.000, 1.018, 0)
+    SetDestructableLife(gg_dest_NOfp_11502, 2.55 * GetDestructableLife(gg_dest_NOfp_11502))
     gg_dest_NTtw_9410 = CreateDestructable(1314157687, 640.0, -4416.0, 270.000, 0.922, 3)
     gg_dest_NTtw_9411 = CreateDestructable(1314157687, 640.0, -4544.0, 270.000, 0.854, 4)
     gg_dest_NTtw_9412 = CreateDestructable(1314157687, 576.0, -4928.0, 270.000, 0.945, 2)
@@ -58593,28 +58892,28 @@ function CreateAllDestructables()
     gg_dest_CTtr_9825 = CreateDestructable(1129608306, -576.0, -4928.0, 270.000, 0.883, 1)
     gg_dest_CTtr_9826 = CreateDestructable(1129608306, -640.0, -4416.0, 270.000, 0.894, 4)
     gg_dest_CTtr_9827 = CreateDestructable(1129608306, -576.0, -4288.0, 270.000, 1.083, 4)
-    gg_dest_CTtr_9828 = CreateDestructable(1129608306, -640.0, -4160.0, 270.000, 1.009, 3)
+    gg_dest_NTtw_11462 = CreateDestructable(1314157687, 7232.0, -1920.0, 270.000, 1.155, 6)
     gg_dest_CTtr_9829 = CreateDestructable(1129608306, -576.0, -4672.0, 270.000, 1.047, 1)
     gg_dest_CTtr_9830 = CreateDestructable(1129608306, -512.0, -4544.0, 270.000, 1.054, 4)
     gg_dest_CTtr_9831 = CreateDestructable(1129608306, -576.0, -4800.0, 270.000, 1.024, 3)
-    gg_dest_CTtr_9832 = CreateDestructable(1129608306, -576.0, -3968.0, 270.000, 0.856, 1)
-    gg_dest_CTtr_9833 = CreateDestructable(1129608306, -640.0, -3840.0, 270.000, 1.153, 4)
-    gg_dest_CTtr_9834 = CreateDestructable(1129608306, -512.0, -3840.0, 270.000, 0.900, 4)
-    gg_dest_CTtr_9835 = CreateDestructable(1129608306, -576.0, -3712.0, 270.000, 1.166, 1)
-    gg_dest_CTtr_9836 = CreateDestructable(1129608306, -512.0, -4096.0, 270.000, 0.947, 2)
+    gg_dest_NTtw_11461 = CreateDestructable(1314157687, 7168.0, -2048.0, 270.000, 0.939, 2)
+    gg_dest_NTtw_11460 = CreateDestructable(1314157687, 7040.0, -2048.0, 270.000, 0.981, 3)
+    gg_dest_NTtw_11459 = CreateDestructable(1314157687, 7104.0, -1792.0, 270.000, 0.919, 2)
+    gg_dest_NTtw_11458 = CreateDestructable(1314157687, 7040.0, -1920.0, 270.000, 0.909, 6)
+    gg_dest_NTtw_11457 = CreateDestructable(1314157687, 6912.0, -1920.0, 270.000, 1.022, 8)
     gg_dest_CTtr_9837 = CreateDestructable(1129608306, -320.0, -4416.0, 270.000, 1.114, 1)
-    gg_dest_CTtr_9838 = CreateDestructable(1129608306, -576.0, -3520.0, 270.000, 0.995, 0)
-    gg_dest_CTtr_9839 = CreateDestructable(1129608306, -640.0, -3264.0, 270.000, 0.954, 0)
-    gg_dest_CTtr_9840 = CreateDestructable(1129608306, -576.0, -3136.0, 270.000, 1.122, 2)
-    gg_dest_CTtr_9841 = CreateDestructable(1129608306, -576.0, -2944.0, 270.000, 1.137, 4)
-    gg_dest_CTtr_9842 = CreateDestructable(1129608306, -576.0, -3392.0, 270.000, 0.838, 2)
-    gg_dest_CTtr_9843 = CreateDestructable(1129608306, -512.0, -3264.0, 270.000, 0.823, 3)
-    gg_dest_CTtr_9844 = CreateDestructable(1129608306, -448.0, -3072.0, 270.000, 1.141, 3)
-    gg_dest_CTtr_9845 = CreateDestructable(1129608306, -576.0, -2624.0, 270.000, 1.072, 3)
-    gg_dest_CTtr_9846 = CreateDestructable(1129608306, -512.0, -2496.0, 270.000, 1.119, 3)
-    gg_dest_CTtr_9847 = CreateDestructable(1129608306, -576.0, -2368.0, 270.000, 1.103, 2)
-    gg_dest_CTtr_9848 = CreateDestructable(1129608306, -512.0, -2176.0, 270.000, 0.991, 4)
-    gg_dest_CTtr_9849 = CreateDestructable(1129608306, -576.0, -2048.0, 270.000, 1.178, 0)
+    gg_dest_NTtw_11456 = CreateDestructable(1314157687, 6976.0, -1664.0, 270.000, 0.841, 6)
+    gg_dest_NTtw_11455 = CreateDestructable(1314157687, 6912.0, -1792.0, 270.000, 0.984, 7)
+    gg_dest_NTtw_11454 = CreateDestructable(1314157687, 6784.0, -1792.0, 270.000, 1.066, 2)
+    gg_dest_NTtw_11453 = CreateDestructable(1314157687, 6912.0, -1536.0, 270.000, 1.111, 8)
+    gg_dest_NTtw_11452 = CreateDestructable(1314157687, 6848.0, -1664.0, 270.000, 0.945, 4)
+    gg_dest_NTtw_11451 = CreateDestructable(1314157687, 6720.0, -1664.0, 270.000, 0.978, 3)
+    gg_dest_NTtw_11450 = CreateDestructable(1314157687, 6848.0, -1408.0, 270.000, 0.895, 8)
+    gg_dest_NTtw_11449 = CreateDestructable(1314157687, 6784.0, -1536.0, 270.000, 0.885, 8)
+    gg_dest_NTtw_11448 = CreateDestructable(1314157687, 6656.0, -1536.0, 270.000, 0.870, 1)
+    gg_dest_NTtw_11447 = CreateDestructable(1314157687, 6848.0, -1280.0, 270.000, 1.046, 1)
+    gg_dest_NTtw_11446 = CreateDestructable(1314157687, 6720.0, -1408.0, 270.000, 0.932, 6)
+    gg_dest_NTtw_11445 = CreateDestructable(1314157687, 6592.0, -1408.0, 270.000, 0.882, 8)
     gg_dest_CTtr_9850 = CreateDestructable(1129608306, -512.0, -1920.0, 270.000, 1.132, 0)
     gg_dest_CTtr_9851 = CreateDestructable(1129608306, -576.0, -1792.0, 270.000, 0.822, 1)
     gg_dest_CTtr_9852 = CreateDestructable(1129608306, -576.0, -1664.0, 270.000, 1.144, 0)
@@ -59228,15 +59527,15 @@ function CreateAllDestructables()
     gg_dest_CTtr_10460 = CreateDestructable(1129608306, -3520.0, -7872.0, 270.000, 0.927, 1)
     gg_dest_CTtr_10461 = CreateDestructable(1129608306, -3392.0, -7936.0, 270.000, 0.953, 1)
     gg_dest_CTtr_10462 = CreateDestructable(1129608306, -3392.0, -8064.0, 270.000, 0.971, 2)
-    gg_dest_LTlt_3844 = CreateDestructable(1280601204, -6848.0, 3648.0, 270.000, 0.896, 7)
-    gg_dest_LTlt_3849 = CreateDestructable(1280601204, -6848.0, 3776.0, 270.000, 1.115, 8)
-    gg_dest_LTlt_3850 = CreateDestructable(1280601204, -6976.0, 3648.0, 270.000, 0.978, 2)
-    gg_dest_LTlt_3851 = CreateDestructable(1280601204, -6976.0, 3776.0, 270.000, 1.155, 3)
-    gg_dest_LTlt_3857 = CreateDestructable(1280601204, -7104.0, 3648.0, 270.000, 1.153, 1)
-    gg_dest_LTlt_3858 = CreateDestructable(1280601204, -7104.0, 3776.0, 270.000, 0.934, 6)
-    gg_dest_LTlt_3859 = CreateDestructable(1280601204, -7232.0, 3648.0, 270.000, 0.976, 2)
-    gg_dest_LTlt_3860 = CreateDestructable(1280601204, -7232.0, 3776.0, 270.000, 0.920, 8)
-    gg_dest_LTlt_3861 = CreateDestructable(1280601204, -6912.0, 3968.0, 270.000, 0.956, 5)
+    gg_dest_NTtw_5124 = CreateDestructable(1314157687, 8576.0, -1088.0, 270.000, 1.061, 9)
+    gg_dest_NTtw_5123 = CreateDestructable(1314157687, 8832.0, -1024.0, 270.000, 1.137, 6)
+    gg_dest_NTtw_5122 = CreateDestructable(1314157687, 8704.0, -1088.0, 270.000, 1.123, 8)
+    gg_dest_NTtw_5121 = CreateDestructable(1314157687, 8640.0, -1216.0, 270.000, 1.036, 5)
+    gg_dest_NTtw_5120 = CreateDestructable(1314157687, 8960.0, -1408.0, 270.000, 0.859, 6)
+    gg_dest_NTtw_5119 = CreateDestructable(1314157687, 8832.0, -1152.0, 270.000, 0.883, 5)
+    gg_dest_NTtw_5118 = CreateDestructable(1314157687, 8832.0, -1408.0, 270.000, 1.059, 1)
+    gg_dest_NTtw_11336 = CreateDestructable(1314157687, 4352.0, -3648.0, 270.000, 1.084, 1)
+    gg_dest_NTtw_11335 = CreateDestructable(1314157687, 4224.0, -3520.0, 270.000, 0.982, 4)
     gg_dest_LTlt_3862 = CreateDestructable(1280601204, -7040.0, 3968.0, 270.000, 0.907, 5)
     gg_dest_LTlt_3863 = CreateDestructable(1280601204, -7168.0, 3968.0, 270.000, 0.960, 0)
     gg_dest_AObd_11684 = CreateDestructable(1095721572, -4625.6, -4039.8, 73.000, 0.914, 0)
@@ -60082,557 +60381,501 @@ function CreateAllDestructables()
     gg_dest_NTtw_11312 = CreateDestructable(1314157687, 3136.0, -4096.0, 270.000, 0.998, 6)
     gg_dest_NTtw_11313 = CreateDestructable(1314157687, 3264.0, -4160.0, 270.000, 0.966, 1)
     gg_dest_NTtw_11314 = CreateDestructable(1314157687, 3072.0, -3968.0, 270.000, 0.964, 3)
-    gg_dest_NTtw_11315 = CreateDestructable(1314157687, 3200.0, -3968.0, 270.000, 1.014, 6)
-    gg_dest_NTtw_11316 = CreateDestructable(1314157687, 3328.0, -4032.0, 270.000, 0.959, 6)
-    gg_dest_NTtw_11317 = CreateDestructable(1314157687, 3328.0, -3904.0, 270.000, 0.889, 1)
-    gg_dest_NTtw_11318 = CreateDestructable(1314157687, 3200.0, -3840.0, 270.000, 0.981, 4)
-    gg_dest_NTtw_11319 = CreateDestructable(1314157687, 3456.0, -3968.0, 270.000, 1.049, 4)
-    gg_dest_NTtw_11320 = CreateDestructable(1314157687, 3328.0, -3776.0, 270.000, 0.973, 5)
-    gg_dest_NTtw_11321 = CreateDestructable(1314157687, 3456.0, -3776.0, 270.000, 1.187, 8)
-    gg_dest_NTtw_11322 = CreateDestructable(1314157687, 3584.0, -3904.0, 270.000, 1.163, 4)
-    gg_dest_NTtw_11323 = CreateDestructable(1314157687, 3584.0, -3712.0, 270.000, 1.099, 1)
-    gg_dest_NTtw_11324 = CreateDestructable(1314157687, 3712.0, -3840.0, 270.000, 0.929, 8)
-    gg_dest_NTtw_11325 = CreateDestructable(1314157687, 3712.0, -3648.0, 270.000, 1.103, 4)
-    gg_dest_NTtw_11326 = CreateDestructable(1314157687, 3840.0, -3776.0, 270.000, 1.153, 3)
-    gg_dest_NTtw_11327 = CreateDestructable(1314157687, 3840.0, -3584.0, 270.000, 0.967, 4)
-    gg_dest_NTtw_11328 = CreateDestructable(1314157687, 3968.0, -3712.0, 270.000, 0.855, 3)
-    gg_dest_NTtw_11329 = CreateDestructable(1314157687, 3968.0, -3520.0, 270.000, 1.190, 9)
-    gg_dest_NTtw_11330 = CreateDestructable(1314157687, 4096.0, -3648.0, 270.000, 0.847, 4)
-    gg_dest_NTtw_11331 = CreateDestructable(1314157687, 4096.0, -3776.0, 270.000, 0.929, 5)
-    gg_dest_NTtw_11332 = CreateDestructable(1314157687, 4096.0, -3520.0, 270.000, 0.822, 3)
-    gg_dest_NTtw_11333 = CreateDestructable(1314157687, 4224.0, -3648.0, 270.000, 1.113, 1)
-    gg_dest_NTtw_11334 = CreateDestructable(1314157687, 4224.0, -3776.0, 270.000, 1.171, 2)
-    gg_dest_NTtw_11335 = CreateDestructable(1314157687, 4224.0, -3520.0, 270.000, 0.982, 4)
-    gg_dest_NTtw_11336 = CreateDestructable(1314157687, 4352.0, -3648.0, 270.000, 1.084, 1)
-    gg_dest_NTtw_11337 = CreateDestructable(1314157687, 4352.0, -3776.0, 270.000, 0.944, 7)
-    gg_dest_NTtw_11338 = CreateDestructable(1314157687, 4352.0, -3520.0, 270.000, 0.891, 2)
-    gg_dest_NTtw_11339 = CreateDestructable(1314157687, 4480.0, -3648.0, 270.000, 0.980, 9)
-    gg_dest_NTtw_11340 = CreateDestructable(1314157687, 4480.0, -3776.0, 270.000, 0.830, 4)
-    gg_dest_NTtw_11341 = CreateDestructable(1314157687, 4480.0, -3520.0, 270.000, 1.041, 4)
-    gg_dest_NTtw_11342 = CreateDestructable(1314157687, 4608.0, -3648.0, 270.000, 0.834, 9)
-    gg_dest_NTtw_11343 = CreateDestructable(1314157687, 4608.0, -3776.0, 270.000, 1.121, 5)
-    gg_dest_NTtw_11344 = CreateDestructable(1314157687, 4608.0, -3520.0, 270.000, 1.145, 2)
-    gg_dest_NTtw_11345 = CreateDestructable(1314157687, 4736.0, -3712.0, 270.000, 1.010, 3)
-    gg_dest_NTtw_11346 = CreateDestructable(1314157687, 4736.0, -3840.0, 270.000, 1.105, 7)
-    gg_dest_NTtw_11347 = CreateDestructable(1314157687, 4736.0, -3584.0, 270.000, 1.112, 6)
-    gg_dest_NTtw_11348 = CreateDestructable(1314157687, 4864.0, -3776.0, 270.000, 0.860, 0)
-    gg_dest_NTtw_11349 = CreateDestructable(1314157687, 4864.0, -3904.0, 270.000, 0.982, 8)
-    gg_dest_NTtw_11350 = CreateDestructable(1314157687, 4736.0, -3968.0, 270.000, 0.891, 6)
-    gg_dest_NTtw_11351 = CreateDestructable(1314157687, 4928.0, -4032.0, 270.000, 0.918, 7)
-    gg_dest_NTtw_11352 = CreateDestructable(1314157687, 5056.0, -3968.0, 270.000, 1.199, 9)
-    gg_dest_NTtw_11353 = CreateDestructable(1314157687, 4928.0, -4160.0, 270.000, 1.084, 6)
-    gg_dest_NTtw_11354 = CreateDestructable(1314157687, 5056.0, -4160.0, 270.000, 1.153, 5)
-    gg_dest_NTtw_11355 = CreateDestructable(1314157687, 4992.0, -4288.0, 270.000, 0.878, 2)
-    gg_dest_NTtw_11356 = CreateDestructable(1314157687, 5120.0, -4288.0, 270.000, 1.167, 2)
-    gg_dest_NTtw_11357 = CreateDestructable(1314157687, 5184.0, -4160.0, 270.000, 1.157, 7)
-    gg_dest_NTtw_11358 = CreateDestructable(1314157687, 5056.0, -4416.0, 270.000, 1.006, 3)
-    gg_dest_NTtw_11359 = CreateDestructable(1314157687, 5184.0, -4416.0, 270.000, 0.936, 2)
-    gg_dest_NTtw_11360 = CreateDestructable(1314157687, 5248.0, -4288.0, 270.000, 1.011, 1)
-    gg_dest_NTtw_11361 = CreateDestructable(1314157687, 5056.0, -4544.0, 270.000, 0.893, 8)
-    gg_dest_NTtw_11362 = CreateDestructable(1314157687, 5184.0, -4544.0, 270.000, 0.837, 1)
-    gg_dest_NTtw_11363 = CreateDestructable(1314157687, 5312.0, -4480.0, 270.000, 0.977, 6)
-    gg_dest_NTtw_11364 = CreateDestructable(1314157687, 5120.0, -4672.0, 270.000, 1.005, 6)
-    gg_dest_NTtw_11365 = CreateDestructable(1314157687, 5248.0, -4672.0, 270.000, 0.977, 0)
-    gg_dest_NTtw_11366 = CreateDestructable(1314157687, 5120.0, -4800.0, 270.000, 0.858, 4)
-    gg_dest_NTtw_11367 = CreateDestructable(1314157687, 5248.0, -4800.0, 270.000, 1.133, 0)
-    gg_dest_NTtw_11368 = CreateDestructable(1314157687, 5120.0, -4928.0, 270.000, 1.189, 7)
-    gg_dest_NTtw_11369 = CreateDestructable(1314157687, 5248.0, -4928.0, 270.000, 0.853, 2)
-    gg_dest_NTtw_11370 = CreateDestructable(1314157687, 5184.0, -5056.0, 270.000, 1.104, 0)
-    gg_dest_NTtw_5115 = CreateDestructable(1314157687, 8768.0, -1280.0, 270.000, 0.830, 1)
-    gg_dest_NTtw_5118 = CreateDestructable(1314157687, 8832.0, -1408.0, 270.000, 1.059, 1)
-    gg_dest_NTtw_5119 = CreateDestructable(1314157687, 8832.0, -1152.0, 270.000, 0.883, 5)
-    gg_dest_NTtw_5120 = CreateDestructable(1314157687, 8960.0, -1408.0, 270.000, 0.859, 6)
-    gg_dest_NTtw_5121 = CreateDestructable(1314157687, 8640.0, -1216.0, 270.000, 1.036, 5)
-    gg_dest_NTtw_5122 = CreateDestructable(1314157687, 8704.0, -1088.0, 270.000, 1.123, 8)
-    gg_dest_NTtw_5123 = CreateDestructable(1314157687, 8832.0, -1024.0, 270.000, 1.137, 6)
-    gg_dest_NTtw_5124 = CreateDestructable(1314157687, 8576.0, -1088.0, 270.000, 1.061, 9)
-    gg_dest_NTtw_5125 = CreateDestructable(1314157687, 8640.0, -960.0, 270.000, 1.156, 0)
-    gg_dest_NTtw_5126 = CreateDestructable(1314157687, 8768.0, -896.0, 270.000, 1.155, 6)
-    gg_dest_NTtw_5127 = CreateDestructable(1314157687, 8640.0, -832.0, 270.000, 0.863, 3)
-    gg_dest_NTtw_7059 = CreateDestructable(1314157687, 8768.0, -768.0, 270.000, 0.979, 4)
-    gg_dest_NTtw_7061 = CreateDestructable(1314157687, 8640.0, -704.0, 270.000, 1.127, 5)
-    gg_dest_NTtw_9460 = CreateDestructable(1314157687, 8768.0, -640.0, 270.000, 0.901, 1)
-    gg_dest_NTtw_9461 = CreateDestructable(1314157687, 8640.0, -576.0, 270.000, 1.165, 0)
-    gg_dest_NTtw_9462 = CreateDestructable(1314157687, 8768.0, -512.0, 270.000, 1.170, 6)
-    gg_dest_NTtw_9463 = CreateDestructable(1314157687, 8512.0, -576.0, 270.000, 1.147, 8)
-    gg_dest_NTtw_11388 = CreateDestructable(1314157687, 8576.0, -448.0, 270.000, 1.145, 3)
-    gg_dest_NTtw_11389 = CreateDestructable(1314157687, 8704.0, -384.0, 270.000, 0.881, 4)
-    gg_dest_NTtw_11390 = CreateDestructable(1314157687, 8448.0, -448.0, 270.000, 0.960, 0)
-    gg_dest_NTtw_11391 = CreateDestructable(1314157687, 8512.0, -320.0, 270.000, 0.895, 1)
-    gg_dest_NTtw_11392 = CreateDestructable(1314157687, 8320.0, -320.0, 270.000, 1.046, 6)
-    gg_dest_NTtw_11393 = CreateDestructable(1314157687, 8384.0, -192.0, 270.000, 1.015, 8)
-    gg_dest_NTtw_11394 = CreateDestructable(1314157687, 8512.0, -192.0, 270.000, 1.058, 8)
-    gg_dest_NTtw_11395 = CreateDestructable(1314157687, 8192.0, -192.0, 270.000, 1.192, 2)
-    gg_dest_NTtw_11396 = CreateDestructable(1314157687, 8256.0, -64.0, 270.000, 0.817, 0)
-    gg_dest_NTtw_11397 = CreateDestructable(1314157687, 8384.0, -64.0, 270.000, 0.822, 4)
-    gg_dest_NTtw_11398 = CreateDestructable(1314157687, 8064.0, -128.0, 270.000, 0.841, 8)
-    gg_dest_NTtw_11399 = CreateDestructable(1314157687, 8128.0, 0.0, 270.000, 0.930, 2)
-    gg_dest_NTtw_11400 = CreateDestructable(1314157687, 7936.0, -64.0, 270.000, 0.952, 1)
-    gg_dest_NTtw_11401 = CreateDestructable(1314157687, 8000.0, 64.0, 270.000, 0.934, 4)
-    gg_dest_NTtw_11402 = CreateDestructable(1314157687, 7936.0, -192.0, 270.000, 1.113, 9)
-    gg_dest_NTtw_11403 = CreateDestructable(1314157687, 7808.0, -64.0, 270.000, 1.072, 0)
-    gg_dest_NTtw_11404 = CreateDestructable(1314157687, 7872.0, 64.0, 270.000, 0.816, 2)
-    gg_dest_NTtw_11405 = CreateDestructable(1314157687, 7680.0, 0.0, 270.000, 1.045, 2)
-    gg_dest_NTtw_11406 = CreateDestructable(1314157687, 7744.0, 128.0, 270.000, 0.863, 7)
-    gg_dest_NTtw_11407 = CreateDestructable(1314157687, 7680.0, -128.0, 270.000, 0.882, 4)
-    gg_dest_NTtw_11408 = CreateDestructable(1314157687, 7552.0, 0.0, 270.000, 0.814, 7)
-    gg_dest_NTtw_11409 = CreateDestructable(1314157687, 7616.0, 128.0, 270.000, 0.870, 9)
-    gg_dest_NTtw_11410 = CreateDestructable(1314157687, 7552.0, -128.0, 270.000, 1.136, 2)
-    gg_dest_NTtw_11411 = CreateDestructable(1314157687, 7424.0, 0.0, 270.000, 1.024, 4)
-    gg_dest_NTtw_11412 = CreateDestructable(1314157687, 7488.0, 128.0, 270.000, 1.140, 1)
-    gg_dest_NTtw_11413 = CreateDestructable(1314157687, 7424.0, -128.0, 270.000, 0.977, 4)
-    gg_dest_NTtw_11414 = CreateDestructable(1314157687, 7296.0, 0.0, 270.000, 0.939, 2)
-    gg_dest_NTtw_11415 = CreateDestructable(1314157687, 7360.0, 128.0, 270.000, 0.854, 5)
-    gg_dest_NTtw_11416 = CreateDestructable(1314157687, 7296.0, -192.0, 270.000, 1.062, 1)
-    gg_dest_NTtw_11417 = CreateDestructable(1314157687, 7168.0, -64.0, 270.000, 1.012, 2)
-    gg_dest_NTtw_11418 = CreateDestructable(1314157687, 7168.0, -192.0, 270.000, 1.166, 6)
-    gg_dest_NTtw_11419 = CreateDestructable(1314157687, 7168.0, 64.0, 270.000, 1.092, 8)
-    gg_dest_NTtw_11420 = CreateDestructable(1314157687, 7040.0, -128.0, 270.000, 0.894, 0)
-    gg_dest_NTtw_11421 = CreateDestructable(1314157687, 7040.0, -256.0, 270.000, 0.827, 7)
-    gg_dest_NTtw_11422 = CreateDestructable(1314157687, 7040.0, 0.0, 270.000, 1.150, 8)
-    gg_dest_NTtw_11423 = CreateDestructable(1314157687, 6912.0, -192.0, 270.000, 0.964, 9)
-    gg_dest_NTtw_11424 = CreateDestructable(1314157687, 6912.0, -384.0, 270.000, 0.989, 3)
-    gg_dest_NTtw_11425 = CreateDestructable(1314157687, 7040.0, -384.0, 270.000, 1.033, 8)
-    gg_dest_NTtw_11426 = CreateDestructable(1314157687, 6784.0, -320.0, 270.000, 1.191, 5)
-    gg_dest_NTtw_11427 = CreateDestructable(1314157687, 6848.0, -512.0, 270.000, 1.138, 7)
-    gg_dest_NTtw_11428 = CreateDestructable(1314157687, 6976.0, -512.0, 270.000, 0.875, 6)
-    gg_dest_NTtw_11429 = CreateDestructable(1314157687, 6720.0, -448.0, 270.000, 0.974, 2)
-    gg_dest_NTtw_11430 = CreateDestructable(1314157687, 6784.0, -640.0, 270.000, 0.973, 2)
-    gg_dest_NTtw_11431 = CreateDestructable(1314157687, 6912.0, -640.0, 270.000, 1.164, 9)
-    gg_dest_NTtw_11432 = CreateDestructable(1314157687, 6656.0, -576.0, 270.000, 1.022, 7)
-    gg_dest_NTtw_11433 = CreateDestructable(1314157687, 6720.0, -768.0, 270.000, 0.986, 1)
-    gg_dest_NTtw_11434 = CreateDestructable(1314157687, 6848.0, -768.0, 270.000, 0.898, 3)
-    gg_dest_NTtw_11435 = CreateDestructable(1314157687, 6592.0, -704.0, 270.000, 0.834, 5)
-    gg_dest_NTtw_11436 = CreateDestructable(1314157687, 6656.0, -896.0, 270.000, 0.993, 6)
-    gg_dest_NTtw_11437 = CreateDestructable(1314157687, 6784.0, -896.0, 270.000, 0.901, 7)
-    gg_dest_NTtw_11438 = CreateDestructable(1314157687, 6656.0, -1024.0, 270.000, 1.175, 1)
-    gg_dest_NTtw_11439 = CreateDestructable(1314157687, 6784.0, -1024.0, 270.000, 1.193, 0)
-    gg_dest_NTtw_11440 = CreateDestructable(1314157687, 6528.0, -960.0, 270.000, 0.997, 5)
-    gg_dest_NTtw_11441 = CreateDestructable(1314157687, 6592.0, -1152.0, 270.000, 0.963, 7)
-    gg_dest_NTtw_11442 = CreateDestructable(1314157687, 6720.0, -1152.0, 270.000, 1.123, 8)
-    gg_dest_NTtw_11443 = CreateDestructable(1314157687, 6592.0, -1280.0, 270.000, 0.856, 2)
-    gg_dest_NTtw_11444 = CreateDestructable(1314157687, 6720.0, -1280.0, 270.000, 1.090, 3)
-    gg_dest_NTtw_11445 = CreateDestructable(1314157687, 6592.0, -1408.0, 270.000, 0.882, 8)
-    gg_dest_NTtw_11446 = CreateDestructable(1314157687, 6720.0, -1408.0, 270.000, 0.932, 6)
-    gg_dest_NTtw_11447 = CreateDestructable(1314157687, 6848.0, -1280.0, 270.000, 1.046, 1)
-    gg_dest_NTtw_11448 = CreateDestructable(1314157687, 6656.0, -1536.0, 270.000, 0.870, 1)
-    gg_dest_NTtw_11449 = CreateDestructable(1314157687, 6784.0, -1536.0, 270.000, 0.885, 8)
-    gg_dest_NTtw_11450 = CreateDestructable(1314157687, 6848.0, -1408.0, 270.000, 0.895, 8)
-    gg_dest_NTtw_11451 = CreateDestructable(1314157687, 6720.0, -1664.0, 270.000, 0.978, 3)
-    gg_dest_NTtw_11452 = CreateDestructable(1314157687, 6848.0, -1664.0, 270.000, 0.945, 4)
-    gg_dest_NTtw_11453 = CreateDestructable(1314157687, 6912.0, -1536.0, 270.000, 1.111, 8)
-    gg_dest_NTtw_11454 = CreateDestructable(1314157687, 6784.0, -1792.0, 270.000, 1.066, 2)
-    gg_dest_NTtw_11455 = CreateDestructable(1314157687, 6912.0, -1792.0, 270.000, 0.984, 7)
-    gg_dest_NTtw_11456 = CreateDestructable(1314157687, 6976.0, -1664.0, 270.000, 0.841, 6)
-    gg_dest_NTtw_11457 = CreateDestructable(1314157687, 6912.0, -1920.0, 270.000, 1.022, 8)
-    gg_dest_NTtw_11458 = CreateDestructable(1314157687, 7040.0, -1920.0, 270.000, 0.909, 6)
-    gg_dest_NTtw_11459 = CreateDestructable(1314157687, 7104.0, -1792.0, 270.000, 0.919, 2)
-    gg_dest_NTtw_11460 = CreateDestructable(1314157687, 7040.0, -2048.0, 270.000, 0.981, 3)
-    gg_dest_NTtw_11461 = CreateDestructable(1314157687, 7168.0, -2048.0, 270.000, 0.939, 2)
-    gg_dest_NTtw_11462 = CreateDestructable(1314157687, 7232.0, -1920.0, 270.000, 1.155, 6)
-    gg_dest_NTtw_11463 = CreateDestructable(1314157687, 7232.0, -1792.0, 270.000, 0.913, 8)
-    gg_dest_NTtw_11464 = CreateDestructable(1314157687, 7296.0, -2112.0, 270.000, 1.080, 4)
-    gg_dest_NTtw_11465 = CreateDestructable(1314157687, 7360.0, -1984.0, 270.000, 1.036, 8)
-    gg_dest_NTtw_11466 = CreateDestructable(1314157687, 7360.0, -1856.0, 270.000, 0.876, 6)
-    gg_dest_NTtw_11467 = CreateDestructable(1314157687, 7424.0, -2112.0, 270.000, 0.814, 6)
-    gg_dest_NTtw_11468 = CreateDestructable(1314157687, 7488.0, -1984.0, 270.000, 0.878, 8)
-    gg_dest_NTtw_11469 = CreateDestructable(1314157687, 7616.0, -2176.0, 270.000, 1.048, 3)
-    gg_dest_NTtw_11470 = CreateDestructable(1314157687, 7680.0, -2048.0, 270.000, 0.841, 3)
-    gg_dest_NTtw_11471 = CreateDestructable(1314157687, 7616.0, -1920.0, 270.000, 0.918, 8)
-    gg_dest_NTtw_11472 = CreateDestructable(1314157687, 7744.0, -2240.0, 270.000, 0.817, 7)
-    gg_dest_NTtw_11473 = CreateDestructable(1314157687, 7808.0, -2112.0, 270.000, 1.090, 1)
-    gg_dest_NTtw_11474 = CreateDestructable(1314157687, 7808.0, -1920.0, 270.000, 0.996, 8)
-    gg_dest_NTtw_11475 = CreateDestructable(1314157687, 7936.0, -2048.0, 270.000, 0.893, 6)
-    gg_dest_NTtw_11476 = CreateDestructable(1314157687, 7936.0, -2176.0, 270.000, 1.085, 6)
-    gg_dest_NTtw_11477 = CreateDestructable(1314157687, 7936.0, -1920.0, 270.000, 1.077, 1)
-    gg_dest_NTtw_11478 = CreateDestructable(1314157687, 8064.0, -2176.0, 270.000, 0.864, 3)
-    gg_dest_NTtw_11479 = CreateDestructable(1314157687, 8128.0, -2048.0, 270.000, 0.990, 0)
-    gg_dest_NTtw_11480 = CreateDestructable(1314157687, 8064.0, -1920.0, 270.000, 0.959, 0)
-    gg_dest_NTtw_11481 = CreateDestructable(1314157687, 8192.0, -2240.0, 270.000, 0.939, 7)
-    gg_dest_NTtw_11482 = CreateDestructable(1314157687, 8256.0, -2112.0, 270.000, 1.123, 2)
-    gg_dest_NTtw_11483 = CreateDestructable(1314157687, 8320.0, -2240.0, 270.000, 1.084, 9)
-    gg_dest_NTtw_11484 = CreateDestructable(1314157687, 8384.0, -2112.0, 270.000, 1.157, 0)
-    gg_dest_NTtw_11485 = CreateDestructable(1314157687, 8320.0, -1984.0, 270.000, 0.972, 7)
-    gg_dest_NTtw_11486 = CreateDestructable(1314157687, 8320.0, -2368.0, 270.000, 0.851, 9)
-    gg_dest_NTtw_11487 = CreateDestructable(1314157687, 8448.0, -2368.0, 270.000, 0.911, 8)
-    gg_dest_NTtw_11488 = CreateDestructable(1314157687, 8512.0, -2240.0, 270.000, 0.917, 0)
-    gg_dest_NTtw_11489 = CreateDestructable(1314157687, 8576.0, -2432.0, 270.000, 1.008, 4)
-    gg_dest_NTtw_11490 = CreateDestructable(1314157687, 8640.0, -2304.0, 270.000, 1.085, 7)
-    gg_dest_NTtw_11491 = CreateDestructable(1314157687, 8640.0, -2176.0, 270.000, 0.813, 8)
-    gg_dest_NTtw_11492 = CreateDestructable(1314157687, 8704.0, -2496.0, 270.000, 1.141, 9)
-    gg_dest_NTtw_11493 = CreateDestructable(1314157687, 8768.0, -2368.0, 270.000, 0.807, 8)
-    gg_dest_NTtw_11494 = CreateDestructable(1314157687, 8832.0, -2560.0, 270.000, 1.057, 3)
-    gg_dest_NTtw_11495 = CreateDestructable(1314157687, 8960.0, -2496.0, 270.000, 0.870, 3)
-    gg_dest_NTtw_11496 = CreateDestructable(1314157687, 7296.0, -2304.0, 270.000, 0.885, 2)
-    gg_dest_NTtw_11497 = CreateDestructable(1314157687, 7424.0, -2304.0, 270.000, 0.980, 0)
-    gg_dest_NTtw_11498 = CreateDestructable(1314157687, 7104.0, -2176.0, 270.000, 0.854, 6)
-    gg_dest_KOst_6279 = CreateDestructable(1263498100, 5568.0, 2432.0, 90.000, 1.038, 0)
-    SetDestructableLife(gg_dest_KOst_6279, 2.55 * GetDestructableLife(gg_dest_KOst_6279))
-    gg_dest_LOcg_6128 = CreateDestructable(1280271207, -3584.0, 11200.0, 220.000, 1.000, 0)
-    gg_dest_LOcg_11501 = CreateDestructable(1280271207, -3648.0, 11328.0, 220.000, 1.000, 0)
-    gg_dest_NOfp_11502 = CreateDestructable(1313826416, -4672.0, 10304.0, 323.000, 1.018, 0)
-    SetDestructableLife(gg_dest_NOfp_11502, 2.55 * GetDestructableLife(gg_dest_NOfp_11502))
-    gg_dest_LTrc_10816 = CreateDestructable(1280602723, -3776.0, 11456.0, 232.000, 1.000, 5)
-    gg_dest_LTrt_11504 = CreateDestructable(1280602740, -3840.0, 9984.0, 303.000, 1.000, 0)
-    gg_dest_ZPfw_11505 = CreateDestructable(1515218551, -3306.6, 10551.1, 139.000, 0.870, 2)
-    SetDestructableLife(gg_dest_ZPfw_11505, 2.55 * GetDestructableLife(gg_dest_ZPfw_11505))
-    gg_dest_ZPfw_11506 = CreateDestructable(1515218551, -3303.6, 10675.3, 161.000, 0.954, 2)
-    SetDestructableLife(gg_dest_ZPfw_11506, 2.55 * GetDestructableLife(gg_dest_ZPfw_11506))
-    gg_dest_ZPfw_11507 = CreateDestructable(1515218551, -3254.0, 10726.0, 341.000, 0.960, 4)
-    SetDestructableLife(gg_dest_ZPfw_11507, 2.55 * GetDestructableLife(gg_dest_ZPfw_11507))
-    gg_dest_ZPfw_11508 = CreateDestructable(1515218551, -3361.7, 10714.3, 288.000, 1.102, 3)
-    SetDestructableLife(gg_dest_ZPfw_11508, 2.55 * GetDestructableLife(gg_dest_ZPfw_11508))
-    gg_dest_ZPfw_11509 = CreateDestructable(1515218551, -3352.7, 10811.1, 322.000, 1.139, 2)
-    SetDestructableLife(gg_dest_ZPfw_11509, 2.55 * GetDestructableLife(gg_dest_ZPfw_11509))
-    gg_dest_ZPfw_11510 = CreateDestructable(1515218551, -3336.5, 10885.1, 124.000, 0.908, 1)
-    SetDestructableLife(gg_dest_ZPfw_11510, 2.55 * GetDestructableLife(gg_dest_ZPfw_11510))
-    gg_dest_ZPfw_11511 = CreateDestructable(1515218551, -4880.5, 10521.5, 321.000, 1.007, 1)
-    SetDestructableLife(gg_dest_ZPfw_11511, 2.55 * GetDestructableLife(gg_dest_ZPfw_11511))
-    gg_dest_ZPfw_11512 = CreateDestructable(1515218551, -4869.9, 10607.7, 344.000, 1.152, 1)
-    SetDestructableLife(gg_dest_ZPfw_11512, 2.55 * GetDestructableLife(gg_dest_ZPfw_11512))
-    gg_dest_ZPfw_11513 = CreateDestructable(1515218551, -4902.6, 10685.4, 261.000, 1.074, 3)
-    SetDestructableLife(gg_dest_ZPfw_11513, 2.55 * GetDestructableLife(gg_dest_ZPfw_11513))
-    gg_dest_ZPfw_11514 = CreateDestructable(1515218551, -4791.0, 10634.3, 23.000, 0.855, 2)
-    SetDestructableLife(gg_dest_ZPfw_11514, 2.55 * GetDestructableLife(gg_dest_ZPfw_11514))
-    gg_dest_ZPfw_11515 = CreateDestructable(1515218551, -4542.3, 10072.9, 290.000, 1.163, 4)
-    SetDestructableLife(gg_dest_ZPfw_11515, 2.55 * GetDestructableLife(gg_dest_ZPfw_11515))
-    gg_dest_ZPfw_11516 = CreateDestructable(1515218551, -4452.6, 10025.3, 109.000, 1.195, 0)
-    SetDestructableLife(gg_dest_ZPfw_11516, 2.55 * GetDestructableLife(gg_dest_ZPfw_11516))
-    gg_dest_ZPfw_11517 = CreateDestructable(1515218551, -4427.4, 10109.8, 301.000, 1.016, 2)
-    SetDestructableLife(gg_dest_ZPfw_11517, 2.55 * GetDestructableLife(gg_dest_ZPfw_11517))
-    gg_dest_LPrs_11518 = CreateDestructable(1280340595, -3982.0, 9966.8, 240.000, 0.985, 0)
-    SetDestructableLife(gg_dest_LPrs_11518, 2.55 * GetDestructableLife(gg_dest_LPrs_11518))
-    gg_dest_LPrs_11519 = CreateDestructable(1280340595, -3781.1, 10085.1, 171.000, 0.846, 0)
-    SetDestructableLife(gg_dest_LPrs_11519, 2.55 * GetDestructableLife(gg_dest_LPrs_11519))
-    gg_dest_LPrs_11520 = CreateDestructable(1280340595, -4865.6, 11248.2, 82.000, 0.885, 0)
-    SetDestructableLife(gg_dest_LPrs_11520, 2.55 * GetDestructableLife(gg_dest_LPrs_11520))
-    gg_dest_LPrs_11521 = CreateDestructable(1280340595, -4896.1, 11053.9, 325.000, 1.003, 1)
-    SetDestructableLife(gg_dest_LPrs_11521, 2.55 * GetDestructableLife(gg_dest_LPrs_11521))
-    gg_dest_LPrs_11522 = CreateDestructable(1280340595, -4109.3, 11592.3, 249.000, 0.995, 3)
-    SetDestructableLife(gg_dest_LPrs_11522, 2.55 * GetDestructableLife(gg_dest_LPrs_11522))
-    gg_dest_LPrs_11523 = CreateDestructable(1280340595, -4031.1, 11576.9, 305.000, 1.003, 3)
-    SetDestructableLife(gg_dest_LPrs_11523, 2.55 * GetDestructableLife(gg_dest_LPrs_11523))
-    gg_dest_LPrs_11524 = CreateDestructable(1280340595, -4289.7, 11548.8, 56.000, 0.919, 2)
-    SetDestructableLife(gg_dest_LPrs_11524, 2.55 * GetDestructableLife(gg_dest_LPrs_11524))
-    gg_dest_LRrk_11525 = CreateDestructable(1280471659, -4096.0, 11520.0, 205.000, 0.996, 3)
-    SetDestructableLife(gg_dest_LRrk_11525, 2.55 * GetDestructableLife(gg_dest_LRrk_11525))
-    gg_dest_LRrk_11526 = CreateDestructable(1280471659, -4864.0, 11136.0, 275.000, 1.040, 3)
-    SetDestructableLife(gg_dest_LRrk_11526, 2.55 * GetDestructableLife(gg_dest_LRrk_11526))
-    gg_dest_LPwh_11527 = CreateDestructable(1280341864, -4888.3, 10781.8, 176.000, 1.189, 0)
-    SetDestructableLife(gg_dest_LPwh_11527, 2.55 * GetDestructableLife(gg_dest_LPwh_11527))
-    gg_dest_LPwh_11528 = CreateDestructable(1280341864, -4865.9, 10390.7, 95.000, 0.975, 0)
-    SetDestructableLife(gg_dest_LPwh_11528, 2.55 * GetDestructableLife(gg_dest_LPwh_11528))
-    gg_dest_LPwh_11529 = CreateDestructable(1280341864, -3336.5, 11013.6, 170.000, 1.003, 0)
-    SetDestructableLife(gg_dest_LPwh_11529, 2.55 * GetDestructableLife(gg_dest_LPwh_11529))
-    gg_dest_LPwh_11530 = CreateDestructable(1280341864, -3365.3, 11115.7, 333.000, 1.160, 0)
-    SetDestructableLife(gg_dest_LPwh_11530, 2.55 * GetDestructableLife(gg_dest_LPwh_11530))
-    gg_dest_LPwh_11531 = CreateDestructable(1280341864, -3406.7, 11045.3, 359.000, 1.133, 0)
-    SetDestructableLife(gg_dest_LPwh_11531, 2.55 * GetDestructableLife(gg_dest_LPwh_11531))
-    gg_dest_LPwh_11532 = CreateDestructable(1280341864, -4050.8, 9951.2, 319.000, 0.962, 0)
-    SetDestructableLife(gg_dest_LPwh_11532, 2.55 * GetDestructableLife(gg_dest_LPwh_11532))
-    gg_dest_LPwh_11533 = CreateDestructable(1280341864, -3926.9, 10050.9, 254.000, 1.147, 0)
-    SetDestructableLife(gg_dest_LPwh_11533, 2.55 * GetDestructableLife(gg_dest_LPwh_11533))
-    gg_dest_LPwh_11534 = CreateDestructable(1280341864, -3889.1, 10098.4, 322.000, 1.057, 0)
-    SetDestructableLife(gg_dest_LPwh_11534, 2.55 * GetDestructableLife(gg_dest_LPwh_11534))
-    gg_dest_LPwb_11535 = CreateDestructable(1280341858, -3616.0, 10144.0, 226.000, 1.080, 0)
-    SetDestructableLife(gg_dest_LPwb_11535, 2.55 * GetDestructableLife(gg_dest_LPwb_11535))
-    gg_dest_LPwb_11536 = CreateDestructable(1280341858, 3360.0, 10912.0, 253.000, 0.951, 0)
-    SetDestructableLife(gg_dest_LPwb_11536, 2.55 * GetDestructableLife(gg_dest_LPwb_11536))
-    gg_dest_LPwb_11537 = CreateDestructable(1280341858, 3360.0, 10592.0, 158.000, 0.923, 0)
-    SetDestructableLife(gg_dest_LPwb_11537, 2.55 * GetDestructableLife(gg_dest_LPwb_11537))
-    gg_dest_LPwh_11538 = CreateDestructable(1280341864, 3387.4, 10493.6, 267.000, 0.998, 0)
-    SetDestructableLife(gg_dest_LPwh_11538, 2.55 * GetDestructableLife(gg_dest_LPwh_11538))
-    gg_dest_LPwh_11539 = CreateDestructable(1280341864, 3465.9, 10504.8, 250.000, 0.803, 0)
-    SetDestructableLife(gg_dest_LPwh_11539, 2.55 * GetDestructableLife(gg_dest_LPwh_11539))
-    gg_dest_LPwh_11540 = CreateDestructable(1280341864, 3613.2, 10533.6, 220.000, 1.047, 0)
-    SetDestructableLife(gg_dest_LPwh_11540, 2.55 * GetDestructableLife(gg_dest_LPwh_11540))
-    gg_dest_LPwh_11541 = CreateDestructable(1280341864, 3578.9, 10463.2, 253.000, 1.008, 0)
-    SetDestructableLife(gg_dest_LPwh_11541, 2.55 * GetDestructableLife(gg_dest_LPwh_11541))
-    gg_dest_LPwh_11542 = CreateDestructable(1280341864, 3470.8, 10442.4, 75.000, 1.128, 0)
-    SetDestructableLife(gg_dest_LPwh_11542, 2.55 * GetDestructableLife(gg_dest_LPwh_11542))
-    gg_dest_LPwh_11543 = CreateDestructable(1280341864, 3408.7, 10384.8, 160.000, 1.060, 0)
-    SetDestructableLife(gg_dest_LPwh_11543, 2.55 * GetDestructableLife(gg_dest_LPwh_11543))
-    gg_dest_LPwh_11544 = CreateDestructable(1280341864, 3457.8, 10325.5, 208.000, 1.055, 0)
-    SetDestructableLife(gg_dest_LPwh_11544, 2.55 * GetDestructableLife(gg_dest_LPwh_11544))
-    gg_dest_LPwh_11545 = CreateDestructable(1280341864, 3529.8, 10375.2, 89.000, 0.941, 0)
-    SetDestructableLife(gg_dest_LPwh_11545, 2.55 * GetDestructableLife(gg_dest_LPwh_11545))
-    gg_dest_LPwh_11546 = CreateDestructable(1280341864, 3523.2, 10517.6, 338.000, 0.810, 0)
-    SetDestructableLife(gg_dest_LPwh_11546, 2.55 * GetDestructableLife(gg_dest_LPwh_11546))
-    gg_dest_LPwh_11547 = CreateDestructable(1280341864, 3462.7, 10541.6, 227.000, 0.868, 0)
-    SetDestructableLife(gg_dest_LPwh_11547, 2.55 * GetDestructableLife(gg_dest_LPwh_11547))
-    gg_dest_LPwh_11548 = CreateDestructable(1280341864, 3562.5, 10584.8, 8.000, 1.074, 0)
-    SetDestructableLife(gg_dest_LPwh_11548, 2.55 * GetDestructableLife(gg_dest_LPwh_11548))
-    gg_dest_LPwh_11549 = CreateDestructable(1280341864, 3626.3, 10437.6, 107.000, 1.021, 0)
-    SetDestructableLife(gg_dest_LPwh_11549, 2.55 * GetDestructableLife(gg_dest_LPwh_11549))
-    gg_dest_LPwh_11550 = CreateDestructable(1280341864, 3438.1, 10597.6, 28.000, 1.053, 0)
-    SetDestructableLife(gg_dest_LPwh_11550, 2.55 * GetDestructableLife(gg_dest_LPwh_11550))
-    gg_dest_LPwh_11551 = CreateDestructable(1280341864, 3325.8, 10532.1, 288.000, 0.939, 0)
-    SetDestructableLife(gg_dest_LPwh_11551, 2.55 * GetDestructableLife(gg_dest_LPwh_11551))
-    gg_dest_LPwb_11552 = CreateDestructable(1280341858, 3424.0, 11168.0, 35.000, 0.869, 0)
-    SetDestructableLife(gg_dest_LPwb_11552, 2.55 * GetDestructableLife(gg_dest_LPwb_11552))
-    gg_dest_LPwh_11553 = CreateDestructable(1280341864, 3405.4, 10970.5, 86.000, 1.071, 0)
-    SetDestructableLife(gg_dest_LPwh_11553, 2.55 * GetDestructableLife(gg_dest_LPwh_11553))
-    gg_dest_LPwh_11554 = CreateDestructable(1280341864, 3382.5, 11048.9, 111.000, 1.033, 0)
-    SetDestructableLife(gg_dest_LPwh_11554, 2.55 * GetDestructableLife(gg_dest_LPwh_11554))
-    gg_dest_LPwh_11555 = CreateDestructable(1280341864, 3369.4, 11098.5, 235.000, 0.831, 0)
-    SetDestructableLife(gg_dest_LPwh_11555, 2.55 * GetDestructableLife(gg_dest_LPwh_11555))
-    gg_dest_LPwh_11556 = CreateDestructable(1280341864, 3492.1, 11103.3, 258.000, 0.892, 0)
-    SetDestructableLife(gg_dest_LPwh_11556, 2.55 * GetDestructableLife(gg_dest_LPwh_11556))
-    gg_dest_LPwh_11557 = CreateDestructable(1280341864, 3479.0, 11021.7, 208.000, 0.806, 0)
-    SetDestructableLife(gg_dest_LPwh_11557, 2.55 * GetDestructableLife(gg_dest_LPwh_11557))
-    gg_dest_LPwh_11558 = CreateDestructable(1280341864, 3531.4, 10928.8, 37.000, 1.103, 0)
-    SetDestructableLife(gg_dest_LPwh_11558, 2.55 * GetDestructableLife(gg_dest_LPwh_11558))
-    gg_dest_LPwh_11559 = CreateDestructable(1280341864, 3505.2, 10940.0, 122.000, 0.864, 0)
-    SetDestructableLife(gg_dest_LPwh_11559, 2.55 * GetDestructableLife(gg_dest_LPwh_11559))
-    gg_dest_LPwh_11560 = CreateDestructable(1280341864, 3588.7, 11007.3, 9.000, 0.819, 0)
-    SetDestructableLife(gg_dest_LPwh_11560, 2.55 * GetDestructableLife(gg_dest_LPwh_11560))
-    gg_dest_LPwh_11561 = CreateDestructable(1280341864, 3549.4, 11077.7, 172.000, 0.888, 0)
-    SetDestructableLife(gg_dest_LPwh_11561, 2.55 * GetDestructableLife(gg_dest_LPwh_11561))
-    gg_dest_LRrk_11562 = CreateDestructable(1280471659, 4736.0, 10304.0, 338.000, 0.938, 9)
-    SetDestructableLife(gg_dest_LRrk_11562, 2.55 * GetDestructableLife(gg_dest_LRrk_11562))
-    gg_dest_LRrk_11563 = CreateDestructable(1280471659, 4096.0, 9984.0, 268.000, 1.194, 9)
-    SetDestructableLife(gg_dest_LRrk_11563, 2.55 * GetDestructableLife(gg_dest_LRrk_11563))
-    gg_dest_LRrk_11564 = CreateDestructable(1280471659, 4096.0, 11584.0, 206.000, 0.830, 3)
-    SetDestructableLife(gg_dest_LRrk_11564, 2.55 * GetDestructableLife(gg_dest_LRrk_11564))
-    gg_dest_LRrk_11565 = CreateDestructable(1280471659, 4864.0, 11328.0, 22.000, 0.959, 6)
-    SetDestructableLife(gg_dest_LRrk_11565, 2.55 * GetDestructableLife(gg_dest_LRrk_11565))
-    gg_dest_LRrk_11566 = CreateDestructable(1280471659, 4416.0, 11648.0, 316.000, 1.067, 9)
-    SetDestructableLife(gg_dest_LRrk_11566, 2.55 * GetDestructableLife(gg_dest_LRrk_11566))
-    gg_dest_ZPf0_11567 = CreateDestructable(1515218480, 4320.3, 11567.2, 287.000, 1.122, 3)
-    SetDestructableLife(gg_dest_ZPf0_11567, 2.55 * GetDestructableLife(gg_dest_ZPf0_11567))
-    gg_dest_ZPf0_11568 = CreateDestructable(1515218480, 4209.5, 11534.2, 290.000, 0.962, 1)
-    SetDestructableLife(gg_dest_ZPf0_11568, 2.55 * GetDestructableLife(gg_dest_ZPf0_11568))
-    gg_dest_ZPf0_11569 = CreateDestructable(1515218480, 4889.3, 11453.0, 112.000, 1.001, 0)
-    SetDestructableLife(gg_dest_ZPf0_11569, 2.55 * GetDestructableLife(gg_dest_ZPf0_11569))
-    gg_dest_ZPf0_11570 = CreateDestructable(1515218480, 4880.6, 11194.4, 75.000, 0.883, 1)
-    SetDestructableLife(gg_dest_ZPf0_11570, 2.55 * GetDestructableLife(gg_dest_ZPf0_11570))
-    gg_dest_ZPf0_11571 = CreateDestructable(1515218480, 4810.0, 11222.2, 237.000, 1.137, 0)
-    SetDestructableLife(gg_dest_ZPf0_11571, 2.55 * GetDestructableLife(gg_dest_ZPf0_11571))
-    gg_dest_ZPf0_11572 = CreateDestructable(1515218480, 4658.9, 10312.7, 172.000, 1.028, 2)
-    SetDestructableLife(gg_dest_ZPf0_11572, 2.55 * GetDestructableLife(gg_dest_ZPf0_11572))
-    gg_dest_ZPf0_11573 = CreateDestructable(1515218480, 4776.2, 10347.7, 146.000, 1.149, 2)
-    SetDestructableLife(gg_dest_ZPf0_11573, 2.55 * GetDestructableLife(gg_dest_ZPf0_11573))
-    gg_dest_ZPf0_11574 = CreateDestructable(1515218480, 4202.2, 9978.0, 216.000, 1.063, 3)
-    SetDestructableLife(gg_dest_ZPf0_11574, 2.55 * GetDestructableLife(gg_dest_ZPf0_11574))
-    gg_dest_ZPf0_11575 = CreateDestructable(1515218480, 4117.3, 10068.0, 350.000, 0.841, 4)
-    SetDestructableLife(gg_dest_ZPf0_11575, 2.55 * GetDestructableLife(gg_dest_ZPf0_11575))
-    gg_dest_ZPf0_11576 = CreateDestructable(1515218480, 3996.4, 9951.9, 308.000, 1.078, 0)
-    SetDestructableLife(gg_dest_ZPf0_11576, 2.55 * GetDestructableLife(gg_dest_ZPf0_11576))
-    gg_dest_LOsc_11577 = CreateDestructable(1280275299, 4704.0, 10400.0, 117.000, 1.137, 0)
-    SetDestructableLife(gg_dest_LOsc_11577, 2.55 * GetDestructableLife(gg_dest_LOsc_11577))
-    gg_dest_YOec_11578 = CreateDestructable(1498375523, 3680.0, 10080.0, 51.000, 0.894, 1)
-    SetDestructableLife(gg_dest_YOec_11578, 2.55 * GetDestructableLife(gg_dest_YOec_11578))
-    gg_dest_YOec_11579 = CreateDestructable(1498375523, 3936.0, 9952.0, 139.000, 1.111, 2)
-    SetDestructableLife(gg_dest_YOec_11579, 2.55 * GetDestructableLife(gg_dest_YOec_11579))
-    gg_dest_YOec_11580 = CreateDestructable(1498375523, 4832.0, 11104.0, 178.000, 0.850, 1)
-    SetDestructableLife(gg_dest_YOec_11580, 2.55 * GetDestructableLife(gg_dest_YOec_11580))
-    gg_dest_NOfp_11581 = CreateDestructable(1313826416, 4288.0, 10176.0, 308.000, 1.113, 0)
-    SetDestructableLife(gg_dest_NOfp_11581, 2.55 * GetDestructableLife(gg_dest_NOfp_11581))
-    gg_dest_NOft_11582 = CreateDestructable(1313826420, 3584.0, 10752.0, 256.000, 1.025, 0)
-    SetDestructableLife(gg_dest_NOft_11582, 2.55 * GetDestructableLife(gg_dest_NOft_11582))
-    gg_dest_NOft_11583 = CreateDestructable(1313826420, 7936.0, 7872.0, 102.000, 1.154, 0)
-    SetDestructableLife(gg_dest_NOft_11583, 2.55 * GetDestructableLife(gg_dest_NOft_11583))
-    gg_dest_NOfg_11584 = CreateDestructable(1313826407, 8320.0, 6912.0, 156.000, 0.800, 0)
-    SetDestructableLife(gg_dest_NOfg_11584, 2.55 * GetDestructableLife(gg_dest_NOfg_11584))
-    gg_dest_NOfg_11585 = CreateDestructable(1313826407, 7040.0, 7424.0, 290.000, 1.075, 0)
-    SetDestructableLife(gg_dest_NOfg_11585, 2.55 * GetDestructableLife(gg_dest_NOfg_11585))
-    gg_dest_LOfl_11586 = CreateDestructable(1280271980, 7917.0, 7843.7, 62.000, 1.093, 0)
-    SetDestructableLife(gg_dest_LOfl_11586, 2.55 * GetDestructableLife(gg_dest_LOfl_11586))
-    gg_dest_LOfl_11587 = CreateDestructable(1280271980, 6966.5, 7090.5, 341.000, 0.921, 0)
-    SetDestructableLife(gg_dest_LOfl_11587, 2.55 * GetDestructableLife(gg_dest_LOfl_11587))
-    gg_dest_LOfl_11588 = CreateDestructable(1280271980, 7354.6, 7841.8, 255.000, 0.851, 0)
-    SetDestructableLife(gg_dest_LOfl_11588, 2.55 * GetDestructableLife(gg_dest_LOfl_11588))
-    gg_dest_LOfl_11589 = CreateDestructable(1280271980, 8425.9, 7204.7, 119.000, 1.083, 0)
-    SetDestructableLife(gg_dest_LOfl_11589, 2.55 * GetDestructableLife(gg_dest_LOfl_11589))
-    gg_dest_LOfl_11590 = CreateDestructable(1280271980, 8231.9, 6729.4, 348.000, 0.986, 0)
-    SetDestructableLife(gg_dest_LOfl_11590, 2.55 * GetDestructableLife(gg_dest_LOfl_11590))
-    gg_dest_LOic_11591 = CreateDestructable(1280272739, 8608.0, 7712.0, 295.000, 1.029, 1)
-    SetDestructableLife(gg_dest_LOic_11591, 2.55 * GetDestructableLife(gg_dest_LOic_11591))
-    gg_dest_LOic_11592 = CreateDestructable(1280272739, 8352.0, 8032.0, 84.000, 0.870, 0)
-    SetDestructableLife(gg_dest_LOic_11592, 2.55 * GetDestructableLife(gg_dest_LOic_11592))
-    gg_dest_LOic_11593 = CreateDestructable(1280272739, 8928.0, 8288.0, 234.000, 1.147, 0)
-    SetDestructableLife(gg_dest_LOic_11593, 2.55 * GetDestructableLife(gg_dest_LOic_11593))
-    gg_dest_LOic_11594 = CreateDestructable(1280272739, 8992.0, 7968.0, 257.000, 1.172, 1)
-    SetDestructableLife(gg_dest_LOic_11594, 2.55 * GetDestructableLife(gg_dest_LOic_11594))
-    gg_dest_YOec_11595 = CreateDestructable(1498375523, 8096.0, 7904.0, 255.000, 1.025, 0)
-    SetDestructableLife(gg_dest_YOec_11595, 2.55 * GetDestructableLife(gg_dest_YOec_11595))
-    gg_dest_YOec_11596 = CreateDestructable(1498375523, 6944.0, 6880.0, 25.000, 1.053, 1)
-    SetDestructableLife(gg_dest_YOec_11596, 2.55 * GetDestructableLife(gg_dest_YOec_11596))
-    gg_dest_YOec_11597 = CreateDestructable(1498375523, 7008.0, 6752.0, 128.000, 0.845, 0)
-    SetDestructableLife(gg_dest_YOec_11597, 2.55 * GetDestructableLife(gg_dest_YOec_11597))
-    gg_dest_YOec_11598 = CreateDestructable(1498375523, 7136.0, 6624.0, 120.000, 0.964, 2)
-    SetDestructableLife(gg_dest_YOec_11598, 2.55 * GetDestructableLife(gg_dest_YOec_11598))
-    gg_dest_YOec_11599 = CreateDestructable(1498375523, 7264.0, 6560.0, 286.000, 0.967, 1)
-    SetDestructableLife(gg_dest_YOec_11599, 2.55 * GetDestructableLife(gg_dest_YOec_11599))
-    gg_dest_YOec_11600 = CreateDestructable(1498375523, 7136.0, 6688.0, 210.000, 0.808, 0)
-    SetDestructableLife(gg_dest_YOec_11600, 2.55 * GetDestructableLife(gg_dest_YOec_11600))
-    gg_dest_LOsc_11601 = CreateDestructable(1280275299, 7968.0, 6432.0, 341.000, 0.966, 0)
-    SetDestructableLife(gg_dest_LOsc_11601, 2.55 * GetDestructableLife(gg_dest_LOsc_11601))
-    gg_dest_LOsc_11602 = CreateDestructable(1280275299, 7840.0, 6432.0, 61.000, 1.141, 0)
-    SetDestructableLife(gg_dest_LOsc_11602, 2.55 * GetDestructableLife(gg_dest_LOsc_11602))
-    gg_dest_LOsc_11603 = CreateDestructable(1280275299, 7904.0, 6432.0, 28.000, 1.196, 0)
-    SetDestructableLife(gg_dest_LOsc_11603, 2.55 * GetDestructableLife(gg_dest_LOsc_11603))
-    gg_dest_LOcb_11604 = CreateDestructable(1280271202, 7488.0, 6464.0, 245.000, 1.110, 0)
-    SetDestructableLife(gg_dest_LOcb_11604, 2.55 * GetDestructableLife(gg_dest_LOcb_11604))
-    gg_dest_LOsh_11605 = CreateDestructable(1280275304, 7712.0, 6432.0, 201.000, 1.035, 2)
-    SetDestructableLife(gg_dest_LOsh_11605, 2.55 * GetDestructableLife(gg_dest_LOsh_11605))
-    gg_dest_DOtp_11606 = CreateDestructable(1146057840, 7744.0, 7936.0, 179.000, 1.098, 0)
-    SetDestructableLife(gg_dest_DOtp_11606, 2.55 * GetDestructableLife(gg_dest_DOtp_11606))
-    gg_dest_DOjp_11607 = CreateDestructable(1146055280, -7232.0, 6656.0, 156.000, 1.173, 0)
-    SetDestructableLife(gg_dest_DOjp_11607, 2.55 * GetDestructableLife(gg_dest_DOjp_11607))
-    gg_dest_LOsp_11608 = CreateDestructable(1280275312, -9098.7, 8199.9, 90.000, 1.069, 0)
-    SetDestructableLife(gg_dest_LOsp_11608, 2.55 * GetDestructableLife(gg_dest_LOsp_11608))
-    gg_dest_LOsh_11609 = CreateDestructable(1280275304, -8544.0, 7392.0, 196.000, 1.164, 0)
-    SetDestructableLife(gg_dest_LOsh_11609, 2.55 * GetDestructableLife(gg_dest_LOsh_11609))
-    gg_dest_DOtp_11610 = CreateDestructable(1146057840, -8768.0, 7680.0, 233.000, 1.069, 1)
-    SetDestructableLife(gg_dest_DOtp_11610, 2.55 * GetDestructableLife(gg_dest_DOtp_11610))
-    gg_dest_LOam_11613 = CreateDestructable(1280270701, 3744.0, 11424.0, 288.000, 1.723, 0)
-    SetDestructableLife(gg_dest_LOam_11613, 2.55 * GetDestructableLife(gg_dest_LOam_11613))
-    gg_dest_LOam_11612 = CreateDestructable(1280270701, 3552.0, 11296.0, 320.000, 1.726, 0)
-    SetDestructableLife(gg_dest_LOam_11612, 2.55 * GetDestructableLife(gg_dest_LOam_11612))
-    gg_dest_LOwp_11611 = CreateDestructable(1280276336, 8160.0, -416.0, 38.000, 1.859, 0)
-    SetDestructableLife(gg_dest_LOwp_11611, 2.55 * GetDestructableLife(gg_dest_LOwp_11611))
-    gg_dest_LOwp_11614 = CreateDestructable(1280276336, 7200.0, -480.0, 345.000, 1.217, 0)
-    SetDestructableLife(gg_dest_LOwp_11614, 2.55 * GetDestructableLife(gg_dest_LOwp_11614))
-    gg_dest_LOwp_11615 = CreateDestructable(1280276336, 7328.0, -352.0, 300.000, 1.175, 0)
-    SetDestructableLife(gg_dest_LOwp_11615, 2.55 * GetDestructableLife(gg_dest_LOwp_11615))
-    gg_dest_LOwp_11616 = CreateDestructable(1280276336, 7520.0, -288.0, 79.000, 1.253, 0)
-    SetDestructableLife(gg_dest_LOwp_11616, 2.55 * GetDestructableLife(gg_dest_LOwp_11616))
-    gg_dest_LOwr_11617 = CreateDestructable(1280276338, 8448.0, -1024.0, 337.000, 1.051, 0)
-    SetDestructableLife(gg_dest_LOwr_11617, 2.55 * GetDestructableLife(gg_dest_LOwr_11617))
-    gg_dest_LOwr_11618 = CreateDestructable(1280276338, 7040.0, -1408.0, 164.000, 0.844, 0)
-    SetDestructableLife(gg_dest_LOwr_11618, 2.55 * GetDestructableLife(gg_dest_LOwr_11618))
-    gg_dest_LOt1_11619 = CreateDestructable(1280275505, 6976.0, -1216.0, 53.000, 1.199, 0)
-    SetDestructableLife(gg_dest_LOt1_11619, 2.55 * GetDestructableLife(gg_dest_LOt1_11619))
-    gg_dest_LOt1_11620 = CreateDestructable(1280275505, 6976.0, -832.0, 283.000, 0.928, 0)
-    SetDestructableLife(gg_dest_LOt1_11620, 2.55 * GetDestructableLife(gg_dest_LOt1_11620))
-    gg_dest_LOtz_11621 = CreateDestructable(1280275578, 8664.8, -1442.8, 55.000, 1.147, 0)
-    SetDestructableLife(gg_dest_LOtz_11621, 2.55 * GetDestructableLife(gg_dest_LOtz_11621))
-    gg_dest_LOtz_11622 = CreateDestructable(1280275578, 8345.2, -1917.4, 189.000, 0.889, 0)
-    SetDestructableLife(gg_dest_LOtz_11622, 2.55 * GetDestructableLife(gg_dest_LOtz_11622))
-    gg_dest_LOtz_11623 = CreateDestructable(1280275578, 8897.0, -2191.1, 65.000, 1.100, 0)
-    SetDestructableLife(gg_dest_LOtz_11623, 2.55 * GetDestructableLife(gg_dest_LOtz_11623))
-    gg_dest_LOtz_11624 = CreateDestructable(1280275578, 8945.8, -1680.9, 182.000, 0.822, 0)
-    SetDestructableLife(gg_dest_LOtz_11624, 2.55 * GetDestructableLife(gg_dest_LOtz_11624))
-    gg_dest_LOtz_11625 = CreateDestructable(1280275578, 7195.8, -662.4, 114.000, 0.819, 0)
-    SetDestructableLife(gg_dest_LOtz_11625, 2.55 * GetDestructableLife(gg_dest_LOtz_11625))
-    gg_dest_LOtz_11626 = CreateDestructable(1280275578, 8241.9, -711.0, 285.000, 1.124, 0)
-    SetDestructableLife(gg_dest_LOtz_11626, 2.55 * GetDestructableLife(gg_dest_LOtz_11626))
-    gg_dest_LOtz_11627 = CreateDestructable(1280275578, 7658.0, 6402.2, 350.000, 1.187, 0)
-    SetDestructableLife(gg_dest_LOtz_11627, 2.55 * GetDestructableLife(gg_dest_LOtz_11627))
-    gg_dest_LOtz_11628 = CreateDestructable(1280275578, 7041.1, 6873.2, 330.000, 0.986, 0)
-    SetDestructableLife(gg_dest_LOtz_11628, 2.55 * GetDestructableLife(gg_dest_LOtz_11628))
-    gg_dest_LOtz_11629 = CreateDestructable(1280275578, 7245.1, 6675.7, 230.000, 1.001, 0)
-    SetDestructableLife(gg_dest_LOtz_11629, 2.55 * GetDestructableLife(gg_dest_LOtz_11629))
-    gg_dest_LOtz_11630 = CreateDestructable(1280275578, 7617.4, 7897.2, 232.000, 0.805, 0)
-    SetDestructableLife(gg_dest_LOtz_11630, 2.55 * GetDestructableLife(gg_dest_LOtz_11630))
-    gg_dest_LOtz_11631 = CreateDestructable(1280275578, 8419.4, 7376.3, 254.000, 1.077, 0)
-    SetDestructableLife(gg_dest_LOtz_11631, 2.55 * GetDestructableLife(gg_dest_LOtz_11631))
-    gg_dest_LOss_11632 = CreateDestructable(1280275315, 7904.0, -1760.0, 336.000, 0.883, 3)
-    SetDestructableLife(gg_dest_LOss_11632, 2.55 * GetDestructableLife(gg_dest_LOss_11632))
-    gg_dest_LOss_11633 = CreateDestructable(1280275315, 8096.0, -1760.0, 112.000, 0.852, 4)
-    SetDestructableLife(gg_dest_LOss_11633, 2.55 * GetDestructableLife(gg_dest_LOss_11633))
-    gg_dest_LOss_11634 = CreateDestructable(1280275315, 8480.0, -1184.0, 214.000, 1.038, 3)
-    SetDestructableLife(gg_dest_LOss_11634, 2.55 * GetDestructableLife(gg_dest_LOss_11634))
-    gg_dest_LOss_11635 = CreateDestructable(1280275315, 6944.0, -992.0, 346.000, 0.843, 4)
-    SetDestructableLife(gg_dest_LOss_11635, 2.55 * GetDestructableLife(gg_dest_LOss_11635))
-    gg_dest_LOss_11636 = CreateDestructable(1280275315, 7712.0, -288.0, 337.000, 1.003, 0)
-    SetDestructableLife(gg_dest_LOss_11636, 2.55 * GetDestructableLife(gg_dest_LOss_11636))
-    gg_dest_LOss_11637 = CreateDestructable(1280275315, 8224.0, -544.0, 297.000, 1.170, 4)
-    SetDestructableLife(gg_dest_LOss_11637, 2.55 * GetDestructableLife(gg_dest_LOss_11637))
-    gg_dest_LOsk_11638 = CreateDestructable(1280275307, 3840.0, -5312.0, 249.000, 1.157, 2)
-    SetDestructableLife(gg_dest_LOsk_11638, 2.55 * GetDestructableLife(gg_dest_LOsk_11638))
-    gg_dest_LOsk_11639 = CreateDestructable(1280275307, 4160.0, -5376.0, 309.000, 0.955, 2)
-    SetDestructableLife(gg_dest_LOsk_11639, 2.55 * GetDestructableLife(gg_dest_LOsk_11639))
-    gg_dest_LOic_7351 = CreateDestructable(1280272739, 5408.0, 2464.0, 241.000, 0.870, 0)
-    SetDestructableLife(gg_dest_LOic_7351, 2.55 * GetDestructableLife(gg_dest_LOic_7351))
-    gg_dest_ORmk_2143 = CreateDestructable(1330802027, 5952.0, 3776.0, 270.000, 0.969, 1)
-    SetDestructableLife(gg_dest_ORmk_2143, 2.55 * GetDestructableLife(gg_dest_ORmk_2143))
-    gg_dest_ORmk_2144 = CreateDestructable(1330802027, 5120.0, 2432.0, 270.000, 1.000, 3)
-    SetDestructableLife(gg_dest_ORmk_2144, 2.55 * GetDestructableLife(gg_dest_ORmk_2144))
-    gg_dest_ORmk_2145 = CreateDestructable(1330802027, 6080.0, 2496.0, 270.000, 1.057, 4)
-    SetDestructableLife(gg_dest_ORmk_2145, 2.55 * GetDestructableLife(gg_dest_ORmk_2145))
-    gg_dest_OPop_2146 = CreateDestructable(1330671472, 5824.0, 2304.0, 270.000, 1.107, 4)
-    SetDestructableLife(gg_dest_OPop_2146, 2.55 * GetDestructableLife(gg_dest_OPop_2146))
-    gg_dest_OPop_2147 = CreateDestructable(1330671472, 6272.0, 3520.0, 270.000, 0.928, 6)
-    SetDestructableLife(gg_dest_OPop_2147, 2.55 * GetDestructableLife(gg_dest_OPop_2147))
-    gg_dest_OPop_2148 = CreateDestructable(1330671472, 6144.0, 3648.0, 270.000, 0.843, 7)
-    SetDestructableLife(gg_dest_OPop_2148, 2.55 * GetDestructableLife(gg_dest_OPop_2148))
-    gg_dest_OPop_2149 = CreateDestructable(1330671472, 5376.0, 3776.0, 270.000, 0.817, 4)
-    SetDestructableLife(gg_dest_OPop_2149, 2.55 * GetDestructableLife(gg_dest_OPop_2149))
-    gg_dest_OPop_2151 = CreateDestructable(1330671472, 5632.0, 3904.0, 270.000, 0.817, 0)
-    SetDestructableLife(gg_dest_OPop_2151, 2.55 * GetDestructableLife(gg_dest_OPop_2151))
-    gg_dest_OPop_2155 = CreateDestructable(1330671472, 5312.0, 2304.0, 270.000, 1.151, 7)
-    SetDestructableLife(gg_dest_OPop_2155, 2.55 * GetDestructableLife(gg_dest_OPop_2155))
-    gg_dest_OPop_3865 = CreateDestructable(1330671472, 5632.0, 2176.0, 270.000, 0.881, 2)
-    SetDestructableLife(gg_dest_OPop_3865, 2.55 * GetDestructableLife(gg_dest_OPop_3865))
-    gg_dest_NOfg_6281 = CreateDestructable(1313826407, 3968.0, 11392.0, 38.000, 0.840, 0)
-    SetDestructableLife(gg_dest_NOfg_6281, 2.55 * GetDestructableLife(gg_dest_NOfg_6281))
-    gg_dest_OPop_4924 = CreateDestructable(1330671472, 5952.0, 2304.0, 270.000, 0.874, 7)
-    SetDestructableLife(gg_dest_OPop_4924, 2.55 * GetDestructableLife(gg_dest_OPop_4924))
-    gg_dest_NOfg_6280 = CreateDestructable(1313826407, 4800.0, 10944.0, 88.000, 1.004, 0)
-    SetDestructableLife(gg_dest_NOfg_6280, 2.55 * GetDestructableLife(gg_dest_NOfg_6280))
-    gg_dest_OPop_4927 = CreateDestructable(1330671472, -5824.0, 2304.0, 270.000, 1.074, 4)
-    SetDestructableLife(gg_dest_OPop_4927, 2.55 * GetDestructableLife(gg_dest_OPop_4927))
-    gg_dest_OPop_4928 = CreateDestructable(1330671472, -6208.0, 3648.0, 270.000, 0.851, 3)
-    SetDestructableLife(gg_dest_OPop_4928, 2.55 * GetDestructableLife(gg_dest_OPop_4928))
-    gg_dest_OPop_4930 = CreateDestructable(1330671472, -4928.0, 3456.0, 270.000, 1.087, 6)
-    SetDestructableLife(gg_dest_OPop_4930, 2.55 * GetDestructableLife(gg_dest_OPop_4930))
-    gg_dest_OPop_4932 = CreateDestructable(1330671472, -5248.0, 3840.0, 270.000, 0.841, 6)
-    SetDestructableLife(gg_dest_OPop_4932, 2.55 * GetDestructableLife(gg_dest_OPop_4932))
-    gg_dest_OPop_4934 = CreateDestructable(1330671472, -6144.0, 2432.0, 270.000, 1.019, 4)
-    SetDestructableLife(gg_dest_OPop_4934, 2.55 * GetDestructableLife(gg_dest_OPop_4934))
-    gg_dest_OPop_4936 = CreateDestructable(1330671472, -6016.0, 2368.0, 270.000, 0.990, 6)
-    SetDestructableLife(gg_dest_OPop_4936, 2.55 * GetDestructableLife(gg_dest_OPop_4936))
-    gg_dest_OPop_5493 = CreateDestructable(1330671472, -4992.0, 2496.0, 270.000, 0.972, 4)
-    SetDestructableLife(gg_dest_OPop_5493, 2.55 * GetDestructableLife(gg_dest_OPop_5493))
-    gg_dest_OPop_5496 = CreateDestructable(1330671472, -5120.0, 2368.0, 270.000, 1.006, 2)
-    SetDestructableLife(gg_dest_OPop_5496, 2.55 * GetDestructableLife(gg_dest_OPop_5496))
-    gg_dest_OPop_5497 = CreateDestructable(1330671472, -5632.0, 3904.0, 270.000, 1.052, 3)
-    SetDestructableLife(gg_dest_OPop_5497, 2.55 * GetDestructableLife(gg_dest_OPop_5497))
-    gg_dest_OPop_5499 = CreateDestructable(1330671472, -5248.0, 2240.0, 270.000, 0.848, 3)
-    SetDestructableLife(gg_dest_OPop_5499, 2.55 * GetDestructableLife(gg_dest_OPop_5499))
-    gg_dest_ORmk_5500 = CreateDestructable(1330802027, -6016.0, 3840.0, 270.000, 1.171, 0)
-    SetDestructableLife(gg_dest_ORmk_5500, 2.55 * GetDestructableLife(gg_dest_ORmk_5500))
-    gg_dest_ORmk_5502 = CreateDestructable(1330802027, -6272.0, 2624.0, 270.000, 0.997, 4)
-    SetDestructableLife(gg_dest_ORmk_5502, 2.55 * GetDestructableLife(gg_dest_ORmk_5502))
-    gg_dest_ORmk_5504 = CreateDestructable(1330802027, -5632.0, 2176.0, 270.000, 1.000, 0)
-    SetDestructableLife(gg_dest_ORmk_5504, 2.55 * GetDestructableLife(gg_dest_ORmk_5504))
-    gg_dest_ORmk_5505 = CreateDestructable(1330802027, -5056.0, 3648.0, 270.000, 0.893, 2)
-    SetDestructableLife(gg_dest_ORmk_5505, 2.55 * GetDestructableLife(gg_dest_ORmk_5505))
-    gg_dest_AOob_6268 = CreateDestructable(1095724898, 6016.0, 3456.0, 303.000, 0.875, 2)
-    SetDestructableLife(gg_dest_AOob_6268, 2.55 * GetDestructableLife(gg_dest_AOob_6268))
-    gg_dest_AOob_5506 = CreateDestructable(1095724898, 6016.0, 2688.0, 303.000, 0.875, 2)
-    SetDestructableLife(gg_dest_AOob_5506, 2.55 * GetDestructableLife(gg_dest_AOob_5506))
-    gg_dest_AOob_5508 = CreateDestructable(1095724898, 5248.0, 2688.0, 303.000, 0.875, 2)
-    SetDestructableLife(gg_dest_AOob_5508, 2.55 * GetDestructableLife(gg_dest_AOob_5508))
-    gg_dest_AOob_5509 = CreateDestructable(1095724898, 5248.0, 3456.0, 303.000, 0.875, 2)
-    SetDestructableLife(gg_dest_AOob_5509, 2.55 * GetDestructableLife(gg_dest_AOob_5509))
-    gg_dest_AOob_5510 = CreateDestructable(1095724898, -6016.0, 3456.0, 303.000, 0.875, 2)
-    SetDestructableLife(gg_dest_AOob_5510, 2.55 * GetDestructableLife(gg_dest_AOob_5510))
-    gg_dest_AOob_5511 = CreateDestructable(1095724898, -5248.0, 3456.0, 303.000, 0.875, 2)
-    SetDestructableLife(gg_dest_AOob_5511, 2.55 * GetDestructableLife(gg_dest_AOob_5511))
-    gg_dest_AOob_6271 = CreateDestructable(1095724898, -6016.0, 2688.0, 303.000, 0.875, 2)
-    SetDestructableLife(gg_dest_AOob_6271, 2.55 * GetDestructableLife(gg_dest_AOob_6271))
-    gg_dest_AOob_6273 = CreateDestructable(1095724898, -5248.0, 2688.0, 303.000, 0.875, 2)
-    SetDestructableLife(gg_dest_AOob_6273, 2.55 * GetDestructableLife(gg_dest_AOob_6273))
-    gg_dest_KOst_6274 = CreateDestructable(1263498100, -5632.0, 3712.0, 270.000, 1.038, 0)
-    SetDestructableLife(gg_dest_KOst_6274, 2.55 * GetDestructableLife(gg_dest_KOst_6274))
-    gg_dest_KOst_6275 = CreateDestructable(1263498100, -5632.0, 2432.0, 90.000, 1.038, 0)
-    SetDestructableLife(gg_dest_KOst_6275, 2.55 * GetDestructableLife(gg_dest_KOst_6275))
-    gg_dest_KOst_6277 = CreateDestructable(1263498100, 5632.0, 3712.0, 270.000, 1.038, 0)
-    SetDestructableLife(gg_dest_KOst_6277, 2.55 * GetDestructableLife(gg_dest_KOst_6277))
-    gg_dest_NOfg_3843 = CreateDestructable(1313826407, -7424.0, 6592.0, 270.000, 1.091, 0)
-    SetDestructableLife(gg_dest_NOfg_3843, 2.55 * GetDestructableLife(gg_dest_NOfg_3843))
-    gg_dest_LOic_4923 = CreateDestructable(1280272739, -5472.0, 2464.0, 22.000, 1.082, 0)
-    SetDestructableLife(gg_dest_LOic_4923, 2.55 * GetDestructableLife(gg_dest_LOic_4923))
-    gg_dest_LOic_4926 = CreateDestructable(1280272739, -5792.0, 2464.0, 276.000, 1.043, 0)
-    SetDestructableLife(gg_dest_LOic_4926, 2.55 * GetDestructableLife(gg_dest_LOic_4926))
-    gg_dest_NTtw_0241 = CreateDestructable(1314157687, 11328.0, 2048.0, 270.000, 1.132, 6)
-    gg_dest_NTtw_0239 = CreateDestructable(1314157687, 11328.0, 1920.0, 270.000, 1.061, 6)
-    gg_dest_NTtw_0213 = CreateDestructable(1314157687, 11200.0, 1856.0, 270.000, 0.884, 9)
-    gg_dest_NTtw_0214 = CreateDestructable(1314157687, 11200.0, 1984.0, 270.000, 1.188, 5)
-    gg_dest_NTtw_1246 = CreateDestructable(1314157687, 11072.0, 2240.0, 270.000, 1.146, 9)
+    gg_dest_LTlt_1091 = CreateDestructable(1280601204, -1024.0, 8000.0, 270.000, 0.987, 8)
+    gg_dest_LTlt_1093 = CreateDestructable(1280601204, -896.0, 8000.0, 270.000, 0.940, 9)
+    gg_dest_LTlt_1095 = CreateDestructable(1280601204, -960.0, 8128.0, 270.000, 0.965, 1)
+    gg_dest_LTlt_1096 = CreateDestructable(1280601204, -768.0, 8000.0, 270.000, 0.886, 3)
+    gg_dest_LTlt_1097 = CreateDestructable(1280601204, -832.0, 8128.0, 270.000, 1.139, 1)
+    gg_dest_LTlt_1098 = CreateDestructable(1280601204, -768.0, 8256.0, 270.000, 0.820, 8)
+    gg_dest_LTlt_1100 = CreateDestructable(1280601204, -640.0, 8000.0, 270.000, 0.943, 3)
+    gg_dest_LTlt_1101 = CreateDestructable(1280601204, -704.0, 8128.0, 270.000, 1.062, 1)
+    gg_dest_LTlt_1102 = CreateDestructable(1280601204, -576.0, 7872.0, 270.000, 0.943, 5)
+    gg_dest_LTlt_1103 = CreateDestructable(1280601204, -512.0, 8000.0, 270.000, 0.920, 1)
+    gg_dest_LTlt_1104 = CreateDestructable(1280601204, -576.0, 8128.0, 270.000, 1.119, 7)
+    gg_dest_LTlt_1105 = CreateDestructable(1280601204, -896.0, 8256.0, 270.000, 0.852, 8)
+    gg_dest_LTlt_1106 = CreateDestructable(1280601204, -640.0, 8256.0, 270.000, 1.120, 4)
+    gg_dest_LTlt_1107 = CreateDestructable(1280601204, -1024.0, 8256.0, 270.000, 0.874, 4)
+    gg_dest_LTlt_1108 = CreateDestructable(1280601204, -960.0, 8384.0, 270.000, 1.066, 1)
+    gg_dest_LTlt_1109 = CreateDestructable(1280601204, -832.0, 8384.0, 270.000, 1.148, 6)
+    gg_dest_LTlt_1110 = CreateDestructable(1280601204, -1152.0, 8384.0, 270.000, 1.050, 9)
+    gg_dest_LTlt_1111 = CreateDestructable(1280601204, -1088.0, 8512.0, 270.000, 1.087, 6)
+    gg_dest_LTlt_1112 = CreateDestructable(1280601204, -960.0, 8512.0, 270.000, 1.200, 3)
+    gg_dest_LTlt_1113 = CreateDestructable(1280601204, -1152.0, 8256.0, 270.000, 0.954, 5)
+    gg_dest_LTlt_1114 = CreateDestructable(1280601204, -1280.0, 8448.0, 270.000, 1.186, 0)
+    gg_dest_LTlt_1115 = CreateDestructable(1280601204, -1216.0, 8576.0, 270.000, 1.188, 3)
+    gg_dest_LTlt_1116 = CreateDestructable(1280601204, -1024.0, 8704.0, 270.000, 0.928, 6)
+    gg_dest_LTlt_1117 = CreateDestructable(1280601204, -1344.0, 8576.0, 270.000, 1.198, 1)
+    gg_dest_LTlt_1118 = CreateDestructable(1280601204, -1280.0, 8704.0, 270.000, 0.847, 3)
+    gg_dest_LTlt_1119 = CreateDestructable(1280601204, -1152.0, 8704.0, 270.000, 1.053, 5)
+    gg_dest_LTlt_1120 = CreateDestructable(1280601204, -1088.0, 8832.0, 270.000, 1.098, 7)
+    gg_dest_LTlt_1121 = CreateDestructable(1280601204, -1408.0, 8704.0, 270.000, 0.928, 1)
+    gg_dest_LTlt_1122 = CreateDestructable(1280601204, -1344.0, 8832.0, 270.000, 1.189, 1)
+    gg_dest_LTlt_1123 = CreateDestructable(1280601204, -1216.0, 8832.0, 270.000, 1.039, 0)
+    gg_dest_LTlt_1124 = CreateDestructable(1280601204, -1152.0, 8960.0, 270.000, 0.831, 6)
+    gg_dest_LTlt_1126 = CreateDestructable(1280601204, -1472.0, 8832.0, 270.000, 1.186, 4)
+    gg_dest_LTlt_1127 = CreateDestructable(1280601204, -1408.0, 8960.0, 270.000, 0.849, 7)
+    gg_dest_LTlt_1128 = CreateDestructable(1280601204, -1280.0, 8960.0, 270.000, 1.059, 4)
+    gg_dest_LTlt_1129 = CreateDestructable(1280601204, -1216.0, 9088.0, 270.000, 1.034, 2)
+    gg_dest_LTlt_1130 = CreateDestructable(1280601204, -1024.0, 8960.0, 270.000, 0.977, 4)
+    gg_dest_LTlt_1131 = CreateDestructable(1280601204, -1536.0, 8960.0, 270.000, 1.192, 8)
+    gg_dest_LTlt_2137 = CreateDestructable(1280601204, -1472.0, 9088.0, 270.000, 0.963, 5)
+    gg_dest_LTlt_2138 = CreateDestructable(1280601204, -1344.0, 9088.0, 270.000, 0.988, 7)
+    gg_dest_LTlt_2141 = CreateDestructable(1280601204, -1280.0, 9216.0, 270.000, 1.088, 0)
+    gg_dest_LTlt_2142 = CreateDestructable(1280601204, -1472.0, 9216.0, 270.000, 0.989, 5)
+    gg_dest_LTlt_2150 = CreateDestructable(1280601204, -1280.0, 9344.0, 270.000, 0.978, 9)
+    gg_dest_LTlt_2152 = CreateDestructable(1280601204, -1472.0, 9344.0, 270.000, 0.808, 0)
+    gg_dest_LTlt_2153 = CreateDestructable(1280601204, -1280.0, 9472.0, 270.000, 1.096, 6)
+    gg_dest_LTlt_2154 = CreateDestructable(1280601204, -1152.0, 9216.0, 270.000, 0.814, 2)
+    gg_dest_LTlt_2156 = CreateDestructable(1280601204, -1472.0, 9536.0, 270.000, 1.038, 0)
+    gg_dest_LTlt_2157 = CreateDestructable(1280601204, -1280.0, 9664.0, 270.000, 1.028, 3)
+    gg_dest_LTlt_2158 = CreateDestructable(1280601204, -1152.0, 9408.0, 270.000, 0.918, 4)
+    gg_dest_LTlt_2159 = CreateDestructable(1280601204, -1088.0, 9536.0, 270.000, 1.076, 8)
+    gg_dest_LTlt_2160 = CreateDestructable(1280601204, -1408.0, 9728.0, 270.000, 1.072, 4)
+    gg_dest_LTlt_2161 = CreateDestructable(1280601204, -1216.0, 9856.0, 270.000, 0.981, 3)
+    gg_dest_LTlt_2162 = CreateDestructable(1280601204, -1152.0, 9728.0, 270.000, 0.915, 7)
+    gg_dest_LTlt_2163 = CreateDestructable(1280601204, -1024.0, 9728.0, 270.000, 1.174, 7)
+    gg_dest_LTlt_2165 = CreateDestructable(1280601204, -1344.0, 9856.0, 270.000, 0.846, 3)
+    gg_dest_LTlt_3844 = CreateDestructable(1280601204, -1152.0, 9984.0, 270.000, 1.141, 7)
+    gg_dest_LTlt_3849 = CreateDestructable(1280601204, -1088.0, 9856.0, 270.000, 1.068, 7)
+    gg_dest_LTlt_3850 = CreateDestructable(1280601204, -960.0, 9856.0, 270.000, 1.158, 5)
+    gg_dest_LTlt_3851 = CreateDestructable(1280601204, -1280.0, 9984.0, 270.000, 1.010, 5)
+    gg_dest_LTlt_3857 = CreateDestructable(1280601204, -1088.0, 10112.0, 270.000, 1.195, 4)
+    gg_dest_LTlt_3858 = CreateDestructable(1280601204, -1024.0, 9984.0, 270.000, 1.193, 3)
+    gg_dest_LTlt_3859 = CreateDestructable(1280601204, -896.0, 9984.0, 270.000, 0.911, 5)
+    gg_dest_LTlt_3860 = CreateDestructable(1280601204, -1216.0, 10112.0, 270.000, 1.094, 2)
+    gg_dest_LTlt_3861 = CreateDestructable(1280601204, -960.0, 10112.0, 270.000, 0.887, 0)
+    gg_dest_LTlt_4258 = CreateDestructable(1280601204, -768.0, 9984.0, 270.000, 0.856, 6)
+    gg_dest_LTlt_4259 = CreateDestructable(1280601204, -832.0, 10112.0, 270.000, 1.067, 1)
+    gg_dest_LTlt_4260 = CreateDestructable(1280601204, -1152.0, 10240.0, 270.000, 0.876, 1)
+    gg_dest_LTlt_4261 = CreateDestructable(1280601204, -704.0, 10112.0, 270.000, 0.956, 6)
+    gg_dest_LTlt_4262 = CreateDestructable(1280601204, -768.0, 10240.0, 270.000, 0.960, 2)
+    gg_dest_LTlt_4263 = CreateDestructable(1280601204, -640.0, 10304.0, 270.000, 0.893, 0)
+    gg_dest_LTlt_4264 = CreateDestructable(1280601204, -512.0, 10432.0, 270.000, 0.895, 1)
+    gg_dest_LTlt_4265 = CreateDestructable(1280601204, -512.0, 10240.0, 270.000, 1.126, 8)
+    gg_dest_LTlt_4266 = CreateDestructable(1280601204, -512.0, 10560.0, 270.000, 0.997, 7)
+    gg_dest_FTtw_4267 = CreateDestructable(1179939959, 256.0, 7424.0, 270.000, 0.932, 6)
+    gg_dest_FTtw_4268 = CreateDestructable(1179939959, 320.0, 7296.0, 270.000, 0.864, 1)
+    gg_dest_FTtw_4269 = CreateDestructable(1179939959, 320.0, 7552.0, 270.000, 0.980, 7)
+    gg_dest_FTtw_4270 = CreateDestructable(1179939959, 1088.0, 7424.0, 270.000, 1.001, 5)
+    gg_dest_FTtw_4271 = CreateDestructable(1179939959, 1024.0, 7552.0, 270.000, 1.039, 6)
+    gg_dest_FTtw_4272 = CreateDestructable(1179939959, 1216.0, 7616.0, 270.000, 1.105, 1)
+    gg_dest_FTtw_4273 = CreateDestructable(1179939959, 1152.0, 7744.0, 270.000, 1.142, 6)
+    gg_dest_LTlt_11745 = CreateDestructable(1280601204, -6016.0, 4416.0, 270.000, 0.997, 4)
+    gg_dest_FTtw_4275 = CreateDestructable(1179939959, 1280.0, 7744.0, 270.000, 1.107, 2)
+    gg_dest_LTlt_11744 = CreateDestructable(1280601204, -6208.0, 4288.0, 270.000, 0.971, 3)
+    gg_dest_LTlt_11743 = CreateDestructable(1280601204, -5888.0, 4352.0, 270.000, 1.017, 5)
+    gg_dest_LTlt_11742 = CreateDestructable(1280601204, -6080.0, 4224.0, 270.000, 0.872, 3)
+    gg_dest_LTlt_11741 = CreateDestructable(1280601204, -5696.0, 4288.0, 270.000, 0.970, 8)
+    gg_dest_LTlt_11740 = CreateDestructable(1280601204, -5888.0, 4160.0, 270.000, 0.884, 1)
+    gg_dest_LTlt_11739 = CreateDestructable(1280601204, -5504.0, 4160.0, 270.000, 1.058, 8)
+    gg_dest_LTlt_11738 = CreateDestructable(1280601204, -5568.0, 4288.0, 270.000, 1.048, 9)
+    gg_dest_LTlt_11737 = CreateDestructable(1280601204, -5760.0, 4160.0, 270.000, 1.144, 6)
+    gg_dest_LTlt_11736 = CreateDestructable(1280601204, -5632.0, 4096.0, 270.000, 0.841, 1)
+    gg_dest_LTlt_11735 = CreateDestructable(1280601204, -5376.0, 4224.0, 270.000, 1.129, 3)
+    gg_dest_LTlt_11734 = CreateDestructable(1280601204, -5504.0, 4032.0, 270.000, 1.051, 9)
+    gg_dest_LTlt_11733 = CreateDestructable(1280601204, -5376.0, 3840.0, 270.000, 0.981, 3)
+    gg_dest_LTlt_11732 = CreateDestructable(1280601204, -5376.0, 3968.0, 270.000, 1.048, 5)
+    gg_dest_LTlt_11731 = CreateDestructable(1280601204, -5248.0, 3904.0, 270.000, 0.928, 4)
+    gg_dest_LTlt_11682 = CreateDestructable(1280601204, -4992.0, 3648.0, 270.000, 0.903, 6)
+    gg_dest_LTlt_10550 = CreateDestructable(1280601204, -5120.0, 3648.0, 270.000, 0.995, 8)
+    gg_dest_LTlt_10517 = CreateDestructable(1280601204, -5184.0, 3776.0, 270.000, 1.179, 6)
+    gg_dest_CTtr_10516 = CreateDestructable(1129608306, -8320.0, 2624.0, 270.000, 0.880, 4)
+    gg_dest_CTtr_10515 = CreateDestructable(1129608306, -7872.0, 2560.0, 270.000, 1.111, 2)
+    gg_dest_CTtr_10514 = CreateDestructable(1129608306, -7616.0, 2048.0, 270.000, 0.959, 0)
+    gg_dest_CTtr_10513 = CreateDestructable(1129608306, -4992.0, 2560.0, 270.000, 0.980, 0)
+    gg_dest_CTtr_10512 = CreateDestructable(1129608306, -5056.0, 2368.0, 270.000, 1.129, 1)
+    gg_dest_CTtr_10511 = CreateDestructable(1129608306, -5120.0, 2496.0, 270.000, 0.899, 3)
+    gg_dest_CTtr_10510 = CreateDestructable(1129608306, -5056.0, 1984.0, 270.000, 1.130, 0)
+    gg_dest_CTtr_10509 = CreateDestructable(1129608306, -5248.0, 2368.0, 270.000, 1.043, 3)
+    gg_dest_CTtr_10508 = CreateDestructable(1129608306, -5248.0, 1856.0, 270.000, 0.903, 0)
+    gg_dest_CTtr_10507 = CreateDestructable(1129608306, -5312.0, 2240.0, 270.000, 1.118, 0)
+    gg_dest_CTtr_10506 = CreateDestructable(1129608306, -5248.0, 2112.0, 270.000, 0.812, 3)
+    gg_dest_CTtr_10505 = CreateDestructable(1129608306, -5376.0, 2112.0, 270.000, 1.034, 2)
+    gg_dest_CTtr_10504 = CreateDestructable(1129608306, -5312.0, 1984.0, 270.000, 0.990, 2)
+    gg_dest_CTtr_10503 = CreateDestructable(1129608306, -5376.0, 1856.0, 270.000, 0.923, 3)
+    gg_dest_CTtr_10502 = CreateDestructable(1129608306, -5568.0, 1728.0, 270.000, 1.030, 1)
+    gg_dest_CTtr_10501 = CreateDestructable(1129608306, -5504.0, 2112.0, 270.000, 1.072, 0)
+    gg_dest_CTtr_10500 = CreateDestructable(1129608306, -5440.0, 1984.0, 270.000, 1.163, 2)
+    gg_dest_CTtr_10499 = CreateDestructable(1129608306, -5504.0, 1856.0, 270.000, 0.861, 0)
+    gg_dest_CTtr_9849 = CreateDestructable(1129608306, -5696.0, 1728.0, 270.000, 0.960, 3)
+    gg_dest_CTtr_9848 = CreateDestructable(1129608306, -5632.0, 1984.0, 270.000, 0.893, 0)
+    gg_dest_CTtr_9847 = CreateDestructable(1129608306, -5696.0, 1856.0, 270.000, 0.962, 1)
+    gg_dest_CTtr_9846 = CreateDestructable(1129608306, -5888.0, 1728.0, 270.000, 0.849, 0)
+    gg_dest_CTtr_9845 = CreateDestructable(1129608306, -5760.0, 1984.0, 270.000, 0.971, 0)
+    gg_dest_CTtr_9844 = CreateDestructable(1129608306, -5824.0, 1856.0, 270.000, 1.035, 4)
+    gg_dest_CTtr_9843 = CreateDestructable(1129608306, -6016.0, 1728.0, 270.000, 1.023, 4)
+    gg_dest_CTtr_9842 = CreateDestructable(1129608306, -5888.0, 1984.0, 270.000, 1.076, 4)
+    gg_dest_CTtr_9841 = CreateDestructable(1129608306, -6016.0, 1920.0, 270.000, 1.187, 4)
+    gg_dest_CTtr_9840 = CreateDestructable(1129608306, -6208.0, 1792.0, 270.000, 0.843, 1)
+    gg_dest_CTtr_9839 = CreateDestructable(1129608306, -6144.0, 1920.0, 270.000, 0.979, 0)
+    gg_dest_CTtr_9838 = CreateDestructable(1129608306, -6336.0, 1792.0, 270.000, 1.167, 0)
+    gg_dest_CTtr_9836 = CreateDestructable(1129608306, -6272.0, 1920.0, 270.000, 0.983, 0)
+    gg_dest_CTtr_9835 = CreateDestructable(1129608306, -6464.0, 1792.0, 270.000, 1.005, 1)
+    gg_dest_CTtr_9834 = CreateDestructable(1129608306, -6400.0, 1984.0, 270.000, 1.038, 4)
+    gg_dest_CTtr_9833 = CreateDestructable(1129608306, -6592.0, 1856.0, 270.000, 1.111, 0)
+    gg_dest_CTtr_9832 = CreateDestructable(1129608306, -6528.0, 1984.0, 270.000, 1.022, 3)
+    gg_dest_CTtr_9828 = CreateDestructable(1129608306, -6720.0, 1856.0, 270.000, 1.133, 0)
+    gg_dest_FTtw_5013 = CreateDestructable(1179939959, 768.0, 10304.0, 270.000, 0.944, 6)
+    gg_dest_CTtr_9409 = CreateDestructable(1129608306, -6656.0, 1984.0, 270.000, 1.178, 1)
+    gg_dest_CTtr_9408 = CreateDestructable(1129608306, -6784.0, 1984.0, 270.000, 0.985, 1)
+    gg_dest_FTtw_5018 = CreateDestructable(1179939959, 960.0, 10432.0, 270.000, 1.055, 6)
+    gg_dest_FTtw_5017 = CreateDestructable(1179939959, 704.0, 10432.0, 270.000, 0.861, 2)
+    gg_dest_FTtw_5015 = CreateDestructable(1179939959, 1024.0, 10304.0, 270.000, 0.810, 3)
+    gg_dest_FTtw_5025 = CreateDestructable(1179939959, 4480.0, 3968.0, 270.000, 0.825, 1)
+    gg_dest_FTtw_5029 = CreateDestructable(1179939959, 4736.0, 3712.0, 270.000, 0.867, 0)
+    gg_dest_FTtw_5484 = CreateDestructable(1179939959, 4672.0, 3584.0, 270.000, 0.970, 9)
+    gg_dest_FTtw_5487 = CreateDestructable(1179939959, 4864.0, 3712.0, 270.000, 1.065, 4)
+    gg_dest_FTtw_5488 = CreateDestructable(1179939959, 4928.0, 3840.0, 270.000, 0.951, 5)
+    gg_dest_FTtw_5489 = CreateDestructable(1179939959, 4864.0, 3584.0, 270.000, 1.180, 2)
+    gg_dest_FTtw_5490 = CreateDestructable(1179939959, 5056.0, 3712.0, 270.000, 0.829, 6)
+    gg_dest_FTtw_5491 = CreateDestructable(1179939959, 5120.0, 3840.0, 270.000, 1.194, 0)
+    gg_dest_FTtw_5492 = CreateDestructable(1179939959, 5056.0, 3968.0, 270.000, 1.180, 4)
+    gg_dest_FTtw_5494 = CreateDestructable(1179939959, 4992.0, 4224.0, 270.000, 0.986, 1)
+    gg_dest_FTtw_5495 = CreateDestructable(1179939959, 5248.0, 3968.0, 270.000, 0.968, 2)
+    gg_dest_FTtw_5498 = CreateDestructable(1179939959, 5120.0, 4224.0, 270.000, 0.944, 4)
+    gg_dest_FTtw_5501 = CreateDestructable(1179939959, 5312.0, 3840.0, 270.000, 1.040, 5)
+    gg_dest_FTtw_5503 = CreateDestructable(1179939959, 5376.0, 3968.0, 270.000, 1.031, 6)
+    gg_dest_FTtw_5507 = CreateDestructable(1179939959, 5312.0, 4096.0, 270.000, 0.966, 2)
+    gg_dest_FTtw_5987 = CreateDestructable(1179939959, 5248.0, 4288.0, 270.000, 0.956, 2)
+    gg_dest_FTtw_5988 = CreateDestructable(1179939959, 5504.0, 4032.0, 270.000, 1.116, 3)
+    gg_dest_FTtw_5989 = CreateDestructable(1179939959, 5440.0, 4160.0, 270.000, 1.103, 9)
+    gg_dest_FTtw_5990 = CreateDestructable(1179939959, 5376.0, 4288.0, 270.000, 0.865, 5)
+    gg_dest_FTtw_5991 = CreateDestructable(1179939959, 5568.0, 4160.0, 270.000, 0.815, 1)
+    gg_dest_FTtw_5992 = CreateDestructable(1179939959, 5504.0, 4352.0, 270.000, 1.049, 5)
+    gg_dest_FTtw_5993 = CreateDestructable(1179939959, 5760.0, 4096.0, 270.000, 0.852, 0)
+    gg_dest_FTtw_5994 = CreateDestructable(1179939959, 5696.0, 4224.0, 270.000, 0.808, 0)
+    gg_dest_FTtw_5995 = CreateDestructable(1179939959, 5632.0, 4352.0, 270.000, 1.088, 7)
+    gg_dest_FTtw_5996 = CreateDestructable(1179939959, 5888.0, 4096.0, 270.000, 1.021, 0)
+    gg_dest_FTtw_5997 = CreateDestructable(1179939959, 5824.0, 4224.0, 270.000, 0.969, 8)
+    gg_dest_FTtw_5998 = CreateDestructable(1179939959, 5760.0, 4416.0, 270.000, 0.938, 6)
+    gg_dest_FTtw_5999 = CreateDestructable(1179939959, 5952.0, 4288.0, 270.000, 0.936, 9)
+    gg_dest_FTtw_6000 = CreateDestructable(1179939959, 6080.0, 4224.0, 270.000, 1.012, 4)
+    gg_dest_FTtw_6001 = CreateDestructable(1179939959, 5888.0, 4480.0, 270.000, 0.886, 7)
+    gg_dest_FTtw_6002 = CreateDestructable(1179939959, 6080.0, 4352.0, 270.000, 0.979, 6)
+    gg_dest_FTtw_6003 = CreateDestructable(1179939959, 6016.0, 4544.0, 270.000, 1.008, 9)
+    gg_dest_FTtw_6004 = CreateDestructable(1179939959, 6272.0, 4288.0, 270.000, 0.902, 9)
+    gg_dest_FTtw_6005 = CreateDestructable(1179939959, 6208.0, 4416.0, 270.000, 1.190, 0)
+    gg_dest_FTtw_6006 = CreateDestructable(1179939959, 6144.0, 4544.0, 270.000, 1.079, 7)
+    gg_dest_FTtw_6007 = CreateDestructable(1179939959, 6400.0, 4288.0, 270.000, 0.902, 9)
+    gg_dest_FTtw_6008 = CreateDestructable(1179939959, 6336.0, 4416.0, 270.000, 1.002, 0)
+    gg_dest_FTtw_6009 = CreateDestructable(1179939959, 6400.0, 4096.0, 270.000, 1.165, 6)
+    gg_dest_FTtw_6010 = CreateDestructable(1179939959, 6528.0, 4096.0, 270.000, 0.867, 4)
+    gg_dest_FTtw_6011 = CreateDestructable(1179939959, 6592.0, 4224.0, 270.000, 1.015, 0)
+    gg_dest_FTtw_6012 = CreateDestructable(1179939959, 6528.0, 4352.0, 270.000, 0.987, 5)
+    gg_dest_FTtw_6013 = CreateDestructable(1179939959, 6528.0, 4480.0, 270.000, 1.068, 2)
+    gg_dest_FTtw_6014 = CreateDestructable(1179939959, 6720.0, 4096.0, 270.000, 1.006, 8)
+    gg_dest_FTtw_6015 = CreateDestructable(1179939959, 6784.0, 4224.0, 270.000, 0.893, 0)
+    gg_dest_FTtw_6016 = CreateDestructable(1179939959, 6720.0, 4352.0, 270.000, 1.014, 3)
+    gg_dest_FTtw_6017 = CreateDestructable(1179939959, 6656.0, 4480.0, 270.000, 1.059, 8)
+    gg_dest_FTtw_6018 = CreateDestructable(1179939959, 6912.0, 4224.0, 270.000, 0.946, 8)
+    gg_dest_FTtw_6019 = CreateDestructable(1179939959, 6848.0, 4352.0, 270.000, 1.120, 2)
+    gg_dest_FTtw_6020 = CreateDestructable(1179939959, 7040.0, 4288.0, 270.000, 0.953, 0)
+    gg_dest_FTtw_6021 = CreateDestructable(1179939959, 6912.0, 3904.0, 270.000, 0.977, 7)
+    gg_dest_FTtw_6022 = CreateDestructable(1179939959, 6784.0, 3968.0, 270.000, 1.020, 0)
+    gg_dest_FTtw_6023 = CreateDestructable(1179939959, 7168.0, 4224.0, 270.000, 1.059, 1)
+    gg_dest_FTtw_6024 = CreateDestructable(1179939959, 7040.0, 3776.0, 270.000, 1.122, 1)
+    gg_dest_FTtw_6026 = CreateDestructable(1179939959, 7232.0, 3648.0, 270.000, 1.148, 2)
+    gg_dest_FTtw_6246 = CreateDestructable(1179939959, 7360.0, 3648.0, 270.000, 1.022, 1)
+    gg_dest_FTtw_6248 = CreateDestructable(1179939959, 8704.0, 3392.0, 270.000, 1.131, 8)
+    gg_dest_FTtw_6250 = CreateDestructable(1179939959, 7936.0, 3392.0, 270.000, 1.038, 9)
+    gg_dest_FTtw_6251 = CreateDestructable(1179939959, 8704.0, 3520.0, 270.000, 0.918, 9)
+    gg_dest_NTtw_6252 = CreateDestructable(1314157687, 6976.0, 1856.0, 270.000, 0.924, 4)
+    gg_dest_NTtw_6253 = CreateDestructable(1314157687, 6912.0, 2240.0, 270.000, 1.165, 4)
+    gg_dest_NTtw_6254 = CreateDestructable(1314157687, 7104.0, 1984.0, 270.000, 0.951, 1)
+    gg_dest_NTtw_6255 = CreateDestructable(1314157687, 6592.0, 2048.0, 270.000, 0.973, 2)
+    gg_dest_NTtw_6256 = CreateDestructable(1314157687, 6656.0, 1920.0, 270.000, 0.918, 1)
+    gg_dest_NTtw_6257 = CreateDestructable(1314157687, 6848.0, 1792.0, 270.000, 0.992, 9)
+    gg_dest_NTtw_6258 = CreateDestructable(1314157687, 6784.0, 1920.0, 270.000, 1.108, 7)
+    gg_dest_NTtw_6259 = CreateDestructable(1314157687, 6784.0, 2176.0, 270.000, 0.961, 9)
+    gg_dest_NTtw_6260 = CreateDestructable(1314157687, 6464.0, 1984.0, 270.000, 0.891, 2)
+    gg_dest_NTtw_6261 = CreateDestructable(1314157687, 6528.0, 1856.0, 270.000, 1.113, 4)
+    gg_dest_NTtw_6262 = CreateDestructable(1314157687, 6720.0, 1728.0, 270.000, 1.188, 8)
+    gg_dest_NTtw_6263 = CreateDestructable(1314157687, 6336.0, 1920.0, 270.000, 1.032, 7)
+    gg_dest_NTtw_6265 = CreateDestructable(1314157687, 6400.0, 1792.0, 270.000, 0.880, 0)
+    gg_dest_NTtw_6266 = CreateDestructable(1314157687, 6592.0, 1664.0, 270.000, 0.801, 0)
+    gg_dest_NTtw_6267 = CreateDestructable(1314157687, 6144.0, 1920.0, 270.000, 0.912, 1)
+    gg_dest_NTtw_6270 = CreateDestructable(1314157687, 6208.0, 1792.0, 270.000, 1.189, 8)
+    gg_dest_NTtw_6272 = CreateDestructable(1314157687, 6400.0, 1664.0, 270.000, 0.952, 4)
+    gg_dest_NTtw_6276 = CreateDestructable(1314157687, 6016.0, 1856.0, 270.000, 1.174, 3)
+    gg_dest_NTtw_6278 = CreateDestructable(1314157687, 6080.0, 1728.0, 270.000, 0.807, 7)
+    gg_dest_NTtw_6284 = CreateDestructable(1314157687, 6272.0, 1600.0, 270.000, 1.172, 9)
+    gg_dest_NTtw_6285 = CreateDestructable(1314157687, 5888.0, 1856.0, 270.000, 1.138, 4)
+    gg_dest_NTtw_6979 = CreateDestructable(1314157687, 5952.0, 1728.0, 270.000, 1.132, 3)
+    gg_dest_NTtw_6982 = CreateDestructable(1314157687, 6144.0, 1600.0, 270.000, 0.850, 3)
+    gg_dest_NTtw_6983 = CreateDestructable(1314157687, 5760.0, 1920.0, 270.000, 0.862, 2)
+    gg_dest_NTtw_6984 = CreateDestructable(1314157687, 5824.0, 2048.0, 270.000, 1.194, 9)
+    gg_dest_NTtw_6985 = CreateDestructable(1314157687, 5760.0, 1792.0, 270.000, 0.922, 2)
+    gg_dest_NTtw_6986 = CreateDestructable(1314157687, 5632.0, 1856.0, 270.000, 1.042, 1)
+    gg_dest_NTtw_6987 = CreateDestructable(1314157687, 5888.0, 1600.0, 270.000, 1.120, 8)
+    gg_dest_NTtw_6988 = CreateDestructable(1314157687, 5632.0, 1728.0, 270.000, 1.049, 4)
+    gg_dest_NTtw_6989 = CreateDestructable(1314157687, 5632.0, 1984.0, 270.000, 1.148, 4)
+    gg_dest_NTtw_6990 = CreateDestructable(1314157687, 5440.0, 1856.0, 270.000, 1.156, 4)
+    gg_dest_NTtw_6991 = CreateDestructable(1314157687, 5504.0, 1728.0, 270.000, 0.945, 7)
+    gg_dest_NTtw_6992 = CreateDestructable(1314157687, 5504.0, 1984.0, 270.000, 1.078, 4)
+    gg_dest_NTtw_6993 = CreateDestructable(1314157687, 5696.0, 1600.0, 270.000, 0.897, 8)
+    gg_dest_NTtw_6994 = CreateDestructable(1314157687, 5312.0, 1920.0, 270.000, 1.126, 1)
+    gg_dest_NTtw_6995 = CreateDestructable(1314157687, 5376.0, 2176.0, 270.000, 0.937, 9)
+    gg_dest_NTtw_6996 = CreateDestructable(1314157687, 5504.0, 2176.0, 270.000, 1.103, 7)
+    gg_dest_NTtw_6997 = CreateDestructable(1314157687, 5184.0, 1920.0, 270.000, 1.011, 1)
+    gg_dest_NTtw_6998 = CreateDestructable(1314157687, 5376.0, 2304.0, 270.000, 0.920, 1)
+    gg_dest_NTtw_6999 = CreateDestructable(1314157687, 5248.0, 2304.0, 270.000, 1.166, 6)
+    gg_dest_NTtw_7001 = CreateDestructable(1314157687, 5056.0, 2368.0, 270.000, 1.027, 2)
+    gg_dest_NTtw_7002 = CreateDestructable(1314157687, 5248.0, 2432.0, 270.000, 0.993, 0)
+    gg_dest_NTtw_7003 = CreateDestructable(1314157687, 4928.0, 2432.0, 270.000, 0.929, 4)
+    gg_dest_NTtw_7004 = CreateDestructable(1314157687, 5120.0, 2560.0, 270.000, 1.166, 3)
+    gg_dest_NTtw_7005 = CreateDestructable(1314157687, 4992.0, 2560.0, 270.000, 1.110, 1)
+    gg_dest_NTtw_7350 = CreateDestructable(1314157687, 7360.0, 1984.0, 270.000, 1.188, 6)
+    gg_dest_NTtw_7353 = CreateDestructable(1314157687, 7040.0, 2368.0, 270.000, 0.922, 2)
+    gg_dest_NTtw_7355 = CreateDestructable(1314157687, 576.0, -1920.0, 270.000, 1.138, 5)
+    gg_dest_NTtw_7356 = CreateDestructable(1314157687, 640.0, -2048.0, 270.000, 1.112, 9)
+    gg_dest_NTtw_7358 = CreateDestructable(1314157687, 832.0, -2176.0, 270.000, 0.851, 7)
+    gg_dest_NTtw_7359 = CreateDestructable(1314157687, 704.0, -2176.0, 270.000, 1.079, 9)
+    gg_dest_NTtw_7361 = CreateDestructable(1314157687, 896.0, -2304.0, 270.000, 1.073, 3)
+    gg_dest_NTtw_7363 = CreateDestructable(1314157687, 960.0, -2176.0, 270.000, 0.859, 6)
+    gg_dest_NTtw_7445 = CreateDestructable(1314157687, 1088.0, -2176.0, 270.000, 0.901, 1)
+    gg_dest_NTtw_7446 = CreateDestructable(1314157687, 1152.0, -2048.0, 270.000, 0.913, 5)
+    gg_dest_NTtw_7447 = CreateDestructable(1314157687, 768.0, -2304.0, 270.000, 0.825, 1)
+    gg_dest_NTtw_7448 = CreateDestructable(1314157687, 1024.0, -2304.0, 270.000, 0.916, 2)
+    gg_dest_NTtw_7450 = CreateDestructable(1314157687, 1152.0, -2304.0, 270.000, 0.823, 3)
+    gg_dest_NTtw_7451 = CreateDestructable(1314157687, 1216.0, -2176.0, 270.000, 1.001, 2)
+    gg_dest_NTtw_7453 = CreateDestructable(1314157687, 1024.0, -2496.0, 270.000, 1.012, 5)
+    gg_dest_NTtw_7454 = CreateDestructable(1314157687, 1152.0, -2432.0, 270.000, 1.136, 2)
+    gg_dest_NTtw_7456 = CreateDestructable(1314157687, 1280.0, -2432.0, 270.000, 0.919, 2)
+    gg_dest_NTtw_7457 = CreateDestructable(1314157687, 1344.0, -2304.0, 270.000, 0.845, 9)
+    gg_dest_NTtw_7459 = CreateDestructable(1314157687, 1088.0, -2624.0, 270.000, 0.838, 2)
+    gg_dest_NTtw_7460 = CreateDestructable(1314157687, 1280.0, -2560.0, 270.000, 1.020, 5)
+    gg_dest_NTtw_7461 = CreateDestructable(1314157687, 1152.0, -2752.0, 270.000, 1.026, 3)
+    gg_dest_NTtw_7462 = CreateDestructable(1314157687, 1408.0, -2496.0, 270.000, 0.845, 9)
+    gg_dest_NTtw_7464 = CreateDestructable(1314157687, 1344.0, -2688.0, 270.000, 1.192, 1)
+    gg_dest_NTtw_7465 = CreateDestructable(1314157687, 1152.0, -2880.0, 270.000, 0.891, 5)
+    gg_dest_NTtw_7711 = CreateDestructable(1314157687, 1024.0, -2752.0, 270.000, 1.065, 3)
+    gg_dest_NTtw_7722 = CreateDestructable(1314157687, 1472.0, -2624.0, 270.000, 0.887, 9)
+    gg_dest_NTtw_8061 = CreateDestructable(1314157687, 1280.0, -2816.0, 270.000, 1.018, 1)
+    gg_dest_NTtw_8062 = CreateDestructable(1314157687, 1408.0, -2816.0, 270.000, 1.192, 4)
+    gg_dest_NTtw_8063 = CreateDestructable(1314157687, 1216.0, -3008.0, 270.000, 0.812, 9)
+    gg_dest_NTtw_8064 = CreateDestructable(1314157687, 1408.0, -2944.0, 270.000, 0.818, 0)
+    gg_dest_NTtw_8065 = CreateDestructable(1314157687, 1216.0, -3136.0, 270.000, 1.112, 3)
+    gg_dest_NTtw_8066 = CreateDestructable(1314157687, 1408.0, -3072.0, 270.000, 0.877, 3)
+    gg_dest_NTtw_8067 = CreateDestructable(1314157687, 1216.0, -3264.0, 270.000, 0.916, 5)
+    gg_dest_NTtw_8068 = CreateDestructable(1314157687, 1408.0, -3200.0, 270.000, 1.196, 9)
+    gg_dest_NTtw_8069 = CreateDestructable(1314157687, 1216.0, -3392.0, 270.000, 0.949, 7)
+    gg_dest_NTtw_8070 = CreateDestructable(1314157687, 1024.0, -3328.0, 270.000, 0.917, 6)
+    gg_dest_NTtw_8071 = CreateDestructable(1314157687, 1408.0, -3328.0, 270.000, 0.992, 3)
+    gg_dest_NTtw_8072 = CreateDestructable(1314157687, 1216.0, -3520.0, 270.000, 1.039, 9)
+    gg_dest_NTtw_8073 = CreateDestructable(1314157687, 1088.0, -3456.0, 270.000, 0.930, 0)
+    gg_dest_NTtw_8074 = CreateDestructable(1314157687, 1344.0, -3456.0, 270.000, 0.982, 9)
+    gg_dest_NTtw_8075 = CreateDestructable(1314157687, 1152.0, -3648.0, 270.000, 1.133, 0)
+    gg_dest_NTtw_8076 = CreateDestructable(1314157687, 1344.0, -3584.0, 270.000, 1.015, 6)
+    gg_dest_NTtw_8077 = CreateDestructable(1314157687, 1088.0, -3776.0, 270.000, 1.166, 4)
+    gg_dest_NTtw_8078 = CreateDestructable(1314157687, 1024.0, -3648.0, 270.000, 1.002, 7)
+    gg_dest_NTtw_8209 = CreateDestructable(1314157687, 896.0, -3712.0, 270.000, 1.028, 4)
+    gg_dest_NTtw_8210 = CreateDestructable(1314157687, 1280.0, -3712.0, 270.000, 1.161, 6)
+    gg_dest_NTtw_8211 = CreateDestructable(1314157687, 1024.0, -3904.0, 270.000, 1.148, 1)
+    gg_dest_NTtw_8212 = CreateDestructable(1314157687, 832.0, -3840.0, 270.000, 0.905, 6)
+    gg_dest_NTtw_8213 = CreateDestructable(1314157687, 1216.0, -3840.0, 270.000, 1.057, 5)
+    gg_dest_NTtw_8214 = CreateDestructable(1314157687, 768.0, -3968.0, 270.000, 1.059, 0)
+    gg_dest_NTtw_8215 = CreateDestructable(1314157687, 896.0, -3968.0, 270.000, 0.807, 5)
+    gg_dest_NTtw_8216 = CreateDestructable(1314157687, 1152.0, -3968.0, 270.000, 1.033, 2)
+    gg_dest_NTtw_8217 = CreateDestructable(1314157687, 640.0, -3968.0, 270.000, 0.902, 2)
+    gg_dest_NTtw_8218 = CreateDestructable(1314157687, 704.0, -4096.0, 270.000, 0.817, 8)
+    gg_dest_NTtw_8219 = CreateDestructable(1314157687, 576.0, -4096.0, 270.000, 1.104, 4)
+    gg_dest_NTtw_8669 = CreateDestructable(1314157687, 576.0, -4288.0, 270.000, 0.855, 9)
+    gg_dest_NTtw_8670 = CreateDestructable(1314157687, 512.0, -6080.0, 270.000, 1.113, 2)
+    gg_dest_NTtw_8671 = CreateDestructable(1314157687, 640.0, -6336.0, 270.000, 1.105, 8)
+    gg_dest_NTtw_8672 = CreateDestructable(1314157687, 576.0, -6208.0, 270.000, 1.101, 4)
+    gg_dest_CTtr_8673 = CreateDestructable(1129608306, -768.0, -3968.0, 270.000, 0.890, 4)
+    gg_dest_CTtr_8674 = CreateDestructable(1129608306, -576.0, -4096.0, 270.000, 0.981, 0)
+    gg_dest_CTtr_8675 = CreateDestructable(1129608306, -1088.0, -4224.0, 270.000, 0.956, 4)
+    gg_dest_CTtr_8676 = CreateDestructable(1129608306, -1024.0, -4096.0, 270.000, 1.127, 3)
+    gg_dest_CTtr_8677 = CreateDestructable(1129608306, -1024.0, -3968.0, 270.000, 0.956, 3)
+    gg_dest_CTtr_8678 = CreateDestructable(1129608306, -896.0, -3968.0, 270.000, 0.936, 0)
+    gg_dest_CTtr_8679 = CreateDestructable(1129608306, -832.0, -3840.0, 270.000, 1.099, 2)
+    gg_dest_CTtr_8680 = CreateDestructable(1129608306, -640.0, -3968.0, 270.000, 0.961, 2)
+    gg_dest_CTtr_8681 = CreateDestructable(1129608306, -1024.0, -3840.0, 270.000, 0.973, 3)
+    gg_dest_CTtr_8682 = CreateDestructable(1129608306, -1152.0, -3904.0, 270.000, 0.963, 0)
+    gg_dest_CTtr_8683 = CreateDestructable(1129608306, -1216.0, -3776.0, 270.000, 1.011, 3)
+    gg_dest_CTtr_8966 = CreateDestructable(1129608306, -1152.0, -3648.0, 270.000, 1.169, 4)
+    gg_dest_CTtr_8967 = CreateDestructable(1129608306, -1024.0, -3648.0, 270.000, 0.838, 0)
+    gg_dest_CTtr_8968 = CreateDestructable(1129608306, -1024.0, -3456.0, 270.000, 1.048, 4)
+    gg_dest_CTtr_8969 = CreateDestructable(1129608306, -896.0, -3712.0, 270.000, 0.825, 1)
+    gg_dest_CTtr_8970 = CreateDestructable(1129608306, -1344.0, -3648.0, 270.000, 1.094, 0)
+    gg_dest_CTtr_8971 = CreateDestructable(1129608306, -1280.0, -3520.0, 270.000, 0.926, 0)
+    gg_dest_CTtr_8972 = CreateDestructable(1129608306, -1152.0, -3520.0, 270.000, 1.069, 3)
+    gg_dest_CTtr_8973 = CreateDestructable(1129608306, -1152.0, -3328.0, 270.000, 1.177, 1)
+    gg_dest_CTtr_8974 = CreateDestructable(1129608306, -1408.0, -3520.0, 270.000, 1.141, 0)
+    gg_dest_CTtr_8975 = CreateDestructable(1129608306, -1344.0, -3392.0, 270.000, 0.858, 3)
+    gg_dest_CTtr_8976 = CreateDestructable(1129608306, -1216.0, -3200.0, 270.000, 1.076, 1)
+    gg_dest_CTtr_8977 = CreateDestructable(1129608306, -1024.0, -3328.0, 270.000, 0.906, 1)
+    gg_dest_CTtr_8978 = CreateDestructable(1129608306, -1472.0, -3392.0, 270.000, 1.025, 2)
+    gg_dest_CTtr_8979 = CreateDestructable(1129608306, -1408.0, -3264.0, 270.000, 0.889, 0)
+    gg_dest_CTtr_8980 = CreateDestructable(1129608306, -1536.0, -3264.0, 270.000, 1.186, 0)
+    gg_dest_CTtr_8981 = CreateDestructable(1129608306, -1472.0, -3136.0, 270.000, 0.982, 1)
+    gg_dest_CTtr_8982 = CreateDestructable(1129608306, -1344.0, -3136.0, 270.000, 0.835, 3)
+    gg_dest_CTtr_8983 = CreateDestructable(1129608306, -1280.0, -3008.0, 270.000, 0.906, 2)
+    gg_dest_CTtr_8984 = CreateDestructable(1129608306, -1472.0, -3008.0, 270.000, 1.055, 2)
+    gg_dest_CTtr_8985 = CreateDestructable(1129608306, -1280.0, -2880.0, 270.000, 0.806, 1)
+    gg_dest_CTtr_8986 = CreateDestructable(1129608306, -1152.0, -3072.0, 270.000, 1.017, 1)
+    gg_dest_CTtr_8987 = CreateDestructable(1129608306, -1472.0, -2816.0, 270.000, 0.982, 3)
+    gg_dest_CTtr_8988 = CreateDestructable(1129608306, -1280.0, -2688.0, 270.000, 0.842, 4)
+    gg_dest_CTtr_8989 = CreateDestructable(1129608306, -1152.0, -2944.0, 270.000, 0.935, 3)
+    gg_dest_CTtr_8991 = CreateDestructable(1129608306, -1088.0, -2816.0, 270.000, 0.889, 4)
+    gg_dest_CTtr_9147 = CreateDestructable(1129608306, -1472.0, -2624.0, 270.000, 0.989, 4)
+    gg_dest_CTtr_9148 = CreateDestructable(1129608306, -1280.0, -2496.0, 270.000, 0.965, 1)
+    gg_dest_CTtr_9149 = CreateDestructable(1129608306, -1088.0, -2624.0, 270.000, 0.974, 2)
+    gg_dest_CTtr_9150 = CreateDestructable(1129608306, -1408.0, -2496.0, 270.000, 1.114, 4)
+    gg_dest_CTtr_9151 = CreateDestructable(1129608306, -1216.0, -2368.0, 270.000, 0.846, 3)
+    gg_dest_CTtr_9152 = CreateDestructable(1129608306, -1152.0, -2496.0, 270.000, 1.091, 3)
+    gg_dest_CTtr_9153 = CreateDestructable(1129608306, -1024.0, -2496.0, 270.000, 0.823, 2)
+    gg_dest_CTtr_9154 = CreateDestructable(1129608306, -1408.0, -2368.0, 270.000, 1.138, 3)
+    gg_dest_CTtr_9155 = CreateDestructable(1129608306, -1216.0, -2240.0, 270.000, 1.171, 0)
+    gg_dest_CTtr_9156 = CreateDestructable(1129608306, -1024.0, -2368.0, 270.000, 0.890, 4)
+    gg_dest_CTtr_9157 = CreateDestructable(1129608306, -896.0, -2432.0, 270.000, 0.847, 0)
+    gg_dest_CTtr_9158 = CreateDestructable(1129608306, -1344.0, -2240.0, 270.000, 0.912, 0)
+    gg_dest_CTtr_9159 = CreateDestructable(1129608306, -1152.0, -2112.0, 270.000, 0.805, 2)
+    gg_dest_CTtr_9160 = CreateDestructable(1129608306, -1088.0, -2240.0, 270.000, 0.918, 0)
+    gg_dest_CTtr_9161 = CreateDestructable(1129608306, -960.0, -2240.0, 270.000, 1.183, 4)
+    gg_dest_CTtr_9162 = CreateDestructable(1129608306, -832.0, -2304.0, 270.000, 1.127, 0)
+    gg_dest_CTtr_9163 = CreateDestructable(1129608306, -1024.0, -1984.0, 270.000, 1.055, 1)
+    gg_dest_CTtr_9164 = CreateDestructable(1129608306, -960.0, -2112.0, 270.000, 1.061, 2)
+    gg_dest_CTtr_9165 = CreateDestructable(1129608306, -832.0, -2112.0, 270.000, 0.871, 4)
+    gg_dest_CTtr_9166 = CreateDestructable(1129608306, -1152.0, -1984.0, 270.000, 1.165, 2)
+    gg_dest_CTtr_9167 = CreateDestructable(1129608306, -960.0, -1856.0, 270.000, 1.163, 1)
+    gg_dest_CTtr_9168 = CreateDestructable(1129608306, -896.0, -1984.0, 270.000, 0.996, 4)
+    gg_dest_CTtr_9392 = CreateDestructable(1129608306, -704.0, -2112.0, 270.000, 0.805, 4)
+    gg_dest_CTtr_9393 = CreateDestructable(1129608306, -768.0, -1984.0, 270.000, 0.806, 4)
+    gg_dest_CTtr_9395 = CreateDestructable(1129608306, -768.0, -1856.0, 270.000, 1.096, 3)
+    gg_dest_CTtr_9396 = CreateDestructable(1129608306, -640.0, -1984.0, 270.000, 0.842, 3)
+    gg_dest_CTtr_9397 = CreateDestructable(1129608306, -7360.0, 2368.0, 270.000, 0.981, 4)
+    gg_dest_CTtr_9398 = CreateDestructable(1129608306, -7168.0, 1984.0, 270.000, 1.049, 2)
+    gg_dest_CTtr_9399 = CreateDestructable(1129608306, -7232.0, 2368.0, 270.000, 1.102, 4)
+    gg_dest_CTtr_9400 = CreateDestructable(1129608306, -7040.0, 2240.0, 270.000, 1.050, 2)
+    gg_dest_CTtr_9401 = CreateDestructable(1129608306, -7104.0, 2368.0, 270.000, 0.801, 2)
+    gg_dest_CTtr_9402 = CreateDestructable(1129608306, -6976.0, 2112.0, 270.000, 1.163, 2)
+    gg_dest_CTtr_9403 = CreateDestructable(1129608306, -6912.0, 2240.0, 270.000, 1.199, 4)
+    gg_dest_CTtr_9404 = CreateDestructable(1129608306, -7296.0, 2112.0, 270.000, 1.078, 3)
+    gg_dest_CTtr_9405 = CreateDestructable(1129608306, -6976.0, 1984.0, 270.000, 0.949, 0)
+    gg_dest_CTtr_9406 = CreateDestructable(1129608306, -6784.0, 2112.0, 270.000, 0.904, 2)
+    gg_dest_CTtr_9407 = CreateDestructable(1129608306, -6848.0, 1856.0, 270.000, 1.162, 4)
+    gg_dest_FTtw_1085 = CreateDestructable(1179939959, 704.0, 7744.0, 270.000, 0.878, 3)
+    gg_dest_FTtw_1092 = CreateDestructable(1179939959, 640.0, 7872.0, 270.000, 1.034, 3)
+    gg_dest_FTtw_1094 = CreateDestructable(1179939959, 768.0, 7872.0, 270.000, 0.904, 2)
+    gg_dest_FTtw_1099 = CreateDestructable(1179939959, 832.0, 8000.0, 270.000, 1.164, 1)
+    gg_dest_FTtw_1125 = CreateDestructable(1179939959, 896.0, 7872.0, 270.000, 0.924, 4)
+    gg_dest_FTtw_1132 = CreateDestructable(1179939959, 1024.0, 7872.0, 270.000, 0.837, 6)
+    gg_dest_FTtw_1133 = CreateDestructable(1179939959, 512.0, 7808.0, 270.000, 1.112, 0)
+    gg_dest_FTtw_1134 = CreateDestructable(1179939959, 576.0, 8000.0, 270.000, 0.931, 9)
+    gg_dest_FTtw_1135 = CreateDestructable(1179939959, 704.0, 8000.0, 270.000, 0.948, 5)
+    gg_dest_FTtw_1136 = CreateDestructable(1179939959, 768.0, 8128.0, 270.000, 0.984, 3)
+    gg_dest_FTtw_2155 = CreateDestructable(1179939959, 960.0, 8000.0, 270.000, 0.992, 4)
+    gg_dest_FTtw_3865 = CreateDestructable(1179939959, 576.0, 8128.0, 270.000, 1.034, 3)
+    gg_dest_FTtw_4274 = CreateDestructable(1179939959, 768.0, 8256.0, 270.000, 0.892, 0)
+    gg_dest_FTtw_4276 = CreateDestructable(1179939959, 960.0, 8128.0, 270.000, 1.039, 5)
+    gg_dest_FTtw_4277 = CreateDestructable(1179939959, 768.0, 8384.0, 270.000, 0.901, 1)
+    gg_dest_FTtw_4278 = CreateDestructable(1179939959, 960.0, 8256.0, 270.000, 0.998, 4)
+    gg_dest_FTtw_4279 = CreateDestructable(1179939959, 640.0, 8320.0, 270.000, 1.135, 5)
+    gg_dest_FTtw_4280 = CreateDestructable(1179939959, 1088.0, 8192.0, 270.000, 1.112, 2)
+    gg_dest_FTtw_4281 = CreateDestructable(1179939959, 896.0, 8448.0, 270.000, 1.173, 0)
+    gg_dest_FTtw_4282 = CreateDestructable(1179939959, 1088.0, 8320.0, 270.000, 0.943, 5)
+    gg_dest_FTtw_4283 = CreateDestructable(1179939959, 1024.0, 8448.0, 270.000, 0.805, 1)
+    gg_dest_FTtw_4284 = CreateDestructable(1179939959, 1152.0, 8512.0, 270.000, 0.881, 3)
+    gg_dest_FTtw_4285 = CreateDestructable(1179939959, 1088.0, 8640.0, 270.000, 0.862, 6)
+    gg_dest_FTtw_4286 = CreateDestructable(1179939959, 960.0, 8576.0, 270.000, 1.059, 7)
+    gg_dest_FTtw_4287 = CreateDestructable(1179939959, 1024.0, 8896.0, 270.000, 1.079, 3)
+    gg_dest_FTtw_4288 = CreateDestructable(1179939959, 1088.0, 8768.0, 270.000, 0.819, 4)
+    gg_dest_FTtw_4289 = CreateDestructable(1179939959, 1280.0, 8640.0, 270.000, 1.087, 6)
+    gg_dest_FTtw_4290 = CreateDestructable(1179939959, 1216.0, 8768.0, 270.000, 0.965, 9)
+    gg_dest_FTtw_4291 = CreateDestructable(1179939959, 1152.0, 8896.0, 270.000, 1.139, 7)
+    gg_dest_FTtw_4292 = CreateDestructable(1179939959, 1344.0, 8768.0, 270.000, 0.901, 7)
+    gg_dest_FTtw_4293 = CreateDestructable(1179939959, 1280.0, 8896.0, 270.000, 0.853, 6)
+    gg_dest_FTtw_4294 = CreateDestructable(1179939959, 1152.0, 9088.0, 270.000, 1.122, 3)
+    gg_dest_FTtw_4295 = CreateDestructable(1179939959, 1280.0, 9024.0, 270.000, 0.872, 8)
+    gg_dest_FTtw_4296 = CreateDestructable(1179939959, 1472.0, 8896.0, 270.000, 1.169, 2)
+    gg_dest_FTtw_4297 = CreateDestructable(1179939959, 1408.0, 9024.0, 270.000, 1.026, 9)
+    gg_dest_FTtw_4298 = CreateDestructable(1179939959, 1216.0, 9280.0, 270.000, 1.029, 7)
+    gg_dest_FTtw_4299 = CreateDestructable(1179939959, 1280.0, 9152.0, 270.000, 0.861, 3)
+    gg_dest_FTtw_4300 = CreateDestructable(1179939959, 1408.0, 9152.0, 270.000, 1.012, 0)
+    gg_dest_FTtw_4924 = CreateDestructable(1179939959, 1536.0, 9088.0, 270.000, 1.013, 2)
+    gg_dest_FTtw_4928 = CreateDestructable(1179939959, 1344.0, 9472.0, 270.000, 0.934, 2)
+    gg_dest_FTtw_4929 = CreateDestructable(1179939959, 1408.0, 9344.0, 270.000, 0.831, 1)
+    gg_dest_FTtw_4930 = CreateDestructable(1179939959, 1600.0, 9216.0, 270.000, 0.831, 2)
+    gg_dest_FTtw_4931 = CreateDestructable(1179939959, 1536.0, 9344.0, 270.000, 1.168, 5)
+    gg_dest_FTtw_4932 = CreateDestructable(1179939959, 1152.0, 9472.0, 270.000, 0.859, 4)
+    gg_dest_FTtw_4933 = CreateDestructable(1179939959, 1344.0, 9600.0, 270.000, 1.023, 2)
+    gg_dest_FTtw_4934 = CreateDestructable(1179939959, 1536.0, 9472.0, 270.000, 0.909, 1)
+    gg_dest_FTtw_4935 = CreateDestructable(1179939959, 1024.0, 9536.0, 270.000, 0.896, 9)
+    gg_dest_FTtw_4936 = CreateDestructable(1179939959, 1088.0, 9664.0, 270.000, 0.956, 1)
+    gg_dest_FTtw_4937 = CreateDestructable(1179939959, 1216.0, 9664.0, 270.000, 1.147, 3)
+    gg_dest_FTtw_4938 = CreateDestructable(1179939959, 1280.0, 9792.0, 270.000, 1.079, 0)
+    gg_dest_FTtw_4939 = CreateDestructable(1179939959, 1472.0, 9664.0, 270.000, 1.067, 2)
+    gg_dest_FTtw_4940 = CreateDestructable(1179939959, 1024.0, 9792.0, 270.000, 1.180, 7)
+    gg_dest_FTtw_4941 = CreateDestructable(1179939959, 1152.0, 9792.0, 270.000, 0.986, 7)
+    gg_dest_FTtw_4942 = CreateDestructable(1179939959, 1216.0, 9920.0, 270.000, 0.811, 8)
+    gg_dest_FTtw_4943 = CreateDestructable(1179939959, 1408.0, 9792.0, 270.000, 0.974, 7)
+    gg_dest_FTtw_4944 = CreateDestructable(1179939959, 896.0, 9920.0, 270.000, 1.132, 9)
+    gg_dest_FTtw_4945 = CreateDestructable(1179939959, 1024.0, 9920.0, 270.000, 1.013, 1)
+    gg_dest_FTtw_4946 = CreateDestructable(1179939959, 1088.0, 10048.0, 270.000, 1.137, 2)
+    gg_dest_FTtw_4947 = CreateDestructable(1179939959, 832.0, 10048.0, 270.000, 1.111, 2)
+    gg_dest_FTtw_4948 = CreateDestructable(1179939959, 960.0, 10048.0, 270.000, 0.970, 5)
+    gg_dest_FTtw_4949 = CreateDestructable(1179939959, 1024.0, 10176.0, 270.000, 1.122, 4)
+    gg_dest_FTtw_4952 = CreateDestructable(1179939959, 1216.0, 10048.0, 270.000, 1.189, 0)
+    gg_dest_FTtw_4953 = CreateDestructable(1179939959, 704.0, 10176.0, 270.000, 0.890, 6)
+    gg_dest_FTtw_4955 = CreateDestructable(1179939959, 832.0, 10176.0, 270.000, 1.118, 7)
+    gg_dest_FTtw_5011 = CreateDestructable(1179939959, 896.0, 10304.0, 270.000, 0.830, 4)
+    gg_dest_ORmk_1090 = CreateDestructable(1330802027, 960.0, 9152.0, 270.000, 1.057, 4)
+    SetDestructableLife(gg_dest_ORmk_1090, 2.55 * GetDestructableLife(gg_dest_ORmk_1090))
+    gg_dest_ORmk_4320 = CreateDestructable(1330802027, 768.0, 8704.0, 270.000, 1.000, 0)
+    SetDestructableLife(gg_dest_ORmk_4320, 2.55 * GetDestructableLife(gg_dest_ORmk_4320))
+    gg_dest_ORmk_5019 = CreateDestructable(1330802027, 512.0, 10048.0, 270.000, 1.000, 0)
+    SetDestructableLife(gg_dest_ORmk_5019, 2.55 * GetDestructableLife(gg_dest_ORmk_5019))
+    gg_dest_ORmk_5020 = CreateDestructable(1330802027, -320.0, -4224.0, 270.000, 1.000, 0)
+    SetDestructableLife(gg_dest_ORmk_5020, 2.55 * GetDestructableLife(gg_dest_ORmk_5020))
+    gg_dest_ORmk_5021 = CreateDestructable(1330802027, 832.0, -3456.0, 270.000, 1.000, 0)
+    SetDestructableLife(gg_dest_ORmk_5021, 2.55 * GetDestructableLife(gg_dest_ORmk_5021))
+    gg_dest_ORmk_5022 = CreateDestructable(1330802027, -320.0, -1088.0, 270.000, 1.000, 0)
+    SetDestructableLife(gg_dest_ORmk_5022, 2.55 * GetDestructableLife(gg_dest_ORmk_5022))
+    gg_dest_ORmk_5023 = CreateDestructable(1330802027, 768.0, -2496.0, 270.000, 0.997, 4)
+    SetDestructableLife(gg_dest_ORmk_5023, 2.55 * GetDestructableLife(gg_dest_ORmk_5023))
+    gg_dest_ORmk_5024 = CreateDestructable(1330802027, -832.0, -2624.0, 270.000, 0.997, 4)
+    SetDestructableLife(gg_dest_ORmk_5024, 2.55 * GetDestructableLife(gg_dest_ORmk_5024))
+    gg_dest_ORmk_5493 = CreateDestructable(1330802027, 320.0, -5312.0, 270.000, 0.997, 4)
+    SetDestructableLife(gg_dest_ORmk_5493, 2.55 * GetDestructableLife(gg_dest_ORmk_5493))
+    gg_dest_ORmk_5496 = CreateDestructable(1330802027, -960.0, -3136.0, 270.000, 0.969, 1)
+    SetDestructableLife(gg_dest_ORmk_5496, 2.55 * GetDestructableLife(gg_dest_ORmk_5496))
+    gg_dest_ORmk_5497 = CreateDestructable(1330802027, 512.0, -2240.0, 270.000, 0.969, 1)
+    SetDestructableLife(gg_dest_ORmk_5497, 2.55 * GetDestructableLife(gg_dest_ORmk_5497))
+    gg_dest_AOob_5499 = CreateDestructable(1095724898, -384.0, 9600.0, 303.000, 0.875, 2)
+    SetDestructableLife(gg_dest_AOob_5499, 2.55 * GetDestructableLife(gg_dest_AOob_5499))
+    gg_dest_AOob_6282 = CreateDestructable(1095724898, 384.0, 9600.0, 303.000, 0.875, 2)
+    SetDestructableLife(gg_dest_AOob_6282, 2.55 * GetDestructableLife(gg_dest_AOob_6282))
+    gg_dest_AOob_6283 = CreateDestructable(1095724898, -384.0, 8832.0, 303.000, 0.875, 2)
+    SetDestructableLife(gg_dest_AOob_6283, 2.55 * GetDestructableLife(gg_dest_AOob_6283))
+    gg_dest_AOob_6287 = CreateDestructable(1095724898, 384.0, 8832.0, 303.000, 0.875, 2)
+    SetDestructableLife(gg_dest_AOob_6287, 2.55 * GetDestructableLife(gg_dest_AOob_6287))
+    gg_dest_AOob_6548 = CreateDestructable(1095724898, -384.0, -2688.0, 303.000, 0.875, 2)
+    SetDestructableLife(gg_dest_AOob_6548, 2.55 * GetDestructableLife(gg_dest_AOob_6548))
+    gg_dest_AOob_7351 = CreateDestructable(1095724898, 384.0, -2688.0, 303.000, 0.875, 2)
+    SetDestructableLife(gg_dest_AOob_7351, 2.55 * GetDestructableLife(gg_dest_AOob_7351))
+    gg_dest_AOob_7693 = CreateDestructable(1095724898, 384.0, -3456.0, 303.000, 0.875, 2)
+    SetDestructableLife(gg_dest_AOob_7693, 2.55 * GetDestructableLife(gg_dest_AOob_7693))
+    gg_dest_AOob_7706 = CreateDestructable(1095724898, -384.0, -3456.0, 303.000, 0.875, 2)
+    SetDestructableLife(gg_dest_AOob_7706, 2.55 * GetDestructableLife(gg_dest_AOob_7706))
+    gg_dest_KOst_7712 = CreateDestructable(1263498100, -640.0, 9216.0, 0.000, 1.038, 0)
+    SetDestructableLife(gg_dest_KOst_7712, 2.55 * GetDestructableLife(gg_dest_KOst_7712))
+    gg_dest_KOst_8208 = CreateDestructable(1263498100, -640.0, -3072.0, 0.000, 1.038, 0)
+    SetDestructableLife(gg_dest_KOst_8208, 2.55 * GetDestructableLife(gg_dest_KOst_8208))
+    gg_dest_KOst_8668 = CreateDestructable(1263498100, 640.0, 9216.0, 180.000, 1.038, 0)
+    SetDestructableLife(gg_dest_KOst_8668, 2.55 * GetDestructableLife(gg_dest_KOst_8668))
+    gg_dest_KOst_8684 = CreateDestructable(1263498100, 640.0, -3072.0, 180.000, 1.038, 0)
+    SetDestructableLife(gg_dest_KOst_8684, 2.55 * GetDestructableLife(gg_dest_KOst_8684))
+    gg_dest_LTlt_8685 = CreateDestructable(1280601204, -11712.0, 13312.0, 270.000, 0.958, 0)
+    gg_dest_LTlt_8686 = CreateDestructable(1280601204, -11840.0, 13248.0, 270.000, 1.091, 9)
+    gg_dest_LTlt_8687 = CreateDestructable(1280601204, -11584.0, 13504.0, 270.000, 1.018, 2)
+    gg_dest_LTlt_11781 = CreateDestructable(1280601204, -11968.0, 13184.0, 270.000, 0.810, 1)
+    gg_dest_LTlt_11782 = CreateDestructable(1280601204, -11712.0, 13440.0, 270.000, 0.813, 1)
+    gg_dest_LTlt_11783 = CreateDestructable(1280601204, -11008.0, 13440.0, 270.000, 0.946, 0)
+    gg_dest_LTlt_11784 = CreateDestructable(1280601204, -10176.0, 14784.0, 270.000, 0.952, 2)
+    gg_dest_LTlt_11785 = CreateDestructable(1280601204, -10432.0, 14720.0, 270.000, 0.949, 6)
+    gg_dest_LTlt_11786 = CreateDestructable(1280601204, -10048.0, 14080.0, 270.000, 1.086, 8)
 end
 
 function CreateBuildingsForPlayer0()
@@ -60649,30 +60892,48 @@ function CreateBuildingsForPlayer0()
     gg_unit_h005_0039 = CreateUnit(p, 1747988533, -10624.0, 11264.0, 270.000)
     gg_unit_h005_0040 = CreateUnit(p, 1747988533, -10240.0, 9984.0, 270.000)
     gg_unit_n005_0044 = CreateUnit(p, 1848651829, -12032.0, 15104.0, 270.000)
-    gg_unit_h009_0053 = CreateUnit(p, 1747988537, -11264.0, 14848.0, 270.000)
-    gg_unit_h005_0054 = CreateUnit(p, 1747988533, -10624.0, 12288.0, 270.000)
-    gg_unit_h005_0055 = CreateUnit(p, 1747988533, -9216.0, 12800.0, 270.000)
+    gg_unit_h009_0053 = CreateUnit(p, 1747988537, -11008.0, 14592.0, 270.000)
+    gg_unit_h02R_0054 = CreateUnit(p, 1747989074, -9216.0, 13312.0, 270.000)
     gg_unit_h005_0138 = CreateUnit(p, 1747988533, -8960.0, 11520.0, 270.000)
     gg_unit_h005_0139 = CreateUnit(p, 1747988533, -8448.0, 12032.0, 270.000)
     gg_unit_h005_0143 = CreateUnit(p, 1747988533, -7680.0, 10752.0, 270.000)
-    gg_unit_h004_0144 = CreateUnit(p, 1747988532, -9920.0, 7168.0, 270.000)
-    gg_unit_h004_0145 = CreateUnit(p, 1747988532, -10560.0, 7168.0, 270.000)
+    gg_unit_h004_0144 = CreateUnit(p, 1747988532, -9856.0, 7168.0, 270.000)
+    gg_unit_h004_0145 = CreateUnit(p, 1747988532, -10624.0, 7168.0, 270.000)
     gg_unit_h004_0146 = CreateUnit(p, 1747988532, -10240.0, 5888.0, 270.000)
     gg_unit_h004_0176 = CreateUnit(p, 1747988532, -5376.0, 7936.0, 270.000)
     gg_unit_h004_0177 = CreateUnit(p, 1747988532, -4864.0, 8448.0, 270.000)
     gg_unit_h004_0178 = CreateUnit(p, 1747988532, -4096.0, 7168.0, 270.000)
-    gg_unit_h005_0204 = CreateUnit(p, 1747988533, -11264.0, 13824.0, 270.000)
-    gg_unit_h005_0243 = CreateUnit(p, 1747988533, -10752.0, 14336.0, 270.000)
-    gg_unit_h005_0249 = CreateUnit(p, 1747988533, -9216.0, 13696.0, 270.000)
-    gg_unit_h005_0252 = CreateUnit(p, 1747988533, -9728.0, 12288.0, 270.000)
-    gg_unit_h005_0254 = CreateUnit(p, 1747988533, -12160.0, 14720.0, 270.000)
-    gg_unit_h005_0264 = CreateUnit(p, 1747988533, -11648.0, 15232.0, 270.000)
+    gg_unit_h02R_0243 = CreateUnit(p, 1747989074, -11008.0, 14080.0, 270.000)
+    gg_unit_h02R_0249 = CreateUnit(p, 1747989074, -9472.0, 12544.0, 270.000)
+    gg_unit_h02R_0254 = CreateUnit(p, 1747989074, -12160.0, 14720.0, 270.000)
+    gg_unit_h02R_0257 = CreateUnit(p, 1747989074, -11648.0, 15232.0, 270.000)
     gg_unit_n01I_0271 = CreateUnit(p, 1848652105, 4832.0, 10656.0, 270.000)
     gg_unit_n02A_0276 = CreateUnit(p, 1848652353, 8416.0, 7200.0, 270.000)
-    gg_unit_h00T_0284 = CreateUnit(p, 1747988564, -11776.0, 14336.0, 270.000)
+    gg_unit_h00T_0284 = CreateUnit(p, 1747988564, -11520.0, 14080.0, 270.000)
     gg_unit_n02A_0286 = CreateUnit(p, 1848652353, 8224.0, 6688.0, 270.000)
     gg_unit_n02A_0296 = CreateUnit(p, 1848652353, 7328.0, 7840.0, 270.000)
     gg_unit_n02A_0297 = CreateUnit(p, 1848652353, 6944.0, 7072.0, 270.000)
+    gg_unit_h02R_0358 = CreateUnit(p, 1747989074, -10240.0, 12288.0, 270.000)
+end
+
+function CreateUnitsForPlayer0()
+    local p = Player(0)
+    local unitID = nil
+    local t = nil
+    gg_unit_E000_0328 = CreateUnit(p, 1160785968, -1021.8, 19203.7, 270.000)
+    SetUnitState(gg_unit_E000_0328, UNIT_STATE_MANA, 0)
+    gg_unit_H00O_0329 = CreateUnit(p, 1211117647, -1534.2, 19199.9, 270.000)
+    SetUnitState(gg_unit_H00O_0329, UNIT_STATE_MANA, 0)
+    gg_unit_O001_0330 = CreateUnit(p, 1328558129, -2048.0, 19194.1, 270.000)
+    SetUnitState(gg_unit_O001_0330, UNIT_STATE_MANA, 0)
+    gg_unit_N002_0354 = CreateUnit(p, 1311780914, -2555.6, 19197.9, 270.000)
+    SetUnitState(gg_unit_N002_0354, UNIT_STATE_MANA, 0)
+    gg_unit_N02H_0355 = CreateUnit(p, 1311781448, -2301.3, 19199.9, 270.000)
+    SetUnitState(gg_unit_N02H_0355, UNIT_STATE_MANA, 0)
+    gg_unit_N009_0356 = CreateUnit(p, 1311780921, -1792.3, 19194.1, 270.000)
+    SetUnitState(gg_unit_N009_0356, UNIT_STATE_MANA, 0)
+    gg_unit_N004_0357 = CreateUnit(p, 1311780916, -1281.0, 19205.6, 270.000)
+    SetUnitState(gg_unit_N004_0357, UNIT_STATE_MANA, 0)
 end
 
 function CreateBuildingsForPlayer1()
@@ -60706,16 +60967,17 @@ function CreateBuildingsForPlayer4()
     gg_unit_h00U_0013 = CreateUnit(p, 1747988565, 4096.0, 7168.0, 270.000)
     gg_unit_h00V_0017 = CreateUnit(p, 1747988566, 7680.0, 10752.0, 270.000)
     gg_unit_h00V_0037 = CreateUnit(p, 1747988566, 8448.0, 12032.0, 270.000)
-    gg_unit_h00V_0041 = CreateUnit(p, 1747988566, 9216.0, 13696.0, 270.000)
-    gg_unit_h00V_0042 = CreateUnit(p, 1747988566, 10624.0, 12288.0, 270.000)
+    gg_unit_h02S_0041 = CreateUnit(p, 1747989075, 9472.0, 12544.0, 270.000)
+    gg_unit_h02S_0042 = CreateUnit(p, 1747989075, 10240.0, 12288.0, 270.000)
     gg_unit_h00V_0043 = CreateUnit(p, 1747988566, 6912.0, 13312.0, 270.000)
-    gg_unit_h00W_0045 = CreateUnit(p, 1747988567, 11776.0, 14336.0, 270.000)
+    gg_unit_h00W_0045 = CreateUnit(p, 1747988567, 11520.0, 14080.0, 270.000)
     gg_unit_h00U_0046 = CreateUnit(p, 1747988565, 2816.0, 13312.0, 270.000)
     gg_unit_h00U_0047 = CreateUnit(p, 1747988565, 4864.0, 8448.0, 270.000)
     gg_unit_h00V_0048 = CreateUnit(p, 1747988566, 8192.0, 13696.0, 270.000)
     gg_unit_h00V_0049 = CreateUnit(p, 1747988566, 8192.0, 12928.0, 270.000)
     gg_unit_h00V_0050 = CreateUnit(p, 1747988566, 8960.0, 11520.0, 270.000)
-    gg_unit_h00X_0052 = CreateUnit(p, 1747988568, 11264.0, 14848.0, 270.000)
+    gg_unit_h00X_0052 = CreateUnit(p, 1747988568, 11008.0, 14592.0, 270.000)
+    gg_unit_h02S_0055 = CreateUnit(p, 1747989075, 9216.0, 13312.0, 270.000)
     gg_unit_NBDB_0134 = CreateUnit(p, 1312965698, 12032.0, 15104.0, 270.000)
     gg_unit_h00V_0140 = CreateUnit(p, 1747988566, 10240.0, 9984.0, 270.000)
     gg_unit_h00V_0141 = CreateUnit(p, 1747988566, 9856.0, 11264.0, 270.000)
@@ -60726,12 +60988,9 @@ function CreateBuildingsForPlayer4()
     gg_unit_h00U_0231 = CreateUnit(p, 1747988565, 4096.0, 13696.0, 270.000)
     gg_unit_h00U_0232 = CreateUnit(p, 1747988565, 4096.0, 12928.0, 270.000)
     gg_unit_h00U_0233 = CreateUnit(p, 1747988565, 10624.0, 7168.0, 270.000)
-    gg_unit_h00V_0251 = CreateUnit(p, 1747988566, 9728.0, 12288.0, 270.000)
-    gg_unit_h00V_0253 = CreateUnit(p, 1747988566, 12160.0, 14720.0, 270.000)
-    gg_unit_h00V_0256 = CreateUnit(p, 1747988566, 10752.0, 14336.0, 270.000)
-    gg_unit_h00V_0257 = CreateUnit(p, 1747988566, 11264.0, 13824.0, 270.000)
-    gg_unit_h00V_0261 = CreateUnit(p, 1747988566, 9216.0, 12800.0, 270.000)
-    gg_unit_h00V_0265 = CreateUnit(p, 1747988566, 11648.0, 15232.0, 270.000)
+    gg_unit_h02S_0251 = CreateUnit(p, 1747989075, 11008.0, 14080.0, 270.000)
+    gg_unit_h02S_0253 = CreateUnit(p, 1747989075, 12160.0, 14720.0, 270.000)
+    gg_unit_h02S_0256 = CreateUnit(p, 1747989075, 11648.0, 15232.0, 270.000)
 end
 
 function CreateBuildingsForPlayer5()
@@ -60767,8 +61026,8 @@ function CreateBuildingsForPlayer8()
     gg_unit_h010_0057 = CreateUnit(p, 1747988784, -10624.0, -1024.0, 270.000)
     gg_unit_h011_0153 = CreateUnit(p, 1747988785, -8448.0, -5888.0, 270.000)
     gg_unit_h011_0154 = CreateUnit(p, 1747988785, -8960.0, -5376.0, 270.000)
-    gg_unit_h011_0155 = CreateUnit(p, 1747988785, -9216.0, -7552.0, 270.000)
-    gg_unit_h011_0156 = CreateUnit(p, 1747988785, -10624.0, -6144.0, 270.000)
+    gg_unit_h02U_0155 = CreateUnit(p, 1747989077, -11008.0, -7936.0, 270.000)
+    gg_unit_h02U_0156 = CreateUnit(p, 1747989077, -11648.0, -9088.0, 270.000)
     gg_unit_h011_0160 = CreateUnit(p, 1747988785, -8192.0, -6784.0, 270.000)
     gg_unit_h010_0163 = CreateUnit(p, 1747988784, -4096.0, -1024.0, 270.000)
     gg_unit_h010_0164 = CreateUnit(p, 1747988784, -4864.0, -2304.0, 270.000)
@@ -60779,18 +61038,16 @@ function CreateBuildingsForPlayer8()
     gg_unit_h011_0185 = CreateUnit(p, 1747988785, -6912.0, -7168.0, 270.000)
     gg_unit_h011_0186 = CreateUnit(p, 1747988785, -8192.0, -7552.0, 270.000)
     gg_unit_h010_0187 = CreateUnit(p, 1747988784, -5376.0, -1792.0, 270.000)
-    gg_unit_h013_0188 = CreateUnit(p, 1747988787, -11264.0, -8704.0, 270.000)
-    gg_unit_h011_0190 = CreateUnit(p, 1747988785, -11264.0, -7680.0, 270.000)
-    gg_unit_h012_0196 = CreateUnit(p, 1747988786, -11776.0, -8192.0, 270.000)
-    gg_unit_h011_0197 = CreateUnit(p, 1747988785, -10752.0, -8192.0, 270.000)
+    gg_unit_h013_0188 = CreateUnit(p, 1747988787, -11008.0, -8448.0, 270.000)
+    gg_unit_h02U_0190 = CreateUnit(p, 1747989077, -12160.0, -8576.0, 270.000)
+    gg_unit_h012_0196 = CreateUnit(p, 1747988786, -11520.0, -7936.0, 270.000)
+    gg_unit_h02U_0204 = CreateUnit(p, 1747989077, -9216.0, -7168.0, 270.000)
     gg_unit_h011_0239 = CreateUnit(p, 1747988785, -7680.0, -4608.0, 270.000)
     gg_unit_h011_0240 = CreateUnit(p, 1747988785, -10240.0, -3840.0, 270.000)
     gg_unit_h011_0241 = CreateUnit(p, 1747988785, -10624.0, -5120.0, 270.000)
     gg_unit_h011_0242 = CreateUnit(p, 1747988785, -9856.0, -5120.0, 270.000)
-    gg_unit_h011_0258 = CreateUnit(p, 1747988785, -12160.0, -8576.0, 270.000)
-    gg_unit_h011_0263 = CreateUnit(p, 1747988785, -11648.0, -9088.0, 270.000)
-    gg_unit_h011_0266 = CreateUnit(p, 1747988785, -9216.0, -6656.0, 270.000)
-    gg_unit_h011_0267 = CreateUnit(p, 1747988785, -9728.0, -6144.0, 270.000)
+    gg_unit_h02U_0244 = CreateUnit(p, 1747989077, -9472.0, -6400.0, 270.000)
+    gg_unit_h02U_0252 = CreateUnit(p, 1747989077, -10240.0, -6144.0, 270.000)
 end
 
 function CreateBuildingsForPlayer9()
@@ -60823,7 +61080,7 @@ function CreateBuildingsForPlayer12()
     local t = nil
     gg_unit_NEBL_0009 = CreateUnit(p, 1313161804, 12032.0, -8960.0, 270.000)
     gg_unit_h018_0023 = CreateUnit(p, 1747988792, 2816.0, -7168.0, 270.000)
-    gg_unit_h01C_0024 = CreateUnit(p, 1747988803, 11264.0, -8704.0, 270.000)
+    gg_unit_h01C_0024 = CreateUnit(p, 1747988803, 11008.0, -8448.0, 270.000)
     gg_unit_h018_0147 = CreateUnit(p, 1747988792, 4096.0, -6784.0, 270.000)
     gg_unit_h019_0148 = CreateUnit(p, 1747988793, 10240.0, -3840.0, 270.000)
     gg_unit_h019_0149 = CreateUnit(p, 1747988793, 10624.0, -5120.0, 270.000)
@@ -60831,9 +61088,9 @@ function CreateBuildingsForPlayer12()
     gg_unit_h018_0151 = CreateUnit(p, 1747988792, 10624.0, -1024.0, 270.000)
     gg_unit_h019_0152 = CreateUnit(p, 1747988793, 6912.0, -7168.0, 270.000)
     gg_unit_h019_0162 = CreateUnit(p, 1747988793, 9856.0, -5120.0, 270.000)
-    gg_unit_h019_0169 = CreateUnit(p, 1747988793, 9216.0, -7552.0, 270.000)
-    gg_unit_h019_0170 = CreateUnit(p, 1747988793, 10624.0, -6144.0, 270.000)
-    gg_unit_h01D_0171 = CreateUnit(p, 1747988804, 11776.0, -8192.0, 270.000)
+    gg_unit_h02T_0169 = CreateUnit(p, 1747989076, 11008.0, -7936.0, 270.000)
+    gg_unit_h02T_0170 = CreateUnit(p, 1747989076, 11648.0, -9088.0, 270.000)
+    gg_unit_h01D_0171 = CreateUnit(p, 1747988804, 11520.0, -7936.0, 270.000)
     gg_unit_h019_0172 = CreateUnit(p, 1747988793, 8192.0, -6784.0, 270.000)
     gg_unit_h019_0173 = CreateUnit(p, 1747988793, 8192.0, -7552.0, 270.000)
     gg_unit_h018_0174 = CreateUnit(p, 1747988792, 4096.0, -7552.0, 270.000)
@@ -60844,12 +61101,10 @@ function CreateBuildingsForPlayer12()
     gg_unit_h018_0198 = CreateUnit(p, 1747988792, 4096.0, -1024.0, 270.000)
     gg_unit_h018_0202 = CreateUnit(p, 1747988792, 4864.0, -2304.0, 270.000)
     gg_unit_h018_0203 = CreateUnit(p, 1747988792, 5376.0, -1792.0, 270.000)
-    gg_unit_h019_0210 = CreateUnit(p, 1747988793, 9216.0, -6656.0, 270.000)
-    gg_unit_h019_0244 = CreateUnit(p, 1747988793, 10752.0, -8192.0, 270.000)
-    gg_unit_h019_0255 = CreateUnit(p, 1747988793, 11264.0, -7680.0, 270.000)
-    gg_unit_h019_0259 = CreateUnit(p, 1747988793, 12160.0, -8576.0, 270.000)
-    gg_unit_h019_0260 = CreateUnit(p, 1747988793, 11648.0, -9088.0, 270.000)
-    gg_unit_h019_0262 = CreateUnit(p, 1747988793, 9728.0, -6144.0, 270.000)
+    gg_unit_h02T_0210 = CreateUnit(p, 1747989076, 12160.0, -8576.0, 270.000)
+    gg_unit_h02T_0261 = CreateUnit(p, 1747989076, 9216.0, -7168.0, 270.000)
+    gg_unit_h02T_0264 = CreateUnit(p, 1747989076, 9472.0, -6400.0, 270.000)
+    gg_unit_h02T_0265 = CreateUnit(p, 1747989076, 10240.0, -6144.0, 270.000)
 end
 
 function CreateBuildingsForPlayer13()
@@ -61103,11 +61358,16 @@ function CreatePlayerBuildings()
     CreateBuildingsForPlayer15()
 end
 
+function CreatePlayerUnits()
+    CreateUnitsForPlayer0()
+end
+
 function CreateAllUnits()
     CreateNeutralPassiveBuildings()
     CreatePlayerBuildings()
     CreateNeutralHostile()
     CreateNeutralPassive()
+    CreatePlayerUnits()
 end
 
 function CreateRegions()
@@ -61166,8 +61426,18 @@ function CreateRegions()
     gg_rct_HumanToOrcOuterLine = Rect(-4160.0, 13248.0, -4032.0, 13376.0)
     gg_rct_HumanToUndeadInnerLine = Rect(-8768.0, 11712.0, -8640.0, 11840.0)
     gg_rct_HumanToUndeadOuterLine = Rect(-5184.0, 8128.0, -5056.0, 8256.0)
-    gg_rct_MiddleLaneSpawnEast = Rect(5248.0, 2688.0, 6016.0, 3456.0)
-    gg_rct_MiddleLaneSpawnWest = Rect(-6016.0, 2688.0, -5248.0, 3456.0)
+    gg_rct_LegionSpawnBottom = Rect(-384.0, -3456.0, 384.0, -2688.0)
+    gg_rct_LegionSpawnBottom1 = Rect(-448.0, -3136.0, -320.0, -3008.0)
+    gg_rct_LegionSpawnBottom2 = Rect(320.0, -3136.0, 448.0, -3008.0)
+    gg_rct_LegionSpawnEast = Rect(5760.0, 2688.0, 6528.0, 3456.0)
+    gg_rct_LegionSpawnEast1 = Rect(6080.0, 3392.0, 6208.0, 3520.0)
+    gg_rct_LegionSpawnEast2 = Rect(6080.0, 2624.0, 6208.0, 2752.0)
+    gg_rct_LegionSpawnTop = Rect(-384.0, 8832.0, 384.0, 9600.0)
+    gg_rct_LegionSpawnTop1 = Rect(-448.0, 9152.0, -320.0, 9280.0)
+    gg_rct_LegionSpawnTop2 = Rect(320.0, 9152.0, 448.0, 9280.0)
+    gg_rct_LegionSpawnWest = Rect(-6528.0, 2688.0, -5760.0, 3456.0)
+    gg_rct_LegionSpawnWest1 = Rect(-6208.0, 3392.0, -6080.0, 3520.0)
+    gg_rct_LegionSpawnWest2 = Rect(-6208.0, 2624.0, -6080.0, 2752.0)
     gg_rct_OrcBarracksToCenter = Rect(6080.0, 9152.0, 6208.0, 9280.0)
     gg_rct_OrcBarracksToCenterSpawn = Rect(5760.0, 8704.0, 6016.0, 9216.0)
     gg_rct_OrcBarracksToHuman = Rect(4928.0, 13248.0, 5056.0, 13376.0)

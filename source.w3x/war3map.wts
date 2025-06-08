@@ -12,7 +12,7 @@ STRING 3
 {
 Choose one of 12 heroes and fight for your team. Invest your gold wisely in items, research, upgrades or mercenaries - many paths lead to victory or defeat.
 
-Version 1.2.0
+Version 1.3.0
 }
 
 STRING 4
@@ -77,7 +77,7 @@ STRING 65
 {
 Choose one of 12 heroes and fight for your team. Invest your gold wisely in items, research, upgrades or mercenaries - many paths lead to victory or defeat.
 
-Version 1.2.0
+Version 1.3.0
 }
 
 STRING 73
@@ -5607,18 +5607,6 @@ STRING 4352
 Increases the attack damage of melee units.
 }
 
-STRING 4353
-// Upgrades: R005 (Animal War Training), Tip (Tooltip)
-{
-Improve melee units [|cffffcc00level 2|r]
-}
-
-STRING 4354
-// Upgrades: R005 (Animal War Training), Tip (Tooltip)
-{
-Improve melee units [|cffffcc00level 3|r]
-}
-
 STRING 4355
 // Upgrades: R006 (Flare), Tip (Tooltip)
 {
@@ -5761,18 +5749,6 @@ STRING 4378
 // Upgrades: R008 (Animal War Training), Ubertip (Tooltip - Extended)
 {
 Upgrade siege squads in your army to better siege machines.
-}
-
-STRING 4379
-// Upgrades: R009 (Animal War Training), Tip (Tooltip)
-{
-Improve ranged units [|cffffcc00level 2|r]
-}
-
-STRING 4380
-// Upgrades: R009 (Animal War Training), Tip (Tooltip)
-{
-Improve ranged units [|cffffcc00level 3|r]
 }
 
 STRING 4381
@@ -13879,5 +13855,77 @@ STRING 5749
 // Abilities: A00M (Townportal), EditorSuffix (Editor Suffix)
 {
 (Hero)
+}
+
+STRING 5750
+// Upgrades: R005 (Animal War Training), Tip (Tooltip)
+{
+Upgrade melee units [|cffffcc00level 2|r]
+}
+
+STRING 5751
+// Upgrades: R005 (Animal War Training), Tip (Tooltip)
+{
+Upgrade melee units [|cffffcc00level 3|r]
+}
+
+STRING 5752
+// Upgrades: R009 (Animal War Training), Tip (Tooltip)
+{
+Upgrade ranged units [|cffffcc00level 2|r]
+}
+
+STRING 5753
+// Upgrades: R009 (Animal War Training), Tip (Tooltip)
+{
+Upgrade ranged units [|cffffcc00level 3|r]
+}
+
+STRING 5754
+// Units: h02R (Holy tower), EditorSuffix (Name - Editor Suffix)
+{
+(Human)
+}
+
+STRING 5755
+// Units: h02R (Holy tower), Name (Name)
+{
+Holy tower
+}
+
+STRING 5756
+// Units: h02S (Rage tower), EditorSuffix (Name - Editor Suffix)
+{
+(Orc)
+}
+
+STRING 5757
+// Units: h02S (Rage tower), Name (Name)
+{
+Rage tower
+}
+
+STRING 5758
+// Units: h02T (Death Tower), EditorSuffix (Name - Editor Suffix)
+{
+(Undead)
+}
+
+STRING 5759
+// Units: h02T (Death Tower), Name (Name)
+{
+Death Tower
+}
+
+STRING 5760
+// Units: h02U (Nature tower), EditorSuffix (Name - Editor Suffix)
+{
+(Elf)
+}
+
+STRING 5761
+// Units: h02U (Nature tower), Name (Name)
+{
+Nature tower
 }
 

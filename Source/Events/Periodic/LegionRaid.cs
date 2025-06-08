@@ -10,7 +10,10 @@ namespace Source.Events.Periodic
 {
   internal static class LegionRaid
   {
-    public static int RaidCounts = 0;
+    /// <summary>
+    /// Anzahl an Raids
+    /// </summary>
+    public static int RaidRound = 0;
 
     public static bool OnElapsed()
     {
@@ -32,13 +35,13 @@ namespace Source.Events.Periodic
 
         player player = player.NeutralAggressive;
 
-        RaidCounts++;
+        RaidRound++;
 
         Rectangle centerRect = Areas.CenterComplete.Wc3Rectangle;
-        Rectangle CenterBottomRect = Areas.CenterBottom.Wc3Rectangle;
-        Rectangle CenterLeftRect = Areas.MiddleLaneSpawnEast.Wc3Rectangle;
-        Rectangle CenterTopRect = Areas.CenterTop.Wc3Rectangle;
-        Rectangle CenterRightRect = Areas.MiddleLaneSpawnWest.Wc3Rectangle;
+        Rectangle CenterBottomRect = Areas.LegionSpawnBottom.Wc3Rectangle;
+        Rectangle CenterLeftRect = Areas.LegionSpawnEast.Wc3Rectangle;
+        Rectangle CenterTopRect = Areas.LegionSpawnTop.Wc3Rectangle;
+        Rectangle CenterRightRect = Areas.LegionSpawnWest.Wc3Rectangle;
 
         Console.WriteLine($"The {Program.Legion.ColorizedName} is approaching, abandon all hope and despair...");
 
@@ -81,7 +84,7 @@ namespace Source.Events.Periodic
         int maxHeroLevel = Program.AllActiveUsers.Max(user => user.HeroLevelCounter);
 #endif
         if (maxHeroLevel == 0)
-          maxHeroLevel = RaidCounts;
+          maxHeroLevel = RaidRound;
 
         timer spawnTimer = Common.CreateTimer();
         Common.TimerStart(spawnTimer, 5f, false, () =>
@@ -92,30 +95,42 @@ namespace Source.Events.Periodic
 
           try
           {
-            Program.Legion.CreateOrRefreshSpawnBuildings(RaidCounts);
-            Program.Legion.CreateOrReviveHero(Constants.UNIT_DEMON_LORD_LEGION, Areas.Center, maxHeroLevel, RaidCounts);
+            Program.Legion.CreateOrRefreshSpawnBuildings(RaidRound);
+            Program.Legion.CreateOrReviveHero(Constants.UNIT_DEMON_LORD_LEGION, Areas.Center, maxHeroLevel, RaidRound);
 
             // Zentrum - Weitere Einheiten via Cast hinzurufen
-            Program.Legion.CreateUnit(centerRect, Constants.UNIT_INFERNAL_LEGION, RaidCounts);
-            Program.Legion.CreateUnit(centerRect, Constants.UNIT_INFERNAL_LEGION, RaidCounts);
-            Program.Legion.CreateUnit(centerRect, Constants.UNIT_INFERNAL_LEGION, RaidCounts);
-            Program.Legion.CreateUnit(centerRect, Constants.UNIT_INFERNAL_LEGION, RaidCounts);
+            Program.Legion.CreateUnitAtRandomPoint(centerRect, Constants.UNIT_INFERNAL_LEGION)
+              .AttackMoveTimed(Areas.HumanBase, 1);
+            Program.Legion.CreateUnitAtRandomPoint(centerRect, Constants.UNIT_INFERNAL_LEGION)
+              .AttackMoveTimed(Areas.OrcBase, 1);
+            Program.Legion.CreateUnitAtRandomPoint(centerRect, Constants.UNIT_INFERNAL_LEGION)
+              .AttackMoveTimed(Areas.ElfBase, 1);
+            Program.Legion.CreateUnitAtRandomPoint(centerRect, Constants.UNIT_INFERNAL_LEGION)
+              .AttackMoveTimed(Areas.UndeadBase, 1);
 
             // Bottom Lane - Weitere Einheiten via Cast hinzurufen
-            Program.Legion.CreateUnit(CenterBottomRect, Constants.UNIT_INFERNAL_LEGION, RaidCounts);
-            Program.Legion.CreateUnit(CenterBottomRect, Constants.UNIT_INFERNAL_LEGION, RaidCounts);
+            Program.Legion.CreateUnitInArea(Areas.LegionSpawnBottom1, Constants.UNIT_INFERNAL_LEGION)
+              .AttackMoveTimed(Areas.ElfBase, 1);
+            Program.Legion.CreateUnitInArea(Areas.LegionSpawnBottom2, Constants.UNIT_INFERNAL_LEGION, 180f)
+              .AttackMoveTimed(Areas.UndeadBase, 1);
 
             // Left Lane - Weitere Einheiten via Cast hinzurufen
-            Program.Legion.CreateUnit(CenterLeftRect, Constants.UNIT_INFERNAL_LEGION, RaidCounts);
-            Program.Legion.CreateUnit(CenterLeftRect, Constants.UNIT_INFERNAL_LEGION, RaidCounts);
+            Program.Legion.CreateUnitInArea(Areas.LegionSpawnEast1, Constants.UNIT_INFERNAL_LEGION, 270f)
+              .AttackMoveTimed(Areas.OrcBase, 1);
+            Program.Legion.CreateUnitInArea(Areas.LegionSpawnEast2, Constants.UNIT_INFERNAL_LEGION, 90f)
+              .AttackMoveTimed(Areas.UndeadBase, 1);
 
             // Top Lane - Weitere Einheiten via Cast hinzurufen
-            Program.Legion.CreateUnit(CenterTopRect, Constants.UNIT_INFERNAL_LEGION, RaidCounts);
-            Program.Legion.CreateUnit(CenterTopRect, Constants.UNIT_INFERNAL_LEGION, RaidCounts);
+            Program.Legion.CreateUnitInArea(Areas.LegionSpawnTop1, Constants.UNIT_INFERNAL_LEGION)
+              .AttackMoveTimed(Areas.HumanBase, 1);
+            Program.Legion.CreateUnitInArea(Areas.LegionSpawnTop2, Constants.UNIT_INFERNAL_LEGION, 180f)
+              .AttackMoveTimed(Areas.OrcBase, 1);
 
             // Right Lane - Weitere Einheiten via Cast hinzurufen
-            Program.Legion.CreateUnit(CenterRightRect, Constants.UNIT_INFERNAL_LEGION, RaidCounts);
-            Program.Legion.CreateUnit(CenterRightRect, Constants.UNIT_INFERNAL_LEGION, RaidCounts);
+            Program.Legion.CreateUnitInArea(Areas.LegionSpawnWest1, Constants.UNIT_INFERNAL_LEGION, 270f)
+              .AttackMoveTimed(Areas.HumanBase, 1);
+            Program.Legion.CreateUnitInArea(Areas.LegionSpawnWest2, Constants.UNIT_INFERNAL_LEGION, 90f)
+              .AttackMoveTimed(Areas.ElfBase, 1);
           }
           catch (Exception ex)
           {
@@ -140,7 +155,7 @@ namespace Source.Events.Periodic
         timer.Dispose();
         timer = null;
 
-        Program.Legion.CreateUnit(rectangle, unitTypeId, RaidCounts, 0f);
+        Program.Legion.CreateUnitAtRandomPoint(rectangle, unitTypeId);
       });
     }
 

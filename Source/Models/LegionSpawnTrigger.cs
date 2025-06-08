@@ -74,8 +74,7 @@ namespace Source.Models
         foreach (int unitId in UnitIds)
         {
 
-          Program.Legion.CreateUnit(SpawnArea.Wc3Rectangle, unitId, LegionRaid.RaidCounts)
-            .AttackMoveTimed(TargetArea, 2f);
+          Program.Legion.CreateUnitAtRandomPoint(SpawnArea.Wc3Rectangle, unitId).AttackMoveTimed(TargetArea, 2f);
         }
       }
       catch (Exception ex)
