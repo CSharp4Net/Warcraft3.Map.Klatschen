@@ -12,7 +12,7 @@ STRING 3
 {
 Choose one of 12 heroes and fight for your team. Invest your gold wisely in items, research, upgrades or mercenaries - many paths lead to victory or defeat.
 
-Version 1.4.0
+Version 1.5.0
 }
 
 STRING 4
@@ -77,7 +77,7 @@ STRING 65
 {
 Choose one of 12 heroes and fight for your team. Invest your gold wisely in items, research, upgrades or mercenaries - many paths lead to victory or defeat.
 
-Version 1.4.0
+Version 1.5.0
 }
 
 STRING 73
@@ -9423,12 +9423,6 @@ STRING 5011
 |cffff0000Ultimate ability|r|n|nTransforms trees and enemies in an area into <A00Q,DataA3> treants. Treants have <e003,realHP> hit points and deal <e003,mindmg3>-<efon,maxdmg3> damage. They can learn Blessing of Nature.|nStay in place for <A00Q,Dur3> seconds.|n|n|cffffcc00Can attack ground units.|r
 }
 
-STRING 5012
-// Abilities: AADA (Endurance Aura), Researchubertip (Tooltip - Learn - Extended)
-{
-Increases the movement and attack speed (<A00X,DataB1,%>% to <A00X,DataB10,%>%) of nearby allied units.
-}
-
 STRING 5013
 // Abilities: AADA (Endurance Aura), Tip (Tooltip - Normal)
 {
@@ -13828,7 +13822,7 @@ Eldin Sunstrider,Tanin Hawkwing,Lorn Bloodseeker,Aldos Firestar,Gilaras Drakeson
 }
 
 STRING 5749
-// Abilities: A00M (Townportal), EditorSuffix (Editor Suffix)
+// Units: N02J (Tauren Chieftain), EditorSuffix (Name - Editor Suffix)
 {
 (Hero)
 }
@@ -14401,5 +14395,893 @@ STRING 5846
 // Abilities: APHX (Phoenix), Ubertip (Tooltip - Normal - Extended)
 {
 |cffff0000Ultimate Ability|r|n|nSummons a powerful Phoenix [|cffffcc00Level 1|r]. The Phoenix burns with such intensity that it damages itself and nearby enemy units. Has Magic and Spell Immunity, and Resistant Skin. When a Phoenix dies, it creates an egg that will hatch into a Phoenix. |n|n|cffffcc00Attacks land and air units.|r
+}
+
+STRING 5847
+// Abilities: A002 (Attribute Bonus), Researchhotkey (Hotkey - Learn)
+{
+Z
+}
+
+STRING 5848
+// Units: N02J (Tauren Chieftain), Name (Name)
+{
+Tauren Chieftain
+}
+
+STRING 5849
+// Units: N02J (Tauren Chieftain), Propernames (Proper Names)
+{
+Marn Thunderhorn,Tygore Dusthoof,Tam Windtotem,Durn Harpyslayer,Kam Ghoststeer,Kel Stonebull,Mull Stormhoof,Grok Bloodhorn,Malar Plainstrider,Taur Runetotem
+}
+
+STRING 5850
+// Units: N02K (Crypt Lord), EditorSuffix (Name - Editor Suffix)
+{
+(Hero)
+}
+
+STRING 5851
+// Abilities: AADA (Endurance Aura), Researchubertip (Tooltip - Learn - Extended)
+{
+Increases the movement and attack speed (<AADA,DataB1,%>% to <AADA,DataB10,%>%) of nearby allied units.
+}
+
+STRING 5852
+// Abilities: AEDM (Endurance Aura), EditorSuffix (Editor Suffix)
+{
+(Hero 10)
+}
+
+STRING 5853
+// Abilities: AEDM (Endurance Aura), Researchubertip (Tooltip - Learn - Extended)
+{
+Increases the movement and attack speed (<AEDM,DataB1,%>% to <AEDM,DataB10,%>%) of nearby allied units.
+}
+
+STRING 5854
+// Abilities: AEDM (Endurance Aura), Tip (Tooltip - Normal)
+{
+Endurance Aura - [|cffffcc00Level 4|r]
+}
+
+STRING 5855
+// Abilities: AEDM (Endurance Aura), Tip (Tooltip - Normal)
+{
+Endurance Aura - [|cffffcc00Level 5|r]
+}
+
+STRING 5856
+// Abilities: AEDM (Endurance Aura), Tip (Tooltip - Normal)
+{
+Endurance Aura - [|cffffcc00Level 6|r]
+}
+
+STRING 5857
+// Abilities: AEDM (Endurance Aura), Tip (Tooltip - Normal)
+{
+Endurance Aura - [|cffffcc00Level 7|r]
+}
+
+STRING 5858
+// Abilities: AEDM (Endurance Aura), Tip (Tooltip - Normal)
+{
+Endurance Aura - [|cffffcc00Level 8|r]
+}
+
+STRING 5859
+// Abilities: AEDM (Endurance Aura), Tip (Tooltip - Normal)
+{
+Endurance Aura - [|cffffcc00Level 9|r]
+}
+
+STRING 5860
+// Abilities: AEDM (Endurance Aura), Tip (Tooltip - Normal)
+{
+Endurance Aura - [|cffffcc00Level 10|r]
+}
+
+STRING 5861
+// Abilities: AEDM (Endurance Aura), Tip (Tooltip - Normal)
+{
+Endurance Aura - [|cffffcc00Level 11|r]
+}
+
+STRING 5862
+// Abilities: AEDM (Endurance Aura), Tip (Tooltip - Normal)
+{
+Endurance Aura - [|cffffcc00Level 12|r]
+}
+
+STRING 5863
+// Abilities: AEDM (Endurance Aura), Tip (Tooltip - Normal)
+{
+Endurance Aura - [|cffffcc00Level 13|r]
+}
+
+STRING 5864
+// Abilities: AEDM (Endurance Aura), Tip (Tooltip - Normal)
+{
+Endurance Aura - [|cffffcc00Level 14|r]
+}
+
+STRING 5865
+// Abilities: AEDM (Endurance Aura), Tip (Tooltip - Normal)
+{
+Endurance Aura - [|cffffcc00Level 15|r]
+}
+
+STRING 5866
+// Abilities: AEDM (Endurance Aura), Tip (Tooltip - Normal)
+{
+Endurance Aura - [|cffffcc00Level 16|r]
+}
+
+STRING 5867
+// Abilities: AEDM (Endurance Aura), Tip (Tooltip - Normal)
+{
+Endurance Aura - [|cffffcc00Level 17|r]
+}
+
+STRING 5868
+// Abilities: AEDM (Endurance Aura), Tip (Tooltip - Normal)
+{
+Endurance Aura - [|cffffcc00Level 18|r]
+}
+
+STRING 5869
+// Abilities: AEDM (Endurance Aura), Tip (Tooltip - Normal)
+{
+Endurance Aura - [|cffffcc00Level 19|r]
+}
+
+STRING 5870
+// Abilities: AEDM (Endurance Aura), Tip (Tooltip - Normal)
+{
+Endurance Aura - [|cffffcc00Level 20|r]
+}
+
+STRING 5871
+// Abilities: AEDM (Endurance Aura), Ubertip (Tooltip - Normal - Extended)
+{
+Increases the movement speed of nearby allied units by <AEDM,DataA1,%>% and attack speed by <AEDM,DataB1,%>%.
+}
+
+STRING 5872
+// Abilities: AEDM (Endurance Aura), Ubertip (Tooltip - Normal - Extended)
+{
+Increases the movement speed of nearby allied units by <AEDM,DataA2,%>% and attack speed by <AEDM,DataB2,%>%.
+}
+
+STRING 5873
+// Abilities: AEDM (Endurance Aura), Ubertip (Tooltip - Normal - Extended)
+{
+Increases the movement speed of nearby allied units by <AEDM,DataA3,%>% and attack speed by <AEDM,DataB3,%>%.
+}
+
+STRING 5874
+// Abilities: AEDM (Endurance Aura), Ubertip (Tooltip - Normal - Extended)
+{
+Increases the movement speed of nearby allied units by <AEDM,DataA4,%>% and attack speed by <AEDM,DataB4,%>%.
+}
+
+STRING 5875
+// Abilities: AEDM (Endurance Aura), Ubertip (Tooltip - Normal - Extended)
+{
+Increases the movement speed of nearby allied units by <AEDM,DataA5,%>% and attack speed by <AEDM,DataB5,%>%.
+}
+
+STRING 5876
+// Abilities: AEDM (Endurance Aura), Ubertip (Tooltip - Normal - Extended)
+{
+Increases the movement speed of nearby allied units by <AEDM,DataA6,%>% and attack speed by <AEDM,DataB6,%>%.
+}
+
+STRING 5877
+// Abilities: AEDM (Endurance Aura), Ubertip (Tooltip - Normal - Extended)
+{
+Increases the movement speed of nearby allied units by <AEDM,DataA7,%>% and attack speed by <AEDM,DataB7,%>%.
+}
+
+STRING 5878
+// Abilities: AEDM (Endurance Aura), Ubertip (Tooltip - Normal - Extended)
+{
+Increases the movement speed of nearby allied units by <AEDM,DataA8,%>% and attack speed by <AEDM,DataB8,%>%.
+}
+
+STRING 5879
+// Abilities: AEDM (Endurance Aura), Ubertip (Tooltip - Normal - Extended)
+{
+Increases the movement speed of nearby allied units by <AEDM,DataA9,%>% and attack speed by <AEDM,DataB9,%>%.
+}
+
+STRING 5880
+// Abilities: AEDM (Endurance Aura), Ubertip (Tooltip - Normal - Extended)
+{
+Increases the movement speed of nearby allied units by <AEDM,DataA10,%>% and attack speed by <AEDM,DataB10,%>%.
+}
+
+STRING 5881
+// Abilities: AEDM (Endurance Aura), Ubertip (Tooltip - Normal - Extended)
+{
+Increases the movement speed of nearby allied units by <AADA,DataA11,%>% and attack speed by <AADA,DataB11,%>%.
+}
+
+STRING 5882
+// Abilities: AEDM (Endurance Aura), Ubertip (Tooltip - Normal - Extended)
+{
+Increases the movement speed of nearby allied units by <AADA,DataA12,%>% and attack speed by <AADA,DataB12,%>%.
+}
+
+STRING 5883
+// Abilities: AEDM (Endurance Aura), Ubertip (Tooltip - Normal - Extended)
+{
+Increases the movement speed of nearby allied units by <AADA,DataA13,%>% and attack speed by <AADA,DataB13,%>%.
+}
+
+STRING 5884
+// Abilities: AEDM (Endurance Aura), Ubertip (Tooltip - Normal - Extended)
+{
+Increases the movement speed of nearby allied units by <AADA,DataA14,%>% and attack speed by <AADA,DataB14,%>%.
+}
+
+STRING 5885
+// Abilities: AEDM (Endurance Aura), Ubertip (Tooltip - Normal - Extended)
+{
+Increases the movement speed of nearby allied units by <AADA,DataA15,%>% and attack speed by <AADA,DataB15,%>%.
+}
+
+STRING 5886
+// Abilities: AEDM (Endurance Aura), Ubertip (Tooltip - Normal - Extended)
+{
+Increases the movement speed of nearby allied units by <AADA,DataA16,%>% and attack speed by <AADA,DataB16,%>%.
+}
+
+STRING 5887
+// Abilities: AEDM (Endurance Aura), Ubertip (Tooltip - Normal - Extended)
+{
+Increases the movement speed of nearby allied units by <AADA,DataA17,%>% and attack speed by <AADA,DataB17,%>%.
+}
+
+STRING 5888
+// Abilities: AEDM (Endurance Aura), Ubertip (Tooltip - Normal - Extended)
+{
+Increases the movement speed of nearby allied units by <AADA,DataA18,%>% and attack speed by <AADA,DataB18,%>%.
+}
+
+STRING 5889
+// Abilities: AEDM (Endurance Aura), Ubertip (Tooltip - Normal - Extended)
+{
+Increases the movement speed of nearby allied units by <AADA,DataA19,%>% and attack speed by <AADA,DataB19,%>%.
+}
+
+STRING 5890
+// Abilities: AEDM (Endurance Aura), Ubertip (Tooltip - Normal - Extended)
+{
+Increases the movement speed of nearby allied units by <AADA,DataA20,%>% and attack speed by <AADA,DataB20,%>%.
+}
+
+STRING 5891
+// Abilities: ARIC (Reincarnation), EditorSuffix (Editor Suffix)
+{
+(Hero 10)
+}
+
+STRING 5892
+// Abilities: ARIC (Reincarnation), Ubertip (Tooltip - Normal - Extended)
+{
+When killed, the Tauren Chieftain will come back to life. Reincarnation has a <ARIC,Cool1> second cooldown.
+}
+
+STRING 5894
+// Abilities: ARIC (Reincarnation), Tip (Tooltip - Normal)
+{
+Reincarnation - [|cffffcc00Level 1|r]
+}
+
+STRING 5895
+// Abilities: ARIC (Reincarnation), Tip (Tooltip - Normal)
+{
+Reincarnation - [|cffffcc00Level 2|r]
+}
+
+STRING 5896
+// Abilities: ARIC (Reincarnation), Tip (Tooltip - Normal)
+{
+Reincarnation - [|cffffcc00Level 3|r]
+}
+
+STRING 5897
+// Abilities: ARIC (Reincarnation), Tip (Tooltip - Normal)
+{
+Reincarnation - [|cffffcc00Level 4|r]
+}
+
+STRING 5898
+// Abilities: ARIC (Reincarnation), Tip (Tooltip - Normal)
+{
+Reincarnation - [|cffffcc00Level 5|r]
+}
+
+STRING 5899
+// Abilities: ARIC (Reincarnation), Tip (Tooltip - Normal)
+{
+Reincarnation - [|cffffcc00Level 6|r]
+}
+
+STRING 5900
+// Abilities: ARIC (Reincarnation), Tip (Tooltip - Normal)
+{
+Reincarnation - [|cffffcc00Level 7|r]
+}
+
+STRING 5901
+// Abilities: ARIC (Reincarnation), Tip (Tooltip - Normal)
+{
+Reincarnation - [|cffffcc00Level 8|r]
+}
+
+STRING 5902
+// Abilities: ARIC (Reincarnation), Tip (Tooltip - Normal)
+{
+Reincarnation - [|cffffcc00Level 9|r]
+}
+
+STRING 5903
+// Abilities: ARIC (Reincarnation), Tip (Tooltip - Normal)
+{
+Reincarnation - [|cffffcc00Level 10|r]
+}
+
+STRING 5904
+// Abilities: ARIC (Reincarnation), Ubertip (Tooltip - Normal - Extended)
+{
+When killed, the Tauren Chieftain will come back to life. Reincarnation has a <ARIC,Cool2> second cooldown.
+}
+
+STRING 5905
+// Abilities: ARIC (Reincarnation), Ubertip (Tooltip - Normal - Extended)
+{
+When killed, the Tauren Chieftain will come back to life. Reincarnation has a <ARIC,Cool3> second cooldown.
+}
+
+STRING 5906
+// Abilities: ARIC (Reincarnation), Ubertip (Tooltip - Normal - Extended)
+{
+When killed, the Tauren Chieftain will come back to life. Reincarnation has a <ARIC,Cool4> second cooldown.
+}
+
+STRING 5907
+// Abilities: ARIC (Reincarnation), Ubertip (Tooltip - Normal - Extended)
+{
+When killed, the Tauren Chieftain will come back to life. Reincarnation has a <ARIC,Cool5> second cooldown.
+}
+
+STRING 5908
+// Abilities: ARIC (Reincarnation), Ubertip (Tooltip - Normal - Extended)
+{
+When killed, the Tauren Chieftain will come back to life. Reincarnation has a <ARIC,Cool6> second cooldown.
+}
+
+STRING 5909
+// Abilities: ARIC (Reincarnation), Ubertip (Tooltip - Normal - Extended)
+{
+When killed, the Tauren Chieftain will come back to life. Reincarnation has a <ARIC,Cool7> second cooldown.
+}
+
+STRING 5910
+// Abilities: ARIC (Reincarnation), Ubertip (Tooltip - Normal - Extended)
+{
+When killed, the Tauren Chieftain will come back to life. Reincarnation has a <ARIC,Cool8> second cooldown.
+}
+
+STRING 5911
+// Abilities: ARIC (Reincarnation), Ubertip (Tooltip - Normal - Extended)
+{
+When killed, the Tauren Chieftain will come back to life. Reincarnation has a <ARIC,Cool9> second cooldown.
+}
+
+STRING 5912
+// Abilities: ARIC (Reincarnation), Ubertip (Tooltip - Normal - Extended)
+{
+When killed, the Tauren Chieftain will come back to life. Reincarnation has a <ARIC,Cool10> second cooldown.
+}
+
+STRING 5917
+// Abilities: AWST (War Stomp), Researchubertip (Tooltip - Learn - Extended)
+{
+|cffff0000Ultimative Fähigkeit|r|n|nSlams the ground, stunning (<AWST,Dur1> to <AWST,Dur3>) and damaging (<AWST,DataA1> to <AWST,DataA3>) nearby enemy land units.
+}
+
+STRING 5918
+// Abilities: AWST (War Stomp), Ubertip (Tooltip - Normal - Extended)
+{
+|cffff0000Ultimative Fähigkeit|r|n|nSlams the ground, dealing <AWST,DataA1> damage to nearby enemy land units and stunning them for <AWST,Dur1> seconds.
+}
+
+STRING 5919
+// Abilities: AWST (War Stomp), Ubertip (Tooltip - Normal - Extended)
+{
+|cffff0000Ultimative Fähigkeit|r|n|nSlams the ground, dealing <AWST,DataA2> damage to nearby enemy land units and stunning them for <AWST,Dur2> seconds.
+}
+
+STRING 5920
+// Abilities: AWST (War Stomp), Ubertip (Tooltip - Normal - Extended)
+{
+|cffff0000Ultimative Fähigkeit|r|n|nSlams the ground, dealing <AWST,DataA3> damage to nearby enemy land units and stunning them for <AWST,Dur3> seconds.
+}
+
+STRING 5921
+// Abilities: AWST (War Stomp), EditorSuffix (Editor Suffix)
+{
+(Hero 3)
+}
+
+STRING 5922
+// Units: N02K (Crypt Lord), Name (Name)
+{
+Crypt Lord
+}
+
+STRING 5923
+// Units: N02K (Crypt Lord), Propernames (Proper Names)
+{
+Thebis-Ra,Typhis-Ahn,Anubiros,Memphis-Ahn,Horus'aman,Nephri'thos,Arak-arahm,Tuten'arak,Pharoh-moth
+}
+
+STRING 5924
+// Abilities: A00M (Townportal), EditorSuffix (Editor Suffix)
+{
+(Hero)
+}
+
+STRING 5925
+// Abilities: AIMP (Impale), Researchubertip (Tooltip - Learn - Extended)
+{
+Slams the ground with the Crypt Lord's massive claws, shooting spiked tendrils out in a straight line, dealing damage (<AIMP,DataC1> to <AIMP,DataC3>) and hurling enemy ground units into the air in their wake.
+}
+
+STRING 5926
+// Abilities: AIMP (Impale), Tip (Tooltip - Normal)
+{
+Impale - [|cffffcc00Level 4|r]
+}
+
+STRING 5927
+// Abilities: AIMP (Impale), Tip (Tooltip - Normal)
+{
+Impale - [|cffffcc00Level 5|r]
+}
+
+STRING 5928
+// Abilities: AIMP (Impale), Tip (Tooltip - Normal)
+{
+Impale - [|cffffcc00Level 6|r]
+}
+
+STRING 5929
+// Abilities: AIMP (Impale), Tip (Tooltip - Normal)
+{
+Impale - [|cffffcc00Level 7|r]
+}
+
+STRING 5930
+// Abilities: AIMP (Impale), Tip (Tooltip - Normal)
+{
+Impale - [|cffffcc00Level 8|r]
+}
+
+STRING 5931
+// Abilities: AIMP (Impale), Tip (Tooltip - Normal)
+{
+Impale - [|cffffcc00Level 9|r]
+}
+
+STRING 5932
+// Abilities: AIMP (Impale), Tip (Tooltip - Normal)
+{
+Impale - [|cffffcc00Level 10|r]
+}
+
+STRING 5933
+// Abilities: AIMP (Impale), Ubertip (Tooltip - Normal - Extended)
+{
+Slams the ground with the Crypt Lord's massive claws, shooting spiked tendrils out in a straight line, dealing <AIMP,DataC1> damage and hurling enemy ground units into the air in their wake, stunning them for <AIMP,Dur1> seconds.
+}
+
+STRING 5934
+// Abilities: AIMP (Impale), Ubertip (Tooltip - Normal - Extended)
+{
+Slams the ground with the Crypt Lord's massive claws, shooting spiked tendrils out in a straight line, dealing <AIMP,DataC2> damage and hurling enemy ground units into the air in their wake, stunning them for <AIMP,Dur2> seconds.
+}
+
+STRING 5935
+// Abilities: AIMP (Impale), Ubertip (Tooltip - Normal - Extended)
+{
+Slams the ground with the Crypt Lord's massive claws, shooting spiked tendrils out in a straight line, dealing <AIMP,DataC3> damage and hurling enemy ground units into the air in their wake, stunning them for <AIMP,Dur3> seconds.
+}
+
+STRING 5936
+// Abilities: AIMP (Impale), Ubertip (Tooltip - Normal - Extended)
+{
+Slams the ground with the Crypt Lord's massive claws, shooting spiked tendrils out in a straight line, dealing <AIMP,DataC4> damage and hurling enemy ground units into the air in their wake, stunning them for <AIMP,Dur4> seconds.
+}
+
+STRING 5937
+// Abilities: AIMP (Impale), Ubertip (Tooltip - Normal - Extended)
+{
+Slams the ground with the Crypt Lord's massive claws, shooting spiked tendrils out in a straight line, dealing <AIMP,DataC5> damage and hurling enemy ground units into the air in their wake, stunning them for <AIMP,Dur5> seconds.
+}
+
+STRING 5938
+// Abilities: AIMP (Impale), Ubertip (Tooltip - Normal - Extended)
+{
+Slams the ground with the Crypt Lord's massive claws, shooting spiked tendrils out in a straight line, dealing <AIMP,DataC6> damage and hurling enemy ground units into the air in their wake, stunning them for <AIMP,Dur6> seconds.
+}
+
+STRING 5939
+// Abilities: AIMP (Impale), Ubertip (Tooltip - Normal - Extended)
+{
+Slams the ground with the Crypt Lord's massive claws, shooting spiked tendrils out in a straight line, dealing <AIMP,DataC7> damage and hurling enemy ground units into the air in their wake, stunning them for <AIMP,Dur7> seconds.
+}
+
+STRING 5940
+// Abilities: AIMP (Impale), Ubertip (Tooltip - Normal - Extended)
+{
+Slams the ground with the Crypt Lord's massive claws, shooting spiked tendrils out in a straight line, dealing <AIMP,DataC8> damage and hurling enemy ground units into the air in their wake, stunning them for <AIMP,Dur8> seconds.
+}
+
+STRING 5941
+// Abilities: AIMP (Impale), Ubertip (Tooltip - Normal - Extended)
+{
+Slams the ground with the Crypt Lord's massive claws, shooting spiked tendrils out in a straight line, dealing <AIMP,DataC9> damage and hurling enemy ground units into the air in their wake, stunning them for <AIMP,Dur9> seconds.
+}
+
+STRING 5942
+// Abilities: AIMP (Impale), Ubertip (Tooltip - Normal - Extended)
+{
+Slams the ground with the Crypt Lord's massive claws, shooting spiked tendrils out in a straight line, dealing <AIMP,DataC10> damage and hurling enemy ground units into the air in their wake, stunning them for <AIMP,Dur10> seconds.
+}
+
+STRING 5943
+// Abilities: AIMP (Impale), EditorSuffix (Editor Suffix)
+{
+(Hero 10)
+}
+
+STRING 5944
+// Abilities: ASPC (Spiked Carapace), Researchubertip (Tooltip - Learn - Extended)
+{
+The Crypt Lord forms barbed layers of chitinous armor that increases its defense (<ASPC,DataC1> to <ASPC,DataC10>) and returns damage (<ASPC,DataA1,%>% to  <ASPC,DataA10,%>%) to enemy melee attackers.
+}
+
+STRING 5945
+// Abilities: ASPC (Spiked Carapace), Tip (Tooltip - Normal)
+{
+Spiked Carapace - [|cffffcc00Level 4|r]
+}
+
+STRING 5946
+// Abilities: ASPC (Spiked Carapace), Tip (Tooltip - Normal)
+{
+Spiked Carapace - [|cffffcc00Level 5|r]
+}
+
+STRING 5947
+// Abilities: ASPC (Spiked Carapace), Tip (Tooltip - Normal)
+{
+Spiked Carapace - [|cffffcc00Level 6|r]
+}
+
+STRING 5948
+// Abilities: ASPC (Spiked Carapace), Tip (Tooltip - Normal)
+{
+Spiked Carapace - [|cffffcc00Level 7|r]
+}
+
+STRING 5949
+// Abilities: ASPC (Spiked Carapace), Tip (Tooltip - Normal)
+{
+Spiked Carapace - [|cffffcc00Level 8|r]
+}
+
+STRING 5950
+// Abilities: ASPC (Spiked Carapace), Tip (Tooltip - Normal)
+{
+Spiked Carapace - [|cffffcc00Level 9|r]
+}
+
+STRING 5951
+// Abilities: ASPC (Spiked Carapace), Tip (Tooltip - Normal)
+{
+Spiked Carapace - [|cffffcc00Level 10|r]
+}
+
+STRING 5952
+// Abilities: ASPC (Spiked Carapace), Ubertip (Tooltip - Normal - Extended)
+{
+Enhances the Crypt Lord's chitinous armor with organic barbs, giving him <ASPC,DataC2> bonus armor and returning <ASPC,DataA2,%>% of melee attack damage to enemies.
+}
+
+STRING 5953
+// Abilities: ASPC (Spiked Carapace), Ubertip (Tooltip - Normal - Extended)
+{
+Enhances the Crypt Lord's chitinous armor with organic barbs, giving him <ASPC,DataC2> bonus armor and returning <ASPC,DataA2,%>% of melee attack damage to enemies.
+}
+
+STRING 5954
+// Abilities: ASPC (Spiked Carapace), Ubertip (Tooltip - Normal - Extended)
+{
+Enhances the Crypt Lord's chitinous armor with organic barbs, giving him <ASPC,DataC2> bonus armor and returning <ASPC,DataA2,%>% of melee attack damage to enemies.
+}
+
+STRING 5955
+// Abilities: ASPC (Spiked Carapace), Ubertip (Tooltip - Normal - Extended)
+{
+Enhances the Crypt Lord's chitinous armor with organic barbs, giving him <ASPC,DataC2> bonus armor and returning <ASPC,DataA2,%>% of melee attack damage to enemies.
+}
+
+STRING 5956
+// Abilities: ASPC (Spiked Carapace), Ubertip (Tooltip - Normal - Extended)
+{
+Enhances the Crypt Lord's chitinous armor with organic barbs, giving him <ASPC,DataC2> bonus armor and returning <ASPC,DataA2,%>% of melee attack damage to enemies.
+}
+
+STRING 5957
+// Abilities: ASPC (Spiked Carapace), Ubertip (Tooltip - Normal - Extended)
+{
+Enhances the Crypt Lord's chitinous armor with organic barbs, giving him <ASPC,DataC2> bonus armor and returning <ASPC,DataA2,%>% of melee attack damage to enemies.
+}
+
+STRING 5958
+// Abilities: ASPC (Spiked Carapace), Ubertip (Tooltip - Normal - Extended)
+{
+Enhances the Crypt Lord's chitinous armor with organic barbs, giving him <ASPC,DataC2> bonus armor and returning <ASPC,DataA2,%>% of melee attack damage to enemies.
+}
+
+STRING 5959
+// Abilities: ASPC (Spiked Carapace), Ubertip (Tooltip - Normal - Extended)
+{
+Enhances the Crypt Lord's chitinous armor with organic barbs, giving him <ASPC,DataC2> bonus armor and returning <ASPC,DataA2,%>% of melee attack damage to enemies.
+}
+
+STRING 5960
+// Abilities: ASPC (Spiked Carapace), Ubertip (Tooltip - Normal - Extended)
+{
+Enhances the Crypt Lord's chitinous armor with organic barbs, giving him <ASPC,DataC2> bonus armor and returning <ASPC,DataA2,%>% of melee attack damage to enemies.
+}
+
+STRING 5961
+// Abilities: ASPC (Spiked Carapace), Ubertip (Tooltip - Normal - Extended)
+{
+Enhances the Crypt Lord's chitinous armor with organic barbs, giving him <ASPC,DataC2> bonus armor and returning <ASPC,DataA2,%>% of melee attack damage to enemies.
+}
+
+STRING 5962
+// Abilities: ASPC (Spiked Carapace), EditorSuffix (Editor Suffix)
+{
+(Hero 10)
+}
+
+STRING 5963
+// Units: u000 (Carrion Beetle [|cffffcc00Level 1|r]), Name (Name)
+{
+Carrion Beetle [|cffffcc00Level 1|r]
+}
+
+STRING 5964
+// Units: u000 (Carrion Beetle [|cffffcc00Level 1|r]), EditorSuffix (Name - Editor Suffix)
+{
+(Hero spell)
+}
+
+STRING 5965
+// Units: u001 (Carrion Beetle [|cffffcc00Level 2|r]), Name (Name)
+{
+Carrion Beetle [|cffffcc00Level 2|r]
+}
+
+STRING 5966
+// Units: u001 (Carrion Beetle [|cffffcc00Level 2|r]), EditorSuffix (Name - Editor Suffix)
+{
+(Hero spell)
+}
+
+STRING 5967
+// Units: u002 (Carrion Beetle [|cffffcc00Level 3|r]), Name (Name)
+{
+Carrion Beetle [|cffffcc00Level 3|r]
+}
+
+STRING 5968
+// Units: u002 (Carrion Beetle [|cffffcc00Level 3|r]), EditorSuffix (Name - Editor Suffix)
+{
+(Hero spell)
+}
+
+STRING 5969
+// Abilities: ACAB (Carrion Beetles), EditorSuffix (Editor Suffix)
+{
+(Hero 3)
+}
+
+STRING 5974
+// Abilities: ACAB (Carrion Beetles), Untip (Tooltip - Turn Off)
+{
+|cffc3dbffRight-click to activate auto-casting.
+}
+
+STRING 5975
+// Abilities: ACAB (Carrion Beetles), Untip (Tooltip - Turn Off)
+{
+|cffc3dbffRight-click to activate auto-casting.
+}
+
+STRING 5976
+// Abilities: ACAB (Carrion Beetles), Unubertip (Tooltip - Turn Off - Extended)
+{
+|cffc3dbffRight-click to deactivate auto-casting.
+}
+
+STRING 5977
+// Abilities: ACAB (Carrion Beetles), Unubertip (Tooltip - Turn Off - Extended)
+{
+|cffc3dbffRight-click to deactivate auto-casting.
+}
+
+STRING 5981
+// Abilities: ALOC (Locust Swarm), Researchubertip (Tooltip - Learn - Extended)
+{
+Creates a swarm of angry locusts that bite and tear at nearby enemy units. As they chew the enemy flesh, they convert it into a substance that restores hit points to the Crypt Lord when they return. Pierces spell immunity. |nLasts <ALOC,HeroDur1> to <ALOC,HeroDur10>seconds.
+}
+
+STRING 5982
+// Abilities: ALOC (Locust Swarm), Ubertip (Tooltip - Normal - Extended)
+{
+Creates a swarm of angry locusts that bite and tear at nearby enemy units. As they chew the enemy flesh, they convert it into a substance that restores hit points to the Crypt Lord when they return. Pierces spell immunity. |nLasts <ALOC,HeroDur1> seconds.
+}
+
+STRING 5983
+// Abilities: ALOC (Locust Swarm), Ubertip (Tooltip - Normal - Extended)
+{
+Creates a swarm of angry locusts that bite and tear at nearby enemy units. As they chew the enemy flesh, they convert it into a substance that restores hit points to the Crypt Lord when they return. Pierces spell immunity. |nLasts <ALOC,HeroDur2> seconds.
+}
+
+STRING 5984
+// Abilities: ALOC (Locust Swarm), Ubertip (Tooltip - Normal - Extended)
+{
+Creates a swarm of angry locusts that bite and tear at nearby enemy units. As they chew the enemy flesh, they convert it into a substance that restores hit points to the Crypt Lord when they return. Pierces spell immunity. |nLasts <ALOC,HeroDur3> seconds.
+}
+
+STRING 5985
+// Abilities: ALOC (Locust Swarm), Ubertip (Tooltip - Normal - Extended)
+{
+Creates a swarm of angry locusts that bite and tear at nearby enemy units. As they chew the enemy flesh, they convert it into a substance that restores hit points to the Crypt Lord when they return. Pierces spell immunity. |nLasts <ALOC,HeroDur4> seconds.
+}
+
+STRING 5986
+// Abilities: ALOC (Locust Swarm), Ubertip (Tooltip - Normal - Extended)
+{
+Creates a swarm of angry locusts that bite and tear at nearby enemy units. As they chew the enemy flesh, they convert it into a substance that restores hit points to the Crypt Lord when they return. Pierces spell immunity. |nLasts <ALOC,HeroDur5> seconds.
+}
+
+STRING 5987
+// Abilities: ALOC (Locust Swarm), Ubertip (Tooltip - Normal - Extended)
+{
+Creates a swarm of angry locusts that bite and tear at nearby enemy units. As they chew the enemy flesh, they convert it into a substance that restores hit points to the Crypt Lord when they return. Pierces spell immunity. |nLasts <ALOC,HeroDur6> seconds.
+}
+
+STRING 5988
+// Abilities: ALOC (Locust Swarm), Ubertip (Tooltip - Normal - Extended)
+{
+Creates a swarm of angry locusts that bite and tear at nearby enemy units. As they chew the enemy flesh, they convert it into a substance that restores hit points to the Crypt Lord when they return. Pierces spell immunity. |nLasts <ALOC,HeroDur7> seconds.
+}
+
+STRING 5989
+// Abilities: ALOC (Locust Swarm), Ubertip (Tooltip - Normal - Extended)
+{
+Creates a swarm of angry locusts that bite and tear at nearby enemy units. As they chew the enemy flesh, they convert it into a substance that restores hit points to the Crypt Lord when they return. Pierces spell immunity. |nLasts <ALOC,HeroDur8> seconds.
+}
+
+STRING 5990
+// Abilities: ALOC (Locust Swarm), Ubertip (Tooltip - Normal - Extended)
+{
+Creates a swarm of angry locusts that bite and tear at nearby enemy units. As they chew the enemy flesh, they convert it into a substance that restores hit points to the Crypt Lord when they return. Pierces spell immunity. |nLasts <ALOC,HeroDur9> seconds.
+}
+
+STRING 5991
+// Abilities: ALOC (Locust Swarm), Ubertip (Tooltip - Normal - Extended)
+{
+Creates a swarm of angry locusts that bite and tear at nearby enemy units. As they chew the enemy flesh, they convert it into a substance that restores hit points to the Crypt Lord when they return. Pierces spell immunity. |nLasts <ALOC,HeroDur10> seconds.
+}
+
+STRING 5992
+// Abilities: ALOC (Locust Swarm), Tip (Tooltip - Normal)
+{
+Locust Swarm
+}
+
+STRING 5993
+// Abilities: ALOC (Locust Swarm), Tip (Tooltip - Normal)
+{
+Locust Swarm
+}
+
+STRING 5994
+// Abilities: ALOC (Locust Swarm), Tip (Tooltip - Normal)
+{
+Locust Swarm
+}
+
+STRING 5995
+// Abilities: ALOC (Locust Swarm), Tip (Tooltip - Normal)
+{
+Locust Swarm
+}
+
+STRING 5996
+// Abilities: ALOC (Locust Swarm), Tip (Tooltip - Normal)
+{
+Locust Swarm
+}
+
+STRING 5997
+// Abilities: ALOC (Locust Swarm), Tip (Tooltip - Normal)
+{
+Locust Swarm
+}
+
+STRING 5998
+// Abilities: ALOC (Locust Swarm), Tip (Tooltip - Normal)
+{
+Locust Swarm
+}
+
+STRING 5999
+// Abilities: ALOC (Locust Swarm), Tip (Tooltip - Normal)
+{
+Locust Swarm
+}
+
+STRING 6000
+// Abilities: ALOC (Locust Swarm), Tip (Tooltip - Normal)
+{
+Locust Swarm
+}
+
+STRING 6001
+// Abilities: ALOC (Locust Swarm), EditorSuffix (Editor Suffix)
+{
+(Hero 10)
+}
+
+STRING 6006
+// Abilities: ACAB (Carrion Beetles), Researchubertip (Tooltip - Learn - Extended)
+{
+|cffff0000Ultimate ability|r|n|nThe Crypt Lord progenerates <ACAB,DataA1> Carrion Beetle from a target corpse to attack the Crypt Lord's enemies. Beetles are permanent, but only <ACAB,DataE1> to <ACAB,DataE3> can be controlled at a time.
+}
+
+STRING 6010
+// Abilities: ARIC (Reincarnation), Researchubertip (Tooltip - Learn - Extended)
+{
+When killed, the Tauren Chieftain will come back to life. Reincarnation has a <ARIC,Cool1> to <ARIC,Cool10> second cooldown.
+}
+
+STRING 6014
+// Abilities: ACAB (Carrion Beetles), Ubertip (Tooltip - Normal - Extended)
+{
+|cffff0000Ultimate ability|r|n|nProgenerates <ACAB,DataA1> Beetle [|cffffcc00Level 1|r] from a target corpse. Beetles are permanent until killed.|n|nMaximum of <ACAB,DataE1> Beetles.
+}
+
+STRING 6015
+// Abilities: ACAB (Carrion Beetles), Ubertip (Tooltip - Normal - Extended)
+{
+|cffff0000Ultimate ability|r|n|nProgenerates <ACAB,DataA2> Beetle [|cffffcc00Level 2|r] from a target corpse. Beetles are permanent until killed.|n|nMaximum of <ACAB,DataE2> Beetles.
+}
+
+STRING 6016
+// Abilities: ACAB (Carrion Beetles), Ubertip (Tooltip - Normal - Extended)
+{
+|cffff0000Ultimate ability|r|n|nProgenerates <ACAB,DataA3> Beetle [|cffffcc00Level 3|r] from a target corpse. Beetles are permanent until killed.|n|nMaximum of <ACAB,DataE3> Beetles.
 }
 

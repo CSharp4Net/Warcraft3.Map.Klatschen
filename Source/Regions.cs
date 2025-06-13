@@ -42,6 +42,7 @@ public static class Regions
 	public static Rectangle HeroBlademaster { get; set; } = new Rectangle(-4672f, 17408f, -4544f, 17536f);
 	public static Rectangle HeroBloodMage { get; set; } = new Rectangle(-2944f, 18496f, -2816f, 18624f);
 	public static Rectangle HeroBrewmaster { get; set; } = new Rectangle(-3712f, 18496f, -3584f, 18624f);
+	public static Rectangle HeroCryptLord { get; set; } = new Rectangle(-4672f, 17024f, -4544f, 17152f);
 	public static Rectangle HeroDarkRanger { get; set; } = new Rectangle(-1984f, 17408f, -1856f, 17536f);
 	public static Rectangle HeroFirelord { get; set; } = new Rectangle(-2560f, 18496f, -2432f, 18624f);
 	public static Rectangle HeroKeeperOfTheGrove { get; set; } = new Rectangle(-2176f, 18496f, -2048f, 18624f);
@@ -51,6 +52,7 @@ public static class Regions
 	public static Rectangle HeroSelectionTotal { get; set; } = new Rectangle(-5248f, 16768f, -1280f, 19200f);
 	public static Rectangle HeroSelectorSpawn { get; set; } = new Rectangle(-3328f, 18176f, -3200f, 18304f);
 	public static Rectangle HeroShadowHunter { get; set; } = new Rectangle(-1984f, 17792f, -1856f, 17920f);
+	public static Rectangle HeroTaurenChieftain { get; set; } = new Rectangle(-3648f, 17792f, -3520f, 17920f);
 	public static Rectangle HeroTinker { get; set; } = new Rectangle(-4096f, 18496f, -3968f, 18624f);
 	public static Rectangle HumanBarracksToCenter { get; set; } = new Rectangle(-6208f, 9152f, -6080f, 9280f);
 	public static Rectangle HumanBarracksToCenterSpawn { get; set; } = new Rectangle(-6016f, 8704f, -5760f, 9216f);

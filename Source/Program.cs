@@ -102,6 +102,7 @@ namespace Source
         Areas.HeroBlademaster.RegisterOnEnter(HeroSelection.OnBlademaster);
         Areas.HeroBloodMage.RegisterOnEnter(HeroSelection.OnBloodMage);
         Areas.HeroBrewmaster.RegisterOnEnter(HeroSelection.OnBrewmaster);
+        Areas.HeroCryptLord.RegisterOnEnter(HeroSelection.OnCryptLord);
         Areas.HeroDarkRanger.RegisterOnEnter(HeroSelection.OnDarkRanger);
         Areas.HeroFirelord.RegisterOnEnter(HeroSelection.OnFirelord);
         Areas.HeroKeeperOfTheGrove.RegisterOnEnter(HeroSelection.OnKeeperOfTheGrove);
@@ -109,6 +110,7 @@ namespace Source
         Areas.HeroPitLord.RegisterOnEnter(HeroSelection.OnPitLord);
         Areas.HeroSeaWitch.RegisterOnEnter(HeroSelection.OnSeaWitch);
         Areas.HeroShadowHunter.RegisterOnEnter(HeroSelection.OnShadowHunter);
+        Areas.HeroTaurenChieftain.RegisterOnEnter(HeroSelection.OnTaurenChieftain);
         Areas.HeroTinker.RegisterOnEnter(HeroSelection.OnTinker);
 
         // Regions-Ereignisse registrieren für automatische Einheitenbewegungen:

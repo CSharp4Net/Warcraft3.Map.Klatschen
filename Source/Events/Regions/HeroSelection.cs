@@ -30,6 +30,11 @@ namespace Source.Events.Regions
       HandleHeroSelection(Constants.UNIT_BREWMASTER_HERO);
     }
 
+    internal static void OnCryptLord()
+    {
+      HandleHeroSelection(Constants.UNIT_CRYPT_LORD_HERO);
+    }
+
     internal static void OnDarkRanger()
     {
       HandleHeroSelection(Constants.UNIT_DARK_RANGER_HERO);
@@ -63,6 +68,11 @@ namespace Source.Events.Regions
     internal static void OnShadowHunter()
     {
       HandleHeroSelection(Constants.UNIT_SHADOW_HUNTER_HERO);
+    }
+
+    internal static void OnTaurenChieftain()
+    {
+      HandleHeroSelection(Constants.UNIT_TAUREN_CHIEFTAIN_HERO);
     }
 
     internal static void OnTinker()

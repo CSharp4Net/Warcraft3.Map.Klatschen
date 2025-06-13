@@ -42,6 +42,7 @@ internal static class Areas
   public static Area HeroBlademaster { get; set; } = new Area(Regions.HeroBlademaster);
   public static Area HeroBloodMage { get; set; } = new Area(Regions.HeroBloodMage);
   public static Area HeroBrewmaster { get; set; } = new Area(Regions.HeroBrewmaster);
+  public static Area HeroCryptLord { get; set; } = new Area(Regions.HeroCryptLord);
   public static Area HeroDarkRanger { get; set; } = new Area(Regions.HeroDarkRanger);
   public static Area HeroFirelord { get; set; } = new Area(Regions.HeroFirelord);
   public static Area HeroKeeperOfTheGrove { get; set; } = new Area(Regions.HeroKeeperOfTheGrove);
@@ -51,6 +52,7 @@ internal static class Areas
   public static Area HeroSelectionTotal { get; set; } = new Area(Regions.HeroSelectionTotal);
   public static Area HeroSelectorSpawn { get; set; } = new Area(Regions.HeroSelectorSpawn);
   public static Area HeroShadowHunter { get; set; } = new Area(Regions.HeroShadowHunter);
+  public static Area HeroTaurenChieftain { get; set; } = new Area(Regions.HeroTaurenChieftain);
   public static Area HeroTinker { get; set; } = new Area(Regions.HeroTinker);
   public static Area HumanBarracksToCenter { get; set; } = new Area(Regions.HumanBarracksToCenter);
   public static Area HumanBarracksToCenterSpawn { get; set; } = new Area(Regions.HumanBarracksToCenterSpawn);
