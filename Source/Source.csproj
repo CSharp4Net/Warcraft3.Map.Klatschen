@@ -22,4 +22,7 @@
 		<PackageReference Include="WCSharp.Sync" Version="3.1.0" />
 		<PackageReference Include="WCSharp.W3MMD" Version="3.1.0" />
 	</ItemGroup>
+	<ItemGroup>
+	  <Folder Include="Events\HeroSelections\" />
+	</ItemGroup>
 </Project>

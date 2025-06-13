@@ -12,7 +12,7 @@ STRING 3
 {
 Choose one of 12 heroes and fight for your team. Invest your gold wisely in items, research, upgrades or mercenaries - many paths lead to victory or defeat.
 
-Version 1.3.0
+Version 1.4.0
 }
 
 STRING 4
@@ -77,7 +77,7 @@ STRING 65
 {
 Choose one of 12 heroes and fight for your team. Invest your gold wisely in items, research, upgrades or mercenaries - many paths lead to victory or defeat.
 
-Version 1.3.0
+Version 1.4.0
 }
 
 STRING 73
@@ -866,24 +866,6 @@ STRING 1164
 (Hero 10)
 }
 
-STRING 1196
-// Abilities: A00S (Kaboom!), EditorSuffix (Editor Suffix)
-{
-(Hero spell - Stufe 2)
-}
-
-STRING 1198
-// Abilities: A00U (Kaboom!), EditorSuffix (Editor Suffix)
-{
-(Hero spell - Stufe 3)
-}
-
-STRING 1200
-// Abilities: A00T (Kaboom!), EditorSuffix (Editor Suffix)
-{
-(Hero spell - Stufe 1)
-}
-
 STRING 1212
 // Abilities: A00R (Pocket Factory), Tip (Tooltip - Normal)
 {
@@ -1461,7 +1443,7 @@ STRING 1832
 }
 
 STRING 1861
-// Abilities: A0BA (Command Aura), EditorSuffix (Editor Suffix)
+// Abilities: A00S (Kaboom! [|cffffcc00Level 2|r]), EditorSuffix (Editor Suffix)
 {
 (Unit)
 }
@@ -1557,13 +1539,13 @@ STRING 1973
 }
 
 STRING 1976
-// Abilities: AFRG (Frost Armor), EditorSuffix (Editor Suffix)
+// Abilities: A00T (Kaboom! [|cffffcc00Level 1|r]), EditorSuffix (Editor Suffix)
 {
 (Unit)
 }
 
 STRING 1978
-// Abilities: ASCW (Crushing Wave), EditorSuffix (Editor Suffix)
+// Abilities: A00U (Kaboom! [|cffffcc00Level 3|r]), EditorSuffix (Editor Suffix)
 {
 (Unit)
 }
@@ -2091,25 +2073,25 @@ Wertet die Reiter eurer Streitmacht auf die nächste Stufe auf, wodurch sie wese
 }
 
 STRING 2658
-// Abilities: A00V (Entangling Roots), EditorSuffix (Editor Suffix)
+// Abilities: A0BA (Command Aura), EditorSuffix (Editor Suffix)
 {
 (Unit)
 }
 
 STRING 2660
-// Abilities: A00W (Firebolt), EditorSuffix (Editor Suffix)
+// Abilities: AFRG (Frost Armor), EditorSuffix (Editor Suffix)
 {
 (Unit)
 }
 
 STRING 2661
-// Abilities: A01C (Cripple), EditorSuffix (Editor Suffix)
+// Abilities: ASCW (Crushing Wave), EditorSuffix (Editor Suffix)
 {
 (Unit)
 }
 
 STRING 2664
-// Abilities: A01D (Unholy Aura), EditorSuffix (Editor Suffix)
+// Abilities: A00V (Entangling Roots), EditorSuffix (Editor Suffix)
 {
 (Unit)
 }
@@ -2259,31 +2241,31 @@ STRING 2815
 }
 
 STRING 2816
-// Abilities: A0PF (Permanent Immolation), EditorSuffix (Editor Suffix)
+// Abilities: A00W (Firebolt), EditorSuffix (Editor Suffix)
 {
 (Unit)
 }
 
 STRING 2819
-// Abilities: A0FO (Breath of Fire), EditorSuffix (Editor Suffix)
+// Abilities: A01C (Cripple), EditorSuffix (Editor Suffix)
 {
 (Unit)
 }
 
 STRING 2857
-// Abilities: A0SR (Silence), EditorSuffix (Editor Suffix)
+// Abilities: A01D (Unholy Aura), EditorSuffix (Editor Suffix)
 {
 (Unit)
 }
 
 STRING 2859
-// Abilities: A0MV (Devour Magic), EditorSuffix (Editor Suffix)
+// Abilities: A0PF (Permanent Immolation), EditorSuffix (Editor Suffix)
 {
 (Unit)
 }
 
 STRING 2861
-// Abilities: ASSG (Shadow Strike), EditorSuffix (Editor Suffix)
+// Abilities: A0FO (Breath of Fire), EditorSuffix (Editor Suffix)
 {
 (Unit)
 }
@@ -3788,19 +3770,19 @@ Nahkampfeinheit
 }
 
 STRING 3789
-// Abilities: A028 (Hex), EditorSuffix (Editor Suffix)
+// Abilities: A0SR (Silence), EditorSuffix (Editor Suffix)
 {
 (Unit)
 }
 
 STRING 3790
-// Abilities: A029 (Curse), EditorSuffix (Editor Suffix)
+// Abilities: A0MV (Devour Magic), EditorSuffix (Editor Suffix)
 {
 (Unit)
 }
 
 STRING 3793
-// Abilities: A02A (Carrion Swarm), EditorSuffix (Editor Suffix)
+// Abilities: ASSG (Shadow Strike), EditorSuffix (Editor Suffix)
 {
 (Unit)
 }
@@ -6237,12 +6219,6 @@ STRING 4468
 Townportal
 }
 
-STRING 4469
-// Abilities: A00M (Townportal), Ubertip (Tooltip - Normal - Extended)
-{
-Teleports the hero and up to <A00M,DataA1> allied units near him to a selected allied main building.
-}
-
 STRING 4470
 // Abilities: A021 (Cloak of Flames), Name (Name)
 {
@@ -6598,19 +6574,19 @@ Slams the ground, dealing <A008,DataA1> damage to nearby enemy land units and st
 }
 
 STRING 4529
-// Abilities: A00S (Kaboom!), Ubertip (Tooltip - Normal - Extended)
+// Abilities: A00S (Kaboom! [|cffffcc00Level 2|r]), Ubertip (Tooltip - Normal - Extended)
 {
 Deals <A00S,DataB1> damage in a small area.
 }
 
 STRING 4530
-// Abilities: A00T (Kaboom!), Ubertip (Tooltip - Normal - Extended)
+// Abilities: A00T (Kaboom! [|cffffcc00Level 1|r]), Ubertip (Tooltip - Normal - Extended)
 {
 Deals <A00T,DataB1> damage in a small area.
 }
 
 STRING 4531
-// Abilities: A00U (Kaboom!), Ubertip (Tooltip - Normal - Extended)
+// Abilities: A00U (Kaboom! [|cffffcc00Level 3|r]), Ubertip (Tooltip - Normal - Extended)
 {
 Deals <A00U,DataB1> damage in a small area.
 }
@@ -13927,5 +13903,503 @@ STRING 5761
 // Units: h02U (Nature tower), Name (Name)
 {
 Nature tower
+}
+
+STRING 5762
+// Abilities: AFST (Flame Strike), Researchubertip (Tooltip - Learn - Extended)
+{
+Conjures a pillar of fire which damages ground units in a target area over time.
+}
+
+STRING 5763
+// Abilities: AFST (Flame Strike), Ubertip (Tooltip - Normal - Extended)
+{
+Conjures a pillar of flame that burns ground units for <AFST,DataA1> damage a second for <AFST,Dur1> seconds. As the pillar of flame subsides, units within the fire continue to take minor damage.
+}
+
+STRING 5764
+// Abilities: AFST (Flame Strike), Ubertip (Tooltip - Normal - Extended)
+{
+Conjures a pillar of flame that burns ground units for <AFST,DataA2> damage a second for <AFST,Dur2> seconds. As the pillar of flame subsides, units within the fire continue to take minor damage.
+}
+
+STRING 5765
+// Abilities: AFST (Flame Strike), Ubertip (Tooltip - Normal - Extended)
+{
+Conjures a pillar of flame that burns ground units for <AFST,DataA3> damage a second for <AFST,Dur3> seconds. As the pillar of flame subsides, units within the fire continue to take minor damage.
+}
+
+STRING 5766
+// Abilities: AFST (Flame Strike), Tip (Tooltip - Normal)
+{
+Flame Strike - [|cffffcc00Level 4|r]
+}
+
+STRING 5767
+// Abilities: AFST (Flame Strike), Tip (Tooltip - Normal)
+{
+Flame Strike - [|cffffcc00Level 5|r]
+}
+
+STRING 5768
+// Abilities: AFST (Flame Strike), Tip (Tooltip - Normal)
+{
+Flame Strike - [|cffffcc00Level 6|r]
+}
+
+STRING 5769
+// Abilities: AFST (Flame Strike), Tip (Tooltip - Normal)
+{
+Flame Strike - [|cffffcc00Level 7|r]
+}
+
+STRING 5770
+// Abilities: AFST (Flame Strike), Tip (Tooltip - Normal)
+{
+Flame Strike - [|cffffcc00Level 8|r]
+}
+
+STRING 5771
+// Abilities: AFST (Flame Strike), Tip (Tooltip - Normal)
+{
+Flame Strike - [|cffffcc00Level 9|r]
+}
+
+STRING 5772
+// Abilities: AFST (Flame Strike), Tip (Tooltip - Normal)
+{
+Flame Strike - [|cffffcc00Level 10|r]
+}
+
+STRING 5773
+// Abilities: AFST (Flame Strike), Ubertip (Tooltip - Normal - Extended)
+{
+Conjures a pillar of flame that burns ground units for <AFST,DataA4> damage a second for <AFST,Dur4> seconds. As the pillar of flame subsides, units within the fire continue to take minor damage.
+}
+
+STRING 5774
+// Abilities: AFST (Flame Strike), Ubertip (Tooltip - Normal - Extended)
+{
+Conjures a pillar of flame that burns ground units for <AFST,DataA5> damage a second for <AFST,Dur5> seconds. As the pillar of flame subsides, units within the fire continue to take minor damage.
+}
+
+STRING 5775
+// Abilities: AFST (Flame Strike), Ubertip (Tooltip - Normal - Extended)
+{
+Conjures a pillar of flame that burns ground units for <AFST,DataA6> damage a second for <AFST,Dur6> seconds. As the pillar of flame subsides, units within the fire continue to take minor damage.
+}
+
+STRING 5776
+// Abilities: AFST (Flame Strike), Ubertip (Tooltip - Normal - Extended)
+{
+Conjures a pillar of flame that burns ground units for <AFST,DataA7> damage a second for <AFST,Dur7> seconds. As the pillar of flame subsides, units within the fire continue to take minor damage.
+}
+
+STRING 5777
+// Abilities: AFST (Flame Strike), Ubertip (Tooltip - Normal - Extended)
+{
+Conjures a pillar of flame that burns ground units for <AFST,DataA8> damage a second for <AFST,Dur8> seconds. As the pillar of flame subsides, units within the fire continue to take minor damage.
+}
+
+STRING 5778
+// Abilities: AFST (Flame Strike), Ubertip (Tooltip - Normal - Extended)
+{
+Conjures a pillar of flame that burns ground units for <AFST,DataA9> damage a second for <AFST,Dur9> seconds. As the pillar of flame subsides, units within the fire continue to take minor damage.
+}
+
+STRING 5779
+// Abilities: AFST (Flame Strike), Ubertip (Tooltip - Normal - Extended)
+{
+Conjures a pillar of flame that burns ground units for <AFST,DataA10> damage a second for <AFST,Dur10> seconds. As the pillar of flame subsides, units within the fire continue to take minor damage.
+}
+
+STRING 5780
+// Abilities: AFST (Flame Strike), EditorSuffix (Editor Suffix)
+{
+(Hero 10)
+}
+
+STRING 5781
+// Abilities: ABNS (Banish), EditorSuffix (Editor Suffix)
+{
+(Hero 10)
+}
+
+STRING 5782
+// Abilities: ABNS (Banish), Researchubertip (Tooltip - Learn - Extended)
+{
+Turns a non-mechanical unit ethereal and slows its movement speed by <ABNS,DataA1,%>% to <ABNS,DataA10,%>%  for a short duration. Ethereal creatures cannot attack, but they can cast spells and certain spells cast upon them will have a greater effect.
+}
+
+STRING 5783
+// Abilities: ABNS (Banish), Ubertip (Tooltip - Normal - Extended)
+{
+Turns a unit ethereal and slows its movement speed by <ABNS,DataA1,%>% for <ABNS,Dur1> seconds. Ethereal creatures cannot attack, but they can cast spells and certain spells cast upon them will have a greater effect.
+}
+
+STRING 5784
+// Abilities: ABNS (Banish), Ubertip (Tooltip - Normal - Extended)
+{
+Turns a unit ethereal and slows its movement speed by <ABNS,DataA2,%>% for <ABNS,Dur2> seconds. Ethereal creatures cannot attack, but they can cast spells and certain spells cast upon them will have a greater effect.
+}
+
+STRING 5785
+// Abilities: ABNS (Banish), Ubertip (Tooltip - Normal - Extended)
+{
+Turns a unit ethereal and slows its movement speed by <ABNS,DataA3,%>% for <ABNS,Dur3> seconds. Ethereal creatures cannot attack, but they can cast spells and certain spells cast upon them will have a greater effect.
+}
+
+STRING 5786
+// Abilities: ABNS (Banish), Ubertip (Tooltip - Normal - Extended)
+{
+Turns a unit ethereal and slows its movement speed by <ABNS,DataA4,%>% for <ABNS,Dur4> seconds. Ethereal creatures cannot attack, but they can cast spells and certain spells cast upon them will have a greater effect.
+}
+
+STRING 5787
+// Abilities: ABNS (Banish), Ubertip (Tooltip - Normal - Extended)
+{
+Turns a unit ethereal and slows its movement speed by <ABNS,DataA5,%>% for <ABNS,Dur5> seconds. Ethereal creatures cannot attack, but they can cast spells and certain spells cast upon them will have a greater effect.
+}
+
+STRING 5788
+// Abilities: ABNS (Banish), Ubertip (Tooltip - Normal - Extended)
+{
+Turns a unit ethereal and slows its movement speed by <ABNS,DataA6,%>% for <ABNS,Dur6> seconds. Ethereal creatures cannot attack, but they can cast spells and certain spells cast upon them will have a greater effect.
+}
+
+STRING 5789
+// Abilities: ABNS (Banish), Ubertip (Tooltip - Normal - Extended)
+{
+Turns a unit ethereal and slows its movement speed by <ABNS,DataA7,%>% for <ABNS,Dur7> seconds. Ethereal creatures cannot attack, but they can cast spells and certain spells cast upon them will have a greater effect.
+}
+
+STRING 5790
+// Abilities: ABNS (Banish), Ubertip (Tooltip - Normal - Extended)
+{
+Turns a unit ethereal and slows its movement speed by <ABNS,DataA8,%>% for <ABNS,Dur8> seconds. Ethereal creatures cannot attack, but they can cast spells and certain spells cast upon them will have a greater effect.
+}
+
+STRING 5791
+// Abilities: ABNS (Banish), Ubertip (Tooltip - Normal - Extended)
+{
+Turns a unit ethereal and slows its movement speed by <ABNS,DataA9,%>% for <ABNS,Dur9> seconds. Ethereal creatures cannot attack, but they can cast spells and certain spells cast upon them will have a greater effect.
+}
+
+STRING 5792
+// Abilities: ABNS (Banish), Ubertip (Tooltip - Normal - Extended)
+{
+Turns a unit ethereal and slows its movement speed by <ABNS,DataA10,%>% for <ABNS,Dur10> seconds. Ethereal creatures cannot attack, but they can cast spells and certain spells cast upon them will have a greater effect.
+}
+
+STRING 5793
+// Abilities: ABNS (Banish), Tip (Tooltip - Normal)
+{
+Banish - [|cffffcc00Level 4|r]
+}
+
+STRING 5794
+// Abilities: ABNS (Banish), Tip (Tooltip - Normal)
+{
+Banish - [|cffffcc00Level 5|r]
+}
+
+STRING 5795
+// Abilities: ABNS (Banish), Tip (Tooltip - Normal)
+{
+Banish - [|cffffcc00Level 6|r]
+}
+
+STRING 5796
+// Abilities: ABNS (Banish), Tip (Tooltip - Normal)
+{
+Banish - [|cffffcc00Level 7|r]
+}
+
+STRING 5797
+// Abilities: ABNS (Banish), Tip (Tooltip - Normal)
+{
+Banish - [|cffffcc00Level 8|r]
+}
+
+STRING 5798
+// Abilities: ABNS (Banish), Tip (Tooltip - Normal)
+{
+Banish - [|cffffcc00Level 9|r]
+}
+
+STRING 5799
+// Abilities: ABNS (Banish), Tip (Tooltip - Normal)
+{
+Banish - [|cffffcc00Level 10|r]
+}
+
+STRING 5800
+// Abilities: AMSP (Siphon Mana), Researchubertip (Tooltip - Learn - Extended)
+{
+Drains <AHdr,DataB1> to <AHdr,DataB10> mana from an enemy to the caster.
+}
+
+STRING 5801
+// Abilities: AMSP (Siphon Mana), Tip (Tooltip - Normal)
+{
+Siphon Mana - [|cffffcc00Level 4|r]
+}
+
+STRING 5802
+// Abilities: AMSP (Siphon Mana), Tip (Tooltip - Normal)
+{
+Siphon Mana - [|cffffcc00Level 5|r]
+}
+
+STRING 5803
+// Abilities: AMSP (Siphon Mana), Tip (Tooltip - Normal)
+{
+Siphon Mana - [|cffffcc00Level 6|r]
+}
+
+STRING 5804
+// Abilities: AMSP (Siphon Mana), Tip (Tooltip - Normal)
+{
+Siphon Mana - [|cffffcc00Level 7|r]
+}
+
+STRING 5805
+// Abilities: AMSP (Siphon Mana), Tip (Tooltip - Normal)
+{
+Siphon Mana - [|cffffcc00Level 8|r]
+}
+
+STRING 5806
+// Abilities: AMSP (Siphon Mana), Tip (Tooltip - Normal)
+{
+Siphon Mana - [|cffffcc00Level 9|r]
+}
+
+STRING 5807
+// Abilities: AMSP (Siphon Mana), Tip (Tooltip - Normal)
+{
+Siphon Mana - [|cffffcc00Level 10|r]
+}
+
+STRING 5808
+// Abilities: AMSP (Siphon Mana), Ubertip (Tooltip - Normal - Extended)
+{
+Transfers mana between the Blood Mage and a target. Drains <AMSP,DataB1> mana per second from an enemy, or transfers <AMSP,DataE1> mana per second to an ally.|n|nSiphon Mana can push the Blood Mage's mana over its maximum value, though excess mana drains off rapidly if not used.|nLasts <AMSP,Dur1> seconds.
+}
+
+STRING 5809
+// Abilities: AMSP (Siphon Mana), Ubertip (Tooltip - Normal - Extended)
+{
+Transfers mana between the Blood Mage and a target. Drains <AMSP,DataB2> mana per second from an enemy, or transfers <AMSP,DataE2> mana per second to an ally.|n|nSiphon Mana can push the Blood Mage's mana over its maximum value, though excess mana drains off rapidly if not used.|nLasts <AMSP,Dur2> seconds.
+}
+
+STRING 5810
+// Abilities: AMSP (Siphon Mana), Ubertip (Tooltip - Normal - Extended)
+{
+Transfers mana between the Blood Mage and a target. Drains <AMSP,DataB3> mana per second from an enemy, or transfers <AMSP,DataE3> mana per second to an ally.|n|nSiphon Mana can push the Blood Mage's mana over its maximum value, though excess mana drains off rapidly if not used.|nLasts <AMSP,Dur3> seconds.
+}
+
+STRING 5811
+// Abilities: AMSP (Siphon Mana), Ubertip (Tooltip - Normal - Extended)
+{
+Transfers mana between the Blood Mage and a target. Drains <AMSP,DataB4> mana per second from an enemy, or transfers <AMSP,DataE4> mana per second to an ally.|n|nSiphon Mana can push the Blood Mage's mana over its maximum value, though excess mana drains off rapidly if not used.|nLasts <AMSP,Dur4> seconds.
+}
+
+STRING 5812
+// Abilities: AMSP (Siphon Mana), Ubertip (Tooltip - Normal - Extended)
+{
+Transfers mana between the Blood Mage and a target. Drains <AMSP,DataB5> mana per second from an enemy, or transfers <AMSP,DataE5> mana per second to an ally.|n|nSiphon Mana can push the Blood Mage's mana over its maximum value, though excess mana drains off rapidly if not used.|nLasts <AMSP,Dur5> seconds.
+}
+
+STRING 5813
+// Abilities: AMSP (Siphon Mana), Ubertip (Tooltip - Normal - Extended)
+{
+Transfers mana between the Blood Mage and a target. Drains <AMSP,DataB6> mana per second from an enemy, or transfers <AMSP,DataE6> mana per second to an ally.|n|nSiphon Mana can push the Blood Mage's mana over its maximum value, though excess mana drains off rapidly if not used.|nLasts <AMSP,Dur6> seconds.
+}
+
+STRING 5814
+// Abilities: AMSP (Siphon Mana), Ubertip (Tooltip - Normal - Extended)
+{
+Transfers mana between the Blood Mage and a target. Drains <AMSP,DataB7> mana per second from an enemy, or transfers <AMSP,DataE7> mana per second to an ally.|n|nSiphon Mana can push the Blood Mage's mana over its maximum value, though excess mana drains off rapidly if not used.|nLasts <AMSP,Dur7> seconds.
+}
+
+STRING 5815
+// Abilities: AMSP (Siphon Mana), Ubertip (Tooltip - Normal - Extended)
+{
+Transfers mana between the Blood Mage and a target. Drains <AMSP,DataB8> mana per second from an enemy, or transfers <AMSP,DataE8> mana per second to an ally.|n|nSiphon Mana can push the Blood Mage's mana over its maximum value, though excess mana drains off rapidly if not used.|nLasts <AMSP,Dur8> seconds.
+}
+
+STRING 5816
+// Abilities: AMSP (Siphon Mana), Ubertip (Tooltip - Normal - Extended)
+{
+Transfers mana between the Blood Mage and a target. Drains <AMSP,DataB9> mana per second from an enemy, or transfers <AMSP,DataE9> mana per second to an ally.|n|nSiphon Mana can push the Blood Mage's mana over its maximum value, though excess mana drains off rapidly if not used.|nLasts <AMSP,Dur9> seconds.
+}
+
+STRING 5817
+// Abilities: AMSP (Siphon Mana), Ubertip (Tooltip - Normal - Extended)
+{
+Transfers mana between the Blood Mage and a target. Drains <AMSP,DataB10> mana per second from an enemy, or transfers <AMSP,DataE10> mana per second to an ally.|n|nSiphon Mana can push the Blood Mage's mana over its maximum value, though excess mana drains off rapidly if not used.|nLasts <AMSP,Dur10> seconds.
+}
+
+STRING 5818
+// Abilities: AMSP (Siphon Mana), EditorSuffix (Editor Suffix)
+{
+(Hero 10)
+}
+
+STRING 5819
+// Units: h02V (Phoenix [|cffffcc00Level 1|r]), EditorSuffix (Name - Editor Suffix)
+{
+(Hero spell)
+}
+
+STRING 5820
+// Units: h02V (Phoenix [|cffffcc00Level 1|r]), Name (Name)
+{
+Phoenix [|cffffcc00Level 1|r]
+}
+
+STRING 5821
+// Units: h02W (Phoenix [|cffffcc00Level 2|r]), EditorSuffix (Name - Editor Suffix)
+{
+(Hero spell)
+}
+
+STRING 5822
+// Units: h02W (Phoenix [|cffffcc00Level 2|r]), Name (Name)
+{
+Phoenix [|cffffcc00Level 2|r]
+}
+
+STRING 5823
+// Units: h02X (Phoenix [|cffffcc00Level 3|r]), EditorSuffix (Name - Editor Suffix)
+{
+(Hero spell)
+}
+
+STRING 5824
+// Units: h02X (Phoenix [|cffffcc00Level 3|r]), Name (Name)
+{
+Phoenix [|cffffcc00Level 3|r]
+}
+
+STRING 5825
+// Abilities: A00S (Kaboom! [|cffffcc00Level 2|r]), Name (Name)
+{
+Kaboom! [|cffffcc00Level 2|r]
+}
+
+STRING 5826
+// Abilities: A00T (Kaboom! [|cffffcc00Level 1|r]), Name (Name)
+{
+Kaboom! [|cffffcc00Level 1|r]
+}
+
+STRING 5827
+// Abilities: A00U (Kaboom! [|cffffcc00Level 3|r]), Name (Name)
+{
+Kaboom! [|cffffcc00Level 3|r]
+}
+
+STRING 5828
+// Abilities: A028 (Hex), EditorSuffix (Editor Suffix)
+{
+(Unit)
+}
+
+STRING 5829
+// Abilities: A029 (Curse), EditorSuffix (Editor Suffix)
+{
+(Unit)
+}
+
+STRING 5830
+// Abilities: A02A (Carrion Swarm), EditorSuffix (Editor Suffix)
+{
+(Unit)
+}
+
+STRING 5833
+// Abilities: APHX (Phoenix), Tip (Tooltip - Normal)
+{
+Phoenix
+}
+
+STRING 5834
+// Abilities: APHX (Phoenix), Tip (Tooltip - Normal)
+{
+Phoenix
+}
+
+STRING 5835
+// Abilities: APXF (Phoenix Fire [|cffffcc00Level 1|r]), EditorSuffix (Editor Suffix)
+{
+(Unit)
+}
+
+STRING 5836
+// Abilities: APXF (Phoenix Fire [|cffffcc00Level 1|r]), Name (Name)
+{
+Phoenix Fire [|cffffcc00Level 1|r]
+}
+
+STRING 5837
+// Abilities: APYF (Phoenix Fire [|cffffcc00Level 2|r]), EditorSuffix (Editor Suffix)
+{
+(Unit)
+}
+
+STRING 5838
+// Abilities: APYF (Phoenix Fire [|cffffcc00Level 2|r]), Name (Name)
+{
+Phoenix Fire [|cffffcc00Level 2|r]
+}
+
+STRING 5839
+// Abilities: APZF (Phoenix Fire [|cffffcc00Level 3|r]), EditorSuffix (Editor Suffix)
+{
+(Unit)
+}
+
+STRING 5840
+// Abilities: APZF (Phoenix Fire [|cffffcc00Level 3|r]), Name (Name)
+{
+Phoenix Fire [|cffffcc00Level 3|r]
+}
+
+STRING 5841
+// Abilities: APHX (Phoenix), EditorSuffix (Editor Suffix)
+{
+(Hero 3)
+}
+
+STRING 5842
+// Units: nCOP (Circle of Power), EditorSuffix (Name - Editor Suffix)
+{
+(Hero Selection)
+}
+
+STRING 5843
+// Abilities: APHX (Phoenix), Ubertip (Tooltip - Normal - Extended)
+{
+|cffff0000Ultimate Ability|r|n|nSummons a powerful Phoenix [|cffffcc00Level 2|r]. The Phoenix burns with such intensity that it damages itself and nearby enemy units. Has Magic and Spell Immunity, and Resistant Skin. When a Phoenix dies, it creates an egg that will hatch into a Phoenix. |n|n|cffffcc00Attacks land and air units.|r
+}
+
+STRING 5844
+// Abilities: APHX (Phoenix), Ubertip (Tooltip - Normal - Extended)
+{
+|cffff0000Ultimate Ability|r|n|nSummons a powerful Phoenix [|cffffcc00Level 3|r]. The Phoenix burns with such intensity that it damages itself and nearby enemy units. Has Magic and Spell Immunity, and Resistant Skin. When a Phoenix dies, it creates an egg that will hatch into a Phoenix. |n|n|cffffcc00Attacks land and air units.|r
+}
+
+STRING 5845
+// Abilities: APHX (Phoenix), Researchubertip (Tooltip - Learn - Extended)
+{
+|cffff0000Ultimate Ability|r|n|nSummons a powerful Phoenix. The Phoenix burns with such intensity that it damages itself and nearby enemy units. Has Magic and Spell Immunity, and Resistant Skin. When a Phoenix dies, it creates an egg that will hatch into a Phoenix. |n|n|cffffcc00Attacks land and air units.|r
+}
+
+STRING 5846
+// Abilities: APHX (Phoenix), Ubertip (Tooltip - Normal - Extended)
+{
+|cffff0000Ultimate Ability|r|n|nSummons a powerful Phoenix [|cffffcc00Level 1|r]. The Phoenix burns with such intensity that it damages itself and nearby enemy units. Has Magic and Spell Immunity, and Resistant Skin. When a Phoenix dies, it creates an egg that will hatch into a Phoenix. |n|n|cffffcc00Attacks land and air units.|r
 }
 

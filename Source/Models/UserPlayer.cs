@@ -38,9 +38,13 @@ namespace Source.Models
       unit unit = Common.CreateUnitAtLoc(Wc3Player, unitId, spawnArea.Wc3CenterLocation, 0f);
 
       if (HeroLevelCounter > 0)
+        // Ggf. Level des vorherigen Helden wiederherstellen
         unit.HeroLevel = HeroLevelCounter;
 
+      // Spieler-Kamera auf Helden fokussieren
       ApplyCamera(spawnArea);
+
+      // Helden auswählen
       Blizzard.SelectUnitForPlayerSingle(unit, Wc3Player);
     }
 

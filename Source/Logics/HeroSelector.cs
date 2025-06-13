@@ -53,5 +53,46 @@ namespace Source.Logics
 
       user.CreateHero(soldUnitId, spawnArea);
     }
+
+    internal static void HandleHeroSelected(unit selectingUnit, int heroUnitTypeId)
+    {
+      player player = selectingUnit.Owner;
+      int playerId = player.Id;
+
+      // Käufer-Einheit töten
+      selectingUnit.Kill();
+
+      Area spawnArea = null;
+
+      if (Program.Humans.ContainsPlayer(playerId, out UserPlayer user))
+      {
+        spawnArea = Areas.HumanBaseHeroSpawn;
+      }
+      else if (Program.Orcs.ContainsPlayer(playerId, out user))
+      {
+        spawnArea = Areas.OrcBaseHeroSpawn;
+      }
+      else if (Program.Elves.ContainsPlayer(playerId, out user))
+      {
+        spawnArea = Areas.ElfBaseHeroSpawn;
+      }
+      else if (Program.Undeads.ContainsPlayer(playerId, out user))
+      {
+        spawnArea = Areas.UndeadBaseHeroSpawn;
+      }
+      else
+        Program.ShowDebugMessage("UserHero.OnBuyed", $"Player {player.Name} of buying unit not found in teams!");
+
+      if (user == null)
+        return;
+
+#if DEBUG
+      //spawnArea = Areas.TestArea2;
+      user.HeroLevelCounter = 50;
+      user.Wc3Player.Gold += 50000;
+#endif
+
+      user.CreateHero(heroUnitTypeId, spawnArea);
+    }
   }
 }

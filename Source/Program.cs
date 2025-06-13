@@ -3,6 +3,7 @@ using Source.Events;
 using Source.Events.Buildings;
 using Source.Events.Periodic;
 using Source.Events.Region;
+using Source.Events.Regions;
 using Source.Extensions;
 using Source.Models;
 using Source.Models.Teams;
@@ -95,6 +96,21 @@ namespace Source
 
         Legion = new LegionForce(ConstantsEx.ForceName_DemonLegion);
 
+        // Helden-Auswahl-Ereignisse registrieren
+        Areas.HeroAlchemist.RegisterOnEnter(HeroSelection.OnAlchemist);
+        Areas.HeroArchmage.RegisterOnEnter(HeroSelection.OnArchmage);
+        Areas.HeroBlademaster.RegisterOnEnter(HeroSelection.OnBlademaster);
+        Areas.HeroBloodMage.RegisterOnEnter(HeroSelection.OnBloodMage);
+        Areas.HeroBrewmaster.RegisterOnEnter(HeroSelection.OnBrewmaster);
+        Areas.HeroDarkRanger.RegisterOnEnter(HeroSelection.OnDarkRanger);
+        Areas.HeroFirelord.RegisterOnEnter(HeroSelection.OnFirelord);
+        Areas.HeroKeeperOfTheGrove.RegisterOnEnter(HeroSelection.OnKeeperOfTheGrove);
+        Areas.HeroMountainKing.RegisterOnEnter(HeroSelection.OnMountainKing);
+        Areas.HeroPitLord.RegisterOnEnter(HeroSelection.OnPitLord);
+        Areas.HeroSeaWitch.RegisterOnEnter(HeroSelection.OnSeaWitch);
+        Areas.HeroShadowHunter.RegisterOnEnter(HeroSelection.OnShadowHunter);
+        Areas.HeroTinker.RegisterOnEnter(HeroSelection.OnTinker);
+
         // Regions-Ereignisse registrieren für automatische Einheitenbewegungen:
         // Wenn feindliche Einheiten in die Regionen treten, welche von zerstörten Gebäuden freigegeben werden.
         Areas.HumanBase.RegisterOnEnter(HumanBase.OnEnter);
@@ -130,12 +146,16 @@ namespace Source
         // Für alle Benutzer-Spieler einen Hero-Selector generieren
         foreach (UserPlayer user in AllActiveUsers)
         {
+          // Dauerhafte Spielersicht auf Heldenauswahlbereich
+          fogmodifier fogmodifier = Blizzard.CreateFogModifierRectSimple(user.Wc3Player, fogstate.Visible, Regions.HeroSelectionTotal.Rect, true);
+          fogmodifier.Start();
+
           CreateHeroSelectorForPlayerAndAdjustCamera(user);
         }
 
 #if DEBUG
-        Common.FogEnable(false);
-        Common.FogMaskEnable(false);
+        //Common.FogEnable(false);
+        //Common.FogMaskEnable(false);
 #endif
 
         var timer = Common.CreateTimer();
@@ -459,8 +479,11 @@ namespace Source
     internal static void CreateHeroSelectorForPlayerAndAdjustCamera(UserPlayer user)
     {
       SpawnedUnit unit = user.CreateUnit(Constants.UNIT_HEROIC_SOUL_HERO_SELECTOR, Areas.HeroSelectorSpawn);
+
+      // Spieler-Kamera auf Heldenseele fokussieren
       user.ApplyCamera(Areas.HeroSelectorSpawn);
 
+      // Heldenseele auswählen
       Blizzard.SelectUnitForPlayerSingle(unit.Wc3Unit, user.Wc3Player);
     }
 
