@@ -162,5 +162,13 @@ namespace Source.Abstracts
       spawnCommand = null;
       return Enums.ResearchType.CommonUpgrade;
     }
+
+    public virtual Enums.ItemType GetItemTypeOfItem(int itemTypeId, out AddOrUpgradeSpawnUnitCommand spawnCommand)
+    {
+      Program.ShowErrorMessage("TeamBase.\r\n", $"Method not implemented yet for player {ColorizedName}!");
+
+      spawnCommand = null;
+      return Enums.ItemType.SingleSpawnUnit;
+    }
   }
 }

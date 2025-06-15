@@ -13798,13 +13798,13 @@ Alpha in the nest. Has full hit aura and root growth.|n|n|cffffcc00Can attack gr
 }
 
 STRING 5745
-// Upgrades: R005 (Animal War Training), Ubertip (Tooltip - Extended)
+// Items: I00P (Melee Unit - [|cffffcc00Level 2|r]), Ubertip (Tooltip - Extended)
 {
 Upgrade the melee fighters in your army to the next level, making them much more effective.
 }
 
 STRING 5746
-// Upgrades: R005 (Animal War Training), Ubertip (Tooltip - Extended)
+// Items: I00Q (Melee Unit - [|cffffcc00Level 3|r]), Ubertip (Tooltip - Extended)
 {
 Upgrade the melee fighters in your army to the next level, making them much more effective.
 }
@@ -15367,5 +15367,89 @@ STRING 6031
 // Abilities: ASSW (Smash Wave), Researchhotkey (Hotkey - Learn)
 {
 C
+}
+
+STRING 6032
+// Items: I00O (War Golem), Description (Description)
+{
+War Golem
+}
+
+STRING 6033
+// Items: I00O (War Golem), Tip (Tooltip - Basic)
+{
+Summon War Golem
+}
+
+STRING 6034
+// Items: I00O (War Golem), Name (Name)
+{
+War Golem
+}
+
+STRING 6035
+// Items: I00O (War Golem), Ubertip (Tooltip - Extended)
+{
+Summons a golem that is immune to spells. The golem rushes at the enemy base and smashes everything to pieces.|n|n|cffffcc00Attacks land units.|r
+}
+
+STRING 6036
+// Items: I00P (Melee Unit - [|cffffcc00Level 2|r]), Tip (Tooltip - Basic)
+{
+Melee Unit - Upgrade to [|cffffcc00Level 2|r]
+}
+
+STRING 6037
+// Items: I00P (Melee Unit - [|cffffcc00Level 2|r]), Name (Name)
+{
+Melee Unit - [|cffffcc00Level 2|r]
+}
+
+STRING 6039
+// Upgrades: R005 (Animal War Training), Ubertip (Tooltip - Extended)
+{
+Upgrade the melee fighters in your army to the next level, making them much more effective.
+}
+
+STRING 6040
+// Items: I00Q (Melee Unit - [|cffffcc00Level 3|r]), Tip (Tooltip - Basic)
+{
+Melee Unit - Upgrade to [|cffffcc00Level 3|r]
+}
+
+STRING 6041
+// Items: I00Q (Melee Unit - [|cffffcc00Level 3|r]), Name (Name)
+{
+Melee Unit - [|cffffcc00Level 3|r]
+}
+
+STRING 6043
+// Upgrades: R005 (Animal War Training), Ubertip (Tooltip - Extended)
+{
+Upgrade the melee fighters in your army to the next level, making them much more effective.
+}
+
+STRING 6044
+// Items: I00R (Glyph of TEST), Name (Name)
+{
+Glyph of TEST
+}
+
+STRING 6045
+// Items: I00R (Glyph of TEST), Tip (Tooltip - Basic)
+{
+Buy Glyph of Sacrifice
+}
+
+STRING 6046
+// Items: I00R (Glyph of TEST), Ubertip (Tooltip - Extended)
+{
+Sacrifice the hero's body to release his soul, which can then choose a new body.
+}
+
+STRING 6047
+// Items: I00R (Glyph of TEST), Description (Description)
+{
+Sacrifice the hero's body to release his soul, which can then choose a new body.
 }
 

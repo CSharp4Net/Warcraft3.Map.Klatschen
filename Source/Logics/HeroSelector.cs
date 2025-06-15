@@ -87,7 +87,7 @@ namespace Source.Logics
         return;
 
 #if DEBUG
-      //spawnArea = Areas.TestArea2;
+      spawnArea = Areas.TestArea2;
       user.HeroLevelCounter = 50;
       user.Wc3Player.Gold += 50000;
 #endif

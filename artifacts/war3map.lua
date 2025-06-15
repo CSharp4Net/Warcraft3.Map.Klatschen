@@ -20637,7 +20637,7 @@ System.namespace("", function (namespace)
       this.OrcToUndeadInnerLine = System.new(WCSharpSharedData.Rectangle, 2, 10176, 11200, 10304, 11328)
       this.OrcToUndeadOuterLine = System.new(WCSharpSharedData.Rectangle, 2, 10176, 7104, 10304, 7232)
       this.TestArea = System.new(WCSharpSharedData.Rectangle, 2, 17280, 17280, 17408, 17408)
-      this.TestArea2 = System.new(WCSharpSharedData.Rectangle, 2, -9920, 3648, -9792, 3776)
+      this.TestArea2 = System.new(WCSharpSharedData.Rectangle, 2, -10016, 8224, -9888, 8352)
       this.UndeadBarracksToCenter = System.new(WCSharpSharedData.Rectangle, 2, 6080, -3136, 6208, -3008)
       this.UndeadBarracksToCenterSpawn = System.new(WCSharpSharedData.Rectangle, 2, 5760, -3072, 6016, -2560)
       this.UndeadBarracksToElf = System.new(WCSharpSharedData.Rectangle, 2, 4928, -7232, 5056, -7104)
@@ -20952,7 +20952,7 @@ System.import(function (out)
 end)
 System.namespace("Source.Abstracts", function (namespace)
   namespace.class("TeamBase", function (namespace)
-    local Defeat, Win, ContainsPlayer, IncreaseTechForAllPlayers, DisplayChatMessage, GetTechType, __ctor__
+    local Defeat, Win, ContainsPlayer, IncreaseTechForAllPlayers, DisplayChatMessage, GetTechType, GetItemTypeOfItem, __ctor__
     __ctor__ = function (this, wc3ComputerPlayer, teamBaseArea)
       this.Name = GetPlayerName(wc3ComputerPlayer)
 
@@ -21059,6 +21059,12 @@ System.namespace("Source.Abstracts", function (namespace)
       spawnCommand = nil
       return 0 --[[ResearchType.CommonUpgrade]], spawnCommand
     end
+    GetItemTypeOfItem = function (this, itemTypeId, spawnCommand)
+      Source.Program.ShowErrorMessage("TeamBase.\r\n", "Method not implemented yet for player " .. System.toString(this.ColorizedName) .. "!")
+
+      spawnCommand = nil
+      return 2 --[[ItemType.SingleSpawnUnit]], spawnCommand
+    end
     return {
       Defeated = false,
       Defeat = Defeat,
@@ -21067,6 +21073,7 @@ System.namespace("Source.Abstracts", function (namespace)
       IncreaseTechForAllPlayers = IncreaseTechForAllPlayers,
       DisplayChatMessage = DisplayChatMessage,
       GetTechType = GetTechType,
+      GetItemTypeOfItem = GetItemTypeOfItem,
       __ctor__ = __ctor__,
       __metadata__ = function (out)
         return {
@@ -21075,6 +21082,7 @@ System.namespace("Source.Abstracts", function (namespace)
             { "ContainsPlayer", 0x286, ContainsPlayer, System.Int32, out.Source.Models.UserPlayer, System.Boolean },
             { "Defeat", 0x6, Defeat },
             { "DisplayChatMessage", 0x106, DisplayChatMessage, System.String },
+            { "GetItemTypeOfItem", 0x286, GetItemTypeOfItem, System.Int32, out.Source.Models.AddOrUpgradeSpawnUnitCommand, System.Int32 },
             { "GetTechType", 0x386, GetTechType, System.Int32, System.Int32, out.Source.Models.SpawnUnitCommand, System.Int32 },
             { "IncreaseTechForAllPlayers", 0x206, IncreaseTechForAllPlayers, System.Int32, System.Int32 },
             { "Win", 0x6, Win }
@@ -21303,8 +21311,9 @@ System.namespace("Source.Events", function (namespace)
         end
 
         local buyedItem = GetSoldItem()
+        local sellingUnit = GetSellingUnit()
 
-        SourceLogics.UserHero.HandleItemBuyed(buyingUnit, buyedItem)
+        SourceLogics.UserHero.HandleItemBuyed(buyingUnit, buyedItem, sellingUnit)
       end, function (default)
         local ex = default
         Source.Program.ShowExceptionMessage("Unit.OnSellsItem", ex)
@@ -22733,7 +22742,7 @@ System.namespace("Source.Logics", function (namespace)
       end
 
 
-      --spawnArea = Areas.TestArea2;
+      spawnArea = Areas.TestArea2
       user.HeroLevelCounter = 50
       SetPlayerState(user.Wc3Player, PLAYER_STATE_RESOURCE_GOLD, GetPlayerState(user.Wc3Player, PLAYER_STATE_RESOURCE_GOLD) + 50000)
 
@@ -22765,7 +22774,7 @@ System.import(function (out)
 end)
 System.namespace("Source.Logics", function (namespace)
   namespace.class("Research", function (namespace)
-    local HandleResearchFinished
+    local HandleResearchFinished, HandleUpgradeItemBuyed, TryGetNextStepItem
     HandleResearchFinished = function (researchingUnit, researchedTechId)
       System.try(function ()
         local researchedTechIdCount = GetPlayerTechCount(GetOwningPlayer(researchingUnit), researchedTechId, true)
@@ -22837,12 +22846,69 @@ System.namespace("Source.Logics", function (namespace)
         Source.Program.ShowExceptionMessage("Research.OnFinished", ex)
       end)
     end
+    HandleUpgradeItemBuyed = function (buyingUnit, soldItem, sellingUnit)
+      local soldItemTypeId = GetItemTypeId(soldItem)
+
+      Source.Program.ShowDebugMessage("Remove item " .. soldItemTypeId .. " from stock of " .. System.toString(GetUnitName(sellingUnit)))
+      -- Gekaufte Upgrade-Item von soldItemTypeId entfernen
+      RemoveItemFromStock(sellingUnit, soldItemTypeId)
+
+      RemoveItemFromStock(sellingUnit, soldItemTypeId)
+
+      -- Prüfe ob es Nachfolger gibt, wenn ja zu Gebäude hinzufügen
+      --if (TryGetNextStepItem(soldItemTypeId, out int nextItemTypeId))
+      --{
+      --  Program.ShowDebugMessage($"Add item {nextItemTypeId} to stock of {sellingUnit.Name}");
+      --  sellingUnit.AddItemToStock(nextItemTypeId, 1, 1);
+      --}
+
+      local default, team = Source.Program.TryGetTeamByUnit(sellingUnit)
+      if not default then
+        Source.Program.ShowErrorMessage("UserHero.HandleItemBuyed", "Selling unit has no known team!")
+        return
+      end
+
+      local extern, building = team.Computer:IsOwnerOfBuilding(sellingUnit)
+      if not extern then
+        Source.Program.ShowErrorMessage("UserHero.HandleItemBuyed", "Spawn building which sells the item is unknown!")
+        return
+      end
+
+      Source.Program.ShowDebugMessage("Get type of upgrade item " .. soldItemTypeId)
+      local ref, command = team:GetItemTypeOfItem(soldItemTypeId)
+      local itemType = ref
+
+      if itemType == 0 --[[ItemType.Unknown]] then
+        Source.Program.ShowErrorMessage("UserHero.HandleItemBuyed", "Item type of sold upgrade item is unknown!")
+        return
+      end
+
+      Source.Program.ShowDebugMessage("Update units by item" .. "")
+      building:UpgradeSpawningUnits(command)
+    end
+    TryGetNextStepItem = function (soldItemTypeId, nextItemTypeId)
+      repeat
+        local default = soldItemTypeId
+        if default == 1227894864 --[[Constants.ITEM_MELEE_UNIT_LEVEL_2]] then
+          nextItemTypeId = 1227894865 --[[Constants.ITEM_MELEE_UNIT_LEVEL_3]]
+          break
+        else
+          nextItemTypeId = 0
+          break
+        end
+      until 1
+
+      return nextItemTypeId > 0, nextItemTypeId
+    end
     return {
       HandleResearchFinished = HandleResearchFinished,
+      HandleUpgradeItemBuyed = HandleUpgradeItemBuyed,
       __metadata__ = function (out)
         return {
           methods = {
-            { "HandleResearchFinished", 0x20C, HandleResearchFinished, out.WCSharp.Api.unit, System.Int32 }
+            { "HandleResearchFinished", 0x20C, HandleResearchFinished, out.WCSharp.Api.unit, System.Int32 },
+            { "HandleUpgradeItemBuyed", 0x30C, HandleUpgradeItemBuyed, out.WCSharp.Api.unit, out.WCSharp.Api.item, out.WCSharp.Api.unit },
+            { "TryGetNextStepItem", 0x289, TryGetNextStepItem, System.Int32, System.Int32, System.Boolean }
           },
           class = { "Research", 0x3C }
         }
@@ -22856,8 +22922,10 @@ do
 local System = System
 local WCSharpApi = WCSharp.Api
 local Source
+local SourceLogics
 System.import(function (out)
   Source = out.Source
+  SourceLogics = Source.Logics
 end)
 System.namespace("Source.Logics", function (namespace)
   namespace.class("UserHero", function (namespace)
@@ -22925,13 +22993,20 @@ System.namespace("Source.Logics", function (namespace)
         end)
       end)
     end
-    HandleItemBuyed = function (buyingUnit, soldItem)
-      local itemId = GetItemTypeId(soldItem)
+    HandleItemBuyed = function (buyingUnit, soldItem, sellingUnit)
+      local itemTypeId = GetItemTypeId(soldItem)
 
-      if itemId == 1227894832 --[[Constants.ITEM_GLYPH_OF_SACRIFICE]] then
-        local playerId = GetPlayerId(GetOwningPlayer(buyingUnit))
-        local default, user = Source.Program.TryGetUserById(playerId)
-        if default then
+      repeat
+        local default = itemTypeId
+        if default == 1227894832 --[[Constants.ITEM_GLYPH_OF_SACRIFICE]] then
+          -- Neuen Helden auswählen
+          local playerId = GetPlayerId(GetOwningPlayer(buyingUnit))
+          local extern, user = Source.Program.TryGetUserById(playerId)
+          if not extern then
+            Source.Program.ShowErrorMessage("UserHero.HandleItemBuyed", "User not foudn by player id?!")
+            break
+          end
+
           -- Merke Heldenstufe
           user.HeroLevelCounter = GetHeroLevel(buyingUnit)
           -- Entferne Käufer/Helden aus Spiel
@@ -22939,8 +23014,14 @@ System.namespace("Source.Logics", function (namespace)
 
           -- Heldenseele erstellen und Kamera verschieben
           Source.Program.CreateHeroSelectorForPlayerAndAdjustCamera(user)
+          break
+        elseif default == 1227894864 --[[Constants.ITEM_MELEE_UNIT_LEVEL_2]] or default == 1227894865 --[[Constants.ITEM_MELEE_UNIT_LEVEL_3]] then
+          -- Items für Upgrades von Unit-Spawns
+
+          SourceLogics.Research.HandleUpgradeItemBuyed(buyingUnit, soldItem, sellingUnit)
+          break
         end
-      end
+      until 1
     end
     HandleCharmCasted = function (castedAbilityId)
       System.try(function ()
@@ -23157,11 +23238,36 @@ System.namespace("Source.Logics", function (namespace)
             { "HandleCharmCasted", 0x10C, HandleCharmCasted, System.Int32 },
             { "HandleCreepSpawnBuyed", 0x30C, HandleCreepSpawnBuyed, out.WCSharp.Api.unit, out.WCSharp.Api.unit, out.WCSharp.Api.unit },
             { "HandleDied", 0x10C, HandleDied, out.WCSharp.Api.unit },
-            { "HandleItemBuyed", 0x20C, HandleItemBuyed, out.WCSharp.Api.unit, out.WCSharp.Api.item },
+            { "HandleItemBuyed", 0x30C, HandleItemBuyed, out.WCSharp.Api.unit, out.WCSharp.Api.item, out.WCSharp.Api.unit },
             { "HandleLeveled", 0x10C, HandleLeveled, out.WCSharp.Api.unit },
             { "HandleSingleSpawnBuyed", 0x30C, HandleSingleSpawnBuyed, out.WCSharp.Api.unit, out.WCSharp.Api.unit, out.WCSharp.Api.unit }
           },
           class = { "UserHero", 0x3C }
+        }
+      end
+    }
+  end)
+end)
+
+end
+do
+local System = System
+System.namespace("Source.Models", function (namespace)
+  namespace.class("SpawnUnitCommand", function (namespace)
+    return {
+      UnitSpawnType = 0,
+      UnitIdOfBuilding = 0,
+      UnitId = 0,
+      UnitIdToUpgrade = 0,
+      __metadata__ = function (out)
+        return {
+          properties = {
+            { "UnitId", 0x6, System.Int32 },
+            { "UnitIdOfBuilding", 0x6, System.Int32 },
+            { "UnitIdToUpgrade", 0x6, System.Int32 },
+            { "UnitSpawnType", 0x6, System.Int32 }
+          },
+          class = { "SpawnUnitCommand", 0x26 }
         }
       end
     }
@@ -23356,6 +23462,23 @@ System.namespace("Source.Models", function (namespace)
               { "UpgradeUnit", 0xE, System.Int32 }
             },
             class = { "ResearchType", 0x26 }
+          }
+        end
+      }
+    end)
+    namespace.enum("ItemType", function ()
+      return {
+        Unknown = 0,
+        UpgradeTeamUnits = 1,
+        SingleSpawnUnit = 2,
+        __metadata__ = function (out)
+          return {
+            fields = {
+              { "SingleSpawnUnit", 0xE, System.Int32 },
+              { "Unknown", 0xE, System.Int32 },
+              { "UpgradeTeamUnits", 0xE, System.Int32 }
+            },
+            class = { "ItemType", 0x26 }
           }
         end
       }
@@ -24355,21 +24478,21 @@ end
 do
 local System = System
 System.namespace("Source.Models", function (namespace)
-  namespace.class("SpawnUnitCommand", function (namespace)
+  namespace.class("AddOrUpgradeSpawnUnitCommand", function (namespace)
     return {
+      IsAddCommand = false,
       UnitSpawnType = 0,
-      UnitIdOfBuilding = 0,
-      UnitId = 0,
-      UnitIdToUpgrade = 0,
+      NewUnitTypeId = 0,
+      OldUnitTypeId = 0,
       __metadata__ = function (out)
         return {
           properties = {
-            { "UnitId", 0x6, System.Int32 },
-            { "UnitIdOfBuilding", 0x6, System.Int32 },
-            { "UnitIdToUpgrade", 0x6, System.Int32 },
+            { "IsAddCommand", 0x6, System.Boolean },
+            { "NewUnitTypeId", 0x6, System.Int32 },
+            { "OldUnitTypeId", 0x6, System.Int32 },
             { "UnitSpawnType", 0x6, System.Int32 }
           },
-          class = { "SpawnUnitCommand", 0x26 }
+          class = { "AddOrUpgradeSpawnUnitCommand", 0x26 }
         }
       end
     }
@@ -24390,7 +24513,8 @@ System.import(function (out)
 end)
 System.namespace("Source.Models", function (namespace)
   namespace.class("SpawnUnitsBuilding", function (namespace)
-    local AddSpawnTrigger, Destroy, RegisterOnDies, DeRegisterOnDies, AddUnitSpawn, UpgradeUnitSpawn, CreateSingleUnitSpawn, __ctor__
+    local AddSpawnTrigger, Destroy, RegisterOnDies, DeRegisterOnDies, AddUnitSpawn, UpgradeUnitSpawn, UpgradeSpawningUnits, CreateSingleUnitSpawn, 
+    __ctor__
     __ctor__ = function (this, computer, unitTypeId, creationArea, face)
       this.Wc3Unit = CreateUnitAtLoc(computer.Wc3Player, unitTypeId, creationArea.Wc3CenterLocation, face)
       this.Computer = computer
@@ -24471,6 +24595,17 @@ System.namespace("Source.Models", function (namespace)
         end
       end
     end
+    UpgradeSpawningUnits = function (this, command)
+      for _, trigger in System.each(this.SpawnTriggers) do
+        if trigger.UnitSpawnType == command.UnitSpawnType then
+          if command.IsAddCommand then
+            trigger:Add1(command.NewUnitTypeId)
+          else
+            trigger:Upgrade1(command.OldUnitTypeId, command.NewUnitTypeId)
+          end
+        end
+      end
+    end
     -- <summary>
     -- Erstellt einmalig eine Einheit, welche die feindliche Basis auf dieser Lane angreift.
     -- </summary>
@@ -24495,6 +24630,7 @@ System.namespace("Source.Models", function (namespace)
       RegisterOnDies = RegisterOnDies,
       AddUnitSpawn = AddUnitSpawn,
       UpgradeUnitSpawn = UpgradeUnitSpawn,
+      UpgradeSpawningUnits = UpgradeSpawningUnits,
       CreateSingleUnitSpawn = CreateSingleUnitSpawn,
       __ctor__ = __ctor__,
       __metadata__ = function (out)
@@ -24507,6 +24643,7 @@ System.namespace("Source.Models", function (namespace)
             { "DeRegisterOnDies", 0x1, DeRegisterOnDies },
             { "Destroy", 0x6, Destroy },
             { "RegisterOnDies", 0x106, RegisterOnDies, System.Delegate },
+            { "UpgradeSpawningUnits", 0x104, UpgradeSpawningUnits, out.Source.Models.AddOrUpgradeSpawnUnitCommand },
             { "UpgradeUnitSpawn", 0x106, UpgradeUnitSpawn, out.Source.Models.SpawnUnitCommand }
           },
           properties = {
@@ -24532,7 +24669,8 @@ System.import(function (out)
 end)
 System.namespace("Source.Models", function (namespace)
   namespace.class("SpawnUnitsTrigger", function (namespace)
-    local Run, Start, Elapsed, Stop, Add, Upgrade, __ctor__
+    local Run, Start, Elapsed, Stop, Add, Add1, Upgrade, Upgrade1, 
+    __ctor__
     -- <summary>
     -- Erstellt einen zeitgesteuertem Auslöser für das regelmäßige Erstellen von Einheiten.
     -- </summary>
@@ -24601,6 +24739,13 @@ System.namespace("Source.Models", function (namespace)
       this.UnitTypeIds:Add(spawnCommand.UnitId)
     end
     -- <summary>
+    -- Fügt der Auflistung von Einheitentyp-Ids einen Eintrag hinzu.
+    -- </summary>
+    -- <param name="unitTypeId"></param>
+    Add1 = function (this, unitTypeId)
+      this.UnitTypeIds:Add(unitTypeId)
+    end
+    -- <summary>
     -- Aktualisiert einen oder mehrere Einträge in der Auflistung von Einheitentyp-Ids.
     -- </summary>
     -- <param name="spawnCommand"></param>
@@ -24611,24 +24756,39 @@ System.namespace("Source.Models", function (namespace)
         end
       end
     end
+    -- <summary>
+    -- Aktualisiert einen oder mehrere Einträge in der Auflistung von Einheitentyp-Ids.
+    -- </summary>
+    -- <param name="spawnCommand"></param>
+    Upgrade1 = function (this, oldUnitTypeId, newUnitTypeId)
+      for i = 0, #this.UnitTypeIds - 1 do
+        if this.UnitTypeIds:get(i) == oldUnitTypeId then
+          this.UnitTypeIds:set(i, newUnitTypeId)
+        end
+      end
+    end
     return {
       Interval = 0,
       UnitSpawnType = 0,
       Run = Run,
       Stop = Stop,
       Add = Add,
+      Add1 = Add1,
       Upgrade = Upgrade,
+      Upgrade1 = Upgrade1,
       __ctor__ = __ctor__,
       __metadata__ = function (out)
         return {
           methods = {
             { ".ctor", 0x506, nil, out.Source.Models.ComputerPlayer, out.Source.Models.Area, System.Int32, out.Source.Models.Area, System.Array(System.Int32) },
             { "Add", 0x106, Add, out.Source.Models.SpawnUnitCommand },
+            { "Add", 0x106, Add1, System.Int32 },
             { "Elapsed", 0x1, Elapsed },
             { "Run", 0x106, Run, System.Single },
             { "Start", 0x1, Start },
             { "Stop", 0x6, Stop },
-            { "Upgrade", 0x106, Upgrade, out.Source.Models.SpawnUnitCommand }
+            { "Upgrade", 0x106, Upgrade, out.Source.Models.SpawnUnitCommand },
+            { "Upgrade", 0x206, Upgrade1, System.Int32, System.Int32 }
           },
           properties = {
             { "Interval", 0x1, System.Single },
@@ -24863,7 +25023,7 @@ System.import(function (out)
 end)
 System.namespace("Source.Models.Teams", function (namespace)
   namespace.class("HumansTeam", function (namespace)
-    local GetTechType, __ctor__
+    local GetTechType, GetItemTypeOfItem, __ctor__
     __ctor__ = function (this, wc3ComputerPlayer)
       System.base(this).__ctor__(this, Player(0), Areas.HumanBase)
       this.ColorizedName = "|c" .. System.toString("ffff0000" --[[ConstantsEx.ColorHexCode_Red]]) .. System.toString(GetPlayerName(wc3ComputerPlayer)) .. "|r"
@@ -24967,6 +25127,29 @@ System.namespace("Source.Models.Teams", function (namespace)
         end
       until 1
     end
+    GetItemTypeOfItem = function (this, itemTypeId, spawnCommand)
+      repeat
+        local default = itemTypeId
+        if default == 1227894864 --[[Constants.ITEM_MELEE_UNIT_LEVEL_2]] then
+          local extern = SourceModels.AddOrUpgradeSpawnUnitCommand()
+          extern.UnitSpawnType = 0 --[[SpawnInterval.Short]]
+          extern.NewUnitTypeId = 1747988547 --[[Constants.UNIT_CAPTIAN_HUMAN]]
+          extern.OldUnitTypeId = 1747988529 --[[Constants.UNIT_SOLDIER_HUMAN]]
+          spawnCommand = extern
+          return 1 --[[ItemType.UpgradeTeamUnits]], spawnCommand
+        elseif default == 1227894865 --[[Constants.ITEM_MELEE_UNIT_LEVEL_3]] then
+          local extern = SourceModels.AddOrUpgradeSpawnUnitCommand()
+          extern.UnitSpawnType = 0 --[[SpawnInterval.Short]]
+          extern.NewUnitTypeId = 1747988546 --[[Constants.UNIT_KNIGHT_HUMAN]]
+          extern.OldUnitTypeId = 1747988547 --[[Constants.UNIT_CAPTIAN_HUMAN]]
+          spawnCommand = extern
+          return 1 --[[ItemType.UpgradeTeamUnits]], spawnCommand
+        end
+      until 1
+
+      spawnCommand = nil
+      return 0 --[[ItemType.Unknown]], spawnCommand
+    end
     return {
       base = function (out)
         return {
@@ -24974,11 +25157,13 @@ System.namespace("Source.Models.Teams", function (namespace)
         }
       end,
       GetTechType = GetTechType,
+      GetItemTypeOfItem = GetItemTypeOfItem,
       __ctor__ = __ctor__,
       __metadata__ = function (out)
         return {
           methods = {
             { ".ctor", 0x106, nil, out.WCSharp.Api.player },
+            { "GetItemTypeOfItem", 0x286, GetItemTypeOfItem, System.Int32, out.Source.Models.AddOrUpgradeSpawnUnitCommand, System.Int32 },
             { "GetTechType", 0x386, GetTechType, System.Int32, System.Int32, out.Source.Models.SpawnUnitCommand, System.Int32 }
           },
           class = { "HumansTeam", 0x26 }
@@ -36818,8 +37003,10 @@ local InitCSharp = function ()
       "Source.Logics.HeroSelector",
       "Source.Logics.Research",
       "Source.Logics.UserHero",
+      "Source.Models.AddOrUpgradeSpawnUnitCommand",
       "Source.Models.Area",
       "Source.Models.ComputerPlayer",
+      "Source.Models.Enums.ItemType",
       "Source.Models.Enums.ResearchType",
       "Source.Models.Enums.SpawnInterval",
       "Source.Models.LegionForce",
@@ -37068,6 +37255,7 @@ gg_rct_UndeadToHumanOuterLine = nil
 gg_rct_UndeadToOrcInnerLine = nil
 gg_rct_UndeadToOrcOuterLine = nil
 gg_snd_blowitup_cutted = nil
+gg_trg_Untitled_Trigger_001 = nil
 gg_unit_h02U_0244 = nil
 gg_unit_NBDB_0134 = nil
 gg_unit_h00U_0179 = nil
@@ -67051,9 +67239,7 @@ function CreateNeutralPassive()
     gg_unit_h01S_0085 = CreateUnit(p, 1747988819, 15429.3, 19006.0, 270.000)
     gg_unit_h01T_0086 = CreateUnit(p, 1747988820, 15543.8, 19006.0, 270.000)
     gg_unit_H00M_0087 = CreateUnit(p, 1211117645, 16059.3, 19259.2, 270.000)
-    SetUnitState(gg_unit_H00M_0087, UNIT_STATE_MANA, 0)
     gg_unit_H01W_0088 = CreateUnit(p, 1211117911, 16055.7, 19011.1, 270.000)
-    SetUnitState(gg_unit_H01W_0088, UNIT_STATE_MANA, 0)
     gg_unit_h020_0093 = CreateUnit(p, 1747989040, 14258.2, 18489.2, 270.000)
     gg_unit_h01Y_0094 = CreateUnit(p, 1747988825, 14138.7, 18482.8, 270.000)
     gg_unit_h022_0095 = CreateUnit(p, 1747989042, 14397.3, 18495.6, 270.000)
@@ -67083,9 +67269,7 @@ function CreateNeutralPassive()
     gg_unit_h02F_0119 = CreateUnit(p, 1747989062, 15541.1, 18756.5, 270.000)
     gg_unit_h02B_0120 = CreateUnit(p, 1747989058, 15051.8, 18751.7, 270.000)
     gg_unit_H02P_0121 = CreateUnit(p, 1211118160, 16060.4, 18751.7, 270.000)
-    SetUnitState(gg_unit_H02P_0121, UNIT_STATE_MANA, 0)
     gg_unit_H02Q_0122 = CreateUnit(p, 1211118161, 16058.8, 18500.4, 270.000)
-    SetUnitState(gg_unit_H02Q_0122, UNIT_STATE_MANA, 0)
     gg_unit_N006_0123 = CreateUnit(p, 1311780918, 16059.5, 17987.9, 270.000)
     gg_unit_n01O_0126 = CreateUnit(p, 1848652111, 17222.7, 19253.2, 270.000)
     gg_unit_n014_0128 = CreateUnit(p, 1848652084, 17227.1, 19142.6, 270.000)
@@ -67345,7 +67529,7 @@ function CreateRegions()
     gg_rct_OrcToUndeadInnerLine = Rect(10176.0, 11200.0, 10304.0, 11328.0)
     gg_rct_OrcToUndeadOuterLine = Rect(10176.0, 7104.0, 10304.0, 7232.0)
     gg_rct_TestArea = Rect(17280.0, 17280.0, 17408.0, 17408.0)
-    gg_rct_TestArea2 = Rect(-9920.0, 3648.0, -9792.0, 3776.0)
+    gg_rct_TestArea2 = Rect(-10016.0, 8224.0, -9888.0, 8352.0)
     gg_rct_UndeadBarracksToCenter = Rect(6080.0, -3136.0, 6208.0, -3008.0)
     gg_rct_UndeadBarracksToCenterSpawn = Rect(5760.0, -3072.0, 6016.0, -2560.0)
     gg_rct_UndeadBarracksToElf = Rect(4928.0, -7232.0, 5056.0, -7104.0)
@@ -67368,6 +67552,14 @@ function CreateRegions()
     gg_rct_UndeadToHumanOuterLine = Rect(5056.0, -2112.0, 5184.0, -1984.0)
     gg_rct_UndeadToOrcInnerLine = Rect(10176.0, -5184.0, 10304.0, -5056.0)
     gg_rct_UndeadToOrcOuterLine = Rect(10176.0, -1088.0, 10304.0, -960.0)
+end
+
+function InitTrig_Untitled_Trigger_001()
+    gg_trg_Untitled_Trigger_001 = CreateTrigger()
+end
+
+function InitCustomTriggers()
+    InitTrig_Untitled_Trigger_001()
 end
 
 function InitCustomPlayerSlots()
@@ -67809,6 +68001,7 @@ function main()
     CreateAllUnits()
     InitBlizzard()
     InitGlobals()
+    InitCustomTriggers()
     InitCSharp()
 end
 

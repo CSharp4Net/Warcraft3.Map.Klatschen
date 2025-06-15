@@ -124,6 +124,14 @@ namespace Source.Models
     {
       UnitTypeIds.Add(spawnCommand.UnitId);
     }
+    /// <summary>
+    /// Fügt der Auflistung von Einheitentyp-Ids einen Eintrag hinzu.
+    /// </summary>
+    /// <param name="unitTypeId"></param>
+    public void Add(int unitTypeId)
+    {
+      UnitTypeIds.Add(unitTypeId);
+    }
 
     /// <summary>
     /// Aktualisiert einen oder mehrere Einträge in der Auflistung von Einheitentyp-Ids.
@@ -135,6 +143,18 @@ namespace Source.Models
       {
         if (UnitTypeIds[i] == spawnCommand.UnitIdToUpgrade)
           UnitTypeIds[i] = spawnCommand.UnitId;
+      }
+    }
+    /// <summary>
+    /// Aktualisiert einen oder mehrere Einträge in der Auflistung von Einheitentyp-Ids.
+    /// </summary>
+    /// <param name="spawnCommand"></param>
+    public void Upgrade(int oldUnitTypeId, int newUnitTypeId)
+    {
+      for (int i = 0; i < UnitTypeIds.Count; i++)
+      {
+        if (UnitTypeIds[i] == oldUnitTypeId)
+          UnitTypeIds[i] = newUnitTypeId;
       }
     }
   }

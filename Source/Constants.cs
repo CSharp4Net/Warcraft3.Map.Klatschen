@@ -167,6 +167,10 @@ public static class Constants
 	public const int ITEM_MANA_STONE = 1227894859;
 	public const int ITEM_HEALTH_STONE = 1227894860;
 	public const int ITEM_SCROLL_OF_THE_BEAST = 1227894862;
+	public const int ITEM_MELEE_UNIT_LEVEL_2 = 1227894864;
+	public const int ITEM_MELEE_UNIT_LEVEL_3 = 1227894865;
+	public const int ITEM_WAR_GOLEM = 1227894863;
+	public const int ITEM_GLYPH_OF_TEST = 1227894866;
 	public const int UNIT_DUMMY = 1848651824;
 	public const int UNIT_CASTLE_HUMAN = 1747988531;
 	public const int UNIT_WATCHTOWER_HUMAN = 1747988532;

@@ -183,8 +183,9 @@ namespace Source.Events
           return;
 
         item buyedItem = Common.GetSoldItem();
+        unit sellingUnit = Common.GetSellingUnit();
 
-        Logics.UserHero.HandleItemBuyed(buyingUnit, buyedItem);
+        Logics.UserHero.HandleItemBuyed(buyingUnit, buyedItem, sellingUnit);
       }
       catch (Exception ex)
       {

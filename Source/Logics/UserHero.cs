@@ -68,15 +68,20 @@ namespace Source.Logics
       });
     }
 
-    internal static void HandleItemBuyed(unit buyingUnit, item soldItem)
+    internal static void HandleItemBuyed(unit buyingUnit, item soldItem, unit sellingUnit)
     {
-      int itemId = soldItem.TypeId;
+      int itemTypeId = soldItem.TypeId;
 
-      if (itemId == Constants.ITEM_GLYPH_OF_SACRIFICE)
+      switch (itemTypeId)
       {
-        int playerId = buyingUnit.Owner.Id;
-        if (Program.TryGetUserById(playerId, out UserPlayer user))
-        {
+        case Constants.ITEM_GLYPH_OF_SACRIFICE: // Neuen Helden auswählen
+          int playerId = buyingUnit.Owner.Id;
+          if (!Program.TryGetUserById(playerId, out UserPlayer user))
+          {
+            Program.ShowErrorMessage("UserHero.HandleItemBuyed", "User not foudn by player id?!");
+            break;
+          }
+
           // Merke Heldenstufe
           user.HeroLevelCounter = buyingUnit.HeroLevel;
           // Entferne Käufer/Helden aus Spiel
@@ -84,7 +89,12 @@ namespace Source.Logics
 
           // Heldenseele erstellen und Kamera verschieben
           Program.CreateHeroSelectorForPlayerAndAdjustCamera(user);
-        }
+          break;
+
+        case Constants.ITEM_MELEE_UNIT_LEVEL_2: // Items für Upgrades von Unit-Spawns
+        case Constants.ITEM_MELEE_UNIT_LEVEL_3:
+          Research.HandleUpgradeItemBuyed(buyingUnit, soldItem, sellingUnit);
+          break;
       }
     }
 

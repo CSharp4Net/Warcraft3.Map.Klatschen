@@ -119,5 +119,31 @@ namespace Source.Models.Teams
           return Enums.ResearchType.CommonUpgrade;
       }
     }
+
+    public override Enums.ItemType GetItemTypeOfItem(int itemTypeId, out AddOrUpgradeSpawnUnitCommand spawnCommand)
+    {
+      switch (itemTypeId)
+      {
+        case Constants.ITEM_MELEE_UNIT_LEVEL_2:
+          spawnCommand = new AddOrUpgradeSpawnUnitCommand()
+          {
+            UnitSpawnType = Enums.SpawnInterval.Short,
+            NewUnitTypeId = Constants.UNIT_CAPTIAN_HUMAN,
+            OldUnitTypeId = Constants.UNIT_SOLDIER_HUMAN,
+          };
+          return Enums.ItemType.UpgradeTeamUnits;
+        case Constants.ITEM_MELEE_UNIT_LEVEL_3:
+          spawnCommand = new AddOrUpgradeSpawnUnitCommand()
+          {
+            UnitSpawnType = Enums.SpawnInterval.Short,
+            NewUnitTypeId = Constants.UNIT_KNIGHT_HUMAN,
+            OldUnitTypeId = Constants.UNIT_CAPTIAN_HUMAN,
+          };
+          return Enums.ItemType.UpgradeTeamUnits;
+      }
+
+      spawnCommand = null;
+      return Enums.ItemType.Unknown;
+    }
   }
 }

@@ -1,4 +1,5 @@
-﻿using Source.Models;
+﻿using Source.Abstracts;
+using Source.Models;
 using System;
 using WCSharp.Api;
 
@@ -73,6 +74,62 @@ namespace Source.Logics
       {
         Program.ShowExceptionMessage("Research.OnFinished", ex);
       }
+    }
+
+    internal static void HandleUpgradeItemBuyed(unit buyingUnit, item soldItem, unit sellingUnit)
+    {
+      int soldItemTypeId = soldItem.TypeId;
+
+      Program.ShowDebugMessage($"Remove item {soldItemTypeId} from stock of {sellingUnit.Name}");
+      // Gekaufte Upgrade-Item von soldItemTypeId entfernen
+      sellingUnit.RemoveItemFromStock(soldItemTypeId);
+
+      // Prüfe ob es Nachfolger gibt, wenn ja zu Gebäude hinzufügen
+      if (TryGetNextStepItem(soldItemTypeId, out int nextItemTypeId))
+      {
+        Program.ShowDebugMessage($"Add item {nextItemTypeId} to stock of {sellingUnit.Name}");
+        sellingUnit.AddItemToStock(nextItemTypeId, 1, 1);
+      }
+
+      if (!Program.TryGetTeamByUnit(sellingUnit, out TeamBase team))
+      {
+        Program.ShowErrorMessage("UserHero.HandleItemBuyed", "Selling unit has no known team!");
+        return;
+      }
+
+      if (!team.Computer.IsOwnerOfBuilding(sellingUnit, out SpawnUnitsBuilding building))
+      {
+        Program.ShowErrorMessage("UserHero.HandleItemBuyed", "Spawn building which sells the item is unknown!");
+        return;
+      }
+
+      Program.ShowDebugMessage($"Get type of upgrade item {soldItemTypeId}");
+      Enums.ItemType itemType = team.GetItemTypeOfItem(soldItemTypeId, out AddOrUpgradeSpawnUnitCommand command);
+
+      if (itemType == Enums.ItemType.Unknown)
+      {
+        Program.ShowErrorMessage("UserHero.HandleItemBuyed", "Item type of sold upgrade item is unknown!");
+        return;
+      }
+
+      Program.ShowDebugMessage($"Update units by item");
+      building.UpgradeSpawningUnits(command);
+    }
+
+    private static bool TryGetNextStepItem(int soldItemTypeId, out int nextItemTypeId)
+    {
+      switch (soldItemTypeId)
+      {
+        case Constants.ITEM_MELEE_UNIT_LEVEL_2:
+          nextItemTypeId = Constants.ITEM_MELEE_UNIT_LEVEL_3;
+          break;
+
+        default:
+          nextItemTypeId = 0;
+          break;
+      }
+
+      return nextItemTypeId > 0;
     }
   }
 }

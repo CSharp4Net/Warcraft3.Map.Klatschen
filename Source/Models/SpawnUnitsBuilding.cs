@@ -120,6 +120,20 @@ namespace Source.Models
       }
     }
 
+    internal void UpgradeSpawningUnits(AddOrUpgradeSpawnUnitCommand command)
+    {
+      foreach (SpawnUnitsTrigger trigger in SpawnTriggers)
+      {
+        if (trigger.UnitSpawnType == command.UnitSpawnType)
+        {
+          if (command.IsAddCommand)
+            trigger.Add(command.NewUnitTypeId);
+          else
+            trigger.Upgrade(command.OldUnitTypeId, command.NewUnitTypeId);
+        }
+      }
+    }
+
     /// <summary>
     /// Erstellt einmalig eine Einheit, welche die feindliche Basis auf dieser Lane angreift.
     /// </summary>

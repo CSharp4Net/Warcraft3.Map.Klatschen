@@ -128,6 +128,7 @@ gg_rct_UndeadToHumanOuterLine = nil
 gg_rct_UndeadToOrcInnerLine = nil
 gg_rct_UndeadToOrcOuterLine = nil
 gg_snd_blowitup_cutted = ""
+gg_trg_Untitled_Trigger_001 = nil
 function InitGlobals()
 end
 
@@ -574,9 +575,7 @@ u = BlzCreateUnitWithSkin(p, FourCC("h01R"), 15302.8, 19011.9, 270.000, FourCC("
 u = BlzCreateUnitWithSkin(p, FourCC("h01S"), 15429.3, 19006.0, 270.000, FourCC("h01S"))
 u = BlzCreateUnitWithSkin(p, FourCC("h01T"), 15543.8, 19006.0, 270.000, FourCC("h01T"))
 u = BlzCreateUnitWithSkin(p, FourCC("H00M"), 16059.3, 19259.2, 270.000, FourCC("H00M"))
-SetUnitState(u, UNIT_STATE_MANA, 0)
 u = BlzCreateUnitWithSkin(p, FourCC("H01W"), 16055.7, 19011.1, 270.000, FourCC("H01W"))
-SetUnitState(u, UNIT_STATE_MANA, 0)
 u = BlzCreateUnitWithSkin(p, FourCC("h020"), 14258.2, 18489.2, 270.000, FourCC("h020"))
 u = BlzCreateUnitWithSkin(p, FourCC("h01Y"), 14138.7, 18482.8, 270.000, FourCC("h01Y"))
 u = BlzCreateUnitWithSkin(p, FourCC("h022"), 14397.3, 18495.6, 270.000, FourCC("h022"))
@@ -606,9 +605,7 @@ u = BlzCreateUnitWithSkin(p, FourCC("h02L"), 15804.6, 18761.3, 270.000, FourCC("
 u = BlzCreateUnitWithSkin(p, FourCC("h02F"), 15541.1, 18756.5, 270.000, FourCC("h02F"))
 u = BlzCreateUnitWithSkin(p, FourCC("h02B"), 15051.8, 18751.7, 270.000, FourCC("h02B"))
 u = BlzCreateUnitWithSkin(p, FourCC("H02P"), 16060.4, 18751.7, 270.000, FourCC("H02P"))
-SetUnitState(u, UNIT_STATE_MANA, 0)
 u = BlzCreateUnitWithSkin(p, FourCC("H02Q"), 16058.8, 18500.4, 270.000, FourCC("H02Q"))
-SetUnitState(u, UNIT_STATE_MANA, 0)
 u = BlzCreateUnitWithSkin(p, FourCC("N006"), 16059.5, 17987.9, 270.000, FourCC("N006"))
 u = BlzCreateUnitWithSkin(p, FourCC("n01O"), 17222.7, 19253.2, 270.000, FourCC("n01O"))
 u = BlzCreateUnitWithSkin(p, FourCC("n014"), 17227.1, 19142.6, 270.000, FourCC("n014"))
@@ -861,7 +858,7 @@ gg_rct_OrcToHumanOuterLine = Rect(4032.0, 13248.0, 4160.0, 13376.0)
 gg_rct_OrcToUndeadInnerLine = Rect(10176.0, 11200.0, 10304.0, 11328.0)
 gg_rct_OrcToUndeadOuterLine = Rect(10176.0, 7104.0, 10304.0, 7232.0)
 gg_rct_TestArea = Rect(17280.0, 17280.0, 17408.0, 17408.0)
-gg_rct_TestArea2 = Rect(-9920.0, 3648.0, -9792.0, 3776.0)
+gg_rct_TestArea2 = Rect(-10016.0, 8224.0, -9888.0, 8352.0)
 gg_rct_UndeadBarracksToCenter = Rect(6080.0, -3136.0, 6208.0, -3008.0)
 gg_rct_UndeadBarracksToCenterSpawn = Rect(5760.0, -3072.0, 6016.0, -2560.0)
 gg_rct_UndeadBarracksToElf = Rect(4928.0, -7232.0, 5056.0, -7104.0)
@@ -884,6 +881,18 @@ gg_rct_UndeadToHumanInnerLine = Rect(8640.0, -5696.0, 8768.0, -5568.0)
 gg_rct_UndeadToHumanOuterLine = Rect(5056.0, -2112.0, 5184.0, -1984.0)
 gg_rct_UndeadToOrcInnerLine = Rect(10176.0, -5184.0, 10304.0, -5056.0)
 gg_rct_UndeadToOrcOuterLine = Rect(10176.0, -1088.0, 10304.0, -960.0)
+end
+
+function Trig_Untitled_Trigger_001_Actions()
+end
+
+function InitTrig_Untitled_Trigger_001()
+gg_trg_Untitled_Trigger_001 = CreateTrigger()
+TriggerAddAction(gg_trg_Untitled_Trigger_001, Trig_Untitled_Trigger_001_Actions)
+end
+
+function InitCustomTriggers()
+InitTrig_Untitled_Trigger_001()
 end
 
 function InitCustomPlayerSlots()
@@ -1327,6 +1336,7 @@ CreateRegions()
 CreateAllUnits()
 InitBlizzard()
 InitGlobals()
+InitCustomTriggers()
 end
 
 function config()

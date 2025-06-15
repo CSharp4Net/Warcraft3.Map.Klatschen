@@ -18,6 +18,13 @@
       UpgradeUnit = 2
     }
 
+    public enum ItemType
+    {
+      Unknown = 0,
+      UpgradeTeamUnits = 1,
+      SingleSpawnUnit = 2,
+    }
+
     /// <summary>
     /// Stellt die verschiedenen Zeitintervalle dar, in denen Einheiten automatisch gespawned werden.
     /// </summary>
