@@ -39,11 +39,11 @@ namespace Source.Models
     /// <summary>
     /// Gebiet, in dem Einheiten ryhtmisch erstellt werden.
     /// </summary>
-    private Area SpawnArea { get; init; }
+    internal Area SpawnArea { get; init; }
     /// <summary>
     /// Zielgebiet, für das erstellte Einheiten einen Angriff/Bewegen-Befehl bekommen.
     /// </summary>
-    private Area TargetArea { get; init; }
+    internal Area TargetArea { get; init; }
 
     /// <summary>
     /// Auflistung von Einheittyp-Ids, welche beim Auslösen erstelltt werden.

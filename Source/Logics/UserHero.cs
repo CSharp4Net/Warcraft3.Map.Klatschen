@@ -1,4 +1,5 @@
-﻿using Source.Models;
+﻿using Source.Abstracts;
+using Source.Models;
 using System;
 using WCSharp.Api;
 
@@ -238,6 +239,34 @@ namespace Source.Logics
       }
 
       creepCamp.Building.AddUnitToSpawnTriggers(soldUnitId);
+    }
+
+    internal static void HandleSingleSpawnBuyed(unit buyingUnit, unit soldUnit, unit sellingUnit)
+    {
+      int soldUnitId = Common.GetUnitTypeId(soldUnit);
+
+      // Gekaufte Einheit sofort entfernen
+      Common.RemoveUnit(soldUnit);
+
+      // Sicherheitshalber Verweis auf Einheit für GC freigeben
+      soldUnit.Dispose();
+      soldUnit = null;
+
+      int playerId = buyingUnit.Owner.Id;
+
+      if (!Program.TryGetTeamByUnit(sellingUnit, out TeamBase team))
+      {
+        Program.ShowErrorMessage("BarracksBuilding.OnDies", $"Building {sellingUnit.Name} not found in building lists of teams!");
+        return;
+      }
+
+      if (!team.Computer.IsOwnerOfBuilding(sellingUnit, out SpawnUnitsBuilding building))
+      {
+        Program.ShowErrorMessage("BarracksBuilding.OnDies", $"Building {sellingUnit.Name} not found in building lists of computer player {team.Computer.Wc3Player.Name}!");
+        return;
+      }
+
+      building.CreateSingleUnitSpawn(soldUnitId);
     }
 
     internal static void HandleLeveled(unit unit)

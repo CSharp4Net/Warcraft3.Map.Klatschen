@@ -15285,3 +15285,87 @@ STRING 6016
 |cffff0000Ultimate ability|r|n|nProgenerates <ACAB,DataA3> Beetle [|cffffcc00Level 3|r] from a target corpse. Beetles are permanent until killed.|n|nMaximum of <ACAB,DataE3> Beetles.
 }
 
+STRING 6017
+// Units: n02L (War Golem), EditorSuffix (Name - Editor Suffix)
+{
+(Human)
+}
+
+STRING 6019
+// Units: n02L (War Golem), Ubertip (Tooltip - Extended)
+{
+Summons a golem that is immune to spells. The golem rushes at the enemy base and smashes everything to pieces.|n|n|cffffcc00Attacks land units.|r
+}
+
+STRING 6020
+// Units: n02M (Guardian Golem), EditorSuffix (Name - Editor Suffix)
+{
+(Elf)
+}
+
+STRING 6021
+// Units: n02M (Guardian Golem), Ubertip (Tooltip - Extended)
+{
+Summons a golem that is immune to spells. The golem rushes at the enemy base and smashes everything to pieces.|n|n|cffffcc00Attacks land units.|r
+}
+
+STRING 6022
+// Units: n02M (Guardian Golem), Name (Name)
+{
+Guardian Golem
+}
+
+STRING 6023
+// Units: n02M (Guardian Golem), Tip (Tooltip - Basic)
+{
+Summon Guardian Golem
+}
+
+STRING 6024
+// Units: n02N (Flesh Golem), EditorSuffix (Name - Editor Suffix)
+{
+(Undead)
+}
+
+STRING 6025
+// Units: n02N (Flesh Golem), Ubertip (Tooltip - Extended)
+{
+Summons a golem that is immune to spells. The golem rushes at the enemy base and smashes everything to pieces.|n|n|cffffcc00Attacks land units.|r
+}
+
+STRING 6026
+// Units: n02N (Flesh Golem), Name (Name)
+{
+Flesh Golem
+}
+
+STRING 6027
+// Units: n02N (Flesh Golem), Tip (Tooltip - Basic)
+{
+Summon Flesh Golem
+}
+
+STRING 6028
+// Units: n02O (Mud Golem), EditorSuffix (Name - Editor Suffix)
+{
+(Orc)
+}
+
+STRING 6029
+// Units: n02O (Mud Golem), Ubertip (Tooltip - Extended)
+{
+Summons a golem that is immune to spells. The golem rushes at the enemy base and smashes everything to pieces.|n|n|cffffcc00Attacks land units.|r
+}
+
+STRING 6030
+// Units: n02O (Mud Golem), Name (Name)
+{
+Mud Golem
+}
+
+STRING 6031
+// Abilities: ASSW (Smash Wave), Researchhotkey (Hotkey - Learn)
+{
+C
+}
+

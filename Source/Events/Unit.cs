@@ -136,11 +136,33 @@ namespace Source.Events
           return;
         }
 
-        // TODO 001
-        //if (soldUnit.IsHero())
-        //  Logics.UserHero.HandleCreepHeroBuyed(buyingUnit, soldUnit, sellingUnit);
-        //else
-        Logics.UserHero.HandleCreepSpawnBuyed(buyingUnit, soldUnit, sellingUnit);
+        int sellingUnitTypeId = sellingUnit.UnitType;
+
+        if (sellingUnitTypeId == Constants.UNIT_BANDIT_CAMP_CREEP ||
+          sellingUnitTypeId == Constants.UNIT_CENTAUR_CAMP_CREEP || 
+          sellingUnitTypeId == Constants.UNIT_FURBOLG_CAMP_CREEP || 
+          sellingUnitTypeId == Constants.UNIT_MUR_GUL_CAMP_CREEP || 
+          sellingUnitTypeId == Constants.UNIT_NERUBIAN_CAMP_CREEP || 
+          sellingUnitTypeId == Constants.UNIT_OGRE_CAMP_CREEP || 
+          sellingUnitTypeId == Constants.UNIT_TUSKARR_CAMP_CREEP || 
+          sellingUnitTypeId == Constants.UNIT_WILDEKIN_CAMP_CREEP)
+        {
+          // Verkauf durch ein Söldner-Lager
+
+          // TODO 001
+          //if (soldUnit.IsHero())
+          //  Logics.UserHero.HandleCreepHeroBuyed(buyingUnit, soldUnit, sellingUnit);
+          //else
+          Logics.UserHero.HandleCreepSpawnBuyed(buyingUnit, soldUnit, sellingUnit);
+        }
+        else if (sellingUnitTypeId == Constants.UNIT_BARRACKS_HUMAN ||
+          sellingUnitTypeId == Constants.UNIT_BARRACKS_HUMAN ||
+          sellingUnitTypeId == Constants.UNIT_ANCIENT_OF_WAR_ELF ||
+          sellingUnitTypeId == Constants.UNIT_CRYPT_UNDEAD)
+        {
+          // Verkauf durch eine Kaserne
+          Logics.UserHero.HandleSingleSpawnBuyed(buyingUnit, soldUnit, sellingUnit);
+        }  
       }
       catch (Exception ex)
       {

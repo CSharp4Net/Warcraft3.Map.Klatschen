@@ -35,6 +35,7 @@ gg_rct_HeroArchmage = nil
 gg_rct_HeroBlademaster = nil
 gg_rct_HeroBloodMage = nil
 gg_rct_HeroBrewmaster = nil
+gg_rct_HeroCryptLord = nil
 gg_rct_HeroDarkRanger = nil
 gg_rct_HeroFirelord = nil
 gg_rct_HeroKeeperOfTheGrove = nil
@@ -44,6 +45,7 @@ gg_rct_HeroSeaWitch = nil
 gg_rct_HeroSelectionTotal = nil
 gg_rct_HeroSelectorSpawn = nil
 gg_rct_HeroShadowHunter = nil
+gg_rct_HeroTaurenChieftain = nil
 gg_rct_HeroTinker = nil
 gg_rct_HumanBarracksToCenter = nil
 gg_rct_HumanBarracksToCenterSpawn = nil
@@ -126,8 +128,6 @@ gg_rct_UndeadToHumanOuterLine = nil
 gg_rct_UndeadToOrcInnerLine = nil
 gg_rct_UndeadToOrcOuterLine = nil
 gg_snd_blowitup_cutted = ""
-gg_rct_HeroTaurenChieftain = nil
-gg_rct_HeroCryptLord = nil
 function InitGlobals()
 end
 
@@ -183,6 +183,7 @@ local unitID
 local t
 local life
 
+u = BlzCreateUnitWithSkin(p, FourCC("n02L"), 16821.3, 19262.4, 270.000, FourCC("n02L"))
 u = BlzCreateUnitWithSkin(p, FourCC("nvlw"), -10481.6, 15017.3, 144.112, FourCC("nvlw"))
 u = BlzCreateUnitWithSkin(p, FourCC("nvk2"), -10664.9, 15091.3, 180.000, FourCC("nvk2"))
 u = BlzCreateUnitWithSkin(p, FourCC("nvk2"), -10731.9, 15094.7, 0.000, FourCC("nvk2"))
@@ -259,6 +260,16 @@ u = BlzCreateUnitWithSkin(p, FourCC("h02S"), 12160.0, 14720.0, 270.000, FourCC("
 u = BlzCreateUnitWithSkin(p, FourCC("h02S"), 11648.0, 15232.0, 270.000, FourCC("h02S"))
 end
 
+function CreateUnitsForPlayer4()
+local p = Player(4)
+local u
+local unitID
+local t
+local life
+
+u = BlzCreateUnitWithSkin(p, FourCC("n02O"), 16835.8, 19002.6, 270.000, FourCC("n02O"))
+end
+
 function CreateBuildingsForPlayer5()
 local p = Player(5)
 local u
@@ -328,6 +339,16 @@ u = BlzCreateUnitWithSkin(p, FourCC("h02U"), -9472.0, -6400.0, 270.000, FourCC("
 u = BlzCreateUnitWithSkin(p, FourCC("h02U"), -10240.0, -6144.0, 270.000, FourCC("h02U"))
 end
 
+function CreateUnitsForPlayer8()
+local p = Player(8)
+local u
+local unitID
+local t
+local life
+
+u = BlzCreateUnitWithSkin(p, FourCC("n02M"), 16818.3, 18761.9, 270.000, FourCC("n02M"))
+end
+
 function CreateBuildingsForPlayer9()
 local p = Player(9)
 local u
@@ -395,6 +416,16 @@ u = BlzCreateUnitWithSkin(p, FourCC("h02T"), 12160.0, -8576.0, 270.000, FourCC("
 u = BlzCreateUnitWithSkin(p, FourCC("h02T"), 9216.0, -7168.0, 270.000, FourCC("h02T"))
 u = BlzCreateUnitWithSkin(p, FourCC("h02T"), 9472.0, -6400.0, 270.000, FourCC("h02T"))
 u = BlzCreateUnitWithSkin(p, FourCC("h02T"), 10240.0, -6144.0, 270.000, FourCC("h02T"))
+end
+
+function CreateUnitsForPlayer12()
+local p = Player(12)
+local u
+local unitID
+local t
+local life
+
+u = BlzCreateUnitWithSkin(p, FourCC("n02N"), 16822.7, 18506.3, 270.000, FourCC("n02N"))
 end
 
 function CreateBuildingsForPlayer13()
@@ -543,7 +574,9 @@ u = BlzCreateUnitWithSkin(p, FourCC("h01R"), 15302.8, 19011.9, 270.000, FourCC("
 u = BlzCreateUnitWithSkin(p, FourCC("h01S"), 15429.3, 19006.0, 270.000, FourCC("h01S"))
 u = BlzCreateUnitWithSkin(p, FourCC("h01T"), 15543.8, 19006.0, 270.000, FourCC("h01T"))
 u = BlzCreateUnitWithSkin(p, FourCC("H00M"), 16059.3, 19259.2, 270.000, FourCC("H00M"))
+SetUnitState(u, UNIT_STATE_MANA, 0)
 u = BlzCreateUnitWithSkin(p, FourCC("H01W"), 16055.7, 19011.1, 270.000, FourCC("H01W"))
+SetUnitState(u, UNIT_STATE_MANA, 0)
 u = BlzCreateUnitWithSkin(p, FourCC("h020"), 14258.2, 18489.2, 270.000, FourCC("h020"))
 u = BlzCreateUnitWithSkin(p, FourCC("h01Y"), 14138.7, 18482.8, 270.000, FourCC("h01Y"))
 u = BlzCreateUnitWithSkin(p, FourCC("h022"), 14397.3, 18495.6, 270.000, FourCC("h022"))
@@ -573,7 +606,9 @@ u = BlzCreateUnitWithSkin(p, FourCC("h02L"), 15804.6, 18761.3, 270.000, FourCC("
 u = BlzCreateUnitWithSkin(p, FourCC("h02F"), 15541.1, 18756.5, 270.000, FourCC("h02F"))
 u = BlzCreateUnitWithSkin(p, FourCC("h02B"), 15051.8, 18751.7, 270.000, FourCC("h02B"))
 u = BlzCreateUnitWithSkin(p, FourCC("H02P"), 16060.4, 18751.7, 270.000, FourCC("H02P"))
+SetUnitState(u, UNIT_STATE_MANA, 0)
 u = BlzCreateUnitWithSkin(p, FourCC("H02Q"), 16058.8, 18500.4, 270.000, FourCC("H02Q"))
+SetUnitState(u, UNIT_STATE_MANA, 0)
 u = BlzCreateUnitWithSkin(p, FourCC("N006"), 16059.5, 17987.9, 270.000, FourCC("N006"))
 u = BlzCreateUnitWithSkin(p, FourCC("n01O"), 17222.7, 19253.2, 270.000, FourCC("n01O"))
 u = BlzCreateUnitWithSkin(p, FourCC("n014"), 17227.1, 19142.6, 270.000, FourCC("n014"))
@@ -660,13 +695,6 @@ u = BlzCreateUnitWithSkin(p, FourCC("nfro"), 12512.6, -7278.3, 301.309, FourCC("
 u = BlzCreateUnitWithSkin(p, FourCC("nfro"), 10108.2, -8996.7, 128.335, FourCC("nfro"))
 u = BlzCreateUnitWithSkin(p, FourCC("nCOP"), -2880.0, 18560.0, 270.000, FourCC("nCOP"))
 u = BlzCreateUnitWithSkin(p, FourCC("nCOP"), -4800.0, 18560.0, 270.000, FourCC("nCOP"))
-u = BlzCreateUnitWithSkin(p, FourCC("nggg"), 16190.4, 16968.9, 270.000, FourCC("nggg"))
-SetUnitState(u, UNIT_STATE_MANA, 0)
-u = BlzCreateUnitWithSkin(p, FourCC("nggm"), 15937.8, 16968.9, 270.000, FourCC("nggm"))
-SetUnitState(u, UNIT_STATE_MANA, 0)
-u = BlzCreateUnitWithSkin(p, FourCC("noga"), 15679.4, 16960.9, 270.000, FourCC("noga"))
-u = BlzCreateUnitWithSkin(p, FourCC("nfgl"), 15416.5, 16960.9, 270.000, FourCC("nfgl"))
-SetUnitState(u, UNIT_STATE_MANA, 0)
 u = BlzCreateUnitWithSkin(p, FourCC("N02H"), 15559.0, 17322.6, 270.000, FourCC("N02H"))
 SetUnitState(u, UNIT_STATE_MANA, 220)
 u = BlzCreateUnitWithSkin(p, FourCC("E000"), 15935.9, 17470.3, 270.000, FourCC("E000"))
@@ -711,6 +739,9 @@ end
 
 function CreatePlayerUnits()
 CreateUnitsForPlayer0()
+CreateUnitsForPlayer4()
+CreateUnitsForPlayer8()
+CreateUnitsForPlayer12()
 end
 
 function CreateAllUnits()
@@ -1305,21 +1336,21 @@ SetPlayers(17)
 SetTeams(17)
 SetGamePlacement(MAP_PLACEMENT_TEAMS_TOGETHER)
 DefineStartLocation(0, -10240.0, 13312.0)
-DefineStartLocation(1, -18432.0, 18432.0)
-DefineStartLocation(2, -18432.0, 18432.0)
-DefineStartLocation(3, -18432.0, 18432.0)
+DefineStartLocation(1, -3264.0, 18240.0)
+DefineStartLocation(2, -3264.0, 18240.0)
+DefineStartLocation(3, -3264.0, 18240.0)
 DefineStartLocation(4, 10240.0, 13312.0)
-DefineStartLocation(5, -18432.0, 18432.0)
-DefineStartLocation(6, -18432.0, 18432.0)
-DefineStartLocation(7, -18432.0, 18432.0)
+DefineStartLocation(5, -3264.0, 18240.0)
+DefineStartLocation(6, -3264.0, 18240.0)
+DefineStartLocation(7, -3264.0, 18240.0)
 DefineStartLocation(8, -10240.0, -7168.0)
-DefineStartLocation(9, -18432.0, 18432.0)
-DefineStartLocation(10, -18432.0, 18432.0)
-DefineStartLocation(11, -18432.0, 18432.0)
+DefineStartLocation(9, -3264.0, 18240.0)
+DefineStartLocation(10, -3264.0, 18240.0)
+DefineStartLocation(11, -3264.0, 18240.0)
 DefineStartLocation(12, 10240.0, -7168.0)
-DefineStartLocation(13, -18432.0, 18432.0)
-DefineStartLocation(14, -18432.0, 18432.0)
-DefineStartLocation(15, -18432.0, 18432.0)
+DefineStartLocation(13, -3264.0, 18240.0)
+DefineStartLocation(14, -3264.0, 18240.0)
+DefineStartLocation(15, -3264.0, 18240.0)
 DefineStartLocation(16, 0.0, 3072.0)
 InitCustomPlayerSlots()
 InitCustomTeams()

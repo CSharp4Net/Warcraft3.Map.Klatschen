@@ -119,5 +119,26 @@ namespace Source.Models
           trigger.Upgrade(spawnCommand);
       }
     }
+
+    /// <summary>
+    /// Erstellt einmalig eine Einheit, welche die feindliche Basis auf dieser Lane angreift.
+    /// </summary>
+    /// <param name="unitId"></param>
+    /// <exception cref="NotImplementedException"></exception>
+    internal void CreateSingleUnitSpawn(int unitId)
+    {
+      if (SpawnTriggers.Count == 0)
+      {
+        Program.ShowErrorMessage("SpawnUnitsBuilding.CreateSingleUnitSpawn", $"Not trigger found in collection of unit {Wc3Unit.Name} from {Computer.Wc3Player.Name}");
+        return;
+      }
+
+      // Nutze erstbesten Trigger zum Abruf des Erstell- und Zielbereichs
+      SpawnUnitsTrigger trigger = SpawnTriggers[0];
+
+      SpawnedUnit unit = Computer.CreateUnit(unitId, trigger.SpawnArea);
+
+      unit.AttackMove(trigger.TargetArea);
+    }
   }
 }
