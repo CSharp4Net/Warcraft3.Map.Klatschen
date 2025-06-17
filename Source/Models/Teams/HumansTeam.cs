@@ -25,13 +25,13 @@ namespace Source.Models.Teams
           switch (techLevel)
           {
             case 1:
-              spawnCommand.UnitId = Constants.UNIT_CAPTIAN_HUMAN;
+              spawnCommand.UnitId = Constants.UNIT_CAPTAIN_HUMAN;
               spawnCommand.UnitIdToUpgrade = Constants.UNIT_SOLDIER_HUMAN;
               return Enums.ResearchType.UpgradeUnit;
 
             default:
               spawnCommand.UnitId = Constants.UNIT_KNIGHT_HUMAN;
-              spawnCommand.UnitIdToUpgrade = Constants.UNIT_CAPTIAN_HUMAN;
+              spawnCommand.UnitIdToUpgrade = Constants.UNIT_CAPTAIN_HUMAN;
               return Enums.ResearchType.UpgradeUnit;
           }
 
@@ -120,7 +120,7 @@ namespace Source.Models.Teams
       }
     }
 
-    public override Enums.ItemType GetItemTypeOfItem(int itemTypeId, out AddOrUpgradeSpawnUnitCommand spawnCommand)
+    public override Enums.UpgradeUnitByItemType GetUpgradeUnitByItemTypem(int itemTypeId, out AddOrUpgradeSpawnUnitCommand spawnCommand)
     {
       switch (itemTypeId)
       {
@@ -128,22 +128,22 @@ namespace Source.Models.Teams
           spawnCommand = new AddOrUpgradeSpawnUnitCommand()
           {
             UnitSpawnType = Enums.SpawnInterval.Short,
-            NewUnitTypeId = Constants.UNIT_CAPTIAN_HUMAN,
             OldUnitTypeId = Constants.UNIT_SOLDIER_HUMAN,
+            NewUnitTypeId = Constants.UNIT_CAPTAIN_HUMAN,
           };
-          return Enums.ItemType.UpgradeTeamUnits;
+          return Enums.UpgradeUnitByItemType.UpgradeTeamUnits;
         case Constants.ITEM_MELEE_UNIT_LEVEL_3:
           spawnCommand = new AddOrUpgradeSpawnUnitCommand()
           {
             UnitSpawnType = Enums.SpawnInterval.Short,
+            OldUnitTypeId = Constants.UNIT_CAPTAIN_HUMAN,
             NewUnitTypeId = Constants.UNIT_KNIGHT_HUMAN,
-            OldUnitTypeId = Constants.UNIT_CAPTIAN_HUMAN,
           };
-          return Enums.ItemType.UpgradeTeamUnits;
+          return Enums.UpgradeUnitByItemType.UpgradeTeamUnits;
       }
 
       spawnCommand = null;
-      return Enums.ItemType.Unknown;
+      return Enums.UpgradeUnitByItemType.Unknown;
     }
   }
 }

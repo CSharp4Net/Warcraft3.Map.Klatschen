@@ -20192,10 +20192,14 @@ System.namespace("Source", function (namespace)
         Areas.ElfBase:RegisterOnEnter(SourceEventsRegion.ElfBase.OnEnter)
         Areas.UndeadBase:RegisterOnEnter(SourceEventsRegion.UndeadBase.OnEnter)
 
+        PauseTimer(bj_stockUpdateTimer)
+        DisableTrigger(bj_stockItemPurchased)
+
         -- Allgemeine Events registrieren
         WCSharpEvents.PlayerUnitEvents.Register14(802 --[[UnitTypeEvent.BuysUnit]], SourceEvents.Unit.OnBuysUnit)
         WCSharpEvents.PlayerUnitEvents.Register14(818 --[[UnitTypeEvent.FinishesResearch]], SourceEvents.Unit.OnFinishesResearch)
         WCSharpEvents.PlayerUnitEvents.Register14(842 --[[UnitTypeEvent.SellsItem]], SourceEvents.Unit.OnSellsItem)
+        --PlayerUnitEvents.Register(ItemTypeEvent.IsSold, Item.OnIsSold);
         WCSharpEvents.PlayerUnitEvents.Register14(813 --[[UnitTypeEvent.Dies]], SourceEvents.Unit.OnDies)
         WCSharpEvents.PlayerUnitEvents.Register14(837 --[[UnitTypeEvent.ReceivesOrder]], SourceEvents.Unit.OnReceivesOrder)
         WCSharpEvents.PlayerUnitEvents.Register14(848 --[[UnitTypeEvent.SpellEffect]], SourceEvents.Unit.OnSpellEffect)
@@ -20293,7 +20297,7 @@ System.namespace("Source", function (namespace)
     end
     ConstructHumanBuildingAndTrigger = function ()
       -- Hauptgebäude
-      local building = class.Humans.Computer:CreateBuilding(1747988531 --[[Constants.UNIT_CASTLE_HUMAN]], Areas.HumanBase, 0)
+      local building = class.Humans.Computer:CreateBarrackBuilding(1747988531 --[[Constants.UNIT_CASTLE_HUMAN]], Areas.HumanBase, 0)
       building:RegisterOnDies(SourceEventsBuildings.TeamMainBuilding.OnDies)
       building:AddSpawnTrigger(Areas.HumanBaseToCenterSpawn, 1 --[[SpawnInterval.Middle]], Areas.UndeadBase, System.Array(System.Int32) { 1747988536 --[[Constants.UNIT_PRIEST_HUMAN]], 1747988554 --[[Constants.UNIT_FLYING_MACHINE_HUMAN]] }):Run(5.5)
       building:AddSpawnTrigger(Areas.HumanBaseToCenterSpawn, 2 --[[SpawnInterval.Long]], Areas.UndeadBase, System.Array.Empty(System.Int32)):Run(7.5)
@@ -20303,24 +20307,24 @@ System.namespace("Source", function (namespace)
       building:AddSpawnTrigger(Areas.HumanBaseToOrcsSpawn, 2 --[[SpawnInterval.Long]], Areas.OrcBase, System.Array.Empty(System.Int32)):Run(7.5)
 
       -- Kasernen
-      building = class.Humans.Computer:CreateBuilding(1747988535 --[[Constants.UNIT_BARRACKS_HUMAN]], Areas.HumanBarracksToCenter, 0)
+      building = class.Humans.Computer:CreateBarrackBuilding(1747988535 --[[Constants.UNIT_BARRACKS_HUMAN]], Areas.HumanBarracksToCenter, 0)
       building:RegisterOnDies(SourceEventsBuildings.TeamBarracksBuilding.OnDies)
       building:AddSpawnTrigger(Areas.HumanBarracksToCenterSpawn, 0 --[[SpawnInterval.Short]], Areas.UndeadBase, System.Array(System.Int32) { 1747988529 --[[Constants.UNIT_SOLDIER_HUMAN]], 1747988529 --[[Constants.UNIT_SOLDIER_HUMAN]] }):Run(0)
       building:AddSpawnTrigger(Areas.HumanBarracksToCenterSpawn, 1 --[[SpawnInterval.Middle]], Areas.UndeadBase, System.Array(System.Int32) { 1747988530 --[[Constants.UNIT_RIFLEMAN_HUMAN]] }):Run(1)
 
-      building = class.Humans.Computer:CreateBuilding(1747988535 --[[Constants.UNIT_BARRACKS_HUMAN]], Areas.HumanBarracksToElf, 0)
+      building = class.Humans.Computer:CreateBarrackBuilding(1747988535 --[[Constants.UNIT_BARRACKS_HUMAN]], Areas.HumanBarracksToElf, 0)
       building:RegisterOnDies(SourceEventsBuildings.TeamBarracksBuilding.OnDies)
       building:AddSpawnTrigger(Areas.HumanBarracksToElfSpawn, 0 --[[SpawnInterval.Short]], Areas.ElfBase, System.Array(System.Int32) { 1747988529 --[[Constants.UNIT_SOLDIER_HUMAN]], 1747988529 --[[Constants.UNIT_SOLDIER_HUMAN]] }):Run(0)
       building:AddSpawnTrigger(Areas.HumanBarracksToElfSpawn, 1 --[[SpawnInterval.Middle]], Areas.ElfBase, System.Array(System.Int32) { 1747988530 --[[Constants.UNIT_RIFLEMAN_HUMAN]] }):Run(1)
 
-      building = class.Humans.Computer:CreateBuilding(1747988535 --[[Constants.UNIT_BARRACKS_HUMAN]], Areas.HumanBarracksToOrcs, 0)
+      building = class.Humans.Computer:CreateBarrackBuilding(1747988535 --[[Constants.UNIT_BARRACKS_HUMAN]], Areas.HumanBarracksToOrcs, 0)
       building:RegisterOnDies(SourceEventsBuildings.TeamBarracksBuilding.OnDies)
       building:AddSpawnTrigger(Areas.HumanBarracksToOrcsSpawn, 0 --[[SpawnInterval.Short]], Areas.OrcBase, System.Array(System.Int32) { 1747988529 --[[Constants.UNIT_SOLDIER_HUMAN]], 1747988529 --[[Constants.UNIT_SOLDIER_HUMAN]] }):Run(0)
       building:AddSpawnTrigger(Areas.HumanBarracksToOrcsSpawn, 1 --[[SpawnInterval.Middle]], Areas.OrcBase, System.Array(System.Int32) { 1747988530 --[[Constants.UNIT_RIFLEMAN_HUMAN]] }):Run(1)
     end
     ConstructOrcBuildingAndTrigger = function ()
       -- Hauptgebäude
-      local building = class.Orcs.Computer:CreateBuilding(1747988570 --[[Constants.UNIT_FORTRESS_ORC]], Areas.OrcBase, 0)
+      local building = class.Orcs.Computer:CreateBarrackBuilding(1747988570 --[[Constants.UNIT_FORTRESS_ORC]], Areas.OrcBase, 0)
       building:RegisterOnDies(SourceEventsBuildings.TeamMainBuilding.OnDies)
       building:AddSpawnTrigger(Areas.OrcBaseToCenterSpawn, 1 --[[SpawnInterval.Middle]], Areas.ElfBase, System.Array(System.Int32) { 1747988818 --[[Constants.UNIT_WITCH_DOCTOR_ORC]], 1747988815 --[[Constants.UNIT_BATRIDER_ORC]] }):Run(5.5)
       building:AddSpawnTrigger(Areas.OrcBaseToCenterSpawn, 2 --[[SpawnInterval.Long]], Areas.ElfBase, System.Array.Empty(System.Int32)):Run(7.5)
@@ -20330,24 +20334,24 @@ System.namespace("Source", function (namespace)
       building:AddSpawnTrigger(Areas.OrcBaseToUndeadSpawn, 2 --[[SpawnInterval.Long]], Areas.UndeadBase, System.Array.Empty(System.Int32)):Run(7.5)
 
       -- Kasernen
-      building = class.Orcs.Computer:CreateBuilding(1747988569 --[[Constants.UNIT_BARRACKS_ORC]], Areas.OrcBarracksToCenter, 0)
+      building = class.Orcs.Computer:CreateBarrackBuilding(1747988569 --[[Constants.UNIT_BARRACKS_ORC]], Areas.OrcBarracksToCenter, 0)
       building:RegisterOnDies(SourceEventsBuildings.TeamBarracksBuilding.OnDies)
       building:AddSpawnTrigger(Areas.OrcBarracksToCenterSpawn, 0 --[[SpawnInterval.Short]], Areas.ElfBase, System.Array(System.Int32) { 1747988809 --[[Constants.UNIT_GRUNT_ORC]], 1747988809 --[[Constants.UNIT_GRUNT_ORC]] }):Run(0)
       building:AddSpawnTrigger(Areas.OrcBarracksToCenterSpawn, 1 --[[SpawnInterval.Middle]], Areas.ElfBase, System.Array(System.Int32) { 1747988812 --[[Constants.UNIT_HEADHUNTER_ORC]] }):Run(0.5)
 
-      building = class.Orcs.Computer:CreateBuilding(1747988569 --[[Constants.UNIT_BARRACKS_ORC]], Areas.OrcBarracksToHuman, 0)
+      building = class.Orcs.Computer:CreateBarrackBuilding(1747988569 --[[Constants.UNIT_BARRACKS_ORC]], Areas.OrcBarracksToHuman, 0)
       building:RegisterOnDies(SourceEventsBuildings.TeamBarracksBuilding.OnDies)
       building:AddSpawnTrigger(Areas.OrcBarracksToHumanSpawn, 0 --[[SpawnInterval.Short]], Areas.HumanBase, System.Array(System.Int32) { 1747988809 --[[Constants.UNIT_GRUNT_ORC]], 1747988809 --[[Constants.UNIT_GRUNT_ORC]] }):Run(0)
       building:AddSpawnTrigger(Areas.OrcBarracksToHumanSpawn, 1 --[[SpawnInterval.Middle]], Areas.HumanBase, System.Array(System.Int32) { 1747988812 --[[Constants.UNIT_HEADHUNTER_ORC]] }):Run(0.5)
 
-      building = class.Orcs.Computer:CreateBuilding(1747988569 --[[Constants.UNIT_BARRACKS_ORC]], Areas.OrcBarracksToUndead, 0)
+      building = class.Orcs.Computer:CreateBarrackBuilding(1747988569 --[[Constants.UNIT_BARRACKS_ORC]], Areas.OrcBarracksToUndead, 0)
       building:RegisterOnDies(SourceEventsBuildings.TeamBarracksBuilding.OnDies)
       building:AddSpawnTrigger(Areas.OrcBarracksToUndeadSpawn, 0 --[[SpawnInterval.Short]], Areas.UndeadBase, System.Array(System.Int32) { 1747988809 --[[Constants.UNIT_GRUNT_ORC]], 1747988809 --[[Constants.UNIT_GRUNT_ORC]] }):Run(0)
       building:AddSpawnTrigger(Areas.OrcBarracksToUndeadSpawn, 1 --[[SpawnInterval.Middle]], Areas.UndeadBase, System.Array(System.Int32) { 1747988812 --[[Constants.UNIT_HEADHUNTER_ORC]] }):Run(0.5)
     end
     ConstructElfBuildingAndTrigger = function ()
       -- Hauptgebäude
-      local building = class.Elves.Computer:CreateBuilding(1747988789 --[[Constants.UNIT_TREE_OF_ETERNITY_ELF]], Areas.ElfBase, 0)
+      local building = class.Elves.Computer:CreateBarrackBuilding(1747988789 --[[Constants.UNIT_TREE_OF_ETERNITY_ELF]], Areas.ElfBase, 0)
       building:RegisterOnDies(SourceEventsBuildings.TeamMainBuilding.OnDies)
       building:AddSpawnTrigger(Areas.ElfBaseToCenterSpawn, 1 --[[SpawnInterval.Middle]], Areas.OrcBase, System.Array(System.Int32) { 1747989066 --[[Constants.UNIT_DRUID_OF_THE_TALON_ELF]], 1747989060 --[[Constants.UNIT_FAERIE_DRAGON_ELF]] }):Run(5.5)
       building:AddSpawnTrigger(Areas.ElfBaseToCenterSpawn, 2 --[[SpawnInterval.Long]], Areas.OrcBase, System.Array.Empty(System.Int32)):Run(7.5)
@@ -20357,24 +20361,24 @@ System.namespace("Source", function (namespace)
       building:AddSpawnTrigger(Areas.ElfBaseToUndeadSpawn, 2 --[[SpawnInterval.Long]], Areas.UndeadBase, System.Array.Empty(System.Int32)):Run(7.5)
 
       -- Kasernen
-      building = class.Elves.Computer:CreateBuilding(1747988788 --[[Constants.UNIT_ANCIENT_OF_WAR_ELF]], Areas.ElfBarracksToCenter, 0)
+      building = class.Elves.Computer:CreateBarrackBuilding(1747988788 --[[Constants.UNIT_ANCIENT_OF_WAR_ELF]], Areas.ElfBarracksToCenter, 0)
       building:RegisterOnDies(SourceEventsBuildings.TeamBarracksBuilding.OnDies)
       building:AddSpawnTrigger(Areas.ElfBarracksToCenterSpawn, 0 --[[SpawnInterval.Short]], Areas.OrcBase, System.Array(System.Int32) { 1747988824 --[[Constants.UNIT_SENTRY_ELF]], 1747988824 --[[Constants.UNIT_SENTRY_ELF]] }):Run(0)
       building:AddSpawnTrigger(Areas.ElfBarracksToCenterSpawn, 1 --[[SpawnInterval.Middle]], Areas.OrcBase, System.Array(System.Int32) { 1747988824 --[[Constants.UNIT_SENTRY_ELF]] }):Run(0.5)
 
-      building = class.Elves.Computer:CreateBuilding(1747988788 --[[Constants.UNIT_ANCIENT_OF_WAR_ELF]], Areas.ElfBarracksToHuman, 0)
+      building = class.Elves.Computer:CreateBarrackBuilding(1747988788 --[[Constants.UNIT_ANCIENT_OF_WAR_ELF]], Areas.ElfBarracksToHuman, 0)
       building:RegisterOnDies(SourceEventsBuildings.TeamBarracksBuilding.OnDies)
       building:AddSpawnTrigger(Areas.ElfBarracksToHumanSpawn, 0 --[[SpawnInterval.Short]], Areas.HumanBase, System.Array(System.Int32) { 1747988824 --[[Constants.UNIT_SENTRY_ELF]], 1747988824 --[[Constants.UNIT_SENTRY_ELF]] }):Run(0)
       building:AddSpawnTrigger(Areas.ElfBarracksToHumanSpawn, 1 --[[SpawnInterval.Middle]], Areas.HumanBase, System.Array(System.Int32) { 1747989043 --[[Constants.UNIT_ARCHER_ELF]] }):Run(0.5)
 
-      building = class.Elves.Computer:CreateBuilding(1747988788 --[[Constants.UNIT_ANCIENT_OF_WAR_ELF]], Areas.ElfBarracksToUndead, 0)
+      building = class.Elves.Computer:CreateBarrackBuilding(1747988788 --[[Constants.UNIT_ANCIENT_OF_WAR_ELF]], Areas.ElfBarracksToUndead, 0)
       building:RegisterOnDies(SourceEventsBuildings.TeamBarracksBuilding.OnDies)
       building:AddSpawnTrigger(Areas.ElfBarracksToUndeadSpawn, 0 --[[SpawnInterval.Short]], Areas.UndeadBase, System.Array(System.Int32) { 1747988824 --[[Constants.UNIT_SENTRY_ELF]], 1747988824 --[[Constants.UNIT_SENTRY_ELF]] }):Run(0)
       building:AddSpawnTrigger(Areas.ElfBarracksToUndeadSpawn, 1 --[[SpawnInterval.Middle]], Areas.UndeadBase, System.Array(System.Int32) { 1747989043 --[[Constants.UNIT_ARCHER_ELF]] }):Run(0.5)
     end
     ConstructUndeadBuildingAndTrigger = function ()
       -- Hauptgebäude
-      local building = class.Undeads.Computer:CreateBuilding(1747988801 --[[Constants.UNIT_BLACK_CITADEL_UNDEAD]], Areas.UndeadBase, 0)
+      local building = class.Undeads.Computer:CreateBarrackBuilding(1747988801 --[[Constants.UNIT_BLACK_CITADEL_UNDEAD]], Areas.UndeadBase, 0)
       building:RegisterOnDies(SourceEventsBuildings.TeamMainBuilding.OnDies)
       building:AddSpawnTrigger(Areas.UndeadBaseToCenterSpawn, 1 --[[SpawnInterval.Middle]], Areas.HumanBase, System.Array(System.Int32) { 1747989067 --[[Constants.UNIT_SKELETAL_MAGE_UNDEAD]], 1747989061 --[[Constants.UNIT_GARGOYLE_UNDEAD]] }):Run(5.5)
       building:AddSpawnTrigger(Areas.UndeadBaseToCenterSpawn, 2 --[[SpawnInterval.Long]], Areas.HumanBase, System.Array.Empty(System.Int32)):Run(7.5)
@@ -20384,17 +20388,17 @@ System.namespace("Source", function (namespace)
       building:AddSpawnTrigger(Areas.UndeadBaseToOrcsSpawn, 2 --[[SpawnInterval.Long]], Areas.OrcBase, System.Array.Empty(System.Int32)):Run(7.5)
 
       -- Kasernen
-      building = class.Undeads.Computer:CreateBuilding(1747988805 --[[Constants.UNIT_CRYPT_UNDEAD]], Areas.UndeadBarracksToCenter, 0)
+      building = class.Undeads.Computer:CreateBarrackBuilding(1747988805 --[[Constants.UNIT_CRYPT_UNDEAD]], Areas.UndeadBarracksToCenter, 0)
       building:RegisterOnDies(SourceEventsBuildings.TeamBarracksBuilding.OnDies)
       building:AddSpawnTrigger(Areas.UndeadBarracksToCenterSpawn, 0 --[[SpawnInterval.Short]], Areas.HumanBase, System.Array(System.Int32) { 1747988825 --[[Constants.UNIT_GHOUL_UNDEAD]], 1747988825 --[[Constants.UNIT_GHOUL_UNDEAD]] }):Run(0)
       building:AddSpawnTrigger(Areas.UndeadBarracksToCenterSpawn, 1 --[[SpawnInterval.Middle]], Areas.HumanBase, System.Array(System.Int32) { 1747989044 --[[Constants.UNIT_CRYPT_FIEND_UNDEAD]] }):Run(0.5)
 
-      building = class.Undeads.Computer:CreateBuilding(1747988805 --[[Constants.UNIT_CRYPT_UNDEAD]], Areas.UndeadBarracksToElf, 0)
+      building = class.Undeads.Computer:CreateBarrackBuilding(1747988805 --[[Constants.UNIT_CRYPT_UNDEAD]], Areas.UndeadBarracksToElf, 0)
       building:RegisterOnDies(SourceEventsBuildings.TeamBarracksBuilding.OnDies)
       building:AddSpawnTrigger(Areas.UndeadBarracksToElfSpawn, 0 --[[SpawnInterval.Short]], Areas.ElfBase, System.Array(System.Int32) { 1747988825 --[[Constants.UNIT_GHOUL_UNDEAD]], 1747988825 --[[Constants.UNIT_GHOUL_UNDEAD]] }):Run(0)
       building:AddSpawnTrigger(Areas.UndeadBarracksToElfSpawn, 1 --[[SpawnInterval.Middle]], Areas.ElfBase, System.Array(System.Int32) { 1747989044 --[[Constants.UNIT_CRYPT_FIEND_UNDEAD]] }):Run(0.5)
 
-      building = class.Undeads.Computer:CreateBuilding(1747988805 --[[Constants.UNIT_CRYPT_UNDEAD]], Areas.UndeadBarracksToOrcs, 0)
+      building = class.Undeads.Computer:CreateBarrackBuilding(1747988805 --[[Constants.UNIT_CRYPT_UNDEAD]], Areas.UndeadBarracksToOrcs, 0)
       building:RegisterOnDies(SourceEventsBuildings.TeamBarracksBuilding.OnDies)
       building:AddSpawnTrigger(Areas.UndeadBarracksToOrcsSpawn, 0 --[[SpawnInterval.Short]], Areas.OrcBase, System.Array(System.Int32) { 1747988825 --[[Constants.UNIT_GHOUL_UNDEAD]], 1747988825 --[[Constants.UNIT_GHOUL_UNDEAD]] }):Run(0)
       building:AddSpawnTrigger(Areas.UndeadBarracksToOrcsSpawn, 1 --[[SpawnInterval.Middle]], Areas.OrcBase, System.Array(System.Int32) { 1747989044 --[[Constants.UNIT_CRYPT_FIEND_UNDEAD]] }):Run(0.5)
@@ -20637,7 +20641,7 @@ System.namespace("", function (namespace)
       this.OrcToUndeadInnerLine = System.new(WCSharpSharedData.Rectangle, 2, 10176, 11200, 10304, 11328)
       this.OrcToUndeadOuterLine = System.new(WCSharpSharedData.Rectangle, 2, 10176, 7104, 10304, 7232)
       this.TestArea = System.new(WCSharpSharedData.Rectangle, 2, 17280, 17280, 17408, 17408)
-      this.TestArea2 = System.new(WCSharpSharedData.Rectangle, 2, -10016, 8224, -9888, 8352)
+      this.TestArea2 = System.new(WCSharpSharedData.Rectangle, 2, -5376, 12928, -5248, 13056)
       this.UndeadBarracksToCenter = System.new(WCSharpSharedData.Rectangle, 2, 6080, -3136, 6208, -3008)
       this.UndeadBarracksToCenterSpawn = System.new(WCSharpSharedData.Rectangle, 2, 5760, -3072, 6016, -2560)
       this.UndeadBarracksToElf = System.new(WCSharpSharedData.Rectangle, 2, 4928, -7232, 5056, -7104)
@@ -20952,7 +20956,7 @@ System.import(function (out)
 end)
 System.namespace("Source.Abstracts", function (namespace)
   namespace.class("TeamBase", function (namespace)
-    local Defeat, Win, ContainsPlayer, IncreaseTechForAllPlayers, DisplayChatMessage, GetTechType, GetItemTypeOfItem, __ctor__
+    local Defeat, Win, ContainsPlayer, IncreaseTechForAllPlayers, DisplayChatMessage, GetTechType, GetUpgradeUnitByItemTypem, __ctor__
     __ctor__ = function (this, wc3ComputerPlayer, teamBaseArea)
       this.Name = GetPlayerName(wc3ComputerPlayer)
 
@@ -21059,11 +21063,11 @@ System.namespace("Source.Abstracts", function (namespace)
       spawnCommand = nil
       return 0 --[[ResearchType.CommonUpgrade]], spawnCommand
     end
-    GetItemTypeOfItem = function (this, itemTypeId, spawnCommand)
-      Source.Program.ShowErrorMessage("TeamBase.\r\n", "Method not implemented yet for player " .. System.toString(this.ColorizedName) .. "!")
+    GetUpgradeUnitByItemTypem = function (this, itemTypeId, spawnCommand)
+      Source.Program.ShowErrorMessage("TeamBase.GetUpgradeUnitByItemTypem", "Method not implemented yet for player " .. System.toString(this.ColorizedName) .. "!")
 
       spawnCommand = nil
-      return 2 --[[ItemType.SingleSpawnUnit]], spawnCommand
+      return 2 --[[UpgradeUnitByItemType.SingleSpawnUnit]], spawnCommand
     end
     return {
       Defeated = false,
@@ -21073,7 +21077,7 @@ System.namespace("Source.Abstracts", function (namespace)
       IncreaseTechForAllPlayers = IncreaseTechForAllPlayers,
       DisplayChatMessage = DisplayChatMessage,
       GetTechType = GetTechType,
-      GetItemTypeOfItem = GetItemTypeOfItem,
+      GetUpgradeUnitByItemTypem = GetUpgradeUnitByItemTypem,
       __ctor__ = __ctor__,
       __metadata__ = function (out)
         return {
@@ -21082,8 +21086,8 @@ System.namespace("Source.Abstracts", function (namespace)
             { "ContainsPlayer", 0x286, ContainsPlayer, System.Int32, out.Source.Models.UserPlayer, System.Boolean },
             { "Defeat", 0x6, Defeat },
             { "DisplayChatMessage", 0x106, DisplayChatMessage, System.String },
-            { "GetItemTypeOfItem", 0x286, GetItemTypeOfItem, System.Int32, out.Source.Models.AddOrUpgradeSpawnUnitCommand, System.Int32 },
             { "GetTechType", 0x386, GetTechType, System.Int32, System.Int32, out.Source.Models.SpawnUnitCommand, System.Int32 },
+            { "GetUpgradeUnitByItemTypem", 0x286, GetUpgradeUnitByItemTypem, System.Int32, out.Source.Models.AddOrUpgradeSpawnUnitCommand, System.Int32 },
             { "IncreaseTechForAllPlayers", 0x206, IncreaseTechForAllPlayers, System.Int32, System.Int32 },
             { "Win", 0x6, Win }
           },
@@ -21266,18 +21270,23 @@ System.namespace("Source.Events", function (namespace)
     -- Behandelt den Kaufvorgang einer Einheit.
     -- </summary>
     OnBuysUnit = function ()
-      local default = System.try(function ()
+      System.try(function ()
         local buyingUnit = GetBuyingUnit()
         local soldUnit = GetSoldUnit()
         local sellingUnit = GetSellingUnit()
 
-        if GetUnitTypeId(buyingUnit) == 1966092342 --[[Constants.UNIT_HEROIC_SOUL_HERO_SELECTOR]] then
-          -- Helden-Selector kauft Benutzerhelden
-          SourceLogics.HeroSelector.HandleHeroBuyed(buyingUnit, soldUnit)
-          return true
-        end
+        --if (Common.GetUnitTypeId(buyingUnit) == Constants.UNIT_HEROIC_SOUL_HERO_SELECTOR)
+        --{
+        --  // Helden-Selector kauft Benutzerhelden
+        --  Logics.HeroSelector.HandleHeroBuyed(buyingUnit, soldUnit);
+        --  return;
+        --}
 
         local sellingUnitTypeId = GetUnitTypeId(sellingUnit)
+
+        System.Console.WriteLine("Race of selling unit: " .. System.toString(GetUnitRace(sellingUnit)))
+        System.Console.WriteLine("Race of human: " .. System.toString(RACE_HUMAN))
+        System.Console.WriteLine("Race of other: " .. System.toString(RACE_OTHER))
 
         if sellingUnitTypeId == 1848651862 --[[Constants.UNIT_BANDIT_CAMP_CREEP]] or sellingUnitTypeId == 1848652104 --[[Constants.UNIT_CENTAUR_CAMP_CREEP]] or sellingUnitTypeId == 1848651856 --[[Constants.UNIT_FURBOLG_CAMP_CREEP]] or sellingUnitTypeId == 1848652340 --[[Constants.UNIT_MUR_GUL_CAMP_CREEP]] or sellingUnitTypeId == 1848652106 --[[Constants.UNIT_NERUBIAN_CAMP_CREEP]] or sellingUnitTypeId == 1848652342 --[[Constants.UNIT_OGRE_CAMP_CREEP]] or sellingUnitTypeId == 1848652358 --[[Constants.UNIT_TUSKARR_CAMP_CREEP]] or sellingUnitTypeId == 1848652356 --[[Constants.UNIT_WILDEKIN_CAMP_CREEP]] then
           -- Verkauf durch ein Söldner-Lager
@@ -21295,9 +21304,6 @@ System.namespace("Source.Events", function (namespace)
         local ex = default
         Source.Program.ShowExceptionMessage("Unit.OnBuysUnit", ex)
       end)
-      if default then
-        return
-      end
     end
     -- <summary>
     -- Behandelt den Gegenstandskauf einer Einheit.
@@ -22774,7 +22780,7 @@ System.import(function (out)
 end)
 System.namespace("Source.Logics", function (namespace)
   namespace.class("Research", function (namespace)
-    local HandleResearchFinished, HandleUpgradeItemBuyed, TryGetNextStepItem
+    local HandleResearchFinished, HandleUpgradeByBuyedItem, TryGetNextStepItem
     HandleResearchFinished = function (researchingUnit, researchedTechId)
       System.try(function ()
         local researchedTechIdCount = GetPlayerTechCount(GetOwningPlayer(researchingUnit), researchedTechId, true)
@@ -22846,39 +22852,37 @@ System.namespace("Source.Logics", function (namespace)
         Source.Program.ShowExceptionMessage("Research.OnFinished", ex)
       end)
     end
-    HandleUpgradeItemBuyed = function (buyingUnit, soldItem, sellingUnit)
+    HandleUpgradeByBuyedItem = function (buyingUnit, soldItem, sellingUnit)
       local soldItemTypeId = GetItemTypeId(soldItem)
 
       Source.Program.ShowDebugMessage("Remove item " .. soldItemTypeId .. " from stock of " .. System.toString(GetUnitName(sellingUnit)))
       -- Gekaufte Upgrade-Item von soldItemTypeId entfernen
-      RemoveItemFromStock(sellingUnit, soldItemTypeId)
-
-      RemoveItemFromStock(sellingUnit, soldItemTypeId)
+      RemoveItemFromStock(sellingUnit, GetItemTypeId(soldItem))
 
       -- Prüfe ob es Nachfolger gibt, wenn ja zu Gebäude hinzufügen
-      --if (TryGetNextStepItem(soldItemTypeId, out int nextItemTypeId))
-      --{
-      --  Program.ShowDebugMessage($"Add item {nextItemTypeId} to stock of {sellingUnit.Name}");
-      --  sellingUnit.AddItemToStock(nextItemTypeId, 1, 1);
-      --}
+      local default, nextItemTypeId = TryGetNextStepItem(soldItemTypeId)
+      if default then
+        Source.Program.ShowDebugMessage("Add item " .. nextItemTypeId .. " to stock of " .. System.toString(GetUnitName(sellingUnit)))
+        AddItemToStock(sellingUnit, nextItemTypeId, 1, 1)
+      end
 
-      local default, team = Source.Program.TryGetTeamByUnit(sellingUnit)
-      if not default then
+      local extern, team = Source.Program.TryGetTeamByUnit(sellingUnit)
+      if not extern then
         Source.Program.ShowErrorMessage("UserHero.HandleItemBuyed", "Selling unit has no known team!")
         return
       end
 
-      local extern, building = team.Computer:IsOwnerOfBuilding(sellingUnit)
-      if not extern then
+      local ref, building = team.Computer:IsOwnerOfBuilding(sellingUnit)
+      if not ref then
         Source.Program.ShowErrorMessage("UserHero.HandleItemBuyed", "Spawn building which sells the item is unknown!")
         return
       end
 
       Source.Program.ShowDebugMessage("Get type of upgrade item " .. soldItemTypeId)
-      local ref, command = team:GetItemTypeOfItem(soldItemTypeId)
-      local itemType = ref
+      local out, command = team:GetUpgradeUnitByItemTypem(soldItemTypeId)
+      local itemType = out
 
-      if itemType == 0 --[[ItemType.Unknown]] then
+      if itemType == 0 --[[UpgradeUnitByItemType.Unknown]] then
         Source.Program.ShowErrorMessage("UserHero.HandleItemBuyed", "Item type of sold upgrade item is unknown!")
         return
       end
@@ -22902,12 +22906,12 @@ System.namespace("Source.Logics", function (namespace)
     end
     return {
       HandleResearchFinished = HandleResearchFinished,
-      HandleUpgradeItemBuyed = HandleUpgradeItemBuyed,
+      HandleUpgradeByBuyedItem = HandleUpgradeByBuyedItem,
       __metadata__ = function (out)
         return {
           methods = {
             { "HandleResearchFinished", 0x20C, HandleResearchFinished, out.WCSharp.Api.unit, System.Int32 },
-            { "HandleUpgradeItemBuyed", 0x30C, HandleUpgradeItemBuyed, out.WCSharp.Api.unit, out.WCSharp.Api.item, out.WCSharp.Api.unit },
+            { "HandleUpgradeByBuyedItem", 0x30C, HandleUpgradeByBuyedItem, out.WCSharp.Api.unit, out.WCSharp.Api.item, out.WCSharp.Api.unit },
             { "TryGetNextStepItem", 0x289, TryGetNextStepItem, System.Int32, System.Int32, System.Boolean }
           },
           class = { "Research", 0x3C }
@@ -22922,10 +22926,8 @@ do
 local System = System
 local WCSharpApi = WCSharp.Api
 local Source
-local SourceLogics
 System.import(function (out)
   Source = out.Source
-  SourceLogics = Source.Logics
 end)
 System.namespace("Source.Logics", function (namespace)
   namespace.class("UserHero", function (namespace)
@@ -23014,11 +23016,6 @@ System.namespace("Source.Logics", function (namespace)
 
           -- Heldenseele erstellen und Kamera verschieben
           Source.Program.CreateHeroSelectorForPlayerAndAdjustCamera(user)
-          break
-        elseif default == 1227894864 --[[Constants.ITEM_MELEE_UNIT_LEVEL_2]] or default == 1227894865 --[[Constants.ITEM_MELEE_UNIT_LEVEL_3]] then
-          -- Items für Upgrades von Unit-Spawns
-
-          SourceLogics.Research.HandleUpgradeItemBuyed(buyingUnit, soldItem, sellingUnit)
           break
         end
       until 1
@@ -23336,11 +23333,19 @@ System.import(function (out)
 end)
 System.namespace("Source.Models", function (namespace)
   namespace.class("ComputerPlayer", function (namespace)
-    local CreateBuilding, IsOwnerOfBuilding, RemoveBuilding, Defeat, AddSpawnUnit, UpgradeSpawnUnit, __ctor__
+    local CreateBaseBuilding, CreateBarrackBuilding, IsOwnerOfBuilding, RemoveBuilding, Defeat, AddSpawnUnit, UpgradeSpawnUnit, __ctor__
     __ctor__ = function (this, player, team)
-      this.Buildings = ListSpawnUnitsBuilding()
+      this.BarrackBuildings = ListSpawnUnitsBuilding()
       System.base(this).__ctor__(this, player)
       this.Team = team
+    end
+    CreateBaseBuilding = function (this, unitTypeId, creationArea, face)
+      this.BaseBuilding = SourceModels.SpawnUnitsBuilding(this, unitTypeId, creationArea, face)
+
+      -- TODO : Add items
+      --BaseBuilding.Wc3Unit.AddItem
+
+      return this.BaseBuilding
     end
     -- <summary>
     -- Erzeugt ein Gebäude für den Spieler und fügt es der Auflistung aller Gebäude hinzu.
@@ -23349,10 +23354,16 @@ System.namespace("Source.Models", function (namespace)
     -- <param name="creationArea"></param>
     -- <param name="face"></param>
     -- <returns></returns>
-    CreateBuilding = function (this, unitTypeId, creationArea, face)
+    CreateBarrackBuilding = function (this, unitTypeId, creationArea, face)
       -- Ort anhand Zentrum einer Region erstellen
       local building = SourceModels.SpawnUnitsBuilding(this, unitTypeId, creationArea, face)
-      this.Buildings:Add(building)
+
+      -- Upgrade-Items via Trigger hinzufügen, da diese nur dann auch via Trigger entfernt werden können
+      --building.Wc3Unit.AddItemToStock(Constants.ITEM_MELEE_UNIT_LEVEL_2, 1, 1);
+      AddUnitToStock(building.Wc3Unit, 1747988547 --[[Constants.UNIT_CAPTAIN_HUMAN]], 1, 1)
+
+      this.BarrackBuildings:Add(building)
+
       return building
     end
     -- <summary>
@@ -23362,7 +23373,7 @@ System.namespace("Source.Models", function (namespace)
     -- <param name="foundBuilding">Wird gesetzt, wenn True zurück gegeben wurde.</param>
     -- <returns></returns>
     IsOwnerOfBuilding = function (this, wc3Unit, foundBuilding)
-      for _, building in System.each(this.Buildings) do
+      for _, building in System.each(this.BarrackBuildings) do
         if building.Wc3Unit == wc3Unit then
           foundBuilding = building
           return true, foundBuilding
@@ -23378,15 +23389,15 @@ System.namespace("Source.Models", function (namespace)
     -- <param name="building"></param>
     RemoveBuilding = function (this, building)
       --Program.ShowDebugMessage("ComputerPlayer.RemoveBuilding", $"Remove building {building.Wc3Unit.Name}");
-      this.Buildings:Remove(building)
+      this.BarrackBuildings:Remove(building)
     end
     -- <summary>
     -- Zerstört und entfernt alle Gebäude des Computer-Spielers und setzt diesen auf "Besiegt".
     -- </summary>
     Defeat = function (this)
       -- Alle gespawnten Gebäude zerstören
-      for i = #this.Buildings - 1, 0, -1 do
-        local building = this.Buildings:get(i)
+      for i = #this.BarrackBuildings - 1, 0, -1 do
+        local building = this.BarrackBuildings:get(i)
 
         building:Destroy()
 
@@ -23396,14 +23407,14 @@ System.namespace("Source.Models", function (namespace)
       System.base(this).Defeat(this)
     end
     AddSpawnUnit = function (this, spawnCommand)
-      for _, building in System.each(this.Buildings) do
+      for _, building in System.each(this.BarrackBuildings) do
         if GetUnitTypeId(building.Wc3Unit) == spawnCommand.UnitIdOfBuilding then
           building:AddUnitSpawn(spawnCommand)
         end
       end
     end
     UpgradeSpawnUnit = function (this, spawnCommand)
-      for _, building in System.each(this.Buildings) do
+      for _, building in System.each(this.BarrackBuildings) do
         if GetUnitTypeId(building.Wc3Unit) == spawnCommand.UnitIdOfBuilding then
           building:UpgradeUnitSpawn(spawnCommand)
         end
@@ -23415,7 +23426,8 @@ System.namespace("Source.Models", function (namespace)
           out.Source.Abstracts.PlayerBase
         }
       end,
-      CreateBuilding = CreateBuilding,
+      CreateBaseBuilding = CreateBaseBuilding,
+      CreateBarrackBuilding = CreateBarrackBuilding,
       IsOwnerOfBuilding = IsOwnerOfBuilding,
       RemoveBuilding = RemoveBuilding,
       Defeat = Defeat,
@@ -23427,14 +23439,16 @@ System.namespace("Source.Models", function (namespace)
           methods = {
             { ".ctor", 0x206, nil, out.WCSharp.Api.player, out.Source.Abstracts.TeamBase },
             { "AddSpawnUnit", 0x106, AddSpawnUnit, out.Source.Models.SpawnUnitCommand },
-            { "CreateBuilding", 0x386, CreateBuilding, System.Int32, out.Source.Models.Area, System.Single, out.Source.Models.SpawnUnitsBuilding },
+            { "CreateBarrackBuilding", 0x386, CreateBarrackBuilding, System.Int32, out.Source.Models.Area, System.Single, out.Source.Models.SpawnUnitsBuilding },
+            { "CreateBaseBuilding", 0x386, CreateBaseBuilding, System.Int32, out.Source.Models.Area, System.Single, out.Source.Models.SpawnUnitsBuilding },
             { "Defeat", 0x6, Defeat },
             { "IsOwnerOfBuilding", 0x286, IsOwnerOfBuilding, out.WCSharp.Api.unit, out.Source.Models.SpawnUnitsBuilding, System.Boolean },
             { "RemoveBuilding", 0x106, RemoveBuilding, out.Source.Models.SpawnUnitsBuilding },
             { "UpgradeSpawnUnit", 0x106, UpgradeSpawnUnit, out.Source.Models.SpawnUnitCommand }
           },
           properties = {
-            { "Buildings", 0x1, System.List(out.Source.Models.SpawnUnitsBuilding) },
+            { "BarrackBuildings", 0x1, System.List(out.Source.Models.SpawnUnitsBuilding) },
+            { "BaseBuilding", 0x1, out.Source.Models.SpawnUnitsBuilding },
             { "Team", 0x6, out.Source.Abstracts.TeamBase }
           },
           class = { "ComputerPlayer", 0x26 }
@@ -23466,7 +23480,7 @@ System.namespace("Source.Models", function (namespace)
         end
       }
     end)
-    namespace.enum("ItemType", function ()
+    namespace.enum("UpgradeUnitByItemType", function ()
       return {
         Unknown = 0,
         UpgradeTeamUnits = 1,
@@ -23478,7 +23492,7 @@ System.namespace("Source.Models", function (namespace)
               { "Unknown", 0xE, System.Int32 },
               { "UpgradeTeamUnits", 0xE, System.Int32 }
             },
-            class = { "ItemType", 0x26 }
+            class = { "UpgradeUnitByItemType", 0x26 }
           }
         end
       }
@@ -25023,7 +25037,7 @@ System.import(function (out)
 end)
 System.namespace("Source.Models.Teams", function (namespace)
   namespace.class("HumansTeam", function (namespace)
-    local GetTechType, GetItemTypeOfItem, __ctor__
+    local GetTechType, GetUpgradeUnitByItemTypem, __ctor__
     __ctor__ = function (this, wc3ComputerPlayer)
       System.base(this).__ctor__(this, Player(0), Areas.HumanBase)
       this.ColorizedName = "|c" .. System.toString("ffff0000" --[[ConstantsEx.ColorHexCode_Red]]) .. System.toString(GetPlayerName(wc3ComputerPlayer)) .. "|r"
@@ -25040,12 +25054,12 @@ System.namespace("Source.Models.Teams", function (namespace)
           repeat
             local extern = techLevel
             if extern == 1 then
-              spawnCommand.UnitId = 1747988547 --[[Constants.UNIT_CAPTIAN_HUMAN]]
+              spawnCommand.UnitId = 1747988547 --[[Constants.UNIT_CAPTAIN_HUMAN]]
               spawnCommand.UnitIdToUpgrade = 1747988529 --[[Constants.UNIT_SOLDIER_HUMAN]]
               return 2 --[[ResearchType.UpgradeUnit]], spawnCommand
             else
               spawnCommand.UnitId = 1747988546 --[[Constants.UNIT_KNIGHT_HUMAN]]
-              spawnCommand.UnitIdToUpgrade = 1747988547 --[[Constants.UNIT_CAPTIAN_HUMAN]]
+              spawnCommand.UnitIdToUpgrade = 1747988547 --[[Constants.UNIT_CAPTAIN_HUMAN]]
               return 2 --[[ResearchType.UpgradeUnit]], spawnCommand
             end
           until 1
@@ -25127,28 +25141,28 @@ System.namespace("Source.Models.Teams", function (namespace)
         end
       until 1
     end
-    GetItemTypeOfItem = function (this, itemTypeId, spawnCommand)
+    GetUpgradeUnitByItemTypem = function (this, itemTypeId, spawnCommand)
       repeat
         local default = itemTypeId
         if default == 1227894864 --[[Constants.ITEM_MELEE_UNIT_LEVEL_2]] then
           local extern = SourceModels.AddOrUpgradeSpawnUnitCommand()
           extern.UnitSpawnType = 0 --[[SpawnInterval.Short]]
-          extern.NewUnitTypeId = 1747988547 --[[Constants.UNIT_CAPTIAN_HUMAN]]
           extern.OldUnitTypeId = 1747988529 --[[Constants.UNIT_SOLDIER_HUMAN]]
+          extern.NewUnitTypeId = 1747988547 --[[Constants.UNIT_CAPTAIN_HUMAN]]
           spawnCommand = extern
-          return 1 --[[ItemType.UpgradeTeamUnits]], spawnCommand
+          return 1 --[[UpgradeUnitByItemType.UpgradeTeamUnits]], spawnCommand
         elseif default == 1227894865 --[[Constants.ITEM_MELEE_UNIT_LEVEL_3]] then
           local extern = SourceModels.AddOrUpgradeSpawnUnitCommand()
           extern.UnitSpawnType = 0 --[[SpawnInterval.Short]]
+          extern.OldUnitTypeId = 1747988547 --[[Constants.UNIT_CAPTAIN_HUMAN]]
           extern.NewUnitTypeId = 1747988546 --[[Constants.UNIT_KNIGHT_HUMAN]]
-          extern.OldUnitTypeId = 1747988547 --[[Constants.UNIT_CAPTIAN_HUMAN]]
           spawnCommand = extern
-          return 1 --[[ItemType.UpgradeTeamUnits]], spawnCommand
+          return 1 --[[UpgradeUnitByItemType.UpgradeTeamUnits]], spawnCommand
         end
       until 1
 
       spawnCommand = nil
-      return 0 --[[ItemType.Unknown]], spawnCommand
+      return 0 --[[UpgradeUnitByItemType.Unknown]], spawnCommand
     end
     return {
       base = function (out)
@@ -25157,14 +25171,14 @@ System.namespace("Source.Models.Teams", function (namespace)
         }
       end,
       GetTechType = GetTechType,
-      GetItemTypeOfItem = GetItemTypeOfItem,
+      GetUpgradeUnitByItemTypem = GetUpgradeUnitByItemTypem,
       __ctor__ = __ctor__,
       __metadata__ = function (out)
         return {
           methods = {
             { ".ctor", 0x106, nil, out.WCSharp.Api.player },
-            { "GetItemTypeOfItem", 0x286, GetItemTypeOfItem, System.Int32, out.Source.Models.AddOrUpgradeSpawnUnitCommand, System.Int32 },
-            { "GetTechType", 0x386, GetTechType, System.Int32, System.Int32, out.Source.Models.SpawnUnitCommand, System.Int32 }
+            { "GetTechType", 0x386, GetTechType, System.Int32, System.Int32, out.Source.Models.SpawnUnitCommand, System.Int32 },
+            { "GetUpgradeUnitByItemTypem", 0x286, GetUpgradeUnitByItemTypem, System.Int32, out.Source.Models.AddOrUpgradeSpawnUnitCommand, System.Int32 }
           },
           class = { "HumansTeam", 0x26 }
         }
@@ -36974,8 +36988,8 @@ local InitCSharp = function ()
       "WCSharp.Missiles.HomingMissile",
       "WCSharp.Missiles.MomentumMissile",
       "WCSharp.Missiles.OrbitalMissile",
-      "WCSharp.SaveLoad.Save_1",
       "WCSharp.SaveLoad.SaveLoadedMessage_1",
+      "WCSharp.SaveLoad.Save_1",
       "WCSharp.W3MMD.IW3MmdVar",
       "Areas",
       "Constants",
@@ -37006,9 +37020,9 @@ local InitCSharp = function ()
       "Source.Models.AddOrUpgradeSpawnUnitCommand",
       "Source.Models.Area",
       "Source.Models.ComputerPlayer",
-      "Source.Models.Enums.ItemType",
       "Source.Models.Enums.ResearchType",
       "Source.Models.Enums.SpawnInterval",
+      "Source.Models.Enums.UpgradeUnitByItemType",
       "Source.Models.LegionForce",
       "Source.Models.LegionSpawnBuilding",
       "Source.Models.LegionSpawnTrigger",
@@ -67529,7 +67543,7 @@ function CreateRegions()
     gg_rct_OrcToUndeadInnerLine = Rect(10176.0, 11200.0, 10304.0, 11328.0)
     gg_rct_OrcToUndeadOuterLine = Rect(10176.0, 7104.0, 10304.0, 7232.0)
     gg_rct_TestArea = Rect(17280.0, 17280.0, 17408.0, 17408.0)
-    gg_rct_TestArea2 = Rect(-10016.0, 8224.0, -9888.0, 8352.0)
+    gg_rct_TestArea2 = Rect(-5376.0, 12928.0, -5248.0, 13056.0)
     gg_rct_UndeadBarracksToCenter = Rect(6080.0, -3136.0, 6208.0, -3008.0)
     gg_rct_UndeadBarracksToCenterSpawn = Rect(5760.0, -3072.0, 6016.0, -2560.0)
     gg_rct_UndeadBarracksToElf = Rect(4928.0, -7232.0, 5056.0, -7104.0)

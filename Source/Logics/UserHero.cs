@@ -91,10 +91,10 @@ namespace Source.Logics
           Program.CreateHeroSelectorForPlayerAndAdjustCamera(user);
           break;
 
-        case Constants.ITEM_MELEE_UNIT_LEVEL_2: // Items für Upgrades von Unit-Spawns
-        case Constants.ITEM_MELEE_UNIT_LEVEL_3:
-          Research.HandleUpgradeItemBuyed(buyingUnit, soldItem, sellingUnit);
-          break;
+        //case Constants.ITEM_MELEE_UNIT_LEVEL_2: // Items für Upgrades von Unit-Spawns
+        //case Constants.ITEM_MELEE_UNIT_LEVEL_3:
+        //  Research.HandleUpgradeByBuyedItem(buyingUnit, soldItem, sellingUnit);
+        //  break;
       }
     }
 

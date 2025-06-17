@@ -18,7 +18,7 @@
       UpgradeUnit = 2
     }
 
-    public enum ItemType
+    public enum UpgradeUnitByItemType
     {
       Unknown = 0,
       UpgradeTeamUnits = 1,

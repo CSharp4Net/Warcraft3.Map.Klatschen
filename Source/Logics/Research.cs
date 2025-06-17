@@ -76,13 +76,13 @@ namespace Source.Logics
       }
     }
 
-    internal static void HandleUpgradeItemBuyed(unit buyingUnit, item soldItem, unit sellingUnit)
+    internal static void HandleUpgradeByBuyedItem(unit buyingUnit, item soldItem, unit sellingUnit)
     {
       int soldItemTypeId = soldItem.TypeId;
 
       Program.ShowDebugMessage($"Remove item {soldItemTypeId} from stock of {sellingUnit.Name}");
       // Gekaufte Upgrade-Item von soldItemTypeId entfernen
-      sellingUnit.RemoveItemFromStock(soldItemTypeId);
+      sellingUnit.RemoveItemFromStock(soldItem.TypeId);
 
       // Prüfe ob es Nachfolger gibt, wenn ja zu Gebäude hinzufügen
       if (TryGetNextStepItem(soldItemTypeId, out int nextItemTypeId))
@@ -104,9 +104,9 @@ namespace Source.Logics
       }
 
       Program.ShowDebugMessage($"Get type of upgrade item {soldItemTypeId}");
-      Enums.ItemType itemType = team.GetItemTypeOfItem(soldItemTypeId, out AddOrUpgradeSpawnUnitCommand command);
+      Enums.UpgradeUnitByItemType itemType = team.GetUpgradeUnitByItemTypem(soldItemTypeId, out AddOrUpgradeSpawnUnitCommand command);
 
-      if (itemType == Enums.ItemType.Unknown)
+      if (itemType == Enums.UpgradeUnitByItemType.Unknown)
       {
         Program.ShowErrorMessage("UserHero.HandleItemBuyed", "Item type of sold upgrade item is unknown!");
         return;

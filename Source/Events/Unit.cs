@@ -129,40 +129,57 @@ namespace Source.Events
         unit soldUnit = Common.GetSoldUnit();
         unit sellingUnit = Common.GetSellingUnit();
 
-        if (Common.GetUnitTypeId(buyingUnit) == Constants.UNIT_HEROIC_SOUL_HERO_SELECTOR)
+        if (sellingUnit.Race == race.Other)
         {
-          // Helden-Selector kauft Benutzerhelden
-          Logics.HeroSelector.HandleHeroBuyed(buyingUnit, soldUnit);
+          // Rasse "Andere" wird für neutrale Gebäude (i.d.R. Creep Camps) verwendet
+          Program.ShowDebugMessage($"Unit {buyingUnit.Name} buyed a {soldUnit.Name} in camp {sellingUnit.Name}");
+          Logics.UserHero.HandleCreepSpawnBuyed(buyingUnit, soldUnit, sellingUnit);
           return;
         }
-
-        int sellingUnitTypeId = sellingUnit.UnitType;
-
-        if (sellingUnitTypeId == Constants.UNIT_BANDIT_CAMP_CREEP ||
-          sellingUnitTypeId == Constants.UNIT_CENTAUR_CAMP_CREEP || 
-          sellingUnitTypeId == Constants.UNIT_FURBOLG_CAMP_CREEP || 
-          sellingUnitTypeId == Constants.UNIT_MUR_GUL_CAMP_CREEP || 
-          sellingUnitTypeId == Constants.UNIT_NERUBIAN_CAMP_CREEP || 
-          sellingUnitTypeId == Constants.UNIT_OGRE_CAMP_CREEP || 
-          sellingUnitTypeId == Constants.UNIT_TUSKARR_CAMP_CREEP || 
-          sellingUnitTypeId == Constants.UNIT_WILDEKIN_CAMP_CREEP)
-        {
-          // Verkauf durch ein Söldner-Lager
-
-          // TODO 001
-          //if (soldUnit.IsHero())
-          //  Logics.UserHero.HandleCreepHeroBuyed(buyingUnit, soldUnit, sellingUnit);
-          //else
-          Logics.UserHero.HandleCreepSpawnBuyed(buyingUnit, soldUnit, sellingUnit);
-        }
-        else if (sellingUnitTypeId == Constants.UNIT_BARRACKS_HUMAN ||
-          sellingUnitTypeId == Constants.UNIT_BARRACKS_HUMAN ||
-          sellingUnitTypeId == Constants.UNIT_ANCIENT_OF_WAR_ELF ||
-          sellingUnitTypeId == Constants.UNIT_CRYPT_UNDEAD)
+        else if (sellingUnit.Race == race.Human)
         {
           // Verkauf durch eine Kaserne
           Logics.UserHero.HandleSingleSpawnBuyed(buyingUnit, soldUnit, sellingUnit);
-        }  
+        }
+
+
+          //if (Common.GetUnitTypeId(buyingUnit) == Constants.UNIT_HEROIC_SOUL_HERO_SELECTOR)
+          //{
+          //  // Helden-Selector kauft Benutzerhelden
+          //  Logics.HeroSelector.HandleHeroBuyed(buyingUnit, soldUnit);
+          //  return;
+          //}
+
+        //  int sellingUnitTypeId = sellingUnit.UnitType;
+
+        //Console.WriteLine($"Race of selling unit: {sellingUnit.Race}");
+        //Console.WriteLine($"Race of human: {race.Human}");
+        //Console.WriteLine($"Race of other: {race.Other}");
+
+        //if (sellingUnitTypeId == Constants.UNIT_BANDIT_CAMP_CREEP ||
+        //  sellingUnitTypeId == Constants.UNIT_CENTAUR_CAMP_CREEP ||
+        //  sellingUnitTypeId == Constants.UNIT_FURBOLG_CAMP_CREEP ||
+        //  sellingUnitTypeId == Constants.UNIT_MUR_GUL_CAMP_CREEP ||
+        //  sellingUnitTypeId == Constants.UNIT_NERUBIAN_CAMP_CREEP ||
+        //  sellingUnitTypeId == Constants.UNIT_OGRE_CAMP_CREEP ||
+        //  sellingUnitTypeId == Constants.UNIT_TUSKARR_CAMP_CREEP ||
+        //  sellingUnitTypeId == Constants.UNIT_WILDEKIN_CAMP_CREEP)
+        //{
+        //  // Verkauf durch ein Söldner-Lager
+
+        //  // TODO 001
+        //  //if (soldUnit.IsHero())
+        //  //  Logics.UserHero.HandleCreepHeroBuyed(buyingUnit, soldUnit, sellingUnit);
+        //  //else
+          
+        //}
+        //else if (sellingUnitTypeId == Constants.UNIT_BARRACKS_HUMAN ||
+        //  sellingUnitTypeId == Constants.UNIT_BARRACKS_HUMAN ||
+        //  sellingUnitTypeId == Constants.UNIT_ANCIENT_OF_WAR_ELF ||
+        //  sellingUnitTypeId == Constants.UNIT_CRYPT_UNDEAD)
+        //{
+      
+        //}
       }
       catch (Exception ex)
       {

@@ -120,10 +120,14 @@ namespace Source
         Areas.ElfBase.RegisterOnEnter(ElfBase.OnEnter);
         Areas.UndeadBase.RegisterOnEnter(UndeadBase.OnEnter);
 
+        Blizzard.bj_stockUpdateTimer.Pause();
+        Blizzard.bj_stockItemPurchased.Disable();
+
         // Allgemeine Events registrieren
         PlayerUnitEvents.Register(UnitTypeEvent.BuysUnit, Unit.OnBuysUnit);
         PlayerUnitEvents.Register(UnitTypeEvent.FinishesResearch, Unit.OnFinishesResearch);
         PlayerUnitEvents.Register(UnitTypeEvent.SellsItem, Unit.OnSellsItem);
+        //PlayerUnitEvents.Register(ItemTypeEvent.IsSold, Item.OnIsSold);
         PlayerUnitEvents.Register(UnitTypeEvent.Dies, Unit.OnDies);
         PlayerUnitEvents.Register(UnitTypeEvent.ReceivesOrder, Unit.OnReceivesOrder);
         PlayerUnitEvents.Register(UnitTypeEvent.SpellEffect, Unit.OnSpellEffect);
@@ -245,7 +249,7 @@ namespace Source
     private static void ConstructHumanBuildingAndTrigger()
     {
       // Hauptgebäude
-      SpawnUnitsBuilding building = Humans.Computer.CreateBuilding(Constants.UNIT_CASTLE_HUMAN, Areas.HumanBase);
+      SpawnUnitsBuilding building = Humans.Computer.CreateBarrackBuilding(Constants.UNIT_CASTLE_HUMAN, Areas.HumanBase);
       building.RegisterOnDies(TeamMainBuilding.OnDies);
       building.AddSpawnTrigger(Areas.HumanBaseToCenterSpawn, Enums.SpawnInterval.Middle, Areas.UndeadBase, Constants.UNIT_PRIEST_HUMAN, Constants.UNIT_FLYING_MACHINE_HUMAN)
         .Run(5.5f);
@@ -261,21 +265,21 @@ namespace Source
         .Run(7.5f);
 
       // Kasernen
-      building = Humans.Computer.CreateBuilding(Constants.UNIT_BARRACKS_HUMAN, Areas.HumanBarracksToCenter);
+      building = Humans.Computer.CreateBarrackBuilding(Constants.UNIT_BARRACKS_HUMAN, Areas.HumanBarracksToCenter);
       building.RegisterOnDies(TeamBarracksBuilding.OnDies);
       building.AddSpawnTrigger(Areas.HumanBarracksToCenterSpawn, Enums.SpawnInterval.Short, Areas.UndeadBase, Constants.UNIT_SOLDIER_HUMAN, Constants.UNIT_SOLDIER_HUMAN)
         .Run();
       building.AddSpawnTrigger(Areas.HumanBarracksToCenterSpawn, Enums.SpawnInterval.Middle, Areas.UndeadBase, Constants.UNIT_RIFLEMAN_HUMAN)
         .Run(1f);
 
-      building = Humans.Computer.CreateBuilding(Constants.UNIT_BARRACKS_HUMAN, Areas.HumanBarracksToElf);
+      building = Humans.Computer.CreateBarrackBuilding(Constants.UNIT_BARRACKS_HUMAN, Areas.HumanBarracksToElf);
       building.RegisterOnDies(TeamBarracksBuilding.OnDies);
       building.AddSpawnTrigger(Areas.HumanBarracksToElfSpawn, Enums.SpawnInterval.Short, Areas.ElfBase, Constants.UNIT_SOLDIER_HUMAN, Constants.UNIT_SOLDIER_HUMAN)
         .Run();
       building.AddSpawnTrigger(Areas.HumanBarracksToElfSpawn, Enums.SpawnInterval.Middle, Areas.ElfBase, Constants.UNIT_RIFLEMAN_HUMAN)
         .Run(1f);
 
-      building = Humans.Computer.CreateBuilding(Constants.UNIT_BARRACKS_HUMAN, Areas.HumanBarracksToOrcs);
+      building = Humans.Computer.CreateBarrackBuilding(Constants.UNIT_BARRACKS_HUMAN, Areas.HumanBarracksToOrcs);
       building.RegisterOnDies(TeamBarracksBuilding.OnDies);
       building.AddSpawnTrigger(Areas.HumanBarracksToOrcsSpawn, Enums.SpawnInterval.Short, Areas.OrcBase, Constants.UNIT_SOLDIER_HUMAN, Constants.UNIT_SOLDIER_HUMAN)
         .Run();
@@ -286,7 +290,7 @@ namespace Source
     private static void ConstructOrcBuildingAndTrigger()
     {
       // Hauptgebäude
-      SpawnUnitsBuilding building = Orcs.Computer.CreateBuilding(Constants.UNIT_FORTRESS_ORC, Areas.OrcBase);
+      SpawnUnitsBuilding building = Orcs.Computer.CreateBarrackBuilding(Constants.UNIT_FORTRESS_ORC, Areas.OrcBase);
       building.RegisterOnDies(TeamMainBuilding.OnDies);
       building.AddSpawnTrigger(Areas.OrcBaseToCenterSpawn, Enums.SpawnInterval.Middle, Areas.ElfBase, Constants.UNIT_WITCH_DOCTOR_ORC, Constants.UNIT_BATRIDER_ORC)
         .Run(5.5f);
@@ -302,21 +306,21 @@ namespace Source
         .Run(7.5f);
 
       // Kasernen
-      building = Orcs.Computer.CreateBuilding(Constants.UNIT_BARRACKS_ORC, Areas.OrcBarracksToCenter);
+      building = Orcs.Computer.CreateBarrackBuilding(Constants.UNIT_BARRACKS_ORC, Areas.OrcBarracksToCenter);
       building.RegisterOnDies(TeamBarracksBuilding.OnDies);
       building.AddSpawnTrigger(Areas.OrcBarracksToCenterSpawn, Enums.SpawnInterval.Short, Areas.ElfBase, Constants.UNIT_GRUNT_ORC, Constants.UNIT_GRUNT_ORC)
         .Run();
       building.AddSpawnTrigger(Areas.OrcBarracksToCenterSpawn, Enums.SpawnInterval.Middle, Areas.ElfBase, Constants.UNIT_HEADHUNTER_ORC)
         .Run(0.5f);
 
-      building = Orcs.Computer.CreateBuilding(Constants.UNIT_BARRACKS_ORC, Areas.OrcBarracksToHuman);
+      building = Orcs.Computer.CreateBarrackBuilding(Constants.UNIT_BARRACKS_ORC, Areas.OrcBarracksToHuman);
       building.RegisterOnDies(TeamBarracksBuilding.OnDies);
       building.AddSpawnTrigger(Areas.OrcBarracksToHumanSpawn, Enums.SpawnInterval.Short, Areas.HumanBase, Constants.UNIT_GRUNT_ORC, Constants.UNIT_GRUNT_ORC)
         .Run();
       building.AddSpawnTrigger(Areas.OrcBarracksToHumanSpawn, Enums.SpawnInterval.Middle, Areas.HumanBase, Constants.UNIT_HEADHUNTER_ORC)
         .Run(0.5f);
 
-      building = Orcs.Computer.CreateBuilding(Constants.UNIT_BARRACKS_ORC, Areas.OrcBarracksToUndead);
+      building = Orcs.Computer.CreateBarrackBuilding(Constants.UNIT_BARRACKS_ORC, Areas.OrcBarracksToUndead);
       building.RegisterOnDies(TeamBarracksBuilding.OnDies);
       building.AddSpawnTrigger(Areas.OrcBarracksToUndeadSpawn, Enums.SpawnInterval.Short, Areas.UndeadBase, Constants.UNIT_GRUNT_ORC, Constants.UNIT_GRUNT_ORC)
         .Run();
@@ -327,7 +331,7 @@ namespace Source
     private static void ConstructElfBuildingAndTrigger()
     {
       // Hauptgebäude
-      SpawnUnitsBuilding building = Elves.Computer.CreateBuilding(Constants.UNIT_TREE_OF_ETERNITY_ELF, Areas.ElfBase);
+      SpawnUnitsBuilding building = Elves.Computer.CreateBarrackBuilding(Constants.UNIT_TREE_OF_ETERNITY_ELF, Areas.ElfBase);
       building.RegisterOnDies(TeamMainBuilding.OnDies);
       building.AddSpawnTrigger(Areas.ElfBaseToCenterSpawn, Enums.SpawnInterval.Middle, Areas.OrcBase, Constants.UNIT_DRUID_OF_THE_TALON_ELF, Constants.UNIT_FAERIE_DRAGON_ELF)
         .Run(5.5f);
@@ -343,21 +347,21 @@ namespace Source
         .Run(7.5f);
 
       // Kasernen
-      building = Elves.Computer.CreateBuilding(Constants.UNIT_ANCIENT_OF_WAR_ELF, Areas.ElfBarracksToCenter);
+      building = Elves.Computer.CreateBarrackBuilding(Constants.UNIT_ANCIENT_OF_WAR_ELF, Areas.ElfBarracksToCenter);
       building.RegisterOnDies(TeamBarracksBuilding.OnDies);
       building.AddSpawnTrigger(Areas.ElfBarracksToCenterSpawn, Enums.SpawnInterval.Short, Areas.OrcBase, Constants.UNIT_SENTRY_ELF, Constants.UNIT_SENTRY_ELF)
         .Run();
       building.AddSpawnTrigger(Areas.ElfBarracksToCenterSpawn, Enums.SpawnInterval.Middle, Areas.OrcBase, Constants.UNIT_SENTRY_ELF)
         .Run(0.5f);
 
-      building = Elves.Computer.CreateBuilding(Constants.UNIT_ANCIENT_OF_WAR_ELF, Areas.ElfBarracksToHuman);
+      building = Elves.Computer.CreateBarrackBuilding(Constants.UNIT_ANCIENT_OF_WAR_ELF, Areas.ElfBarracksToHuman);
       building.RegisterOnDies(TeamBarracksBuilding.OnDies);
       building.AddSpawnTrigger(Areas.ElfBarracksToHumanSpawn, Enums.SpawnInterval.Short, Areas.HumanBase, Constants.UNIT_SENTRY_ELF, Constants.UNIT_SENTRY_ELF)
         .Run();
       building.AddSpawnTrigger(Areas.ElfBarracksToHumanSpawn, Enums.SpawnInterval.Middle, Areas.HumanBase, Constants.UNIT_ARCHER_ELF)
         .Run(0.5f);
 
-      building = Elves.Computer.CreateBuilding(Constants.UNIT_ANCIENT_OF_WAR_ELF, Areas.ElfBarracksToUndead);
+      building = Elves.Computer.CreateBarrackBuilding(Constants.UNIT_ANCIENT_OF_WAR_ELF, Areas.ElfBarracksToUndead);
       building.RegisterOnDies(TeamBarracksBuilding.OnDies);
       building.AddSpawnTrigger(Areas.ElfBarracksToUndeadSpawn, Enums.SpawnInterval.Short, Areas.UndeadBase, Constants.UNIT_SENTRY_ELF, Constants.UNIT_SENTRY_ELF)
         .Run();
@@ -368,7 +372,7 @@ namespace Source
     private static void ConstructUndeadBuildingAndTrigger()
     {
       // Hauptgebäude
-      SpawnUnitsBuilding building = Undeads.Computer.CreateBuilding(Constants.UNIT_BLACK_CITADEL_UNDEAD, Areas.UndeadBase);
+      SpawnUnitsBuilding building = Undeads.Computer.CreateBarrackBuilding(Constants.UNIT_BLACK_CITADEL_UNDEAD, Areas.UndeadBase);
       building.RegisterOnDies(TeamMainBuilding.OnDies);
       building.AddSpawnTrigger(Areas.UndeadBaseToCenterSpawn, Enums.SpawnInterval.Middle, Areas.HumanBase, Constants.UNIT_SKELETAL_MAGE_UNDEAD, Constants.UNIT_GARGOYLE_UNDEAD)
         .Run(5.5f);
@@ -384,21 +388,21 @@ namespace Source
         .Run(7.5f);
 
       // Kasernen
-      building = Undeads.Computer.CreateBuilding(Constants.UNIT_CRYPT_UNDEAD, Areas.UndeadBarracksToCenter);
+      building = Undeads.Computer.CreateBarrackBuilding(Constants.UNIT_CRYPT_UNDEAD, Areas.UndeadBarracksToCenter);
       building.RegisterOnDies(TeamBarracksBuilding.OnDies);
       building.AddSpawnTrigger(Areas.UndeadBarracksToCenterSpawn, Enums.SpawnInterval.Short, Areas.HumanBase, Constants.UNIT_GHOUL_UNDEAD, Constants.UNIT_GHOUL_UNDEAD)
         .Run();
       building.AddSpawnTrigger(Areas.UndeadBarracksToCenterSpawn, Enums.SpawnInterval.Middle, Areas.HumanBase, Constants.UNIT_CRYPT_FIEND_UNDEAD)
         .Run(0.5f);
 
-      building = Undeads.Computer.CreateBuilding(Constants.UNIT_CRYPT_UNDEAD, Areas.UndeadBarracksToElf);
+      building = Undeads.Computer.CreateBarrackBuilding(Constants.UNIT_CRYPT_UNDEAD, Areas.UndeadBarracksToElf);
       building.RegisterOnDies(TeamBarracksBuilding.OnDies);
       building.AddSpawnTrigger(Areas.UndeadBarracksToElfSpawn, Enums.SpawnInterval.Short, Areas.ElfBase, Constants.UNIT_GHOUL_UNDEAD, Constants.UNIT_GHOUL_UNDEAD)
         .Run();
       building.AddSpawnTrigger(Areas.UndeadBarracksToElfSpawn, Enums.SpawnInterval.Middle, Areas.ElfBase, Constants.UNIT_CRYPT_FIEND_UNDEAD)
         .Run(0.5f);
 
-      building = Undeads.Computer.CreateBuilding(Constants.UNIT_CRYPT_UNDEAD, Areas.UndeadBarracksToOrcs);
+      building = Undeads.Computer.CreateBarrackBuilding(Constants.UNIT_CRYPT_UNDEAD, Areas.UndeadBarracksToOrcs);
       building.RegisterOnDies(TeamBarracksBuilding.OnDies);
       building.AddSpawnTrigger(Areas.UndeadBarracksToOrcsSpawn, Enums.SpawnInterval.Short, Areas.OrcBase, Constants.UNIT_GHOUL_UNDEAD, Constants.UNIT_GHOUL_UNDEAD)
         .Run();

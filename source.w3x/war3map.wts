@@ -153,7 +153,7 @@ STRING 115
 }
 
 STRING 116
-// Units: h00C (Captian), EditorSuffix (Name - Editor Suffix)
+// Units: h00C (Captain), EditorSuffix (Name - Editor Suffix)
 {
 (Human)
 }
@@ -249,7 +249,7 @@ ratx
 }
 
 STRING 223
-// Units: h00C (Captian), Hotkey (Hotkey)
+// Units: h00C (Captain), Hotkey (Hotkey)
 {
 H
 }
@@ -4804,7 +4804,7 @@ Melee unit
 }
 
 STRING 4186
-// Units: h00C (Captian), Description (Description)
+// Units: h00C (Captain), Description (Description)
 {
 Melee unit
 }
@@ -6775,12 +6775,6 @@ STRING 4566
 // Units: h01T (Warlock), Name (Name)
 {
 Warlock
-}
-
-STRING 4567
-// Units: h00C (Captian), Name (Name)
-{
-Captian
 }
 
 STRING 4568

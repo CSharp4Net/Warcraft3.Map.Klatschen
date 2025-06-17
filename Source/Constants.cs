@@ -189,7 +189,7 @@ public static class Constants
 	public const int UNIT_PRIEST_HUMAN = 1747988536;
 	public const int UNIT_POTIONS_AND_SUNDRIES_HUMAN = 1747988537;
 	public const int UNIT_KNIGHT_HUMAN = 1747988546;
-	public const int UNIT_CAPTIAN_HUMAN = 1747988547;
+	public const int UNIT_CAPTAIN_HUMAN = 1747988547;
 	public const int UNIT_ALTAR_OF_THE_KINGS_HUMAN = 1747988548;
 	public const int UNIT_FORGE_HUMAN = 1747988545;
 	public const int UNIT_SIEGE_SQUAD_HUMAN = 1747988549;

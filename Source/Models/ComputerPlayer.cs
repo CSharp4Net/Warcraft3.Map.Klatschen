@@ -17,7 +17,19 @@ namespace Source.Models
     /// </summary>
     public TeamBase Team { get; init; }
 
-    private List<SpawnUnitsBuilding> Buildings { get; init; } = new List<SpawnUnitsBuilding>();
+    private SpawnUnitsBuilding BaseBuilding { get; set; }
+
+    private List<SpawnUnitsBuilding> BarrackBuildings { get; init; } = new List<SpawnUnitsBuilding>();
+
+    public SpawnUnitsBuilding CreateBaseBuilding(int unitTypeId, Area creationArea, float face = 0f)
+    {
+      BaseBuilding = new SpawnUnitsBuilding(this, unitTypeId, creationArea, face);
+
+      // TODO : Add items
+      //BaseBuilding.Wc3Unit.AddItem
+
+      return BaseBuilding;
+    }
 
     /// <summary>
     /// Erzeugt ein Gebäude für den Spieler und fügt es der Auflistung aller Gebäude hinzu.
@@ -26,11 +38,17 @@ namespace Source.Models
     /// <param name="creationArea"></param>
     /// <param name="face"></param>
     /// <returns></returns>
-    public SpawnUnitsBuilding CreateBuilding(int unitTypeId, Area creationArea, float face = 0f)
+    public SpawnUnitsBuilding CreateBarrackBuilding(int unitTypeId, Area creationArea, float face = 0f)
     {
       // Ort anhand Zentrum einer Region erstellen
       SpawnUnitsBuilding building = new SpawnUnitsBuilding(this, unitTypeId, creationArea, face);
-      Buildings.Add(building);
+
+      // Upgrade-Items via Trigger hinzufügen, da diese nur dann auch via Trigger entfernt werden können
+      //building.Wc3Unit.AddItemToStock(Constants.ITEM_MELEE_UNIT_LEVEL_2, 1, 1);
+      building.Wc3Unit.AddUnitToStock(Constants.UNIT_CAPTAIN_HUMAN, 1, 1);
+
+      BarrackBuildings.Add(building);
+
       return building;
     }
 
@@ -42,7 +60,7 @@ namespace Source.Models
     /// <returns></returns>
     public bool IsOwnerOfBuilding(unit wc3Unit, out SpawnUnitsBuilding foundBuilding)
     {
-      foreach (SpawnUnitsBuilding building in Buildings)
+      foreach (SpawnUnitsBuilding building in BarrackBuildings)
       {
         if (building.Wc3Unit == wc3Unit)
         {
@@ -62,7 +80,7 @@ namespace Source.Models
     public void RemoveBuilding(SpawnUnitsBuilding building)
     {
       //Program.ShowDebugMessage("ComputerPlayer.RemoveBuilding", $"Remove building {building.Wc3Unit.Name}");
-      Buildings.Remove(building);
+      BarrackBuildings.Remove(building);
     }
 
     /// <summary>
@@ -71,9 +89,9 @@ namespace Source.Models
     public override void Defeat()
     {
       // Alle gespawnten Gebäude zerstören
-      for (int i = Buildings.Count - 1; i >= 0; i--) 
+      for (int i = BarrackBuildings.Count - 1; i >= 0; i--)
       {
-        SpawnUnitsBuilding building = Buildings[i];
+        SpawnUnitsBuilding building = BarrackBuildings[i];
 
         building.Destroy();
 
@@ -82,10 +100,10 @@ namespace Source.Models
 
       base.Defeat();
     }
-        
+
     public void AddSpawnUnit(SpawnUnitCommand spawnCommand)
     {
-      foreach (SpawnUnitsBuilding building in Buildings)
+      foreach (SpawnUnitsBuilding building in BarrackBuildings)
       {
         if (building.Wc3Unit.UnitType == spawnCommand.UnitIdOfBuilding)
           building.AddUnitSpawn(spawnCommand);
@@ -94,7 +112,7 @@ namespace Source.Models
 
     public void UpgradeSpawnUnit(SpawnUnitCommand spawnCommand)
     {
-      foreach (SpawnUnitsBuilding building in Buildings)
+      foreach (SpawnUnitsBuilding building in BarrackBuildings)
       {
         if (building.Wc3Unit.UnitType == spawnCommand.UnitIdOfBuilding)
           building.UpgradeUnitSpawn(spawnCommand);
