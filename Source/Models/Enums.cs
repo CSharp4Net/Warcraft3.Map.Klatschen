@@ -1,4 +1,6 @@
-﻿namespace Source.Models
+﻿using System;
+
+namespace Source.Models
 {
   public static class Enums
   {
@@ -11,18 +13,29 @@
       /// <summary>
       /// Neue Einheit in Spawn-Intervalle aufnehmen
       /// </summary>
+      [Obsolete]
       AddUnit = 1,
       /// <summary>
       /// Einheiten in Spawn-Intervallen aktualisieren
       /// </summary>
+      [Obsolete]
       UpgradeUnit = 2
     }
 
-    public enum UpgradeUnitByItemType
+    public enum UnitUpgradeType
     {
+      /// <summary>
+      /// Unbekannt - konnte nicht ermittelt werden
+      /// </summary>
       Unknown = 0,
-      UpgradeTeamUnits = 1,
-      SingleSpawnUnit = 2,
+      /// <summary>
+      /// Automatische Erstellung von Einheiten wird um neue Einheit ergänzt.
+      /// </summary>
+      AddNewUnitToSpawn = 1,
+      /// <summary>
+      /// Bestehende Einheit in automatischer Erstellung wird geändert.
+      /// </summary>
+      UpgradeUnitInSpawn = 2,
     }
 
     /// <summary>

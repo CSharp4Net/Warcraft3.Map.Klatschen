@@ -1,14 +1,53 @@
 ﻿using Source.Abstracts;
+using Source.Events.Buildings;
 using WCSharp.Api;
 
 namespace Source.Models.Teams
 {
   public sealed class ElvesTeam : TeamBase
   {
-    public ElvesTeam(player wc3ComputerPlayer)
-      : base(wc3ComputerPlayer, Areas.ElfBase)
+    public ElvesTeam()
+      : base(Common.Player(8), Areas.ElfBase)
     {
-      ColorizedName = $"|c{ConstantsEx.ColorHexCode_Gray}{wc3ComputerPlayer.Name}|r";
+      ColorizedName = $"|c{ConstantsEx.ColorHexCode_Gray}{Common.Player(8).Name}|r";
+    }
+
+    public override void CreateBuildings()
+    {
+      // Hauptgebäude
+      MainBuilding mainBuilding = Computer.CreateMainBuilding(Constants.UNIT_TREE_OF_ETERNITY_ELF, Areas.ElfBase);
+
+      mainBuilding.RegisterOnDies(TeamMainBuilding.OnDies);
+      mainBuilding.AddSpawnAttackRoute(Areas.ElfBaseToCenterSpawn, Areas.OrcBase);
+      mainBuilding.AddSpawnAttackRoute(Areas.ElfBaseToHumanSpawn, Areas.HumanBase);
+      mainBuilding.AddSpawnAttackRoute(Areas.ElfBaseToUndeadSpawn, Areas.UndeadBase);
+
+      mainBuilding.Wc3Unit.AddUnitToStock(Constants.UNIT_GUARDIAN_GOLEM_ELF, 1, 1);
+
+      // Kasernen
+      UnitSpawnBuilding building = Computer.CreateBarrackBuilding(Constants.UNIT_ANCIENT_OF_WAR_ELF,
+        Areas.ElfBarracksToCenter, Areas.ElfBarracksToCenterSpawn, Areas.OrcBase);
+
+      building.RegisterOnDies(TeamBarracksBuilding.OnDies);
+      building.AddSpawnTrigger(Enums.SpawnInterval.Short, Constants.UNIT_SENTRY_ELF, Constants.UNIT_SENTRY_ELF).Run();
+      building.AddSpawnTrigger(Enums.SpawnInterval.Middle, Constants.UNIT_SENTRY_ELF).Run(1f);
+      building.AddSpawnTrigger(Enums.SpawnInterval.Long, Constants.UNIT_DRUID_OF_THE_TALON_ELF).Run(2f);
+
+      building = Computer.CreateBarrackBuilding(Constants.UNIT_ANCIENT_OF_WAR_ELF,
+        Areas.ElfBarracksToHuman, Areas.ElfBarracksToHumanSpawn, Areas.HumanBase);
+
+      building.RegisterOnDies(TeamBarracksBuilding.OnDies);
+      building.AddSpawnTrigger(Enums.SpawnInterval.Short, Constants.UNIT_SENTRY_ELF, Constants.UNIT_SENTRY_ELF).Run();
+      building.AddSpawnTrigger(Enums.SpawnInterval.Middle, Constants.UNIT_ARCHER_ELF).Run(1f);
+      building.AddSpawnTrigger(Enums.SpawnInterval.Long, Constants.UNIT_DRUID_OF_THE_TALON_ELF).Run(2f);
+
+      building = Computer.CreateBarrackBuilding(Constants.UNIT_ANCIENT_OF_WAR_ELF,
+        Areas.ElfBarracksToUndead, Areas.ElfBarracksToUndeadSpawn, Areas.UndeadBase);
+
+      building.RegisterOnDies(TeamBarracksBuilding.OnDies);
+      building.AddSpawnTrigger(Enums.SpawnInterval.Short, Constants.UNIT_SENTRY_ELF, Constants.UNIT_SENTRY_ELF).Run();
+      building.AddSpawnTrigger(Enums.SpawnInterval.Middle, Constants.UNIT_ARCHER_ELF).Run(1f);
+      building.AddSpawnTrigger(Enums.SpawnInterval.Long, Constants.UNIT_DRUID_OF_THE_TALON_ELF).Run(2f);
     }
 
     public override Enums.ResearchType GetTechType(int techId, int techLevel, out SpawnUnitCommand spawnCommand)

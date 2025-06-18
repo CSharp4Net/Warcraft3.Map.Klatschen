@@ -1,14 +1,53 @@
 ﻿using Source.Abstracts;
+using Source.Events.Buildings;
 using WCSharp.Api;
 
 namespace Source.Models.Teams
 {
   public sealed class UndeadsTeam : TeamBase
   {
-    public UndeadsTeam(player wc3ComputerPlayer)
-      : base(wc3ComputerPlayer, Areas.UndeadBase)
+    public UndeadsTeam()
+      : base(Common.Player(12), Areas.UndeadBase)
     {
-      ColorizedName = $"|c{ConstantsEx.ColorHexCode_Maroon}{wc3ComputerPlayer.Name}|r";
+      ColorizedName = $"|c{ConstantsEx.ColorHexCode_Maroon}{Common.Player(12).Name}|r";
+    }
+
+    public override void CreateBuildings()
+    {
+      // Hauptgebäude
+      MainBuilding mainBuilding = Computer.CreateMainBuilding(Constants.UNIT_BLACK_CITADEL_UNDEAD, Areas.UndeadBase);
+
+      mainBuilding.RegisterOnDies(TeamMainBuilding.OnDies);
+      mainBuilding.AddSpawnAttackRoute(Areas.UndeadBaseToCenterSpawn, Areas.HumanBase);
+      mainBuilding.AddSpawnAttackRoute(Areas.UndeadBaseToElfSpawn, Areas.ElfBase);
+      mainBuilding.AddSpawnAttackRoute(Areas.UndeadBaseToOrcsSpawn, Areas.OrcBase);
+
+      mainBuilding.Wc3Unit.AddUnitToStock(Constants.UNIT_FLESH_GOLEM_UNDEAD, 1, 1);
+
+      // Kasernen
+      UnitSpawnBuilding building = Computer.CreateBarrackBuilding(Constants.UNIT_CRYPT_UNDEAD,
+        Areas.UndeadBarracksToCenter, Areas.UndeadBarracksToCenterSpawn, Areas.HumanBase);
+
+      building.RegisterOnDies(TeamBarracksBuilding.OnDies);
+      building.AddSpawnTrigger(Enums.SpawnInterval.Short, Constants.UNIT_GHOUL_UNDEAD, Constants.UNIT_GHOUL_UNDEAD).Run();
+      building.AddSpawnTrigger(Enums.SpawnInterval.Middle, Constants.UNIT_CRYPT_FIEND_UNDEAD).Run(1f);
+      building.AddSpawnTrigger(Enums.SpawnInterval.Long, Constants.UNIT_SKELETAL_MAGE_UNDEAD).Run(2f);
+
+      building = Computer.CreateBarrackBuilding(Constants.UNIT_CRYPT_UNDEAD,
+        Areas.UndeadBarracksToElf, Areas.UndeadBarracksToElfSpawn, Areas.ElfBase);
+
+      building.RegisterOnDies(TeamBarracksBuilding.OnDies);
+      building.AddSpawnTrigger(Enums.SpawnInterval.Short, Constants.UNIT_GHOUL_UNDEAD, Constants.UNIT_GHOUL_UNDEAD).Run();
+      building.AddSpawnTrigger(Enums.SpawnInterval.Middle, Constants.UNIT_CRYPT_FIEND_UNDEAD).Run(1f);
+      building.AddSpawnTrigger(Enums.SpawnInterval.Long, Constants.UNIT_SKELETAL_MAGE_UNDEAD).Run(2f);
+
+      building = Computer.CreateBarrackBuilding(Constants.UNIT_CRYPT_UNDEAD,
+        Areas.UndeadBarracksToOrcs, Areas.UndeadBarracksToOrcsSpawn, Areas.OrcBase);
+
+      building.RegisterOnDies(TeamBarracksBuilding.OnDies);
+      building.AddSpawnTrigger(Enums.SpawnInterval.Short, Constants.UNIT_GHOUL_UNDEAD, Constants.UNIT_GHOUL_UNDEAD).Run();
+      building.AddSpawnTrigger(Enums.SpawnInterval.Middle, Constants.UNIT_CRYPT_FIEND_UNDEAD).Run(1f);
+      building.AddSpawnTrigger(Enums.SpawnInterval.Long, Constants.UNIT_SKELETAL_MAGE_UNDEAD).Run(2f);
     }
 
     public override Enums.ResearchType GetTechType(int techId, int techLevel, out SpawnUnitCommand spawnCommand)

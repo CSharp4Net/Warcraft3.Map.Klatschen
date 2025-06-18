@@ -76,43 +76,36 @@ namespace Source.Logics
       }
     }
 
-    internal static void HandleUpgradeByBuyedItem(unit buyingUnit, item soldItem, unit sellingUnit)
+    internal static void HandleUnitUpgradeBuyed(unit buyingUnit, unit soldUnit, unit sellingUnit, TeamBase team)
     {
-      int soldItemTypeId = soldItem.TypeId;
+      int unitTypeId = soldUnit.UnitType;
 
-      Program.ShowDebugMessage($"Remove item {soldItemTypeId} from stock of {sellingUnit.Name}");
+      Program.ShowDebugMessage($"Remove unit {unitTypeId} from stock of {sellingUnit.Name}");
       // Gekaufte Upgrade-Item von soldItemTypeId entfernen
-      sellingUnit.RemoveItemFromStock(soldItem.TypeId);
+      sellingUnit.RemoveUnitFromStock(unitTypeId);
+
+      Program.ShowDebugMessage($"Determince upgrade unit command");
+      Enums.UnitUpgradeType upgradeType = team.DetermineTypeOfUnitUpgrade(unitTypeId, out UpgradeUnitCommand command);
+
+      if (upgradeType == Enums.UnitUpgradeType.Unknown)
+      {
+        Program.ShowErrorMessage("UserHero.HandleUnitUpgradeBuyed", $"No upgrade unit command can determined by unit {soldUnit.Name}!");
+        return;
+      }
 
       // Prüfe ob es Nachfolger gibt, wenn ja zu Gebäude hinzufügen
-      if (TryGetNextStepItem(soldItemTypeId, out int nextItemTypeId))
+      if (command.NextUnitTypeId > 0)
       {
-        Program.ShowDebugMessage($"Add item {nextItemTypeId} to stock of {sellingUnit.Name}");
-        sellingUnit.AddItemToStock(nextItemTypeId, 1, 1);
+        Program.ShowDebugMessage($"Add unit {command.NextUnitTypeId} to stock of {sellingUnit.Name}");
+        sellingUnit.AddUnitToStock(command.NextUnitTypeId, 1, 1);
       }
 
-      if (!Program.TryGetTeamByUnit(sellingUnit, out TeamBase team))
+      if (!team.Computer.IsOwnerOfBuilding(sellingUnit, out UnitSpawnBuilding building))
       {
-        Program.ShowErrorMessage("UserHero.HandleItemBuyed", "Selling unit has no known team!");
+        Program.ShowErrorMessage("UserHero.HandleUnitUpgradeBuyed", "Spawn building which sells the item is unknown!");
         return;
       }
 
-      if (!team.Computer.IsOwnerOfBuilding(sellingUnit, out SpawnUnitsBuilding building))
-      {
-        Program.ShowErrorMessage("UserHero.HandleItemBuyed", "Spawn building which sells the item is unknown!");
-        return;
-      }
-
-      Program.ShowDebugMessage($"Get type of upgrade item {soldItemTypeId}");
-      Enums.UpgradeUnitByItemType itemType = team.GetUpgradeUnitByItemTypem(soldItemTypeId, out AddOrUpgradeSpawnUnitCommand command);
-
-      if (itemType == Enums.UpgradeUnitByItemType.Unknown)
-      {
-        Program.ShowErrorMessage("UserHero.HandleItemBuyed", "Item type of sold upgrade item is unknown!");
-        return;
-      }
-
-      Program.ShowDebugMessage($"Update units by item");
       building.UpgradeSpawningUnits(command);
     }
 

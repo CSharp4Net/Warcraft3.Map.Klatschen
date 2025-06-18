@@ -1,14 +1,53 @@
 ﻿using Source.Abstracts;
+using Source.Events.Buildings;
 using WCSharp.Api;
 
 namespace Source.Models.Teams
 {
   public sealed class OrcsTeam : TeamBase
   {
-    public OrcsTeam(player wc3ComputerPlayer)
-      : base(wc3ComputerPlayer, Areas.OrcBase)
+    public OrcsTeam()
+      : base(Common.Player(4), Areas.OrcBase)
     {
-      ColorizedName = $"|c{ConstantsEx.ColorHexCode_Yellow}{wc3ComputerPlayer.Name}|r";
+      ColorizedName = $"|c{ConstantsEx.ColorHexCode_Yellow}{Common.Player(4).Name}|r";
+    }
+
+    public override void CreateBuildings()
+    {
+      // Hauptgebäude
+      MainBuilding mainBuilding = Computer.CreateMainBuilding(Constants.UNIT_FORTRESS_ORC, Areas.OrcBase);
+
+      mainBuilding.RegisterOnDies(TeamMainBuilding.OnDies);
+      mainBuilding.AddSpawnAttackRoute(Areas.OrcBaseToCenterSpawn, Areas.ElfBase);
+      mainBuilding.AddSpawnAttackRoute(Areas.OrcBaseToHumanSpawn, Areas.HumanBase);
+      mainBuilding.AddSpawnAttackRoute(Areas.OrcBaseToUndeadSpawn, Areas.UndeadBase);
+
+      mainBuilding.Wc3Unit.AddUnitToStock(Constants.UNIT_MUD_GOLEM_ORC, 1, 1);
+
+      // Kasernen
+      UnitSpawnBuilding building = Computer.CreateBarrackBuilding(Constants.UNIT_BARRACKS_ORC,
+        Areas.OrcBarracksToCenter, Areas.OrcBarracksToCenterSpawn, Areas.ElfBase);
+
+      building.RegisterOnDies(TeamBarracksBuilding.OnDies);
+      building.AddSpawnTrigger(Enums.SpawnInterval.Short, Constants.UNIT_GRUNT_ORC, Constants.UNIT_GRUNT_ORC).Run();
+      building.AddSpawnTrigger(Enums.SpawnInterval.Middle, Constants.UNIT_HEADHUNTER_ORC).Run(1f);
+      building.AddSpawnTrigger(Enums.SpawnInterval.Long, Constants.UNIT_WITCH_DOCTOR_ORC).Run(2f);
+
+      building = Computer.CreateBarrackBuilding(Constants.UNIT_BARRACKS_ORC,
+        Areas.OrcBarracksToHuman, Areas.OrcBarracksToHumanSpawn, Areas.HumanBase);
+
+      building.RegisterOnDies(TeamBarracksBuilding.OnDies);
+      building.AddSpawnTrigger(Enums.SpawnInterval.Short, Constants.UNIT_GRUNT_ORC, Constants.UNIT_GRUNT_ORC).Run();
+      building.AddSpawnTrigger(Enums.SpawnInterval.Middle, Constants.UNIT_HEADHUNTER_ORC).Run(1f);
+      building.AddSpawnTrigger(Enums.SpawnInterval.Long, Constants.UNIT_WITCH_DOCTOR_ORC).Run(2f);
+
+      building = Computer.CreateBarrackBuilding(Constants.UNIT_BARRACKS_ORC,
+        Areas.OrcBarracksToUndead, Areas.OrcBarracksToUndeadSpawn, Areas.UndeadBase);
+
+      building.RegisterOnDies(TeamBarracksBuilding.OnDies);
+      building.AddSpawnTrigger(Enums.SpawnInterval.Short, Constants.UNIT_GRUNT_ORC, Constants.UNIT_GRUNT_ORC).Run();
+      building.AddSpawnTrigger(Enums.SpawnInterval.Middle, Constants.UNIT_HEADHUNTER_ORC).Run(1f);
+      building.AddSpawnTrigger(Enums.SpawnInterval.Long, Constants.UNIT_WITCH_DOCTOR_ORC).Run(2f);
     }
 
     public override Enums.ResearchType GetTechType(int techId, int techLevel, out SpawnUnitCommand spawnCommand)

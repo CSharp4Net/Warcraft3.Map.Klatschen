@@ -163,12 +163,18 @@ namespace Source.Abstracts
       return Enums.ResearchType.CommonUpgrade;
     }
 
-    public virtual Enums.UpgradeUnitByItemType GetUpgradeUnitByItemTypem(int itemTypeId, out AddOrUpgradeSpawnUnitCommand spawnCommand)
+    public virtual Enums.UnitUpgradeType DetermineTypeOfUnitUpgrade(int baseUnitTypeId, out UpgradeUnitCommand upgradeUnitCommand)
     {
-      Program.ShowErrorMessage("TeamBase.GetUpgradeUnitByItemTypem", $"Method not implemented yet for player {ColorizedName}!");
+      Program.ShowErrorMessage("TeamBase.DetermineTypeOfUnitUpgrade", $"Method not implemented yet for player {ColorizedName}!");
 
-      spawnCommand = null;
-      return Enums.UpgradeUnitByItemType.SingleSpawnUnit;
+      upgradeUnitCommand = null;
+
+      return Enums.UnitUpgradeType.Unknown;
+    }
+
+    public virtual void CreateBuildings()
+    {
+      Program.ShowErrorMessage("TeamBase.CreateBuildings", $"Method not implemented yet for player {ColorizedName}!");
     }
   }
 }

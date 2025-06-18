@@ -40,7 +40,7 @@
     internal const string Message_CollectedGoldToResearchTech = "The gold collected was used to complete a research project.";
 
 #if DEBUG
-    internal const float Interval_Event_Klatschen = 60f; //360f;
+    internal const float Interval_Event_Klatschen = 300f;
 #else
     internal const float Interval_Event_Klatschen = 900f;
 #endif

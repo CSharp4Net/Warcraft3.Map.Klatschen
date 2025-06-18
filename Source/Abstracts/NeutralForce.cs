@@ -1,6 +1,4 @@
-﻿using Source.Models;
-using WCSharp.Api;
-using WCSharp.Shared.Data;
+﻿using WCSharp.Api;
 
 namespace Source.Abstracts
 {

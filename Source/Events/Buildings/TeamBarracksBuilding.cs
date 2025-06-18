@@ -19,7 +19,7 @@ namespace Source.Events.Buildings
           return;
         }
 
-        if (!team.Computer.IsOwnerOfBuilding(unit, out SpawnUnitsBuilding building))
+        if (!team.Computer.IsOwnerOfBuilding(unit, out UnitSpawnBuilding building))
         {
           Program.ShowErrorMessage("BarracksBuilding.OnDies", $"Building {unit.Name} not found in building lists of computer player {team.Computer.Wc3Player.Name}!");
           return;

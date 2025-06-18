@@ -6,7 +6,7 @@ using static Source.Models.Enums;
 
 namespace Source.Models
 {
-  public sealed class SpawnUnitsTrigger
+  public sealed class UnitSpawnTrigger
   {
     /// <summary>
     /// Erstellt einen zeitgesteuertem Auslöser für das regelmäßige Erstellen von Einheiten.
@@ -16,12 +16,11 @@ namespace Source.Models
     /// <param name="spawnInterval">Klasse der erstellten Einheiten</param>
     /// <param name="targetArea">Zielgebiet, für das erstellte Einheiten einen Angriff/Bewegen-Befehl erhalten</param>
     /// <param name="unitTypeIds">Auflistung an Einheit-Typen zu beginn</param>
-    public SpawnUnitsTrigger(ComputerPlayer player, Area spawnArea, SpawnInterval spawnInterval, Area targetArea, params int[] unitTypeIds)
+    public UnitSpawnTrigger(ComputerPlayer player, SpawnInterval spawnInterval, SpawnAttackRoute route, params int[] unitTypeIds)
     {
       Player = player;
-      SpawnArea = spawnArea;
-      TargetArea = targetArea;
-      UnitSpawnType = spawnInterval;
+      Route = route;
+      SpawnInterval = spawnInterval;
       UnitTypeIds = unitTypeIds.ToList();
       Interval = Program.GetIntervalSeconds(spawnInterval);
     }
@@ -39,11 +38,7 @@ namespace Source.Models
     /// <summary>
     /// Gebiet, in dem Einheiten ryhtmisch erstellt werden.
     /// </summary>
-    internal Area SpawnArea { get; init; }
-    /// <summary>
-    /// Zielgebiet, für das erstellte Einheiten einen Angriff/Bewegen-Befehl bekommen.
-    /// </summary>
-    internal Area TargetArea { get; init; }
+    internal SpawnAttackRoute Route { get; init; }
 
     /// <summary>
     /// Auflistung von Einheittyp-Ids, welche beim Auslösen erstelltt werden.
@@ -58,7 +53,7 @@ namespace Source.Models
     /// <summary>
     /// Typ der erstellenden Einheiten.
     /// </summary>
-    public Enums.SpawnInterval UnitSpawnType { get; init; }
+    public Enums.SpawnInterval SpawnInterval { get; init; }
 
     /// <summary>
     /// Startet den Trigger im angegebenen Interval
@@ -95,9 +90,9 @@ namespace Source.Models
       {
         foreach (int unitId in UnitTypeIds)
         {
-          SpawnedUnit unit = Player.CreateUnit(unitId, SpawnArea);
+          SpawnedUnit unit = Player.CreateUnit(unitId, Route.SpawnArea);
 
-          unit.AttackMove(TargetArea);
+          unit.AttackMove(Route.TargetArea);
         }
       }
       catch (Exception ex)

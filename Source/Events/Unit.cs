@@ -1,19 +1,13 @@
-﻿using Source.Abstracts;
-using Source.Extensions;
+﻿using Source.Extensions;
 using Source.Models;
+using Source.Models.Teams;
 using System;
 using WCSharp.Api;
 
 namespace Source.Events
 {
-  /// <summary>
-  /// Stellt statische Methoden zum Behandeln von Einheiten-Events bereit.
-  /// </summary>
   internal static class Unit
   {
-    /// <summary>
-    /// Behandelt den Tod einer Einheit.
-    /// </summary>
     internal static void OnDies()
     {
       try
@@ -56,9 +50,6 @@ namespace Source.Events
       }
     }
 
-    /// <summary>
-    /// Behandelt den Befehlswechsel einer Einheit.
-    /// </summary>
     internal static void OnReceivesOrder()
     {
       try
@@ -91,9 +82,6 @@ namespace Source.Events
       }
     }
 
-    /// <summary>
-    /// Behandelt den Zaubervorgang einer Einheit.
-    /// </summary>
     internal static void OnSpellEffect()
     {
       try
@@ -118,9 +106,6 @@ namespace Source.Events
       }
     }
 
-    /// <summary>
-    /// Behandelt den Kaufvorgang einer Einheit.
-    /// </summary>
     internal static void OnBuysUnit()
     {
       try
@@ -128,6 +113,8 @@ namespace Source.Events
         unit buyingUnit = Common.GetBuyingUnit();
         unit soldUnit = Common.GetSoldUnit();
         unit sellingUnit = Common.GetSellingUnit();
+
+        int sellingUnitTypeId = sellingUnit.UnitType;
 
         if (sellingUnit.Race == race.Other)
         {
@@ -138,48 +125,41 @@ namespace Source.Events
         }
         else if (sellingUnit.Race == race.Human)
         {
-          // Verkauf durch eine Kaserne
-          Logics.UserHero.HandleSingleSpawnBuyed(buyingUnit, soldUnit, sellingUnit);
+          // Verkauf durch Gebäude der Menschen
+          switch (sellingUnitTypeId)
+          {
+            case Constants.UNIT_BARRACKS_HUMAN:
+              Logics.Research.HandleUnitUpgradeBuyed(buyingUnit, soldUnit, sellingUnit, Program.Humans);
+              break;
+
+            case Constants.UNIT_CASTLE_HUMAN:
+              Logics.ComputerBuilding.HandleSingleSpawnBuyed(buyingUnit, soldUnit, sellingUnit, Program.Humans);
+              break;
+
+            default:
+              Program.ShowErrorMessage("Unit.OnBuysUnit", $"{sellingUnit.Name} is an unknown building?!");
+              break;
+          }
         }
+        else if (sellingUnit.Race == race.Orc)
+        {
+          // Verkauf durch Gebäude der Orks
 
+        }
+        else if (sellingUnit.Race == race.NightElf)
+        {
+          // Verkauf durch Gebäude der Elfen
 
-          //if (Common.GetUnitTypeId(buyingUnit) == Constants.UNIT_HEROIC_SOUL_HERO_SELECTOR)
-          //{
-          //  // Helden-Selector kauft Benutzerhelden
-          //  Logics.HeroSelector.HandleHeroBuyed(buyingUnit, soldUnit);
-          //  return;
-          //}
+        }
+        else if (sellingUnit.Race == race.Undead)
+        {
+          // Verkauf durch Gebäude der Untoten
 
-        //  int sellingUnitTypeId = sellingUnit.UnitType;
-
-        //Console.WriteLine($"Race of selling unit: {sellingUnit.Race}");
-        //Console.WriteLine($"Race of human: {race.Human}");
-        //Console.WriteLine($"Race of other: {race.Other}");
-
-        //if (sellingUnitTypeId == Constants.UNIT_BANDIT_CAMP_CREEP ||
-        //  sellingUnitTypeId == Constants.UNIT_CENTAUR_CAMP_CREEP ||
-        //  sellingUnitTypeId == Constants.UNIT_FURBOLG_CAMP_CREEP ||
-        //  sellingUnitTypeId == Constants.UNIT_MUR_GUL_CAMP_CREEP ||
-        //  sellingUnitTypeId == Constants.UNIT_NERUBIAN_CAMP_CREEP ||
-        //  sellingUnitTypeId == Constants.UNIT_OGRE_CAMP_CREEP ||
-        //  sellingUnitTypeId == Constants.UNIT_TUSKARR_CAMP_CREEP ||
-        //  sellingUnitTypeId == Constants.UNIT_WILDEKIN_CAMP_CREEP)
-        //{
-        //  // Verkauf durch ein Söldner-Lager
-
-        //  // TODO 001
-        //  //if (soldUnit.IsHero())
-        //  //  Logics.UserHero.HandleCreepHeroBuyed(buyingUnit, soldUnit, sellingUnit);
-        //  //else
-          
-        //}
-        //else if (sellingUnitTypeId == Constants.UNIT_BARRACKS_HUMAN ||
-        //  sellingUnitTypeId == Constants.UNIT_BARRACKS_HUMAN ||
-        //  sellingUnitTypeId == Constants.UNIT_ANCIENT_OF_WAR_ELF ||
-        //  sellingUnitTypeId == Constants.UNIT_CRYPT_UNDEAD)
-        //{
-      
-        //}
+        }
+        else
+        {
+          Program.ShowErrorMessage("Unit.OnBuysUnit", $"{buyingUnit.Name} buyed an unit {soldUnit.Name} from unknown race?!");
+        }
       }
       catch (Exception ex)
       {
@@ -187,9 +167,6 @@ namespace Source.Events
       }
     }
 
-    /// <summary>
-    /// Behandelt den Gegenstandskauf einer Einheit.
-    /// </summary>
     internal static void OnSellsItem()
     {
       try
@@ -210,9 +187,6 @@ namespace Source.Events
       }
     }
 
-    /// <summary>
-    /// Behandelt den Forschungsabschluss einer Einheit.
-    /// </summary>
     internal static void OnFinishesResearch()
     {
       try

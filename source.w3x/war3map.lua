@@ -494,8 +494,6 @@ local unitID
 local t
 local life
 
-u = BlzCreateUnitWithSkin(p, FourCC("n003"), -18432.0, 18944.0, 270.000, FourCC("n003"))
-SetUnitColor(u, ConvertPlayerColor(0))
 u = BlzCreateUnitWithSkin(p, FourCC("h004"), 16320.0, 19264.0, 270.000, FourCC("h004"))
 u = BlzCreateUnitWithSkin(p, FourCC("h005"), 16576.0, 19264.0, 270.000, FourCC("h005"))
 u = BlzCreateUnitWithSkin(p, FourCC("h00V"), 16576.0, 19008.0, 270.000, FourCC("h00V"))
