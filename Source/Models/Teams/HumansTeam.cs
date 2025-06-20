@@ -33,6 +33,8 @@ namespace Source.Models.Teams
       building.AddSpawnTrigger(Enums.SpawnInterval.Middle, Constants.UNIT_RIFLEMAN_HUMAN).Run(1f);
       building.AddSpawnTrigger(Enums.SpawnInterval.Long, Constants.UNIT_PRIEST_HUMAN).Run(2f);
 
+      AddBaseUnitsToStock(building);
+
       building = Computer.CreateBarrackBuilding(Constants.UNIT_BARRACKS_HUMAN,
         Areas.HumanBarracksToElf, Areas.HumanBarracksToElfSpawn, Areas.ElfBase);
 
@@ -40,6 +42,8 @@ namespace Source.Models.Teams
       building.AddSpawnTrigger(Enums.SpawnInterval.Short, Constants.UNIT_SOLDIER_HUMAN, Constants.UNIT_SOLDIER_HUMAN).Run();
       building.AddSpawnTrigger(Enums.SpawnInterval.Middle, Constants.UNIT_RIFLEMAN_HUMAN).Run(1f);
       building.AddSpawnTrigger(Enums.SpawnInterval.Long, Constants.UNIT_PRIEST_HUMAN).Run(2f);
+
+      AddBaseUnitsToStock(building);
 
       building = Computer.CreateBarrackBuilding(Constants.UNIT_BARRACKS_HUMAN,
         Areas.HumanBarracksToOrcs, Areas.HumanBarracksToOrcsSpawn, Areas.OrcBase);
@@ -49,6 +53,18 @@ namespace Source.Models.Teams
       building.AddSpawnTrigger(Enums.SpawnInterval.Middle, Constants.UNIT_RIFLEMAN_HUMAN).Run(1f);
       building.AddSpawnTrigger(Enums.SpawnInterval.Long, Constants.UNIT_PRIEST_HUMAN).Run(2f);
 
+      AddBaseUnitsToStock(building);
+
+#if DEBUG
+      building = Computer.CreateBarrackBuilding(Constants.UNIT_BARRACKS_HUMAN,
+        Areas.TestArea, Areas.HumanBarracksToOrcsSpawn, Areas.OrcBase);
+
+      AddBaseUnitsToStock(building);
+#endif
+    }
+
+    private void AddBaseUnitsToStock(UnitSpawnBuilding building)
+    {
       building.Wc3Unit.AddUnitToStock(Constants.UNIT_CAPTAIN_HUMAN, 1, 1);
       building.Wc3Unit.AddUnitToStock(Constants.UNIT_RIFLEMAN_BESERK_HUMAN, 1, 1);
       building.Wc3Unit.AddUnitToStock(Constants.UNIT_SORCERESS_HUMAN, 1, 1);

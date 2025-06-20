@@ -1,11 +1,10 @@
-TODO 001:
-=========
-Ein Creep-Hero, welcher zu einem Team-Computer-Spieler gehört, kann bei dessen Tot
-nicht mehr als Creep-Hero erkannt werden, da er kein entsprechendes Flag besitzt. Insofern
-wird die Erstellung und Wiedergeburt bis auf weiteres nicht implementiert.
+Letzte Änderungen:
+==================
+Alle zyklischen Unit-Spawns finden nun ausschließlich in der Kaserne statt.
+Kaserne bieten einen Unit-Upgrades zum Kauf an, welche die zyklischen Unit-Spawns verstärken.
+Im Hauptgebäude können einmalige Unit-Spawns mit mächtigen Einheiten gekauft werden.
 
-Idee : Ggf. kann die Race der Unit einen Hinweis darauf geben?!
 
-Änderungen:
+Noch offen:
 ===========
-Kasernen der Teams verkauf einmalig Einheiten
+Teams ohne menschliche Spieler, sollen Upgrades der Einheiten weiterhin erforschen!

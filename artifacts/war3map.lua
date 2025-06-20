@@ -19866,6 +19866,7 @@ System.namespace("", function (namespace)
       this.OrcToUndeadOuterLine = SourceModels.Area(Regions.OrcToUndeadOuterLine)
       this.TestArea = SourceModels.Area(Regions.TestArea)
       this.TestArea2 = SourceModels.Area(Regions.TestArea2)
+      this.TestArea3 = SourceModels.Area(Regions.TestArea3)
       this.UndeadBarracksToCenter = SourceModels.Area(Regions.UndeadBarracksToCenter)
       this.UndeadBarracksToCenterSpawn = SourceModels.Area(Regions.UndeadBarracksToCenterSpawn)
       this.UndeadBarracksToElf = SourceModels.Area(Regions.UndeadBarracksToElf)
@@ -20001,6 +20002,7 @@ System.namespace("", function (namespace)
             { "OrcToUndeadOuterLine", 0xE, out.Source.Models.Area },
             { "TestArea", 0xE, out.Source.Models.Area },
             { "TestArea2", 0xE, out.Source.Models.Area },
+            { "TestArea3", 0xE, out.Source.Models.Area },
             { "UndeadBarracksToCenter", 0xE, out.Source.Models.Area },
             { "UndeadBarracksToCenterSpawn", 0xE, out.Source.Models.Area },
             { "UndeadBarracksToElf", 0xE, out.Source.Models.Area },
@@ -20524,8 +20526,9 @@ System.namespace("", function (namespace)
       this.OrcToHumanOuterLine = System.new(WCSharpSharedData.Rectangle, 2, 4032, 13248, 4160, 13376)
       this.OrcToUndeadInnerLine = System.new(WCSharpSharedData.Rectangle, 2, 10176, 11200, 10304, 11328)
       this.OrcToUndeadOuterLine = System.new(WCSharpSharedData.Rectangle, 2, 10176, 7104, 10304, 7232)
-      this.TestArea = System.new(WCSharpSharedData.Rectangle, 2, 17280, 17280, 17408, 17408)
-      this.TestArea2 = System.new(WCSharpSharedData.Rectangle, 2, -5376, 12928, -5248, 13056)
+      this.TestArea = System.new(WCSharpSharedData.Rectangle, 2, 14784, 16320, 14912, 16448)
+      this.TestArea2 = System.new(WCSharpSharedData.Rectangle, 2, 15808, 16320, 15936, 16448)
+      this.TestArea3 = System.new(WCSharpSharedData.Rectangle, 2, 16832, 16320, 16960, 16448)
       this.UndeadBarracksToCenter = System.new(WCSharpSharedData.Rectangle, 2, 6080, -3136, 6208, -3008)
       this.UndeadBarracksToCenterSpawn = System.new(WCSharpSharedData.Rectangle, 2, 5760, -3072, 6016, -2560)
       this.UndeadBarracksToElf = System.new(WCSharpSharedData.Rectangle, 2, 4928, -7232, 5056, -7104)
@@ -20661,6 +20664,7 @@ System.namespace("", function (namespace)
             { "OrcToUndeadOuterLine", 0xE, out.WCSharp.Shared.Data.Rectangle },
             { "TestArea", 0xE, out.WCSharp.Shared.Data.Rectangle },
             { "TestArea2", 0xE, out.WCSharp.Shared.Data.Rectangle },
+            { "TestArea3", 0xE, out.WCSharp.Shared.Data.Rectangle },
             { "UndeadBarracksToCenter", 0xE, out.WCSharp.Shared.Data.Rectangle },
             { "UndeadBarracksToCenterSpawn", 0xE, out.WCSharp.Shared.Data.Rectangle },
             { "UndeadBarracksToElf", 0xE, out.WCSharp.Shared.Data.Rectangle },
@@ -22783,7 +22787,7 @@ System.import(function (out)
 end)
 System.namespace("Source.Logics", function (namespace)
   namespace.class("Research", function (namespace)
-    local HandleResearchFinished, HandleUnitUpgradeBuyed, TryGetNextStepItem
+    local HandleResearchFinished, HandleUnitUpgradeBuyed
     HandleResearchFinished = function (researchingUnit, researchedTechId)
       System.try(function ()
         local researchedTechIdCount = GetPlayerTechCount(GetOwningPlayer(researchingUnit), researchedTechId, true)
@@ -22858,6 +22862,9 @@ System.namespace("Source.Logics", function (namespace)
     HandleUnitUpgradeBuyed = function (buyingUnit, soldUnit, sellingUnit, team)
       local unitTypeId = GetUnitTypeId(soldUnit)
 
+      -- Gekaufte Einheit sofort entfernen
+      RemoveUnit(soldUnit)
+
       Source.Program.ShowDebugMessage("Remove unit " .. unitTypeId .. " from stock of " .. System.toString(GetUnitName(sellingUnit)))
       -- Gekaufte Upgrade-Item von soldItemTypeId entfernen
       RemoveUnitFromStock(sellingUnit, unitTypeId)
@@ -22885,20 +22892,6 @@ System.namespace("Source.Logics", function (namespace)
 
       building:UpgradeSpawningUnits(command)
     end
-    TryGetNextStepItem = function (soldItemTypeId, nextItemTypeId)
-      repeat
-        local default = soldItemTypeId
-        if default == 1227894864 --[[Constants.ITEM_MELEE_UNIT_LEVEL_2]] then
-          nextItemTypeId = 1227894865 --[[Constants.ITEM_MELEE_UNIT_LEVEL_3]]
-          break
-        else
-          nextItemTypeId = 0
-          break
-        end
-      until 1
-
-      return nextItemTypeId > 0, nextItemTypeId
-    end
     return {
       HandleResearchFinished = HandleResearchFinished,
       HandleUnitUpgradeBuyed = HandleUnitUpgradeBuyed,
@@ -22906,8 +22899,7 @@ System.namespace("Source.Logics", function (namespace)
         return {
           methods = {
             { "HandleResearchFinished", 0x20C, HandleResearchFinished, out.WCSharp.Api.unit, System.Int32 },
-            { "HandleUnitUpgradeBuyed", 0x40C, HandleUnitUpgradeBuyed, out.WCSharp.Api.unit, out.WCSharp.Api.unit, out.WCSharp.Api.unit, out.Source.Abstracts.TeamBase },
-            { "TryGetNextStepItem", 0x289, TryGetNextStepItem, System.Int32, System.Int32, System.Boolean }
+            { "HandleUnitUpgradeBuyed", 0x40C, HandleUnitUpgradeBuyed, out.WCSharp.Api.unit, out.WCSharp.Api.unit, out.WCSharp.Api.unit, out.Source.Abstracts.TeamBase }
           },
           class = { "Research", 0x3C }
         }
@@ -25063,7 +25055,7 @@ System.import(function (out)
 end)
 System.namespace("Source.Models.Teams", function (namespace)
   namespace.class("HumansTeam", function (namespace)
-    local CreateBuildings, GetTechType, DetermineTypeOfUnitUpgrade, __ctor__
+    local CreateBuildings, AddBaseUnitsToStock, GetTechType, DetermineTypeOfUnitUpgrade, __ctor__
     __ctor__ = function (this)
       System.base(this).__ctor__(this, Player(0), Areas.HumanBase)
       this.ColorizedName = "|c" .. System.toString("ffff0000" --[[ConstantsEx.ColorHexCode_Red]]) .. System.toString(GetPlayerName(Player(0))) .. "|r"
@@ -25087,12 +25079,16 @@ System.namespace("Source.Models.Teams", function (namespace)
       building:AddSpawnTrigger(1 --[[SpawnInterval.Middle]], System.Array(System.Int32) { 1747988530 --[[Constants.UNIT_RIFLEMAN_HUMAN]] }):Run(1)
       building:AddSpawnTrigger(2 --[[SpawnInterval.Long]], System.Array(System.Int32) { 1747988536 --[[Constants.UNIT_PRIEST_HUMAN]] }):Run(2)
 
+      AddBaseUnitsToStock(this, building)
+
       building = this.Computer:CreateBarrackBuilding(1747988535 --[[Constants.UNIT_BARRACKS_HUMAN]], Areas.HumanBarracksToElf, Areas.HumanBarracksToElfSpawn, Areas.ElfBase)
 
       building:RegisterOnDies(SourceEventsBuildings.TeamBarracksBuilding.OnDies)
       building:AddSpawnTrigger(0 --[[SpawnInterval.Short]], System.Array(System.Int32) { 1747988529 --[[Constants.UNIT_SOLDIER_HUMAN]], 1747988529 --[[Constants.UNIT_SOLDIER_HUMAN]] }):Run(0)
       building:AddSpawnTrigger(1 --[[SpawnInterval.Middle]], System.Array(System.Int32) { 1747988530 --[[Constants.UNIT_RIFLEMAN_HUMAN]] }):Run(1)
       building:AddSpawnTrigger(2 --[[SpawnInterval.Long]], System.Array(System.Int32) { 1747988536 --[[Constants.UNIT_PRIEST_HUMAN]] }):Run(2)
+
+      AddBaseUnitsToStock(this, building)
 
       building = this.Computer:CreateBarrackBuilding(1747988535 --[[Constants.UNIT_BARRACKS_HUMAN]], Areas.HumanBarracksToOrcs, Areas.HumanBarracksToOrcsSpawn, Areas.OrcBase)
 
@@ -25101,6 +25097,14 @@ System.namespace("Source.Models.Teams", function (namespace)
       building:AddSpawnTrigger(1 --[[SpawnInterval.Middle]], System.Array(System.Int32) { 1747988530 --[[Constants.UNIT_RIFLEMAN_HUMAN]] }):Run(1)
       building:AddSpawnTrigger(2 --[[SpawnInterval.Long]], System.Array(System.Int32) { 1747988536 --[[Constants.UNIT_PRIEST_HUMAN]] }):Run(2)
 
+      AddBaseUnitsToStock(this, building)
+
+
+      building = this.Computer:CreateBarrackBuilding(1747988535 --[[Constants.UNIT_BARRACKS_HUMAN]], Areas.TestArea, Areas.HumanBarracksToOrcsSpawn, Areas.OrcBase)
+
+      AddBaseUnitsToStock(this, building)
+    end
+    AddBaseUnitsToStock = function (this, building)
       AddUnitToStock(building.Wc3Unit, 1747988547 --[[Constants.UNIT_CAPTAIN_HUMAN]], 1, 1)
       AddUnitToStock(building.Wc3Unit, 1747988550 --[[Constants.UNIT_RIFLEMAN_BESERK_HUMAN]], 1, 1)
       AddUnitToStock(building.Wc3Unit, 1747988552 --[[Constants.UNIT_SORCERESS_HUMAN]], 1, 1)
@@ -25239,6 +25243,7 @@ System.namespace("Source.Models.Teams", function (namespace)
         return {
           methods = {
             { ".ctor", 0x6, nil },
+            { "AddBaseUnitsToStock", 0x101, AddBaseUnitsToStock, out.Source.Models.UnitSpawnBuilding },
             { "CreateBuildings", 0x6, CreateBuildings },
             { "DetermineTypeOfUnitUpgrade", 0x286, DetermineTypeOfUnitUpgrade, System.Int32, out.Source.Models.UpgradeUnitCommand, System.Int32 },
             { "GetTechType", 0x386, GetTechType, System.Int32, System.Int32, out.Source.Models.SpawnUnitCommand, System.Int32 }
@@ -25261,7 +25266,7 @@ System.import(function (out)
 end)
 System.namespace("Source.Models.Teams", function (namespace)
   namespace.class("OrcsTeam", function (namespace)
-    local CreateBuildings, GetTechType, __ctor__
+    local CreateBuildings, AddBaseUnitsToStock, GetTechType, __ctor__
     __ctor__ = function (this)
       System.base(this).__ctor__(this, Player(4), Areas.OrcBase)
       this.ColorizedName = "|c" .. System.toString("ffffff00" --[[ConstantsEx.ColorHexCode_Yellow]]) .. System.toString(GetPlayerName(Player(4))) .. "|r"
@@ -25285,6 +25290,8 @@ System.namespace("Source.Models.Teams", function (namespace)
       building:AddSpawnTrigger(1 --[[SpawnInterval.Middle]], System.Array(System.Int32) { 1747988812 --[[Constants.UNIT_HEADHUNTER_ORC]] }):Run(1)
       building:AddSpawnTrigger(2 --[[SpawnInterval.Long]], System.Array(System.Int32) { 1747988818 --[[Constants.UNIT_WITCH_DOCTOR_ORC]] }):Run(2)
 
+      AddBaseUnitsToStock(this, building)
+
       building = this.Computer:CreateBarrackBuilding(1747988569 --[[Constants.UNIT_BARRACKS_ORC]], Areas.OrcBarracksToHuman, Areas.OrcBarracksToHumanSpawn, Areas.HumanBase)
 
       building:RegisterOnDies(SourceEventsBuildings.TeamBarracksBuilding.OnDies)
@@ -25292,12 +25299,29 @@ System.namespace("Source.Models.Teams", function (namespace)
       building:AddSpawnTrigger(1 --[[SpawnInterval.Middle]], System.Array(System.Int32) { 1747988812 --[[Constants.UNIT_HEADHUNTER_ORC]] }):Run(1)
       building:AddSpawnTrigger(2 --[[SpawnInterval.Long]], System.Array(System.Int32) { 1747988818 --[[Constants.UNIT_WITCH_DOCTOR_ORC]] }):Run(2)
 
+      AddBaseUnitsToStock(this, building)
+
       building = this.Computer:CreateBarrackBuilding(1747988569 --[[Constants.UNIT_BARRACKS_ORC]], Areas.OrcBarracksToUndead, Areas.OrcBarracksToUndeadSpawn, Areas.UndeadBase)
 
       building:RegisterOnDies(SourceEventsBuildings.TeamBarracksBuilding.OnDies)
       building:AddSpawnTrigger(0 --[[SpawnInterval.Short]], System.Array(System.Int32) { 1747988809 --[[Constants.UNIT_GRUNT_ORC]], 1747988809 --[[Constants.UNIT_GRUNT_ORC]] }):Run(0)
       building:AddSpawnTrigger(1 --[[SpawnInterval.Middle]], System.Array(System.Int32) { 1747988812 --[[Constants.UNIT_HEADHUNTER_ORC]] }):Run(1)
       building:AddSpawnTrigger(2 --[[SpawnInterval.Long]], System.Array(System.Int32) { 1747988818 --[[Constants.UNIT_WITCH_DOCTOR_ORC]] }):Run(2)
+
+      AddBaseUnitsToStock(this, building)
+
+
+      building = this.Computer:CreateBarrackBuilding(1747988569 --[[Constants.UNIT_BARRACKS_ORC]], Areas.TestArea3, Areas.HumanBarracksToOrcsSpawn, Areas.OrcBase)
+
+      AddBaseUnitsToStock(this, building)
+    end
+    AddBaseUnitsToStock = function (this, building)
+      -- TODO
+      AddUnitToStock(building.Wc3Unit, 1747988547 --[[Constants.UNIT_CAPTAIN_HUMAN]], 1, 1)
+      AddUnitToStock(building.Wc3Unit, 1747988550 --[[Constants.UNIT_RIFLEMAN_BESERK_HUMAN]], 1, 1)
+      AddUnitToStock(building.Wc3Unit, 1747988552 --[[Constants.UNIT_SORCERESS_HUMAN]], 1, 1)
+      AddUnitToStock(building.Wc3Unit, 1747988554 --[[Constants.UNIT_FLYING_MACHINE_HUMAN]], 1, 1)
+      AddUnitToStock(building.Wc3Unit, 1747988549 --[[Constants.UNIT_SIEGE_SQUAD_HUMAN]], 1, 1)
     end
     GetTechType = function (this, techId, techLevel, spawnCommand)
       repeat
@@ -25410,6 +25434,7 @@ System.namespace("Source.Models.Teams", function (namespace)
         return {
           methods = {
             { ".ctor", 0x6, nil },
+            { "AddBaseUnitsToStock", 0x101, AddBaseUnitsToStock, out.Source.Models.UnitSpawnBuilding },
             { "CreateBuildings", 0x6, CreateBuildings },
             { "GetTechType", 0x386, GetTechType, System.Int32, System.Int32, out.Source.Models.SpawnUnitCommand, System.Int32 }
           },
@@ -37126,8 +37151,8 @@ local InitCSharp = function ()
       "WCSharp.Missiles.HomingMissile",
       "WCSharp.Missiles.MomentumMissile",
       "WCSharp.Missiles.OrbitalMissile",
-      "WCSharp.SaveLoad.Save_1",
       "WCSharp.SaveLoad.SaveLoadedMessage_1",
+      "WCSharp.SaveLoad.Save_1",
       "WCSharp.W3MMD.IW3MmdVar",
       "Areas",
       "Constants",
@@ -37387,6 +37412,7 @@ gg_rct_OrcToUndeadInnerLine = nil
 gg_rct_OrcToUndeadOuterLine = nil
 gg_rct_TestArea = nil
 gg_rct_TestArea2 = nil
+gg_rct_TestArea3 = nil
 gg_rct_UndeadBarracksToCenter = nil
 gg_rct_UndeadBarracksToCenterSpawn = nil
 gg_rct_UndeadBarracksToElf = nil
@@ -37449,11 +37475,11 @@ gg_unit_h00V_0142 = nil
 gg_unit_h00V_0043 = nil
 gg_unit_h00V_0140 = nil
 gg_unit_h00U_0231 = nil
-gg_unit_h01G_0193 = nil
+gg_unit_N02J_0380 = nil
 gg_unit_h00A_0028 = nil
-gg_unit_h00D_0029 = nil
+gg_unit_n02M_0364 = nil
 gg_unit_h00A_0030 = nil
-gg_unit_h00D_0051 = nil
+gg_unit_n02O_0363 = nil
 gg_unit_h00W_0045 = nil
 gg_unit_h02S_0042 = nil
 gg_unit_h02R_0358 = nil
@@ -37461,7 +37487,7 @@ gg_unit_h02S_0256 = nil
 gg_unit_h02S_0041 = nil
 gg_unit_N007_0322 = nil
 gg_unit_h02R_0054 = nil
-gg_unit_h01G_0194 = nil
+gg_unit_E000_0367 = nil
 gg_unit_h02S_0253 = nil
 gg_unit_h02T_0170 = nil
 gg_unit_h02R_0243 = nil
@@ -37476,12 +37502,12 @@ gg_unit_h016_0158 = nil
 gg_unit_h01F_0201 = nil
 gg_unit_h011_0185 = nil
 gg_unit_h011_0153 = nil
-gg_unit_h00D_0008 = nil
+gg_unit_n02L_0007 = nil
 gg_unit_N001_0327 = nil
 gg_unit_N00A_0326 = nil
 gg_unit_h02S_0251 = nil
 gg_unit_h01F_0208 = nil
-gg_unit_h01H_0205 = nil
+gg_unit_nvil_0360 = nil
 gg_unit_h011_0154 = nil
 gg_unit_h010_0165 = nil
 gg_unit_h010_0057 = nil
@@ -37503,8 +37529,8 @@ gg_unit_h00U_0047 = nil
 gg_unit_h00U_0181 = nil
 gg_unit_h02T_0210 = nil
 gg_unit_h02T_0169 = nil
-gg_unit_h01B_0199 = nil
-gg_unit_h01B_0200 = nil
+gg_unit_N02K_0384 = nil
+gg_unit_nCOP_0383 = nil
 gg_unit_h010_0187 = nil
 gg_unit_h018_0202 = nil
 gg_unit_h018_0203 = nil
@@ -37519,14 +37545,14 @@ gg_unit_h017_0026 = nil
 gg_unit_h016_0161 = nil
 gg_unit_h02R_0254 = nil
 gg_unit_NBDL_0135 = nil
-gg_unit_h01B_0136 = nil
+gg_unit_nvlk_0361 = nil
 gg_unit_h010_0166 = nil
 gg_unit_h010_0167 = nil
 gg_unit_h010_0168 = nil
 gg_unit_h01F_0209 = nil
-gg_unit_h01H_0206 = nil
-gg_unit_h01H_0207 = nil
-gg_unit_h01G_0195 = nil
+gg_unit_nCOP_0381 = nil
+gg_unit_N02K_0226 = nil
+gg_unit_N02H_0366 = nil
 gg_unit_h009_0053 = nil
 gg_unit_O001_0320 = nil
 gg_unit_h01D_0171 = nil
@@ -37764,20 +37790,6 @@ gg_unit_nCOP_0328 = nil
 gg_unit_nCOP_0329 = nil
 gg_unit_nCOP_0330 = nil
 gg_unit_nvlw_0354 = nil
-gg_unit_nvk2_0357 = nil
-gg_unit_nvk2_0359 = nil
-gg_unit_nvil_0360 = nil
-gg_unit_nvlk_0361 = nil
-gg_unit_nCOP_0383 = nil
-gg_unit_N02K_0384 = nil
-gg_unit_N02H_0366 = nil
-gg_unit_E000_0367 = nil
-gg_unit_N02J_0380 = nil
-gg_unit_nCOP_0381 = nil
-gg_unit_N02K_0226 = nil
-gg_unit_n02L_0007 = nil
-gg_unit_n02O_0363 = nil
-gg_unit_n02M_0364 = nil
 gg_dest_HEch_0019 = nil
 gg_dest_HEch_0017 = nil
 gg_dest_HEch_0016 = nil
@@ -67059,8 +67071,6 @@ function CreateUnitsForPlayer0()
     local t = nil
     gg_unit_n02L_0007 = CreateUnit(p, 1848652364, 16821.3, 19262.4, 270.000)
     gg_unit_nvlw_0354 = CreateUnit(p, 1853254775, -10481.6, 15017.3, 144.112)
-    gg_unit_nvk2_0357 = CreateUnit(p, 1853254450, -10664.9, 15091.3, 180.000)
-    gg_unit_nvk2_0359 = CreateUnit(p, 1853254450, -10731.9, 15094.7, 0.000)
     gg_unit_nvil_0360 = CreateUnit(p, 1853253996, -10534.3, 14958.8, 126.830)
     gg_unit_nvlk_0361 = CreateUnit(p, 1853254763, -10586.0, 15049.3, 150.000)
 end
@@ -67069,7 +67079,6 @@ function CreateBuildingsForPlayer1()
     local p = Player(1)
     local unitID = nil
     local t = nil
-    gg_unit_h00D_0008 = CreateUnit(p, 1747988548, -11296.0, 15264.0, 270.000)
     gg_unit_h00A_0015 = CreateUnit(p, 1747988545, -12160.0, 14336.0, 270.000)
 end
 
@@ -67078,7 +67087,6 @@ function CreateBuildingsForPlayer2()
     local unitID = nil
     local t = nil
     gg_unit_h00A_0028 = CreateUnit(p, 1747988545, -12160.0, 13952.0, 270.000)
-    gg_unit_h00D_0029 = CreateUnit(p, 1747988548, -10912.0, 15264.0, 270.000)
 end
 
 function CreateBuildingsForPlayer3()
@@ -67086,7 +67094,6 @@ function CreateBuildingsForPlayer3()
     local unitID = nil
     local t = nil
     gg_unit_h00A_0030 = CreateUnit(p, 1747988545, -12160.0, 13568.0, 270.000)
-    gg_unit_h00D_0051 = CreateUnit(p, 1747988548, -10528.0, 15264.0, 270.000)
 end
 
 function CreateBuildingsForPlayer4()
@@ -67134,7 +67141,6 @@ function CreateBuildingsForPlayer5()
     local unitID = nil
     local t = nil
     gg_unit_h017_0025 = CreateUnit(p, 1747988791, 12160.0, 14336.0, 270.000)
-    gg_unit_h01G_0194 = CreateUnit(p, 1747988807, 10528.0, 15264.0, 270.000)
 end
 
 function CreateBuildingsForPlayer6()
@@ -67142,7 +67148,6 @@ function CreateBuildingsForPlayer6()
     local unitID = nil
     local t = nil
     gg_unit_h017_0026 = CreateUnit(p, 1747988791, 12160.0, 13952.0, 270.000)
-    gg_unit_h01G_0193 = CreateUnit(p, 1747988807, 10912.0, 15264.0, 270.000)
 end
 
 function CreateBuildingsForPlayer7()
@@ -67150,7 +67155,6 @@ function CreateBuildingsForPlayer7()
     local unitID = nil
     local t = nil
     gg_unit_h017_0157 = CreateUnit(p, 1747988791, 12160.0, 13568.0, 270.000)
-    gg_unit_h01G_0195 = CreateUnit(p, 1747988807, 11296.0, 15264.0, 270.000)
 end
 
 function CreateBuildingsForPlayer8()
@@ -67198,7 +67202,6 @@ function CreateBuildingsForPlayer9()
     local unitID = nil
     local t = nil
     gg_unit_h016_0158 = CreateUnit(p, 1747988790, -12160.0, -8192.0, 270.000)
-    gg_unit_h01H_0205 = CreateUnit(p, 1747988808, -11232.0, -9120.0, 270.000)
 end
 
 function CreateBuildingsForPlayer10()
@@ -67206,7 +67209,6 @@ function CreateBuildingsForPlayer10()
     local unitID = nil
     local t = nil
     gg_unit_h016_0159 = CreateUnit(p, 1747988790, -12160.0, -7808.0, 270.000)
-    gg_unit_h01H_0206 = CreateUnit(p, 1747988808, -10848.0, -9120.0, 270.000)
 end
 
 function CreateBuildingsForPlayer11()
@@ -67214,7 +67216,6 @@ function CreateBuildingsForPlayer11()
     local unitID = nil
     local t = nil
     gg_unit_h016_0161 = CreateUnit(p, 1747988790, -12160.0, -7424.0, 270.000)
-    gg_unit_h01H_0207 = CreateUnit(p, 1747988808, -10464.0, -9120.0, 270.000)
 end
 
 function CreateBuildingsForPlayer12()
@@ -67261,7 +67262,6 @@ function CreateBuildingsForPlayer13()
     local p = Player(13)
     local unitID = nil
     local t = nil
-    gg_unit_h01B_0136 = CreateUnit(p, 1747988802, 12192.0, -7392.0, 270.000)
     gg_unit_h01F_0201 = CreateUnit(p, 1747988806, 10880.0, -9088.0, 270.000)
 end
 
@@ -67269,7 +67269,6 @@ function CreateBuildingsForPlayer14()
     local p = Player(14)
     local unitID = nil
     local t = nil
-    gg_unit_h01B_0199 = CreateUnit(p, 1747988802, 12192.0, -8160.0, 270.000)
     gg_unit_h01F_0208 = CreateUnit(p, 1747988806, 10496.0, -9088.0, 270.000)
 end
 
@@ -67277,7 +67276,6 @@ function CreateBuildingsForPlayer15()
     local p = Player(15)
     local unitID = nil
     local t = nil
-    gg_unit_h01B_0200 = CreateUnit(p, 1747988802, 12192.0, -7776.0, 270.000)
     gg_unit_h01F_0209 = CreateUnit(p, 1747988806, 11264.0, -9088.0, 270.000)
 end
 
@@ -67663,8 +67661,9 @@ function CreateRegions()
     gg_rct_OrcToHumanOuterLine = Rect(4032.0, 13248.0, 4160.0, 13376.0)
     gg_rct_OrcToUndeadInnerLine = Rect(10176.0, 11200.0, 10304.0, 11328.0)
     gg_rct_OrcToUndeadOuterLine = Rect(10176.0, 7104.0, 10304.0, 7232.0)
-    gg_rct_TestArea = Rect(17280.0, 17280.0, 17408.0, 17408.0)
-    gg_rct_TestArea2 = Rect(-5376.0, 12928.0, -5248.0, 13056.0)
+    gg_rct_TestArea = Rect(14784.0, 16320.0, 14912.0, 16448.0)
+    gg_rct_TestArea2 = Rect(15808.0, 16320.0, 15936.0, 16448.0)
+    gg_rct_TestArea3 = Rect(16832.0, 16320.0, 16960.0, 16448.0)
     gg_rct_UndeadBarracksToCenter = Rect(6080.0, -3136.0, 6208.0, -3008.0)
     gg_rct_UndeadBarracksToCenterSpawn = Rect(5760.0, -3072.0, 6016.0, -2560.0)
     gg_rct_UndeadBarracksToElf = Rect(4928.0, -7232.0, 5056.0, -7104.0)

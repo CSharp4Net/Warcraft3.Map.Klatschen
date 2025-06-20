@@ -112,6 +112,7 @@ internal static class Areas
   public static Area OrcToUndeadOuterLine { get; set; } = new Area(Regions.OrcToUndeadOuterLine);
   public static Area TestArea { get; set; } = new Area(Regions.TestArea);
   public static Area TestArea2 { get; set; } = new Area(Regions.TestArea2);
+  public static Area TestArea3 { get; set; } = new Area(Regions.TestArea3);
   public static Area UndeadBarracksToCenter { get; set; } = new Area(Regions.UndeadBarracksToCenter);
   public static Area UndeadBarracksToCenterSpawn { get; set; } = new Area(Regions.UndeadBarracksToCenterSpawn);
   public static Area UndeadBarracksToElf { get; set; } = new Area(Regions.UndeadBarracksToElf);

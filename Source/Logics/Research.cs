@@ -80,6 +80,9 @@ namespace Source.Logics
     {
       int unitTypeId = soldUnit.UnitType;
 
+      // Gekaufte Einheit sofort entfernen
+      Common.RemoveUnit(soldUnit);
+
       Program.ShowDebugMessage($"Remove unit {unitTypeId} from stock of {sellingUnit.Name}");
       // Gekaufte Upgrade-Item von soldItemTypeId entfernen
       sellingUnit.RemoveUnitFromStock(unitTypeId);
@@ -107,22 +110,6 @@ namespace Source.Logics
       }
 
       building.UpgradeSpawningUnits(command);
-    }
-
-    private static bool TryGetNextStepItem(int soldItemTypeId, out int nextItemTypeId)
-    {
-      switch (soldItemTypeId)
-      {
-        case Constants.ITEM_MELEE_UNIT_LEVEL_2:
-          nextItemTypeId = Constants.ITEM_MELEE_UNIT_LEVEL_3;
-          break;
-
-        default:
-          nextItemTypeId = 0;
-          break;
-      }
-
-      return nextItemTypeId > 0;
     }
   }
 }

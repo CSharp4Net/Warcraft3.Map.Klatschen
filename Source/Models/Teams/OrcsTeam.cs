@@ -33,6 +33,8 @@ namespace Source.Models.Teams
       building.AddSpawnTrigger(Enums.SpawnInterval.Middle, Constants.UNIT_HEADHUNTER_ORC).Run(1f);
       building.AddSpawnTrigger(Enums.SpawnInterval.Long, Constants.UNIT_WITCH_DOCTOR_ORC).Run(2f);
 
+      AddBaseUnitsToStock(building);
+
       building = Computer.CreateBarrackBuilding(Constants.UNIT_BARRACKS_ORC,
         Areas.OrcBarracksToHuman, Areas.OrcBarracksToHumanSpawn, Areas.HumanBase);
 
@@ -41,6 +43,8 @@ namespace Source.Models.Teams
       building.AddSpawnTrigger(Enums.SpawnInterval.Middle, Constants.UNIT_HEADHUNTER_ORC).Run(1f);
       building.AddSpawnTrigger(Enums.SpawnInterval.Long, Constants.UNIT_WITCH_DOCTOR_ORC).Run(2f);
 
+      AddBaseUnitsToStock(building);
+
       building = Computer.CreateBarrackBuilding(Constants.UNIT_BARRACKS_ORC,
         Areas.OrcBarracksToUndead, Areas.OrcBarracksToUndeadSpawn, Areas.UndeadBase);
 
@@ -48,6 +52,25 @@ namespace Source.Models.Teams
       building.AddSpawnTrigger(Enums.SpawnInterval.Short, Constants.UNIT_GRUNT_ORC, Constants.UNIT_GRUNT_ORC).Run();
       building.AddSpawnTrigger(Enums.SpawnInterval.Middle, Constants.UNIT_HEADHUNTER_ORC).Run(1f);
       building.AddSpawnTrigger(Enums.SpawnInterval.Long, Constants.UNIT_WITCH_DOCTOR_ORC).Run(2f);
+
+      AddBaseUnitsToStock(building);
+
+#if DEBUG
+      building = Computer.CreateBarrackBuilding(Constants.UNIT_BARRACKS_ORC,
+        Areas.TestArea3, Areas.HumanBarracksToOrcsSpawn, Areas.OrcBase);
+
+      AddBaseUnitsToStock(building);
+#endif
+    }
+
+    private void AddBaseUnitsToStock(UnitSpawnBuilding building)
+    {
+      // TODO
+      building.Wc3Unit.AddUnitToStock(Constants.UNIT_CAPTAIN_HUMAN, 1, 1);
+      building.Wc3Unit.AddUnitToStock(Constants.UNIT_RIFLEMAN_BESERK_HUMAN, 1, 1);
+      building.Wc3Unit.AddUnitToStock(Constants.UNIT_SORCERESS_HUMAN, 1, 1);
+      building.Wc3Unit.AddUnitToStock(Constants.UNIT_FLYING_MACHINE_HUMAN, 1, 1);
+      building.Wc3Unit.AddUnitToStock(Constants.UNIT_SIEGE_SQUAD_HUMAN, 1, 1);
     }
 
     public override Enums.ResearchType GetTechType(int techId, int techLevel, out SpawnUnitCommand spawnCommand)

@@ -129,6 +129,7 @@ gg_rct_UndeadToOrcInnerLine = nil
 gg_rct_UndeadToOrcOuterLine = nil
 gg_snd_blowitup_cutted = ""
 gg_trg_Untitled_Trigger_001 = nil
+gg_rct_TestArea3 = nil
 function InitGlobals()
 end
 
@@ -186,8 +187,6 @@ local life
 
 u = BlzCreateUnitWithSkin(p, FourCC("n02L"), 16821.3, 19262.4, 270.000, FourCC("n02L"))
 u = BlzCreateUnitWithSkin(p, FourCC("nvlw"), -10481.6, 15017.3, 144.112, FourCC("nvlw"))
-u = BlzCreateUnitWithSkin(p, FourCC("nvk2"), -10664.9, 15091.3, 180.000, FourCC("nvk2"))
-u = BlzCreateUnitWithSkin(p, FourCC("nvk2"), -10731.9, 15094.7, 0.000, FourCC("nvk2"))
 u = BlzCreateUnitWithSkin(p, FourCC("nvil"), -10534.3, 14958.8, 126.830, FourCC("nvil"))
 u = BlzCreateUnitWithSkin(p, FourCC("nvlk"), -10586.0, 15049.3, 150.000, FourCC("nvlk"))
 end
@@ -199,7 +198,6 @@ local unitID
 local t
 local life
 
-u = BlzCreateUnitWithSkin(p, FourCC("h00D"), -11296.0, 15264.0, 270.000, FourCC("h00D"))
 u = BlzCreateUnitWithSkin(p, FourCC("h00A"), -12160.0, 14336.0, 270.000, FourCC("h00A"))
 end
 
@@ -211,7 +209,6 @@ local t
 local life
 
 u = BlzCreateUnitWithSkin(p, FourCC("h00A"), -12160.0, 13952.0, 270.000, FourCC("h00A"))
-u = BlzCreateUnitWithSkin(p, FourCC("h00D"), -10912.0, 15264.0, 270.000, FourCC("h00D"))
 end
 
 function CreateBuildingsForPlayer3()
@@ -222,7 +219,6 @@ local t
 local life
 
 u = BlzCreateUnitWithSkin(p, FourCC("h00A"), -12160.0, 13568.0, 270.000, FourCC("h00A"))
-u = BlzCreateUnitWithSkin(p, FourCC("h00D"), -10528.0, 15264.0, 270.000, FourCC("h00D"))
 end
 
 function CreateBuildingsForPlayer4()
@@ -279,7 +275,6 @@ local t
 local life
 
 u = BlzCreateUnitWithSkin(p, FourCC("h017"), 12160.0, 14336.0, 270.000, FourCC("h017"))
-u = BlzCreateUnitWithSkin(p, FourCC("h01G"), 10528.0, 15264.0, 270.000, FourCC("h01G"))
 end
 
 function CreateBuildingsForPlayer6()
@@ -290,7 +285,6 @@ local t
 local life
 
 u = BlzCreateUnitWithSkin(p, FourCC("h017"), 12160.0, 13952.0, 270.000, FourCC("h017"))
-u = BlzCreateUnitWithSkin(p, FourCC("h01G"), 10912.0, 15264.0, 270.000, FourCC("h01G"))
 end
 
 function CreateBuildingsForPlayer7()
@@ -301,7 +295,6 @@ local t
 local life
 
 u = BlzCreateUnitWithSkin(p, FourCC("h017"), 12160.0, 13568.0, 270.000, FourCC("h017"))
-u = BlzCreateUnitWithSkin(p, FourCC("h01G"), 11296.0, 15264.0, 270.000, FourCC("h01G"))
 end
 
 function CreateBuildingsForPlayer8()
@@ -358,7 +351,6 @@ local t
 local life
 
 u = BlzCreateUnitWithSkin(p, FourCC("h016"), -12160.0, -8192.0, 270.000, FourCC("h016"))
-u = BlzCreateUnitWithSkin(p, FourCC("h01H"), -11232.0, -9120.0, 270.000, FourCC("h01H"))
 end
 
 function CreateBuildingsForPlayer10()
@@ -369,7 +361,6 @@ local t
 local life
 
 u = BlzCreateUnitWithSkin(p, FourCC("h016"), -12160.0, -7808.0, 270.000, FourCC("h016"))
-u = BlzCreateUnitWithSkin(p, FourCC("h01H"), -10848.0, -9120.0, 270.000, FourCC("h01H"))
 end
 
 function CreateBuildingsForPlayer11()
@@ -380,7 +371,6 @@ local t
 local life
 
 u = BlzCreateUnitWithSkin(p, FourCC("h016"), -12160.0, -7424.0, 270.000, FourCC("h016"))
-u = BlzCreateUnitWithSkin(p, FourCC("h01H"), -10464.0, -9120.0, 270.000, FourCC("h01H"))
 end
 
 function CreateBuildingsForPlayer12()
@@ -436,7 +426,6 @@ local unitID
 local t
 local life
 
-u = BlzCreateUnitWithSkin(p, FourCC("h01B"), 12192.0, -7392.0, 270.000, FourCC("h01B"))
 u = BlzCreateUnitWithSkin(p, FourCC("h01F"), 10880.0, -9088.0, 270.000, FourCC("h01F"))
 end
 
@@ -447,7 +436,6 @@ local unitID
 local t
 local life
 
-u = BlzCreateUnitWithSkin(p, FourCC("h01B"), 12192.0, -8160.0, 270.000, FourCC("h01B"))
 u = BlzCreateUnitWithSkin(p, FourCC("h01F"), 10496.0, -9088.0, 270.000, FourCC("h01F"))
 end
 
@@ -458,7 +446,6 @@ local unitID
 local t
 local life
 
-u = BlzCreateUnitWithSkin(p, FourCC("h01B"), 12192.0, -7776.0, 270.000, FourCC("h01B"))
 u = BlzCreateUnitWithSkin(p, FourCC("h01F"), 11264.0, -9088.0, 270.000, FourCC("h01F"))
 end
 
@@ -855,8 +842,9 @@ gg_rct_OrcToHumanInnerLine = Rect(8128.0, 13248.0, 8256.0, 13376.0)
 gg_rct_OrcToHumanOuterLine = Rect(4032.0, 13248.0, 4160.0, 13376.0)
 gg_rct_OrcToUndeadInnerLine = Rect(10176.0, 11200.0, 10304.0, 11328.0)
 gg_rct_OrcToUndeadOuterLine = Rect(10176.0, 7104.0, 10304.0, 7232.0)
-gg_rct_TestArea = Rect(17280.0, 17280.0, 17408.0, 17408.0)
-gg_rct_TestArea2 = Rect(-5376.0, 12928.0, -5248.0, 13056.0)
+gg_rct_TestArea = Rect(14784.0, 16320.0, 14912.0, 16448.0)
+gg_rct_TestArea2 = Rect(15808.0, 16320.0, 15936.0, 16448.0)
+gg_rct_TestArea3 = Rect(16832.0, 16320.0, 16960.0, 16448.0)
 gg_rct_UndeadBarracksToCenter = Rect(6080.0, -3136.0, 6208.0, -3008.0)
 gg_rct_UndeadBarracksToCenterSpawn = Rect(5760.0, -3072.0, 6016.0, -2560.0)
 gg_rct_UndeadBarracksToElf = Rect(4928.0, -7232.0, 5056.0, -7104.0)
