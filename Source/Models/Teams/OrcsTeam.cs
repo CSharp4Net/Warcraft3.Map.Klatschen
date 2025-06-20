@@ -25,45 +25,33 @@ namespace Source.Models.Teams
       mainBuilding.Wc3Unit.AddUnitToStock(Constants.UNIT_MUD_GOLEM_ORC, 1, 1);
 
       // Kasernen
-      UnitSpawnBuilding building = Computer.CreateBarrackBuilding(Constants.UNIT_BARRACKS_ORC,
-        Areas.OrcBarracksToCenter, Areas.OrcBarracksToCenterSpawn, Areas.ElfBase);
-
+      UnitSpawnBuilding building = Computer.CreateBarrackBuilding(Constants.UNIT_BARRACKS_ORC, Areas.OrcBarracksToCenter, Areas.OrcBarracksToCenterSpawn, Areas.ElfBase);
       building.RegisterOnDies(TeamBarracksBuilding.OnDies);
-      building.AddSpawnTrigger(Enums.SpawnInterval.Short, Constants.UNIT_GRUNT_ORC, Constants.UNIT_GRUNT_ORC).Run();
-      building.AddSpawnTrigger(Enums.SpawnInterval.Middle, Constants.UNIT_HEADHUNTER_ORC).Run(1f);
-      building.AddSpawnTrigger(Enums.SpawnInterval.Long, Constants.UNIT_WITCH_DOCTOR_ORC).Run(2f);
 
-      AddBaseUnitsToStock(building);
+      AddInitialSpawnTriggers(building);
+      AddInitialUnitUpgradesToStock(building);
 
-      building = Computer.CreateBarrackBuilding(Constants.UNIT_BARRACKS_ORC,
-        Areas.OrcBarracksToHuman, Areas.OrcBarracksToHumanSpawn, Areas.HumanBase);
-
+      building = Computer.CreateBarrackBuilding(Constants.UNIT_BARRACKS_ORC, Areas.OrcBarracksToHuman, Areas.OrcBarracksToHumanSpawn, Areas.HumanBase);
       building.RegisterOnDies(TeamBarracksBuilding.OnDies);
-      building.AddSpawnTrigger(Enums.SpawnInterval.Short, Constants.UNIT_GRUNT_ORC, Constants.UNIT_GRUNT_ORC).Run();
-      building.AddSpawnTrigger(Enums.SpawnInterval.Middle, Constants.UNIT_HEADHUNTER_ORC).Run(1f);
-      building.AddSpawnTrigger(Enums.SpawnInterval.Long, Constants.UNIT_WITCH_DOCTOR_ORC).Run(2f);
 
-      AddBaseUnitsToStock(building);
+      AddInitialSpawnTriggers(building);
+      AddInitialUnitUpgradesToStock(building);
 
-      building = Computer.CreateBarrackBuilding(Constants.UNIT_BARRACKS_ORC,
-        Areas.OrcBarracksToUndead, Areas.OrcBarracksToUndeadSpawn, Areas.UndeadBase);
-
+      building = Computer.CreateBarrackBuilding(Constants.UNIT_BARRACKS_ORC, Areas.OrcBarracksToUndead, Areas.OrcBarracksToUndeadSpawn, Areas.UndeadBase);
       building.RegisterOnDies(TeamBarracksBuilding.OnDies);
-      building.AddSpawnTrigger(Enums.SpawnInterval.Short, Constants.UNIT_GRUNT_ORC, Constants.UNIT_GRUNT_ORC).Run();
-      building.AddSpawnTrigger(Enums.SpawnInterval.Middle, Constants.UNIT_HEADHUNTER_ORC).Run(1f);
-      building.AddSpawnTrigger(Enums.SpawnInterval.Long, Constants.UNIT_WITCH_DOCTOR_ORC).Run(2f);
 
-      AddBaseUnitsToStock(building);
-
-#if DEBUG
-      building = Computer.CreateBarrackBuilding(Constants.UNIT_BARRACKS_ORC,
-        Areas.TestArea3, Areas.HumanBarracksToOrcsSpawn, Areas.OrcBase);
-
-      AddBaseUnitsToStock(building);
-#endif
+      AddInitialSpawnTriggers(building);
+      AddInitialUnitUpgradesToStock(building);
     }
 
-    private void AddBaseUnitsToStock(UnitSpawnBuilding building)
+    private void AddInitialSpawnTriggers(UnitSpawnBuilding building)
+    {
+      building.AddSpawnTrigger(Enums.SpawnInterval.Short, Constants.UNIT_GRUNT_ORC, Constants.UNIT_GRUNT_ORC, Constants.UNIT_HEADHUNTER_ORC).Run();
+      building.AddSpawnTrigger(Enums.SpawnInterval.Middle, Constants.UNIT_WITCH_DOCTOR_ORC).Run(1f);
+      building.AddSpawnTrigger(Enums.SpawnInterval.Long).Run(2f);
+    }
+
+    private void AddInitialUnitUpgradesToStock(UnitSpawnBuilding building)
     {
       // TODO
       building.Wc3Unit.AddUnitToStock(Constants.UNIT_CAPTAIN_HUMAN, 1, 1);
@@ -121,7 +109,7 @@ namespace Source.Models.Teams
           spawnCommand = new SpawnUnitCommand()
           {
             UnitSpawnType = Enums.SpawnInterval.Middle,
-            UnitIdOfBuilding = Constants.UNIT_FORTRESS_ORC,
+            UnitIdOfBuilding = Constants.UNIT_BARRACKS_ORC,
           };
 
           switch (techLevel)
@@ -141,7 +129,7 @@ namespace Source.Models.Teams
           spawnCommand = new SpawnUnitCommand()
           {
             UnitSpawnType = Enums.SpawnInterval.Middle,
-            UnitIdOfBuilding = Constants.UNIT_FORTRESS_ORC
+            UnitIdOfBuilding = Constants.UNIT_BARRACKS_ORC
           };
 
           switch (techLevel)
@@ -161,7 +149,7 @@ namespace Source.Models.Teams
           spawnCommand = new SpawnUnitCommand()
           {
             UnitSpawnType = Enums.SpawnInterval.Long,
-            UnitIdOfBuilding = Constants.UNIT_FORTRESS_ORC
+            UnitIdOfBuilding = Constants.UNIT_BARRACKS_ORC
           };
 
           switch (techLevel)

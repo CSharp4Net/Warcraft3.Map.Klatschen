@@ -25,45 +25,33 @@ namespace Source.Models.Teams
       mainBuilding.Wc3Unit.AddUnitToStock(Constants.UNIT_WAR_GOLEM_HUMAN, 1, 1);
 
       // Kasernen
-      UnitSpawnBuilding building = Computer.CreateBarrackBuilding(Constants.UNIT_BARRACKS_HUMAN,
-        Areas.HumanBarracksToCenter, Areas.HumanBarracksToCenterSpawn, Areas.UndeadBase);
-
+      UnitSpawnBuilding building = Computer.CreateBarrackBuilding(Constants.UNIT_BARRACKS_HUMAN, Areas.HumanBarracksToCenter, Areas.HumanBarracksToCenterSpawn, Areas.UndeadBase);
       building.RegisterOnDies(TeamBarracksBuilding.OnDies);
-      building.AddSpawnTrigger(Enums.SpawnInterval.Short, Constants.UNIT_SOLDIER_HUMAN, Constants.UNIT_SOLDIER_HUMAN).Run();
-      building.AddSpawnTrigger(Enums.SpawnInterval.Middle, Constants.UNIT_RIFLEMAN_HUMAN).Run(1f);
-      building.AddSpawnTrigger(Enums.SpawnInterval.Long, Constants.UNIT_PRIEST_HUMAN).Run(2f);
 
-      AddBaseUnitsToStock(building);
+      AddInitialSpawnTriggers(building);
+      AddInitialUnitUpgradesToStock(building);
 
-      building = Computer.CreateBarrackBuilding(Constants.UNIT_BARRACKS_HUMAN,
-        Areas.HumanBarracksToElf, Areas.HumanBarracksToElfSpawn, Areas.ElfBase);
-
+      building = Computer.CreateBarrackBuilding(Constants.UNIT_BARRACKS_HUMAN, Areas.HumanBarracksToElf, Areas.HumanBarracksToElfSpawn, Areas.ElfBase);
       building.RegisterOnDies(TeamBarracksBuilding.OnDies);
-      building.AddSpawnTrigger(Enums.SpawnInterval.Short, Constants.UNIT_SOLDIER_HUMAN, Constants.UNIT_SOLDIER_HUMAN).Run();
-      building.AddSpawnTrigger(Enums.SpawnInterval.Middle, Constants.UNIT_RIFLEMAN_HUMAN).Run(1f);
-      building.AddSpawnTrigger(Enums.SpawnInterval.Long, Constants.UNIT_PRIEST_HUMAN).Run(2f);
 
-      AddBaseUnitsToStock(building);
+      AddInitialSpawnTriggers(building);
+      AddInitialUnitUpgradesToStock(building);
 
-      building = Computer.CreateBarrackBuilding(Constants.UNIT_BARRACKS_HUMAN,
-        Areas.HumanBarracksToOrcs, Areas.HumanBarracksToOrcsSpawn, Areas.OrcBase);
-
+      building = Computer.CreateBarrackBuilding(Constants.UNIT_BARRACKS_HUMAN, Areas.HumanBarracksToOrcs, Areas.HumanBarracksToOrcsSpawn, Areas.OrcBase);
       building.RegisterOnDies(TeamBarracksBuilding.OnDies);
-      building.AddSpawnTrigger(Enums.SpawnInterval.Short, Constants.UNIT_SOLDIER_HUMAN, Constants.UNIT_SOLDIER_HUMAN).Run();
-      building.AddSpawnTrigger(Enums.SpawnInterval.Middle, Constants.UNIT_RIFLEMAN_HUMAN).Run(1f);
-      building.AddSpawnTrigger(Enums.SpawnInterval.Long, Constants.UNIT_PRIEST_HUMAN).Run(2f);
 
-      AddBaseUnitsToStock(building);
-
-#if DEBUG
-      building = Computer.CreateBarrackBuilding(Constants.UNIT_BARRACKS_HUMAN,
-        Areas.TestArea, Areas.HumanBarracksToOrcsSpawn, Areas.OrcBase);
-
-      AddBaseUnitsToStock(building);
-#endif
+      AddInitialSpawnTriggers(building);
+      AddInitialUnitUpgradesToStock(building);
     }
 
-    private void AddBaseUnitsToStock(UnitSpawnBuilding building)
+    private void AddInitialSpawnTriggers(UnitSpawnBuilding building)
+    {
+      building.AddSpawnTrigger(Enums.SpawnInterval.Short, Constants.UNIT_SOLDIER_HUMAN, Constants.UNIT_SOLDIER_HUMAN, Constants.UNIT_RIFLEMAN_HUMAN).Run();
+      building.AddSpawnTrigger(Enums.SpawnInterval.Middle, Constants.UNIT_PRIEST_HUMAN).Run(1f);
+      building.AddSpawnTrigger(Enums.SpawnInterval.Long).Run(2f);
+    }
+
+    private void AddInitialUnitUpgradesToStock(UnitSpawnBuilding building)
     {
       building.Wc3Unit.AddUnitToStock(Constants.UNIT_CAPTAIN_HUMAN, 1, 1);
       building.Wc3Unit.AddUnitToStock(Constants.UNIT_RIFLEMAN_BESERK_HUMAN, 1, 1);
@@ -120,7 +108,7 @@ namespace Source.Models.Teams
           spawnCommand = new SpawnUnitCommand()
           {
             UnitSpawnType = Enums.SpawnInterval.Middle,
-            UnitIdOfBuilding = Constants.UNIT_CASTLE_HUMAN,
+            UnitIdOfBuilding = Constants.UNIT_BARRACKS_HUMAN,
           };
 
           switch (techLevel)
@@ -140,7 +128,7 @@ namespace Source.Models.Teams
           spawnCommand = new SpawnUnitCommand()
           {
             UnitSpawnType = Enums.SpawnInterval.Middle,
-            UnitIdOfBuilding = Constants.UNIT_CASTLE_HUMAN
+            UnitIdOfBuilding = Constants.UNIT_BARRACKS_HUMAN
           };
 
           switch (techLevel)
@@ -160,7 +148,7 @@ namespace Source.Models.Teams
           spawnCommand = new SpawnUnitCommand()
           {
             UnitSpawnType = Enums.SpawnInterval.Long,
-            UnitIdOfBuilding = Constants.UNIT_CASTLE_HUMAN
+            UnitIdOfBuilding = Constants.UNIT_BARRACKS_HUMAN
           };
 
           switch (techLevel)
@@ -185,11 +173,42 @@ namespace Source.Models.Teams
     {
       switch (baseUnitTypeId)
       {
-        case Constants.UNIT_CAPTAIN_HUMAN: // Soldier -> Captain
+        case Constants.UNIT_CAPTAIN_HUMAN:
           upgradeUnitCommand = new UpgradeUnitCommand(Enums.SpawnInterval.Short, Constants.UNIT_SOLDIER_HUMAN, baseUnitTypeId, Constants.UNIT_KNIGHT_HUMAN);
           return Enums.UnitUpgradeType.UpgradeUnitInSpawn;
-        case Constants.UNIT_KNIGHT_HUMAN: // Captain -> Knight
+        case Constants.UNIT_KNIGHT_HUMAN:
           upgradeUnitCommand = new UpgradeUnitCommand(Enums.SpawnInterval.Short, Constants.UNIT_CAPTAIN_HUMAN, baseUnitTypeId, 0);
+          return Enums.UnitUpgradeType.UpgradeUnitInSpawn;
+
+        case Constants.UNIT_RIFLEMAN_BESERK_HUMAN:
+          upgradeUnitCommand = new UpgradeUnitCommand(Enums.SpawnInterval.Short, Constants.UNIT_RIFLEMAN_HUMAN, baseUnitTypeId, Constants.UNIT_RIFLEMAN_ELITE_HUMAN);
+          return Enums.UnitUpgradeType.UpgradeUnitInSpawn;
+        case Constants.UNIT_RIFLEMAN_ELITE_HUMAN:
+          upgradeUnitCommand = new UpgradeUnitCommand(Enums.SpawnInterval.Short, Constants.UNIT_RIFLEMAN_BESERK_HUMAN, baseUnitTypeId, 0);
+          return Enums.UnitUpgradeType.UpgradeUnitInSpawn;
+
+        case Constants.UNIT_SORCERESS_HUMAN:
+          upgradeUnitCommand = new UpgradeUnitCommand(Enums.SpawnInterval.Middle, Constants.UNIT_RIFLEMAN_HUMAN, baseUnitTypeId, Constants.UNIT_SPELLBREAKER_HUMAN);
+          return Enums.UnitUpgradeType.UpgradeUnitInSpawn;
+        case Constants.UNIT_SPELLBREAKER_HUMAN:
+          upgradeUnitCommand = new UpgradeUnitCommand(Enums.SpawnInterval.Middle, Constants.UNIT_SORCERESS_HUMAN, baseUnitTypeId, 0);
+          return Enums.UnitUpgradeType.UpgradeUnitInSpawn;
+
+        case Constants.UNIT_FLYING_MACHINE_HUMAN:
+          upgradeUnitCommand = new UpgradeUnitCommand(Enums.SpawnInterval.Middle, baseUnitTypeId, Constants.UNIT_RIFLEMAN_ELITE_HUMAN);
+          return Enums.UnitUpgradeType.AddNewUnitToSpawn;
+        case Constants.UNIT_FALCON_RIDER_HUMAN:
+          upgradeUnitCommand = new UpgradeUnitCommand(Enums.SpawnInterval.Middle, Constants.UNIT_FLYING_MACHINE_HUMAN, baseUnitTypeId, Constants.UNIT_GRIFFIN_RIDER_HUMAN);
+          return Enums.UnitUpgradeType.UpgradeUnitInSpawn;
+        case Constants.UNIT_GRIFFIN_RIDER_HUMAN:
+          upgradeUnitCommand = new UpgradeUnitCommand(Enums.SpawnInterval.Middle, Constants.UNIT_FALCON_RIDER_HUMAN, baseUnitTypeId, 0);
+          return Enums.UnitUpgradeType.UpgradeUnitInSpawn;
+
+        case Constants.UNIT_SIEGE_SQUAD_HUMAN:
+          upgradeUnitCommand = new UpgradeUnitCommand(Enums.SpawnInterval.Long, baseUnitTypeId, Constants.UNIT_SIEGE_ENGINE_HUMAN);
+          return Enums.UnitUpgradeType.AddNewUnitToSpawn;
+        case Constants.UNIT_SIEGE_ENGINE_HUMAN:
+          upgradeUnitCommand = new UpgradeUnitCommand(Enums.SpawnInterval.Long, Constants.UNIT_SIEGE_SQUAD_HUMAN, baseUnitTypeId, 0);
           return Enums.UnitUpgradeType.UpgradeUnitInSpawn;
 
         default: // Einheiten-Typ ist nicht bekannt

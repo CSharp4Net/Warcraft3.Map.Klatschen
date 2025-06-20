@@ -20526,9 +20526,9 @@ System.namespace("", function (namespace)
       this.OrcToHumanOuterLine = System.new(WCSharpSharedData.Rectangle, 2, 4032, 13248, 4160, 13376)
       this.OrcToUndeadInnerLine = System.new(WCSharpSharedData.Rectangle, 2, 10176, 11200, 10304, 11328)
       this.OrcToUndeadOuterLine = System.new(WCSharpSharedData.Rectangle, 2, 10176, 7104, 10304, 7232)
-      this.TestArea = System.new(WCSharpSharedData.Rectangle, 2, 14784, 16320, 14912, 16448)
-      this.TestArea2 = System.new(WCSharpSharedData.Rectangle, 2, 15808, 16320, 15936, 16448)
-      this.TestArea3 = System.new(WCSharpSharedData.Rectangle, 2, 16832, 16320, 16960, 16448)
+      this.TestArea = System.new(WCSharpSharedData.Rectangle, 2, 15296, 16320, 15424, 16448)
+      this.TestArea2 = System.new(WCSharpSharedData.Rectangle, 2, -5376, 12928, -5248, 13056)
+      this.TestArea3 = System.new(WCSharpSharedData.Rectangle, 2, 16320, 16320, 16448, 16448)
       this.UndeadBarracksToCenter = System.new(WCSharpSharedData.Rectangle, 2, 6080, -3136, 6208, -3008)
       this.UndeadBarracksToCenterSpawn = System.new(WCSharpSharedData.Rectangle, 2, 5760, -3072, 6016, -2560)
       this.UndeadBarracksToElf = System.new(WCSharpSharedData.Rectangle, 2, 4928, -7232, 5056, -7104)
@@ -24885,7 +24885,7 @@ System.import(function (out)
 end)
 System.namespace("Source.Models.Teams", function (namespace)
   namespace.class("ElvesTeam", function (namespace)
-    local CreateBuildings, GetTechType, __ctor__
+    local CreateBuildings, AddInitialSpawnTriggers, AddInitialUnitUpgradesToStock, GetTechType, __ctor__
     __ctor__ = function (this)
       System.base(this).__ctor__(this, Player(8), Areas.ElfBase)
       this.ColorizedName = "|c" .. System.toString("ff808080" --[[ConstantsEx.ColorHexCode_Gray]]) .. System.toString(GetPlayerName(Player(8))) .. "|r"
@@ -24903,25 +24903,35 @@ System.namespace("Source.Models.Teams", function (namespace)
 
       -- Kasernen
       local building = this.Computer:CreateBarrackBuilding(1747988788 --[[Constants.UNIT_ANCIENT_OF_WAR_ELF]], Areas.ElfBarracksToCenter, Areas.ElfBarracksToCenterSpawn, Areas.OrcBase)
-
       building:RegisterOnDies(SourceEventsBuildings.TeamBarracksBuilding.OnDies)
-      building:AddSpawnTrigger(0 --[[SpawnInterval.Short]], System.Array(System.Int32) { 1747988824 --[[Constants.UNIT_SENTRY_ELF]], 1747988824 --[[Constants.UNIT_SENTRY_ELF]] }):Run(0)
-      building:AddSpawnTrigger(1 --[[SpawnInterval.Middle]], System.Array(System.Int32) { 1747988824 --[[Constants.UNIT_SENTRY_ELF]] }):Run(1)
-      building:AddSpawnTrigger(2 --[[SpawnInterval.Long]], System.Array(System.Int32) { 1747989066 --[[Constants.UNIT_DRUID_OF_THE_TALON_ELF]] }):Run(2)
+
+      AddInitialSpawnTriggers(this, building)
+      AddInitialUnitUpgradesToStock(this, building)
 
       building = this.Computer:CreateBarrackBuilding(1747988788 --[[Constants.UNIT_ANCIENT_OF_WAR_ELF]], Areas.ElfBarracksToHuman, Areas.ElfBarracksToHumanSpawn, Areas.HumanBase)
-
       building:RegisterOnDies(SourceEventsBuildings.TeamBarracksBuilding.OnDies)
-      building:AddSpawnTrigger(0 --[[SpawnInterval.Short]], System.Array(System.Int32) { 1747988824 --[[Constants.UNIT_SENTRY_ELF]], 1747988824 --[[Constants.UNIT_SENTRY_ELF]] }):Run(0)
-      building:AddSpawnTrigger(1 --[[SpawnInterval.Middle]], System.Array(System.Int32) { 1747989043 --[[Constants.UNIT_ARCHER_ELF]] }):Run(1)
-      building:AddSpawnTrigger(2 --[[SpawnInterval.Long]], System.Array(System.Int32) { 1747989066 --[[Constants.UNIT_DRUID_OF_THE_TALON_ELF]] }):Run(2)
+
+      AddInitialSpawnTriggers(this, building)
+      AddInitialUnitUpgradesToStock(this, building)
 
       building = this.Computer:CreateBarrackBuilding(1747988788 --[[Constants.UNIT_ANCIENT_OF_WAR_ELF]], Areas.ElfBarracksToUndead, Areas.ElfBarracksToUndeadSpawn, Areas.UndeadBase)
-
       building:RegisterOnDies(SourceEventsBuildings.TeamBarracksBuilding.OnDies)
-      building:AddSpawnTrigger(0 --[[SpawnInterval.Short]], System.Array(System.Int32) { 1747988824 --[[Constants.UNIT_SENTRY_ELF]], 1747988824 --[[Constants.UNIT_SENTRY_ELF]] }):Run(0)
-      building:AddSpawnTrigger(1 --[[SpawnInterval.Middle]], System.Array(System.Int32) { 1747989043 --[[Constants.UNIT_ARCHER_ELF]] }):Run(1)
-      building:AddSpawnTrigger(2 --[[SpawnInterval.Long]], System.Array(System.Int32) { 1747989066 --[[Constants.UNIT_DRUID_OF_THE_TALON_ELF]] }):Run(2)
+
+      AddInitialSpawnTriggers(this, building)
+      AddInitialUnitUpgradesToStock(this, building)
+    end
+    AddInitialSpawnTriggers = function (this, building)
+      building:AddSpawnTrigger(0 --[[SpawnInterval.Short]], System.Array(System.Int32) { 1747988824 --[[Constants.UNIT_SENTRY_ELF]], 1747988824 --[[Constants.UNIT_SENTRY_ELF]], 1747989043 --[[Constants.UNIT_ARCHER_ELF]] }):Run(0)
+      building:AddSpawnTrigger(1 --[[SpawnInterval.Middle]], System.Array(System.Int32) { 1747989066 --[[Constants.UNIT_DRUID_OF_THE_TALON_ELF]] }):Run(1)
+      building:AddSpawnTrigger(2 --[[SpawnInterval.Long]], System.Array.Empty(System.Int32)):Run(2)
+    end
+    AddInitialUnitUpgradesToStock = function (this, building)
+      -- TODO
+      AddUnitToStock(building.Wc3Unit, 1747988547 --[[Constants.UNIT_CAPTAIN_HUMAN]], 1, 1)
+      AddUnitToStock(building.Wc3Unit, 1747988550 --[[Constants.UNIT_RIFLEMAN_BESERK_HUMAN]], 1, 1)
+      AddUnitToStock(building.Wc3Unit, 1747988552 --[[Constants.UNIT_SORCERESS_HUMAN]], 1, 1)
+      AddUnitToStock(building.Wc3Unit, 1747988554 --[[Constants.UNIT_FLYING_MACHINE_HUMAN]], 1, 1)
+      AddUnitToStock(building.Wc3Unit, 1747988549 --[[Constants.UNIT_SIEGE_SQUAD_HUMAN]], 1, 1)
     end
     GetTechType = function (this, techId, techLevel, spawnCommand)
       repeat
@@ -24965,7 +24975,7 @@ System.namespace("Source.Models.Teams", function (namespace)
         elseif default == 1378889795 --[[Constants.UPGRADE_FLIGHT_UNIT_TEAM]] then
           local extern = SourceModels.SpawnUnitCommand()
           extern.UnitSpawnType = 1 --[[SpawnInterval.Middle]]
-          extern.UnitIdOfBuilding = 1747988789 --[[Constants.UNIT_TREE_OF_ETERNITY_ELF]]
+          extern.UnitIdOfBuilding = 1747988788 --[[Constants.UNIT_ANCIENT_OF_WAR_ELF]]
           spawnCommand = extern
 
           repeat
@@ -24983,7 +24993,7 @@ System.namespace("Source.Models.Teams", function (namespace)
         elseif default == 1378889797 --[[Constants.UPGRADE_MAGE_UNIT_TEAM]] then
           local extern = SourceModels.SpawnUnitCommand()
           extern.UnitSpawnType = 1 --[[SpawnInterval.Middle]]
-          extern.UnitIdOfBuilding = 1747988789 --[[Constants.UNIT_TREE_OF_ETERNITY_ELF]]
+          extern.UnitIdOfBuilding = 1747988788 --[[Constants.UNIT_ANCIENT_OF_WAR_ELF]]
           spawnCommand = extern
 
           repeat
@@ -25001,7 +25011,7 @@ System.namespace("Source.Models.Teams", function (namespace)
         elseif default == 1378889784 --[[Constants.UPGRADE_SIEGE_UNIT_TEAM]] then
           local extern = SourceModels.SpawnUnitCommand()
           extern.UnitSpawnType = 2 --[[SpawnInterval.Long]]
-          extern.UnitIdOfBuilding = 1747988789 --[[Constants.UNIT_TREE_OF_ETERNITY_ELF]]
+          extern.UnitIdOfBuilding = 1747988788 --[[Constants.UNIT_ANCIENT_OF_WAR_ELF]]
           spawnCommand = extern
 
           repeat
@@ -25034,6 +25044,8 @@ System.namespace("Source.Models.Teams", function (namespace)
         return {
           methods = {
             { ".ctor", 0x6, nil },
+            { "AddInitialSpawnTriggers", 0x101, AddInitialSpawnTriggers, out.Source.Models.UnitSpawnBuilding },
+            { "AddInitialUnitUpgradesToStock", 0x101, AddInitialUnitUpgradesToStock, out.Source.Models.UnitSpawnBuilding },
             { "CreateBuildings", 0x6, CreateBuildings },
             { "GetTechType", 0x386, GetTechType, System.Int32, System.Int32, out.Source.Models.SpawnUnitCommand, System.Int32 }
           },
@@ -25055,7 +25067,7 @@ System.import(function (out)
 end)
 System.namespace("Source.Models.Teams", function (namespace)
   namespace.class("HumansTeam", function (namespace)
-    local CreateBuildings, AddBaseUnitsToStock, GetTechType, DetermineTypeOfUnitUpgrade, __ctor__
+    local CreateBuildings, AddInitialSpawnTriggers, AddInitialUnitUpgradesToStock, GetTechType, DetermineTypeOfUnitUpgrade, __ctor__
     __ctor__ = function (this)
       System.base(this).__ctor__(this, Player(0), Areas.HumanBase)
       this.ColorizedName = "|c" .. System.toString("ffff0000" --[[ConstantsEx.ColorHexCode_Red]]) .. System.toString(GetPlayerName(Player(0))) .. "|r"
@@ -25073,38 +25085,29 @@ System.namespace("Source.Models.Teams", function (namespace)
 
       -- Kasernen
       local building = this.Computer:CreateBarrackBuilding(1747988535 --[[Constants.UNIT_BARRACKS_HUMAN]], Areas.HumanBarracksToCenter, Areas.HumanBarracksToCenterSpawn, Areas.UndeadBase)
-
       building:RegisterOnDies(SourceEventsBuildings.TeamBarracksBuilding.OnDies)
-      building:AddSpawnTrigger(0 --[[SpawnInterval.Short]], System.Array(System.Int32) { 1747988529 --[[Constants.UNIT_SOLDIER_HUMAN]], 1747988529 --[[Constants.UNIT_SOLDIER_HUMAN]] }):Run(0)
-      building:AddSpawnTrigger(1 --[[SpawnInterval.Middle]], System.Array(System.Int32) { 1747988530 --[[Constants.UNIT_RIFLEMAN_HUMAN]] }):Run(1)
-      building:AddSpawnTrigger(2 --[[SpawnInterval.Long]], System.Array(System.Int32) { 1747988536 --[[Constants.UNIT_PRIEST_HUMAN]] }):Run(2)
 
-      AddBaseUnitsToStock(this, building)
+      AddInitialSpawnTriggers(this, building)
+      AddInitialUnitUpgradesToStock(this, building)
 
       building = this.Computer:CreateBarrackBuilding(1747988535 --[[Constants.UNIT_BARRACKS_HUMAN]], Areas.HumanBarracksToElf, Areas.HumanBarracksToElfSpawn, Areas.ElfBase)
-
       building:RegisterOnDies(SourceEventsBuildings.TeamBarracksBuilding.OnDies)
-      building:AddSpawnTrigger(0 --[[SpawnInterval.Short]], System.Array(System.Int32) { 1747988529 --[[Constants.UNIT_SOLDIER_HUMAN]], 1747988529 --[[Constants.UNIT_SOLDIER_HUMAN]] }):Run(0)
-      building:AddSpawnTrigger(1 --[[SpawnInterval.Middle]], System.Array(System.Int32) { 1747988530 --[[Constants.UNIT_RIFLEMAN_HUMAN]] }):Run(1)
-      building:AddSpawnTrigger(2 --[[SpawnInterval.Long]], System.Array(System.Int32) { 1747988536 --[[Constants.UNIT_PRIEST_HUMAN]] }):Run(2)
 
-      AddBaseUnitsToStock(this, building)
+      AddInitialSpawnTriggers(this, building)
+      AddInitialUnitUpgradesToStock(this, building)
 
       building = this.Computer:CreateBarrackBuilding(1747988535 --[[Constants.UNIT_BARRACKS_HUMAN]], Areas.HumanBarracksToOrcs, Areas.HumanBarracksToOrcsSpawn, Areas.OrcBase)
-
       building:RegisterOnDies(SourceEventsBuildings.TeamBarracksBuilding.OnDies)
-      building:AddSpawnTrigger(0 --[[SpawnInterval.Short]], System.Array(System.Int32) { 1747988529 --[[Constants.UNIT_SOLDIER_HUMAN]], 1747988529 --[[Constants.UNIT_SOLDIER_HUMAN]] }):Run(0)
-      building:AddSpawnTrigger(1 --[[SpawnInterval.Middle]], System.Array(System.Int32) { 1747988530 --[[Constants.UNIT_RIFLEMAN_HUMAN]] }):Run(1)
-      building:AddSpawnTrigger(2 --[[SpawnInterval.Long]], System.Array(System.Int32) { 1747988536 --[[Constants.UNIT_PRIEST_HUMAN]] }):Run(2)
 
-      AddBaseUnitsToStock(this, building)
-
-
-      building = this.Computer:CreateBarrackBuilding(1747988535 --[[Constants.UNIT_BARRACKS_HUMAN]], Areas.TestArea, Areas.HumanBarracksToOrcsSpawn, Areas.OrcBase)
-
-      AddBaseUnitsToStock(this, building)
+      AddInitialSpawnTriggers(this, building)
+      AddInitialUnitUpgradesToStock(this, building)
     end
-    AddBaseUnitsToStock = function (this, building)
+    AddInitialSpawnTriggers = function (this, building)
+      building:AddSpawnTrigger(0 --[[SpawnInterval.Short]], System.Array(System.Int32) { 1747988529 --[[Constants.UNIT_SOLDIER_HUMAN]], 1747988529 --[[Constants.UNIT_SOLDIER_HUMAN]], 1747988530 --[[Constants.UNIT_RIFLEMAN_HUMAN]] }):Run(0)
+      building:AddSpawnTrigger(1 --[[SpawnInterval.Middle]], System.Array(System.Int32) { 1747988536 --[[Constants.UNIT_PRIEST_HUMAN]] }):Run(1)
+      building:AddSpawnTrigger(2 --[[SpawnInterval.Long]], System.Array.Empty(System.Int32)):Run(2)
+    end
+    AddInitialUnitUpgradesToStock = function (this, building)
       AddUnitToStock(building.Wc3Unit, 1747988547 --[[Constants.UNIT_CAPTAIN_HUMAN]], 1, 1)
       AddUnitToStock(building.Wc3Unit, 1747988550 --[[Constants.UNIT_RIFLEMAN_BESERK_HUMAN]], 1, 1)
       AddUnitToStock(building.Wc3Unit, 1747988552 --[[Constants.UNIT_SORCERESS_HUMAN]], 1, 1)
@@ -25153,7 +25156,7 @@ System.namespace("Source.Models.Teams", function (namespace)
         elseif default == 1378889795 --[[Constants.UPGRADE_FLIGHT_UNIT_TEAM]] then
           local extern = SourceModels.SpawnUnitCommand()
           extern.UnitSpawnType = 1 --[[SpawnInterval.Middle]]
-          extern.UnitIdOfBuilding = 1747988531 --[[Constants.UNIT_CASTLE_HUMAN]]
+          extern.UnitIdOfBuilding = 1747988535 --[[Constants.UNIT_BARRACKS_HUMAN]]
           spawnCommand = extern
 
           repeat
@@ -25171,7 +25174,7 @@ System.namespace("Source.Models.Teams", function (namespace)
         elseif default == 1378889797 --[[Constants.UPGRADE_MAGE_UNIT_TEAM]] then
           local extern = SourceModels.SpawnUnitCommand()
           extern.UnitSpawnType = 1 --[[SpawnInterval.Middle]]
-          extern.UnitIdOfBuilding = 1747988531 --[[Constants.UNIT_CASTLE_HUMAN]]
+          extern.UnitIdOfBuilding = 1747988535 --[[Constants.UNIT_BARRACKS_HUMAN]]
           spawnCommand = extern
 
           repeat
@@ -25189,7 +25192,7 @@ System.namespace("Source.Models.Teams", function (namespace)
         elseif default == 1378889784 --[[Constants.UPGRADE_SIEGE_UNIT_TEAM]] then
           local extern = SourceModels.SpawnUnitCommand()
           extern.UnitSpawnType = 2 --[[SpawnInterval.Long]]
-          extern.UnitIdOfBuilding = 1747988531 --[[Constants.UNIT_CASTLE_HUMAN]]
+          extern.UnitIdOfBuilding = 1747988535 --[[Constants.UNIT_BARRACKS_HUMAN]]
           spawnCommand = extern
 
           repeat
@@ -25214,12 +25217,37 @@ System.namespace("Source.Models.Teams", function (namespace)
       repeat
         local default = baseUnitTypeId
         if default == 1747988547 --[[Constants.UNIT_CAPTAIN_HUMAN]] then
-          -- Soldier -> Captain
           upgradeUnitCommand = System.new(SourceModels.UpgradeUnitCommand, 2, 0 --[[SpawnInterval.Short]], 1747988529 --[[Constants.UNIT_SOLDIER_HUMAN]], baseUnitTypeId, 1747988546 --[[Constants.UNIT_KNIGHT_HUMAN]])
           return 2 --[[UnitUpgradeType.UpgradeUnitInSpawn]], upgradeUnitCommand
         elseif default == 1747988546 --[[Constants.UNIT_KNIGHT_HUMAN]] then
-          -- Captain -> Knight
           upgradeUnitCommand = System.new(SourceModels.UpgradeUnitCommand, 2, 0 --[[SpawnInterval.Short]], 1747988547 --[[Constants.UNIT_CAPTAIN_HUMAN]], baseUnitTypeId, 0)
+          return 2 --[[UnitUpgradeType.UpgradeUnitInSpawn]], upgradeUnitCommand
+        elseif default == 1747988550 --[[Constants.UNIT_RIFLEMAN_BESERK_HUMAN]] then
+          upgradeUnitCommand = System.new(SourceModels.UpgradeUnitCommand, 2, 0 --[[SpawnInterval.Short]], 1747988530 --[[Constants.UNIT_RIFLEMAN_HUMAN]], baseUnitTypeId, 1747988551 --[[Constants.UNIT_RIFLEMAN_ELITE_HUMAN]])
+          return 2 --[[UnitUpgradeType.UpgradeUnitInSpawn]], upgradeUnitCommand
+        elseif default == 1747988551 --[[Constants.UNIT_RIFLEMAN_ELITE_HUMAN]] then
+          upgradeUnitCommand = System.new(SourceModels.UpgradeUnitCommand, 2, 0 --[[SpawnInterval.Short]], 1747988550 --[[Constants.UNIT_RIFLEMAN_BESERK_HUMAN]], baseUnitTypeId, 0)
+          return 2 --[[UnitUpgradeType.UpgradeUnitInSpawn]], upgradeUnitCommand
+        elseif default == 1747988552 --[[Constants.UNIT_SORCERESS_HUMAN]] then
+          upgradeUnitCommand = System.new(SourceModels.UpgradeUnitCommand, 2, 1 --[[SpawnInterval.Middle]], 1747988530 --[[Constants.UNIT_RIFLEMAN_HUMAN]], baseUnitTypeId, 1747988553 --[[Constants.UNIT_SPELLBREAKER_HUMAN]])
+          return 2 --[[UnitUpgradeType.UpgradeUnitInSpawn]], upgradeUnitCommand
+        elseif default == 1747988553 --[[Constants.UNIT_SPELLBREAKER_HUMAN]] then
+          upgradeUnitCommand = System.new(SourceModels.UpgradeUnitCommand, 2, 1 --[[SpawnInterval.Middle]], 1747988552 --[[Constants.UNIT_SORCERESS_HUMAN]], baseUnitTypeId, 0)
+          return 2 --[[UnitUpgradeType.UpgradeUnitInSpawn]], upgradeUnitCommand
+        elseif default == 1747988554 --[[Constants.UNIT_FLYING_MACHINE_HUMAN]] then
+          upgradeUnitCommand = SourceModels.UpgradeUnitCommand(1 --[[SpawnInterval.Middle]], baseUnitTypeId, 1747988551 --[[Constants.UNIT_RIFLEMAN_ELITE_HUMAN]])
+          return 1 --[[UnitUpgradeType.AddNewUnitToSpawn]], upgradeUnitCommand
+        elseif default == 1747988555 --[[Constants.UNIT_FALCON_RIDER_HUMAN]] then
+          upgradeUnitCommand = System.new(SourceModels.UpgradeUnitCommand, 2, 1 --[[SpawnInterval.Middle]], 1747988554 --[[Constants.UNIT_FLYING_MACHINE_HUMAN]], baseUnitTypeId, 1747988556 --[[Constants.UNIT_GRIFFIN_RIDER_HUMAN]])
+          return 2 --[[UnitUpgradeType.UpgradeUnitInSpawn]], upgradeUnitCommand
+        elseif default == 1747988556 --[[Constants.UNIT_GRIFFIN_RIDER_HUMAN]] then
+          upgradeUnitCommand = System.new(SourceModels.UpgradeUnitCommand, 2, 1 --[[SpawnInterval.Middle]], 1747988555 --[[Constants.UNIT_FALCON_RIDER_HUMAN]], baseUnitTypeId, 0)
+          return 2 --[[UnitUpgradeType.UpgradeUnitInSpawn]], upgradeUnitCommand
+        elseif default == 1747988549 --[[Constants.UNIT_SIEGE_SQUAD_HUMAN]] then
+          upgradeUnitCommand = SourceModels.UpgradeUnitCommand(2 --[[SpawnInterval.Long]], baseUnitTypeId, 1747988563 --[[Constants.UNIT_SIEGE_ENGINE_HUMAN]])
+          return 1 --[[UnitUpgradeType.AddNewUnitToSpawn]], upgradeUnitCommand
+        elseif default == 1747988563 --[[Constants.UNIT_SIEGE_ENGINE_HUMAN]] then
+          upgradeUnitCommand = System.new(SourceModels.UpgradeUnitCommand, 2, 2 --[[SpawnInterval.Long]], 1747988549 --[[Constants.UNIT_SIEGE_SQUAD_HUMAN]], baseUnitTypeId, 0)
           return 2 --[[UnitUpgradeType.UpgradeUnitInSpawn]], upgradeUnitCommand
         else
           -- Einheiten-Typ ist nicht bekannt
@@ -25243,7 +25271,8 @@ System.namespace("Source.Models.Teams", function (namespace)
         return {
           methods = {
             { ".ctor", 0x6, nil },
-            { "AddBaseUnitsToStock", 0x101, AddBaseUnitsToStock, out.Source.Models.UnitSpawnBuilding },
+            { "AddInitialSpawnTriggers", 0x101, AddInitialSpawnTriggers, out.Source.Models.UnitSpawnBuilding },
+            { "AddInitialUnitUpgradesToStock", 0x101, AddInitialUnitUpgradesToStock, out.Source.Models.UnitSpawnBuilding },
             { "CreateBuildings", 0x6, CreateBuildings },
             { "DetermineTypeOfUnitUpgrade", 0x286, DetermineTypeOfUnitUpgrade, System.Int32, out.Source.Models.UpgradeUnitCommand, System.Int32 },
             { "GetTechType", 0x386, GetTechType, System.Int32, System.Int32, out.Source.Models.SpawnUnitCommand, System.Int32 }
@@ -25266,7 +25295,7 @@ System.import(function (out)
 end)
 System.namespace("Source.Models.Teams", function (namespace)
   namespace.class("OrcsTeam", function (namespace)
-    local CreateBuildings, AddBaseUnitsToStock, GetTechType, __ctor__
+    local CreateBuildings, AddInitialSpawnTriggers, AddInitialUnitUpgradesToStock, GetTechType, __ctor__
     __ctor__ = function (this)
       System.base(this).__ctor__(this, Player(4), Areas.OrcBase)
       this.ColorizedName = "|c" .. System.toString("ffffff00" --[[ConstantsEx.ColorHexCode_Yellow]]) .. System.toString(GetPlayerName(Player(4))) .. "|r"
@@ -25284,38 +25313,29 @@ System.namespace("Source.Models.Teams", function (namespace)
 
       -- Kasernen
       local building = this.Computer:CreateBarrackBuilding(1747988569 --[[Constants.UNIT_BARRACKS_ORC]], Areas.OrcBarracksToCenter, Areas.OrcBarracksToCenterSpawn, Areas.ElfBase)
-
       building:RegisterOnDies(SourceEventsBuildings.TeamBarracksBuilding.OnDies)
-      building:AddSpawnTrigger(0 --[[SpawnInterval.Short]], System.Array(System.Int32) { 1747988809 --[[Constants.UNIT_GRUNT_ORC]], 1747988809 --[[Constants.UNIT_GRUNT_ORC]] }):Run(0)
-      building:AddSpawnTrigger(1 --[[SpawnInterval.Middle]], System.Array(System.Int32) { 1747988812 --[[Constants.UNIT_HEADHUNTER_ORC]] }):Run(1)
-      building:AddSpawnTrigger(2 --[[SpawnInterval.Long]], System.Array(System.Int32) { 1747988818 --[[Constants.UNIT_WITCH_DOCTOR_ORC]] }):Run(2)
 
-      AddBaseUnitsToStock(this, building)
+      AddInitialSpawnTriggers(this, building)
+      AddInitialUnitUpgradesToStock(this, building)
 
       building = this.Computer:CreateBarrackBuilding(1747988569 --[[Constants.UNIT_BARRACKS_ORC]], Areas.OrcBarracksToHuman, Areas.OrcBarracksToHumanSpawn, Areas.HumanBase)
-
       building:RegisterOnDies(SourceEventsBuildings.TeamBarracksBuilding.OnDies)
-      building:AddSpawnTrigger(0 --[[SpawnInterval.Short]], System.Array(System.Int32) { 1747988809 --[[Constants.UNIT_GRUNT_ORC]], 1747988809 --[[Constants.UNIT_GRUNT_ORC]] }):Run(0)
-      building:AddSpawnTrigger(1 --[[SpawnInterval.Middle]], System.Array(System.Int32) { 1747988812 --[[Constants.UNIT_HEADHUNTER_ORC]] }):Run(1)
-      building:AddSpawnTrigger(2 --[[SpawnInterval.Long]], System.Array(System.Int32) { 1747988818 --[[Constants.UNIT_WITCH_DOCTOR_ORC]] }):Run(2)
 
-      AddBaseUnitsToStock(this, building)
+      AddInitialSpawnTriggers(this, building)
+      AddInitialUnitUpgradesToStock(this, building)
 
       building = this.Computer:CreateBarrackBuilding(1747988569 --[[Constants.UNIT_BARRACKS_ORC]], Areas.OrcBarracksToUndead, Areas.OrcBarracksToUndeadSpawn, Areas.UndeadBase)
-
       building:RegisterOnDies(SourceEventsBuildings.TeamBarracksBuilding.OnDies)
-      building:AddSpawnTrigger(0 --[[SpawnInterval.Short]], System.Array(System.Int32) { 1747988809 --[[Constants.UNIT_GRUNT_ORC]], 1747988809 --[[Constants.UNIT_GRUNT_ORC]] }):Run(0)
-      building:AddSpawnTrigger(1 --[[SpawnInterval.Middle]], System.Array(System.Int32) { 1747988812 --[[Constants.UNIT_HEADHUNTER_ORC]] }):Run(1)
-      building:AddSpawnTrigger(2 --[[SpawnInterval.Long]], System.Array(System.Int32) { 1747988818 --[[Constants.UNIT_WITCH_DOCTOR_ORC]] }):Run(2)
 
-      AddBaseUnitsToStock(this, building)
-
-
-      building = this.Computer:CreateBarrackBuilding(1747988569 --[[Constants.UNIT_BARRACKS_ORC]], Areas.TestArea3, Areas.HumanBarracksToOrcsSpawn, Areas.OrcBase)
-
-      AddBaseUnitsToStock(this, building)
+      AddInitialSpawnTriggers(this, building)
+      AddInitialUnitUpgradesToStock(this, building)
     end
-    AddBaseUnitsToStock = function (this, building)
+    AddInitialSpawnTriggers = function (this, building)
+      building:AddSpawnTrigger(0 --[[SpawnInterval.Short]], System.Array(System.Int32) { 1747988809 --[[Constants.UNIT_GRUNT_ORC]], 1747988809 --[[Constants.UNIT_GRUNT_ORC]], 1747988812 --[[Constants.UNIT_HEADHUNTER_ORC]] }):Run(0)
+      building:AddSpawnTrigger(1 --[[SpawnInterval.Middle]], System.Array(System.Int32) { 1747988818 --[[Constants.UNIT_WITCH_DOCTOR_ORC]] }):Run(1)
+      building:AddSpawnTrigger(2 --[[SpawnInterval.Long]], System.Array.Empty(System.Int32)):Run(2)
+    end
+    AddInitialUnitUpgradesToStock = function (this, building)
       -- TODO
       AddUnitToStock(building.Wc3Unit, 1747988547 --[[Constants.UNIT_CAPTAIN_HUMAN]], 1, 1)
       AddUnitToStock(building.Wc3Unit, 1747988550 --[[Constants.UNIT_RIFLEMAN_BESERK_HUMAN]], 1, 1)
@@ -25365,7 +25385,7 @@ System.namespace("Source.Models.Teams", function (namespace)
         elseif default == 1378889795 --[[Constants.UPGRADE_FLIGHT_UNIT_TEAM]] then
           local extern = SourceModels.SpawnUnitCommand()
           extern.UnitSpawnType = 1 --[[SpawnInterval.Middle]]
-          extern.UnitIdOfBuilding = 1747988570 --[[Constants.UNIT_FORTRESS_ORC]]
+          extern.UnitIdOfBuilding = 1747988569 --[[Constants.UNIT_BARRACKS_ORC]]
           spawnCommand = extern
 
           repeat
@@ -25383,7 +25403,7 @@ System.namespace("Source.Models.Teams", function (namespace)
         elseif default == 1378889797 --[[Constants.UPGRADE_MAGE_UNIT_TEAM]] then
           local extern = SourceModels.SpawnUnitCommand()
           extern.UnitSpawnType = 1 --[[SpawnInterval.Middle]]
-          extern.UnitIdOfBuilding = 1747988570 --[[Constants.UNIT_FORTRESS_ORC]]
+          extern.UnitIdOfBuilding = 1747988569 --[[Constants.UNIT_BARRACKS_ORC]]
           spawnCommand = extern
 
           repeat
@@ -25401,7 +25421,7 @@ System.namespace("Source.Models.Teams", function (namespace)
         elseif default == 1378889784 --[[Constants.UPGRADE_SIEGE_UNIT_TEAM]] then
           local extern = SourceModels.SpawnUnitCommand()
           extern.UnitSpawnType = 2 --[[SpawnInterval.Long]]
-          extern.UnitIdOfBuilding = 1747988570 --[[Constants.UNIT_FORTRESS_ORC]]
+          extern.UnitIdOfBuilding = 1747988569 --[[Constants.UNIT_BARRACKS_ORC]]
           spawnCommand = extern
 
           repeat
@@ -25434,7 +25454,8 @@ System.namespace("Source.Models.Teams", function (namespace)
         return {
           methods = {
             { ".ctor", 0x6, nil },
-            { "AddBaseUnitsToStock", 0x101, AddBaseUnitsToStock, out.Source.Models.UnitSpawnBuilding },
+            { "AddInitialSpawnTriggers", 0x101, AddInitialSpawnTriggers, out.Source.Models.UnitSpawnBuilding },
+            { "AddInitialUnitUpgradesToStock", 0x101, AddInitialUnitUpgradesToStock, out.Source.Models.UnitSpawnBuilding },
             { "CreateBuildings", 0x6, CreateBuildings },
             { "GetTechType", 0x386, GetTechType, System.Int32, System.Int32, out.Source.Models.SpawnUnitCommand, System.Int32 }
           },
@@ -25456,7 +25477,7 @@ System.import(function (out)
 end)
 System.namespace("Source.Models.Teams", function (namespace)
   namespace.class("UndeadsTeam", function (namespace)
-    local CreateBuildings, GetTechType, __ctor__
+    local CreateBuildings, AddInitialSpawnTriggers, AddInitialUnitUpgradesToStock, GetTechType, __ctor__
     __ctor__ = function (this)
       System.base(this).__ctor__(this, Player(12), Areas.UndeadBase)
       this.ColorizedName = "|c" .. System.toString("ff800000" --[[ConstantsEx.ColorHexCode_Maroon]]) .. System.toString(GetPlayerName(Player(12))) .. "|r"
@@ -25474,25 +25495,35 @@ System.namespace("Source.Models.Teams", function (namespace)
 
       -- Kasernen
       local building = this.Computer:CreateBarrackBuilding(1747988805 --[[Constants.UNIT_CRYPT_UNDEAD]], Areas.UndeadBarracksToCenter, Areas.UndeadBarracksToCenterSpawn, Areas.HumanBase)
-
       building:RegisterOnDies(SourceEventsBuildings.TeamBarracksBuilding.OnDies)
-      building:AddSpawnTrigger(0 --[[SpawnInterval.Short]], System.Array(System.Int32) { 1747988825 --[[Constants.UNIT_GHOUL_UNDEAD]], 1747988825 --[[Constants.UNIT_GHOUL_UNDEAD]] }):Run(0)
-      building:AddSpawnTrigger(1 --[[SpawnInterval.Middle]], System.Array(System.Int32) { 1747989044 --[[Constants.UNIT_CRYPT_FIEND_UNDEAD]] }):Run(1)
-      building:AddSpawnTrigger(2 --[[SpawnInterval.Long]], System.Array(System.Int32) { 1747989067 --[[Constants.UNIT_SKELETAL_MAGE_UNDEAD]] }):Run(2)
+
+      AddInitialSpawnTriggers(this, building)
+      AddInitialUnitUpgradesToStock(this, building)
 
       building = this.Computer:CreateBarrackBuilding(1747988805 --[[Constants.UNIT_CRYPT_UNDEAD]], Areas.UndeadBarracksToElf, Areas.UndeadBarracksToElfSpawn, Areas.ElfBase)
-
       building:RegisterOnDies(SourceEventsBuildings.TeamBarracksBuilding.OnDies)
-      building:AddSpawnTrigger(0 --[[SpawnInterval.Short]], System.Array(System.Int32) { 1747988825 --[[Constants.UNIT_GHOUL_UNDEAD]], 1747988825 --[[Constants.UNIT_GHOUL_UNDEAD]] }):Run(0)
-      building:AddSpawnTrigger(1 --[[SpawnInterval.Middle]], System.Array(System.Int32) { 1747989044 --[[Constants.UNIT_CRYPT_FIEND_UNDEAD]] }):Run(1)
-      building:AddSpawnTrigger(2 --[[SpawnInterval.Long]], System.Array(System.Int32) { 1747989067 --[[Constants.UNIT_SKELETAL_MAGE_UNDEAD]] }):Run(2)
+
+      AddInitialSpawnTriggers(this, building)
+      AddInitialUnitUpgradesToStock(this, building)
 
       building = this.Computer:CreateBarrackBuilding(1747988805 --[[Constants.UNIT_CRYPT_UNDEAD]], Areas.UndeadBarracksToOrcs, Areas.UndeadBarracksToOrcsSpawn, Areas.OrcBase)
-
       building:RegisterOnDies(SourceEventsBuildings.TeamBarracksBuilding.OnDies)
-      building:AddSpawnTrigger(0 --[[SpawnInterval.Short]], System.Array(System.Int32) { 1747988825 --[[Constants.UNIT_GHOUL_UNDEAD]], 1747988825 --[[Constants.UNIT_GHOUL_UNDEAD]] }):Run(0)
-      building:AddSpawnTrigger(1 --[[SpawnInterval.Middle]], System.Array(System.Int32) { 1747989044 --[[Constants.UNIT_CRYPT_FIEND_UNDEAD]] }):Run(1)
-      building:AddSpawnTrigger(2 --[[SpawnInterval.Long]], System.Array(System.Int32) { 1747989067 --[[Constants.UNIT_SKELETAL_MAGE_UNDEAD]] }):Run(2)
+
+      AddInitialSpawnTriggers(this, building)
+      AddInitialUnitUpgradesToStock(this, building)
+    end
+    AddInitialSpawnTriggers = function (this, building)
+      building:AddSpawnTrigger(0 --[[SpawnInterval.Short]], System.Array(System.Int32) { 1747988825 --[[Constants.UNIT_GHOUL_UNDEAD]], 1747988825 --[[Constants.UNIT_GHOUL_UNDEAD]], 1747989044 --[[Constants.UNIT_CRYPT_FIEND_UNDEAD]] }):Run(0)
+      building:AddSpawnTrigger(1 --[[SpawnInterval.Middle]], System.Array(System.Int32) { 1747989067 --[[Constants.UNIT_SKELETAL_MAGE_UNDEAD]] }):Run(1)
+      building:AddSpawnTrigger(2 --[[SpawnInterval.Long]], System.Array.Empty(System.Int32)):Run(2)
+    end
+    AddInitialUnitUpgradesToStock = function (this, building)
+      -- TODO
+      AddUnitToStock(building.Wc3Unit, 1747988547 --[[Constants.UNIT_CAPTAIN_HUMAN]], 1, 1)
+      AddUnitToStock(building.Wc3Unit, 1747988550 --[[Constants.UNIT_RIFLEMAN_BESERK_HUMAN]], 1, 1)
+      AddUnitToStock(building.Wc3Unit, 1747988552 --[[Constants.UNIT_SORCERESS_HUMAN]], 1, 1)
+      AddUnitToStock(building.Wc3Unit, 1747988554 --[[Constants.UNIT_FLYING_MACHINE_HUMAN]], 1, 1)
+      AddUnitToStock(building.Wc3Unit, 1747988549 --[[Constants.UNIT_SIEGE_SQUAD_HUMAN]], 1, 1)
     end
     GetTechType = function (this, techId, techLevel, spawnCommand)
       repeat
@@ -25605,6 +25636,8 @@ System.namespace("Source.Models.Teams", function (namespace)
         return {
           methods = {
             { ".ctor", 0x6, nil },
+            { "AddInitialSpawnTriggers", 0x101, AddInitialSpawnTriggers, out.Source.Models.UnitSpawnBuilding },
+            { "AddInitialUnitUpgradesToStock", 0x101, AddInitialUnitUpgradesToStock, out.Source.Models.UnitSpawnBuilding },
             { "CreateBuildings", 0x6, CreateBuildings },
             { "GetTechType", 0x386, GetTechType, System.Int32, System.Int32, out.Source.Models.SpawnUnitCommand, System.Int32 }
           },
@@ -37151,8 +37184,8 @@ local InitCSharp = function ()
       "WCSharp.Missiles.HomingMissile",
       "WCSharp.Missiles.MomentumMissile",
       "WCSharp.Missiles.OrbitalMissile",
-      "WCSharp.SaveLoad.SaveLoadedMessage_1",
       "WCSharp.SaveLoad.Save_1",
+      "WCSharp.SaveLoad.SaveLoadedMessage_1",
       "WCSharp.W3MMD.IW3MmdVar",
       "Areas",
       "Constants",
@@ -67661,9 +67694,9 @@ function CreateRegions()
     gg_rct_OrcToHumanOuterLine = Rect(4032.0, 13248.0, 4160.0, 13376.0)
     gg_rct_OrcToUndeadInnerLine = Rect(10176.0, 11200.0, 10304.0, 11328.0)
     gg_rct_OrcToUndeadOuterLine = Rect(10176.0, 7104.0, 10304.0, 7232.0)
-    gg_rct_TestArea = Rect(14784.0, 16320.0, 14912.0, 16448.0)
-    gg_rct_TestArea2 = Rect(15808.0, 16320.0, 15936.0, 16448.0)
-    gg_rct_TestArea3 = Rect(16832.0, 16320.0, 16960.0, 16448.0)
+    gg_rct_TestArea = Rect(15296.0, 16320.0, 15424.0, 16448.0)
+    gg_rct_TestArea2 = Rect(-5376.0, 12928.0, -5248.0, 13056.0)
+    gg_rct_TestArea3 = Rect(16320.0, 16320.0, 16448.0, 16448.0)
     gg_rct_UndeadBarracksToCenter = Rect(6080.0, -3136.0, 6208.0, -3008.0)
     gg_rct_UndeadBarracksToCenterSpawn = Rect(5760.0, -3072.0, 6016.0, -2560.0)
     gg_rct_UndeadBarracksToElf = Rect(4928.0, -7232.0, 5056.0, -7104.0)

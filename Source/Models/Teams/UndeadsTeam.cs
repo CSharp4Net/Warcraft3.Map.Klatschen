@@ -25,29 +25,40 @@ namespace Source.Models.Teams
       mainBuilding.Wc3Unit.AddUnitToStock(Constants.UNIT_FLESH_GOLEM_UNDEAD, 1, 1);
 
       // Kasernen
-      UnitSpawnBuilding building = Computer.CreateBarrackBuilding(Constants.UNIT_CRYPT_UNDEAD,
-        Areas.UndeadBarracksToCenter, Areas.UndeadBarracksToCenterSpawn, Areas.HumanBase);
-
+      UnitSpawnBuilding building = Computer.CreateBarrackBuilding(Constants.UNIT_CRYPT_UNDEAD, Areas.UndeadBarracksToCenter, Areas.UndeadBarracksToCenterSpawn, Areas.HumanBase);
       building.RegisterOnDies(TeamBarracksBuilding.OnDies);
-      building.AddSpawnTrigger(Enums.SpawnInterval.Short, Constants.UNIT_GHOUL_UNDEAD, Constants.UNIT_GHOUL_UNDEAD).Run();
-      building.AddSpawnTrigger(Enums.SpawnInterval.Middle, Constants.UNIT_CRYPT_FIEND_UNDEAD).Run(1f);
-      building.AddSpawnTrigger(Enums.SpawnInterval.Long, Constants.UNIT_SKELETAL_MAGE_UNDEAD).Run(2f);
 
-      building = Computer.CreateBarrackBuilding(Constants.UNIT_CRYPT_UNDEAD,
-        Areas.UndeadBarracksToElf, Areas.UndeadBarracksToElfSpawn, Areas.ElfBase);
+      AddInitialSpawnTriggers(building);
+      AddInitialUnitUpgradesToStock(building);
 
+      building = Computer.CreateBarrackBuilding(Constants.UNIT_CRYPT_UNDEAD, Areas.UndeadBarracksToElf, Areas.UndeadBarracksToElfSpawn, Areas.ElfBase);
       building.RegisterOnDies(TeamBarracksBuilding.OnDies);
-      building.AddSpawnTrigger(Enums.SpawnInterval.Short, Constants.UNIT_GHOUL_UNDEAD, Constants.UNIT_GHOUL_UNDEAD).Run();
-      building.AddSpawnTrigger(Enums.SpawnInterval.Middle, Constants.UNIT_CRYPT_FIEND_UNDEAD).Run(1f);
-      building.AddSpawnTrigger(Enums.SpawnInterval.Long, Constants.UNIT_SKELETAL_MAGE_UNDEAD).Run(2f);
 
-      building = Computer.CreateBarrackBuilding(Constants.UNIT_CRYPT_UNDEAD,
-        Areas.UndeadBarracksToOrcs, Areas.UndeadBarracksToOrcsSpawn, Areas.OrcBase);
+      AddInitialSpawnTriggers(building);
+      AddInitialUnitUpgradesToStock(building);
 
+      building = Computer.CreateBarrackBuilding(Constants.UNIT_CRYPT_UNDEAD, Areas.UndeadBarracksToOrcs, Areas.UndeadBarracksToOrcsSpawn, Areas.OrcBase);
       building.RegisterOnDies(TeamBarracksBuilding.OnDies);
-      building.AddSpawnTrigger(Enums.SpawnInterval.Short, Constants.UNIT_GHOUL_UNDEAD, Constants.UNIT_GHOUL_UNDEAD).Run();
-      building.AddSpawnTrigger(Enums.SpawnInterval.Middle, Constants.UNIT_CRYPT_FIEND_UNDEAD).Run(1f);
-      building.AddSpawnTrigger(Enums.SpawnInterval.Long, Constants.UNIT_SKELETAL_MAGE_UNDEAD).Run(2f);
+
+      AddInitialSpawnTriggers(building);
+      AddInitialUnitUpgradesToStock(building);
+    }
+
+    private void AddInitialSpawnTriggers(UnitSpawnBuilding building)
+    {
+      building.AddSpawnTrigger(Enums.SpawnInterval.Short, Constants.UNIT_GHOUL_UNDEAD, Constants.UNIT_GHOUL_UNDEAD, Constants.UNIT_CRYPT_FIEND_UNDEAD).Run();
+      building.AddSpawnTrigger(Enums.SpawnInterval.Middle, Constants.UNIT_SKELETAL_MAGE_UNDEAD).Run(1f);
+      building.AddSpawnTrigger(Enums.SpawnInterval.Long).Run(2f);
+    }
+
+    private void AddInitialUnitUpgradesToStock(UnitSpawnBuilding building)
+    {
+      // TODO
+      building.Wc3Unit.AddUnitToStock(Constants.UNIT_CAPTAIN_HUMAN, 1, 1);
+      building.Wc3Unit.AddUnitToStock(Constants.UNIT_RIFLEMAN_BESERK_HUMAN, 1, 1);
+      building.Wc3Unit.AddUnitToStock(Constants.UNIT_SORCERESS_HUMAN, 1, 1);
+      building.Wc3Unit.AddUnitToStock(Constants.UNIT_FLYING_MACHINE_HUMAN, 1, 1);
+      building.Wc3Unit.AddUnitToStock(Constants.UNIT_SIEGE_SQUAD_HUMAN, 1, 1);
     }
 
     public override Enums.ResearchType GetTechType(int techId, int techLevel, out SpawnUnitCommand spawnCommand)

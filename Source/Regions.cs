@@ -110,9 +110,9 @@ public static class Regions
 	public static Rectangle OrcToHumanOuterLine { get; set; } = new Rectangle(4032f, 13248f, 4160f, 13376f);
 	public static Rectangle OrcToUndeadInnerLine { get; set; } = new Rectangle(10176f, 11200f, 10304f, 11328f);
 	public static Rectangle OrcToUndeadOuterLine { get; set; } = new Rectangle(10176f, 7104f, 10304f, 7232f);
-	public static Rectangle TestArea { get; set; } = new Rectangle(14784f, 16320f, 14912f, 16448f);
-	public static Rectangle TestArea2 { get; set; } = new Rectangle(15808f, 16320f, 15936f, 16448f);
-	public static Rectangle TestArea3 { get; set; } = new Rectangle(16832f, 16320f, 16960f, 16448f);
+	public static Rectangle TestArea { get; set; } = new Rectangle(15296f, 16320f, 15424f, 16448f);
+	public static Rectangle TestArea2 { get; set; } = new Rectangle(-5376f, 12928f, -5248f, 13056f);
+	public static Rectangle TestArea3 { get; set; } = new Rectangle(16320f, 16320f, 16448f, 16448f);
 	public static Rectangle UndeadBarracksToCenter { get; set; } = new Rectangle(6080f, -3136f, 6208f, -3008f);
 	public static Rectangle UndeadBarracksToCenterSpawn { get; set; } = new Rectangle(5760f, -3072f, 6016f, -2560f);
 	public static Rectangle UndeadBarracksToElf { get; set; } = new Rectangle(4928f, -7232f, 5056f, -7104f);

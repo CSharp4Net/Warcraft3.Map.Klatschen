@@ -105,6 +105,7 @@ gg_rct_OrcToUndeadInnerLine = nil
 gg_rct_OrcToUndeadOuterLine = nil
 gg_rct_TestArea = nil
 gg_rct_TestArea2 = nil
+gg_rct_TestArea3 = nil
 gg_rct_UndeadBarracksToCenter = nil
 gg_rct_UndeadBarracksToCenterSpawn = nil
 gg_rct_UndeadBarracksToElf = nil
@@ -129,7 +130,6 @@ gg_rct_UndeadToOrcInnerLine = nil
 gg_rct_UndeadToOrcOuterLine = nil
 gg_snd_blowitup_cutted = ""
 gg_trg_Untitled_Trigger_001 = nil
-gg_rct_TestArea3 = nil
 function InitGlobals()
 end
 
@@ -842,9 +842,9 @@ gg_rct_OrcToHumanInnerLine = Rect(8128.0, 13248.0, 8256.0, 13376.0)
 gg_rct_OrcToHumanOuterLine = Rect(4032.0, 13248.0, 4160.0, 13376.0)
 gg_rct_OrcToUndeadInnerLine = Rect(10176.0, 11200.0, 10304.0, 11328.0)
 gg_rct_OrcToUndeadOuterLine = Rect(10176.0, 7104.0, 10304.0, 7232.0)
-gg_rct_TestArea = Rect(14784.0, 16320.0, 14912.0, 16448.0)
-gg_rct_TestArea2 = Rect(15808.0, 16320.0, 15936.0, 16448.0)
-gg_rct_TestArea3 = Rect(16832.0, 16320.0, 16960.0, 16448.0)
+gg_rct_TestArea = Rect(15296.0, 16320.0, 15424.0, 16448.0)
+gg_rct_TestArea2 = Rect(-5376.0, 12928.0, -5248.0, 13056.0)
+gg_rct_TestArea3 = Rect(16320.0, 16320.0, 16448.0, 16448.0)
 gg_rct_UndeadBarracksToCenter = Rect(6080.0, -3136.0, 6208.0, -3008.0)
 gg_rct_UndeadBarracksToCenterSpawn = Rect(5760.0, -3072.0, 6016.0, -2560.0)
 gg_rct_UndeadBarracksToElf = Rect(4928.0, -7232.0, 5056.0, -7104.0)

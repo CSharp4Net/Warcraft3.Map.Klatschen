@@ -25,29 +25,40 @@ namespace Source.Models.Teams
       mainBuilding.Wc3Unit.AddUnitToStock(Constants.UNIT_GUARDIAN_GOLEM_ELF, 1, 1);
 
       // Kasernen
-      UnitSpawnBuilding building = Computer.CreateBarrackBuilding(Constants.UNIT_ANCIENT_OF_WAR_ELF,
-        Areas.ElfBarracksToCenter, Areas.ElfBarracksToCenterSpawn, Areas.OrcBase);
-
+      UnitSpawnBuilding building = Computer.CreateBarrackBuilding(Constants.UNIT_ANCIENT_OF_WAR_ELF, Areas.ElfBarracksToCenter, Areas.ElfBarracksToCenterSpawn, Areas.OrcBase);
       building.RegisterOnDies(TeamBarracksBuilding.OnDies);
-      building.AddSpawnTrigger(Enums.SpawnInterval.Short, Constants.UNIT_SENTRY_ELF, Constants.UNIT_SENTRY_ELF).Run();
-      building.AddSpawnTrigger(Enums.SpawnInterval.Middle, Constants.UNIT_SENTRY_ELF).Run(1f);
-      building.AddSpawnTrigger(Enums.SpawnInterval.Long, Constants.UNIT_DRUID_OF_THE_TALON_ELF).Run(2f);
 
-      building = Computer.CreateBarrackBuilding(Constants.UNIT_ANCIENT_OF_WAR_ELF,
-        Areas.ElfBarracksToHuman, Areas.ElfBarracksToHumanSpawn, Areas.HumanBase);
+      AddInitialSpawnTriggers(building);
+      AddInitialUnitUpgradesToStock(building);
 
+      building = Computer.CreateBarrackBuilding(Constants.UNIT_ANCIENT_OF_WAR_ELF, Areas.ElfBarracksToHuman, Areas.ElfBarracksToHumanSpawn, Areas.HumanBase);
       building.RegisterOnDies(TeamBarracksBuilding.OnDies);
-      building.AddSpawnTrigger(Enums.SpawnInterval.Short, Constants.UNIT_SENTRY_ELF, Constants.UNIT_SENTRY_ELF).Run();
-      building.AddSpawnTrigger(Enums.SpawnInterval.Middle, Constants.UNIT_ARCHER_ELF).Run(1f);
-      building.AddSpawnTrigger(Enums.SpawnInterval.Long, Constants.UNIT_DRUID_OF_THE_TALON_ELF).Run(2f);
 
-      building = Computer.CreateBarrackBuilding(Constants.UNIT_ANCIENT_OF_WAR_ELF,
-        Areas.ElfBarracksToUndead, Areas.ElfBarracksToUndeadSpawn, Areas.UndeadBase);
+      AddInitialSpawnTriggers(building);
+      AddInitialUnitUpgradesToStock(building);
 
+      building = Computer.CreateBarrackBuilding(Constants.UNIT_ANCIENT_OF_WAR_ELF, Areas.ElfBarracksToUndead, Areas.ElfBarracksToUndeadSpawn, Areas.UndeadBase);
       building.RegisterOnDies(TeamBarracksBuilding.OnDies);
-      building.AddSpawnTrigger(Enums.SpawnInterval.Short, Constants.UNIT_SENTRY_ELF, Constants.UNIT_SENTRY_ELF).Run();
-      building.AddSpawnTrigger(Enums.SpawnInterval.Middle, Constants.UNIT_ARCHER_ELF).Run(1f);
-      building.AddSpawnTrigger(Enums.SpawnInterval.Long, Constants.UNIT_DRUID_OF_THE_TALON_ELF).Run(2f);
+
+      AddInitialSpawnTriggers(building);
+      AddInitialUnitUpgradesToStock(building);
+    }
+
+    private void AddInitialSpawnTriggers(UnitSpawnBuilding building)
+    {
+      building.AddSpawnTrigger(Enums.SpawnInterval.Short, Constants.UNIT_SENTRY_ELF, Constants.UNIT_SENTRY_ELF, Constants.UNIT_ARCHER_ELF).Run();
+      building.AddSpawnTrigger(Enums.SpawnInterval.Middle, Constants.UNIT_DRUID_OF_THE_TALON_ELF).Run(1f);
+      building.AddSpawnTrigger(Enums.SpawnInterval.Long).Run(2f);
+    }
+
+    private void AddInitialUnitUpgradesToStock(UnitSpawnBuilding building)
+    {
+      // TODO
+      building.Wc3Unit.AddUnitToStock(Constants.UNIT_CAPTAIN_HUMAN, 1, 1);
+      building.Wc3Unit.AddUnitToStock(Constants.UNIT_RIFLEMAN_BESERK_HUMAN, 1, 1);
+      building.Wc3Unit.AddUnitToStock(Constants.UNIT_SORCERESS_HUMAN, 1, 1);
+      building.Wc3Unit.AddUnitToStock(Constants.UNIT_FLYING_MACHINE_HUMAN, 1, 1);
+      building.Wc3Unit.AddUnitToStock(Constants.UNIT_SIEGE_SQUAD_HUMAN, 1, 1);
     }
 
     public override Enums.ResearchType GetTechType(int techId, int techLevel, out SpawnUnitCommand spawnCommand)
@@ -98,7 +109,7 @@ namespace Source.Models.Teams
           spawnCommand = new SpawnUnitCommand()
           {
             UnitSpawnType = Enums.SpawnInterval.Middle,
-            UnitIdOfBuilding = Constants.UNIT_TREE_OF_ETERNITY_ELF,
+            UnitIdOfBuilding = Constants.UNIT_ANCIENT_OF_WAR_ELF,
           };
 
           switch (techLevel)
@@ -118,7 +129,7 @@ namespace Source.Models.Teams
           spawnCommand = new SpawnUnitCommand()
           {
             UnitSpawnType = Enums.SpawnInterval.Middle,
-            UnitIdOfBuilding = Constants.UNIT_TREE_OF_ETERNITY_ELF
+            UnitIdOfBuilding = Constants.UNIT_ANCIENT_OF_WAR_ELF
           };
 
           switch (techLevel)
@@ -138,7 +149,7 @@ namespace Source.Models.Teams
           spawnCommand = new SpawnUnitCommand()
           {
             UnitSpawnType = Enums.SpawnInterval.Long,
-            UnitIdOfBuilding = Constants.UNIT_TREE_OF_ETERNITY_ELF
+            UnitIdOfBuilding = Constants.UNIT_ANCIENT_OF_WAR_ELF
           };
 
           switch (techLevel)
