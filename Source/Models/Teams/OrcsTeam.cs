@@ -53,12 +53,11 @@ namespace Source.Models.Teams
 
     private void AddInitialUnitUpgradesToStock(UnitSpawnBuilding building)
     {
-      // TODO
-      building.Wc3Unit.AddUnitToStock(Constants.UNIT_CAPTAIN_HUMAN, 1, 1);
-      building.Wc3Unit.AddUnitToStock(Constants.UNIT_RIFLEMAN_BESERK_HUMAN, 1, 1);
-      building.Wc3Unit.AddUnitToStock(Constants.UNIT_SORCERESS_HUMAN, 1, 1);
-      building.Wc3Unit.AddUnitToStock(Constants.UNIT_FLYING_MACHINE_HUMAN, 1, 1);
-      building.Wc3Unit.AddUnitToStock(Constants.UNIT_SIEGE_SQUAD_HUMAN, 1, 1);
+      building.Wc3Unit.AddUnitToStock(Constants.UNIT_BESERK_ORC, 1, 1);
+      building.Wc3Unit.AddUnitToStock(Constants.UNIT_HEADHUNTER_BESERK_ORC, 1, 1);
+      building.Wc3Unit.AddUnitToStock(Constants.UNIT_SHAMAN_ORC, 1, 1);
+      building.Wc3Unit.AddUnitToStock(Constants.UNIT_BATRIDER_ORC, 1, 1);
+      building.Wc3Unit.AddUnitToStock(Constants.UNIT_KODO_BEAST_ORC, 1, 1);
     }
 
     public override Enums.ResearchType GetTechType(int techId, int techLevel, out SpawnUnitCommand spawnCommand)
@@ -167,6 +166,53 @@ namespace Source.Models.Teams
         default:
           spawnCommand = null;
           return Enums.ResearchType.CommonUpgrade;
+      }
+    }
+
+    public override Enums.UnitUpgradeType DetermineTypeOfUnitUpgrade(int baseUnitTypeId, out UpgradeUnitCommand upgradeUnitCommand)
+    {
+      switch (baseUnitTypeId)
+      {
+        case Constants.UNIT_BESERK_ORC:
+          upgradeUnitCommand = new UpgradeUnitCommand(Enums.SpawnInterval.Short, Constants.UNIT_GRUNT_ORC, baseUnitTypeId, Constants.UNIT_TAUREN_ORC);
+          return Enums.UnitUpgradeType.UpgradeUnitInSpawn;
+        case Constants.UNIT_TAUREN_ORC:
+          upgradeUnitCommand = new UpgradeUnitCommand(Enums.SpawnInterval.Short, Constants.UNIT_BESERK_ORC, baseUnitTypeId, 0);
+          return Enums.UnitUpgradeType.UpgradeUnitInSpawn;
+
+        case Constants.UNIT_HEADHUNTER_BESERK_ORC:
+          upgradeUnitCommand = new UpgradeUnitCommand(Enums.SpawnInterval.Short, Constants.UNIT_HEADHUNTER_ORC, baseUnitTypeId, Constants.UNIT_HEADHUNTER_ELITE_ORC);
+          return Enums.UnitUpgradeType.UpgradeUnitInSpawn;
+        case Constants.UNIT_HEADHUNTER_ELITE_ORC:
+          upgradeUnitCommand = new UpgradeUnitCommand(Enums.SpawnInterval.Short, Constants.UNIT_HEADHUNTER_BESERK_ORC, baseUnitTypeId, 0);
+          return Enums.UnitUpgradeType.UpgradeUnitInSpawn;
+
+        case Constants.UNIT_SHAMAN_ORC:
+          upgradeUnitCommand = new UpgradeUnitCommand(Enums.SpawnInterval.Middle, Constants.UNIT_WITCH_DOCTOR_ORC, baseUnitTypeId, Constants.UNIT_WARLOCK_ORC);
+          return Enums.UnitUpgradeType.UpgradeUnitInSpawn;
+        case Constants.UNIT_WARLOCK_ORC:
+          upgradeUnitCommand = new UpgradeUnitCommand(Enums.SpawnInterval.Middle, Constants.UNIT_SHAMAN_ORC, baseUnitTypeId, 0);
+          return Enums.UnitUpgradeType.UpgradeUnitInSpawn;
+
+        case Constants.UNIT_BATRIDER_ORC:
+          upgradeUnitCommand = new UpgradeUnitCommand(Enums.SpawnInterval.Middle, baseUnitTypeId, Constants.UNIT_WIND_RIDER_ORC);
+          return Enums.UnitUpgradeType.AddNewUnitToSpawn;
+        case Constants.UNIT_WIND_RIDER_ORC:
+          upgradeUnitCommand = new UpgradeUnitCommand(Enums.SpawnInterval.Middle, Constants.UNIT_BATRIDER_ORC, baseUnitTypeId, Constants.UNIT_SPIRIT_WIND_RIDER_ORC);
+          return Enums.UnitUpgradeType.UpgradeUnitInSpawn;
+        case Constants.UNIT_SPIRIT_WIND_RIDER_ORC:
+          upgradeUnitCommand = new UpgradeUnitCommand(Enums.SpawnInterval.Middle, Constants.UNIT_WIND_RIDER_ORC, baseUnitTypeId, 0);
+          return Enums.UnitUpgradeType.UpgradeUnitInSpawn;
+
+        case Constants.UNIT_KODO_BEAST_ORC:
+          upgradeUnitCommand = new UpgradeUnitCommand(Enums.SpawnInterval.Long, baseUnitTypeId, Constants.UNIT_DEMOLISHER_ORC);
+          return Enums.UnitUpgradeType.AddNewUnitToSpawn;
+        case Constants.UNIT_DEMOLISHER_ORC:
+          upgradeUnitCommand = new UpgradeUnitCommand(Enums.SpawnInterval.Long, Constants.UNIT_KODO_BEAST_ORC, baseUnitTypeId, 0);
+          return Enums.UnitUpgradeType.UpgradeUnitInSpawn;
+
+        default: // Einheiten-Typ ist nicht bekannt
+          return base.DetermineTypeOfUnitUpgrade(baseUnitTypeId, out upgradeUnitCommand);
       }
     }
   }

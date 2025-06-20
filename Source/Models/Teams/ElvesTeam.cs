@@ -53,12 +53,11 @@ namespace Source.Models.Teams
 
     private void AddInitialUnitUpgradesToStock(UnitSpawnBuilding building)
     {
-      // TODO
-      building.Wc3Unit.AddUnitToStock(Constants.UNIT_CAPTAIN_HUMAN, 1, 1);
-      building.Wc3Unit.AddUnitToStock(Constants.UNIT_RIFLEMAN_BESERK_HUMAN, 1, 1);
-      building.Wc3Unit.AddUnitToStock(Constants.UNIT_SORCERESS_HUMAN, 1, 1);
-      building.Wc3Unit.AddUnitToStock(Constants.UNIT_FLYING_MACHINE_HUMAN, 1, 1);
-      building.Wc3Unit.AddUnitToStock(Constants.UNIT_SIEGE_SQUAD_HUMAN, 1, 1);
+      building.Wc3Unit.AddUnitToStock(Constants.UNIT_DRUID_OF_THE_CLAW_ELF, 1, 1);
+      building.Wc3Unit.AddUnitToStock(Constants.UNIT_ARCHER_BESERK_ELF, 1, 1);
+      building.Wc3Unit.AddUnitToStock(Constants.UNIT_WARDEN_ELF, 1, 1);
+      building.Wc3Unit.AddUnitToStock(Constants.UNIT_FAERIE_DRAGON_ELF, 1, 1);
+      building.Wc3Unit.AddUnitToStock(Constants.UNIT_PRISON_WAGON_ELF, 1, 1);
     }
 
     public override Enums.ResearchType GetTechType(int techId, int techLevel, out SpawnUnitCommand spawnCommand)
@@ -167,6 +166,54 @@ namespace Source.Models.Teams
         default:
           spawnCommand = null;
           return Enums.ResearchType.CommonUpgrade;
+      }
+    }
+
+    public override Enums.UnitUpgradeType DetermineTypeOfUnitUpgrade(int baseUnitTypeId, out UpgradeUnitCommand upgradeUnitCommand)
+    {
+      switch (baseUnitTypeId)
+      {
+        case Constants.UNIT_DRUID_OF_THE_CLAW_ELF:
+          upgradeUnitCommand = new UpgradeUnitCommand(Enums.SpawnInterval.Short, Constants.UNIT_SENTRY_ELF, baseUnitTypeId, Constants.UNIT_MOUNTAIN_GIANT_ELF);
+          return Enums.UnitUpgradeType.UpgradeUnitInSpawn;
+        case Constants.UNIT_MOUNTAIN_GIANT_ELF:
+          upgradeUnitCommand = new UpgradeUnitCommand(Enums.SpawnInterval.Short, Constants.UNIT_DRUID_OF_THE_CLAW_ELF, baseUnitTypeId, 0);
+          return Enums.UnitUpgradeType.UpgradeUnitInSpawn;
+
+        case Constants.UNIT_ARCHER_BESERK_ELF:
+          upgradeUnitCommand = new UpgradeUnitCommand(Enums.SpawnInterval.Short, Constants.UNIT_ARCHER_ELF, baseUnitTypeId, Constants.UNIT_ARCHER_ELITE_ELF);
+          return Enums.UnitUpgradeType.UpgradeUnitInSpawn;
+        case Constants.UNIT_ARCHER_ELITE_ELF:
+          upgradeUnitCommand = new UpgradeUnitCommand(Enums.SpawnInterval.Short, Constants.UNIT_ARCHER_BESERK_ELF, baseUnitTypeId, 0);
+          return Enums.UnitUpgradeType.UpgradeUnitInSpawn;
+
+        case Constants.UNIT_WARDEN_ELF:
+          upgradeUnitCommand = new UpgradeUnitCommand(Enums.SpawnInterval.Middle, Constants.UNIT_DRUID_OF_THE_TALON_ELF, baseUnitTypeId, Constants.UNIT_SPIRIT_OF_VENGEANCE_ELF);
+          return Enums.UnitUpgradeType.UpgradeUnitInSpawn;
+        case Constants.UNIT_SPIRIT_OF_VENGEANCE_ELF:
+          upgradeUnitCommand = new UpgradeUnitCommand(Enums.SpawnInterval.Middle, Constants.UNIT_WARDEN_ELF, baseUnitTypeId, 0);
+          return Enums.UnitUpgradeType.UpgradeUnitInSpawn;
+
+        // TODO
+        case Constants.UNIT_FLYING_MACHINE_HUMAN:
+          upgradeUnitCommand = new UpgradeUnitCommand(Enums.SpawnInterval.Middle, baseUnitTypeId, Constants.UNIT_FALCON_RIDER_HUMAN);
+          return Enums.UnitUpgradeType.AddNewUnitToSpawn;
+        case Constants.UNIT_FALCON_RIDER_HUMAN:
+          upgradeUnitCommand = new UpgradeUnitCommand(Enums.SpawnInterval.Middle, Constants.UNIT_FAERIE_DRAGON_ELF, baseUnitTypeId, Constants.UNIT_GRIFFIN_RIDER_HUMAN);
+          return Enums.UnitUpgradeType.UpgradeUnitInSpawn;
+        case Constants.UNIT_GRIFFIN_RIDER_HUMAN:
+          upgradeUnitCommand = new UpgradeUnitCommand(Enums.SpawnInterval.Middle, Constants.UNIT_FALCON_RIDER_HUMAN, baseUnitTypeId, 0);
+          return Enums.UnitUpgradeType.UpgradeUnitInSpawn;
+
+        case Constants.UNIT_SIEGE_SQUAD_HUMAN:
+          upgradeUnitCommand = new UpgradeUnitCommand(Enums.SpawnInterval.Long, baseUnitTypeId, Constants.UNIT_SIEGE_ENGINE_HUMAN);
+          return Enums.UnitUpgradeType.AddNewUnitToSpawn;
+        case Constants.UNIT_SIEGE_ENGINE_HUMAN:
+          upgradeUnitCommand = new UpgradeUnitCommand(Enums.SpawnInterval.Long, Constants.UNIT_SIEGE_SQUAD_HUMAN, baseUnitTypeId, 0);
+          return Enums.UnitUpgradeType.UpgradeUnitInSpawn;
+
+        default: // Einheiten-Typ ist nicht bekannt
+          return base.DetermineTypeOfUnitUpgrade(baseUnitTypeId, out upgradeUnitCommand);
       }
     }
   }

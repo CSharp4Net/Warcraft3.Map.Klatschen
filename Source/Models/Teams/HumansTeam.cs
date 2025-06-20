@@ -195,7 +195,7 @@ namespace Source.Models.Teams
           return Enums.UnitUpgradeType.UpgradeUnitInSpawn;
 
         case Constants.UNIT_FLYING_MACHINE_HUMAN:
-          upgradeUnitCommand = new UpgradeUnitCommand(Enums.SpawnInterval.Middle, baseUnitTypeId, Constants.UNIT_RIFLEMAN_ELITE_HUMAN);
+          upgradeUnitCommand = new UpgradeUnitCommand(Enums.SpawnInterval.Middle, baseUnitTypeId, Constants.UNIT_FALCON_RIDER_HUMAN);
           return Enums.UnitUpgradeType.AddNewUnitToSpawn;
         case Constants.UNIT_FALCON_RIDER_HUMAN:
           upgradeUnitCommand = new UpgradeUnitCommand(Enums.SpawnInterval.Middle, Constants.UNIT_FLYING_MACHINE_HUMAN, baseUnitTypeId, Constants.UNIT_GRIFFIN_RIDER_HUMAN);
