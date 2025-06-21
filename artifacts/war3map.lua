@@ -19800,6 +19800,7 @@ System.namespace("", function (namespace)
       this.HeroDarkRanger = SourceModels.Area(Regions.HeroDarkRanger)
       this.HeroFirelord = SourceModels.Area(Regions.HeroFirelord)
       this.HeroKeeperOfTheGrove = SourceModels.Area(Regions.HeroKeeperOfTheGrove)
+      this.HeroLich = SourceModels.Area(Regions.HeroLich)
       this.HeroMountainKing = SourceModels.Area(Regions.HeroMountainKing)
       this.HeroPitLord = SourceModels.Area(Regions.HeroPitLord)
       this.HeroSeaWitch = SourceModels.Area(Regions.HeroSeaWitch)
@@ -19936,6 +19937,7 @@ System.namespace("", function (namespace)
             { "HeroDarkRanger", 0xE, out.Source.Models.Area },
             { "HeroFirelord", 0xE, out.Source.Models.Area },
             { "HeroKeeperOfTheGrove", 0xE, out.Source.Models.Area },
+            { "HeroLich", 0xE, out.Source.Models.Area },
             { "HeroMountainKing", 0xE, out.Source.Models.Area },
             { "HeroPitLord", 0xE, out.Source.Models.Area },
             { "HeroSeaWitch", 0xE, out.Source.Models.Area },
@@ -20115,7 +20117,8 @@ end)
 System.namespace("Source", function (namespace)
   namespace.class("Program", function (namespace)
     local Main, ShowDebugMessage, ShowDebugMessage1, ShowErrorMessage, ShowExceptionMessage, Start, TryGetUserById, TryGetCreepCampByBuilding, 
-    TryGetTeamByUnit, ConstructCreepCamps, ConstructCreepCamp, CreateComputerHeros, CreateHeroSelectorForPlayerAndAdjustCamera, GetIntervalSeconds, class, static
+    TryGetCreepCampByUnit, TryGetTeamByUnit, ConstructCreepCamps, ConstructCreepCamp, CreateComputerHeros, CreateHeroSelectorForPlayerAndAdjustCamera, GetIntervalSeconds, class, 
+    static
     static = function (this)
       this.Mercenaries = ListMercenaryForce()
       this.AllActiveUsers = ListUserPlayer()
@@ -20177,6 +20180,7 @@ System.namespace("Source", function (namespace)
         Areas.HeroDarkRanger:RegisterOnEnter(SourceEventsRegions.HeroSelection.OnDarkRanger)
         Areas.HeroFirelord:RegisterOnEnter(SourceEventsRegions.HeroSelection.OnFirelord)
         Areas.HeroKeeperOfTheGrove:RegisterOnEnter(SourceEventsRegions.HeroSelection.OnKeeperOfTheGrove)
+        Areas.HeroLich:RegisterOnEnter(SourceEventsRegions.HeroSelection.OnLich)
         Areas.HeroMountainKing:RegisterOnEnter(SourceEventsRegions.HeroSelection.OnMountainKing)
         Areas.HeroPitLord:RegisterOnEnter(SourceEventsRegions.HeroSelection.OnPitLord)
         Areas.HeroSeaWitch:RegisterOnEnter(SourceEventsRegions.HeroSelection.OnSeaWitch)
@@ -20263,6 +20267,17 @@ System.namespace("Source", function (namespace)
       return false, user
     end
     TryGetCreepCampByBuilding = function (buildingUnit, creepCamp)
+      for i = #class.Mercenaries - 1, 0, -1 do
+        if class.Mercenaries:get(i).Building.Wc3Unit == buildingUnit then
+          creepCamp = class.Mercenaries:get(i)
+          return true, creepCamp
+        end
+      end
+
+      creepCamp = nil
+      return false, creepCamp
+    end
+    TryGetCreepCampByUnit = function (buildingUnit, creepCamp)
       for i = #class.Mercenaries - 1, 0, -1 do
         if class.Mercenaries:get(i).Building.Wc3Unit == buildingUnit then
           creepCamp = class.Mercenaries:get(i)
@@ -20365,6 +20380,7 @@ System.namespace("Source", function (namespace)
       ShowExceptionMessage = ShowExceptionMessage,
       TryGetUserById = TryGetUserById,
       TryGetCreepCampByBuilding = TryGetCreepCampByBuilding,
+      TryGetCreepCampByUnit = TryGetCreepCampByUnit,
       TryGetTeamByUnit = TryGetTeamByUnit,
       CreateHeroSelectorForPlayerAndAdjustCamera = CreateHeroSelectorForPlayerAndAdjustCamera,
       GetIntervalSeconds = GetIntervalSeconds,
@@ -20396,6 +20412,7 @@ System.namespace("Source", function (namespace)
             { "ShowExceptionMessage", 0x20E, ShowExceptionMessage, System.String, System.Exception },
             { "Start", 0x9, Start },
             { "TryGetCreepCampByBuilding", 0x28E, TryGetCreepCampByBuilding, out.WCSharp.Api.unit, out.Source.Models.MercenaryForce, System.Boolean },
+            { "TryGetCreepCampByUnit", 0x28E, TryGetCreepCampByUnit, out.WCSharp.Api.unit, out.Source.Models.MercenaryForce, System.Boolean },
             { "TryGetTeamByUnit", 0x28E, TryGetTeamByUnit, out.WCSharp.Api.unit, out.Source.Abstracts.TeamBase, System.Boolean },
             { "TryGetUserById", 0x28E, TryGetUserById, System.Int32, out.Source.Models.UserPlayer, System.Boolean }
           },
@@ -20462,6 +20479,7 @@ System.namespace("", function (namespace)
       this.HeroDarkRanger = System.new(WCSharpSharedData.Rectangle, 2, -1984, 17408, -1856, 17536)
       this.HeroFirelord = System.new(WCSharpSharedData.Rectangle, 2, -2560, 18496, -2432, 18624)
       this.HeroKeeperOfTheGrove = System.new(WCSharpSharedData.Rectangle, 2, -2176, 18496, -2048, 18624)
+      this.HeroLich = System.new(WCSharpSharedData.Rectangle, 2, -3008, 17792, -2880, 17920)
       this.HeroMountainKing = System.new(WCSharpSharedData.Rectangle, 2, -4480, 18496, -4352, 18624)
       this.HeroPitLord = System.new(WCSharpSharedData.Rectangle, 2, -4672, 17792, -4544, 17920)
       this.HeroSeaWitch = System.new(WCSharpSharedData.Rectangle, 2, -1984, 17024, -1856, 17152)
@@ -20598,6 +20616,7 @@ System.namespace("", function (namespace)
             { "HeroDarkRanger", 0xE, out.WCSharp.Shared.Data.Rectangle },
             { "HeroFirelord", 0xE, out.WCSharp.Shared.Data.Rectangle },
             { "HeroKeeperOfTheGrove", 0xE, out.WCSharp.Shared.Data.Rectangle },
+            { "HeroLich", 0xE, out.WCSharp.Shared.Data.Rectangle },
             { "HeroMountainKing", 0xE, out.WCSharp.Shared.Data.Rectangle },
             { "HeroPitLord", 0xE, out.WCSharp.Shared.Data.Rectangle },
             { "HeroSeaWitch", 0xE, out.WCSharp.Shared.Data.Rectangle },
@@ -20822,7 +20841,7 @@ System.import(function (out)
 end)
 System.namespace("Source.Abstracts", function (namespace)
   namespace.class("PlayerBase", function (namespace)
-    local CreateUnit, Defeat, Win, IsOwnerOfUnit, RemoveUnit, __ctor__
+    local CreateUnit, Defeat, Win, IsOwnerOfUnit, AddUnit, RemoveUnit, __ctor__
     __ctor__ = function (this, wc3Player)
       this.Units = ListSpawnedUnit()
       this.PlayerId = GetPlayerId(wc3Player)
@@ -20841,7 +20860,7 @@ System.namespace("Source.Abstracts", function (namespace)
       return unit
     end
     -- <summary>
-    -- Tötet alle Einheiten des Spielers und setzt diesen auf "Besiegt"
+    -- Tötet alle Einheiten des Spielers und setzt dessen Status auf "Besiegt", damit endet für ihn das Spiel.
     -- </summary>
     Defeat = function (this)
       MeleeDoDefeat(this.Wc3Player)
@@ -20849,10 +20868,9 @@ System.namespace("Source.Abstracts", function (namespace)
       this.Defeated = true
     end
     -- <summary>
-    -- Setzt den Spieler auf "Gewonnen"
+    -- Setzt den Status des Spieler auf "Gewonnen", für diesen endet damit das Spiel.
     -- </summary>
     Win = function (this)
-      --Program.ShowDebugMessage("PlayerBase.Defeat", $"Win WC3 player");
       MeleeVictoryDialogBJ(this.Wc3Player, true)
     end
     -- <summary>
@@ -20882,7 +20900,14 @@ System.namespace("Source.Abstracts", function (namespace)
       return false, unit
     end
     -- <summary>
-    -- Entfernt eine Einheit aus der Auflistung aller Einheiten.
+    -- Fügt der Auflistung erzeugter Einheiten einen Eintrag hinzu.
+    -- </summary>
+    -- <param name="unit"></param>
+    AddUnit = function (this, unit)
+      this.Units:Add(unit)
+    end
+    -- <summary>
+    -- Entfernt eine Einheit aus der Auflistung erzeugter Einheiten.
     -- </summary>
     -- <param name="unit"></param>
     RemoveUnit = function (this, unit)
@@ -20895,16 +20920,18 @@ System.namespace("Source.Abstracts", function (namespace)
       Defeat = Defeat,
       Win = Win,
       IsOwnerOfUnit = IsOwnerOfUnit,
+      AddUnit = AddUnit,
       RemoveUnit = RemoveUnit,
       __ctor__ = __ctor__,
       __metadata__ = function (out)
         return {
           methods = {
             { ".ctor", 0x106, nil, out.WCSharp.Api.player },
+            { "AddUnit", 0x104, AddUnit, out.Source.Models.SpawnedUnit },
             { "CreateUnit", 0x386, CreateUnit, System.Int32, out.Source.Models.Area, System.Single, out.Source.Models.SpawnedUnit },
             { "Defeat", 0x6, Defeat },
             { "IsOwnerOfUnit", 0x286, IsOwnerOfUnit, out.WCSharp.Api.unit, out.Source.Models.SpawnedUnit, System.Boolean },
-            { "RemoveUnit", 0x106, RemoveUnit, out.Source.Models.SpawnedUnit },
+            { "RemoveUnit", 0x104, RemoveUnit, out.Source.Models.SpawnedUnit },
             { "Win", 0x6, Win }
           },
           properties = {
@@ -20934,7 +20961,7 @@ System.import(function (out)
 end)
 System.namespace("Source.Abstracts", function (namespace)
   namespace.class("TeamBase", function (namespace)
-    local Defeat, Win, ContainsPlayer, IncreaseTechForAllPlayers, DisplayChatMessage, GetTechType, DetermineTypeOfUnitUpgrade, CreateBuildings, 
+    local Defeat, Win, ContainsPlayer, IncreaseTechForAllPlayers, DisplayChatMessage, GetUnitUpgradeByResearch, GetUnitUpgradeBySold, CreateBuildings, 
     __ctor__
     __ctor__ = function (this, wc3ComputerPlayer, teamBaseArea)
       this.Name = GetPlayerName(wc3ComputerPlayer)
@@ -21034,21 +21061,31 @@ System.namespace("Source.Abstracts", function (namespace)
     -- </summary>
     -- <param name="techId">Technologie-Id</param>
     -- <param name="techLevel">Technologie-Stufe</param>
-    -- <param name="spawnCommand">Spawn-Befehl, welcher sich aus dieser Konstellation ergibt.</param>
+    -- <param name="command">Spawn-Befehl, welcher sich aus dieser Konstellation ergibt.</param>
     -- <returns></returns>
-    GetTechType = function (this, techId, techLevel, spawnCommand)
-      Source.Program.ShowErrorMessage("TeamBase.GetTechType", "Method not implemented yet for player " .. System.toString(this.ColorizedName) .. "!")
+    GetUnitUpgradeByResearch = function (this, techId, techLevel, command)
+      Source.Program.ShowErrorMessage("TeamBase.GetUnitUpgradeByResearch", "Method not implemented yet for player " .. System.toString(this.ColorizedName) .. "!")
 
-      spawnCommand = nil
-      return 0 --[[ResearchType.CommonUpgrade]], spawnCommand
+      command = nil
+
+      return 0 --[[ResearchType.Unknown]], command
     end
-    DetermineTypeOfUnitUpgrade = function (this, baseUnitTypeId, upgradeUnitCommand)
-      Source.Program.ShowErrorMessage("TeamBase.DetermineTypeOfUnitUpgrade", "Method not implemented yet for player " .. System.toString(this.ColorizedName) .. "!")
+    -- <summary>
+    -- Ermittelt anhand der UnitType-Id den Spawn-Command, welche alle nötigen Informationen zum Upgrade der Einheit, sowie zum Ändern des Shops enthält.
+    -- </summary>
+    -- <param name="baseUnitTypeId">UnitType-Id der gekauften Einheit</param>
+    -- <param name="command">Upgrade-Command</param>
+    -- <returns></returns>
+    GetUnitUpgradeBySold = function (this, baseUnitTypeId, command)
+      Source.Program.ShowErrorMessage("TeamBase.GetUnitUpgradeBySold", "Method not implemented yet for player " .. System.toString(this.ColorizedName) .. "!")
 
-      upgradeUnitCommand = nil
+      command = nil
 
-      return 0 --[[UnitUpgradeType.Unknown]], upgradeUnitCommand
+      return 0 --[[UnitUpgradeType.Unknown]], command
     end
+    -- <summary>
+    -- Erstellt alle initialen Gebäude für den Computer-Spieler des Teams.
+    -- </summary>
     CreateBuildings = function (this)
       Source.Program.ShowErrorMessage("TeamBase.CreateBuildings", "Method not implemented yet for player " .. System.toString(this.ColorizedName) .. "!")
     end
@@ -21059,8 +21096,8 @@ System.namespace("Source.Abstracts", function (namespace)
       ContainsPlayer = ContainsPlayer,
       IncreaseTechForAllPlayers = IncreaseTechForAllPlayers,
       DisplayChatMessage = DisplayChatMessage,
-      GetTechType = GetTechType,
-      DetermineTypeOfUnitUpgrade = DetermineTypeOfUnitUpgrade,
+      GetUnitUpgradeByResearch = GetUnitUpgradeByResearch,
+      GetUnitUpgradeBySold = GetUnitUpgradeBySold,
       CreateBuildings = CreateBuildings,
       __ctor__ = __ctor__,
       __metadata__ = function (out)
@@ -21070,9 +21107,9 @@ System.namespace("Source.Abstracts", function (namespace)
             { "ContainsPlayer", 0x286, ContainsPlayer, System.Int32, out.Source.Models.UserPlayer, System.Boolean },
             { "CreateBuildings", 0x6, CreateBuildings },
             { "Defeat", 0x6, Defeat },
-            { "DetermineTypeOfUnitUpgrade", 0x286, DetermineTypeOfUnitUpgrade, System.Int32, out.Source.Models.UpgradeUnitCommand, System.Int32 },
             { "DisplayChatMessage", 0x106, DisplayChatMessage, System.String },
-            { "GetTechType", 0x386, GetTechType, System.Int32, System.Int32, out.Source.Models.SpawnUnitCommand, System.Int32 },
+            { "GetUnitUpgradeByResearch", 0x386, GetUnitUpgradeByResearch, System.Int32, System.Int32, out.Source.Models.UnitUpgradeByResearchCommand, System.Int32 },
+            { "GetUnitUpgradeBySold", 0x286, GetUnitUpgradeBySold, System.Int32, out.Source.Models.UnitUpgradeBySoldCommand, System.Int32 },
             { "IncreaseTechForAllPlayers", 0x206, IncreaseTechForAllPlayers, System.Int32, System.Int32 },
             { "Win", 0x6, Win }
           },
@@ -21263,16 +21300,55 @@ System.namespace("Source.Events", function (namespace)
               SourceLogics.ComputerBuilding.HandleSingleSpawnBuyed(buyingUnit, soldUnit, sellingUnit, Source.Program.Humans)
               break
             else
-              Source.Program.ShowErrorMessage("Unit.OnBuysUnit", System.toString(GetUnitName(sellingUnit)) .. " is an unknown building?!")
+              Source.Program.ShowErrorMessage("Unit.OnBuysUnit", System.toString(GetUnitName(sellingUnit)) .. " is an unknown human building?!")
               break
             end
           until 1
         elseif GetUnitRace(sellingUnit) == RACE_ORC then
           -- Verkauf durch Gebäude der Orks
+          repeat
+            local default = sellingUnitTypeId
+            if default == 1747988569 --[[Constants.UNIT_BARRACKS_ORC]] then
+              SourceLogics.Research.HandleUnitUpgradeBuyed(buyingUnit, soldUnit, sellingUnit, Source.Program.Orcs)
+              break
+            elseif default == 1747988570 --[[Constants.UNIT_FORTRESS_ORC]] then
+              SourceLogics.ComputerBuilding.HandleSingleSpawnBuyed(buyingUnit, soldUnit, sellingUnit, Source.Program.Orcs)
+              break
+            else
+              Source.Program.ShowErrorMessage("Unit.OnBuysUnit", System.toString(GetUnitName(sellingUnit)) .. " is an unknown orc building?!")
+              break
+            end
+          until 1
         elseif GetUnitRace(sellingUnit) == RACE_NIGHTELF then
           -- Verkauf durch Gebäude der Elfen
+          repeat
+            local default = sellingUnitTypeId
+            if default == 1747988790 --[[Constants.UNIT_HUNTER_S_HALL_ELF]] then
+              SourceLogics.Research.HandleUnitUpgradeBuyed(buyingUnit, soldUnit, sellingUnit, Source.Program.Elves)
+              break
+            elseif default == 1747988789 --[[Constants.UNIT_TREE_OF_ETERNITY_ELF]] then
+              SourceLogics.ComputerBuilding.HandleSingleSpawnBuyed(buyingUnit, soldUnit, sellingUnit, Source.Program.Elves)
+              break
+            else
+              Source.Program.ShowErrorMessage("Unit.OnBuysUnit", System.toString(GetUnitName(sellingUnit)) .. " is an unknown elf building?!")
+              break
+            end
+          until 1
         elseif GetUnitRace(sellingUnit) == RACE_UNDEAD then
           -- Verkauf durch Gebäude der Untoten
+          repeat
+            local default = sellingUnitTypeId
+            if default == 1747988805 --[[Constants.UNIT_CRYPT_UNDEAD]] then
+              SourceLogics.Research.HandleUnitUpgradeBuyed(buyingUnit, soldUnit, sellingUnit, Source.Program.Undeads)
+              break
+            elseif default == 1747988801 --[[Constants.UNIT_BLACK_CITADEL_UNDEAD]] then
+              SourceLogics.ComputerBuilding.HandleSingleSpawnBuyed(buyingUnit, soldUnit, sellingUnit, Source.Program.Undeads)
+              break
+            else
+              Source.Program.ShowErrorMessage("Unit.OnBuysUnit", System.toString(GetUnitName(sellingUnit)) .. " is an unknown undead building?!")
+              break
+            end
+          until 1
         else
           Source.Program.ShowErrorMessage("Unit.OnBuysUnit", System.toString(GetUnitName(buyingUnit)) .. " buyed an unit " .. System.toString(GetUnitName(soldUnit)) .. " from unknown race?!")
         end
@@ -21835,8 +21911,10 @@ end
 do
 local System = System
 local Source
+local SourceModelsEnums
 System.import(function (out)
   Source = out.Source
+  SourceModelsEnums = Source.Models.Enums
 end)
 System.namespace("Source.Events.Periodic", function (namespace)
   namespace.class("ResearchCheck", function (namespace)
@@ -21864,25 +21942,30 @@ System.namespace("Source.Events.Periodic", function (namespace)
       local default, extern = System.try(function ()
         local player = team.Computer.Wc3Player
 
-        IncreaseTechIfAffordable(team, player, 1378889778 --[[Constants.UPGRADE_MELEE_ATTACK_TEAM]], 250 --[[ResearchCheck.BaseGoldPriceUnitResearch]])
-        IncreaseTechIfAffordable(team, player, 1378889794 --[[Constants.UPGRADE_MELEE_DEFENSE_TEAM]], 250 --[[ResearchCheck.BaseGoldPriceUnitResearch]])
-        IncreaseTechIfAffordable(team, player, 1378889779 --[[Constants.UPGRADE_DISTANCE_ATTACK_TEAM]], 250 --[[ResearchCheck.BaseGoldPriceUnitResearch]])
-        IncreaseTechIfAffordable(team, player, 1378889798 --[[Constants.UPGRADE_DISTANCE_DEFENSE_TEAM]], 250 --[[ResearchCheck.BaseGoldPriceUnitResearch]])
-        IncreaseTechIfAffordable(team, player, 1378889793 --[[Constants.UPGRADE_MAGE_ATTACK_TEAM]], 250 --[[ResearchCheck.BaseGoldPriceUnitResearch]])
-        IncreaseTechIfAffordable(team, player, 1378889796 --[[Constants.UPGRADE_MAGE_DEFENSE_TEAM]], 250 --[[ResearchCheck.BaseGoldPriceUnitResearch]])
+        IncreaseTechIfAffordable(team, player, 1378889778 --[[Constants.UPGRADE_MELEE_ATTACK_TEAM]], 200 --[[ResearchCheck.BaseGoldPriceUnitResearch]])
+        IncreaseTechIfAffordable(team, player, 1378889794 --[[Constants.UPGRADE_MELEE_DEFENSE_TEAM]], 200 --[[ResearchCheck.BaseGoldPriceUnitResearch]])
+        IncreaseTechIfAffordable(team, player, 1378889779 --[[Constants.UPGRADE_DISTANCE_ATTACK_TEAM]], 200 --[[ResearchCheck.BaseGoldPriceUnitResearch]])
+        IncreaseTechIfAffordable(team, player, 1378889798 --[[Constants.UPGRADE_DISTANCE_DEFENSE_TEAM]], 200 --[[ResearchCheck.BaseGoldPriceUnitResearch]])
+        IncreaseTechIfAffordable(team, player, 1378889793 --[[Constants.UPGRADE_MAGE_ATTACK_TEAM]], 200 --[[ResearchCheck.BaseGoldPriceUnitResearch]])
+        IncreaseTechIfAffordable(team, player, 1378889796 --[[Constants.UPGRADE_MAGE_DEFENSE_TEAM]], 200 --[[ResearchCheck.BaseGoldPriceUnitResearch]])
 
-        IncreaseTechIfAffordable(team, player, 1378889780 --[[Constants.UPGRADE_BUILDING_ATTACK_TEAM]], 500 --[[ResearchCheck.BaseGoldPriceUnitResearchBuilding]])
-        IncreaseTechIfAffordable(team, player, 1378889776 --[[Constants.UPGRADE_BUILDING_DEFENSE_TEAM]], 500 --[[ResearchCheck.BaseGoldPriceUnitResearchBuilding]])
+        IncreaseTechIfAffordable(team, player, 1378889780 --[[Constants.UPGRADE_BUILDING_ATTACK_TEAM]], 400 --[[ResearchCheck.BaseGoldPriceUnitResearchBuilding]])
+        IncreaseTechIfAffordable(team, player, 1378889776 --[[Constants.UPGRADE_BUILDING_DEFENSE_TEAM]], 400 --[[ResearchCheck.BaseGoldPriceUnitResearchBuilding]])
 
-        IncreaseTechIfAffordable(team, player, 1378889781 --[[Constants.UPGRADE_MELEE_UNIT_TEAM]], 500 --[[ResearchCheck.BaseGoldPriceUnitUpgrade]])
-        IncreaseTechIfAffordable(team, player, 1378889785 --[[Constants.UPGRADE_DISTANCE_UNIT_TEAM]], 500 --[[ResearchCheck.BaseGoldPriceUnitUpgrade]])
-        IncreaseTechIfAffordable(team, player, 1378889795 --[[Constants.UPGRADE_FLIGHT_UNIT_TEAM]], 500 --[[ResearchCheck.BaseGoldPriceUnitUpgrade]])
-        IncreaseTechIfAffordable(team, player, 1378889797 --[[Constants.UPGRADE_MAGE_UNIT_TEAM]], 500 --[[ResearchCheck.BaseGoldPriceUnitUpgrade]])
+        if #team.Users == 0 then
+          -- Teams ohne menschlichen Mitspieler upgrade ihre Unit-Spawn
+          IncreaseTechIfAffordable(team, player, 1378889781 --[[Constants.UPGRADE_MELEE_UNIT_TEAM]], 400 --[[ResearchCheck.BaseGoldPriceUnitUpgrade]])
+          IncreaseTechIfAffordable(team, player, 1378889785 --[[Constants.UPGRADE_DISTANCE_UNIT_TEAM]], 400 --[[ResearchCheck.BaseGoldPriceUnitUpgrade]])
+          IncreaseTechIfAffordable(team, player, 1378889795 --[[Constants.UPGRADE_FLIGHT_UNIT_TEAM]], 400 --[[ResearchCheck.BaseGoldPriceUnitUpgrade]])
+          IncreaseTechIfAffordable(team, player, 1378889797 --[[Constants.UPGRADE_MAGE_UNIT_TEAM]], 400 --[[ResearchCheck.BaseGoldPriceUnitUpgrade]])
+        end
 
-        IncreaseTechIfAffordable(team, player, 1378889782 --[[Constants.UPGRADE_SIEGE_ATTACK_TEAM]], 625 --[[ResearchCheck.BaseGoldPriceUnitResearchArtillery]])
-        IncreaseTechIfAffordable(team, player, 1378889799 --[[Constants.UPGRADE_SIEGE_DEFENSE_TEAM]], 625 --[[ResearchCheck.BaseGoldPriceUnitResearchArtillery]])
+        IncreaseTechIfAffordable(team, player, 1378889782 --[[Constants.UPGRADE_SIEGE_ATTACK_TEAM]], 500 --[[ResearchCheck.BaseGoldPriceUnitResearchArtillery]])
+        IncreaseTechIfAffordable(team, player, 1378889799 --[[Constants.UPGRADE_SIEGE_DEFENSE_TEAM]], 500 --[[ResearchCheck.BaseGoldPriceUnitResearchArtillery]])
 
-        IncreaseTechIfAffordable(team, player, 1378889784 --[[Constants.UPGRADE_SIEGE_UNIT_TEAM]], 1250 --[[ResearchCheck.BaseGoldPriceUnitUpgradeArtillery]])
+        if #team.Users == 0 then
+          IncreaseTechIfAffordable(team, player, 1378889784 --[[Constants.UPGRADE_SIEGE_UNIT_TEAM]], 1000 --[[ResearchCheck.BaseGoldPriceUnitUpgradeArtillery]])
+        end
 
         -- Keine bezahlbare Forschung übrig
         return true, true
@@ -21913,17 +21996,21 @@ System.namespace("Source.Events.Periodic", function (namespace)
       team:IncreaseTechForAllPlayers(techId, nextTechLevel)
       SetPlayerState(computerPlayer, PLAYER_STATE_RESOURCE_GOLD, GetPlayerState(computerPlayer, PLAYER_STATE_RESOURCE_GOLD) - (goldPriceBase * nextTechLevel))
 
-      local default, spawnCommand = team:GetTechType(techId, nextTechLevel)
+      local default, command = team:GetUnitUpgradeByResearch(techId, nextTechLevel)
       local researchType = default
 
-      if researchType == 1 --[[ResearchType.AddUnit]] then
-        team.Computer:AddSpawnUnit(spawnCommand)
+      if researchType == 0 --[[ResearchType.Unknown]] then
+        return false
+      elseif researchType == 1 --[[ResearchType.CommonUpgrade]] then
+        team:DisplayChatMessage(Source.ConstantsEx.Message_CollectedGoldToResearchTech)
+      elseif researchType == 2 --[[ResearchType.AddUnit]] then
+        team.Computer:AddSpawnUnit(command)
         team:DisplayChatMessage(Source.ConstantsEx.Message_CollectedGoldForMoreUnits)
-      elseif researchType == 2 --[[ResearchType.UpgradeUnit]] then
-        team.Computer:UpgradeSpawnUnit(spawnCommand)
+      elseif researchType == 3 --[[ResearchType.UpgradeUnit]] then
+        team.Computer:UpgradeSpawnUnit(command)
         team:DisplayChatMessage(Source.ConstantsEx.Message_CollectedGoldToUpgradeUnits)
       else
-        team:DisplayChatMessage(Source.ConstantsEx.Message_CollectedGoldToResearchTech)
+        Source.Program.ShowErrorMessage("ResearchCheck.IncreaseTechIfAffordable", "Unsopported research tyoe " .. System.toString(System.EnumToString(researchType, SourceModelsEnums.ResearchType)) .. "!")
       end
 
       return true
@@ -22018,7 +22105,8 @@ end)
 System.namespace("Source.Events.Regions", function (namespace)
   namespace.class("HeroSelection", function (namespace)
     local OnAlchemist, OnArchmage, OnBlademaster, OnBloodMage, OnBrewmaster, OnCryptLord, OnDarkRanger, OnFirelord, 
-    OnKeeperOfTheGrove, OnMountainKing, OnPitLord, OnSeaWitch, OnShadowHunter, OnTaurenChieftain, OnTinker, HandleHeroSelection
+    OnKeeperOfTheGrove, OnLich, OnMountainKing, OnPitLord, OnSeaWitch, OnShadowHunter, OnTaurenChieftain, OnTinker, 
+    HandleHeroSelection
     OnAlchemist = function ()
       HandleHeroSelection(1311780913 --[[Constants.UNIT_ALCHEMIST_HERO]])
     end
@@ -22045,6 +22133,9 @@ System.namespace("Source.Events.Regions", function (namespace)
     end
     OnKeeperOfTheGrove = function ()
       HandleHeroSelection(1160785968 --[[Constants.UNIT_KEEPER_OF_THE_GROVE_HERO]])
+    end
+    OnLich = function ()
+      HandleHeroSelection(1160785972 --[[Constants.UNIT_LICH_HERO]])
     end
     OnMountainKing = function ()
       HandleHeroSelection(1211117646 --[[Constants.UNIT_MOUNTAIN_KING_HERO]])
@@ -22085,6 +22176,7 @@ System.namespace("Source.Events.Regions", function (namespace)
       OnDarkRanger = OnDarkRanger,
       OnFirelord = OnFirelord,
       OnKeeperOfTheGrove = OnKeeperOfTheGrove,
+      OnLich = OnLich,
       OnMountainKing = OnMountainKing,
       OnPitLord = OnPitLord,
       OnSeaWitch = OnSeaWitch,
@@ -22104,6 +22196,7 @@ System.namespace("Source.Events.Regions", function (namespace)
             { "OnDarkRanger", 0xC, OnDarkRanger },
             { "OnFirelord", 0xC, OnFirelord },
             { "OnKeeperOfTheGrove", 0xC, OnKeeperOfTheGrove },
+            { "OnLich", 0xC, OnLich },
             { "OnMountainKing", 0xC, OnMountainKing },
             { "OnPitLord", 0xC, OnPitLord },
             { "OnSeaWitch", 0xC, OnSeaWitch },
@@ -22798,56 +22891,56 @@ System.namespace("Source.Logics", function (namespace)
 
         local default, foundUser = Source.Program.Humans:ContainsPlayer(playerId)
         if default then
-          local extern, spawnCommand = Source.Program.Humans:GetTechType(researchedTechId, researchedTechIdCount)
+          local extern, spawnCommand = Source.Program.Humans:GetUnitUpgradeByResearch(researchedTechId, researchedTechIdCount)
           researchType = extern
 
           Source.Program.Humans:IncreaseTechForAllPlayers(researchedTechId, researchedTechIdCount)
 
-          if researchType == 1 --[[ResearchType.AddUnit]] then
+          if researchType == 2 --[[ResearchType.AddUnit]] then
             Source.Program.Humans.Computer:AddSpawnUnit(spawnCommand)
-          elseif researchType == 2 --[[ResearchType.UpgradeUnit]] then
+          elseif researchType == 3 --[[ResearchType.UpgradeUnit]] then
             Source.Program.Humans.Computer:UpgradeSpawnUnit(spawnCommand)
           end
         else
           local extern
           extern, foundUser = Source.Program.Orcs:ContainsPlayer(playerId)
           if extern then
-            local extern, spawnCommand = Source.Program.Orcs:GetTechType(researchedTechId, researchedTechIdCount)
+            local extern, spawnCommand = Source.Program.Orcs:GetUnitUpgradeByResearch(researchedTechId, researchedTechIdCount)
             researchType = extern
 
             Source.Program.Orcs:IncreaseTechForAllPlayers(researchedTechId, researchedTechIdCount)
 
-            if researchType == 1 --[[ResearchType.AddUnit]] then
+            if researchType == 2 --[[ResearchType.AddUnit]] then
               Source.Program.Orcs.Computer:AddSpawnUnit(spawnCommand)
-            elseif researchType == 2 --[[ResearchType.UpgradeUnit]] then
+            elseif researchType == 3 --[[ResearchType.UpgradeUnit]] then
               Source.Program.Orcs.Computer:UpgradeSpawnUnit(spawnCommand)
             end
           else
             local extern
             extern, foundUser = Source.Program.Elves:ContainsPlayer(playerId)
             if extern then
-              local extern, spawnCommand = Source.Program.Elves:GetTechType(researchedTechId, researchedTechIdCount)
+              local extern, spawnCommand = Source.Program.Elves:GetUnitUpgradeByResearch(researchedTechId, researchedTechIdCount)
               researchType = extern
 
               Source.Program.Elves:IncreaseTechForAllPlayers(researchedTechId, researchedTechIdCount)
 
-              if researchType == 1 --[[ResearchType.AddUnit]] then
+              if researchType == 2 --[[ResearchType.AddUnit]] then
                 Source.Program.Elves.Computer:AddSpawnUnit(spawnCommand)
-              elseif researchType == 2 --[[ResearchType.UpgradeUnit]] then
+              elseif researchType == 3 --[[ResearchType.UpgradeUnit]] then
                 Source.Program.Elves.Computer:UpgradeSpawnUnit(spawnCommand)
               end
             else
               local extern
               extern, foundUser = Source.Program.Undeads:ContainsPlayer(playerId)
               if extern then
-                local extern, spawnCommand = Source.Program.Undeads:GetTechType(researchedTechId, researchedTechIdCount)
+                local extern, spawnCommand = Source.Program.Undeads:GetUnitUpgradeByResearch(researchedTechId, researchedTechIdCount)
                 researchType = extern
 
                 Source.Program.Undeads:IncreaseTechForAllPlayers(researchedTechId, researchedTechIdCount)
 
-                if researchType == 1 --[[ResearchType.AddUnit]] then
+                if researchType == 2 --[[ResearchType.AddUnit]] then
                   Source.Program.Undeads.Computer:AddSpawnUnit(spawnCommand)
-                elseif researchType == 2 --[[ResearchType.UpgradeUnit]] then
+                elseif researchType == 3 --[[ResearchType.UpgradeUnit]] then
                   Source.Program.Undeads.Computer:UpgradeSpawnUnit(spawnCommand)
                 end
               end
@@ -22870,7 +22963,7 @@ System.namespace("Source.Logics", function (namespace)
       RemoveUnitFromStock(sellingUnit, unitTypeId)
 
       Source.Program.ShowDebugMessage("Determince upgrade unit command" .. "")
-      local default, command = team:DetermineTypeOfUnitUpgrade(unitTypeId)
+      local default, command = team:GetUnitUpgradeBySold(unitTypeId)
       local upgradeType = default
 
       if upgradeType == 0 --[[UnitUpgradeType.Unknown]] then
@@ -23209,31 +23302,6 @@ end
 do
 local System = System
 System.namespace("Source.Models", function (namespace)
-  namespace.class("SpawnUnitCommand", function (namespace)
-    return {
-      UnitSpawnType = 0,
-      UnitIdOfBuilding = 0,
-      UnitId = 0,
-      UnitIdToUpgrade = 0,
-      __metadata__ = function (out)
-        return {
-          properties = {
-            { "UnitId", 0x6, System.Int32 },
-            { "UnitIdOfBuilding", 0x6, System.Int32 },
-            { "UnitIdToUpgrade", 0x6, System.Int32 },
-            { "UnitSpawnType", 0x6, System.Int32 }
-          },
-          class = { "SpawnUnitCommand", 0x26 }
-        }
-      end
-    }
-  end)
-end)
-
-end
-do
-local System = System
-System.namespace("Source.Models", function (namespace)
   namespace.class("Area", function (namespace)
     local getWc3Region, RegisterOnEnter, ToString1, __ctor__
     __ctor__ = function (this, wc3Rectangle)
@@ -23369,13 +23437,13 @@ System.namespace("Source.Models", function (namespace)
         return {
           methods = {
             { ".ctor", 0x206, nil, out.WCSharp.Api.player, out.Source.Abstracts.TeamBase },
-            { "AddSpawnUnit", 0x106, AddSpawnUnit, out.Source.Models.SpawnUnitCommand },
+            { "AddSpawnUnit", 0x106, AddSpawnUnit, out.Source.Models.UnitUpgradeByResearchCommand },
             { "CreateBarrackBuilding", 0x486, CreateBarrackBuilding, System.Int32, out.Source.Models.Area, out.Source.Models.Area, out.Source.Models.Area, out.Source.Models.UnitSpawnBuilding },
             { "CreateMainBuilding", 0x286, CreateMainBuilding, System.Int32, out.Source.Models.Area, out.Source.Models.MainBuilding },
             { "Defeat", 0x6, Defeat },
             { "IsOwnerOfBuilding", 0x286, IsOwnerOfBuilding, out.WCSharp.Api.unit, out.Source.Models.UnitSpawnBuilding, System.Boolean },
             { "RemoveBuilding", 0x106, RemoveBuilding, out.Source.Models.UnitSpawnBuilding },
-            { "UpgradeSpawnUnit", 0x106, UpgradeSpawnUnit, out.Source.Models.SpawnUnitCommand }
+            { "UpgradeSpawnUnit", 0x106, UpgradeSpawnUnit, out.Source.Models.UnitUpgradeByResearchCommand }
           },
           properties = {
             { "BarrackBuildings", 0x1, System.List(out.Source.Models.UnitSpawnBuilding) },
@@ -23396,14 +23464,16 @@ System.namespace("Source.Models", function (namespace)
   namespace.class("Enums", function (namespace)
     namespace.enum("ResearchType", function ()
       return {
-        CommonUpgrade = 0,
-        AddUnit = 1,
-        UpgradeUnit = 2,
+        Unknown = 0,
+        CommonUpgrade = 1,
+        AddUnit = 2,
+        UpgradeUnit = 3,
         __metadata__ = function (out)
           return {
             fields = {
               { "AddUnit", 0xE, System.Int32 },
               { "CommonUpgrade", 0xE, System.Int32 },
+              { "Unknown", 0xE, System.Int32 },
               { "UpgradeUnit", 0xE, System.Int32 }
             },
             class = { "ResearchType", 0x26 }
@@ -24006,7 +24076,7 @@ System.import(function (out)
 end)
 System.namespace("Source.Models", function (namespace)
   namespace.class("MercenaryForce", function (namespace)
-    local InitializeBuilding, SetOwnerAndRebuild, CreateDefendingUnits, SpawnUnitAtPoint, __ctor__
+    local InitializeBuilding, SetOwnerAndRebuild, SpawnDefendingUnits, SpawnAttackingUnit, __ctor__
     __ctor__ = function (this, name, buildingArea, spawnArea, nearTeam, opposingTeam, buildingUnitTypeId, defenderUnitTypeIds)
       this.DefendingUnits = ListSpawnedUnit()
       this.Name = name
@@ -24030,7 +24100,7 @@ System.namespace("Source.Models", function (namespace)
       this.Building = SourceModels.MercenarySpawnBuilding(this, this.BuildingUnitTypeId, this.BuildingArea, 0)
       this.Building:RegisterOnDies(SourceEventsBuildings.MercenaryBuilding.OnDies)
 
-      CreateDefendingUnits(this, false)
+      SpawnDefendingUnits(this, false)
 
       return this.Building
     end
@@ -24049,17 +24119,26 @@ System.namespace("Source.Models", function (namespace)
       this.Building = SourceModels.MercenarySpawnBuilding(this, this.BuildingUnitTypeId, this.BuildingArea, 0)
       this.Building:RegisterOnDies(SourceEventsBuildings.MercenaryBuilding.OnDies)
 
-      CreateDefendingUnits(this, true)
+      SpawnDefendingUnits(this, true)
 
       -- Füge direkt SpawnTrigger hinzu, welche später durch kaufen von Söldnern um Einheiten erweitert werden
       this.Building:AddSpawnTrigger(1 --[[SpawnInterval.Middle]], this.SpawnArea, this.AttackTargetArea):Run(0)
     end
-    CreateDefendingUnits = function (this, withSpecialEffect)
+    -- <summary>
+    -- Erzeugt im Spawn-Bereich eine Einheit, welche das Lager verteidigt.
+    -- </summary>
+    -- <param name="withSpecialEffect"></param>
+    SpawnDefendingUnits = function (this, withSpecialEffect)
       local rectangle = this.SpawnArea.Wc3Rectangle
 
       for _, unitTypeId in System.each(this.DefenderUnitTypeIds) do
         local point = rectangle:GetRandomPoint()
-        this.DefendingUnits:Add(SpawnUnitAtPoint(this, point, unitTypeId, 0))
+        local unit = System.new(SourceModels.SpawnedUnit, 2, this.Wc3Player, unitTypeId, point, 0)
+        this.DefendingUnits:Add(unit)
+
+        if this.OwnerTeam ~= nil then
+          this.OwnerTeam.Computer:AddUnit(unit)
+        end
 
         if withSpecialEffect then
           SourceStatics.SpecialEffects.CreateSpecialEffect("UI\\Feedback\\GoldCredit\\GoldCredit.mdl", point, 1, 1)
@@ -24067,28 +24146,31 @@ System.namespace("Source.Models", function (namespace)
       end
     end
     -- <summary>
-    -- Erzeugt im Spawn-Bereich eine Einheit an einem definierten Punkt.
+    -- Erzeugt im Spawn-Bereich eine Einheit, welche das Zielgebiet angreift.
     -- </summary>
     -- <param name="point">Punkt</param>
     -- <param name="unitTypeId">Einheit-Typ</param>
     -- <returns></returns>
-    SpawnUnitAtPoint = function (this, point, unitTypeId, face)
-      return System.new(SourceModels.SpawnedUnit, 2, this.Wc3Player, unitTypeId, point, face)
+    SpawnAttackingUnit = function (this, point, unitTypeId)
+      local result = System.new(SourceModels.SpawnedUnit, 2, this.Wc3Player, unitTypeId, point, 0)
+      result:AttackMoveTimed(this.AttackTargetArea, 1)
+      this.OwnerTeam.Computer:AddUnit(result)
+      return result
     end
     return {
       BuildingUnitTypeId = 0,
       InitializeBuilding = InitializeBuilding,
       SetOwnerAndRebuild = SetOwnerAndRebuild,
-      SpawnUnitAtPoint = SpawnUnitAtPoint,
+      SpawnAttackingUnit = SpawnAttackingUnit,
       __ctor__ = __ctor__,
       __metadata__ = function (out)
         return {
           methods = {
             { ".ctor", 0x706, nil, System.String, out.Source.Models.Area, out.Source.Models.Area, out.Source.Abstracts.TeamBase, out.Source.Abstracts.TeamBase, System.Int32, System.Array(System.Int32) },
-            { "CreateDefendingUnits", 0x101, CreateDefendingUnits, System.Boolean },
             { "InitializeBuilding", 0x86, InitializeBuilding, out.Source.Models.MercenarySpawnBuilding },
             { "SetOwnerAndRebuild", 0x206, SetOwnerAndRebuild, out.Source.Abstracts.TeamBase, out.Source.Models.Area },
-            { "SpawnUnitAtPoint", 0x386, SpawnUnitAtPoint, out.WCSharp.Shared.Data.Point, System.Int32, System.Single, out.Source.Models.SpawnedUnit }
+            { "SpawnAttackingUnit", 0x286, SpawnAttackingUnit, out.WCSharp.Shared.Data.Point, System.Int32, out.Source.Models.SpawnedUnit },
+            { "SpawnDefendingUnits", 0x101, SpawnDefendingUnits, System.Boolean }
           },
           properties = {
             { "AttackTargetArea", 0x6, out.Source.Models.Area },
@@ -24267,7 +24349,7 @@ System.namespace("Source.Models", function (namespace)
         for _, unitId in System.each(this.UnitIds) do
           local randomPoint = this.SpawnArea.Wc3Rectangle:GetRandomPoint()
           SourceStatics.SpecialEffects.CreateSpecialEffect("UI\\Feedback\\GoldCredit\\GoldCredit.mdl", randomPoint, 1, 1)
-          this.Owner:SpawnUnitAtPoint(randomPoint, unitId, 0):AttackMoveTimed(this.TargetArea, 1)
+          this.Owner:SpawnAttackingUnit(randomPoint, unitId):AttackMoveTimed(this.TargetArea, 1)
         end
       end, function (default)
         local ex = default
@@ -24576,78 +24658,16 @@ System.namespace("Source.Models", function (namespace)
           methods = {
             { ".ctor", 0x506, nil, out.Source.Models.ComputerPlayer, System.Int32, out.Source.Models.Area, out.Source.Models.Area, out.Source.Models.Area },
             { "AddSpawnTrigger", 0x286, AddSpawnTrigger, System.Int32, System.Array(System.Int32), out.Source.Models.UnitSpawnTrigger },
-            { "AddUnitSpawn", 0x106, AddUnitSpawn, out.Source.Models.SpawnUnitCommand },
+            { "AddUnitSpawn", 0x106, AddUnitSpawn, out.Source.Models.UnitUpgradeByResearchCommand },
             { "Destroy", 0x6, Destroy },
-            { "UpgradeSpawningUnits", 0x106, UpgradeSpawningUnits, out.Source.Models.UpgradeUnitCommand },
-            { "UpgradeUnitSpawn", 0x106, UpgradeUnitSpawn, out.Source.Models.SpawnUnitCommand }
+            { "UpgradeSpawningUnits", 0x106, UpgradeSpawningUnits, out.Source.Models.UnitUpgradeBySoldCommand },
+            { "UpgradeUnitSpawn", 0x106, UpgradeUnitSpawn, out.Source.Models.UnitUpgradeByResearchCommand }
           },
           properties = {
             { "Route", 0x1, out.Source.Models.SpawnAttackRoute },
             { "SpawnTriggers", 0x1, System.List(out.Source.Models.UnitSpawnTrigger) }
           },
           class = { "UnitSpawnBuilding", 0x26 }
-        }
-      end
-    }
-  end)
-end)
-
-end
-do
-local System = System
-System.namespace("Source.Models", function (namespace)
-  namespace.class("UpgradeUnitCommand", function (namespace)
-    local __ctor1__, __ctor2__
-    -- <summary>
-    -- Instanziiert einen Hinzufügen-Befehl, welcher die Spawn-Liste eines Triggers um eine Einheit ergänzt.
-    -- </summary>
-    -- <param name="spawnInterval"></param>
-    -- <param name="newUnitTypeIdToAdd"></param>
-    -- <param name="nextUnitTypeIdForShop"></param>
-    __ctor1__ = function (this, spawnInterval, newUnitTypeIdToAdd, nextUnitTypeIdForShop)
-      this.IsAddCommand = true
-      this.SpawnInterval = spawnInterval
-      this.NewUnitTypeId = newUnitTypeIdToAdd
-      this.NextUnitTypeId = nextUnitTypeIdForShop
-    end
-    -- <summary>
-    -- Erstellt einen Aktualisieren-Befehl, welcher die Spawn-Liste eines Triggers aktualisiert und eine bestehende Einheit überschreibt.
-    -- </summary>
-    -- <param name="spawnInterval"></param>
-    -- <param name="oldUnitTypeIdToReplace"></param>
-    -- <param name="newUnitTypeIdToAdd"></param>
-    -- <param name="nextUnitTypeIdForShop"></param>
-    __ctor2__ = function (this, spawnInterval, oldUnitTypeIdToReplace, newUnitTypeIdToAdd, nextUnitTypeIdForShop)
-      this.IsAddCommand = false
-      this.SpawnInterval = spawnInterval
-      this.OldUnitTypeId = oldUnitTypeIdToReplace
-      this.NewUnitTypeId = newUnitTypeIdToAdd
-      this.NextUnitTypeId = nextUnitTypeIdForShop
-    end
-    return {
-      IsAddCommand = false,
-      SpawnInterval = 0,
-      OldUnitTypeId = 0,
-      NewUnitTypeId = 0,
-      NextUnitTypeId = 0,
-      __ctor__ = {
-        __ctor1__,
-        __ctor2__
-      },
-      __metadata__ = function (out)
-        return {
-          methods = {
-            { ".ctor", 0x306, __ctor1__, System.Int32, System.Int32, System.Int32 },
-            { ".ctor", 0x406, __ctor2__, System.Int32, System.Int32, System.Int32, System.Int32 }
-          },
-          properties = {
-            { "IsAddCommand", 0x6, System.Boolean },
-            { "NewUnitTypeId", 0x6, System.Int32 },
-            { "NextUnitTypeId", 0x6, System.Int32 },
-            { "OldUnitTypeId", 0x6, System.Int32 },
-            { "SpawnInterval", 0x6, System.Int32 }
-          },
-          class = { "UpgradeUnitCommand", 0x26 }
         }
       end
     }
@@ -24775,13 +24795,13 @@ System.namespace("Source.Models", function (namespace)
         return {
           methods = {
             { ".ctor", 0x406, nil, out.Source.Models.ComputerPlayer, System.Int32, out.Source.Models.SpawnAttackRoute, System.Array(System.Int32) },
-            { "Add", 0x106, Add, out.Source.Models.SpawnUnitCommand },
+            { "Add", 0x106, Add, out.Source.Models.UnitUpgradeByResearchCommand },
             { "Add", 0x106, Add1, System.Int32 },
             { "Elapsed", 0x1, Elapsed },
             { "Run", 0x106, Run, System.Single },
             { "Start", 0x1, Start },
             { "Stop", 0x6, Stop },
-            { "Upgrade", 0x106, Upgrade, out.Source.Models.SpawnUnitCommand },
+            { "Upgrade", 0x106, Upgrade, out.Source.Models.UnitUpgradeByResearchCommand },
             { "Upgrade", 0x206, Upgrade1, System.Int32, System.Int32 }
           },
           properties = {
@@ -24793,6 +24813,102 @@ System.namespace("Source.Models", function (namespace)
             { "UnitTypeIds", 0x1, System.List(System.Int32) }
           },
           class = { "UnitSpawnTrigger", 0x26 }
+        }
+      end
+    }
+  end)
+end)
+
+end
+do
+local System = System
+System.namespace("Source.Models", function (namespace)
+  -- <summary>
+  -- Model für den Upgrade-Befehl eines Unit-Spawns.
+  -- Achtung: Dieser Befehl wird nur durch Forschung vom Computer-Spieler ausgelöst!
+  -- Er ist als Ersatz für fehlende menschliche Spieler im Team gedacht, um die Unit-Spawns dennoch zu verbessern.
+  -- </summary>
+  namespace.class("UnitUpgradeByResearchCommand", function (namespace)
+    return {
+      UnitSpawnType = 0,
+      UnitIdOfBuilding = 0,
+      UnitId = 0,
+      UnitIdToUpgrade = 0,
+      __metadata__ = function (out)
+        return {
+          properties = {
+            { "UnitId", 0x6, System.Int32 },
+            { "UnitIdOfBuilding", 0x6, System.Int32 },
+            { "UnitIdToUpgrade", 0x6, System.Int32 },
+            { "UnitSpawnType", 0x6, System.Int32 }
+          },
+          class = { "UnitUpgradeByResearchCommand", 0x26 }
+        }
+      end
+    }
+  end)
+end)
+
+end
+do
+local System = System
+System.namespace("Source.Models", function (namespace)
+  -- <summary>
+  -- Model für den Upgrade-Befehl eines Unit-Spawns.
+  -- Achtung: Dieser Befehl wird nur durch Kauf von Einheinte durch menschliche Spieler ausgelöst!
+  -- </summary>
+  namespace.class("UnitUpgradeBySoldCommand", function (namespace)
+    local __ctor1__, __ctor2__
+    -- <summary>
+    -- Instanziiert einen Hinzufügen-Befehl, welcher die Spawn-Liste eines Triggers um eine Einheit ergänzt.
+    -- </summary>
+    -- <param name="spawnInterval"></param>
+    -- <param name="newUnitTypeIdToAdd"></param>
+    -- <param name="nextUnitTypeIdForShop"></param>
+    __ctor1__ = function (this, spawnInterval, newUnitTypeIdToAdd, nextUnitTypeIdForShop)
+      this.IsAddCommand = true
+      this.SpawnInterval = spawnInterval
+      this.NewUnitTypeId = newUnitTypeIdToAdd
+      this.NextUnitTypeId = nextUnitTypeIdForShop
+    end
+    -- <summary>
+    -- Erstellt einen Aktualisieren-Befehl, welcher die Spawn-Liste eines Triggers aktualisiert und eine bestehende Einheit überschreibt.
+    -- </summary>
+    -- <param name="spawnInterval"></param>
+    -- <param name="oldUnitTypeIdToReplace"></param>
+    -- <param name="newUnitTypeIdToAdd"></param>
+    -- <param name="nextUnitTypeIdForShop"></param>
+    __ctor2__ = function (this, spawnInterval, oldUnitTypeIdToReplace, newUnitTypeIdToAdd, nextUnitTypeIdForShop)
+      this.IsAddCommand = false
+      this.SpawnInterval = spawnInterval
+      this.OldUnitTypeId = oldUnitTypeIdToReplace
+      this.NewUnitTypeId = newUnitTypeIdToAdd
+      this.NextUnitTypeId = nextUnitTypeIdForShop
+    end
+    return {
+      IsAddCommand = false,
+      SpawnInterval = 0,
+      OldUnitTypeId = 0,
+      NewUnitTypeId = 0,
+      NextUnitTypeId = 0,
+      __ctor__ = {
+        __ctor1__,
+        __ctor2__
+      },
+      __metadata__ = function (out)
+        return {
+          methods = {
+            { ".ctor", 0x306, __ctor1__, System.Int32, System.Int32, System.Int32 },
+            { ".ctor", 0x406, __ctor2__, System.Int32, System.Int32, System.Int32, System.Int32 }
+          },
+          properties = {
+            { "IsAddCommand", 0x6, System.Boolean },
+            { "NewUnitTypeId", 0x6, System.Int32 },
+            { "NextUnitTypeId", 0x6, System.Int32 },
+            { "OldUnitTypeId", 0x6, System.Int32 },
+            { "SpawnInterval", 0x6, System.Int32 }
+          },
+          class = { "UnitUpgradeBySoldCommand", 0x26 }
         }
       end
     }
@@ -24885,11 +25001,12 @@ System.import(function (out)
 end)
 System.namespace("Source.Models.Teams", function (namespace)
   namespace.class("ElvesTeam", function (namespace)
-    local CreateBuildings, AddInitialSpawnTriggers, AddInitialUnitUpgradesToStock, GetTechType, __ctor__
+    local CreateBuildings, GetUnitUpgradeByResearch, GetUnitUpgradeBySold, AddInitialSpawnTriggers, AddInitialUnitUpgradesToStock, __ctor__
     __ctor__ = function (this)
       System.base(this).__ctor__(this, Player(8), Areas.ElfBase)
       this.ColorizedName = "|c" .. System.toString("ff808080" --[[ConstantsEx.ColorHexCode_Gray]]) .. System.toString(GetPlayerName(Player(8))) .. "|r"
     end
+    -- <inheritdoc/>
     CreateBuildings = function (this)
       -- Hauptgebäude
       local mainBuilding = this.Computer:CreateMainBuilding(1747988789 --[[Constants.UNIT_TREE_OF_ETERNITY_ELF]], Areas.ElfBase)
@@ -24920,116 +25037,161 @@ System.namespace("Source.Models.Teams", function (namespace)
       AddInitialSpawnTriggers(this, building)
       AddInitialUnitUpgradesToStock(this, building)
     end
+    -- <inheritdoc/>
+    GetUnitUpgradeByResearch = function (this, techId, techLevel, command)
+      repeat
+        local default = techId
+        if default == 1378889781 --[[Constants.UPGRADE_MELEE_UNIT_TEAM]] then
+          local extern = SourceModels.UnitUpgradeByResearchCommand()
+          extern.UnitSpawnType = 0 --[[SpawnInterval.Short]]
+          extern.UnitIdOfBuilding = 1747988788 --[[Constants.UNIT_ANCIENT_OF_WAR_ELF]]
+          command = extern
+
+          repeat
+            local extern = techLevel
+            if extern == 1 then
+              command.UnitId = 1747988826 --[[Constants.UNIT_DRUID_OF_THE_CLAW_ELF]]
+              command.UnitIdToUpgrade = 1747988824 --[[Constants.UNIT_SENTRY_ELF]]
+              return 3 --[[ResearchType.UpgradeUnit]], command
+            else
+              command.UnitId = 1747989041 --[[Constants.UNIT_MOUNTAIN_GIANT_ELF]]
+              command.UnitIdToUpgrade = 1747988826 --[[Constants.UNIT_DRUID_OF_THE_CLAW_ELF]]
+              return 3 --[[ResearchType.UpgradeUnit]], command
+            end
+          until 1
+        elseif default == 1378889785 --[[Constants.UPGRADE_DISTANCE_UNIT_TEAM]] then
+          local extern = SourceModels.UnitUpgradeByResearchCommand()
+          extern.UnitSpawnType = 1 --[[SpawnInterval.Middle]]
+          extern.UnitIdOfBuilding = 1747988788 --[[Constants.UNIT_ANCIENT_OF_WAR_ELF]]
+          command = extern
+
+          repeat
+            local extern = techLevel
+            if extern == 1 then
+              command.UnitId = 1747989045 --[[Constants.UNIT_ARCHER_BESERK_ELF]]
+              command.UnitIdToUpgrade = 1747989043 --[[Constants.UNIT_ARCHER_ELF]]
+              return 3 --[[ResearchType.UpgradeUnit]], command
+            else
+              command.UnitId = 1747989047 --[[Constants.UNIT_ARCHER_ELITE_ELF]]
+              command.UnitIdToUpgrade = 1747989045 --[[Constants.UNIT_ARCHER_BESERK_ELF]]
+              return 3 --[[ResearchType.UpgradeUnit]], command
+            end
+          until 1
+        elseif default == 1378889795 --[[Constants.UPGRADE_FLIGHT_UNIT_TEAM]] then
+          local extern = SourceModels.UnitUpgradeByResearchCommand()
+          extern.UnitSpawnType = 1 --[[SpawnInterval.Middle]]
+          extern.UnitIdOfBuilding = 1747988788 --[[Constants.UNIT_ANCIENT_OF_WAR_ELF]]
+          command = extern
+
+          repeat
+            local extern = techLevel
+            if extern == 1 then
+              command.UnitId = 1747989058 --[[Constants.UNIT_HIPPOGRYPH_RIDER_ELF]]
+              command.UnitIdToUpgrade = 1747989060 --[[Constants.UNIT_FAERIE_DRAGON_ELF]]
+              return 3 --[[ResearchType.UpgradeUnit]], command
+            else
+              command.UnitId = 1747989049 --[[Constants.UNIT_CHIMAERA_ELF]]
+              command.UnitIdToUpgrade = 1747989058 --[[Constants.UNIT_HIPPOGRYPH_RIDER_ELF]]
+              return 3 --[[ResearchType.UpgradeUnit]], command
+            end
+          until 1
+        elseif default == 1378889797 --[[Constants.UPGRADE_MAGE_UNIT_TEAM]] then
+          local extern = SourceModels.UnitUpgradeByResearchCommand()
+          extern.UnitSpawnType = 1 --[[SpawnInterval.Middle]]
+          extern.UnitIdOfBuilding = 1747988788 --[[Constants.UNIT_ANCIENT_OF_WAR_ELF]]
+          command = extern
+
+          repeat
+            local extern = techLevel
+            if extern == 1 then
+              command.UnitId = 1747989064 --[[Constants.UNIT_WARDEN_ELF]]
+              command.UnitIdToUpgrade = 1747989066 --[[Constants.UNIT_DRUID_OF_THE_TALON_ELF]]
+              return 3 --[[ResearchType.UpgradeUnit]], command
+            else
+              command.UnitId = 1747989062 --[[Constants.UNIT_SPIRIT_OF_VENGEANCE_ELF]]
+              command.UnitIdToUpgrade = 1747989064 --[[Constants.UNIT_WARDEN_ELF]]
+              return 3 --[[ResearchType.UpgradeUnit]], command
+            end
+          until 1
+        elseif default == 1378889784 --[[Constants.UPGRADE_SIEGE_UNIT_TEAM]] then
+          local extern = SourceModels.UnitUpgradeByResearchCommand()
+          extern.UnitSpawnType = 2 --[[SpawnInterval.Long]]
+          extern.UnitIdOfBuilding = 1747988788 --[[Constants.UNIT_ANCIENT_OF_WAR_ELF]]
+          command = extern
+
+          repeat
+            local extern = techLevel
+            if extern == 1 then
+              command.UnitId = 1747989070 --[[Constants.UNIT_PRISON_WAGON_ELF]]
+              return 2 --[[ResearchType.AddUnit]], command
+            else
+              command.UnitId = 1747989068 --[[Constants.UNIT_GLAIVE_THROWER_ELF]]
+              command.UnitIdToUpgrade = 1747989070 --[[Constants.UNIT_PRISON_WAGON_ELF]]
+              return 3 --[[ResearchType.UpgradeUnit]], command
+            end
+          until 1
+        else
+          command = nil
+          return 1 --[[ResearchType.CommonUpgrade]], command
+        end
+      until 1
+    end
+    -- <inheritdoc/>
+    GetUnitUpgradeBySold = function (this, baseUnitTypeId, command)
+      repeat
+        local default = baseUnitTypeId
+        if default == 1747988826 --[[Constants.UNIT_DRUID_OF_THE_CLAW_ELF]] then
+          command = System.new(SourceModels.UnitUpgradeBySoldCommand, 2, 0 --[[SpawnInterval.Short]], 1747988824 --[[Constants.UNIT_SENTRY_ELF]], baseUnitTypeId, 1747989041 --[[Constants.UNIT_MOUNTAIN_GIANT_ELF]])
+          return 2 --[[UnitUpgradeType.UpgradeUnitInSpawn]], command
+        elseif default == 1747989041 --[[Constants.UNIT_MOUNTAIN_GIANT_ELF]] then
+          command = System.new(SourceModels.UnitUpgradeBySoldCommand, 2, 0 --[[SpawnInterval.Short]], 1747988826 --[[Constants.UNIT_DRUID_OF_THE_CLAW_ELF]], baseUnitTypeId, 0)
+          return 2 --[[UnitUpgradeType.UpgradeUnitInSpawn]], command
+        elseif default == 1747989045 --[[Constants.UNIT_ARCHER_BESERK_ELF]] then
+          command = System.new(SourceModels.UnitUpgradeBySoldCommand, 2, 0 --[[SpawnInterval.Short]], 1747989043 --[[Constants.UNIT_ARCHER_ELF]], baseUnitTypeId, 1747989047 --[[Constants.UNIT_ARCHER_ELITE_ELF]])
+          return 2 --[[UnitUpgradeType.UpgradeUnitInSpawn]], command
+        elseif default == 1747989047 --[[Constants.UNIT_ARCHER_ELITE_ELF]] then
+          command = System.new(SourceModels.UnitUpgradeBySoldCommand, 2, 0 --[[SpawnInterval.Short]], 1747989045 --[[Constants.UNIT_ARCHER_BESERK_ELF]], baseUnitTypeId, 0)
+          return 2 --[[UnitUpgradeType.UpgradeUnitInSpawn]], command
+        elseif default == 1747989064 --[[Constants.UNIT_WARDEN_ELF]] then
+          command = System.new(SourceModels.UnitUpgradeBySoldCommand, 2, 1 --[[SpawnInterval.Middle]], 1747989066 --[[Constants.UNIT_DRUID_OF_THE_TALON_ELF]], baseUnitTypeId, 1747989062 --[[Constants.UNIT_SPIRIT_OF_VENGEANCE_ELF]])
+          return 2 --[[UnitUpgradeType.UpgradeUnitInSpawn]], command
+        elseif default == 1747989062 --[[Constants.UNIT_SPIRIT_OF_VENGEANCE_ELF]] then
+          command = System.new(SourceModels.UnitUpgradeBySoldCommand, 2, 1 --[[SpawnInterval.Middle]], 1747989064 --[[Constants.UNIT_WARDEN_ELF]], baseUnitTypeId, 0)
+          return 2 --[[UnitUpgradeType.UpgradeUnitInSpawn]], command
+        elseif default == 1747989060 --[[Constants.UNIT_FAERIE_DRAGON_ELF]] then
+          command = SourceModels.UnitUpgradeBySoldCommand(1 --[[SpawnInterval.Middle]], baseUnitTypeId, 1747989058 --[[Constants.UNIT_HIPPOGRYPH_RIDER_ELF]])
+          return 1 --[[UnitUpgradeType.AddNewUnitToSpawn]], command
+        elseif default == 1747989058 --[[Constants.UNIT_HIPPOGRYPH_RIDER_ELF]] then
+          command = System.new(SourceModels.UnitUpgradeBySoldCommand, 2, 1 --[[SpawnInterval.Middle]], 1747989060 --[[Constants.UNIT_FAERIE_DRAGON_ELF]], baseUnitTypeId, 1747989049 --[[Constants.UNIT_CHIMAERA_ELF]])
+          return 2 --[[UnitUpgradeType.UpgradeUnitInSpawn]], command
+        elseif default == 1747989049 --[[Constants.UNIT_CHIMAERA_ELF]] then
+          command = System.new(SourceModels.UnitUpgradeBySoldCommand, 2, 1 --[[SpawnInterval.Middle]], 1747989058 --[[Constants.UNIT_HIPPOGRYPH_RIDER_ELF]], baseUnitTypeId, 0)
+          return 2 --[[UnitUpgradeType.UpgradeUnitInSpawn]], command
+        elseif default == 1747989070 --[[Constants.UNIT_PRISON_WAGON_ELF]] then
+          command = SourceModels.UnitUpgradeBySoldCommand(2 --[[SpawnInterval.Long]], baseUnitTypeId, 1747989068 --[[Constants.UNIT_GLAIVE_THROWER_ELF]])
+          return 1 --[[UnitUpgradeType.AddNewUnitToSpawn]], command
+        elseif default == 1747989068 --[[Constants.UNIT_GLAIVE_THROWER_ELF]] then
+          command = System.new(SourceModels.UnitUpgradeBySoldCommand, 2, 2 --[[SpawnInterval.Long]], 1747989070 --[[Constants.UNIT_PRISON_WAGON_ELF]], baseUnitTypeId, 0)
+          return 2 --[[UnitUpgradeType.UpgradeUnitInSpawn]], command
+        else
+          -- Einheiten-Typ ist nicht bekannt
+          local extern
+          extern, command = System.base(this).GetUnitUpgradeBySold(this, baseUnitTypeId)
+          return extern, command
+        end
+      until 1
+    end
     AddInitialSpawnTriggers = function (this, building)
       building:AddSpawnTrigger(0 --[[SpawnInterval.Short]], System.Array(System.Int32) { 1747988824 --[[Constants.UNIT_SENTRY_ELF]], 1747988824 --[[Constants.UNIT_SENTRY_ELF]], 1747989043 --[[Constants.UNIT_ARCHER_ELF]] }):Run(0)
       building:AddSpawnTrigger(1 --[[SpawnInterval.Middle]], System.Array(System.Int32) { 1747989066 --[[Constants.UNIT_DRUID_OF_THE_TALON_ELF]] }):Run(1)
       building:AddSpawnTrigger(2 --[[SpawnInterval.Long]], System.Array.Empty(System.Int32)):Run(2)
     end
     AddInitialUnitUpgradesToStock = function (this, building)
-      -- TODO
-      AddUnitToStock(building.Wc3Unit, 1747988547 --[[Constants.UNIT_CAPTAIN_HUMAN]], 1, 1)
-      AddUnitToStock(building.Wc3Unit, 1747988550 --[[Constants.UNIT_RIFLEMAN_BESERK_HUMAN]], 1, 1)
-      AddUnitToStock(building.Wc3Unit, 1747988552 --[[Constants.UNIT_SORCERESS_HUMAN]], 1, 1)
-      AddUnitToStock(building.Wc3Unit, 1747988554 --[[Constants.UNIT_FLYING_MACHINE_HUMAN]], 1, 1)
-      AddUnitToStock(building.Wc3Unit, 1747988549 --[[Constants.UNIT_SIEGE_SQUAD_HUMAN]], 1, 1)
-    end
-    GetTechType = function (this, techId, techLevel, spawnCommand)
-      repeat
-        local default = techId
-        if default == 1378889781 --[[Constants.UPGRADE_MELEE_UNIT_TEAM]] then
-          local extern = SourceModels.SpawnUnitCommand()
-          extern.UnitSpawnType = 0 --[[SpawnInterval.Short]]
-          extern.UnitIdOfBuilding = 1747988788 --[[Constants.UNIT_ANCIENT_OF_WAR_ELF]]
-          spawnCommand = extern
-
-          repeat
-            local extern = techLevel
-            if extern == 1 then
-              spawnCommand.UnitId = 1747988826 --[[Constants.UNIT_DRUID_OF_THE_CLAW_ELF]]
-              spawnCommand.UnitIdToUpgrade = 1747988824 --[[Constants.UNIT_SENTRY_ELF]]
-              return 2 --[[ResearchType.UpgradeUnit]], spawnCommand
-            else
-              spawnCommand.UnitId = 1747989041 --[[Constants.UNIT_MOUNTAIN_GIANT_ELF]]
-              spawnCommand.UnitIdToUpgrade = 1747988826 --[[Constants.UNIT_DRUID_OF_THE_CLAW_ELF]]
-              return 2 --[[ResearchType.UpgradeUnit]], spawnCommand
-            end
-          until 1
-        elseif default == 1378889785 --[[Constants.UPGRADE_DISTANCE_UNIT_TEAM]] then
-          local extern = SourceModels.SpawnUnitCommand()
-          extern.UnitSpawnType = 1 --[[SpawnInterval.Middle]]
-          extern.UnitIdOfBuilding = 1747988788 --[[Constants.UNIT_ANCIENT_OF_WAR_ELF]]
-          spawnCommand = extern
-
-          repeat
-            local extern = techLevel
-            if extern == 1 then
-              spawnCommand.UnitId = 1747989045 --[[Constants.UNIT_ARCHER_BESERK_ELF]]
-              spawnCommand.UnitIdToUpgrade = 1747989043 --[[Constants.UNIT_ARCHER_ELF]]
-              return 2 --[[ResearchType.UpgradeUnit]], spawnCommand
-            else
-              spawnCommand.UnitId = 1747989047 --[[Constants.UNIT_ARCHER_ELITE_ELF]]
-              spawnCommand.UnitIdToUpgrade = 1747989045 --[[Constants.UNIT_ARCHER_BESERK_ELF]]
-              return 2 --[[ResearchType.UpgradeUnit]], spawnCommand
-            end
-          until 1
-        elseif default == 1378889795 --[[Constants.UPGRADE_FLIGHT_UNIT_TEAM]] then
-          local extern = SourceModels.SpawnUnitCommand()
-          extern.UnitSpawnType = 1 --[[SpawnInterval.Middle]]
-          extern.UnitIdOfBuilding = 1747988788 --[[Constants.UNIT_ANCIENT_OF_WAR_ELF]]
-          spawnCommand = extern
-
-          repeat
-            local extern = techLevel
-            if extern == 1 then
-              spawnCommand.UnitId = 1747989058 --[[Constants.UNIT_HIPPOGRYPH_RIDER_ELF]]
-              spawnCommand.UnitIdToUpgrade = 1747989060 --[[Constants.UNIT_FAERIE_DRAGON_ELF]]
-              return 2 --[[ResearchType.UpgradeUnit]], spawnCommand
-            else
-              spawnCommand.UnitId = 1747989049 --[[Constants.UNIT_CHIMAERA_ELF]]
-              spawnCommand.UnitIdToUpgrade = 1747989058 --[[Constants.UNIT_HIPPOGRYPH_RIDER_ELF]]
-              return 2 --[[ResearchType.UpgradeUnit]], spawnCommand
-            end
-          until 1
-        elseif default == 1378889797 --[[Constants.UPGRADE_MAGE_UNIT_TEAM]] then
-          local extern = SourceModels.SpawnUnitCommand()
-          extern.UnitSpawnType = 1 --[[SpawnInterval.Middle]]
-          extern.UnitIdOfBuilding = 1747988788 --[[Constants.UNIT_ANCIENT_OF_WAR_ELF]]
-          spawnCommand = extern
-
-          repeat
-            local extern = techLevel
-            if extern == 1 then
-              spawnCommand.UnitId = 1747989064 --[[Constants.UNIT_WARDEN_ELF]]
-              spawnCommand.UnitIdToUpgrade = 1747989066 --[[Constants.UNIT_DRUID_OF_THE_TALON_ELF]]
-              return 2 --[[ResearchType.UpgradeUnit]], spawnCommand
-            else
-              spawnCommand.UnitId = 1747989062 --[[Constants.UNIT_SPIRIT_OF_VENGEANCE_ELF]]
-              spawnCommand.UnitIdToUpgrade = 1747989064 --[[Constants.UNIT_WARDEN_ELF]]
-              return 2 --[[ResearchType.UpgradeUnit]], spawnCommand
-            end
-          until 1
-        elseif default == 1378889784 --[[Constants.UPGRADE_SIEGE_UNIT_TEAM]] then
-          local extern = SourceModels.SpawnUnitCommand()
-          extern.UnitSpawnType = 2 --[[SpawnInterval.Long]]
-          extern.UnitIdOfBuilding = 1747988788 --[[Constants.UNIT_ANCIENT_OF_WAR_ELF]]
-          spawnCommand = extern
-
-          repeat
-            local extern = techLevel
-            if extern == 1 then
-              spawnCommand.UnitId = 1747989070 --[[Constants.UNIT_PRISON_WAGON_ELF]]
-              return 1 --[[ResearchType.AddUnit]], spawnCommand
-            else
-              spawnCommand.UnitId = 1747989068 --[[Constants.UNIT_GLAIVE_THROWER_ELF]]
-              spawnCommand.UnitIdToUpgrade = 1747989070 --[[Constants.UNIT_PRISON_WAGON_ELF]]
-              return 2 --[[ResearchType.UpgradeUnit]], spawnCommand
-            end
-          until 1
-        else
-          spawnCommand = nil
-          return 0 --[[ResearchType.CommonUpgrade]], spawnCommand
-        end
-      until 1
+      AddUnitToStock(building.Wc3Unit, 1747988826 --[[Constants.UNIT_DRUID_OF_THE_CLAW_ELF]], 1, 1)
+      AddUnitToStock(building.Wc3Unit, 1747989045 --[[Constants.UNIT_ARCHER_BESERK_ELF]], 1, 1)
+      AddUnitToStock(building.Wc3Unit, 1747989064 --[[Constants.UNIT_WARDEN_ELF]], 1, 1)
+      AddUnitToStock(building.Wc3Unit, 1747989060 --[[Constants.UNIT_FAERIE_DRAGON_ELF]], 1, 1)
+      AddUnitToStock(building.Wc3Unit, 1747989070 --[[Constants.UNIT_PRISON_WAGON_ELF]], 1, 1)
     end
     return {
       base = function (out)
@@ -25038,7 +25200,8 @@ System.namespace("Source.Models.Teams", function (namespace)
         }
       end,
       CreateBuildings = CreateBuildings,
-      GetTechType = GetTechType,
+      GetUnitUpgradeByResearch = GetUnitUpgradeByResearch,
+      GetUnitUpgradeBySold = GetUnitUpgradeBySold,
       __ctor__ = __ctor__,
       __metadata__ = function (out)
         return {
@@ -25047,7 +25210,8 @@ System.namespace("Source.Models.Teams", function (namespace)
             { "AddInitialSpawnTriggers", 0x101, AddInitialSpawnTriggers, out.Source.Models.UnitSpawnBuilding },
             { "AddInitialUnitUpgradesToStock", 0x101, AddInitialUnitUpgradesToStock, out.Source.Models.UnitSpawnBuilding },
             { "CreateBuildings", 0x6, CreateBuildings },
-            { "GetTechType", 0x386, GetTechType, System.Int32, System.Int32, out.Source.Models.SpawnUnitCommand, System.Int32 }
+            { "GetUnitUpgradeByResearch", 0x386, GetUnitUpgradeByResearch, System.Int32, System.Int32, out.Source.Models.UnitUpgradeByResearchCommand, System.Int32 },
+            { "GetUnitUpgradeBySold", 0x286, GetUnitUpgradeBySold, System.Int32, out.Source.Models.UnitUpgradeBySoldCommand, System.Int32 }
           },
           class = { "ElvesTeam", 0x26 }
         }
@@ -25067,11 +25231,12 @@ System.import(function (out)
 end)
 System.namespace("Source.Models.Teams", function (namespace)
   namespace.class("HumansTeam", function (namespace)
-    local CreateBuildings, AddInitialSpawnTriggers, AddInitialUnitUpgradesToStock, GetTechType, DetermineTypeOfUnitUpgrade, __ctor__
+    local CreateBuildings, GetUnitUpgradeByResearch, GetUnitUpgradeBySold, AddInitialSpawnTriggers, AddInitialUnitUpgradesToStock, __ctor__
     __ctor__ = function (this)
       System.base(this).__ctor__(this, Player(0), Areas.HumanBase)
       this.ColorizedName = "|c" .. System.toString("ffff0000" --[[ConstantsEx.ColorHexCode_Red]]) .. System.toString(GetPlayerName(Player(0))) .. "|r"
     end
+    -- <inheritdoc/>
     CreateBuildings = function (this)
       -- Hauptgebäude
       local mainBuilding = this.Computer:CreateMainBuilding(1747988531 --[[Constants.UNIT_CASTLE_HUMAN]], Areas.HumanBase)
@@ -25102,6 +25267,151 @@ System.namespace("Source.Models.Teams", function (namespace)
       AddInitialSpawnTriggers(this, building)
       AddInitialUnitUpgradesToStock(this, building)
     end
+    -- <inheritdoc/>
+    GetUnitUpgradeByResearch = function (this, techId, techLevel, command)
+      repeat
+        local default = techId
+        if default == 1378889781 --[[Constants.UPGRADE_MELEE_UNIT_TEAM]] then
+          local extern = SourceModels.UnitUpgradeByResearchCommand()
+          extern.UnitSpawnType = 0 --[[SpawnInterval.Short]]
+          extern.UnitIdOfBuilding = 1747988535 --[[Constants.UNIT_BARRACKS_HUMAN]]
+          command = extern
+
+          repeat
+            local extern = techLevel
+            if extern == 1 then
+              command.UnitId = 1747988547 --[[Constants.UNIT_CAPTAIN_HUMAN]]
+              command.UnitIdToUpgrade = 1747988529 --[[Constants.UNIT_SOLDIER_HUMAN]]
+              return 3 --[[ResearchType.UpgradeUnit]], command
+            else
+              command.UnitId = 1747988546 --[[Constants.UNIT_KNIGHT_HUMAN]]
+              command.UnitIdToUpgrade = 1747988547 --[[Constants.UNIT_CAPTAIN_HUMAN]]
+              return 3 --[[ResearchType.UpgradeUnit]], command
+            end
+          until 1
+        elseif default == 1378889785 --[[Constants.UPGRADE_DISTANCE_UNIT_TEAM]] then
+          local extern = SourceModels.UnitUpgradeByResearchCommand()
+          extern.UnitSpawnType = 1 --[[SpawnInterval.Middle]]
+          extern.UnitIdOfBuilding = 1747988535 --[[Constants.UNIT_BARRACKS_HUMAN]]
+          command = extern
+
+          repeat
+            local extern = techLevel
+            if extern == 1 then
+              command.UnitId = 1747988550 --[[Constants.UNIT_RIFLEMAN_BESERK_HUMAN]]
+              command.UnitIdToUpgrade = 1747988530 --[[Constants.UNIT_RIFLEMAN_HUMAN]]
+              return 3 --[[ResearchType.UpgradeUnit]], command
+            else
+              command.UnitId = 1747988551 --[[Constants.UNIT_RIFLEMAN_ELITE_HUMAN]]
+              command.UnitIdToUpgrade = 1747988550 --[[Constants.UNIT_RIFLEMAN_BESERK_HUMAN]]
+              return 3 --[[ResearchType.UpgradeUnit]], command
+            end
+          until 1
+        elseif default == 1378889795 --[[Constants.UPGRADE_FLIGHT_UNIT_TEAM]] then
+          local extern = SourceModels.UnitUpgradeByResearchCommand()
+          extern.UnitSpawnType = 1 --[[SpawnInterval.Middle]]
+          extern.UnitIdOfBuilding = 1747988535 --[[Constants.UNIT_BARRACKS_HUMAN]]
+          command = extern
+
+          repeat
+            local extern = techLevel
+            if extern == 1 then
+              command.UnitId = 1747988555 --[[Constants.UNIT_FALCON_RIDER_HUMAN]]
+              command.UnitIdToUpgrade = 1747988554 --[[Constants.UNIT_FLYING_MACHINE_HUMAN]]
+              return 3 --[[ResearchType.UpgradeUnit]], command
+            else
+              command.UnitId = 1747988556 --[[Constants.UNIT_GRIFFIN_RIDER_HUMAN]]
+              command.UnitIdToUpgrade = 1747988555 --[[Constants.UNIT_FALCON_RIDER_HUMAN]]
+              return 3 --[[ResearchType.UpgradeUnit]], command
+            end
+          until 1
+        elseif default == 1378889797 --[[Constants.UPGRADE_MAGE_UNIT_TEAM]] then
+          local extern = SourceModels.UnitUpgradeByResearchCommand()
+          extern.UnitSpawnType = 1 --[[SpawnInterval.Middle]]
+          extern.UnitIdOfBuilding = 1747988535 --[[Constants.UNIT_BARRACKS_HUMAN]]
+          command = extern
+
+          repeat
+            local extern = techLevel
+            if extern == 1 then
+              command.UnitId = 1747988552 --[[Constants.UNIT_SORCERESS_HUMAN]]
+              command.UnitIdToUpgrade = 1747988536 --[[Constants.UNIT_PRIEST_HUMAN]]
+              return 3 --[[ResearchType.UpgradeUnit]], command
+            else
+              command.UnitId = 1747988553 --[[Constants.UNIT_SPELLBREAKER_HUMAN]]
+              command.UnitIdToUpgrade = 1747988552 --[[Constants.UNIT_SORCERESS_HUMAN]]
+              return 3 --[[ResearchType.UpgradeUnit]], command
+            end
+          until 1
+        elseif default == 1378889784 --[[Constants.UPGRADE_SIEGE_UNIT_TEAM]] then
+          local extern = SourceModels.UnitUpgradeByResearchCommand()
+          extern.UnitSpawnType = 2 --[[SpawnInterval.Long]]
+          extern.UnitIdOfBuilding = 1747988535 --[[Constants.UNIT_BARRACKS_HUMAN]]
+          command = extern
+
+          repeat
+            local extern = techLevel
+            if extern == 1 then
+              command.UnitId = 1747988549 --[[Constants.UNIT_SIEGE_SQUAD_HUMAN]]
+              return 2 --[[ResearchType.AddUnit]], command
+            else
+              command.UnitId = 1747988563 --[[Constants.UNIT_SIEGE_ENGINE_HUMAN]]
+              command.UnitIdToUpgrade = 1747988549 --[[Constants.UNIT_SIEGE_SQUAD_HUMAN]]
+              return 3 --[[ResearchType.UpgradeUnit]], command
+            end
+          until 1
+        else
+          -- Einfache Verbeserungen bestehender Einheiten
+          command = nil
+          return 1 --[[ResearchType.CommonUpgrade]], command
+        end
+      until 1
+    end
+    -- <inheritdoc/>
+    GetUnitUpgradeBySold = function (this, baseUnitTypeId, command)
+      repeat
+        local default = baseUnitTypeId
+        if default == 1747988547 --[[Constants.UNIT_CAPTAIN_HUMAN]] then
+          command = System.new(SourceModels.UnitUpgradeBySoldCommand, 2, 0 --[[SpawnInterval.Short]], 1747988529 --[[Constants.UNIT_SOLDIER_HUMAN]], baseUnitTypeId, 1747988546 --[[Constants.UNIT_KNIGHT_HUMAN]])
+          return 2 --[[UnitUpgradeType.UpgradeUnitInSpawn]], command
+        elseif default == 1747988546 --[[Constants.UNIT_KNIGHT_HUMAN]] then
+          command = System.new(SourceModels.UnitUpgradeBySoldCommand, 2, 0 --[[SpawnInterval.Short]], 1747988547 --[[Constants.UNIT_CAPTAIN_HUMAN]], baseUnitTypeId, 0)
+          return 2 --[[UnitUpgradeType.UpgradeUnitInSpawn]], command
+        elseif default == 1747988550 --[[Constants.UNIT_RIFLEMAN_BESERK_HUMAN]] then
+          command = System.new(SourceModels.UnitUpgradeBySoldCommand, 2, 0 --[[SpawnInterval.Short]], 1747988530 --[[Constants.UNIT_RIFLEMAN_HUMAN]], baseUnitTypeId, 1747988551 --[[Constants.UNIT_RIFLEMAN_ELITE_HUMAN]])
+          return 2 --[[UnitUpgradeType.UpgradeUnitInSpawn]], command
+        elseif default == 1747988551 --[[Constants.UNIT_RIFLEMAN_ELITE_HUMAN]] then
+          command = System.new(SourceModels.UnitUpgradeBySoldCommand, 2, 0 --[[SpawnInterval.Short]], 1747988550 --[[Constants.UNIT_RIFLEMAN_BESERK_HUMAN]], baseUnitTypeId, 0)
+          return 2 --[[UnitUpgradeType.UpgradeUnitInSpawn]], command
+        elseif default == 1747988552 --[[Constants.UNIT_SORCERESS_HUMAN]] then
+          command = System.new(SourceModels.UnitUpgradeBySoldCommand, 2, 1 --[[SpawnInterval.Middle]], 1747988530 --[[Constants.UNIT_RIFLEMAN_HUMAN]], baseUnitTypeId, 1747988553 --[[Constants.UNIT_SPELLBREAKER_HUMAN]])
+          return 2 --[[UnitUpgradeType.UpgradeUnitInSpawn]], command
+        elseif default == 1747988553 --[[Constants.UNIT_SPELLBREAKER_HUMAN]] then
+          command = System.new(SourceModels.UnitUpgradeBySoldCommand, 2, 1 --[[SpawnInterval.Middle]], 1747988552 --[[Constants.UNIT_SORCERESS_HUMAN]], baseUnitTypeId, 0)
+          return 2 --[[UnitUpgradeType.UpgradeUnitInSpawn]], command
+        elseif default == 1747988554 --[[Constants.UNIT_FLYING_MACHINE_HUMAN]] then
+          command = SourceModels.UnitUpgradeBySoldCommand(1 --[[SpawnInterval.Middle]], baseUnitTypeId, 1747988555 --[[Constants.UNIT_FALCON_RIDER_HUMAN]])
+          return 1 --[[UnitUpgradeType.AddNewUnitToSpawn]], command
+        elseif default == 1747988555 --[[Constants.UNIT_FALCON_RIDER_HUMAN]] then
+          command = System.new(SourceModels.UnitUpgradeBySoldCommand, 2, 1 --[[SpawnInterval.Middle]], 1747988554 --[[Constants.UNIT_FLYING_MACHINE_HUMAN]], baseUnitTypeId, 1747988556 --[[Constants.UNIT_GRIFFIN_RIDER_HUMAN]])
+          return 2 --[[UnitUpgradeType.UpgradeUnitInSpawn]], command
+        elseif default == 1747988556 --[[Constants.UNIT_GRIFFIN_RIDER_HUMAN]] then
+          command = System.new(SourceModels.UnitUpgradeBySoldCommand, 2, 1 --[[SpawnInterval.Middle]], 1747988555 --[[Constants.UNIT_FALCON_RIDER_HUMAN]], baseUnitTypeId, 0)
+          return 2 --[[UnitUpgradeType.UpgradeUnitInSpawn]], command
+        elseif default == 1747988549 --[[Constants.UNIT_SIEGE_SQUAD_HUMAN]] then
+          command = SourceModels.UnitUpgradeBySoldCommand(2 --[[SpawnInterval.Long]], baseUnitTypeId, 1747988563 --[[Constants.UNIT_SIEGE_ENGINE_HUMAN]])
+          return 1 --[[UnitUpgradeType.AddNewUnitToSpawn]], command
+        elseif default == 1747988563 --[[Constants.UNIT_SIEGE_ENGINE_HUMAN]] then
+          command = System.new(SourceModels.UnitUpgradeBySoldCommand, 2, 2 --[[SpawnInterval.Long]], 1747988549 --[[Constants.UNIT_SIEGE_SQUAD_HUMAN]], baseUnitTypeId, 0)
+          return 2 --[[UnitUpgradeType.UpgradeUnitInSpawn]], command
+        else
+          -- Einheiten-Typ ist nicht bekannt
+          local extern
+          extern, command = System.base(this).GetUnitUpgradeBySold(this, baseUnitTypeId)
+          return extern, command
+        end
+      until 1
+    end
     AddInitialSpawnTriggers = function (this, building)
       building:AddSpawnTrigger(0 --[[SpawnInterval.Short]], System.Array(System.Int32) { 1747988529 --[[Constants.UNIT_SOLDIER_HUMAN]], 1747988529 --[[Constants.UNIT_SOLDIER_HUMAN]], 1747988530 --[[Constants.UNIT_RIFLEMAN_HUMAN]] }):Run(0)
       building:AddSpawnTrigger(1 --[[SpawnInterval.Middle]], System.Array(System.Int32) { 1747988536 --[[Constants.UNIT_PRIEST_HUMAN]] }):Run(1)
@@ -25114,149 +25424,6 @@ System.namespace("Source.Models.Teams", function (namespace)
       AddUnitToStock(building.Wc3Unit, 1747988554 --[[Constants.UNIT_FLYING_MACHINE_HUMAN]], 1, 1)
       AddUnitToStock(building.Wc3Unit, 1747988549 --[[Constants.UNIT_SIEGE_SQUAD_HUMAN]], 1, 1)
     end
-    GetTechType = function (this, techId, techLevel, spawnCommand)
-      repeat
-        local default = techId
-        if default == 1378889781 --[[Constants.UPGRADE_MELEE_UNIT_TEAM]] then
-          local extern = SourceModels.SpawnUnitCommand()
-          extern.UnitSpawnType = 0 --[[SpawnInterval.Short]]
-          extern.UnitIdOfBuilding = 1747988535 --[[Constants.UNIT_BARRACKS_HUMAN]]
-          spawnCommand = extern
-
-          repeat
-            local extern = techLevel
-            if extern == 1 then
-              spawnCommand.UnitId = 1747988547 --[[Constants.UNIT_CAPTAIN_HUMAN]]
-              spawnCommand.UnitIdToUpgrade = 1747988529 --[[Constants.UNIT_SOLDIER_HUMAN]]
-              return 2 --[[ResearchType.UpgradeUnit]], spawnCommand
-            else
-              spawnCommand.UnitId = 1747988546 --[[Constants.UNIT_KNIGHT_HUMAN]]
-              spawnCommand.UnitIdToUpgrade = 1747988547 --[[Constants.UNIT_CAPTAIN_HUMAN]]
-              return 2 --[[ResearchType.UpgradeUnit]], spawnCommand
-            end
-          until 1
-        elseif default == 1378889785 --[[Constants.UPGRADE_DISTANCE_UNIT_TEAM]] then
-          local extern = SourceModels.SpawnUnitCommand()
-          extern.UnitSpawnType = 1 --[[SpawnInterval.Middle]]
-          extern.UnitIdOfBuilding = 1747988535 --[[Constants.UNIT_BARRACKS_HUMAN]]
-          spawnCommand = extern
-
-          repeat
-            local extern = techLevel
-            if extern == 1 then
-              spawnCommand.UnitId = 1747988550 --[[Constants.UNIT_RIFLEMAN_BESERK_HUMAN]]
-              spawnCommand.UnitIdToUpgrade = 1747988530 --[[Constants.UNIT_RIFLEMAN_HUMAN]]
-              return 2 --[[ResearchType.UpgradeUnit]], spawnCommand
-            else
-              spawnCommand.UnitId = 1747988551 --[[Constants.UNIT_RIFLEMAN_ELITE_HUMAN]]
-              spawnCommand.UnitIdToUpgrade = 1747988550 --[[Constants.UNIT_RIFLEMAN_BESERK_HUMAN]]
-              return 2 --[[ResearchType.UpgradeUnit]], spawnCommand
-            end
-          until 1
-        elseif default == 1378889795 --[[Constants.UPGRADE_FLIGHT_UNIT_TEAM]] then
-          local extern = SourceModels.SpawnUnitCommand()
-          extern.UnitSpawnType = 1 --[[SpawnInterval.Middle]]
-          extern.UnitIdOfBuilding = 1747988535 --[[Constants.UNIT_BARRACKS_HUMAN]]
-          spawnCommand = extern
-
-          repeat
-            local extern = techLevel
-            if extern == 1 then
-              spawnCommand.UnitId = 1747988555 --[[Constants.UNIT_FALCON_RIDER_HUMAN]]
-              spawnCommand.UnitIdToUpgrade = 1747988554 --[[Constants.UNIT_FLYING_MACHINE_HUMAN]]
-              return 2 --[[ResearchType.UpgradeUnit]], spawnCommand
-            else
-              spawnCommand.UnitId = 1747988556 --[[Constants.UNIT_GRIFFIN_RIDER_HUMAN]]
-              spawnCommand.UnitIdToUpgrade = 1747988555 --[[Constants.UNIT_FALCON_RIDER_HUMAN]]
-              return 2 --[[ResearchType.UpgradeUnit]], spawnCommand
-            end
-          until 1
-        elseif default == 1378889797 --[[Constants.UPGRADE_MAGE_UNIT_TEAM]] then
-          local extern = SourceModels.SpawnUnitCommand()
-          extern.UnitSpawnType = 1 --[[SpawnInterval.Middle]]
-          extern.UnitIdOfBuilding = 1747988535 --[[Constants.UNIT_BARRACKS_HUMAN]]
-          spawnCommand = extern
-
-          repeat
-            local extern = techLevel
-            if extern == 1 then
-              spawnCommand.UnitId = 1747988552 --[[Constants.UNIT_SORCERESS_HUMAN]]
-              spawnCommand.UnitIdToUpgrade = 1747988536 --[[Constants.UNIT_PRIEST_HUMAN]]
-              return 2 --[[ResearchType.UpgradeUnit]], spawnCommand
-            else
-              spawnCommand.UnitId = 1747988553 --[[Constants.UNIT_SPELLBREAKER_HUMAN]]
-              spawnCommand.UnitIdToUpgrade = 1747988552 --[[Constants.UNIT_SORCERESS_HUMAN]]
-              return 2 --[[ResearchType.UpgradeUnit]], spawnCommand
-            end
-          until 1
-        elseif default == 1378889784 --[[Constants.UPGRADE_SIEGE_UNIT_TEAM]] then
-          local extern = SourceModels.SpawnUnitCommand()
-          extern.UnitSpawnType = 2 --[[SpawnInterval.Long]]
-          extern.UnitIdOfBuilding = 1747988535 --[[Constants.UNIT_BARRACKS_HUMAN]]
-          spawnCommand = extern
-
-          repeat
-            local extern = techLevel
-            if extern == 1 then
-              spawnCommand.UnitId = 1747988549 --[[Constants.UNIT_SIEGE_SQUAD_HUMAN]]
-              return 1 --[[ResearchType.AddUnit]], spawnCommand
-            else
-              spawnCommand.UnitId = 1747988563 --[[Constants.UNIT_SIEGE_ENGINE_HUMAN]]
-              spawnCommand.UnitIdToUpgrade = 1747988549 --[[Constants.UNIT_SIEGE_SQUAD_HUMAN]]
-              return 2 --[[ResearchType.UpgradeUnit]], spawnCommand
-            end
-          until 1
-        else
-          -- Einfache Verbeserungen bestehender Einheiten
-          spawnCommand = nil
-          return 0 --[[ResearchType.CommonUpgrade]], spawnCommand
-        end
-      until 1
-    end
-    DetermineTypeOfUnitUpgrade = function (this, baseUnitTypeId, upgradeUnitCommand)
-      repeat
-        local default = baseUnitTypeId
-        if default == 1747988547 --[[Constants.UNIT_CAPTAIN_HUMAN]] then
-          upgradeUnitCommand = System.new(SourceModels.UpgradeUnitCommand, 2, 0 --[[SpawnInterval.Short]], 1747988529 --[[Constants.UNIT_SOLDIER_HUMAN]], baseUnitTypeId, 1747988546 --[[Constants.UNIT_KNIGHT_HUMAN]])
-          return 2 --[[UnitUpgradeType.UpgradeUnitInSpawn]], upgradeUnitCommand
-        elseif default == 1747988546 --[[Constants.UNIT_KNIGHT_HUMAN]] then
-          upgradeUnitCommand = System.new(SourceModels.UpgradeUnitCommand, 2, 0 --[[SpawnInterval.Short]], 1747988547 --[[Constants.UNIT_CAPTAIN_HUMAN]], baseUnitTypeId, 0)
-          return 2 --[[UnitUpgradeType.UpgradeUnitInSpawn]], upgradeUnitCommand
-        elseif default == 1747988550 --[[Constants.UNIT_RIFLEMAN_BESERK_HUMAN]] then
-          upgradeUnitCommand = System.new(SourceModels.UpgradeUnitCommand, 2, 0 --[[SpawnInterval.Short]], 1747988530 --[[Constants.UNIT_RIFLEMAN_HUMAN]], baseUnitTypeId, 1747988551 --[[Constants.UNIT_RIFLEMAN_ELITE_HUMAN]])
-          return 2 --[[UnitUpgradeType.UpgradeUnitInSpawn]], upgradeUnitCommand
-        elseif default == 1747988551 --[[Constants.UNIT_RIFLEMAN_ELITE_HUMAN]] then
-          upgradeUnitCommand = System.new(SourceModels.UpgradeUnitCommand, 2, 0 --[[SpawnInterval.Short]], 1747988550 --[[Constants.UNIT_RIFLEMAN_BESERK_HUMAN]], baseUnitTypeId, 0)
-          return 2 --[[UnitUpgradeType.UpgradeUnitInSpawn]], upgradeUnitCommand
-        elseif default == 1747988552 --[[Constants.UNIT_SORCERESS_HUMAN]] then
-          upgradeUnitCommand = System.new(SourceModels.UpgradeUnitCommand, 2, 1 --[[SpawnInterval.Middle]], 1747988530 --[[Constants.UNIT_RIFLEMAN_HUMAN]], baseUnitTypeId, 1747988553 --[[Constants.UNIT_SPELLBREAKER_HUMAN]])
-          return 2 --[[UnitUpgradeType.UpgradeUnitInSpawn]], upgradeUnitCommand
-        elseif default == 1747988553 --[[Constants.UNIT_SPELLBREAKER_HUMAN]] then
-          upgradeUnitCommand = System.new(SourceModels.UpgradeUnitCommand, 2, 1 --[[SpawnInterval.Middle]], 1747988552 --[[Constants.UNIT_SORCERESS_HUMAN]], baseUnitTypeId, 0)
-          return 2 --[[UnitUpgradeType.UpgradeUnitInSpawn]], upgradeUnitCommand
-        elseif default == 1747988554 --[[Constants.UNIT_FLYING_MACHINE_HUMAN]] then
-          upgradeUnitCommand = SourceModels.UpgradeUnitCommand(1 --[[SpawnInterval.Middle]], baseUnitTypeId, 1747988551 --[[Constants.UNIT_RIFLEMAN_ELITE_HUMAN]])
-          return 1 --[[UnitUpgradeType.AddNewUnitToSpawn]], upgradeUnitCommand
-        elseif default == 1747988555 --[[Constants.UNIT_FALCON_RIDER_HUMAN]] then
-          upgradeUnitCommand = System.new(SourceModels.UpgradeUnitCommand, 2, 1 --[[SpawnInterval.Middle]], 1747988554 --[[Constants.UNIT_FLYING_MACHINE_HUMAN]], baseUnitTypeId, 1747988556 --[[Constants.UNIT_GRIFFIN_RIDER_HUMAN]])
-          return 2 --[[UnitUpgradeType.UpgradeUnitInSpawn]], upgradeUnitCommand
-        elseif default == 1747988556 --[[Constants.UNIT_GRIFFIN_RIDER_HUMAN]] then
-          upgradeUnitCommand = System.new(SourceModels.UpgradeUnitCommand, 2, 1 --[[SpawnInterval.Middle]], 1747988555 --[[Constants.UNIT_FALCON_RIDER_HUMAN]], baseUnitTypeId, 0)
-          return 2 --[[UnitUpgradeType.UpgradeUnitInSpawn]], upgradeUnitCommand
-        elseif default == 1747988549 --[[Constants.UNIT_SIEGE_SQUAD_HUMAN]] then
-          upgradeUnitCommand = SourceModels.UpgradeUnitCommand(2 --[[SpawnInterval.Long]], baseUnitTypeId, 1747988563 --[[Constants.UNIT_SIEGE_ENGINE_HUMAN]])
-          return 1 --[[UnitUpgradeType.AddNewUnitToSpawn]], upgradeUnitCommand
-        elseif default == 1747988563 --[[Constants.UNIT_SIEGE_ENGINE_HUMAN]] then
-          upgradeUnitCommand = System.new(SourceModels.UpgradeUnitCommand, 2, 2 --[[SpawnInterval.Long]], 1747988549 --[[Constants.UNIT_SIEGE_SQUAD_HUMAN]], baseUnitTypeId, 0)
-          return 2 --[[UnitUpgradeType.UpgradeUnitInSpawn]], upgradeUnitCommand
-        else
-          -- Einheiten-Typ ist nicht bekannt
-          local extern
-          extern, upgradeUnitCommand = System.base(this).DetermineTypeOfUnitUpgrade(this, baseUnitTypeId)
-          return extern, upgradeUnitCommand
-        end
-      until 1
-    end
     return {
       base = function (out)
         return {
@@ -25264,8 +25431,8 @@ System.namespace("Source.Models.Teams", function (namespace)
         }
       end,
       CreateBuildings = CreateBuildings,
-      GetTechType = GetTechType,
-      DetermineTypeOfUnitUpgrade = DetermineTypeOfUnitUpgrade,
+      GetUnitUpgradeByResearch = GetUnitUpgradeByResearch,
+      GetUnitUpgradeBySold = GetUnitUpgradeBySold,
       __ctor__ = __ctor__,
       __metadata__ = function (out)
         return {
@@ -25274,8 +25441,8 @@ System.namespace("Source.Models.Teams", function (namespace)
             { "AddInitialSpawnTriggers", 0x101, AddInitialSpawnTriggers, out.Source.Models.UnitSpawnBuilding },
             { "AddInitialUnitUpgradesToStock", 0x101, AddInitialUnitUpgradesToStock, out.Source.Models.UnitSpawnBuilding },
             { "CreateBuildings", 0x6, CreateBuildings },
-            { "DetermineTypeOfUnitUpgrade", 0x286, DetermineTypeOfUnitUpgrade, System.Int32, out.Source.Models.UpgradeUnitCommand, System.Int32 },
-            { "GetTechType", 0x386, GetTechType, System.Int32, System.Int32, out.Source.Models.SpawnUnitCommand, System.Int32 }
+            { "GetUnitUpgradeByResearch", 0x386, GetUnitUpgradeByResearch, System.Int32, System.Int32, out.Source.Models.UnitUpgradeByResearchCommand, System.Int32 },
+            { "GetUnitUpgradeBySold", 0x286, GetUnitUpgradeBySold, System.Int32, out.Source.Models.UnitUpgradeBySoldCommand, System.Int32 }
           },
           class = { "HumansTeam", 0x26 }
         }
@@ -25295,11 +25462,12 @@ System.import(function (out)
 end)
 System.namespace("Source.Models.Teams", function (namespace)
   namespace.class("OrcsTeam", function (namespace)
-    local CreateBuildings, AddInitialSpawnTriggers, AddInitialUnitUpgradesToStock, GetTechType, __ctor__
+    local CreateBuildings, GetUnitUpgradeByResearch, GetUnitUpgradeBySold, AddInitialSpawnTriggers, AddInitialUnitUpgradesToStock, __ctor__
     __ctor__ = function (this)
       System.base(this).__ctor__(this, Player(4), Areas.OrcBase)
       this.ColorizedName = "|c" .. System.toString("ffffff00" --[[ConstantsEx.ColorHexCode_Yellow]]) .. System.toString(GetPlayerName(Player(4))) .. "|r"
     end
+    -- <inheritdoc/>
     CreateBuildings = function (this)
       -- Hauptgebäude
       local mainBuilding = this.Computer:CreateMainBuilding(1747988570 --[[Constants.UNIT_FORTRESS_ORC]], Areas.OrcBase)
@@ -25330,116 +25498,161 @@ System.namespace("Source.Models.Teams", function (namespace)
       AddInitialSpawnTriggers(this, building)
       AddInitialUnitUpgradesToStock(this, building)
     end
+    -- <inheritdoc/>
+    GetUnitUpgradeByResearch = function (this, techId, techLevel, command)
+      repeat
+        local default = techId
+        if default == 1378889781 --[[Constants.UPGRADE_MELEE_UNIT_TEAM]] then
+          local extern = SourceModels.UnitUpgradeByResearchCommand()
+          extern.UnitSpawnType = 0 --[[SpawnInterval.Short]]
+          extern.UnitIdOfBuilding = 1747988569 --[[Constants.UNIT_BARRACKS_ORC]]
+          command = extern
+
+          repeat
+            local extern = techLevel
+            if extern == 1 then
+              command.UnitId = 1747988810 --[[Constants.UNIT_BESERK_ORC]]
+              command.UnitIdToUpgrade = 1747988809 --[[Constants.UNIT_GRUNT_ORC]]
+              return 3 --[[ResearchType.UpgradeUnit]], command
+            else
+              command.UnitId = 1747988811 --[[Constants.UNIT_TAUREN_ORC]]
+              command.UnitIdToUpgrade = 1747988810 --[[Constants.UNIT_BESERK_ORC]]
+              return 3 --[[ResearchType.UpgradeUnit]], command
+            end
+          until 1
+        elseif default == 1378889785 --[[Constants.UPGRADE_DISTANCE_UNIT_TEAM]] then
+          local extern = SourceModels.UnitUpgradeByResearchCommand()
+          extern.UnitSpawnType = 1 --[[SpawnInterval.Middle]]
+          extern.UnitIdOfBuilding = 1747988569 --[[Constants.UNIT_BARRACKS_ORC]]
+          command = extern
+
+          repeat
+            local extern = techLevel
+            if extern == 1 then
+              command.UnitId = 1747988813 --[[Constants.UNIT_HEADHUNTER_BESERK_ORC]]
+              command.UnitIdToUpgrade = 1747988812 --[[Constants.UNIT_HEADHUNTER_ORC]]
+              return 3 --[[ResearchType.UpgradeUnit]], command
+            else
+              command.UnitId = 1747988814 --[[Constants.UNIT_HEADHUNTER_ELITE_ORC]]
+              command.UnitIdToUpgrade = 1747988813 --[[Constants.UNIT_HEADHUNTER_BESERK_ORC]]
+              return 3 --[[ResearchType.UpgradeUnit]], command
+            end
+          until 1
+        elseif default == 1378889795 --[[Constants.UPGRADE_FLIGHT_UNIT_TEAM]] then
+          local extern = SourceModels.UnitUpgradeByResearchCommand()
+          extern.UnitSpawnType = 1 --[[SpawnInterval.Middle]]
+          extern.UnitIdOfBuilding = 1747988569 --[[Constants.UNIT_BARRACKS_ORC]]
+          command = extern
+
+          repeat
+            local extern = techLevel
+            if extern == 1 then
+              command.UnitId = 1747988816 --[[Constants.UNIT_WIND_RIDER_ORC]]
+              command.UnitIdToUpgrade = 1747988815 --[[Constants.UNIT_BATRIDER_ORC]]
+              return 3 --[[ResearchType.UpgradeUnit]], command
+            else
+              command.UnitId = 1747988817 --[[Constants.UNIT_SPIRIT_WIND_RIDER_ORC]]
+              command.UnitIdToUpgrade = 1747988816 --[[Constants.UNIT_WIND_RIDER_ORC]]
+              return 3 --[[ResearchType.UpgradeUnit]], command
+            end
+          until 1
+        elseif default == 1378889797 --[[Constants.UPGRADE_MAGE_UNIT_TEAM]] then
+          local extern = SourceModels.UnitUpgradeByResearchCommand()
+          extern.UnitSpawnType = 1 --[[SpawnInterval.Middle]]
+          extern.UnitIdOfBuilding = 1747988569 --[[Constants.UNIT_BARRACKS_ORC]]
+          command = extern
+
+          repeat
+            local extern = techLevel
+            if extern == 1 then
+              command.UnitId = 1747988819 --[[Constants.UNIT_SHAMAN_ORC]]
+              command.UnitIdToUpgrade = 1747988818 --[[Constants.UNIT_WITCH_DOCTOR_ORC]]
+              return 3 --[[ResearchType.UpgradeUnit]], command
+            else
+              command.UnitId = 1747988820 --[[Constants.UNIT_WARLOCK_ORC]]
+              command.UnitIdToUpgrade = 1747988819 --[[Constants.UNIT_SHAMAN_ORC]]
+              return 3 --[[ResearchType.UpgradeUnit]], command
+            end
+          until 1
+        elseif default == 1378889784 --[[Constants.UPGRADE_SIEGE_UNIT_TEAM]] then
+          local extern = SourceModels.UnitUpgradeByResearchCommand()
+          extern.UnitSpawnType = 2 --[[SpawnInterval.Long]]
+          extern.UnitIdOfBuilding = 1747988569 --[[Constants.UNIT_BARRACKS_ORC]]
+          command = extern
+
+          repeat
+            local extern = techLevel
+            if extern == 1 then
+              command.UnitId = 1747988821 --[[Constants.UNIT_KODO_BEAST_ORC]]
+              return 2 --[[ResearchType.AddUnit]], command
+            else
+              command.UnitId = 1747988822 --[[Constants.UNIT_DEMOLISHER_ORC]]
+              command.UnitIdToUpgrade = 1747988821 --[[Constants.UNIT_KODO_BEAST_ORC]]
+              return 3 --[[ResearchType.UpgradeUnit]], command
+            end
+          until 1
+        else
+          command = nil
+          return 1 --[[ResearchType.CommonUpgrade]], command
+        end
+      until 1
+    end
+    -- <inheritdoc/>
+    GetUnitUpgradeBySold = function (this, baseUnitTypeId, command)
+      repeat
+        local default = baseUnitTypeId
+        if default == 1747988810 --[[Constants.UNIT_BESERK_ORC]] then
+          command = System.new(SourceModels.UnitUpgradeBySoldCommand, 2, 0 --[[SpawnInterval.Short]], 1747988809 --[[Constants.UNIT_GRUNT_ORC]], baseUnitTypeId, 1747988811 --[[Constants.UNIT_TAUREN_ORC]])
+          return 2 --[[UnitUpgradeType.UpgradeUnitInSpawn]], command
+        elseif default == 1747988811 --[[Constants.UNIT_TAUREN_ORC]] then
+          command = System.new(SourceModels.UnitUpgradeBySoldCommand, 2, 0 --[[SpawnInterval.Short]], 1747988810 --[[Constants.UNIT_BESERK_ORC]], baseUnitTypeId, 0)
+          return 2 --[[UnitUpgradeType.UpgradeUnitInSpawn]], command
+        elseif default == 1747988813 --[[Constants.UNIT_HEADHUNTER_BESERK_ORC]] then
+          command = System.new(SourceModels.UnitUpgradeBySoldCommand, 2, 0 --[[SpawnInterval.Short]], 1747988812 --[[Constants.UNIT_HEADHUNTER_ORC]], baseUnitTypeId, 1747988814 --[[Constants.UNIT_HEADHUNTER_ELITE_ORC]])
+          return 2 --[[UnitUpgradeType.UpgradeUnitInSpawn]], command
+        elseif default == 1747988814 --[[Constants.UNIT_HEADHUNTER_ELITE_ORC]] then
+          command = System.new(SourceModels.UnitUpgradeBySoldCommand, 2, 0 --[[SpawnInterval.Short]], 1747988813 --[[Constants.UNIT_HEADHUNTER_BESERK_ORC]], baseUnitTypeId, 0)
+          return 2 --[[UnitUpgradeType.UpgradeUnitInSpawn]], command
+        elseif default == 1747988819 --[[Constants.UNIT_SHAMAN_ORC]] then
+          command = System.new(SourceModels.UnitUpgradeBySoldCommand, 2, 1 --[[SpawnInterval.Middle]], 1747988818 --[[Constants.UNIT_WITCH_DOCTOR_ORC]], baseUnitTypeId, 1747988820 --[[Constants.UNIT_WARLOCK_ORC]])
+          return 2 --[[UnitUpgradeType.UpgradeUnitInSpawn]], command
+        elseif default == 1747988820 --[[Constants.UNIT_WARLOCK_ORC]] then
+          command = System.new(SourceModels.UnitUpgradeBySoldCommand, 2, 1 --[[SpawnInterval.Middle]], 1747988819 --[[Constants.UNIT_SHAMAN_ORC]], baseUnitTypeId, 0)
+          return 2 --[[UnitUpgradeType.UpgradeUnitInSpawn]], command
+        elseif default == 1747988815 --[[Constants.UNIT_BATRIDER_ORC]] then
+          command = SourceModels.UnitUpgradeBySoldCommand(1 --[[SpawnInterval.Middle]], baseUnitTypeId, 1747988816 --[[Constants.UNIT_WIND_RIDER_ORC]])
+          return 1 --[[UnitUpgradeType.AddNewUnitToSpawn]], command
+        elseif default == 1747988816 --[[Constants.UNIT_WIND_RIDER_ORC]] then
+          command = System.new(SourceModels.UnitUpgradeBySoldCommand, 2, 1 --[[SpawnInterval.Middle]], 1747988815 --[[Constants.UNIT_BATRIDER_ORC]], baseUnitTypeId, 1747988817 --[[Constants.UNIT_SPIRIT_WIND_RIDER_ORC]])
+          return 2 --[[UnitUpgradeType.UpgradeUnitInSpawn]], command
+        elseif default == 1747988817 --[[Constants.UNIT_SPIRIT_WIND_RIDER_ORC]] then
+          command = System.new(SourceModels.UnitUpgradeBySoldCommand, 2, 1 --[[SpawnInterval.Middle]], 1747988816 --[[Constants.UNIT_WIND_RIDER_ORC]], baseUnitTypeId, 0)
+          return 2 --[[UnitUpgradeType.UpgradeUnitInSpawn]], command
+        elseif default == 1747988821 --[[Constants.UNIT_KODO_BEAST_ORC]] then
+          command = SourceModels.UnitUpgradeBySoldCommand(2 --[[SpawnInterval.Long]], baseUnitTypeId, 1747988822 --[[Constants.UNIT_DEMOLISHER_ORC]])
+          return 1 --[[UnitUpgradeType.AddNewUnitToSpawn]], command
+        elseif default == 1747988822 --[[Constants.UNIT_DEMOLISHER_ORC]] then
+          command = System.new(SourceModels.UnitUpgradeBySoldCommand, 2, 2 --[[SpawnInterval.Long]], 1747988821 --[[Constants.UNIT_KODO_BEAST_ORC]], baseUnitTypeId, 0)
+          return 2 --[[UnitUpgradeType.UpgradeUnitInSpawn]], command
+        else
+          -- Einheiten-Typ ist nicht bekannt
+          local extern
+          extern, command = System.base(this).GetUnitUpgradeBySold(this, baseUnitTypeId)
+          return extern, command
+        end
+      until 1
+    end
     AddInitialSpawnTriggers = function (this, building)
       building:AddSpawnTrigger(0 --[[SpawnInterval.Short]], System.Array(System.Int32) { 1747988809 --[[Constants.UNIT_GRUNT_ORC]], 1747988809 --[[Constants.UNIT_GRUNT_ORC]], 1747988812 --[[Constants.UNIT_HEADHUNTER_ORC]] }):Run(0)
       building:AddSpawnTrigger(1 --[[SpawnInterval.Middle]], System.Array(System.Int32) { 1747988818 --[[Constants.UNIT_WITCH_DOCTOR_ORC]] }):Run(1)
       building:AddSpawnTrigger(2 --[[SpawnInterval.Long]], System.Array.Empty(System.Int32)):Run(2)
     end
     AddInitialUnitUpgradesToStock = function (this, building)
-      -- TODO
-      AddUnitToStock(building.Wc3Unit, 1747988547 --[[Constants.UNIT_CAPTAIN_HUMAN]], 1, 1)
-      AddUnitToStock(building.Wc3Unit, 1747988550 --[[Constants.UNIT_RIFLEMAN_BESERK_HUMAN]], 1, 1)
-      AddUnitToStock(building.Wc3Unit, 1747988552 --[[Constants.UNIT_SORCERESS_HUMAN]], 1, 1)
-      AddUnitToStock(building.Wc3Unit, 1747988554 --[[Constants.UNIT_FLYING_MACHINE_HUMAN]], 1, 1)
-      AddUnitToStock(building.Wc3Unit, 1747988549 --[[Constants.UNIT_SIEGE_SQUAD_HUMAN]], 1, 1)
-    end
-    GetTechType = function (this, techId, techLevel, spawnCommand)
-      repeat
-        local default = techId
-        if default == 1378889781 --[[Constants.UPGRADE_MELEE_UNIT_TEAM]] then
-          local extern = SourceModels.SpawnUnitCommand()
-          extern.UnitSpawnType = 0 --[[SpawnInterval.Short]]
-          extern.UnitIdOfBuilding = 1747988569 --[[Constants.UNIT_BARRACKS_ORC]]
-          spawnCommand = extern
-
-          repeat
-            local extern = techLevel
-            if extern == 1 then
-              spawnCommand.UnitId = 1747988810 --[[Constants.UNIT_BESERK_ORC]]
-              spawnCommand.UnitIdToUpgrade = 1747988809 --[[Constants.UNIT_GRUNT_ORC]]
-              return 2 --[[ResearchType.UpgradeUnit]], spawnCommand
-            else
-              spawnCommand.UnitId = 1747988811 --[[Constants.UNIT_TAUREN_ORC]]
-              spawnCommand.UnitIdToUpgrade = 1747988810 --[[Constants.UNIT_BESERK_ORC]]
-              return 2 --[[ResearchType.UpgradeUnit]], spawnCommand
-            end
-          until 1
-        elseif default == 1378889785 --[[Constants.UPGRADE_DISTANCE_UNIT_TEAM]] then
-          local extern = SourceModels.SpawnUnitCommand()
-          extern.UnitSpawnType = 1 --[[SpawnInterval.Middle]]
-          extern.UnitIdOfBuilding = 1747988569 --[[Constants.UNIT_BARRACKS_ORC]]
-          spawnCommand = extern
-
-          repeat
-            local extern = techLevel
-            if extern == 1 then
-              spawnCommand.UnitId = 1747988813 --[[Constants.UNIT_HEADHUNTER_BESERK_ORC]]
-              spawnCommand.UnitIdToUpgrade = 1747988812 --[[Constants.UNIT_HEADHUNTER_ORC]]
-              return 2 --[[ResearchType.UpgradeUnit]], spawnCommand
-            else
-              spawnCommand.UnitId = 1747988814 --[[Constants.UNIT_HEADHUNTER_ELITE_ORC]]
-              spawnCommand.UnitIdToUpgrade = 1747988813 --[[Constants.UNIT_HEADHUNTER_BESERK_ORC]]
-              return 2 --[[ResearchType.UpgradeUnit]], spawnCommand
-            end
-          until 1
-        elseif default == 1378889795 --[[Constants.UPGRADE_FLIGHT_UNIT_TEAM]] then
-          local extern = SourceModels.SpawnUnitCommand()
-          extern.UnitSpawnType = 1 --[[SpawnInterval.Middle]]
-          extern.UnitIdOfBuilding = 1747988569 --[[Constants.UNIT_BARRACKS_ORC]]
-          spawnCommand = extern
-
-          repeat
-            local extern = techLevel
-            if extern == 1 then
-              spawnCommand.UnitId = 1747988816 --[[Constants.UNIT_WIND_RIDER_ORC]]
-              spawnCommand.UnitIdToUpgrade = 1747988815 --[[Constants.UNIT_BATRIDER_ORC]]
-              return 2 --[[ResearchType.UpgradeUnit]], spawnCommand
-            else
-              spawnCommand.UnitId = 1747988817 --[[Constants.UNIT_SPIRIT_WIND_RIDER_ORC]]
-              spawnCommand.UnitIdToUpgrade = 1747988816 --[[Constants.UNIT_WIND_RIDER_ORC]]
-              return 2 --[[ResearchType.UpgradeUnit]], spawnCommand
-            end
-          until 1
-        elseif default == 1378889797 --[[Constants.UPGRADE_MAGE_UNIT_TEAM]] then
-          local extern = SourceModels.SpawnUnitCommand()
-          extern.UnitSpawnType = 1 --[[SpawnInterval.Middle]]
-          extern.UnitIdOfBuilding = 1747988569 --[[Constants.UNIT_BARRACKS_ORC]]
-          spawnCommand = extern
-
-          repeat
-            local extern = techLevel
-            if extern == 1 then
-              spawnCommand.UnitId = 1747988819 --[[Constants.UNIT_SHAMAN_ORC]]
-              spawnCommand.UnitIdToUpgrade = 1747988818 --[[Constants.UNIT_WITCH_DOCTOR_ORC]]
-              return 2 --[[ResearchType.UpgradeUnit]], spawnCommand
-            else
-              spawnCommand.UnitId = 1747988820 --[[Constants.UNIT_WARLOCK_ORC]]
-              spawnCommand.UnitIdToUpgrade = 1747988819 --[[Constants.UNIT_SHAMAN_ORC]]
-              return 2 --[[ResearchType.UpgradeUnit]], spawnCommand
-            end
-          until 1
-        elseif default == 1378889784 --[[Constants.UPGRADE_SIEGE_UNIT_TEAM]] then
-          local extern = SourceModels.SpawnUnitCommand()
-          extern.UnitSpawnType = 2 --[[SpawnInterval.Long]]
-          extern.UnitIdOfBuilding = 1747988569 --[[Constants.UNIT_BARRACKS_ORC]]
-          spawnCommand = extern
-
-          repeat
-            local extern = techLevel
-            if extern == 1 then
-              spawnCommand.UnitId = 1747988821 --[[Constants.UNIT_KODO_BEAST_ORC]]
-              return 1 --[[ResearchType.AddUnit]], spawnCommand
-            else
-              spawnCommand.UnitId = 1747988822 --[[Constants.UNIT_DEMOLISHER_ORC]]
-              spawnCommand.UnitIdToUpgrade = 1747988821 --[[Constants.UNIT_KODO_BEAST_ORC]]
-              return 2 --[[ResearchType.UpgradeUnit]], spawnCommand
-            end
-          until 1
-        else
-          spawnCommand = nil
-          return 0 --[[ResearchType.CommonUpgrade]], spawnCommand
-        end
-      until 1
+      AddUnitToStock(building.Wc3Unit, 1747988810 --[[Constants.UNIT_BESERK_ORC]], 1, 1)
+      AddUnitToStock(building.Wc3Unit, 1747988813 --[[Constants.UNIT_HEADHUNTER_BESERK_ORC]], 1, 1)
+      AddUnitToStock(building.Wc3Unit, 1747988819 --[[Constants.UNIT_SHAMAN_ORC]], 1, 1)
+      AddUnitToStock(building.Wc3Unit, 1747988815 --[[Constants.UNIT_BATRIDER_ORC]], 1, 1)
+      AddUnitToStock(building.Wc3Unit, 1747988821 --[[Constants.UNIT_KODO_BEAST_ORC]], 1, 1)
     end
     return {
       base = function (out)
@@ -25448,7 +25661,8 @@ System.namespace("Source.Models.Teams", function (namespace)
         }
       end,
       CreateBuildings = CreateBuildings,
-      GetTechType = GetTechType,
+      GetUnitUpgradeByResearch = GetUnitUpgradeByResearch,
+      GetUnitUpgradeBySold = GetUnitUpgradeBySold,
       __ctor__ = __ctor__,
       __metadata__ = function (out)
         return {
@@ -25457,7 +25671,8 @@ System.namespace("Source.Models.Teams", function (namespace)
             { "AddInitialSpawnTriggers", 0x101, AddInitialSpawnTriggers, out.Source.Models.UnitSpawnBuilding },
             { "AddInitialUnitUpgradesToStock", 0x101, AddInitialUnitUpgradesToStock, out.Source.Models.UnitSpawnBuilding },
             { "CreateBuildings", 0x6, CreateBuildings },
-            { "GetTechType", 0x386, GetTechType, System.Int32, System.Int32, out.Source.Models.SpawnUnitCommand, System.Int32 }
+            { "GetUnitUpgradeByResearch", 0x386, GetUnitUpgradeByResearch, System.Int32, System.Int32, out.Source.Models.UnitUpgradeByResearchCommand, System.Int32 },
+            { "GetUnitUpgradeBySold", 0x286, GetUnitUpgradeBySold, System.Int32, out.Source.Models.UnitUpgradeBySoldCommand, System.Int32 }
           },
           class = { "OrcsTeam", 0x26 }
         }
@@ -25477,11 +25692,12 @@ System.import(function (out)
 end)
 System.namespace("Source.Models.Teams", function (namespace)
   namespace.class("UndeadsTeam", function (namespace)
-    local CreateBuildings, AddInitialSpawnTriggers, AddInitialUnitUpgradesToStock, GetTechType, __ctor__
+    local CreateBuildings, GetUnitUpgradeByResearch, GetUnitUpgradeBySold, AddInitialSpawnTriggers, AddInitialUnitUpgradesToStock, __ctor__
     __ctor__ = function (this)
       System.base(this).__ctor__(this, Player(12), Areas.UndeadBase)
       this.ColorizedName = "|c" .. System.toString("ff800000" --[[ConstantsEx.ColorHexCode_Maroon]]) .. System.toString(GetPlayerName(Player(12))) .. "|r"
     end
+    -- <inheritdoc/>
     CreateBuildings = function (this)
       -- Hauptgebäude
       local mainBuilding = this.Computer:CreateMainBuilding(1747988801 --[[Constants.UNIT_BLACK_CITADEL_UNDEAD]], Areas.UndeadBase)
@@ -25512,116 +25728,161 @@ System.namespace("Source.Models.Teams", function (namespace)
       AddInitialSpawnTriggers(this, building)
       AddInitialUnitUpgradesToStock(this, building)
     end
+    -- <inheritdoc/>
+    GetUnitUpgradeByResearch = function (this, techId, techLevel, command)
+      repeat
+        local default = techId
+        if default == 1378889781 --[[Constants.UPGRADE_MELEE_UNIT_TEAM]] then
+          local extern = SourceModels.UnitUpgradeByResearchCommand()
+          extern.UnitSpawnType = 0 --[[SpawnInterval.Short]]
+          extern.UnitIdOfBuilding = 1747988805 --[[Constants.UNIT_CRYPT_UNDEAD]]
+          command = extern
+
+          repeat
+            local extern = techLevel
+            if extern == 1 then
+              command.UnitId = 1747989040 --[[Constants.UNIT_SKELETON_WARRIOR_UNDEAD]]
+              command.UnitIdToUpgrade = 1747988825 --[[Constants.UNIT_GHOUL_UNDEAD]]
+              return 3 --[[ResearchType.UpgradeUnit]], command
+            else
+              command.UnitId = 1747989042 --[[Constants.UNIT_ABOMINATION_UNDEAD]]
+              command.UnitIdToUpgrade = 1747989040 --[[Constants.UNIT_SKELETON_WARRIOR_UNDEAD]]
+              return 3 --[[ResearchType.UpgradeUnit]], command
+            end
+          until 1
+        elseif default == 1378889785 --[[Constants.UPGRADE_DISTANCE_UNIT_TEAM]] then
+          local extern = SourceModels.UnitUpgradeByResearchCommand()
+          extern.UnitSpawnType = 1 --[[SpawnInterval.Middle]]
+          extern.UnitIdOfBuilding = 1747988805 --[[Constants.UNIT_CRYPT_UNDEAD]]
+          command = extern
+
+          repeat
+            local extern = techLevel
+            if extern == 1 then
+              command.UnitId = 1747989046 --[[Constants.UNIT_CRYPT_FIEND_BESERK_UNDEAD]]
+              command.UnitIdToUpgrade = 1747989044 --[[Constants.UNIT_CRYPT_FIEND_UNDEAD]]
+              return 3 --[[ResearchType.UpgradeUnit]], command
+            else
+              command.UnitId = 1747989048 --[[Constants.UNIT_CRYPT_FIEND_ELITE_UNDEAD]]
+              command.UnitIdToUpgrade = 1747989046 --[[Constants.UNIT_CRYPT_FIEND_BESERK_UNDEAD]]
+              return 3 --[[ResearchType.UpgradeUnit]], command
+            end
+          until 1
+        elseif default == 1378889795 --[[Constants.UPGRADE_FLIGHT_UNIT_TEAM]] then
+          local extern = SourceModels.UnitUpgradeByResearchCommand()
+          extern.UnitSpawnType = 1 --[[SpawnInterval.Middle]]
+          extern.UnitIdOfBuilding = 1747988801 --[[Constants.UNIT_BLACK_CITADEL_UNDEAD]]
+          command = extern
+
+          repeat
+            local extern = techLevel
+            if extern == 1 then
+              command.UnitId = 1747989059 --[[Constants.UNIT_DESTROYER_UNDEAD]]
+              command.UnitIdToUpgrade = 1747989061 --[[Constants.UNIT_GARGOYLE_UNDEAD]]
+              return 3 --[[ResearchType.UpgradeUnit]], command
+            else
+              command.UnitId = 1747989057 --[[Constants.UNIT_FROST_WYRM_UNDEAD]]
+              command.UnitIdToUpgrade = 1747989059 --[[Constants.UNIT_DESTROYER_UNDEAD]]
+              return 3 --[[ResearchType.UpgradeUnit]], command
+            end
+          until 1
+        elseif default == 1378889797 --[[Constants.UPGRADE_MAGE_UNIT_TEAM]] then
+          local extern = SourceModels.UnitUpgradeByResearchCommand()
+          extern.UnitSpawnType = 1 --[[SpawnInterval.Middle]]
+          extern.UnitIdOfBuilding = 1747988801 --[[Constants.UNIT_BLACK_CITADEL_UNDEAD]]
+          command = extern
+
+          repeat
+            local extern = techLevel
+            if extern == 1 then
+              command.UnitId = 1747989065 --[[Constants.UNIT_NECROMANCER_UNDEAD]]
+              command.UnitIdToUpgrade = 1747989067 --[[Constants.UNIT_SKELETAL_MAGE_UNDEAD]]
+              return 3 --[[ResearchType.UpgradeUnit]], command
+            else
+              command.UnitId = 1747989063 --[[Constants.UNIT_BANSHEE_UNDEAD]]
+              command.UnitIdToUpgrade = 1747989065 --[[Constants.UNIT_NECROMANCER_UNDEAD]]
+              return 3 --[[ResearchType.UpgradeUnit]], command
+            end
+          until 1
+        elseif default == 1378889784 --[[Constants.UPGRADE_SIEGE_UNIT_TEAM]] then
+          local extern = SourceModels.UnitUpgradeByResearchCommand()
+          extern.UnitSpawnType = 2 --[[SpawnInterval.Long]]
+          extern.UnitIdOfBuilding = 1747988801 --[[Constants.UNIT_BLACK_CITADEL_UNDEAD]]
+          command = extern
+
+          repeat
+            local extern = techLevel
+            if extern == 1 then
+              command.UnitId = 1747989071 --[[Constants.UNIT_OBSIDIAN_STATUE_UNDEAD]]
+              return 2 --[[ResearchType.AddUnit]], command
+            else
+              command.UnitId = 1747989069 --[[Constants.UNIT_MEAT_WAGON_UNDEAD]]
+              command.UnitIdToUpgrade = 1747989071 --[[Constants.UNIT_OBSIDIAN_STATUE_UNDEAD]]
+              return 3 --[[ResearchType.UpgradeUnit]], command
+            end
+          until 1
+        else
+          command = nil
+          return 1 --[[ResearchType.CommonUpgrade]], command
+        end
+      until 1
+    end
+    -- <inheritdoc/>
+    GetUnitUpgradeBySold = function (this, baseUnitTypeId, command)
+      repeat
+        local default = baseUnitTypeId
+        if default == 1747989040 --[[Constants.UNIT_SKELETON_WARRIOR_UNDEAD]] then
+          command = System.new(SourceModels.UnitUpgradeBySoldCommand, 2, 0 --[[SpawnInterval.Short]], 1747988825 --[[Constants.UNIT_GHOUL_UNDEAD]], baseUnitTypeId, 1747989042 --[[Constants.UNIT_ABOMINATION_UNDEAD]])
+          return 2 --[[UnitUpgradeType.UpgradeUnitInSpawn]], command
+        elseif default == 1747989042 --[[Constants.UNIT_ABOMINATION_UNDEAD]] then
+          command = System.new(SourceModels.UnitUpgradeBySoldCommand, 2, 0 --[[SpawnInterval.Short]], 1747989040 --[[Constants.UNIT_SKELETON_WARRIOR_UNDEAD]], baseUnitTypeId, 0)
+          return 2 --[[UnitUpgradeType.UpgradeUnitInSpawn]], command
+        elseif default == 1747989046 --[[Constants.UNIT_CRYPT_FIEND_BESERK_UNDEAD]] then
+          command = System.new(SourceModels.UnitUpgradeBySoldCommand, 2, 0 --[[SpawnInterval.Short]], 1747989044 --[[Constants.UNIT_CRYPT_FIEND_UNDEAD]], baseUnitTypeId, 1747989048 --[[Constants.UNIT_CRYPT_FIEND_ELITE_UNDEAD]])
+          return 2 --[[UnitUpgradeType.UpgradeUnitInSpawn]], command
+        elseif default == 1747989048 --[[Constants.UNIT_CRYPT_FIEND_ELITE_UNDEAD]] then
+          command = System.new(SourceModels.UnitUpgradeBySoldCommand, 2, 0 --[[SpawnInterval.Short]], 1747989046 --[[Constants.UNIT_CRYPT_FIEND_BESERK_UNDEAD]], baseUnitTypeId, 0)
+          return 2 --[[UnitUpgradeType.UpgradeUnitInSpawn]], command
+        elseif default == 1747989065 --[[Constants.UNIT_NECROMANCER_UNDEAD]] then
+          command = System.new(SourceModels.UnitUpgradeBySoldCommand, 2, 1 --[[SpawnInterval.Middle]], 1747989067 --[[Constants.UNIT_SKELETAL_MAGE_UNDEAD]], baseUnitTypeId, 1747989063 --[[Constants.UNIT_BANSHEE_UNDEAD]])
+          return 2 --[[UnitUpgradeType.UpgradeUnitInSpawn]], command
+        elseif default == 1747989063 --[[Constants.UNIT_BANSHEE_UNDEAD]] then
+          command = System.new(SourceModels.UnitUpgradeBySoldCommand, 2, 1 --[[SpawnInterval.Middle]], 1747989065 --[[Constants.UNIT_NECROMANCER_UNDEAD]], baseUnitTypeId, 0)
+          return 2 --[[UnitUpgradeType.UpgradeUnitInSpawn]], command
+        elseif default == 1747989061 --[[Constants.UNIT_GARGOYLE_UNDEAD]] then
+          command = SourceModels.UnitUpgradeBySoldCommand(1 --[[SpawnInterval.Middle]], baseUnitTypeId, 1747989059 --[[Constants.UNIT_DESTROYER_UNDEAD]])
+          return 1 --[[UnitUpgradeType.AddNewUnitToSpawn]], command
+        elseif default == 1747989059 --[[Constants.UNIT_DESTROYER_UNDEAD]] then
+          command = System.new(SourceModels.UnitUpgradeBySoldCommand, 2, 1 --[[SpawnInterval.Middle]], 1747989061 --[[Constants.UNIT_GARGOYLE_UNDEAD]], baseUnitTypeId, 1747989057 --[[Constants.UNIT_FROST_WYRM_UNDEAD]])
+          return 2 --[[UnitUpgradeType.UpgradeUnitInSpawn]], command
+        elseif default == 1747989057 --[[Constants.UNIT_FROST_WYRM_UNDEAD]] then
+          command = System.new(SourceModels.UnitUpgradeBySoldCommand, 2, 1 --[[SpawnInterval.Middle]], 1747989059 --[[Constants.UNIT_DESTROYER_UNDEAD]], baseUnitTypeId, 0)
+          return 2 --[[UnitUpgradeType.UpgradeUnitInSpawn]], command
+        elseif default == 1747989071 --[[Constants.UNIT_OBSIDIAN_STATUE_UNDEAD]] then
+          command = SourceModels.UnitUpgradeBySoldCommand(2 --[[SpawnInterval.Long]], baseUnitTypeId, 1747989069 --[[Constants.UNIT_MEAT_WAGON_UNDEAD]])
+          return 1 --[[UnitUpgradeType.AddNewUnitToSpawn]], command
+        elseif default == 1747989069 --[[Constants.UNIT_MEAT_WAGON_UNDEAD]] then
+          command = System.new(SourceModels.UnitUpgradeBySoldCommand, 2, 2 --[[SpawnInterval.Long]], 1747989071 --[[Constants.UNIT_OBSIDIAN_STATUE_UNDEAD]], baseUnitTypeId, 0)
+          return 2 --[[UnitUpgradeType.UpgradeUnitInSpawn]], command
+        else
+          -- Einheiten-Typ ist nicht bekannt
+          local extern
+          extern, command = System.base(this).GetUnitUpgradeBySold(this, baseUnitTypeId)
+          return extern, command
+        end
+      until 1
+    end
     AddInitialSpawnTriggers = function (this, building)
       building:AddSpawnTrigger(0 --[[SpawnInterval.Short]], System.Array(System.Int32) { 1747988825 --[[Constants.UNIT_GHOUL_UNDEAD]], 1747988825 --[[Constants.UNIT_GHOUL_UNDEAD]], 1747989044 --[[Constants.UNIT_CRYPT_FIEND_UNDEAD]] }):Run(0)
       building:AddSpawnTrigger(1 --[[SpawnInterval.Middle]], System.Array(System.Int32) { 1747989067 --[[Constants.UNIT_SKELETAL_MAGE_UNDEAD]] }):Run(1)
       building:AddSpawnTrigger(2 --[[SpawnInterval.Long]], System.Array.Empty(System.Int32)):Run(2)
     end
     AddInitialUnitUpgradesToStock = function (this, building)
-      -- TODO
-      AddUnitToStock(building.Wc3Unit, 1747988547 --[[Constants.UNIT_CAPTAIN_HUMAN]], 1, 1)
-      AddUnitToStock(building.Wc3Unit, 1747988550 --[[Constants.UNIT_RIFLEMAN_BESERK_HUMAN]], 1, 1)
-      AddUnitToStock(building.Wc3Unit, 1747988552 --[[Constants.UNIT_SORCERESS_HUMAN]], 1, 1)
-      AddUnitToStock(building.Wc3Unit, 1747988554 --[[Constants.UNIT_FLYING_MACHINE_HUMAN]], 1, 1)
-      AddUnitToStock(building.Wc3Unit, 1747988549 --[[Constants.UNIT_SIEGE_SQUAD_HUMAN]], 1, 1)
-    end
-    GetTechType = function (this, techId, techLevel, spawnCommand)
-      repeat
-        local default = techId
-        if default == 1378889781 --[[Constants.UPGRADE_MELEE_UNIT_TEAM]] then
-          local extern = SourceModels.SpawnUnitCommand()
-          extern.UnitSpawnType = 0 --[[SpawnInterval.Short]]
-          extern.UnitIdOfBuilding = 1747988805 --[[Constants.UNIT_CRYPT_UNDEAD]]
-          spawnCommand = extern
-
-          repeat
-            local extern = techLevel
-            if extern == 1 then
-              spawnCommand.UnitId = 1747989040 --[[Constants.UNIT_SKELETON_WARRIOR_UNDEAD]]
-              spawnCommand.UnitIdToUpgrade = 1747988825 --[[Constants.UNIT_GHOUL_UNDEAD]]
-              return 2 --[[ResearchType.UpgradeUnit]], spawnCommand
-            else
-              spawnCommand.UnitId = 1747989042 --[[Constants.UNIT_ABOMINATION_UNDEAD]]
-              spawnCommand.UnitIdToUpgrade = 1747989040 --[[Constants.UNIT_SKELETON_WARRIOR_UNDEAD]]
-              return 2 --[[ResearchType.UpgradeUnit]], spawnCommand
-            end
-          until 1
-        elseif default == 1378889785 --[[Constants.UPGRADE_DISTANCE_UNIT_TEAM]] then
-          local extern = SourceModels.SpawnUnitCommand()
-          extern.UnitSpawnType = 1 --[[SpawnInterval.Middle]]
-          extern.UnitIdOfBuilding = 1747988805 --[[Constants.UNIT_CRYPT_UNDEAD]]
-          spawnCommand = extern
-
-          repeat
-            local extern = techLevel
-            if extern == 1 then
-              spawnCommand.UnitId = 1747989046 --[[Constants.UNIT_CRYPT_FIEND_BESERK_UNDEAD]]
-              spawnCommand.UnitIdToUpgrade = 1747989044 --[[Constants.UNIT_CRYPT_FIEND_UNDEAD]]
-              return 2 --[[ResearchType.UpgradeUnit]], spawnCommand
-            else
-              spawnCommand.UnitId = 1747989048 --[[Constants.UNIT_CRYPT_FIEND_ELITE_UNDEAD]]
-              spawnCommand.UnitIdToUpgrade = 1747989046 --[[Constants.UNIT_CRYPT_FIEND_BESERK_UNDEAD]]
-              return 2 --[[ResearchType.UpgradeUnit]], spawnCommand
-            end
-          until 1
-        elseif default == 1378889795 --[[Constants.UPGRADE_FLIGHT_UNIT_TEAM]] then
-          local extern = SourceModels.SpawnUnitCommand()
-          extern.UnitSpawnType = 1 --[[SpawnInterval.Middle]]
-          extern.UnitIdOfBuilding = 1747988801 --[[Constants.UNIT_BLACK_CITADEL_UNDEAD]]
-          spawnCommand = extern
-
-          repeat
-            local extern = techLevel
-            if extern == 1 then
-              spawnCommand.UnitId = 1747989059 --[[Constants.UNIT_DESTROYER_UNDEAD]]
-              spawnCommand.UnitIdToUpgrade = 1747989061 --[[Constants.UNIT_GARGOYLE_UNDEAD]]
-              return 2 --[[ResearchType.UpgradeUnit]], spawnCommand
-            else
-              spawnCommand.UnitId = 1747989057 --[[Constants.UNIT_FROST_WYRM_UNDEAD]]
-              spawnCommand.UnitIdToUpgrade = 1747989059 --[[Constants.UNIT_DESTROYER_UNDEAD]]
-              return 2 --[[ResearchType.UpgradeUnit]], spawnCommand
-            end
-          until 1
-        elseif default == 1378889797 --[[Constants.UPGRADE_MAGE_UNIT_TEAM]] then
-          local extern = SourceModels.SpawnUnitCommand()
-          extern.UnitSpawnType = 1 --[[SpawnInterval.Middle]]
-          extern.UnitIdOfBuilding = 1747988801 --[[Constants.UNIT_BLACK_CITADEL_UNDEAD]]
-          spawnCommand = extern
-
-          repeat
-            local extern = techLevel
-            if extern == 1 then
-              spawnCommand.UnitId = 1747989065 --[[Constants.UNIT_NECROMANCER_UNDEAD]]
-              spawnCommand.UnitIdToUpgrade = 1747989067 --[[Constants.UNIT_SKELETAL_MAGE_UNDEAD]]
-              return 2 --[[ResearchType.UpgradeUnit]], spawnCommand
-            else
-              spawnCommand.UnitId = 1747989063 --[[Constants.UNIT_BANSHEE_UNDEAD]]
-              spawnCommand.UnitIdToUpgrade = 1747989065 --[[Constants.UNIT_NECROMANCER_UNDEAD]]
-              return 2 --[[ResearchType.UpgradeUnit]], spawnCommand
-            end
-          until 1
-        elseif default == 1378889784 --[[Constants.UPGRADE_SIEGE_UNIT_TEAM]] then
-          local extern = SourceModels.SpawnUnitCommand()
-          extern.UnitSpawnType = 2 --[[SpawnInterval.Long]]
-          extern.UnitIdOfBuilding = 1747988801 --[[Constants.UNIT_BLACK_CITADEL_UNDEAD]]
-          spawnCommand = extern
-
-          repeat
-            local extern = techLevel
-            if extern == 1 then
-              spawnCommand.UnitId = 1747989071 --[[Constants.UNIT_OBSIDIAN_STATUE_UNDEAD]]
-              return 1 --[[ResearchType.AddUnit]], spawnCommand
-            else
-              spawnCommand.UnitId = 1747989069 --[[Constants.UNIT_MEAT_WAGON_UNDEAD]]
-              spawnCommand.UnitIdToUpgrade = 1747989071 --[[Constants.UNIT_OBSIDIAN_STATUE_UNDEAD]]
-              return 2 --[[ResearchType.UpgradeUnit]], spawnCommand
-            end
-          until 1
-        else
-          spawnCommand = nil
-          return 0 --[[ResearchType.CommonUpgrade]], spawnCommand
-        end
-      until 1
+      AddUnitToStock(building.Wc3Unit, 1747989040 --[[Constants.UNIT_SKELETON_WARRIOR_UNDEAD]], 1, 1)
+      AddUnitToStock(building.Wc3Unit, 1747989046 --[[Constants.UNIT_CRYPT_FIEND_BESERK_UNDEAD]], 1, 1)
+      AddUnitToStock(building.Wc3Unit, 1747989065 --[[Constants.UNIT_NECROMANCER_UNDEAD]], 1, 1)
+      AddUnitToStock(building.Wc3Unit, 1747989061 --[[Constants.UNIT_GARGOYLE_UNDEAD]], 1, 1)
+      AddUnitToStock(building.Wc3Unit, 1747989071 --[[Constants.UNIT_OBSIDIAN_STATUE_UNDEAD]], 1, 1)
     end
     return {
       base = function (out)
@@ -25630,7 +25891,8 @@ System.namespace("Source.Models.Teams", function (namespace)
         }
       end,
       CreateBuildings = CreateBuildings,
-      GetTechType = GetTechType,
+      GetUnitUpgradeByResearch = GetUnitUpgradeByResearch,
+      GetUnitUpgradeBySold = GetUnitUpgradeBySold,
       __ctor__ = __ctor__,
       __metadata__ = function (out)
         return {
@@ -25639,7 +25901,8 @@ System.namespace("Source.Models.Teams", function (namespace)
             { "AddInitialSpawnTriggers", 0x101, AddInitialSpawnTriggers, out.Source.Models.UnitSpawnBuilding },
             { "AddInitialUnitUpgradesToStock", 0x101, AddInitialUnitUpgradesToStock, out.Source.Models.UnitSpawnBuilding },
             { "CreateBuildings", 0x6, CreateBuildings },
-            { "GetTechType", 0x386, GetTechType, System.Int32, System.Int32, out.Source.Models.SpawnUnitCommand, System.Int32 }
+            { "GetUnitUpgradeByResearch", 0x386, GetUnitUpgradeByResearch, System.Int32, System.Int32, out.Source.Models.UnitUpgradeByResearchCommand, System.Int32 },
+            { "GetUnitUpgradeBySold", 0x286, GetUnitUpgradeBySold, System.Int32, out.Source.Models.UnitUpgradeBySoldCommand, System.Int32 }
           },
           class = { "UndeadsTeam", 0x26 }
         }
@@ -37184,8 +37447,8 @@ local InitCSharp = function ()
       "WCSharp.Missiles.HomingMissile",
       "WCSharp.Missiles.MomentumMissile",
       "WCSharp.Missiles.OrbitalMissile",
-      "WCSharp.SaveLoad.Save_1",
       "WCSharp.SaveLoad.SaveLoadedMessage_1",
+      "WCSharp.SaveLoad.Save_1",
       "WCSharp.W3MMD.IW3MmdVar",
       "Areas",
       "Constants",
@@ -37228,7 +37491,6 @@ local InitCSharp = function ()
       "Source.Models.MercenarySpawnTrigger",
       "Source.Models.Pentagram",
       "Source.Models.SpawnAttackRoute",
-      "Source.Models.SpawnUnitCommand",
       "Source.Models.SpawnedUnit",
       "Source.Models.Teams.ElvesTeam",
       "Source.Models.Teams.HumansTeam",
@@ -37236,7 +37498,8 @@ local InitCSharp = function ()
       "Source.Models.Teams.UndeadsTeam",
       "Source.Models.UnitSpawnBuilding",
       "Source.Models.UnitSpawnTrigger",
-      "Source.Models.UpgradeUnitCommand",
+      "Source.Models.UnitUpgradeByResearchCommand",
+      "Source.Models.UnitUpgradeBySoldCommand",
       "Source.Models.UserPlayer",
       "Source.Program",
       "Source.Statics.SpecialEffects",
@@ -37379,6 +37642,7 @@ gg_rct_HeroCryptLord = nil
 gg_rct_HeroDarkRanger = nil
 gg_rct_HeroFirelord = nil
 gg_rct_HeroKeeperOfTheGrove = nil
+gg_rct_HeroLich = nil
 gg_rct_HeroMountainKing = nil
 gg_rct_HeroPitLord = nil
 gg_rct_HeroSeaWitch = nil
@@ -37823,6 +38087,48 @@ gg_unit_nCOP_0328 = nil
 gg_unit_nCOP_0329 = nil
 gg_unit_nCOP_0330 = nil
 gg_unit_nvlw_0354 = nil
+gg_unit_e001_0008 = nil
+gg_unit_e002_0010 = nil
+gg_unit_e003_0029 = nil
+gg_unit_h00P_0051 = nil
+gg_unit_h00Q_0136 = nil
+gg_unit_h00R_0193 = nil
+gg_unit_h02V_0194 = nil
+gg_unit_h02W_0195 = nil
+gg_unit_h02X_0199 = nil
+gg_unit_o002_0200 = nil
+gg_unit_o003_0205 = nil
+gg_unit_o004_0206 = nil
+gg_unit_u000_0207 = nil
+gg_unit_u001_0357 = nil
+gg_unit_u002_0359 = nil
+gg_unit_n00G_0385 = nil
+gg_unit_n00H_0386 = nil
+gg_unit_n00I_0387 = nil
+gg_unit_n00D_0388 = nil
+gg_unit_n00B_0389 = nil
+gg_unit_n00E_0390 = nil
+gg_unit_n018_0391 = nil
+gg_unit_n019_0392 = nil
+gg_unit_n01A_0393 = nil
+gg_unit_n00M_0394 = nil
+gg_unit_n00L_0395 = nil
+gg_unit_n00Y_0396 = nil
+gg_unit_n00O_0397 = nil
+gg_unit_n00U_0398 = nil
+gg_unit_n00W_0399 = nil
+gg_unit_n00R_0400 = nil
+gg_unit_n00S_0401 = nil
+gg_unit_n00Z_0402 = nil
+gg_unit_n010_0403 = nil
+gg_unit_n011_0404 = nil
+gg_unit_n012_0405 = nil
+gg_unit_n016_0406 = nil
+gg_unit_n017_0407 = nil
+gg_unit_n015_0408 = nil
+gg_unit_nCOP_0409 = nil
+gg_unit_E004_0410 = nil
+gg_unit_E004_0411 = nil
 gg_dest_HEch_0019 = nil
 gg_dest_HEch_0017 = nil
 gg_dest_HEch_0016 = nil
@@ -67369,16 +67675,30 @@ function CreateNeutralPassiveBuildings()
     gg_unit_n02E_0303 = CreateUnit(p, 1848652357, 4704.0, -4640.0, 270.000)
     gg_unit_n02E_0304 = CreateUnit(p, 1848652357, 3808.0, -4960.0, 270.000)
     gg_unit_n02E_0305 = CreateUnit(p, 1848652357, 3744.0, -4384.0, 270.000)
-    gg_unit_n02I_0353 = CreateUnit(p, 1848652361, 16320.0, 17984.0, 270.000)
+    gg_unit_n02I_0353 = CreateUnit(p, 1848652361, 16320.0, 17728.0, 270.000)
+    gg_unit_n00D_0388 = CreateUnit(p, 1848651844, 16720.1, 18111.9, 270.000)
+    SetUnitState(gg_unit_n00D_0388, UNIT_STATE_MANA, 0)
+    gg_unit_n00B_0389 = CreateUnit(p, 1848651842, 16940.5, 18102.7, 270.000)
+    SetUnitState(gg_unit_n00B_0389, UNIT_STATE_MANA, 0)
+    gg_unit_n00E_0390 = CreateUnit(p, 1848651845, 17187.9, 18098.1, 270.000)
+    SetUnitState(gg_unit_n00E_0390, UNIT_STATE_MANA, 0)
 end
 
 function CreateNeutralPassive()
     local p = Player(PLAYER_NEUTRAL_PASSIVE)
     local unitID = nil
     local t = nil
+    gg_unit_e001_0008 = CreateUnit(p, 1697656881, 14145.4, 18111.5, 270.000)
+    SetUnitState(gg_unit_e001_0008, UNIT_STATE_MANA, 0)
+    gg_unit_e002_0010 = CreateUnit(p, 1697656882, 14280.2, 18114.0, 270.000)
+    SetUnitState(gg_unit_e002_0010, UNIT_STATE_MANA, 0)
     gg_unit_h001_0016 = CreateUnit(p, 1747988529, 14141.2, 19257.5, 270.000)
     gg_unit_h00C_0019 = CreateUnit(p, 1747988547, 14266.6, 19272.0, 270.000)
     gg_unit_h00B_0020 = CreateUnit(p, 1747988546, 14396.9, 19263.5, 270.000)
+    gg_unit_e003_0029 = CreateUnit(p, 1697656883, 14415.8, 18106.7, 270.000)
+    SetUnitState(gg_unit_e003_0029, UNIT_STATE_MANA, 0)
+    gg_unit_h00P_0051 = CreateUnit(p, 1747988560, 14533.0, 18101.8, 270.000)
+    SetUnitState(gg_unit_h00P_0051, UNIT_STATE_MANA, 0)
     gg_unit_h002_0058 = CreateUnit(p, 1747988530, 14532.2, 19269.6, 270.000)
     gg_unit_h00F_0059 = CreateUnit(p, 1747988550, 14658.8, 19267.2, 270.000)
     gg_unit_h00G_0060 = CreateUnit(p, 1747988551, 14783.0, 19263.5, 270.000)
@@ -67436,16 +67756,34 @@ function CreateNeutralPassive()
     gg_unit_h02B_0120 = CreateUnit(p, 1747989058, 15051.8, 18751.7, 270.000)
     gg_unit_H02P_0121 = CreateUnit(p, 1211118160, 16060.4, 18751.7, 270.000)
     gg_unit_H02Q_0122 = CreateUnit(p, 1211118161, 16058.8, 18500.4, 270.000)
-    gg_unit_N006_0123 = CreateUnit(p, 1311780918, 16059.5, 17987.9, 270.000)
+    gg_unit_N006_0123 = CreateUnit(p, 1311780918, 16059.5, 17731.9, 270.000)
     gg_unit_n01O_0126 = CreateUnit(p, 1848652111, 17222.7, 19253.2, 270.000)
     gg_unit_n014_0128 = CreateUnit(p, 1848652084, 17227.1, 19142.6, 270.000)
-    gg_unit_n00T_0132 = CreateUnit(p, 1848651860, 15802.6, 17980.8, 270.000)
-    gg_unit_n00J_0133 = CreateUnit(p, 1848651850, 15292.0, 17986.3, 270.000)
-    gg_unit_n00C_0137 = CreateUnit(p, 1848651843, 15172.4, 17983.6, 270.000)
-    gg_unit_n00N_0191 = CreateUnit(p, 1848651854, 15545.3, 17974.9, 270.000)
-    gg_unit_n00F_0192 = CreateUnit(p, 1848651846, 15421.9, 17980.8, 270.000)
+    gg_unit_n00T_0132 = CreateUnit(p, 1848651860, 15802.6, 17724.8, 270.000)
+    gg_unit_n00J_0133 = CreateUnit(p, 1848651850, 15292.0, 17730.3, 270.000)
+    gg_unit_h00Q_0136 = CreateUnit(p, 1747988561, 14665.7, 18111.5, 270.000)
+    SetUnitState(gg_unit_h00Q_0136, UNIT_STATE_MANA, 0)
+    gg_unit_n00C_0137 = CreateUnit(p, 1848651843, 15172.4, 17727.6, 270.000)
+    gg_unit_n00N_0191 = CreateUnit(p, 1848651854, 15545.3, 17718.9, 270.000)
+    gg_unit_n00F_0192 = CreateUnit(p, 1848651846, 15421.9, 17724.8, 270.000)
+    gg_unit_h00R_0193 = CreateUnit(p, 1747988562, 14788.8, 18114.0, 270.000)
+    SetUnitState(gg_unit_h00R_0193, UNIT_STATE_MANA, 0)
+    gg_unit_h02V_0194 = CreateUnit(p, 1747989078, 14919.7, 18106.7, 270.000)
+    SetUnitState(gg_unit_h02V_0194, UNIT_STATE_MANA, 0)
+    gg_unit_h02W_0195 = CreateUnit(p, 1747989079, 15044.5, 18104.2, 270.000)
+    SetUnitState(gg_unit_h02W_0195, UNIT_STATE_MANA, 0)
     gg_unit_E000_0197 = CreateUnit(p, 1160785968, -2111.0, 18750.9, 270.000)
-    gg_unit_n00Q_0211 = CreateUnit(p, 1848651857, 15672.7, 17979.3, 270.000)
+    gg_unit_h02X_0199 = CreateUnit(p, 1747989080, 15159.2, 18099.4, 270.000)
+    SetUnitState(gg_unit_h02X_0199, UNIT_STATE_MANA, 0)
+    gg_unit_o002_0200 = CreateUnit(p, 1865429042, 15294.7, 18101.8, 270.000)
+    SetUnitState(gg_unit_o002_0200, UNIT_STATE_MANA, 0)
+    gg_unit_o003_0205 = CreateUnit(p, 1865429043, 15436.0, 18118.8, 270.000)
+    SetUnitState(gg_unit_o003_0205, UNIT_STATE_MANA, 0)
+    gg_unit_o004_0206 = CreateUnit(p, 1865429044, 15558.5, 18104.2, 270.000)
+    SetUnitState(gg_unit_o004_0206, UNIT_STATE_MANA, 0)
+    gg_unit_u000_0207 = CreateUnit(p, 1966092336, 15685.0, 18099.4, 270.000)
+    SetUnitState(gg_unit_u000_0207, UNIT_STATE_MANA, 0)
+    gg_unit_n00Q_0211 = CreateUnit(p, 1848651857, 15672.7, 17723.3, 270.000)
     gg_unit_n01D_0212 = CreateUnit(p, 1848652100, 17471.1, 19138.2, 270.000)
     gg_unit_n01F_0213 = CreateUnit(p, 1848652102, 17475.6, 19004.4, 270.000)
     gg_unit_n01L_0214 = CreateUnit(p, 1848652108, 17478.6, 18882.2, 270.000)
@@ -67458,9 +67796,9 @@ function CreateNeutralPassive()
     gg_unit_n01K_0222 = CreateUnit(p, 1848652107, 17346.3, 18874.1, 270.000)
     gg_unit_n013_0225 = CreateUnit(p, 1848652083, 17343.2, 19261.9, 270.000)
     gg_unit_N02K_0226 = CreateUnit(p, 1311781451, -4417.2, 17088.2, 180.000)
-    gg_unit_H00O_0227 = CreateUnit(p, 1211117647, 15683.3, 17332.0, 270.000)
-    gg_unit_H00N_0230 = CreateUnit(p, 1211117646, 14913.8, 17322.6, 270.000)
-    gg_unit_O000_0234 = CreateUnit(p, 1328558128, 15190.2, 17471.4, 270.000)
+    gg_unit_H00O_0227 = CreateUnit(p, 1211117647, 15303.3, 16934.0, 270.000)
+    gg_unit_H00N_0230 = CreateUnit(p, 1211117646, 14533.9, 16924.5, 270.000)
+    gg_unit_O000_0234 = CreateUnit(p, 1328558128, 14810.3, 17073.3, 270.000)
     gg_unit_n00X_0235 = CreateUnit(p, 1848651864, 17468.2, 19263.4, 270.000)
     gg_unit_n01Z_0236 = CreateUnit(p, 1848652122, 17207.8, 18998.6, 270.000)
     gg_unit_n01C_0237 = CreateUnit(p, 1848652099, 17347.7, 18754.2, 270.000)
@@ -67496,14 +67834,14 @@ function CreateNeutralPassive()
     gg_unit_n027_0316 = CreateUnit(p, 1848652343, 17077.7, 18754.6, 270.000)
     gg_unit_n02C_0317 = CreateUnit(p, 1848652355, 17088.5, 18481.8, 270.000)
     gg_unit_n028_0318 = CreateUnit(p, 1848652344, 17081.3, 18617.3, 270.000)
-    gg_unit_O001_0320 = CreateUnit(p, 1328558129, 15826.1, 17334.4, 270.000)
-    gg_unit_N002_0321 = CreateUnit(p, 1311780914, 15664.4, 17453.0, 270.000)
-    gg_unit_N007_0322 = CreateUnit(p, 1311780919, 15175.4, 17346.2, 270.000)
-    gg_unit_N008_0323 = CreateUnit(p, 1311780920, 15049.8, 17346.2, 270.000)
-    gg_unit_N009_0324 = CreateUnit(p, 1311780921, 15541.3, 17461.6, 270.000)
-    gg_unit_N004_0325 = CreateUnit(p, 1311780916, 15800.0, 17482.6, 270.000)
-    gg_unit_N00A_0326 = CreateUnit(p, 1311780929, 14913.4, 17464.1, 270.000)
-    gg_unit_N001_0327 = CreateUnit(p, 1311780913, 15052.1, 17462.8, 270.000)
+    gg_unit_O001_0320 = CreateUnit(p, 1328558129, 15446.1, 16936.3, 270.000)
+    gg_unit_N002_0321 = CreateUnit(p, 1311780914, 15284.4, 17054.9, 270.000)
+    gg_unit_N007_0322 = CreateUnit(p, 1311780919, 14795.5, 16948.2, 270.000)
+    gg_unit_N008_0323 = CreateUnit(p, 1311780920, 14669.8, 16948.2, 270.000)
+    gg_unit_N009_0324 = CreateUnit(p, 1311780921, 15553.0, 16957.3, 270.000)
+    gg_unit_N004_0325 = CreateUnit(p, 1311780916, 15420.1, 17084.5, 270.000)
+    gg_unit_N00A_0326 = CreateUnit(p, 1311780929, 14533.4, 17066.0, 270.000)
+    gg_unit_N001_0327 = CreateUnit(p, 1311780913, 14672.1, 17064.7, 270.000)
     gg_unit_nCOP_0328 = CreateUnit(p, 1849904976, -1920.0, 17088.0, 270.000)
     gg_unit_nCOP_0329 = CreateUnit(p, 1849904976, -4608.0, 17472.0, 270.000)
     gg_unit_nCOP_0330 = CreateUnit(p, 1849904976, -4608.0, 17856.0, 270.000)
@@ -67531,9 +67869,13 @@ function CreateNeutralPassive()
     gg_unit_n02B_0352 = CreateUnit(p, 1848652354, -3584.0, -4800.0, 270.000)
     gg_unit_nCOP_0355 = CreateUnit(p, 1849904976, -2880.0, 18560.0, 270.000)
     gg_unit_nCOP_0356 = CreateUnit(p, 1849904976, -4800.0, 18560.0, 270.000)
-    gg_unit_N02H_0366 = CreateUnit(p, 1311781448, 15559.0, 17322.6, 270.000)
+    gg_unit_u001_0357 = CreateUnit(p, 1966092337, 15812.5, 18109.6, 270.000)
+    SetUnitState(gg_unit_u001_0357, UNIT_STATE_MANA, 0)
+    gg_unit_u002_0359 = CreateUnit(p, 1966092338, 15943.9, 18095.7, 270.000)
+    SetUnitState(gg_unit_u002_0359, UNIT_STATE_MANA, 0)
+    gg_unit_N02H_0366 = CreateUnit(p, 1311781448, 15179.0, 16924.5, 270.000)
     SetUnitState(gg_unit_N02H_0366, UNIT_STATE_MANA, 220)
-    gg_unit_E000_0367 = CreateUnit(p, 1160785968, 15935.9, 17470.3, 270.000)
+    gg_unit_E000_0367 = CreateUnit(p, 1160785968, 15556.0, 17072.2, 270.000)
     gg_unit_H00O_0368 = CreateUnit(p, 1211117647, -1725.2, 18748.4, 270.000)
     gg_unit_N004_0369 = CreateUnit(p, 1311780916, -2501.7, 18753.8, 270.000)
     gg_unit_N002_0370 = CreateUnit(p, 1311780914, -2116.3, 17086.2, 0.000)
@@ -67549,9 +67891,51 @@ function CreateNeutralPassive()
     gg_unit_H00N_0379 = CreateUnit(p, 1211117646, -4414.9, 18744.9, 270.000)
     gg_unit_N02J_0380 = CreateUnit(p, 1311781450, -3781.6, 17852.4, 0.000)
     gg_unit_nCOP_0381 = CreateUnit(p, 1849904976, -3584.0, 17856.0, 270.000)
-    gg_unit_N02J_0382 = CreateUnit(p, 1311781450, 14784.7, 17477.6, 270.000)
+    gg_unit_N02J_0382 = CreateUnit(p, 1311781450, 14404.7, 17079.6, 270.000)
     gg_unit_nCOP_0383 = CreateUnit(p, 1849904976, -4608.0, 17088.0, 270.000)
-    gg_unit_N02K_0384 = CreateUnit(p, 1311781451, 14776.8, 17340.1, 270.000)
+    gg_unit_N02K_0384 = CreateUnit(p, 1311781451, 14396.8, 16942.1, 270.000)
+    gg_unit_n00G_0385 = CreateUnit(p, 1848651847, 16706.1, 17902.2, 270.000)
+    gg_unit_n00H_0386 = CreateUnit(p, 1848651848, 16945.5, 17919.4, 270.000)
+    gg_unit_n00I_0387 = CreateUnit(p, 1848651849, 17213.1, 17919.4, 270.000)
+    gg_unit_n018_0391 = CreateUnit(p, 1848652088, 14153.4, 17980.6, 270.000)
+    SetUnitState(gg_unit_n018_0391, UNIT_STATE_MANA, 0)
+    gg_unit_n019_0392 = CreateUnit(p, 1848652089, 14275.0, 17956.4, 270.000)
+    SetUnitState(gg_unit_n019_0392, UNIT_STATE_MANA, 0)
+    gg_unit_n01A_0393 = CreateUnit(p, 1848652097, 14406.9, 17960.7, 270.000)
+    SetUnitState(gg_unit_n01A_0393, UNIT_STATE_MANA, 0)
+    gg_unit_n00M_0394 = CreateUnit(p, 1848651853, 14544.2, 17952.0, 270.000)
+    SetUnitState(gg_unit_n00M_0394, UNIT_STATE_MANA, 0)
+    gg_unit_n00L_0395 = CreateUnit(p, 1848651852, 14923.7, 17969.5, 270.000)
+    SetUnitState(gg_unit_n00L_0395, UNIT_STATE_MANA, 0)
+    gg_unit_n00Y_0396 = CreateUnit(p, 1848651865, 15308.1, 17976.1, 270.000)
+    SetUnitState(gg_unit_n00Y_0396, UNIT_STATE_MANA, 0)
+    gg_unit_n00O_0397 = CreateUnit(p, 1848651855, 14674.4, 17980.6, 270.000)
+    SetUnitState(gg_unit_n00O_0397, UNIT_STATE_MANA, 0)
+    gg_unit_n00U_0398 = CreateUnit(p, 1848651861, 15047.0, 17976.1, 270.000)
+    SetUnitState(gg_unit_n00U_0398, UNIT_STATE_MANA, 0)
+    gg_unit_n00W_0399 = CreateUnit(p, 1848651863, 15427.2, 17976.1, 270.000)
+    SetUnitState(gg_unit_n00W_0399, UNIT_STATE_MANA, 0)
+    gg_unit_n00R_0400 = CreateUnit(p, 1848651858, 14795.5, 17978.3, 270.000)
+    SetUnitState(gg_unit_n00R_0400, UNIT_STATE_MANA, 0)
+    gg_unit_n00S_0401 = CreateUnit(p, 1848651859, 15172.8, 17967.3, 270.000)
+    SetUnitState(gg_unit_n00S_0401, UNIT_STATE_MANA, 0)
+    gg_unit_n00Z_0402 = CreateUnit(p, 1848651866, 15530.1, 17969.5, 270.000)
+    SetUnitState(gg_unit_n00Z_0402, UNIT_STATE_MANA, 0)
+    gg_unit_n010_0403 = CreateUnit(p, 1848652080, 15674.8, 17987.2, 270.000)
+    SetUnitState(gg_unit_n010_0403, UNIT_STATE_MANA, 0)
+    gg_unit_n011_0404 = CreateUnit(p, 1848652081, 15809.4, 17969.5, 270.000)
+    SetUnitState(gg_unit_n011_0404, UNIT_STATE_MANA, 0)
+    gg_unit_n012_0405 = CreateUnit(p, 1848652082, 15934.5, 17987.2, 270.000)
+    SetUnitState(gg_unit_n012_0405, UNIT_STATE_MANA, 0)
+    gg_unit_n016_0406 = CreateUnit(p, 1848652086, 16192.3, 18056.8, 270.000)
+    SetUnitState(gg_unit_n016_0406, UNIT_STATE_MANA, 0)
+    gg_unit_n017_0407 = CreateUnit(p, 1848652087, 16330.7, 18061.4, 270.000)
+    SetUnitState(gg_unit_n017_0407, UNIT_STATE_MANA, 0)
+    gg_unit_n015_0408 = CreateUnit(p, 1848652085, 16458.2, 18038.7, 270.000)
+    SetUnitState(gg_unit_n015_0408, UNIT_STATE_MANA, 0)
+    gg_unit_nCOP_0409 = CreateUnit(p, 1849904976, -2944.0, 17856.0, 270.000)
+    gg_unit_E004_0410 = CreateUnit(p, 1160785972, -2752.2, 17850.3, 180.000)
+    gg_unit_E004_0411 = CreateUnit(p, 1160785972, 15166.4, 17063.0, 270.000)
 end
 
 function CreatePlayerBuildings()
@@ -67630,6 +68014,7 @@ function CreateRegions()
     gg_rct_HeroDarkRanger = Rect(-1984.0, 17408.0, -1856.0, 17536.0)
     gg_rct_HeroFirelord = Rect(-2560.0, 18496.0, -2432.0, 18624.0)
     gg_rct_HeroKeeperOfTheGrove = Rect(-2176.0, 18496.0, -2048.0, 18624.0)
+    gg_rct_HeroLich = Rect(-3008.0, 17792.0, -2880.0, 17920.0)
     gg_rct_HeroMountainKing = Rect(-4480.0, 18496.0, -4352.0, 18624.0)
     gg_rct_HeroPitLord = Rect(-4672.0, 17792.0, -4544.0, 17920.0)
     gg_rct_HeroSeaWitch = Rect(-1984.0, 17024.0, -1856.0, 17152.0)

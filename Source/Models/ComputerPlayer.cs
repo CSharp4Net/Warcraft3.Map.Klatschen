@@ -1,4 +1,5 @@
 ﻿using Source.Abstracts;
+using System;
 using System.Collections.Generic;
 using WCSharp.Api;
 
@@ -69,7 +70,7 @@ namespace Source.Models
       base.Defeat();
     }
 
-    public void AddSpawnUnit(SpawnUnitCommand spawnCommand)
+    public void AddSpawnUnit(UnitUpgradeByResearchCommand spawnCommand)
     {
       foreach (UnitSpawnBuilding building in BarrackBuildings)
       {
@@ -78,7 +79,7 @@ namespace Source.Models
       }
     }
 
-    public void UpgradeSpawnUnit(SpawnUnitCommand spawnCommand)
+    public void UpgradeSpawnUnit(UnitUpgradeByResearchCommand spawnCommand)
     {
       foreach (UnitSpawnBuilding building in BarrackBuildings)
       {

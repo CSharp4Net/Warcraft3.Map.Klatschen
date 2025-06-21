@@ -105,6 +105,7 @@ namespace Source
         Areas.HeroDarkRanger.RegisterOnEnter(HeroSelection.OnDarkRanger);
         Areas.HeroFirelord.RegisterOnEnter(HeroSelection.OnFirelord);
         Areas.HeroKeeperOfTheGrove.RegisterOnEnter(HeroSelection.OnKeeperOfTheGrove);
+        Areas.HeroLich.RegisterOnEnter(HeroSelection.OnLich);
         Areas.HeroMountainKing.RegisterOnEnter(HeroSelection.OnMountainKing);
         Areas.HeroPitLord.RegisterOnEnter(HeroSelection.OnPitLord);
         Areas.HeroSeaWitch.RegisterOnEnter(HeroSelection.OnSeaWitch);
@@ -201,6 +202,21 @@ namespace Source
     }
 
     public static bool TryGetCreepCampByBuilding(unit buildingUnit, out MercenaryForce creepCamp)
+    {
+      for (int i = Mercenaries.Count - 1; i >= 0; i--)
+      {
+        if (Mercenaries[i].Building.Wc3Unit == buildingUnit)
+        {
+          creepCamp = Mercenaries[i];
+          return true;
+        }
+      }
+
+      creepCamp = null;
+      return false;
+    }
+
+    public static bool TryGetCreepCampByUnit(unit buildingUnit, out MercenaryForce creepCamp)
     {
       for (int i = Mercenaries.Count - 1; i >= 0; i--)
       {

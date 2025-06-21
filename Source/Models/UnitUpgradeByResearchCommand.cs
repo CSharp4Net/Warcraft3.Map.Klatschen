@@ -1,6 +1,11 @@
 ﻿namespace Source.Models
 {
-  public sealed class SpawnUnitCommand
+  /// <summary>
+  /// Model für den Upgrade-Befehl eines Unit-Spawns.
+  /// Achtung: Dieser Befehl wird nur durch Forschung vom Computer-Spieler ausgelöst! 
+  /// Er ist als Ersatz für fehlende menschliche Spieler im Team gedacht, um die Unit-Spawns dennoch zu verbessern.
+  /// </summary>
+  public sealed class UnitUpgradeByResearchCommand
   {
     /// <summary>
     /// Typ der zu spawnenden Einheit

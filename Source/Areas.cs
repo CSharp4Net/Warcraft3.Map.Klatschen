@@ -46,6 +46,7 @@ internal static class Areas
   public static Area HeroDarkRanger { get; set; } = new Area(Regions.HeroDarkRanger);
   public static Area HeroFirelord { get; set; } = new Area(Regions.HeroFirelord);
   public static Area HeroKeeperOfTheGrove { get; set; } = new Area(Regions.HeroKeeperOfTheGrove);
+  public static Area HeroLich { get; set; } = new Area(Regions.HeroLich);
   public static Area HeroMountainKing { get; set; } = new Area(Regions.HeroMountainKing);
   public static Area HeroPitLord { get; set; } = new Area(Regions.HeroPitLord);
   public static Area HeroSeaWitch { get; set; } = new Area(Regions.HeroSeaWitch);

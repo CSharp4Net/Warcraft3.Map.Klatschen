@@ -48,7 +48,7 @@ namespace Source.Abstracts
     }
 
     /// <summary>
-    /// Tötet alle Einheiten des Spielers und setzt diesen auf "Besiegt"
+    /// Tötet alle Einheiten des Spielers und setzt dessen Status auf "Besiegt", damit endet für ihn das Spiel.
     /// </summary>
     public virtual void Defeat()
     {
@@ -58,11 +58,10 @@ namespace Source.Abstracts
     }
 
     /// <summary>
-    /// Setzt den Spieler auf "Gewonnen"
+    /// Setzt den Status des Spieler auf "Gewonnen", für diesen endet damit das Spiel.
     /// </summary>
     public virtual void Win()
     {
-      //Program.ShowDebugMessage("PlayerBase.Defeat", $"Win WC3 player");
       Blizzard.MeleeVictoryDialogBJ(Wc3Player, true);
     }
 
@@ -98,10 +97,19 @@ namespace Source.Abstracts
     }
 
     /// <summary>
-    /// Entfernt eine Einheit aus der Auflistung aller Einheiten.
+    /// Fügt der Auflistung erzeugter Einheiten einen Eintrag hinzu.
     /// </summary>
     /// <param name="unit"></param>
-    public void RemoveUnit(SpawnedUnit unit)
+    internal void AddUnit(SpawnedUnit unit)
+    {
+      Units.Add(unit);
+    }
+
+    /// <summary>
+    /// Entfernt eine Einheit aus der Auflistung erzeugter Einheiten.
+    /// </summary>
+    /// <param name="unit"></param>
+    internal void RemoveUnit(SpawnedUnit unit)
     {
       Units.Remove(unit);
     }

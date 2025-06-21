@@ -46,6 +46,7 @@ public static class Regions
 	public static Rectangle HeroDarkRanger { get; set; } = new Rectangle(-1984f, 17408f, -1856f, 17536f);
 	public static Rectangle HeroFirelord { get; set; } = new Rectangle(-2560f, 18496f, -2432f, 18624f);
 	public static Rectangle HeroKeeperOfTheGrove { get; set; } = new Rectangle(-2176f, 18496f, -2048f, 18624f);
+	public static Rectangle HeroLich { get; set; } = new Rectangle(-3008f, 17792f, -2880f, 17920f);
 	public static Rectangle HeroMountainKing { get; set; } = new Rectangle(-4480f, 18496f, -4352f, 18624f);
 	public static Rectangle HeroPitLord { get; set; } = new Rectangle(-4672f, 17792f, -4544f, 17920f);
 	public static Rectangle HeroSeaWitch { get; set; } = new Rectangle(-1984f, 17024f, -1856f, 17152f);

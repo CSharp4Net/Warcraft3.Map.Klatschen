@@ -8,12 +8,14 @@ namespace Source.Events.Periodic
 {
   public static class ResearchCheck
   {
-    // Computer-Spielen zahlen 2,5fachen Preis für Forschungen, sonst bietet sich für echte Spieler wenig Anreiz
-    private const int BaseGoldPriceUnitResearch = 250; // 100
-    private const int BaseGoldPriceUnitResearchBuilding = 500; // 200
-    private const int BaseGoldPriceUnitResearchArtillery = 625; // 250
-    private const int BaseGoldPriceUnitUpgrade = 500; // 200
-    private const int BaseGoldPriceUnitUpgradeArtillery = 1250; // 500
+    // Computer-Spielen zahlen 2 fachen Preis für Forschungen, sind also langsamer beim Forschen.
+    // Grund: Für menschlicher Spieler lohnt es sich sonst nicht zu forschen, da der Computer dies
+    // sowieso macht.
+    private const int BaseGoldPriceUnitResearch = 200; // 100
+    private const int BaseGoldPriceUnitResearchBuilding = 400; // 200
+    private const int BaseGoldPriceUnitResearchArtillery = 500; // 250
+    private const int BaseGoldPriceUnitUpgrade = 400; // 200
+    private const int BaseGoldPriceUnitUpgradeArtillery = 1000; // 500
 
     public static bool OnElapsed()
     {
@@ -50,6 +52,7 @@ namespace Source.Events.Periodic
 
         if (team.Users.Count == 0)
         {
+          // Teams ohne menschlichen Mitspieler upgrade ihre Unit-Spawn
           IncreaseTechIfAffordable(team, player, Constants.UPGRADE_MELEE_UNIT_TEAM, BaseGoldPriceUnitUpgrade);
           IncreaseTechIfAffordable(team, player, Constants.UPGRADE_DISTANCE_UNIT_TEAM, BaseGoldPriceUnitUpgrade);
           IncreaseTechIfAffordable(team, player, Constants.UPGRADE_FLIGHT_UNIT_TEAM, BaseGoldPriceUnitUpgrade);
@@ -91,24 +94,29 @@ namespace Source.Events.Periodic
       team.IncreaseTechForAllPlayers(techId, nextTechLevel);
       computerPlayer.Gold -= (goldPriceBase * nextTechLevel);
 
-      ResearchType researchType = team.GetTechType(techId, nextTechLevel, out UpgradeUnitCommand spawnCommand);
+      ResearchType researchType = team.GetUnitUpgradeByResearch(techId, nextTechLevel, out UnitUpgradeByResearchCommand command);
 
-      if (researchType == ResearchType.Unknown)      
-        return false;      
-
-      if (researchType == ResearchType.AddUnit)
+      if (researchType == ResearchType.Unknown)
       {
-        team.Computer.AddSpawnUnit(spawnCommand);
+        return false;
+      }
+      else if (researchType == ResearchType.CommonUpgrade)
+      {
+        team.DisplayChatMessage(ConstantsEx.Message_CollectedGoldToResearchTech);
+      }
+      else if (researchType == ResearchType.AddUnit)
+      {
+        team.Computer.AddSpawnUnit(command);
         team.DisplayChatMessage(ConstantsEx.Message_CollectedGoldForMoreUnits);
       }
       else if (researchType == ResearchType.UpgradeUnit)
       {
-        team.Computer.UpgradeSpawnUnit(spawnCommand);
+        team.Computer.UpgradeSpawnUnit(command);
         team.DisplayChatMessage(ConstantsEx.Message_CollectedGoldToUpgradeUnits);
       }
       else
       {
-        team.DisplayChatMessage(ConstantsEx.Message_CollectedGoldToResearchTech);
+        Program.ShowErrorMessage("ResearchCheck.IncreaseTechIfAffordable", $"Unsopported research tyoe {researchType.ToString()}!");
       }
 
       return true;

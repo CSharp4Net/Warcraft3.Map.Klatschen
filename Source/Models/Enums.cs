@@ -17,15 +17,11 @@ namespace Source.Models
       /// <summary>
       /// Neue Einheit in Spawn-Intervalle aufnehmen
       /// </summary>
-      [Obsolete]
       AddUnit,
       /// <summary>
       /// Einheiten in Spawn-Intervallen aktualisieren
       /// </summary>
-      [Obsolete]
-      UpgradeUnit,
-
-      UnitUpgrade = 2
+      UpgradeUnit
     }
 
     public enum UnitUpgradeType

@@ -19,7 +19,7 @@ namespace Source.Logics
 
         if (Program.Humans.ContainsPlayer(playerId, out UserPlayer foundUser))
         {
-          researchType = Program.Humans.GetTechType(researchedTechId, researchedTechIdCount, out SpawnUnitCommand spawnCommand);
+          researchType = Program.Humans.GetUnitUpgradeByResearch(researchedTechId, researchedTechIdCount, out UnitUpgradeByResearchCommand spawnCommand);
 
           Program.Humans.IncreaseTechForAllPlayers(researchedTechId, researchedTechIdCount);
 
@@ -32,7 +32,7 @@ namespace Source.Logics
         }
         else if (Program.Orcs.ContainsPlayer(playerId, out foundUser))
         {
-          researchType = Program.Orcs.GetTechType(researchedTechId, researchedTechIdCount, out SpawnUnitCommand spawnCommand);
+          researchType = Program.Orcs.GetUnitUpgradeByResearch(researchedTechId, researchedTechIdCount, out UnitUpgradeByResearchCommand spawnCommand);
 
           Program.Orcs.IncreaseTechForAllPlayers(researchedTechId, researchedTechIdCount);
 
@@ -45,7 +45,7 @@ namespace Source.Logics
         }
         else if (Program.Elves.ContainsPlayer(playerId, out foundUser))
         {
-          researchType = Program.Elves.GetTechType(researchedTechId, researchedTechIdCount, out SpawnUnitCommand spawnCommand);
+          researchType = Program.Elves.GetUnitUpgradeByResearch(researchedTechId, researchedTechIdCount, out UnitUpgradeByResearchCommand spawnCommand);
 
           Program.Elves.IncreaseTechForAllPlayers(researchedTechId, researchedTechIdCount);
 
@@ -58,7 +58,7 @@ namespace Source.Logics
         }
         else if (Program.Undeads.ContainsPlayer(playerId, out foundUser))
         {
-          researchType = Program.Undeads.GetTechType(researchedTechId, researchedTechIdCount, out SpawnUnitCommand spawnCommand);
+          researchType = Program.Undeads.GetUnitUpgradeByResearch(researchedTechId, researchedTechIdCount, out UnitUpgradeByResearchCommand spawnCommand);
 
           Program.Undeads.IncreaseTechForAllPlayers(researchedTechId, researchedTechIdCount);
 
@@ -88,7 +88,7 @@ namespace Source.Logics
       sellingUnit.RemoveUnitFromStock(unitTypeId);
 
       Program.ShowDebugMessage($"Determince upgrade unit command");
-      Enums.UnitUpgradeType upgradeType = team.DetermineTypeOfUnitUpgrade(unitTypeId, out UpgradeUnitCommand command);
+      Enums.UnitUpgradeType upgradeType = team.GetUnitUpgradeBySold(unitTypeId, out UnitUpgradeBySoldCommand command);
 
       if (upgradeType == Enums.UnitUpgradeType.Unknown)
       {

@@ -50,6 +50,11 @@ namespace Source.Events.Regions
       HandleHeroSelection(Constants.UNIT_KEEPER_OF_THE_GROVE_HERO);
     }
 
+    internal static void OnLich()
+    {
+      HandleHeroSelection(Constants.UNIT_LICH_HERO);
+    }
+
     internal static void OnMountainKing()
     {
       HandleHeroSelection(Constants.UNIT_MOUNTAIN_KING_HERO);

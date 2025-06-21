@@ -94,7 +94,7 @@ namespace Source.Models
       Building = new MercenarySpawnBuilding(this, BuildingUnitTypeId, BuildingArea, 0f);
       Building.RegisterOnDies(MercenaryBuilding.OnDies);
 
-      CreateDefendingUnits(false);
+      SpawnDefendingUnits(false);
 
       return Building;
     }
@@ -115,20 +115,28 @@ namespace Source.Models
       Building = new MercenarySpawnBuilding(this, BuildingUnitTypeId, BuildingArea, 0f);
       Building.RegisterOnDies(MercenaryBuilding.OnDies);
 
-      CreateDefendingUnits(true);
+      SpawnDefendingUnits(true);
 
       // Füge direkt SpawnTrigger hinzu, welche später durch kaufen von Söldnern um Einheiten erweitert werden
       Building.AddSpawnTrigger(Enums.SpawnInterval.Middle, SpawnArea, AttackTargetArea).Run();
     }
 
-    private void CreateDefendingUnits(bool withSpecialEffect)
+    /// <summary>
+    /// Erzeugt im Spawn-Bereich eine Einheit, welche das Lager verteidigt.
+    /// </summary>
+    /// <param name="withSpecialEffect"></param>
+    private void SpawnDefendingUnits(bool withSpecialEffect)
     {
       Rectangle rectangle = SpawnArea.Wc3Rectangle;
 
       foreach (int unitTypeId in DefenderUnitTypeIds)
       {
         Point point = rectangle.GetRandomPoint();
-        DefendingUnits.Add(SpawnUnitAtPoint(point, unitTypeId));
+        SpawnedUnit unit = new SpawnedUnit(Wc3Player, unitTypeId, point);
+        DefendingUnits.Add(unit);
+
+        if (OwnerTeam != null)
+          OwnerTeam.Computer.AddUnit(unit);
 
         if (withSpecialEffect)
           SpecialEffects.CreateSpecialEffect("UI\\Feedback\\GoldCredit\\GoldCredit.mdl", point, 1f, 1f);
@@ -136,14 +144,17 @@ namespace Source.Models
     }
 
     /// <summary>
-    /// Erzeugt im Spawn-Bereich eine Einheit an einem definierten Punkt.
+    /// Erzeugt im Spawn-Bereich eine Einheit, welche das Zielgebiet angreift.
     /// </summary>
     /// <param name="point">Punkt</param>
     /// <param name="unitTypeId">Einheit-Typ</param>
     /// <returns></returns>
-    public SpawnedUnit SpawnUnitAtPoint(Point point, int unitTypeId, float face = 0f)
+    public SpawnedUnit SpawnAttackingUnit(Point point, int unitTypeId)
     {
-      return new SpawnedUnit(Wc3Player, unitTypeId, point, face);
+      SpawnedUnit result = new SpawnedUnit(Wc3Player, unitTypeId, point, 0f);
+      result.AttackMoveTimed(AttackTargetArea, 1f);
+      OwnerTeam.Computer.AddUnit(result);
+      return result;
     }
   }
 }

@@ -23,7 +23,7 @@ namespace Source.Models
       return trigger;
     }
 
-    public void AddUnitSpawn(SpawnUnitCommand spawnCommand)
+    public void AddUnitSpawn(UnitUpgradeByResearchCommand spawnCommand)
     {
       foreach (UnitSpawnTrigger trigger in SpawnTriggers)
       {
@@ -32,7 +32,7 @@ namespace Source.Models
       }
     }
 
-    public void UpgradeUnitSpawn(SpawnUnitCommand spawnCommand)
+    public void UpgradeUnitSpawn(UnitUpgradeByResearchCommand spawnCommand)
     {
       foreach (UnitSpawnTrigger trigger in SpawnTriggers)
       {
@@ -41,7 +41,7 @@ namespace Source.Models
       }
     }
 
-    public void UpgradeSpawningUnits(UpgradeUnitCommand command)
+    public void UpgradeSpawningUnits(UnitUpgradeBySoldCommand command)
     {
       foreach (UnitSpawnTrigger trigger in SpawnTriggers)
       {

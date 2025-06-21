@@ -78,7 +78,7 @@ namespace Source.Models
         {
           Point randomPoint = SpawnArea.Wc3Rectangle.GetRandomPoint();
           SpecialEffects.CreateSpecialEffect("UI\\Feedback\\GoldCredit\\GoldCredit.mdl", randomPoint, 1f, 1f);
-          Owner.SpawnUnitAtPoint(randomPoint, unitId)
+          Owner.SpawnAttackingUnit(randomPoint, unitId)
             .AttackMoveTimed(TargetArea, 1f);
         }
       }

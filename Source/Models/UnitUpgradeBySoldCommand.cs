@@ -1,6 +1,10 @@
 ﻿namespace Source.Models
 {
-  public sealed class UpgradeUnitCommand
+  /// <summary>
+  /// Model für den Upgrade-Befehl eines Unit-Spawns.
+  /// Achtung: Dieser Befehl wird nur durch Kauf von Einheinte durch menschliche Spieler ausgelöst!
+  /// </summary>
+  public sealed class UnitUpgradeBySoldCommand
   {
     /// <summary>
     /// Instanziiert einen Hinzufügen-Befehl, welcher die Spawn-Liste eines Triggers um eine Einheit ergänzt.
@@ -8,7 +12,7 @@
     /// <param name="spawnInterval"></param>
     /// <param name="newUnitTypeIdToAdd"></param>
     /// <param name="nextUnitTypeIdForShop"></param>
-    public UpgradeUnitCommand(Enums.SpawnInterval spawnInterval, int newUnitTypeIdToAdd, int nextUnitTypeIdForShop)
+    public UnitUpgradeBySoldCommand(Enums.SpawnInterval spawnInterval, int newUnitTypeIdToAdd, int nextUnitTypeIdForShop)
     {
       IsAddCommand = true;
       SpawnInterval = spawnInterval;
@@ -22,7 +26,7 @@
     /// <param name="oldUnitTypeIdToReplace"></param>
     /// <param name="newUnitTypeIdToAdd"></param>
     /// <param name="nextUnitTypeIdForShop"></param>
-    public UpgradeUnitCommand(Enums.SpawnInterval spawnInterval, int oldUnitTypeIdToReplace, int newUnitTypeIdToAdd, int nextUnitTypeIdForShop)
+    public UnitUpgradeBySoldCommand(Enums.SpawnInterval spawnInterval, int oldUnitTypeIdToReplace, int newUnitTypeIdToAdd, int nextUnitTypeIdForShop)
     {
       IsAddCommand = false;
       SpawnInterval = spawnInterval;

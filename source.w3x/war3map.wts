@@ -10,7 +10,7 @@ All you can eat
 
 STRING 3
 {
-Choose one of 12 heroes and fight for your team. Invest your gold wisely in items, research, upgrades or mercenaries - many paths lead to victory or defeat.
+Choose your hero and fight for your team. Invest your gold wisely in items, research, upgrades or mercenaries - many paths lead to victory or defeat.
 
 Version 1.5.0
 }
@@ -14824,7 +14824,7 @@ Thebis-Ra,Typhis-Ahn,Anubiros,Memphis-Ahn,Horus'aman,Nephri'thos,Arak-arahm,Tute
 }
 
 STRING 5924
-// Abilities: A00M (Townportal), EditorSuffix (Editor Suffix)
+// Units: E004 (Lich), EditorSuffix (Name - Editor Suffix)
 {
 (Hero)
 }
@@ -15361,5 +15361,509 @@ STRING 6031
 // Abilities: ASSW (Smash Wave), Researchhotkey (Hotkey - Learn)
 {
 C
+}
+
+STRING 6032
+// Abilities: A00M (Townportal), EditorSuffix (Editor Suffix)
+{
+(Hero)
+}
+
+STRING 6033
+// Units: E004 (Lich), Name (Name)
+{
+Lich
+}
+
+STRING 6034
+// Abilities: AFNO (Frost Nova), EditorSuffix (Editor Suffix)
+{
+(Hero 10)
+}
+
+STRING 6035
+// Abilities: AFNO (Frost Nova), Researchubertip (Tooltip - Learn - Extended)
+{
+Blasts enemy units around a target enemy unit with a wave of damaging frost that slows movement and attack rate.
+}
+
+STRING 6036
+// Abilities: AFNO (Frost Nova), Tip (Tooltip - Normal)
+{
+Frost Nova - [|cffffcc00Level 4|r]
+}
+
+STRING 6037
+// Abilities: AFNO (Frost Nova), Tip (Tooltip - Normal)
+{
+Frost Nova - [|cffffcc00Level 5|r]
+}
+
+STRING 6038
+// Abilities: AFNO (Frost Nova), Tip (Tooltip - Normal)
+{
+Frost Nova - [|cffffcc00Level 6|r]
+}
+
+STRING 6039
+// Abilities: AFNO (Frost Nova), Tip (Tooltip - Normal)
+{
+Frost Nova - [|cffffcc00Level 7|r]
+}
+
+STRING 6040
+// Abilities: AFNO (Frost Nova), Tip (Tooltip - Normal)
+{
+Frost Nova - [|cffffcc00Level 8|r]
+}
+
+STRING 6041
+// Abilities: AFNO (Frost Nova), Tip (Tooltip - Normal)
+{
+Frost Nova - [|cffffcc00Level 9|r]
+}
+
+STRING 6042
+// Abilities: AFNO (Frost Nova), Tip (Tooltip - Normal)
+{
+Frost Nova - [|cffffcc00Level 10|r]
+}
+
+STRING 6043
+// Abilities: AFNO (Frost Nova), Ubertip (Tooltip - Normal - Extended)
+{
+Blasts enemy units with a wave of frost that deals <AFNO,DataB1> damage to the target, and <AFNO,DataA1> nova damage. Cold damage slows units' movement and attack rate for <AFNO,Dur1> seconds.
+}
+
+STRING 6044
+// Abilities: AFNO (Frost Nova), Ubertip (Tooltip - Normal - Extended)
+{
+Blasts enemy units with a wave of frost that deals <AFNO,DataB2> damage to the target, and <AFNO,DataA2> nova damage. Cold damage slows units' movement and attack rate for <AFNO,Dur2> seconds.
+}
+
+STRING 6045
+// Abilities: AFNO (Frost Nova), Ubertip (Tooltip - Normal - Extended)
+{
+Blasts enemy units with a wave of frost that deals <AFNO,DataB3> damage to the target, and <AFNO,DataA3> nova damage. Cold damage slows units' movement and attack rate for <AFNO,Dur3> seconds.
+}
+
+STRING 6046
+// Abilities: AFNO (Frost Nova), Ubertip (Tooltip - Normal - Extended)
+{
+Blasts enemy units with a wave of frost that deals <AFNO,DataB4> damage to the target, and <AFNO,DataA4> nova damage. Cold damage slows units' movement and attack rate for <AFNO,Dur4> seconds.
+}
+
+STRING 6047
+// Abilities: AFNO (Frost Nova), Ubertip (Tooltip - Normal - Extended)
+{
+Blasts enemy units with a wave of frost that deals <AFNO,DataB5> damage to the target, and <AFNO,DataA5> nova damage. Cold damage slows units' movement and attack rate for <AFNO,Dur5> seconds.
+}
+
+STRING 6048
+// Abilities: AFNO (Frost Nova), Ubertip (Tooltip - Normal - Extended)
+{
+Blasts enemy units with a wave of frost that deals <AFNO,DataB6> damage to the target, and <AFNO,DataA6> nova damage. Cold damage slows units' movement and attack rate for <AFNO,Dur6> seconds.
+}
+
+STRING 6049
+// Abilities: AFNO (Frost Nova), Ubertip (Tooltip - Normal - Extended)
+{
+Blasts enemy units with a wave of frost that deals <AFNO,DataB7> damage to the target, and <AFNO,DataA7> nova damage. Cold damage slows units' movement and attack rate for <AFNO,Dur7> seconds.
+}
+
+STRING 6050
+// Abilities: AFNO (Frost Nova), Ubertip (Tooltip - Normal - Extended)
+{
+Blasts enemy units with a wave of frost that deals <AFNO,DataB8> damage to the target, and <AFNO,DataA8> nova damage. Cold damage slows units' movement and attack rate for <AFNO,Dur8> seconds.
+}
+
+STRING 6051
+// Abilities: AFNO (Frost Nova), Ubertip (Tooltip - Normal - Extended)
+{
+Blasts enemy units with a wave of frost that deals <AFNO,DataB9> damage to the target, and <AFNO,DataA9> nova damage. Cold damage slows units' movement and attack rate for <AFNO,Dur9> seconds.
+}
+
+STRING 6052
+// Abilities: AFNO (Frost Nova), Ubertip (Tooltip - Normal - Extended)
+{
+Blasts enemy units with a wave of frost that deals <AFNO,DataB10> damage to the target, and <AFNO,DataA10> nova damage. Cold damage slows units' movement and attack rate for <AFNO,Dur10> seconds.
+}
+
+STRING 6053
+// Abilities: AFAR (Frost Armor), EditorSuffix (Editor Suffix)
+{
+(Hero 10)
+}
+
+STRING 6054
+// Abilities: AFAR (Frost Armor), Researchubertip (Tooltip - Learn - Extended)
+{
+Creates a shield of frost around a target friendly unit. The shield adds armor and slows melee units that attack it.
+}
+
+STRING 6055
+// Abilities: AFAR (Frost Armor), Tip (Tooltip - Normal)
+{
+Frost Armor - [|cffffcc00Level 4|r]
+}
+
+STRING 6056
+// Abilities: AFAR (Frost Armor), Tip (Tooltip - Normal)
+{
+Frost Armor - [|cffffcc00Level 5|r]
+}
+
+STRING 6057
+// Abilities: AFAR (Frost Armor), Tip (Tooltip - Normal)
+{
+Frost Armor - [|cffffcc00Level 6|r]
+}
+
+STRING 6058
+// Abilities: AFAR (Frost Armor), Tip (Tooltip - Normal)
+{
+Frost Armor - [|cffffcc00Level 7|r]
+}
+
+STRING 6059
+// Abilities: AFAR (Frost Armor), Tip (Tooltip - Normal)
+{
+Frost Armor - [|cffffcc00Level 8|r]
+}
+
+STRING 6060
+// Abilities: AFAR (Frost Armor), Tip (Tooltip - Normal)
+{
+Frost Armor - [|cffffcc00Level 9|r]
+}
+
+STRING 6061
+// Abilities: AFAR (Frost Armor), Tip (Tooltip - Normal)
+{
+Frost Armor - [|cffffcc00Level 10|r]
+}
+
+STRING 6062
+// Abilities: AFAR (Frost Armor), Ubertip (Tooltip - Normal - Extended)
+{
+Creates a shield of frost around a target friendly unit. The shield adds <AFAR,DataB1> armor and slows melee units that attack it for <AFAR,Dur1> seconds. |nLasts <AFAR,DataA1> seconds.
+}
+
+STRING 6063
+// Abilities: AFAR (Frost Armor), Ubertip (Tooltip - Normal - Extended)
+{
+Creates a shield of frost around a target friendly unit. The shield adds <AFAR,DataB2> armor and slows melee units that attack it for <AFAR,Dur2> seconds. |nLasts <AFAR,DataA2> seconds.
+}
+
+STRING 6064
+// Abilities: AFAR (Frost Armor), Ubertip (Tooltip - Normal - Extended)
+{
+Creates a shield of frost around a target friendly unit. The shield adds <AFAR,DataB3> armor and slows melee units that attack it for <AFAR,Dur3> seconds. |nLasts <AFAR,DataA3> seconds.
+}
+
+STRING 6065
+// Abilities: AFAR (Frost Armor), Ubertip (Tooltip - Normal - Extended)
+{
+Creates a shield of frost around a target friendly unit. The shield adds <AFAR,DataB4> armor and slows melee units that attack it for <AFAR,Dur4> seconds. |nLasts <AFAR,DataA4> seconds.
+}
+
+STRING 6066
+// Abilities: AFAR (Frost Armor), Ubertip (Tooltip - Normal - Extended)
+{
+Creates a shield of frost around a target friendly unit. The shield adds <AFAR,DataB5> armor and slows melee units that attack it for <AFAR,Dur5> seconds. |nLasts <AFAR,DataA5> seconds.
+}
+
+STRING 6067
+// Abilities: AFAR (Frost Armor), Ubertip (Tooltip - Normal - Extended)
+{
+Creates a shield of frost around a target friendly unit. The shield adds <AFAR,DataB6> armor and slows melee units that attack it for <AFAR,Dur6> seconds. |nLasts <AFAR,DataA6> seconds.
+}
+
+STRING 6068
+// Abilities: AFAR (Frost Armor), Ubertip (Tooltip - Normal - Extended)
+{
+Creates a shield of frost around a target friendly unit. The shield adds <AFAR,DataB7> armor and slows melee units that attack it for <AFAR,Dur7> seconds. |nLasts <AFAR,DataA7> seconds.
+}
+
+STRING 6069
+// Abilities: AFAR (Frost Armor), Ubertip (Tooltip - Normal - Extended)
+{
+Creates a shield of frost around a target friendly unit. The shield adds <AFAR,DataB8> armor and slows melee units that attack it for <AFAR,Dur8> seconds. |nLasts <AFAR,DataA8> seconds.
+}
+
+STRING 6070
+// Abilities: AFAR (Frost Armor), Ubertip (Tooltip - Normal - Extended)
+{
+Creates a shield of frost around a target friendly unit. The shield adds <AFAR,DataB9> armor and slows melee units that attack it for <AFAR,Dur9> seconds. |nLasts <AFAR,DataA9> seconds.
+}
+
+STRING 6071
+// Abilities: AFAR (Frost Armor), Ubertip (Tooltip - Normal - Extended)
+{
+Creates a shield of frost around a target friendly unit. The shield adds <AFAR,DataB10> armor and slows melee units that attack it for <AFAR,Dur10> seconds. |nLasts <AFAR,DataA10> seconds.
+}
+
+STRING 6072
+// Abilities: AFAR (Frost Armor), Untip (Tooltip - Turn Off)
+{
+|cffc3dbffRight-click to activate auto-casting.
+}
+
+STRING 6073
+// Abilities: AFAR (Frost Armor), Untip (Tooltip - Turn Off)
+{
+|cffc3dbffRight-click to activate auto-casting.
+}
+
+STRING 6074
+// Abilities: AFAR (Frost Armor), Untip (Tooltip - Turn Off)
+{
+|cffc3dbffRight-click to activate auto-casting.
+}
+
+STRING 6075
+// Abilities: AFAR (Frost Armor), Untip (Tooltip - Turn Off)
+{
+|cffc3dbffRight-click to activate auto-casting.
+}
+
+STRING 6076
+// Abilities: AFAR (Frost Armor), Untip (Tooltip - Turn Off)
+{
+|cffc3dbffRight-click to activate auto-casting.
+}
+
+STRING 6077
+// Abilities: AFAR (Frost Armor), Untip (Tooltip - Turn Off)
+{
+|cffc3dbffRight-click to activate auto-casting.
+}
+
+STRING 6078
+// Abilities: AFAR (Frost Armor), Untip (Tooltip - Turn Off)
+{
+|cffc3dbffRight-click to activate auto-casting.
+}
+
+STRING 6079
+// Abilities: AFAR (Frost Armor), Untip (Tooltip - Turn Off)
+{
+|cffc3dbffRight-click to activate auto-casting.
+}
+
+STRING 6080
+// Abilities: AFAR (Frost Armor), Untip (Tooltip - Turn Off)
+{
+|cffc3dbffRight-click to activate auto-casting.
+}
+
+STRING 6081
+// Abilities: AFAR (Frost Armor), Unubertip (Tooltip - Turn Off - Extended)
+{
+|cffc3dbffRight-click to deactivate auto-casting.
+}
+
+STRING 6082
+// Abilities: AFAR (Frost Armor), Unubertip (Tooltip - Turn Off - Extended)
+{
+|cffc3dbffRight-click to deactivate auto-casting.
+}
+
+STRING 6083
+// Abilities: AFAR (Frost Armor), Unubertip (Tooltip - Turn Off - Extended)
+{
+|cffc3dbffRight-click to deactivate auto-casting.
+}
+
+STRING 6084
+// Abilities: AFAR (Frost Armor), Unubertip (Tooltip - Turn Off - Extended)
+{
+|cffc3dbffRight-click to deactivate auto-casting.
+}
+
+STRING 6085
+// Abilities: AFAR (Frost Armor), Unubertip (Tooltip - Turn Off - Extended)
+{
+|cffc3dbffRight-click to deactivate auto-casting.
+}
+
+STRING 6086
+// Abilities: AFAR (Frost Armor), Unubertip (Tooltip - Turn Off - Extended)
+{
+|cffc3dbffRight-click to deactivate auto-casting.
+}
+
+STRING 6087
+// Abilities: AFAR (Frost Armor), Unubertip (Tooltip - Turn Off - Extended)
+{
+|cffc3dbffRight-click to deactivate auto-casting.
+}
+
+STRING 6088
+// Abilities: AFAR (Frost Armor), Unubertip (Tooltip - Turn Off - Extended)
+{
+|cffc3dbffRight-click to deactivate auto-casting.
+}
+
+STRING 6089
+// Abilities: AFAR (Frost Armor), Unubertip (Tooltip - Turn Off - Extended)
+{
+|cffc3dbffRight-click to deactivate auto-casting.
+}
+
+STRING 6090
+// Abilities: ADRK (Dark Ritual), EditorSuffix (Editor Suffix)
+{
+(Hero 3)
+}
+
+STRING 6091
+// Abilities: ADRK (Dark Ritual), Researchubertip (Tooltip - Learn - Extended)
+{
+|cffff0000Ultimate Ability|r|n|nSacrifices a target friendly Undead unit to convert its hit points into mana for the Lich.
+}
+
+STRING 6095
+// Abilities: ADRK (Dark Ritual), Ubertip (Tooltip - Normal - Extended)
+{
+|cffff0000Ultimate Ability|r|n|nSacrifices a target unit to convert <ADRK,DataA1,%>% of its hit points into mana for the Lich.
+}
+
+STRING 6096
+// Abilities: ADRK (Dark Ritual), Ubertip (Tooltip - Normal - Extended)
+{
+|cffff0000Ultimate Ability|r|n|nSacrifices a target unit to convert <ADRK,DataA2,%>% of its hit points into mana for the Lich.
+}
+
+STRING 6097
+// Abilities: ADRK (Dark Ritual), Ubertip (Tooltip - Normal - Extended)
+{
+|cffff0000Ultimate Ability|r|n|nSacrifices a target unit to convert <ADRK,DataA3,%>% of its hit points into mana for the Lich.
+}
+
+STRING 6098
+// Abilities: ADAD (Death And Decay), Researchubertip (Tooltip - Learn - Extended)
+{
+Damages everything in its area of effect by <ADAD,DataA1,%>% to <ADAD,DataA10,%>% of its max hit points per second.
+}
+
+STRING 6099
+// Abilities: ADAD (Death And Decay), Tip (Tooltip - Normal)
+{
+Death And Decay
+}
+
+STRING 6100
+// Abilities: ADAD (Death And Decay), Tip (Tooltip - Normal)
+{
+Death And Decay
+}
+
+STRING 6101
+// Abilities: ADAD (Death And Decay), Tip (Tooltip - Normal)
+{
+Death And Decay
+}
+
+STRING 6102
+// Abilities: ADAD (Death And Decay), Tip (Tooltip - Normal)
+{
+Death And Decay
+}
+
+STRING 6103
+// Abilities: ADAD (Death And Decay), Tip (Tooltip - Normal)
+{
+Death And Decay
+}
+
+STRING 6104
+// Abilities: ADAD (Death And Decay), Tip (Tooltip - Normal)
+{
+Death And Decay
+}
+
+STRING 6105
+// Abilities: ADAD (Death And Decay), Tip (Tooltip - Normal)
+{
+Death And Decay
+}
+
+STRING 6106
+// Abilities: ADAD (Death And Decay), Tip (Tooltip - Normal)
+{
+Death And Decay
+}
+
+STRING 6107
+// Abilities: ADAD (Death And Decay), Tip (Tooltip - Normal)
+{
+Death And Decay
+}
+
+STRING 6108
+// Abilities: ADAD (Death And Decay), Ubertip (Tooltip - Normal - Extended)
+{
+Damages everything in its area of effect by <ADAD,DataA1,%>% of its max hit points per second. Also destroys trees. |nLasts <ADAD,Dur1> seconds.
+}
+
+STRING 6109
+// Abilities: ADAD (Death And Decay), Ubertip (Tooltip - Normal - Extended)
+{
+Damages everything in its area of effect by <ADAD,DataA2,%>% of its max hit points per second. Also destroys trees. |nLasts <ADAD,Dur2> seconds.
+}
+
+STRING 6110
+// Abilities: ADAD (Death And Decay), Ubertip (Tooltip - Normal - Extended)
+{
+Damages everything in its area of effect by <ADAD,DataA3,%>% of its max hit points per second. Also destroys trees. |nLasts <ADAD,Dur3> seconds.
+}
+
+STRING 6111
+// Abilities: ADAD (Death And Decay), Ubertip (Tooltip - Normal - Extended)
+{
+Damages everything in its area of effect by <ADAD,DataA4,%>% of its max hit points per second. Also destroys trees. |nLasts <ADAD,Dur4> seconds.
+}
+
+STRING 6112
+// Abilities: ADAD (Death And Decay), Ubertip (Tooltip - Normal - Extended)
+{
+Damages everything in its area of effect by <ADAD,DataA5,%>% of its max hit points per second. Also destroys trees. |nLasts <ADAD,Dur5> seconds.
+}
+
+STRING 6113
+// Abilities: ADAD (Death And Decay), Ubertip (Tooltip - Normal - Extended)
+{
+Damages everything in its area of effect by <ADAD,DataA6,%>% of its max hit points per second. Also destroys trees. |nLasts <ADAD,Dur6> seconds.
+}
+
+STRING 6114
+// Abilities: ADAD (Death And Decay), Ubertip (Tooltip - Normal - Extended)
+{
+Damages everything in its area of effect by <ADAD,DataA7,%>% of its max hit points per second. Also destroys trees. |nLasts <ADAD,Dur7> seconds.
+}
+
+STRING 6115
+// Abilities: ADAD (Death And Decay), Ubertip (Tooltip - Normal - Extended)
+{
+Damages everything in its area of effect by <ADAD,DataA8,%>% of its max hit points per second. Also destroys trees. |nLasts <ADAD,Dur8> seconds.
+}
+
+STRING 6116
+// Abilities: ADAD (Death And Decay), Ubertip (Tooltip - Normal - Extended)
+{
+Damages everything in its area of effect by <ADAD,DataA9,%>% of its max hit points per second. Also destroys trees. |nLasts <ADAD,Dur9> seconds.
+}
+
+STRING 6117
+// Abilities: ADAD (Death And Decay), Ubertip (Tooltip - Normal - Extended)
+{
+Damages everything in its area of effect by <ADAD,DataA10,%>% of its max hit points per second. Also destroys trees. |nLasts <ADAD,Dur10> seconds.
+}
+
+STRING 6118
+// Abilities: ADAD (Death And Decay), EditorSuffix (Editor Suffix)
+{
+(Hero 10)
 }
 

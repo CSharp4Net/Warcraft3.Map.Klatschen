@@ -115,7 +115,7 @@ namespace Source.Models
     /// Fügt der Auflistung von Einheitentyp-Ids einen Eintrag hinzu.
     /// </summary>
     /// <param name="spawnCommand"></param>
-    public void Add(SpawnUnitCommand spawnCommand)
+    public void Add(UnitUpgradeByResearchCommand spawnCommand)
     {
       UnitTypeIds.Add(spawnCommand.UnitId);
     }
@@ -132,7 +132,7 @@ namespace Source.Models
     /// Aktualisiert einen oder mehrere Einträge in der Auflistung von Einheitentyp-Ids.
     /// </summary>
     /// <param name="spawnCommand"></param>
-    public void Upgrade(SpawnUnitCommand spawnCommand)
+    public void Upgrade(UnitUpgradeByResearchCommand spawnCommand)
     {
       for (int i = 0; i < UnitTypeIds.Count; i++)
       {

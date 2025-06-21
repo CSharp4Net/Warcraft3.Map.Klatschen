@@ -153,25 +153,35 @@ namespace Source.Abstracts
     /// </summary>
     /// <param name="techId">Technologie-Id</param>
     /// <param name="techLevel">Technologie-Stufe</param>
-    /// <param name="spawnCommand">Spawn-Befehl, welcher sich aus dieser Konstellation ergibt.</param>
+    /// <param name="command">Spawn-Befehl, welcher sich aus dieser Konstellation ergibt.</param>
     /// <returns></returns>
-    public virtual Enums.ResearchType GetTechType(int techId, int techLevel, out SpawnUnitCommand spawnCommand)
+    public virtual Enums.ResearchType GetUnitUpgradeByResearch(int techId, int techLevel, out UnitUpgradeByResearchCommand command)
     {
-      Program.ShowErrorMessage("TeamBase.GetTechType", $"Method not implemented yet for player {ColorizedName}!");
+      Program.ShowErrorMessage("TeamBase.GetUnitUpgradeByResearch", $"Method not implemented yet for player {ColorizedName}!");
 
-      spawnCommand = null;
+      command = null;
+
       return Enums.ResearchType.Unknown;
     }
 
-    public virtual Enums.UnitUpgradeType DetermineTypeOfUnitUpgrade(int baseUnitTypeId, out UpgradeUnitCommand upgradeUnitCommand)
+    /// <summary>
+    /// Ermittelt anhand der UnitType-Id den Spawn-Command, welche alle nötigen Informationen zum Upgrade der Einheit, sowie zum Ändern des Shops enthält.
+    /// </summary>
+    /// <param name="baseUnitTypeId">UnitType-Id der gekauften Einheit</param>
+    /// <param name="command">Upgrade-Command</param>
+    /// <returns></returns>
+    public virtual Enums.UnitUpgradeType GetUnitUpgradeBySold(int baseUnitTypeId, out UnitUpgradeBySoldCommand command)
     {
-      Program.ShowErrorMessage("TeamBase.DetermineTypeOfUnitUpgrade", $"Method not implemented yet for player {ColorizedName}!");
+      Program.ShowErrorMessage("TeamBase.GetUnitUpgradeBySold", $"Method not implemented yet for player {ColorizedName}!");
 
-      upgradeUnitCommand = null;
+      command = null;
 
       return Enums.UnitUpgradeType.Unknown;
     }
 
+    /// <summary>
+    /// Erstellt alle initialen Gebäude für den Computer-Spieler des Teams.
+    /// </summary>
     public virtual void CreateBuildings()
     {
       Program.ShowErrorMessage("TeamBase.CreateBuildings", $"Method not implemented yet for player {ColorizedName}!");
