@@ -6,8 +6,7 @@ namespace Source.Models.Teams
 {
   public sealed class OrcsTeam : TeamBase
   {
-    public OrcsTeam()
-      : base(Common.Player(4), Areas.OrcBase)
+    public OrcsTeam() : base(Common.Player(4), Areas.OrcBase)
     {
       ColorizedName = $"|c{ConstantsEx.ColorHexCode_Yellow}{Common.Player(4).Name}|r";
     }

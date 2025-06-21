@@ -6,8 +6,7 @@ namespace Source.Models.Teams
 {
   public sealed class UndeadsTeam : TeamBase
   {
-    public UndeadsTeam()
-      : base(Common.Player(12), Areas.UndeadBase)
+    public UndeadsTeam() : base(Common.Player(12), Areas.UndeadBase)
     {
       ColorizedName = $"|c{ConstantsEx.ColorHexCode_Maroon}{Common.Player(12).Name}|r";
     }
@@ -171,45 +170,44 @@ namespace Source.Models.Teams
 
     public override Enums.UnitUpgradeType DetermineTypeOfUnitUpgrade(int baseUnitTypeId, out UpgradeUnitCommand upgradeUnitCommand)
     {
-      // TODO
       switch (baseUnitTypeId)
       {
-        case Constants.UNIT_CAPTAIN_HUMAN:
-          upgradeUnitCommand = new UpgradeUnitCommand(Enums.SpawnInterval.Short, Constants.UNIT_SOLDIER_HUMAN, baseUnitTypeId, Constants.UNIT_KNIGHT_HUMAN);
+        case Constants.UNIT_SKELETON_WARRIOR_UNDEAD:
+          upgradeUnitCommand = new UpgradeUnitCommand(Enums.SpawnInterval.Short, Constants.UNIT_GHOUL_UNDEAD, baseUnitTypeId, Constants.UNIT_ABOMINATION_UNDEAD);
           return Enums.UnitUpgradeType.UpgradeUnitInSpawn;
-        case Constants.UNIT_KNIGHT_HUMAN:
-          upgradeUnitCommand = new UpgradeUnitCommand(Enums.SpawnInterval.Short, Constants.UNIT_CAPTAIN_HUMAN, baseUnitTypeId, 0);
-          return Enums.UnitUpgradeType.UpgradeUnitInSpawn;
-
-        case Constants.UNIT_RIFLEMAN_BESERK_HUMAN:
-          upgradeUnitCommand = new UpgradeUnitCommand(Enums.SpawnInterval.Short, Constants.UNIT_RIFLEMAN_HUMAN, baseUnitTypeId, Constants.UNIT_RIFLEMAN_ELITE_HUMAN);
-          return Enums.UnitUpgradeType.UpgradeUnitInSpawn;
-        case Constants.UNIT_RIFLEMAN_ELITE_HUMAN:
-          upgradeUnitCommand = new UpgradeUnitCommand(Enums.SpawnInterval.Short, Constants.UNIT_RIFLEMAN_BESERK_HUMAN, baseUnitTypeId, 0);
+        case Constants.UNIT_ABOMINATION_UNDEAD:
+          upgradeUnitCommand = new UpgradeUnitCommand(Enums.SpawnInterval.Short, Constants.UNIT_SKELETON_WARRIOR_UNDEAD, baseUnitTypeId, 0);
           return Enums.UnitUpgradeType.UpgradeUnitInSpawn;
 
-        case Constants.UNIT_SORCERESS_HUMAN:
-          upgradeUnitCommand = new UpgradeUnitCommand(Enums.SpawnInterval.Middle, Constants.UNIT_RIFLEMAN_HUMAN, baseUnitTypeId, Constants.UNIT_SPELLBREAKER_HUMAN);
+        case Constants.UNIT_CRYPT_FIEND_BESERK_UNDEAD:
+          upgradeUnitCommand = new UpgradeUnitCommand(Enums.SpawnInterval.Short, Constants.UNIT_CRYPT_FIEND_UNDEAD, baseUnitTypeId, Constants.UNIT_CRYPT_FIEND_ELITE_UNDEAD);
           return Enums.UnitUpgradeType.UpgradeUnitInSpawn;
-        case Constants.UNIT_SPELLBREAKER_HUMAN:
-          upgradeUnitCommand = new UpgradeUnitCommand(Enums.SpawnInterval.Middle, Constants.UNIT_SORCERESS_HUMAN, baseUnitTypeId, 0);
+        case Constants.UNIT_CRYPT_FIEND_ELITE_UNDEAD:
+          upgradeUnitCommand = new UpgradeUnitCommand(Enums.SpawnInterval.Short, Constants.UNIT_CRYPT_FIEND_BESERK_UNDEAD, baseUnitTypeId, 0);
           return Enums.UnitUpgradeType.UpgradeUnitInSpawn;
 
-        case Constants.UNIT_FLYING_MACHINE_HUMAN:
-          upgradeUnitCommand = new UpgradeUnitCommand(Enums.SpawnInterval.Middle, baseUnitTypeId, Constants.UNIT_FALCON_RIDER_HUMAN);
+        case Constants.UNIT_NECROMANCER_UNDEAD:
+          upgradeUnitCommand = new UpgradeUnitCommand(Enums.SpawnInterval.Middle, Constants.UNIT_SKELETAL_MAGE_UNDEAD, baseUnitTypeId, Constants.UNIT_BANSHEE_UNDEAD);
+          return Enums.UnitUpgradeType.UpgradeUnitInSpawn;
+        case Constants.UNIT_BANSHEE_UNDEAD:
+          upgradeUnitCommand = new UpgradeUnitCommand(Enums.SpawnInterval.Middle, Constants.UNIT_NECROMANCER_UNDEAD, baseUnitTypeId, 0);
+          return Enums.UnitUpgradeType.UpgradeUnitInSpawn;
+
+        case Constants.UNIT_GARGOYLE_UNDEAD:
+          upgradeUnitCommand = new UpgradeUnitCommand(Enums.SpawnInterval.Middle, baseUnitTypeId, Constants.UNIT_DESTROYER_UNDEAD);
           return Enums.UnitUpgradeType.AddNewUnitToSpawn;
-        case Constants.UNIT_FALCON_RIDER_HUMAN:
-          upgradeUnitCommand = new UpgradeUnitCommand(Enums.SpawnInterval.Middle, Constants.UNIT_FLYING_MACHINE_HUMAN, baseUnitTypeId, Constants.UNIT_GRIFFIN_RIDER_HUMAN);
+        case Constants.UNIT_DESTROYER_UNDEAD:
+          upgradeUnitCommand = new UpgradeUnitCommand(Enums.SpawnInterval.Middle, Constants.UNIT_GARGOYLE_UNDEAD, baseUnitTypeId, Constants.UNIT_FROST_WYRM_UNDEAD);
           return Enums.UnitUpgradeType.UpgradeUnitInSpawn;
-        case Constants.UNIT_GRIFFIN_RIDER_HUMAN:
-          upgradeUnitCommand = new UpgradeUnitCommand(Enums.SpawnInterval.Middle, Constants.UNIT_FALCON_RIDER_HUMAN, baseUnitTypeId, 0);
+        case Constants.UNIT_FROST_WYRM_UNDEAD:
+          upgradeUnitCommand = new UpgradeUnitCommand(Enums.SpawnInterval.Middle, Constants.UNIT_DESTROYER_UNDEAD, baseUnitTypeId, 0);
           return Enums.UnitUpgradeType.UpgradeUnitInSpawn;
 
-        case Constants.UNIT_SIEGE_SQUAD_HUMAN:
-          upgradeUnitCommand = new UpgradeUnitCommand(Enums.SpawnInterval.Long, baseUnitTypeId, Constants.UNIT_SIEGE_ENGINE_HUMAN);
+        case Constants.UNIT_OBSIDIAN_STATUE_UNDEAD:
+          upgradeUnitCommand = new UpgradeUnitCommand(Enums.SpawnInterval.Long, baseUnitTypeId, Constants.UNIT_MEAT_WAGON_UNDEAD);
           return Enums.UnitUpgradeType.AddNewUnitToSpawn;
-        case Constants.UNIT_SIEGE_ENGINE_HUMAN:
-          upgradeUnitCommand = new UpgradeUnitCommand(Enums.SpawnInterval.Long, Constants.UNIT_SIEGE_SQUAD_HUMAN, baseUnitTypeId, 0);
+        case Constants.UNIT_MEAT_WAGON_UNDEAD:
+          upgradeUnitCommand = new UpgradeUnitCommand(Enums.SpawnInterval.Long, Constants.UNIT_OBSIDIAN_STATUE_UNDEAD, baseUnitTypeId, 0);
           return Enums.UnitUpgradeType.UpgradeUnitInSpawn;
 
         default: // Einheiten-Typ ist nicht bekannt

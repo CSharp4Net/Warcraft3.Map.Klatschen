@@ -7,19 +7,25 @@ namespace Source.Models
     public enum ResearchType
     {
       /// <summary>
+      /// Unbekannt - konnte nicht ermittelt werden
+      /// </summary>
+      Unknown = 0,
+      /// <summary>
       /// Allgemeines Upgrade bestehender Einheiten.
       /// </summary>
-      CommonUpgrade = 0,
+      CommonUpgrade = 1,
       /// <summary>
       /// Neue Einheit in Spawn-Intervalle aufnehmen
       /// </summary>
       [Obsolete]
-      AddUnit = 1,
+      AddUnit,
       /// <summary>
       /// Einheiten in Spawn-Intervallen aktualisieren
       /// </summary>
       [Obsolete]
-      UpgradeUnit = 2
+      UpgradeUnit,
+
+      UnitUpgrade = 2
     }
 
     public enum UnitUpgradeType

@@ -137,24 +137,63 @@ namespace Source.Events
               break;
 
             default:
-              Program.ShowErrorMessage("Unit.OnBuysUnit", $"{sellingUnit.Name} is an unknown building?!");
+              Program.ShowErrorMessage("Unit.OnBuysUnit", $"{sellingUnit.Name} is an unknown human building?!");
               break;
           }
         }
         else if (sellingUnit.Race == race.Orc)
         {
           // Verkauf durch Gebäude der Orks
+          switch (sellingUnitTypeId)
+          {
+            case Constants.UNIT_BARRACKS_ORC:
+              Logics.Research.HandleUnitUpgradeBuyed(buyingUnit, soldUnit, sellingUnit, Program.Orcs);
+              break;
 
+            case Constants.UNIT_FORTRESS_ORC:
+              Logics.ComputerBuilding.HandleSingleSpawnBuyed(buyingUnit, soldUnit, sellingUnit, Program.Orcs);
+              break;
+
+            default:
+              Program.ShowErrorMessage("Unit.OnBuysUnit", $"{sellingUnit.Name} is an unknown orc building?!");
+              break;
+          }
         }
         else if (sellingUnit.Race == race.NightElf)
         {
           // Verkauf durch Gebäude der Elfen
+          switch (sellingUnitTypeId)
+          {
+            case Constants.UNIT_HUNTER_S_HALL_ELF:
+              Logics.Research.HandleUnitUpgradeBuyed(buyingUnit, soldUnit, sellingUnit, Program.Elves);
+              break;
 
+            case Constants.UNIT_TREE_OF_ETERNITY_ELF:
+              Logics.ComputerBuilding.HandleSingleSpawnBuyed(buyingUnit, soldUnit, sellingUnit, Program.Elves);
+              break;
+
+            default:
+              Program.ShowErrorMessage("Unit.OnBuysUnit", $"{sellingUnit.Name} is an unknown elf building?!");
+              break;
+          }
         }
         else if (sellingUnit.Race == race.Undead)
         {
           // Verkauf durch Gebäude der Untoten
+          switch (sellingUnitTypeId)
+          {
+            case Constants.UNIT_CRYPT_UNDEAD:
+              Logics.Research.HandleUnitUpgradeBuyed(buyingUnit, soldUnit, sellingUnit, Program.Undeads);
+              break;
 
+            case Constants.UNIT_BLACK_CITADEL_UNDEAD:
+              Logics.ComputerBuilding.HandleSingleSpawnBuyed(buyingUnit, soldUnit, sellingUnit, Program.Undeads);
+              break;
+
+            default:
+              Program.ShowErrorMessage("Unit.OnBuysUnit", $"{sellingUnit.Name} is an unknown undead building?!");
+              break;
+          }
         }
         else
         {

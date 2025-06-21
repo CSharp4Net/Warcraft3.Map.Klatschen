@@ -6,8 +6,7 @@ namespace Source.Models.Teams
 {
   public sealed class ElvesTeam : TeamBase
   {
-    public ElvesTeam()
-      : base(Common.Player(8), Areas.ElfBase)
+    public ElvesTeam() : base(Common.Player(8), Areas.ElfBase)
     {
       ColorizedName = $"|c{ConstantsEx.ColorHexCode_Gray}{Common.Player(8).Name}|r";
     }
@@ -194,22 +193,21 @@ namespace Source.Models.Teams
           upgradeUnitCommand = new UpgradeUnitCommand(Enums.SpawnInterval.Middle, Constants.UNIT_WARDEN_ELF, baseUnitTypeId, 0);
           return Enums.UnitUpgradeType.UpgradeUnitInSpawn;
 
-        // TODO
-        case Constants.UNIT_FLYING_MACHINE_HUMAN:
-          upgradeUnitCommand = new UpgradeUnitCommand(Enums.SpawnInterval.Middle, baseUnitTypeId, Constants.UNIT_FALCON_RIDER_HUMAN);
+        case Constants.UNIT_FAERIE_DRAGON_ELF:
+          upgradeUnitCommand = new UpgradeUnitCommand(Enums.SpawnInterval.Middle, baseUnitTypeId, Constants.UNIT_HIPPOGRYPH_RIDER_ELF);
           return Enums.UnitUpgradeType.AddNewUnitToSpawn;
-        case Constants.UNIT_FALCON_RIDER_HUMAN:
-          upgradeUnitCommand = new UpgradeUnitCommand(Enums.SpawnInterval.Middle, Constants.UNIT_FAERIE_DRAGON_ELF, baseUnitTypeId, Constants.UNIT_GRIFFIN_RIDER_HUMAN);
+        case Constants.UNIT_HIPPOGRYPH_RIDER_ELF:
+          upgradeUnitCommand = new UpgradeUnitCommand(Enums.SpawnInterval.Middle, Constants.UNIT_FAERIE_DRAGON_ELF, baseUnitTypeId, Constants.UNIT_CHIMAERA_ELF);
           return Enums.UnitUpgradeType.UpgradeUnitInSpawn;
-        case Constants.UNIT_GRIFFIN_RIDER_HUMAN:
-          upgradeUnitCommand = new UpgradeUnitCommand(Enums.SpawnInterval.Middle, Constants.UNIT_FALCON_RIDER_HUMAN, baseUnitTypeId, 0);
+        case Constants.UNIT_CHIMAERA_ELF:
+          upgradeUnitCommand = new UpgradeUnitCommand(Enums.SpawnInterval.Middle, Constants.UNIT_HIPPOGRYPH_RIDER_ELF, baseUnitTypeId, 0);
           return Enums.UnitUpgradeType.UpgradeUnitInSpawn;
 
-        case Constants.UNIT_SIEGE_SQUAD_HUMAN:
-          upgradeUnitCommand = new UpgradeUnitCommand(Enums.SpawnInterval.Long, baseUnitTypeId, Constants.UNIT_SIEGE_ENGINE_HUMAN);
+        case Constants.UNIT_PRISON_WAGON_ELF:
+          upgradeUnitCommand = new UpgradeUnitCommand(Enums.SpawnInterval.Long, baseUnitTypeId, Constants.UNIT_GLAIVE_THROWER_ELF);
           return Enums.UnitUpgradeType.AddNewUnitToSpawn;
-        case Constants.UNIT_SIEGE_ENGINE_HUMAN:
-          upgradeUnitCommand = new UpgradeUnitCommand(Enums.SpawnInterval.Long, Constants.UNIT_SIEGE_SQUAD_HUMAN, baseUnitTypeId, 0);
+        case Constants.UNIT_GLAIVE_THROWER_ELF:
+          upgradeUnitCommand = new UpgradeUnitCommand(Enums.SpawnInterval.Long, Constants.UNIT_PRISON_WAGON_ELF, baseUnitTypeId, 0);
           return Enums.UnitUpgradeType.UpgradeUnitInSpawn;
 
         default: // Einheiten-Typ ist nicht bekannt

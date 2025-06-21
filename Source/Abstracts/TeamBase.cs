@@ -160,7 +160,7 @@ namespace Source.Abstracts
       Program.ShowErrorMessage("TeamBase.GetTechType", $"Method not implemented yet for player {ColorizedName}!");
 
       spawnCommand = null;
-      return Enums.ResearchType.CommonUpgrade;
+      return Enums.ResearchType.Unknown;
     }
 
     public virtual Enums.UnitUpgradeType DetermineTypeOfUnitUpgrade(int baseUnitTypeId, out UpgradeUnitCommand upgradeUnitCommand)

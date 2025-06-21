@@ -48,15 +48,19 @@ namespace Source.Events.Periodic
         IncreaseTechIfAffordable(team, player, Constants.UPGRADE_BUILDING_ATTACK_TEAM, BaseGoldPriceUnitResearchBuilding);
         IncreaseTechIfAffordable(team, player, Constants.UPGRADE_BUILDING_DEFENSE_TEAM, BaseGoldPriceUnitResearchBuilding);
 
-        IncreaseTechIfAffordable(team, player, Constants.UPGRADE_MELEE_UNIT_TEAM, BaseGoldPriceUnitUpgrade);
-        IncreaseTechIfAffordable(team, player, Constants.UPGRADE_DISTANCE_UNIT_TEAM, BaseGoldPriceUnitUpgrade);
-        IncreaseTechIfAffordable(team, player, Constants.UPGRADE_FLIGHT_UNIT_TEAM, BaseGoldPriceUnitUpgrade);
-        IncreaseTechIfAffordable(team, player, Constants.UPGRADE_MAGE_UNIT_TEAM, BaseGoldPriceUnitUpgrade);
+        if (team.Users.Count == 0)
+        {
+          IncreaseTechIfAffordable(team, player, Constants.UPGRADE_MELEE_UNIT_TEAM, BaseGoldPriceUnitUpgrade);
+          IncreaseTechIfAffordable(team, player, Constants.UPGRADE_DISTANCE_UNIT_TEAM, BaseGoldPriceUnitUpgrade);
+          IncreaseTechIfAffordable(team, player, Constants.UPGRADE_FLIGHT_UNIT_TEAM, BaseGoldPriceUnitUpgrade);
+          IncreaseTechIfAffordable(team, player, Constants.UPGRADE_MAGE_UNIT_TEAM, BaseGoldPriceUnitUpgrade);
+        }
 
         IncreaseTechIfAffordable(team, player, Constants.UPGRADE_SIEGE_ATTACK_TEAM, BaseGoldPriceUnitResearchArtillery);
         IncreaseTechIfAffordable(team, player, Constants.UPGRADE_SIEGE_DEFENSE_TEAM, BaseGoldPriceUnitResearchArtillery);
 
-        IncreaseTechIfAffordable(team, player, Constants.UPGRADE_SIEGE_UNIT_TEAM, BaseGoldPriceUnitUpgradeArtillery);
+        if (team.Users.Count == 0)
+          IncreaseTechIfAffordable(team, player, Constants.UPGRADE_SIEGE_UNIT_TEAM, BaseGoldPriceUnitUpgradeArtillery);
 
         // Keine bezahlbare Forschung übrig
         return true;
@@ -87,7 +91,10 @@ namespace Source.Events.Periodic
       team.IncreaseTechForAllPlayers(techId, nextTechLevel);
       computerPlayer.Gold -= (goldPriceBase * nextTechLevel);
 
-      ResearchType researchType = team.GetTechType(techId, nextTechLevel, out SpawnUnitCommand spawnCommand);
+      ResearchType researchType = team.GetTechType(techId, nextTechLevel, out UpgradeUnitCommand spawnCommand);
+
+      if (researchType == ResearchType.Unknown)      
+        return false;      
 
       if (researchType == ResearchType.AddUnit)
       {
