@@ -104,7 +104,7 @@ namespace Source.Models.Teams
               return Enums.ResearchType.UpgradeUnit;
 
             default:
-              command.UnitId = Constants.UNIT_GRIFFIN_RIDER_HUMAN;
+              command.UnitId = Constants.UNIT_GRYPHON_RIDER_HUMAN;
               command.UnitIdToUpgrade = Constants.UNIT_FALCON_RIDER_HUMAN;
               return Enums.ResearchType.UpgradeUnit;
           }
@@ -184,9 +184,9 @@ namespace Source.Models.Teams
           command = new UnitUpgradeBySoldCommand(Enums.SpawnInterval.Middle, baseUnitTypeId, Constants.UNIT_FALCON_RIDER_HUMAN);
           return Enums.UnitUpgradeType.AddNewUnitToSpawn;
         case Constants.UNIT_FALCON_RIDER_HUMAN:
-          command = new UnitUpgradeBySoldCommand(Enums.SpawnInterval.Middle, Constants.UNIT_FLYING_MACHINE_HUMAN, baseUnitTypeId, Constants.UNIT_GRIFFIN_RIDER_HUMAN);
+          command = new UnitUpgradeBySoldCommand(Enums.SpawnInterval.Middle, Constants.UNIT_FLYING_MACHINE_HUMAN, baseUnitTypeId, Constants.UNIT_GRYPHON_RIDER_HUMAN);
           return Enums.UnitUpgradeType.UpgradeUnitInSpawn;
-        case Constants.UNIT_GRIFFIN_RIDER_HUMAN:
+        case Constants.UNIT_GRYPHON_RIDER_HUMAN:
           command = new UnitUpgradeBySoldCommand(Enums.SpawnInterval.Middle, Constants.UNIT_FALCON_RIDER_HUMAN, baseUnitTypeId, 0);
           return Enums.UnitUpgradeType.UpgradeUnitInSpawn;
 

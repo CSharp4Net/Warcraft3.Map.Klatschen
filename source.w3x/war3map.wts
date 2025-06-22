@@ -171,19 +171,19 @@ STRING 118
 }
 
 STRING 119
-// Units: h00E (Siege squad), EditorSuffix (Name - Editor Suffix)
+// Units: h00E (Siege Squad), EditorSuffix (Name - Editor Suffix)
 {
 (Human)
 }
 
 STRING 120
-// Units: h00F (Rifleman beserk), EditorSuffix (Name - Editor Suffix)
+// Units: h00F (Rifleman - Beserk), EditorSuffix (Name - Editor Suffix)
 {
 (Human)
 }
 
 STRING 122
-// Units: h00G (Rifleman elite), EditorSuffix (Name - Editor Suffix)
+// Units: h00G (Rifleman - Elite), EditorSuffix (Name - Editor Suffix)
 {
 (Human)
 }
@@ -201,13 +201,13 @@ STRING 124
 }
 
 STRING 125
-// Units: h00J (Flying machine), EditorSuffix (Name - Editor Suffix)
+// Units: h00J (Flying Machine), EditorSuffix (Name - Editor Suffix)
 {
 (Human)
 }
 
 STRING 126
-// Units: h00K (Falcon rider), EditorSuffix (Name - Editor Suffix)
+// Units: h00K (Falcon Rider), EditorSuffix (Name - Editor Suffix)
 {
 (Human)
 }
@@ -225,7 +225,7 @@ ratx
 }
 
 STRING 168
-// Units: h00L (Griffin rider), EditorSuffix (Name - Editor Suffix)
+// Units: h00L (Gryphon Rider), EditorSuffix (Name - Editor Suffix)
 {
 (Human)
 }
@@ -237,7 +237,7 @@ STRING 169
 }
 
 STRING 170
-// Units: h00S (Siege engine), EditorSuffix (Name - Editor Suffix)
+// Units: h00S (Siege Engine), EditorSuffix (Name - Editor Suffix)
 {
 (Human)
 }
@@ -2655,13 +2655,13 @@ STRING 3245
 }
 
 STRING 3247
-// Units: h01M (Headhunter beserk), EditorSuffix (Name - Editor Suffix)
+// Units: h01M (Headhunter - Beserk), EditorSuffix (Name - Editor Suffix)
 {
 (Orc)
 }
 
 STRING 3249
-// Units: h01N (Headhunter elite), EditorSuffix (Name - Editor Suffix)
+// Units: h01N (Headhunter - Elite), EditorSuffix (Name - Editor Suffix)
 {
 (Orc)
 }
@@ -2763,25 +2763,25 @@ STRING 3334
 }
 
 STRING 3335
-// Units: h025 (Archer beserk), EditorSuffix (Name - Editor Suffix)
+// Units: h025 (Archer - Beserk), EditorSuffix (Name - Editor Suffix)
 {
 (Elf)
 }
 
 STRING 3336
-// Units: h026 (Crypt Fiend beserk), EditorSuffix (Name - Editor Suffix)
+// Units: h026 (Crypt Fiend - Beserk), EditorSuffix (Name - Editor Suffix)
 {
 (Undead)
 }
 
 STRING 3337
-// Units: h027 (Archer elite), EditorSuffix (Name - Editor Suffix)
+// Units: h027 (Archer - Elite), EditorSuffix (Name - Editor Suffix)
 {
 (Elf)
 }
 
 STRING 3338
-// Units: h028 (Crypt Fiend elite), EditorSuffix (Name - Editor Suffix)
+// Units: h028 (Crypt Fiend - Elite), EditorSuffix (Name - Editor Suffix)
 {
 (Undead)
 }
@@ -3458,7 +3458,7 @@ STRING 3707
 }
 
 STRING 3708
-// Units: h01M (Headhunter beserk), Description (Description)
+// Units: h01M (Headhunter - Beserk), Description (Description)
 {
 Fernkampfeinheit
 }
@@ -3470,7 +3470,7 @@ STRING 3712
 }
 
 STRING 3713
-// Units: h01N (Headhunter elite), Description (Description)
+// Units: h01N (Headhunter - Elite), Description (Description)
 {
 Fernkampfeinheit
 }
@@ -4600,19 +4600,13 @@ Demons
 }
 
 STRING 4160
-// Units: h00E (Siege squad), Description (Description)
+// Units: h00E (Siege Squad), Description (Description)
 {
 Siege unit
 }
 
-STRING 4161
-// Units: h00S (Siege engine), Name (Name)
-{
-Siege engine
-}
-
 STRING 4162
-// Units: h00S (Siege engine), Description (Description)
+// Units: h00S (Siege Engine), Description (Description)
 {
 Siege unit
 }
@@ -4623,58 +4617,28 @@ STRING 4167
 Rifleman
 }
 
-STRING 4169
-// Units: h00G (Rifleman elite), Name (Name)
-{
-Rifleman elite
-}
-
 STRING 4170
-// Units: h00J (Flying machine), Description (Description)
+// Units: h00J (Flying Machine), Description (Description)
 {
 Flight unit
 }
 
 STRING 4171
-// Units: h00K (Falcon rider), Description (Description)
+// Units: h00K (Falcon Rider), Description (Description)
 {
 Flight unit
 }
 
 STRING 4172
-// Units: h00L (Griffin rider), Description (Description)
+// Units: h00L (Gryphon Rider), Description (Description)
 {
 Flight unit
-}
-
-STRING 4173
-// Units: h00J (Flying machine), Name (Name)
-{
-Flying machine
-}
-
-STRING 4174
-// Units: h00K (Falcon rider), Name (Name)
-{
-Falcon rider
-}
-
-STRING 4175
-// Units: h00L (Griffin rider), Name (Name)
-{
-Griffin rider
 }
 
 STRING 4176
 // Units: h008 (Priest), Name (Name)
 {
 Priest
-}
-
-STRING 4177
-// Units: h00H (Sorceress), Name (Name)
-{
-Sorceress
 }
 
 STRING 4178
@@ -4719,20 +4683,14 @@ STRING 4186
 Melee unit
 }
 
-STRING 4187
-// Units: h00E (Siege squad), Name (Name)
-{
-Siege squad
-}
-
 STRING 4188
-// Units: h00F (Rifleman beserk), Description (Description)
+// Units: h00F (Rifleman - Beserk), Description (Description)
 {
 Ranged unit
 }
 
 STRING 4189
-// Units: h00G (Rifleman elite), Description (Description)
+// Units: h00G (Rifleman - Elite), Description (Description)
 {
 Ranged unit
 }
@@ -6591,12 +6549,6 @@ STRING 4546
 Headhunter
 }
 
-STRING 4548
-// Units: h01N (Headhunter elite), Name (Name)
-{
-Headhunter elite
-}
-
 STRING 4549
 // Units: h01U (Kodo Beast), Name (Name)
 {
@@ -6661,18 +6613,6 @@ STRING 4560
 // Units: h01K (Tauren), Name (Name)
 {
 Tauren
-}
-
-STRING 4563
-// Units: h00F (Rifleman beserk), Name (Name)
-{
-Rifleman beserk
-}
-
-STRING 4564
-// Units: h01M (Headhunter beserk), Name (Name)
-{
-Headhunter beserk
 }
 
 STRING 4565
@@ -12387,18 +12327,6 @@ STRING 5577
 Crypt Fiend
 }
 
-STRING 5578
-// Units: h026 (Crypt Fiend beserk), Name (Name)
-{
-Crypt Fiend beserk
-}
-
-STRING 5579
-// Units: h028 (Crypt Fiend elite), Name (Name)
-{
-Crypt Fiend elite
-}
-
 STRING 5580
 // Units: h02A (Frost Wyrm), Name (Name)
 {
@@ -12529,18 +12457,6 @@ STRING 5601
 // Units: h023 (Archer), Name (Name)
 {
 Archer
-}
-
-STRING 5602
-// Units: h025 (Archer beserk), Name (Name)
-{
-Archer beserk
-}
-
-STRING 5603
-// Units: h027 (Archer elite), Name (Name)
-{
-Archer elite
 }
 
 STRING 5604
@@ -17575,5 +17491,785 @@ STRING 6510
 // Abilities: AGBV (Big Bad Voodoo), Researchtip (Tooltip - Learn)
 {
 Learn Big Bad Voodoo - [|cffffcc00Level %d|r]
+}
+
+STRING 6511
+// Abilities: AEAR (Earthquake), Tip (Tooltip - Normal)
+{
+Earthquake - [|cffffcc00Level 1|r]
+}
+
+STRING 6512
+// Abilities: AEAR (Earthquake), Tip (Tooltip - Normal)
+{
+Earthquake - [|cffffcc00Level 2|r]
+}
+
+STRING 6513
+// Abilities: AEAR (Earthquake), Tip (Tooltip - Normal)
+{
+Earthquake - [|cffffcc00Level 3|r]
+}
+
+STRING 6514
+// Abilities: AEAR (Earthquake), Tip (Tooltip - Normal)
+{
+Earthquake - [|cffffcc00Level 4|r]
+}
+
+STRING 6515
+// Abilities: AEAR (Earthquake), Tip (Tooltip - Normal)
+{
+Earthquake - [|cffffcc00Level 5|r]
+}
+
+STRING 6516
+// Abilities: AEAR (Earthquake), Tip (Tooltip - Normal)
+{
+Earthquake - [|cffffcc00Level 6|r]
+}
+
+STRING 6517
+// Abilities: AEAR (Earthquake), Tip (Tooltip - Normal)
+{
+Earthquake - [|cffffcc00Level 7|r]
+}
+
+STRING 6518
+// Abilities: AEAR (Earthquake), Tip (Tooltip - Normal)
+{
+Earthquake - [|cffffcc00Level 8|r]
+}
+
+STRING 6519
+// Abilities: AEAR (Earthquake), Tip (Tooltip - Normal)
+{
+Earthquake - [|cffffcc00Level 9|r]
+}
+
+STRING 6520
+// Abilities: AEAR (Earthquake), Tip (Tooltip - Normal)
+{
+Earthquake - [|cffffcc00Level 10|r]
+}
+
+STRING 6521
+// Abilities: AEAR (Earthquake), Ubertip (Tooltip - Normal - Extended)
+{
+Makes the ground tremble and break, causing <AEAR,DataB1> damage per second to buildings and slowing units by <AEAR,DataC1,%>% within the area of effect. |nLasts <AEAR,Dur1> seconds.
+}
+
+STRING 6522
+// Abilities: AEAR (Earthquake), Ubertip (Tooltip - Normal - Extended)
+{
+Makes the ground tremble and break, causing <AEAR,DataB2> damage per second to buildings and slowing units by <AEAR,DataC2,%>% within the area of effect. |nLasts <AEAR,Dur2> seconds.
+}
+
+STRING 6523
+// Abilities: AEAR (Earthquake), Ubertip (Tooltip - Normal - Extended)
+{
+Makes the ground tremble and break, causing <AEAR,DataB3> damage per second to buildings and slowing units by <AEAR,DataC3,%>% within the area of effect. |nLasts <AEAR,Dur3> seconds.
+}
+
+STRING 6524
+// Abilities: AEAR (Earthquake), Ubertip (Tooltip - Normal - Extended)
+{
+Makes the ground tremble and break, causing <AEAR,DataB4> damage per second to buildings and slowing units by <AEAR,DataC4,%>% within the area of effect. |nLasts <AEAR,Dur4> seconds.
+}
+
+STRING 6525
+// Abilities: AEAR (Earthquake), Ubertip (Tooltip - Normal - Extended)
+{
+Makes the ground tremble and break, causing <AEAR,DataB5> damage per second to buildings and slowing units by <AEAR,DataC5,%>% within the area of effect. |nLasts <AEAR,Dur5> seconds.
+}
+
+STRING 6526
+// Abilities: AEAR (Earthquake), Ubertip (Tooltip - Normal - Extended)
+{
+Makes the ground tremble and break, causing <AEAR,DataB6> damage per second to buildings and slowing units by <AEAR,DataC6,%>% within the area of effect. |nLasts <AEAR,Dur6> seconds.
+}
+
+STRING 6527
+// Abilities: AEAR (Earthquake), Ubertip (Tooltip - Normal - Extended)
+{
+Makes the ground tremble and break, causing <AEAR,DataB7> damage per second to buildings and slowing units by <AEAR,DataC7,%>% within the area of effect. |nLasts <AEAR,Dur7> seconds.
+}
+
+STRING 6528
+// Abilities: AEAR (Earthquake), Ubertip (Tooltip - Normal - Extended)
+{
+Makes the ground tremble and break, causing <AEAR,DataB8> damage per second to buildings and slowing units by <AEAR,DataC8,%>% within the area of effect. |nLasts <AEAR,Dur8> seconds.
+}
+
+STRING 6529
+// Abilities: AEAR (Earthquake), Ubertip (Tooltip - Normal - Extended)
+{
+Makes the ground tremble and break, causing <AEAR,DataB9> damage per second to buildings and slowing units by <AEAR,DataC9,%>% within the area of effect. |nLasts <AEAR,Dur9> seconds.
+}
+
+STRING 6530
+// Abilities: AEAR (Earthquake), Ubertip (Tooltip - Normal - Extended)
+{
+Makes the ground tremble and break, causing <AEAR,DataB10> damage per second to buildings and slowing units by <AEAR,DataC10,%>% within the area of effect. |nLasts <AEAR,Dur10> seconds.
+}
+
+STRING 6531
+// Units: o006 (Spirit Wolf [|cffffcc00Level 1|r]), EditorSuffix (Name - Editor Suffix)
+{
+(Hero Spell)
+}
+
+STRING 6532
+// Units: o006 (Spirit Wolf [|cffffcc00Level 1|r]), Name (Name)
+{
+Spirit Wolf [|cffffcc00Level 1|r]
+}
+
+STRING 6537
+// Units: o007 (Spirit Wolf [|cffffcc00Level 2|r]), EditorSuffix (Name - Editor Suffix)
+{
+(Hero Spell)
+}
+
+STRING 6538
+// Units: o007 (Spirit Wolf [|cffffcc00Level 2|r]), Name (Name)
+{
+Spirit Wolf [|cffffcc00Level 2|r]
+}
+
+STRING 6539
+// Units: o008 (Spirit Wolf [|cffffcc00Level 3|r]), EditorSuffix (Name - Editor Suffix)
+{
+(Hero Spell)
+}
+
+STRING 6540
+// Units: o008 (Spirit Wolf [|cffffcc00Level 3|r]), Name (Name)
+{
+Spirit Wolf [|cffffcc00Level 3|r]
+}
+
+STRING 6544
+// Abilities: AFSP (Feral Spirit), Researchubertip (Tooltip - Learn - Extended)
+{
+|cffff0000Ultimate Ability|r|n|nSummons Spirit Wolves to fight the Far Seer's enemies.
+}
+
+STRING 6545
+// Abilities: AFSP (Feral Spirit), Ubertip (Tooltip - Normal - Extended)
+{
+|cffff0000Ultimate Ability|r|n|nSummons <AFSP,DataB1> Spirit Wolf companions. Each wolf has <o006,realHP> hit points and deals <o006,mindmg1> - <o006,maxdmg1> damage. |nLasts <AFSP,Dur1> seconds. |n|n|cffffcc00Attacks land units.|r
+}
+
+STRING 6546
+// Abilities: AFSP (Feral Spirit), Ubertip (Tooltip - Normal - Extended)
+{
+|cffff0000Ultimate Ability|r|n|nSummons <AFSP,DataB2> Spirit Wolf companions. Each wolf has <o007,realHP> hit points and deals <o007,mindmg1> - <o007,maxdmg1> damage. |nLasts <AFSP,Dur2> seconds. |n|n|cffffcc00Attacks land units.|r
+}
+
+STRING 6547
+// Abilities: AFSP (Feral Spirit), Ubertip (Tooltip - Normal - Extended)
+{
+|cffff0000Ultimate Ability|r|n|nSummons <AFSP,DataB3> Spirit Wolf companions. Each wolf has <o008,realHP> hit points and deals <o008,mindmg1> - <o008,maxdmg1> damage. |nLasts <AFSP,Dur3> seconds. |n|n|cffffcc00Attacks land units.|r
+}
+
+STRING 6548
+// Abilities: AFSP (Feral Spirit), EditorSuffix (Editor Suffix)
+{
+(Hero 3)
+}
+
+STRING 6549
+// Units: h00B (Knight), Tip (Tooltip - Basic)
+{
+Upgrade Captains to Knights
+}
+
+STRING 6550
+// Units: h00B (Knight), Ubertip (Tooltip - Extended)
+{
+Upgrades captains this barracks to knights who deal and withstand more damage and have special abilities.|n|n|cffffcc00Can only attack ground units.|r
+}
+
+STRING 6551
+// Units: h00C (Captain), Ubertip (Tooltip - Extended)
+{
+Upgrades soldiers in this barracks to captains who deal and withstand more damage and have special abilities.|n|n|cffffcc00Can only attack ground units.|r
+}
+
+STRING 6552
+// Units: h00C (Captain), Tip (Tooltip - Basic)
+{
+Upgrade Soldiers to Captains
+}
+
+STRING 6553
+// Units: h00F (Rifleman - Beserk), Tip (Tooltip - Basic)
+{
+Upgrade Riflemans to Beserks
+}
+
+STRING 6554
+// Units: h00F (Rifleman - Beserk), Ubertip (Tooltip - Extended)
+{
+Upgrades Rifleman in this barracks to Beserks who deal and withstand more damage and have special abilities.|n|n|cffffcc00Can attack ground and air units.|r
+}
+
+STRING 6555
+// Units: h00G (Rifleman - Elite), Tip (Tooltip - Basic)
+{
+Upgrade Beserks to Elites
+}
+
+STRING 6556
+// Units: h00G (Rifleman - Elite), Ubertip (Tooltip - Extended)
+{
+Upgrades Beserks in this barracks to Elites who deal and withstand more damage and have special abilities.|n|n|cffffcc00Can attack ground and air units.|r
+}
+
+STRING 6557
+// Units: h00H (Sorceress), Tip (Tooltip - Basic)
+{
+Upgrade Priests to Sorceress
+}
+
+STRING 6558
+// Units: h00H (Sorceress), Ubertip (Tooltip - Extended)
+{
+Upgrades Priests in this barracks to Sorceress who deal and withstand more damage and have special abilities.|n|n|cffffcc00Can attack ground and air units.|r
+}
+
+STRING 6559
+// Units: h00I (Spellbreaker), Tip (Tooltip - Basic)
+{
+Upgrade Sorceress to Spellbreaker
+}
+
+STRING 6560
+// Units: h00I (Spellbreaker), Ubertip (Tooltip - Extended)
+{
+Upgrades Sorceress in this barracks to Spellbreakers who deal and withstand more damage and have special abilities.|n|n|cffffcc00Can attack ground and air units.|r
+}
+
+STRING 6565
+// Units: h00E (Siege Squad), Tip (Tooltip - Basic)
+{
+Add Siege Squad
+}
+
+STRING 6566
+// Units: h00E (Siege Squad), Ubertip (Tooltip - Extended)
+{
+Adds Siege Squad to this barracks.|n|n|cffffcc00Can only attack ground units.|r
+}
+
+STRING 6567
+// Units: h00E (Siege Squad), Name (Name)
+{
+Siege Squad
+}
+
+STRING 6568
+// Units: h00K (Falcon Rider), Name (Name)
+{
+Falcon Rider
+}
+
+STRING 6569
+// Units: h00L (Gryphon Rider), Tip (Tooltip - Basic)
+{
+Upgrade Falcon Riders to Gryphon Riders
+}
+
+STRING 6570
+// Units: h00L (Gryphon Rider), Ubertip (Tooltip - Extended)
+{
+Upgrades Falcon Riders in this barracks to Gryphon Rider who deal and withstand more damage and have special abilities.|n|n|cffffcc00Can attack ground and air units.|r
+}
+
+STRING 6571
+// Units: h00S (Siege Engine), Tip (Tooltip - Basic)
+{
+Upgrade Siege Squad to Siege Engines
+}
+
+STRING 6572
+// Units: h00S (Siege Engine), Ubertip (Tooltip - Extended)
+{
+Upgrades Siege Squads in this barracks to Siege Engines who deal and withstand more damage and have special abilities.|n|n|cffffcc00Can only attack ground units.|r
+}
+
+STRING 6575
+// Units: h00J (Flying Machine), Ubertip (Tooltip - Extended)
+{
+Adds Flying Machines to this barracks.|n|n|cffffcc00Can attack ground and air units.|r
+}
+
+STRING 6576
+// Units: h00J (Flying Machine), Tip (Tooltip - Basic)
+{
+Add Flying Machines
+}
+
+STRING 6577
+// Units: h00K (Falcon Rider), Tip (Tooltip - Basic)
+{
+Upgrade Flying Machines to Falcon Riders
+}
+
+STRING 6578
+// Units: h00K (Falcon Rider), Ubertip (Tooltip - Extended)
+{
+Upgrades Flying Machines in this barracks to Falcon Riders who deal and withstand more damage and have special abilities.|n|n|cffffcc00Can attack ground and air units.|r
+}
+
+STRING 6579
+// Units: h01J (Beserk), Tip (Tooltip - Basic)
+{
+Upgrade Grunts to Beserks
+}
+
+STRING 6580
+// Units: h01J (Beserk), Ubertip (Tooltip - Extended)
+{
+Upgrades Grunts in this barracks to Beserks who deal and withstand more damage and have special abilities.|n|n|cffffcc00Can only attack ground units.|r
+}
+
+STRING 6581
+// Units: h01K (Tauren), Tip (Tooltip - Basic)
+{
+Upgrade Beserks to Tauren
+}
+
+STRING 6582
+// Units: h01K (Tauren), Ubertip (Tooltip - Extended)
+{
+Upgrades Beserks in this barracks to Tauren who deal and withstand more damage and have special abilities.|n|n|cffffcc00Can only attack ground units.|r
+}
+
+STRING 6583
+// Units: h01M (Headhunter - Beserk), Tip (Tooltip - Basic)
+{
+Upgrade Headhunter to Beserks
+}
+
+STRING 6584
+// Units: h01M (Headhunter - Beserk), Ubertip (Tooltip - Extended)
+{
+Upgrades Headhunters in this barracks to Beserks who deal and withstand more damage and have special abilities.|n|n|cffffcc00Can attack ground and air units.|r
+}
+
+STRING 6586
+// Units: h01N (Headhunter - Elite), Tip (Tooltip - Basic)
+{
+Upgrade Beserks to Elites
+}
+
+STRING 6587
+// Units: h01N (Headhunter - Elite), Ubertip (Tooltip - Extended)
+{
+Upgrades Beserks in this barracks to Elites who deal and withstand more damage and have special abilities.|n|n|cffffcc00Can attack ground and air units.|r
+}
+
+STRING 6589
+// Units: h01O (Batrider), Tip (Tooltip - Basic)
+{
+Add Batrider
+}
+
+STRING 6590
+// Units: h01O (Batrider), Ubertip (Tooltip - Extended)
+{
+Adds Batriders to this barracks.|n|n|cffffcc00Can attack ground and air units.|r
+}
+
+STRING 6591
+// Units: h01P (Wind Rider), Tip (Tooltip - Basic)
+{
+Upgrade Batrider to Wind Riders
+}
+
+STRING 6592
+// Units: h01P (Wind Rider), Ubertip (Tooltip - Extended)
+{
+Upgrades Batriders in this barracks to Wind Riders who deal and withstand more damage and have special abilities.|n|n|cffffcc00Can attack ground and air units.|r
+}
+
+STRING 6593
+// Units: h01Q (Spirit Wind Rider), Tip (Tooltip - Basic)
+{
+Upgrade Wind Riders to Spirit Wind Riders
+}
+
+STRING 6594
+// Units: h01Q (Spirit Wind Rider), Ubertip (Tooltip - Extended)
+{
+Upgrades Wind Riders in this barracks to Spirit Wind Rider who deal and withstand more damage and have special abilities.|n|n|cffffcc00Can attack ground and air units.|r
+}
+
+STRING 6595
+// Units: h01S (Shaman), Tip (Tooltip - Basic)
+{
+Upgrade Witch Doctor to Shaman
+}
+
+STRING 6596
+// Units: h01S (Shaman), Ubertip (Tooltip - Extended)
+{
+Upgrades Witch Doctors in this barracks to Shamans who deal and withstand more damage and have special abilities.|n|n|cffffcc00Can attack ground and air units.|r
+}
+
+STRING 6597
+// Units: h01T (Warlock), Tip (Tooltip - Basic)
+{
+Upgrade Shaman to Warlock
+}
+
+STRING 6598
+// Units: h01T (Warlock), Ubertip (Tooltip - Extended)
+{
+Upgrades Shamans in this barracks to Warlocks who deal and withstand more damage and have special abilities.|n|n|cffffcc00Can attack ground and air units.|r
+}
+
+STRING 6599
+// Units: h01U (Kodo Beast), Tip (Tooltip - Basic)
+{
+Add Kodo Beast
+}
+
+STRING 6600
+// Units: h01U (Kodo Beast), Ubertip (Tooltip - Extended)
+{
+Adds Kodo Beasts to this barracks.|n|n|cffffcc00Can only attack ground units.|r
+}
+
+STRING 6601
+// Units: h01V (Demolisher), Tip (Tooltip - Basic)
+{
+Upgrade Kodo Beast to Demolisher
+}
+
+STRING 6602
+// Units: h01V (Demolisher), Ubertip (Tooltip - Extended)
+{
+Upgrades Kodo Beasts in this barracks to Demolishers who deal and withstand more damage and have special abilities.|n|n|cffffcc00Can only attack ground units.|r
+}
+
+STRING 6603
+// Units: h022 (Abomination), Tip (Tooltip - Basic)
+{
+Upgrade Skeleton Warrior to Abomination
+}
+
+STRING 6604
+// Units: h00F (Rifleman - Beserk), Name (Name)
+{
+Rifleman - Beserk
+}
+
+STRING 6605
+// Units: h00G (Rifleman - Elite), Name (Name)
+{
+Rifleman - Elite
+}
+
+STRING 6606
+// Units: h01M (Headhunter - Beserk), Name (Name)
+{
+Headhunter - Beserk
+}
+
+STRING 6607
+// Units: h01N (Headhunter - Elite), Name (Name)
+{
+Headhunter - Elite
+}
+
+STRING 6608
+// Units: h022 (Abomination), Ubertip (Tooltip - Extended)
+{
+Upgrades Skeleton Warrior this barracks to Abomination who deal and withstand more damage and have special abilities.|n|n|cffffcc00Can only attack ground units.|r
+}
+
+STRING 6609
+// Units: h026 (Crypt Fiend - Beserk), Tip (Tooltip - Basic)
+{
+Upgrade Crypt Fiend to Beserk
+}
+
+STRING 6610
+// Units: h026 (Crypt Fiend - Beserk), Ubertip (Tooltip - Extended)
+{
+Upgrades Crypt Fiend in this barracks to Beserks who deal and withstand more damage and have special abilities.|n|n|cffffcc00Can attack ground and air units.|r
+}
+
+STRING 6611
+// Units: h026 (Crypt Fiend - Beserk), Name (Name)
+{
+Crypt Fiend - Beserk
+}
+
+STRING 6612
+// Units: h028 (Crypt Fiend - Elite), Name (Name)
+{
+Crypt Fiend - Elite
+}
+
+STRING 6613
+// Units: h02G (Banshee), Tip (Tooltip - Basic)
+{
+Upgrade Skeletal Mage to Banshee
+}
+
+STRING 6614
+// Units: h02G (Banshee), Ubertip (Tooltip - Extended)
+{
+Upgrades Skeletal Mages in this barracks to Banshees who deal and withstand more damage and have special abilities.|n|n|cffffcc00Can attack ground and air units.|r
+}
+
+STRING 6615
+// Units: h028 (Crypt Fiend - Elite), Tip (Tooltip - Basic)
+{
+Upgrade Beserks to Elites
+}
+
+STRING 6616
+// Units: h027 (Archer - Elite), Ubertip (Tooltip - Extended)
+{
+Upgrades Beserks in this barracks to Elites who deal and withstand more damage and have special abilities.|n|n|cffffcc00Can attack ground and air units.|r
+}
+
+STRING 6617
+// Units: h020 (Skeleton Warrior), Tip (Tooltip - Basic)
+{
+Upgrade Ghoul to Skeleton Warriors
+}
+
+STRING 6618
+// Units: h020 (Skeleton Warrior), Ubertip (Tooltip - Extended)
+{
+Upgrades Ghouls in this barracks to Skeleton Warriors who deal and withstand more damage and have special abilities.|n|n|cffffcc00Can only attack ground units.|r
+}
+
+STRING 6619
+// Units: h02A (Frost Wyrm), Ubertip (Tooltip - Extended)
+{
+Upgrades Destroyer in this barracks to Frost Wyrm who deal and withstand more damage and have special abilities.|n|n|cffffcc00Can attack ground and air units.|r
+}
+
+STRING 6620
+// Units: h02A (Frost Wyrm), Tip (Tooltip - Basic)
+{
+Upgrade Destroyer to Frost Wyrm
+}
+
+STRING 6621
+// Units: h02C (Destroyer), Tip (Tooltip - Basic)
+{
+Upgrade Gargoyle to Destroyer
+}
+
+STRING 6622
+// Units: h02C (Destroyer), Ubertip (Tooltip - Extended)
+{
+Upgrades Gargoyle in this barracks to Destroyer who deal and withstand more damage and have special abilities.|n|n|cffffcc00Can attack ground and air units.|r
+}
+
+STRING 6623
+// Units: h02E (Gargoyle), Ubertip (Tooltip - Extended)
+{
+Adds Gargoyles to this barracks.|n|n|cffffcc00Can attack ground and air units.|r
+}
+
+STRING 6624
+// Units: h02E (Gargoyle), Tip (Tooltip - Basic)
+{
+Add Gargoyle
+}
+
+STRING 6625
+// Units: h02M (Meat Wagon), Tip (Tooltip - Basic)
+{
+Upgrade Obsidian Statue to Meat Wagon
+}
+
+STRING 6626
+// Units: h02M (Meat Wagon), Ubertip (Tooltip - Extended)
+{
+Upgrades Obsidian Statue in this barracks to Meat Wagon who deal and withstand more damage and have special abilities.|n|n|cffffcc00Can only attack ground units.|r
+}
+
+STRING 6627
+// Units: h02O (Obsidian Statue), Tip (Tooltip - Basic)
+{
+Add Obsidian Statue
+}
+
+STRING 6630
+// Units: h025 (Archer - Beserk), Ubertip (Tooltip - Extended)
+{
+Upgrades Archer in this barracks to Beserks who deal and withstand more damage and have special abilities.|n|n|cffffcc00Can attack ground and air units.|r
+}
+
+STRING 6631
+// Units: h025 (Archer - Beserk), Name (Name)
+{
+Archer - Beserk
+}
+
+STRING 6632
+// Units: h027 (Archer - Elite), Name (Name)
+{
+Archer - Elite
+}
+
+STRING 6634
+// Units: h028 (Crypt Fiend - Elite), Ubertip (Tooltip - Extended)
+{
+Upgrades Beserks in this barracks to Elites who deal and withstand more damage and have special abilities.|n|n|cffffcc00Can attack ground and air units.|r
+}
+
+STRING 6636
+// Units: h029 (Chimaera), Ubertip (Tooltip - Extended)
+{
+Upgrades Hippogryph Rider in this barracks to Chimeare who deal and withstand more damage and have special abilities.|n|n|cffffcc00Can attack ground and air units.|r
+}
+
+STRING 6637
+// Units: h01X (Sentry), Tip (Tooltip - Basic)
+{
+Melee Unit - [|cffffcc00Level 1|r]
+}
+
+STRING 6638
+// Units: h01Z (Druid of the Claw), Tip (Tooltip - Basic)
+{
+Melee Unit - [|cffffcc00Level 2|r]
+}
+
+STRING 6639
+// Units: h01Z (Druid of the Claw), Ubertip (Tooltip - Extended)
+{
+Upgrades Sentry in this barracks to Druid of the Claw who deal and withstand more damage and have special abilities.|n|n|cffffcc00Can only attack ground units.|r
+}
+
+STRING 6640
+// Units: h021 (Mountain Giant), Tip (Tooltip - Basic)
+{
+Melee Unit - [|cffffcc00Level 3|r]
+}
+
+STRING 6641
+// Units: h021 (Mountain Giant), Ubertip (Tooltip - Extended)
+{
+Upgrades |cffffcc00Melee Unit|r in this barracks to [|cffffcc00Level 3|r] who deal and withstand more damage and have one or more special abilities.|n|n|cffffcc00Can only attack ground units.|r
+}
+
+STRING 6642
+// Units: h023 (Archer), Tip (Tooltip - Basic)
+{
+Distance Unit - [|cffffcc00Level 1|r]
+}
+
+STRING 6643
+// Units: h025 (Archer - Beserk), Tip (Tooltip - Basic)
+{
+Distance Unit - [|cffffcc00Level 2|r]
+}
+
+STRING 6644
+// Units: h027 (Archer - Elite), Tip (Tooltip - Basic)
+{
+Distance Unit - [|cffffcc00Level 3|r]
+}
+
+STRING 6645
+// Units: h029 (Chimaera), Tip (Tooltip - Basic)
+{
+Flying Unit - [|cffffcc00Level 3|r]
+}
+
+STRING 6646
+// Units: h02B (Hippogryph Rider), Tip (Tooltip - Basic)
+{
+Flying Unit - [|cffffcc00Level 2|r]
+}
+
+STRING 6647
+// Units: h02B (Hippogryph Rider), Ubertip (Tooltip - Extended)
+{
+Upgrades Faerie Dragon in this barracks to Hippogryph Rider who deal and withstand more damage and have special abilities.|n|n|cffffcc00Can attack ground and air units.|r
+}
+
+STRING 6648
+// Units: h02D (Faerie Dragon), Ubertip (Tooltip - Extended)
+{
+Adds Faerie Dragon to this barracks.|n|n|cffffcc00Can attack ground and air units.|r
+}
+
+STRING 6649
+// Units: h02D (Faerie Dragon), Tip (Tooltip - Basic)
+{
+Flying Unit - [|cffffcc00Level 1|r]
+}
+
+STRING 6650
+// Units: h02F (Spirit of Vengeance), Tip (Tooltip - Basic)
+{
+Mage Unit - [|cffffcc00Level 3|r]
+}
+
+STRING 6651
+// Units: h02F (Spirit of Vengeance), Ubertip (Tooltip - Extended)
+{
+Upgrades [|cffffcc00Mage Unit|r] in this barracks to [|cffffcc00Level 3|r] who deal and withstand more damage and have one or more special abilities.|n|n|cffffcc00Can attack ground and air units.|r
+}
+
+STRING 6652
+// Units: h02H (Warden), Tip (Tooltip - Basic)
+{
+Mage Unit - [|cffffcc00Level 2|r]
+}
+
+STRING 6653
+// Units: h02H (Warden), Ubertip (Tooltip - Extended)
+{
+Upgrades [|cffffcc00Mage Unit|r] in this barracks to [|cffffcc00Level 2|r] who deal and withstand more damage and have a special ability.|n|n|cffffcc00Can attack ground and air units.|r
+}
+
+STRING 6654
+// Units: h02J (Druid of the Talon), Tip (Tooltip - Basic)
+{
+Mage Unit - [|cffffcc00Level 1|r]
+}
+
+STRING 6655
+// Units: h02L (Glaive Thrower), Tip (Tooltip - Basic)
+{
+Siege Unit - [|cffffcc00Level 2|r]
+}
+
+STRING 6656
+// Units: h02L (Glaive Thrower), Ubertip (Tooltip - Extended)
+{
+Upgrades Prison Wagon in this barracks to Glaive Thrower who deal and withstand more damage and have special abilities.|n|n|cffffcc00Can only attack ground units.|r
+}
+
+STRING 6657
+// Units: h02N (Prison Wagon), Tip (Tooltip - Basic)
+{
+Siege Unit - [|cffffcc00Level 1|r]
+}
+
+STRING 6658
+// Units: h02N (Prison Wagon), Ubertip (Tooltip - Extended)
+{
+Adds Siege Unit to this barracks.|n|n|cffffcc00Can only attack ground units.|r
+}
+
+STRING 6659
+// Units: h02O (Obsidian Statue), Ubertip (Tooltip - Extended)
+{
+Adds Obsidian Statue to this barracks.|n|n|cffffcc00Can only attack ground units.|r
 }
 

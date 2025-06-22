@@ -1,6 +1,5 @@
 ﻿using Source.Abstracts;
 using System.Collections.Generic;
-using WCSharp.Api;
 
 namespace Source.Models
 {
@@ -22,10 +21,10 @@ namespace Source.Models
     /// <param name="unitId"></param>
     public void CreateSingleUnitSpawn(int unitId)
     {
-      foreach   (SpawnAttackRoute route in Routes)
+      foreach (SpawnAttackRoute route in Routes)
       {
         Computer.CreateUnit(unitId, route.SpawnArea).AttackMove(route.TargetArea);
-      }     
+      }
     }
   }
 }

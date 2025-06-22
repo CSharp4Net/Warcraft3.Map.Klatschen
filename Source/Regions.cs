@@ -45,6 +45,7 @@ public static class Regions
 	public static Rectangle HeroCryptLord { get; set; } = new Rectangle(-4672f, 17024f, -4544f, 17152f);
 	public static Rectangle HeroDarkRanger { get; set; } = new Rectangle(-1984f, 17408f, -1856f, 17536f);
 	public static Rectangle HeroDeathKnight { get; set; } = new Rectangle(-3648f, 17024f, -3520f, 17152f);
+	public static Rectangle HeroFarSeer { get; set; } = new Rectangle(-3008f, 17024f, -2880f, 17152f);
 	public static Rectangle HeroFirelord { get; set; } = new Rectangle(-2560f, 18496f, -2432f, 18624f);
 	public static Rectangle HeroKeeperOfTheGrove { get; set; } = new Rectangle(-2176f, 18496f, -2048f, 18624f);
 	public static Rectangle HeroLich { get; set; } = new Rectangle(-3008f, 17792f, -2880f, 17920f);
@@ -136,7 +137,7 @@ public static class Regions
 	public static Rectangle UndeadToElfInnerLine { get; set; } = new Rectangle(8128f, -7232f, 8256f, -7104f);
 	public static Rectangle UndeadToElfOuterLine { get; set; } = new Rectangle(4032f, -7232f, 4160f, -7104f);
 	public static Rectangle UndeadToHumanInnerLine { get; set; } = new Rectangle(8640f, -5696f, 8768f, -5568f);
-	public static Rectangle UndeadToHumanOuterLine { get; set; } = new Rectangle(5056f, -2112f, 5184f, -1984f);
+	public static Rectangle UndeadToHumanOuterLine { get; set; } = new Rectangle(5024f, -2144f, 5152f, -2016f);
 	public static Rectangle UndeadToOrcInnerLine { get; set; } = new Rectangle(10176f, -5184f, 10304f, -5056f);
 	public static Rectangle UndeadToOrcOuterLine { get; set; } = new Rectangle(10176f, -1088f, 10304f, -960f);
 

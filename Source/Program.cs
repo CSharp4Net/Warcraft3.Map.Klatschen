@@ -104,6 +104,7 @@ namespace Source
         Areas.HeroCryptLord.RegisterOnEnter(HeroSelection.OnCryptLord);
         Areas.HeroDarkRanger.RegisterOnEnter(HeroSelection.OnDarkRanger);
         Areas.HeroDeathKnight.RegisterOnEnter(HeroSelection.OnDeathKnight);
+        Areas.HeroFarSeer.RegisterOnEnter(HeroSelection.OnFarSeer);
         Areas.HeroFirelord.RegisterOnEnter(HeroSelection.OnFirelord);
         Areas.HeroKeeperOfTheGrove.RegisterOnEnter(HeroSelection.OnKeeperOfTheGrove);
         Areas.HeroLich.RegisterOnEnter(HeroSelection.OnLich);

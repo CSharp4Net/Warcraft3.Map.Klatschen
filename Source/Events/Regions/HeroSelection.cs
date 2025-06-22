@@ -45,6 +45,11 @@ namespace Source.Events.Regions
       HandleHeroSelection(Constants.UNIT_DEATH_KNIGHT_HERO);
     }
 
+    internal static void OnFarSeer()
+    {
+      HandleHeroSelection(Constants.UNIT_FAR_SEER_HERO);
+    }
+
     internal static void OnFirelord()
     {
       HandleHeroSelection(Constants.UNIT_FIRELORD_HERO);
