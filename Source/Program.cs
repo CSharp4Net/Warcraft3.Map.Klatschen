@@ -103,15 +103,18 @@ namespace Source
         Areas.HeroBrewmaster.RegisterOnEnter(HeroSelection.OnBrewmaster);
         Areas.HeroCryptLord.RegisterOnEnter(HeroSelection.OnCryptLord);
         Areas.HeroDarkRanger.RegisterOnEnter(HeroSelection.OnDarkRanger);
+        Areas.HeroDeathKnight.RegisterOnEnter(HeroSelection.OnDeathKnight);
         Areas.HeroFirelord.RegisterOnEnter(HeroSelection.OnFirelord);
         Areas.HeroKeeperOfTheGrove.RegisterOnEnter(HeroSelection.OnKeeperOfTheGrove);
         Areas.HeroLich.RegisterOnEnter(HeroSelection.OnLich);
         Areas.HeroMountainKing.RegisterOnEnter(HeroSelection.OnMountainKing);
         Areas.HeroPitLord.RegisterOnEnter(HeroSelection.OnPitLord);
+        Areas.HeroPriestessOfMoon.RegisterOnEnter(HeroSelection.OnPriestessOfMoon);
         Areas.HeroSeaWitch.RegisterOnEnter(HeroSelection.OnSeaWitch);
         Areas.HeroShadowHunter.RegisterOnEnter(HeroSelection.OnShadowHunter);
         Areas.HeroTaurenChieftain.RegisterOnEnter(HeroSelection.OnTaurenChieftain);
         Areas.HeroTinker.RegisterOnEnter(HeroSelection.OnTinker);
+        Areas.HeroWarden.RegisterOnEnter(HeroSelection.OnWarden);
 
         // Regions-Ereignisse registrieren für automatische Einheitenbewegungen:
         // Wenn feindliche Einheiten in die Regionen treten, welche von zerstörten Gebäuden freigegeben werden.

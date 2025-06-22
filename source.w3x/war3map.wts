@@ -1490,48 +1490,6 @@ STRING 1949
 (Hero 10)
 }
 
-STRING 1950
-// Abilities: ABRA (Brilliance Aura), Tip (Tooltip - Normal)
-{
-Brillanzaura [|cffffcc00Stufe 4|r]
-}
-
-STRING 1951
-// Abilities: ABRA (Brilliance Aura), Tip (Tooltip - Normal)
-{
-Brillanzaura [|cffffcc00Stufe 5|r]
-}
-
-STRING 1952
-// Abilities: ABRA (Brilliance Aura), Tip (Tooltip - Normal)
-{
-Brillanzaura [|cffffcc00Stufe 6|r]
-}
-
-STRING 1953
-// Abilities: ABRA (Brilliance Aura), Tip (Tooltip - Normal)
-{
-Brillanzaura [|cffffcc00Stufe 7|r]
-}
-
-STRING 1954
-// Abilities: ABRA (Brilliance Aura), Tip (Tooltip - Normal)
-{
-Brillanzaura [|cffffcc00Stufe 8|r]
-}
-
-STRING 1955
-// Abilities: ABRA (Brilliance Aura), Tip (Tooltip - Normal)
-{
-Brillanzaura [|cffffcc00Stufe 9|r]
-}
-
-STRING 1956
-// Abilities: ABRA (Brilliance Aura), Tip (Tooltip - Normal)
-{
-Brillanzaura [|cffffcc00Stufe 10|r]
-}
-
 STRING 1973
 // Abilities: AWEB (Summon Water Elemental), EditorSuffix (Editor Suffix)
 {
@@ -1632,24 +1590,6 @@ STRING 2163
 // Abilities: ADRA (Thorns Aura), EditorSuffix (Editor Suffix)
 {
 (Hero 10)
-}
-
-STRING 2211
-// Abilities: A00Z (Storm, Earth, And Fire), Tip (Tooltip - Normal)
-{
-Sturm, Erde und Feuer [|cffffcc00Stufe 2|r]
-}
-
-STRING 2212
-// Abilities: A00Z (Storm, Earth, And Fire), Tip (Tooltip - Normal)
-{
-Sturm, Erde und Feuer [|cffffcc00Stufe 3|r]
-}
-
-STRING 2213
-// Abilities: A00Z (Storm, Earth, And Fire), Tip (Tooltip - Normal)
-{
-Sturm, Erde und Feuer [|cffffcc00Stufe 1|r]
 }
 
 STRING 2264
@@ -2484,30 +2424,6 @@ STRING 2952
 // Units: h01E (Crypt), EditorSuffix (Name - Editor Suffix)
 {
 (Undead)
-}
-
-STRING 2961
-// Abilities: A00Z (Storm, Earth, And Fire), Researchubertip (Tooltip - Learn - Extended)
-{
-|cffff0000Ultimative Fähigkeit|r|n|nTeilt den Braumeister in drei spezialisierte Krieger verschiedener Elemente. Wenn mindestens einer bis zum Ende seiner Lebensdauer überlebt, wird der Braumeister wiedergeboren.|nHält <A00Z,HeroDur1> Sek. lang an.|n|nDie drei Krieger werden mit jeder Stufe stärker.
-}
-
-STRING 2984
-// Abilities: A00Z (Storm, Earth, And Fire), Ubertip (Tooltip - Normal - Extended)
-{
-|cffff0000Ultimative Fähigkeit|r|n|nTeilt den Braumeister in drei spezialisierte Krieger verschiedener Elemente. Wenn mindestens einer bis zum Ende seiner Lebensdauer überlebt, wird der Braumeister wiedergeboren.|n|nHält |cffffcc00<A00Z,HeroDur1> Sekunden|r lang an.
-}
-
-STRING 2985
-// Abilities: A00Z (Storm, Earth, And Fire), Ubertip (Tooltip - Normal - Extended)
-{
-|cffff0000Ultimative Fähigkeit|r|n|nTeilt den Braumeister in drei spezialisierte Krieger verschiedener Elemente. Wenn mindestens einer bis zum Ende seiner Lebensdauer überlebt, wird der Braumeister wiedergeboren.|n|nHält |cffffcc00<A00Z,HeroDur2> Sekunden|r lang an.
-}
-
-STRING 2986
-// Abilities: A00Z (Storm, Earth, And Fire), Ubertip (Tooltip - Normal - Extended)
-{
-|cffff0000Ultimative Fähigkeit|r|n|nTeilt den Braumeister in drei spezialisierte Krieger verschiedener Elemente. Wenn mindestens einer bis zum Ende seiner Lebensdauer überlebt, wird der Braumeister wiedergeboren.|n|nHält |cffffcc00<A00Z,HeroDur3> Sekunden|r lang an.
 }
 
 STRING 3018
@@ -3383,12 +3299,6 @@ STRING 3613
 // Units: h01L (Headhunter), Description (Description)
 {
 Fernkampfeinheit
-}
-
-STRING 3615
-// Abilities: A00Z (Storm, Earth, And Fire), Researchtip (Tooltip - Learn)
-{
-Sturm, Erde und Feuer [|cffffcc00Stufe %d|r] erlernen
 }
 
 STRING 3624
@@ -7503,18 +7413,6 @@ STRING 4688
 Hurls a bottle of acid at a target, shattering on impact and splattering nearby enemy units with powerful acid.|n|nThe acid reduces armor, dealing high periodic damage to the primary target and slightly less periodic damage to nearby targets.|nLasts <A00F,Dur1> sec. |n|n|cffffcc00Level 1|r - Maximum <A00F,DataD1> damage per second, reduces armor by <A00F,DataC1>. |n|cffffcc00Level 2|r - Maximum <A00F,DataD2> damage per second, reduces armor by <A00F,DataC2>.|n|cffffcc00Level 3|r - Maximum <A00F,DataD3> damage per second, reduces armor by <A00F,DataC3>.
 }
 
-STRING 4690
-// Abilities: A015 (Avatar), Tip (Tooltip - Normal)
-{
-Activate avatar [|cffffcc00level 2|r
-}
-
-STRING 4691
-// Abilities: A015 (Avatar), Tip (Tooltip - Normal)
-{
-Activate avatar [|cffffcc00level 3|r
-}
-
 STRING 4692
 // Abilities: A015 (Avatar), Untip (Tooltip - Turn Off)
 {
@@ -7545,22 +7443,10 @@ STRING 4696
 |cffff0000Ultimative Ability|r|n|nActivate to increase the Mountain King's armor by <A015,DataA3>, his hit points by <A015,DataB3>, his damage by <A015,DataC3>, and grant him spell immunity.|n|nLasts <A015,Dur3> sec.
 }
 
-STRING 4697
-// Abilities: A015 (Avatar), Tip (Tooltip - Normal)
-{
-Activate avatar [|cffffcc00level 1|r
-}
-
 STRING 4698
 // Abilities: A015 (Avatar), Untip (Tooltip - Turn Off)
 {
 Deactivate avatar [|cffffcc00level 1|r
-}
-
-STRING 4699
-// Abilities: A015 (Avatar), Researchtip (Tooltip - Learn)
-{
-Learn avatar [|cffffcc00level %d|r]
 }
 
 STRING 4700
@@ -7767,76 +7653,10 @@ STRING 4733
 Makes all allied units near the Shadowhunter invulnerable.|nThe Shadowhunter itself does not become invulnerable.|nLasts <AGBV,Dur10> sec.
 }
 
-STRING 4734
-// Abilities: AGBV (Big Bad Voodoo), Tip (Tooltip - Normal)
-{
-Big bad voodoo [|cffffcc00level 1|r]
-}
-
-STRING 4735
-// Abilities: AGBV (Big Bad Voodoo), Tip (Tooltip - Normal)
-{
-Big bad voodoo [|cffffcc00level 2|r]
-}
-
-STRING 4736
-// Abilities: AGBV (Big Bad Voodoo), Tip (Tooltip - Normal)
-{
-Big bad voodoo [|cffffcc00level 3|r]
-}
-
-STRING 4737
-// Abilities: AGBV (Big Bad Voodoo), Tip (Tooltip - Normal)
-{
-Big bad voodoo [|cffffcc00level 4|r]
-}
-
-STRING 4738
-// Abilities: AGBV (Big Bad Voodoo), Tip (Tooltip - Normal)
-{
-Big bad voodoo [|cffffcc00level 5|r]
-}
-
-STRING 4739
-// Abilities: AGBV (Big Bad Voodoo), Tip (Tooltip - Normal)
-{
-Big bad voodoo [|cffffcc00level 6|r]
-}
-
-STRING 4740
-// Abilities: AGBV (Big Bad Voodoo), Tip (Tooltip - Normal)
-{
-Big bad voodoo [|cffffcc00level 7|r]
-}
-
-STRING 4741
-// Abilities: AGBV (Big Bad Voodoo), Tip (Tooltip - Normal)
-{
-Big bad voodoo [|cffffcc00level 8|r]
-}
-
-STRING 4742
-// Abilities: AGBV (Big Bad Voodoo), Tip (Tooltip - Normal)
-{
-Big bad voodoo [|cffffcc00level 9|r]
-}
-
-STRING 4743
-// Abilities: AGBV (Big Bad Voodoo), Tip (Tooltip - Normal)
-{
-Big bad voodoo [|cffffcc00level 10|r]
-}
-
 STRING 4744
 // Abilities: AGBV (Big Bad Voodoo), Researchubertip (Tooltip - Learn - Extended)
 {
 Makes all allied units near the Shadowhunter invulnerable.|nThe Shadowhunter itself does not become invulnerable.|n|nLasts <AGBV,Dur1> sec.
-}
-
-STRING 4745
-// Abilities: AGBV (Big Bad Voodoo), Researchtip (Tooltip - Learn)
-{
-Learn big bad voodoo [|cffffcc00level %d|r]
 }
 
 STRING 4746
@@ -7993,24 +7813,6 @@ STRING 4771
 // Abilities: AKLS (Bladestorm), Ubertip (Tooltip - Normal - Extended)
 {
 |cffff0000Ultimate Ability|r|n|nUnleashes a destructive storm of blades around the Blademaster, making him immune to magic and dealing <AKLS,DataA3> damage per second to nearby enemy ground units.|n|nLasts <AKLS,Dur3> for seconds.
-}
-
-STRING 4772
-// Abilities: AKLS (Bladestorm), Tip (Tooltip - Normal)
-{
-Bladestorm [|cffffcc00level 2|r]
-}
-
-STRING 4773
-// Abilities: AKLS (Bladestorm), Tip (Tooltip - Normal)
-{
-Bladestorm [|cffffcc00level 3|r]
-}
-
-STRING 4774
-// Abilities: AKLS (Bladestorm), Tip (Tooltip - Normal)
-{
-Bladestorm [|cffffcc00level 1|r]
 }
 
 STRING 4775
@@ -8253,60 +8055,6 @@ STRING 4814
 Takes control of an enemy target unit, as well as other nearby units.|n|nCannot be used against heroes or buildings.|n|n|cffffcc00Level 1|r - 1 more unit|n|cffffcc00Level 2|r - 2 more units|n|cffffcc00Level 3|r - 3 more units|n|cffffcc00... ...
 }
 
-STRING 4815
-// Abilities: A0A0 (Charm), Tip (Tooltip - Normal)
-{
-Enchantment [|cffffcc00level 2|r]
-}
-
-STRING 4816
-// Abilities: A0A0 (Charm), Tip (Tooltip - Normal)
-{
-Enchantment [|cffffcc00level 3|r]
-}
-
-STRING 4817
-// Abilities: A0A0 (Charm), Tip (Tooltip - Normal)
-{
-Enchantment [|cffffcc00level 4|r]
-}
-
-STRING 4818
-// Abilities: A0A0 (Charm), Tip (Tooltip - Normal)
-{
-Enchantment [|cffffcc00level 5|r]
-}
-
-STRING 4819
-// Abilities: A0A0 (Charm), Tip (Tooltip - Normal)
-{
-Enchantment [|cffffcc00level 6|r]
-}
-
-STRING 4820
-// Abilities: A0A0 (Charm), Tip (Tooltip - Normal)
-{
-Enchantment [|cffffcc00level 7|r]
-}
-
-STRING 4821
-// Abilities: A0A0 (Charm), Tip (Tooltip - Normal)
-{
-Enchantment [|cffffcc00level 8|r]
-}
-
-STRING 4822
-// Abilities: A0A0 (Charm), Tip (Tooltip - Normal)
-{
-Enchantment [|cffffcc00level 9|r]
-}
-
-STRING 4823
-// Abilities: A0A0 (Charm), Tip (Tooltip - Normal)
-{
-Enchantment [|cffffcc00level 10|r]
-}
-
 STRING 4824
 // Abilities: A0A0 (Charm), Ubertip (Tooltip - Normal - Extended)
 {
@@ -8365,18 +8113,6 @@ STRING 4833
 // Abilities: A0A0 (Charm), Ubertip (Tooltip - Normal - Extended)
 {
 Takes control of an enemy target unit and 10 other nearby unit. The maximum number of units and the range increases with each level.|n|nCannot be used against heroes or buildings.
-}
-
-STRING 4834
-// Abilities: A0A0 (Charm), Tip (Tooltip - Normal)
-{
-Enchantment [|cffffcc00level 1|r]
-}
-
-STRING 4835
-// Abilities: A0A0 (Charm), Researchtip (Tooltip - Learn)
-{
-Learn enchantment [|cffffcc00level %d|r
 }
 
 STRING 4836
@@ -8487,34 +8223,10 @@ STRING 4853
 Strikes with such force that even enemies near the primary target take <A0SS,DataA10,%>% damage.
 }
 
-STRING 4854
-// Abilities: A0VD (Doom), Tip (Tooltip - Normal)
-{
-Doom [|cffffcc00level 2|r]
-}
-
-STRING 4855
-// Abilities: A0VD (Doom), Tip (Tooltip - Normal)
-{
-Doom [|cffffcc00level 3|r]
-}
-
-STRING 4859
-// Abilities: A0VD (Doom), Tip (Tooltip - Normal)
-{
-Doom [|cffffcc00level 1|r]
-}
-
 STRING 4860
 // Abilities: A0VD (Doom), Researchubertip (Tooltip - Learn - Extended)
 {
 |cffff0000Ultimate Ability|r|n|nMarks a target unit for the manifestation of a demon. The unit cannot use any abilities and takes <A0VD,DataA1> damage per second until it dies. After it dies, a large demon rises from its corpse. |n|nDamnation cannot be dispelled or ended.
-}
-
-STRING 4861
-// Abilities: A0VD (Doom), Researchtip (Tooltip - Learn)
-{
-Learn Doom [|cffffcc00level %d|r
 }
 
 STRING 4862
@@ -8583,66 +8295,6 @@ STRING 4872
 Increases the mana regeneration of nearby allied units by <ABRA,DataA3> points.
 }
 
-STRING 4873
-// Abilities: ASSW (Smash Wave), Tip (Tooltip - Normal)
-{
-Smash wave [|cffffcc00level 1|r]
-}
-
-STRING 4874
-// Abilities: ASSW (Smash Wave), Tip (Tooltip - Normal)
-{
-Smash wave [|cffffcc00level 2|r]
-}
-
-STRING 4875
-// Abilities: ASSW (Smash Wave), Tip (Tooltip - Normal)
-{
-Smash wave [|cffffcc00level 3|r]
-}
-
-STRING 4876
-// Abilities: ASSW (Smash Wave), Tip (Tooltip - Normal)
-{
-Smash wave [|cffffcc00level 4|r]
-}
-
-STRING 4877
-// Abilities: ASSW (Smash Wave), Tip (Tooltip - Normal)
-{
-Smash wave [|cffffcc00level 5|r]
-}
-
-STRING 4878
-// Abilities: ASSW (Smash Wave), Tip (Tooltip - Normal)
-{
-Smash wave [|cffffcc00level 6|r]
-}
-
-STRING 4879
-// Abilities: ASSW (Smash Wave), Tip (Tooltip - Normal)
-{
-Smash wave [|cffffcc00level 7|r]
-}
-
-STRING 4880
-// Abilities: ASSW (Smash Wave), Tip (Tooltip - Normal)
-{
-Smash wave [|cffffcc00level 8|r]
-}
-
-STRING 4881
-// Abilities: ASSW (Smash Wave), Tip (Tooltip - Normal)
-{
-Smash wave [|cffffcc00level 9|r]
-}
-
-STRING 4882
-// Abilities: ASSW (Smash Wave), Tip (Tooltip - Normal)
-{
-Smash wave [|cffffcc00level 10|r]
-}
-
 STRING 4883
 // Abilities: ASSW (Smash Wave), Ubertip (Tooltip - Normal - Extended)
 {
@@ -8707,12 +8359,6 @@ STRING 4893
 // Abilities: ASSW (Smash Wave), Researchubertip (Tooltip - Learn - Extended)
 {
 Sends out a gigantic wave that deals damage to all enemy ground units in a line.
-}
-
-STRING 4894
-// Abilities: ASSW (Smash Wave), Researchtip (Tooltip - Learn)
-{
-Learn smash wave [|cffffcc00level %d|r]
 }
 
 STRING 4895
@@ -12285,66 +11931,6 @@ STRING 5490
 Causes a healing rain to fall over a large area, healing allied units for <AGLH,DataA1> hit points per second for <AGLH,Dur1> seconds.
 }
 
-STRING 5491
-// Abilities: AGLH (Tranquility), Tip (Tooltip - Normal)
-{
-Serenity - [|cffffcc00level 1|r]
-}
-
-STRING 5492
-// Abilities: AGLH (Tranquility), Tip (Tooltip - Normal)
-{
-Serenity - [|cffffcc00level 2|r]
-}
-
-STRING 5493
-// Abilities: AGLH (Tranquility), Tip (Tooltip - Normal)
-{
-Serenity - [|cffffcc00level 3|r]
-}
-
-STRING 5494
-// Abilities: AGLH (Tranquility), Tip (Tooltip - Normal)
-{
-Serenity - [|cffffcc00level 4|r]
-}
-
-STRING 5495
-// Abilities: AGLH (Tranquility), Tip (Tooltip - Normal)
-{
-Serenity - [|cffffcc00level 5|r]
-}
-
-STRING 5496
-// Abilities: AGLH (Tranquility), Tip (Tooltip - Normal)
-{
-Serenity - [|cffffcc00level 6|r]
-}
-
-STRING 5497
-// Abilities: AGLH (Tranquility), Tip (Tooltip - Normal)
-{
-Serenity - [|cffffcc00level 7|r]
-}
-
-STRING 5498
-// Abilities: AGLH (Tranquility), Tip (Tooltip - Normal)
-{
-Serenity - [|cffffcc00level 8|r]
-}
-
-STRING 5499
-// Abilities: AGLH (Tranquility), Tip (Tooltip - Normal)
-{
-Serenity - [|cffffcc00level 9|r]
-}
-
-STRING 5500
-// Abilities: AGLH (Tranquility), Tip (Tooltip - Normal)
-{
-Serenity - [|cffffcc00level 10|r]
-}
-
 STRING 5501
 // Abilities: AGLH (Tranquility), Ubertip (Tooltip - Normal - Extended)
 {
@@ -12403,12 +11989,6 @@ STRING 5510
 // Abilities: AGLH (Tranquility), Ubertip (Tooltip - Normal - Extended)
 {
 Causes a healing rain to fall over a large area, healing allied units for <AGLH,DataA10> hit points per second for <AGLH,Dur10> seconds.
-}
-
-STRING 5511
-// Abilities: AGLH (Tranquility), Researchtip (Tooltip - Learn)
-{
-Learn serenity - [|cffffcc00level %d|r]
 }
 
 STRING 5512
@@ -14307,18 +13887,6 @@ STRING 5830
 (Unit)
 }
 
-STRING 5833
-// Abilities: APHX (Phoenix), Tip (Tooltip - Normal)
-{
-Phoenix
-}
-
-STRING 5834
-// Abilities: APHX (Phoenix), Tip (Tooltip - Normal)
-{
-Phoenix
-}
-
 STRING 5835
 // Abilities: APXF (Phoenix Fire [|cffffcc00Level 1|r]), EditorSuffix (Editor Suffix)
 {
@@ -14781,30 +14349,6 @@ STRING 5912
 When killed, the Tauren Chieftain will come back to life. Reincarnation has a <ARIC,Cool10> second cooldown.
 }
 
-STRING 5917
-// Abilities: AWST (War Stomp), Researchubertip (Tooltip - Learn - Extended)
-{
-|cffff0000Ultimative Fähigkeit|r|n|nSlams the ground, stunning (<AWST,Dur1> to <AWST,Dur3>) and damaging (<AWST,DataA1> to <AWST,DataA3>) nearby enemy land units.
-}
-
-STRING 5918
-// Abilities: AWST (War Stomp), Ubertip (Tooltip - Normal - Extended)
-{
-|cffff0000Ultimative Fähigkeit|r|n|nSlams the ground, dealing <AWST,DataA1> damage to nearby enemy land units and stunning them for <AWST,Dur1> seconds.
-}
-
-STRING 5919
-// Abilities: AWST (War Stomp), Ubertip (Tooltip - Normal - Extended)
-{
-|cffff0000Ultimative Fähigkeit|r|n|nSlams the ground, dealing <AWST,DataA2> damage to nearby enemy land units and stunning them for <AWST,Dur2> seconds.
-}
-
-STRING 5920
-// Abilities: AWST (War Stomp), Ubertip (Tooltip - Normal - Extended)
-{
-|cffff0000Ultimative Fähigkeit|r|n|nSlams the ground, dealing <AWST,DataA3> damage to nearby enemy land units and stunning them for <AWST,Dur3> seconds.
-}
-
 STRING 5921
 // Abilities: AWST (War Stomp), EditorSuffix (Editor Suffix)
 {
@@ -15189,60 +14733,6 @@ STRING 5991
 Creates a swarm of angry locusts that bite and tear at nearby enemy units. As they chew the enemy flesh, they convert it into a substance that restores hit points to the Crypt Lord when they return. Pierces spell immunity. |nLasts <ALOC,HeroDur10> seconds.
 }
 
-STRING 5992
-// Abilities: ALOC (Locust Swarm), Tip (Tooltip - Normal)
-{
-Locust Swarm
-}
-
-STRING 5993
-// Abilities: ALOC (Locust Swarm), Tip (Tooltip - Normal)
-{
-Locust Swarm
-}
-
-STRING 5994
-// Abilities: ALOC (Locust Swarm), Tip (Tooltip - Normal)
-{
-Locust Swarm
-}
-
-STRING 5995
-// Abilities: ALOC (Locust Swarm), Tip (Tooltip - Normal)
-{
-Locust Swarm
-}
-
-STRING 5996
-// Abilities: ALOC (Locust Swarm), Tip (Tooltip - Normal)
-{
-Locust Swarm
-}
-
-STRING 5997
-// Abilities: ALOC (Locust Swarm), Tip (Tooltip - Normal)
-{
-Locust Swarm
-}
-
-STRING 5998
-// Abilities: ALOC (Locust Swarm), Tip (Tooltip - Normal)
-{
-Locust Swarm
-}
-
-STRING 5999
-// Abilities: ALOC (Locust Swarm), Tip (Tooltip - Normal)
-{
-Locust Swarm
-}
-
-STRING 6000
-// Abilities: ALOC (Locust Swarm), Tip (Tooltip - Normal)
-{
-Locust Swarm
-}
-
 STRING 6001
 // Abilities: ALOC (Locust Swarm), EditorSuffix (Editor Suffix)
 {
@@ -15364,7 +14854,7 @@ C
 }
 
 STRING 6032
-// Abilities: A00M (Townportal), EditorSuffix (Editor Suffix)
+// Units: O005 (Warden), EditorSuffix (Name - Editor Suffix)
 {
 (Hero)
 }
@@ -15747,60 +15237,6 @@ STRING 6098
 Damages everything in its area of effect by <ADAD,DataA1,%>% to <ADAD,DataA10,%>% of its max hit points per second.
 }
 
-STRING 6099
-// Abilities: ADAD (Death And Decay), Tip (Tooltip - Normal)
-{
-Death And Decay
-}
-
-STRING 6100
-// Abilities: ADAD (Death And Decay), Tip (Tooltip - Normal)
-{
-Death And Decay
-}
-
-STRING 6101
-// Abilities: ADAD (Death And Decay), Tip (Tooltip - Normal)
-{
-Death And Decay
-}
-
-STRING 6102
-// Abilities: ADAD (Death And Decay), Tip (Tooltip - Normal)
-{
-Death And Decay
-}
-
-STRING 6103
-// Abilities: ADAD (Death And Decay), Tip (Tooltip - Normal)
-{
-Death And Decay
-}
-
-STRING 6104
-// Abilities: ADAD (Death And Decay), Tip (Tooltip - Normal)
-{
-Death And Decay
-}
-
-STRING 6105
-// Abilities: ADAD (Death And Decay), Tip (Tooltip - Normal)
-{
-Death And Decay
-}
-
-STRING 6106
-// Abilities: ADAD (Death And Decay), Tip (Tooltip - Normal)
-{
-Death And Decay
-}
-
-STRING 6107
-// Abilities: ADAD (Death And Decay), Tip (Tooltip - Normal)
-{
-Death And Decay
-}
-
 STRING 6108
 // Abilities: ADAD (Death And Decay), Ubertip (Tooltip - Normal - Extended)
 {
@@ -15865,5 +15301,2279 @@ STRING 6118
 // Abilities: ADAD (Death And Decay), EditorSuffix (Editor Suffix)
 {
 (Hero 10)
+}
+
+STRING 6119
+// Units: O005 (Warden), Name (Name)
+{
+Warden
+}
+
+STRING 6120
+// Units: O005 (Warden), Propernames (Proper Names)
+{
+Alsa Iron-cell,The Iron Raven,Marin Bladewing,Shalis Darkhunter,Sira Moonwarden,Saithis,Malace Shade,Kiri Starstalker,Anaya Felgrove,Mirana Starlight,Felhala Starmoon,Drelanim Whisperwind,Cordana Felsong,Nalmeena Darkfollow
+}
+
+STRING 6121
+// Units: N02P (Priestess of the Moon), EditorSuffix (Name - Editor Suffix)
+{
+(Hero)
+}
+
+STRING 6122
+// Abilities: ABLK (Blink), Researchubertip (Tooltip - Learn - Extended)
+{
+Short distance teleportation that allows the Warden to move in and out of combat.
+}
+
+STRING 6123
+// Abilities: ABLK (Blink), EditorSuffix (Editor Suffix)
+{
+(Hero 10)
+}
+
+STRING 6124
+// Abilities: ABLK (Blink), Tip (Tooltip - Normal)
+{
+Blink - [|cffffcc00Level 4|r]
+}
+
+STRING 6125
+// Abilities: ABLK (Blink), Tip (Tooltip - Normal)
+{
+Blink - [|cffffcc00Level 5|r]
+}
+
+STRING 6126
+// Abilities: ABLK (Blink), Tip (Tooltip - Normal)
+{
+Blink - [|cffffcc00Level 6|r]
+}
+
+STRING 6127
+// Abilities: ABLK (Blink), Tip (Tooltip - Normal)
+{
+Blink - [|cffffcc00Level 7|r]
+}
+
+STRING 6128
+// Abilities: ABLK (Blink), Tip (Tooltip - Normal)
+{
+Blink - [|cffffcc00Level 8|r]
+}
+
+STRING 6129
+// Abilities: ABLK (Blink), Tip (Tooltip - Normal)
+{
+Blink - [|cffffcc00Level 9|r]
+}
+
+STRING 6130
+// Abilities: ABLK (Blink), Tip (Tooltip - Normal)
+{
+Blink - [|cffffcc00Level 10|r]
+}
+
+STRING 6131
+// Abilities: ABLK (Blink), Ubertip (Tooltip - Normal - Extended)
+{
+Teleports the Warden a short distance, allowing her to move in and out of combat. The time it takes to fire decreases with each level, the range increases with each level.
+}
+
+STRING 6132
+// Abilities: ABLK (Blink), Ubertip (Tooltip - Normal - Extended)
+{
+Teleports the Warden a short distance, allowing her to move in and out of combat. The time it takes to fire decreases with each level, the range increases with each level.
+}
+
+STRING 6133
+// Abilities: ABLK (Blink), Ubertip (Tooltip - Normal - Extended)
+{
+Teleports the Warden a short distance, allowing her to move in and out of combat. The time it takes to fire decreases with each level, the range increases with each level.
+}
+
+STRING 6134
+// Abilities: ABLK (Blink), Ubertip (Tooltip - Normal - Extended)
+{
+Teleports the Warden a short distance, allowing her to move in and out of combat. The time it takes to fire decreases with each level, the range increases with each level.
+}
+
+STRING 6135
+// Abilities: ABLK (Blink), Ubertip (Tooltip - Normal - Extended)
+{
+Teleports the Warden a short distance, allowing her to move in and out of combat. The time it takes to fire decreases with each level, the range increases with each level.
+}
+
+STRING 6136
+// Abilities: ABLK (Blink), Ubertip (Tooltip - Normal - Extended)
+{
+Teleports the Warden a short distance, allowing her to move in and out of combat. The time it takes to fire decreases with each level, the range increases with each level.
+}
+
+STRING 6137
+// Abilities: ABLK (Blink), Ubertip (Tooltip - Normal - Extended)
+{
+Teleports the Warden a short distance, allowing her to move in and out of combat. The time it takes to fire decreases with each level, the range increases with each level.
+}
+
+STRING 6138
+// Abilities: ABLK (Blink), Ubertip (Tooltip - Normal - Extended)
+{
+Teleports the Warden a short distance, allowing her to move in and out of combat. The time it takes to fire decreases with each level, the range increases with each level.
+}
+
+STRING 6139
+// Abilities: ABLK (Blink), Ubertip (Tooltip - Normal - Extended)
+{
+Teleports the Warden a short distance, allowing her to move in and out of combat. The time it takes to fire decreases with each level, the range increases with each level.
+}
+
+STRING 6140
+// Abilities: ABLK (Blink), Ubertip (Tooltip - Normal - Extended)
+{
+Teleports the Warden a short distance, allowing her to move in and out of combat. The time it takes to fire decreases with each level, the range increases with each level.
+}
+
+STRING 6141
+// Abilities: AFOK (Fan of Knives), EditorSuffix (Editor Suffix)
+{
+(Hero 10)
+}
+
+STRING 6142
+// Abilities: AFOK (Fan of Knives), Researchubertip (Tooltip - Learn - Extended)
+{
+The Warden hurls a flurry of knives, damaging nearby enemies.
+}
+
+STRING 6143
+// Abilities: AFOK (Fan of Knives), Ubertip (Tooltip - Normal - Extended)
+{
+The Warden hurls a flurry of knives, damaging nearby enemies. Each knife does <AFOK,DataA1> damage.
+}
+
+STRING 6144
+// Abilities: AFOK (Fan of Knives), Ubertip (Tooltip - Normal - Extended)
+{
+The Warden hurls a flurry of knives, damaging nearby enemies. Each knife does <AFOK,DataA2> damage.
+}
+
+STRING 6145
+// Abilities: AFOK (Fan of Knives), Ubertip (Tooltip - Normal - Extended)
+{
+The Warden hurls a flurry of knives, damaging nearby enemies. Each knife does <AFOK,DataA3> damage.
+}
+
+STRING 6146
+// Abilities: AFOK (Fan of Knives), Ubertip (Tooltip - Normal - Extended)
+{
+The Warden hurls a flurry of knives, damaging nearby enemies. Each knife does <AFOK,DataA4> damage.
+}
+
+STRING 6147
+// Abilities: AFOK (Fan of Knives), Ubertip (Tooltip - Normal - Extended)
+{
+The Warden hurls a flurry of knives, damaging nearby enemies. Each knife does <AFOK,DataA5> damage.
+}
+
+STRING 6148
+// Abilities: AFOK (Fan of Knives), Ubertip (Tooltip - Normal - Extended)
+{
+The Warden hurls a flurry of knives, damaging nearby enemies. Each knife does <AFOK,DataA6> damage.
+}
+
+STRING 6149
+// Abilities: AFOK (Fan of Knives), Ubertip (Tooltip - Normal - Extended)
+{
+The Warden hurls a flurry of knives, damaging nearby enemies. Each knife does <AFOK,DataA7> damage.
+}
+
+STRING 6150
+// Abilities: AFOK (Fan of Knives), Ubertip (Tooltip - Normal - Extended)
+{
+The Warden hurls a flurry of knives, damaging nearby enemies. Each knife does <AFOK,DataA8> damage.
+}
+
+STRING 6151
+// Abilities: AFOK (Fan of Knives), Ubertip (Tooltip - Normal - Extended)
+{
+The Warden hurls a flurry of knives, damaging nearby enemies. Each knife does <AFOK,DataA9> damage.
+}
+
+STRING 6152
+// Abilities: AFOK (Fan of Knives), Ubertip (Tooltip - Normal - Extended)
+{
+The Warden hurls a flurry of knives, damaging nearby enemies. Each knife does <AFOK,DataA10> damage.
+}
+
+STRING 6153
+// Abilities: AFOK (Fan of Knives), Tip (Tooltip - Normal)
+{
+Fan of Knives - [|cffffcc00Level 4|r]
+}
+
+STRING 6154
+// Abilities: AFOK (Fan of Knives), Tip (Tooltip - Normal)
+{
+Fan of Knives - [|cffffcc00Level 5|r]
+}
+
+STRING 6155
+// Abilities: AFOK (Fan of Knives), Tip (Tooltip - Normal)
+{
+Fan of Knives - [|cffffcc00Level 6|r]
+}
+
+STRING 6156
+// Abilities: AFOK (Fan of Knives), Tip (Tooltip - Normal)
+{
+Fan of Knives - [|cffffcc00Level 7|r]
+}
+
+STRING 6157
+// Abilities: AFOK (Fan of Knives), Tip (Tooltip - Normal)
+{
+Fan of Knives - [|cffffcc00Level 8|r]
+}
+
+STRING 6158
+// Abilities: AFOK (Fan of Knives), Tip (Tooltip - Normal)
+{
+Fan of Knives - [|cffffcc00Level 9|r]
+}
+
+STRING 6159
+// Abilities: AFOK (Fan of Knives), Tip (Tooltip - Normal)
+{
+Fan of Knives - [|cffffcc00Level 10|r]
+}
+
+STRING 6160
+// Abilities: ASST (Shadow Strike), Researchubertip (Tooltip - Learn - Extended)
+{
+Hurls a poisoned dagger which deals large initial damage, and then deals damage over time. The poisoned unit has its movement speed slowed for a short duration.
+}
+
+STRING 6161
+// Abilities: ASST (Shadow Strike), EditorSuffix (Editor Suffix)
+{
+(Hero 10)
+}
+
+STRING 6162
+// Abilities: ASST (Shadow Strike), Tip (Tooltip - Normal)
+{
+Shadow Strike - [|cffffcc00Level 4|r]
+}
+
+STRING 6163
+// Abilities: ASST (Shadow Strike), Tip (Tooltip - Normal)
+{
+Shadow Strike - [|cffffcc00Level 5|r]
+}
+
+STRING 6164
+// Abilities: ASST (Shadow Strike), Tip (Tooltip - Normal)
+{
+Shadow Strike - [|cffffcc00Level 6|r]
+}
+
+STRING 6165
+// Abilities: ASST (Shadow Strike), Tip (Tooltip - Normal)
+{
+Shadow Strike - [|cffffcc00Level 7|r]
+}
+
+STRING 6166
+// Abilities: ASST (Shadow Strike), Tip (Tooltip - Normal)
+{
+Shadow Strike - [|cffffcc00Level 8|r]
+}
+
+STRING 6167
+// Abilities: ASST (Shadow Strike), Tip (Tooltip - Normal)
+{
+Shadow Strike - [|cffffcc00Level 9|r]
+}
+
+STRING 6168
+// Abilities: ASST (Shadow Strike), Tip (Tooltip - Normal)
+{
+Shadow Strike - [|cffffcc00Level 10|r]
+}
+
+STRING 6169
+// Abilities: ASST (Shadow Strike), Ubertip (Tooltip - Normal - Extended)
+{
+Hurls a poisoned dagger at a target enemy unit, dealing <AEsh,DataE1> initial damage, and <ASST,DataA1> damage every <ASST,Cast1> seconds for <ASST,Dur1> seconds. The poison slows the movement speed of the targeted unit for a short duration.
+}
+
+STRING 6170
+// Abilities: ASST (Shadow Strike), Ubertip (Tooltip - Normal - Extended)
+{
+Hurls a poisoned dagger at a target enemy unit, dealing <AEsh,DataE2> initial damage, and <ASST,DataA2> damage every <ASST,Cast2> seconds for <ASST,Dur2> seconds. The poison slows the movement speed of the targeted unit for a short duration.
+}
+
+STRING 6171
+// Abilities: ASST (Shadow Strike), Ubertip (Tooltip - Normal - Extended)
+{
+Hurls a poisoned dagger at a target enemy unit, dealing <AEsh,DataE3> initial damage, and <ASST,DataA3> damage every <ASST,Cast3> seconds for <ASST,Dur3> seconds. The poison slows the movement speed of the targeted unit for a short duration.
+}
+
+STRING 6172
+// Abilities: ASST (Shadow Strike), Ubertip (Tooltip - Normal - Extended)
+{
+Hurls a poisoned dagger at a target enemy unit, dealing <AEsh,DataE4> initial damage, and <ASST,DataA4> damage every <ASST,Cast4> seconds for <ASST,Dur4> seconds. The poison slows the movement speed of the targeted unit for a short duration.
+}
+
+STRING 6173
+// Abilities: ASST (Shadow Strike), Ubertip (Tooltip - Normal - Extended)
+{
+Hurls a poisoned dagger at a target enemy unit, dealing <AEsh,DataE5> initial damage, and <ASST,DataA5> damage every <ASST,Cast5> seconds for <ASST,Dur5> seconds. The poison slows the movement speed of the targeted unit for a short duration.
+}
+
+STRING 6174
+// Abilities: ASST (Shadow Strike), Ubertip (Tooltip - Normal - Extended)
+{
+Hurls a poisoned dagger at a target enemy unit, dealing <AEsh,DataE6> initial damage, and <ASST,DataA6> damage every <ASST,Cast6> seconds for <ASST,Dur6> seconds. The poison slows the movement speed of the targeted unit for a short duration.
+}
+
+STRING 6175
+// Abilities: ASST (Shadow Strike), Ubertip (Tooltip - Normal - Extended)
+{
+Hurls a poisoned dagger at a target enemy unit, dealing <AEsh,DataE7> initial damage, and <ASST,DataA7> damage every <ASST,Cast7> seconds for <ASST,Dur7> seconds. The poison slows the movement speed of the targeted unit for a short duration.
+}
+
+STRING 6176
+// Abilities: ASST (Shadow Strike), Ubertip (Tooltip - Normal - Extended)
+{
+Hurls a poisoned dagger at a target enemy unit, dealing <AEsh,DataE8> initial damage, and <ASST,DataA8> damage every <ASST,Cast8> seconds for <ASST,Dur8> seconds. The poison slows the movement speed of the targeted unit for a short duration.
+}
+
+STRING 6177
+// Abilities: ASST (Shadow Strike), Ubertip (Tooltip - Normal - Extended)
+{
+Hurls a poisoned dagger at a target enemy unit, dealing <AEsh,DataE9> initial damage, and <ASST,DataA9> damage every <ASST,Cast9> seconds for <ASST,Dur9> seconds. The poison slows the movement speed of the targeted unit for a short duration.
+}
+
+STRING 6178
+// Abilities: ASST (Shadow Strike), Ubertip (Tooltip - Normal - Extended)
+{
+Hurls a poisoned dagger at a target enemy unit, dealing <AEsh,DataE10> initial damage, and <ASST,DataA10> damage every <ASST,Cast10> seconds for <ASST,Dur10> seconds. The poison slows the movement speed of the targeted unit for a short duration.
+}
+
+STRING 6180
+// Abilities: AVEG (Vengeance), Tip (Tooltip - Normal)
+{
+Vengeance - [|cffffcc00Level 1|r]
+}
+
+STRING 6181
+// Abilities: AVEG (Vengeance), Tip (Tooltip - Normal)
+{
+Vengeance - [|cffffcc00Level 2|r]
+}
+
+STRING 6182
+// Abilities: AVEG (Vengeance), Tip (Tooltip - Normal)
+{
+Vengeance - [|cffffcc00Level 3|r]
+}
+
+STRING 6186
+// Units: e005 (Avatar of Vengeance [|cffffcc00Level 1|r]), Name (Name)
+{
+Avatar of Vengeance [|cffffcc00Level 1|r]
+}
+
+STRING 6187
+// Units: e005 (Avatar of Vengeance [|cffffcc00Level 1|r]), EditorSuffix (Name - Editor Suffix)
+{
+(Hero spell)
+}
+
+STRING 6188
+// Units: e006 (Avatar of Vengeance [|cffffcc00Level 2|r]), Name (Name)
+{
+Avatar of Vengeance [|cffffcc00Level 2|r]
+}
+
+STRING 6189
+// Units: e006 (Avatar of Vengeance [|cffffcc00Level 2|r]), EditorSuffix (Name - Editor Suffix)
+{
+(Hero spell)
+}
+
+STRING 6190
+// Units: e007 (Avatar of Vengeance [|cffffcc00Level 3|r]), Name (Name)
+{
+Avatar of Vengeance [|cffffcc00Level 3|r]
+}
+
+STRING 6191
+// Units: e007 (Avatar of Vengeance [|cffffcc00Level 3|r]), EditorSuffix (Name - Editor Suffix)
+{
+(Hero spell)
+}
+
+STRING 6192
+// Units: e008 (Spirit of Vengeance [|cffffcc00Level 1|r]), Name (Name)
+{
+Spirit of Vengeance [|cffffcc00Level 1|r]
+}
+
+STRING 6193
+// Units: e008 (Spirit of Vengeance [|cffffcc00Level 1|r]), EditorSuffix (Name - Editor Suffix)
+{
+(Hero Spell)
+}
+
+STRING 6194
+// Units: e009 (Spirit of Vengeance [|cffffcc00Level 2|r]), Name (Name)
+{
+Spirit of Vengeance [|cffffcc00Level 2|r]
+}
+
+STRING 6195
+// Units: e009 (Spirit of Vengeance [|cffffcc00Level 2|r]), EditorSuffix (Name - Editor Suffix)
+{
+(Hero Spell)
+}
+
+STRING 6196
+// Units: e00A (Spirit of Vengeance [|cffffcc00Level 3|r]), Name (Name)
+{
+Spirit of Vengeance [|cffffcc00Level 3|r]
+}
+
+STRING 6197
+// Units: e00A (Spirit of Vengeance [|cffffcc00Level 3|r]), EditorSuffix (Name - Editor Suffix)
+{
+(Hero Spell)
+}
+
+STRING 6198
+// Abilities: ASOE (Spirit of Vengeance [|cffffcc00Level 1|r]), EditorSuffix (Editor Suffix)
+{
+(Unit)
+}
+
+STRING 6199
+// Abilities: ASOE (Spirit of Vengeance [|cffffcc00Level 1|r]), Ubertip (Tooltip - Normal - Extended)
+{
+Raises an invulnerable feral spirit from a corpse. Lasts <ASOE,Dur1> seconds or until the avatar dies.
+}
+
+STRING 6200
+// Abilities: ASOE (Spirit of Vengeance [|cffffcc00Level 1|r]), Name (Name)
+{
+Spirit of Vengeance [|cffffcc00Level 1|r]
+}
+
+STRING 6201
+// Abilities: ASOZ (Spirit of Vengeance [|cffffcc00Level 2|r]), EditorSuffix (Editor Suffix)
+{
+(Unit)
+}
+
+STRING 6202
+// Abilities: ASOZ (Spirit of Vengeance [|cffffcc00Level 2|r]), Ubertip (Tooltip - Normal - Extended)
+{
+Raises an invulnerable feral spirit from a corpse. Lasts <ASOZ,Dur1> seconds or until the avatar dies.
+}
+
+STRING 6203
+// Abilities: ASOZ (Spirit of Vengeance [|cffffcc00Level 2|r]), Name (Name)
+{
+Spirit of Vengeance [|cffffcc00Level 2|r]
+}
+
+STRING 6204
+// Abilities: ASOD (Spirit of Vengeance [|cffffcc00Level 3|r]), EditorSuffix (Editor Suffix)
+{
+(Unit)
+}
+
+STRING 6205
+// Abilities: ASOD (Spirit of Vengeance [|cffffcc00Level 3|r]), Ubertip (Tooltip - Normal - Extended)
+{
+Raises an invulnerable feral spirit from a corpse. Lasts <ASOD,Dur1> seconds or until the avatar dies.
+}
+
+STRING 6206
+// Abilities: ASOD (Spirit of Vengeance [|cffffcc00Level 3|r]), Name (Name)
+{
+Spirit of Vengeance [|cffffcc00Level 3|r]
+}
+
+STRING 6207
+// Abilities: AVEG (Vengeance), EditorSuffix (Editor Suffix)
+{
+(Hero 3)
+}
+
+STRING 6208
+// Abilities: AWST (War Stomp), Researchubertip (Tooltip - Learn - Extended)
+{
+|cffff0000Ultimate ability|r|n|nSlams the ground, stunning (<AWST,Dur1> to <AWST,Dur3>) and damaging (<AWST,DataA1> to <AWST,DataA3>) nearby enemy land units.
+}
+
+STRING 6209
+// Abilities: AWST (War Stomp), Ubertip (Tooltip - Normal - Extended)
+{
+|cffff0000Ultimate ability|r|n|nSlams the ground, dealing <AWST,DataA1> damage to nearby enemy land units and stunning them for <AWST,Dur1> seconds.
+}
+
+STRING 6210
+// Abilities: AWST (War Stomp), Ubertip (Tooltip - Normal - Extended)
+{
+|cffff0000Ultimate ability|r|n|nSlams the ground, dealing <AWST,DataA2> damage to nearby enemy land units and stunning them for <AWST,Dur2> seconds.
+}
+
+STRING 6211
+// Abilities: AWST (War Stomp), Ubertip (Tooltip - Normal - Extended)
+{
+|cffff0000Ultimate ability|r|n|nSlams the ground, dealing <AWST,DataA3> damage to nearby enemy land units and stunning them for <AWST,Dur3> seconds.
+}
+
+STRING 6212
+// Abilities: AVEG (Vengeance), Researchubertip (Tooltip - Learn - Extended)
+{
+|cffff0000Ultimate ability|r|n|nCreates a powerful avatar that summons invulnerable spirits from nearby corpses to attack your enemies. When the Avatar of Vengeance dies, the spirits vanish.
+}
+
+STRING 6213
+// Abilities: AVEG (Vengeance), Ubertip (Tooltip - Normal - Extended)
+{
+|cffff0000Ultimate ability|r|n|nCreates a powerful avatar that summons invulnerable spirits from nearby corpses to attack your enemies. When the Avatar of Vengeance dies, the spirits vanish. |nLasts <AVEG,Dur1> seconds.
+}
+
+STRING 6214
+// Abilities: AVEG (Vengeance), Ubertip (Tooltip - Normal - Extended)
+{
+|cffff0000Ultimate ability|r|n|nCreates a powerful avatar that summons invulnerable spirits from nearby corpses to attack your enemies. When the Avatar of Vengeance dies, the spirits vanish. |nLasts <AVEG,Dur2> seconds.
+}
+
+STRING 6215
+// Abilities: AVEG (Vengeance), Ubertip (Tooltip - Normal - Extended)
+{
+|cffff0000Ultimate ability|r|n|nCreates a powerful avatar that summons invulnerable spirits from nearby corpses to attack your enemies. When the Avatar of Vengeance dies, the spirits vanish. |nLasts <AVEG,Dur3> seconds.
+}
+
+STRING 6216
+// Units: E004 (Lich), Propernames (Proper Names)
+{
+Ordin Frostbane,Ras Splinterspine,Morbent Fell,Rage Winterchill,Araj the Summoner,Kali'naj Dethknell,Rak Coldskull,Din Frostfire,Calis Wraithson,Venim Iceblade,Naze the Eternal,Ras Frostwhisper,Coldreaver,Cho'Nammoth,Kryptikk Soulslayer,Alandil Lieng
+}
+
+STRING 6217
+// Units: N02P (Priestess of the Moon), Name (Name)
+{
+Priestess of the Moon
+}
+
+STRING 6218
+// Units: N02P (Priestess of the Moon), Propernames (Proper Names)
+{
+Kathris Starsong,Adora Nightshade,Mora Moonsinger,Felore Moonray,Anara Chillwind,Kera Stardragon,Mave Whisperwind,Delas Moonfang,Mira Whitemane,Theta Saberfang,Tygra Snowscar,Ariel Darkmoon,Diana Windwood
+}
+
+STRING 6219
+// Units: N02Q (Death Knight), EditorSuffix (Name - Editor Suffix)
+{
+(Hero)
+}
+
+STRING 6220
+// Abilities: ASAR (Searing Arrows), EditorSuffix (Editor Suffix)
+{
+(Hero 3)
+}
+
+STRING 6221
+// Abilities: ASAR (Searing Arrows), Researchubertip (Tooltip - Learn - Extended)
+{
+|cffff0000Ultimate Ability|r|n|nIncreases the damage of the Priestess' attack by adding fire.
+}
+
+STRING 6222
+// Abilities: ASAR (Searing Arrows), Untip (Tooltip - Turn Off)
+{
+|cffc3dbffRight-click to activate auto-casting.|r
+}
+
+STRING 6223
+// Abilities: ASAR (Searing Arrows), Untip (Tooltip - Turn Off)
+{
+|cffc3dbffRight-click to activate auto-casting.|r
+}
+
+STRING 6224
+// Abilities: ASAR (Searing Arrows), Unubertip (Tooltip - Turn Off - Extended)
+{
+|cffc3dbffRight-click to deactivate auto-casting.|r
+}
+
+STRING 6225
+// Abilities: ASAR (Searing Arrows), Unubertip (Tooltip - Turn Off - Extended)
+{
+|cffc3dbffRight-click to deactivate auto-casting.|r
+}
+
+STRING 6226
+// Abilities: ASAR (Searing Arrows), Ubertip (Tooltip - Normal - Extended)
+{
+Adds <ASAR,DataA1> bonus fire damage to an attack against enemies, but drains mana with each shot fired.
+}
+
+STRING 6227
+// Abilities: ASAR (Searing Arrows), Ubertip (Tooltip - Normal - Extended)
+{
+Adds <ASAR,DataA2> bonus fire damage to an attack against enemies, but drains mana with each shot fired.
+}
+
+STRING 6228
+// Abilities: ASAR (Searing Arrows), Ubertip (Tooltip - Normal - Extended)
+{
+Adds <ASAR,DataA3> bonus fire damage to an attack against enemies, but drains mana with each shot fired.
+}
+
+STRING 6229
+// Abilities: ATRA (Trueshot Aura), Researchubertip (Tooltip - Learn - Extended)
+{
+An aura that gives friendly nearby units bonus damage to their ranged attacks.
+}
+
+STRING 6230
+// Abilities: ATRA (Trueshot Aura), Tip (Tooltip - Normal)
+{
+Trueshot Aura - [|cffffcc00Level 4|r]
+}
+
+STRING 6231
+// Abilities: ATRA (Trueshot Aura), Tip (Tooltip - Normal)
+{
+Trueshot Aura - [|cffffcc00Level 5|r]
+}
+
+STRING 6232
+// Abilities: ATRA (Trueshot Aura), Tip (Tooltip - Normal)
+{
+Trueshot Aura - [|cffffcc00Level 6|r]
+}
+
+STRING 6233
+// Abilities: ATRA (Trueshot Aura), Tip (Tooltip - Normal)
+{
+Trueshot Aura - [|cffffcc00Level 7|r]
+}
+
+STRING 6234
+// Abilities: ATRA (Trueshot Aura), Tip (Tooltip - Normal)
+{
+Trueshot Aura - [|cffffcc00Level 8|r]
+}
+
+STRING 6235
+// Abilities: ATRA (Trueshot Aura), Tip (Tooltip - Normal)
+{
+Trueshot Aura - [|cffffcc00Level 9|r]
+}
+
+STRING 6236
+// Abilities: ATRA (Trueshot Aura), Tip (Tooltip - Normal)
+{
+Trueshot Aura - [|cffffcc00Level 10|r]
+}
+
+STRING 6237
+// Abilities: ATRA (Trueshot Aura), Ubertip (Tooltip - Normal - Extended)
+{
+An aura that gives friendly nearby units a <ATRA,DataA1,%>% bonus damage to their ranged attacks.
+}
+
+STRING 6238
+// Abilities: ATRA (Trueshot Aura), Ubertip (Tooltip - Normal - Extended)
+{
+An aura that gives friendly nearby units a <ATRA,DataA2,%>% bonus damage to their ranged attacks.
+}
+
+STRING 6239
+// Abilities: ATRA (Trueshot Aura), Ubertip (Tooltip - Normal - Extended)
+{
+An aura that gives friendly nearby units a <ATRA,DataA3,%>% bonus damage to their ranged attacks.
+}
+
+STRING 6240
+// Abilities: ATRA (Trueshot Aura), Ubertip (Tooltip - Normal - Extended)
+{
+An aura that gives friendly nearby units a <ATRA,DataA4,%>% bonus damage to their ranged attacks.
+}
+
+STRING 6241
+// Abilities: ATRA (Trueshot Aura), Ubertip (Tooltip - Normal - Extended)
+{
+An aura that gives friendly nearby units a <ATRA,DataA5,%>% bonus damage to their ranged attacks.
+}
+
+STRING 6242
+// Abilities: ATRA (Trueshot Aura), Ubertip (Tooltip - Normal - Extended)
+{
+An aura that gives friendly nearby units a <ATRA,DataA6,%>% bonus damage to their ranged attacks.
+}
+
+STRING 6243
+// Abilities: ATRA (Trueshot Aura), Ubertip (Tooltip - Normal - Extended)
+{
+An aura that gives friendly nearby units a <ATRA,DataA7,%>% bonus damage to their ranged attacks.
+}
+
+STRING 6244
+// Abilities: ATRA (Trueshot Aura), Ubertip (Tooltip - Normal - Extended)
+{
+An aura that gives friendly nearby units a <ATRA,DataA8,%>% bonus damage to their ranged attacks.
+}
+
+STRING 6245
+// Abilities: ATRA (Trueshot Aura), Ubertip (Tooltip - Normal - Extended)
+{
+An aura that gives friendly nearby units a <ATRA,DataA9,%>% bonus damage to their ranged attacks.
+}
+
+STRING 6246
+// Abilities: ATRA (Trueshot Aura), Ubertip (Tooltip - Normal - Extended)
+{
+An aura that gives friendly nearby units a <ATRA,DataA10,%>% bonus damage to their ranged attacks.
+}
+
+STRING 6247
+// Abilities: ATRA (Trueshot Aura), EditorSuffix (Editor Suffix)
+{
+(Hero 10)
+}
+
+STRING 6248
+// Abilities: ASTF (Starfall), EditorSuffix (Editor Suffix)
+{
+(Hero 10)
+}
+
+STRING 6249
+// Abilities: ASTF (Starfall), Researchubertip (Tooltip - Learn - Extended)
+{
+Calls down waves of falling stars that damage nearby enemy units. Pierces spell immunity.
+}
+
+STRING 6250
+// Abilities: ASTF (Starfall), Ubertip (Tooltip - Normal - Extended)
+{
+Calls down waves of falling stars that damage nearby enemy units. Each wave deals <ASTF,DataA1> damage. |nLasts for <ASTF,Dur1> seconds. Pierces spell immunity.
+}
+
+STRING 6251
+// Abilities: ASTF (Starfall), Ubertip (Tooltip - Normal - Extended)
+{
+Calls down waves of falling stars that damage nearby enemy units. Each wave deals <ASTF,DataA2> damage. |nLasts for <ASTF,Dur2> seconds. Pierces spell immunity.
+}
+
+STRING 6252
+// Abilities: ASTF (Starfall), Ubertip (Tooltip - Normal - Extended)
+{
+Calls down waves of falling stars that damage nearby enemy units. Each wave deals <ASTF,DataA3> damage. |nLasts for <ASTF,Dur3> seconds. Pierces spell immunity.
+}
+
+STRING 6253
+// Abilities: ASTF (Starfall), Ubertip (Tooltip - Normal - Extended)
+{
+Calls down waves of falling stars that damage nearby enemy units. Each wave deals <ASTF,DataA4> damage. |nLasts for <ASTF,Dur4> seconds. Pierces spell immunity.
+}
+
+STRING 6254
+// Abilities: ASTF (Starfall), Ubertip (Tooltip - Normal - Extended)
+{
+Calls down waves of falling stars that damage nearby enemy units. Each wave deals <ASTF,DataA5> damage. |nLasts for <ASTF,Dur5> seconds. Pierces spell immunity.
+}
+
+STRING 6255
+// Abilities: ASTF (Starfall), Ubertip (Tooltip - Normal - Extended)
+{
+Calls down waves of falling stars that damage nearby enemy units. Each wave deals <ASTF,DataA6> damage. |nLasts for <ASTF,Dur6> seconds. Pierces spell immunity.
+}
+
+STRING 6256
+// Abilities: ASTF (Starfall), Ubertip (Tooltip - Normal - Extended)
+{
+Calls down waves of falling stars that damage nearby enemy units. Each wave deals <ASTF,DataA7> damage. |nLasts for <ASTF,Dur7> seconds. Pierces spell immunity.
+}
+
+STRING 6257
+// Abilities: ASTF (Starfall), Ubertip (Tooltip - Normal - Extended)
+{
+Calls down waves of falling stars that damage nearby enemy units. Each wave deals <ASTF,DataA8> damage. |nLasts for <ASTF,Dur8> seconds. Pierces spell immunity.
+}
+
+STRING 6258
+// Abilities: ASTF (Starfall), Ubertip (Tooltip - Normal - Extended)
+{
+Calls down waves of falling stars that damage nearby enemy units. Each wave deals <ASTF,DataA9> damage. |nLasts for <ASTF,Dur9> seconds. Pierces spell immunity.
+}
+
+STRING 6259
+// Abilities: ASTF (Starfall), Ubertip (Tooltip - Normal - Extended)
+{
+Calls down waves of falling stars that damage nearby enemy units. Each wave deals <ASTF,DataA10> damage. |nLasts for <ASTF,Dur10> seconds. Pierces spell immunity.
+}
+
+STRING 6260
+// Abilities: ASTF (Starfall), Tip (Tooltip - Normal)
+{
+Starfall - [|cffffcc00Level 1|r]
+}
+
+STRING 6261
+// Abilities: ASTF (Starfall), Tip (Tooltip - Normal)
+{
+Starfall - [|cffffcc00Level 2|r]
+}
+
+STRING 6262
+// Abilities: ASTF (Starfall), Tip (Tooltip - Normal)
+{
+Starfall - [|cffffcc00Level 3|r]
+}
+
+STRING 6263
+// Abilities: ASTF (Starfall), Tip (Tooltip - Normal)
+{
+Starfall - [|cffffcc00Level 4|r]
+}
+
+STRING 6264
+// Abilities: ASTF (Starfall), Tip (Tooltip - Normal)
+{
+Starfall - [|cffffcc00Level 5|r]
+}
+
+STRING 6265
+// Abilities: ASTF (Starfall), Tip (Tooltip - Normal)
+{
+Starfall - [|cffffcc00Level 6|r]
+}
+
+STRING 6266
+// Abilities: ASTF (Starfall), Tip (Tooltip - Normal)
+{
+Starfall - [|cffffcc00Level 7|r]
+}
+
+STRING 6267
+// Abilities: ASTF (Starfall), Tip (Tooltip - Normal)
+{
+Starfall - [|cffffcc00Level 8|r]
+}
+
+STRING 6268
+// Abilities: ASTF (Starfall), Tip (Tooltip - Normal)
+{
+Starfall - [|cffffcc00Level 9|r]
+}
+
+STRING 6269
+// Abilities: ASTF (Starfall), Tip (Tooltip - Normal)
+{
+Starfall - [|cffffcc00Level 10|r]
+}
+
+STRING 6270
+// Abilities: AREJ (Rejuvenation), EditorSuffix (Editor Suffix)
+{
+(Hero 10)
+}
+
+STRING 6280
+// Abilities: AREJ (Rejuvenation), Ubertip (Tooltip - Normal - Extended)
+{
+Heals a target friendly unit for <AREJ,DataA1> hit points over <AREJ,Dur1> seconds.
+}
+
+STRING 6281
+// Abilities: AREJ (Rejuvenation), Ubertip (Tooltip - Normal - Extended)
+{
+Heals a target friendly unit for <AREJ,DataA2> hit points over <AREJ,Dur2> seconds.
+}
+
+STRING 6282
+// Abilities: AREJ (Rejuvenation), Ubertip (Tooltip - Normal - Extended)
+{
+Heals a target friendly unit for <AREJ,DataA3> hit points over <AREJ,Dur3> seconds.
+}
+
+STRING 6283
+// Abilities: AREJ (Rejuvenation), Ubertip (Tooltip - Normal - Extended)
+{
+Heals a target friendly unit for <AREJ,DataA4> hit points over <AREJ,Dur4> seconds.
+}
+
+STRING 6284
+// Abilities: AREJ (Rejuvenation), Ubertip (Tooltip - Normal - Extended)
+{
+Heals a target friendly unit for <AREJ,DataA5> hit points over <AREJ,Dur5> seconds.
+}
+
+STRING 6285
+// Abilities: AREJ (Rejuvenation), Ubertip (Tooltip - Normal - Extended)
+{
+Heals a target friendly unit for <AREJ,DataA6> hit points over <AREJ,Dur6> seconds.
+}
+
+STRING 6286
+// Abilities: AREJ (Rejuvenation), Ubertip (Tooltip - Normal - Extended)
+{
+Heals a target friendly unit for <AREJ,DataA7> hit points over <AREJ,Dur7> seconds.
+}
+
+STRING 6287
+// Abilities: AREJ (Rejuvenation), Ubertip (Tooltip - Normal - Extended)
+{
+Heals a target friendly unit for <AREJ,DataA8> hit points over <AREJ,Dur8> seconds.
+}
+
+STRING 6288
+// Abilities: AREJ (Rejuvenation), Ubertip (Tooltip - Normal - Extended)
+{
+Heals a target friendly unit for <AREJ,DataA9> hit points over <AREJ,Dur9> seconds.
+}
+
+STRING 6289
+// Abilities: AREJ (Rejuvenation), Ubertip (Tooltip - Normal - Extended)
+{
+Heals a target friendly unit for <AREJ,DataA10> hit points over <AREJ,Dur10> seconds.
+}
+
+STRING 6290
+// Units: N02Q (Death Knight), Name (Name)
+{
+Death Knight
+}
+
+STRING 6291
+// Units: N02Q (Death Knight), Propernames (Proper Names)
+{
+Lord Nightsorrow,Lord Soulrender,Lord Dethstorm,Lord Maldazzar,Lord Darkhallow,Lord Lightstalker,Baron Bloodbane,Baron Felblade,Duke Dreadmoore,Duke Ragereaver,Baron Frostfel,Lord Darkscythe,Duke Wintermaul,Baron Perenolde,Baron Morte
+}
+
+STRING 6292
+// Units: H02Y (Far Seer), EditorSuffix (Name - Editor Suffix)
+{
+(Hero)
+}
+
+STRING 6293
+// Abilities: ADCO (Death Coil), EditorSuffix (Editor Suffix)
+{
+(Hero 10)
+}
+
+STRING 6294
+// Abilities: ADCO (Death Coil), Hotkey (Hotkey - Normal)
+{
+C
+}
+
+STRING 6295
+// Abilities: ADCO (Death Coil), Name (Name)
+{
+Death Coil
+}
+
+STRING 6296
+// Abilities: ADCO (Death Coil), Researchhotkey (Hotkey - Learn)
+{
+C
+}
+
+STRING 6297
+// Abilities: ADCO (Death Coil), Ubertip (Tooltip - Normal - Extended)
+{
+A coil of death that deal <ADOC,DataA1> damage to a enemy unit.
+}
+
+STRING 6298
+// Abilities: ADCO (Death Coil), Ubertip (Tooltip - Normal - Extended)
+{
+A coil of death that deal <ADOC,DataA2> damage to a enemy unit.
+}
+
+STRING 6299
+// Abilities: ADCO (Death Coil), Ubertip (Tooltip - Normal - Extended)
+{
+A coil of death that deal <ADOC,DataA3> damage to a enemy unit.
+}
+
+STRING 6300
+// Abilities: ADCO (Death Coil), Ubertip (Tooltip - Normal - Extended)
+{
+A coil of death that deal <ADOC,DataA4> damage to a enemy unit.
+}
+
+STRING 6301
+// Abilities: ADCO (Death Coil), Ubertip (Tooltip - Normal - Extended)
+{
+A coil of death that deal <ADOC,DataA5> damage to a enemy unit.
+}
+
+STRING 6302
+// Abilities: ADCO (Death Coil), Ubertip (Tooltip - Normal - Extended)
+{
+A coil of death that deal <ADOC,DataA6> damage to a enemy unit.
+}
+
+STRING 6303
+// Abilities: ADCO (Death Coil), Ubertip (Tooltip - Normal - Extended)
+{
+A coil of death that deal <ADOC,DataA7> damage to a enemy unit.
+}
+
+STRING 6304
+// Abilities: ADCO (Death Coil), Ubertip (Tooltip - Normal - Extended)
+{
+A coil of death that deal <ADOC,DataA8> damage to a enemy unit.
+}
+
+STRING 6305
+// Abilities: ADCO (Death Coil), Ubertip (Tooltip - Normal - Extended)
+{
+A coil of death that deal <ADOC,DataA9> damage to a enemy unit.
+}
+
+STRING 6306
+// Abilities: ADCO (Death Coil), Ubertip (Tooltip - Normal - Extended)
+{
+A coil of death that deal <ADOC,DataA10> damage to a enemy unit.
+}
+
+STRING 6307
+// Abilities: ADCO (Death Coil), Tip (Tooltip - Normal)
+{
+Death Coil - [|cffffcc00Level 1|r]
+}
+
+STRING 6308
+// Abilities: ADCO (Death Coil), Tip (Tooltip - Normal)
+{
+Death Coil - [|cffffcc00Level 2|r]
+}
+
+STRING 6309
+// Abilities: ADCO (Death Coil), Tip (Tooltip - Normal)
+{
+Death Coil - [|cffffcc00Level 3|r]
+}
+
+STRING 6310
+// Abilities: ADCO (Death Coil), Tip (Tooltip - Normal)
+{
+Death Coil - [|cffffcc00Level 4|r]
+}
+
+STRING 6311
+// Abilities: ADCO (Death Coil), Tip (Tooltip - Normal)
+{
+Death Coil - [|cffffcc00Level 5|r]
+}
+
+STRING 6312
+// Abilities: ADCO (Death Coil), Tip (Tooltip - Normal)
+{
+Death Coil - [|cffffcc00Level 6|r]
+}
+
+STRING 6313
+// Abilities: ADCO (Death Coil), Tip (Tooltip - Normal)
+{
+Death Coil - [|cffffcc00Level 7|r]
+}
+
+STRING 6314
+// Abilities: ADCO (Death Coil), Tip (Tooltip - Normal)
+{
+Death Coil - [|cffffcc00Level 8|r]
+}
+
+STRING 6315
+// Abilities: ADCO (Death Coil), Tip (Tooltip - Normal)
+{
+Death Coil - [|cffffcc00Level 9|r]
+}
+
+STRING 6316
+// Abilities: ADCO (Death Coil), Tip (Tooltip - Normal)
+{
+Death Coil - [|cffffcc00Level 10|r]
+}
+
+STRING 6317
+// Abilities: A00Z (Storm, Earth, And Fire), Tip (Tooltip - Normal)
+{
+Storm, Earth And Fire - [|cffffcc00Level 2|r]
+}
+
+STRING 6318
+// Abilities: A00Z (Storm, Earth, And Fire), Tip (Tooltip - Normal)
+{
+Storm, Earth And Fire - [|cffffcc00Level 3|r]
+}
+
+STRING 6319
+// Abilities: A00Z (Storm, Earth, And Fire), Tip (Tooltip - Normal)
+{
+Storm, Earth And Fire - [|cffffcc00Level 1|r]
+}
+
+STRING 6320
+// Abilities: A0A0 (Charm), Tip (Tooltip - Normal)
+{
+Charm - [|cffffcc00Level 2|r]
+}
+
+STRING 6321
+// Abilities: A0A0 (Charm), Tip (Tooltip - Normal)
+{
+Charm - [|cffffcc00Level 3|r]
+}
+
+STRING 6322
+// Abilities: A0A0 (Charm), Tip (Tooltip - Normal)
+{
+Charm - [|cffffcc00Level 4|r]
+}
+
+STRING 6323
+// Abilities: A0A0 (Charm), Tip (Tooltip - Normal)
+{
+Charm - [|cffffcc00Level 5|r]
+}
+
+STRING 6324
+// Abilities: A0A0 (Charm), Tip (Tooltip - Normal)
+{
+Charm - [|cffffcc00Level 6|r]
+}
+
+STRING 6325
+// Abilities: A0A0 (Charm), Tip (Tooltip - Normal)
+{
+Charm - [|cffffcc00Level 7|r]
+}
+
+STRING 6326
+// Abilities: A0A0 (Charm), Tip (Tooltip - Normal)
+{
+Charm - [|cffffcc00Level 8|r]
+}
+
+STRING 6327
+// Abilities: A0A0 (Charm), Tip (Tooltip - Normal)
+{
+Charm - [|cffffcc00Level 9|r]
+}
+
+STRING 6328
+// Abilities: A0A0 (Charm), Tip (Tooltip - Normal)
+{
+Charm - [|cffffcc00Level 10|r]
+}
+
+STRING 6329
+// Abilities: A0A0 (Charm), Tip (Tooltip - Normal)
+{
+Charm - [|cffffcc00Level 1|r]
+}
+
+STRING 6330
+// Abilities: A0VD (Doom), Tip (Tooltip - Normal)
+{
+Doom - [|cffffcc00Level 2|r]
+}
+
+STRING 6331
+// Abilities: A0VD (Doom), Tip (Tooltip - Normal)
+{
+Doom - [|cffffcc00Level 3|r]
+}
+
+STRING 6332
+// Abilities: A0VD (Doom), Tip (Tooltip - Normal)
+{
+Doom - [|cffffcc00Level 1|r]
+}
+
+STRING 6333
+// Abilities: A015 (Avatar), Tip (Tooltip - Normal)
+{
+Activate avatar - [|cffffcc00Level 2|r]
+}
+
+STRING 6334
+// Abilities: A015 (Avatar), Tip (Tooltip - Normal)
+{
+Activate avatar - [|cffffcc00Level 3|r]
+}
+
+STRING 6335
+// Abilities: A015 (Avatar), Tip (Tooltip - Normal)
+{
+Activate avatar - [|cffffcc00Level 1|r]
+}
+
+STRING 6336
+// Abilities: ABRA (Brilliance Aura), Tip (Tooltip - Normal)
+{
+Brilliance Aura - [|cffffcc00Level 4|r]
+}
+
+STRING 6337
+// Abilities: ABRA (Brilliance Aura), Tip (Tooltip - Normal)
+{
+Brilliance Aura - [|cffffcc00Level 5|r]
+}
+
+STRING 6338
+// Abilities: ABRA (Brilliance Aura), Tip (Tooltip - Normal)
+{
+Brilliance Aura - [|cffffcc00Level 6|r]
+}
+
+STRING 6339
+// Abilities: ABRA (Brilliance Aura), Tip (Tooltip - Normal)
+{
+Brilliance Aura - [|cffffcc00Level 7|r]
+}
+
+STRING 6340
+// Abilities: ABRA (Brilliance Aura), Tip (Tooltip - Normal)
+{
+Brilliance Aura - [|cffffcc00Level 8|r]
+}
+
+STRING 6341
+// Abilities: ABRA (Brilliance Aura), Tip (Tooltip - Normal)
+{
+Brilliance Aura - [|cffffcc00Level 9|r]
+}
+
+STRING 6342
+// Abilities: ABRA (Brilliance Aura), Tip (Tooltip - Normal)
+{
+Brilliance Aura - [|cffffcc00Level 10|r]
+}
+
+STRING 6343
+// Abilities: ASSW (Smash Wave), Tip (Tooltip - Normal)
+{
+Smash Wave - [|cffffcc00Level 2|r]
+}
+
+STRING 6344
+// Abilities: ASSW (Smash Wave), Tip (Tooltip - Normal)
+{
+Smash Wave - [|cffffcc00Level 3|r]
+}
+
+STRING 6345
+// Abilities: ASSW (Smash Wave), Tip (Tooltip - Normal)
+{
+Smash Wave - [|cffffcc00Level 4|r]
+}
+
+STRING 6346
+// Abilities: ASSW (Smash Wave), Tip (Tooltip - Normal)
+{
+Smash Wave - [|cffffcc00Level 5|r]
+}
+
+STRING 6347
+// Abilities: ASSW (Smash Wave), Tip (Tooltip - Normal)
+{
+Smash Wave - [|cffffcc00Level 6|r]
+}
+
+STRING 6348
+// Abilities: ASSW (Smash Wave), Tip (Tooltip - Normal)
+{
+Smash Wave - [|cffffcc00Level 7|r]
+}
+
+STRING 6349
+// Abilities: ASSW (Smash Wave), Tip (Tooltip - Normal)
+{
+Smash Wave - [|cffffcc00Level 8|r]
+}
+
+STRING 6350
+// Abilities: ASSW (Smash Wave), Tip (Tooltip - Normal)
+{
+Smash Wave - [|cffffcc00Level 9|r]
+}
+
+STRING 6351
+// Abilities: ASSW (Smash Wave), Tip (Tooltip - Normal)
+{
+Smash Wave - [|cffffcc00Level 10|r]
+}
+
+STRING 6352
+// Abilities: ASSW (Smash Wave), Tip (Tooltip - Normal)
+{
+Smash Wave - [|cffffcc00Level 1|r]
+}
+
+STRING 6353
+// Abilities: AKLS (Bladestorm), Tip (Tooltip - Normal)
+{
+Bladestorm - [|cffffcc00Level 2|r]
+}
+
+STRING 6354
+// Abilities: AKLS (Bladestorm), Tip (Tooltip - Normal)
+{
+Bladestorm - [|cffffcc00Level 3|r]
+}
+
+STRING 6355
+// Abilities: AKLS (Bladestorm), Tip (Tooltip - Normal)
+{
+Bladestorm - [|cffffcc00Level 1|r]
+}
+
+STRING 6356
+// Abilities: AGBV (Big Bad Voodoo), Tip (Tooltip - Normal)
+{
+Big bad voodoo - [|cffffcc00Level 1|r]
+}
+
+STRING 6357
+// Abilities: AGBV (Big Bad Voodoo), Tip (Tooltip - Normal)
+{
+Big bad voodoo - [|cffffcc00Level 2|r]
+}
+
+STRING 6358
+// Abilities: AGBV (Big Bad Voodoo), Tip (Tooltip - Normal)
+{
+Big bad voodoo - [|cffffcc00Level 3|r]
+}
+
+STRING 6359
+// Abilities: AGBV (Big Bad Voodoo), Tip (Tooltip - Normal)
+{
+Big bad voodoo - [|cffffcc00Level 4|r]
+}
+
+STRING 6360
+// Abilities: AGBV (Big Bad Voodoo), Tip (Tooltip - Normal)
+{
+Big bad voodoo - [|cffffcc00Level 5|r]
+}
+
+STRING 6361
+// Abilities: AGBV (Big Bad Voodoo), Tip (Tooltip - Normal)
+{
+Big bad voodoo - [|cffffcc00Level 6|r]
+}
+
+STRING 6362
+// Abilities: AGBV (Big Bad Voodoo), Tip (Tooltip - Normal)
+{
+Big bad voodoo - [|cffffcc00Level 7|r]
+}
+
+STRING 6363
+// Abilities: AGBV (Big Bad Voodoo), Tip (Tooltip - Normal)
+{
+Big bad voodoo - [|cffffcc00Level 8|r]
+}
+
+STRING 6364
+// Abilities: AGBV (Big Bad Voodoo), Tip (Tooltip - Normal)
+{
+Big bad voodoo - [|cffffcc00Level 9|r]
+}
+
+STRING 6365
+// Abilities: AGBV (Big Bad Voodoo), Tip (Tooltip - Normal)
+{
+Big bad voodoo - [|cffffcc00Level 10|r]
+}
+
+STRING 6366
+// Abilities: AGLH (Tranquility), Tip (Tooltip - Normal)
+{
+Tranquility - [|cffffcc00Level 2|r]
+}
+
+STRING 6367
+// Abilities: AGLH (Tranquility), Tip (Tooltip - Normal)
+{
+Tranquility - [|cffffcc00Level 3|r]
+}
+
+STRING 6368
+// Abilities: AGLH (Tranquility), Tip (Tooltip - Normal)
+{
+Tranquility - [|cffffcc00Level 4|r]
+}
+
+STRING 6369
+// Abilities: AGLH (Tranquility), Tip (Tooltip - Normal)
+{
+Tranquility - [|cffffcc00Level 5|r]
+}
+
+STRING 6370
+// Abilities: AGLH (Tranquility), Tip (Tooltip - Normal)
+{
+Tranquility - [|cffffcc00Level 6|r]
+}
+
+STRING 6371
+// Abilities: AGLH (Tranquility), Tip (Tooltip - Normal)
+{
+Tranquility - [|cffffcc00Level 7|r]
+}
+
+STRING 6372
+// Abilities: AGLH (Tranquility), Tip (Tooltip - Normal)
+{
+Tranquility - [|cffffcc00Level 8|r]
+}
+
+STRING 6373
+// Abilities: AGLH (Tranquility), Tip (Tooltip - Normal)
+{
+Tranquility - [|cffffcc00Level 9|r]
+}
+
+STRING 6374
+// Abilities: AGLH (Tranquility), Tip (Tooltip - Normal)
+{
+Tranquility - [|cffffcc00Level 10|r]
+}
+
+STRING 6375
+// Abilities: AGLH (Tranquility), Tip (Tooltip - Normal)
+{
+Tranquility - [|cffffcc00Level 1|r]
+}
+
+STRING 6376
+// Abilities: APHX (Phoenix), Tip (Tooltip - Normal)
+{
+Phoenix - [|cffffcc00Level 2|r]
+}
+
+STRING 6377
+// Abilities: APHX (Phoenix), Tip (Tooltip - Normal)
+{
+Phoenix - [|cffffcc00Level 3|r]
+}
+
+STRING 6378
+// Abilities: APHX (Phoenix), Tip (Tooltip - Normal)
+{
+Phoenix - [|cffffcc00Level 1|r]
+}
+
+STRING 6379
+// Abilities: ALOC (Locust Swarm), Tip (Tooltip - Normal)
+{
+Locust Swarm - [|cffffcc00Level 2|r]
+}
+
+STRING 6380
+// Abilities: ALOC (Locust Swarm), Tip (Tooltip - Normal)
+{
+Locust Swarm - [|cffffcc00Level 3|r]
+}
+
+STRING 6381
+// Abilities: ALOC (Locust Swarm), Tip (Tooltip - Normal)
+{
+Locust Swarm - [|cffffcc00Level 4|r]
+}
+
+STRING 6382
+// Abilities: ALOC (Locust Swarm), Tip (Tooltip - Normal)
+{
+Locust Swarm - [|cffffcc00Level 5|r]
+}
+
+STRING 6383
+// Abilities: ALOC (Locust Swarm), Tip (Tooltip - Normal)
+{
+Locust Swarm - [|cffffcc00Level 6|r]
+}
+
+STRING 6384
+// Abilities: ALOC (Locust Swarm), Tip (Tooltip - Normal)
+{
+Locust Swarm - [|cffffcc00Level 7|r]
+}
+
+STRING 6385
+// Abilities: ALOC (Locust Swarm), Tip (Tooltip - Normal)
+{
+Locust Swarm - [|cffffcc00Level 8|r]
+}
+
+STRING 6386
+// Abilities: ALOC (Locust Swarm), Tip (Tooltip - Normal)
+{
+Locust Swarm - [|cffffcc00Level 9|r]
+}
+
+STRING 6387
+// Abilities: ALOC (Locust Swarm), Tip (Tooltip - Normal)
+{
+Locust Swarm - [|cffffcc00Level 10|r]
+}
+
+STRING 6388
+// Abilities: ALOC (Locust Swarm), Tip (Tooltip - Normal)
+{
+Locust Swarm - [|cffffcc00Level 1|r]
+}
+
+STRING 6389
+// Abilities: ADAD (Death And Decay), Tip (Tooltip - Normal)
+{
+Death And Decay - [|cffffcc00Level 2|r]
+}
+
+STRING 6390
+// Abilities: ADAD (Death And Decay), Tip (Tooltip - Normal)
+{
+Death And Decay - [|cffffcc00Level 3|r]
+}
+
+STRING 6391
+// Abilities: ADAD (Death And Decay), Tip (Tooltip - Normal)
+{
+Death And Decay - [|cffffcc00Level 4|r]
+}
+
+STRING 6392
+// Abilities: ADAD (Death And Decay), Tip (Tooltip - Normal)
+{
+Death And Decay - [|cffffcc00Level 5|r]
+}
+
+STRING 6393
+// Abilities: ADAD (Death And Decay), Tip (Tooltip - Normal)
+{
+Death And Decay - [|cffffcc00Level 6|r]
+}
+
+STRING 6394
+// Abilities: ADAD (Death And Decay), Tip (Tooltip - Normal)
+{
+Death And Decay - [|cffffcc00Level 7|r]
+}
+
+STRING 6395
+// Abilities: ADAD (Death And Decay), Tip (Tooltip - Normal)
+{
+Death And Decay - [|cffffcc00Level 8|r]
+}
+
+STRING 6396
+// Abilities: ADAD (Death And Decay), Tip (Tooltip - Normal)
+{
+Death And Decay - [|cffffcc00Level 9|r]
+}
+
+STRING 6397
+// Abilities: ADAD (Death And Decay), Tip (Tooltip - Normal)
+{
+Death And Decay - [|cffffcc00Level 10|r]
+}
+
+STRING 6398
+// Abilities: ADAD (Death And Decay), Tip (Tooltip - Normal)
+{
+Death And Decay - [|cffffcc00Level 1|r]
+}
+
+STRING 6399
+// Abilities: AREJ (Rejuvenation), Tip (Tooltip - Normal)
+{
+Rejuvenation - [|cffffcc00Level 2|r]
+}
+
+STRING 6400
+// Abilities: AREJ (Rejuvenation), Tip (Tooltip - Normal)
+{
+Rejuvenation - [|cffffcc00Level 3|r]
+}
+
+STRING 6401
+// Abilities: AREJ (Rejuvenation), Tip (Tooltip - Normal)
+{
+Rejuvenation - [|cffffcc00Level 4|r]
+}
+
+STRING 6402
+// Abilities: AREJ (Rejuvenation), Tip (Tooltip - Normal)
+{
+Rejuvenation - [|cffffcc00Level 5|r]
+}
+
+STRING 6403
+// Abilities: AREJ (Rejuvenation), Tip (Tooltip - Normal)
+{
+Rejuvenation - [|cffffcc00Level 6|r]
+}
+
+STRING 6404
+// Abilities: AREJ (Rejuvenation), Tip (Tooltip - Normal)
+{
+Rejuvenation - [|cffffcc00Level 7|r]
+}
+
+STRING 6405
+// Abilities: AREJ (Rejuvenation), Tip (Tooltip - Normal)
+{
+Rejuvenation - [|cffffcc00Level 8|r]
+}
+
+STRING 6406
+// Abilities: AREJ (Rejuvenation), Tip (Tooltip - Normal)
+{
+Rejuvenation - [|cffffcc00Level 9|r]
+}
+
+STRING 6407
+// Abilities: AREJ (Rejuvenation), Tip (Tooltip - Normal)
+{
+Rejuvenation - [|cffffcc00Level 10|r]
+}
+
+STRING 6408
+// Abilities: AREJ (Rejuvenation), Tip (Tooltip - Normal)
+{
+Rejuvenation - [|cffffcc00Level 1|r]
+}
+
+STRING 6409
+// Abilities: AAND (Animate Dead), Researchubertip (Tooltip - Learn - Extended)
+{
+Raises dead units in an area to fight for the Death Knight.
+}
+
+STRING 6410
+// Abilities: AAND (Animate Dead), Tip (Tooltip - Normal)
+{
+Animate Dead - [|cffffcc00Level 2|r]
+}
+
+STRING 6411
+// Abilities: AAND (Animate Dead), Tip (Tooltip - Normal)
+{
+Animate Dead - [|cffffcc00Level 3|r]
+}
+
+STRING 6412
+// Abilities: AAND (Animate Dead), Tip (Tooltip - Normal)
+{
+Animate Dead - [|cffffcc00Level 4|r]
+}
+
+STRING 6413
+// Abilities: AAND (Animate Dead), Tip (Tooltip - Normal)
+{
+Animate Dead - [|cffffcc00Level 5|r]
+}
+
+STRING 6414
+// Abilities: AAND (Animate Dead), Tip (Tooltip - Normal)
+{
+Animate Dead - [|cffffcc00Level 6|r]
+}
+
+STRING 6415
+// Abilities: AAND (Animate Dead), Tip (Tooltip - Normal)
+{
+Animate Dead - [|cffffcc00Level 7|r]
+}
+
+STRING 6416
+// Abilities: AAND (Animate Dead), Tip (Tooltip - Normal)
+{
+Animate Dead - [|cffffcc00Level 8|r]
+}
+
+STRING 6417
+// Abilities: AAND (Animate Dead), Tip (Tooltip - Normal)
+{
+Animate Dead - [|cffffcc00Level 9|r]
+}
+
+STRING 6418
+// Abilities: AAND (Animate Dead), Tip (Tooltip - Normal)
+{
+Animate Dead - [|cffffcc00Level 10|r]
+}
+
+STRING 6419
+// Abilities: AAND (Animate Dead), Ubertip (Tooltip - Normal - Extended)
+{
+Raises <AAND,DataA1> dead units in an area to fight for the Death Knight for <AAND,Dur1> seconds.
+}
+
+STRING 6420
+// Abilities: AAND (Animate Dead), Ubertip (Tooltip - Normal - Extended)
+{
+Raises <AAND,DataA2> dead units in an area to fight for the Death Knight for <AAND,Dur2> seconds.
+}
+
+STRING 6421
+// Abilities: AAND (Animate Dead), Ubertip (Tooltip - Normal - Extended)
+{
+Raises <AAND,DataA3> dead units in an area to fight for the Death Knight for <AAND,Dur3> seconds.
+}
+
+STRING 6422
+// Abilities: AAND (Animate Dead), Ubertip (Tooltip - Normal - Extended)
+{
+Raises <AAND,DataA4> dead units in an area to fight for the Death Knight for <AAND,Dur4> seconds.
+}
+
+STRING 6423
+// Abilities: AAND (Animate Dead), Ubertip (Tooltip - Normal - Extended)
+{
+Raises <AAND,DataA5> dead units in an area to fight for the Death Knight for <AAND,Dur5> seconds.
+}
+
+STRING 6424
+// Abilities: AAND (Animate Dead), Ubertip (Tooltip - Normal - Extended)
+{
+Raises <AAND,DataA6> dead units in an area to fight for the Death Knight for <AAND,Dur6> seconds.
+}
+
+STRING 6425
+// Abilities: AAND (Animate Dead), Ubertip (Tooltip - Normal - Extended)
+{
+Raises <AAND,DataA7> dead units in an area to fight for the Death Knight for <AAND,Dur7> seconds.
+}
+
+STRING 6426
+// Abilities: AAND (Animate Dead), Ubertip (Tooltip - Normal - Extended)
+{
+Raises <AAND,DataA8> dead units in an area to fight for the Death Knight for <AAND,Dur8> seconds.
+}
+
+STRING 6427
+// Abilities: AAND (Animate Dead), Ubertip (Tooltip - Normal - Extended)
+{
+Raises <AAND,DataA9> dead units in an area to fight for the Death Knight for <AAND,Dur9> seconds.
+}
+
+STRING 6428
+// Abilities: AAND (Animate Dead), Ubertip (Tooltip - Normal - Extended)
+{
+Raises <AAND,DataA10> dead units in an area to fight for the Death Knight for <AAND,Dur10> seconds.
+}
+
+STRING 6429
+// Abilities: AAND (Animate Dead), EditorSuffix (Editor Suffix)
+{
+(Hero 10)
+}
+
+STRING 6430
+// Abilities: AAND (Animate Dead), Researchtip (Tooltip - Learn)
+{
+Learn Animate Dead - [|cffffcc00Level %d|r]
+}
+
+STRING 6431
+// Abilities: AAND (Animate Dead), Tip (Tooltip - Normal)
+{
+Animate Dead - [|cffffcc00Level 1|r]
+}
+
+STRING 6432
+// Abilities: ASLP (Sleep), Researchubertip (Tooltip - Learn - Extended)
+{
+|cffff0000Ultimate Ability|r|n|nPuts a target enemy unit to sleep. A sleeping unit can be awoken by attacking it.
+}
+
+STRING 6433
+// Abilities: ASLP (Sleep), Ubertip (Tooltip - Normal - Extended)
+{
+|cffff0000Ultimate Ability|r|n|nPuts a target enemy unit to sleep for <ASLP,Dur1> seconds. A sleeping unit can be awoken by attacking it.
+}
+
+STRING 6434
+// Abilities: ASLP (Sleep), Ubertip (Tooltip - Normal - Extended)
+{
+|cffff0000Ultimate Ability|r|n|nPuts a target enemy unit to sleep for <ASLP,Dur2> seconds. A sleeping unit can be awoken by attacking it.
+}
+
+STRING 6435
+// Abilities: ASLP (Sleep), Ubertip (Tooltip - Normal - Extended)
+{
+|cffff0000Ultimate Ability|r|n|nPuts a target enemy unit to sleep for <ASLP,Dur3> seconds. A sleeping unit can be awoken by attacking it.
+}
+
+STRING 6436
+// Abilities: ASLP (Sleep), EditorSuffix (Editor Suffix)
+{
+(Hero 3)
+}
+
+STRING 6437
+// Abilities: ACSW (Carrion Swarm), EditorSuffix (Editor Suffix)
+{
+(Hero 3)
+}
+
+STRING 6438
+// Abilities: ACSW (Carrion Swarm), Researchubertip (Tooltip - Learn - Extended)
+{
+|cffff0000Ultimate ability|r|n|nSends a horde of bats to damage enemies.
+}
+
+STRING 6439
+// Abilities: ACSW (Carrion Swarm), Ubertip (Tooltip - Normal - Extended)
+{
+|cffff0000Ultimate ability|r|n|nSends a horde of bats to deal <ACSW,DataA1> damage to each enemy unit in a cone.
+}
+
+STRING 6440
+// Abilities: ACSW (Carrion Swarm), Ubertip (Tooltip - Normal - Extended)
+{
+|cffff0000Ultimate ability|r|n|nSends a horde of bats to deal <ACSW,DataA2> damage to each enemy unit in a cone.
+}
+
+STRING 6441
+// Abilities: ACSW (Carrion Swarm), Ubertip (Tooltip - Normal - Extended)
+{
+|cffff0000Ultimate ability|r|n|nSends a horde of bats to deal <ACSW,DataA3> damage to each enemy unit in a cone.
+}
+
+STRING 6442
+// Units: H02Y (Far Seer), Name (Name)
+{
+Far Seer
+}
+
+STRING 6443
+// Units: H02Y (Far Seer), Propernames (Proper Names)
+{
+Gar'dal Grimsight,Negal Fireye,Kazil Darkeye,Magis Coldeye,Bale Bleakstare,Gorr Grimwolf,Kag'ar Winterfang,Nazgrel,Morg Wolfsong,Kazragore,Fenris'ar Gul
+}
+
+STRING 6444
+// Abilities: A00M (Townportal), EditorSuffix (Editor Suffix)
+{
+(Hero)
+}
+
+STRING 6445
+// Abilities: ACLI (Chain Lightning), Researchubertip (Tooltip - Learn - Extended)
+{
+Hurls a bolt of damaging lightning at a target enemy that jumps to nearby enemies. Each jump deals less damage.
+}
+
+STRING 6446
+// Abilities: ACLI (Chain Lightning), Tip (Tooltip - Normal)
+{
+Chain Lightning - [|cffffcc00Level 4|r]
+}
+
+STRING 6447
+// Abilities: ACLI (Chain Lightning), Tip (Tooltip - Normal)
+{
+Chain Lightning - [|cffffcc00Level 5|r]
+}
+
+STRING 6448
+// Abilities: ACLI (Chain Lightning), Tip (Tooltip - Normal)
+{
+Chain Lightning - [|cffffcc00Level 6|r]
+}
+
+STRING 6449
+// Abilities: ACLI (Chain Lightning), Tip (Tooltip - Normal)
+{
+Chain Lightning - [|cffffcc00Level 7|r]
+}
+
+STRING 6450
+// Abilities: ACLI (Chain Lightning), Tip (Tooltip - Normal)
+{
+Chain Lightning - [|cffffcc00Level 8|r]
+}
+
+STRING 6451
+// Abilities: ACLI (Chain Lightning), Tip (Tooltip - Normal)
+{
+Chain Lightning - [|cffffcc00Level 9|r]
+}
+
+STRING 6452
+// Abilities: ACLI (Chain Lightning), Tip (Tooltip - Normal)
+{
+Chain Lightning - [|cffffcc00Level 10|r]
+}
+
+STRING 6453
+// Abilities: ACLI (Chain Lightning), Ubertip (Tooltip - Normal - Extended)
+{
+Calls forth a bolt of lightning that bounces up to <ACLI,DataB1> times, dealing <ACLI,DataA1> damage on the primary target. Each jump deals less damage.
+}
+
+STRING 6454
+// Abilities: ACLI (Chain Lightning), Ubertip (Tooltip - Normal - Extended)
+{
+Calls forth a bolt of lightning that bounces up to <ACLI,DataB2> times, dealing <ACLI,DataA2> damage on the primary target. Each jump deals less damage.
+}
+
+STRING 6455
+// Abilities: ACLI (Chain Lightning), Ubertip (Tooltip - Normal - Extended)
+{
+Calls forth a bolt of lightning that bounces up to <ACLI,DataB3> times, dealing <ACLI,DataA3> damage on the primary target. Each jump deals less damage.
+}
+
+STRING 6456
+// Abilities: ACLI (Chain Lightning), Ubertip (Tooltip - Normal - Extended)
+{
+Calls forth a bolt of lightning that bounces up to <ACLI,DataB4> times, dealing <ACLI,DataA4> damage on the primary target. Each jump deals less damage.
+}
+
+STRING 6457
+// Abilities: ACLI (Chain Lightning), Ubertip (Tooltip - Normal - Extended)
+{
+Calls forth a bolt of lightning that bounces up to <ACLI,DataB5> times, dealing <ACLI,DataA5> damage on the primary target. Each jump deals less damage.
+}
+
+STRING 6458
+// Abilities: ACLI (Chain Lightning), Ubertip (Tooltip - Normal - Extended)
+{
+Calls forth a bolt of lightning that bounces up to <ACLI,DataB6> times, dealing <ACLI,DataA6> damage on the primary target. Each jump deals less damage.
+}
+
+STRING 6459
+// Abilities: ACLI (Chain Lightning), Ubertip (Tooltip - Normal - Extended)
+{
+Calls forth a bolt of lightning that bounces up to <ACLI,DataB7> times, dealing <ACLI,DataA7> damage on the primary target. Each jump deals less damage.
+}
+
+STRING 6460
+// Abilities: ACLI (Chain Lightning), Ubertip (Tooltip - Normal - Extended)
+{
+Calls forth a bolt of lightning that bounces up to <ACLI,DataB8> times, dealing <ACLI,DataA8> damage on the primary target. Each jump deals less damage.
+}
+
+STRING 6461
+// Abilities: ACLI (Chain Lightning), Ubertip (Tooltip - Normal - Extended)
+{
+Calls forth a bolt of lightning that bounces up to <ACLI,DataB9> times, dealing <ACLI,DataA9> damage on the primary target. Each jump deals less damage.
+}
+
+STRING 6462
+// Abilities: ACLI (Chain Lightning), Ubertip (Tooltip - Normal - Extended)
+{
+Calls forth a bolt of lightning that bounces up to <ACLI,DataB10> times, dealing <ACLI,DataA10> damage on the primary target. Each jump deals less damage.
+}
+
+STRING 6463
+// Abilities: ACLI (Chain Lightning), EditorSuffix (Editor Suffix)
+{
+(Hero 10)
+}
+
+STRING 6464
+// Abilities: ASLI (Spirit Link), Tip (Tooltip - Normal)
+{
+Spirit Link - [|cffffcc00Level 2|r]
+}
+
+STRING 6465
+// Abilities: ASLI (Spirit Link), Tip (Tooltip - Normal)
+{
+Spirit Link - [|cffffcc00Level 3|r]
+}
+
+STRING 6466
+// Abilities: ASLI (Spirit Link), Tip (Tooltip - Normal)
+{
+Spirit Link - [|cffffcc00Level 4|r]
+}
+
+STRING 6467
+// Abilities: ASLI (Spirit Link), Tip (Tooltip - Normal)
+{
+Spirit Link - [|cffffcc00Level 5|r]
+}
+
+STRING 6468
+// Abilities: ASLI (Spirit Link), Tip (Tooltip - Normal)
+{
+Spirit Link - [|cffffcc00Level 6|r]
+}
+
+STRING 6469
+// Abilities: ASLI (Spirit Link), Tip (Tooltip - Normal)
+{
+Spirit Link - [|cffffcc00Level 7|r]
+}
+
+STRING 6470
+// Abilities: ASLI (Spirit Link), Tip (Tooltip - Normal)
+{
+Spirit Link - [|cffffcc00Level 8|r]
+}
+
+STRING 6471
+// Abilities: ASLI (Spirit Link), Tip (Tooltip - Normal)
+{
+Spirit Link - [|cffffcc00Level 9|r]
+}
+
+STRING 6472
+// Abilities: ASLI (Spirit Link), Tip (Tooltip - Normal)
+{
+Spirit Link - [|cffffcc00Level 10|r]
+}
+
+STRING 6473
+// Abilities: ASLI (Spirit Link), Ubertip (Tooltip - Normal - Extended)
+{
+Links <ASLI,DataB1> units together in a chain. All units with Spirit Link on them will live longer, by distributing <ASLI,DataA1,%>% of the damage they take across other Spirit Linked units. |nLasts <ASLI,Dur1> seconds.
+}
+
+STRING 6474
+// Abilities: ASLI (Spirit Link), Ubertip (Tooltip - Normal - Extended)
+{
+Links <ASLI,DataB2> units together in a chain. All units with Spirit Link on them will live longer, by distributing <ASLI,DataA2,%>% of the damage they take across other Spirit Linked units. |nLasts <ASLI,Dur2> seconds.
+}
+
+STRING 6475
+// Abilities: ASLI (Spirit Link), Ubertip (Tooltip - Normal - Extended)
+{
+Links <ASLI,DataB3> units together in a chain. All units with Spirit Link on them will live longer, by distributing <ASLI,DataA3,%>% of the damage they take across other Spirit Linked units. |nLasts <ASLI,Dur3> seconds.
+}
+
+STRING 6476
+// Abilities: ASLI (Spirit Link), Ubertip (Tooltip - Normal - Extended)
+{
+Links <ASLI,DataB4> units together in a chain. All units with Spirit Link on them will live longer, by distributing <ASLI,DataA4,%>% of the damage they take across other Spirit Linked units. |nLasts <ASLI,Dur4> seconds.
+}
+
+STRING 6477
+// Abilities: ASLI (Spirit Link), Ubertip (Tooltip - Normal - Extended)
+{
+Links <ASLI,DataB5> units together in a chain. All units with Spirit Link on them will live longer, by distributing <ASLI,DataA5,%>% of the damage they take across other Spirit Linked units. |nLasts <ASLI,Dur5> seconds.
+}
+
+STRING 6478
+// Abilities: ASLI (Spirit Link), Ubertip (Tooltip - Normal - Extended)
+{
+Links <ASLI,DataB6> units together in a chain. All units with Spirit Link on them will live longer, by distributing <ASLI,DataA6,%>% of the damage they take across other Spirit Linked units. |nLasts <ASLI,Dur6> seconds.
+}
+
+STRING 6479
+// Abilities: ASLI (Spirit Link), Ubertip (Tooltip - Normal - Extended)
+{
+Links <ASLI,DataB7> units together in a chain. All units with Spirit Link on them will live longer, by distributing <ASLI,DataA7,%>% of the damage they take across other Spirit Linked units. |nLasts <ASLI,Dur7> seconds.
+}
+
+STRING 6480
+// Abilities: ASLI (Spirit Link), Ubertip (Tooltip - Normal - Extended)
+{
+Links <ASLI,DataB8> units together in a chain. All units with Spirit Link on them will live longer, by distributing <ASLI,DataA8,%>% of the damage they take across other Spirit Linked units. |nLasts <ASLI,Dur8> seconds.
+}
+
+STRING 6481
+// Abilities: ASLI (Spirit Link), Ubertip (Tooltip - Normal - Extended)
+{
+Links <ASLI,DataB9> units together in a chain. All units with Spirit Link on them will live longer, by distributing <ASLI,DataA9,%>% of the damage they take across other Spirit Linked units. |nLasts <ASLI,Dur9> seconds.
+}
+
+STRING 6482
+// Abilities: ASLI (Spirit Link), Ubertip (Tooltip - Normal - Extended)
+{
+Links <ASLI,DataB10> units together in a chain. All units with Spirit Link on them will live longer, by distributing <ASLI,DataA10,%>% of the damage they take across other Spirit Linked units. |nLasts <ASLI,Dur10> seconds.
+}
+
+STRING 6483
+// Abilities: ASLI (Spirit Link), EditorSuffix (Editor Suffix)
+{
+(Hero 10)
+}
+
+STRING 6484
+// Abilities: ASLI (Spirit Link), Researchhotkey (Hotkey - Learn)
+{
+R
+}
+
+STRING 6485
+// Abilities: ASLI (Spirit Link), Tip (Tooltip - Normal)
+{
+Spirit Link - [|cffffcc00Level 1|r]
+}
+
+STRING 6486
+// Abilities: A00Z (Storm, Earth, And Fire), Ubertip (Tooltip - Normal - Extended)
+{
+|cffff0000Ultimate Ability|r|n|nDivides the Brewmaster into three specialized warriors of different elements. If at least one survives to the end of its life, the Brewmaster is reborn.|n|nLasts for |cffffcc00<A00Z,HeroDur1> seconds|r.
+}
+
+STRING 6487
+// Abilities: A00Z (Storm, Earth, And Fire), Ubertip (Tooltip - Normal - Extended)
+{
+|cffff0000Ultimate Ability|r|n|nDivides the Brewmaster into three specialized warriors of different elements. If at least one survives to the end of its life, the Brewmaster is reborn.|n|nLasts for |cffffcc00<A00Z,HeroDur2> seconds|r.
+}
+
+STRING 6488
+// Abilities: A00Z (Storm, Earth, And Fire), Ubertip (Tooltip - Normal - Extended)
+{
+|cffff0000Ultimate Ability|r|n|nDivides the Brewmaster into three specialized warriors of different elements. If at least one survives to the end of its life, the Brewmaster is reborn.|n|nLasts for |cffffcc00<A00Z,HeroDur3> seconds|r.
+}
+
+STRING 6489
+// Abilities: A00Z (Storm, Earth, And Fire), Researchubertip (Tooltip - Learn - Extended)
+{
+|cffff0000Ultimate Ability|r|n|nDivides the Brewmaster into three specialized warriors of different elements. If at least one survives to the end of its life, the Brewmaster is reborn.
+}
+
+STRING 6490
+// Abilities: A00Z (Storm, Earth, And Fire), Researchtip (Tooltip - Learn)
+{
+Learn Storm, Earth and Fire - [|cffffcc00Level %d|r]
+}
+
+STRING 6491
+// Abilities: ASSW (Smash Wave), Researchtip (Tooltip - Learn)
+{
+Learn Smash Wave - [|cffffcc00level %d|r]
+}
+
+STRING 6492
+// Abilities: APHX (Phoenix), Researchtip (Tooltip - Learn)
+{
+Learn Phoenix - [|cffffcc00Level %d|r]
+}
+
+STRING 6493
+// Abilities: ARIC (Reincarnation), Researchtip (Tooltip - Learn)
+{
+Learn Reincarnation - [|cffffcc00Level %d|r]
+}
+
+STRING 6494
+// Abilities: ALOC (Locust Swarm), Researchtip (Tooltip - Learn)
+{
+Learn Locust Swarm - [|cffffcc00Level %d|r]
+}
+
+STRING 6495
+// Abilities: ADAD (Death And Decay), Researchtip (Tooltip - Learn)
+{
+Learn Death And Decay - [|cffffcc00Level %d|r]
+}
+
+STRING 6496
+// Abilities: ASTF (Starfall), Researchtip (Tooltip - Learn)
+{
+Learn Starfall - [|cffffcc00Level %d|r]
+}
+
+STRING 6497
+// Abilities: AREJ (Rejuvenation), Researchtip (Tooltip - Learn)
+{
+Learn Rejuvenation - [|cffffcc00Level %d|r]
+}
+
+STRING 6498
+// Abilities: AREJ (Rejuvenation), Researchubertip (Tooltip - Learn - Extended)
+{
+Heals a target friendly unit over seconds.
+}
+
+STRING 6499
+// Abilities: ADCO (Death Coil), Researchtip (Tooltip - Learn)
+{
+Learn Death Coil - [|cffffcc00Level %d|r]
+}
+
+STRING 6500
+// Abilities: ADCO (Death Coil), Researchubertip (Tooltip - Learn - Extended)
+{
+A coil of death that damages an enemy unit. 
+}
+
+STRING 6501
+// Abilities: ASLI (Spirit Link), Researchtip (Tooltip - Learn)
+{
+Learn Spirit Link - [|cffffcc00Level %d|r]
+}
+
+STRING 6502
+// Abilities: ASLI (Spirit Link), Researchubertip (Tooltip - Learn - Extended)
+{
+Links  units together in a chain. All units with Spirit Link on them will live longer, by distributing damage they take across other Spirit Linked units.
+}
+
+STRING 6503
+// Abilities: AEAR (Earthquake), Researchubertip (Tooltip - Learn - Extended)
+{
+Makes the ground tremble and break, makes damage per second to buildings and slowing units within the area of effect.
+}
+
+STRING 6504
+// Abilities: AEAR (Earthquake), EditorSuffix (Editor Suffix)
+{
+(Hero 10)
+}
+
+STRING 6505
+// Abilities: AEAR (Earthquake), Researchtip (Tooltip - Learn)
+{
+Learn Earthquake - [|cffffcc00Level %d|r]
+}
+
+STRING 6506
+// Abilities: AGLH (Tranquility), Researchtip (Tooltip - Learn)
+{
+Learn Tranquility- [|cffffcc00level %d|r]
+}
+
+STRING 6507
+// Abilities: A0A0 (Charm), Researchtip (Tooltip - Learn)
+{
+Learn Charm - [|cffffcc00Level %d|r]
+}
+
+STRING 6508
+// Abilities: A0VD (Doom), Researchtip (Tooltip - Learn)
+{
+Learn Doom - [|cffffcc00Level %d|r]
+}
+
+STRING 6509
+// Abilities: A015 (Avatar), Researchtip (Tooltip - Learn)
+{
+Learn Avatar - [|cffffcc00Level %d|r]
+}
+
+STRING 6510
+// Abilities: AGBV (Big Bad Voodoo), Researchtip (Tooltip - Learn)
+{
+Learn Big Bad Voodoo - [|cffffcc00Level %d|r]
 }
 

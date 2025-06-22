@@ -40,6 +40,11 @@ namespace Source.Events.Regions
       HandleHeroSelection(Constants.UNIT_DARK_RANGER_HERO);
     }
 
+    internal static void OnDeathKnight()
+    {
+      HandleHeroSelection(Constants.UNIT_DEATH_KNIGHT_HERO);
+    }
+
     internal static void OnFirelord()
     {
       HandleHeroSelection(Constants.UNIT_FIRELORD_HERO);
@@ -65,6 +70,11 @@ namespace Source.Events.Regions
       HandleHeroSelection(Constants.UNIT_PIT_LORD_HERO);
     }
 
+    internal static void OnPriestessOfMoon()
+    {
+      HandleHeroSelection(Constants.UNIT_PRIESTESS_OF_THE_MOON_HERO);
+    }
+
     internal static void OnSeaWitch()
     {
       HandleHeroSelection(Constants.UNIT_SEA_WITCH_HERO);
@@ -83,6 +93,11 @@ namespace Source.Events.Regions
     internal static void OnTinker()
     {
       HandleHeroSelection(Constants.UNIT_TINKER_HERO);
+    }
+
+    internal static void OnWarden()
+    {
+      HandleHeroSelection(Constants.UNIT_WARDEN_HERO);
     }
 
     private static void HandleHeroSelection(int heroUnitTypeId)

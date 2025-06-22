@@ -1,19 +1,19 @@
 Letzte Änderungen:
 ==================
-Change: Alle zyklischen Unit-Spawns finden nun ausschließlich in der Kaserne statt.
-Change: Teams ohne menschliche Spieler erforschen Einheiten-Upgrades automatisch.
-Change: Menschliche Spieler können keine Einheiten-Upgrades mehr erforschen.
-Feature: Kaserne bieten einen Unit-Upgrades zum Kauf an, welche die zyklischen Unit-Spawns verstärken.
-Feature: Im Hauptgebäude können einmalige Unit-Spawns mit mächtigen Einheiten gekauft werden.
-Feature: Neue Held: Lich
-Bugfix: Söldner die zaubern kehren nun nicht mehr zu ihrem Lager zurück.
+C: Alle zyklischen Unit-Spawns finden nun ausschließlich in der Kaserne statt.
+C: Teams ohne menschliche Spieler erforschen Einheiten-Upgrades automatisch.
+C: Menschliche Spieler können keine Einheiten-Upgrades mehr erforschen.
+F: Kaserne bieten einen Unit-Upgrades zum Kauf an, welche die zyklischen Unit-Spawns verstärken.
+F: Im Hauptgebäude können einmalige Unit-Spawns mit mächtigen Einheiten gekauft werden.
+F: Neue Held: Lich, Death Knight, Warden, Priestess of the Moon, Far Seer
+B: Söldner die zaubern kehren nun nicht mehr zu ihrem Lager zurück.
 
 
 Noch offen:
 ===========
-Kasernen müssen überall näher an das Hauptgebäude verschoben werden.
-2 weitere Nahkampfhelden
-2 weitere Fernkampfhelden
-Mehr Single-Spawn-Einheiten zum Kaufen im Hauptgebäude.
-Mehr Söldner-Einheiten zum Kaufen im Söldnerlager.
-Mehr Einheiten-Upgrades zum Kaufen durch Spieler und Forschen durch Computer.
+Letzten Helden beenden: Far Seer
+Tooltip für kaufbare Einheiten
+Kasernen müssen überall näher an das Hauptgebäude verschoben werden
+Mehr Single-Spawn-Einheiten zum Kaufen im Hauptgebäude
+Mehr Söldner-Einheiten zum Kaufen im Söldnerlager
+Mehr Einheiten-Upgrades zum Kaufen durch Spieler und Forschen durch Computer
