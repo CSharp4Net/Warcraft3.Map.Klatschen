@@ -59,13 +59,13 @@ namespace Source.Models.Teams
           switch (techLevel)
           {
             case 1:
-              command.UnitId = Constants.UNIT_SKELETON_WARRIOR_UNDEAD;
-              command.UnitIdToUpgrade = Constants.UNIT_GHOUL_UNDEAD;
+              command.UnitId = Constants.UNIT_SKELETON_WARRIOR_UNDEAD_MELEE_2;
+              command.UnitIdToUpgrade = Constants.UNIT_GHOUL_UNDEAD_MELEE_1;
               return Enums.ResearchType.UpgradeUnit;
 
             default:
-              command.UnitId = Constants.UNIT_ABOMINATION_UNDEAD;
-              command.UnitIdToUpgrade = Constants.UNIT_SKELETON_WARRIOR_UNDEAD;
+              command.UnitId = Constants.UNIT_ABOMINATION_UNDEAD_MELEE_3;
+              command.UnitIdToUpgrade = Constants.UNIT_SKELETON_WARRIOR_UNDEAD_MELEE_2;
               return Enums.ResearchType.UpgradeUnit;
           }
 
@@ -79,13 +79,13 @@ namespace Source.Models.Teams
           switch (techLevel)
           {
             case 1:
-              command.UnitId = Constants.UNIT_CRYPT_FIEND_BESERK_UNDEAD;
-              command.UnitIdToUpgrade = Constants.UNIT_CRYPT_FIEND_UNDEAD;
+              command.UnitId = Constants.UNIT_CRYPT_FIEND_BESERK_UNDEAD_DISTANCE_2;
+              command.UnitIdToUpgrade = Constants.UNIT_CRYPT_FIEND_UNDEAD_DISTANCE_1;
               return Enums.ResearchType.UpgradeUnit;
 
             default:
-              command.UnitId = Constants.UNIT_CRYPT_FIEND_ELITE_UNDEAD;
-              command.UnitIdToUpgrade = Constants.UNIT_CRYPT_FIEND_BESERK_UNDEAD;
+              command.UnitId = Constants.UNIT_CRYPT_FIEND_ELITE_UNDEAD_DISTANCE_3;
+              command.UnitIdToUpgrade = Constants.UNIT_CRYPT_FIEND_BESERK_UNDEAD_DISTANCE_2;
               return Enums.ResearchType.UpgradeUnit;
           }
 
@@ -99,13 +99,13 @@ namespace Source.Models.Teams
           switch (techLevel)
           {
             case 1:
-              command.UnitId = Constants.UNIT_DESTROYER_UNDEAD;
-              command.UnitIdToUpgrade = Constants.UNIT_GARGOYLE_UNDEAD;
+              command.UnitId = Constants.UNIT_DESTROYER_UNDEAD_FLY_2;
+              command.UnitIdToUpgrade = Constants.UNIT_GARGOYLE_UNDEAD_FLY_1;
               return Enums.ResearchType.UpgradeUnit;
 
             default:
-              command.UnitId = Constants.UNIT_FROST_WYRM_UNDEAD;
-              command.UnitIdToUpgrade = Constants.UNIT_DESTROYER_UNDEAD;
+              command.UnitId = Constants.UNIT_FROST_WYRM_UNDEAD_FLY_3;
+              command.UnitIdToUpgrade = Constants.UNIT_DESTROYER_UNDEAD_FLY_2;
               return Enums.ResearchType.UpgradeUnit;
           }
 
@@ -119,13 +119,13 @@ namespace Source.Models.Teams
           switch (techLevel)
           {
             case 1:
-              command.UnitId = Constants.UNIT_NECROMANCER_UNDEAD;
-              command.UnitIdToUpgrade = Constants.UNIT_SKELETAL_MAGE_UNDEAD;
+              command.UnitId = Constants.UNIT_NECROMANCER_UNDEAD_MAGE_2;
+              command.UnitIdToUpgrade = Constants.UNIT_SKELETAL_MAGE_UNDEAD_MAGE_1;
               return Enums.ResearchType.UpgradeUnit;
 
             default:
-              command.UnitId = Constants.UNIT_BANSHEE_UNDEAD;
-              command.UnitIdToUpgrade = Constants.UNIT_NECROMANCER_UNDEAD;
+              command.UnitId = Constants.UNIT_BANSHEE_UNDEAD_MAGE_3;
+              command.UnitIdToUpgrade = Constants.UNIT_NECROMANCER_UNDEAD_MAGE_2;
               return Enums.ResearchType.UpgradeUnit;
           }
 
@@ -139,12 +139,12 @@ namespace Source.Models.Teams
           switch (techLevel)
           {
             case 1:
-              command.UnitId = Constants.UNIT_OBSIDIAN_STATUE_UNDEAD;
+              command.UnitId = Constants.UNIT_OBSIDIAN_STATUE_UNDEAD_SIEGE_1;
               return Enums.ResearchType.AddUnit;
 
             default:
-              command.UnitId = Constants.UNIT_MEAT_WAGON_UNDEAD;
-              command.UnitIdToUpgrade = Constants.UNIT_OBSIDIAN_STATUE_UNDEAD;
+              command.UnitId = Constants.UNIT_MEAT_WAGON_UNDEAD_SIEGE_2;
+              command.UnitIdToUpgrade = Constants.UNIT_OBSIDIAN_STATUE_UNDEAD_SIEGE_1;
               return Enums.ResearchType.UpgradeUnit;
           }
 
@@ -159,42 +159,42 @@ namespace Source.Models.Teams
     {
       switch (baseUnitTypeId)
       {
-        case Constants.UNIT_SKELETON_WARRIOR_UNDEAD:
-          command = new UnitUpgradeBySoldCommand(Enums.SpawnInterval.Short, Constants.UNIT_GHOUL_UNDEAD, baseUnitTypeId, Constants.UNIT_ABOMINATION_UNDEAD);
+        case Constants.UNIT_SKELETON_WARRIOR_UNDEAD_MELEE_2:
+          command = new UnitUpgradeBySoldCommand(Enums.SpawnInterval.Short, Constants.UNIT_GHOUL_UNDEAD_MELEE_1, baseUnitTypeId, Constants.UNIT_ABOMINATION_UNDEAD_MELEE_3);
           return Enums.UnitUpgradeType.UpgradeUnitInSpawn;
-        case Constants.UNIT_ABOMINATION_UNDEAD:
-          command = new UnitUpgradeBySoldCommand(Enums.SpawnInterval.Short, Constants.UNIT_SKELETON_WARRIOR_UNDEAD, baseUnitTypeId, 0);
-          return Enums.UnitUpgradeType.UpgradeUnitInSpawn;
-
-        case Constants.UNIT_CRYPT_FIEND_BESERK_UNDEAD:
-          command = new UnitUpgradeBySoldCommand(Enums.SpawnInterval.Short, Constants.UNIT_CRYPT_FIEND_UNDEAD, baseUnitTypeId, Constants.UNIT_CRYPT_FIEND_ELITE_UNDEAD);
-          return Enums.UnitUpgradeType.UpgradeUnitInSpawn;
-        case Constants.UNIT_CRYPT_FIEND_ELITE_UNDEAD:
-          command = new UnitUpgradeBySoldCommand(Enums.SpawnInterval.Short, Constants.UNIT_CRYPT_FIEND_BESERK_UNDEAD, baseUnitTypeId, 0);
+        case Constants.UNIT_ABOMINATION_UNDEAD_MELEE_3:
+          command = new UnitUpgradeBySoldCommand(Enums.SpawnInterval.Short, Constants.UNIT_SKELETON_WARRIOR_UNDEAD_MELEE_2, baseUnitTypeId, 0);
           return Enums.UnitUpgradeType.UpgradeUnitInSpawn;
 
-        case Constants.UNIT_NECROMANCER_UNDEAD:
-          command = new UnitUpgradeBySoldCommand(Enums.SpawnInterval.Middle, Constants.UNIT_SKELETAL_MAGE_UNDEAD, baseUnitTypeId, Constants.UNIT_BANSHEE_UNDEAD);
+        case Constants.UNIT_CRYPT_FIEND_BESERK_UNDEAD_DISTANCE_2:
+          command = new UnitUpgradeBySoldCommand(Enums.SpawnInterval.Short, Constants.UNIT_CRYPT_FIEND_UNDEAD_DISTANCE_1, baseUnitTypeId, Constants.UNIT_CRYPT_FIEND_ELITE_UNDEAD_DISTANCE_3);
           return Enums.UnitUpgradeType.UpgradeUnitInSpawn;
-        case Constants.UNIT_BANSHEE_UNDEAD:
-          command = new UnitUpgradeBySoldCommand(Enums.SpawnInterval.Middle, Constants.UNIT_NECROMANCER_UNDEAD, baseUnitTypeId, 0);
+        case Constants.UNIT_CRYPT_FIEND_ELITE_UNDEAD_DISTANCE_3:
+          command = new UnitUpgradeBySoldCommand(Enums.SpawnInterval.Short, Constants.UNIT_CRYPT_FIEND_BESERK_UNDEAD_DISTANCE_2, baseUnitTypeId, 0);
           return Enums.UnitUpgradeType.UpgradeUnitInSpawn;
 
-        case Constants.UNIT_GARGOYLE_UNDEAD:
-          command = new UnitUpgradeBySoldCommand(Enums.SpawnInterval.Middle, baseUnitTypeId, Constants.UNIT_DESTROYER_UNDEAD);
+        case Constants.UNIT_NECROMANCER_UNDEAD_MAGE_2:
+          command = new UnitUpgradeBySoldCommand(Enums.SpawnInterval.Middle, Constants.UNIT_SKELETAL_MAGE_UNDEAD_MAGE_1, baseUnitTypeId, Constants.UNIT_BANSHEE_UNDEAD_MAGE_3);
+          return Enums.UnitUpgradeType.UpgradeUnitInSpawn;
+        case Constants.UNIT_BANSHEE_UNDEAD_MAGE_3:
+          command = new UnitUpgradeBySoldCommand(Enums.SpawnInterval.Middle, Constants.UNIT_NECROMANCER_UNDEAD_MAGE_2, baseUnitTypeId, 0);
+          return Enums.UnitUpgradeType.UpgradeUnitInSpawn;
+
+        case Constants.UNIT_GARGOYLE_UNDEAD_FLY_1:
+          command = new UnitUpgradeBySoldCommand(Enums.SpawnInterval.Middle, baseUnitTypeId, Constants.UNIT_DESTROYER_UNDEAD_FLY_2);
           return Enums.UnitUpgradeType.AddNewUnitToSpawn;
-        case Constants.UNIT_DESTROYER_UNDEAD:
-          command = new UnitUpgradeBySoldCommand(Enums.SpawnInterval.Middle, Constants.UNIT_GARGOYLE_UNDEAD, baseUnitTypeId, Constants.UNIT_FROST_WYRM_UNDEAD);
+        case Constants.UNIT_DESTROYER_UNDEAD_FLY_2:
+          command = new UnitUpgradeBySoldCommand(Enums.SpawnInterval.Middle, Constants.UNIT_GARGOYLE_UNDEAD_FLY_1, baseUnitTypeId, Constants.UNIT_FROST_WYRM_UNDEAD_FLY_3);
           return Enums.UnitUpgradeType.UpgradeUnitInSpawn;
-        case Constants.UNIT_FROST_WYRM_UNDEAD:
-          command = new UnitUpgradeBySoldCommand(Enums.SpawnInterval.Middle, Constants.UNIT_DESTROYER_UNDEAD, baseUnitTypeId, 0);
+        case Constants.UNIT_FROST_WYRM_UNDEAD_FLY_3:
+          command = new UnitUpgradeBySoldCommand(Enums.SpawnInterval.Middle, Constants.UNIT_DESTROYER_UNDEAD_FLY_2, baseUnitTypeId, 0);
           return Enums.UnitUpgradeType.UpgradeUnitInSpawn;
 
-        case Constants.UNIT_OBSIDIAN_STATUE_UNDEAD:
-          command = new UnitUpgradeBySoldCommand(Enums.SpawnInterval.Long, baseUnitTypeId, Constants.UNIT_MEAT_WAGON_UNDEAD);
+        case Constants.UNIT_OBSIDIAN_STATUE_UNDEAD_SIEGE_1:
+          command = new UnitUpgradeBySoldCommand(Enums.SpawnInterval.Long, baseUnitTypeId, Constants.UNIT_MEAT_WAGON_UNDEAD_SIEGE_2);
           return Enums.UnitUpgradeType.AddNewUnitToSpawn;
-        case Constants.UNIT_MEAT_WAGON_UNDEAD:
-          command = new UnitUpgradeBySoldCommand(Enums.SpawnInterval.Long, Constants.UNIT_OBSIDIAN_STATUE_UNDEAD, baseUnitTypeId, 0);
+        case Constants.UNIT_MEAT_WAGON_UNDEAD_SIEGE_2:
+          command = new UnitUpgradeBySoldCommand(Enums.SpawnInterval.Long, Constants.UNIT_OBSIDIAN_STATUE_UNDEAD_SIEGE_1, baseUnitTypeId, 0);
           return Enums.UnitUpgradeType.UpgradeUnitInSpawn;
 
         default: // Einheiten-Typ ist nicht bekannt
@@ -204,18 +204,18 @@ namespace Source.Models.Teams
 
     private void AddInitialSpawnTriggers(UnitSpawnBuilding building)
     {
-      building.AddSpawnTrigger(Enums.SpawnInterval.Short, Constants.UNIT_GHOUL_UNDEAD, Constants.UNIT_GHOUL_UNDEAD, Constants.UNIT_CRYPT_FIEND_UNDEAD).Run();
-      building.AddSpawnTrigger(Enums.SpawnInterval.Middle, Constants.UNIT_SKELETAL_MAGE_UNDEAD).Run(1f);
+      building.AddSpawnTrigger(Enums.SpawnInterval.Short, Constants.UNIT_GHOUL_UNDEAD_MELEE_1, Constants.UNIT_GHOUL_UNDEAD_MELEE_1, Constants.UNIT_CRYPT_FIEND_UNDEAD_DISTANCE_1).Run();
+      building.AddSpawnTrigger(Enums.SpawnInterval.Middle, Constants.UNIT_SKELETAL_MAGE_UNDEAD_MAGE_1).Run(1f);
       building.AddSpawnTrigger(Enums.SpawnInterval.Long).Run(2f);
     }
 
     private void AddInitialUnitUpgradesToStock(UnitSpawnBuilding building)
     {
-      building.Wc3Unit.AddUnitToStock(Constants.UNIT_SKELETON_WARRIOR_UNDEAD, 1, 1);
-      building.Wc3Unit.AddUnitToStock(Constants.UNIT_CRYPT_FIEND_BESERK_UNDEAD, 1, 1);
-      building.Wc3Unit.AddUnitToStock(Constants.UNIT_NECROMANCER_UNDEAD, 1, 1);
-      building.Wc3Unit.AddUnitToStock(Constants.UNIT_GARGOYLE_UNDEAD, 1, 1);
-      building.Wc3Unit.AddUnitToStock(Constants.UNIT_OBSIDIAN_STATUE_UNDEAD, 1, 1);
+      building.Wc3Unit.AddUnitToStock(Constants.UNIT_SKELETON_WARRIOR_UNDEAD_MELEE_2, 1, 1);
+      building.Wc3Unit.AddUnitToStock(Constants.UNIT_CRYPT_FIEND_BESERK_UNDEAD_DISTANCE_2, 1, 1);
+      building.Wc3Unit.AddUnitToStock(Constants.UNIT_NECROMANCER_UNDEAD_MAGE_2, 1, 1);
+      building.Wc3Unit.AddUnitToStock(Constants.UNIT_GARGOYLE_UNDEAD_FLY_1, 1, 1);
+      building.Wc3Unit.AddUnitToStock(Constants.UNIT_OBSIDIAN_STATUE_UNDEAD_SIEGE_1, 1, 1);
     }
   }
 }

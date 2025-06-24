@@ -59,13 +59,13 @@ namespace Source.Models.Teams
           switch (techLevel)
           {
             case 1:
-              command.UnitId = Constants.UNIT_BESERK_ORC;
-              command.UnitIdToUpgrade = Constants.UNIT_GRUNT_ORC;
+              command.UnitId = Constants.UNIT_BESERK_ORC_MELEE_2;
+              command.UnitIdToUpgrade = Constants.UNIT_GRUNT_ORC_MELEE_1;
               return Enums.ResearchType.UpgradeUnit;
 
             default:
-              command.UnitId = Constants.UNIT_TAUREN_ORC;
-              command.UnitIdToUpgrade = Constants.UNIT_BESERK_ORC;
+              command.UnitId = Constants.UNIT_TAUREN_ORC_MELEE_3;
+              command.UnitIdToUpgrade = Constants.UNIT_BESERK_ORC_MELEE_2;
               return Enums.ResearchType.UpgradeUnit;
           }
 
@@ -79,13 +79,13 @@ namespace Source.Models.Teams
           switch (techLevel)
           {
             case 1:
-              command.UnitId = Constants.UNIT_HEADHUNTER_BESERK_ORC;
-              command.UnitIdToUpgrade = Constants.UNIT_HEADHUNTER_ORC;
+              command.UnitId = Constants.UNIT_HEADHUNTER_BESERK_ORC_DISTANCE_2;
+              command.UnitIdToUpgrade = Constants.UNIT_HEADHUNTER_ORC_DISTANCE_1;
               return Enums.ResearchType.UpgradeUnit;
 
             default:
-              command.UnitId = Constants.UNIT_HEADHUNTER_ELITE_ORC;
-              command.UnitIdToUpgrade = Constants.UNIT_HEADHUNTER_BESERK_ORC;
+              command.UnitId = Constants.UNIT_HEADHUNTER_ELITE_ORC_DISTANCE_3;
+              command.UnitIdToUpgrade = Constants.UNIT_HEADHUNTER_BESERK_ORC_DISTANCE_2;
               return Enums.ResearchType.UpgradeUnit;
           }
 
@@ -99,13 +99,13 @@ namespace Source.Models.Teams
           switch (techLevel)
           {
             case 1:
-              command.UnitId = Constants.UNIT_WIND_RIDER_ORC;
-              command.UnitIdToUpgrade = Constants.UNIT_BATRIDER_ORC;
+              command.UnitId = Constants.UNIT_WIND_RIDER_ORC_FLY_2;
+              command.UnitIdToUpgrade = Constants.UNIT_BATRIDER_ORC_FLY_1;
               return Enums.ResearchType.UpgradeUnit;
 
             default:
-              command.UnitId = Constants.UNIT_SPIRIT_WIND_RIDER_ORC;
-              command.UnitIdToUpgrade = Constants.UNIT_WIND_RIDER_ORC;
+              command.UnitId = Constants.UNIT_SPIRIT_WIND_RIDER_ORC_FLY_3;
+              command.UnitIdToUpgrade = Constants.UNIT_WIND_RIDER_ORC_FLY_2;
               return Enums.ResearchType.UpgradeUnit;
           }
 
@@ -119,13 +119,13 @@ namespace Source.Models.Teams
           switch (techLevel)
           {
             case 1:
-              command.UnitId = Constants.UNIT_SHAMAN_ORC;
-              command.UnitIdToUpgrade = Constants.UNIT_WITCH_DOCTOR_ORC;
+              command.UnitId = Constants.UNIT_SHAMAN_ORC_MAGE_2;
+              command.UnitIdToUpgrade = Constants.UNIT_WITCH_DOCTOR_ORC_MAGE_1;
               return Enums.ResearchType.UpgradeUnit;
 
             default:
-              command.UnitId = Constants.UNIT_WARLOCK_ORC;
-              command.UnitIdToUpgrade = Constants.UNIT_SHAMAN_ORC;
+              command.UnitId = Constants.UNIT_WARLOCK_ORC_MAGE_3;
+              command.UnitIdToUpgrade = Constants.UNIT_SHAMAN_ORC_MAGE_2;
               return Enums.ResearchType.UpgradeUnit;
           }
 
@@ -139,12 +139,12 @@ namespace Source.Models.Teams
           switch (techLevel)
           {
             case 1:
-              command.UnitId = Constants.UNIT_KODO_BEAST_ORC;
+              command.UnitId = Constants.UNIT_KODO_BEAST_ORC_SIEGE_1;
               return Enums.ResearchType.AddUnit;
 
             default:
-              command.UnitId = Constants.UNIT_DEMOLISHER_ORC;
-              command.UnitIdToUpgrade = Constants.UNIT_KODO_BEAST_ORC;
+              command.UnitId = Constants.UNIT_DEMOLISHER_ORC_SIEGE_2;
+              command.UnitIdToUpgrade = Constants.UNIT_KODO_BEAST_ORC_SIEGE_1;
               return Enums.ResearchType.UpgradeUnit;
           }
 
@@ -159,42 +159,42 @@ namespace Source.Models.Teams
     {
       switch (baseUnitTypeId)
       {
-        case Constants.UNIT_BESERK_ORC:
-          command = new UnitUpgradeBySoldCommand(Enums.SpawnInterval.Short, Constants.UNIT_GRUNT_ORC, baseUnitTypeId, Constants.UNIT_TAUREN_ORC);
+        case Constants.UNIT_BESERK_ORC_MELEE_2:
+          command = new UnitUpgradeBySoldCommand(Enums.SpawnInterval.Short, Constants.UNIT_GRUNT_ORC_MELEE_1, baseUnitTypeId, Constants.UNIT_TAUREN_ORC_MELEE_3);
           return Enums.UnitUpgradeType.UpgradeUnitInSpawn;
-        case Constants.UNIT_TAUREN_ORC:
-          command = new UnitUpgradeBySoldCommand(Enums.SpawnInterval.Short, Constants.UNIT_BESERK_ORC, baseUnitTypeId, 0);
-          return Enums.UnitUpgradeType.UpgradeUnitInSpawn;
-
-        case Constants.UNIT_HEADHUNTER_BESERK_ORC:
-          command = new UnitUpgradeBySoldCommand(Enums.SpawnInterval.Short, Constants.UNIT_HEADHUNTER_ORC, baseUnitTypeId, Constants.UNIT_HEADHUNTER_ELITE_ORC);
-          return Enums.UnitUpgradeType.UpgradeUnitInSpawn;
-        case Constants.UNIT_HEADHUNTER_ELITE_ORC:
-          command = new UnitUpgradeBySoldCommand(Enums.SpawnInterval.Short, Constants.UNIT_HEADHUNTER_BESERK_ORC, baseUnitTypeId, 0);
+        case Constants.UNIT_TAUREN_ORC_MELEE_3:
+          command = new UnitUpgradeBySoldCommand(Enums.SpawnInterval.Short, Constants.UNIT_BESERK_ORC_MELEE_2, baseUnitTypeId, 0);
           return Enums.UnitUpgradeType.UpgradeUnitInSpawn;
 
-        case Constants.UNIT_SHAMAN_ORC:
-          command = new UnitUpgradeBySoldCommand(Enums.SpawnInterval.Middle, Constants.UNIT_WITCH_DOCTOR_ORC, baseUnitTypeId, Constants.UNIT_WARLOCK_ORC);
+        case Constants.UNIT_HEADHUNTER_BESERK_ORC_DISTANCE_2:
+          command = new UnitUpgradeBySoldCommand(Enums.SpawnInterval.Short, Constants.UNIT_HEADHUNTER_ORC_DISTANCE_1, baseUnitTypeId, Constants.UNIT_HEADHUNTER_ELITE_ORC_DISTANCE_3);
           return Enums.UnitUpgradeType.UpgradeUnitInSpawn;
-        case Constants.UNIT_WARLOCK_ORC:
-          command = new UnitUpgradeBySoldCommand(Enums.SpawnInterval.Middle, Constants.UNIT_SHAMAN_ORC, baseUnitTypeId, 0);
+        case Constants.UNIT_HEADHUNTER_ELITE_ORC_DISTANCE_3:
+          command = new UnitUpgradeBySoldCommand(Enums.SpawnInterval.Short, Constants.UNIT_HEADHUNTER_BESERK_ORC_DISTANCE_2, baseUnitTypeId, 0);
           return Enums.UnitUpgradeType.UpgradeUnitInSpawn;
 
-        case Constants.UNIT_BATRIDER_ORC:
-          command = new UnitUpgradeBySoldCommand(Enums.SpawnInterval.Middle, baseUnitTypeId, Constants.UNIT_WIND_RIDER_ORC);
+        case Constants.UNIT_SHAMAN_ORC_MAGE_2:
+          command = new UnitUpgradeBySoldCommand(Enums.SpawnInterval.Middle, Constants.UNIT_WITCH_DOCTOR_ORC_MAGE_1, baseUnitTypeId, Constants.UNIT_WARLOCK_ORC_MAGE_3);
+          return Enums.UnitUpgradeType.UpgradeUnitInSpawn;
+        case Constants.UNIT_WARLOCK_ORC_MAGE_3:
+          command = new UnitUpgradeBySoldCommand(Enums.SpawnInterval.Middle, Constants.UNIT_SHAMAN_ORC_MAGE_2, baseUnitTypeId, 0);
+          return Enums.UnitUpgradeType.UpgradeUnitInSpawn;
+
+        case Constants.UNIT_BATRIDER_ORC_FLY_1:
+          command = new UnitUpgradeBySoldCommand(Enums.SpawnInterval.Middle, baseUnitTypeId, Constants.UNIT_WIND_RIDER_ORC_FLY_2);
           return Enums.UnitUpgradeType.AddNewUnitToSpawn;
-        case Constants.UNIT_WIND_RIDER_ORC:
-          command = new UnitUpgradeBySoldCommand(Enums.SpawnInterval.Middle, Constants.UNIT_BATRIDER_ORC, baseUnitTypeId, Constants.UNIT_SPIRIT_WIND_RIDER_ORC);
+        case Constants.UNIT_WIND_RIDER_ORC_FLY_2:
+          command = new UnitUpgradeBySoldCommand(Enums.SpawnInterval.Middle, Constants.UNIT_BATRIDER_ORC_FLY_1, baseUnitTypeId, Constants.UNIT_SPIRIT_WIND_RIDER_ORC_FLY_3);
           return Enums.UnitUpgradeType.UpgradeUnitInSpawn;
-        case Constants.UNIT_SPIRIT_WIND_RIDER_ORC:
-          command = new UnitUpgradeBySoldCommand(Enums.SpawnInterval.Middle, Constants.UNIT_WIND_RIDER_ORC, baseUnitTypeId, 0);
+        case Constants.UNIT_SPIRIT_WIND_RIDER_ORC_FLY_3:
+          command = new UnitUpgradeBySoldCommand(Enums.SpawnInterval.Middle, Constants.UNIT_WIND_RIDER_ORC_FLY_2, baseUnitTypeId, 0);
           return Enums.UnitUpgradeType.UpgradeUnitInSpawn;
 
-        case Constants.UNIT_KODO_BEAST_ORC:
-          command = new UnitUpgradeBySoldCommand(Enums.SpawnInterval.Long, baseUnitTypeId, Constants.UNIT_DEMOLISHER_ORC);
+        case Constants.UNIT_KODO_BEAST_ORC_SIEGE_1:
+          command = new UnitUpgradeBySoldCommand(Enums.SpawnInterval.Long, baseUnitTypeId, Constants.UNIT_DEMOLISHER_ORC_SIEGE_2);
           return Enums.UnitUpgradeType.AddNewUnitToSpawn;
-        case Constants.UNIT_DEMOLISHER_ORC:
-          command = new UnitUpgradeBySoldCommand(Enums.SpawnInterval.Long, Constants.UNIT_KODO_BEAST_ORC, baseUnitTypeId, 0);
+        case Constants.UNIT_DEMOLISHER_ORC_SIEGE_2:
+          command = new UnitUpgradeBySoldCommand(Enums.SpawnInterval.Long, Constants.UNIT_KODO_BEAST_ORC_SIEGE_1, baseUnitTypeId, 0);
           return Enums.UnitUpgradeType.UpgradeUnitInSpawn;
 
         default: // Einheiten-Typ ist nicht bekannt
@@ -204,18 +204,18 @@ namespace Source.Models.Teams
 
     private void AddInitialSpawnTriggers(UnitSpawnBuilding building)
     {
-      building.AddSpawnTrigger(Enums.SpawnInterval.Short, Constants.UNIT_GRUNT_ORC, Constants.UNIT_GRUNT_ORC, Constants.UNIT_HEADHUNTER_ORC).Run();
-      building.AddSpawnTrigger(Enums.SpawnInterval.Middle, Constants.UNIT_WITCH_DOCTOR_ORC).Run(1f);
+      building.AddSpawnTrigger(Enums.SpawnInterval.Short, Constants.UNIT_GRUNT_ORC_MELEE_1, Constants.UNIT_GRUNT_ORC_MELEE_1, Constants.UNIT_HEADHUNTER_ORC_DISTANCE_1).Run();
+      building.AddSpawnTrigger(Enums.SpawnInterval.Middle, Constants.UNIT_WITCH_DOCTOR_ORC_MAGE_1).Run(1f);
       building.AddSpawnTrigger(Enums.SpawnInterval.Long).Run(2f);
     }
 
     private void AddInitialUnitUpgradesToStock(UnitSpawnBuilding building)
     {
-      building.Wc3Unit.AddUnitToStock(Constants.UNIT_BESERK_ORC, 1, 1);
-      building.Wc3Unit.AddUnitToStock(Constants.UNIT_HEADHUNTER_BESERK_ORC, 1, 1);
-      building.Wc3Unit.AddUnitToStock(Constants.UNIT_SHAMAN_ORC, 1, 1);
-      building.Wc3Unit.AddUnitToStock(Constants.UNIT_BATRIDER_ORC, 1, 1);
-      building.Wc3Unit.AddUnitToStock(Constants.UNIT_KODO_BEAST_ORC, 1, 1);
+      building.Wc3Unit.AddUnitToStock(Constants.UNIT_BESERK_ORC_MELEE_2, 1, 1);
+      building.Wc3Unit.AddUnitToStock(Constants.UNIT_HEADHUNTER_BESERK_ORC_DISTANCE_2, 1, 1);
+      building.Wc3Unit.AddUnitToStock(Constants.UNIT_SHAMAN_ORC_MAGE_2, 1, 1);
+      building.Wc3Unit.AddUnitToStock(Constants.UNIT_BATRIDER_ORC_FLY_1, 1, 1);
+      building.Wc3Unit.AddUnitToStock(Constants.UNIT_KODO_BEAST_ORC_SIEGE_1, 1, 1);
     }
   }
 }

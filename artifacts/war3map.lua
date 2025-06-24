@@ -19785,11 +19785,8 @@ System.namespace("", function (namespace)
       this.ElfCreepToHumanSpawnBuilding = SourceModels.Area(Regions.ElfCreepToHumanSpawnBuilding)
       this.ElfCreepToUndeadSpawn = SourceModels.Area(Regions.ElfCreepToUndeadSpawn)
       this.ElfCreepToUndeadSpawnBuilding = SourceModels.Area(Regions.ElfCreepToUndeadSpawnBuilding)
-      this.ElfToHumanInnerLine = SourceModels.Area(Regions.ElfToHumanInnerLine)
       this.ElfToHumanOuterLine = SourceModels.Area(Regions.ElfToHumanOuterLine)
-      this.ElfToOrcInnerLine = SourceModels.Area(Regions.ElfToOrcInnerLine)
       this.ElfToOrcOuterLine = SourceModels.Area(Regions.ElfToOrcOuterLine)
-      this.ElfToUndeadInnerLine = SourceModels.Area(Regions.ElfToUndeadInnerLine)
       this.ElfToUndeadOuterLine = SourceModels.Area(Regions.ElfToUndeadOuterLine)
       this.HeroAlchemist = SourceModels.Area(Regions.HeroAlchemist)
       this.HeroArchmage = SourceModels.Area(Regions.HeroArchmage)
@@ -19798,17 +19795,21 @@ System.namespace("", function (namespace)
       this.HeroBrewmaster = SourceModels.Area(Regions.HeroBrewmaster)
       this.HeroCryptLord = SourceModels.Area(Regions.HeroCryptLord)
       this.HeroDarkRanger = SourceModels.Area(Regions.HeroDarkRanger)
+      this.HeroDeathKnight = SourceModels.Area(Regions.HeroDeathKnight)
+      this.HeroFarSeer = SourceModels.Area(Regions.HeroFarSeer)
       this.HeroFirelord = SourceModels.Area(Regions.HeroFirelord)
       this.HeroKeeperOfTheGrove = SourceModels.Area(Regions.HeroKeeperOfTheGrove)
       this.HeroLich = SourceModels.Area(Regions.HeroLich)
       this.HeroMountainKing = SourceModels.Area(Regions.HeroMountainKing)
       this.HeroPitLord = SourceModels.Area(Regions.HeroPitLord)
+      this.HeroPriestessOfMoon = SourceModels.Area(Regions.HeroPriestessOfMoon)
       this.HeroSeaWitch = SourceModels.Area(Regions.HeroSeaWitch)
       this.HeroSelectionTotal = SourceModels.Area(Regions.HeroSelectionTotal)
       this.HeroSelectorSpawn = SourceModels.Area(Regions.HeroSelectorSpawn)
       this.HeroShadowHunter = SourceModels.Area(Regions.HeroShadowHunter)
       this.HeroTaurenChieftain = SourceModels.Area(Regions.HeroTaurenChieftain)
       this.HeroTinker = SourceModels.Area(Regions.HeroTinker)
+      this.HeroWarden = SourceModels.Area(Regions.HeroWarden)
       this.HumanBarracksToCenter = SourceModels.Area(Regions.HumanBarracksToCenter)
       this.HumanBarracksToCenterSpawn = SourceModels.Area(Regions.HumanBarracksToCenterSpawn)
       this.HumanBarracksToElf = SourceModels.Area(Regions.HumanBarracksToElf)
@@ -19825,11 +19826,7 @@ System.namespace("", function (namespace)
       this.HumanCreepToElfSpawnBuilding = SourceModels.Area(Regions.HumanCreepToElfSpawnBuilding)
       this.HumanCreepToOrcSpawn = SourceModels.Area(Regions.HumanCreepToOrcSpawn)
       this.HumanCreepToOrcSpawnBuilding = SourceModels.Area(Regions.HumanCreepToOrcSpawnBuilding)
-      this.HumanToElfInnerLine = SourceModels.Area(Regions.HumanToElfInnerLine)
       this.HumanToElfOuterLine = SourceModels.Area(Regions.HumanToElfOuterLine)
-      this.HumanToOrcInnerLine = SourceModels.Area(Regions.HumanToOrcInnerLine)
-      this.HumanToOrcOuterLine = SourceModels.Area(Regions.HumanToOrcOuterLine)
-      this.HumanToUndeadInnerLine = SourceModels.Area(Regions.HumanToUndeadInnerLine)
       this.HumanToUndeadOuterLine = SourceModels.Area(Regions.HumanToUndeadOuterLine)
       this.LegionSpawnBottom = SourceModels.Area(Regions.LegionSpawnBottom)
       this.LegionSpawnBottom1 = SourceModels.Area(Regions.LegionSpawnBottom1)
@@ -19859,11 +19856,8 @@ System.namespace("", function (namespace)
       this.OrcCreepToHumanSpawnBuilding = SourceModels.Area(Regions.OrcCreepToHumanSpawnBuilding)
       this.OrcCreepToUndeadSpawn = SourceModels.Area(Regions.OrcCreepToUndeadSpawn)
       this.OrcCreepToUndeadSpawnBuilding = SourceModels.Area(Regions.OrcCreepToUndeadSpawnBuilding)
-      this.OrcToElfInnerLine = SourceModels.Area(Regions.OrcToElfInnerLine)
       this.OrcToElfOuterLine = SourceModels.Area(Regions.OrcToElfOuterLine)
-      this.OrcToHumanInnerLine = SourceModels.Area(Regions.OrcToHumanInnerLine)
       this.OrcToHumanOuterLine = SourceModels.Area(Regions.OrcToHumanOuterLine)
-      this.OrcToUndeadInnerLine = SourceModels.Area(Regions.OrcToUndeadInnerLine)
       this.OrcToUndeadOuterLine = SourceModels.Area(Regions.OrcToUndeadOuterLine)
       this.TestArea = SourceModels.Area(Regions.TestArea)
       this.TestArea2 = SourceModels.Area(Regions.TestArea2)
@@ -19884,11 +19878,8 @@ System.namespace("", function (namespace)
       this.UndeadCreepToElfSpawnBuilding = SourceModels.Area(Regions.UndeadCreepToElfSpawnBuilding)
       this.UndeadCreepToOrcSpawn = SourceModels.Area(Regions.UndeadCreepToOrcSpawn)
       this.UndeadCreepToOrcSpawnBuilding = SourceModels.Area(Regions.UndeadCreepToOrcSpawnBuilding)
-      this.UndeadToElfInnerLine = SourceModels.Area(Regions.UndeadToElfInnerLine)
       this.UndeadToElfOuterLine = SourceModels.Area(Regions.UndeadToElfOuterLine)
-      this.UndeadToHumanInnerLine = SourceModels.Area(Regions.UndeadToHumanInnerLine)
       this.UndeadToHumanOuterLine = SourceModels.Area(Regions.UndeadToHumanOuterLine)
-      this.UndeadToOrcInnerLine = SourceModels.Area(Regions.UndeadToOrcInnerLine)
       this.UndeadToOrcOuterLine = SourceModels.Area(Regions.UndeadToOrcOuterLine)
     end
     return {
@@ -19922,11 +19913,8 @@ System.namespace("", function (namespace)
             { "ElfCreepToHumanSpawnBuilding", 0xE, out.Source.Models.Area },
             { "ElfCreepToUndeadSpawn", 0xE, out.Source.Models.Area },
             { "ElfCreepToUndeadSpawnBuilding", 0xE, out.Source.Models.Area },
-            { "ElfToHumanInnerLine", 0xE, out.Source.Models.Area },
             { "ElfToHumanOuterLine", 0xE, out.Source.Models.Area },
-            { "ElfToOrcInnerLine", 0xE, out.Source.Models.Area },
             { "ElfToOrcOuterLine", 0xE, out.Source.Models.Area },
-            { "ElfToUndeadInnerLine", 0xE, out.Source.Models.Area },
             { "ElfToUndeadOuterLine", 0xE, out.Source.Models.Area },
             { "HeroAlchemist", 0xE, out.Source.Models.Area },
             { "HeroArchmage", 0xE, out.Source.Models.Area },
@@ -19935,17 +19923,21 @@ System.namespace("", function (namespace)
             { "HeroBrewmaster", 0xE, out.Source.Models.Area },
             { "HeroCryptLord", 0xE, out.Source.Models.Area },
             { "HeroDarkRanger", 0xE, out.Source.Models.Area },
+            { "HeroDeathKnight", 0xE, out.Source.Models.Area },
+            { "HeroFarSeer", 0xE, out.Source.Models.Area },
             { "HeroFirelord", 0xE, out.Source.Models.Area },
             { "HeroKeeperOfTheGrove", 0xE, out.Source.Models.Area },
             { "HeroLich", 0xE, out.Source.Models.Area },
             { "HeroMountainKing", 0xE, out.Source.Models.Area },
             { "HeroPitLord", 0xE, out.Source.Models.Area },
+            { "HeroPriestessOfMoon", 0xE, out.Source.Models.Area },
             { "HeroSeaWitch", 0xE, out.Source.Models.Area },
             { "HeroSelectionTotal", 0xE, out.Source.Models.Area },
             { "HeroSelectorSpawn", 0xE, out.Source.Models.Area },
             { "HeroShadowHunter", 0xE, out.Source.Models.Area },
             { "HeroTaurenChieftain", 0xE, out.Source.Models.Area },
             { "HeroTinker", 0xE, out.Source.Models.Area },
+            { "HeroWarden", 0xE, out.Source.Models.Area },
             { "HumanBarracksToCenter", 0xE, out.Source.Models.Area },
             { "HumanBarracksToCenterSpawn", 0xE, out.Source.Models.Area },
             { "HumanBarracksToElf", 0xE, out.Source.Models.Area },
@@ -19962,11 +19954,7 @@ System.namespace("", function (namespace)
             { "HumanCreepToElfSpawnBuilding", 0xE, out.Source.Models.Area },
             { "HumanCreepToOrcSpawn", 0xE, out.Source.Models.Area },
             { "HumanCreepToOrcSpawnBuilding", 0xE, out.Source.Models.Area },
-            { "HumanToElfInnerLine", 0xE, out.Source.Models.Area },
             { "HumanToElfOuterLine", 0xE, out.Source.Models.Area },
-            { "HumanToOrcInnerLine", 0xE, out.Source.Models.Area },
-            { "HumanToOrcOuterLine", 0xE, out.Source.Models.Area },
-            { "HumanToUndeadInnerLine", 0xE, out.Source.Models.Area },
             { "HumanToUndeadOuterLine", 0xE, out.Source.Models.Area },
             { "LegionSpawnBottom", 0xE, out.Source.Models.Area },
             { "LegionSpawnBottom1", 0xE, out.Source.Models.Area },
@@ -19996,11 +19984,8 @@ System.namespace("", function (namespace)
             { "OrcCreepToHumanSpawnBuilding", 0xE, out.Source.Models.Area },
             { "OrcCreepToUndeadSpawn", 0xE, out.Source.Models.Area },
             { "OrcCreepToUndeadSpawnBuilding", 0xE, out.Source.Models.Area },
-            { "OrcToElfInnerLine", 0xE, out.Source.Models.Area },
             { "OrcToElfOuterLine", 0xE, out.Source.Models.Area },
-            { "OrcToHumanInnerLine", 0xE, out.Source.Models.Area },
             { "OrcToHumanOuterLine", 0xE, out.Source.Models.Area },
-            { "OrcToUndeadInnerLine", 0xE, out.Source.Models.Area },
             { "OrcToUndeadOuterLine", 0xE, out.Source.Models.Area },
             { "TestArea", 0xE, out.Source.Models.Area },
             { "TestArea2", 0xE, out.Source.Models.Area },
@@ -20021,11 +20006,8 @@ System.namespace("", function (namespace)
             { "UndeadCreepToElfSpawnBuilding", 0xE, out.Source.Models.Area },
             { "UndeadCreepToOrcSpawn", 0xE, out.Source.Models.Area },
             { "UndeadCreepToOrcSpawnBuilding", 0xE, out.Source.Models.Area },
-            { "UndeadToElfInnerLine", 0xE, out.Source.Models.Area },
             { "UndeadToElfOuterLine", 0xE, out.Source.Models.Area },
-            { "UndeadToHumanInnerLine", 0xE, out.Source.Models.Area },
             { "UndeadToHumanOuterLine", 0xE, out.Source.Models.Area },
-            { "UndeadToOrcInnerLine", 0xE, out.Source.Models.Area },
             { "UndeadToOrcOuterLine", 0xE, out.Source.Models.Area }
           },
           class = { "Areas", 0x3C }
@@ -20178,15 +20160,19 @@ System.namespace("Source", function (namespace)
         Areas.HeroBrewmaster:RegisterOnEnter(SourceEventsRegions.HeroSelection.OnBrewmaster)
         Areas.HeroCryptLord:RegisterOnEnter(SourceEventsRegions.HeroSelection.OnCryptLord)
         Areas.HeroDarkRanger:RegisterOnEnter(SourceEventsRegions.HeroSelection.OnDarkRanger)
+        Areas.HeroDeathKnight:RegisterOnEnter(SourceEventsRegions.HeroSelection.OnDeathKnight)
+        Areas.HeroFarSeer:RegisterOnEnter(SourceEventsRegions.HeroSelection.OnFarSeer)
         Areas.HeroFirelord:RegisterOnEnter(SourceEventsRegions.HeroSelection.OnFirelord)
         Areas.HeroKeeperOfTheGrove:RegisterOnEnter(SourceEventsRegions.HeroSelection.OnKeeperOfTheGrove)
         Areas.HeroLich:RegisterOnEnter(SourceEventsRegions.HeroSelection.OnLich)
         Areas.HeroMountainKing:RegisterOnEnter(SourceEventsRegions.HeroSelection.OnMountainKing)
         Areas.HeroPitLord:RegisterOnEnter(SourceEventsRegions.HeroSelection.OnPitLord)
+        Areas.HeroPriestessOfMoon:RegisterOnEnter(SourceEventsRegions.HeroSelection.OnPriestessOfMoon)
         Areas.HeroSeaWitch:RegisterOnEnter(SourceEventsRegions.HeroSelection.OnSeaWitch)
         Areas.HeroShadowHunter:RegisterOnEnter(SourceEventsRegions.HeroSelection.OnShadowHunter)
         Areas.HeroTaurenChieftain:RegisterOnEnter(SourceEventsRegions.HeroSelection.OnTaurenChieftain)
         Areas.HeroTinker:RegisterOnEnter(SourceEventsRegions.HeroSelection.OnTinker)
+        Areas.HeroWarden:RegisterOnEnter(SourceEventsRegions.HeroSelection.OnWarden)
 
         -- Regions-Ereignisse registrieren für automatische Einheitenbewegungen:
         -- Wenn feindliche Einheiten in die Regionen treten, welche von zerstörten Gebäuden freigegeben werden.
@@ -20464,11 +20450,8 @@ System.namespace("", function (namespace)
       this.ElfCreepToHumanSpawnBuilding = System.new(WCSharpSharedData.Rectangle, 2, -7808, -768, -7552, -512)
       this.ElfCreepToUndeadSpawn = System.new(WCSharpSharedData.Rectangle, 2, -4608, -5120, -3840, -4352)
       this.ElfCreepToUndeadSpawnBuilding = System.new(WCSharpSharedData.Rectangle, 2, -4224, -4352, -3968, -4096)
-      this.ElfToHumanInnerLine = System.new(WCSharpSharedData.Rectangle, 2, -10304, -5184, -10176, -5056)
       this.ElfToHumanOuterLine = System.new(WCSharpSharedData.Rectangle, 2, -10304, -1088, -10176, -960)
-      this.ElfToOrcInnerLine = System.new(WCSharpSharedData.Rectangle, 2, -8768, -5696, -8640, -5568)
       this.ElfToOrcOuterLine = System.new(WCSharpSharedData.Rectangle, 2, -5184, -2112, -5056, -1984)
-      this.ElfToUndeadInnerLine = System.new(WCSharpSharedData.Rectangle, 2, -8256, -7232, -8128, -7104)
       this.ElfToUndeadOuterLine = System.new(WCSharpSharedData.Rectangle, 2, -4160, -7232, -4032, -7104)
       this.HeroAlchemist = System.new(WCSharpSharedData.Rectangle, 2, -4864, 18496, -4736, 18624)
       this.HeroArchmage = System.new(WCSharpSharedData.Rectangle, 2, -1792, 18496, -1664, 18624)
@@ -20477,23 +20460,27 @@ System.namespace("", function (namespace)
       this.HeroBrewmaster = System.new(WCSharpSharedData.Rectangle, 2, -3712, 18496, -3584, 18624)
       this.HeroCryptLord = System.new(WCSharpSharedData.Rectangle, 2, -4672, 17024, -4544, 17152)
       this.HeroDarkRanger = System.new(WCSharpSharedData.Rectangle, 2, -1984, 17408, -1856, 17536)
+      this.HeroDeathKnight = System.new(WCSharpSharedData.Rectangle, 2, -3648, 17024, -3520, 17152)
+      this.HeroFarSeer = System.new(WCSharpSharedData.Rectangle, 2, -3008, 17024, -2880, 17152)
       this.HeroFirelord = System.new(WCSharpSharedData.Rectangle, 2, -2560, 18496, -2432, 18624)
       this.HeroKeeperOfTheGrove = System.new(WCSharpSharedData.Rectangle, 2, -2176, 18496, -2048, 18624)
       this.HeroLich = System.new(WCSharpSharedData.Rectangle, 2, -3008, 17792, -2880, 17920)
       this.HeroMountainKing = System.new(WCSharpSharedData.Rectangle, 2, -4480, 18496, -4352, 18624)
       this.HeroPitLord = System.new(WCSharpSharedData.Rectangle, 2, -4672, 17792, -4544, 17920)
+      this.HeroPriestessOfMoon = System.new(WCSharpSharedData.Rectangle, 2, -3008, 17408, -2880, 17536)
       this.HeroSeaWitch = System.new(WCSharpSharedData.Rectangle, 2, -1984, 17024, -1856, 17152)
       this.HeroSelectionTotal = System.new(WCSharpSharedData.Rectangle, 2, -5248, 16768, -1280, 19200)
       this.HeroSelectorSpawn = System.new(WCSharpSharedData.Rectangle, 2, -3328, 18176, -3200, 18304)
       this.HeroShadowHunter = System.new(WCSharpSharedData.Rectangle, 2, -1984, 17792, -1856, 17920)
       this.HeroTaurenChieftain = System.new(WCSharpSharedData.Rectangle, 2, -3648, 17792, -3520, 17920)
       this.HeroTinker = System.new(WCSharpSharedData.Rectangle, 2, -4096, 18496, -3968, 18624)
+      this.HeroWarden = System.new(WCSharpSharedData.Rectangle, 2, -3648, 17408, -3520, 17536)
       this.HumanBarracksToCenter = System.new(WCSharpSharedData.Rectangle, 2, -6208, 9152, -6080, 9280)
       this.HumanBarracksToCenterSpawn = System.new(WCSharpSharedData.Rectangle, 2, -6016, 8704, -5760, 9216)
       this.HumanBarracksToElf = System.new(WCSharpSharedData.Rectangle, 2, -10304, 8000, -10176, 8128)
       this.HumanBarracksToElfSpawn = System.new(WCSharpSharedData.Rectangle, 2, -10496, 7680, -9984, 7936)
-      this.HumanBarracksToOrc = System.new(WCSharpSharedData.Rectangle, 2, -5056, 13248, -4928, 13376)
-      this.HumanBarracksToOrcSpawn = System.new(WCSharpSharedData.Rectangle, 2, -4864, 13056, -4608, 13568)
+      this.HumanBarracksToOrc = System.new(WCSharpSharedData.Rectangle, 2, -8256, 13248, -8128, 13376)
+      this.HumanBarracksToOrcSpawn = System.new(WCSharpSharedData.Rectangle, 2, -8064, 13056, -7808, 13568)
       this.HumanBase = System.new(WCSharpSharedData.Rectangle, 2, -10304, 13248, -10176, 13376)
       this.HumanBaseHeroRespawn = System.new(WCSharpSharedData.Rectangle, 2, -11904, 14976, -11776, 15104)
       this.HumanBaseHeroSpawn = System.new(WCSharpSharedData.Rectangle, 2, -12032, 14848, -11904, 14976)
@@ -20504,11 +20491,7 @@ System.namespace("", function (namespace)
       this.HumanCreepToElfSpawnBuilding = System.new(WCSharpSharedData.Rectangle, 2, -7808, 6656, -7552, 6912)
       this.HumanCreepToOrcSpawn = System.new(WCSharpSharedData.Rectangle, 2, -4608, 10368, -3840, 11136)
       this.HumanCreepToOrcSpawnBuilding = System.new(WCSharpSharedData.Rectangle, 2, -4224, 10112, -3968, 10368)
-      this.HumanToElfInnerLine = System.new(WCSharpSharedData.Rectangle, 2, -10304, 11200, -10176, 11328)
       this.HumanToElfOuterLine = System.new(WCSharpSharedData.Rectangle, 2, -10304, 7104, -10176, 7232)
-      this.HumanToOrcInnerLine = System.new(WCSharpSharedData.Rectangle, 2, -8256, 13248, -8128, 13376)
-      this.HumanToOrcOuterLine = System.new(WCSharpSharedData.Rectangle, 2, -4160, 13248, -4032, 13376)
-      this.HumanToUndeadInnerLine = System.new(WCSharpSharedData.Rectangle, 2, -8768, 11712, -8640, 11840)
       this.HumanToUndeadOuterLine = System.new(WCSharpSharedData.Rectangle, 2, -5184, 8128, -5056, 8256)
       this.LegionSpawnBottom = System.new(WCSharpSharedData.Rectangle, 2, -384, -3456, 384, -2688)
       this.LegionSpawnBottom1 = System.new(WCSharpSharedData.Rectangle, 2, -448, -3136, -320, -3008)
@@ -20538,14 +20521,11 @@ System.namespace("", function (namespace)
       this.OrcCreepToHumanSpawnBuilding = System.new(WCSharpSharedData.Rectangle, 2, 3840, 10240, 4096, 10496)
       this.OrcCreepToUndeadSpawn = System.new(WCSharpSharedData.Rectangle, 2, 7424, 6912, 8192, 7680)
       this.OrcCreepToUndeadSpawnBuilding = System.new(WCSharpSharedData.Rectangle, 2, 7552, 6656, 7808, 6912)
-      this.OrcToElfInnerLine = System.new(WCSharpSharedData.Rectangle, 2, 8640, 11712, 8768, 11840)
       this.OrcToElfOuterLine = System.new(WCSharpSharedData.Rectangle, 2, 5056, 8128, 5184, 8256)
-      this.OrcToHumanInnerLine = System.new(WCSharpSharedData.Rectangle, 2, 8128, 13248, 8256, 13376)
       this.OrcToHumanOuterLine = System.new(WCSharpSharedData.Rectangle, 2, 4032, 13248, 4160, 13376)
-      this.OrcToUndeadInnerLine = System.new(WCSharpSharedData.Rectangle, 2, 10176, 11200, 10304, 11328)
       this.OrcToUndeadOuterLine = System.new(WCSharpSharedData.Rectangle, 2, 10176, 7104, 10304, 7232)
       this.TestArea = System.new(WCSharpSharedData.Rectangle, 2, 15296, 16320, 15424, 16448)
-      this.TestArea2 = System.new(WCSharpSharedData.Rectangle, 2, -5376, 12928, -5248, 13056)
+      this.TestArea2 = System.new(WCSharpSharedData.Rectangle, 2, -10304, 13632, -10176, 13760)
       this.TestArea3 = System.new(WCSharpSharedData.Rectangle, 2, 16320, 16320, 16448, 16448)
       this.UndeadBarracksToCenter = System.new(WCSharpSharedData.Rectangle, 2, 6080, -3136, 6208, -3008)
       this.UndeadBarracksToCenterSpawn = System.new(WCSharpSharedData.Rectangle, 2, 5760, -3072, 6016, -2560)
@@ -20563,11 +20543,8 @@ System.namespace("", function (namespace)
       this.UndeadCreepToElfSpawnBuilding = System.new(WCSharpSharedData.Rectangle, 2, 3968, -4352, 4224, -4096)
       this.UndeadCreepToOrcSpawn = System.new(WCSharpSharedData.Rectangle, 2, 7424, -1664, 8192, -896)
       this.UndeadCreepToOrcSpawnBuilding = System.new(WCSharpSharedData.Rectangle, 2, 7552, -896, 7808, -640)
-      this.UndeadToElfInnerLine = System.new(WCSharpSharedData.Rectangle, 2, 8128, -7232, 8256, -7104)
       this.UndeadToElfOuterLine = System.new(WCSharpSharedData.Rectangle, 2, 4032, -7232, 4160, -7104)
-      this.UndeadToHumanInnerLine = System.new(WCSharpSharedData.Rectangle, 2, 8640, -5696, 8768, -5568)
-      this.UndeadToHumanOuterLine = System.new(WCSharpSharedData.Rectangle, 2, 5056, -2112, 5184, -1984)
-      this.UndeadToOrcInnerLine = System.new(WCSharpSharedData.Rectangle, 2, 10176, -5184, 10304, -5056)
+      this.UndeadToHumanOuterLine = System.new(WCSharpSharedData.Rectangle, 2, 5024, -2144, 5152, -2016)
       this.UndeadToOrcOuterLine = System.new(WCSharpSharedData.Rectangle, 2, 10176, -1088, 10304, -960)
     end
     return {
@@ -20601,11 +20578,8 @@ System.namespace("", function (namespace)
             { "ElfCreepToHumanSpawnBuilding", 0xE, out.WCSharp.Shared.Data.Rectangle },
             { "ElfCreepToUndeadSpawn", 0xE, out.WCSharp.Shared.Data.Rectangle },
             { "ElfCreepToUndeadSpawnBuilding", 0xE, out.WCSharp.Shared.Data.Rectangle },
-            { "ElfToHumanInnerLine", 0xE, out.WCSharp.Shared.Data.Rectangle },
             { "ElfToHumanOuterLine", 0xE, out.WCSharp.Shared.Data.Rectangle },
-            { "ElfToOrcInnerLine", 0xE, out.WCSharp.Shared.Data.Rectangle },
             { "ElfToOrcOuterLine", 0xE, out.WCSharp.Shared.Data.Rectangle },
-            { "ElfToUndeadInnerLine", 0xE, out.WCSharp.Shared.Data.Rectangle },
             { "ElfToUndeadOuterLine", 0xE, out.WCSharp.Shared.Data.Rectangle },
             { "HeroAlchemist", 0xE, out.WCSharp.Shared.Data.Rectangle },
             { "HeroArchmage", 0xE, out.WCSharp.Shared.Data.Rectangle },
@@ -20614,17 +20588,21 @@ System.namespace("", function (namespace)
             { "HeroBrewmaster", 0xE, out.WCSharp.Shared.Data.Rectangle },
             { "HeroCryptLord", 0xE, out.WCSharp.Shared.Data.Rectangle },
             { "HeroDarkRanger", 0xE, out.WCSharp.Shared.Data.Rectangle },
+            { "HeroDeathKnight", 0xE, out.WCSharp.Shared.Data.Rectangle },
+            { "HeroFarSeer", 0xE, out.WCSharp.Shared.Data.Rectangle },
             { "HeroFirelord", 0xE, out.WCSharp.Shared.Data.Rectangle },
             { "HeroKeeperOfTheGrove", 0xE, out.WCSharp.Shared.Data.Rectangle },
             { "HeroLich", 0xE, out.WCSharp.Shared.Data.Rectangle },
             { "HeroMountainKing", 0xE, out.WCSharp.Shared.Data.Rectangle },
             { "HeroPitLord", 0xE, out.WCSharp.Shared.Data.Rectangle },
+            { "HeroPriestessOfMoon", 0xE, out.WCSharp.Shared.Data.Rectangle },
             { "HeroSeaWitch", 0xE, out.WCSharp.Shared.Data.Rectangle },
             { "HeroSelectionTotal", 0xE, out.WCSharp.Shared.Data.Rectangle },
             { "HeroSelectorSpawn", 0xE, out.WCSharp.Shared.Data.Rectangle },
             { "HeroShadowHunter", 0xE, out.WCSharp.Shared.Data.Rectangle },
             { "HeroTaurenChieftain", 0xE, out.WCSharp.Shared.Data.Rectangle },
             { "HeroTinker", 0xE, out.WCSharp.Shared.Data.Rectangle },
+            { "HeroWarden", 0xE, out.WCSharp.Shared.Data.Rectangle },
             { "HumanBarracksToCenter", 0xE, out.WCSharp.Shared.Data.Rectangle },
             { "HumanBarracksToCenterSpawn", 0xE, out.WCSharp.Shared.Data.Rectangle },
             { "HumanBarracksToElf", 0xE, out.WCSharp.Shared.Data.Rectangle },
@@ -20641,11 +20619,7 @@ System.namespace("", function (namespace)
             { "HumanCreepToElfSpawnBuilding", 0xE, out.WCSharp.Shared.Data.Rectangle },
             { "HumanCreepToOrcSpawn", 0xE, out.WCSharp.Shared.Data.Rectangle },
             { "HumanCreepToOrcSpawnBuilding", 0xE, out.WCSharp.Shared.Data.Rectangle },
-            { "HumanToElfInnerLine", 0xE, out.WCSharp.Shared.Data.Rectangle },
             { "HumanToElfOuterLine", 0xE, out.WCSharp.Shared.Data.Rectangle },
-            { "HumanToOrcInnerLine", 0xE, out.WCSharp.Shared.Data.Rectangle },
-            { "HumanToOrcOuterLine", 0xE, out.WCSharp.Shared.Data.Rectangle },
-            { "HumanToUndeadInnerLine", 0xE, out.WCSharp.Shared.Data.Rectangle },
             { "HumanToUndeadOuterLine", 0xE, out.WCSharp.Shared.Data.Rectangle },
             { "LegionSpawnBottom", 0xE, out.WCSharp.Shared.Data.Rectangle },
             { "LegionSpawnBottom1", 0xE, out.WCSharp.Shared.Data.Rectangle },
@@ -20675,11 +20649,8 @@ System.namespace("", function (namespace)
             { "OrcCreepToHumanSpawnBuilding", 0xE, out.WCSharp.Shared.Data.Rectangle },
             { "OrcCreepToUndeadSpawn", 0xE, out.WCSharp.Shared.Data.Rectangle },
             { "OrcCreepToUndeadSpawnBuilding", 0xE, out.WCSharp.Shared.Data.Rectangle },
-            { "OrcToElfInnerLine", 0xE, out.WCSharp.Shared.Data.Rectangle },
             { "OrcToElfOuterLine", 0xE, out.WCSharp.Shared.Data.Rectangle },
-            { "OrcToHumanInnerLine", 0xE, out.WCSharp.Shared.Data.Rectangle },
             { "OrcToHumanOuterLine", 0xE, out.WCSharp.Shared.Data.Rectangle },
-            { "OrcToUndeadInnerLine", 0xE, out.WCSharp.Shared.Data.Rectangle },
             { "OrcToUndeadOuterLine", 0xE, out.WCSharp.Shared.Data.Rectangle },
             { "TestArea", 0xE, out.WCSharp.Shared.Data.Rectangle },
             { "TestArea2", 0xE, out.WCSharp.Shared.Data.Rectangle },
@@ -20700,11 +20671,8 @@ System.namespace("", function (namespace)
             { "UndeadCreepToElfSpawnBuilding", 0xE, out.WCSharp.Shared.Data.Rectangle },
             { "UndeadCreepToOrcSpawn", 0xE, out.WCSharp.Shared.Data.Rectangle },
             { "UndeadCreepToOrcSpawnBuilding", 0xE, out.WCSharp.Shared.Data.Rectangle },
-            { "UndeadToElfInnerLine", 0xE, out.WCSharp.Shared.Data.Rectangle },
             { "UndeadToElfOuterLine", 0xE, out.WCSharp.Shared.Data.Rectangle },
-            { "UndeadToHumanInnerLine", 0xE, out.WCSharp.Shared.Data.Rectangle },
             { "UndeadToHumanOuterLine", 0xE, out.WCSharp.Shared.Data.Rectangle },
-            { "UndeadToOrcInnerLine", 0xE, out.WCSharp.Shared.Data.Rectangle },
             { "UndeadToOrcOuterLine", 0xE, out.WCSharp.Shared.Data.Rectangle }
           },
           class = { "Regions", 0x3E }
@@ -22104,9 +22072,9 @@ System.import(function (out)
 end)
 System.namespace("Source.Events.Regions", function (namespace)
   namespace.class("HeroSelection", function (namespace)
-    local OnAlchemist, OnArchmage, OnBlademaster, OnBloodMage, OnBrewmaster, OnCryptLord, OnDarkRanger, OnFirelord, 
-    OnKeeperOfTheGrove, OnLich, OnMountainKing, OnPitLord, OnSeaWitch, OnShadowHunter, OnTaurenChieftain, OnTinker, 
-    HandleHeroSelection
+    local OnAlchemist, OnArchmage, OnBlademaster, OnBloodMage, OnBrewmaster, OnCryptLord, OnDarkRanger, OnDeathKnight, 
+    OnFarSeer, OnFirelord, OnKeeperOfTheGrove, OnLich, OnMountainKing, OnPitLord, OnPriestessOfMoon, OnSeaWitch, 
+    OnShadowHunter, OnTaurenChieftain, OnTinker, OnWarden, HandleHeroSelection
     OnAlchemist = function ()
       HandleHeroSelection(1311780913 --[[Constants.UNIT_ALCHEMIST_HERO]])
     end
@@ -22128,6 +22096,12 @@ System.namespace("Source.Events.Regions", function (namespace)
     OnDarkRanger = function ()
       HandleHeroSelection(1311780921 --[[Constants.UNIT_DARK_RANGER_HERO]])
     end
+    OnDeathKnight = function ()
+      HandleHeroSelection(1311781457 --[[Constants.UNIT_DEATH_KNIGHT_HERO]])
+    end
+    OnFarSeer = function ()
+      HandleHeroSelection(1211118169 --[[Constants.UNIT_FAR_SEER_HERO]])
+    end
     OnFirelord = function ()
       HandleHeroSelection(1311780916 --[[Constants.UNIT_FIRELORD_HERO]])
     end
@@ -22143,6 +22117,9 @@ System.namespace("Source.Events.Regions", function (namespace)
     OnPitLord = function ()
       HandleHeroSelection(1311780929 --[[Constants.UNIT_PIT_LORD_HERO]])
     end
+    OnPriestessOfMoon = function ()
+      HandleHeroSelection(1311781456 --[[Constants.UNIT_PRIESTESS_OF_THE_MOON_HERO]])
+    end
     OnSeaWitch = function ()
       HandleHeroSelection(1311780914 --[[Constants.UNIT_SEA_WITCH_HERO]])
     end
@@ -22154,6 +22131,9 @@ System.namespace("Source.Events.Regions", function (namespace)
     end
     OnTinker = function ()
       HandleHeroSelection(1311780919 --[[Constants.UNIT_TINKER_HERO]])
+    end
+    OnWarden = function ()
+      HandleHeroSelection(1328558133 --[[Constants.UNIT_WARDEN_HERO]])
     end
     HandleHeroSelection = function (heroUnitTypeId)
       local unit = GetEnteringUnit()
@@ -22174,15 +22154,19 @@ System.namespace("Source.Events.Regions", function (namespace)
       OnBrewmaster = OnBrewmaster,
       OnCryptLord = OnCryptLord,
       OnDarkRanger = OnDarkRanger,
+      OnDeathKnight = OnDeathKnight,
+      OnFarSeer = OnFarSeer,
       OnFirelord = OnFirelord,
       OnKeeperOfTheGrove = OnKeeperOfTheGrove,
       OnLich = OnLich,
       OnMountainKing = OnMountainKing,
       OnPitLord = OnPitLord,
+      OnPriestessOfMoon = OnPriestessOfMoon,
       OnSeaWitch = OnSeaWitch,
       OnShadowHunter = OnShadowHunter,
       OnTaurenChieftain = OnTaurenChieftain,
       OnTinker = OnTinker,
+      OnWarden = OnWarden,
       __metadata__ = function (out)
         return {
           methods = {
@@ -22194,15 +22178,19 @@ System.namespace("Source.Events.Regions", function (namespace)
             { "OnBrewmaster", 0xC, OnBrewmaster },
             { "OnCryptLord", 0xC, OnCryptLord },
             { "OnDarkRanger", 0xC, OnDarkRanger },
+            { "OnDeathKnight", 0xC, OnDeathKnight },
+            { "OnFarSeer", 0xC, OnFarSeer },
             { "OnFirelord", 0xC, OnFirelord },
             { "OnKeeperOfTheGrove", 0xC, OnKeeperOfTheGrove },
             { "OnLich", 0xC, OnLich },
             { "OnMountainKing", 0xC, OnMountainKing },
             { "OnPitLord", 0xC, OnPitLord },
+            { "OnPriestessOfMoon", 0xC, OnPriestessOfMoon },
             { "OnSeaWitch", 0xC, OnSeaWitch },
             { "OnShadowHunter", 0xC, OnShadowHunter },
             { "OnTaurenChieftain", 0xC, OnTaurenChieftain },
-            { "OnTinker", 0xC, OnTinker }
+            { "OnTinker", 0xC, OnTinker },
+            { "OnWarden", 0xC, OnWarden }
           },
           class = { "HeroSelection", 0x3C }
         }
@@ -25050,12 +25038,12 @@ System.namespace("Source.Models.Teams", function (namespace)
           repeat
             local extern = techLevel
             if extern == 1 then
-              command.UnitId = 1747988826 --[[Constants.UNIT_DRUID_OF_THE_CLAW_ELF]]
-              command.UnitIdToUpgrade = 1747988824 --[[Constants.UNIT_SENTRY_ELF]]
+              command.UnitId = 1747988826 --[[Constants.UNIT_DRUID_OF_THE_CLAW_ELF_MELEE_2]]
+              command.UnitIdToUpgrade = 1747988824 --[[Constants.UNIT_SENTRY_ELF_MELEE_1]]
               return 3 --[[ResearchType.UpgradeUnit]], command
             else
-              command.UnitId = 1747989041 --[[Constants.UNIT_MOUNTAIN_GIANT_ELF]]
-              command.UnitIdToUpgrade = 1747988826 --[[Constants.UNIT_DRUID_OF_THE_CLAW_ELF]]
+              command.UnitId = 1747989041 --[[Constants.UNIT_MOUNTAIN_GIANT_ELF_MELEE_3]]
+              command.UnitIdToUpgrade = 1747988826 --[[Constants.UNIT_DRUID_OF_THE_CLAW_ELF_MELEE_2]]
               return 3 --[[ResearchType.UpgradeUnit]], command
             end
           until 1
@@ -25068,12 +25056,12 @@ System.namespace("Source.Models.Teams", function (namespace)
           repeat
             local extern = techLevel
             if extern == 1 then
-              command.UnitId = 1747989045 --[[Constants.UNIT_ARCHER_BESERK_ELF]]
-              command.UnitIdToUpgrade = 1747989043 --[[Constants.UNIT_ARCHER_ELF]]
+              command.UnitId = 1747989045 --[[Constants.UNIT_ARCHER_BESERK_ELF_DISTANCE_2]]
+              command.UnitIdToUpgrade = 1747989043 --[[Constants.UNIT_ARCHER_ELF_DISTANCE_1]]
               return 3 --[[ResearchType.UpgradeUnit]], command
             else
-              command.UnitId = 1747989047 --[[Constants.UNIT_ARCHER_ELITE_ELF]]
-              command.UnitIdToUpgrade = 1747989045 --[[Constants.UNIT_ARCHER_BESERK_ELF]]
+              command.UnitId = 1747989047 --[[Constants.UNIT_ARCHER_ELITE_ELF_DISTANCE_3]]
+              command.UnitIdToUpgrade = 1747989045 --[[Constants.UNIT_ARCHER_BESERK_ELF_DISTANCE_2]]
               return 3 --[[ResearchType.UpgradeUnit]], command
             end
           until 1
@@ -25086,12 +25074,12 @@ System.namespace("Source.Models.Teams", function (namespace)
           repeat
             local extern = techLevel
             if extern == 1 then
-              command.UnitId = 1747989058 --[[Constants.UNIT_HIPPOGRYPH_RIDER_ELF]]
-              command.UnitIdToUpgrade = 1747989060 --[[Constants.UNIT_FAERIE_DRAGON_ELF]]
+              command.UnitId = 1747989058 --[[Constants.UNIT_HIPPOGRYPH_RIDER_ELF_FLY_2]]
+              command.UnitIdToUpgrade = 1747989060 --[[Constants.UNIT_FAERIE_DRAGON_ELF_FLY_1]]
               return 3 --[[ResearchType.UpgradeUnit]], command
             else
-              command.UnitId = 1747989049 --[[Constants.UNIT_CHIMAERA_ELF]]
-              command.UnitIdToUpgrade = 1747989058 --[[Constants.UNIT_HIPPOGRYPH_RIDER_ELF]]
+              command.UnitId = 1747989049 --[[Constants.UNIT_CHIMAERA_ELF_FLY_3]]
+              command.UnitIdToUpgrade = 1747989058 --[[Constants.UNIT_HIPPOGRYPH_RIDER_ELF_FLY_2]]
               return 3 --[[ResearchType.UpgradeUnit]], command
             end
           until 1
@@ -25104,12 +25092,12 @@ System.namespace("Source.Models.Teams", function (namespace)
           repeat
             local extern = techLevel
             if extern == 1 then
-              command.UnitId = 1747989064 --[[Constants.UNIT_WARDEN_ELF]]
-              command.UnitIdToUpgrade = 1747989066 --[[Constants.UNIT_DRUID_OF_THE_TALON_ELF]]
+              command.UnitId = 1747989064 --[[Constants.UNIT_WARDEN_ELF_MAGE_2]]
+              command.UnitIdToUpgrade = 1747989066 --[[Constants.UNIT_DRUID_OF_THE_TALON_ELF_MAGE_1]]
               return 3 --[[ResearchType.UpgradeUnit]], command
             else
-              command.UnitId = 1747989062 --[[Constants.UNIT_SPIRIT_OF_VENGEANCE_ELF]]
-              command.UnitIdToUpgrade = 1747989064 --[[Constants.UNIT_WARDEN_ELF]]
+              command.UnitId = 1747989062 --[[Constants.UNIT_SPIRIT_OF_VENGEANCE_ELF_MAGE_3]]
+              command.UnitIdToUpgrade = 1747989064 --[[Constants.UNIT_WARDEN_ELF_MAGE_2]]
               return 3 --[[ResearchType.UpgradeUnit]], command
             end
           until 1
@@ -25122,11 +25110,11 @@ System.namespace("Source.Models.Teams", function (namespace)
           repeat
             local extern = techLevel
             if extern == 1 then
-              command.UnitId = 1747989070 --[[Constants.UNIT_PRISON_WAGON_ELF]]
+              command.UnitId = 1747989070 --[[Constants.UNIT_PRISON_WAGON_ELF_SIEGE_1]]
               return 2 --[[ResearchType.AddUnit]], command
             else
-              command.UnitId = 1747989068 --[[Constants.UNIT_GLAIVE_THROWER_ELF]]
-              command.UnitIdToUpgrade = 1747989070 --[[Constants.UNIT_PRISON_WAGON_ELF]]
+              command.UnitId = 1747989068 --[[Constants.UNIT_GLAIVE_THROWER_ELF_SIEGE_2]]
+              command.UnitIdToUpgrade = 1747989070 --[[Constants.UNIT_PRISON_WAGON_ELF_SIEGE_1]]
               return 3 --[[ResearchType.UpgradeUnit]], command
             end
           until 1
@@ -25140,38 +25128,38 @@ System.namespace("Source.Models.Teams", function (namespace)
     GetUnitUpgradeBySold = function (this, baseUnitTypeId, command)
       repeat
         local default = baseUnitTypeId
-        if default == 1747988826 --[[Constants.UNIT_DRUID_OF_THE_CLAW_ELF]] then
-          command = System.new(SourceModels.UnitUpgradeBySoldCommand, 2, 0 --[[SpawnInterval.Short]], 1747988824 --[[Constants.UNIT_SENTRY_ELF]], baseUnitTypeId, 1747989041 --[[Constants.UNIT_MOUNTAIN_GIANT_ELF]])
+        if default == 1747988826 --[[Constants.UNIT_DRUID_OF_THE_CLAW_ELF_MELEE_2]] then
+          command = System.new(SourceModels.UnitUpgradeBySoldCommand, 2, 0 --[[SpawnInterval.Short]], 1747988824 --[[Constants.UNIT_SENTRY_ELF_MELEE_1]], baseUnitTypeId, 1747989041 --[[Constants.UNIT_MOUNTAIN_GIANT_ELF_MELEE_3]])
           return 2 --[[UnitUpgradeType.UpgradeUnitInSpawn]], command
-        elseif default == 1747989041 --[[Constants.UNIT_MOUNTAIN_GIANT_ELF]] then
-          command = System.new(SourceModels.UnitUpgradeBySoldCommand, 2, 0 --[[SpawnInterval.Short]], 1747988826 --[[Constants.UNIT_DRUID_OF_THE_CLAW_ELF]], baseUnitTypeId, 0)
+        elseif default == 1747989041 --[[Constants.UNIT_MOUNTAIN_GIANT_ELF_MELEE_3]] then
+          command = System.new(SourceModels.UnitUpgradeBySoldCommand, 2, 0 --[[SpawnInterval.Short]], 1747988826 --[[Constants.UNIT_DRUID_OF_THE_CLAW_ELF_MELEE_2]], baseUnitTypeId, 0)
           return 2 --[[UnitUpgradeType.UpgradeUnitInSpawn]], command
-        elseif default == 1747989045 --[[Constants.UNIT_ARCHER_BESERK_ELF]] then
-          command = System.new(SourceModels.UnitUpgradeBySoldCommand, 2, 0 --[[SpawnInterval.Short]], 1747989043 --[[Constants.UNIT_ARCHER_ELF]], baseUnitTypeId, 1747989047 --[[Constants.UNIT_ARCHER_ELITE_ELF]])
+        elseif default == 1747989045 --[[Constants.UNIT_ARCHER_BESERK_ELF_DISTANCE_2]] then
+          command = System.new(SourceModels.UnitUpgradeBySoldCommand, 2, 0 --[[SpawnInterval.Short]], 1747989043 --[[Constants.UNIT_ARCHER_ELF_DISTANCE_1]], baseUnitTypeId, 1747989047 --[[Constants.UNIT_ARCHER_ELITE_ELF_DISTANCE_3]])
           return 2 --[[UnitUpgradeType.UpgradeUnitInSpawn]], command
-        elseif default == 1747989047 --[[Constants.UNIT_ARCHER_ELITE_ELF]] then
-          command = System.new(SourceModels.UnitUpgradeBySoldCommand, 2, 0 --[[SpawnInterval.Short]], 1747989045 --[[Constants.UNIT_ARCHER_BESERK_ELF]], baseUnitTypeId, 0)
+        elseif default == 1747989047 --[[Constants.UNIT_ARCHER_ELITE_ELF_DISTANCE_3]] then
+          command = System.new(SourceModels.UnitUpgradeBySoldCommand, 2, 0 --[[SpawnInterval.Short]], 1747989045 --[[Constants.UNIT_ARCHER_BESERK_ELF_DISTANCE_2]], baseUnitTypeId, 0)
           return 2 --[[UnitUpgradeType.UpgradeUnitInSpawn]], command
-        elseif default == 1747989064 --[[Constants.UNIT_WARDEN_ELF]] then
-          command = System.new(SourceModels.UnitUpgradeBySoldCommand, 2, 1 --[[SpawnInterval.Middle]], 1747989066 --[[Constants.UNIT_DRUID_OF_THE_TALON_ELF]], baseUnitTypeId, 1747989062 --[[Constants.UNIT_SPIRIT_OF_VENGEANCE_ELF]])
+        elseif default == 1747989064 --[[Constants.UNIT_WARDEN_ELF_MAGE_2]] then
+          command = System.new(SourceModels.UnitUpgradeBySoldCommand, 2, 1 --[[SpawnInterval.Middle]], 1747989066 --[[Constants.UNIT_DRUID_OF_THE_TALON_ELF_MAGE_1]], baseUnitTypeId, 1747989062 --[[Constants.UNIT_SPIRIT_OF_VENGEANCE_ELF_MAGE_3]])
           return 2 --[[UnitUpgradeType.UpgradeUnitInSpawn]], command
-        elseif default == 1747989062 --[[Constants.UNIT_SPIRIT_OF_VENGEANCE_ELF]] then
-          command = System.new(SourceModels.UnitUpgradeBySoldCommand, 2, 1 --[[SpawnInterval.Middle]], 1747989064 --[[Constants.UNIT_WARDEN_ELF]], baseUnitTypeId, 0)
+        elseif default == 1747989062 --[[Constants.UNIT_SPIRIT_OF_VENGEANCE_ELF_MAGE_3]] then
+          command = System.new(SourceModels.UnitUpgradeBySoldCommand, 2, 1 --[[SpawnInterval.Middle]], 1747989064 --[[Constants.UNIT_WARDEN_ELF_MAGE_2]], baseUnitTypeId, 0)
           return 2 --[[UnitUpgradeType.UpgradeUnitInSpawn]], command
-        elseif default == 1747989060 --[[Constants.UNIT_FAERIE_DRAGON_ELF]] then
-          command = SourceModels.UnitUpgradeBySoldCommand(1 --[[SpawnInterval.Middle]], baseUnitTypeId, 1747989058 --[[Constants.UNIT_HIPPOGRYPH_RIDER_ELF]])
+        elseif default == 1747989060 --[[Constants.UNIT_FAERIE_DRAGON_ELF_FLY_1]] then
+          command = SourceModels.UnitUpgradeBySoldCommand(1 --[[SpawnInterval.Middle]], baseUnitTypeId, 1747989058 --[[Constants.UNIT_HIPPOGRYPH_RIDER_ELF_FLY_2]])
           return 1 --[[UnitUpgradeType.AddNewUnitToSpawn]], command
-        elseif default == 1747989058 --[[Constants.UNIT_HIPPOGRYPH_RIDER_ELF]] then
-          command = System.new(SourceModels.UnitUpgradeBySoldCommand, 2, 1 --[[SpawnInterval.Middle]], 1747989060 --[[Constants.UNIT_FAERIE_DRAGON_ELF]], baseUnitTypeId, 1747989049 --[[Constants.UNIT_CHIMAERA_ELF]])
+        elseif default == 1747989058 --[[Constants.UNIT_HIPPOGRYPH_RIDER_ELF_FLY_2]] then
+          command = System.new(SourceModels.UnitUpgradeBySoldCommand, 2, 1 --[[SpawnInterval.Middle]], 1747989060 --[[Constants.UNIT_FAERIE_DRAGON_ELF_FLY_1]], baseUnitTypeId, 1747989049 --[[Constants.UNIT_CHIMAERA_ELF_FLY_3]])
           return 2 --[[UnitUpgradeType.UpgradeUnitInSpawn]], command
-        elseif default == 1747989049 --[[Constants.UNIT_CHIMAERA_ELF]] then
-          command = System.new(SourceModels.UnitUpgradeBySoldCommand, 2, 1 --[[SpawnInterval.Middle]], 1747989058 --[[Constants.UNIT_HIPPOGRYPH_RIDER_ELF]], baseUnitTypeId, 0)
+        elseif default == 1747989049 --[[Constants.UNIT_CHIMAERA_ELF_FLY_3]] then
+          command = System.new(SourceModels.UnitUpgradeBySoldCommand, 2, 1 --[[SpawnInterval.Middle]], 1747989058 --[[Constants.UNIT_HIPPOGRYPH_RIDER_ELF_FLY_2]], baseUnitTypeId, 0)
           return 2 --[[UnitUpgradeType.UpgradeUnitInSpawn]], command
-        elseif default == 1747989070 --[[Constants.UNIT_PRISON_WAGON_ELF]] then
-          command = SourceModels.UnitUpgradeBySoldCommand(2 --[[SpawnInterval.Long]], baseUnitTypeId, 1747989068 --[[Constants.UNIT_GLAIVE_THROWER_ELF]])
+        elseif default == 1747989070 --[[Constants.UNIT_PRISON_WAGON_ELF_SIEGE_1]] then
+          command = SourceModels.UnitUpgradeBySoldCommand(2 --[[SpawnInterval.Long]], baseUnitTypeId, 1747989068 --[[Constants.UNIT_GLAIVE_THROWER_ELF_SIEGE_2]])
           return 1 --[[UnitUpgradeType.AddNewUnitToSpawn]], command
-        elseif default == 1747989068 --[[Constants.UNIT_GLAIVE_THROWER_ELF]] then
-          command = System.new(SourceModels.UnitUpgradeBySoldCommand, 2, 2 --[[SpawnInterval.Long]], 1747989070 --[[Constants.UNIT_PRISON_WAGON_ELF]], baseUnitTypeId, 0)
+        elseif default == 1747989068 --[[Constants.UNIT_GLAIVE_THROWER_ELF_SIEGE_2]] then
+          command = System.new(SourceModels.UnitUpgradeBySoldCommand, 2, 2 --[[SpawnInterval.Long]], 1747989070 --[[Constants.UNIT_PRISON_WAGON_ELF_SIEGE_1]], baseUnitTypeId, 0)
           return 2 --[[UnitUpgradeType.UpgradeUnitInSpawn]], command
         else
           -- Einheiten-Typ ist nicht bekannt
@@ -25182,16 +25170,16 @@ System.namespace("Source.Models.Teams", function (namespace)
       until 1
     end
     AddInitialSpawnTriggers = function (this, building)
-      building:AddSpawnTrigger(0 --[[SpawnInterval.Short]], System.Array(System.Int32) { 1747988824 --[[Constants.UNIT_SENTRY_ELF]], 1747988824 --[[Constants.UNIT_SENTRY_ELF]], 1747989043 --[[Constants.UNIT_ARCHER_ELF]] }):Run(0)
-      building:AddSpawnTrigger(1 --[[SpawnInterval.Middle]], System.Array(System.Int32) { 1747989066 --[[Constants.UNIT_DRUID_OF_THE_TALON_ELF]] }):Run(1)
+      building:AddSpawnTrigger(0 --[[SpawnInterval.Short]], System.Array(System.Int32) { 1747988824 --[[Constants.UNIT_SENTRY_ELF_MELEE_1]], 1747988824 --[[Constants.UNIT_SENTRY_ELF_MELEE_1]], 1747989043 --[[Constants.UNIT_ARCHER_ELF_DISTANCE_1]] }):Run(0)
+      building:AddSpawnTrigger(1 --[[SpawnInterval.Middle]], System.Array(System.Int32) { 1747989066 --[[Constants.UNIT_DRUID_OF_THE_TALON_ELF_MAGE_1]] }):Run(1)
       building:AddSpawnTrigger(2 --[[SpawnInterval.Long]], System.Array.Empty(System.Int32)):Run(2)
     end
     AddInitialUnitUpgradesToStock = function (this, building)
-      AddUnitToStock(building.Wc3Unit, 1747988826 --[[Constants.UNIT_DRUID_OF_THE_CLAW_ELF]], 1, 1)
-      AddUnitToStock(building.Wc3Unit, 1747989045 --[[Constants.UNIT_ARCHER_BESERK_ELF]], 1, 1)
-      AddUnitToStock(building.Wc3Unit, 1747989064 --[[Constants.UNIT_WARDEN_ELF]], 1, 1)
-      AddUnitToStock(building.Wc3Unit, 1747989060 --[[Constants.UNIT_FAERIE_DRAGON_ELF]], 1, 1)
-      AddUnitToStock(building.Wc3Unit, 1747989070 --[[Constants.UNIT_PRISON_WAGON_ELF]], 1, 1)
+      AddUnitToStock(building.Wc3Unit, 1747988826 --[[Constants.UNIT_DRUID_OF_THE_CLAW_ELF_MELEE_2]], 1, 1)
+      AddUnitToStock(building.Wc3Unit, 1747989045 --[[Constants.UNIT_ARCHER_BESERK_ELF_DISTANCE_2]], 1, 1)
+      AddUnitToStock(building.Wc3Unit, 1747989064 --[[Constants.UNIT_WARDEN_ELF_MAGE_2]], 1, 1)
+      AddUnitToStock(building.Wc3Unit, 1747989060 --[[Constants.UNIT_FAERIE_DRAGON_ELF_FLY_1]], 1, 1)
+      AddUnitToStock(building.Wc3Unit, 1747989070 --[[Constants.UNIT_PRISON_WAGON_ELF_SIEGE_1]], 1, 1)
     end
     return {
       base = function (out)
@@ -25280,12 +25268,12 @@ System.namespace("Source.Models.Teams", function (namespace)
           repeat
             local extern = techLevel
             if extern == 1 then
-              command.UnitId = 1747988547 --[[Constants.UNIT_CAPTAIN_HUMAN]]
-              command.UnitIdToUpgrade = 1747988529 --[[Constants.UNIT_SOLDIER_HUMAN]]
+              command.UnitId = 1747988547 --[[Constants.UNIT_CAPTAIN_HUMAN_MELEE_2]]
+              command.UnitIdToUpgrade = 1747988529 --[[Constants.UNIT_SOLDIER_HUMAN_MELEE_1]]
               return 3 --[[ResearchType.UpgradeUnit]], command
             else
-              command.UnitId = 1747988546 --[[Constants.UNIT_KNIGHT_HUMAN]]
-              command.UnitIdToUpgrade = 1747988547 --[[Constants.UNIT_CAPTAIN_HUMAN]]
+              command.UnitId = 1747988546 --[[Constants.UNIT_KNIGHT_HUMAN_MELEE_3]]
+              command.UnitIdToUpgrade = 1747988547 --[[Constants.UNIT_CAPTAIN_HUMAN_MELEE_2]]
               return 3 --[[ResearchType.UpgradeUnit]], command
             end
           until 1
@@ -25298,12 +25286,12 @@ System.namespace("Source.Models.Teams", function (namespace)
           repeat
             local extern = techLevel
             if extern == 1 then
-              command.UnitId = 1747988550 --[[Constants.UNIT_RIFLEMAN_BESERK_HUMAN]]
-              command.UnitIdToUpgrade = 1747988530 --[[Constants.UNIT_RIFLEMAN_HUMAN]]
+              command.UnitId = 1747988550 --[[Constants.UNIT_RIFLEMAN_BESERK_HUMAN_DISTANCE_2]]
+              command.UnitIdToUpgrade = 1747988530 --[[Constants.UNIT_RIFLEMAN_HUMAN_DISTANCE_1]]
               return 3 --[[ResearchType.UpgradeUnit]], command
             else
-              command.UnitId = 1747988551 --[[Constants.UNIT_RIFLEMAN_ELITE_HUMAN]]
-              command.UnitIdToUpgrade = 1747988550 --[[Constants.UNIT_RIFLEMAN_BESERK_HUMAN]]
+              command.UnitId = 1747988551 --[[Constants.UNIT_RIFLEMAN_ELITE_HUMAN_DISTANCE_3]]
+              command.UnitIdToUpgrade = 1747988550 --[[Constants.UNIT_RIFLEMAN_BESERK_HUMAN_DISTANCE_2]]
               return 3 --[[ResearchType.UpgradeUnit]], command
             end
           until 1
@@ -25316,12 +25304,12 @@ System.namespace("Source.Models.Teams", function (namespace)
           repeat
             local extern = techLevel
             if extern == 1 then
-              command.UnitId = 1747988555 --[[Constants.UNIT_FALCON_RIDER_HUMAN]]
-              command.UnitIdToUpgrade = 1747988554 --[[Constants.UNIT_FLYING_MACHINE_HUMAN]]
+              command.UnitId = 1747988555 --[[Constants.UNIT_FALCON_RIDER_HUMAN_FLY_2]]
+              command.UnitIdToUpgrade = 1747988554 --[[Constants.UNIT_FLYING_MACHINE_HUMAN_FLY_1]]
               return 3 --[[ResearchType.UpgradeUnit]], command
             else
-              command.UnitId = 1747988556 --[[Constants.UNIT_GRIFFIN_RIDER_HUMAN]]
-              command.UnitIdToUpgrade = 1747988555 --[[Constants.UNIT_FALCON_RIDER_HUMAN]]
+              command.UnitId = 1747988556 --[[Constants.UNIT_GRYPHON_RIDER_HUMAN_FLY_3]]
+              command.UnitIdToUpgrade = 1747988555 --[[Constants.UNIT_FALCON_RIDER_HUMAN_FLY_2]]
               return 3 --[[ResearchType.UpgradeUnit]], command
             end
           until 1
@@ -25334,12 +25322,12 @@ System.namespace("Source.Models.Teams", function (namespace)
           repeat
             local extern = techLevel
             if extern == 1 then
-              command.UnitId = 1747988552 --[[Constants.UNIT_SORCERESS_HUMAN]]
-              command.UnitIdToUpgrade = 1747988536 --[[Constants.UNIT_PRIEST_HUMAN]]
+              command.UnitId = 1747988552 --[[Constants.UNIT_SORCERESS_HUMAN_MAGE_2]]
+              command.UnitIdToUpgrade = 1747988536 --[[Constants.UNIT_PRIEST_HUMAN_MAGE_1]]
               return 3 --[[ResearchType.UpgradeUnit]], command
             else
-              command.UnitId = 1747988553 --[[Constants.UNIT_SPELLBREAKER_HUMAN]]
-              command.UnitIdToUpgrade = 1747988552 --[[Constants.UNIT_SORCERESS_HUMAN]]
+              command.UnitId = 1747988553 --[[Constants.UNIT_SPELLBREAKER_HUMAN_MAGE_3]]
+              command.UnitIdToUpgrade = 1747988552 --[[Constants.UNIT_SORCERESS_HUMAN_MAGE_2]]
               return 3 --[[ResearchType.UpgradeUnit]], command
             end
           until 1
@@ -25352,11 +25340,11 @@ System.namespace("Source.Models.Teams", function (namespace)
           repeat
             local extern = techLevel
             if extern == 1 then
-              command.UnitId = 1747988549 --[[Constants.UNIT_SIEGE_SQUAD_HUMAN]]
+              command.UnitId = 1747988549 --[[Constants.UNIT_SIEGE_SQUAD_HUMAN_SIEGE_1]]
               return 2 --[[ResearchType.AddUnit]], command
             else
-              command.UnitId = 1747988563 --[[Constants.UNIT_SIEGE_ENGINE_HUMAN]]
-              command.UnitIdToUpgrade = 1747988549 --[[Constants.UNIT_SIEGE_SQUAD_HUMAN]]
+              command.UnitId = 1747988563 --[[Constants.UNIT_SIEGE_ENGINE_HUMAN_SIEGE_2]]
+              command.UnitIdToUpgrade = 1747988549 --[[Constants.UNIT_SIEGE_SQUAD_HUMAN_SIEGE_1]]
               return 3 --[[ResearchType.UpgradeUnit]], command
             end
           until 1
@@ -25371,38 +25359,38 @@ System.namespace("Source.Models.Teams", function (namespace)
     GetUnitUpgradeBySold = function (this, baseUnitTypeId, command)
       repeat
         local default = baseUnitTypeId
-        if default == 1747988547 --[[Constants.UNIT_CAPTAIN_HUMAN]] then
-          command = System.new(SourceModels.UnitUpgradeBySoldCommand, 2, 0 --[[SpawnInterval.Short]], 1747988529 --[[Constants.UNIT_SOLDIER_HUMAN]], baseUnitTypeId, 1747988546 --[[Constants.UNIT_KNIGHT_HUMAN]])
+        if default == 1747988547 --[[Constants.UNIT_CAPTAIN_HUMAN_MELEE_2]] then
+          command = System.new(SourceModels.UnitUpgradeBySoldCommand, 2, 0 --[[SpawnInterval.Short]], 1747988529 --[[Constants.UNIT_SOLDIER_HUMAN_MELEE_1]], baseUnitTypeId, 1747988546 --[[Constants.UNIT_KNIGHT_HUMAN_MELEE_3]])
           return 2 --[[UnitUpgradeType.UpgradeUnitInSpawn]], command
-        elseif default == 1747988546 --[[Constants.UNIT_KNIGHT_HUMAN]] then
-          command = System.new(SourceModels.UnitUpgradeBySoldCommand, 2, 0 --[[SpawnInterval.Short]], 1747988547 --[[Constants.UNIT_CAPTAIN_HUMAN]], baseUnitTypeId, 0)
+        elseif default == 1747988546 --[[Constants.UNIT_KNIGHT_HUMAN_MELEE_3]] then
+          command = System.new(SourceModels.UnitUpgradeBySoldCommand, 2, 0 --[[SpawnInterval.Short]], 1747988547 --[[Constants.UNIT_CAPTAIN_HUMAN_MELEE_2]], baseUnitTypeId, 0)
           return 2 --[[UnitUpgradeType.UpgradeUnitInSpawn]], command
-        elseif default == 1747988550 --[[Constants.UNIT_RIFLEMAN_BESERK_HUMAN]] then
-          command = System.new(SourceModels.UnitUpgradeBySoldCommand, 2, 0 --[[SpawnInterval.Short]], 1747988530 --[[Constants.UNIT_RIFLEMAN_HUMAN]], baseUnitTypeId, 1747988551 --[[Constants.UNIT_RIFLEMAN_ELITE_HUMAN]])
+        elseif default == 1747988550 --[[Constants.UNIT_RIFLEMAN_BESERK_HUMAN_DISTANCE_2]] then
+          command = System.new(SourceModels.UnitUpgradeBySoldCommand, 2, 0 --[[SpawnInterval.Short]], 1747988530 --[[Constants.UNIT_RIFLEMAN_HUMAN_DISTANCE_1]], baseUnitTypeId, 1747988551 --[[Constants.UNIT_RIFLEMAN_ELITE_HUMAN_DISTANCE_3]])
           return 2 --[[UnitUpgradeType.UpgradeUnitInSpawn]], command
-        elseif default == 1747988551 --[[Constants.UNIT_RIFLEMAN_ELITE_HUMAN]] then
-          command = System.new(SourceModels.UnitUpgradeBySoldCommand, 2, 0 --[[SpawnInterval.Short]], 1747988550 --[[Constants.UNIT_RIFLEMAN_BESERK_HUMAN]], baseUnitTypeId, 0)
+        elseif default == 1747988551 --[[Constants.UNIT_RIFLEMAN_ELITE_HUMAN_DISTANCE_3]] then
+          command = System.new(SourceModels.UnitUpgradeBySoldCommand, 2, 0 --[[SpawnInterval.Short]], 1747988550 --[[Constants.UNIT_RIFLEMAN_BESERK_HUMAN_DISTANCE_2]], baseUnitTypeId, 0)
           return 2 --[[UnitUpgradeType.UpgradeUnitInSpawn]], command
-        elseif default == 1747988552 --[[Constants.UNIT_SORCERESS_HUMAN]] then
-          command = System.new(SourceModels.UnitUpgradeBySoldCommand, 2, 1 --[[SpawnInterval.Middle]], 1747988530 --[[Constants.UNIT_RIFLEMAN_HUMAN]], baseUnitTypeId, 1747988553 --[[Constants.UNIT_SPELLBREAKER_HUMAN]])
+        elseif default == 1747988552 --[[Constants.UNIT_SORCERESS_HUMAN_MAGE_2]] then
+          command = System.new(SourceModels.UnitUpgradeBySoldCommand, 2, 1 --[[SpawnInterval.Middle]], 1747988536 --[[Constants.UNIT_PRIEST_HUMAN_MAGE_1]], baseUnitTypeId, 1747988553 --[[Constants.UNIT_SPELLBREAKER_HUMAN_MAGE_3]])
           return 2 --[[UnitUpgradeType.UpgradeUnitInSpawn]], command
-        elseif default == 1747988553 --[[Constants.UNIT_SPELLBREAKER_HUMAN]] then
-          command = System.new(SourceModels.UnitUpgradeBySoldCommand, 2, 1 --[[SpawnInterval.Middle]], 1747988552 --[[Constants.UNIT_SORCERESS_HUMAN]], baseUnitTypeId, 0)
+        elseif default == 1747988553 --[[Constants.UNIT_SPELLBREAKER_HUMAN_MAGE_3]] then
+          command = System.new(SourceModels.UnitUpgradeBySoldCommand, 2, 1 --[[SpawnInterval.Middle]], 1747988552 --[[Constants.UNIT_SORCERESS_HUMAN_MAGE_2]], baseUnitTypeId, 0)
           return 2 --[[UnitUpgradeType.UpgradeUnitInSpawn]], command
-        elseif default == 1747988554 --[[Constants.UNIT_FLYING_MACHINE_HUMAN]] then
-          command = SourceModels.UnitUpgradeBySoldCommand(1 --[[SpawnInterval.Middle]], baseUnitTypeId, 1747988555 --[[Constants.UNIT_FALCON_RIDER_HUMAN]])
+        elseif default == 1747988554 --[[Constants.UNIT_FLYING_MACHINE_HUMAN_FLY_1]] then
+          command = SourceModels.UnitUpgradeBySoldCommand(1 --[[SpawnInterval.Middle]], baseUnitTypeId, 1747988555 --[[Constants.UNIT_FALCON_RIDER_HUMAN_FLY_2]])
           return 1 --[[UnitUpgradeType.AddNewUnitToSpawn]], command
-        elseif default == 1747988555 --[[Constants.UNIT_FALCON_RIDER_HUMAN]] then
-          command = System.new(SourceModels.UnitUpgradeBySoldCommand, 2, 1 --[[SpawnInterval.Middle]], 1747988554 --[[Constants.UNIT_FLYING_MACHINE_HUMAN]], baseUnitTypeId, 1747988556 --[[Constants.UNIT_GRIFFIN_RIDER_HUMAN]])
+        elseif default == 1747988555 --[[Constants.UNIT_FALCON_RIDER_HUMAN_FLY_2]] then
+          command = System.new(SourceModels.UnitUpgradeBySoldCommand, 2, 1 --[[SpawnInterval.Middle]], 1747988554 --[[Constants.UNIT_FLYING_MACHINE_HUMAN_FLY_1]], baseUnitTypeId, 1747988556 --[[Constants.UNIT_GRYPHON_RIDER_HUMAN_FLY_3]])
           return 2 --[[UnitUpgradeType.UpgradeUnitInSpawn]], command
-        elseif default == 1747988556 --[[Constants.UNIT_GRIFFIN_RIDER_HUMAN]] then
-          command = System.new(SourceModels.UnitUpgradeBySoldCommand, 2, 1 --[[SpawnInterval.Middle]], 1747988555 --[[Constants.UNIT_FALCON_RIDER_HUMAN]], baseUnitTypeId, 0)
+        elseif default == 1747988556 --[[Constants.UNIT_GRYPHON_RIDER_HUMAN_FLY_3]] then
+          command = System.new(SourceModels.UnitUpgradeBySoldCommand, 2, 1 --[[SpawnInterval.Middle]], 1747988555 --[[Constants.UNIT_FALCON_RIDER_HUMAN_FLY_2]], baseUnitTypeId, 0)
           return 2 --[[UnitUpgradeType.UpgradeUnitInSpawn]], command
-        elseif default == 1747988549 --[[Constants.UNIT_SIEGE_SQUAD_HUMAN]] then
-          command = SourceModels.UnitUpgradeBySoldCommand(2 --[[SpawnInterval.Long]], baseUnitTypeId, 1747988563 --[[Constants.UNIT_SIEGE_ENGINE_HUMAN]])
+        elseif default == 1747988549 --[[Constants.UNIT_SIEGE_SQUAD_HUMAN_SIEGE_1]] then
+          command = SourceModels.UnitUpgradeBySoldCommand(2 --[[SpawnInterval.Long]], baseUnitTypeId, 1747988563 --[[Constants.UNIT_SIEGE_ENGINE_HUMAN_SIEGE_2]])
           return 1 --[[UnitUpgradeType.AddNewUnitToSpawn]], command
-        elseif default == 1747988563 --[[Constants.UNIT_SIEGE_ENGINE_HUMAN]] then
-          command = System.new(SourceModels.UnitUpgradeBySoldCommand, 2, 2 --[[SpawnInterval.Long]], 1747988549 --[[Constants.UNIT_SIEGE_SQUAD_HUMAN]], baseUnitTypeId, 0)
+        elseif default == 1747988563 --[[Constants.UNIT_SIEGE_ENGINE_HUMAN_SIEGE_2]] then
+          command = System.new(SourceModels.UnitUpgradeBySoldCommand, 2, 2 --[[SpawnInterval.Long]], 1747988549 --[[Constants.UNIT_SIEGE_SQUAD_HUMAN_SIEGE_1]], baseUnitTypeId, 0)
           return 2 --[[UnitUpgradeType.UpgradeUnitInSpawn]], command
         else
           -- Einheiten-Typ ist nicht bekannt
@@ -25413,16 +25401,16 @@ System.namespace("Source.Models.Teams", function (namespace)
       until 1
     end
     AddInitialSpawnTriggers = function (this, building)
-      building:AddSpawnTrigger(0 --[[SpawnInterval.Short]], System.Array(System.Int32) { 1747988529 --[[Constants.UNIT_SOLDIER_HUMAN]], 1747988529 --[[Constants.UNIT_SOLDIER_HUMAN]], 1747988530 --[[Constants.UNIT_RIFLEMAN_HUMAN]] }):Run(0)
-      building:AddSpawnTrigger(1 --[[SpawnInterval.Middle]], System.Array(System.Int32) { 1747988536 --[[Constants.UNIT_PRIEST_HUMAN]] }):Run(1)
+      building:AddSpawnTrigger(0 --[[SpawnInterval.Short]], System.Array(System.Int32) { 1747988529 --[[Constants.UNIT_SOLDIER_HUMAN_MELEE_1]], 1747988529 --[[Constants.UNIT_SOLDIER_HUMAN_MELEE_1]], 1747988530 --[[Constants.UNIT_RIFLEMAN_HUMAN_DISTANCE_1]] }):Run(0)
+      building:AddSpawnTrigger(1 --[[SpawnInterval.Middle]], System.Array(System.Int32) { 1747988536 --[[Constants.UNIT_PRIEST_HUMAN_MAGE_1]] }):Run(1)
       building:AddSpawnTrigger(2 --[[SpawnInterval.Long]], System.Array.Empty(System.Int32)):Run(2)
     end
     AddInitialUnitUpgradesToStock = function (this, building)
-      AddUnitToStock(building.Wc3Unit, 1747988547 --[[Constants.UNIT_CAPTAIN_HUMAN]], 1, 1)
-      AddUnitToStock(building.Wc3Unit, 1747988550 --[[Constants.UNIT_RIFLEMAN_BESERK_HUMAN]], 1, 1)
-      AddUnitToStock(building.Wc3Unit, 1747988552 --[[Constants.UNIT_SORCERESS_HUMAN]], 1, 1)
-      AddUnitToStock(building.Wc3Unit, 1747988554 --[[Constants.UNIT_FLYING_MACHINE_HUMAN]], 1, 1)
-      AddUnitToStock(building.Wc3Unit, 1747988549 --[[Constants.UNIT_SIEGE_SQUAD_HUMAN]], 1, 1)
+      AddUnitToStock(building.Wc3Unit, 1747988547 --[[Constants.UNIT_CAPTAIN_HUMAN_MELEE_2]], 1, 1)
+      AddUnitToStock(building.Wc3Unit, 1747988550 --[[Constants.UNIT_RIFLEMAN_BESERK_HUMAN_DISTANCE_2]], 1, 1)
+      AddUnitToStock(building.Wc3Unit, 1747988552 --[[Constants.UNIT_SORCERESS_HUMAN_MAGE_2]], 1, 1)
+      AddUnitToStock(building.Wc3Unit, 1747988554 --[[Constants.UNIT_FLYING_MACHINE_HUMAN_FLY_1]], 1, 1)
+      AddUnitToStock(building.Wc3Unit, 1747988549 --[[Constants.UNIT_SIEGE_SQUAD_HUMAN_SIEGE_1]], 1, 1)
     end
     return {
       base = function (out)
@@ -25511,12 +25499,12 @@ System.namespace("Source.Models.Teams", function (namespace)
           repeat
             local extern = techLevel
             if extern == 1 then
-              command.UnitId = 1747988810 --[[Constants.UNIT_BESERK_ORC]]
-              command.UnitIdToUpgrade = 1747988809 --[[Constants.UNIT_GRUNT_ORC]]
+              command.UnitId = 1747988810 --[[Constants.UNIT_BESERK_ORC_MELEE_2]]
+              command.UnitIdToUpgrade = 1747988809 --[[Constants.UNIT_GRUNT_ORC_MELEE_1]]
               return 3 --[[ResearchType.UpgradeUnit]], command
             else
-              command.UnitId = 1747988811 --[[Constants.UNIT_TAUREN_ORC]]
-              command.UnitIdToUpgrade = 1747988810 --[[Constants.UNIT_BESERK_ORC]]
+              command.UnitId = 1747988811 --[[Constants.UNIT_TAUREN_ORC_MELEE_3]]
+              command.UnitIdToUpgrade = 1747988810 --[[Constants.UNIT_BESERK_ORC_MELEE_2]]
               return 3 --[[ResearchType.UpgradeUnit]], command
             end
           until 1
@@ -25529,12 +25517,12 @@ System.namespace("Source.Models.Teams", function (namespace)
           repeat
             local extern = techLevel
             if extern == 1 then
-              command.UnitId = 1747988813 --[[Constants.UNIT_HEADHUNTER_BESERK_ORC]]
-              command.UnitIdToUpgrade = 1747988812 --[[Constants.UNIT_HEADHUNTER_ORC]]
+              command.UnitId = 1747988813 --[[Constants.UNIT_HEADHUNTER_BESERK_ORC_DISTANCE_2]]
+              command.UnitIdToUpgrade = 1747988812 --[[Constants.UNIT_HEADHUNTER_ORC_DISTANCE_1]]
               return 3 --[[ResearchType.UpgradeUnit]], command
             else
-              command.UnitId = 1747988814 --[[Constants.UNIT_HEADHUNTER_ELITE_ORC]]
-              command.UnitIdToUpgrade = 1747988813 --[[Constants.UNIT_HEADHUNTER_BESERK_ORC]]
+              command.UnitId = 1747988814 --[[Constants.UNIT_HEADHUNTER_ELITE_ORC_DISTANCE_3]]
+              command.UnitIdToUpgrade = 1747988813 --[[Constants.UNIT_HEADHUNTER_BESERK_ORC_DISTANCE_2]]
               return 3 --[[ResearchType.UpgradeUnit]], command
             end
           until 1
@@ -25547,12 +25535,12 @@ System.namespace("Source.Models.Teams", function (namespace)
           repeat
             local extern = techLevel
             if extern == 1 then
-              command.UnitId = 1747988816 --[[Constants.UNIT_WIND_RIDER_ORC]]
-              command.UnitIdToUpgrade = 1747988815 --[[Constants.UNIT_BATRIDER_ORC]]
+              command.UnitId = 1747988816 --[[Constants.UNIT_WIND_RIDER_ORC_FLY_2]]
+              command.UnitIdToUpgrade = 1747988815 --[[Constants.UNIT_BATRIDER_ORC_FLY_1]]
               return 3 --[[ResearchType.UpgradeUnit]], command
             else
-              command.UnitId = 1747988817 --[[Constants.UNIT_SPIRIT_WIND_RIDER_ORC]]
-              command.UnitIdToUpgrade = 1747988816 --[[Constants.UNIT_WIND_RIDER_ORC]]
+              command.UnitId = 1747988817 --[[Constants.UNIT_SPIRIT_WIND_RIDER_ORC_FLY_3]]
+              command.UnitIdToUpgrade = 1747988816 --[[Constants.UNIT_WIND_RIDER_ORC_FLY_2]]
               return 3 --[[ResearchType.UpgradeUnit]], command
             end
           until 1
@@ -25565,12 +25553,12 @@ System.namespace("Source.Models.Teams", function (namespace)
           repeat
             local extern = techLevel
             if extern == 1 then
-              command.UnitId = 1747988819 --[[Constants.UNIT_SHAMAN_ORC]]
-              command.UnitIdToUpgrade = 1747988818 --[[Constants.UNIT_WITCH_DOCTOR_ORC]]
+              command.UnitId = 1747988819 --[[Constants.UNIT_SHAMAN_ORC_MAGE_2]]
+              command.UnitIdToUpgrade = 1747988818 --[[Constants.UNIT_WITCH_DOCTOR_ORC_MAGE_1]]
               return 3 --[[ResearchType.UpgradeUnit]], command
             else
-              command.UnitId = 1747988820 --[[Constants.UNIT_WARLOCK_ORC]]
-              command.UnitIdToUpgrade = 1747988819 --[[Constants.UNIT_SHAMAN_ORC]]
+              command.UnitId = 1747988820 --[[Constants.UNIT_WARLOCK_ORC_MAGE_3]]
+              command.UnitIdToUpgrade = 1747988819 --[[Constants.UNIT_SHAMAN_ORC_MAGE_2]]
               return 3 --[[ResearchType.UpgradeUnit]], command
             end
           until 1
@@ -25583,11 +25571,11 @@ System.namespace("Source.Models.Teams", function (namespace)
           repeat
             local extern = techLevel
             if extern == 1 then
-              command.UnitId = 1747988821 --[[Constants.UNIT_KODO_BEAST_ORC]]
+              command.UnitId = 1747988821 --[[Constants.UNIT_KODO_BEAST_ORC_SIEGE_1]]
               return 2 --[[ResearchType.AddUnit]], command
             else
-              command.UnitId = 1747988822 --[[Constants.UNIT_DEMOLISHER_ORC]]
-              command.UnitIdToUpgrade = 1747988821 --[[Constants.UNIT_KODO_BEAST_ORC]]
+              command.UnitId = 1747988822 --[[Constants.UNIT_DEMOLISHER_ORC_SIEGE_2]]
+              command.UnitIdToUpgrade = 1747988821 --[[Constants.UNIT_KODO_BEAST_ORC_SIEGE_1]]
               return 3 --[[ResearchType.UpgradeUnit]], command
             end
           until 1
@@ -25601,38 +25589,38 @@ System.namespace("Source.Models.Teams", function (namespace)
     GetUnitUpgradeBySold = function (this, baseUnitTypeId, command)
       repeat
         local default = baseUnitTypeId
-        if default == 1747988810 --[[Constants.UNIT_BESERK_ORC]] then
-          command = System.new(SourceModels.UnitUpgradeBySoldCommand, 2, 0 --[[SpawnInterval.Short]], 1747988809 --[[Constants.UNIT_GRUNT_ORC]], baseUnitTypeId, 1747988811 --[[Constants.UNIT_TAUREN_ORC]])
+        if default == 1747988810 --[[Constants.UNIT_BESERK_ORC_MELEE_2]] then
+          command = System.new(SourceModels.UnitUpgradeBySoldCommand, 2, 0 --[[SpawnInterval.Short]], 1747988809 --[[Constants.UNIT_GRUNT_ORC_MELEE_1]], baseUnitTypeId, 1747988811 --[[Constants.UNIT_TAUREN_ORC_MELEE_3]])
           return 2 --[[UnitUpgradeType.UpgradeUnitInSpawn]], command
-        elseif default == 1747988811 --[[Constants.UNIT_TAUREN_ORC]] then
-          command = System.new(SourceModels.UnitUpgradeBySoldCommand, 2, 0 --[[SpawnInterval.Short]], 1747988810 --[[Constants.UNIT_BESERK_ORC]], baseUnitTypeId, 0)
+        elseif default == 1747988811 --[[Constants.UNIT_TAUREN_ORC_MELEE_3]] then
+          command = System.new(SourceModels.UnitUpgradeBySoldCommand, 2, 0 --[[SpawnInterval.Short]], 1747988810 --[[Constants.UNIT_BESERK_ORC_MELEE_2]], baseUnitTypeId, 0)
           return 2 --[[UnitUpgradeType.UpgradeUnitInSpawn]], command
-        elseif default == 1747988813 --[[Constants.UNIT_HEADHUNTER_BESERK_ORC]] then
-          command = System.new(SourceModels.UnitUpgradeBySoldCommand, 2, 0 --[[SpawnInterval.Short]], 1747988812 --[[Constants.UNIT_HEADHUNTER_ORC]], baseUnitTypeId, 1747988814 --[[Constants.UNIT_HEADHUNTER_ELITE_ORC]])
+        elseif default == 1747988813 --[[Constants.UNIT_HEADHUNTER_BESERK_ORC_DISTANCE_2]] then
+          command = System.new(SourceModels.UnitUpgradeBySoldCommand, 2, 0 --[[SpawnInterval.Short]], 1747988812 --[[Constants.UNIT_HEADHUNTER_ORC_DISTANCE_1]], baseUnitTypeId, 1747988814 --[[Constants.UNIT_HEADHUNTER_ELITE_ORC_DISTANCE_3]])
           return 2 --[[UnitUpgradeType.UpgradeUnitInSpawn]], command
-        elseif default == 1747988814 --[[Constants.UNIT_HEADHUNTER_ELITE_ORC]] then
-          command = System.new(SourceModels.UnitUpgradeBySoldCommand, 2, 0 --[[SpawnInterval.Short]], 1747988813 --[[Constants.UNIT_HEADHUNTER_BESERK_ORC]], baseUnitTypeId, 0)
+        elseif default == 1747988814 --[[Constants.UNIT_HEADHUNTER_ELITE_ORC_DISTANCE_3]] then
+          command = System.new(SourceModels.UnitUpgradeBySoldCommand, 2, 0 --[[SpawnInterval.Short]], 1747988813 --[[Constants.UNIT_HEADHUNTER_BESERK_ORC_DISTANCE_2]], baseUnitTypeId, 0)
           return 2 --[[UnitUpgradeType.UpgradeUnitInSpawn]], command
-        elseif default == 1747988819 --[[Constants.UNIT_SHAMAN_ORC]] then
-          command = System.new(SourceModels.UnitUpgradeBySoldCommand, 2, 1 --[[SpawnInterval.Middle]], 1747988818 --[[Constants.UNIT_WITCH_DOCTOR_ORC]], baseUnitTypeId, 1747988820 --[[Constants.UNIT_WARLOCK_ORC]])
+        elseif default == 1747988819 --[[Constants.UNIT_SHAMAN_ORC_MAGE_2]] then
+          command = System.new(SourceModels.UnitUpgradeBySoldCommand, 2, 1 --[[SpawnInterval.Middle]], 1747988818 --[[Constants.UNIT_WITCH_DOCTOR_ORC_MAGE_1]], baseUnitTypeId, 1747988820 --[[Constants.UNIT_WARLOCK_ORC_MAGE_3]])
           return 2 --[[UnitUpgradeType.UpgradeUnitInSpawn]], command
-        elseif default == 1747988820 --[[Constants.UNIT_WARLOCK_ORC]] then
-          command = System.new(SourceModels.UnitUpgradeBySoldCommand, 2, 1 --[[SpawnInterval.Middle]], 1747988819 --[[Constants.UNIT_SHAMAN_ORC]], baseUnitTypeId, 0)
+        elseif default == 1747988820 --[[Constants.UNIT_WARLOCK_ORC_MAGE_3]] then
+          command = System.new(SourceModels.UnitUpgradeBySoldCommand, 2, 1 --[[SpawnInterval.Middle]], 1747988819 --[[Constants.UNIT_SHAMAN_ORC_MAGE_2]], baseUnitTypeId, 0)
           return 2 --[[UnitUpgradeType.UpgradeUnitInSpawn]], command
-        elseif default == 1747988815 --[[Constants.UNIT_BATRIDER_ORC]] then
-          command = SourceModels.UnitUpgradeBySoldCommand(1 --[[SpawnInterval.Middle]], baseUnitTypeId, 1747988816 --[[Constants.UNIT_WIND_RIDER_ORC]])
+        elseif default == 1747988815 --[[Constants.UNIT_BATRIDER_ORC_FLY_1]] then
+          command = SourceModels.UnitUpgradeBySoldCommand(1 --[[SpawnInterval.Middle]], baseUnitTypeId, 1747988816 --[[Constants.UNIT_WIND_RIDER_ORC_FLY_2]])
           return 1 --[[UnitUpgradeType.AddNewUnitToSpawn]], command
-        elseif default == 1747988816 --[[Constants.UNIT_WIND_RIDER_ORC]] then
-          command = System.new(SourceModels.UnitUpgradeBySoldCommand, 2, 1 --[[SpawnInterval.Middle]], 1747988815 --[[Constants.UNIT_BATRIDER_ORC]], baseUnitTypeId, 1747988817 --[[Constants.UNIT_SPIRIT_WIND_RIDER_ORC]])
+        elseif default == 1747988816 --[[Constants.UNIT_WIND_RIDER_ORC_FLY_2]] then
+          command = System.new(SourceModels.UnitUpgradeBySoldCommand, 2, 1 --[[SpawnInterval.Middle]], 1747988815 --[[Constants.UNIT_BATRIDER_ORC_FLY_1]], baseUnitTypeId, 1747988817 --[[Constants.UNIT_SPIRIT_WIND_RIDER_ORC_FLY_3]])
           return 2 --[[UnitUpgradeType.UpgradeUnitInSpawn]], command
-        elseif default == 1747988817 --[[Constants.UNIT_SPIRIT_WIND_RIDER_ORC]] then
-          command = System.new(SourceModels.UnitUpgradeBySoldCommand, 2, 1 --[[SpawnInterval.Middle]], 1747988816 --[[Constants.UNIT_WIND_RIDER_ORC]], baseUnitTypeId, 0)
+        elseif default == 1747988817 --[[Constants.UNIT_SPIRIT_WIND_RIDER_ORC_FLY_3]] then
+          command = System.new(SourceModels.UnitUpgradeBySoldCommand, 2, 1 --[[SpawnInterval.Middle]], 1747988816 --[[Constants.UNIT_WIND_RIDER_ORC_FLY_2]], baseUnitTypeId, 0)
           return 2 --[[UnitUpgradeType.UpgradeUnitInSpawn]], command
-        elseif default == 1747988821 --[[Constants.UNIT_KODO_BEAST_ORC]] then
-          command = SourceModels.UnitUpgradeBySoldCommand(2 --[[SpawnInterval.Long]], baseUnitTypeId, 1747988822 --[[Constants.UNIT_DEMOLISHER_ORC]])
+        elseif default == 1747988821 --[[Constants.UNIT_KODO_BEAST_ORC_SIEGE_1]] then
+          command = SourceModels.UnitUpgradeBySoldCommand(2 --[[SpawnInterval.Long]], baseUnitTypeId, 1747988822 --[[Constants.UNIT_DEMOLISHER_ORC_SIEGE_2]])
           return 1 --[[UnitUpgradeType.AddNewUnitToSpawn]], command
-        elseif default == 1747988822 --[[Constants.UNIT_DEMOLISHER_ORC]] then
-          command = System.new(SourceModels.UnitUpgradeBySoldCommand, 2, 2 --[[SpawnInterval.Long]], 1747988821 --[[Constants.UNIT_KODO_BEAST_ORC]], baseUnitTypeId, 0)
+        elseif default == 1747988822 --[[Constants.UNIT_DEMOLISHER_ORC_SIEGE_2]] then
+          command = System.new(SourceModels.UnitUpgradeBySoldCommand, 2, 2 --[[SpawnInterval.Long]], 1747988821 --[[Constants.UNIT_KODO_BEAST_ORC_SIEGE_1]], baseUnitTypeId, 0)
           return 2 --[[UnitUpgradeType.UpgradeUnitInSpawn]], command
         else
           -- Einheiten-Typ ist nicht bekannt
@@ -25643,16 +25631,16 @@ System.namespace("Source.Models.Teams", function (namespace)
       until 1
     end
     AddInitialSpawnTriggers = function (this, building)
-      building:AddSpawnTrigger(0 --[[SpawnInterval.Short]], System.Array(System.Int32) { 1747988809 --[[Constants.UNIT_GRUNT_ORC]], 1747988809 --[[Constants.UNIT_GRUNT_ORC]], 1747988812 --[[Constants.UNIT_HEADHUNTER_ORC]] }):Run(0)
-      building:AddSpawnTrigger(1 --[[SpawnInterval.Middle]], System.Array(System.Int32) { 1747988818 --[[Constants.UNIT_WITCH_DOCTOR_ORC]] }):Run(1)
+      building:AddSpawnTrigger(0 --[[SpawnInterval.Short]], System.Array(System.Int32) { 1747988809 --[[Constants.UNIT_GRUNT_ORC_MELEE_1]], 1747988809 --[[Constants.UNIT_GRUNT_ORC_MELEE_1]], 1747988812 --[[Constants.UNIT_HEADHUNTER_ORC_DISTANCE_1]] }):Run(0)
+      building:AddSpawnTrigger(1 --[[SpawnInterval.Middle]], System.Array(System.Int32) { 1747988818 --[[Constants.UNIT_WITCH_DOCTOR_ORC_MAGE_1]] }):Run(1)
       building:AddSpawnTrigger(2 --[[SpawnInterval.Long]], System.Array.Empty(System.Int32)):Run(2)
     end
     AddInitialUnitUpgradesToStock = function (this, building)
-      AddUnitToStock(building.Wc3Unit, 1747988810 --[[Constants.UNIT_BESERK_ORC]], 1, 1)
-      AddUnitToStock(building.Wc3Unit, 1747988813 --[[Constants.UNIT_HEADHUNTER_BESERK_ORC]], 1, 1)
-      AddUnitToStock(building.Wc3Unit, 1747988819 --[[Constants.UNIT_SHAMAN_ORC]], 1, 1)
-      AddUnitToStock(building.Wc3Unit, 1747988815 --[[Constants.UNIT_BATRIDER_ORC]], 1, 1)
-      AddUnitToStock(building.Wc3Unit, 1747988821 --[[Constants.UNIT_KODO_BEAST_ORC]], 1, 1)
+      AddUnitToStock(building.Wc3Unit, 1747988810 --[[Constants.UNIT_BESERK_ORC_MELEE_2]], 1, 1)
+      AddUnitToStock(building.Wc3Unit, 1747988813 --[[Constants.UNIT_HEADHUNTER_BESERK_ORC_DISTANCE_2]], 1, 1)
+      AddUnitToStock(building.Wc3Unit, 1747988819 --[[Constants.UNIT_SHAMAN_ORC_MAGE_2]], 1, 1)
+      AddUnitToStock(building.Wc3Unit, 1747988815 --[[Constants.UNIT_BATRIDER_ORC_FLY_1]], 1, 1)
+      AddUnitToStock(building.Wc3Unit, 1747988821 --[[Constants.UNIT_KODO_BEAST_ORC_SIEGE_1]], 1, 1)
     end
     return {
       base = function (out)
@@ -25741,12 +25729,12 @@ System.namespace("Source.Models.Teams", function (namespace)
           repeat
             local extern = techLevel
             if extern == 1 then
-              command.UnitId = 1747989040 --[[Constants.UNIT_SKELETON_WARRIOR_UNDEAD]]
-              command.UnitIdToUpgrade = 1747988825 --[[Constants.UNIT_GHOUL_UNDEAD]]
+              command.UnitId = 1747989040 --[[Constants.UNIT_SKELETON_WARRIOR_UNDEAD_MELEE_2]]
+              command.UnitIdToUpgrade = 1747988825 --[[Constants.UNIT_GHOUL_UNDEAD_MELEE_1]]
               return 3 --[[ResearchType.UpgradeUnit]], command
             else
-              command.UnitId = 1747989042 --[[Constants.UNIT_ABOMINATION_UNDEAD]]
-              command.UnitIdToUpgrade = 1747989040 --[[Constants.UNIT_SKELETON_WARRIOR_UNDEAD]]
+              command.UnitId = 1747989042 --[[Constants.UNIT_ABOMINATION_UNDEAD_MELEE_3]]
+              command.UnitIdToUpgrade = 1747989040 --[[Constants.UNIT_SKELETON_WARRIOR_UNDEAD_MELEE_2]]
               return 3 --[[ResearchType.UpgradeUnit]], command
             end
           until 1
@@ -25759,12 +25747,12 @@ System.namespace("Source.Models.Teams", function (namespace)
           repeat
             local extern = techLevel
             if extern == 1 then
-              command.UnitId = 1747989046 --[[Constants.UNIT_CRYPT_FIEND_BESERK_UNDEAD]]
-              command.UnitIdToUpgrade = 1747989044 --[[Constants.UNIT_CRYPT_FIEND_UNDEAD]]
+              command.UnitId = 1747989046 --[[Constants.UNIT_CRYPT_FIEND_BESERK_UNDEAD_DISTANCE_2]]
+              command.UnitIdToUpgrade = 1747989044 --[[Constants.UNIT_CRYPT_FIEND_UNDEAD_DISTANCE_1]]
               return 3 --[[ResearchType.UpgradeUnit]], command
             else
-              command.UnitId = 1747989048 --[[Constants.UNIT_CRYPT_FIEND_ELITE_UNDEAD]]
-              command.UnitIdToUpgrade = 1747989046 --[[Constants.UNIT_CRYPT_FIEND_BESERK_UNDEAD]]
+              command.UnitId = 1747989048 --[[Constants.UNIT_CRYPT_FIEND_ELITE_UNDEAD_DISTANCE_3]]
+              command.UnitIdToUpgrade = 1747989046 --[[Constants.UNIT_CRYPT_FIEND_BESERK_UNDEAD_DISTANCE_2]]
               return 3 --[[ResearchType.UpgradeUnit]], command
             end
           until 1
@@ -25777,12 +25765,12 @@ System.namespace("Source.Models.Teams", function (namespace)
           repeat
             local extern = techLevel
             if extern == 1 then
-              command.UnitId = 1747989059 --[[Constants.UNIT_DESTROYER_UNDEAD]]
-              command.UnitIdToUpgrade = 1747989061 --[[Constants.UNIT_GARGOYLE_UNDEAD]]
+              command.UnitId = 1747989059 --[[Constants.UNIT_DESTROYER_UNDEAD_FLY_2]]
+              command.UnitIdToUpgrade = 1747989061 --[[Constants.UNIT_GARGOYLE_UNDEAD_FLY_1]]
               return 3 --[[ResearchType.UpgradeUnit]], command
             else
-              command.UnitId = 1747989057 --[[Constants.UNIT_FROST_WYRM_UNDEAD]]
-              command.UnitIdToUpgrade = 1747989059 --[[Constants.UNIT_DESTROYER_UNDEAD]]
+              command.UnitId = 1747989057 --[[Constants.UNIT_FROST_WYRM_UNDEAD_FLY_3]]
+              command.UnitIdToUpgrade = 1747989059 --[[Constants.UNIT_DESTROYER_UNDEAD_FLY_2]]
               return 3 --[[ResearchType.UpgradeUnit]], command
             end
           until 1
@@ -25795,12 +25783,12 @@ System.namespace("Source.Models.Teams", function (namespace)
           repeat
             local extern = techLevel
             if extern == 1 then
-              command.UnitId = 1747989065 --[[Constants.UNIT_NECROMANCER_UNDEAD]]
-              command.UnitIdToUpgrade = 1747989067 --[[Constants.UNIT_SKELETAL_MAGE_UNDEAD]]
+              command.UnitId = 1747989065 --[[Constants.UNIT_NECROMANCER_UNDEAD_MAGE_2]]
+              command.UnitIdToUpgrade = 1747989067 --[[Constants.UNIT_SKELETAL_MAGE_UNDEAD_MAGE_1]]
               return 3 --[[ResearchType.UpgradeUnit]], command
             else
-              command.UnitId = 1747989063 --[[Constants.UNIT_BANSHEE_UNDEAD]]
-              command.UnitIdToUpgrade = 1747989065 --[[Constants.UNIT_NECROMANCER_UNDEAD]]
+              command.UnitId = 1747989063 --[[Constants.UNIT_BANSHEE_UNDEAD_MAGE_3]]
+              command.UnitIdToUpgrade = 1747989065 --[[Constants.UNIT_NECROMANCER_UNDEAD_MAGE_2]]
               return 3 --[[ResearchType.UpgradeUnit]], command
             end
           until 1
@@ -25813,11 +25801,11 @@ System.namespace("Source.Models.Teams", function (namespace)
           repeat
             local extern = techLevel
             if extern == 1 then
-              command.UnitId = 1747989071 --[[Constants.UNIT_OBSIDIAN_STATUE_UNDEAD]]
+              command.UnitId = 1747989071 --[[Constants.UNIT_OBSIDIAN_STATUE_UNDEAD_SIEGE_1]]
               return 2 --[[ResearchType.AddUnit]], command
             else
-              command.UnitId = 1747989069 --[[Constants.UNIT_MEAT_WAGON_UNDEAD]]
-              command.UnitIdToUpgrade = 1747989071 --[[Constants.UNIT_OBSIDIAN_STATUE_UNDEAD]]
+              command.UnitId = 1747989069 --[[Constants.UNIT_MEAT_WAGON_UNDEAD_SIEGE_2]]
+              command.UnitIdToUpgrade = 1747989071 --[[Constants.UNIT_OBSIDIAN_STATUE_UNDEAD_SIEGE_1]]
               return 3 --[[ResearchType.UpgradeUnit]], command
             end
           until 1
@@ -25831,38 +25819,38 @@ System.namespace("Source.Models.Teams", function (namespace)
     GetUnitUpgradeBySold = function (this, baseUnitTypeId, command)
       repeat
         local default = baseUnitTypeId
-        if default == 1747989040 --[[Constants.UNIT_SKELETON_WARRIOR_UNDEAD]] then
-          command = System.new(SourceModels.UnitUpgradeBySoldCommand, 2, 0 --[[SpawnInterval.Short]], 1747988825 --[[Constants.UNIT_GHOUL_UNDEAD]], baseUnitTypeId, 1747989042 --[[Constants.UNIT_ABOMINATION_UNDEAD]])
+        if default == 1747989040 --[[Constants.UNIT_SKELETON_WARRIOR_UNDEAD_MELEE_2]] then
+          command = System.new(SourceModels.UnitUpgradeBySoldCommand, 2, 0 --[[SpawnInterval.Short]], 1747988825 --[[Constants.UNIT_GHOUL_UNDEAD_MELEE_1]], baseUnitTypeId, 1747989042 --[[Constants.UNIT_ABOMINATION_UNDEAD_MELEE_3]])
           return 2 --[[UnitUpgradeType.UpgradeUnitInSpawn]], command
-        elseif default == 1747989042 --[[Constants.UNIT_ABOMINATION_UNDEAD]] then
-          command = System.new(SourceModels.UnitUpgradeBySoldCommand, 2, 0 --[[SpawnInterval.Short]], 1747989040 --[[Constants.UNIT_SKELETON_WARRIOR_UNDEAD]], baseUnitTypeId, 0)
+        elseif default == 1747989042 --[[Constants.UNIT_ABOMINATION_UNDEAD_MELEE_3]] then
+          command = System.new(SourceModels.UnitUpgradeBySoldCommand, 2, 0 --[[SpawnInterval.Short]], 1747989040 --[[Constants.UNIT_SKELETON_WARRIOR_UNDEAD_MELEE_2]], baseUnitTypeId, 0)
           return 2 --[[UnitUpgradeType.UpgradeUnitInSpawn]], command
-        elseif default == 1747989046 --[[Constants.UNIT_CRYPT_FIEND_BESERK_UNDEAD]] then
-          command = System.new(SourceModels.UnitUpgradeBySoldCommand, 2, 0 --[[SpawnInterval.Short]], 1747989044 --[[Constants.UNIT_CRYPT_FIEND_UNDEAD]], baseUnitTypeId, 1747989048 --[[Constants.UNIT_CRYPT_FIEND_ELITE_UNDEAD]])
+        elseif default == 1747989046 --[[Constants.UNIT_CRYPT_FIEND_BESERK_UNDEAD_DISTANCE_2]] then
+          command = System.new(SourceModels.UnitUpgradeBySoldCommand, 2, 0 --[[SpawnInterval.Short]], 1747989044 --[[Constants.UNIT_CRYPT_FIEND_UNDEAD_DISTANCE_1]], baseUnitTypeId, 1747989048 --[[Constants.UNIT_CRYPT_FIEND_ELITE_UNDEAD_DISTANCE_3]])
           return 2 --[[UnitUpgradeType.UpgradeUnitInSpawn]], command
-        elseif default == 1747989048 --[[Constants.UNIT_CRYPT_FIEND_ELITE_UNDEAD]] then
-          command = System.new(SourceModels.UnitUpgradeBySoldCommand, 2, 0 --[[SpawnInterval.Short]], 1747989046 --[[Constants.UNIT_CRYPT_FIEND_BESERK_UNDEAD]], baseUnitTypeId, 0)
+        elseif default == 1747989048 --[[Constants.UNIT_CRYPT_FIEND_ELITE_UNDEAD_DISTANCE_3]] then
+          command = System.new(SourceModels.UnitUpgradeBySoldCommand, 2, 0 --[[SpawnInterval.Short]], 1747989046 --[[Constants.UNIT_CRYPT_FIEND_BESERK_UNDEAD_DISTANCE_2]], baseUnitTypeId, 0)
           return 2 --[[UnitUpgradeType.UpgradeUnitInSpawn]], command
-        elseif default == 1747989065 --[[Constants.UNIT_NECROMANCER_UNDEAD]] then
-          command = System.new(SourceModels.UnitUpgradeBySoldCommand, 2, 1 --[[SpawnInterval.Middle]], 1747989067 --[[Constants.UNIT_SKELETAL_MAGE_UNDEAD]], baseUnitTypeId, 1747989063 --[[Constants.UNIT_BANSHEE_UNDEAD]])
+        elseif default == 1747989065 --[[Constants.UNIT_NECROMANCER_UNDEAD_MAGE_2]] then
+          command = System.new(SourceModels.UnitUpgradeBySoldCommand, 2, 1 --[[SpawnInterval.Middle]], 1747989067 --[[Constants.UNIT_SKELETAL_MAGE_UNDEAD_MAGE_1]], baseUnitTypeId, 1747989063 --[[Constants.UNIT_BANSHEE_UNDEAD_MAGE_3]])
           return 2 --[[UnitUpgradeType.UpgradeUnitInSpawn]], command
-        elseif default == 1747989063 --[[Constants.UNIT_BANSHEE_UNDEAD]] then
-          command = System.new(SourceModels.UnitUpgradeBySoldCommand, 2, 1 --[[SpawnInterval.Middle]], 1747989065 --[[Constants.UNIT_NECROMANCER_UNDEAD]], baseUnitTypeId, 0)
+        elseif default == 1747989063 --[[Constants.UNIT_BANSHEE_UNDEAD_MAGE_3]] then
+          command = System.new(SourceModels.UnitUpgradeBySoldCommand, 2, 1 --[[SpawnInterval.Middle]], 1747989065 --[[Constants.UNIT_NECROMANCER_UNDEAD_MAGE_2]], baseUnitTypeId, 0)
           return 2 --[[UnitUpgradeType.UpgradeUnitInSpawn]], command
-        elseif default == 1747989061 --[[Constants.UNIT_GARGOYLE_UNDEAD]] then
-          command = SourceModels.UnitUpgradeBySoldCommand(1 --[[SpawnInterval.Middle]], baseUnitTypeId, 1747989059 --[[Constants.UNIT_DESTROYER_UNDEAD]])
+        elseif default == 1747989061 --[[Constants.UNIT_GARGOYLE_UNDEAD_FLY_1]] then
+          command = SourceModels.UnitUpgradeBySoldCommand(1 --[[SpawnInterval.Middle]], baseUnitTypeId, 1747989059 --[[Constants.UNIT_DESTROYER_UNDEAD_FLY_2]])
           return 1 --[[UnitUpgradeType.AddNewUnitToSpawn]], command
-        elseif default == 1747989059 --[[Constants.UNIT_DESTROYER_UNDEAD]] then
-          command = System.new(SourceModels.UnitUpgradeBySoldCommand, 2, 1 --[[SpawnInterval.Middle]], 1747989061 --[[Constants.UNIT_GARGOYLE_UNDEAD]], baseUnitTypeId, 1747989057 --[[Constants.UNIT_FROST_WYRM_UNDEAD]])
+        elseif default == 1747989059 --[[Constants.UNIT_DESTROYER_UNDEAD_FLY_2]] then
+          command = System.new(SourceModels.UnitUpgradeBySoldCommand, 2, 1 --[[SpawnInterval.Middle]], 1747989061 --[[Constants.UNIT_GARGOYLE_UNDEAD_FLY_1]], baseUnitTypeId, 1747989057 --[[Constants.UNIT_FROST_WYRM_UNDEAD_FLY_3]])
           return 2 --[[UnitUpgradeType.UpgradeUnitInSpawn]], command
-        elseif default == 1747989057 --[[Constants.UNIT_FROST_WYRM_UNDEAD]] then
-          command = System.new(SourceModels.UnitUpgradeBySoldCommand, 2, 1 --[[SpawnInterval.Middle]], 1747989059 --[[Constants.UNIT_DESTROYER_UNDEAD]], baseUnitTypeId, 0)
+        elseif default == 1747989057 --[[Constants.UNIT_FROST_WYRM_UNDEAD_FLY_3]] then
+          command = System.new(SourceModels.UnitUpgradeBySoldCommand, 2, 1 --[[SpawnInterval.Middle]], 1747989059 --[[Constants.UNIT_DESTROYER_UNDEAD_FLY_2]], baseUnitTypeId, 0)
           return 2 --[[UnitUpgradeType.UpgradeUnitInSpawn]], command
-        elseif default == 1747989071 --[[Constants.UNIT_OBSIDIAN_STATUE_UNDEAD]] then
-          command = SourceModels.UnitUpgradeBySoldCommand(2 --[[SpawnInterval.Long]], baseUnitTypeId, 1747989069 --[[Constants.UNIT_MEAT_WAGON_UNDEAD]])
+        elseif default == 1747989071 --[[Constants.UNIT_OBSIDIAN_STATUE_UNDEAD_SIEGE_1]] then
+          command = SourceModels.UnitUpgradeBySoldCommand(2 --[[SpawnInterval.Long]], baseUnitTypeId, 1747989069 --[[Constants.UNIT_MEAT_WAGON_UNDEAD_SIEGE_2]])
           return 1 --[[UnitUpgradeType.AddNewUnitToSpawn]], command
-        elseif default == 1747989069 --[[Constants.UNIT_MEAT_WAGON_UNDEAD]] then
-          command = System.new(SourceModels.UnitUpgradeBySoldCommand, 2, 2 --[[SpawnInterval.Long]], 1747989071 --[[Constants.UNIT_OBSIDIAN_STATUE_UNDEAD]], baseUnitTypeId, 0)
+        elseif default == 1747989069 --[[Constants.UNIT_MEAT_WAGON_UNDEAD_SIEGE_2]] then
+          command = System.new(SourceModels.UnitUpgradeBySoldCommand, 2, 2 --[[SpawnInterval.Long]], 1747989071 --[[Constants.UNIT_OBSIDIAN_STATUE_UNDEAD_SIEGE_1]], baseUnitTypeId, 0)
           return 2 --[[UnitUpgradeType.UpgradeUnitInSpawn]], command
         else
           -- Einheiten-Typ ist nicht bekannt
@@ -25873,16 +25861,16 @@ System.namespace("Source.Models.Teams", function (namespace)
       until 1
     end
     AddInitialSpawnTriggers = function (this, building)
-      building:AddSpawnTrigger(0 --[[SpawnInterval.Short]], System.Array(System.Int32) { 1747988825 --[[Constants.UNIT_GHOUL_UNDEAD]], 1747988825 --[[Constants.UNIT_GHOUL_UNDEAD]], 1747989044 --[[Constants.UNIT_CRYPT_FIEND_UNDEAD]] }):Run(0)
-      building:AddSpawnTrigger(1 --[[SpawnInterval.Middle]], System.Array(System.Int32) { 1747989067 --[[Constants.UNIT_SKELETAL_MAGE_UNDEAD]] }):Run(1)
+      building:AddSpawnTrigger(0 --[[SpawnInterval.Short]], System.Array(System.Int32) { 1747988825 --[[Constants.UNIT_GHOUL_UNDEAD_MELEE_1]], 1747988825 --[[Constants.UNIT_GHOUL_UNDEAD_MELEE_1]], 1747989044 --[[Constants.UNIT_CRYPT_FIEND_UNDEAD_DISTANCE_1]] }):Run(0)
+      building:AddSpawnTrigger(1 --[[SpawnInterval.Middle]], System.Array(System.Int32) { 1747989067 --[[Constants.UNIT_SKELETAL_MAGE_UNDEAD_MAGE_1]] }):Run(1)
       building:AddSpawnTrigger(2 --[[SpawnInterval.Long]], System.Array.Empty(System.Int32)):Run(2)
     end
     AddInitialUnitUpgradesToStock = function (this, building)
-      AddUnitToStock(building.Wc3Unit, 1747989040 --[[Constants.UNIT_SKELETON_WARRIOR_UNDEAD]], 1, 1)
-      AddUnitToStock(building.Wc3Unit, 1747989046 --[[Constants.UNIT_CRYPT_FIEND_BESERK_UNDEAD]], 1, 1)
-      AddUnitToStock(building.Wc3Unit, 1747989065 --[[Constants.UNIT_NECROMANCER_UNDEAD]], 1, 1)
-      AddUnitToStock(building.Wc3Unit, 1747989061 --[[Constants.UNIT_GARGOYLE_UNDEAD]], 1, 1)
-      AddUnitToStock(building.Wc3Unit, 1747989071 --[[Constants.UNIT_OBSIDIAN_STATUE_UNDEAD]], 1, 1)
+      AddUnitToStock(building.Wc3Unit, 1747989040 --[[Constants.UNIT_SKELETON_WARRIOR_UNDEAD_MELEE_2]], 1, 1)
+      AddUnitToStock(building.Wc3Unit, 1747989046 --[[Constants.UNIT_CRYPT_FIEND_BESERK_UNDEAD_DISTANCE_2]], 1, 1)
+      AddUnitToStock(building.Wc3Unit, 1747989065 --[[Constants.UNIT_NECROMANCER_UNDEAD_MAGE_2]], 1, 1)
+      AddUnitToStock(building.Wc3Unit, 1747989061 --[[Constants.UNIT_GARGOYLE_UNDEAD_FLY_1]], 1, 1)
+      AddUnitToStock(building.Wc3Unit, 1747989071 --[[Constants.UNIT_OBSIDIAN_STATUE_UNDEAD_SIEGE_1]], 1, 1)
     end
     return {
       base = function (out)
@@ -37627,11 +37615,8 @@ gg_rct_ElfCreepToHumanSpawn = nil
 gg_rct_ElfCreepToHumanSpawnBuilding = nil
 gg_rct_ElfCreepToUndeadSpawn = nil
 gg_rct_ElfCreepToUndeadSpawnBuilding = nil
-gg_rct_ElfToHumanInnerLine = nil
 gg_rct_ElfToHumanOuterLine = nil
-gg_rct_ElfToOrcInnerLine = nil
 gg_rct_ElfToOrcOuterLine = nil
-gg_rct_ElfToUndeadInnerLine = nil
 gg_rct_ElfToUndeadOuterLine = nil
 gg_rct_HeroAlchemist = nil
 gg_rct_HeroArchmage = nil
@@ -37640,17 +37625,21 @@ gg_rct_HeroBloodMage = nil
 gg_rct_HeroBrewmaster = nil
 gg_rct_HeroCryptLord = nil
 gg_rct_HeroDarkRanger = nil
+gg_rct_HeroDeathKnight = nil
+gg_rct_HeroFarSeer = nil
 gg_rct_HeroFirelord = nil
 gg_rct_HeroKeeperOfTheGrove = nil
 gg_rct_HeroLich = nil
 gg_rct_HeroMountainKing = nil
 gg_rct_HeroPitLord = nil
+gg_rct_HeroPriestessOfMoon = nil
 gg_rct_HeroSeaWitch = nil
 gg_rct_HeroSelectionTotal = nil
 gg_rct_HeroSelectorSpawn = nil
 gg_rct_HeroShadowHunter = nil
 gg_rct_HeroTaurenChieftain = nil
 gg_rct_HeroTinker = nil
+gg_rct_HeroWarden = nil
 gg_rct_HumanBarracksToCenter = nil
 gg_rct_HumanBarracksToCenterSpawn = nil
 gg_rct_HumanBarracksToElf = nil
@@ -37667,11 +37656,7 @@ gg_rct_HumanCreepToElfSpawn = nil
 gg_rct_HumanCreepToElfSpawnBuilding = nil
 gg_rct_HumanCreepToOrcSpawn = nil
 gg_rct_HumanCreepToOrcSpawnBuilding = nil
-gg_rct_HumanToElfInnerLine = nil
 gg_rct_HumanToElfOuterLine = nil
-gg_rct_HumanToOrcInnerLine = nil
-gg_rct_HumanToOrcOuterLine = nil
-gg_rct_HumanToUndeadInnerLine = nil
 gg_rct_HumanToUndeadOuterLine = nil
 gg_rct_LegionSpawnBottom = nil
 gg_rct_LegionSpawnBottom1 = nil
@@ -37701,11 +37686,8 @@ gg_rct_OrcCreepToHumanSpawn = nil
 gg_rct_OrcCreepToHumanSpawnBuilding = nil
 gg_rct_OrcCreepToUndeadSpawn = nil
 gg_rct_OrcCreepToUndeadSpawnBuilding = nil
-gg_rct_OrcToElfInnerLine = nil
 gg_rct_OrcToElfOuterLine = nil
-gg_rct_OrcToHumanInnerLine = nil
 gg_rct_OrcToHumanOuterLine = nil
-gg_rct_OrcToUndeadInnerLine = nil
 gg_rct_OrcToUndeadOuterLine = nil
 gg_rct_TestArea = nil
 gg_rct_TestArea2 = nil
@@ -37726,11 +37708,8 @@ gg_rct_UndeadCreepToElfSpawn = nil
 gg_rct_UndeadCreepToElfSpawnBuilding = nil
 gg_rct_UndeadCreepToOrcSpawn = nil
 gg_rct_UndeadCreepToOrcSpawnBuilding = nil
-gg_rct_UndeadToElfInnerLine = nil
 gg_rct_UndeadToElfOuterLine = nil
-gg_rct_UndeadToHumanInnerLine = nil
 gg_rct_UndeadToHumanOuterLine = nil
-gg_rct_UndeadToOrcInnerLine = nil
 gg_rct_UndeadToOrcOuterLine = nil
 gg_snd_blowitup_cutted = nil
 gg_trg_Untitled_Trigger_001 = nil
@@ -38129,6 +38108,23 @@ gg_unit_n015_0408 = nil
 gg_unit_nCOP_0409 = nil
 gg_unit_E004_0410 = nil
 gg_unit_E004_0411 = nil
+gg_unit_O005_0412 = nil
+gg_unit_O005_0413 = nil
+gg_unit_nCOP_0414 = nil
+gg_unit_N02P_0415 = nil
+gg_unit_nCOP_0416 = nil
+gg_unit_N02Q_0417 = nil
+gg_unit_nCOP_0418 = nil
+gg_unit_N02Q_0419 = nil
+gg_unit_N02P_0420 = nil
+gg_unit_e008_0421 = nil
+gg_unit_e009_0422 = nil
+gg_unit_e00A_0423 = nil
+gg_unit_e005_0424 = nil
+gg_unit_e006_0425 = nil
+gg_unit_e007_0426 = nil
+gg_unit_H02Y_0427 = nil
+gg_unit_nCOP_0428 = nil
 gg_dest_HEch_0019 = nil
 gg_dest_HEch_0017 = nil
 gg_dest_HEch_0016 = nil
@@ -67370,20 +67366,20 @@ function CreateBuildingsForPlayer0()
     local p = Player(0)
     local unitID = nil
     local t = nil
-    gg_unit_h005_0031 = CreateUnit(p, 1747988533, -8192.0, 13696.0, 270.000)
-    gg_unit_h005_0032 = CreateUnit(p, 1747988533, -8192.0, 12928.0, 270.000)
-    gg_unit_h005_0033 = CreateUnit(p, 1747988533, -6912.0, 13312.0, 270.000)
-    gg_unit_h004_0034 = CreateUnit(p, 1747988532, -4096.0, 13696.0, 270.000)
-    gg_unit_h004_0035 = CreateUnit(p, 1747988532, -4096.0, 12928.0, 270.000)
-    gg_unit_h004_0036 = CreateUnit(p, 1747988532, -2816.0, 13312.0, 270.000)
+    gg_unit_h005_0031 = CreateUnit(p, 1747988533, -7168.0, 13696.0, 270.000)
+    gg_unit_h005_0032 = CreateUnit(p, 1747988533, -7168.0, 12928.0, 270.000)
+    gg_unit_h005_0033 = CreateUnit(p, 1747988533, -6144.0, 13312.0, 270.000)
+    gg_unit_h004_0034 = CreateUnit(p, 1747988532, -5632.0, 13696.0, 270.000)
+    gg_unit_h004_0035 = CreateUnit(p, 1747988532, -5632.0, 12928.0, 270.000)
+    gg_unit_h004_0036 = CreateUnit(p, 1747988532, -4608.0, 13312.0, 270.000)
     gg_unit_h005_0038 = CreateUnit(p, 1747988533, -9856.0, 11264.0, 270.000)
     gg_unit_h005_0039 = CreateUnit(p, 1747988533, -10624.0, 11264.0, 270.000)
     gg_unit_h005_0040 = CreateUnit(p, 1747988533, -10240.0, 9984.0, 270.000)
     gg_unit_n005_0044 = CreateUnit(p, 1848651829, -12032.0, 15104.0, 270.000)
     gg_unit_h009_0053 = CreateUnit(p, 1747988537, -11008.0, 14592.0, 270.000)
     gg_unit_h02R_0054 = CreateUnit(p, 1747989074, -9216.0, 13312.0, 270.000)
-    gg_unit_h005_0138 = CreateUnit(p, 1747988533, -8960.0, 11520.0, 270.000)
-    gg_unit_h005_0139 = CreateUnit(p, 1747988533, -8448.0, 12032.0, 270.000)
+    gg_unit_h005_0138 = CreateUnit(p, 1747988533, -8192.0, 10752.0, 270.000)
+    gg_unit_h005_0139 = CreateUnit(p, 1747988533, -7680.0, 11264.0, 270.000)
     gg_unit_h005_0143 = CreateUnit(p, 1747988533, -7680.0, 10752.0, 270.000)
     gg_unit_h004_0144 = CreateUnit(p, 1747988532, -9856.0, 7168.0, 270.000)
     gg_unit_h004_0145 = CreateUnit(p, 1747988532, -10624.0, 7168.0, 270.000)
@@ -67412,6 +67408,7 @@ function CreateUnitsForPlayer0()
     gg_unit_nvlw_0354 = CreateUnit(p, 1853254775, -10481.6, 15017.3, 144.112)
     gg_unit_nvil_0360 = CreateUnit(p, 1853253996, -10534.3, 14958.8, 126.830)
     gg_unit_nvlk_0361 = CreateUnit(p, 1853254763, -10586.0, 15049.3, 150.000)
+    gg_unit_O005_0412 = CreateUnit(p, 1328558133, 14920.7, 16948.4, 270.000)
 end
 
 function CreateBuildingsForPlayer1()
@@ -67675,13 +67672,10 @@ function CreateNeutralPassiveBuildings()
     gg_unit_n02E_0303 = CreateUnit(p, 1848652357, 4704.0, -4640.0, 270.000)
     gg_unit_n02E_0304 = CreateUnit(p, 1848652357, 3808.0, -4960.0, 270.000)
     gg_unit_n02E_0305 = CreateUnit(p, 1848652357, 3744.0, -4384.0, 270.000)
-    gg_unit_n02I_0353 = CreateUnit(p, 1848652361, 16320.0, 17728.0, 270.000)
+    gg_unit_n02I_0353 = CreateUnit(p, 1848652361, 16320.0, 17344.0, 270.000)
     gg_unit_n00D_0388 = CreateUnit(p, 1848651844, 16720.1, 18111.9, 270.000)
-    SetUnitState(gg_unit_n00D_0388, UNIT_STATE_MANA, 0)
     gg_unit_n00B_0389 = CreateUnit(p, 1848651842, 16940.5, 18102.7, 270.000)
-    SetUnitState(gg_unit_n00B_0389, UNIT_STATE_MANA, 0)
     gg_unit_n00E_0390 = CreateUnit(p, 1848651845, 17187.9, 18098.1, 270.000)
-    SetUnitState(gg_unit_n00E_0390, UNIT_STATE_MANA, 0)
 end
 
 function CreateNeutralPassive()
@@ -67689,16 +67683,12 @@ function CreateNeutralPassive()
     local unitID = nil
     local t = nil
     gg_unit_e001_0008 = CreateUnit(p, 1697656881, 14145.4, 18111.5, 270.000)
-    SetUnitState(gg_unit_e001_0008, UNIT_STATE_MANA, 0)
     gg_unit_e002_0010 = CreateUnit(p, 1697656882, 14280.2, 18114.0, 270.000)
-    SetUnitState(gg_unit_e002_0010, UNIT_STATE_MANA, 0)
     gg_unit_h001_0016 = CreateUnit(p, 1747988529, 14141.2, 19257.5, 270.000)
     gg_unit_h00C_0019 = CreateUnit(p, 1747988547, 14266.6, 19272.0, 270.000)
     gg_unit_h00B_0020 = CreateUnit(p, 1747988546, 14396.9, 19263.5, 270.000)
     gg_unit_e003_0029 = CreateUnit(p, 1697656883, 14415.8, 18106.7, 270.000)
-    SetUnitState(gg_unit_e003_0029, UNIT_STATE_MANA, 0)
     gg_unit_h00P_0051 = CreateUnit(p, 1747988560, 14533.0, 18101.8, 270.000)
-    SetUnitState(gg_unit_h00P_0051, UNIT_STATE_MANA, 0)
     gg_unit_h002_0058 = CreateUnit(p, 1747988530, 14532.2, 19269.6, 270.000)
     gg_unit_h00F_0059 = CreateUnit(p, 1747988550, 14658.8, 19267.2, 270.000)
     gg_unit_h00G_0060 = CreateUnit(p, 1747988551, 14783.0, 19263.5, 270.000)
@@ -67756,34 +67746,25 @@ function CreateNeutralPassive()
     gg_unit_h02B_0120 = CreateUnit(p, 1747989058, 15051.8, 18751.7, 270.000)
     gg_unit_H02P_0121 = CreateUnit(p, 1211118160, 16060.4, 18751.7, 270.000)
     gg_unit_H02Q_0122 = CreateUnit(p, 1211118161, 16058.8, 18500.4, 270.000)
-    gg_unit_N006_0123 = CreateUnit(p, 1311780918, 16059.5, 17731.9, 270.000)
+    gg_unit_N006_0123 = CreateUnit(p, 1311780918, 16059.5, 17347.9, 270.000)
     gg_unit_n01O_0126 = CreateUnit(p, 1848652111, 17222.7, 19253.2, 270.000)
     gg_unit_n014_0128 = CreateUnit(p, 1848652084, 17227.1, 19142.6, 270.000)
-    gg_unit_n00T_0132 = CreateUnit(p, 1848651860, 15802.6, 17724.8, 270.000)
-    gg_unit_n00J_0133 = CreateUnit(p, 1848651850, 15292.0, 17730.3, 270.000)
+    gg_unit_n00T_0132 = CreateUnit(p, 1848651860, 15802.6, 17340.8, 270.000)
+    gg_unit_n00J_0133 = CreateUnit(p, 1848651850, 15292.0, 17346.3, 270.000)
     gg_unit_h00Q_0136 = CreateUnit(p, 1747988561, 14665.7, 18111.5, 270.000)
-    SetUnitState(gg_unit_h00Q_0136, UNIT_STATE_MANA, 0)
-    gg_unit_n00C_0137 = CreateUnit(p, 1848651843, 15172.4, 17727.6, 270.000)
-    gg_unit_n00N_0191 = CreateUnit(p, 1848651854, 15545.3, 17718.9, 270.000)
-    gg_unit_n00F_0192 = CreateUnit(p, 1848651846, 15421.9, 17724.8, 270.000)
+    gg_unit_n00C_0137 = CreateUnit(p, 1848651843, 15172.4, 17343.6, 270.000)
+    gg_unit_n00N_0191 = CreateUnit(p, 1848651854, 15545.3, 17334.9, 270.000)
+    gg_unit_n00F_0192 = CreateUnit(p, 1848651846, 15421.9, 17340.8, 270.000)
     gg_unit_h00R_0193 = CreateUnit(p, 1747988562, 14788.8, 18114.0, 270.000)
-    SetUnitState(gg_unit_h00R_0193, UNIT_STATE_MANA, 0)
     gg_unit_h02V_0194 = CreateUnit(p, 1747989078, 14919.7, 18106.7, 270.000)
-    SetUnitState(gg_unit_h02V_0194, UNIT_STATE_MANA, 0)
     gg_unit_h02W_0195 = CreateUnit(p, 1747989079, 15044.5, 18104.2, 270.000)
-    SetUnitState(gg_unit_h02W_0195, UNIT_STATE_MANA, 0)
     gg_unit_E000_0197 = CreateUnit(p, 1160785968, -2111.0, 18750.9, 270.000)
     gg_unit_h02X_0199 = CreateUnit(p, 1747989080, 15159.2, 18099.4, 270.000)
-    SetUnitState(gg_unit_h02X_0199, UNIT_STATE_MANA, 0)
     gg_unit_o002_0200 = CreateUnit(p, 1865429042, 15294.7, 18101.8, 270.000)
-    SetUnitState(gg_unit_o002_0200, UNIT_STATE_MANA, 0)
     gg_unit_o003_0205 = CreateUnit(p, 1865429043, 15436.0, 18118.8, 270.000)
-    SetUnitState(gg_unit_o003_0205, UNIT_STATE_MANA, 0)
     gg_unit_o004_0206 = CreateUnit(p, 1865429044, 15558.5, 18104.2, 270.000)
-    SetUnitState(gg_unit_o004_0206, UNIT_STATE_MANA, 0)
     gg_unit_u000_0207 = CreateUnit(p, 1966092336, 15685.0, 18099.4, 270.000)
-    SetUnitState(gg_unit_u000_0207, UNIT_STATE_MANA, 0)
-    gg_unit_n00Q_0211 = CreateUnit(p, 1848651857, 15672.7, 17723.3, 270.000)
+    gg_unit_n00Q_0211 = CreateUnit(p, 1848651857, 15672.7, 17339.3, 270.000)
     gg_unit_n01D_0212 = CreateUnit(p, 1848652100, 17471.1, 19138.2, 270.000)
     gg_unit_n01F_0213 = CreateUnit(p, 1848652102, 17475.6, 19004.4, 270.000)
     gg_unit_n01L_0214 = CreateUnit(p, 1848652108, 17478.6, 18882.2, 270.000)
@@ -67870,9 +67851,7 @@ function CreateNeutralPassive()
     gg_unit_nCOP_0355 = CreateUnit(p, 1849904976, -2880.0, 18560.0, 270.000)
     gg_unit_nCOP_0356 = CreateUnit(p, 1849904976, -4800.0, 18560.0, 270.000)
     gg_unit_u001_0357 = CreateUnit(p, 1966092337, 15812.5, 18109.6, 270.000)
-    SetUnitState(gg_unit_u001_0357, UNIT_STATE_MANA, 0)
     gg_unit_u002_0359 = CreateUnit(p, 1966092338, 15943.9, 18095.7, 270.000)
-    SetUnitState(gg_unit_u002_0359, UNIT_STATE_MANA, 0)
     gg_unit_N02H_0366 = CreateUnit(p, 1311781448, 15179.0, 16924.5, 270.000)
     SetUnitState(gg_unit_N02H_0366, UNIT_STATE_MANA, 220)
     gg_unit_E000_0367 = CreateUnit(p, 1160785968, 15556.0, 17072.2, 270.000)
@@ -67898,44 +67877,42 @@ function CreateNeutralPassive()
     gg_unit_n00H_0386 = CreateUnit(p, 1848651848, 16945.5, 17919.4, 270.000)
     gg_unit_n00I_0387 = CreateUnit(p, 1848651849, 17213.1, 17919.4, 270.000)
     gg_unit_n018_0391 = CreateUnit(p, 1848652088, 14153.4, 17980.6, 270.000)
-    SetUnitState(gg_unit_n018_0391, UNIT_STATE_MANA, 0)
     gg_unit_n019_0392 = CreateUnit(p, 1848652089, 14275.0, 17956.4, 270.000)
-    SetUnitState(gg_unit_n019_0392, UNIT_STATE_MANA, 0)
     gg_unit_n01A_0393 = CreateUnit(p, 1848652097, 14406.9, 17960.7, 270.000)
-    SetUnitState(gg_unit_n01A_0393, UNIT_STATE_MANA, 0)
     gg_unit_n00M_0394 = CreateUnit(p, 1848651853, 14544.2, 17952.0, 270.000)
-    SetUnitState(gg_unit_n00M_0394, UNIT_STATE_MANA, 0)
     gg_unit_n00L_0395 = CreateUnit(p, 1848651852, 14923.7, 17969.5, 270.000)
-    SetUnitState(gg_unit_n00L_0395, UNIT_STATE_MANA, 0)
     gg_unit_n00Y_0396 = CreateUnit(p, 1848651865, 15308.1, 17976.1, 270.000)
-    SetUnitState(gg_unit_n00Y_0396, UNIT_STATE_MANA, 0)
     gg_unit_n00O_0397 = CreateUnit(p, 1848651855, 14674.4, 17980.6, 270.000)
-    SetUnitState(gg_unit_n00O_0397, UNIT_STATE_MANA, 0)
     gg_unit_n00U_0398 = CreateUnit(p, 1848651861, 15047.0, 17976.1, 270.000)
-    SetUnitState(gg_unit_n00U_0398, UNIT_STATE_MANA, 0)
     gg_unit_n00W_0399 = CreateUnit(p, 1848651863, 15427.2, 17976.1, 270.000)
-    SetUnitState(gg_unit_n00W_0399, UNIT_STATE_MANA, 0)
     gg_unit_n00R_0400 = CreateUnit(p, 1848651858, 14795.5, 17978.3, 270.000)
-    SetUnitState(gg_unit_n00R_0400, UNIT_STATE_MANA, 0)
     gg_unit_n00S_0401 = CreateUnit(p, 1848651859, 15172.8, 17967.3, 270.000)
-    SetUnitState(gg_unit_n00S_0401, UNIT_STATE_MANA, 0)
     gg_unit_n00Z_0402 = CreateUnit(p, 1848651866, 15530.1, 17969.5, 270.000)
-    SetUnitState(gg_unit_n00Z_0402, UNIT_STATE_MANA, 0)
     gg_unit_n010_0403 = CreateUnit(p, 1848652080, 15674.8, 17987.2, 270.000)
-    SetUnitState(gg_unit_n010_0403, UNIT_STATE_MANA, 0)
     gg_unit_n011_0404 = CreateUnit(p, 1848652081, 15809.4, 17969.5, 270.000)
-    SetUnitState(gg_unit_n011_0404, UNIT_STATE_MANA, 0)
     gg_unit_n012_0405 = CreateUnit(p, 1848652082, 15934.5, 17987.2, 270.000)
-    SetUnitState(gg_unit_n012_0405, UNIT_STATE_MANA, 0)
     gg_unit_n016_0406 = CreateUnit(p, 1848652086, 16192.3, 18056.8, 270.000)
-    SetUnitState(gg_unit_n016_0406, UNIT_STATE_MANA, 0)
     gg_unit_n017_0407 = CreateUnit(p, 1848652087, 16330.7, 18061.4, 270.000)
-    SetUnitState(gg_unit_n017_0407, UNIT_STATE_MANA, 0)
     gg_unit_n015_0408 = CreateUnit(p, 1848652085, 16458.2, 18038.7, 270.000)
-    SetUnitState(gg_unit_n015_0408, UNIT_STATE_MANA, 0)
     gg_unit_nCOP_0409 = CreateUnit(p, 1849904976, -2944.0, 17856.0, 270.000)
     gg_unit_E004_0410 = CreateUnit(p, 1160785972, -2752.2, 17850.3, 180.000)
     gg_unit_E004_0411 = CreateUnit(p, 1160785972, 15166.4, 17063.0, 270.000)
+    gg_unit_O005_0413 = CreateUnit(p, 1328558133, -3772.3, 17468.4, 0.000)
+    gg_unit_nCOP_0414 = CreateUnit(p, 1849904976, -3584.0, 17472.0, 270.000)
+    gg_unit_N02P_0415 = CreateUnit(p, 1311781456, -2739.9, 17479.3, 180.000)
+    gg_unit_nCOP_0416 = CreateUnit(p, 1849904976, -2944.0, 17472.0, 270.000)
+    gg_unit_N02Q_0417 = CreateUnit(p, 1311781457, -3762.0, 17097.4, 0.000)
+    gg_unit_nCOP_0418 = CreateUnit(p, 1849904976, -3584.0, 17088.0, 270.000)
+    gg_unit_N02Q_0419 = CreateUnit(p, 1311781457, 14923.1, 17084.7, 270.000)
+    gg_unit_N02P_0420 = CreateUnit(p, 1311781456, 15682.4, 17082.9, 270.000)
+    gg_unit_e008_0421 = CreateUnit(p, 1697656888, 14145.3, 17857.6, 270.000)
+    gg_unit_e009_0422 = CreateUnit(p, 1697656889, 14269.7, 17849.1, 270.000)
+    gg_unit_e00A_0423 = CreateUnit(p, 1697656897, 14397.8, 17853.3, 270.000)
+    gg_unit_e005_0424 = CreateUnit(p, 1697656885, 14530.8, 17846.9, 270.000)
+    gg_unit_e006_0425 = CreateUnit(p, 1697656886, 14662.8, 17851.2, 270.000)
+    gg_unit_e007_0426 = CreateUnit(p, 1697656887, 14785.8, 17853.3, 270.000)
+    gg_unit_H02Y_0427 = CreateUnit(p, 1211118169, -2752.3, 17099.9, 180.000)
+    gg_unit_nCOP_0428 = CreateUnit(p, 1849904976, -2944.0, 17088.0, 270.000)
 end
 
 function CreatePlayerBuildings()
@@ -67999,11 +67976,8 @@ function CreateRegions()
     gg_rct_ElfCreepToHumanSpawnBuilding = Rect(-7808.0, -768.0, -7552.0, -512.0)
     gg_rct_ElfCreepToUndeadSpawn = Rect(-4608.0, -5120.0, -3840.0, -4352.0)
     gg_rct_ElfCreepToUndeadSpawnBuilding = Rect(-4224.0, -4352.0, -3968.0, -4096.0)
-    gg_rct_ElfToHumanInnerLine = Rect(-10304.0, -5184.0, -10176.0, -5056.0)
     gg_rct_ElfToHumanOuterLine = Rect(-10304.0, -1088.0, -10176.0, -960.0)
-    gg_rct_ElfToOrcInnerLine = Rect(-8768.0, -5696.0, -8640.0, -5568.0)
     gg_rct_ElfToOrcOuterLine = Rect(-5184.0, -2112.0, -5056.0, -1984.0)
-    gg_rct_ElfToUndeadInnerLine = Rect(-8256.0, -7232.0, -8128.0, -7104.0)
     gg_rct_ElfToUndeadOuterLine = Rect(-4160.0, -7232.0, -4032.0, -7104.0)
     gg_rct_HeroAlchemist = Rect(-4864.0, 18496.0, -4736.0, 18624.0)
     gg_rct_HeroArchmage = Rect(-1792.0, 18496.0, -1664.0, 18624.0)
@@ -68012,23 +67986,27 @@ function CreateRegions()
     gg_rct_HeroBrewmaster = Rect(-3712.0, 18496.0, -3584.0, 18624.0)
     gg_rct_HeroCryptLord = Rect(-4672.0, 17024.0, -4544.0, 17152.0)
     gg_rct_HeroDarkRanger = Rect(-1984.0, 17408.0, -1856.0, 17536.0)
+    gg_rct_HeroDeathKnight = Rect(-3648.0, 17024.0, -3520.0, 17152.0)
+    gg_rct_HeroFarSeer = Rect(-3008.0, 17024.0, -2880.0, 17152.0)
     gg_rct_HeroFirelord = Rect(-2560.0, 18496.0, -2432.0, 18624.0)
     gg_rct_HeroKeeperOfTheGrove = Rect(-2176.0, 18496.0, -2048.0, 18624.0)
     gg_rct_HeroLich = Rect(-3008.0, 17792.0, -2880.0, 17920.0)
     gg_rct_HeroMountainKing = Rect(-4480.0, 18496.0, -4352.0, 18624.0)
     gg_rct_HeroPitLord = Rect(-4672.0, 17792.0, -4544.0, 17920.0)
+    gg_rct_HeroPriestessOfMoon = Rect(-3008.0, 17408.0, -2880.0, 17536.0)
     gg_rct_HeroSeaWitch = Rect(-1984.0, 17024.0, -1856.0, 17152.0)
     gg_rct_HeroSelectionTotal = Rect(-5248.0, 16768.0, -1280.0, 19200.0)
     gg_rct_HeroSelectorSpawn = Rect(-3328.0, 18176.0, -3200.0, 18304.0)
     gg_rct_HeroShadowHunter = Rect(-1984.0, 17792.0, -1856.0, 17920.0)
     gg_rct_HeroTaurenChieftain = Rect(-3648.0, 17792.0, -3520.0, 17920.0)
     gg_rct_HeroTinker = Rect(-4096.0, 18496.0, -3968.0, 18624.0)
+    gg_rct_HeroWarden = Rect(-3648.0, 17408.0, -3520.0, 17536.0)
     gg_rct_HumanBarracksToCenter = Rect(-6208.0, 9152.0, -6080.0, 9280.0)
     gg_rct_HumanBarracksToCenterSpawn = Rect(-6016.0, 8704.0, -5760.0, 9216.0)
     gg_rct_HumanBarracksToElf = Rect(-10304.0, 8000.0, -10176.0, 8128.0)
     gg_rct_HumanBarracksToElfSpawn = Rect(-10496.0, 7680.0, -9984.0, 7936.0)
-    gg_rct_HumanBarracksToOrc = Rect(-5056.0, 13248.0, -4928.0, 13376.0)
-    gg_rct_HumanBarracksToOrcSpawn = Rect(-4864.0, 13056.0, -4608.0, 13568.0)
+    gg_rct_HumanBarracksToOrc = Rect(-8256.0, 13248.0, -8128.0, 13376.0)
+    gg_rct_HumanBarracksToOrcSpawn = Rect(-8064.0, 13056.0, -7808.0, 13568.0)
     gg_rct_HumanBase = Rect(-10304.0, 13248.0, -10176.0, 13376.0)
     gg_rct_HumanBaseHeroRespawn = Rect(-11904.0, 14976.0, -11776.0, 15104.0)
     gg_rct_HumanBaseHeroSpawn = Rect(-12032.0, 14848.0, -11904.0, 14976.0)
@@ -68039,11 +68017,7 @@ function CreateRegions()
     gg_rct_HumanCreepToElfSpawnBuilding = Rect(-7808.0, 6656.0, -7552.0, 6912.0)
     gg_rct_HumanCreepToOrcSpawn = Rect(-4608.0, 10368.0, -3840.0, 11136.0)
     gg_rct_HumanCreepToOrcSpawnBuilding = Rect(-4224.0, 10112.0, -3968.0, 10368.0)
-    gg_rct_HumanToElfInnerLine = Rect(-10304.0, 11200.0, -10176.0, 11328.0)
     gg_rct_HumanToElfOuterLine = Rect(-10304.0, 7104.0, -10176.0, 7232.0)
-    gg_rct_HumanToOrcInnerLine = Rect(-8256.0, 13248.0, -8128.0, 13376.0)
-    gg_rct_HumanToOrcOuterLine = Rect(-4160.0, 13248.0, -4032.0, 13376.0)
-    gg_rct_HumanToUndeadInnerLine = Rect(-8768.0, 11712.0, -8640.0, 11840.0)
     gg_rct_HumanToUndeadOuterLine = Rect(-5184.0, 8128.0, -5056.0, 8256.0)
     gg_rct_LegionSpawnBottom = Rect(-384.0, -3456.0, 384.0, -2688.0)
     gg_rct_LegionSpawnBottom1 = Rect(-448.0, -3136.0, -320.0, -3008.0)
@@ -68073,14 +68047,11 @@ function CreateRegions()
     gg_rct_OrcCreepToHumanSpawnBuilding = Rect(3840.0, 10240.0, 4096.0, 10496.0)
     gg_rct_OrcCreepToUndeadSpawn = Rect(7424.0, 6912.0, 8192.0, 7680.0)
     gg_rct_OrcCreepToUndeadSpawnBuilding = Rect(7552.0, 6656.0, 7808.0, 6912.0)
-    gg_rct_OrcToElfInnerLine = Rect(8640.0, 11712.0, 8768.0, 11840.0)
     gg_rct_OrcToElfOuterLine = Rect(5056.0, 8128.0, 5184.0, 8256.0)
-    gg_rct_OrcToHumanInnerLine = Rect(8128.0, 13248.0, 8256.0, 13376.0)
     gg_rct_OrcToHumanOuterLine = Rect(4032.0, 13248.0, 4160.0, 13376.0)
-    gg_rct_OrcToUndeadInnerLine = Rect(10176.0, 11200.0, 10304.0, 11328.0)
     gg_rct_OrcToUndeadOuterLine = Rect(10176.0, 7104.0, 10304.0, 7232.0)
     gg_rct_TestArea = Rect(15296.0, 16320.0, 15424.0, 16448.0)
-    gg_rct_TestArea2 = Rect(-5376.0, 12928.0, -5248.0, 13056.0)
+    gg_rct_TestArea2 = Rect(-10304.0, 13632.0, -10176.0, 13760.0)
     gg_rct_TestArea3 = Rect(16320.0, 16320.0, 16448.0, 16448.0)
     gg_rct_UndeadBarracksToCenter = Rect(6080.0, -3136.0, 6208.0, -3008.0)
     gg_rct_UndeadBarracksToCenterSpawn = Rect(5760.0, -3072.0, 6016.0, -2560.0)
@@ -68098,11 +68069,8 @@ function CreateRegions()
     gg_rct_UndeadCreepToElfSpawnBuilding = Rect(3968.0, -4352.0, 4224.0, -4096.0)
     gg_rct_UndeadCreepToOrcSpawn = Rect(7424.0, -1664.0, 8192.0, -896.0)
     gg_rct_UndeadCreepToOrcSpawnBuilding = Rect(7552.0, -896.0, 7808.0, -640.0)
-    gg_rct_UndeadToElfInnerLine = Rect(8128.0, -7232.0, 8256.0, -7104.0)
     gg_rct_UndeadToElfOuterLine = Rect(4032.0, -7232.0, 4160.0, -7104.0)
-    gg_rct_UndeadToHumanInnerLine = Rect(8640.0, -5696.0, 8768.0, -5568.0)
-    gg_rct_UndeadToHumanOuterLine = Rect(5056.0, -2112.0, 5184.0, -1984.0)
-    gg_rct_UndeadToOrcInnerLine = Rect(10176.0, -5184.0, 10304.0, -5056.0)
+    gg_rct_UndeadToHumanOuterLine = Rect(5024.0, -2144.0, 5152.0, -2016.0)
     gg_rct_UndeadToOrcOuterLine = Rect(10176.0, -1088.0, 10304.0, -960.0)
 end
 

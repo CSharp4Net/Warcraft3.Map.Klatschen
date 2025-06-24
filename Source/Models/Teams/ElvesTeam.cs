@@ -59,13 +59,13 @@ namespace Source.Models.Teams
           switch (techLevel)
           {
             case 1:
-              command.UnitId = Constants.UNIT_DRUID_OF_THE_CLAW_ELF;
-              command.UnitIdToUpgrade = Constants.UNIT_SENTRY_ELF;
+              command.UnitId = Constants.UNIT_DRUID_OF_THE_CLAW_ELF_MELEE_2;
+              command.UnitIdToUpgrade = Constants.UNIT_SENTRY_ELF_MELEE_1;
               return Enums.ResearchType.UpgradeUnit;
 
             default:
-              command.UnitId = Constants.UNIT_MOUNTAIN_GIANT_ELF;
-              command.UnitIdToUpgrade = Constants.UNIT_DRUID_OF_THE_CLAW_ELF;
+              command.UnitId = Constants.UNIT_MOUNTAIN_GIANT_ELF_MELEE_3;
+              command.UnitIdToUpgrade = Constants.UNIT_DRUID_OF_THE_CLAW_ELF_MELEE_2;
               return Enums.ResearchType.UpgradeUnit;
           }
 
@@ -79,13 +79,13 @@ namespace Source.Models.Teams
           switch (techLevel)
           {
             case 1:
-              command.UnitId = Constants.UNIT_ARCHER_BESERK_ELF;
-              command.UnitIdToUpgrade = Constants.UNIT_ARCHER_ELF;
+              command.UnitId = Constants.UNIT_ARCHER_BESERK_ELF_DISTANCE_2;
+              command.UnitIdToUpgrade = Constants.UNIT_ARCHER_ELF_DISTANCE_1;
               return Enums.ResearchType.UpgradeUnit;
 
             default:
-              command.UnitId = Constants.UNIT_ARCHER_ELITE_ELF;
-              command.UnitIdToUpgrade = Constants.UNIT_ARCHER_BESERK_ELF;
+              command.UnitId = Constants.UNIT_ARCHER_ELITE_ELF_DISTANCE_3;
+              command.UnitIdToUpgrade = Constants.UNIT_ARCHER_BESERK_ELF_DISTANCE_2;
               return Enums.ResearchType.UpgradeUnit;
           }
 
@@ -99,13 +99,13 @@ namespace Source.Models.Teams
           switch (techLevel)
           {
             case 1:
-              command.UnitId = Constants.UNIT_HIPPOGRYPH_RIDER_ELF;
-              command.UnitIdToUpgrade = Constants.UNIT_FAERIE_DRAGON_ELF;
+              command.UnitId = Constants.UNIT_HIPPOGRYPH_RIDER_ELF_FLY_2;
+              command.UnitIdToUpgrade = Constants.UNIT_FAERIE_DRAGON_ELF_FLY_1;
               return Enums.ResearchType.UpgradeUnit;
 
             default:
-              command.UnitId = Constants.UNIT_CHIMAERA_ELF;
-              command.UnitIdToUpgrade = Constants.UNIT_HIPPOGRYPH_RIDER_ELF;
+              command.UnitId = Constants.UNIT_CHIMAERA_ELF_FLY_3;
+              command.UnitIdToUpgrade = Constants.UNIT_HIPPOGRYPH_RIDER_ELF_FLY_2;
               return Enums.ResearchType.UpgradeUnit;
           }
 
@@ -119,13 +119,13 @@ namespace Source.Models.Teams
           switch (techLevel)
           {
             case 1:
-              command.UnitId = Constants.UNIT_WARDEN_ELF;
-              command.UnitIdToUpgrade = Constants.UNIT_DRUID_OF_THE_TALON_ELF;
+              command.UnitId = Constants.UNIT_WARDEN_ELF_MAGE_2;
+              command.UnitIdToUpgrade = Constants.UNIT_DRUID_OF_THE_TALON_ELF_MAGE_1;
               return Enums.ResearchType.UpgradeUnit;
 
             default:
-              command.UnitId = Constants.UNIT_SPIRIT_OF_VENGEANCE_ELF;
-              command.UnitIdToUpgrade = Constants.UNIT_WARDEN_ELF;
+              command.UnitId = Constants.UNIT_SPIRIT_OF_VENGEANCE_ELF_MAGE_3;
+              command.UnitIdToUpgrade = Constants.UNIT_WARDEN_ELF_MAGE_2;
               return Enums.ResearchType.UpgradeUnit;
           }
 
@@ -139,12 +139,12 @@ namespace Source.Models.Teams
           switch (techLevel)
           {
             case 1:
-              command.UnitId = Constants.UNIT_PRISON_WAGON_ELF;
+              command.UnitId = Constants.UNIT_PRISON_WAGON_ELF_SIEGE_1;
               return Enums.ResearchType.AddUnit;
 
             default:
-              command.UnitId = Constants.UNIT_GLAIVE_THROWER_ELF;
-              command.UnitIdToUpgrade = Constants.UNIT_PRISON_WAGON_ELF;
+              command.UnitId = Constants.UNIT_GLAIVE_THROWER_ELF_SIEGE_2;
+              command.UnitIdToUpgrade = Constants.UNIT_PRISON_WAGON_ELF_SIEGE_1;
               return Enums.ResearchType.UpgradeUnit;
           }
 
@@ -159,42 +159,42 @@ namespace Source.Models.Teams
     {
       switch (baseUnitTypeId)
       {
-        case Constants.UNIT_DRUID_OF_THE_CLAW_ELF:
-          command = new UnitUpgradeBySoldCommand(Enums.SpawnInterval.Short, Constants.UNIT_SENTRY_ELF, baseUnitTypeId, Constants.UNIT_MOUNTAIN_GIANT_ELF);
+        case Constants.UNIT_DRUID_OF_THE_CLAW_ELF_MELEE_2:
+          command = new UnitUpgradeBySoldCommand(Enums.SpawnInterval.Short, Constants.UNIT_SENTRY_ELF_MELEE_1, baseUnitTypeId, Constants.UNIT_MOUNTAIN_GIANT_ELF_MELEE_3);
           return Enums.UnitUpgradeType.UpgradeUnitInSpawn;
-        case Constants.UNIT_MOUNTAIN_GIANT_ELF:
-          command = new UnitUpgradeBySoldCommand(Enums.SpawnInterval.Short, Constants.UNIT_DRUID_OF_THE_CLAW_ELF, baseUnitTypeId, 0);
-          return Enums.UnitUpgradeType.UpgradeUnitInSpawn;
-
-        case Constants.UNIT_ARCHER_BESERK_ELF:
-          command = new UnitUpgradeBySoldCommand(Enums.SpawnInterval.Short, Constants.UNIT_ARCHER_ELF, baseUnitTypeId, Constants.UNIT_ARCHER_ELITE_ELF);
-          return Enums.UnitUpgradeType.UpgradeUnitInSpawn;
-        case Constants.UNIT_ARCHER_ELITE_ELF:
-          command = new UnitUpgradeBySoldCommand(Enums.SpawnInterval.Short, Constants.UNIT_ARCHER_BESERK_ELF, baseUnitTypeId, 0);
+        case Constants.UNIT_MOUNTAIN_GIANT_ELF_MELEE_3:
+          command = new UnitUpgradeBySoldCommand(Enums.SpawnInterval.Short, Constants.UNIT_DRUID_OF_THE_CLAW_ELF_MELEE_2, baseUnitTypeId, 0);
           return Enums.UnitUpgradeType.UpgradeUnitInSpawn;
 
-        case Constants.UNIT_WARDEN_ELF:
-          command = new UnitUpgradeBySoldCommand(Enums.SpawnInterval.Middle, Constants.UNIT_DRUID_OF_THE_TALON_ELF, baseUnitTypeId, Constants.UNIT_SPIRIT_OF_VENGEANCE_ELF);
+        case Constants.UNIT_ARCHER_BESERK_ELF_DISTANCE_2:
+          command = new UnitUpgradeBySoldCommand(Enums.SpawnInterval.Short, Constants.UNIT_ARCHER_ELF_DISTANCE_1, baseUnitTypeId, Constants.UNIT_ARCHER_ELITE_ELF_DISTANCE_3);
           return Enums.UnitUpgradeType.UpgradeUnitInSpawn;
-        case Constants.UNIT_SPIRIT_OF_VENGEANCE_ELF:
-          command = new UnitUpgradeBySoldCommand(Enums.SpawnInterval.Middle, Constants.UNIT_WARDEN_ELF, baseUnitTypeId, 0);
+        case Constants.UNIT_ARCHER_ELITE_ELF_DISTANCE_3:
+          command = new UnitUpgradeBySoldCommand(Enums.SpawnInterval.Short, Constants.UNIT_ARCHER_BESERK_ELF_DISTANCE_2, baseUnitTypeId, 0);
           return Enums.UnitUpgradeType.UpgradeUnitInSpawn;
 
-        case Constants.UNIT_FAERIE_DRAGON_ELF:
-          command = new UnitUpgradeBySoldCommand(Enums.SpawnInterval.Middle, baseUnitTypeId, Constants.UNIT_HIPPOGRYPH_RIDER_ELF);
+        case Constants.UNIT_WARDEN_ELF_MAGE_2:
+          command = new UnitUpgradeBySoldCommand(Enums.SpawnInterval.Middle, Constants.UNIT_DRUID_OF_THE_TALON_ELF_MAGE_1, baseUnitTypeId, Constants.UNIT_SPIRIT_OF_VENGEANCE_ELF_MAGE_3);
+          return Enums.UnitUpgradeType.UpgradeUnitInSpawn;
+        case Constants.UNIT_SPIRIT_OF_VENGEANCE_ELF_MAGE_3:
+          command = new UnitUpgradeBySoldCommand(Enums.SpawnInterval.Middle, Constants.UNIT_WARDEN_ELF_MAGE_2, baseUnitTypeId, 0);
+          return Enums.UnitUpgradeType.UpgradeUnitInSpawn;
+
+        case Constants.UNIT_FAERIE_DRAGON_ELF_FLY_1:
+          command = new UnitUpgradeBySoldCommand(Enums.SpawnInterval.Middle, baseUnitTypeId, Constants.UNIT_HIPPOGRYPH_RIDER_ELF_FLY_2);
           return Enums.UnitUpgradeType.AddNewUnitToSpawn;
-        case Constants.UNIT_HIPPOGRYPH_RIDER_ELF:
-          command = new UnitUpgradeBySoldCommand(Enums.SpawnInterval.Middle, Constants.UNIT_FAERIE_DRAGON_ELF, baseUnitTypeId, Constants.UNIT_CHIMAERA_ELF);
+        case Constants.UNIT_HIPPOGRYPH_RIDER_ELF_FLY_2:
+          command = new UnitUpgradeBySoldCommand(Enums.SpawnInterval.Middle, Constants.UNIT_FAERIE_DRAGON_ELF_FLY_1, baseUnitTypeId, Constants.UNIT_CHIMAERA_ELF_FLY_3);
           return Enums.UnitUpgradeType.UpgradeUnitInSpawn;
-        case Constants.UNIT_CHIMAERA_ELF:
-          command = new UnitUpgradeBySoldCommand(Enums.SpawnInterval.Middle, Constants.UNIT_HIPPOGRYPH_RIDER_ELF, baseUnitTypeId, 0);
+        case Constants.UNIT_CHIMAERA_ELF_FLY_3:
+          command = new UnitUpgradeBySoldCommand(Enums.SpawnInterval.Middle, Constants.UNIT_HIPPOGRYPH_RIDER_ELF_FLY_2, baseUnitTypeId, 0);
           return Enums.UnitUpgradeType.UpgradeUnitInSpawn;
 
-        case Constants.UNIT_PRISON_WAGON_ELF:
-          command = new UnitUpgradeBySoldCommand(Enums.SpawnInterval.Long, baseUnitTypeId, Constants.UNIT_GLAIVE_THROWER_ELF);
+        case Constants.UNIT_PRISON_WAGON_ELF_SIEGE_1:
+          command = new UnitUpgradeBySoldCommand(Enums.SpawnInterval.Long, baseUnitTypeId, Constants.UNIT_GLAIVE_THROWER_ELF_SIEGE_2);
           return Enums.UnitUpgradeType.AddNewUnitToSpawn;
-        case Constants.UNIT_GLAIVE_THROWER_ELF:
-          command = new UnitUpgradeBySoldCommand(Enums.SpawnInterval.Long, Constants.UNIT_PRISON_WAGON_ELF, baseUnitTypeId, 0);
+        case Constants.UNIT_GLAIVE_THROWER_ELF_SIEGE_2:
+          command = new UnitUpgradeBySoldCommand(Enums.SpawnInterval.Long, Constants.UNIT_PRISON_WAGON_ELF_SIEGE_1, baseUnitTypeId, 0);
           return Enums.UnitUpgradeType.UpgradeUnitInSpawn;
 
         default: // Einheiten-Typ ist nicht bekannt
@@ -204,18 +204,18 @@ namespace Source.Models.Teams
 
     private void AddInitialSpawnTriggers(UnitSpawnBuilding building)
     {
-      building.AddSpawnTrigger(Enums.SpawnInterval.Short, Constants.UNIT_SENTRY_ELF, Constants.UNIT_SENTRY_ELF, Constants.UNIT_ARCHER_ELF).Run();
-      building.AddSpawnTrigger(Enums.SpawnInterval.Middle, Constants.UNIT_DRUID_OF_THE_TALON_ELF).Run(1f);
+      building.AddSpawnTrigger(Enums.SpawnInterval.Short, Constants.UNIT_SENTRY_ELF_MELEE_1, Constants.UNIT_SENTRY_ELF_MELEE_1, Constants.UNIT_ARCHER_ELF_DISTANCE_1).Run();
+      building.AddSpawnTrigger(Enums.SpawnInterval.Middle, Constants.UNIT_DRUID_OF_THE_TALON_ELF_MAGE_1).Run(1f);
       building.AddSpawnTrigger(Enums.SpawnInterval.Long).Run(2f);
     }
 
     private void AddInitialUnitUpgradesToStock(UnitSpawnBuilding building)
     {
-      building.Wc3Unit.AddUnitToStock(Constants.UNIT_DRUID_OF_THE_CLAW_ELF, 1, 1);
-      building.Wc3Unit.AddUnitToStock(Constants.UNIT_ARCHER_BESERK_ELF, 1, 1);
-      building.Wc3Unit.AddUnitToStock(Constants.UNIT_WARDEN_ELF, 1, 1);
-      building.Wc3Unit.AddUnitToStock(Constants.UNIT_FAERIE_DRAGON_ELF, 1, 1);
-      building.Wc3Unit.AddUnitToStock(Constants.UNIT_PRISON_WAGON_ELF, 1, 1);
+      building.Wc3Unit.AddUnitToStock(Constants.UNIT_DRUID_OF_THE_CLAW_ELF_MELEE_2, 1, 1);
+      building.Wc3Unit.AddUnitToStock(Constants.UNIT_ARCHER_BESERK_ELF_DISTANCE_2, 1, 1);
+      building.Wc3Unit.AddUnitToStock(Constants.UNIT_WARDEN_ELF_MAGE_2, 1, 1);
+      building.Wc3Unit.AddUnitToStock(Constants.UNIT_FAERIE_DRAGON_ELF_FLY_1, 1, 1);
+      building.Wc3Unit.AddUnitToStock(Constants.UNIT_PRISON_WAGON_ELF_SIEGE_1, 1, 1);
     }
   }
 }

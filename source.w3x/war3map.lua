@@ -24,11 +24,8 @@ gg_rct_ElfCreepToHumanSpawn = nil
 gg_rct_ElfCreepToHumanSpawnBuilding = nil
 gg_rct_ElfCreepToUndeadSpawn = nil
 gg_rct_ElfCreepToUndeadSpawnBuilding = nil
-gg_rct_ElfToHumanInnerLine = nil
 gg_rct_ElfToHumanOuterLine = nil
-gg_rct_ElfToOrcInnerLine = nil
 gg_rct_ElfToOrcOuterLine = nil
-gg_rct_ElfToUndeadInnerLine = nil
 gg_rct_ElfToUndeadOuterLine = nil
 gg_rct_HeroAlchemist = nil
 gg_rct_HeroArchmage = nil
@@ -38,6 +35,7 @@ gg_rct_HeroBrewmaster = nil
 gg_rct_HeroCryptLord = nil
 gg_rct_HeroDarkRanger = nil
 gg_rct_HeroDeathKnight = nil
+gg_rct_HeroFarSeer = nil
 gg_rct_HeroFirelord = nil
 gg_rct_HeroKeeperOfTheGrove = nil
 gg_rct_HeroLich = nil
@@ -67,11 +65,7 @@ gg_rct_HumanCreepToElfSpawn = nil
 gg_rct_HumanCreepToElfSpawnBuilding = nil
 gg_rct_HumanCreepToOrcSpawn = nil
 gg_rct_HumanCreepToOrcSpawnBuilding = nil
-gg_rct_HumanToElfInnerLine = nil
 gg_rct_HumanToElfOuterLine = nil
-gg_rct_HumanToOrcInnerLine = nil
-gg_rct_HumanToOrcOuterLine = nil
-gg_rct_HumanToUndeadInnerLine = nil
 gg_rct_HumanToUndeadOuterLine = nil
 gg_rct_LegionSpawnBottom = nil
 gg_rct_LegionSpawnBottom1 = nil
@@ -101,11 +95,8 @@ gg_rct_OrcCreepToHumanSpawn = nil
 gg_rct_OrcCreepToHumanSpawnBuilding = nil
 gg_rct_OrcCreepToUndeadSpawn = nil
 gg_rct_OrcCreepToUndeadSpawnBuilding = nil
-gg_rct_OrcToElfInnerLine = nil
 gg_rct_OrcToElfOuterLine = nil
-gg_rct_OrcToHumanInnerLine = nil
 gg_rct_OrcToHumanOuterLine = nil
-gg_rct_OrcToUndeadInnerLine = nil
 gg_rct_OrcToUndeadOuterLine = nil
 gg_rct_TestArea = nil
 gg_rct_TestArea2 = nil
@@ -126,15 +117,11 @@ gg_rct_UndeadCreepToElfSpawn = nil
 gg_rct_UndeadCreepToElfSpawnBuilding = nil
 gg_rct_UndeadCreepToOrcSpawn = nil
 gg_rct_UndeadCreepToOrcSpawnBuilding = nil
-gg_rct_UndeadToElfInnerLine = nil
 gg_rct_UndeadToElfOuterLine = nil
-gg_rct_UndeadToHumanInnerLine = nil
 gg_rct_UndeadToHumanOuterLine = nil
-gg_rct_UndeadToOrcInnerLine = nil
 gg_rct_UndeadToOrcOuterLine = nil
 gg_snd_blowitup_cutted = ""
 gg_trg_Untitled_Trigger_001 = nil
-gg_rct_HeroFarSeer = nil
 function InitGlobals()
 end
 
@@ -149,20 +136,20 @@ local unitID
 local t
 local life
 
-u = BlzCreateUnitWithSkin(p, FourCC("h005"), -8192.0, 13696.0, 270.000, FourCC("h005"))
-u = BlzCreateUnitWithSkin(p, FourCC("h005"), -8192.0, 12928.0, 270.000, FourCC("h005"))
-u = BlzCreateUnitWithSkin(p, FourCC("h005"), -6912.0, 13312.0, 270.000, FourCC("h005"))
-u = BlzCreateUnitWithSkin(p, FourCC("h004"), -4096.0, 13696.0, 270.000, FourCC("h004"))
-u = BlzCreateUnitWithSkin(p, FourCC("h004"), -4096.0, 12928.0, 270.000, FourCC("h004"))
-u = BlzCreateUnitWithSkin(p, FourCC("h004"), -2816.0, 13312.0, 270.000, FourCC("h004"))
+u = BlzCreateUnitWithSkin(p, FourCC("h005"), -7168.0, 13696.0, 270.000, FourCC("h005"))
+u = BlzCreateUnitWithSkin(p, FourCC("h005"), -7168.0, 12928.0, 270.000, FourCC("h005"))
+u = BlzCreateUnitWithSkin(p, FourCC("h005"), -6144.0, 13312.0, 270.000, FourCC("h005"))
+u = BlzCreateUnitWithSkin(p, FourCC("h004"), -5632.0, 13696.0, 270.000, FourCC("h004"))
+u = BlzCreateUnitWithSkin(p, FourCC("h004"), -5632.0, 12928.0, 270.000, FourCC("h004"))
+u = BlzCreateUnitWithSkin(p, FourCC("h004"), -4608.0, 13312.0, 270.000, FourCC("h004"))
 u = BlzCreateUnitWithSkin(p, FourCC("h005"), -9856.0, 11264.0, 270.000, FourCC("h005"))
 u = BlzCreateUnitWithSkin(p, FourCC("h005"), -10624.0, 11264.0, 270.000, FourCC("h005"))
 u = BlzCreateUnitWithSkin(p, FourCC("h005"), -10240.0, 9984.0, 270.000, FourCC("h005"))
 u = BlzCreateUnitWithSkin(p, FourCC("n005"), -12032.0, 15104.0, 270.000, FourCC("n005"))
 u = BlzCreateUnitWithSkin(p, FourCC("h009"), -11008.0, 14592.0, 270.000, FourCC("h009"))
-u = BlzCreateUnitWithSkin(p, FourCC("h02R"), -9216.0, 13312.0, 270.000, FourCC("h02R"))
-u = BlzCreateUnitWithSkin(p, FourCC("h005"), -8960.0, 11520.0, 270.000, FourCC("h005"))
-u = BlzCreateUnitWithSkin(p, FourCC("h005"), -8448.0, 12032.0, 270.000, FourCC("h005"))
+u = BlzCreateUnitWithSkin(p, FourCC("h02R"), -9856.0, 13568.0, 270.000, FourCC("h02R"))
+u = BlzCreateUnitWithSkin(p, FourCC("h005"), -8192.0, 10752.0, 270.000, FourCC("h005"))
+u = BlzCreateUnitWithSkin(p, FourCC("h005"), -7680.0, 11264.0, 270.000, FourCC("h005"))
 u = BlzCreateUnitWithSkin(p, FourCC("h005"), -7680.0, 10752.0, 270.000, FourCC("h005"))
 u = BlzCreateUnitWithSkin(p, FourCC("h004"), -9856.0, 7168.0, 270.000, FourCC("h004"))
 u = BlzCreateUnitWithSkin(p, FourCC("h004"), -10624.0, 7168.0, 270.000, FourCC("h004"))
@@ -171,7 +158,6 @@ u = BlzCreateUnitWithSkin(p, FourCC("h004"), -5376.0, 7936.0, 270.000, FourCC("h
 u = BlzCreateUnitWithSkin(p, FourCC("h004"), -4864.0, 8448.0, 270.000, FourCC("h004"))
 u = BlzCreateUnitWithSkin(p, FourCC("h004"), -4096.0, 7168.0, 270.000, FourCC("h004"))
 u = BlzCreateUnitWithSkin(p, FourCC("h02R"), -11008.0, 14080.0, 270.000, FourCC("h02R"))
-u = BlzCreateUnitWithSkin(p, FourCC("h02R"), -9472.0, 12544.0, 270.000, FourCC("h02R"))
 u = BlzCreateUnitWithSkin(p, FourCC("h02R"), -12160.0, 14720.0, 270.000, FourCC("h02R"))
 u = BlzCreateUnitWithSkin(p, FourCC("h02R"), -11648.0, 15232.0, 270.000, FourCC("h02R"))
 u = BlzCreateUnitWithSkin(p, FourCC("n01I"), 4832.0, 10656.0, 270.000, FourCC("n01I"))
@@ -180,7 +166,9 @@ u = BlzCreateUnitWithSkin(p, FourCC("h00T"), -11520.0, 14080.0, 270.000, FourCC(
 u = BlzCreateUnitWithSkin(p, FourCC("n02A"), 8224.0, 6688.0, 270.000, FourCC("n02A"))
 u = BlzCreateUnitWithSkin(p, FourCC("n02A"), 7328.0, 7840.0, 270.000, FourCC("n02A"))
 u = BlzCreateUnitWithSkin(p, FourCC("n02A"), 6944.0, 7072.0, 270.000, FourCC("n02A"))
-u = BlzCreateUnitWithSkin(p, FourCC("h02R"), -10240.0, 12288.0, 270.000, FourCC("h02R"))
+u = BlzCreateUnitWithSkin(p, FourCC("h02R"), -10048.0, 12928.0, 270.000, FourCC("h02R"))
+u = BlzCreateUnitWithSkin(p, FourCC("h02R"), -10432.0, 12928.0, 270.000, FourCC("h02R"))
+u = BlzCreateUnitWithSkin(p, FourCC("h02R"), -9856.0, 13120.0, 270.000, FourCC("h02R"))
 end
 
 function CreateUnitsForPlayer0()
@@ -755,17 +743,11 @@ u = BlzCreateUnitWithSkin(p, FourCC("nCOP"), -3584.0, 17088.0, 270.000, FourCC("
 u = BlzCreateUnitWithSkin(p, FourCC("N02Q"), 14923.1, 17084.7, 270.000, FourCC("N02Q"))
 u = BlzCreateUnitWithSkin(p, FourCC("N02P"), 15682.4, 17082.9, 270.000, FourCC("N02P"))
 u = BlzCreateUnitWithSkin(p, FourCC("e008"), 14145.3, 17857.6, 270.000, FourCC("e008"))
-SetUnitState(u, UNIT_STATE_MANA, 0)
 u = BlzCreateUnitWithSkin(p, FourCC("e009"), 14269.7, 17849.1, 270.000, FourCC("e009"))
-SetUnitState(u, UNIT_STATE_MANA, 0)
 u = BlzCreateUnitWithSkin(p, FourCC("e00A"), 14397.8, 17853.3, 270.000, FourCC("e00A"))
-SetUnitState(u, UNIT_STATE_MANA, 0)
 u = BlzCreateUnitWithSkin(p, FourCC("e005"), 14530.8, 17846.9, 270.000, FourCC("e005"))
-SetUnitState(u, UNIT_STATE_MANA, 0)
 u = BlzCreateUnitWithSkin(p, FourCC("e006"), 14662.8, 17851.2, 270.000, FourCC("e006"))
-SetUnitState(u, UNIT_STATE_MANA, 0)
 u = BlzCreateUnitWithSkin(p, FourCC("e007"), 14785.8, 17853.3, 270.000, FourCC("e007"))
-SetUnitState(u, UNIT_STATE_MANA, 0)
 u = BlzCreateUnitWithSkin(p, FourCC("H02Y"), -2752.3, 17099.9, 180.000, FourCC("H02Y"))
 u = BlzCreateUnitWithSkin(p, FourCC("nCOP"), -2944.0, 17088.0, 270.000, FourCC("nCOP"))
 end
@@ -833,11 +815,8 @@ gg_rct_ElfCreepToHumanSpawn = Rect(-8064.0, -1536.0, -7296.0, -768.0)
 gg_rct_ElfCreepToHumanSpawnBuilding = Rect(-7808.0, -768.0, -7552.0, -512.0)
 gg_rct_ElfCreepToUndeadSpawn = Rect(-4608.0, -5120.0, -3840.0, -4352.0)
 gg_rct_ElfCreepToUndeadSpawnBuilding = Rect(-4224.0, -4352.0, -3968.0, -4096.0)
-gg_rct_ElfToHumanInnerLine = Rect(-10304.0, -5184.0, -10176.0, -5056.0)
 gg_rct_ElfToHumanOuterLine = Rect(-10304.0, -1088.0, -10176.0, -960.0)
-gg_rct_ElfToOrcInnerLine = Rect(-8768.0, -5696.0, -8640.0, -5568.0)
 gg_rct_ElfToOrcOuterLine = Rect(-5184.0, -2112.0, -5056.0, -1984.0)
-gg_rct_ElfToUndeadInnerLine = Rect(-8256.0, -7232.0, -8128.0, -7104.0)
 gg_rct_ElfToUndeadOuterLine = Rect(-4160.0, -7232.0, -4032.0, -7104.0)
 gg_rct_HeroAlchemist = Rect(-4864.0, 18496.0, -4736.0, 18624.0)
 gg_rct_HeroArchmage = Rect(-1792.0, 18496.0, -1664.0, 18624.0)
@@ -861,12 +840,12 @@ gg_rct_HeroShadowHunter = Rect(-1984.0, 17792.0, -1856.0, 17920.0)
 gg_rct_HeroTaurenChieftain = Rect(-3648.0, 17792.0, -3520.0, 17920.0)
 gg_rct_HeroTinker = Rect(-4096.0, 18496.0, -3968.0, 18624.0)
 gg_rct_HeroWarden = Rect(-3648.0, 17408.0, -3520.0, 17536.0)
-gg_rct_HumanBarracksToCenter = Rect(-6208.0, 9152.0, -6080.0, 9280.0)
-gg_rct_HumanBarracksToCenterSpawn = Rect(-6016.0, 8704.0, -5760.0, 9216.0)
-gg_rct_HumanBarracksToElf = Rect(-10304.0, 8000.0, -10176.0, 8128.0)
-gg_rct_HumanBarracksToElfSpawn = Rect(-10496.0, 7680.0, -9984.0, 7936.0)
-gg_rct_HumanBarracksToOrc = Rect(-5056.0, 13248.0, -4928.0, 13376.0)
-gg_rct_HumanBarracksToOrcSpawn = Rect(-4864.0, 13056.0, -4608.0, 13568.0)
+gg_rct_HumanBarracksToCenter = Rect(-9280.0, 12224.0, -9152.0, 12352.0)
+gg_rct_HumanBarracksToCenterSpawn = Rect(-9088.0, 11904.0, -8832.0, 12160.0)
+gg_rct_HumanBarracksToElf = Rect(-10304.0, 11968.0, -10176.0, 12096.0)
+gg_rct_HumanBarracksToElfSpawn = Rect(-10496.0, 11648.0, -9984.0, 11904.0)
+gg_rct_HumanBarracksToOrc = Rect(-9024.0, 13248.0, -8896.0, 13376.0)
+gg_rct_HumanBarracksToOrcSpawn = Rect(-8832.0, 13056.0, -8576.0, 13568.0)
 gg_rct_HumanBase = Rect(-10304.0, 13248.0, -10176.0, 13376.0)
 gg_rct_HumanBaseHeroRespawn = Rect(-11904.0, 14976.0, -11776.0, 15104.0)
 gg_rct_HumanBaseHeroSpawn = Rect(-12032.0, 14848.0, -11904.0, 14976.0)
@@ -877,11 +856,7 @@ gg_rct_HumanCreepToElfSpawn = Rect(-8064.0, 6912.0, -7296.0, 7680.0)
 gg_rct_HumanCreepToElfSpawnBuilding = Rect(-7808.0, 6656.0, -7552.0, 6912.0)
 gg_rct_HumanCreepToOrcSpawn = Rect(-4608.0, 10368.0, -3840.0, 11136.0)
 gg_rct_HumanCreepToOrcSpawnBuilding = Rect(-4224.0, 10112.0, -3968.0, 10368.0)
-gg_rct_HumanToElfInnerLine = Rect(-10304.0, 11200.0, -10176.0, 11328.0)
 gg_rct_HumanToElfOuterLine = Rect(-10304.0, 7104.0, -10176.0, 7232.0)
-gg_rct_HumanToOrcInnerLine = Rect(-8256.0, 13248.0, -8128.0, 13376.0)
-gg_rct_HumanToOrcOuterLine = Rect(-4160.0, 13248.0, -4032.0, 13376.0)
-gg_rct_HumanToUndeadInnerLine = Rect(-8768.0, 11712.0, -8640.0, 11840.0)
 gg_rct_HumanToUndeadOuterLine = Rect(-5184.0, 8128.0, -5056.0, 8256.0)
 gg_rct_LegionSpawnBottom = Rect(-384.0, -3456.0, 384.0, -2688.0)
 gg_rct_LegionSpawnBottom1 = Rect(-448.0, -3136.0, -320.0, -3008.0)
@@ -911,14 +886,11 @@ gg_rct_OrcCreepToHumanSpawn = Rect(3712.0, 10496.0, 4480.0, 11264.0)
 gg_rct_OrcCreepToHumanSpawnBuilding = Rect(3840.0, 10240.0, 4096.0, 10496.0)
 gg_rct_OrcCreepToUndeadSpawn = Rect(7424.0, 6912.0, 8192.0, 7680.0)
 gg_rct_OrcCreepToUndeadSpawnBuilding = Rect(7552.0, 6656.0, 7808.0, 6912.0)
-gg_rct_OrcToElfInnerLine = Rect(8640.0, 11712.0, 8768.0, 11840.0)
 gg_rct_OrcToElfOuterLine = Rect(5056.0, 8128.0, 5184.0, 8256.0)
-gg_rct_OrcToHumanInnerLine = Rect(8128.0, 13248.0, 8256.0, 13376.0)
 gg_rct_OrcToHumanOuterLine = Rect(4032.0, 13248.0, 4160.0, 13376.0)
-gg_rct_OrcToUndeadInnerLine = Rect(10176.0, 11200.0, 10304.0, 11328.0)
 gg_rct_OrcToUndeadOuterLine = Rect(10176.0, 7104.0, 10304.0, 7232.0)
 gg_rct_TestArea = Rect(15296.0, 16320.0, 15424.0, 16448.0)
-gg_rct_TestArea2 = Rect(-5376.0, 12928.0, -5248.0, 13056.0)
+gg_rct_TestArea2 = Rect(-10304.0, 13632.0, -10176.0, 13760.0)
 gg_rct_TestArea3 = Rect(16320.0, 16320.0, 16448.0, 16448.0)
 gg_rct_UndeadBarracksToCenter = Rect(6080.0, -3136.0, 6208.0, -3008.0)
 gg_rct_UndeadBarracksToCenterSpawn = Rect(5760.0, -3072.0, 6016.0, -2560.0)
@@ -936,11 +908,8 @@ gg_rct_UndeadCreepToElfSpawn = Rect(3840.0, -5120.0, 4608.0, -4352.0)
 gg_rct_UndeadCreepToElfSpawnBuilding = Rect(3968.0, -4352.0, 4224.0, -4096.0)
 gg_rct_UndeadCreepToOrcSpawn = Rect(7424.0, -1664.0, 8192.0, -896.0)
 gg_rct_UndeadCreepToOrcSpawnBuilding = Rect(7552.0, -896.0, 7808.0, -640.0)
-gg_rct_UndeadToElfInnerLine = Rect(8128.0, -7232.0, 8256.0, -7104.0)
 gg_rct_UndeadToElfOuterLine = Rect(4032.0, -7232.0, 4160.0, -7104.0)
-gg_rct_UndeadToHumanInnerLine = Rect(8640.0, -5696.0, 8768.0, -5568.0)
 gg_rct_UndeadToHumanOuterLine = Rect(5024.0, -2144.0, 5152.0, -2016.0)
-gg_rct_UndeadToOrcInnerLine = Rect(10176.0, -5184.0, 10304.0, -5056.0)
 gg_rct_UndeadToOrcOuterLine = Rect(10176.0, -1088.0, 10304.0, -960.0)
 end
 

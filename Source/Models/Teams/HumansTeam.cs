@@ -59,13 +59,13 @@ namespace Source.Models.Teams
           switch (techLevel)
           {
             case 1:
-              command.UnitId = Constants.UNIT_CAPTAIN_HUMAN;
-              command.UnitIdToUpgrade = Constants.UNIT_SOLDIER_HUMAN;
+              command.UnitId = Constants.UNIT_CAPTAIN_HUMAN_MELEE_2;
+              command.UnitIdToUpgrade = Constants.UNIT_SOLDIER_HUMAN_MELEE_1;
               return Enums.ResearchType.UpgradeUnit;
 
             default:
-              command.UnitId = Constants.UNIT_KNIGHT_HUMAN;
-              command.UnitIdToUpgrade = Constants.UNIT_CAPTAIN_HUMAN;
+              command.UnitId = Constants.UNIT_KNIGHT_HUMAN_MELEE_3;
+              command.UnitIdToUpgrade = Constants.UNIT_CAPTAIN_HUMAN_MELEE_2;
               return Enums.ResearchType.UpgradeUnit;
           }
 
@@ -79,13 +79,13 @@ namespace Source.Models.Teams
           switch (techLevel)
           {
             case 1:
-              command.UnitId = Constants.UNIT_RIFLEMAN_BESERK_HUMAN;
-              command.UnitIdToUpgrade = Constants.UNIT_RIFLEMAN_HUMAN;
+              command.UnitId = Constants.UNIT_RIFLEMAN_BESERK_HUMAN_DISTANCE_2;
+              command.UnitIdToUpgrade = Constants.UNIT_RIFLEMAN_HUMAN_DISTANCE_1;
               return Enums.ResearchType.UpgradeUnit;
 
             default:
-              command.UnitId = Constants.UNIT_RIFLEMAN_ELITE_HUMAN;
-              command.UnitIdToUpgrade = Constants.UNIT_RIFLEMAN_BESERK_HUMAN;
+              command.UnitId = Constants.UNIT_RIFLEMAN_ELITE_HUMAN_DISTANCE_3;
+              command.UnitIdToUpgrade = Constants.UNIT_RIFLEMAN_BESERK_HUMAN_DISTANCE_2;
               return Enums.ResearchType.UpgradeUnit;
           }
 
@@ -99,13 +99,13 @@ namespace Source.Models.Teams
           switch (techLevel)
           {
             case 1:
-              command.UnitId = Constants.UNIT_FALCON_RIDER_HUMAN;
-              command.UnitIdToUpgrade = Constants.UNIT_FLYING_MACHINE_HUMAN;
+              command.UnitId = Constants.UNIT_FALCON_RIDER_HUMAN_FLY_2;
+              command.UnitIdToUpgrade = Constants.UNIT_FLYING_MACHINE_HUMAN_FLY_1;
               return Enums.ResearchType.UpgradeUnit;
 
             default:
-              command.UnitId = Constants.UNIT_GRYPHON_RIDER_HUMAN;
-              command.UnitIdToUpgrade = Constants.UNIT_FALCON_RIDER_HUMAN;
+              command.UnitId = Constants.UNIT_GRYPHON_RIDER_HUMAN_FLY_3;
+              command.UnitIdToUpgrade = Constants.UNIT_FALCON_RIDER_HUMAN_FLY_2;
               return Enums.ResearchType.UpgradeUnit;
           }
 
@@ -119,13 +119,13 @@ namespace Source.Models.Teams
           switch (techLevel)
           {
             case 1:
-              command.UnitId = Constants.UNIT_SORCERESS_HUMAN;
-              command.UnitIdToUpgrade = Constants.UNIT_PRIEST_HUMAN;
+              command.UnitId = Constants.UNIT_SORCERESS_HUMAN_MAGE_2;
+              command.UnitIdToUpgrade = Constants.UNIT_PRIEST_HUMAN_MAGE_1;
               return Enums.ResearchType.UpgradeUnit;
 
             default:
-              command.UnitId = Constants.UNIT_SPELLBREAKER_HUMAN;
-              command.UnitIdToUpgrade = Constants.UNIT_SORCERESS_HUMAN;
+              command.UnitId = Constants.UNIT_SPELLBREAKER_HUMAN_MAGE_3;
+              command.UnitIdToUpgrade = Constants.UNIT_SORCERESS_HUMAN_MAGE_2;
               return Enums.ResearchType.UpgradeUnit;
           }
 
@@ -139,12 +139,12 @@ namespace Source.Models.Teams
           switch (techLevel)
           {
             case 1:
-              command.UnitId = Constants.UNIT_SIEGE_SQUAD_HUMAN;
+              command.UnitId = Constants.UNIT_SIEGE_SQUAD_HUMAN_SIEGE_1;
               return Enums.ResearchType.AddUnit;
 
             default:
-              command.UnitId = Constants.UNIT_SIEGE_ENGINE_HUMAN;
-              command.UnitIdToUpgrade = Constants.UNIT_SIEGE_SQUAD_HUMAN;
+              command.UnitId = Constants.UNIT_SIEGE_ENGINE_HUMAN_SIEGE_2;
+              command.UnitIdToUpgrade = Constants.UNIT_SIEGE_SQUAD_HUMAN_SIEGE_1;
               return Enums.ResearchType.UpgradeUnit;
           }
 
@@ -159,42 +159,42 @@ namespace Source.Models.Teams
     {
       switch (baseUnitTypeId)
       {
-        case Constants.UNIT_CAPTAIN_HUMAN:
-          command = new UnitUpgradeBySoldCommand(Enums.SpawnInterval.Short, Constants.UNIT_SOLDIER_HUMAN, baseUnitTypeId, Constants.UNIT_KNIGHT_HUMAN);
+        case Constants.UNIT_CAPTAIN_HUMAN_MELEE_2:
+          command = new UnitUpgradeBySoldCommand(Enums.SpawnInterval.Short, Constants.UNIT_SOLDIER_HUMAN_MELEE_1, baseUnitTypeId, Constants.UNIT_KNIGHT_HUMAN_MELEE_3);
           return Enums.UnitUpgradeType.UpgradeUnitInSpawn;
-        case Constants.UNIT_KNIGHT_HUMAN:
-          command = new UnitUpgradeBySoldCommand(Enums.SpawnInterval.Short, Constants.UNIT_CAPTAIN_HUMAN, baseUnitTypeId, 0);
-          return Enums.UnitUpgradeType.UpgradeUnitInSpawn;
-
-        case Constants.UNIT_RIFLEMAN_BESERK_HUMAN:
-          command = new UnitUpgradeBySoldCommand(Enums.SpawnInterval.Short, Constants.UNIT_RIFLEMAN_HUMAN, baseUnitTypeId, Constants.UNIT_RIFLEMAN_ELITE_HUMAN);
-          return Enums.UnitUpgradeType.UpgradeUnitInSpawn;
-        case Constants.UNIT_RIFLEMAN_ELITE_HUMAN:
-          command = new UnitUpgradeBySoldCommand(Enums.SpawnInterval.Short, Constants.UNIT_RIFLEMAN_BESERK_HUMAN, baseUnitTypeId, 0);
+        case Constants.UNIT_KNIGHT_HUMAN_MELEE_3:
+          command = new UnitUpgradeBySoldCommand(Enums.SpawnInterval.Short, Constants.UNIT_CAPTAIN_HUMAN_MELEE_2, baseUnitTypeId, 0);
           return Enums.UnitUpgradeType.UpgradeUnitInSpawn;
 
-        case Constants.UNIT_SORCERESS_HUMAN:
-          command = new UnitUpgradeBySoldCommand(Enums.SpawnInterval.Middle, Constants.UNIT_RIFLEMAN_HUMAN, baseUnitTypeId, Constants.UNIT_SPELLBREAKER_HUMAN);
+        case Constants.UNIT_RIFLEMAN_BESERK_HUMAN_DISTANCE_2:
+          command = new UnitUpgradeBySoldCommand(Enums.SpawnInterval.Short, Constants.UNIT_RIFLEMAN_HUMAN_DISTANCE_1, baseUnitTypeId, Constants.UNIT_RIFLEMAN_ELITE_HUMAN_DISTANCE_3);
           return Enums.UnitUpgradeType.UpgradeUnitInSpawn;
-        case Constants.UNIT_SPELLBREAKER_HUMAN:
-          command = new UnitUpgradeBySoldCommand(Enums.SpawnInterval.Middle, Constants.UNIT_SORCERESS_HUMAN, baseUnitTypeId, 0);
+        case Constants.UNIT_RIFLEMAN_ELITE_HUMAN_DISTANCE_3:
+          command = new UnitUpgradeBySoldCommand(Enums.SpawnInterval.Short, Constants.UNIT_RIFLEMAN_BESERK_HUMAN_DISTANCE_2, baseUnitTypeId, 0);
           return Enums.UnitUpgradeType.UpgradeUnitInSpawn;
 
-        case Constants.UNIT_FLYING_MACHINE_HUMAN:
-          command = new UnitUpgradeBySoldCommand(Enums.SpawnInterval.Middle, baseUnitTypeId, Constants.UNIT_FALCON_RIDER_HUMAN);
+        case Constants.UNIT_SORCERESS_HUMAN_MAGE_2:
+          command = new UnitUpgradeBySoldCommand(Enums.SpawnInterval.Middle, Constants.UNIT_PRIEST_HUMAN_MAGE_1, baseUnitTypeId, Constants.UNIT_SPELLBREAKER_HUMAN_MAGE_3);
+          return Enums.UnitUpgradeType.UpgradeUnitInSpawn;
+        case Constants.UNIT_SPELLBREAKER_HUMAN_MAGE_3:
+          command = new UnitUpgradeBySoldCommand(Enums.SpawnInterval.Middle, Constants.UNIT_SORCERESS_HUMAN_MAGE_2, baseUnitTypeId, 0);
+          return Enums.UnitUpgradeType.UpgradeUnitInSpawn;
+
+        case Constants.UNIT_FLYING_MACHINE_HUMAN_FLY_1:
+          command = new UnitUpgradeBySoldCommand(Enums.SpawnInterval.Middle, baseUnitTypeId, Constants.UNIT_FALCON_RIDER_HUMAN_FLY_2);
           return Enums.UnitUpgradeType.AddNewUnitToSpawn;
-        case Constants.UNIT_FALCON_RIDER_HUMAN:
-          command = new UnitUpgradeBySoldCommand(Enums.SpawnInterval.Middle, Constants.UNIT_FLYING_MACHINE_HUMAN, baseUnitTypeId, Constants.UNIT_GRYPHON_RIDER_HUMAN);
+        case Constants.UNIT_FALCON_RIDER_HUMAN_FLY_2:
+          command = new UnitUpgradeBySoldCommand(Enums.SpawnInterval.Middle, Constants.UNIT_FLYING_MACHINE_HUMAN_FLY_1, baseUnitTypeId, Constants.UNIT_GRYPHON_RIDER_HUMAN_FLY_3);
           return Enums.UnitUpgradeType.UpgradeUnitInSpawn;
-        case Constants.UNIT_GRYPHON_RIDER_HUMAN:
-          command = new UnitUpgradeBySoldCommand(Enums.SpawnInterval.Middle, Constants.UNIT_FALCON_RIDER_HUMAN, baseUnitTypeId, 0);
+        case Constants.UNIT_GRYPHON_RIDER_HUMAN_FLY_3:
+          command = new UnitUpgradeBySoldCommand(Enums.SpawnInterval.Middle, Constants.UNIT_FALCON_RIDER_HUMAN_FLY_2, baseUnitTypeId, 0);
           return Enums.UnitUpgradeType.UpgradeUnitInSpawn;
 
-        case Constants.UNIT_SIEGE_SQUAD_HUMAN:
-          command = new UnitUpgradeBySoldCommand(Enums.SpawnInterval.Long, baseUnitTypeId, Constants.UNIT_SIEGE_ENGINE_HUMAN);
+        case Constants.UNIT_SIEGE_SQUAD_HUMAN_SIEGE_1:
+          command = new UnitUpgradeBySoldCommand(Enums.SpawnInterval.Long, baseUnitTypeId, Constants.UNIT_SIEGE_ENGINE_HUMAN_SIEGE_2);
           return Enums.UnitUpgradeType.AddNewUnitToSpawn;
-        case Constants.UNIT_SIEGE_ENGINE_HUMAN:
-          command = new UnitUpgradeBySoldCommand(Enums.SpawnInterval.Long, Constants.UNIT_SIEGE_SQUAD_HUMAN, baseUnitTypeId, 0);
+        case Constants.UNIT_SIEGE_ENGINE_HUMAN_SIEGE_2:
+          command = new UnitUpgradeBySoldCommand(Enums.SpawnInterval.Long, Constants.UNIT_SIEGE_SQUAD_HUMAN_SIEGE_1, baseUnitTypeId, 0);
           return Enums.UnitUpgradeType.UpgradeUnitInSpawn;
 
         default: // Einheiten-Typ ist nicht bekannt
@@ -204,18 +204,18 @@ namespace Source.Models.Teams
 
     private void AddInitialSpawnTriggers(UnitSpawnBuilding building)
     {
-      building.AddSpawnTrigger(Enums.SpawnInterval.Short, Constants.UNIT_SOLDIER_HUMAN, Constants.UNIT_SOLDIER_HUMAN, Constants.UNIT_RIFLEMAN_HUMAN).Run();
-      building.AddSpawnTrigger(Enums.SpawnInterval.Middle, Constants.UNIT_PRIEST_HUMAN).Run(1f);
+      building.AddSpawnTrigger(Enums.SpawnInterval.Short, Constants.UNIT_SOLDIER_HUMAN_MELEE_1, Constants.UNIT_SOLDIER_HUMAN_MELEE_1, Constants.UNIT_RIFLEMAN_HUMAN_DISTANCE_1).Run();
+      building.AddSpawnTrigger(Enums.SpawnInterval.Middle, Constants.UNIT_PRIEST_HUMAN_MAGE_1).Run(1f);
       building.AddSpawnTrigger(Enums.SpawnInterval.Long).Run(2f);
     }
 
     private void AddInitialUnitUpgradesToStock(UnitSpawnBuilding building)
     {
-      building.Wc3Unit.AddUnitToStock(Constants.UNIT_CAPTAIN_HUMAN, 1, 1);
-      building.Wc3Unit.AddUnitToStock(Constants.UNIT_RIFLEMAN_BESERK_HUMAN, 1, 1);
-      building.Wc3Unit.AddUnitToStock(Constants.UNIT_SORCERESS_HUMAN, 1, 1);
-      building.Wc3Unit.AddUnitToStock(Constants.UNIT_FLYING_MACHINE_HUMAN, 1, 1);
-      building.Wc3Unit.AddUnitToStock(Constants.UNIT_SIEGE_SQUAD_HUMAN, 1, 1);
+      building.Wc3Unit.AddUnitToStock(Constants.UNIT_CAPTAIN_HUMAN_MELEE_2, 1, 1);
+      building.Wc3Unit.AddUnitToStock(Constants.UNIT_RIFLEMAN_BESERK_HUMAN_DISTANCE_2, 1, 1);
+      building.Wc3Unit.AddUnitToStock(Constants.UNIT_SORCERESS_HUMAN_MAGE_2, 1, 1);
+      building.Wc3Unit.AddUnitToStock(Constants.UNIT_FLYING_MACHINE_HUMAN_FLY_1, 1, 1);
+      building.Wc3Unit.AddUnitToStock(Constants.UNIT_SIEGE_SQUAD_HUMAN_SIEGE_1, 1, 1);
     }
   }
 }
