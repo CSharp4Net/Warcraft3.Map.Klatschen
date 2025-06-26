@@ -95,7 +95,7 @@ namespace Source.Models
       }
 
       LegionSpawnBuilding building = new LegionSpawnBuilding(Constants.UNIT_DEMON_SHRINE_LEGION, creationArea, 180f);
-      SpecialEffects.CreateSpecialEffect("Abilities\\Spells\\Other\\Doom\\DoomDeath.mdl", building.CreationArea.Wc3Rectangle.Center, 2f, 3f);
+      SpecialEffects.CreateSpecialEffect("Objects\\Spawnmodels\\Human\\SmallFlameSpawn\\SmallFlameSpawn.mdl", building.CreationArea.Wc3Rectangle.Center, 2f, 3f);
       building.RegisterOnDies(LegionBuilding.OnDies);
 
       building.AddSpawnTrigger(Enums.SpawnInterval.Long, creationArea, target2).Run();

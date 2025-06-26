@@ -11,9 +11,7 @@ B: Söldner die zaubern kehren nun nicht mehr zu ihrem Lager zurück.
 
 Noch offen:
 ===========
-Kasernen müssen überall näher an das Hauptgebäude verschoben werden
-
-Auto-Spawn- und Single-Spawn-Units sollen mit Effekt erstellt werden
+Auto-Spawns und Hero-Spawn sollen mit Effekt erstellt werden.
 
 Mehr Single-Spawn-Einheiten zum Kaufen im Hauptgebäude
 Mehr Söldner-Einheiten zum Kaufen im Söldnerlager

@@ -15,7 +15,7 @@ namespace Source.Models.Teams
     public override void CreateBuildings()
     {
       // Hauptgebäude
-      MainBuilding mainBuilding = Computer.CreateMainBuilding(Constants.UNIT_BLACK_CITADEL_UNDEAD, Areas.UndeadBase);
+      MainBuilding mainBuilding = Computer.CreateMainBuilding(Constants.UNIT_BLACK_CITADEL_UNDEAD, Areas.UndeadBase, "Abilities\\Spells\\Undead\\RaiseSkeletonWarrior\\RaiseSkeleton.mdl");
 
       mainBuilding.RegisterOnDies(TeamMainBuilding.OnDies);
       mainBuilding.AddSpawnAttackRoute(Areas.UndeadBaseToCenterSpawn, Areas.HumanBase);

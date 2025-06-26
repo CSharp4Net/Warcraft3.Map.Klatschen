@@ -1,14 +1,20 @@
 ﻿using Source.Abstracts;
+using Source.Statics;
 using System.Collections.Generic;
 
 namespace Source.Models
 {
   public sealed class MainBuilding : BuildingBase
   {
-    public MainBuilding(ComputerPlayer computer, int unitTypeId, Area creationArea)
-      : base(computer, unitTypeId, creationArea) { }
+    public MainBuilding(ComputerPlayer computer, int unitTypeId, Area creationArea, string specialEffectPath)
+      : base(computer, unitTypeId, creationArea) 
+    {
+      SpecialEffectPath = specialEffectPath;
+    }
 
-    private List<SpawnAttackRoute> Routes { get; set; } = new List<SpawnAttackRoute>();
+    private List<SpawnAttackRoute> Routes { get; init; } = new List<SpawnAttackRoute>();
+
+    private string SpecialEffectPath { get; init; }
 
     public void AddSpawnAttackRoute(Area spawnArea, Area targetArea)
     {
@@ -23,7 +29,8 @@ namespace Source.Models
     {
       foreach (SpawnAttackRoute route in Routes)
       {
-        Computer.CreateUnit(unitId, route.SpawnArea).AttackMove(route.TargetArea);
+        SpecialEffects.CreateSpecialEffect(SpecialEffectPath, route.SpawnArea.Wc3Rectangle.Center, 1f, 0.5f);
+        Computer.CreateUnit(unitId, route.SpawnArea).AttackMoveTimed(route.TargetArea, 0.5f);
       }
     }
   }

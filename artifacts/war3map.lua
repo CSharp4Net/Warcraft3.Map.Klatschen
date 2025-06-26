@@ -19785,9 +19785,6 @@ System.namespace("", function (namespace)
       this.ElfCreepToHumanSpawnBuilding = SourceModels.Area(Regions.ElfCreepToHumanSpawnBuilding)
       this.ElfCreepToUndeadSpawn = SourceModels.Area(Regions.ElfCreepToUndeadSpawn)
       this.ElfCreepToUndeadSpawnBuilding = SourceModels.Area(Regions.ElfCreepToUndeadSpawnBuilding)
-      this.ElfToHumanOuterLine = SourceModels.Area(Regions.ElfToHumanOuterLine)
-      this.ElfToOrcOuterLine = SourceModels.Area(Regions.ElfToOrcOuterLine)
-      this.ElfToUndeadOuterLine = SourceModels.Area(Regions.ElfToUndeadOuterLine)
       this.HeroAlchemist = SourceModels.Area(Regions.HeroAlchemist)
       this.HeroArchmage = SourceModels.Area(Regions.HeroArchmage)
       this.HeroBlademaster = SourceModels.Area(Regions.HeroBlademaster)
@@ -19826,8 +19823,6 @@ System.namespace("", function (namespace)
       this.HumanCreepToElfSpawnBuilding = SourceModels.Area(Regions.HumanCreepToElfSpawnBuilding)
       this.HumanCreepToOrcSpawn = SourceModels.Area(Regions.HumanCreepToOrcSpawn)
       this.HumanCreepToOrcSpawnBuilding = SourceModels.Area(Regions.HumanCreepToOrcSpawnBuilding)
-      this.HumanToElfOuterLine = SourceModels.Area(Regions.HumanToElfOuterLine)
-      this.HumanToUndeadOuterLine = SourceModels.Area(Regions.HumanToUndeadOuterLine)
       this.LegionSpawnBottom = SourceModels.Area(Regions.LegionSpawnBottom)
       this.LegionSpawnBottom1 = SourceModels.Area(Regions.LegionSpawnBottom1)
       this.LegionSpawnBottom2 = SourceModels.Area(Regions.LegionSpawnBottom2)
@@ -19856,9 +19851,6 @@ System.namespace("", function (namespace)
       this.OrcCreepToHumanSpawnBuilding = SourceModels.Area(Regions.OrcCreepToHumanSpawnBuilding)
       this.OrcCreepToUndeadSpawn = SourceModels.Area(Regions.OrcCreepToUndeadSpawn)
       this.OrcCreepToUndeadSpawnBuilding = SourceModels.Area(Regions.OrcCreepToUndeadSpawnBuilding)
-      this.OrcToElfOuterLine = SourceModels.Area(Regions.OrcToElfOuterLine)
-      this.OrcToHumanOuterLine = SourceModels.Area(Regions.OrcToHumanOuterLine)
-      this.OrcToUndeadOuterLine = SourceModels.Area(Regions.OrcToUndeadOuterLine)
       this.TestArea = SourceModels.Area(Regions.TestArea)
       this.TestArea2 = SourceModels.Area(Regions.TestArea2)
       this.TestArea3 = SourceModels.Area(Regions.TestArea3)
@@ -19878,9 +19870,6 @@ System.namespace("", function (namespace)
       this.UndeadCreepToElfSpawnBuilding = SourceModels.Area(Regions.UndeadCreepToElfSpawnBuilding)
       this.UndeadCreepToOrcSpawn = SourceModels.Area(Regions.UndeadCreepToOrcSpawn)
       this.UndeadCreepToOrcSpawnBuilding = SourceModels.Area(Regions.UndeadCreepToOrcSpawnBuilding)
-      this.UndeadToElfOuterLine = SourceModels.Area(Regions.UndeadToElfOuterLine)
-      this.UndeadToHumanOuterLine = SourceModels.Area(Regions.UndeadToHumanOuterLine)
-      this.UndeadToOrcOuterLine = SourceModels.Area(Regions.UndeadToOrcOuterLine)
     end
     return {
       static = static,
@@ -19913,9 +19902,6 @@ System.namespace("", function (namespace)
             { "ElfCreepToHumanSpawnBuilding", 0xE, out.Source.Models.Area },
             { "ElfCreepToUndeadSpawn", 0xE, out.Source.Models.Area },
             { "ElfCreepToUndeadSpawnBuilding", 0xE, out.Source.Models.Area },
-            { "ElfToHumanOuterLine", 0xE, out.Source.Models.Area },
-            { "ElfToOrcOuterLine", 0xE, out.Source.Models.Area },
-            { "ElfToUndeadOuterLine", 0xE, out.Source.Models.Area },
             { "HeroAlchemist", 0xE, out.Source.Models.Area },
             { "HeroArchmage", 0xE, out.Source.Models.Area },
             { "HeroBlademaster", 0xE, out.Source.Models.Area },
@@ -19954,8 +19940,6 @@ System.namespace("", function (namespace)
             { "HumanCreepToElfSpawnBuilding", 0xE, out.Source.Models.Area },
             { "HumanCreepToOrcSpawn", 0xE, out.Source.Models.Area },
             { "HumanCreepToOrcSpawnBuilding", 0xE, out.Source.Models.Area },
-            { "HumanToElfOuterLine", 0xE, out.Source.Models.Area },
-            { "HumanToUndeadOuterLine", 0xE, out.Source.Models.Area },
             { "LegionSpawnBottom", 0xE, out.Source.Models.Area },
             { "LegionSpawnBottom1", 0xE, out.Source.Models.Area },
             { "LegionSpawnBottom2", 0xE, out.Source.Models.Area },
@@ -19984,9 +19968,6 @@ System.namespace("", function (namespace)
             { "OrcCreepToHumanSpawnBuilding", 0xE, out.Source.Models.Area },
             { "OrcCreepToUndeadSpawn", 0xE, out.Source.Models.Area },
             { "OrcCreepToUndeadSpawnBuilding", 0xE, out.Source.Models.Area },
-            { "OrcToElfOuterLine", 0xE, out.Source.Models.Area },
-            { "OrcToHumanOuterLine", 0xE, out.Source.Models.Area },
-            { "OrcToUndeadOuterLine", 0xE, out.Source.Models.Area },
             { "TestArea", 0xE, out.Source.Models.Area },
             { "TestArea2", 0xE, out.Source.Models.Area },
             { "TestArea3", 0xE, out.Source.Models.Area },
@@ -20005,10 +19986,7 @@ System.namespace("", function (namespace)
             { "UndeadCreepToElfSpawn", 0xE, out.Source.Models.Area },
             { "UndeadCreepToElfSpawnBuilding", 0xE, out.Source.Models.Area },
             { "UndeadCreepToOrcSpawn", 0xE, out.Source.Models.Area },
-            { "UndeadCreepToOrcSpawnBuilding", 0xE, out.Source.Models.Area },
-            { "UndeadToElfOuterLine", 0xE, out.Source.Models.Area },
-            { "UndeadToHumanOuterLine", 0xE, out.Source.Models.Area },
-            { "UndeadToOrcOuterLine", 0xE, out.Source.Models.Area }
+            { "UndeadCreepToOrcSpawnBuilding", 0xE, out.Source.Models.Area }
           },
           class = { "Areas", 0x3C }
         }
@@ -20434,12 +20412,12 @@ System.namespace("", function (namespace)
       this.CenterRightComplete = System.new(WCSharpSharedData.Rectangle, 2, 9792, 2688, 10560, 3456)
       this.CenterTop = System.new(WCSharpSharedData.Rectangle, 2, -128, 13120, 128, 13376)
       this.CenterTopComplete = System.new(WCSharpSharedData.Rectangle, 2, -384, 12864, 384, 13632)
-      this.ElfBarracksToCenter = System.new(WCSharpSharedData.Rectangle, 2, -6208, -3136, -6080, -3008)
-      this.ElfBarracksToCenterSpawn = System.new(WCSharpSharedData.Rectangle, 2, -6016, -3072, -5760, -2560)
-      this.ElfBarracksToHuman = System.new(WCSharpSharedData.Rectangle, 2, -10304, -1984, -10176, -1856)
-      this.ElfBarracksToHumanSpawn = System.new(WCSharpSharedData.Rectangle, 2, -10496, -1792, -9984, -1536)
-      this.ElfBarracksToUndead = System.new(WCSharpSharedData.Rectangle, 2, -5056, -7232, -4928, -7104)
-      this.ElfBarracksToUndeadSpawn = System.new(WCSharpSharedData.Rectangle, 2, -4864, -7424, -4608, -6912)
+      this.ElfBarracksToCenter = System.new(WCSharpSharedData.Rectangle, 2, -9152, -6080, -9024, -5952)
+      this.ElfBarracksToCenterSpawn = System.new(WCSharpSharedData.Rectangle, 2, -8960, -5888, -8704, -5632)
+      this.ElfBarracksToHuman = System.new(WCSharpSharedData.Rectangle, 2, -10304, -5696, -10176, -5568)
+      this.ElfBarracksToHumanSpawn = System.new(WCSharpSharedData.Rectangle, 2, -10496, -5504, -9984, -5248)
+      this.ElfBarracksToUndead = System.new(WCSharpSharedData.Rectangle, 2, -8768, -7232, -8640, -7104)
+      this.ElfBarracksToUndeadSpawn = System.new(WCSharpSharedData.Rectangle, 2, -8576, -7424, -8320, -6912)
       this.ElfBase = System.new(WCSharpSharedData.Rectangle, 2, -10304, -7232, -10176, -7104)
       this.ElfBaseHeroRespawn = System.new(WCSharpSharedData.Rectangle, 2, -12032, -8832, -11904, -8704)
       this.ElfBaseHeroSpawn = System.new(WCSharpSharedData.Rectangle, 2, -11904, -8960, -11776, -8832)
@@ -20450,9 +20428,6 @@ System.namespace("", function (namespace)
       this.ElfCreepToHumanSpawnBuilding = System.new(WCSharpSharedData.Rectangle, 2, -7808, -768, -7552, -512)
       this.ElfCreepToUndeadSpawn = System.new(WCSharpSharedData.Rectangle, 2, -4608, -5120, -3840, -4352)
       this.ElfCreepToUndeadSpawnBuilding = System.new(WCSharpSharedData.Rectangle, 2, -4224, -4352, -3968, -4096)
-      this.ElfToHumanOuterLine = System.new(WCSharpSharedData.Rectangle, 2, -10304, -1088, -10176, -960)
-      this.ElfToOrcOuterLine = System.new(WCSharpSharedData.Rectangle, 2, -5184, -2112, -5056, -1984)
-      this.ElfToUndeadOuterLine = System.new(WCSharpSharedData.Rectangle, 2, -4160, -7232, -4032, -7104)
       this.HeroAlchemist = System.new(WCSharpSharedData.Rectangle, 2, -4864, 18496, -4736, 18624)
       this.HeroArchmage = System.new(WCSharpSharedData.Rectangle, 2, -1792, 18496, -1664, 18624)
       this.HeroBlademaster = System.new(WCSharpSharedData.Rectangle, 2, -4672, 17408, -4544, 17536)
@@ -20475,10 +20450,10 @@ System.namespace("", function (namespace)
       this.HeroTaurenChieftain = System.new(WCSharpSharedData.Rectangle, 2, -3648, 17792, -3520, 17920)
       this.HeroTinker = System.new(WCSharpSharedData.Rectangle, 2, -4096, 18496, -3968, 18624)
       this.HeroWarden = System.new(WCSharpSharedData.Rectangle, 2, -3648, 17408, -3520, 17536)
-      this.HumanBarracksToCenter = System.new(WCSharpSharedData.Rectangle, 2, -9280, 12224, -9152, 12352)
-      this.HumanBarracksToCenterSpawn = System.new(WCSharpSharedData.Rectangle, 2, -9088, 11904, -8832, 12160)
-      this.HumanBarracksToElf = System.new(WCSharpSharedData.Rectangle, 2, -10304, 11968, -10176, 12096)
-      this.HumanBarracksToElfSpawn = System.new(WCSharpSharedData.Rectangle, 2, -10496, 11648, -9984, 11904)
+      this.HumanBarracksToCenter = System.new(WCSharpSharedData.Rectangle, 2, -9152, 12096, -9024, 12224)
+      this.HumanBarracksToCenterSpawn = System.new(WCSharpSharedData.Rectangle, 2, -8960, 11776, -8704, 12032)
+      this.HumanBarracksToElf = System.new(WCSharpSharedData.Rectangle, 2, -10304, 11712, -10176, 11840)
+      this.HumanBarracksToElfSpawn = System.new(WCSharpSharedData.Rectangle, 2, -10496, 11392, -9984, 11648)
       this.HumanBarracksToOrc = System.new(WCSharpSharedData.Rectangle, 2, -8768, 13248, -8640, 13376)
       this.HumanBarracksToOrcSpawn = System.new(WCSharpSharedData.Rectangle, 2, -8576, 13056, -8320, 13568)
       this.HumanBase = System.new(WCSharpSharedData.Rectangle, 2, -10304, 13248, -10176, 13376)
@@ -20491,8 +20466,6 @@ System.namespace("", function (namespace)
       this.HumanCreepToElfSpawnBuilding = System.new(WCSharpSharedData.Rectangle, 2, -7808, 6656, -7552, 6912)
       this.HumanCreepToOrcSpawn = System.new(WCSharpSharedData.Rectangle, 2, -4608, 10368, -3840, 11136)
       this.HumanCreepToOrcSpawnBuilding = System.new(WCSharpSharedData.Rectangle, 2, -4224, 10112, -3968, 10368)
-      this.HumanToElfOuterLine = System.new(WCSharpSharedData.Rectangle, 2, -10304, 7104, -10176, 7232)
-      this.HumanToUndeadOuterLine = System.new(WCSharpSharedData.Rectangle, 2, -5184, 8128, -5056, 8256)
       this.LegionSpawnBottom = System.new(WCSharpSharedData.Rectangle, 2, -384, -3456, 384, -2688)
       this.LegionSpawnBottom1 = System.new(WCSharpSharedData.Rectangle, 2, -448, -3136, -320, -3008)
       this.LegionSpawnBottom2 = System.new(WCSharpSharedData.Rectangle, 2, 320, -3136, 448, -3008)
@@ -20505,12 +20478,12 @@ System.namespace("", function (namespace)
       this.LegionSpawnWest = System.new(WCSharpSharedData.Rectangle, 2, -6528, 2688, -5760, 3456)
       this.LegionSpawnWest1 = System.new(WCSharpSharedData.Rectangle, 2, -6208, 3392, -6080, 3520)
       this.LegionSpawnWest2 = System.new(WCSharpSharedData.Rectangle, 2, -6208, 2624, -6080, 2752)
-      this.OrcBarracksToCenter = System.new(WCSharpSharedData.Rectangle, 2, 6080, 9152, 6208, 9280)
-      this.OrcBarracksToCenterSpawn = System.new(WCSharpSharedData.Rectangle, 2, 5760, 8704, 6016, 9216)
-      this.OrcBarracksToHuman = System.new(WCSharpSharedData.Rectangle, 2, 4928, 13248, 5056, 13376)
-      this.OrcBarracksToHumanSpawn = System.new(WCSharpSharedData.Rectangle, 2, 4608, 13056, 4864, 13568)
-      this.OrcBarracksToUndead = System.new(WCSharpSharedData.Rectangle, 2, 10176, 8000, 10304, 8128)
-      this.OrcBarracksToUndeadSpawn = System.new(WCSharpSharedData.Rectangle, 2, 9984, 7680, 10496, 7936)
+      this.OrcBarracksToCenter = System.new(WCSharpSharedData.Rectangle, 2, 9024, 12096, 9152, 12224)
+      this.OrcBarracksToCenterSpawn = System.new(WCSharpSharedData.Rectangle, 2, 8704, 11776, 8960, 12032)
+      this.OrcBarracksToHuman = System.new(WCSharpSharedData.Rectangle, 2, 8640, 13248, 8768, 13376)
+      this.OrcBarracksToHumanSpawn = System.new(WCSharpSharedData.Rectangle, 2, 8320, 13056, 8576, 13568)
+      this.OrcBarracksToUndead = System.new(WCSharpSharedData.Rectangle, 2, 10176, 11712, 10304, 11840)
+      this.OrcBarracksToUndeadSpawn = System.new(WCSharpSharedData.Rectangle, 2, 9984, 11392, 10496, 11648)
       this.OrcBase = System.new(WCSharpSharedData.Rectangle, 2, 10176, 13248, 10304, 13376)
       this.OrcBaseHeroRespawn = System.new(WCSharpSharedData.Rectangle, 2, 11776, 14976, 11904, 15104)
       this.OrcBaseHeroSpawn = System.new(WCSharpSharedData.Rectangle, 2, 11904, 14848, 12032, 14976)
@@ -20521,18 +20494,15 @@ System.namespace("", function (namespace)
       this.OrcCreepToHumanSpawnBuilding = System.new(WCSharpSharedData.Rectangle, 2, 3840, 10240, 4096, 10496)
       this.OrcCreepToUndeadSpawn = System.new(WCSharpSharedData.Rectangle, 2, 7424, 6912, 8192, 7680)
       this.OrcCreepToUndeadSpawnBuilding = System.new(WCSharpSharedData.Rectangle, 2, 7552, 6656, 7808, 6912)
-      this.OrcToElfOuterLine = System.new(WCSharpSharedData.Rectangle, 2, 5056, 8128, 5184, 8256)
-      this.OrcToHumanOuterLine = System.new(WCSharpSharedData.Rectangle, 2, 4032, 13248, 4160, 13376)
-      this.OrcToUndeadOuterLine = System.new(WCSharpSharedData.Rectangle, 2, 10176, 7104, 10304, 7232)
       this.TestArea = System.new(WCSharpSharedData.Rectangle, 2, 15296, 16320, 15424, 16448)
       this.TestArea2 = System.new(WCSharpSharedData.Rectangle, 2, -10304, 13632, -10176, 13760)
       this.TestArea3 = System.new(WCSharpSharedData.Rectangle, 2, 16320, 16320, 16448, 16448)
-      this.UndeadBarracksToCenter = System.new(WCSharpSharedData.Rectangle, 2, 6080, -3136, 6208, -3008)
-      this.UndeadBarracksToCenterSpawn = System.new(WCSharpSharedData.Rectangle, 2, 5760, -3072, 6016, -2560)
-      this.UndeadBarracksToElf = System.new(WCSharpSharedData.Rectangle, 2, 4928, -7232, 5056, -7104)
-      this.UndeadBarracksToElfSpawn = System.new(WCSharpSharedData.Rectangle, 2, 4608, -7424, 4864, -6912)
-      this.UndeadBarracksToOrc = System.new(WCSharpSharedData.Rectangle, 2, 10176, -1984, 10304, -1856)
-      this.UndeadBarracksToOrcSpawn = System.new(WCSharpSharedData.Rectangle, 2, 9984, -1792, 10496, -1536)
+      this.UndeadBarracksToCenter = System.new(WCSharpSharedData.Rectangle, 2, 9024, -6080, 9152, -5952)
+      this.UndeadBarracksToCenterSpawn = System.new(WCSharpSharedData.Rectangle, 2, 8704, -5888, 8960, -5632)
+      this.UndeadBarracksToElf = System.new(WCSharpSharedData.Rectangle, 2, 8640, -7232, 8768, -7104)
+      this.UndeadBarracksToElfSpawn = System.new(WCSharpSharedData.Rectangle, 2, 8320, -7424, 8576, -6912)
+      this.UndeadBarracksToOrc = System.new(WCSharpSharedData.Rectangle, 2, 10176, -5696, 10304, -5568)
+      this.UndeadBarracksToOrcSpawn = System.new(WCSharpSharedData.Rectangle, 2, 9984, -5504, 10496, -5248)
       this.UndeadBase = System.new(WCSharpSharedData.Rectangle, 2, 10176, -7232, 10304, -7104)
       this.UndeadBaseHeroRespawn = System.new(WCSharpSharedData.Rectangle, 2, 11776, -8960, 11904, -8832)
       this.UndeadBaseHeroSpawn = System.new(WCSharpSharedData.Rectangle, 2, 11904, -8832, 12032, -8704)
@@ -20543,9 +20513,6 @@ System.namespace("", function (namespace)
       this.UndeadCreepToElfSpawnBuilding = System.new(WCSharpSharedData.Rectangle, 2, 3968, -4352, 4224, -4096)
       this.UndeadCreepToOrcSpawn = System.new(WCSharpSharedData.Rectangle, 2, 7424, -1664, 8192, -896)
       this.UndeadCreepToOrcSpawnBuilding = System.new(WCSharpSharedData.Rectangle, 2, 7552, -896, 7808, -640)
-      this.UndeadToElfOuterLine = System.new(WCSharpSharedData.Rectangle, 2, 4032, -7232, 4160, -7104)
-      this.UndeadToHumanOuterLine = System.new(WCSharpSharedData.Rectangle, 2, 5024, -2144, 5152, -2016)
-      this.UndeadToOrcOuterLine = System.new(WCSharpSharedData.Rectangle, 2, 10176, -1088, 10304, -960)
     end
     return {
       static = static,
@@ -20578,9 +20545,6 @@ System.namespace("", function (namespace)
             { "ElfCreepToHumanSpawnBuilding", 0xE, out.WCSharp.Shared.Data.Rectangle },
             { "ElfCreepToUndeadSpawn", 0xE, out.WCSharp.Shared.Data.Rectangle },
             { "ElfCreepToUndeadSpawnBuilding", 0xE, out.WCSharp.Shared.Data.Rectangle },
-            { "ElfToHumanOuterLine", 0xE, out.WCSharp.Shared.Data.Rectangle },
-            { "ElfToOrcOuterLine", 0xE, out.WCSharp.Shared.Data.Rectangle },
-            { "ElfToUndeadOuterLine", 0xE, out.WCSharp.Shared.Data.Rectangle },
             { "HeroAlchemist", 0xE, out.WCSharp.Shared.Data.Rectangle },
             { "HeroArchmage", 0xE, out.WCSharp.Shared.Data.Rectangle },
             { "HeroBlademaster", 0xE, out.WCSharp.Shared.Data.Rectangle },
@@ -20619,8 +20583,6 @@ System.namespace("", function (namespace)
             { "HumanCreepToElfSpawnBuilding", 0xE, out.WCSharp.Shared.Data.Rectangle },
             { "HumanCreepToOrcSpawn", 0xE, out.WCSharp.Shared.Data.Rectangle },
             { "HumanCreepToOrcSpawnBuilding", 0xE, out.WCSharp.Shared.Data.Rectangle },
-            { "HumanToElfOuterLine", 0xE, out.WCSharp.Shared.Data.Rectangle },
-            { "HumanToUndeadOuterLine", 0xE, out.WCSharp.Shared.Data.Rectangle },
             { "LegionSpawnBottom", 0xE, out.WCSharp.Shared.Data.Rectangle },
             { "LegionSpawnBottom1", 0xE, out.WCSharp.Shared.Data.Rectangle },
             { "LegionSpawnBottom2", 0xE, out.WCSharp.Shared.Data.Rectangle },
@@ -20649,9 +20611,6 @@ System.namespace("", function (namespace)
             { "OrcCreepToHumanSpawnBuilding", 0xE, out.WCSharp.Shared.Data.Rectangle },
             { "OrcCreepToUndeadSpawn", 0xE, out.WCSharp.Shared.Data.Rectangle },
             { "OrcCreepToUndeadSpawnBuilding", 0xE, out.WCSharp.Shared.Data.Rectangle },
-            { "OrcToElfOuterLine", 0xE, out.WCSharp.Shared.Data.Rectangle },
-            { "OrcToHumanOuterLine", 0xE, out.WCSharp.Shared.Data.Rectangle },
-            { "OrcToUndeadOuterLine", 0xE, out.WCSharp.Shared.Data.Rectangle },
             { "TestArea", 0xE, out.WCSharp.Shared.Data.Rectangle },
             { "TestArea2", 0xE, out.WCSharp.Shared.Data.Rectangle },
             { "TestArea3", 0xE, out.WCSharp.Shared.Data.Rectangle },
@@ -20670,10 +20629,7 @@ System.namespace("", function (namespace)
             { "UndeadCreepToElfSpawn", 0xE, out.WCSharp.Shared.Data.Rectangle },
             { "UndeadCreepToElfSpawnBuilding", 0xE, out.WCSharp.Shared.Data.Rectangle },
             { "UndeadCreepToOrcSpawn", 0xE, out.WCSharp.Shared.Data.Rectangle },
-            { "UndeadCreepToOrcSpawnBuilding", 0xE, out.WCSharp.Shared.Data.Rectangle },
-            { "UndeadToElfOuterLine", 0xE, out.WCSharp.Shared.Data.Rectangle },
-            { "UndeadToHumanOuterLine", 0xE, out.WCSharp.Shared.Data.Rectangle },
-            { "UndeadToOrcOuterLine", 0xE, out.WCSharp.Shared.Data.Rectangle }
+            { "UndeadCreepToOrcSpawnBuilding", 0xE, out.WCSharp.Shared.Data.Rectangle }
           },
           class = { "Regions", 0x3E }
         }
@@ -23354,8 +23310,8 @@ System.namespace("Source.Models", function (namespace)
       System.base(this).__ctor__(this, player)
       this.Team = team
     end
-    CreateMainBuilding = function (this, unitTypeId, creationArea)
-      this.MainBuilding = SourceModels.MainBuilding(this, unitTypeId, creationArea)
+    CreateMainBuilding = function (this, unitTypeId, creationArea, specialEffectPath)
+      this.MainBuilding = SourceModels.MainBuilding(this, unitTypeId, creationArea, specialEffectPath)
       return this.MainBuilding
     end
     CreateBarrackBuilding = function (this, unitTypeId, creationArea, spawnArea, targetArea)
@@ -23427,7 +23383,7 @@ System.namespace("Source.Models", function (namespace)
             { ".ctor", 0x206, nil, out.WCSharp.Api.player, out.Source.Abstracts.TeamBase },
             { "AddSpawnUnit", 0x106, AddSpawnUnit, out.Source.Models.UnitUpgradeByResearchCommand },
             { "CreateBarrackBuilding", 0x486, CreateBarrackBuilding, System.Int32, out.Source.Models.Area, out.Source.Models.Area, out.Source.Models.Area, out.Source.Models.UnitSpawnBuilding },
-            { "CreateMainBuilding", 0x286, CreateMainBuilding, System.Int32, out.Source.Models.Area, out.Source.Models.MainBuilding },
+            { "CreateMainBuilding", 0x386, CreateMainBuilding, System.Int32, out.Source.Models.Area, System.String, out.Source.Models.MainBuilding },
             { "Defeat", 0x6, Defeat },
             { "IsOwnerOfBuilding", 0x286, IsOwnerOfBuilding, out.WCSharp.Api.unit, out.Source.Models.UnitSpawnBuilding, System.Boolean },
             { "RemoveBuilding", 0x106, RemoveBuilding, out.Source.Models.UnitSpawnBuilding },
@@ -23593,7 +23549,7 @@ System.namespace("Source.Models", function (namespace)
       end
 
       local building = SourceModels.LegionSpawnBuilding(1848652361 --[[Constants.UNIT_DEMON_SHRINE_LEGION]], creationArea, 180)
-      SourceStatics.SpecialEffects.CreateSpecialEffect("Abilities\\Spells\\Other\\Doom\\DoomDeath.mdl", building.CreationArea.Wc3Rectangle:getCenter(), 2, 3)
+      SourceStatics.SpecialEffects.CreateSpecialEffect("Objects\\Spawnmodels\\Human\\SmallFlameSpawn\\SmallFlameSpawn.mdl", building.CreationArea.Wc3Rectangle:getCenter(), 2, 3)
       building:RegisterOnDies(SourceEventsBuildings.LegionBuilding.OnDies)
 
       building:AddSpawnTrigger(2 --[[SpawnInterval.Long]], creationArea, target2):Run(0)
@@ -23998,17 +23954,20 @@ end
 do
 local System = System
 local SourceModels
+local SourceStatics
 local ListSpawnAttackRoute
 System.import(function (out)
   SourceModels = Source.Models
+  SourceStatics = Source.Statics
   ListSpawnAttackRoute = System.List(SourceModels.SpawnAttackRoute)
 end)
 System.namespace("Source.Models", function (namespace)
   namespace.class("MainBuilding", function (namespace)
     local AddSpawnAttackRoute, CreateSingleUnitSpawn, __ctor__
-    __ctor__ = function (this, computer, unitTypeId, creationArea)
+    __ctor__ = function (this, computer, unitTypeId, creationArea, specialEffectPath)
       this.Routes = ListSpawnAttackRoute()
       System.base(this).__ctor__(this, computer, unitTypeId, creationArea)
+      this.SpecialEffectPath = specialEffectPath
     end
     AddSpawnAttackRoute = function (this, spawnArea, targetArea)
       this.Routes:Add(SourceModels.SpawnAttackRoute(spawnArea, targetArea))
@@ -24019,7 +23978,8 @@ System.namespace("Source.Models", function (namespace)
     -- <param name="unitId"></param>
     CreateSingleUnitSpawn = function (this, unitId)
       for _, route in System.each(this.Routes) do
-        this.Computer:CreateUnit(unitId, route.SpawnArea, 0):AttackMove(route.TargetArea)
+        SourceStatics.SpecialEffects.CreateSpecialEffect(this.SpecialEffectPath, route.SpawnArea.Wc3Rectangle:getCenter(), 1, 0.5)
+        this.Computer:CreateUnit(unitId, route.SpawnArea, 0):AttackMoveTimed(route.TargetArea, 0.5)
       end
     end
     return {
@@ -24034,12 +23994,13 @@ System.namespace("Source.Models", function (namespace)
       __metadata__ = function (out)
         return {
           methods = {
-            { ".ctor", 0x306, nil, out.Source.Models.ComputerPlayer, System.Int32, out.Source.Models.Area },
+            { ".ctor", 0x406, nil, out.Source.Models.ComputerPlayer, System.Int32, out.Source.Models.Area, System.String },
             { "AddSpawnAttackRoute", 0x206, AddSpawnAttackRoute, out.Source.Models.Area, out.Source.Models.Area },
             { "CreateSingleUnitSpawn", 0x106, CreateSingleUnitSpawn, System.Int32 }
           },
           properties = {
-            { "Routes", 0x1, System.List(out.Source.Models.SpawnAttackRoute) }
+            { "Routes", 0x1, System.List(out.Source.Models.SpawnAttackRoute) },
+            { "SpecialEffectPath", 0x1, System.String }
           },
           class = { "MainBuilding", 0x26 }
         }
@@ -24997,7 +24958,7 @@ System.namespace("Source.Models.Teams", function (namespace)
     -- <inheritdoc/>
     CreateBuildings = function (this)
       -- Hauptgebäude
-      local mainBuilding = this.Computer:CreateMainBuilding(1747988789 --[[Constants.UNIT_TREE_OF_ETERNITY_ELF]], Areas.ElfBase)
+      local mainBuilding = this.Computer:CreateMainBuilding(1747988789 --[[Constants.UNIT_TREE_OF_ETERNITY_ELF]], Areas.ElfBase, "Abilities\\Spells\\Undead\\DeathPact\\DeathPactTarget.mdl")
 
       mainBuilding:RegisterOnDies(SourceEventsBuildings.TeamMainBuilding.OnDies)
       mainBuilding:AddSpawnAttackRoute(Areas.ElfBaseToCenterSpawn, Areas.OrcBase)
@@ -25227,7 +25188,8 @@ System.namespace("Source.Models.Teams", function (namespace)
     -- <inheritdoc/>
     CreateBuildings = function (this)
       -- Hauptgebäude
-      local mainBuilding = this.Computer:CreateMainBuilding(1747988531 --[[Constants.UNIT_CASTLE_HUMAN]], Areas.HumanBase)
+      --MainBuilding mainBuilding = Computer.CreateMainBuilding(Constants.UNIT_CASTLE_HUMAN, Areas.HumanBase, "Abilities\\Spells\\Human\\HolyBolt\\HolyBoltSpecialArt.mdl");
+      local mainBuilding = this.Computer:CreateMainBuilding(1747988531 --[[Constants.UNIT_CASTLE_HUMAN]], Areas.HumanBase, "Abilities\\Spells\\Undead\\RaiseSkeletonWarrior\\RaiseSkeleton.mdl")
 
       mainBuilding:RegisterOnDies(SourceEventsBuildings.TeamMainBuilding.OnDies)
       mainBuilding:AddSpawnAttackRoute(Areas.HumanBaseToCenterSpawn, Areas.UndeadBase)
@@ -25458,7 +25420,7 @@ System.namespace("Source.Models.Teams", function (namespace)
     -- <inheritdoc/>
     CreateBuildings = function (this)
       -- Hauptgebäude
-      local mainBuilding = this.Computer:CreateMainBuilding(1747988570 --[[Constants.UNIT_FORTRESS_ORC]], Areas.OrcBase)
+      local mainBuilding = this.Computer:CreateMainBuilding(1747988570 --[[Constants.UNIT_FORTRESS_ORC]], Areas.OrcBase, "Abilities\\Spells\\Items\\AIam\\AIamTarget.mdl")
 
       mainBuilding:RegisterOnDies(SourceEventsBuildings.TeamMainBuilding.OnDies)
       mainBuilding:AddSpawnAttackRoute(Areas.OrcBaseToCenterSpawn, Areas.ElfBase)
@@ -25688,7 +25650,7 @@ System.namespace("Source.Models.Teams", function (namespace)
     -- <inheritdoc/>
     CreateBuildings = function (this)
       -- Hauptgebäude
-      local mainBuilding = this.Computer:CreateMainBuilding(1747988801 --[[Constants.UNIT_BLACK_CITADEL_UNDEAD]], Areas.UndeadBase)
+      local mainBuilding = this.Computer:CreateMainBuilding(1747988801 --[[Constants.UNIT_BLACK_CITADEL_UNDEAD]], Areas.UndeadBase, "")
 
       mainBuilding:RegisterOnDies(SourceEventsBuildings.TeamMainBuilding.OnDies)
       mainBuilding:AddSpawnAttackRoute(Areas.UndeadBaseToCenterSpawn, Areas.HumanBase)
@@ -37615,9 +37577,6 @@ gg_rct_ElfCreepToHumanSpawn = nil
 gg_rct_ElfCreepToHumanSpawnBuilding = nil
 gg_rct_ElfCreepToUndeadSpawn = nil
 gg_rct_ElfCreepToUndeadSpawnBuilding = nil
-gg_rct_ElfToHumanOuterLine = nil
-gg_rct_ElfToOrcOuterLine = nil
-gg_rct_ElfToUndeadOuterLine = nil
 gg_rct_HeroAlchemist = nil
 gg_rct_HeroArchmage = nil
 gg_rct_HeroBlademaster = nil
@@ -37656,8 +37615,6 @@ gg_rct_HumanCreepToElfSpawn = nil
 gg_rct_HumanCreepToElfSpawnBuilding = nil
 gg_rct_HumanCreepToOrcSpawn = nil
 gg_rct_HumanCreepToOrcSpawnBuilding = nil
-gg_rct_HumanToElfOuterLine = nil
-gg_rct_HumanToUndeadOuterLine = nil
 gg_rct_LegionSpawnBottom = nil
 gg_rct_LegionSpawnBottom1 = nil
 gg_rct_LegionSpawnBottom2 = nil
@@ -37686,9 +37643,6 @@ gg_rct_OrcCreepToHumanSpawn = nil
 gg_rct_OrcCreepToHumanSpawnBuilding = nil
 gg_rct_OrcCreepToUndeadSpawn = nil
 gg_rct_OrcCreepToUndeadSpawnBuilding = nil
-gg_rct_OrcToElfOuterLine = nil
-gg_rct_OrcToHumanOuterLine = nil
-gg_rct_OrcToUndeadOuterLine = nil
 gg_rct_TestArea = nil
 gg_rct_TestArea2 = nil
 gg_rct_TestArea3 = nil
@@ -37708,9 +37662,6 @@ gg_rct_UndeadCreepToElfSpawn = nil
 gg_rct_UndeadCreepToElfSpawnBuilding = nil
 gg_rct_UndeadCreepToOrcSpawn = nil
 gg_rct_UndeadCreepToOrcSpawnBuilding = nil
-gg_rct_UndeadToElfOuterLine = nil
-gg_rct_UndeadToHumanOuterLine = nil
-gg_rct_UndeadToOrcOuterLine = nil
 gg_snd_blowitup_cutted = nil
 gg_trg_Untitled_Trigger_001 = nil
 gg_unit_h02U_0244 = nil
@@ -38033,7 +37984,7 @@ gg_unit_nrac_0333 = nil
 gg_unit_nrac_0334 = nil
 gg_unit_nrac_0335 = nil
 gg_unit_nrac_0336 = nil
-gg_unit_nrac_0337 = nil
+gg_unit_h005_0033 = nil
 gg_unit_nrac_0338 = nil
 gg_unit_N02J_0382 = nil
 gg_unit_H00O_0227 = nil
@@ -38124,6 +38075,7 @@ gg_unit_e005_0424 = nil
 gg_unit_e006_0425 = nil
 gg_unit_e007_0426 = nil
 gg_unit_H02Y_0427 = nil
+gg_unit_nrac_0337 = nil
 gg_dest_HEch_0019 = nil
 gg_dest_HEch_0017 = nil
 gg_dest_HEch_0016 = nil
@@ -38198,7 +38150,7 @@ gg_dest_LTlt_10582 = nil
 gg_dest_NTtw_5932 = nil
 gg_dest_NTtw_5931 = nil
 gg_dest_NTtw_5930 = nil
-gg_dest_LTlt_10581 = nil
+gg_dest_CTtr_14449 = nil
 gg_dest_NTtw_11488 = nil
 gg_dest_NTtw_11487 = nil
 gg_dest_NTtw_11486 = nil
@@ -41494,7 +41446,7 @@ gg_dest_NTtw_2702 = nil
 gg_dest_LTlt_10594 = nil
 gg_dest_LTlt_10593 = nil
 gg_dest_LTlt_10592 = nil
-gg_dest_LTlt_10585 = nil
+gg_dest_LTba_14503 = nil
 gg_dest_FTtw_1808 = nil
 gg_dest_NTtw_2700 = nil
 gg_dest_NTtw_2699 = nil
@@ -41607,7 +41559,7 @@ gg_dest_NTtw_1371 = nil
 gg_dest_NTtw_1372 = nil
 gg_dest_NTtw_1373 = nil
 gg_dest_LTlt_10591 = nil
-gg_dest_LTlt_10590 = nil
+gg_dest_CTtr_14452 = nil
 gg_dest_NTtw_1374 = nil
 gg_dest_CTtr_6146 = nil
 gg_dest_NTtw_1375 = nil
@@ -43148,22 +43100,22 @@ gg_dest_LTlt_2343 = nil
 gg_dest_LTlt_2352 = nil
 gg_dest_LTlt_2355 = nil
 gg_dest_LTlt_2357 = nil
-gg_dest_LTlt_2361 = nil
-gg_dest_LTlt_2363 = nil
-gg_dest_LTlt_2364 = nil
-gg_dest_LTlt_2380 = nil
+gg_dest_CTtr_14448 = nil
+gg_dest_LTba_14498 = nil
+gg_dest_LTba_14491 = nil
+gg_dest_LTba_14490 = nil
 gg_dest_LTlt_2423 = nil
 gg_dest_LTlt_2424 = nil
 gg_dest_LTlt_2428 = nil
 gg_dest_LTlt_2430 = nil
 gg_dest_LTlt_2435 = nil
-gg_dest_LTlt_2437 = nil
+gg_dest_CTtr_14451 = nil
 gg_dest_LTlt_2442 = nil
 gg_dest_LTlt_2444 = nil
 gg_dest_LTlt_2449 = nil
 gg_dest_LTlt_2451 = nil
 gg_dest_LTlt_2454 = nil
-gg_dest_LTlt_2456 = nil
+gg_dest_LTba_14496 = nil
 gg_dest_LTlt_2459 = nil
 gg_dest_LTlt_2461 = nil
 gg_dest_LTlt_2462 = nil
@@ -43181,15 +43133,15 @@ gg_dest_LTlt_2509 = nil
 gg_dest_LTlt_2524 = nil
 gg_dest_LTlt_2529 = nil
 gg_dest_LTlt_2530 = nil
-gg_dest_LTlt_2531 = nil
-gg_dest_LTlt_2533 = nil
-gg_dest_LTlt_2534 = nil
-gg_dest_LTlt_2537 = nil
-gg_dest_LTlt_2540 = nil
+gg_dest_LTlt_14466 = nil
+gg_dest_CTtr_14447 = nil
+gg_dest_LTlt_14463 = nil
+gg_dest_CTtr_14454 = nil
+gg_dest_CTtr_14453 = nil
 gg_dest_LTlt_2542 = nil
 gg_dest_LTlt_2543 = nil
 gg_dest_LTlt_2548 = nil
-gg_dest_LTlt_2549 = nil
+gg_dest_CTtr_14450 = nil
 gg_dest_LTlt_2552 = nil
 gg_dest_LTlt_2591 = nil
 gg_dest_LTlt_2595 = nil
@@ -43220,14 +43172,14 @@ gg_dest_LTlt_2752 = nil
 gg_dest_LTlt_2753 = nil
 gg_dest_LTlt_2754 = nil
 gg_dest_LTlt_2755 = nil
-gg_dest_LTlt_2756 = nil
-gg_dest_LTlt_2757 = nil
-gg_dest_LTlt_2758 = nil
-gg_dest_LTlt_2759 = nil
-gg_dest_LTlt_2760 = nil
-gg_dest_LTlt_2761 = nil
-gg_dest_LTlt_2762 = nil
-gg_dest_LTlt_2763 = nil
+gg_dest_LTba_14461 = nil
+gg_dest_LTba_14458 = nil
+gg_dest_LTba_14457 = nil
+gg_dest_LTlt_14464 = nil
+gg_dest_LTlt_14465 = nil
+gg_dest_LTba_14489 = nil
+gg_dest_LTlt_14470 = nil
+gg_dest_LTlt_14469 = nil
 gg_dest_LTlt_2764 = nil
 gg_dest_LTlt_2765 = nil
 gg_dest_LTlt_2766 = nil
@@ -43771,7 +43723,7 @@ gg_dest_LTlt_3314 = nil
 gg_dest_LTlt_3315 = nil
 gg_dest_LTlt_3316 = nil
 gg_dest_LTlt_3317 = nil
-gg_dest_LTlt_3319 = nil
+gg_dest_LTlt_14468 = nil
 gg_dest_LTlt_3325 = nil
 gg_dest_LTlt_3327 = nil
 gg_dest_LTlt_3335 = nil
@@ -45786,7 +45738,7 @@ gg_dest_LTlt_6229 = nil
 gg_dest_LTlt_6234 = nil
 gg_dest_LTlt_6239 = nil
 gg_dest_LTlt_6264 = nil
-gg_dest_LTlt_6269 = nil
+gg_dest_LTlt_14467 = nil
 gg_dest_LTlt_6660 = nil
 gg_dest_LTlt_6661 = nil
 gg_dest_LTlt_6664 = nil
@@ -48308,7 +48260,7 @@ gg_dest_CTtr_10180 = nil
 gg_dest_CTtr_10181 = nil
 gg_dest_CTtr_10182 = nil
 gg_dest_LTlt_10589 = nil
-gg_dest_LTlt_10588 = nil
+gg_dest_CTtr_14446 = nil
 gg_dest_LTlt_10587 = nil
 gg_dest_LTlt_10586 = nil
 gg_dest_CTtr_10187 = nil
@@ -52570,36 +52522,6 @@ gg_dest_CTtr_14442 = nil
 gg_dest_CTtr_14443 = nil
 gg_dest_CTtr_14444 = nil
 gg_dest_CTtr_14445 = nil
-gg_dest_CTtr_14446 = nil
-gg_dest_CTtr_14447 = nil
-gg_dest_CTtr_14448 = nil
-gg_dest_CTtr_14449 = nil
-gg_dest_CTtr_14450 = nil
-gg_dest_CTtr_14451 = nil
-gg_dest_CTtr_14452 = nil
-gg_dest_CTtr_14453 = nil
-gg_dest_CTtr_14454 = nil
-gg_dest_LTba_14475 = nil
-gg_dest_LTba_14456 = nil
-gg_dest_LTba_14476 = nil
-gg_dest_LTba_14479 = nil
-gg_dest_LTba_14459 = nil
-gg_dest_LTba_14460 = nil
-gg_dest_LTba_14477 = nil
-gg_dest_LTba_14478 = nil
-gg_dest_LTlt_14463 = nil
-gg_dest_LTlt_14464 = nil
-gg_dest_LTlt_14465 = nil
-gg_dest_LTlt_14466 = nil
-gg_dest_LTlt_14467 = nil
-gg_dest_LTlt_14468 = nil
-gg_dest_LTlt_14469 = nil
-gg_dest_LTlt_14470 = nil
-gg_dest_LTba_14471 = nil
-gg_dest_LTba_14472 = nil
-gg_dest_LTba_14473 = nil
-gg_dest_LTba_14474 = nil
-gg_dest_LTba_14455 = nil
 function InitGlobals()
 end
 
@@ -52668,7 +52590,7 @@ function CreateAllDestructables()
     gg_dest_NTtw_5949 = CreateDestructable(1314157687, 1728.0, 384.0, 270.000, 1.191, 9)
     gg_dest_NTtw_5948 = CreateDestructable(1314157687, 1472.0, 128.0, 270.000, 0.823, 2)
     gg_dest_NTtw_5947 = CreateDestructable(1314157687, 1856.0, 256.0, 270.000, 0.813, 2)
-    gg_dest_LTlt_10583 = CreateDestructable(1280601204, -8192.0, 8000.0, 270.000, 1.001, 5)
+    gg_dest_LTlt_10583 = CreateDestructable(1280601204, -8256.0, 8384.0, 270.000, 1.001, 5)
     gg_dest_NTtw_5946 = CreateDestructable(1314157687, 1600.0, 0.0, 270.000, 1.115, 6)
     gg_dest_NTtw_5945 = CreateDestructable(1314157687, 1984.0, 128.0, 270.000, 0.978, 5)
     gg_dest_NTtw_5944 = CreateDestructable(1314157687, 1728.0, -128.0, 270.000, 1.016, 7)
@@ -52687,7 +52609,7 @@ function CreateAllDestructables()
     gg_dest_NTtw_5932 = CreateDestructable(1314157687, 2240.0, -576.0, 270.000, 0.849, 8)
     gg_dest_NTtw_5931 = CreateDestructable(1314157687, 2816.0, -576.0, 270.000, 1.052, 6)
     gg_dest_NTtw_5930 = CreateDestructable(1314157687, 2624.0, -448.0, 270.000, 0.900, 4)
-    gg_dest_LTlt_10581 = CreateDestructable(1280601204, -8064.0, 8064.0, 270.000, 1.153, 4)
+    gg_dest_CTtr_14449 = CreateDestructable(1129608306, -9856.0, -6144.0, 270.000, 1.195, 3)
     gg_dest_NTtw_11488 = CreateDestructable(1314157687, 8512.0, -2240.0, 270.000, 0.917, 0)
     gg_dest_NTtw_11487 = CreateDestructable(1314157687, 8448.0, -2368.0, 270.000, 0.911, 8)
     gg_dest_NTtw_11486 = CreateDestructable(1314157687, 8320.0, -2368.0, 270.000, 0.851, 9)
@@ -55188,7 +55110,7 @@ function CreateAllDestructables()
     gg_dest_LTlt_10597 = CreateDestructable(1280601204, -8832.0, 8512.0, 270.000, 1.116, 7)
     gg_dest_CTtr_6348 = CreateDestructable(1129608306, -2496.0, 2112.0, 270.000, 0.832, 0)
     gg_dest_CTtr_6298 = CreateDestructable(1129608306, -4352.0, 2368.0, 270.000, 1.101, 3)
-    gg_dest_LTlt_10596 = CreateDestructable(1280601204, -8832.0, 8320.0, 270.000, 0.842, 7)
+    gg_dest_LTlt_10596 = CreateDestructable(1280601204, -9152.0, 7872.0, 270.000, 0.842, 7)
     gg_dest_CTtr_6349 = CreateDestructable(1129608306, -2240.0, 1856.0, 270.000, 0.869, 1)
     gg_dest_CTtr_6350 = CreateDestructable(1129608306, -2624.0, 1984.0, 270.000, 0.986, 0)
     gg_dest_LTlt_10595 = CreateDestructable(1280601204, -8576.0, 8448.0, 270.000, 1.102, 2)
@@ -56028,9 +55950,9 @@ function CreateAllDestructables()
     gg_dest_FTtw_1315 = CreateDestructable(1179939959, 5056.0, 9024.0, 270.000, 0.930, 6)
     gg_dest_NTtw_2702 = CreateDestructable(1314157687, 12992.0, -8896.0, 270.000, 0.915, 7)
     gg_dest_LTlt_10594 = CreateDestructable(1280601204, -8704.0, 8448.0, 270.000, 1.186, 6)
-    gg_dest_LTlt_10593 = CreateDestructable(1280601204, -8704.0, 8256.0, 270.000, 1.161, 4)
+    gg_dest_LTlt_10593 = CreateDestructable(1280601204, -8832.0, 7936.0, 270.000, 1.161, 4)
     gg_dest_LTlt_10592 = CreateDestructable(1280601204, -8576.0, 8320.0, 270.000, 0.831, 0)
-    gg_dest_LTlt_10585 = CreateDestructable(1280601204, -8320.0, 8128.0, 270.000, 1.096, 2)
+    gg_dest_LTba_14503 = CreateDestructable(1280598625, 15808.0, 16320.0, 0.000, 1.119, 1)
     gg_dest_FTtw_1808 = CreateDestructable(1179939959, 7360.0, 11776.0, 270.000, 0.884, 7)
     gg_dest_NTtw_2700 = CreateDestructable(1314157687, 13056.0, -9024.0, 270.000, 0.832, 3)
     gg_dest_NTtw_2699 = CreateDestructable(1314157687, 13120.0, -9152.0, 270.000, 1.126, 0)
@@ -56142,8 +56064,8 @@ function CreateAllDestructables()
     gg_dest_NTtw_1371 = CreateDestructable(1314157687, 1664.0, -7872.0, 270.000, 1.012, 1)
     gg_dest_NTtw_1372 = CreateDestructable(1314157687, 1664.0, -7744.0, 270.000, 0.933, 2)
     gg_dest_NTtw_1373 = CreateDestructable(1314157687, 1856.0, -7872.0, 270.000, 0.908, 2)
-    gg_dest_LTlt_10591 = CreateDestructable(1280601204, -8576.0, 8064.0, 270.000, 0.858, 7)
-    gg_dest_LTlt_10590 = CreateDestructable(1280601204, -8576.0, 8192.0, 270.000, 1.148, 2)
+    gg_dest_LTlt_10591 = CreateDestructable(1280601204, -8832.0, 7808.0, 270.000, 0.858, 7)
+    gg_dest_CTtr_14452 = CreateDestructable(1129608306, -9728.0, -6144.0, 270.000, 0.914, 1)
     gg_dest_NTtw_1374 = CreateDestructable(1314157687, 1984.0, -7808.0, 270.000, 0.980, 3)
     gg_dest_CTtr_6146 = CreateDestructable(1129608306, -9216.0, -1152.0, 270.000, 1.001, 3)
     gg_dest_NTtw_1375 = CreateDestructable(1314157687, 2112.0, -7808.0, 270.000, 1.018, 0)
@@ -57403,7 +57325,7 @@ function CreateAllDestructables()
     gg_dest_LTlt_11772 = CreateDestructable(1280601204, -5376.0, 4352.0, 270.000, 1.192, 1)
     gg_dest_ORmk_11777 = CreateDestructable(1330802027, -6080.0, 4032.0, 270.000, 0.893, 2)
     SetDestructableLife(gg_dest_ORmk_11777, 2.55 * GetDestructableLife(gg_dest_ORmk_11777))
-    gg_dest_LOsp_11608 = CreateDestructable(1280275312, -9098.7, 8199.9, 90.000, 1.069, 0)
+    gg_dest_LOsp_11608 = CreateDestructable(1280275312, -8712.6, 8283.6, 90.000, 1.069, 0)
     SetDestructableLife(gg_dest_LOsp_11608, 2.55 * GetDestructableLife(gg_dest_LOsp_11608))
     gg_dest_DOjp_11607 = CreateDestructable(1146055280, -7232.0, 6656.0, 156.000, 1.173, 0)
     SetDestructableLife(gg_dest_DOjp_11607, 2.55 * GetDestructableLife(gg_dest_DOjp_11607))
@@ -57727,22 +57649,22 @@ function CreateAllDestructables()
     gg_dest_LTlt_2352 = CreateDestructable(1280601204, -11712.0, 8000.0, 270.000, 1.097, 6)
     gg_dest_LTlt_2355 = CreateDestructable(1280601204, -11072.0, 7872.0, 270.000, 0.961, 3)
     gg_dest_LTlt_2357 = CreateDestructable(1280601204, -11072.0, 8000.0, 270.000, 0.934, 6)
-    gg_dest_LTlt_2361 = CreateDestructable(1280601204, -10944.0, 8256.0, 270.000, 1.030, 0)
-    gg_dest_LTlt_2363 = CreateDestructable(1280601204, -10944.0, 8448.0, 270.000, 1.190, 3)
-    gg_dest_LTlt_2364 = CreateDestructable(1280601204, -10816.0, 8000.0, 270.000, 0.921, 2)
-    gg_dest_LTlt_2380 = CreateDestructable(1280601204, -10816.0, 7872.0, 270.000, 0.987, 0)
+    gg_dest_CTtr_14448 = CreateDestructable(1129608306, -9792.0, -6016.0, 270.000, 0.930, 4)
+    gg_dest_LTba_14498 = CreateDestructable(1280598625, 15680.0, 16192.0, 270.000, 1.119, 1)
+    gg_dest_LTba_14491 = CreateDestructable(1280598625, 15552.0, 16256.0, 315.000, 1.119, 1)
+    gg_dest_LTba_14490 = CreateDestructable(1280598625, 15424.0, 16192.0, 270.000, 1.119, 1)
     gg_dest_LTlt_2423 = CreateDestructable(1280601204, -11456.0, 8640.0, 270.000, 1.170, 4)
     gg_dest_LTlt_2424 = CreateDestructable(1280601204, -11328.0, 8640.0, 270.000, 0.823, 5)
     gg_dest_LTlt_2428 = CreateDestructable(1280601204, -11392.0, 8768.0, 270.000, 0.815, 2)
     gg_dest_LTlt_2430 = CreateDestructable(1280601204, -11264.0, 8512.0, 270.000, 0.972, 4)
     gg_dest_LTlt_2435 = CreateDestructable(1280601204, -11200.0, 8640.0, 270.000, 1.110, 2)
-    gg_dest_LTlt_2437 = CreateDestructable(1280601204, -10944.0, 8640.0, 270.000, 1.123, 5)
+    gg_dest_CTtr_14451 = CreateDestructable(1129608306, -9664.0, -6016.0, 270.000, 0.851, 4)
     gg_dest_LTlt_2442 = CreateDestructable(1280601204, -11456.0, 8896.0, 270.000, 1.184, 1)
     gg_dest_LTlt_2444 = CreateDestructable(1280601204, -11328.0, 8896.0, 270.000, 1.025, 7)
     gg_dest_LTlt_2449 = CreateDestructable(1280601204, -11392.0, 9024.0, 270.000, 0.818, 1)
     gg_dest_LTlt_2451 = CreateDestructable(1280601204, -11264.0, 9024.0, 270.000, 1.126, 4)
     gg_dest_LTlt_2454 = CreateDestructable(1280601204, -11200.0, 9152.0, 270.000, 1.044, 0)
-    gg_dest_LTlt_2456 = CreateDestructable(1280601204, -10944.0, 8896.0, 270.000, 1.087, 7)
+    gg_dest_LTba_14496 = CreateDestructable(1280598625, 15808.0, 16192.0, 315.000, 1.119, 1)
     gg_dest_LTlt_2459 = CreateDestructable(1280601204, -11584.0, 8576.0, 270.000, 0.890, 1)
     gg_dest_LTlt_2461 = CreateDestructable(1280601204, -11584.0, 8704.0, 270.000, 0.814, 2)
     gg_dest_LTlt_2462 = CreateDestructable(1280601204, -11584.0, 8832.0, 270.000, 0.915, 7)
@@ -57760,15 +57682,15 @@ function CreateAllDestructables()
     gg_dest_LTlt_2524 = CreateDestructable(1280601204, -11520.0, 9536.0, 270.000, 0.842, 7)
     gg_dest_LTlt_2529 = CreateDestructable(1280601204, -11328.0, 9664.0, 270.000, 1.164, 8)
     gg_dest_LTlt_2530 = CreateDestructable(1280601204, -11264.0, 9536.0, 270.000, 0.896, 9)
-    gg_dest_LTlt_2531 = CreateDestructable(1280601204, -10944.0, 9088.0, 270.000, 1.006, 8)
-    gg_dest_LTlt_2533 = CreateDestructable(1280601204, -10880.0, 9216.0, 270.000, 1.115, 1)
-    gg_dest_LTlt_2534 = CreateDestructable(1280601204, -10944.0, 9344.0, 270.000, 0.835, 4)
-    gg_dest_LTlt_2537 = CreateDestructable(1280601204, -10880.0, 9472.0, 270.000, 1.096, 5)
-    gg_dest_LTlt_2540 = CreateDestructable(1280601204, -10944.0, 9600.0, 270.000, 1.046, 9)
+    gg_dest_LTlt_14466 = CreateDestructable(1280601204, -8320.0, 12096.0, 270.000, 1.134, 2)
+    gg_dest_CTtr_14447 = CreateDestructable(1129608306, -9792.0, -5888.0, 270.000, 1.161, 0)
+    gg_dest_LTlt_14463 = CreateDestructable(1280601204, -8704.0, 12352.0, 270.000, 1.182, 4)
+    gg_dest_CTtr_14454 = CreateDestructable(1129608306, -9280.0, -5568.0, 270.000, 0.830, 4)
+    gg_dest_CTtr_14453 = CreateDestructable(1129608306, -9408.0, -5696.0, 270.000, 0.994, 4)
     gg_dest_LTlt_2542 = CreateDestructable(1280601204, -11200.0, 9664.0, 270.000, 1.120, 3)
     gg_dest_LTlt_2543 = CreateDestructable(1280601204, -11328.0, 9856.0, 270.000, 0.819, 3)
     gg_dest_LTlt_2548 = CreateDestructable(1280601204, -11200.0, 9856.0, 270.000, 0.999, 3)
-    gg_dest_LTlt_2549 = CreateDestructable(1280601204, -10880.0, 9728.0, 270.000, 1.056, 7)
+    gg_dest_CTtr_14450 = CreateDestructable(1129608306, -9856.0, -6272.0, 270.000, 0.946, 0)
     gg_dest_LTlt_2552 = CreateDestructable(1280601204, -11392.0, 9984.0, 270.000, 0.996, 9)
     gg_dest_LTlt_2591 = CreateDestructable(1280601204, -11264.0, 9984.0, 270.000, 1.192, 7)
     gg_dest_LTlt_2595 = CreateDestructable(1280601204, -11328.0, 10112.0, 270.000, 0.863, 7)
@@ -57799,14 +57721,14 @@ function CreateAllDestructables()
     gg_dest_LTlt_2753 = CreateDestructable(1280601204, -11456.0, 10944.0, 270.000, 1.028, 6)
     gg_dest_LTlt_2754 = CreateDestructable(1280601204, -11264.0, 11072.0, 270.000, 0.801, 4)
     gg_dest_LTlt_2755 = CreateDestructable(1280601204, -11200.0, 10944.0, 270.000, 1.053, 6)
-    gg_dest_LTlt_2756 = CreateDestructable(1280601204, -10944.0, 10240.0, 270.000, 0.930, 6)
-    gg_dest_LTlt_2757 = CreateDestructable(1280601204, -10880.0, 10368.0, 270.000, 1.042, 4)
-    gg_dest_LTlt_2758 = CreateDestructable(1280601204, -10944.0, 10496.0, 270.000, 1.110, 3)
-    gg_dest_LTlt_2759 = CreateDestructable(1280601204, -10944.0, 10624.0, 270.000, 0.939, 1)
-    gg_dest_LTlt_2760 = CreateDestructable(1280601204, -10944.0, 10752.0, 270.000, 1.107, 2)
-    gg_dest_LTlt_2761 = CreateDestructable(1280601204, -10816.0, 10752.0, 270.000, 0.956, 7)
-    gg_dest_LTlt_2762 = CreateDestructable(1280601204, -10880.0, 10880.0, 270.000, 0.993, 5)
-    gg_dest_LTlt_2763 = CreateDestructable(1280601204, -10880.0, 11008.0, 270.000, 1.152, 3)
+    gg_dest_LTba_14461 = CreateDestructable(1280598625, 14976.0, 16256.0, 0.000, 1.065, 1)
+    gg_dest_LTba_14458 = CreateDestructable(1280598625, 14912.0, 16384.0, 45.000, 1.065, 1)
+    gg_dest_LTba_14457 = CreateDestructable(1280598625, 14912.0, 16128.0, 315.000, 1.119, 1)
+    gg_dest_LTlt_14464 = CreateDestructable(1280601204, -8576.0, 12224.0, 270.000, 1.122, 4)
+    gg_dest_LTlt_14465 = CreateDestructable(1280601204, -8448.0, 12160.0, 270.000, 1.003, 9)
+    gg_dest_LTba_14489 = CreateDestructable(1280598625, 15296.0, 16256.0, 225.000, 1.119, 1)
+    gg_dest_LTlt_14470 = CreateDestructable(1280601204, -8896.0, 12480.0, 270.000, 1.022, 1)
+    gg_dest_LTlt_14469 = CreateDestructable(1280601204, -8192.0, 12800.0, 270.000, 1.018, 9)
     gg_dest_LTlt_2764 = CreateDestructable(1280601204, -10880.0, 11136.0, 270.000, 1.044, 9)
     gg_dest_LTlt_2765 = CreateDestructable(1280601204, -11264.0, 11200.0, 270.000, 0.936, 6)
     gg_dest_LTlt_2766 = CreateDestructable(1280601204, -10880.0, 11264.0, 270.000, 0.854, 5)
@@ -58350,7 +58272,7 @@ function CreateAllDestructables()
     gg_dest_LTlt_3315 = CreateDestructable(1280601204, -8128.0, 12352.0, 270.000, 1.075, 6)
     gg_dest_LTlt_3316 = CreateDestructable(1280601204, -8000.0, 12352.0, 270.000, 0.918, 6)
     gg_dest_LTlt_3317 = CreateDestructable(1280601204, -8000.0, 12608.0, 270.000, 0.903, 4)
-    gg_dest_LTlt_3319 = CreateDestructable(1280601204, -8000.0, 12736.0, 270.000, 1.137, 2)
+    gg_dest_LTlt_14468 = CreateDestructable(1280601204, -8064.0, 11904.0, 270.000, 0.814, 0)
     gg_dest_LTlt_3325 = CreateDestructable(1280601204, -7808.0, 12352.0, 270.000, 0.900, 6)
     gg_dest_LTlt_3327 = CreateDestructable(1280601204, -7808.0, 12608.0, 270.000, 0.973, 4)
     gg_dest_LTlt_3335 = CreateDestructable(1280601204, -7680.0, 12672.0, 270.000, 1.126, 6)
@@ -59050,10 +58972,10 @@ function CreateAllDestructables()
     SetDestructableLife(gg_dest_NOfp_3856, 2.55 * GetDestructableLife(gg_dest_NOfp_3856))
     gg_dest_LTbr_3848 = CreateDestructable(1280598642, -7008.0, 6944.0, 28.000, 1.472, 0)
     gg_dest_LTlt_5328 = CreateDestructable(1280601204, -9408.0, 8576.0, 270.000, 0.889, 8)
-    gg_dest_LTlt_5329 = CreateDestructable(1280601204, -9152.0, 8320.0, 270.000, 1.062, 1)
+    gg_dest_LTlt_5329 = CreateDestructable(1280601204, -9216.0, 8000.0, 270.000, 1.062, 1)
     gg_dest_LTlt_5330 = CreateDestructable(1280601204, -9088.0, 8448.0, 270.000, 0.871, 1)
     gg_dest_LTlt_5331 = CreateDestructable(1280601204, -9152.0, 8576.0, 270.000, 1.054, 2)
-    gg_dest_LTlt_5332 = CreateDestructable(1280601204, -9024.0, 8320.0, 270.000, 0.950, 9)
+    gg_dest_LTlt_5332 = CreateDestructable(1280601204, -9408.0, 7936.0, 270.000, 0.950, 9)
     gg_dest_LTlt_5333 = CreateDestructable(1280601204, -8960.0, 8448.0, 270.000, 0.888, 1)
     gg_dest_LTlt_5334 = CreateDestructable(1280601204, -9024.0, 8576.0, 270.000, 0.816, 2)
     gg_dest_CTtr_10532 = CreateDestructable(1129608306, -3136.0, 2560.0, 270.000, 1.126, 2)
@@ -60454,7 +60376,7 @@ function CreateAllDestructables()
     gg_dest_LTlt_6234 = CreateDestructable(1280601204, -9600.0, 11392.0, 270.000, 1.195, 5)
     gg_dest_LTlt_6239 = CreateDestructable(1280601204, -11072.0, 9984.0, 270.000, 0.965, 7)
     gg_dest_LTlt_6264 = CreateDestructable(1280601204, -11008.0, 9856.0, 270.000, 0.881, 3)
-    gg_dest_LTlt_6269 = CreateDestructable(1280601204, -10944.0, 9984.0, 270.000, 0.942, 9)
+    gg_dest_LTlt_14467 = CreateDestructable(1280601204, -8192.0, 12032.0, 270.000, 1.184, 8)
     gg_dest_LTlt_6660 = CreateDestructable(1280601204, -11008.0, 10112.0, 270.000, 1.107, 0)
     gg_dest_LTlt_6661 = CreateDestructable(1280601204, -11072.0, 10304.0, 270.000, 1.182, 4)
     gg_dest_LTlt_6664 = CreateDestructable(1280601204, -11136.0, 10432.0, 270.000, 0.964, 1)
@@ -61092,7 +61014,7 @@ function CreateAllDestructables()
     gg_dest_CTtr_10548 = CreateDestructable(1129608306, -1472.0, 2240.0, 270.000, 0.992, 4)
     gg_dest_CTtr_10547 = CreateDestructable(1129608306, -9536.0, 2304.0, 270.000, 1.174, 3)
     gg_dest_CTtr_10546 = CreateDestructable(1129608306, -9472.0, 2560.0, 270.000, 1.173, 3)
-    gg_dest_LTlt_8272 = CreateDestructable(1280601204, -9280.0, 8320.0, 270.000, 0.964, 0)
+    gg_dest_LTlt_8272 = CreateDestructable(1280601204, -8960.0, 7872.0, 270.000, 0.964, 0)
     gg_dest_LTlt_8273 = CreateDestructable(1280601204, -9344.0, 8448.0, 270.000, 0.860, 7)
     gg_dest_CTtr_10545 = CreateDestructable(1129608306, -9536.0, 2432.0, 270.000, 1.153, 3)
     gg_dest_CTtr_10544 = CreateDestructable(1129608306, -9344.0, 2560.0, 270.000, 0.924, 0)
@@ -63071,9 +62993,9 @@ function CreateAllDestructables()
     gg_dest_CTtr_10181 = CreateDestructable(1129608306, -8832.0, -6656.0, 270.000, 0.931, 0)
     gg_dest_CTtr_10182 = CreateDestructable(1129608306, -9408.0, -2176.0, 270.000, 1.131, 1)
     gg_dest_LTlt_10589 = CreateDestructable(1280601204, -8320.0, 8256.0, 270.000, 1.051, 4)
-    gg_dest_LTlt_10588 = CreateDestructable(1280601204, -8448.0, 8256.0, 270.000, 1.052, 9)
-    gg_dest_LTlt_10587 = CreateDestructable(1280601204, -8448.0, 8064.0, 270.000, 1.193, 5)
-    gg_dest_LTlt_10586 = CreateDestructable(1280601204, -8320.0, 7936.0, 270.000, 1.017, 8)
+    gg_dest_CTtr_14446 = CreateDestructable(1129608306, -9792.0, -5760.0, 270.000, 0.894, 3)
+    gg_dest_LTlt_10587 = CreateDestructable(1280601204, -9088.0, 8000.0, 270.000, 1.193, 5)
+    gg_dest_LTlt_10586 = CreateDestructable(1280601204, -8512.0, 7296.0, 270.000, 1.017, 8)
     gg_dest_CTtr_10187 = CreateDestructable(1129608306, -9408.0, -1600.0, 270.000, 0.890, 2)
     gg_dest_CTtr_10188 = CreateDestructable(1129608306, -9408.0, -1472.0, 270.000, 0.806, 1)
     gg_dest_CTtr_10189 = CreateDestructable(1129608306, -9472.0, -1344.0, 270.000, 0.937, 2)
@@ -67509,36 +67431,6 @@ function CreateAllDestructables()
     gg_dest_CTtr_14443 = CreateDestructable(1129608306, -9280.0, -6656.0, 270.000, 1.002, 3)
     gg_dest_CTtr_14444 = CreateDestructable(1129608306, -8896.0, -6400.0, 270.000, 0.964, 2)
     gg_dest_CTtr_14445 = CreateDestructable(1129608306, -9152.0, -6592.0, 270.000, 0.900, 0)
-    gg_dest_CTtr_14446 = CreateDestructable(1129608306, -9792.0, -5760.0, 270.000, 0.894, 3)
-    gg_dest_CTtr_14447 = CreateDestructable(1129608306, -9792.0, -5888.0, 270.000, 1.161, 0)
-    gg_dest_CTtr_14448 = CreateDestructable(1129608306, -9792.0, -6016.0, 270.000, 0.930, 4)
-    gg_dest_CTtr_14449 = CreateDestructable(1129608306, -9856.0, -6144.0, 270.000, 1.195, 3)
-    gg_dest_CTtr_14450 = CreateDestructable(1129608306, -9856.0, -6272.0, 270.000, 0.946, 0)
-    gg_dest_CTtr_14451 = CreateDestructable(1129608306, -9664.0, -6016.0, 270.000, 0.851, 4)
-    gg_dest_CTtr_14452 = CreateDestructable(1129608306, -9728.0, -6144.0, 270.000, 0.914, 1)
-    gg_dest_CTtr_14453 = CreateDestructable(1129608306, -9408.0, -5696.0, 270.000, 0.994, 4)
-    gg_dest_CTtr_14454 = CreateDestructable(1129608306, -9280.0, -5568.0, 270.000, 0.830, 4)
-    gg_dest_LTba_14475 = CreateDestructable(1280598625, -5568.0, 13440.0, 315.000, 1.119, 1)
-    gg_dest_LTba_14456 = CreateDestructable(1280598625, -7552.0, 13632.0, 45.000, 1.065, 1)
-    gg_dest_LTba_14476 = CreateDestructable(1280598625, -4032.0, 13184.0, 315.000, 1.119, 1)
-    gg_dest_LTba_14479 = CreateDestructable(1280598625, -5568.0, 13184.0, 45.000, 1.065, 1)
-    gg_dest_LTba_14459 = CreateDestructable(1280598625, -7552.0, 13120.0, 45.000, 1.065, 1)
-    gg_dest_LTba_14460 = CreateDestructable(1280598625, -7552.0, 12992.0, 315.000, 1.119, 1)
-    gg_dest_LTba_14477 = CreateDestructable(1280598625, -5568.0, 13696.0, 45.000, 1.065, 1)
-    gg_dest_LTba_14478 = CreateDestructable(1280598625, -4032.0, 13440.0, 45.000, 1.065, 1)
-    gg_dest_LTlt_14463 = CreateDestructable(1280601204, -8704.0, 12352.0, 270.000, 1.182, 4)
-    gg_dest_LTlt_14464 = CreateDestructable(1280601204, -8576.0, 12224.0, 270.000, 1.122, 4)
-    gg_dest_LTlt_14465 = CreateDestructable(1280601204, -8448.0, 12160.0, 270.000, 1.003, 9)
-    gg_dest_LTlt_14466 = CreateDestructable(1280601204, -8320.0, 12096.0, 270.000, 1.134, 2)
-    gg_dest_LTlt_14467 = CreateDestructable(1280601204, -8192.0, 12032.0, 270.000, 1.184, 8)
-    gg_dest_LTlt_14468 = CreateDestructable(1280601204, -8064.0, 11904.0, 270.000, 0.814, 0)
-    gg_dest_LTlt_14469 = CreateDestructable(1280601204, -8192.0, 12800.0, 270.000, 1.018, 9)
-    gg_dest_LTlt_14470 = CreateDestructable(1280601204, -8896.0, 12480.0, 270.000, 1.022, 1)
-    gg_dest_LTba_14471 = CreateDestructable(1280598625, -5504.0, 13056.0, 0.000, 1.065, 1)
-    gg_dest_LTba_14472 = CreateDestructable(1280598625, -5504.0, 13568.0, 0.000, 1.065, 1)
-    gg_dest_LTba_14473 = CreateDestructable(1280598625, -3968.0, 13312.0, 0.000, 1.065, 1)
-    gg_dest_LTba_14474 = CreateDestructable(1280598625, -5568.0, 12928.0, 315.000, 1.119, 1)
-    gg_dest_LTba_14455 = CreateDestructable(1280598625, -7552.0, 13504.0, 315.000, 1.119, 1)
 end
 
 function CreateBuildingsForPlayer0()
@@ -67547,30 +67439,31 @@ function CreateBuildingsForPlayer0()
     local t = nil
     gg_unit_h005_0031 = CreateUnit(p, 1747988533, -7680.0, 13568.0, 270.000)
     gg_unit_h005_0032 = CreateUnit(p, 1747988533, -7680.0, 13056.0, 270.000)
-    gg_unit_h004_0034 = CreateUnit(p, 1747988532, -5632.0, 13568.0, 270.000)
-    gg_unit_h004_0035 = CreateUnit(p, 1747988532, -5632.0, 13056.0, 270.000)
+    gg_unit_h005_0033 = CreateUnit(p, 1747988533, -6656.0, 13312.0, 270.000)
+    gg_unit_h004_0034 = CreateUnit(p, 1747988532, -5120.0, 13568.0, 270.000)
+    gg_unit_h004_0035 = CreateUnit(p, 1747988532, -5120.0, 13056.0, 270.000)
     gg_unit_h004_0036 = CreateUnit(p, 1747988532, -4096.0, 13312.0, 270.000)
-    gg_unit_h005_0038 = CreateUnit(p, 1747988533, -9856.0, 11264.0, 270.000)
-    gg_unit_h005_0039 = CreateUnit(p, 1747988533, -10624.0, 11264.0, 270.000)
-    gg_unit_h005_0040 = CreateUnit(p, 1747988533, -10240.0, 9984.0, 270.000)
+    gg_unit_h005_0038 = CreateUnit(p, 1747988533, -9984.0, 10752.0, 270.000)
+    gg_unit_h005_0039 = CreateUnit(p, 1747988533, -10496.0, 10752.0, 270.000)
+    gg_unit_h005_0040 = CreateUnit(p, 1747988533, -10240.0, 9728.0, 270.000)
     gg_unit_n005_0044 = CreateUnit(p, 1848651829, -12032.0, 15104.0, 270.000)
-    gg_unit_h009_0053 = CreateUnit(p, 1747988537, -11008.0, 14592.0, 270.000)
+    gg_unit_h009_0053 = CreateUnit(p, 1747988537, -11264.0, 15232.0, 270.000)
     gg_unit_h02R_0054 = CreateUnit(p, 1747989074, -9472.0, 13312.0, 270.000)
-    gg_unit_h005_0138 = CreateUnit(p, 1747988533, -8192.0, 10752.0, 270.000)
-    gg_unit_h005_0139 = CreateUnit(p, 1747988533, -7680.0, 11264.0, 270.000)
-    gg_unit_h005_0143 = CreateUnit(p, 1747988533, -7680.0, 10752.0, 270.000)
-    gg_unit_h004_0144 = CreateUnit(p, 1747988532, -9856.0, 7168.0, 270.000)
-    gg_unit_h004_0145 = CreateUnit(p, 1747988532, -10624.0, 7168.0, 270.000)
-    gg_unit_h004_0146 = CreateUnit(p, 1747988532, -10240.0, 5888.0, 270.000)
-    gg_unit_h004_0176 = CreateUnit(p, 1747988532, -5376.0, 7936.0, 270.000)
-    gg_unit_h004_0177 = CreateUnit(p, 1747988532, -4864.0, 8448.0, 270.000)
-    gg_unit_h004_0178 = CreateUnit(p, 1747988532, -4096.0, 7168.0, 270.000)
+    gg_unit_h005_0138 = CreateUnit(p, 1747988533, -8576.0, 11264.0, 270.000)
+    gg_unit_h005_0139 = CreateUnit(p, 1747988533, -8192.0, 11648.0, 270.000)
+    gg_unit_h005_0143 = CreateUnit(p, 1747988533, -7808.0, 10880.0, 270.000)
+    gg_unit_h004_0144 = CreateUnit(p, 1747988532, -9984.0, 8192.0, 270.000)
+    gg_unit_h004_0145 = CreateUnit(p, 1747988532, -10496.0, 8192.0, 270.000)
+    gg_unit_h004_0146 = CreateUnit(p, 1747988532, -10240.0, 7168.0, 270.000)
+    gg_unit_h004_0176 = CreateUnit(p, 1747988532, -6016.0, 8704.0, 270.000)
+    gg_unit_h004_0177 = CreateUnit(p, 1747988532, -5632.0, 9088.0, 270.000)
+    gg_unit_h004_0178 = CreateUnit(p, 1747988532, -5248.0, 8320.0, 270.000)
     gg_unit_h02R_0243 = CreateUnit(p, 1747989074, -11008.0, 14080.0, 270.000)
     gg_unit_h02R_0254 = CreateUnit(p, 1747989074, -12160.0, 14720.0, 270.000)
     gg_unit_h02R_0257 = CreateUnit(p, 1747989074, -11648.0, 15232.0, 270.000)
     gg_unit_n01I_0271 = CreateUnit(p, 1848652105, 4832.0, 10656.0, 270.000)
     gg_unit_n02A_0276 = CreateUnit(p, 1848652353, 8416.0, 7200.0, 270.000)
-    gg_unit_h00T_0284 = CreateUnit(p, 1747988564, -11520.0, 14080.0, 270.000)
+    gg_unit_h00T_0284 = CreateUnit(p, 1747988564, -10880.0, 15232.0, 270.000)
     gg_unit_n02A_0286 = CreateUnit(p, 1848652353, 8224.0, 6688.0, 270.000)
     gg_unit_n02A_0296 = CreateUnit(p, 1848652353, 7328.0, 7840.0, 270.000)
     gg_unit_n02A_0297 = CreateUnit(p, 1848652353, 6944.0, 7072.0, 270.000)
@@ -67614,30 +67507,30 @@ function CreateBuildingsForPlayer4()
     local p = Player(4)
     local unitID = nil
     local t = nil
-    gg_unit_h00U_0013 = CreateUnit(p, 1747988565, 4096.0, 7168.0, 270.000)
-    gg_unit_h00V_0017 = CreateUnit(p, 1747988566, 7680.0, 10752.0, 270.000)
-    gg_unit_h00V_0037 = CreateUnit(p, 1747988566, 8448.0, 12032.0, 270.000)
-    gg_unit_h02S_0041 = CreateUnit(p, 1747989075, 9472.0, 12544.0, 270.000)
-    gg_unit_h02S_0042 = CreateUnit(p, 1747989075, 10240.0, 12288.0, 270.000)
-    gg_unit_h00V_0043 = CreateUnit(p, 1747988566, 6912.0, 13312.0, 270.000)
-    gg_unit_h00W_0045 = CreateUnit(p, 1747988567, 11520.0, 14080.0, 270.000)
-    gg_unit_h00U_0046 = CreateUnit(p, 1747988565, 2816.0, 13312.0, 270.000)
-    gg_unit_h00U_0047 = CreateUnit(p, 1747988565, 4864.0, 8448.0, 270.000)
-    gg_unit_h00V_0048 = CreateUnit(p, 1747988566, 8192.0, 13696.0, 270.000)
-    gg_unit_h00V_0049 = CreateUnit(p, 1747988566, 8192.0, 12928.0, 270.000)
-    gg_unit_h00V_0050 = CreateUnit(p, 1747988566, 8960.0, 11520.0, 270.000)
-    gg_unit_h00X_0052 = CreateUnit(p, 1747988568, 11008.0, 14592.0, 270.000)
-    gg_unit_h02S_0055 = CreateUnit(p, 1747989075, 9216.0, 13312.0, 270.000)
+    gg_unit_h00U_0013 = CreateUnit(p, 1747988565, 5248.0, 8320.0, 270.000)
+    gg_unit_h00V_0017 = CreateUnit(p, 1747988566, 7808.0, 10880.0, 270.000)
+    gg_unit_h00V_0037 = CreateUnit(p, 1747988566, 8192.0, 11648.0, 270.000)
+    gg_unit_h02S_0041 = CreateUnit(p, 1747989075, 9600.0, 12672.0, 270.000)
+    gg_unit_h02S_0042 = CreateUnit(p, 1747989075, 10240.0, 12544.0, 270.000)
+    gg_unit_h00V_0043 = CreateUnit(p, 1747988566, 6656.0, 13312.0, 270.000)
+    gg_unit_h00W_0045 = CreateUnit(p, 1747988567, 11264.0, 15232.0, 270.000)
+    gg_unit_h00U_0046 = CreateUnit(p, 1747988565, 4096.0, 13312.0, 270.000)
+    gg_unit_h00U_0047 = CreateUnit(p, 1747988565, 5632.0, 9088.0, 270.000)
+    gg_unit_h00V_0048 = CreateUnit(p, 1747988566, 7680.0, 13568.0, 270.000)
+    gg_unit_h00V_0049 = CreateUnit(p, 1747988566, 7680.0, 13056.0, 270.000)
+    gg_unit_h00V_0050 = CreateUnit(p, 1747988566, 8576.0, 11264.0, 270.000)
+    gg_unit_h00X_0052 = CreateUnit(p, 1747988568, 10880.0, 15232.0, 270.000)
+    gg_unit_h02S_0055 = CreateUnit(p, 1747989075, 9472.0, 13312.0, 270.000)
     gg_unit_NBDB_0134 = CreateUnit(p, 1312965698, 12032.0, 15104.0, 270.000)
-    gg_unit_h00V_0140 = CreateUnit(p, 1747988566, 10240.0, 9984.0, 270.000)
-    gg_unit_h00V_0141 = CreateUnit(p, 1747988566, 9856.0, 11264.0, 270.000)
-    gg_unit_h00V_0142 = CreateUnit(p, 1747988566, 10624.0, 11264.0, 270.000)
-    gg_unit_h00U_0179 = CreateUnit(p, 1747988565, 10240.0, 5888.0, 270.000)
-    gg_unit_h00U_0180 = CreateUnit(p, 1747988565, 9856.0, 7168.0, 270.000)
-    gg_unit_h00U_0181 = CreateUnit(p, 1747988565, 5376.0, 7936.0, 270.000)
-    gg_unit_h00U_0231 = CreateUnit(p, 1747988565, 4096.0, 13696.0, 270.000)
-    gg_unit_h00U_0232 = CreateUnit(p, 1747988565, 4096.0, 12928.0, 270.000)
-    gg_unit_h00U_0233 = CreateUnit(p, 1747988565, 10624.0, 7168.0, 270.000)
+    gg_unit_h00V_0140 = CreateUnit(p, 1747988566, 10240.0, 9728.0, 270.000)
+    gg_unit_h00V_0141 = CreateUnit(p, 1747988566, 9984.0, 10752.0, 270.000)
+    gg_unit_h00V_0142 = CreateUnit(p, 1747988566, 10496.0, 10752.0, 270.000)
+    gg_unit_h00U_0179 = CreateUnit(p, 1747988565, 10240.0, 7168.0, 270.000)
+    gg_unit_h00U_0180 = CreateUnit(p, 1747988565, 9984.0, 8192.0, 270.000)
+    gg_unit_h00U_0181 = CreateUnit(p, 1747988565, 6016.0, 8704.0, 270.000)
+    gg_unit_h00U_0231 = CreateUnit(p, 1747988565, 5120.0, 13568.0, 270.000)
+    gg_unit_h00U_0232 = CreateUnit(p, 1747988565, 5120.0, 13056.0, 270.000)
+    gg_unit_h00U_0233 = CreateUnit(p, 1747988565, 10496.0, 8192.0, 270.000)
     gg_unit_h02S_0251 = CreateUnit(p, 1747989075, 11008.0, 14080.0, 270.000)
     gg_unit_h02S_0253 = CreateUnit(p, 1747989075, 12160.0, 14720.0, 270.000)
     gg_unit_h02S_0256 = CreateUnit(p, 1747989075, 11648.0, 15232.0, 270.000)
@@ -67675,33 +67568,33 @@ function CreateBuildingsForPlayer8()
     local p = Player(8)
     local unitID = nil
     local t = nil
-    gg_unit_h010_0056 = CreateUnit(p, 1747988784, -10240.0, 256.0, 270.000)
+    gg_unit_h010_0056 = CreateUnit(p, 1747988784, -10240.0, -1024.0, 270.000)
     IssueImmediateOrderById(gg_unit_h010_0056, 1098018610)
-    gg_unit_h010_0057 = CreateUnit(p, 1747988784, -10624.0, -1024.0, 270.000)
-    gg_unit_h011_0153 = CreateUnit(p, 1747988785, -8448.0, -5888.0, 270.000)
-    gg_unit_h011_0154 = CreateUnit(p, 1747988785, -8960.0, -5376.0, 270.000)
+    gg_unit_h010_0057 = CreateUnit(p, 1747988784, -10496.0, -2048.0, 270.000)
+    gg_unit_h011_0153 = CreateUnit(p, 1747988785, -8192.0, -5504.0, 270.000)
+    gg_unit_h011_0154 = CreateUnit(p, 1747988785, -8576.0, -5120.0, 270.000)
     gg_unit_h02U_0155 = CreateUnit(p, 1747989077, -11008.0, -7936.0, 270.000)
     gg_unit_h02U_0156 = CreateUnit(p, 1747989077, -11648.0, -9088.0, 270.000)
-    gg_unit_h011_0160 = CreateUnit(p, 1747988785, -8192.0, -6784.0, 270.000)
-    gg_unit_h010_0163 = CreateUnit(p, 1747988784, -4096.0, -1024.0, 270.000)
-    gg_unit_h010_0164 = CreateUnit(p, 1747988784, -4864.0, -2304.0, 270.000)
-    gg_unit_h010_0165 = CreateUnit(p, 1747988784, -9856.0, -1024.0, 270.000)
-    gg_unit_h010_0166 = CreateUnit(p, 1747988784, -2816.0, -7168.0, 270.000)
-    gg_unit_h010_0167 = CreateUnit(p, 1747988784, -4096.0, -7552.0, 270.000)
-    gg_unit_h010_0168 = CreateUnit(p, 1747988784, -4096.0, -6784.0, 270.000)
-    gg_unit_h011_0185 = CreateUnit(p, 1747988785, -6912.0, -7168.0, 270.000)
-    gg_unit_h011_0186 = CreateUnit(p, 1747988785, -8192.0, -7552.0, 270.000)
-    gg_unit_h010_0187 = CreateUnit(p, 1747988784, -5376.0, -1792.0, 270.000)
-    gg_unit_h013_0188 = CreateUnit(p, 1747988787, -11008.0, -8448.0, 270.000)
+    gg_unit_h011_0160 = CreateUnit(p, 1747988785, -7680.0, -6912.0, 270.000)
+    gg_unit_h010_0163 = CreateUnit(p, 1747988784, -5248.0, -2176.0, 270.000)
+    gg_unit_h010_0164 = CreateUnit(p, 1747988784, -5632.0, -2944.0, 270.000)
+    gg_unit_h010_0165 = CreateUnit(p, 1747988784, -9984.0, -2048.0, 270.000)
+    gg_unit_h010_0166 = CreateUnit(p, 1747988784, -4096.0, -7168.0, 270.000)
+    gg_unit_h010_0167 = CreateUnit(p, 1747988784, -5120.0, -7424.0, 270.000)
+    gg_unit_h010_0168 = CreateUnit(p, 1747988784, -5120.0, -6912.0, 270.000)
+    gg_unit_h011_0185 = CreateUnit(p, 1747988785, -6656.0, -7168.0, 270.000)
+    gg_unit_h011_0186 = CreateUnit(p, 1747988785, -7680.0, -7424.0, 270.000)
+    gg_unit_h010_0187 = CreateUnit(p, 1747988784, -6016.0, -2560.0, 270.000)
+    gg_unit_h013_0188 = CreateUnit(p, 1747988787, -11264.0, -9088.0, 270.000)
     gg_unit_h02U_0190 = CreateUnit(p, 1747989077, -12160.0, -8576.0, 270.000)
-    gg_unit_h012_0196 = CreateUnit(p, 1747988786, -11520.0, -7936.0, 270.000)
-    gg_unit_h02U_0204 = CreateUnit(p, 1747989077, -9216.0, -7168.0, 270.000)
-    gg_unit_h011_0239 = CreateUnit(p, 1747988785, -7680.0, -4608.0, 270.000)
-    gg_unit_h011_0240 = CreateUnit(p, 1747988785, -10240.0, -3840.0, 270.000)
-    gg_unit_h011_0241 = CreateUnit(p, 1747988785, -10624.0, -5120.0, 270.000)
-    gg_unit_h011_0242 = CreateUnit(p, 1747988785, -9856.0, -5120.0, 270.000)
-    gg_unit_h02U_0244 = CreateUnit(p, 1747989077, -9472.0, -6400.0, 270.000)
-    gg_unit_h02U_0252 = CreateUnit(p, 1747989077, -10240.0, -6144.0, 270.000)
+    gg_unit_h012_0196 = CreateUnit(p, 1747988786, -10880.0, -9088.0, 270.000)
+    gg_unit_h02U_0204 = CreateUnit(p, 1747989077, -9472.0, -7168.0, 270.000)
+    gg_unit_h011_0239 = CreateUnit(p, 1747988785, -7808.0, -4736.0, 270.000)
+    gg_unit_h011_0240 = CreateUnit(p, 1747988785, -10240.0, -3584.0, 270.000)
+    gg_unit_h011_0241 = CreateUnit(p, 1747988785, -10496.0, -4608.0, 270.000)
+    gg_unit_h011_0242 = CreateUnit(p, 1747988785, -9984.0, -4608.0, 270.000)
+    gg_unit_h02U_0244 = CreateUnit(p, 1747989077, -9600.0, -6528.0, 270.000)
+    gg_unit_h02U_0252 = CreateUnit(p, 1747989077, -10240.0, -6400.0, 270.000)
 end
 
 function CreateUnitsForPlayer8()
@@ -67737,32 +67630,32 @@ function CreateBuildingsForPlayer12()
     local unitID = nil
     local t = nil
     gg_unit_NEBL_0009 = CreateUnit(p, 1313161804, 12032.0, -8960.0, 270.000)
-    gg_unit_h018_0023 = CreateUnit(p, 1747988792, 2816.0, -7168.0, 270.000)
-    gg_unit_h01C_0024 = CreateUnit(p, 1747988803, 11008.0, -8448.0, 270.000)
-    gg_unit_h018_0147 = CreateUnit(p, 1747988792, 4096.0, -6784.0, 270.000)
-    gg_unit_h019_0148 = CreateUnit(p, 1747988793, 10240.0, -3840.0, 270.000)
-    gg_unit_h019_0149 = CreateUnit(p, 1747988793, 10624.0, -5120.0, 270.000)
-    gg_unit_h018_0150 = CreateUnit(p, 1747988792, 10240.0, 256.0, 270.000)
-    gg_unit_h018_0151 = CreateUnit(p, 1747988792, 10624.0, -1024.0, 270.000)
-    gg_unit_h019_0152 = CreateUnit(p, 1747988793, 6912.0, -7168.0, 270.000)
-    gg_unit_h019_0162 = CreateUnit(p, 1747988793, 9856.0, -5120.0, 270.000)
+    gg_unit_h018_0023 = CreateUnit(p, 1747988792, 4096.0, -7168.0, 270.000)
+    gg_unit_h01C_0024 = CreateUnit(p, 1747988803, 12160.0, -7808.0, 270.000)
+    gg_unit_h018_0147 = CreateUnit(p, 1747988792, 5120.0, -6784.0, 270.000)
+    gg_unit_h019_0148 = CreateUnit(p, 1747988793, 10240.0, -3584.0, 270.000)
+    gg_unit_h019_0149 = CreateUnit(p, 1747988793, 10496.0, -4608.0, 270.000)
+    gg_unit_h018_0150 = CreateUnit(p, 1747988792, 10240.0, -1024.0, 270.000)
+    gg_unit_h018_0151 = CreateUnit(p, 1747988792, 10496.0, -2048.0, 270.000)
+    gg_unit_h019_0152 = CreateUnit(p, 1747988793, 6656.0, -7168.0, 270.000)
+    gg_unit_h019_0162 = CreateUnit(p, 1747988793, 9984.0, -4608.0, 270.000)
     gg_unit_h02T_0169 = CreateUnit(p, 1747989076, 11008.0, -7936.0, 270.000)
     gg_unit_h02T_0170 = CreateUnit(p, 1747989076, 11648.0, -9088.0, 270.000)
-    gg_unit_h01D_0171 = CreateUnit(p, 1747988804, 11520.0, -7936.0, 270.000)
-    gg_unit_h019_0172 = CreateUnit(p, 1747988793, 8192.0, -6784.0, 270.000)
-    gg_unit_h019_0173 = CreateUnit(p, 1747988793, 8192.0, -7552.0, 270.000)
-    gg_unit_h018_0174 = CreateUnit(p, 1747988792, 4096.0, -7552.0, 270.000)
-    gg_unit_h018_0175 = CreateUnit(p, 1747988792, 9856.0, -1024.0, 270.000)
-    gg_unit_h019_0182 = CreateUnit(p, 1747988793, 8960.0, -5376.0, 270.000)
-    gg_unit_h019_0183 = CreateUnit(p, 1747988793, 8448.0, -5888.0, 270.000)
-    gg_unit_h019_0184 = CreateUnit(p, 1747988793, 7680.0, -4608.0, 270.000)
-    gg_unit_h018_0198 = CreateUnit(p, 1747988792, 4096.0, -1024.0, 270.000)
-    gg_unit_h018_0202 = CreateUnit(p, 1747988792, 4864.0, -2304.0, 270.000)
-    gg_unit_h018_0203 = CreateUnit(p, 1747988792, 5376.0, -1792.0, 270.000)
+    gg_unit_h01D_0171 = CreateUnit(p, 1747988804, 12160.0, -8192.0, 270.000)
+    gg_unit_h019_0172 = CreateUnit(p, 1747988793, 7680.0, -6912.0, 270.000)
+    gg_unit_h019_0173 = CreateUnit(p, 1747988793, 7680.0, -7424.0, 270.000)
+    gg_unit_h018_0174 = CreateUnit(p, 1747988792, 5120.0, -7424.0, 270.000)
+    gg_unit_h018_0175 = CreateUnit(p, 1747988792, 9984.0, -2048.0, 270.000)
+    gg_unit_h019_0182 = CreateUnit(p, 1747988793, 8576.0, -5120.0, 270.000)
+    gg_unit_h019_0183 = CreateUnit(p, 1747988793, 8192.0, -5504.0, 270.000)
+    gg_unit_h019_0184 = CreateUnit(p, 1747988793, 7808.0, -4736.0, 270.000)
+    gg_unit_h018_0198 = CreateUnit(p, 1747988792, 5248.0, -2176.0, 270.000)
+    gg_unit_h018_0202 = CreateUnit(p, 1747988792, 5632.0, -2944.0, 270.000)
+    gg_unit_h018_0203 = CreateUnit(p, 1747988792, 6016.0, -2560.0, 270.000)
     gg_unit_h02T_0210 = CreateUnit(p, 1747989076, 12160.0, -8576.0, 270.000)
-    gg_unit_h02T_0261 = CreateUnit(p, 1747989076, 9216.0, -7168.0, 270.000)
-    gg_unit_h02T_0264 = CreateUnit(p, 1747989076, 9472.0, -6400.0, 270.000)
-    gg_unit_h02T_0265 = CreateUnit(p, 1747989076, 10240.0, -6144.0, 270.000)
+    gg_unit_h02T_0261 = CreateUnit(p, 1747989076, 9472.0, -7168.0, 270.000)
+    gg_unit_h02T_0264 = CreateUnit(p, 1747989076, 9600.0, -6528.0, 270.000)
+    gg_unit_h02T_0265 = CreateUnit(p, 1747989076, 10240.0, -6400.0, 270.000)
 end
 
 function CreateUnitsForPlayer12()
@@ -68138,12 +68031,12 @@ function CreateRegions()
     gg_rct_CenterRightComplete = Rect(9792.0, 2688.0, 10560.0, 3456.0)
     gg_rct_CenterTop = Rect(-128.0, 13120.0, 128.0, 13376.0)
     gg_rct_CenterTopComplete = Rect(-384.0, 12864.0, 384.0, 13632.0)
-    gg_rct_ElfBarracksToCenter = Rect(-6208.0, -3136.0, -6080.0, -3008.0)
-    gg_rct_ElfBarracksToCenterSpawn = Rect(-6016.0, -3072.0, -5760.0, -2560.0)
-    gg_rct_ElfBarracksToHuman = Rect(-10304.0, -1984.0, -10176.0, -1856.0)
-    gg_rct_ElfBarracksToHumanSpawn = Rect(-10496.0, -1792.0, -9984.0, -1536.0)
-    gg_rct_ElfBarracksToUndead = Rect(-5056.0, -7232.0, -4928.0, -7104.0)
-    gg_rct_ElfBarracksToUndeadSpawn = Rect(-4864.0, -7424.0, -4608.0, -6912.0)
+    gg_rct_ElfBarracksToCenter = Rect(-9152.0, -6080.0, -9024.0, -5952.0)
+    gg_rct_ElfBarracksToCenterSpawn = Rect(-8960.0, -5888.0, -8704.0, -5632.0)
+    gg_rct_ElfBarracksToHuman = Rect(-10304.0, -5696.0, -10176.0, -5568.0)
+    gg_rct_ElfBarracksToHumanSpawn = Rect(-10496.0, -5504.0, -9984.0, -5248.0)
+    gg_rct_ElfBarracksToUndead = Rect(-8768.0, -7232.0, -8640.0, -7104.0)
+    gg_rct_ElfBarracksToUndeadSpawn = Rect(-8576.0, -7424.0, -8320.0, -6912.0)
     gg_rct_ElfBase = Rect(-10304.0, -7232.0, -10176.0, -7104.0)
     gg_rct_ElfBaseHeroRespawn = Rect(-12032.0, -8832.0, -11904.0, -8704.0)
     gg_rct_ElfBaseHeroSpawn = Rect(-11904.0, -8960.0, -11776.0, -8832.0)
@@ -68154,9 +68047,6 @@ function CreateRegions()
     gg_rct_ElfCreepToHumanSpawnBuilding = Rect(-7808.0, -768.0, -7552.0, -512.0)
     gg_rct_ElfCreepToUndeadSpawn = Rect(-4608.0, -5120.0, -3840.0, -4352.0)
     gg_rct_ElfCreepToUndeadSpawnBuilding = Rect(-4224.0, -4352.0, -3968.0, -4096.0)
-    gg_rct_ElfToHumanOuterLine = Rect(-10304.0, -1088.0, -10176.0, -960.0)
-    gg_rct_ElfToOrcOuterLine = Rect(-5184.0, -2112.0, -5056.0, -1984.0)
-    gg_rct_ElfToUndeadOuterLine = Rect(-4160.0, -7232.0, -4032.0, -7104.0)
     gg_rct_HeroAlchemist = Rect(-4864.0, 18496.0, -4736.0, 18624.0)
     gg_rct_HeroArchmage = Rect(-1792.0, 18496.0, -1664.0, 18624.0)
     gg_rct_HeroBlademaster = Rect(-4672.0, 17408.0, -4544.0, 17536.0)
@@ -68179,10 +68069,10 @@ function CreateRegions()
     gg_rct_HeroTaurenChieftain = Rect(-3648.0, 17792.0, -3520.0, 17920.0)
     gg_rct_HeroTinker = Rect(-4096.0, 18496.0, -3968.0, 18624.0)
     gg_rct_HeroWarden = Rect(-3648.0, 17408.0, -3520.0, 17536.0)
-    gg_rct_HumanBarracksToCenter = Rect(-9280.0, 12224.0, -9152.0, 12352.0)
-    gg_rct_HumanBarracksToCenterSpawn = Rect(-9088.0, 11904.0, -8832.0, 12160.0)
-    gg_rct_HumanBarracksToElf = Rect(-10304.0, 11968.0, -10176.0, 12096.0)
-    gg_rct_HumanBarracksToElfSpawn = Rect(-10496.0, 11648.0, -9984.0, 11904.0)
+    gg_rct_HumanBarracksToCenter = Rect(-9152.0, 12096.0, -9024.0, 12224.0)
+    gg_rct_HumanBarracksToCenterSpawn = Rect(-8960.0, 11776.0, -8704.0, 12032.0)
+    gg_rct_HumanBarracksToElf = Rect(-10304.0, 11712.0, -10176.0, 11840.0)
+    gg_rct_HumanBarracksToElfSpawn = Rect(-10496.0, 11392.0, -9984.0, 11648.0)
     gg_rct_HumanBarracksToOrc = Rect(-8768.0, 13248.0, -8640.0, 13376.0)
     gg_rct_HumanBarracksToOrcSpawn = Rect(-8576.0, 13056.0, -8320.0, 13568.0)
     gg_rct_HumanBase = Rect(-10304.0, 13248.0, -10176.0, 13376.0)
@@ -68195,8 +68085,6 @@ function CreateRegions()
     gg_rct_HumanCreepToElfSpawnBuilding = Rect(-7808.0, 6656.0, -7552.0, 6912.0)
     gg_rct_HumanCreepToOrcSpawn = Rect(-4608.0, 10368.0, -3840.0, 11136.0)
     gg_rct_HumanCreepToOrcSpawnBuilding = Rect(-4224.0, 10112.0, -3968.0, 10368.0)
-    gg_rct_HumanToElfOuterLine = Rect(-10304.0, 7104.0, -10176.0, 7232.0)
-    gg_rct_HumanToUndeadOuterLine = Rect(-5184.0, 8128.0, -5056.0, 8256.0)
     gg_rct_LegionSpawnBottom = Rect(-384.0, -3456.0, 384.0, -2688.0)
     gg_rct_LegionSpawnBottom1 = Rect(-448.0, -3136.0, -320.0, -3008.0)
     gg_rct_LegionSpawnBottom2 = Rect(320.0, -3136.0, 448.0, -3008.0)
@@ -68209,12 +68097,12 @@ function CreateRegions()
     gg_rct_LegionSpawnWest = Rect(-6528.0, 2688.0, -5760.0, 3456.0)
     gg_rct_LegionSpawnWest1 = Rect(-6208.0, 3392.0, -6080.0, 3520.0)
     gg_rct_LegionSpawnWest2 = Rect(-6208.0, 2624.0, -6080.0, 2752.0)
-    gg_rct_OrcBarracksToCenter = Rect(6080.0, 9152.0, 6208.0, 9280.0)
-    gg_rct_OrcBarracksToCenterSpawn = Rect(5760.0, 8704.0, 6016.0, 9216.0)
-    gg_rct_OrcBarracksToHuman = Rect(4928.0, 13248.0, 5056.0, 13376.0)
-    gg_rct_OrcBarracksToHumanSpawn = Rect(4608.0, 13056.0, 4864.0, 13568.0)
-    gg_rct_OrcBarracksToUndead = Rect(10176.0, 8000.0, 10304.0, 8128.0)
-    gg_rct_OrcBarracksToUndeadSpawn = Rect(9984.0, 7680.0, 10496.0, 7936.0)
+    gg_rct_OrcBarracksToCenter = Rect(9024.0, 12096.0, 9152.0, 12224.0)
+    gg_rct_OrcBarracksToCenterSpawn = Rect(8704.0, 11776.0, 8960.0, 12032.0)
+    gg_rct_OrcBarracksToHuman = Rect(8640.0, 13248.0, 8768.0, 13376.0)
+    gg_rct_OrcBarracksToHumanSpawn = Rect(8320.0, 13056.0, 8576.0, 13568.0)
+    gg_rct_OrcBarracksToUndead = Rect(10176.0, 11712.0, 10304.0, 11840.0)
+    gg_rct_OrcBarracksToUndeadSpawn = Rect(9984.0, 11392.0, 10496.0, 11648.0)
     gg_rct_OrcBase = Rect(10176.0, 13248.0, 10304.0, 13376.0)
     gg_rct_OrcBaseHeroRespawn = Rect(11776.0, 14976.0, 11904.0, 15104.0)
     gg_rct_OrcBaseHeroSpawn = Rect(11904.0, 14848.0, 12032.0, 14976.0)
@@ -68225,18 +68113,15 @@ function CreateRegions()
     gg_rct_OrcCreepToHumanSpawnBuilding = Rect(3840.0, 10240.0, 4096.0, 10496.0)
     gg_rct_OrcCreepToUndeadSpawn = Rect(7424.0, 6912.0, 8192.0, 7680.0)
     gg_rct_OrcCreepToUndeadSpawnBuilding = Rect(7552.0, 6656.0, 7808.0, 6912.0)
-    gg_rct_OrcToElfOuterLine = Rect(5056.0, 8128.0, 5184.0, 8256.0)
-    gg_rct_OrcToHumanOuterLine = Rect(4032.0, 13248.0, 4160.0, 13376.0)
-    gg_rct_OrcToUndeadOuterLine = Rect(10176.0, 7104.0, 10304.0, 7232.0)
     gg_rct_TestArea = Rect(15296.0, 16320.0, 15424.0, 16448.0)
     gg_rct_TestArea2 = Rect(-10304.0, 13632.0, -10176.0, 13760.0)
     gg_rct_TestArea3 = Rect(16320.0, 16320.0, 16448.0, 16448.0)
-    gg_rct_UndeadBarracksToCenter = Rect(6080.0, -3136.0, 6208.0, -3008.0)
-    gg_rct_UndeadBarracksToCenterSpawn = Rect(5760.0, -3072.0, 6016.0, -2560.0)
-    gg_rct_UndeadBarracksToElf = Rect(4928.0, -7232.0, 5056.0, -7104.0)
-    gg_rct_UndeadBarracksToElfSpawn = Rect(4608.0, -7424.0, 4864.0, -6912.0)
-    gg_rct_UndeadBarracksToOrc = Rect(10176.0, -1984.0, 10304.0, -1856.0)
-    gg_rct_UndeadBarracksToOrcSpawn = Rect(9984.0, -1792.0, 10496.0, -1536.0)
+    gg_rct_UndeadBarracksToCenter = Rect(9024.0, -6080.0, 9152.0, -5952.0)
+    gg_rct_UndeadBarracksToCenterSpawn = Rect(8704.0, -5888.0, 8960.0, -5632.0)
+    gg_rct_UndeadBarracksToElf = Rect(8640.0, -7232.0, 8768.0, -7104.0)
+    gg_rct_UndeadBarracksToElfSpawn = Rect(8320.0, -7424.0, 8576.0, -6912.0)
+    gg_rct_UndeadBarracksToOrc = Rect(10176.0, -5696.0, 10304.0, -5568.0)
+    gg_rct_UndeadBarracksToOrcSpawn = Rect(9984.0, -5504.0, 10496.0, -5248.0)
     gg_rct_UndeadBase = Rect(10176.0, -7232.0, 10304.0, -7104.0)
     gg_rct_UndeadBaseHeroRespawn = Rect(11776.0, -8960.0, 11904.0, -8832.0)
     gg_rct_UndeadBaseHeroSpawn = Rect(11904.0, -8832.0, 12032.0, -8704.0)
@@ -68247,9 +68132,6 @@ function CreateRegions()
     gg_rct_UndeadCreepToElfSpawnBuilding = Rect(3968.0, -4352.0, 4224.0, -4096.0)
     gg_rct_UndeadCreepToOrcSpawn = Rect(7424.0, -1664.0, 8192.0, -896.0)
     gg_rct_UndeadCreepToOrcSpawnBuilding = Rect(7552.0, -896.0, 7808.0, -640.0)
-    gg_rct_UndeadToElfOuterLine = Rect(4032.0, -7232.0, 4160.0, -7104.0)
-    gg_rct_UndeadToHumanOuterLine = Rect(5024.0, -2144.0, 5152.0, -2016.0)
-    gg_rct_UndeadToOrcOuterLine = Rect(10176.0, -1088.0, 10304.0, -960.0)
 end
 
 function InitTrig_Untitled_Trigger_001()

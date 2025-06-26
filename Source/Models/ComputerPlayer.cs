@@ -19,9 +19,9 @@ namespace Source.Models
 
     private List<UnitSpawnBuilding> BarrackBuildings { get; init; } = new List<UnitSpawnBuilding>();
 
-    public MainBuilding CreateMainBuilding(int unitTypeId, Area creationArea)
+    public MainBuilding CreateMainBuilding(int unitTypeId, Area creationArea, string specialEffectPath)
     {
-      return MainBuilding = new MainBuilding(this, unitTypeId, creationArea);
+      return MainBuilding = new MainBuilding(this, unitTypeId, creationArea, specialEffectPath);
     }
 
     public UnitSpawnBuilding CreateBarrackBuilding(int unitTypeId, Area creationArea, Area spawnArea, Area targetArea)

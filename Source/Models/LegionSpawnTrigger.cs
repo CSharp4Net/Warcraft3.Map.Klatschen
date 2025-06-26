@@ -73,7 +73,6 @@ namespace Source.Models
       {
         foreach (int unitId in UnitIds)
         {
-
           Program.Legion.CreateUnitAtRandomPoint(SpawnArea.Wc3Rectangle, unitId).AttackMoveTimed(TargetArea, 2f);
         }
       }
