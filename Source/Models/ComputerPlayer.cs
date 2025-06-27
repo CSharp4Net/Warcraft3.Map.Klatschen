@@ -1,4 +1,5 @@
 ﻿using Source.Abstracts;
+using Source.Statics;
 using System;
 using System.Collections.Generic;
 using WCSharp.Api;
@@ -7,10 +8,11 @@ namespace Source.Models
 {
   public sealed class ComputerPlayer : PlayerBase
   {
-    public ComputerPlayer(player player, TeamBase team)
+    public ComputerPlayer(player player, TeamBase team, string specialEffectPath)
       : base(player)
     {
       Team = team;
+      SpecialEffectPath = specialEffectPath;
     }
 
     public TeamBase Team { get; init; }
@@ -19,9 +21,11 @@ namespace Source.Models
 
     private List<UnitSpawnBuilding> BarrackBuildings { get; init; } = new List<UnitSpawnBuilding>();
 
-    public MainBuilding CreateMainBuilding(int unitTypeId, Area creationArea, string specialEffectPath)
+    private string SpecialEffectPath { get; init; }
+
+    public MainBuilding CreateMainBuilding(int unitTypeId, Area creationArea)
     {
-      return MainBuilding = new MainBuilding(this, unitTypeId, creationArea, specialEffectPath);
+      return MainBuilding = new MainBuilding(this, unitTypeId, creationArea);
     }
 
     public UnitSpawnBuilding CreateBarrackBuilding(int unitTypeId, Area creationArea, Area spawnArea, Area targetArea)
@@ -86,6 +90,20 @@ namespace Source.Models
         if (building.Wc3Unit.UnitType == spawnCommand.UnitIdOfBuilding)
           building.UpgradeUnitSpawn(spawnCommand);
       }
+    }
+
+    /// <summary>
+    /// Erzeugt den Spieler-spezifischen Effekt und erstellt die Einheit im Zentrum des Gebiets.
+    /// </summary>
+    /// <param name="unitTypeId"></param>
+    /// <param name="area"></param>
+    /// <param name="face"></param>
+    /// <returns></returns>
+    public override SpawnedUnit CreateUnit(int unitTypeId, Area area, float face = 0)
+    {
+      SpecialEffects.CreateSpecialEffect(SpecialEffectPath, area.Wc3CenterLocation, 1f, 0.5f);
+      SpawnedUnit unit = base.CreateUnit(unitTypeId, area, face);
+      return unit;
     }
   }
 }

@@ -6,15 +6,10 @@ namespace Source.Models
 {
   public sealed class MainBuilding : BuildingBase
   {
-    public MainBuilding(ComputerPlayer computer, int unitTypeId, Area creationArea, string specialEffectPath)
-      : base(computer, unitTypeId, creationArea) 
-    {
-      SpecialEffectPath = specialEffectPath;
-    }
+    public MainBuilding(ComputerPlayer computer, int unitTypeId, Area creationArea)
+      : base(computer, unitTypeId, creationArea) { }
 
     private List<SpawnAttackRoute> Routes { get; init; } = new List<SpawnAttackRoute>();
-
-    private string SpecialEffectPath { get; init; }
 
     public void AddSpawnAttackRoute(Area spawnArea, Area targetArea)
     {
@@ -29,7 +24,6 @@ namespace Source.Models
     {
       foreach (SpawnAttackRoute route in Routes)
       {
-        SpecialEffects.CreateSpecialEffect(SpecialEffectPath, route.SpawnArea.Wc3Rectangle.Center, 1f, 0.5f);
         Computer.CreateUnit(unitId, route.SpawnArea).AttackMoveTimed(route.TargetArea, 0.5f);
       }
     }

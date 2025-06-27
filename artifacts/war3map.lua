@@ -1,22 +1,5 @@
--- Compiled with the following packages:
---   WCSharp.Api: v3.1.1 (decompiled)
---   WCSharp.Buffs: v3.1.4 (decompiled)
---   WCSharp.DateTime: v3.1.1 (decompiled)
---   WCSharp.Dummies: v3.1.4 (decompiled)
---   WCSharp.Effects: v3.1.0 (decompiled)
---   WCSharp.Events: v3.1.7 (decompiled)
---   WCSharp.Json: v3.1.0 (decompiled)
---   WCSharp.Knockbacks: v3.1.0 (decompiled)
---   WCSharp.Lightnings: v3.1.0 (decompiled)
---   WCSharp.Missiles: v3.1.0 (decompiled)
---   WCSharp.SaveLoad: v3.1.0 (decompiled)
---   WCSharp.Shared: v3.1.1 (decompiled)
---   WCSharp.Sync: v3.1.0 (decompiled)
---   WCSharp.W3MMD: v3.1.0 (decompiled)
-
 CSharpLuaSingleFile = true
 
--- CoreSystemLib: Natives.lua
 do
 -- math functions are faster than natives, but may return different results when incorrect input values are given.
 Deg2Rad = math.deg
@@ -36,7 +19,6 @@ Pow = function(x,power) return x ^ power end
 
 end
 
--- CoreSystemLib: Core.lua
 do
 local setmetatable = setmetatable
 local getmetatable = getmetatable
@@ -1685,7 +1667,6 @@ end
 System.config = {}
 end
 
--- CoreSystemLib: Interfaces.lua
 do
 local System = System
 local defInf = System.defInf
@@ -1785,7 +1766,6 @@ defInf("System.IEqualityComparer_1", emptyFn)
 System.enumMetatable.interface = { IComparable, IFormattable, IConvertible }
 end
 
--- CoreSystemLib: Exception.lua
 do
 local System = System
 local define = System.define
@@ -2128,7 +2108,6 @@ System.SwitchExpressionException = define("System.Runtime.CompilerServices", {
 })
 end
 
--- CoreSystemLib: Number.lua
 do
 local System = System
 local throw = System.throw
@@ -2543,7 +2522,6 @@ if not debugsetmetatable then
 end
 end
 
--- CoreSystemLib: Char.lua
 do
 local System = System
 local throw = System.throw
@@ -2761,7 +2739,6 @@ local charMetaTable = setmetatable({ __index = ValueType, __call = Char.default 
 setmetatable(Char, charMetaTable)
 end
 
--- CoreSystemLib: String.lua
 do
 local System = System
 local Char = System.Char
@@ -3511,7 +3488,6 @@ else
 end
 end
 
--- CoreSystemLib: Boolean.lua
 do
 local System = System
 local throw = System.throw
@@ -3615,7 +3591,6 @@ local boolMetaTable = setmetatable({ __index = ValueType, __call = Boolean.defau
 setmetatable(Boolean, boolMetaTable)
 end
 
--- CoreSystemLib: Delegate.lua
 do
 local System = System
 local throw = System.throw
@@ -3942,7 +3917,6 @@ local EventArgs = System.define("System.EventArgs")
 EventArgs.Empty = setmetatable({}, EventArgs)
 end
 
--- CoreSystemLib: Enum.lua
 do
 local System = System
 local throw = System.throw
@@ -4097,7 +4071,6 @@ System.define("System.Enum", {
 })
 end
 
--- CoreSystemLib: TimeSpan.lua
 do
 local System = System
 local throw = System.throw
@@ -4387,7 +4360,6 @@ TimeSpan.MaxValue = TimeSpan(9223372036854775807)
 TimeSpan.MinValue = TimeSpan((-9223372036854775807 - 1))
 end
 
--- CoreSystemLib: DateTime.lua
 do
 local System = System
 local throw = System.throw
@@ -5024,7 +4996,6 @@ System.defEnum("System.DayOfWeek", {
 })
 end
 
--- CoreSystemLib: Collections\EqualityComparer.lua
 do
 local System = System
 local define = System.define
@@ -5177,7 +5148,6 @@ Comparer = define("System.Comparer_1", function (T)
 end)
 end
 
--- CoreSystemLib: Array.lua
 do
 local System = System
 local define = System.define
@@ -6990,7 +6960,6 @@ define("System.ReadOnlyCollection", function (T)
 end, ReadOnlyCollection, 1)
 end
 
--- CoreSystemLib: Type.lua
 do
 local System = System
 local throw = System.throw
@@ -7487,7 +7456,6 @@ function System.castWithNullable(cls, obj)
 end
 end
 
--- CoreSystemLib: Collections\List.lua
 do
 local System = System
 local falseFn = System.falseFn
@@ -7550,7 +7518,6 @@ System.List = ListFn
 System.ArrayList = ListFn(System.Object)
 end
 
--- CoreSystemLib: Collections\Dictionary.lua
 do
 local System = System
 local define = System.define
@@ -8258,7 +8225,6 @@ local Object = System.Object
 System.Hashtable = DictionaryFn(Object, Object)
 end
 
--- CoreSystemLib: Collections\Queue.lua
 do
 local System = System
 local Array = System.Array
@@ -8300,7 +8266,6 @@ System.Queue = QueueFn
 System.queue = QueueFn(System.Object)
 end
 
--- CoreSystemLib: Collections\Stack.lua
 do
 local System = System
 local Array = System.Array
@@ -8333,7 +8298,6 @@ System.Stack = StackFn
 System.stack = StackFn(System.Object)
 end
 
--- CoreSystemLib: Collections\HashSet.lua
 do
 local System = System
 local throw = System.throw
@@ -8637,7 +8601,6 @@ System.HashSet = System.define("System.Collections.Generic.HashSet", function(T)
 end, HashSet, 1)
 end
 
--- CoreSystemLib: Collections\LinkedList.lua
 do
 local System = System
 local define = System.define
@@ -8971,7 +8934,6 @@ System.LinkedList = define("System.Collections.Generic.LinkedList", function(T)
 end, LinkedList, 1)
 end
 
--- CoreSystemLib: Collections\Linq.lua
 do
 local System = System
 local define = System.define
@@ -10241,7 +10203,6 @@ function Enumerable.Average(source, ...)
 end
 end
 
--- CoreSystemLib: Collections\SortedSet.lua
 do
 local System = System
 local Array = System.Array
@@ -10285,7 +10246,6 @@ end, SortedSet, 1)
 System.SortedSet = SortedSetFn
 end
 
--- CoreSystemLib: Convert.lua
 do
 local System = System
 local throw = System.throw
@@ -11271,7 +11231,6 @@ define("System.BitConverter", {
 })
 end
 
--- CoreSystemLib: Math.lua
 do
 local System = System
 local trunc = System.trunc
@@ -11507,7 +11466,6 @@ System.define("System.Math", Math)
 System.define("System.MathF", Math)
 end
 
--- CoreSystemLib: Random.lua
 do
 -- Compiled from https://github.com/dotnet/corefx/blob/master/src/Common/src/CoreLib/System/Random.cs
 -- Generated by CSharp.lua Compiler
@@ -11675,7 +11633,6 @@ end)())
 
 end
 
--- CoreSystemLib: Text\StringBuilder.lua
 do
 local System = System
 local throw = System.throw
@@ -11875,7 +11832,6 @@ local StringBuilder = System.define("System.Text.StringBuilder", {
 System.StringBuilder = StringBuilder
 end
 
--- CoreSystemLib: Console.lua
 do
 local System = System
 local toString = System.toString
@@ -11929,7 +11885,6 @@ if io then
 end
 end
 
--- CoreSystemLib: IO\File.lua
 do
 local io = io
 if io then
@@ -12020,7 +11975,6 @@ define("System.IO.File", {
 end
 end
 
--- CoreSystemLib: Reflection\Assembly.lua
 do
 local System = System
 local define = System.define
@@ -13138,7 +13092,6 @@ System.Delegate.CreateDelegate = function (delegateType, ...)
 end
 end
 
--- CoreSystemLib: Threading\Timer.lua
 do
 local System = System
 local define = System.define
@@ -13324,7 +13277,6 @@ System.Timer = define("System.Threading.Timer", {
 })
 end
 
--- CoreSystemLib: Threading\Thread.lua
 do
 local System = System
 local define = System.define
@@ -13514,7 +13466,6 @@ System.ThreadAbortException = ThreadAbortException
 System.Thread = Thread
 end
 
--- CoreSystemLib: Threading\Task.lua
 do
 local System = System
 local define = System.define
@@ -14470,7 +14421,6 @@ end
 System.asynceach = each
 end
 
--- CoreSystemLib: Utilities.lua
 do
 local System = System
 local throw = System.throw
@@ -14671,7 +14621,6 @@ define("System.Guid", {})
 define("System.ArraySegment", {})
 end
 
--- CoreSystemLib: Globalization\Globalization.lua
 do
 local System = System
 local emptyFn = System.emptyFn
@@ -14691,7 +14640,6 @@ define("System.Globalization.DateTimeFormatInfo", {
 })
 end
 
--- CoreSystemLib: Numerics\HashCodeHelper.lua
 do
 local System = System
 local bitLShift = System.sl
@@ -14706,7 +14654,6 @@ end
 System.define("System.Numerics.HashCodeHelper", HashCodeHelper)
 end
 
--- CoreSystemLib: Numerics\Complex.lua
 do
 -- Compiled from https://github.com/dotnet/corefx/blob/master/src/System.Runtime.Numerics/src/System/Numerics/Complex.cs
 -- Generated by CSharp.lua Compiler
@@ -15350,7 +15297,6 @@ end)())
 
 end
 
--- CoreSystemLib: Numerics\Vector2.lua
 do
 local System = System
 local SystemNumerics = System.Numerics
@@ -15629,7 +15575,6 @@ Vector2.TransformNormal = function (normal, matrix)
 System.defStc("System.Numerics.Vector2", Vector2)
 end
 
--- CoreSystemLib: Numerics\Vector3.lua
 do
 local System = System
 local SystemNumerics = System.Numerics
@@ -15949,7 +15894,6 @@ System.defStc("System.Numerics.Vector3", Vector3)
 
 end
 
--- CoreSystemLib: Numerics\Vector4.lua
 do
 local System = System
 local SystemNumerics = System.Numerics
@@ -16314,7 +16258,6 @@ System.defStc("System.Numerics.Vector4", Vector4)
 
 end
 
--- CoreSystemLib: Numerics\Matrix3x2.lua
 do
 local System = System
 local SystemNumerics = System.Numerics
@@ -16872,7 +16815,6 @@ end
 System.defStc("System.Numerics.Matrix3x2", Matrix3x2)
 end
 
--- CoreSystemLib: Numerics\Matrix4x4.lua
 do
 local System = System
 local SystemNumerics = System.Numerics
@@ -18483,7 +18425,6 @@ end
 System.defStc("System.Numerics.Matrix4x4", Matrix4x4)
 end
 
--- CoreSystemLib: Numerics\Plane.lua
 do
 local System = System
 local SystemNumerics = System.Numerics
@@ -18650,7 +18591,6 @@ end
 System.defStc("System.Numerics.Plane", Plane)
 end
 
--- CoreSystemLib: Numerics\Quaternion.lua
 do
 local System = System
 local SystemNumerics = System.Numerics
@@ -19071,7 +19011,6 @@ end
 System.defStc("System.Numerics.Quaternion", Quaternion)
 end
 
--- CoreSystemLib: WCSharp.lua
 do
 local define = System.defStc
 local setmetatable = setmetatable
@@ -19483,7 +19422,6 @@ local commandbuttoneffect = define("WCSharp.Api.commandbuttoneffect", {
 
 end
 
--- CoreSystemLib: eue.lua
 do
 local System = System
 local throw = System.throw
@@ -19656,7 +19594,6 @@ end, PriorityQueue, 2)
 System.PriorityQueue = PriorityQueueFn
 end
 
--- CoreSystemLib: ionary.lua
 do
 local System = System
 local Array = System.Array
@@ -19698,7 +19635,6 @@ end, SortedDictionary, 2)
 System.SortedDictionary = SortedDictionaryFn
 end
 
--- CoreSystemLib: .lua
 do
 local System = System
 local lengthFn = System.lengthFn
@@ -19745,7 +19681,6 @@ end, SortedList, 2)
 System.SortedList = SortedListFn
 end
 
--- Generated by CSharp.lua Compiler
 do
 local System = System
 local SourceModels
@@ -19753,9 +19688,9 @@ System.import(function (out)
   SourceModels = Source.Models
 end)
 System.namespace("", function (namespace)
-  -- <summary>
-  -- This class is manual-generated by NozzNazz and based on <see cref="Regions"/>.
-  -- </summary>
+
+
+
   namespace.class("Areas", function (namespace)
     local static
     static = function (this)
@@ -19999,13 +19934,13 @@ end
 do
 local System = System
 System.namespace("", function (namespace)
-  -- <summary>
-  -- This class is auto-generated by WCSharp.ConstantGenerator.
-  -- <para>To ensure that custom units, abilities etc. are picked up, you should either change
-  -- the name from the default of the spell or give it an editor suffix.</para>
-  -- <para>If you have issues with duplicate names, you can give everything a unique name using
-  -- the IncludeCode property in the ConstantGeneratorOptions (see Launcher/Program.cs in the WCSharp template).</para>
-  -- </summary>
+
+
+
+
+
+
+
   namespace.class("Constants", function (namespace)
     return {
       __metadata__ = function (out)
@@ -20021,9 +19956,9 @@ end
 do
 local System = System
 System.namespace("Source", function (namespace)
-  -- <summary>
-  -- This class is manual-generated by NozzNazz />.
-  -- </summary>
+
+
+
   namespace.class("ConstantsEx", function (namespace)
     local Message_FightToTheDeath, Message_CollectedGoldForMoreUnits, Message_CollectedGoldToUpgradeUnits, Message_CollectedGoldToResearchTech
     Message_FightToTheDeath = "Fight to the death, you rags!"
@@ -20056,8 +19991,6 @@ local SourceEventsRegions
 local SourceModels
 local SourceModelsTeams
 local WCSharpEvents
-local WCSharpShared
-local WCSharpSync
 local ListUserPlayer
 local ListMercenaryForce
 System.import(function (out)
@@ -20069,8 +20002,6 @@ System.import(function (out)
   SourceModels = Source.Models
   SourceModelsTeams = Source.Models.Teams
   WCSharpEvents = WCSharp.Events
-  WCSharpShared = WCSharp.Shared
-  WCSharpSync = WCSharp.Sync
   ListUserPlayer = System.List(SourceModels.UserPlayer)
   ListMercenaryForce = System.List(SourceModels.MercenaryForce)
 end)
@@ -20084,7 +20015,7 @@ System.namespace("Source", function (namespace)
       this.AllActiveUsers = ListUserPlayer()
     end
     Main = function ()
-      -- Delay a little since some stuff can break otherwise
+
       local timer = CreateTimer()
       TimerStart(timer, 0.01, false, function ()
         DestroyTimer(timer)
@@ -20095,42 +20026,29 @@ System.namespace("Source", function (namespace)
       end)
     end
     ShowDebugMessage = function (message)
-      System.Console.WriteLine(message)
     end
     ShowDebugMessage1 = function (sender, message)
-      System.Console.WriteLine(System.toString(sender) .. ": " .. System.toString(message))
     end
     ShowErrorMessage = function (sender, message)
-      System.Console.WriteLine("|c" .. System.toString("ffff0000" --[[ConstantsEx.ColorHexCode_Red]]) .. System.toString(sender) .. ": " .. System.toString(message) .. "|r")
+      System.Console.WriteLine("|c" .. System.toString("ffff0000") .. System.toString(sender) .. ": " .. System.toString(message) .. "|r")
     end
     ShowExceptionMessage = function (sender, ex)
-      System.Console.WriteLine("|c" .. System.toString("ffff0000" --[[ConstantsEx.ColorHexCode_Red]]) .. System.toString(sender) .. ": " .. System.toString(ex:ToString()) .. "|r")
+      System.Console.WriteLine("|c" .. System.toString("ffff0000") .. System.toString(sender) .. ": " .. System.toString(ex:ToString()) .. "|r")
     end
     Start = function ()
       System.try(function ()
-        -- This part of the code will only run if the map is compiled in Debug mode
-        class.Debug = true
-        ShowDebugMessage1("Start", "Running in debug mode...")
-
-        -- By calling these methods, whenever these systems call external code (i.e. your code),
-        -- they will wrap the call in a try-catch and output any errors to the chat for easier debugging
-        WCSharpEvents.PeriodicEvents.EnableDebug()
-        WCSharpEvents.PlayerUnitEvents.EnableDebug()
-        WCSharpSync.SyncSystem.EnableDebug()
-        WCSharpShared.Delay.EnableDebug()
-
 
         SetTimeOfDay(0)
 
-        -- Teams initialisieren
+
         class.Humans = SourceModelsTeams.HumansTeam()
         class.Orcs = SourceModelsTeams.OrcsTeam()
         class.Elves = SourceModelsTeams.ElvesTeam()
         class.Undeads = SourceModelsTeams.UndeadsTeam()
 
-        class.Legion = SourceModels.LegionForce("Demon Legion" --[[ConstantsEx.ForceName_DemonLegion]])
+        class.Legion = SourceModels.LegionForce("Demon Legion")
 
-        -- Helden-Auswahl-Ereignisse registrieren
+
         Areas.HeroAlchemist:RegisterOnEnter(SourceEventsRegions.HeroSelection.OnAlchemist)
         Areas.HeroArchmage:RegisterOnEnter(SourceEventsRegions.HeroSelection.OnArchmage)
         Areas.HeroBlademaster:RegisterOnEnter(SourceEventsRegions.HeroSelection.OnBlademaster)
@@ -20152,8 +20070,8 @@ System.namespace("Source", function (namespace)
         Areas.HeroTinker:RegisterOnEnter(SourceEventsRegions.HeroSelection.OnTinker)
         Areas.HeroWarden:RegisterOnEnter(SourceEventsRegions.HeroSelection.OnWarden)
 
-        -- Regions-Ereignisse registrieren für automatische Einheitenbewegungen:
-        -- Wenn feindliche Einheiten in die Regionen treten, welche von zerstörten Gebäuden freigegeben werden.
+
+
         Areas.HumanBase:RegisterOnEnter(SourceEventsRegion.HumanBase.OnEnter)
         Areas.OrcBase:RegisterOnEnter(SourceEventsRegion.OrcBase.OnEnter)
         Areas.ElfBase:RegisterOnEnter(SourceEventsRegion.ElfBase.OnEnter)
@@ -20162,21 +20080,21 @@ System.namespace("Source", function (namespace)
         PauseTimer(bj_stockUpdateTimer)
         DisableTrigger(bj_stockItemPurchased)
 
-        -- Allgemeine Events registrieren
-        WCSharpEvents.PlayerUnitEvents.Register14(802 --[[UnitTypeEvent.BuysUnit]], SourceEvents.Unit.OnBuysUnit)
-        WCSharpEvents.PlayerUnitEvents.Register14(818 --[[UnitTypeEvent.FinishesResearch]], SourceEvents.Unit.OnFinishesResearch)
-        WCSharpEvents.PlayerUnitEvents.Register14(842 --[[UnitTypeEvent.SellsItem]], SourceEvents.Unit.OnSellsItem)
-        WCSharpEvents.PlayerUnitEvents.Register14(813 --[[UnitTypeEvent.Dies]], SourceEvents.Unit.OnDies)
-        WCSharpEvents.PlayerUnitEvents.Register14(837 --[[UnitTypeEvent.ReceivesOrder]], SourceEvents.Unit.OnReceivesOrder)
-        WCSharpEvents.PlayerUnitEvents.Register14(848 --[[UnitTypeEvent.SpellEffect]], SourceEvents.Unit.OnSpellEffect)
-        WCSharpEvents.PlayerUnitEvents.Register1(105 --[[HeroTypeEvent.Levels]], SourceEvents.Hero.OnLevels)
 
-        -- Periodische Events registrieren
+        WCSharpEvents.PlayerUnitEvents.Register14(802, SourceEvents.Unit.OnBuysUnit)
+        WCSharpEvents.PlayerUnitEvents.Register14(818, SourceEvents.Unit.OnFinishesResearch)
+        WCSharpEvents.PlayerUnitEvents.Register14(842, SourceEvents.Unit.OnSellsItem)
+        WCSharpEvents.PlayerUnitEvents.Register14(813, SourceEvents.Unit.OnDies)
+        WCSharpEvents.PlayerUnitEvents.Register14(837, SourceEvents.Unit.OnReceivesOrder)
+        WCSharpEvents.PlayerUnitEvents.Register14(848, SourceEvents.Unit.OnSpellEffect)
+        WCSharpEvents.PlayerUnitEvents.Register1(105, SourceEvents.Hero.OnLevels)
+
+
         WCSharpEvents.PeriodicEvents.AddPeriodicEvent(SourceEventsPeriodic.GoldIncome.OnElapsed, 5)
-        WCSharpEvents.PeriodicEvents.AddPeriodicEvent(SourceEventsPeriodic.LegionRaid.OnElapsed, 300 --[[ConstantsEx.Interval_Event_Klatschen]])
+        WCSharpEvents.PeriodicEvents.AddPeriodicEvent(SourceEventsPeriodic.LegionRaid.OnElapsed, 900)
         WCSharpEvents.PeriodicEvents.AddPeriodicEvent(SourceEventsPeriodic.ResearchCheck.OnElapsed, 10)
 
-        -- Gebäude & Trigger für Computer-Spieler erstellen
+
         class.Humans:CreateBuildings()
         class.Orcs:CreateBuildings()
         class.Elves:CreateBuildings()
@@ -20184,21 +20102,17 @@ System.namespace("Source", function (namespace)
 
         ConstructCreepCamps()
 
-        -- Spezifische Events registrieren
+
         System.Console.WriteLine(Source.ConstantsEx.Message_FightToTheDeath)
 
-        -- Für alle Benutzer-Spieler einen Hero-Selector generieren
+
         for _, user in System.each(class.AllActiveUsers) do
-          -- Dauerhafte Spielersicht auf Heldenauswahlbereich
+
           local fogmodifier = CreateFogModifierRectSimple(user.Wc3Player, FOG_OF_WAR_VISIBLE, Regions.HeroSelectionTotal:getRect(), true)
           FogModifierStart(fogmodifier)
 
           CreateHeroSelectorForPlayerAndAdjustCamera(user)
         end
-
-
-        --Common.FogEnable(false);
-        --Common.FogMaskEnable(false);
 
 
         local timer = CreateTimer()
@@ -20273,21 +20187,21 @@ System.namespace("Source", function (namespace)
       return false, team
     end
     ConstructCreepCamps = function ()
-      -- Menschen-Creeps
-      ConstructCreepCamp("Bandits", Areas.HumanCreepToElfSpawnBuilding, Areas.HumanCreepToElfSpawn, class.Humans, class.Elves, 1848651862 --[[Constants.UNIT_BANDIT_CAMP_CREEP]], System.Array(System.Int32) { 1848652114 --[[Constants.UNIT_BANDIT_LORD_CREEP]], 1848651864 --[[Constants.UNIT_BANDIT_CREEP]], 1848651864 --[[Constants.UNIT_BANDIT_CREEP]], 1848651864 --[[Constants.UNIT_BANDIT_CREEP]], 1848652083 --[[Constants.UNIT_BANDIT_ASSASSIN_CREEP]], 1848652083 --[[Constants.UNIT_BANDIT_ASSASSIN_CREEP]], 1848652111 --[[Constants.UNIT_BANDIT_WIZARD_CREEP]] })
-      ConstructCreepCamp("Tuskarr", Areas.HumanCreepToOrcSpawnBuilding, Areas.HumanCreepToOrcSpawn, class.Humans, class.Orcs, 1848652358 --[[Constants.UNIT_TUSKARR_CAMP_CREEP]], System.Array(System.Int32) { 1848652344 --[[Constants.UNIT_TUSKARR_CHIEFTAIN_CREEP]], 1848652112 --[[Constants.UNIT_TUSKARR_WARRIOR_CREEP]], 1848652112 --[[Constants.UNIT_TUSKARR_WARRIOR_CREEP]], 1848652112 --[[Constants.UNIT_TUSKARR_WARRIOR_CREEP]], 1848652119 --[[Constants.UNIT_TUSKARR_HUNTER_CREEP]], 1848652119 --[[Constants.UNIT_TUSKARR_HUNTER_CREEP]], 1848652116 --[[Constants.UNIT_TUSKARR_HEALER_CREEP]] })
 
-      -- Elfen-Creeps
-      ConstructCreepCamp("Furbolgs", Areas.ElfCreepToHumanSpawnBuilding, Areas.ElfCreepToHumanSpawn, class.Elves, class.Humans, 1848651856 --[[Constants.UNIT_FURBOLG_CAMP_CREEP]], System.Array(System.Int32) { 1848652337 --[[Constants.UNIT_FURBOLG_CHAMPION_CREEP]], 1848652100 --[[Constants.UNIT_FURBOLG_WARRIOR_CREEP]], 1848652100 --[[Constants.UNIT_FURBOLG_WARRIOR_CREEP]], 1848652113 --[[Constants.UNIT_FURBOLG_HUNTER_CREEP]], 1848652113 --[[Constants.UNIT_FURBOLG_HUNTER_CREEP]], 1848652084 --[[Constants.UNIT_FURBOLG_WIZARD_CREEP]] })
-      ConstructCreepCamp("Wildekins", Areas.ElfCreepToUndeadSpawnBuilding, Areas.ElfCreepToUndeadSpawn, class.Elves, class.Undeads, 1848652356 --[[Constants.UNIT_WILDEKIN_CAMP_CREEP]], System.Array(System.Int32) { 1848652355 --[[Constants.UNIT_WILDEKIN_ALPHA_CREEP]], 1848652101 --[[Constants.UNIT_WILDEKIN_CREEP]], 1848652101 --[[Constants.UNIT_WILDEKIN_CREEP]], 1848652101 --[[Constants.UNIT_WILDEKIN_CREEP]], 1848652118 --[[Constants.UNIT_WILDEKIN_TRAPPER_CREEP]], 1848652118 --[[Constants.UNIT_WILDEKIN_TRAPPER_CREEP]], 1848652098 --[[Constants.UNIT_WILDEKIN_ANCESTOR_CREEP]] })
+      ConstructCreepCamp("Bandits", Areas.HumanCreepToElfSpawnBuilding, Areas.HumanCreepToElfSpawn, class.Humans, class.Elves, 1848651862, System.Array(System.Int32) { 1848652114, 1848651864, 1848651864, 1848651864, 1848652083, 1848652083, 1848652111 })
+      ConstructCreepCamp("Tuskarr", Areas.HumanCreepToOrcSpawnBuilding, Areas.HumanCreepToOrcSpawn, class.Humans, class.Orcs, 1848652358, System.Array(System.Int32) { 1848652344, 1848652112, 1848652112, 1848652112, 1848652119, 1848652119, 1848652116 })
 
-      -- Orcs-Creeps
-      ConstructCreepCamp("Centaurs", Areas.OrcCreepToHumanSpawnBuilding, Areas.OrcCreepToHumanSpawn, class.Orcs, class.Humans, 1848652104 --[[Constants.UNIT_CENTAUR_CAMP_CREEP]], System.Array(System.Int32) { 1848652345 --[[Constants.UNIT_CENTAUR_KHAN_CREEP]], 1848652115 --[[Constants.UNIT_CENTAUR_RUNNER_CREEP]], 1848652115 --[[Constants.UNIT_CENTAUR_RUNNER_CREEP]], 1848652115 --[[Constants.UNIT_CENTAUR_RUNNER_CREEP]], 1848652120 --[[Constants.UNIT_CENTAUR_ARCHER_CREEP]], 1848652120 --[[Constants.UNIT_CENTAUR_ARCHER_CREEP]], 1848652336 --[[Constants.UNIT_CENTAUR_SORCERESS_CREEP]] })
-      ConstructCreepCamp("Ogres", Areas.OrcCreepToUndeadSpawnBuilding, Areas.OrcCreepToUndeadSpawn, class.Orcs, class.Undeads, 1848652342 --[[Constants.UNIT_OGRE_CAMP_CREEP]], System.Array(System.Int32) { 1848652343 --[[Constants.UNIT_OGRE_LORD_CREEP]], 1848652110 --[[Constants.UNIT_OGRE_WARRIOR_CREEP]], 1848652110 --[[Constants.UNIT_OGRE_WARRIOR_CREEP]], 1848652110 --[[Constants.UNIT_OGRE_WARRIOR_CREEP]], 1848652099 --[[Constants.UNIT_OGRE_THIEF_CREEP]], 1848652099 --[[Constants.UNIT_OGRE_THIEF_CREEP]], 1848652121 --[[Constants.UNIT_OGRE_MAGE_CREEP]] })
 
-      -- Untoten-Creeps
-      ConstructCreepCamp("Mur'guls", Areas.UndeadCreepToOrcSpawnBuilding, Areas.UndeadCreepToOrcSpawn, class.Undeads, class.Orcs, 1848652340 --[[Constants.UNIT_MUR_GUL_CAMP_CREEP]], System.Array(System.Int32) { 1848652338 --[[Constants.UNIT_MUR_GUL_SHADOWCASTER_CREEP]], 1848652102 --[[Constants.UNIT_MUR_GUL_WARRIOR_CREEP]], 1848652102 --[[Constants.UNIT_MUR_GUL_WARRIOR_CREEP]], 1848652102 --[[Constants.UNIT_MUR_GUL_WARRIOR_CREEP]], 1848652117 --[[Constants.UNIT_MUR_GUL_TRAPPER_CREEP]], 1848652117 --[[Constants.UNIT_MUR_GUL_TRAPPER_CREEP]], 1848652122 --[[Constants.UNIT_MUR_GUL_WIZARD_CREEP]] })
-      ConstructCreepCamp("Nerubians", Areas.UndeadCreepToElfSpawnBuilding, Areas.UndeadCreepToElfSpawn, class.Undeads, class.Elves, 1848652106 --[[Constants.UNIT_NERUBIAN_CAMP_CREEP]], System.Array(System.Int32) { 1848652339 --[[Constants.UNIT_NERUBIAN_QUEEN_CREEP]], 1848652108 --[[Constants.UNIT_NERUBIAN_WARRIOR_CREEP]], 1848652108 --[[Constants.UNIT_NERUBIAN_WARRIOR_CREEP]], 1848652108 --[[Constants.UNIT_NERUBIAN_WARRIOR_CREEP]], 1848652107 --[[Constants.UNIT_NERUBIAN_SPINNER_CREEP]], 1848652107 --[[Constants.UNIT_NERUBIAN_SPINNER_CREEP]], 1848652109 --[[Constants.UNIT_NERUBIAN_WIZARD_CREEP]] })
+      ConstructCreepCamp("Furbolgs", Areas.ElfCreepToHumanSpawnBuilding, Areas.ElfCreepToHumanSpawn, class.Elves, class.Humans, 1848651856, System.Array(System.Int32) { 1848652337, 1848652100, 1848652100, 1848652113, 1848652113, 1848652084 })
+      ConstructCreepCamp("Wildekins", Areas.ElfCreepToUndeadSpawnBuilding, Areas.ElfCreepToUndeadSpawn, class.Elves, class.Undeads, 1848652356, System.Array(System.Int32) { 1848652355, 1848652101, 1848652101, 1848652101, 1848652118, 1848652118, 1848652098 })
+
+
+      ConstructCreepCamp("Centaurs", Areas.OrcCreepToHumanSpawnBuilding, Areas.OrcCreepToHumanSpawn, class.Orcs, class.Humans, 1848652104, System.Array(System.Int32) { 1848652345, 1848652115, 1848652115, 1848652115, 1848652120, 1848652120, 1848652336 })
+      ConstructCreepCamp("Ogres", Areas.OrcCreepToUndeadSpawnBuilding, Areas.OrcCreepToUndeadSpawn, class.Orcs, class.Undeads, 1848652342, System.Array(System.Int32) { 1848652343, 1848652110, 1848652110, 1848652110, 1848652099, 1848652099, 1848652121 })
+
+
+      ConstructCreepCamp("Mur'guls", Areas.UndeadCreepToOrcSpawnBuilding, Areas.UndeadCreepToOrcSpawn, class.Undeads, class.Orcs, 1848652340, System.Array(System.Int32) { 1848652338, 1848652102, 1848652102, 1848652102, 1848652117, 1848652117, 1848652122 })
+      ConstructCreepCamp("Nerubians", Areas.UndeadCreepToElfSpawnBuilding, Areas.UndeadCreepToElfSpawn, class.Undeads, class.Elves, 1848652106, System.Array(System.Int32) { 1848652339, 1848652108, 1848652108, 1848652108, 1848652107, 1848652107, 1848652109 })
     end
     ConstructCreepCamp = function (name, buildingArea, spawnArea, nearestTeam, opposingTeam, buildingUnitType, defenderUnitTypeIds)
       local creepCamp = SourceModels.MercenaryForce(name, buildingArea, spawnArea, nearestTeam, opposingTeam, buildingUnitType, defenderUnitTypeIds)
@@ -20295,40 +20209,40 @@ System.namespace("Source", function (namespace)
       class.Mercenaries:Add(creepCamp)
     end
     CreateComputerHeros = function ()
-      class.Humans.Computer:CreateUnit(1211117645 --[[Constants.UNIT_GUARDIAN_HUMAN]], Areas.HumanBaseToElfSpawn, 0):AttackMove(Areas.ElfBase)
-      class.Humans.Computer:CreateUnit(1211117645 --[[Constants.UNIT_GUARDIAN_HUMAN]], Areas.HumanBaseToCenterSpawn, 0):AttackMove(Areas.UndeadBase)
-      class.Humans.Computer:CreateUnit(1211117645 --[[Constants.UNIT_GUARDIAN_HUMAN]], Areas.HumanBaseToOrcsSpawn, 0):AttackMove(Areas.OrcBase)
+      class.Humans.Computer:CreateUnit(1211117645, Areas.HumanBaseToElfSpawn, 0):AttackMove(Areas.ElfBase)
+      class.Humans.Computer:CreateUnit(1211117645, Areas.HumanBaseToCenterSpawn, 0):AttackMove(Areas.UndeadBase)
+      class.Humans.Computer:CreateUnit(1211117645, Areas.HumanBaseToOrcsSpawn, 0):AttackMove(Areas.OrcBase)
 
-      class.Orcs.Computer:CreateUnit(1211117911 --[[Constants.UNIT_GUARDIAN_ORC]], Areas.OrcBaseToCenterSpawn, 0):AttackMove(Areas.ElfBase)
-      class.Orcs.Computer:CreateUnit(1211117911 --[[Constants.UNIT_GUARDIAN_ORC]], Areas.OrcBaseToUndeadSpawn, 0):AttackMove(Areas.UndeadBase)
-      class.Orcs.Computer:CreateUnit(1211117911 --[[Constants.UNIT_GUARDIAN_ORC]], Areas.OrcBaseToHumanSpawn, 0):AttackMove(Areas.HumanBase)
+      class.Orcs.Computer:CreateUnit(1211117911, Areas.OrcBaseToCenterSpawn, 0):AttackMove(Areas.ElfBase)
+      class.Orcs.Computer:CreateUnit(1211117911, Areas.OrcBaseToUndeadSpawn, 0):AttackMove(Areas.UndeadBase)
+      class.Orcs.Computer:CreateUnit(1211117911, Areas.OrcBaseToHumanSpawn, 0):AttackMove(Areas.HumanBase)
 
-      class.Elves.Computer:CreateUnit(1211118160 --[[Constants.UNIT_GUARDIAN_ELF]], Areas.ElfBaseToHumanSpawn, 0):AttackMove(Areas.HumanBase)
-      class.Elves.Computer:CreateUnit(1211118160 --[[Constants.UNIT_GUARDIAN_ELF]], Areas.ElfBaseToUndeadSpawn, 0):AttackMove(Areas.UndeadBase)
-      class.Elves.Computer:CreateUnit(1211118160 --[[Constants.UNIT_GUARDIAN_ELF]], Areas.ElfBaseToCenterSpawn, 0):AttackMove(Areas.OrcBase)
+      class.Elves.Computer:CreateUnit(1211118160, Areas.ElfBaseToHumanSpawn, 0):AttackMove(Areas.HumanBase)
+      class.Elves.Computer:CreateUnit(1211118160, Areas.ElfBaseToUndeadSpawn, 0):AttackMove(Areas.UndeadBase)
+      class.Elves.Computer:CreateUnit(1211118160, Areas.ElfBaseToCenterSpawn, 0):AttackMove(Areas.OrcBase)
 
-      class.Undeads.Computer:CreateUnit(1211118161 --[[Constants.UNIT_GUARDIAN_UNDEAD]], Areas.UndeadBaseToElfSpawn, 0):AttackMove(Areas.ElfBase)
-      class.Undeads.Computer:CreateUnit(1211118161 --[[Constants.UNIT_GUARDIAN_UNDEAD]], Areas.UndeadBaseToCenterSpawn, 0):AttackMove(Areas.HumanBase)
-      class.Undeads.Computer:CreateUnit(1211118161 --[[Constants.UNIT_GUARDIAN_UNDEAD]], Areas.UndeadBaseToOrcsSpawn, 0):AttackMove(Areas.OrcBase)
+      class.Undeads.Computer:CreateUnit(1211118161, Areas.UndeadBaseToElfSpawn, 0):AttackMove(Areas.ElfBase)
+      class.Undeads.Computer:CreateUnit(1211118161, Areas.UndeadBaseToCenterSpawn, 0):AttackMove(Areas.HumanBase)
+      class.Undeads.Computer:CreateUnit(1211118161, Areas.UndeadBaseToOrcsSpawn, 0):AttackMove(Areas.OrcBase)
     end
     CreateHeroSelectorForPlayerAndAdjustCamera = function (user)
-      local unit = user:CreateUnit(1966092342 --[[Constants.UNIT_HEROIC_SOUL_HERO_SELECTOR]], Areas.HeroSelectorSpawn, 0)
+      local unit = user:CreateUnit(1966092342, Areas.HeroSelectorSpawn, 0)
 
-      -- Spieler-Kamera auf Heldenseele fokussieren
+
       user:ApplyCamera(Areas.HeroSelectorSpawn)
 
-      -- Heldenseele auswählen
+
       SelectUnitForPlayerSingle(unit.Wc3Unit, user.Wc3Player)
     end
     GetIntervalSeconds = function (spawnInterval)
       repeat
         local default = spawnInterval
-        if default == 0 --[[SpawnInterval.Short]] then
-          return 15 --[[ConstantsEx.Interval_SpawnTime_Short]]
-        elseif default == 1 --[[SpawnInterval.Middle]] then
-          return 30 --[[ConstantsEx.Interval_SpawnTime_Middle]]
-        elseif default == 2 --[[SpawnInterval.Long]] then
-          return 60 --[[ConstantsEx.Interval_SpawnTime_Long]]
+        if default == 0 then
+          return 15
+        elseif default == 1 then
+          return 30
+        elseif default == 2 then
+          return 60
         else
           System.Console.WriteLine("Unsupported SpawnInterval!")
           return 999
@@ -20396,9 +20310,9 @@ System.import(function (out)
   WCSharpSharedData = WCSharp.Shared.Data
 end)
 System.namespace("", function (namespace)
-  -- <summary>
-  -- This class is auto-generated by WCSharp.ConstantGenerator.
-  -- </summary>
+
+
+
   namespace.class("Regions", function (namespace)
     local static
     static = function (this)
@@ -20643,43 +20557,43 @@ do
 local System = System
 local WCSharpApi = WCSharp.Api
 System.namespace("Source.Abstracts", function (namespace)
-  -- <summary>
-  -- Represents the base functionality for a building in the game, including unit creation, event handling, and
-  -- cleanup.
-  -- </summary>
-  -- <remarks>The <see cref="BuildingBase"/> class provides core functionality for managing buildings in the
-  -- game. It includes methods for creating units, handling unit death events, and cleaning up resources. Derived
-  -- classes can extend this functionality to implement specific building behaviors.</remarks>
+
+
+
+
+
+
+
   namespace.class("BuildingBase", function (namespace)
     local RegisterOnDies, DeRegisterOnDies, Destroy, __ctor__
-    -- <summary>
-    -- Initializes a new instance of the <see cref="BuildingBase"/> class, creating a unit at the specified location.
-    -- </summary>
-    -- <remarks>This constructor creates a unit of the specified type at the center of the given area. The
-    -- unit is owned by the specified computer player.</remarks>
-    -- <param name="computer">The computer player that owns the building. Cannot be null.</param>
-    -- <param name="unitTypeId">The unique identifier for the type of unit to create.</param>
-    -- <param name="creationArea">The area where the unit will be created. Cannot be null.</param>
+
+
+
+
+
+
+
+
     __ctor__ = function (this, computer, unitTypeId, creationArea)
       this.Computer = computer
       this.Wc3Unit = CreateUnitAtLoc(computer.Wc3Player, unitTypeId, creationArea.Wc3CenterLocation, 0)
     end
-    -- <summary>
-    -- Registers an event handler to be invoked when the unit dies.
-    -- </summary>
-    -- <remarks>This method sets up a death event trigger for the unit and associates the specified  event
-    -- handler with the trigger. The event handler will be executed when the unit dies.</remarks>
-    -- <param name="eventHandler">The action to execute when the unit's death event is triggered.  This parameter cannot be null.</param>
+
+
+
+
+
+
     RegisterOnDies = function (this, eventHandler)
       this.Wc3DeathTrigger = CreateTrigger()
       TriggerRegisterUnitEvent(this.Wc3DeathTrigger, this.Wc3Unit, EVENT_UNIT_DEATH)
       TriggerAddAction(this.Wc3DeathTrigger, eventHandler)
     end
-    -- <summary>
-    -- Deregisters the death trigger, disabling and disposing of any associated resources.
-    -- </summary>
-    -- <remarks>This method ensures that the death trigger is properly disabled and its resources are
-    -- released. It should be called when the death trigger is no longer needed to prevent resource leaks.</remarks>
+
+
+
+
+
     DeRegisterOnDies = function (this)
       if this.Wc3DeathTrigger == nil then
         return
@@ -20689,18 +20603,18 @@ System.namespace("Source.Abstracts", function (namespace)
       DestroyTrigger(this.Wc3DeathTrigger)
       this.Wc3DeathTrigger = nil
     end
-    -- <summary>
-    -- Destroys the associated unit, ensuring proper cleanup and removal from the game.
-    -- </summary>
-    -- <remarks>This method handles deregistration of the unit and ensures that the unit is killed if it is
-    -- still alive. It may be invoked in scenarios where the unit is removed due to game events, such as team loss or
-    -- player removal.</remarks>
+
+
+
+
+
+
     Destroy = function (this)
       DeRegisterOnDies(this)
 
       if UnitAlive(this.Wc3Unit) then
-        -- Da diese Funktion auch beim Tod des Gebäudes ausgelöst werden kann,
-        -- töte Gebäude bei Bedarf, d.h. wenn Team verliert und Spieler entfernt werden.
+
+
         KillUnit(this.Wc3Unit)
       end
     end
@@ -20771,37 +20685,37 @@ System.namespace("Source.Abstracts", function (namespace)
       this.PlayerId = GetPlayerId(wc3Player)
       this.Wc3Player = wc3Player
     end
-    -- <summary>
-    -- Erstellt eine Einheit in einem Bereich und fügt sie der Auflist <see cref="Units"/> hinzu.
-    -- </summary>
-    -- <param name="unitTypeId"></param>
-    -- <param name="area"></param>
-    -- <param name="face"></param>
-    -- <returns></returns>
+
+
+
+
+
+
+
     CreateUnit = function (this, unitTypeId, area, face)
       local unit = SourceModels.SpawnedUnit(this.Wc3Player, unitTypeId, area, face)
       this.Units:Add(unit)
       return unit
     end
-    -- <summary>
-    -- Tötet alle Einheiten des Spielers und setzt dessen Status auf "Besiegt", damit endet für ihn das Spiel.
-    -- </summary>
+
+
+
     Defeat = function (this)
       MeleeDoDefeat(this.Wc3Player)
 
       this.Defeated = true
     end
-    -- <summary>
-    -- Setzt den Status des Spieler auf "Gewonnen", für diesen endet damit das Spiel.
-    -- </summary>
+
+
+
     Win = function (this)
       MeleeVictoryDialogBJ(this.Wc3Player, true)
     end
-    -- <summary>
-    -- Gibt True zurück, wenn die übergebene Einheit in der Auflistung aller Einheiten enthalten ist
-    -- </summary>
-    -- <param name="wc3Unit"></param>
-    -- <returns></returns>
+
+
+
+
+
     IsOwnerOfUnit = function (this, wc3Unit, unit)
       if GetPlayerId(GetOwningPlayer(wc3Unit)) ~= this.PlayerId then
         unit = nil
@@ -20811,29 +20725,29 @@ System.namespace("Source.Abstracts", function (namespace)
       local unitId = GetUnitTypeId(wc3Unit)
 
       for _, spawnedUnit in System.each(this.Units) do
-        -- Prüfe primär die Einheit-Id, da ein UNIT-Vergleich nicht empfohlen wird!
-        -- Ein Einheitenvergleich wird zwar nicht empfohlen, ist aber die einzige Möglichkeit diesselbe Einheit zu ermitteln
+
+
         if GetUnitTypeId(spawnedUnit.Wc3Unit) == unitId and spawnedUnit.Wc3Unit == wc3Unit then
           unit = spawnedUnit
           return true, unit
         end
       end
 
-      -- Dieser Fall kann eintreten, wenn eine statische Computer-Einheit das Event auslöst
+
       unit = nil
       return false, unit
     end
-    -- <summary>
-    -- Fügt der Auflistung erzeugter Einheiten einen Eintrag hinzu.
-    -- </summary>
-    -- <param name="unit"></param>
+
+
+
+
     AddUnit = function (this, unit)
       this.Units:Add(unit)
     end
-    -- <summary>
-    -- Entfernt eine Einheit aus der Auflistung erzeugter Einheiten.
-    -- </summary>
-    -- <param name="unit"></param>
+
+
+
+
     RemoveUnit = function (this, unit)
       this.Units:Remove(unit)
     end
@@ -20887,24 +20801,24 @@ System.namespace("Source.Abstracts", function (namespace)
   namespace.class("TeamBase", function (namespace)
     local Defeat, Win, ContainsPlayer, IncreaseTechForAllPlayers, DisplayChatMessage, GetUnitUpgradeByResearch, GetUnitUpgradeBySold, CreateBuildings, 
     __ctor__
-    __ctor__ = function (this, wc3ComputerPlayer, teamBaseArea)
+    __ctor__ = function (this, wc3ComputerPlayer, teamBaseArea, specialEffectPath)
       this.Name = GetPlayerName(wc3ComputerPlayer)
 
-      this.Computer = SourceModels.ComputerPlayer(wc3ComputerPlayer, this)
+      this.Computer = SourceModels.ComputerPlayer(wc3ComputerPlayer, this, specialEffectPath)
       SetPlayerState(this.Computer.Wc3Player, PLAYER_STATE_GIVES_BOUNTY, 1)
 
       this.TeamBaseArea = teamBaseArea
 
       this.Users = ListUserPlayer()
 
-      -- Alle Spieler der Streitmacht vom Computer-Spiler abrufen
+
       local force = GetPlayersAllies(this.Computer.Wc3Player)
       ForForce(force, function ()
         local player = GetEnumPlayer()
 
-        -- Aktive echte Spieler in die Liste aufnehmen
+
         if GetPlayerController(player) == MAP_CONTROL_USER and GetPlayerSlotState(player) == PLAYER_SLOT_STATE_PLAYING then
-          -- Einmalige Eigenschaften aktivieren/setzen
+
           SetPlayerState(player, PLAYER_STATE_GIVES_BOUNTY, 1)
 
           local user = SourceModels.UserPlayer(player, this)
@@ -20913,38 +20827,38 @@ System.namespace("Source.Abstracts", function (namespace)
         end
       end)
     end
-    -- <summary>
-    -- Löst für alle Spieler dieser Streitmacht die Niederlage aus.
-    -- </summary>
+
+
+
     Defeat = function (this)
-      -- Töte alle Computer-Einheiten
+
       this.Computer:Defeat()
 
-      -- Alle echten Spieler durchlaufen
+
       for _, player in System.each(this.Users) do
         player:Defeat()
       end
 
       this.Defeated = true
     end
-    -- <summary>
-    -- Löst für alle Spieler dieser Streitmacht den Sieg aus.
-    -- </summary>
+
+
+
     Win = function (this)
-      -- Töte alle Computer-Einheiten
+
       this.Computer:Win()
 
-      -- Alle echten Spieler durchlaufen
+
       for _, player in System.each(this.Users) do
         player:Win()
       end
     end
-    -- <summary>
-    -- Gibt True zurück, wenn der <paramref name="wc3Player"/> zu einem menschlichen Spieler in diesem Team gehört.
-    -- </summary>
-    -- <param name="wc3Player">Wacraft-Spieler</param>
-    -- <param name="userOfPlayer">Gefundener Benutzer</param>
-    -- <returns></returns>
+
+
+
+
+
+
     ContainsPlayer = function (this, playerId, userOfPlayer)
       for _, user in System.each(this.Users) do
         if user.PlayerId == playerId then
@@ -20956,11 +20870,11 @@ System.namespace("Source.Abstracts", function (namespace)
       userOfPlayer = nil
       return false, userOfPlayer
     end
-    -- <summary>
-    -- Erhöht die Stufe einer Forschung für alle Spieler im Team.
-    -- </summary>
-    -- <param name="techId">Forschung-Id</param>
-    -- <param name="techLevel">Forschung-Stufe</param>
+
+
+
+
+
     IncreaseTechForAllPlayers = function (this, techId, techLevel)
       SetPlayerTechResearched(this.Computer.Wc3Player, techId, techLevel)
 
@@ -20970,46 +20884,46 @@ System.namespace("Source.Abstracts", function (namespace)
         end
       end
     end
-    -- <summary>
-    -- Zeigt allen menschlichen Mitspielern des Teams eine Chat-Nachricht an.
-    -- </summary>
-    -- <param name="message">Nachricht</param>
+
+
+
+
     DisplayChatMessage = function (this, message)
       for _, user in System.each(this.Users) do
         BlzDisplayChatMessage(this.Computer.Wc3Player, user.PlayerId, message)
       end
     end
-    -- <summary>
-    -- Virtuelle Methode für das Auswerten einer Technologie und der daraus resultierenden Spawn-Befehle.
-    -- Dieser Methode liefert keine verwertbaren Daten und muss pro Streitmacht überschrieben werden!
-    -- </summary>
-    -- <param name="techId">Technologie-Id</param>
-    -- <param name="techLevel">Technologie-Stufe</param>
-    -- <param name="command">Spawn-Befehl, welcher sich aus dieser Konstellation ergibt.</param>
-    -- <returns></returns>
+
+
+
+
+
+
+
+
     GetUnitUpgradeByResearch = function (this, techId, techLevel, command)
       Source.Program.ShowErrorMessage("TeamBase.GetUnitUpgradeByResearch", "Method not implemented yet for player " .. System.toString(this.ColorizedName) .. "!")
 
       command = nil
 
-      return 0 --[[ResearchType.Unknown]], command
+      return 0, command
     end
-    -- <summary>
-    -- Ermittelt anhand der UnitType-Id den Spawn-Command, welche alle nötigen Informationen zum Upgrade der Einheit, sowie zum Ändern des Shops enthält.
-    -- </summary>
-    -- <param name="baseUnitTypeId">UnitType-Id der gekauften Einheit</param>
-    -- <param name="command">Upgrade-Command</param>
-    -- <returns></returns>
+
+
+
+
+
+
     GetUnitUpgradeBySold = function (this, baseUnitTypeId, command)
       Source.Program.ShowErrorMessage("TeamBase.GetUnitUpgradeBySold", "Method not implemented yet for player " .. System.toString(this.ColorizedName) .. "!")
 
       command = nil
 
-      return 0 --[[UnitUpgradeType.Unknown]], command
+      return 0, command
     end
-    -- <summary>
-    -- Erstellt alle initialen Gebäude für den Computer-Spieler des Teams.
-    -- </summary>
+
+
+
     CreateBuildings = function (this)
       Source.Program.ShowErrorMessage("TeamBase.CreateBuildings", "Method not implemented yet for player " .. System.toString(this.ColorizedName) .. "!")
     end
@@ -21027,7 +20941,7 @@ System.namespace("Source.Abstracts", function (namespace)
       __metadata__ = function (out)
         return {
           methods = {
-            { ".ctor", 0x206, nil, out.WCSharp.Api.player, out.Source.Models.Area },
+            { ".ctor", 0x306, nil, out.WCSharp.Api.player, out.Source.Models.Area, System.String },
             { "ContainsPlayer", 0x286, ContainsPlayer, System.Int32, out.Source.Models.UserPlayer, System.Boolean },
             { "CreateBuildings", 0x6, CreateBuildings },
             { "Defeat", 0x6, Defeat },
@@ -21064,14 +20978,14 @@ System.import(function (out)
   SourceLogics = Source.Logics
 end)
 System.namespace("Source.Events", function (namespace)
-  -- <summary>
-  -- Stellt statische Methoden zum Behandeln von Helden-Events bereit.
-  -- </summary>
+
+
+
   namespace.class("Hero", function (namespace)
     local OnLevels
-    -- <summary>
-    -- Behandelt den Levelaufsteig einer Heldeneinheit.
-    -- </summary>
+
+
+
     OnLevels = function ()
       System.try(function ()
         local unit = GetLevelingUnit()
@@ -21120,19 +21034,19 @@ System.namespace("Source.Events", function (namespace)
         local unit = GetTriggerUnit()
 
         if BlzGetUnitBooleanField(unit, UNIT_BF_IS_A_BUILDING) then
-          -- Wenn Gebäude sterben, haben diese wenn überhaupt eigene Trigger
+
           return true
         end
 
         if IsUnitType(unit, UNIT_TYPE_HERO) then
-          -- Wenn Helden sterben, werden diese abhängig vom SlotStatus gesondert behandelt
+
           if SourceExtensions.unitExtension.IsUnitOfUser(unit) then
             SourceLogics.UserHero.HandleDied(unit)
           elseif SourceExtensions.unitExtension.IsUnitOfComputer(unit) then
             SourceLogics.ComputerHero.HandleDied(unit)
           elseif SourceExtensions.unitExtension.IsUnitOfCreep(unit) then
-            -- do nothing :)
-            -- TODO 001
+
+
           else
             System.Console.WriteLine("UNKNOWN hero " .. System.toString(GetUnitName(unit)) .. " died!!!")
           end
@@ -21152,17 +21066,17 @@ System.namespace("Source.Events", function (namespace)
         local unit = GetTriggerUnit()
 
         if BlzGetUnitBooleanField(unit, UNIT_BF_IS_A_BUILDING) then
-          -- Befehle für Gebäude nicht behandeln
+
           return true
         end
 
         if SourceExtensions.unitExtension.IsHero(unit) and SourceExtensions.unitExtension.IsUnitOfUser(unit) then
-          -- Befehle für Benutzer-Helden nicht behandeln
+
           return true
         end
 
-        if GetUnitTypeId(unit) == 1848651824 --[[Constants.UNIT_DUMMY]] then
-          -- Befehle für Dummy-Units nicht behandeln
+        if GetUnitTypeId(unit) == 1848651824 then
+
           return true
         end
 
@@ -21187,7 +21101,7 @@ System.namespace("Source.Events", function (namespace)
 
         repeat
           local default = abilityId
-          if default == 1093681456 --[[Constants.ABILITY_CHARM_HERO_10]] then
+          if default == 1093681456 then
             SourceLogics.UserHero.HandleCharmCasted(abilityId)
             break
           end
@@ -21209,18 +21123,18 @@ System.namespace("Source.Events", function (namespace)
         local sellingUnitTypeId = GetUnitTypeId(sellingUnit)
 
         if GetUnitRace(sellingUnit) == RACE_OTHER then
-          -- Rasse "Andere" wird für neutrale Gebäude (i.d.R. Creep Camps) verwendet
+
           Source.Program.ShowDebugMessage("Unit " .. System.toString(GetUnitName(buyingUnit)) .. " buyed a " .. System.toString(GetUnitName(soldUnit)) .. " in camp " .. System.toString(GetUnitName(sellingUnit)))
           SourceLogics.UserHero.HandleCreepSpawnBuyed(buyingUnit, soldUnit, sellingUnit)
           return true
         elseif GetUnitRace(sellingUnit) == RACE_HUMAN then
-          -- Verkauf durch Gebäude der Menschen
+
           repeat
             local default = sellingUnitTypeId
-            if default == 1747988535 --[[Constants.UNIT_BARRACKS_HUMAN]] then
+            if default == 1747988535 then
               SourceLogics.Research.HandleUnitUpgradeBuyed(buyingUnit, soldUnit, sellingUnit, Source.Program.Humans)
               break
-            elseif default == 1747988531 --[[Constants.UNIT_CASTLE_HUMAN]] then
+            elseif default == 1747988531 then
               SourceLogics.ComputerBuilding.HandleSingleSpawnBuyed(buyingUnit, soldUnit, sellingUnit, Source.Program.Humans)
               break
             else
@@ -21229,13 +21143,13 @@ System.namespace("Source.Events", function (namespace)
             end
           until 1
         elseif GetUnitRace(sellingUnit) == RACE_ORC then
-          -- Verkauf durch Gebäude der Orks
+
           repeat
             local default = sellingUnitTypeId
-            if default == 1747988569 --[[Constants.UNIT_BARRACKS_ORC]] then
+            if default == 1747988569 then
               SourceLogics.Research.HandleUnitUpgradeBuyed(buyingUnit, soldUnit, sellingUnit, Source.Program.Orcs)
               break
-            elseif default == 1747988570 --[[Constants.UNIT_FORTRESS_ORC]] then
+            elseif default == 1747988570 then
               SourceLogics.ComputerBuilding.HandleSingleSpawnBuyed(buyingUnit, soldUnit, sellingUnit, Source.Program.Orcs)
               break
             else
@@ -21244,13 +21158,13 @@ System.namespace("Source.Events", function (namespace)
             end
           until 1
         elseif GetUnitRace(sellingUnit) == RACE_NIGHTELF then
-          -- Verkauf durch Gebäude der Elfen
+
           repeat
             local default = sellingUnitTypeId
-            if default == 1747988790 --[[Constants.UNIT_HUNTER_S_HALL_ELF]] then
+            if default == 1747988790 then
               SourceLogics.Research.HandleUnitUpgradeBuyed(buyingUnit, soldUnit, sellingUnit, Source.Program.Elves)
               break
-            elseif default == 1747988789 --[[Constants.UNIT_TREE_OF_ETERNITY_ELF]] then
+            elseif default == 1747988789 then
               SourceLogics.ComputerBuilding.HandleSingleSpawnBuyed(buyingUnit, soldUnit, sellingUnit, Source.Program.Elves)
               break
             else
@@ -21259,13 +21173,13 @@ System.namespace("Source.Events", function (namespace)
             end
           until 1
         elseif GetUnitRace(sellingUnit) == RACE_UNDEAD then
-          -- Verkauf durch Gebäude der Untoten
+
           repeat
             local default = sellingUnitTypeId
-            if default == 1747988805 --[[Constants.UNIT_CRYPT_UNDEAD]] then
+            if default == 1747988805 then
               SourceLogics.Research.HandleUnitUpgradeBuyed(buyingUnit, soldUnit, sellingUnit, Source.Program.Undeads)
               break
-            elseif default == 1747988801 --[[Constants.UNIT_BLACK_CITADEL_UNDEAD]] then
+            elseif default == 1747988801 then
               SourceLogics.ComputerBuilding.HandleSingleSpawnBuyed(buyingUnit, soldUnit, sellingUnit, Source.Program.Undeads)
               break
             else
@@ -21366,7 +21280,7 @@ System.namespace("Source.Events.Buildings", function (namespace)
         local extern, building = Source.Program.Legion:TryGetSpawnBuilding(buildingUnit)
         if extern then
           System.Console.WriteLine("A " .. System.toString(GetUnitName(building.Wc3Unit)) .. " of the " .. System.toString(Source.Program.Legion.ColorizedName) .. " has been destroyed!")
-          SourceStatics.SpecialEffects.CreateSpecialEffect("Abilities\\Spells\\Other\\Doom\\DoomDeath.mdl", building.CreationArea.Wc3Rectangle:getCenter(), 2, 3)
+          SourceStatics.SpecialEffects.CreateSpecialEffect1("Abilities\\Spells\\Other\\Doom\\DoomDeath.mdl", building.CreationArea.Wc3Rectangle:getCenter(), 2, 3)
           Source.Program.Legion:RemoveSpawnBuilding(building)
         else
           Source.Program.ShowErrorMessage("LegionBuilding.OnDies", "Unhandled legion building destroyed: " .. System.toString(GetUnitName(buildingUnit)))
@@ -21417,7 +21331,7 @@ System.namespace("Source.Events.Buildings", function (namespace)
 
         local unitType = GetUnitTypeId(buildingUnit)
 
-        -- Suche CreepCamp, zudem das zerstörte Gebäude gehört
+
         local extern, creepCamp = Source.Program.TryGetCreepCampByBuilding(buildingUnit)
         if not extern then
           Source.Program.ShowErrorMessage("MercenaryMainBuilding.OnDies", "Creep camp of creep building " .. System.toString(GetUnitName(buildingUnit)) .. " not found!")
@@ -21426,16 +21340,16 @@ System.namespace("Source.Events.Buildings", function (namespace)
 
         local rebuildTime = 5
 
-        -- Stoppe Trigger
+
         creepCamp.Building:Destroy()
 
-        -- Falls Verteidiger noch am Leben, dann töte diese
+
         for i = #creepCamp.DefendingUnits - 1, 0, -1 do
           creepCamp.DefendingUnits:get(i):Kill()
         end
         creepCamp.DefendingUnits:Clear()
 
-        -- Verstorbenen Held nach gegebener Zeit wieder belegen
+
         local timer = CreateTimer()
 
         local newOwningPlayer = user.Team.Computer
@@ -21443,20 +21357,20 @@ System.namespace("Source.Events.Buildings", function (namespace)
         System.Console.WriteLine("The " .. System.toString(creepCamp.ColorizedName) .. " have been defeated and join the " .. System.toString(user.Team.ColorizedName) .. "!")
         TimerStart(timer, rebuildTime, false, function ()
           local default = System.try(function ()
-            -- Timer wieder zerstören
+
             DestroyTimer(timer)
             DestroyTimer(timer)
             timer = nil
 
-            -- Prüfe vor Übernahme, ob der Computer-Spieler noch unbesiegt ist
+
             if newOwningPlayer.Defeated then
               return true
             end
 
             local attackTargetArea
 
-            -- Ist der neue Eigentümer das Team im gleichen Quadranten, ist das Ziel das Team am anderen Ende
-            -- der Lane, ansonsten alternativ ist es das Team im gleichen Quadrant.
+
+
             if newOwningPlayer.PlayerId == creepCamp.NearTeam.Computer.PlayerId then
               attackTargetArea = creepCamp.OpposingTeam.TeamBaseArea
             else
@@ -21568,7 +21482,7 @@ System.namespace("Source.Events.Buildings", function (namespace)
           Source.Program.ShowDebugMessage1("MainBuilding.OnDies", "Unit of building " .. System.toString(GetUnitName(unit)) .. " not found in computer players!")
         end
 
-        -- Ist nur noch ein Team übrig, gewinnen alle Spieler im Team
+
         if Source.Program.Elves.Defeated and Source.Program.Orcs.Defeated and Source.Program.Undeads.Defeated then
           Source.Program.Humans:Win()
         elseif Source.Program.Humans.Defeated and Source.Program.Elves.Defeated and Source.Program.Undeads.Defeated then
@@ -21612,7 +21526,7 @@ System.namespace("Source.Events.Periodic", function (namespace)
         local user = Source.Program.AllActiveUsers:get(i)
 
         if not user.Defeated then
-          SetPlayerState(user.Wc3Player, PLAYER_STATE_RESOURCE_GOLD, GetPlayerState(user.Wc3Player, PLAYER_STATE_RESOURCE_GOLD) + 100)
+          SetPlayerState(user.Wc3Player, PLAYER_STATE_RESOURCE_GOLD, GetPlayerState(user.Wc3Player, PLAYER_STATE_RESOURCE_GOLD) + 1)
         end
       end
 
@@ -21635,6 +21549,7 @@ end)
 end
 do
 local System = System
+local Linq = System.Linq.Enumerable
 local WCSharpApi = WCSharp.Api
 local Source
 local SourceModels
@@ -21649,8 +21564,8 @@ System.namespace("Source.Events.Periodic", function (namespace)
     local OnElapsed, CreateUnitAtRandomPointWithEffectTimed, CreateAtDummyAndCastAbilityTimed, CreateAtDummyAndCastAbilityTimed1, CreateAtDummyAndCastAbility, CreateLightning, class
     OnElapsed = function ()
       System.try(function ()
-        -- Wetter für 60 Sekunden ändern
-        local weathereffect = AddWeatherEffect(GetPlayableMapRect(), 1280467297 --[[ConstantsEx.WEATHER_Rays_of_Sunlight]])
+
+        local weathereffect = AddWeatherEffect(GetPlayableMapRect(), 1280467297)
         local weatherTimer = CreateTimer()
         TimerStart(weatherTimer, 60, false, function ()
           DestroyTimer(weatherTimer)
@@ -21681,14 +21596,14 @@ System.namespace("Source.Events.Periodic", function (namespace)
         local pentaTop = SourceModels.Pentagram(CenterTopRect:getCenter(), 5)
         local pentaRight = SourceModels.Pentagram(CenterRightRect:getCenter(), 5)
 
-        -- Musik (Dauert etwa 55 Sekunden) einmal spielen
+
         PlayThematicMusic("war3mapImported\\blowitup_cutted.mp3")
 
-        -- Pentagram zeichen nach 1,5 Sekunden für 5 Sekunden
+
         local timer1Count = 0
         local pentaTimer = CreateTimer()
         TimerStart(pentaTimer, 1, true, function ()
-          -- Zentrum
+
           pentaCenter:CreateLightning()
           pentaBottom:CreateLightning()
           pentaLeft:CreateLightning()
@@ -21705,9 +21620,11 @@ System.namespace("Source.Events.Periodic", function (namespace)
           end
         end)
 
-        -- Legion-Held wird im Zentrum erzeugt, bekommt ggf. den höchsten Spielerlevel und wird traininert
 
-        local maxHeroLevel = 0
+        local maxHeroLevel = Linq.Max(Source.Program.AllActiveUsers, function (user)
+          return user.HeroLevelCounter
+        end, System.Int32)
+
         if maxHeroLevel == 0 then
           maxHeroLevel = class.RaidRound
         end
@@ -21720,29 +21637,29 @@ System.namespace("Source.Events.Periodic", function (namespace)
 
           System.try(function ()
             Source.Program.Legion:CreateOrRefreshSpawnBuildings(class.RaidRound)
-            Source.Program.Legion:CreateOrReviveHero(1311780918 --[[Constants.UNIT_DEMON_LORD_LEGION]], Areas.Center, maxHeroLevel, class.RaidRound)
+            Source.Program.Legion:CreateOrReviveHero(1311780918, Areas.Center, maxHeroLevel, class.RaidRound)
 
-            -- Zentrum - Weitere Einheiten via Cast hinzurufen
-            Source.Program.Legion:CreateUnitAtRandomPoint(centerRect, 1848651846 --[[Constants.UNIT_INFERNAL_LEGION]], 0):AttackMoveTimed(Areas.HumanBase, 1)
-            Source.Program.Legion:CreateUnitAtRandomPoint(centerRect, 1848651846 --[[Constants.UNIT_INFERNAL_LEGION]], 0):AttackMoveTimed(Areas.OrcBase, 1)
-            Source.Program.Legion:CreateUnitAtRandomPoint(centerRect, 1848651846 --[[Constants.UNIT_INFERNAL_LEGION]], 0):AttackMoveTimed(Areas.ElfBase, 1)
-            Source.Program.Legion:CreateUnitAtRandomPoint(centerRect, 1848651846 --[[Constants.UNIT_INFERNAL_LEGION]], 0):AttackMoveTimed(Areas.UndeadBase, 1)
 
-            -- Bottom Lane - Weitere Einheiten via Cast hinzurufen
-            Source.Program.Legion:CreateUnitInArea(Areas.LegionSpawnBottom1, 1848651846 --[[Constants.UNIT_INFERNAL_LEGION]], 0):AttackMoveTimed(Areas.ElfBase, 1)
-            Source.Program.Legion:CreateUnitInArea(Areas.LegionSpawnBottom2, 1848651846 --[[Constants.UNIT_INFERNAL_LEGION]], 180):AttackMoveTimed(Areas.UndeadBase, 1)
+            Source.Program.Legion:CreateUnitAtRandomPoint(centerRect, 1848651846, 0):AttackMoveTimed(Areas.HumanBase, 1)
+            Source.Program.Legion:CreateUnitAtRandomPoint(centerRect, 1848651846, 0):AttackMoveTimed(Areas.OrcBase, 1)
+            Source.Program.Legion:CreateUnitAtRandomPoint(centerRect, 1848651846, 0):AttackMoveTimed(Areas.ElfBase, 1)
+            Source.Program.Legion:CreateUnitAtRandomPoint(centerRect, 1848651846, 0):AttackMoveTimed(Areas.UndeadBase, 1)
 
-            -- Left Lane - Weitere Einheiten via Cast hinzurufen
-            Source.Program.Legion:CreateUnitInArea(Areas.LegionSpawnEast1, 1848651846 --[[Constants.UNIT_INFERNAL_LEGION]], 270):AttackMoveTimed(Areas.OrcBase, 1)
-            Source.Program.Legion:CreateUnitInArea(Areas.LegionSpawnEast2, 1848651846 --[[Constants.UNIT_INFERNAL_LEGION]], 90):AttackMoveTimed(Areas.UndeadBase, 1)
 
-            -- Top Lane - Weitere Einheiten via Cast hinzurufen
-            Source.Program.Legion:CreateUnitInArea(Areas.LegionSpawnTop1, 1848651846 --[[Constants.UNIT_INFERNAL_LEGION]], 0):AttackMoveTimed(Areas.HumanBase, 1)
-            Source.Program.Legion:CreateUnitInArea(Areas.LegionSpawnTop2, 1848651846 --[[Constants.UNIT_INFERNAL_LEGION]], 180):AttackMoveTimed(Areas.OrcBase, 1)
+            Source.Program.Legion:CreateUnitInArea(Areas.LegionSpawnBottom1, 1848651846, 0):AttackMoveTimed(Areas.ElfBase, 1)
+            Source.Program.Legion:CreateUnitInArea(Areas.LegionSpawnBottom2, 1848651846, 180):AttackMoveTimed(Areas.UndeadBase, 1)
 
-            -- Right Lane - Weitere Einheiten via Cast hinzurufen
-            Source.Program.Legion:CreateUnitInArea(Areas.LegionSpawnWest1, 1848651846 --[[Constants.UNIT_INFERNAL_LEGION]], 270):AttackMoveTimed(Areas.HumanBase, 1)
-            Source.Program.Legion:CreateUnitInArea(Areas.LegionSpawnWest2, 1848651846 --[[Constants.UNIT_INFERNAL_LEGION]], 90):AttackMoveTimed(Areas.ElfBase, 1)
+
+            Source.Program.Legion:CreateUnitInArea(Areas.LegionSpawnEast1, 1848651846, 270):AttackMoveTimed(Areas.OrcBase, 1)
+            Source.Program.Legion:CreateUnitInArea(Areas.LegionSpawnEast2, 1848651846, 90):AttackMoveTimed(Areas.UndeadBase, 1)
+
+
+            Source.Program.Legion:CreateUnitInArea(Areas.LegionSpawnTop1, 1848651846, 0):AttackMoveTimed(Areas.HumanBase, 1)
+            Source.Program.Legion:CreateUnitInArea(Areas.LegionSpawnTop2, 1848651846, 180):AttackMoveTimed(Areas.OrcBase, 1)
+
+
+            Source.Program.Legion:CreateUnitInArea(Areas.LegionSpawnWest1, 1848651846, 270):AttackMoveTimed(Areas.HumanBase, 1)
+            Source.Program.Legion:CreateUnitInArea(Areas.LegionSpawnWest2, 1848651846, 90):AttackMoveTimed(Areas.ElfBase, 1)
           end, function (default)
             local ex = default
             Source.Program.ShowExceptionMessage("LegionRaid.OnElapsed", ex)
@@ -21779,13 +21696,13 @@ System.namespace("Source.Events.Periodic", function (namespace)
       end)
     end
     CreateAtDummyAndCastAbility = function (player, point, abilityId, abilityLevel, orderId, duration)
-      local dummy = CreateUnit(player, 1848651824 --[[Constants.UNIT_DUMMY]], point.X, point.Y, 0)
+      local dummy = CreateUnit(player, 1848651824, point.X, point.Y, 0)
 
       UnitAddAbility(dummy, abilityId)
       SetUnitAbilityLevel(dummy, abilityId, abilityLevel)
       IssueTargetOrderById(dummy, orderId, dummy)
 
-      -- Dummy nach Gebrauch wieder zerstören und freigeben
+
       local timer = CreateTimer()
       TimerStart(timer, duration, false, function ()
         DestroyTimer(timer)
@@ -21866,32 +21783,32 @@ System.namespace("Source.Events.Periodic", function (namespace)
       local default, extern = System.try(function ()
         local player = team.Computer.Wc3Player
 
-        IncreaseTechIfAffordable(team, player, 1378889778 --[[Constants.UPGRADE_MELEE_ATTACK_TEAM]], 200 --[[ResearchCheck.BaseGoldPriceUnitResearch]])
-        IncreaseTechIfAffordable(team, player, 1378889794 --[[Constants.UPGRADE_MELEE_DEFENSE_TEAM]], 200 --[[ResearchCheck.BaseGoldPriceUnitResearch]])
-        IncreaseTechIfAffordable(team, player, 1378889779 --[[Constants.UPGRADE_DISTANCE_ATTACK_TEAM]], 200 --[[ResearchCheck.BaseGoldPriceUnitResearch]])
-        IncreaseTechIfAffordable(team, player, 1378889798 --[[Constants.UPGRADE_DISTANCE_DEFENSE_TEAM]], 200 --[[ResearchCheck.BaseGoldPriceUnitResearch]])
-        IncreaseTechIfAffordable(team, player, 1378889793 --[[Constants.UPGRADE_MAGE_ATTACK_TEAM]], 200 --[[ResearchCheck.BaseGoldPriceUnitResearch]])
-        IncreaseTechIfAffordable(team, player, 1378889796 --[[Constants.UPGRADE_MAGE_DEFENSE_TEAM]], 200 --[[ResearchCheck.BaseGoldPriceUnitResearch]])
+        IncreaseTechIfAffordable(team, player, 1378889778, 200)
+        IncreaseTechIfAffordable(team, player, 1378889794, 200)
+        IncreaseTechIfAffordable(team, player, 1378889779, 200)
+        IncreaseTechIfAffordable(team, player, 1378889798, 200)
+        IncreaseTechIfAffordable(team, player, 1378889793, 200)
+        IncreaseTechIfAffordable(team, player, 1378889796, 200)
 
-        IncreaseTechIfAffordable(team, player, 1378889780 --[[Constants.UPGRADE_BUILDING_ATTACK_TEAM]], 400 --[[ResearchCheck.BaseGoldPriceUnitResearchBuilding]])
-        IncreaseTechIfAffordable(team, player, 1378889776 --[[Constants.UPGRADE_BUILDING_DEFENSE_TEAM]], 400 --[[ResearchCheck.BaseGoldPriceUnitResearchBuilding]])
-
-        if #team.Users == 0 then
-          -- Teams ohne menschlichen Mitspieler upgrade ihre Unit-Spawn
-          IncreaseTechIfAffordable(team, player, 1378889781 --[[Constants.UPGRADE_MELEE_UNIT_TEAM]], 400 --[[ResearchCheck.BaseGoldPriceUnitUpgrade]])
-          IncreaseTechIfAffordable(team, player, 1378889785 --[[Constants.UPGRADE_DISTANCE_UNIT_TEAM]], 400 --[[ResearchCheck.BaseGoldPriceUnitUpgrade]])
-          IncreaseTechIfAffordable(team, player, 1378889795 --[[Constants.UPGRADE_FLIGHT_UNIT_TEAM]], 400 --[[ResearchCheck.BaseGoldPriceUnitUpgrade]])
-          IncreaseTechIfAffordable(team, player, 1378889797 --[[Constants.UPGRADE_MAGE_UNIT_TEAM]], 400 --[[ResearchCheck.BaseGoldPriceUnitUpgrade]])
-        end
-
-        IncreaseTechIfAffordable(team, player, 1378889782 --[[Constants.UPGRADE_SIEGE_ATTACK_TEAM]], 500 --[[ResearchCheck.BaseGoldPriceUnitResearchArtillery]])
-        IncreaseTechIfAffordable(team, player, 1378889799 --[[Constants.UPGRADE_SIEGE_DEFENSE_TEAM]], 500 --[[ResearchCheck.BaseGoldPriceUnitResearchArtillery]])
+        IncreaseTechIfAffordable(team, player, 1378889780, 400)
+        IncreaseTechIfAffordable(team, player, 1378889776, 400)
 
         if #team.Users == 0 then
-          IncreaseTechIfAffordable(team, player, 1378889784 --[[Constants.UPGRADE_SIEGE_UNIT_TEAM]], 1000 --[[ResearchCheck.BaseGoldPriceUnitUpgradeArtillery]])
+
+          IncreaseTechIfAffordable(team, player, 1378889781, 400)
+          IncreaseTechIfAffordable(team, player, 1378889785, 400)
+          IncreaseTechIfAffordable(team, player, 1378889795, 400)
+          IncreaseTechIfAffordable(team, player, 1378889797, 400)
         end
 
-        -- Keine bezahlbare Forschung übrig
+        IncreaseTechIfAffordable(team, player, 1378889782, 500)
+        IncreaseTechIfAffordable(team, player, 1378889799, 500)
+
+        if #team.Users == 0 then
+          IncreaseTechIfAffordable(team, player, 1378889784, 1000)
+        end
+
+
         return true, true
       end, function (default)
         local ex = default
@@ -21906,8 +21823,8 @@ System.namespace("Source.Events.Periodic", function (namespace)
     IncreaseTechIfAffordable = function (team, computerPlayer, techId, goldPriceBase)
       local currentTechLevel = GetPlayerTechCount(computerPlayer, techId, true)
       if currentTechLevel == GetPlayerTechMaxAllowed(computerPlayer, techId) then
-        -- Spieler hat maximale Stufe der Forschung erreicht
-        --Program.ShowDebugMessage($"Fraction has research max level of tech: {techId}");
+
+
         return false
       end
 
@@ -21923,14 +21840,14 @@ System.namespace("Source.Events.Periodic", function (namespace)
       local default, command = team:GetUnitUpgradeByResearch(techId, nextTechLevel)
       local researchType = default
 
-      if researchType == 0 --[[ResearchType.Unknown]] then
+      if researchType == 0 then
         return false
-      elseif researchType == 1 --[[ResearchType.CommonUpgrade]] then
+      elseif researchType == 1 then
         team:DisplayChatMessage(Source.ConstantsEx.Message_CollectedGoldToResearchTech)
-      elseif researchType == 2 --[[ResearchType.AddUnit]] then
+      elseif researchType == 2 then
         team.Computer:AddSpawnUnit(command)
         team:DisplayChatMessage(Source.ConstantsEx.Message_CollectedGoldForMoreUnits)
-      elseif researchType == 3 --[[ResearchType.UpgradeUnit]] then
+      elseif researchType == 3 then
         team.Computer:UpgradeSpawnUnit(command)
         team:DisplayChatMessage(Source.ConstantsEx.Message_CollectedGoldToUpgradeUnits)
       else
@@ -21973,7 +21890,7 @@ System.namespace("Source.Events.Region", function (namespace)
         return
       end
 
-      -- Feindliche Einheit zur Basis eines anderen Spielers schicken
+
       local default, spawnedUnit = Source.Program.Humans.Computer:IsOwnerOfUnit(unit)
       if default then
         if not Source.Program.Undeads.Defeated then
@@ -22032,70 +21949,70 @@ System.namespace("Source.Events.Regions", function (namespace)
     OnFarSeer, OnFirelord, OnKeeperOfTheGrove, OnLich, OnMountainKing, OnPitLord, OnPriestessOfMoon, OnSeaWitch, 
     OnShadowHunter, OnTaurenChieftain, OnTinker, OnWarden, HandleHeroSelection
     OnAlchemist = function ()
-      HandleHeroSelection(1311780913 --[[Constants.UNIT_ALCHEMIST_HERO]])
+      HandleHeroSelection(1311780913)
     end
     OnArchmage = function ()
-      HandleHeroSelection(1211117647 --[[Constants.UNIT_ARCHMAGE_HERO]])
+      HandleHeroSelection(1211117647)
     end
     OnBlademaster = function ()
-      HandleHeroSelection(1328558128 --[[Constants.UNIT_BLADEMASTER_HERO]])
+      HandleHeroSelection(1328558128)
     end
     OnBloodMage = function ()
-      HandleHeroSelection(1311781448 --[[Constants.UNIT_BLOOD_MAGE_HERO]])
+      HandleHeroSelection(1311781448)
     end
     OnBrewmaster = function ()
-      HandleHeroSelection(1311780920 --[[Constants.UNIT_BREWMASTER_HERO]])
+      HandleHeroSelection(1311780920)
     end
     OnCryptLord = function ()
-      HandleHeroSelection(1311781451 --[[Constants.UNIT_CRYPT_LORD_HERO]])
+      HandleHeroSelection(1311781451)
     end
     OnDarkRanger = function ()
-      HandleHeroSelection(1311780921 --[[Constants.UNIT_DARK_RANGER_HERO]])
+      HandleHeroSelection(1311780921)
     end
     OnDeathKnight = function ()
-      HandleHeroSelection(1311781457 --[[Constants.UNIT_DEATH_KNIGHT_HERO]])
+      HandleHeroSelection(1311781457)
     end
     OnFarSeer = function ()
-      HandleHeroSelection(1211118169 --[[Constants.UNIT_FAR_SEER_HERO]])
+      HandleHeroSelection(1211118169)
     end
     OnFirelord = function ()
-      HandleHeroSelection(1311780916 --[[Constants.UNIT_FIRELORD_HERO]])
+      HandleHeroSelection(1311780916)
     end
     OnKeeperOfTheGrove = function ()
-      HandleHeroSelection(1160785968 --[[Constants.UNIT_KEEPER_OF_THE_GROVE_HERO]])
+      HandleHeroSelection(1160785968)
     end
     OnLich = function ()
-      HandleHeroSelection(1160785972 --[[Constants.UNIT_LICH_HERO]])
+      HandleHeroSelection(1160785972)
     end
     OnMountainKing = function ()
-      HandleHeroSelection(1211117646 --[[Constants.UNIT_MOUNTAIN_KING_HERO]])
+      HandleHeroSelection(1211117646)
     end
     OnPitLord = function ()
-      HandleHeroSelection(1311780929 --[[Constants.UNIT_PIT_LORD_HERO]])
+      HandleHeroSelection(1311780929)
     end
     OnPriestessOfMoon = function ()
-      HandleHeroSelection(1311781456 --[[Constants.UNIT_PRIESTESS_OF_THE_MOON_HERO]])
+      HandleHeroSelection(1311781456)
     end
     OnSeaWitch = function ()
-      HandleHeroSelection(1311780914 --[[Constants.UNIT_SEA_WITCH_HERO]])
+      HandleHeroSelection(1311780914)
     end
     OnShadowHunter = function ()
-      HandleHeroSelection(1328558129 --[[Constants.UNIT_SHADOW_HUNTER_HERO]])
+      HandleHeroSelection(1328558129)
     end
     OnTaurenChieftain = function ()
-      HandleHeroSelection(1311781450 --[[Constants.UNIT_TAUREN_CHIEFTAIN_HERO]])
+      HandleHeroSelection(1311781450)
     end
     OnTinker = function ()
-      HandleHeroSelection(1311780919 --[[Constants.UNIT_TINKER_HERO]])
+      HandleHeroSelection(1311780919)
     end
     OnWarden = function ()
-      HandleHeroSelection(1328558133 --[[Constants.UNIT_WARDEN_HERO]])
+      HandleHeroSelection(1328558133)
     end
     HandleHeroSelection = function (heroUnitTypeId)
       local unit = GetEnteringUnit()
 
-      if GetUnitTypeId(unit) == 1966092342 --[[Constants.UNIT_HEROIC_SOUL_HERO_SELECTOR]] then
-        -- Helden-Selector kauft Benutzerhelden
+      if GetUnitTypeId(unit) == 1966092342 then
+
         SourceLogics.HeroSelector.HandleHeroSelected(unit, heroUnitTypeId)
         return
       else
@@ -22173,7 +22090,7 @@ System.namespace("Source.Events.Region", function (namespace)
         return
       end
 
-      -- Feindliche Einheit zur Basis des anderen Spielers schicken
+
       local default, spawnedUnit = Source.Program.Orcs.Computer:IsOwnerOfUnit(unit)
       if default then
         if not Source.Program.Elves.Defeated then
@@ -22235,7 +22152,7 @@ System.namespace("Source.Events.Region", function (namespace)
         return
       end
 
-      -- Feindliche Einheit zur Basis des anderen Spielers schicken
+
       local default, spawnedUnit = Source.Program.Humans.Computer:IsOwnerOfUnit(unit)
       if default then
         if not Source.Program.Undeads.Defeated then
@@ -22297,7 +22214,7 @@ System.namespace("Source.Events.Region", function (namespace)
         return
       end
 
-      -- Feindliche Einheit zur Basis des anderen Spielers schicken
+
       local default, spawnedUnit = Source.Program.Humans.Computer:IsOwnerOfUnit(unit)
       if default then
         if not Source.Program.Orcs.Defeated then
@@ -22415,10 +22332,10 @@ System.namespace("Source.Logics", function (namespace)
     HandleSingleSpawnBuyed = function (buyingUnit, soldUnit, sellingUnit, team)
       local soldUnitId = GetUnitTypeId(soldUnit)
 
-      -- Gekaufte Einheit sofort entfernen
+
       RemoveUnit(soldUnit)
 
-      -- Sicherheitshalber Verweis auf Einheit für GC freigeben
+
       RemoveUnit(soldUnit)
       soldUnit = nil
 
@@ -22454,7 +22371,7 @@ System.namespace("Source.Logics", function (namespace)
       local playerId = GetPlayerId(GetOwningPlayer(unit))
       local respawnTime = 0
 
-      -- Prüfe vor Wiedergeburt-Einleitung, ob der Computer-Spieler noch unbesiegt ist
+
       local default, team = Source.Program.TryGetTeamByUnit(unit)
       if default then
         if team.Computer.Defeated then
@@ -22463,23 +22380,23 @@ System.namespace("Source.Logics", function (namespace)
       end
 
       if team == nil then
-        -- Helden neutrale Spieler (Legion) nicht automatisch wieder beleben
+
         return
       end
 
       respawnTime = 30
 
-      -- Verstorbenen Held nach gegebener Zeit wieder belegen
+
       local timer = CreateTimer()
 
       TimerStart(timer, respawnTime, false, function ()
         local default = System.try(function ()
-          -- Timer wieder zerstören
+
           DestroyTimer(timer)
           DestroyTimer(timer)
           timer = nil
 
-          -- Prüfe vor Wiedergeburt-Abschluss, ob der Computer-Spieler noch unbesiegt ist
+
           local default, team = Source.Program.TryGetTeamByUnit(unit)
           if default then
             if team.Computer.Defeated then
@@ -22494,7 +22411,7 @@ System.namespace("Source.Logics", function (namespace)
             respawnArea = spawnedUnit.SpawnArea
             ReviveHero(unit, respawnArea.CenterX, respawnArea.CenterY, true)
 
-            -- Computer-Helden starten stets mit vollem Mana
+
             SetUnitState(unit, UNIT_STATE_MANA, BlzGetUnitMaxMana(unit))
 
             spawnedUnit:RepeatAttackMove()
@@ -22511,7 +22428,7 @@ System.namespace("Source.Logics", function (namespace)
     HandleLeveled = function (unit)
       local unitId = GetUnitTypeId(unit)
 
-      if unitId == 1211117645 --[[Constants.UNIT_GUARDIAN_HUMAN]] or unitId == 1211117911 --[[Constants.UNIT_GUARDIAN_ORC]] or unitId == 1211118160 --[[Constants.UNIT_GUARDIAN_ELF]] or unitId == 1211118161 --[[Constants.UNIT_GUARDIAN_UNDEAD]] then
+      if unitId == 1211117645 or unitId == 1211117911 or unitId == 1211118160 or unitId == 1211118161 then
         ProcessWaechterLevelUp(unit)
       end
     end
@@ -22520,23 +22437,23 @@ System.namespace("Source.Logics", function (namespace)
       local abilityId = 0
 
       if level:EndsWith("1") or level:EndsWith("6") then
-        abilityId = 1093677619 --[[Constants.ABILITY_TAUNT_GUARD_20]]
+        abilityId = 1093677619
       elseif level:EndsWith("2") or level:EndsWith("7") then
-        abilityId = 1094862401 --[[Constants.ABILITY_COMMAND_AURA_GUARD_20]]
+        abilityId = 1094862401
       elseif level:EndsWith("3") or level:EndsWith("8") then
-        abilityId = 1094996803 --[[Constants.ABILITY_THUNDER_CLAP_GUARD_20]]
+        abilityId = 1094996803
       elseif level:EndsWith("4") or level:EndsWith("9") then
-        abilityId = 1094796353 --[[Constants.ABILITY_ENDURANCE_AURA_GUARD_20]]
+        abilityId = 1094796353
       else
-        abilityId = 1093677106 --[[Constants.ABILITY_ATTRIBUTE_BONUS_HERO_50]]
+        abilityId = 1093677106
       end
 
       local ability = BlzGetUnitAbility(unit, abilityId)
       if BlzGetAbilityId(ability) == 0 then
-        -- Held hat Fähigkeit noch nicht gelernt
+
         UnitAddAbility(unit, abilityId)
       else
-        -- Skill kann verbessert werden
+
         local abilityLevel = IncUnitAbilityLevel(unit, abilityId)
       end
     end
@@ -22565,19 +22482,19 @@ System.import(function (out)
   Source = out.Source
 end)
 System.namespace("Source.Logics", function (namespace)
-  -- <summary>
-  -- Stellt statische Methoden für die Logik von automatisch erstellten Einheiten bereit.
-  -- </summary>
+
+
+
   namespace.class("ComputerUnit", function (namespace)
     local HandleDied, HandleOrderReceived, RepeatAttackMove
-    -- <summary>
-    -- Behandelt den Tod einer Einheit.
-    -- </summary>
-    -- <param name="unit">Einheit</param>
+
+
+
+
     HandleDied = function (unit)
       local owner = GetOwningPlayer(unit)
 
-      -- Getötete Einheit von Spieler entfernen
+
       local default, spawnedUnit = Source.Program.Humans.Computer:IsOwnerOfUnit(unit)
       if default then
         Source.Program.Humans.Computer:RemoveUnit(spawnedUnit)
@@ -22606,42 +22523,42 @@ System.namespace("Source.Logics", function (namespace)
           end
         end
       end
-      --else
-      --  Bspw. der Tod der Heldenseele bei Kauf löst diesen Fall aus.
-      --  Program.ShowDebugMessage("Unit.OnDies", $"Unit {unit.Name} not found in unit lists of computer players!");
 
-      -- Verstorbene Einheit nach kurzer Zeit aus Spiel entfernen um RAM zu sparen
+
+
+
+
       local timer = CreateTimer()
       TimerStart(timer, 10, false, function ()
         DestroyTimer(timer)
         DestroyTimer(timer)
         timer = nil
 
-        -- Sicherheitshalber Verweis auf Einheit für GC freigeben
+
         RemoveUnit(unit)
         RemoveUnit(unit)
         unit = nil
       end)
     end
-    -- <summary>
-    -- Behandelt das Ereignis, wenn eine Einheit vom System einen Befehl bekommt.
-    -- </summary>
-    -- <param name="unit">Einheit</param>
+
+
+
+
     HandleOrderReceived = function (unit)
-      -- Wenn eine gespawnte Einheit ihren Angriffsbefehl verliert, erteilen wir ihr diesen erneut
-      -- Befehl 851974 ist die Heimkehr zum Ausgangspunkt und fehlt in der Constants.
+
+
       repeat
         local default = GetUnitCurrentOrder(unit)
-        if default == 851974 or default == 851976 --[[Constants.ORDER_CANCEL]] or default == 851973 --[[Constants.ORDER_STUNNED]] or default == 851972 --[[Constants.ORDER_STOP]] then
+        if default == 851974 or default == 851976 or default == 851973 or default == 851972 then
           RepeatAttackMove(unit)
           break
         end
       until 1
     end
-    -- <summary>
-    -- Ermittelt den Eigentümer der Einheit und wiederholt deren letzten (Angriffs-)Befehl.
-    -- </summary>
-    -- <param name="unit">Einheit</param>
+
+
+
+
     RepeatAttackMove = function (unit)
       local default, spawnedUnit = Source.Program.Humans.Computer:IsOwnerOfUnit(unit)
       if default then
@@ -22704,13 +22621,13 @@ System.namespace("Source.Logics", function (namespace)
       local player = GetOwningPlayer(buyingUnit)
       local playerId = GetPlayerId(player)
 
-      -- Käufer-Einheit töten
+
       KillUnit(buyingUnit)
 
-      -- Gekaufte Einheit sofort wieder entfernen und in Player-Base neu erstellen!
+
       RemoveUnit(soldUnit)
 
-      -- Sicherheitshalber Verweis auf Einheit für GC freigeben
+
       RemoveUnit(soldUnit)
       soldUnit = nil
 
@@ -22746,18 +22663,13 @@ System.namespace("Source.Logics", function (namespace)
       end
 
 
-      spawnArea = Areas.TestArea2
-      user.HeroLevelCounter = 50
-      SetPlayerState(user.Wc3Player, PLAYER_STATE_RESOURCE_GOLD, GetPlayerState(user.Wc3Player, PLAYER_STATE_RESOURCE_GOLD) + 50000)
-
-
       user:CreateHero(soldUnitId, spawnArea)
     end
     HandleHeroSelected = function (selectingUnit, heroUnitTypeId)
       local player = GetOwningPlayer(selectingUnit)
       local playerId = GetPlayerId(player)
 
-      -- Käufer-Einheit töten
+
       KillUnit(selectingUnit)
 
       local spawnArea = nil
@@ -22790,11 +22702,6 @@ System.namespace("Source.Logics", function (namespace)
       if user == nil then
         return
       end
-
-
-      spawnArea = Areas.TestArea2
-      user.HeroLevelCounter = 50
-      SetPlayerState(user.Wc3Player, PLAYER_STATE_RESOURCE_GOLD, GetPlayerState(user.Wc3Player, PLAYER_STATE_RESOURCE_GOLD) + 50000)
 
 
       user:CreateHero(heroUnitTypeId, spawnArea)
@@ -22840,9 +22747,9 @@ System.namespace("Source.Logics", function (namespace)
 
           Source.Program.Humans:IncreaseTechForAllPlayers(researchedTechId, researchedTechIdCount)
 
-          if researchType == 2 --[[ResearchType.AddUnit]] then
+          if researchType == 2 then
             Source.Program.Humans.Computer:AddSpawnUnit(spawnCommand)
-          elseif researchType == 3 --[[ResearchType.UpgradeUnit]] then
+          elseif researchType == 3 then
             Source.Program.Humans.Computer:UpgradeSpawnUnit(spawnCommand)
           end
         else
@@ -22854,9 +22761,9 @@ System.namespace("Source.Logics", function (namespace)
 
             Source.Program.Orcs:IncreaseTechForAllPlayers(researchedTechId, researchedTechIdCount)
 
-            if researchType == 2 --[[ResearchType.AddUnit]] then
+            if researchType == 2 then
               Source.Program.Orcs.Computer:AddSpawnUnit(spawnCommand)
-            elseif researchType == 3 --[[ResearchType.UpgradeUnit]] then
+            elseif researchType == 3 then
               Source.Program.Orcs.Computer:UpgradeSpawnUnit(spawnCommand)
             end
           else
@@ -22868,9 +22775,9 @@ System.namespace("Source.Logics", function (namespace)
 
               Source.Program.Elves:IncreaseTechForAllPlayers(researchedTechId, researchedTechIdCount)
 
-              if researchType == 2 --[[ResearchType.AddUnit]] then
+              if researchType == 2 then
                 Source.Program.Elves.Computer:AddSpawnUnit(spawnCommand)
-              elseif researchType == 3 --[[ResearchType.UpgradeUnit]] then
+              elseif researchType == 3 then
                 Source.Program.Elves.Computer:UpgradeSpawnUnit(spawnCommand)
               end
             else
@@ -22882,9 +22789,9 @@ System.namespace("Source.Logics", function (namespace)
 
                 Source.Program.Undeads:IncreaseTechForAllPlayers(researchedTechId, researchedTechIdCount)
 
-                if researchType == 2 --[[ResearchType.AddUnit]] then
+                if researchType == 2 then
                   Source.Program.Undeads.Computer:AddSpawnUnit(spawnCommand)
-                elseif researchType == 3 --[[ResearchType.UpgradeUnit]] then
+                elseif researchType == 3 then
                   Source.Program.Undeads.Computer:UpgradeSpawnUnit(spawnCommand)
                 end
               end
@@ -22899,23 +22806,23 @@ System.namespace("Source.Logics", function (namespace)
     HandleUnitUpgradeBuyed = function (buyingUnit, soldUnit, sellingUnit, team)
       local unitTypeId = GetUnitTypeId(soldUnit)
 
-      -- Gekaufte Einheit sofort entfernen
+
       RemoveUnit(soldUnit)
 
       Source.Program.ShowDebugMessage("Remove unit " .. unitTypeId .. " from stock of " .. System.toString(GetUnitName(sellingUnit)))
-      -- Gekaufte Upgrade-Item von soldItemTypeId entfernen
+
       RemoveUnitFromStock(sellingUnit, unitTypeId)
 
       Source.Program.ShowDebugMessage("Determince upgrade unit command" .. "")
       local default, command = team:GetUnitUpgradeBySold(unitTypeId)
       local upgradeType = default
 
-      if upgradeType == 0 --[[UnitUpgradeType.Unknown]] then
+      if upgradeType == 0 then
         Source.Program.ShowErrorMessage("UserHero.HandleUnitUpgradeBuyed", "No upgrade unit command can determined by unit " .. System.toString(GetUnitName(soldUnit)) .. "!")
         return
       end
 
-      -- Prüfe ob es Nachfolger gibt, wenn ja zu Gebäude hinzufügen
+
       if command.NextUnitTypeId > 0 then
         Source.Program.ShowDebugMessage("Add unit " .. command.NextUnitTypeId .. " to stock of " .. System.toString(GetUnitName(sellingUnit)))
         AddUnitToStock(sellingUnit, command.NextUnitTypeId, 1, 1)
@@ -22990,21 +22897,21 @@ System.namespace("Source.Logics", function (namespace)
         return
       end
 
-      -- Verstorbenen Held nach gegebener Zeit wieder belegen
+
       local timer = CreateTimer()
-      -- Währenddessen Timer-Dialog anzeigen
+
       local timerdialog = CreateTimerDialog(timer)
       TimerDialogSetTitle(timerdialog, System.toString(GetUnitName(unit)) .. " erscheint erneut...")
       TimerDialogDisplay(timerdialog, true)
 
       TimerStart(timer, GetHeroLevel(unit) + 2, false, function ()
         System.try(function ()
-          -- Timer wieder zerstören
+
           DestroyTimer(timer)
           DestroyTimer(timer)
           timer = nil
 
-          -- Timer-Dialog wieder zerstören
+
           DestroyTimerDialog(timerdialog)
           timerdialog = nil
 
@@ -23024,8 +22931,8 @@ System.namespace("Source.Logics", function (namespace)
 
       repeat
         local default = itemTypeId
-        if default == 1227894832 --[[Constants.ITEM_GLYPH_OF_SACRIFICE]] then
-          -- Neuen Helden auswählen
+        if default == 1227894832 then
+
           local playerId = GetPlayerId(GetOwningPlayer(buyingUnit))
           local extern, user = Source.Program.TryGetUserById(playerId)
           if not extern then
@@ -23033,12 +22940,12 @@ System.namespace("Source.Logics", function (namespace)
             break
           end
 
-          -- Merke Heldenstufe
+
           user.HeroLevelCounter = GetHeroLevel(buyingUnit)
-          -- Entferne Käufer/Helden aus Spiel
+
           RemoveUnit(buyingUnit)
 
-          -- Heldenseele erstellen und Kamera verschieben
+
           Source.Program.CreateHeroSelectorForPlayerAndAdjustCamera(user)
           break
         end
@@ -23046,21 +22953,21 @@ System.namespace("Source.Logics", function (namespace)
     end
     HandleCharmCasted = function (castedAbilityId)
       System.try(function ()
-        -- Zauberdefinition
+
         local ability = GetSpellAbility()
 
-        -- Zaubernde Einheit
+
         local castingUnit = GetSpellAbilityUnit()
 
-        -- Stufe & Reichweite des Zaubers
+
         local spellLevel = GetUnitAbilityLevel(castingUnit, castedAbilityId)
         local spellRange = 500 + (spellLevel * 50)
 
-        -- Ziel & Position des Zauberziels
+
         local targetUnit = GetSpellTargetUnit()
         local targetLocation = GetUnitLoc(targetUnit)
 
-        -- Alle Einheiten um die Position des Ziels durchlaufen
+
         local group = GetUnitsInRangeOfLocAll(spellRange, targetLocation)
 
         local charmedUnits = 0
@@ -23079,14 +22986,14 @@ System.namespace("Source.Logics", function (namespace)
               break
             end
 
-            -- Einheit in Gruppe ist Feind (oder Neutral) der Zaubernden Einheit?
+
             if IsPlayerEnemy(GetOwningPlayer(groupUnit), GetOwningPlayer(castingUnit)) or GetPlayerController(GetOwningPlayer(groupUnit)) == MAP_CONTROL_CREEP then
-              local dummyUnit = CreateUnitAtLoc(GetOwningPlayer(castingUnit), 1848651824 --[[Constants.UNIT_DUMMY]], targetLocation, 0)
+              local dummyUnit = CreateUnitAtLoc(GetOwningPlayer(castingUnit), 1848651824, targetLocation, 0)
 
-              UnitAddAbility(dummyUnit, 1093681473 --[[Constants.ABILITY_CHARM_DUMMY]])
-              IssueTargetOrderById(dummyUnit, 852581 --[[Constants.ORDER_CHARM]], groupUnit)
+              UnitAddAbility(dummyUnit, 1093681473)
+              IssueTargetOrderById(dummyUnit, 852581, groupUnit)
 
-              -- Dummy nach Gebrauch sofort wieder zerstören und freigeben
+
               RemoveUnit(dummyUnit)
               RemoveUnit(dummyUnit)
               dummyUnit = nil
@@ -23114,24 +23021,24 @@ System.namespace("Source.Logics", function (namespace)
     end
     HandleAnythingCasted = function (castedAbilityId)
       System.try(function ()
-        -- Zauberdefinition
+
         local ability = GetSpellAbility()
 
-        -- Zaubernde Einheit
+
         local castingUnit = GetSpellAbilityUnit()
 
-        -- Stufe des Zaubers
+
         local spellLevel = GetUnitAbilityLevel(castingUnit, castedAbilityId)
         local spellRange = 100 * spellLevel
         Source.Program.ShowDebugMessage("Ability " .. System.toString(BlzGetAbilityStringField(ability, ABILITY_SF_NAME)) .. " with level: " .. spellLevel)
 
-        -- Ziel des Zaubers
+
         local targetUnit = GetSpellTargetUnit()
 
-        -- Position des Ziels
+
         local targetLocation = GetUnitLoc(targetUnit)
 
-        -- Alle Einheiten um die Position des Ziels durchlaufen
+
         local group = GetUnitsInRangeOfLocAll(spellRange, targetLocation)
 
         local charmedUnits = 0
@@ -23142,23 +23049,23 @@ System.namespace("Source.Logics", function (namespace)
 
           local groupUnit = BlzGroupUnitAt(group, i)
 
-          -- Einheit in Gruppe ist Feind der Zaubernden Einheit?
+
           if IsPlayerEnemy(GetOwningPlayer(groupUnit), GetOwningPlayer(castingUnit)) then
-            -- Dummy erstellen
-            local dummyUnit = CreateUnitAtLoc(GetOwningPlayer(castingUnit), 1848651824 --[[Constants.UNIT_DUMMY]], targetLocation, 0)
-            UnitAddAbility(dummyUnit, 1093681473 --[[Constants.ABILITY_CHARM_DUMMY]])
 
-            -- Dummy einen Dummy-Zauber (keine Manakosten) ausführen lassen
-            IssueTargetOrderById(dummyUnit, 852581 --[[Constants.ORDER_CHARM]], groupUnit)
+            local dummyUnit = CreateUnitAtLoc(GetOwningPlayer(castingUnit), 1848651824, targetLocation, 0)
+            UnitAddAbility(dummyUnit, 1093681473)
 
-            -- Effekt erstellen
+
+            IssueTargetOrderById(dummyUnit, 852581, groupUnit)
+
+
             local effect = AddSpecialEffectTarget("Abilities\\Spells\\Other\\Charm\\CharmTarget.mdl", groupUnit, "overhead")
 
-            -- Effekte sofort wieder zerstören, um RAM freizugeben
+
             DestroyEffect(effect)
             effect = nil
 
-            -- Dummy sofort wieder zerstören, um RAM freizuegeben
+
             Source.Program.ShowDebugMessage("- Destroy dummy" .. "")
             RemoveUnit(dummyUnit)
             dummyUnit = nil
@@ -23176,10 +23083,10 @@ System.namespace("Source.Logics", function (namespace)
     HandleCreepSpawnBuyed = function (buyingUnit, soldUnit, sellingUnit)
       local soldUnitId = GetUnitTypeId(soldUnit)
 
-      -- Gekaufte Einheit sofort entfernen
+
       RemoveUnit(soldUnit)
 
-      -- Sicherheitshalber Verweis auf Einheit für GC freigeben
+
       RemoveUnit(soldUnit)
       soldUnit = nil
 
@@ -23297,25 +23204,29 @@ end
 do
 local System = System
 local SourceModels
+local SourceStatics
 local ListUnitSpawnBuilding
 System.import(function (out)
   SourceModels = Source.Models
+  SourceStatics = Source.Statics
   ListUnitSpawnBuilding = System.List(SourceModels.UnitSpawnBuilding)
 end)
 System.namespace("Source.Models", function (namespace)
   namespace.class("ComputerPlayer", function (namespace)
-    local CreateMainBuilding, CreateBarrackBuilding, IsOwnerOfBuilding, RemoveBuilding, Defeat, AddSpawnUnit, UpgradeSpawnUnit, __ctor__
-    __ctor__ = function (this, player, team)
+    local CreateMainBuilding, CreateBarrackBuilding, IsOwnerOfBuilding, RemoveBuilding, Defeat, AddSpawnUnit, UpgradeSpawnUnit, CreateUnit, 
+    __ctor__
+    __ctor__ = function (this, player, team, specialEffectPath)
       this.BarrackBuildings = ListUnitSpawnBuilding()
       System.base(this).__ctor__(this, player)
       this.Team = team
+      this.SpecialEffectPath = specialEffectPath
     end
-    CreateMainBuilding = function (this, unitTypeId, creationArea, specialEffectPath)
-      this.MainBuilding = SourceModels.MainBuilding(this, unitTypeId, creationArea, specialEffectPath)
+    CreateMainBuilding = function (this, unitTypeId, creationArea)
+      this.MainBuilding = SourceModels.MainBuilding(this, unitTypeId, creationArea)
       return this.MainBuilding
     end
     CreateBarrackBuilding = function (this, unitTypeId, creationArea, spawnArea, targetArea)
-      -- Ort anhand Zentrum einer Region erstellen
+
       local building = SourceModels.UnitSpawnBuilding(this, unitTypeId, creationArea, spawnArea, targetArea)
 
       this.BarrackBuildings:Add(building)
@@ -23334,11 +23245,11 @@ System.namespace("Source.Models", function (namespace)
       return false, foundBuilding
     end
     RemoveBuilding = function (this, building)
-      --Program.ShowDebugMessage("ComputerPlayer.RemoveBuilding", $"Remove building {building.Wc3Unit.Name}");
+
       this.BarrackBuildings:Remove(building)
     end
     Defeat = function (this)
-      -- Alle gespawnten Gebäude zerstören
+
       for i = #this.BarrackBuildings - 1, 0, -1 do
         local building = this.BarrackBuildings:get(i)
 
@@ -23363,6 +23274,18 @@ System.namespace("Source.Models", function (namespace)
         end
       end
     end
+
+
+
+
+
+
+
+    CreateUnit = function (this, unitTypeId, area, face)
+      SourceStatics.SpecialEffects.CreateSpecialEffect(this.SpecialEffectPath, area.Wc3CenterLocation, 1, 0.5)
+      local unit = System.base(this).CreateUnit(this, unitTypeId, area, face)
+      return unit
+    end
     return {
       base = function (out)
         return {
@@ -23376,14 +23299,16 @@ System.namespace("Source.Models", function (namespace)
       Defeat = Defeat,
       AddSpawnUnit = AddSpawnUnit,
       UpgradeSpawnUnit = UpgradeSpawnUnit,
+      CreateUnit = CreateUnit,
       __ctor__ = __ctor__,
       __metadata__ = function (out)
         return {
           methods = {
-            { ".ctor", 0x206, nil, out.WCSharp.Api.player, out.Source.Abstracts.TeamBase },
+            { ".ctor", 0x306, nil, out.WCSharp.Api.player, out.Source.Abstracts.TeamBase, System.String },
             { "AddSpawnUnit", 0x106, AddSpawnUnit, out.Source.Models.UnitUpgradeByResearchCommand },
             { "CreateBarrackBuilding", 0x486, CreateBarrackBuilding, System.Int32, out.Source.Models.Area, out.Source.Models.Area, out.Source.Models.Area, out.Source.Models.UnitSpawnBuilding },
-            { "CreateMainBuilding", 0x386, CreateMainBuilding, System.Int32, out.Source.Models.Area, System.String, out.Source.Models.MainBuilding },
+            { "CreateMainBuilding", 0x286, CreateMainBuilding, System.Int32, out.Source.Models.Area, out.Source.Models.MainBuilding },
+            { "CreateUnit", 0x386, CreateUnit, System.Int32, out.Source.Models.Area, System.Single, out.Source.Models.SpawnedUnit },
             { "Defeat", 0x6, Defeat },
             { "IsOwnerOfBuilding", 0x286, IsOwnerOfBuilding, out.WCSharp.Api.unit, out.Source.Models.UnitSpawnBuilding, System.Boolean },
             { "RemoveBuilding", 0x106, RemoveBuilding, out.Source.Models.UnitSpawnBuilding },
@@ -23392,6 +23317,7 @@ System.namespace("Source.Models", function (namespace)
           properties = {
             { "BarrackBuildings", 0x1, System.List(out.Source.Models.UnitSpawnBuilding) },
             { "MainBuilding", 0x6, out.Source.Models.MainBuilding },
+            { "SpecialEffectPath", 0x1, System.String },
             { "Team", 0x6, out.Source.Abstracts.TeamBase }
           },
           class = { "ComputerPlayer", 0x26 }
@@ -23442,9 +23368,9 @@ System.namespace("Source.Models", function (namespace)
         end
       }
     end)
-    -- <summary>
-    -- Stellt die verschiedenen Zeitintervalle dar, in denen Einheiten automatisch gespawned werden.
-    -- </summary>
+
+
+
     namespace.enum("SpawnInterval", function ()
       return {
         Short = 0,
@@ -23498,13 +23424,13 @@ System.namespace("Source.Models", function (namespace)
       this.Units = ListSpawnedUnit()
       this.Name = name
       this.ColorizedName = "|cffff0000" .. System.toString(name) .. "|r"
-      this.Wc3Player = Player(20 --[[ConstantsEx.PlayerId_Legion]])
+      this.Wc3Player = Player(20)
     end
     CreateOrReviveHero = function (this, unitTypeId, spawnArea, heroLevel, face, targetArea)
       local unit = nil
 
       if this.Hero == nil then
-        SourceStatics.SpecialEffects.CreateSpecialEffect("Objects\\Spawnmodels\\NightElf\\EntBirthTarget\\EntBirthTarget.mdl", spawnArea.Wc3Rectangle:getCenter(), 2, 3)
+        SourceStatics.SpecialEffects.CreateSpecialEffect1("Objects\\Spawnmodels\\NightElf\\EntBirthTarget\\EntBirthTarget.mdl", spawnArea.Wc3Rectangle:getCenter(), 2, 3)
         this.Hero = CreateHero(this, unitTypeId, spawnArea.Wc3Rectangle:getCenter(), heroLevel, face)
         unit = this.Hero.Wc3Unit
 
@@ -23513,7 +23439,7 @@ System.namespace("Source.Models", function (namespace)
         unit = this.Hero.Wc3Unit
 
         if not UnitAlive(unit) then
-          SourceStatics.SpecialEffects.CreateSpecialEffect("Objects\\Spawnmodels\\NightElf\\EntBirthTarget\\EntBirthTarget.mdl", spawnArea.Wc3Rectangle:getCenter(), 2, 3)
+          SourceStatics.SpecialEffects.CreateSpecialEffect1("Objects\\Spawnmodels\\NightElf\\EntBirthTarget\\EntBirthTarget.mdl", spawnArea.Wc3Rectangle:getCenter(), 2, 3)
           local point = spawnArea.Wc3Rectangle:getCenter()
           ReviveHero(unit, point.X, point.Y, true)
 
@@ -23521,7 +23447,7 @@ System.namespace("Source.Models", function (namespace)
             this.Hero:AttackMove(targetArea)
           end
         else
-          SourceStatics.SpecialEffects.CreateSpecialEffect1("Objects\\Spawnmodels\\NightElf\\EntBirthTarget\\EntBirthTarget.mdl", GetUnitX(unit), GetUnitY(unit), 2, 3)
+          SourceStatics.SpecialEffects.CreateSpecialEffect2("Objects\\Spawnmodels\\NightElf\\EntBirthTarget\\EntBirthTarget.mdl", GetUnitX(unit), GetUnitY(unit), 2, 3)
           SetWidgetLife(unit, BlzGetUnitMaxHP(unit))
         end
       end
@@ -23542,47 +23468,47 @@ System.namespace("Source.Models", function (namespace)
         if spawnBuilding.CreationArea == creationArea then
           SetWidgetLife(spawnBuilding.Wc3Unit, BlzGetUnitMaxHP(spawnBuilding.Wc3Unit))
 
-          -- TODO : Increase power and bounty by raid Counts or so!
+
 
           return
         end
       end
 
-      local building = SourceModels.LegionSpawnBuilding(1848652361 --[[Constants.UNIT_DEMON_SHRINE_LEGION]], creationArea, 180)
-      SourceStatics.SpecialEffects.CreateSpecialEffect("Objects\\Spawnmodels\\Human\\SmallFlameSpawn\\SmallFlameSpawn.mdl", building.CreationArea.Wc3Rectangle:getCenter(), 2, 3)
+      local building = SourceModels.LegionSpawnBuilding(1848652361, creationArea, 180)
+      SourceStatics.SpecialEffects.CreateSpecialEffect1("Objects\\Spawnmodels\\Human\\SmallFlameSpawn\\SmallFlameSpawn.mdl", building.CreationArea.Wc3Rectangle:getCenter(), 2, 3)
       building:RegisterOnDies(SourceEventsBuildings.LegionBuilding.OnDies)
 
-      building:AddSpawnTrigger(2 --[[SpawnInterval.Long]], creationArea, target2):Run(0)
-      building:AddSpawnTrigger(2 --[[SpawnInterval.Long]], creationArea, target1):Run(0)
+      building:AddSpawnTrigger(2, creationArea, target2):Run(0)
+      building:AddSpawnTrigger(2, creationArea, target1):Run(0)
 
-      building:AddUnitToSpawnTriggers(1848651843 --[[Constants.UNIT_FELGUARD_LEGION]])
+      building:AddUnitToSpawnTriggers(1848651843)
 
       if SourceEventsPeriodic.LegionRaid.RaidRound >= 2 then
-        building:AddUnitToSpawnTriggers(1848651850 --[[Constants.UNIT_FEL_RAVAGER_LEGION]])
+        building:AddUnitToSpawnTriggers(1848651850)
       end
       if SourceEventsPeriodic.LegionRaid.RaidRound >= 3 then
-        building:AddUnitToSpawnTriggers(1848651857 --[[Constants.UNIT_MAIDEN_OF_PAIN_LEGION]])
+        building:AddUnitToSpawnTriggers(1848651857)
       end
       if SourceEventsPeriodic.LegionRaid.RaidRound >= 4 then
-        building:AddUnitToSpawnTriggers(1848651843 --[[Constants.UNIT_FELGUARD_LEGION]])
+        building:AddUnitToSpawnTriggers(1848651843)
       end
       if SourceEventsPeriodic.LegionRaid.RaidRound >= 5 then
-        building:AddUnitToSpawnTriggers(1848651850 --[[Constants.UNIT_FEL_RAVAGER_LEGION]])
+        building:AddUnitToSpawnTriggers(1848651850)
       end
       if SourceEventsPeriodic.LegionRaid.RaidRound >= 6 then
-        building:AddUnitToSpawnTriggers(1848651854 --[[Constants.UNIT_VILE_TORMENTOR_LEGION]])
+        building:AddUnitToSpawnTriggers(1848651854)
       end
       if SourceEventsPeriodic.LegionRaid.RaidRound >= 7 then
-        building:AddUnitToSpawnTriggers(1848651846 --[[Constants.UNIT_INFERNAL_LEGION]])
+        building:AddUnitToSpawnTriggers(1848651846)
       end
       if SourceEventsPeriodic.LegionRaid.RaidRound >= 8 then
-        building:AddUnitToSpawnTriggers(1848651846 --[[Constants.UNIT_INFERNAL_LEGION]])
+        building:AddUnitToSpawnTriggers(1848651846)
       end
       if SourceEventsPeriodic.LegionRaid.RaidRound >= 9 then
-        building:AddUnitToSpawnTriggers(1848651860 --[[Constants.UNIT_INFERNAL_MACHINE_LEGION]])
+        building:AddUnitToSpawnTriggers(1848651860)
       end
 
-      -- TODO : Increase power and bounty by raid Counts or so!
+
 
       this.SpawnBuildings:Add(building)
     end
@@ -23606,12 +23532,12 @@ System.namespace("Source.Models", function (namespace)
     AddAbilitiesToHero = function (this, unitTypeId, unit)
       repeat
         local default = unitTypeId
-        if default == 1311780918 --[[Constants.UNIT_DEMON_LORD_LEGION]] then
-          UnitAddAbility(unit, 1093677623 --[[Constants.ABILITY_RAIN_OF_FIRE_LEGION_100]])
-          UnitAddAbility(unit, 1093677620 --[[Constants.ABILITY_CLEAVING_ATTACK_LEGION_100]])
-          UnitAddAbility(unit, 1093677635 --[[Constants.ABILITY_FINGER_OF_DEATH_LEGION_100]])
-          UnitAddAbility(unit, 1093677621 --[[Constants.ABILITY_UNHOLY_AURA_LEGION_100]])
-          UnitAddAbility(unit, 1093677634 --[[Constants.ABILITY_ATTRIBUTE_BONUS_LEGION_100]])
+        if default == 1311780918 then
+          UnitAddAbility(unit, 1093677623)
+          UnitAddAbility(unit, 1093677620)
+          UnitAddAbility(unit, 1093677635)
+          UnitAddAbility(unit, 1093677621)
+          UnitAddAbility(unit, 1093677634)
           break
         else
           System.throw(System.NotImplementedException("Abilities for hero " .. System.toString(GetUnitName(unit)) .. " (Id " .. unitTypeId .. ") not implemented yet!"))
@@ -23621,12 +23547,12 @@ System.namespace("Source.Models", function (namespace)
     TrainHero = function (this, unitTypeId, unit, heroLevel)
       repeat
         local default = unitTypeId
-        if default == 1311780918 --[[Constants.UNIT_DEMON_LORD_LEGION]] then
-          SetUnitAbilityLevel(unit, 1093677623 --[[Constants.ABILITY_RAIN_OF_FIRE_LEGION_100]], heroLevel)
-          SetUnitAbilityLevel(unit, 1093677620 --[[Constants.ABILITY_CLEAVING_ATTACK_LEGION_100]], heroLevel)
-          SetUnitAbilityLevel(unit, 1093677635 --[[Constants.ABILITY_FINGER_OF_DEATH_LEGION_100]], heroLevel)
-          SetUnitAbilityLevel(unit, 1093677621 --[[Constants.ABILITY_UNHOLY_AURA_LEGION_100]], heroLevel)
-          SetUnitAbilityLevel(unit, 1093677634 --[[Constants.ABILITY_ATTRIBUTE_BONUS_LEGION_100]], heroLevel)
+        if default == 1311780918 then
+          SetUnitAbilityLevel(unit, 1093677623, heroLevel)
+          SetUnitAbilityLevel(unit, 1093677620, heroLevel)
+          SetUnitAbilityLevel(unit, 1093677635, heroLevel)
+          SetUnitAbilityLevel(unit, 1093677621, heroLevel)
+          SetUnitAbilityLevel(unit, 1093677634, heroLevel)
           break
         else
           System.throw(System.NotImplementedException("Abilities for hero " .. System.toString(GetUnitName(unit)) .. " (Id " .. unitTypeId .. ") not implemented yet!"))
@@ -23646,7 +23572,7 @@ System.namespace("Source.Models", function (namespace)
       return CreateUnitAtPoint(this, point, unitTypeId, face)
     end
     CreateUnitAtPoint = function (this, point, unitTypeId, face)
-      SourceStatics.SpecialEffects.CreateSpecialEffect("Objects\\Spawnmodels\\NightElf\\EntBirthTarget\\EntBirthTarget.mdl", point, 2, 1)
+      SourceStatics.SpecialEffects.CreateSpecialEffect1("Objects\\Spawnmodels\\NightElf\\EntBirthTarget\\EntBirthTarget.mdl", point, 2, 1)
       local result = System.new(SourceModels.SpawnedUnit, 2, this.Wc3Player, unitTypeId, point, face)
       this.Units:Add(result)
       ManipulateSpawnedUnit(this, result.Wc3Unit, SourceEventsPeriodic.LegionRaid.RaidRound)
@@ -23661,7 +23587,7 @@ System.namespace("Source.Models", function (namespace)
           BlzSetUnitMaxHP(unit, BlzGetUnitMaxHP(unit) + ((System.div(BlzGetUnitMaxHP(unit), 10)) * raidCount))
           break
         else
-          -- Ab Stufe 10 werden die Einheiten nicht mehr stärker, sonst werden sie (fast) unbesiegbar
+
           BlzSetUnitBaseDamage(unit, BlzGetUnitBaseDamage(unit, 0) + 100, 0)
           BlzSetUnitRealField(unit, UNIT_RF_DEFENSE, BlzGetUnitRealField(unit, UNIT_RF_DEFENSE) + 20)
           BlzSetUnitMaxHP(unit, BlzGetUnitMaxHP(unit) + (BlzGetUnitMaxHP(unit)))
@@ -23671,13 +23597,13 @@ System.namespace("Source.Models", function (namespace)
 
       SetWidgetLife(unit, BlzGetUnitMaxHP(unit))
     end
-    -- <summary>
-    -- Gibt True zurück, wenn die übergebene Einheit in der Auflistung aller Einheiten enthalten ist
-    -- </summary>
-    -- <param name="wc3Unit"></param>
-    -- <returns></returns>
+
+
+
+
+
     IsOwnerOfUnit = function (this, wc3Unit, unit)
-      if GetPlayerId(GetOwningPlayer(wc3Unit)) ~= 20 --[[ConstantsEx.PlayerId_Legion]] then
+      if GetPlayerId(GetOwningPlayer(wc3Unit)) ~= 20 then
         unit = nil
         return false, unit
       end
@@ -23685,22 +23611,22 @@ System.namespace("Source.Models", function (namespace)
       local unitId = GetUnitTypeId(wc3Unit)
 
       for _, spawnedUnit in System.each(this.Units) do
-        -- Prüfe primär die Einheit-Id, da ein UNIT-Vergleich nicht empfohlen wird!
-        -- Ein Einheitenvergleich wird zwar nicht empfohlen, ist aber die einzige Möglichkeit diesselbe Einheit zu ermitteln
+
+
         if GetUnitTypeId(spawnedUnit.Wc3Unit) == unitId and spawnedUnit.Wc3Unit == wc3Unit then
           unit = spawnedUnit
           return true, unit
         end
       end
 
-      -- Dieser Fall kann eintreten, wenn eine statische Computer-Einheit das Event auslöst
+
       unit = nil
       return false, unit
     end
-    -- <summary>
-    -- Entfernt eine Einheit aus der Auflistung aller Einheiten.
-    -- </summary>
-    -- <param name="unit"></param>
+
+
+
+
     RemoveUnit = function (this, unit)
       this.Units:Remove(unit)
     end
@@ -23770,13 +23696,13 @@ System.namespace("Source.Models", function (namespace)
       this.CreationArea = creationArea
       this.Wc3Unit = CreateUnitAtLoc(Source.Program.Legion.Wc3Player, unitTypeId, creationArea.Wc3CenterLocation, face)
     end
-    -- <summary>
-    -- Fügt dem Gebäude einen Spawn-Trigger hinzu, welcher solange existiert ist, bis das Gebäude via <see cref="Destroy"/> zerstört wird.
-    -- </summary>
-    -- <param name="interval">Sekunden</param>
-    -- <param name="spawnArea">Spawn-Gebiet</param>
-    -- <param name="unitIds">Auflistung an Einheiten-Ids</param>
-    -- <returns></returns>
+
+
+
+
+
+
+
     AddSpawnTrigger = function (this, spawnInterval, spawnArea, targetArea)
       local spawnTrigger = SourceModels.LegionSpawnTrigger(spawnInterval, spawnArea, targetArea, System.Array.Empty(System.Int32))
       this.SpawnTriggers:Add(spawnTrigger)
@@ -23787,9 +23713,9 @@ System.namespace("Source.Models", function (namespace)
         this.SpawnTriggers:get(i):AddUnit(unitId)
       end
     end
-    -- <summary>
-    -- Deregistriert das Sterbe-Event, stoppt alle Spawn-Trigger und entfernt die WC3-Einheit.
-    -- </summary>
+
+
+
     Destroy = function (this)
       DeRegisterOnDies(this)
 
@@ -23801,18 +23727,18 @@ System.namespace("Source.Models", function (namespace)
       RemoveUnit(this.Wc3Unit)
       this.Wc3Unit = nil
     end
-    -- <summary>
-    -- Registriert das Sterbe-Event.
-    -- </summary>
-    -- <param name="eventHandler"></param>
+
+
+
+
     RegisterOnDies = function (this, eventHandler)
       this.Wc3Trigger = CreateTrigger()
       TriggerRegisterUnitEvent(this.Wc3Trigger, this.Wc3Unit, EVENT_UNIT_DEATH)
       TriggerAddAction(this.Wc3Trigger, eventHandler)
     end
-    -- <summary>
-    -- Deregistriert das Sterbe-Event.
-    -- </summary>
+
+
+
     DeRegisterOnDies = function (this)
       if this.Wc3Trigger == nil then
         return
@@ -23862,13 +23788,13 @@ end)
 System.namespace("Source.Models", function (namespace)
   namespace.class("LegionSpawnTrigger", function (namespace)
     local Run, Start, Elapsed, Stop, AddUnit, __ctor__
-    -- <summary>
-    -- Erstellt einen zeitgesteuertem Auslöser für das regelmäßige Erstellen von Einheiten.
-    -- </summary>
-    -- <param name="force">Computer-Spieler, für den Einheiten erstellt werden</param>
-    -- <param name="spawnInterval">Klasse der erstellten Einheiten</param>
-    -- <param name="targetArea">Zielgebiet, für das erstellte Einheiten einen Angriff/Bewegen-Befehl erhalten</param>
-    -- <param name="unitIds">Auflistung an Einheit-Typen zu beginn</param>
+
+
+
+
+
+
+
     __ctor__ = function (this, spawnInterval, spawnArea, targetArea, unitIds)
       this.SpawnArea = spawnArea
       this.TargetArea = targetArea
@@ -23876,11 +23802,11 @@ System.namespace("Source.Models", function (namespace)
       this.SpawnInterval = spawnInterval
       this.Interval = Source.Program.GetIntervalSeconds(spawnInterval)
     end
-    -- <summary>
-    -- Startet den Trigger im angegebenen Interval
-    -- </summary>
+
+
+
     Run = function (this, delay)
-      -- Delay a little since some stuff can break otherwise
+
       local timer = CreateTimer()
       TimerStart(timer, delay, false, function ()
         DestroyTimer(timer)
@@ -23894,9 +23820,9 @@ System.namespace("Source.Models", function (namespace)
       this.Timer = CreateTimer()
       TimerStart(this.Timer, this.Interval, true, System.fn(this, Elapsed))
     end
-    -- <summary>
-    -- Wird vom Trigger im angegeben Interval abgearbeitet.
-    -- </summary>
+
+
+
     Elapsed = function (this)
       System.try(function ()
         for _, unitId in System.each(this.UnitIds) do
@@ -23907,9 +23833,9 @@ System.namespace("Source.Models", function (namespace)
         System.Console.WriteLine(ex:getMessage())
       end)
     end
-    -- <summary>
-    -- Stoppt den Trigger und zerstört ihn für den GC.
-    -- </summary>
+
+
+
     Stop = function (this)
       PauseTimer(this.Timer)
       DestroyTimer(this.Timer)
@@ -23954,31 +23880,27 @@ end
 do
 local System = System
 local SourceModels
-local SourceStatics
 local ListSpawnAttackRoute
 System.import(function (out)
   SourceModels = Source.Models
-  SourceStatics = Source.Statics
   ListSpawnAttackRoute = System.List(SourceModels.SpawnAttackRoute)
 end)
 System.namespace("Source.Models", function (namespace)
   namespace.class("MainBuilding", function (namespace)
     local AddSpawnAttackRoute, CreateSingleUnitSpawn, __ctor__
-    __ctor__ = function (this, computer, unitTypeId, creationArea, specialEffectPath)
+    __ctor__ = function (this, computer, unitTypeId, creationArea)
       this.Routes = ListSpawnAttackRoute()
       System.base(this).__ctor__(this, computer, unitTypeId, creationArea)
-      this.SpecialEffectPath = specialEffectPath
     end
     AddSpawnAttackRoute = function (this, spawnArea, targetArea)
       this.Routes:Add(SourceModels.SpawnAttackRoute(spawnArea, targetArea))
     end
-    -- <summary>
-    -- Erstellt einmalig eine Einheit für jede Lane und erteilt den Angriff/Bewegen-Befehl zur gegnerischen Base
-    -- </summary>
-    -- <param name="unitId"></param>
+
+
+
+
     CreateSingleUnitSpawn = function (this, unitId)
       for _, route in System.each(this.Routes) do
-        SourceStatics.SpecialEffects.CreateSpecialEffect(this.SpecialEffectPath, route.SpawnArea.Wc3Rectangle:getCenter(), 1, 0.5)
         this.Computer:CreateUnit(unitId, route.SpawnArea, 0):AttackMoveTimed(route.TargetArea, 0.5)
       end
     end
@@ -23994,13 +23916,12 @@ System.namespace("Source.Models", function (namespace)
       __metadata__ = function (out)
         return {
           methods = {
-            { ".ctor", 0x406, nil, out.Source.Models.ComputerPlayer, System.Int32, out.Source.Models.Area, System.String },
+            { ".ctor", 0x306, nil, out.Source.Models.ComputerPlayer, System.Int32, out.Source.Models.Area },
             { "AddSpawnAttackRoute", 0x206, AddSpawnAttackRoute, out.Source.Models.Area, out.Source.Models.Area },
             { "CreateSingleUnitSpawn", 0x106, CreateSingleUnitSpawn, System.Int32 }
           },
           properties = {
-            { "Routes", 0x1, System.List(out.Source.Models.SpawnAttackRoute) },
-            { "SpecialEffectPath", 0x1, System.String }
+            { "Routes", 0x1, System.List(out.Source.Models.SpawnAttackRoute) }
           },
           class = { "MainBuilding", 0x26 }
         }
@@ -24029,7 +23950,7 @@ System.namespace("Source.Models", function (namespace)
     __ctor__ = function (this, name, buildingArea, spawnArea, nearTeam, opposingTeam, buildingUnitTypeId, defenderUnitTypeIds)
       this.DefendingUnits = ListSpawnedUnit()
       this.Name = name
-      this.ColorizedName = "|c" .. System.toString("ffffcc00" --[[ConstantsEx.ColorHexCode_Gold]]) .. System.toString(name) .. "|r"
+      this.ColorizedName = "|c" .. System.toString("ffffcc00") .. System.toString(name) .. "|r"
       this.SpawnArea = spawnArea
       this.BuildingArea = buildingArea
       this.NearTeam = nearTeam
@@ -24038,14 +23959,14 @@ System.namespace("Source.Models", function (namespace)
       this.DefenderUnitTypeIds = defenderUnitTypeIds
       this.Wc3Player = Player(PLAYER_NEUTRAL_AGGRESSIVE)
     end
-    -- <summary>
-    -- Erstellt das Spawn-Gebäude des Söldnerlagers.
-    -- </summary>
-    -- <param name="unitTypeId"></param>
-    -- <param name="face"></param>
-    -- <returns></returns>
+
+
+
+
+
+
     InitializeBuilding = function (this)
-      -- Ort anhand Zentrum einer Region erstellen
+
       this.Building = SourceModels.MercenarySpawnBuilding(this, this.BuildingUnitTypeId, this.BuildingArea, 0)
       this.Building:RegisterOnDies(SourceEventsBuildings.MercenaryBuilding.OnDies)
 
@@ -24053,30 +23974,30 @@ System.namespace("Source.Models", function (namespace)
 
       return this.Building
     end
-    -- <summary>
-    -- Setzt den Eigentümer des Söldnerlagers und erstellt ein neues Spawn-Gebäude.
-    -- </summary>
-    -- <param name="team">Neues Eigentümer-Team</param>
-    -- <param name="attackTargetForSpawn">Gebiet, welches das Angriff/Bewegen-Befehl der automatisch erstellten Einheiten ist.</param>
+
+
+
+
+
     SetOwnerAndRebuild = function (this, team, attackTargetForSpawn)
       this.OwnerTeam = team
       this.AttackTargetArea = attackTargetForSpawn
 
       this.Wc3Player = this.OwnerTeam.Computer.Wc3Player
 
-      -- Ort anhand Zentrum einer Region erstellen
+
       this.Building = SourceModels.MercenarySpawnBuilding(this, this.BuildingUnitTypeId, this.BuildingArea, 0)
       this.Building:RegisterOnDies(SourceEventsBuildings.MercenaryBuilding.OnDies)
 
       SpawnDefendingUnits(this, true)
 
-      -- Füge direkt SpawnTrigger hinzu, welche später durch kaufen von Söldnern um Einheiten erweitert werden
-      this.Building:AddSpawnTrigger(1 --[[SpawnInterval.Middle]], this.SpawnArea, this.AttackTargetArea):Run(0)
+
+      this.Building:AddSpawnTrigger(1, this.SpawnArea, this.AttackTargetArea):Run(0)
     end
-    -- <summary>
-    -- Erzeugt im Spawn-Bereich eine Einheit, welche das Lager verteidigt.
-    -- </summary>
-    -- <param name="withSpecialEffect"></param>
+
+
+
+
     SpawnDefendingUnits = function (this, withSpecialEffect)
       local rectangle = this.SpawnArea.Wc3Rectangle
 
@@ -24090,16 +24011,16 @@ System.namespace("Source.Models", function (namespace)
         end
 
         if withSpecialEffect then
-          SourceStatics.SpecialEffects.CreateSpecialEffect("UI\\Feedback\\GoldCredit\\GoldCredit.mdl", point, 1, 1)
+          SourceStatics.SpecialEffects.CreateSpecialEffect1("UI\\Feedback\\GoldCredit\\GoldCredit.mdl", point, 1, 1)
         end
       end
     end
-    -- <summary>
-    -- Erzeugt im Spawn-Bereich eine Einheit, welche das Zielgebiet angreift.
-    -- </summary>
-    -- <param name="point">Punkt</param>
-    -- <param name="unitTypeId">Einheit-Typ</param>
-    -- <returns></returns>
+
+
+
+
+
+
     SpawnAttackingUnit = function (this, point, unitTypeId)
       local result = System.new(SourceModels.SpawnedUnit, 2, this.Wc3Player, unitTypeId, point, 0)
       result:AttackMoveTimed(this.AttackTargetArea, 1)
@@ -24161,13 +24082,13 @@ System.namespace("Source.Models", function (namespace)
       this.Wc3Unit = CreateUnitAtLoc(owner.Wc3Player, unitTypeId, creationArea.Wc3CenterLocation, face)
       this.Owner = owner
     end
-    -- <summary>
-    -- Fügt dem Gebäude einen Spawn-Trigger hinzu, welcher solange existiert ist, bis das Gebäude via <see cref="Destroy"/> zerstört wird.
-    -- </summary>
-    -- <param name="interval">Sekunden</param>
-    -- <param name="spawnArea">Spawn-Gebiet</param>
-    -- <param name="unitIds">Auflistung an Einheiten-Ids</param>
-    -- <returns></returns>
+
+
+
+
+
+
+
     AddSpawnTrigger = function (this, spawnInterval, spawnArea, targetArea)
       local spawnTrigger = SourceModels.MercenarySpawnTrigger(this.Owner, spawnInterval, spawnArea, targetArea, System.Array.Empty(System.Int32))
       this.SpawnTriggers:Add(spawnTrigger)
@@ -24178,9 +24099,9 @@ System.namespace("Source.Models", function (namespace)
         this.SpawnTriggers:get(i):AddUnit(unitId)
       end
     end
-    -- <summary>
-    -- Deregistriert das Sterbe-Event, stoppt alle Spawn-Trigger und tötet (falls noch nötig) die WC3-Einheit.
-    -- </summary>
+
+
+
     Destroy = function (this)
       DeRegisterOnDies(this)
 
@@ -24189,23 +24110,23 @@ System.namespace("Source.Models", function (namespace)
       end
 
       if UnitAlive(this.Wc3Unit) then
-        -- Da diese Funktion auch beim Tod des Gebäudes ausgelöst werden kann,
-        -- töte Gebäude bei Bedarf, d.h. wenn Team verliert und Spieler entfernt werden.
+
+
         KillUnit(this.Wc3Unit)
       end
     end
-    -- <summary>
-    -- Registriert das Sterbe-Event.
-    -- </summary>
-    -- <param name="eventHandler"></param>
+
+
+
+
     RegisterOnDies = function (this, eventHandler)
       this.Wc3Trigger = CreateTrigger()
       TriggerRegisterUnitEvent(this.Wc3Trigger, this.Wc3Unit, EVENT_UNIT_DEATH)
       TriggerAddAction(this.Wc3Trigger, eventHandler)
     end
-    -- <summary>
-    -- Deregistriert das Sterbe-Event.
-    -- </summary>
+
+
+
     DeRegisterOnDies = function (this)
       if this.Wc3Trigger == nil then
         return
@@ -24257,13 +24178,13 @@ end)
 System.namespace("Source.Models", function (namespace)
   namespace.class("MercenarySpawnTrigger", function (namespace)
     local Run, Start, Elapsed, Stop, AddUnit, __ctor__
-    -- <summary>
-    -- Erstellt einen zeitgesteuertem Auslöser für das regelmäßige Erstellen von Einheiten.
-    -- </summary>
-    -- <param name="owner">Computer-Spieler, für den Einheiten erstellt werden</param>
-    -- <param name="spawnInterval">Klasse der erstellten Einheiten</param>
-    -- <param name="targetArea">Zielgebiet, für das erstellte Einheiten einen Angriff/Bewegen-Befehl erhalten</param>
-    -- <param name="unitIds">Auflistung an Einheit-Typen zu beginn</param>
+
+
+
+
+
+
+
     __ctor__ = function (this, owner, spawnInterval, spawnArea, targetArea, unitIds)
       this.Owner = owner
       this.SpawnArea = spawnArea
@@ -24272,11 +24193,11 @@ System.namespace("Source.Models", function (namespace)
       this.SpawnInterval = spawnInterval
       this.Interval = Source.Program.GetIntervalSeconds(spawnInterval)
     end
-    -- <summary>
-    -- Startet den Trigger im angegebenen Interval
-    -- </summary>
+
+
+
     Run = function (this, delay)
-      -- Delay a little since some stuff can break otherwise
+
       local timer = CreateTimer()
       TimerStart(timer, delay, false, function ()
         DestroyTimer(timer)
@@ -24290,14 +24211,14 @@ System.namespace("Source.Models", function (namespace)
       this.Timer = CreateTimer()
       TimerStart(this.Timer, this.Interval, true, System.fn(this, Elapsed))
     end
-    -- <summary>
-    -- Wird vom Trigger im angegeben Interval abgearbeitet.
-    -- </summary>
+
+
+
     Elapsed = function (this)
       System.try(function ()
         for _, unitId in System.each(this.UnitIds) do
           local randomPoint = this.SpawnArea.Wc3Rectangle:GetRandomPoint()
-          SourceStatics.SpecialEffects.CreateSpecialEffect("UI\\Feedback\\GoldCredit\\GoldCredit.mdl", randomPoint, 1, 1)
+          SourceStatics.SpecialEffects.CreateSpecialEffect1("UI\\Feedback\\GoldCredit\\GoldCredit.mdl", randomPoint, 1, 1)
           this.Owner:SpawnAttackingUnit(randomPoint, unitId):AttackMoveTimed(this.TargetArea, 1)
         end
       end, function (default)
@@ -24305,9 +24226,9 @@ System.namespace("Source.Models", function (namespace)
         System.Console.WriteLine(ex:getMessage())
       end)
     end
-    -- <summary>
-    -- Stoppt den Trigger und zerstört ihn für den GC.
-    -- </summary>
+
+
+
     Stop = function (this)
       PauseTimer(this.Timer)
       DestroyTimer(this.Timer)
@@ -24433,66 +24354,66 @@ end
 do
 local System = System
 System.namespace("Source.Models", function (namespace)
-  -- <summary>
-  -- Model für eine automatisch erstellte Einheit oder Held.
-  -- </summary>
+
+
+
   namespace.class("SpawnedUnit", function (namespace)
     local AttackMoveTimed, AttackMove, RepeatAttackMove, Kill, __ctor1__, __ctor2__
-    -- <summary>
-    -- Erstellt eine neue Einheit im Zentrum eines Gebiets.
-    -- </summary>
-    -- <param name="owner">Besitzer</param>
-    -- <param name="unitType">Einheit-Typ</param>
-    -- <param name="area">Gebiet</param>
-    -- <param name="face">Blickrichtung (0 = rechts, 90 = oben, 180 = unten, 270 = links)</param>
+
+
+
+
+
+
+
     __ctor1__ = function (this, owner, unitType, area, face)
       this.SpawnArea = area
       this.Wc3Unit = CreateUnitAtLoc(owner, unitType, area.Wc3CenterLocation, face)
     end
-    -- <summary>
-    -- Erstellt eine neue Einheit im Zentrum eines Gebiets.
-    -- </summary>
-    -- <param name="owner">Besitzer</param>
-    -- <param name="unitType">Einheit-Typ</param>
-    -- <param name="area">Gebiet</param>
-    -- <param name="face">Blickrichtung (0 = rechts, 90 = oben, 180 = unten, 270 = links)</param>
+
+
+
+
+
+
+
     __ctor2__ = function (this, owner, unitType, spawnPoint, face)
       this.SpawnPoint = spawnPoint
       this.Wc3Unit = CreateUnit(owner, unitType, spawnPoint.X, spawnPoint.Y, face)
     end
-    -- <summary>
-    -- Gibt der Einheit nach kurzer Verzögerunge einen Angriff/Bewegen-Befehl bis zum Zentrum eines Gebiets.
-    -- </summary>
-    -- <param name="targetArea">Zielgebiet</param>
-    -- <param name="delay">Verzögerung in Sekunden</param>
+
+
+
+
+
     AttackMoveTimed = function (this, targetArea, delay)
       this.LastAreaTarget = targetArea
 
       local timer = CreateTimer()
       TimerStart(timer, delay, false, function ()
-        IssuePointOrderById(this.Wc3Unit, 851983 --[[Constants.ORDER_ATTACK]], this.LastAreaTarget.CenterX, this.LastAreaTarget.CenterY)
+        IssuePointOrderById(this.Wc3Unit, 851983, this.LastAreaTarget.CenterX, this.LastAreaTarget.CenterY)
       end)
     end
-    -- <summary>
-    -- Gibt der Einheit einen Angriff/Bewegen-Befehl bis zum Zentrum eines Gebiets.
-    -- </summary>
-    -- <param name="targetArea">Zielgebiet</param>
+
+
+
+
     AttackMove = function (this, targetArea)
       this.LastAreaTarget = targetArea
 
-      IssuePointOrderById(this.Wc3Unit, 851983 --[[Constants.ORDER_ATTACK]], this.LastAreaTarget.CenterX, this.LastAreaTarget.CenterY)
+      IssuePointOrderById(this.Wc3Unit, 851983, this.LastAreaTarget.CenterX, this.LastAreaTarget.CenterY)
     end
-    -- <summary>
-    -- Gibt der Einheit erneut einen Angriff/Bewegen-Befehl zum letzten Zielgebiet, falls bekannt.
-    -- </summary>
+
+
+
     RepeatAttackMove = function (this)
       if this.LastAreaTarget ~= nil then
-        IssuePointOrderById(this.Wc3Unit, 851983 --[[Constants.ORDER_ATTACK]], this.LastAreaTarget.CenterX, this.LastAreaTarget.CenterY)
+        IssuePointOrderById(this.Wc3Unit, 851983, this.LastAreaTarget.CenterX, this.LastAreaTarget.CenterY)
       end
     end
-    -- <summary>
-    -- Tötet die Einheit, falls diese noch am Leben ist.
-    -- </summary>
+
+
+
     Kill = function (this)
       if UnitAlive(this.Wc3Unit) then
         KillUnit(this.Wc3Unit)
@@ -24635,14 +24556,14 @@ System.namespace("Source.Models", function (namespace)
   namespace.class("UnitSpawnTrigger", function (namespace)
     local Run, Start, Elapsed, Stop, Add, Add1, Upgrade, Upgrade1, 
     __ctor__
-    -- <summary>
-    -- Erstellt einen zeitgesteuertem Auslöser für das regelmäßige Erstellen von Einheiten.
-    -- </summary>
-    -- <param name="player">Computer-Spieler, für den Einheiten erstellt werden</param>
-    -- <param name="spawnArea">Gebiet, in dem die Einheiten erstellt werden</param>
-    -- <param name="spawnInterval">Klasse der erstellten Einheiten</param>
-    -- <param name="targetArea">Zielgebiet, für das erstellte Einheiten einen Angriff/Bewegen-Befehl erhalten</param>
-    -- <param name="unitTypeIds">Auflistung an Einheit-Typen zu beginn</param>
+
+
+
+
+
+
+
+
     __ctor__ = function (this, player, spawnInterval, route, unitTypeIds)
       this.Player = player
       this.Route = route
@@ -24650,11 +24571,11 @@ System.namespace("Source.Models", function (namespace)
       this.UnitTypeIds = Linq.ToList(unitTypeIds)
       this.Interval = Source.Program.GetIntervalSeconds(spawnInterval)
     end
-    -- <summary>
-    -- Startet den Trigger im angegebenen Interval
-    -- </summary>
+
+
+
     Run = function (this, delay)
-      -- Delay a little since some stuff can break otherwise
+
       local timer = CreateTimer()
       TimerStart(timer, delay, false, function ()
         DestroyTimer(timer)
@@ -24664,16 +24585,16 @@ System.namespace("Source.Models", function (namespace)
         Start(this)
       end)
     end
-    -- <summary>
-    -- Startet den Timer zum ryhtmischen Erstellen von Einheiten.
-    -- </summary>
+
+
+
     Start = function (this)
       this.Timer = CreateTimer()
       TimerStart(this.Timer, this.Interval, true, System.fn(this, Elapsed))
     end
-    -- <summary>
-    -- Wird vom Trigger im angegeben Interval abgearbeitet.
-    -- </summary>
+
+
+
     Elapsed = function (this)
       System.try(function ()
         for _, unitId in System.each(this.UnitTypeIds) do
@@ -24686,32 +24607,32 @@ System.namespace("Source.Models", function (namespace)
         System.Console.WriteLine(ex:getMessage())
       end)
     end
-    -- <summary>
-    -- Stoppt den Timer und zerstört ihn für den GC.
-    -- </summary>
+
+
+
     Stop = function (this)
       PauseTimer(this.Timer)
       DestroyTimer(this.Timer)
       this.Timer = nil
     end
-    -- <summary>
-    -- Fügt der Auflistung von Einheitentyp-Ids einen Eintrag hinzu.
-    -- </summary>
-    -- <param name="spawnCommand"></param>
+
+
+
+
     Add = function (this, spawnCommand)
       this.UnitTypeIds:Add(spawnCommand.UnitId)
     end
-    -- <summary>
-    -- Fügt der Auflistung von Einheitentyp-Ids einen Eintrag hinzu.
-    -- </summary>
-    -- <param name="unitTypeId"></param>
+
+
+
+
     Add1 = function (this, unitTypeId)
       this.UnitTypeIds:Add(unitTypeId)
     end
-    -- <summary>
-    -- Aktualisiert einen oder mehrere Einträge in der Auflistung von Einheitentyp-Ids.
-    -- </summary>
-    -- <param name="spawnCommand"></param>
+
+
+
+
     Upgrade = function (this, spawnCommand)
       for i = 0, #this.UnitTypeIds - 1 do
         if this.UnitTypeIds:get(i) == spawnCommand.UnitIdToUpgrade then
@@ -24719,10 +24640,10 @@ System.namespace("Source.Models", function (namespace)
         end
       end
     end
-    -- <summary>
-    -- Aktualisiert einen oder mehrere Einträge in der Auflistung von Einheitentyp-Ids.
-    -- </summary>
-    -- <param name="spawnCommand"></param>
+
+
+
+
     Upgrade1 = function (this, oldUnitTypeId, newUnitTypeId)
       for i = 0, #this.UnitTypeIds - 1 do
         if this.UnitTypeIds:get(i) == oldUnitTypeId then
@@ -24772,11 +24693,11 @@ end
 do
 local System = System
 System.namespace("Source.Models", function (namespace)
-  -- <summary>
-  -- Model für den Upgrade-Befehl eines Unit-Spawns.
-  -- Achtung: Dieser Befehl wird nur durch Forschung vom Computer-Spieler ausgelöst!
-  -- Er ist als Ersatz für fehlende menschliche Spieler im Team gedacht, um die Unit-Spawns dennoch zu verbessern.
-  -- </summary>
+
+
+
+
+
   namespace.class("UnitUpgradeByResearchCommand", function (namespace)
     return {
       UnitSpawnType = 0,
@@ -24802,31 +24723,31 @@ end
 do
 local System = System
 System.namespace("Source.Models", function (namespace)
-  -- <summary>
-  -- Model für den Upgrade-Befehl eines Unit-Spawns.
-  -- Achtung: Dieser Befehl wird nur durch Kauf von Einheinte durch menschliche Spieler ausgelöst!
-  -- </summary>
+
+
+
+
   namespace.class("UnitUpgradeBySoldCommand", function (namespace)
     local __ctor1__, __ctor2__
-    -- <summary>
-    -- Instanziiert einen Hinzufügen-Befehl, welcher die Spawn-Liste eines Triggers um eine Einheit ergänzt.
-    -- </summary>
-    -- <param name="spawnInterval"></param>
-    -- <param name="newUnitTypeIdToAdd"></param>
-    -- <param name="nextUnitTypeIdForShop"></param>
+
+
+
+
+
+
     __ctor1__ = function (this, spawnInterval, newUnitTypeIdToAdd, nextUnitTypeIdForShop)
       this.IsAddCommand = true
       this.SpawnInterval = spawnInterval
       this.NewUnitTypeId = newUnitTypeIdToAdd
       this.NextUnitTypeId = nextUnitTypeIdForShop
     end
-    -- <summary>
-    -- Erstellt einen Aktualisieren-Befehl, welcher die Spawn-Liste eines Triggers aktualisiert und eine bestehende Einheit überschreibt.
-    -- </summary>
-    -- <param name="spawnInterval"></param>
-    -- <param name="oldUnitTypeIdToReplace"></param>
-    -- <param name="newUnitTypeIdToAdd"></param>
-    -- <param name="nextUnitTypeIdForShop"></param>
+
+
+
+
+
+
+
     __ctor2__ = function (this, spawnInterval, oldUnitTypeIdToReplace, newUnitTypeIdToAdd, nextUnitTypeIdForShop)
       this.IsAddCommand = false
       this.SpawnInterval = spawnInterval
@@ -24881,11 +24802,11 @@ System.namespace("Source.Models", function (namespace)
 
       CameraSetupApplyForPlayer(true, setup, this.Wc3Player, 0.0)
     end
-    -- <summary>
-    -- Erstellt eine Held für den Benutzer im angegebenen Gebiet.
-    -- </summary>
-    -- <param name="unitId"></param>
-    -- <param name="spawnArea"></param>
+
+
+
+
+
     CreateHero = function (this, unitId, spawnArea)
       local unit = CreateUnitAtLoc(this.Wc3Player, unitId, spawnArea.Wc3CenterLocation, 0)
 
@@ -24893,15 +24814,15 @@ System.namespace("Source.Models", function (namespace)
         SetHeroLevel(unit, this.HeroLevelCounter, true)
       end
 
-      -- Spieler-Kamera auf Helden fokussieren
+
       ApplyCamera(this, spawnArea)
 
-      -- Helden auswählen
+
       SelectUnitForPlayerSingle(unit, this.Wc3Player)
     end
-    -- <summary>
-    -- Zerstört und entfernt alle Gebäude und Einheiten des Spielers und setzt diesen auf "Besiegt".
-    -- </summary>
+
+
+
     Defeat = function (this)
       for i = #this.Units - 1, 0, -1 do
         this.Units:get(i):Kill()
@@ -24952,178 +24873,178 @@ System.namespace("Source.Models.Teams", function (namespace)
   namespace.class("ElvesTeam", function (namespace)
     local CreateBuildings, GetUnitUpgradeByResearch, GetUnitUpgradeBySold, AddInitialSpawnTriggers, AddInitialUnitUpgradesToStock, __ctor__
     __ctor__ = function (this)
-      System.base(this).__ctor__(this, Player(8), Areas.ElfBase)
-      this.ColorizedName = "|c" .. System.toString("ff808080" --[[ConstantsEx.ColorHexCode_Gray]]) .. System.toString(GetPlayerName(Player(8))) .. "|r"
+      System.base(this).__ctor__(this, Player(8), Areas.ElfBase, "Abilities\\Spells\\Undead\\DeathPact\\DeathPactTarget.mdl")
+      this.ColorizedName = "|c" .. System.toString("ff808080") .. System.toString(GetPlayerName(Player(8))) .. "|r"
     end
-    -- <inheritdoc/>
+
     CreateBuildings = function (this)
-      -- Hauptgebäude
-      local mainBuilding = this.Computer:CreateMainBuilding(1747988789 --[[Constants.UNIT_TREE_OF_ETERNITY_ELF]], Areas.ElfBase, "Abilities\\Spells\\Undead\\DeathPact\\DeathPactTarget.mdl")
+
+      local mainBuilding = this.Computer:CreateMainBuilding(1747988789, Areas.ElfBase)
 
       mainBuilding:RegisterOnDies(SourceEventsBuildings.TeamMainBuilding.OnDies)
       mainBuilding:AddSpawnAttackRoute(Areas.ElfBaseToCenterSpawn, Areas.OrcBase)
       mainBuilding:AddSpawnAttackRoute(Areas.ElfBaseToHumanSpawn, Areas.HumanBase)
       mainBuilding:AddSpawnAttackRoute(Areas.ElfBaseToUndeadSpawn, Areas.UndeadBase)
 
-      AddUnitToStock(mainBuilding.Wc3Unit, 1848652365 --[[Constants.UNIT_GUARDIAN_GOLEM_ELF]], 1, 1)
+      AddUnitToStock(mainBuilding.Wc3Unit, 1848652365, 1, 1)
 
-      -- Kasernen
-      local building = this.Computer:CreateBarrackBuilding(1747988788 --[[Constants.UNIT_ANCIENT_OF_WAR_ELF]], Areas.ElfBarracksToCenter, Areas.ElfBarracksToCenterSpawn, Areas.OrcBase)
+
+      local building = this.Computer:CreateBarrackBuilding(1747988788, Areas.ElfBarracksToCenter, Areas.ElfBarracksToCenterSpawn, Areas.OrcBase)
       building:RegisterOnDies(SourceEventsBuildings.TeamBarracksBuilding.OnDies)
 
       AddInitialSpawnTriggers(this, building)
       AddInitialUnitUpgradesToStock(this, building)
 
-      building = this.Computer:CreateBarrackBuilding(1747988788 --[[Constants.UNIT_ANCIENT_OF_WAR_ELF]], Areas.ElfBarracksToHuman, Areas.ElfBarracksToHumanSpawn, Areas.HumanBase)
+      building = this.Computer:CreateBarrackBuilding(1747988788, Areas.ElfBarracksToHuman, Areas.ElfBarracksToHumanSpawn, Areas.HumanBase)
       building:RegisterOnDies(SourceEventsBuildings.TeamBarracksBuilding.OnDies)
 
       AddInitialSpawnTriggers(this, building)
       AddInitialUnitUpgradesToStock(this, building)
 
-      building = this.Computer:CreateBarrackBuilding(1747988788 --[[Constants.UNIT_ANCIENT_OF_WAR_ELF]], Areas.ElfBarracksToUndead, Areas.ElfBarracksToUndeadSpawn, Areas.UndeadBase)
+      building = this.Computer:CreateBarrackBuilding(1747988788, Areas.ElfBarracksToUndead, Areas.ElfBarracksToUndeadSpawn, Areas.UndeadBase)
       building:RegisterOnDies(SourceEventsBuildings.TeamBarracksBuilding.OnDies)
 
       AddInitialSpawnTriggers(this, building)
       AddInitialUnitUpgradesToStock(this, building)
     end
-    -- <inheritdoc/>
+
     GetUnitUpgradeByResearch = function (this, techId, techLevel, command)
       repeat
         local default = techId
-        if default == 1378889781 --[[Constants.UPGRADE_MELEE_UNIT_TEAM]] then
+        if default == 1378889781 then
           local extern = SourceModels.UnitUpgradeByResearchCommand()
-          extern.UnitSpawnType = 0 --[[SpawnInterval.Short]]
-          extern.UnitIdOfBuilding = 1747988788 --[[Constants.UNIT_ANCIENT_OF_WAR_ELF]]
+          extern.UnitSpawnType = 0
+          extern.UnitIdOfBuilding = 1747988788
           command = extern
 
           repeat
             local extern = techLevel
             if extern == 1 then
-              command.UnitId = 1747988826 --[[Constants.UNIT_DRUID_OF_THE_CLAW_ELF_MELEE_2]]
-              command.UnitIdToUpgrade = 1747988824 --[[Constants.UNIT_SENTRY_ELF_MELEE_1]]
-              return 3 --[[ResearchType.UpgradeUnit]], command
+              command.UnitId = 1747988826
+              command.UnitIdToUpgrade = 1747988824
+              return 3, command
             else
-              command.UnitId = 1747989041 --[[Constants.UNIT_MOUNTAIN_GIANT_ELF_MELEE_3]]
-              command.UnitIdToUpgrade = 1747988826 --[[Constants.UNIT_DRUID_OF_THE_CLAW_ELF_MELEE_2]]
-              return 3 --[[ResearchType.UpgradeUnit]], command
+              command.UnitId = 1747989041
+              command.UnitIdToUpgrade = 1747988826
+              return 3, command
             end
           until 1
-        elseif default == 1378889785 --[[Constants.UPGRADE_DISTANCE_UNIT_TEAM]] then
+        elseif default == 1378889785 then
           local extern = SourceModels.UnitUpgradeByResearchCommand()
-          extern.UnitSpawnType = 1 --[[SpawnInterval.Middle]]
-          extern.UnitIdOfBuilding = 1747988788 --[[Constants.UNIT_ANCIENT_OF_WAR_ELF]]
+          extern.UnitSpawnType = 1
+          extern.UnitIdOfBuilding = 1747988788
           command = extern
 
           repeat
             local extern = techLevel
             if extern == 1 then
-              command.UnitId = 1747989045 --[[Constants.UNIT_ARCHER_BESERK_ELF_DISTANCE_2]]
-              command.UnitIdToUpgrade = 1747989043 --[[Constants.UNIT_ARCHER_ELF_DISTANCE_1]]
-              return 3 --[[ResearchType.UpgradeUnit]], command
+              command.UnitId = 1747989045
+              command.UnitIdToUpgrade = 1747989043
+              return 3, command
             else
-              command.UnitId = 1747989047 --[[Constants.UNIT_ARCHER_ELITE_ELF_DISTANCE_3]]
-              command.UnitIdToUpgrade = 1747989045 --[[Constants.UNIT_ARCHER_BESERK_ELF_DISTANCE_2]]
-              return 3 --[[ResearchType.UpgradeUnit]], command
+              command.UnitId = 1747989047
+              command.UnitIdToUpgrade = 1747989045
+              return 3, command
             end
           until 1
-        elseif default == 1378889795 --[[Constants.UPGRADE_FLIGHT_UNIT_TEAM]] then
+        elseif default == 1378889795 then
           local extern = SourceModels.UnitUpgradeByResearchCommand()
-          extern.UnitSpawnType = 1 --[[SpawnInterval.Middle]]
-          extern.UnitIdOfBuilding = 1747988788 --[[Constants.UNIT_ANCIENT_OF_WAR_ELF]]
+          extern.UnitSpawnType = 1
+          extern.UnitIdOfBuilding = 1747988788
           command = extern
 
           repeat
             local extern = techLevel
             if extern == 1 then
-              command.UnitId = 1747989058 --[[Constants.UNIT_HIPPOGRYPH_RIDER_ELF_FLY_2]]
-              command.UnitIdToUpgrade = 1747989060 --[[Constants.UNIT_FAERIE_DRAGON_ELF_FLY_1]]
-              return 3 --[[ResearchType.UpgradeUnit]], command
+              command.UnitId = 1747989058
+              command.UnitIdToUpgrade = 1747989060
+              return 3, command
             else
-              command.UnitId = 1747989049 --[[Constants.UNIT_CHIMAERA_ELF_FLY_3]]
-              command.UnitIdToUpgrade = 1747989058 --[[Constants.UNIT_HIPPOGRYPH_RIDER_ELF_FLY_2]]
-              return 3 --[[ResearchType.UpgradeUnit]], command
+              command.UnitId = 1747989049
+              command.UnitIdToUpgrade = 1747989058
+              return 3, command
             end
           until 1
-        elseif default == 1378889797 --[[Constants.UPGRADE_MAGE_UNIT_TEAM]] then
+        elseif default == 1378889797 then
           local extern = SourceModels.UnitUpgradeByResearchCommand()
-          extern.UnitSpawnType = 1 --[[SpawnInterval.Middle]]
-          extern.UnitIdOfBuilding = 1747988788 --[[Constants.UNIT_ANCIENT_OF_WAR_ELF]]
+          extern.UnitSpawnType = 1
+          extern.UnitIdOfBuilding = 1747988788
           command = extern
 
           repeat
             local extern = techLevel
             if extern == 1 then
-              command.UnitId = 1747989064 --[[Constants.UNIT_WARDEN_ELF_MAGE_2]]
-              command.UnitIdToUpgrade = 1747989066 --[[Constants.UNIT_DRUID_OF_THE_TALON_ELF_MAGE_1]]
-              return 3 --[[ResearchType.UpgradeUnit]], command
+              command.UnitId = 1747989064
+              command.UnitIdToUpgrade = 1747989066
+              return 3, command
             else
-              command.UnitId = 1747989062 --[[Constants.UNIT_SPIRIT_OF_VENGEANCE_ELF_MAGE_3]]
-              command.UnitIdToUpgrade = 1747989064 --[[Constants.UNIT_WARDEN_ELF_MAGE_2]]
-              return 3 --[[ResearchType.UpgradeUnit]], command
+              command.UnitId = 1747989062
+              command.UnitIdToUpgrade = 1747989064
+              return 3, command
             end
           until 1
-        elseif default == 1378889784 --[[Constants.UPGRADE_SIEGE_UNIT_TEAM]] then
+        elseif default == 1378889784 then
           local extern = SourceModels.UnitUpgradeByResearchCommand()
-          extern.UnitSpawnType = 2 --[[SpawnInterval.Long]]
-          extern.UnitIdOfBuilding = 1747988788 --[[Constants.UNIT_ANCIENT_OF_WAR_ELF]]
+          extern.UnitSpawnType = 2
+          extern.UnitIdOfBuilding = 1747988788
           command = extern
 
           repeat
             local extern = techLevel
             if extern == 1 then
-              command.UnitId = 1747989070 --[[Constants.UNIT_PRISON_WAGON_ELF_SIEGE_1]]
-              return 2 --[[ResearchType.AddUnit]], command
+              command.UnitId = 1747989070
+              return 2, command
             else
-              command.UnitId = 1747989068 --[[Constants.UNIT_GLAIVE_THROWER_ELF_SIEGE_2]]
-              command.UnitIdToUpgrade = 1747989070 --[[Constants.UNIT_PRISON_WAGON_ELF_SIEGE_1]]
-              return 3 --[[ResearchType.UpgradeUnit]], command
+              command.UnitId = 1747989068
+              command.UnitIdToUpgrade = 1747989070
+              return 3, command
             end
           until 1
         else
           command = nil
-          return 1 --[[ResearchType.CommonUpgrade]], command
+          return 1, command
         end
       until 1
     end
-    -- <inheritdoc/>
+
     GetUnitUpgradeBySold = function (this, baseUnitTypeId, command)
       repeat
         local default = baseUnitTypeId
-        if default == 1747988826 --[[Constants.UNIT_DRUID_OF_THE_CLAW_ELF_MELEE_2]] then
-          command = System.new(SourceModels.UnitUpgradeBySoldCommand, 2, 0 --[[SpawnInterval.Short]], 1747988824 --[[Constants.UNIT_SENTRY_ELF_MELEE_1]], baseUnitTypeId, 1747989041 --[[Constants.UNIT_MOUNTAIN_GIANT_ELF_MELEE_3]])
-          return 2 --[[UnitUpgradeType.UpgradeUnitInSpawn]], command
-        elseif default == 1747989041 --[[Constants.UNIT_MOUNTAIN_GIANT_ELF_MELEE_3]] then
-          command = System.new(SourceModels.UnitUpgradeBySoldCommand, 2, 0 --[[SpawnInterval.Short]], 1747988826 --[[Constants.UNIT_DRUID_OF_THE_CLAW_ELF_MELEE_2]], baseUnitTypeId, 0)
-          return 2 --[[UnitUpgradeType.UpgradeUnitInSpawn]], command
-        elseif default == 1747989045 --[[Constants.UNIT_ARCHER_BESERK_ELF_DISTANCE_2]] then
-          command = System.new(SourceModels.UnitUpgradeBySoldCommand, 2, 0 --[[SpawnInterval.Short]], 1747989043 --[[Constants.UNIT_ARCHER_ELF_DISTANCE_1]], baseUnitTypeId, 1747989047 --[[Constants.UNIT_ARCHER_ELITE_ELF_DISTANCE_3]])
-          return 2 --[[UnitUpgradeType.UpgradeUnitInSpawn]], command
-        elseif default == 1747989047 --[[Constants.UNIT_ARCHER_ELITE_ELF_DISTANCE_3]] then
-          command = System.new(SourceModels.UnitUpgradeBySoldCommand, 2, 0 --[[SpawnInterval.Short]], 1747989045 --[[Constants.UNIT_ARCHER_BESERK_ELF_DISTANCE_2]], baseUnitTypeId, 0)
-          return 2 --[[UnitUpgradeType.UpgradeUnitInSpawn]], command
-        elseif default == 1747989064 --[[Constants.UNIT_WARDEN_ELF_MAGE_2]] then
-          command = System.new(SourceModels.UnitUpgradeBySoldCommand, 2, 1 --[[SpawnInterval.Middle]], 1747989066 --[[Constants.UNIT_DRUID_OF_THE_TALON_ELF_MAGE_1]], baseUnitTypeId, 1747989062 --[[Constants.UNIT_SPIRIT_OF_VENGEANCE_ELF_MAGE_3]])
-          return 2 --[[UnitUpgradeType.UpgradeUnitInSpawn]], command
-        elseif default == 1747989062 --[[Constants.UNIT_SPIRIT_OF_VENGEANCE_ELF_MAGE_3]] then
-          command = System.new(SourceModels.UnitUpgradeBySoldCommand, 2, 1 --[[SpawnInterval.Middle]], 1747989064 --[[Constants.UNIT_WARDEN_ELF_MAGE_2]], baseUnitTypeId, 0)
-          return 2 --[[UnitUpgradeType.UpgradeUnitInSpawn]], command
-        elseif default == 1747989060 --[[Constants.UNIT_FAERIE_DRAGON_ELF_FLY_1]] then
-          command = SourceModels.UnitUpgradeBySoldCommand(1 --[[SpawnInterval.Middle]], baseUnitTypeId, 1747989058 --[[Constants.UNIT_HIPPOGRYPH_RIDER_ELF_FLY_2]])
-          return 1 --[[UnitUpgradeType.AddNewUnitToSpawn]], command
-        elseif default == 1747989058 --[[Constants.UNIT_HIPPOGRYPH_RIDER_ELF_FLY_2]] then
-          command = System.new(SourceModels.UnitUpgradeBySoldCommand, 2, 1 --[[SpawnInterval.Middle]], 1747989060 --[[Constants.UNIT_FAERIE_DRAGON_ELF_FLY_1]], baseUnitTypeId, 1747989049 --[[Constants.UNIT_CHIMAERA_ELF_FLY_3]])
-          return 2 --[[UnitUpgradeType.UpgradeUnitInSpawn]], command
-        elseif default == 1747989049 --[[Constants.UNIT_CHIMAERA_ELF_FLY_3]] then
-          command = System.new(SourceModels.UnitUpgradeBySoldCommand, 2, 1 --[[SpawnInterval.Middle]], 1747989058 --[[Constants.UNIT_HIPPOGRYPH_RIDER_ELF_FLY_2]], baseUnitTypeId, 0)
-          return 2 --[[UnitUpgradeType.UpgradeUnitInSpawn]], command
-        elseif default == 1747989070 --[[Constants.UNIT_PRISON_WAGON_ELF_SIEGE_1]] then
-          command = SourceModels.UnitUpgradeBySoldCommand(2 --[[SpawnInterval.Long]], baseUnitTypeId, 1747989068 --[[Constants.UNIT_GLAIVE_THROWER_ELF_SIEGE_2]])
-          return 1 --[[UnitUpgradeType.AddNewUnitToSpawn]], command
-        elseif default == 1747989068 --[[Constants.UNIT_GLAIVE_THROWER_ELF_SIEGE_2]] then
-          command = System.new(SourceModels.UnitUpgradeBySoldCommand, 2, 2 --[[SpawnInterval.Long]], 1747989070 --[[Constants.UNIT_PRISON_WAGON_ELF_SIEGE_1]], baseUnitTypeId, 0)
-          return 2 --[[UnitUpgradeType.UpgradeUnitInSpawn]], command
+        if default == 1747988826 then
+          command = System.new(SourceModels.UnitUpgradeBySoldCommand, 2, 0, 1747988824, baseUnitTypeId, 1747989041)
+          return 2, command
+        elseif default == 1747989041 then
+          command = System.new(SourceModels.UnitUpgradeBySoldCommand, 2, 0, 1747988826, baseUnitTypeId, 0)
+          return 2, command
+        elseif default == 1747989045 then
+          command = System.new(SourceModels.UnitUpgradeBySoldCommand, 2, 0, 1747989043, baseUnitTypeId, 1747989047)
+          return 2, command
+        elseif default == 1747989047 then
+          command = System.new(SourceModels.UnitUpgradeBySoldCommand, 2, 0, 1747989045, baseUnitTypeId, 0)
+          return 2, command
+        elseif default == 1747989064 then
+          command = System.new(SourceModels.UnitUpgradeBySoldCommand, 2, 1, 1747989066, baseUnitTypeId, 1747989062)
+          return 2, command
+        elseif default == 1747989062 then
+          command = System.new(SourceModels.UnitUpgradeBySoldCommand, 2, 1, 1747989064, baseUnitTypeId, 0)
+          return 2, command
+        elseif default == 1747989060 then
+          command = SourceModels.UnitUpgradeBySoldCommand(1, baseUnitTypeId, 1747989058)
+          return 1, command
+        elseif default == 1747989058 then
+          command = System.new(SourceModels.UnitUpgradeBySoldCommand, 2, 1, 1747989060, baseUnitTypeId, 1747989049)
+          return 2, command
+        elseif default == 1747989049 then
+          command = System.new(SourceModels.UnitUpgradeBySoldCommand, 2, 1, 1747989058, baseUnitTypeId, 0)
+          return 2, command
+        elseif default == 1747989070 then
+          command = SourceModels.UnitUpgradeBySoldCommand(2, baseUnitTypeId, 1747989068)
+          return 1, command
+        elseif default == 1747989068 then
+          command = System.new(SourceModels.UnitUpgradeBySoldCommand, 2, 2, 1747989070, baseUnitTypeId, 0)
+          return 2, command
         else
-          -- Einheiten-Typ ist nicht bekannt
+
           local extern
           extern, command = System.base(this).GetUnitUpgradeBySold(this, baseUnitTypeId)
           return extern, command
@@ -25131,16 +25052,16 @@ System.namespace("Source.Models.Teams", function (namespace)
       until 1
     end
     AddInitialSpawnTriggers = function (this, building)
-      building:AddSpawnTrigger(0 --[[SpawnInterval.Short]], System.Array(System.Int32) { 1747988824 --[[Constants.UNIT_SENTRY_ELF_MELEE_1]], 1747988824 --[[Constants.UNIT_SENTRY_ELF_MELEE_1]], 1747989043 --[[Constants.UNIT_ARCHER_ELF_DISTANCE_1]] }):Run(0)
-      building:AddSpawnTrigger(1 --[[SpawnInterval.Middle]], System.Array(System.Int32) { 1747989066 --[[Constants.UNIT_DRUID_OF_THE_TALON_ELF_MAGE_1]] }):Run(1)
-      building:AddSpawnTrigger(2 --[[SpawnInterval.Long]], System.Array.Empty(System.Int32)):Run(2)
+      building:AddSpawnTrigger(0, System.Array(System.Int32) { 1747988824, 1747988824, 1747989043 }):Run(0)
+      building:AddSpawnTrigger(1, System.Array(System.Int32) { 1747989066 }):Run(1)
+      building:AddSpawnTrigger(2, System.Array.Empty(System.Int32)):Run(2)
     end
     AddInitialUnitUpgradesToStock = function (this, building)
-      AddUnitToStock(building.Wc3Unit, 1747988826 --[[Constants.UNIT_DRUID_OF_THE_CLAW_ELF_MELEE_2]], 1, 1)
-      AddUnitToStock(building.Wc3Unit, 1747989045 --[[Constants.UNIT_ARCHER_BESERK_ELF_DISTANCE_2]], 1, 1)
-      AddUnitToStock(building.Wc3Unit, 1747989064 --[[Constants.UNIT_WARDEN_ELF_MAGE_2]], 1, 1)
-      AddUnitToStock(building.Wc3Unit, 1747989060 --[[Constants.UNIT_FAERIE_DRAGON_ELF_FLY_1]], 1, 1)
-      AddUnitToStock(building.Wc3Unit, 1747989070 --[[Constants.UNIT_PRISON_WAGON_ELF_SIEGE_1]], 1, 1)
+      AddUnitToStock(building.Wc3Unit, 1747988826, 1, 1)
+      AddUnitToStock(building.Wc3Unit, 1747989045, 1, 1)
+      AddUnitToStock(building.Wc3Unit, 1747989064, 1, 1)
+      AddUnitToStock(building.Wc3Unit, 1747989060, 1, 1)
+      AddUnitToStock(building.Wc3Unit, 1747989070, 1, 1)
     end
     return {
       base = function (out)
@@ -25182,180 +25103,179 @@ System.namespace("Source.Models.Teams", function (namespace)
   namespace.class("HumansTeam", function (namespace)
     local CreateBuildings, GetUnitUpgradeByResearch, GetUnitUpgradeBySold, AddInitialSpawnTriggers, AddInitialUnitUpgradesToStock, __ctor__
     __ctor__ = function (this)
-      System.base(this).__ctor__(this, Player(0), Areas.HumanBase)
-      this.ColorizedName = "|c" .. System.toString("ffff0000" --[[ConstantsEx.ColorHexCode_Red]]) .. System.toString(GetPlayerName(Player(0))) .. "|r"
+      System.base(this).__ctor__(this, Player(0), Areas.HumanBase, "Abilities\\Spells\\Human\\HolyBolt\\HolyBoltSpecialArt.mdl")
+      this.ColorizedName = "|c" .. System.toString("ffff0000") .. System.toString(GetPlayerName(Player(0))) .. "|r"
     end
-    -- <inheritdoc/>
+
     CreateBuildings = function (this)
-      -- Hauptgebäude
-      --MainBuilding mainBuilding = Computer.CreateMainBuilding(Constants.UNIT_CASTLE_HUMAN, Areas.HumanBase, "Abilities\\Spells\\Human\\HolyBolt\\HolyBoltSpecialArt.mdl");
-      local mainBuilding = this.Computer:CreateMainBuilding(1747988531 --[[Constants.UNIT_CASTLE_HUMAN]], Areas.HumanBase, "Abilities\\Spells\\Undead\\RaiseSkeletonWarrior\\RaiseSkeleton.mdl")
+
+      local mainBuilding = this.Computer:CreateMainBuilding(1747988531, Areas.HumanBase)
 
       mainBuilding:RegisterOnDies(SourceEventsBuildings.TeamMainBuilding.OnDies)
       mainBuilding:AddSpawnAttackRoute(Areas.HumanBaseToCenterSpawn, Areas.UndeadBase)
       mainBuilding:AddSpawnAttackRoute(Areas.HumanBaseToElfSpawn, Areas.ElfBase)
       mainBuilding:AddSpawnAttackRoute(Areas.HumanBaseToOrcsSpawn, Areas.OrcBase)
 
-      AddUnitToStock(mainBuilding.Wc3Unit, 1848652364 --[[Constants.UNIT_WAR_GOLEM_HUMAN]], 1, 1)
+      AddUnitToStock(mainBuilding.Wc3Unit, 1848652364, 1, 1)
 
-      -- Kasernen
-      local building = this.Computer:CreateBarrackBuilding(1747988535 --[[Constants.UNIT_BARRACKS_HUMAN]], Areas.HumanBarracksToCenter, Areas.HumanBarracksToCenterSpawn, Areas.UndeadBase)
+
+      local building = this.Computer:CreateBarrackBuilding(1747988535, Areas.HumanBarracksToCenter, Areas.HumanBarracksToCenterSpawn, Areas.UndeadBase)
       building:RegisterOnDies(SourceEventsBuildings.TeamBarracksBuilding.OnDies)
 
       AddInitialSpawnTriggers(this, building)
       AddInitialUnitUpgradesToStock(this, building)
 
-      building = this.Computer:CreateBarrackBuilding(1747988535 --[[Constants.UNIT_BARRACKS_HUMAN]], Areas.HumanBarracksToElf, Areas.HumanBarracksToElfSpawn, Areas.ElfBase)
+      building = this.Computer:CreateBarrackBuilding(1747988535, Areas.HumanBarracksToElf, Areas.HumanBarracksToElfSpawn, Areas.ElfBase)
       building:RegisterOnDies(SourceEventsBuildings.TeamBarracksBuilding.OnDies)
 
       AddInitialSpawnTriggers(this, building)
       AddInitialUnitUpgradesToStock(this, building)
 
-      building = this.Computer:CreateBarrackBuilding(1747988535 --[[Constants.UNIT_BARRACKS_HUMAN]], Areas.HumanBarracksToOrcs, Areas.HumanBarracksToOrcsSpawn, Areas.OrcBase)
+      building = this.Computer:CreateBarrackBuilding(1747988535, Areas.HumanBarracksToOrcs, Areas.HumanBarracksToOrcsSpawn, Areas.OrcBase)
       building:RegisterOnDies(SourceEventsBuildings.TeamBarracksBuilding.OnDies)
 
       AddInitialSpawnTriggers(this, building)
       AddInitialUnitUpgradesToStock(this, building)
     end
-    -- <inheritdoc/>
+
     GetUnitUpgradeByResearch = function (this, techId, techLevel, command)
       repeat
         local default = techId
-        if default == 1378889781 --[[Constants.UPGRADE_MELEE_UNIT_TEAM]] then
+        if default == 1378889781 then
           local extern = SourceModels.UnitUpgradeByResearchCommand()
-          extern.UnitSpawnType = 0 --[[SpawnInterval.Short]]
-          extern.UnitIdOfBuilding = 1747988535 --[[Constants.UNIT_BARRACKS_HUMAN]]
+          extern.UnitSpawnType = 0
+          extern.UnitIdOfBuilding = 1747988535
           command = extern
 
           repeat
             local extern = techLevel
             if extern == 1 then
-              command.UnitId = 1747988547 --[[Constants.UNIT_CAPTAIN_HUMAN_MELEE_2]]
-              command.UnitIdToUpgrade = 1747988529 --[[Constants.UNIT_SOLDIER_HUMAN_MELEE_1]]
-              return 3 --[[ResearchType.UpgradeUnit]], command
+              command.UnitId = 1747988547
+              command.UnitIdToUpgrade = 1747988529
+              return 3, command
             else
-              command.UnitId = 1747988546 --[[Constants.UNIT_KNIGHT_HUMAN_MELEE_3]]
-              command.UnitIdToUpgrade = 1747988547 --[[Constants.UNIT_CAPTAIN_HUMAN_MELEE_2]]
-              return 3 --[[ResearchType.UpgradeUnit]], command
+              command.UnitId = 1747988546
+              command.UnitIdToUpgrade = 1747988547
+              return 3, command
             end
           until 1
-        elseif default == 1378889785 --[[Constants.UPGRADE_DISTANCE_UNIT_TEAM]] then
+        elseif default == 1378889785 then
           local extern = SourceModels.UnitUpgradeByResearchCommand()
-          extern.UnitSpawnType = 1 --[[SpawnInterval.Middle]]
-          extern.UnitIdOfBuilding = 1747988535 --[[Constants.UNIT_BARRACKS_HUMAN]]
+          extern.UnitSpawnType = 1
+          extern.UnitIdOfBuilding = 1747988535
           command = extern
 
           repeat
             local extern = techLevel
             if extern == 1 then
-              command.UnitId = 1747988550 --[[Constants.UNIT_RIFLEMAN_BESERK_HUMAN_DISTANCE_2]]
-              command.UnitIdToUpgrade = 1747988530 --[[Constants.UNIT_RIFLEMAN_HUMAN_DISTANCE_1]]
-              return 3 --[[ResearchType.UpgradeUnit]], command
+              command.UnitId = 1747988550
+              command.UnitIdToUpgrade = 1747988530
+              return 3, command
             else
-              command.UnitId = 1747988551 --[[Constants.UNIT_RIFLEMAN_ELITE_HUMAN_DISTANCE_3]]
-              command.UnitIdToUpgrade = 1747988550 --[[Constants.UNIT_RIFLEMAN_BESERK_HUMAN_DISTANCE_2]]
-              return 3 --[[ResearchType.UpgradeUnit]], command
+              command.UnitId = 1747988551
+              command.UnitIdToUpgrade = 1747988550
+              return 3, command
             end
           until 1
-        elseif default == 1378889795 --[[Constants.UPGRADE_FLIGHT_UNIT_TEAM]] then
+        elseif default == 1378889795 then
           local extern = SourceModels.UnitUpgradeByResearchCommand()
-          extern.UnitSpawnType = 1 --[[SpawnInterval.Middle]]
-          extern.UnitIdOfBuilding = 1747988535 --[[Constants.UNIT_BARRACKS_HUMAN]]
+          extern.UnitSpawnType = 1
+          extern.UnitIdOfBuilding = 1747988535
           command = extern
 
           repeat
             local extern = techLevel
             if extern == 1 then
-              command.UnitId = 1747988555 --[[Constants.UNIT_FALCON_RIDER_HUMAN_FLY_2]]
-              command.UnitIdToUpgrade = 1747988554 --[[Constants.UNIT_FLYING_MACHINE_HUMAN_FLY_1]]
-              return 3 --[[ResearchType.UpgradeUnit]], command
+              command.UnitId = 1747988555
+              command.UnitIdToUpgrade = 1747988554
+              return 3, command
             else
-              command.UnitId = 1747988556 --[[Constants.UNIT_GRYPHON_RIDER_HUMAN_FLY_3]]
-              command.UnitIdToUpgrade = 1747988555 --[[Constants.UNIT_FALCON_RIDER_HUMAN_FLY_2]]
-              return 3 --[[ResearchType.UpgradeUnit]], command
+              command.UnitId = 1747988556
+              command.UnitIdToUpgrade = 1747988555
+              return 3, command
             end
           until 1
-        elseif default == 1378889797 --[[Constants.UPGRADE_MAGE_UNIT_TEAM]] then
+        elseif default == 1378889797 then
           local extern = SourceModels.UnitUpgradeByResearchCommand()
-          extern.UnitSpawnType = 1 --[[SpawnInterval.Middle]]
-          extern.UnitIdOfBuilding = 1747988535 --[[Constants.UNIT_BARRACKS_HUMAN]]
+          extern.UnitSpawnType = 1
+          extern.UnitIdOfBuilding = 1747988535
           command = extern
 
           repeat
             local extern = techLevel
             if extern == 1 then
-              command.UnitId = 1747988552 --[[Constants.UNIT_SORCERESS_HUMAN_MAGE_2]]
-              command.UnitIdToUpgrade = 1747988536 --[[Constants.UNIT_PRIEST_HUMAN_MAGE_1]]
-              return 3 --[[ResearchType.UpgradeUnit]], command
+              command.UnitId = 1747988552
+              command.UnitIdToUpgrade = 1747988536
+              return 3, command
             else
-              command.UnitId = 1747988553 --[[Constants.UNIT_SPELLBREAKER_HUMAN_MAGE_3]]
-              command.UnitIdToUpgrade = 1747988552 --[[Constants.UNIT_SORCERESS_HUMAN_MAGE_2]]
-              return 3 --[[ResearchType.UpgradeUnit]], command
+              command.UnitId = 1747988553
+              command.UnitIdToUpgrade = 1747988552
+              return 3, command
             end
           until 1
-        elseif default == 1378889784 --[[Constants.UPGRADE_SIEGE_UNIT_TEAM]] then
+        elseif default == 1378889784 then
           local extern = SourceModels.UnitUpgradeByResearchCommand()
-          extern.UnitSpawnType = 2 --[[SpawnInterval.Long]]
-          extern.UnitIdOfBuilding = 1747988535 --[[Constants.UNIT_BARRACKS_HUMAN]]
+          extern.UnitSpawnType = 2
+          extern.UnitIdOfBuilding = 1747988535
           command = extern
 
           repeat
             local extern = techLevel
             if extern == 1 then
-              command.UnitId = 1747988549 --[[Constants.UNIT_SIEGE_SQUAD_HUMAN_SIEGE_1]]
-              return 2 --[[ResearchType.AddUnit]], command
+              command.UnitId = 1747988549
+              return 2, command
             else
-              command.UnitId = 1747988563 --[[Constants.UNIT_SIEGE_ENGINE_HUMAN_SIEGE_2]]
-              command.UnitIdToUpgrade = 1747988549 --[[Constants.UNIT_SIEGE_SQUAD_HUMAN_SIEGE_1]]
-              return 3 --[[ResearchType.UpgradeUnit]], command
+              command.UnitId = 1747988563
+              command.UnitIdToUpgrade = 1747988549
+              return 3, command
             end
           until 1
         else
-          -- Einfache Verbeserungen bestehender Einheiten
+
           command = nil
-          return 1 --[[ResearchType.CommonUpgrade]], command
+          return 1, command
         end
       until 1
     end
-    -- <inheritdoc/>
+
     GetUnitUpgradeBySold = function (this, baseUnitTypeId, command)
       repeat
         local default = baseUnitTypeId
-        if default == 1747988547 --[[Constants.UNIT_CAPTAIN_HUMAN_MELEE_2]] then
-          command = System.new(SourceModels.UnitUpgradeBySoldCommand, 2, 0 --[[SpawnInterval.Short]], 1747988529 --[[Constants.UNIT_SOLDIER_HUMAN_MELEE_1]], baseUnitTypeId, 1747988546 --[[Constants.UNIT_KNIGHT_HUMAN_MELEE_3]])
-          return 2 --[[UnitUpgradeType.UpgradeUnitInSpawn]], command
-        elseif default == 1747988546 --[[Constants.UNIT_KNIGHT_HUMAN_MELEE_3]] then
-          command = System.new(SourceModels.UnitUpgradeBySoldCommand, 2, 0 --[[SpawnInterval.Short]], 1747988547 --[[Constants.UNIT_CAPTAIN_HUMAN_MELEE_2]], baseUnitTypeId, 0)
-          return 2 --[[UnitUpgradeType.UpgradeUnitInSpawn]], command
-        elseif default == 1747988550 --[[Constants.UNIT_RIFLEMAN_BESERK_HUMAN_DISTANCE_2]] then
-          command = System.new(SourceModels.UnitUpgradeBySoldCommand, 2, 0 --[[SpawnInterval.Short]], 1747988530 --[[Constants.UNIT_RIFLEMAN_HUMAN_DISTANCE_1]], baseUnitTypeId, 1747988551 --[[Constants.UNIT_RIFLEMAN_ELITE_HUMAN_DISTANCE_3]])
-          return 2 --[[UnitUpgradeType.UpgradeUnitInSpawn]], command
-        elseif default == 1747988551 --[[Constants.UNIT_RIFLEMAN_ELITE_HUMAN_DISTANCE_3]] then
-          command = System.new(SourceModels.UnitUpgradeBySoldCommand, 2, 0 --[[SpawnInterval.Short]], 1747988550 --[[Constants.UNIT_RIFLEMAN_BESERK_HUMAN_DISTANCE_2]], baseUnitTypeId, 0)
-          return 2 --[[UnitUpgradeType.UpgradeUnitInSpawn]], command
-        elseif default == 1747988552 --[[Constants.UNIT_SORCERESS_HUMAN_MAGE_2]] then
-          command = System.new(SourceModels.UnitUpgradeBySoldCommand, 2, 1 --[[SpawnInterval.Middle]], 1747988536 --[[Constants.UNIT_PRIEST_HUMAN_MAGE_1]], baseUnitTypeId, 1747988553 --[[Constants.UNIT_SPELLBREAKER_HUMAN_MAGE_3]])
-          return 2 --[[UnitUpgradeType.UpgradeUnitInSpawn]], command
-        elseif default == 1747988553 --[[Constants.UNIT_SPELLBREAKER_HUMAN_MAGE_3]] then
-          command = System.new(SourceModels.UnitUpgradeBySoldCommand, 2, 1 --[[SpawnInterval.Middle]], 1747988552 --[[Constants.UNIT_SORCERESS_HUMAN_MAGE_2]], baseUnitTypeId, 0)
-          return 2 --[[UnitUpgradeType.UpgradeUnitInSpawn]], command
-        elseif default == 1747988554 --[[Constants.UNIT_FLYING_MACHINE_HUMAN_FLY_1]] then
-          command = SourceModels.UnitUpgradeBySoldCommand(1 --[[SpawnInterval.Middle]], baseUnitTypeId, 1747988555 --[[Constants.UNIT_FALCON_RIDER_HUMAN_FLY_2]])
-          return 1 --[[UnitUpgradeType.AddNewUnitToSpawn]], command
-        elseif default == 1747988555 --[[Constants.UNIT_FALCON_RIDER_HUMAN_FLY_2]] then
-          command = System.new(SourceModels.UnitUpgradeBySoldCommand, 2, 1 --[[SpawnInterval.Middle]], 1747988554 --[[Constants.UNIT_FLYING_MACHINE_HUMAN_FLY_1]], baseUnitTypeId, 1747988556 --[[Constants.UNIT_GRYPHON_RIDER_HUMAN_FLY_3]])
-          return 2 --[[UnitUpgradeType.UpgradeUnitInSpawn]], command
-        elseif default == 1747988556 --[[Constants.UNIT_GRYPHON_RIDER_HUMAN_FLY_3]] then
-          command = System.new(SourceModels.UnitUpgradeBySoldCommand, 2, 1 --[[SpawnInterval.Middle]], 1747988555 --[[Constants.UNIT_FALCON_RIDER_HUMAN_FLY_2]], baseUnitTypeId, 0)
-          return 2 --[[UnitUpgradeType.UpgradeUnitInSpawn]], command
-        elseif default == 1747988549 --[[Constants.UNIT_SIEGE_SQUAD_HUMAN_SIEGE_1]] then
-          command = SourceModels.UnitUpgradeBySoldCommand(2 --[[SpawnInterval.Long]], baseUnitTypeId, 1747988563 --[[Constants.UNIT_SIEGE_ENGINE_HUMAN_SIEGE_2]])
-          return 1 --[[UnitUpgradeType.AddNewUnitToSpawn]], command
-        elseif default == 1747988563 --[[Constants.UNIT_SIEGE_ENGINE_HUMAN_SIEGE_2]] then
-          command = System.new(SourceModels.UnitUpgradeBySoldCommand, 2, 2 --[[SpawnInterval.Long]], 1747988549 --[[Constants.UNIT_SIEGE_SQUAD_HUMAN_SIEGE_1]], baseUnitTypeId, 0)
-          return 2 --[[UnitUpgradeType.UpgradeUnitInSpawn]], command
+        if default == 1747988547 then
+          command = System.new(SourceModels.UnitUpgradeBySoldCommand, 2, 0, 1747988529, baseUnitTypeId, 1747988546)
+          return 2, command
+        elseif default == 1747988546 then
+          command = System.new(SourceModels.UnitUpgradeBySoldCommand, 2, 0, 1747988547, baseUnitTypeId, 0)
+          return 2, command
+        elseif default == 1747988550 then
+          command = System.new(SourceModels.UnitUpgradeBySoldCommand, 2, 0, 1747988530, baseUnitTypeId, 1747988551)
+          return 2, command
+        elseif default == 1747988551 then
+          command = System.new(SourceModels.UnitUpgradeBySoldCommand, 2, 0, 1747988550, baseUnitTypeId, 0)
+          return 2, command
+        elseif default == 1747988552 then
+          command = System.new(SourceModels.UnitUpgradeBySoldCommand, 2, 1, 1747988536, baseUnitTypeId, 1747988553)
+          return 2, command
+        elseif default == 1747988553 then
+          command = System.new(SourceModels.UnitUpgradeBySoldCommand, 2, 1, 1747988552, baseUnitTypeId, 0)
+          return 2, command
+        elseif default == 1747988554 then
+          command = SourceModels.UnitUpgradeBySoldCommand(1, baseUnitTypeId, 1747988555)
+          return 1, command
+        elseif default == 1747988555 then
+          command = System.new(SourceModels.UnitUpgradeBySoldCommand, 2, 1, 1747988554, baseUnitTypeId, 1747988556)
+          return 2, command
+        elseif default == 1747988556 then
+          command = System.new(SourceModels.UnitUpgradeBySoldCommand, 2, 1, 1747988555, baseUnitTypeId, 0)
+          return 2, command
+        elseif default == 1747988549 then
+          command = SourceModels.UnitUpgradeBySoldCommand(2, baseUnitTypeId, 1747988563)
+          return 1, command
+        elseif default == 1747988563 then
+          command = System.new(SourceModels.UnitUpgradeBySoldCommand, 2, 2, 1747988549, baseUnitTypeId, 0)
+          return 2, command
         else
-          -- Einheiten-Typ ist nicht bekannt
+
           local extern
           extern, command = System.base(this).GetUnitUpgradeBySold(this, baseUnitTypeId)
           return extern, command
@@ -25363,16 +25283,16 @@ System.namespace("Source.Models.Teams", function (namespace)
       until 1
     end
     AddInitialSpawnTriggers = function (this, building)
-      building:AddSpawnTrigger(0 --[[SpawnInterval.Short]], System.Array(System.Int32) { 1747988529 --[[Constants.UNIT_SOLDIER_HUMAN_MELEE_1]], 1747988529 --[[Constants.UNIT_SOLDIER_HUMAN_MELEE_1]], 1747988530 --[[Constants.UNIT_RIFLEMAN_HUMAN_DISTANCE_1]] }):Run(0)
-      building:AddSpawnTrigger(1 --[[SpawnInterval.Middle]], System.Array(System.Int32) { 1747988536 --[[Constants.UNIT_PRIEST_HUMAN_MAGE_1]] }):Run(1)
-      building:AddSpawnTrigger(2 --[[SpawnInterval.Long]], System.Array.Empty(System.Int32)):Run(2)
+      building:AddSpawnTrigger(0, System.Array(System.Int32) { 1747988529, 1747988529, 1747988530 }):Run(0)
+      building:AddSpawnTrigger(1, System.Array(System.Int32) { 1747988536 }):Run(1)
+      building:AddSpawnTrigger(2, System.Array.Empty(System.Int32)):Run(2)
     end
     AddInitialUnitUpgradesToStock = function (this, building)
-      AddUnitToStock(building.Wc3Unit, 1747988547 --[[Constants.UNIT_CAPTAIN_HUMAN_MELEE_2]], 1, 1)
-      AddUnitToStock(building.Wc3Unit, 1747988550 --[[Constants.UNIT_RIFLEMAN_BESERK_HUMAN_DISTANCE_2]], 1, 1)
-      AddUnitToStock(building.Wc3Unit, 1747988552 --[[Constants.UNIT_SORCERESS_HUMAN_MAGE_2]], 1, 1)
-      AddUnitToStock(building.Wc3Unit, 1747988554 --[[Constants.UNIT_FLYING_MACHINE_HUMAN_FLY_1]], 1, 1)
-      AddUnitToStock(building.Wc3Unit, 1747988549 --[[Constants.UNIT_SIEGE_SQUAD_HUMAN_SIEGE_1]], 1, 1)
+      AddUnitToStock(building.Wc3Unit, 1747988547, 1, 1)
+      AddUnitToStock(building.Wc3Unit, 1747988550, 1, 1)
+      AddUnitToStock(building.Wc3Unit, 1747988552, 1, 1)
+      AddUnitToStock(building.Wc3Unit, 1747988554, 1, 1)
+      AddUnitToStock(building.Wc3Unit, 1747988549, 1, 1)
     end
     return {
       base = function (out)
@@ -25414,178 +25334,178 @@ System.namespace("Source.Models.Teams", function (namespace)
   namespace.class("OrcsTeam", function (namespace)
     local CreateBuildings, GetUnitUpgradeByResearch, GetUnitUpgradeBySold, AddInitialSpawnTriggers, AddInitialUnitUpgradesToStock, __ctor__
     __ctor__ = function (this)
-      System.base(this).__ctor__(this, Player(4), Areas.OrcBase)
-      this.ColorizedName = "|c" .. System.toString("ffffff00" --[[ConstantsEx.ColorHexCode_Yellow]]) .. System.toString(GetPlayerName(Player(4))) .. "|r"
+      System.base(this).__ctor__(this, Player(4), Areas.OrcBase, "Abilities\\Spells\\Items\\AIam\\AIamTarget.mdl")
+      this.ColorizedName = "|c" .. System.toString("ffffff00") .. System.toString(GetPlayerName(Player(4))) .. "|r"
     end
-    -- <inheritdoc/>
+
     CreateBuildings = function (this)
-      -- Hauptgebäude
-      local mainBuilding = this.Computer:CreateMainBuilding(1747988570 --[[Constants.UNIT_FORTRESS_ORC]], Areas.OrcBase, "Abilities\\Spells\\Items\\AIam\\AIamTarget.mdl")
+
+      local mainBuilding = this.Computer:CreateMainBuilding(1747988570, Areas.OrcBase)
 
       mainBuilding:RegisterOnDies(SourceEventsBuildings.TeamMainBuilding.OnDies)
       mainBuilding:AddSpawnAttackRoute(Areas.OrcBaseToCenterSpawn, Areas.ElfBase)
       mainBuilding:AddSpawnAttackRoute(Areas.OrcBaseToHumanSpawn, Areas.HumanBase)
       mainBuilding:AddSpawnAttackRoute(Areas.OrcBaseToUndeadSpawn, Areas.UndeadBase)
 
-      AddUnitToStock(mainBuilding.Wc3Unit, 1848652367 --[[Constants.UNIT_MUD_GOLEM_ORC]], 1, 1)
+      AddUnitToStock(mainBuilding.Wc3Unit, 1848652367, 1, 1)
 
-      -- Kasernen
-      local building = this.Computer:CreateBarrackBuilding(1747988569 --[[Constants.UNIT_BARRACKS_ORC]], Areas.OrcBarracksToCenter, Areas.OrcBarracksToCenterSpawn, Areas.ElfBase)
+
+      local building = this.Computer:CreateBarrackBuilding(1747988569, Areas.OrcBarracksToCenter, Areas.OrcBarracksToCenterSpawn, Areas.ElfBase)
       building:RegisterOnDies(SourceEventsBuildings.TeamBarracksBuilding.OnDies)
 
       AddInitialSpawnTriggers(this, building)
       AddInitialUnitUpgradesToStock(this, building)
 
-      building = this.Computer:CreateBarrackBuilding(1747988569 --[[Constants.UNIT_BARRACKS_ORC]], Areas.OrcBarracksToHuman, Areas.OrcBarracksToHumanSpawn, Areas.HumanBase)
+      building = this.Computer:CreateBarrackBuilding(1747988569, Areas.OrcBarracksToHuman, Areas.OrcBarracksToHumanSpawn, Areas.HumanBase)
       building:RegisterOnDies(SourceEventsBuildings.TeamBarracksBuilding.OnDies)
 
       AddInitialSpawnTriggers(this, building)
       AddInitialUnitUpgradesToStock(this, building)
 
-      building = this.Computer:CreateBarrackBuilding(1747988569 --[[Constants.UNIT_BARRACKS_ORC]], Areas.OrcBarracksToUndead, Areas.OrcBarracksToUndeadSpawn, Areas.UndeadBase)
+      building = this.Computer:CreateBarrackBuilding(1747988569, Areas.OrcBarracksToUndead, Areas.OrcBarracksToUndeadSpawn, Areas.UndeadBase)
       building:RegisterOnDies(SourceEventsBuildings.TeamBarracksBuilding.OnDies)
 
       AddInitialSpawnTriggers(this, building)
       AddInitialUnitUpgradesToStock(this, building)
     end
-    -- <inheritdoc/>
+
     GetUnitUpgradeByResearch = function (this, techId, techLevel, command)
       repeat
         local default = techId
-        if default == 1378889781 --[[Constants.UPGRADE_MELEE_UNIT_TEAM]] then
+        if default == 1378889781 then
           local extern = SourceModels.UnitUpgradeByResearchCommand()
-          extern.UnitSpawnType = 0 --[[SpawnInterval.Short]]
-          extern.UnitIdOfBuilding = 1747988569 --[[Constants.UNIT_BARRACKS_ORC]]
+          extern.UnitSpawnType = 0
+          extern.UnitIdOfBuilding = 1747988569
           command = extern
 
           repeat
             local extern = techLevel
             if extern == 1 then
-              command.UnitId = 1747988810 --[[Constants.UNIT_BESERK_ORC_MELEE_2]]
-              command.UnitIdToUpgrade = 1747988809 --[[Constants.UNIT_GRUNT_ORC_MELEE_1]]
-              return 3 --[[ResearchType.UpgradeUnit]], command
+              command.UnitId = 1747988810
+              command.UnitIdToUpgrade = 1747988809
+              return 3, command
             else
-              command.UnitId = 1747988811 --[[Constants.UNIT_TAUREN_ORC_MELEE_3]]
-              command.UnitIdToUpgrade = 1747988810 --[[Constants.UNIT_BESERK_ORC_MELEE_2]]
-              return 3 --[[ResearchType.UpgradeUnit]], command
+              command.UnitId = 1747988811
+              command.UnitIdToUpgrade = 1747988810
+              return 3, command
             end
           until 1
-        elseif default == 1378889785 --[[Constants.UPGRADE_DISTANCE_UNIT_TEAM]] then
+        elseif default == 1378889785 then
           local extern = SourceModels.UnitUpgradeByResearchCommand()
-          extern.UnitSpawnType = 1 --[[SpawnInterval.Middle]]
-          extern.UnitIdOfBuilding = 1747988569 --[[Constants.UNIT_BARRACKS_ORC]]
+          extern.UnitSpawnType = 1
+          extern.UnitIdOfBuilding = 1747988569
           command = extern
 
           repeat
             local extern = techLevel
             if extern == 1 then
-              command.UnitId = 1747988813 --[[Constants.UNIT_HEADHUNTER_BESERK_ORC_DISTANCE_2]]
-              command.UnitIdToUpgrade = 1747988812 --[[Constants.UNIT_HEADHUNTER_ORC_DISTANCE_1]]
-              return 3 --[[ResearchType.UpgradeUnit]], command
+              command.UnitId = 1747988813
+              command.UnitIdToUpgrade = 1747988812
+              return 3, command
             else
-              command.UnitId = 1747988814 --[[Constants.UNIT_HEADHUNTER_ELITE_ORC_DISTANCE_3]]
-              command.UnitIdToUpgrade = 1747988813 --[[Constants.UNIT_HEADHUNTER_BESERK_ORC_DISTANCE_2]]
-              return 3 --[[ResearchType.UpgradeUnit]], command
+              command.UnitId = 1747988814
+              command.UnitIdToUpgrade = 1747988813
+              return 3, command
             end
           until 1
-        elseif default == 1378889795 --[[Constants.UPGRADE_FLIGHT_UNIT_TEAM]] then
+        elseif default == 1378889795 then
           local extern = SourceModels.UnitUpgradeByResearchCommand()
-          extern.UnitSpawnType = 1 --[[SpawnInterval.Middle]]
-          extern.UnitIdOfBuilding = 1747988569 --[[Constants.UNIT_BARRACKS_ORC]]
+          extern.UnitSpawnType = 1
+          extern.UnitIdOfBuilding = 1747988569
           command = extern
 
           repeat
             local extern = techLevel
             if extern == 1 then
-              command.UnitId = 1747988816 --[[Constants.UNIT_WIND_RIDER_ORC_FLY_2]]
-              command.UnitIdToUpgrade = 1747988815 --[[Constants.UNIT_BATRIDER_ORC_FLY_1]]
-              return 3 --[[ResearchType.UpgradeUnit]], command
+              command.UnitId = 1747988816
+              command.UnitIdToUpgrade = 1747988815
+              return 3, command
             else
-              command.UnitId = 1747988817 --[[Constants.UNIT_SPIRIT_WIND_RIDER_ORC_FLY_3]]
-              command.UnitIdToUpgrade = 1747988816 --[[Constants.UNIT_WIND_RIDER_ORC_FLY_2]]
-              return 3 --[[ResearchType.UpgradeUnit]], command
+              command.UnitId = 1747988817
+              command.UnitIdToUpgrade = 1747988816
+              return 3, command
             end
           until 1
-        elseif default == 1378889797 --[[Constants.UPGRADE_MAGE_UNIT_TEAM]] then
+        elseif default == 1378889797 then
           local extern = SourceModels.UnitUpgradeByResearchCommand()
-          extern.UnitSpawnType = 1 --[[SpawnInterval.Middle]]
-          extern.UnitIdOfBuilding = 1747988569 --[[Constants.UNIT_BARRACKS_ORC]]
+          extern.UnitSpawnType = 1
+          extern.UnitIdOfBuilding = 1747988569
           command = extern
 
           repeat
             local extern = techLevel
             if extern == 1 then
-              command.UnitId = 1747988819 --[[Constants.UNIT_SHAMAN_ORC_MAGE_2]]
-              command.UnitIdToUpgrade = 1747988818 --[[Constants.UNIT_WITCH_DOCTOR_ORC_MAGE_1]]
-              return 3 --[[ResearchType.UpgradeUnit]], command
+              command.UnitId = 1747988819
+              command.UnitIdToUpgrade = 1747988818
+              return 3, command
             else
-              command.UnitId = 1747988820 --[[Constants.UNIT_WARLOCK_ORC_MAGE_3]]
-              command.UnitIdToUpgrade = 1747988819 --[[Constants.UNIT_SHAMAN_ORC_MAGE_2]]
-              return 3 --[[ResearchType.UpgradeUnit]], command
+              command.UnitId = 1747988820
+              command.UnitIdToUpgrade = 1747988819
+              return 3, command
             end
           until 1
-        elseif default == 1378889784 --[[Constants.UPGRADE_SIEGE_UNIT_TEAM]] then
+        elseif default == 1378889784 then
           local extern = SourceModels.UnitUpgradeByResearchCommand()
-          extern.UnitSpawnType = 2 --[[SpawnInterval.Long]]
-          extern.UnitIdOfBuilding = 1747988569 --[[Constants.UNIT_BARRACKS_ORC]]
+          extern.UnitSpawnType = 2
+          extern.UnitIdOfBuilding = 1747988569
           command = extern
 
           repeat
             local extern = techLevel
             if extern == 1 then
-              command.UnitId = 1747988821 --[[Constants.UNIT_KODO_BEAST_ORC_SIEGE_1]]
-              return 2 --[[ResearchType.AddUnit]], command
+              command.UnitId = 1747988821
+              return 2, command
             else
-              command.UnitId = 1747988822 --[[Constants.UNIT_DEMOLISHER_ORC_SIEGE_2]]
-              command.UnitIdToUpgrade = 1747988821 --[[Constants.UNIT_KODO_BEAST_ORC_SIEGE_1]]
-              return 3 --[[ResearchType.UpgradeUnit]], command
+              command.UnitId = 1747988822
+              command.UnitIdToUpgrade = 1747988821
+              return 3, command
             end
           until 1
         else
           command = nil
-          return 1 --[[ResearchType.CommonUpgrade]], command
+          return 1, command
         end
       until 1
     end
-    -- <inheritdoc/>
+
     GetUnitUpgradeBySold = function (this, baseUnitTypeId, command)
       repeat
         local default = baseUnitTypeId
-        if default == 1747988810 --[[Constants.UNIT_BESERK_ORC_MELEE_2]] then
-          command = System.new(SourceModels.UnitUpgradeBySoldCommand, 2, 0 --[[SpawnInterval.Short]], 1747988809 --[[Constants.UNIT_GRUNT_ORC_MELEE_1]], baseUnitTypeId, 1747988811 --[[Constants.UNIT_TAUREN_ORC_MELEE_3]])
-          return 2 --[[UnitUpgradeType.UpgradeUnitInSpawn]], command
-        elseif default == 1747988811 --[[Constants.UNIT_TAUREN_ORC_MELEE_3]] then
-          command = System.new(SourceModels.UnitUpgradeBySoldCommand, 2, 0 --[[SpawnInterval.Short]], 1747988810 --[[Constants.UNIT_BESERK_ORC_MELEE_2]], baseUnitTypeId, 0)
-          return 2 --[[UnitUpgradeType.UpgradeUnitInSpawn]], command
-        elseif default == 1747988813 --[[Constants.UNIT_HEADHUNTER_BESERK_ORC_DISTANCE_2]] then
-          command = System.new(SourceModels.UnitUpgradeBySoldCommand, 2, 0 --[[SpawnInterval.Short]], 1747988812 --[[Constants.UNIT_HEADHUNTER_ORC_DISTANCE_1]], baseUnitTypeId, 1747988814 --[[Constants.UNIT_HEADHUNTER_ELITE_ORC_DISTANCE_3]])
-          return 2 --[[UnitUpgradeType.UpgradeUnitInSpawn]], command
-        elseif default == 1747988814 --[[Constants.UNIT_HEADHUNTER_ELITE_ORC_DISTANCE_3]] then
-          command = System.new(SourceModels.UnitUpgradeBySoldCommand, 2, 0 --[[SpawnInterval.Short]], 1747988813 --[[Constants.UNIT_HEADHUNTER_BESERK_ORC_DISTANCE_2]], baseUnitTypeId, 0)
-          return 2 --[[UnitUpgradeType.UpgradeUnitInSpawn]], command
-        elseif default == 1747988819 --[[Constants.UNIT_SHAMAN_ORC_MAGE_2]] then
-          command = System.new(SourceModels.UnitUpgradeBySoldCommand, 2, 1 --[[SpawnInterval.Middle]], 1747988818 --[[Constants.UNIT_WITCH_DOCTOR_ORC_MAGE_1]], baseUnitTypeId, 1747988820 --[[Constants.UNIT_WARLOCK_ORC_MAGE_3]])
-          return 2 --[[UnitUpgradeType.UpgradeUnitInSpawn]], command
-        elseif default == 1747988820 --[[Constants.UNIT_WARLOCK_ORC_MAGE_3]] then
-          command = System.new(SourceModels.UnitUpgradeBySoldCommand, 2, 1 --[[SpawnInterval.Middle]], 1747988819 --[[Constants.UNIT_SHAMAN_ORC_MAGE_2]], baseUnitTypeId, 0)
-          return 2 --[[UnitUpgradeType.UpgradeUnitInSpawn]], command
-        elseif default == 1747988815 --[[Constants.UNIT_BATRIDER_ORC_FLY_1]] then
-          command = SourceModels.UnitUpgradeBySoldCommand(1 --[[SpawnInterval.Middle]], baseUnitTypeId, 1747988816 --[[Constants.UNIT_WIND_RIDER_ORC_FLY_2]])
-          return 1 --[[UnitUpgradeType.AddNewUnitToSpawn]], command
-        elseif default == 1747988816 --[[Constants.UNIT_WIND_RIDER_ORC_FLY_2]] then
-          command = System.new(SourceModels.UnitUpgradeBySoldCommand, 2, 1 --[[SpawnInterval.Middle]], 1747988815 --[[Constants.UNIT_BATRIDER_ORC_FLY_1]], baseUnitTypeId, 1747988817 --[[Constants.UNIT_SPIRIT_WIND_RIDER_ORC_FLY_3]])
-          return 2 --[[UnitUpgradeType.UpgradeUnitInSpawn]], command
-        elseif default == 1747988817 --[[Constants.UNIT_SPIRIT_WIND_RIDER_ORC_FLY_3]] then
-          command = System.new(SourceModels.UnitUpgradeBySoldCommand, 2, 1 --[[SpawnInterval.Middle]], 1747988816 --[[Constants.UNIT_WIND_RIDER_ORC_FLY_2]], baseUnitTypeId, 0)
-          return 2 --[[UnitUpgradeType.UpgradeUnitInSpawn]], command
-        elseif default == 1747988821 --[[Constants.UNIT_KODO_BEAST_ORC_SIEGE_1]] then
-          command = SourceModels.UnitUpgradeBySoldCommand(2 --[[SpawnInterval.Long]], baseUnitTypeId, 1747988822 --[[Constants.UNIT_DEMOLISHER_ORC_SIEGE_2]])
-          return 1 --[[UnitUpgradeType.AddNewUnitToSpawn]], command
-        elseif default == 1747988822 --[[Constants.UNIT_DEMOLISHER_ORC_SIEGE_2]] then
-          command = System.new(SourceModels.UnitUpgradeBySoldCommand, 2, 2 --[[SpawnInterval.Long]], 1747988821 --[[Constants.UNIT_KODO_BEAST_ORC_SIEGE_1]], baseUnitTypeId, 0)
-          return 2 --[[UnitUpgradeType.UpgradeUnitInSpawn]], command
+        if default == 1747988810 then
+          command = System.new(SourceModels.UnitUpgradeBySoldCommand, 2, 0, 1747988809, baseUnitTypeId, 1747988811)
+          return 2, command
+        elseif default == 1747988811 then
+          command = System.new(SourceModels.UnitUpgradeBySoldCommand, 2, 0, 1747988810, baseUnitTypeId, 0)
+          return 2, command
+        elseif default == 1747988813 then
+          command = System.new(SourceModels.UnitUpgradeBySoldCommand, 2, 0, 1747988812, baseUnitTypeId, 1747988814)
+          return 2, command
+        elseif default == 1747988814 then
+          command = System.new(SourceModels.UnitUpgradeBySoldCommand, 2, 0, 1747988813, baseUnitTypeId, 0)
+          return 2, command
+        elseif default == 1747988819 then
+          command = System.new(SourceModels.UnitUpgradeBySoldCommand, 2, 1, 1747988818, baseUnitTypeId, 1747988820)
+          return 2, command
+        elseif default == 1747988820 then
+          command = System.new(SourceModels.UnitUpgradeBySoldCommand, 2, 1, 1747988819, baseUnitTypeId, 0)
+          return 2, command
+        elseif default == 1747988815 then
+          command = SourceModels.UnitUpgradeBySoldCommand(1, baseUnitTypeId, 1747988816)
+          return 1, command
+        elseif default == 1747988816 then
+          command = System.new(SourceModels.UnitUpgradeBySoldCommand, 2, 1, 1747988815, baseUnitTypeId, 1747988817)
+          return 2, command
+        elseif default == 1747988817 then
+          command = System.new(SourceModels.UnitUpgradeBySoldCommand, 2, 1, 1747988816, baseUnitTypeId, 0)
+          return 2, command
+        elseif default == 1747988821 then
+          command = SourceModels.UnitUpgradeBySoldCommand(2, baseUnitTypeId, 1747988822)
+          return 1, command
+        elseif default == 1747988822 then
+          command = System.new(SourceModels.UnitUpgradeBySoldCommand, 2, 2, 1747988821, baseUnitTypeId, 0)
+          return 2, command
         else
-          -- Einheiten-Typ ist nicht bekannt
+
           local extern
           extern, command = System.base(this).GetUnitUpgradeBySold(this, baseUnitTypeId)
           return extern, command
@@ -25593,16 +25513,16 @@ System.namespace("Source.Models.Teams", function (namespace)
       until 1
     end
     AddInitialSpawnTriggers = function (this, building)
-      building:AddSpawnTrigger(0 --[[SpawnInterval.Short]], System.Array(System.Int32) { 1747988809 --[[Constants.UNIT_GRUNT_ORC_MELEE_1]], 1747988809 --[[Constants.UNIT_GRUNT_ORC_MELEE_1]], 1747988812 --[[Constants.UNIT_HEADHUNTER_ORC_DISTANCE_1]] }):Run(0)
-      building:AddSpawnTrigger(1 --[[SpawnInterval.Middle]], System.Array(System.Int32) { 1747988818 --[[Constants.UNIT_WITCH_DOCTOR_ORC_MAGE_1]] }):Run(1)
-      building:AddSpawnTrigger(2 --[[SpawnInterval.Long]], System.Array.Empty(System.Int32)):Run(2)
+      building:AddSpawnTrigger(0, System.Array(System.Int32) { 1747988809, 1747988809, 1747988812 }):Run(0)
+      building:AddSpawnTrigger(1, System.Array(System.Int32) { 1747988818 }):Run(1)
+      building:AddSpawnTrigger(2, System.Array.Empty(System.Int32)):Run(2)
     end
     AddInitialUnitUpgradesToStock = function (this, building)
-      AddUnitToStock(building.Wc3Unit, 1747988810 --[[Constants.UNIT_BESERK_ORC_MELEE_2]], 1, 1)
-      AddUnitToStock(building.Wc3Unit, 1747988813 --[[Constants.UNIT_HEADHUNTER_BESERK_ORC_DISTANCE_2]], 1, 1)
-      AddUnitToStock(building.Wc3Unit, 1747988819 --[[Constants.UNIT_SHAMAN_ORC_MAGE_2]], 1, 1)
-      AddUnitToStock(building.Wc3Unit, 1747988815 --[[Constants.UNIT_BATRIDER_ORC_FLY_1]], 1, 1)
-      AddUnitToStock(building.Wc3Unit, 1747988821 --[[Constants.UNIT_KODO_BEAST_ORC_SIEGE_1]], 1, 1)
+      AddUnitToStock(building.Wc3Unit, 1747988810, 1, 1)
+      AddUnitToStock(building.Wc3Unit, 1747988813, 1, 1)
+      AddUnitToStock(building.Wc3Unit, 1747988819, 1, 1)
+      AddUnitToStock(building.Wc3Unit, 1747988815, 1, 1)
+      AddUnitToStock(building.Wc3Unit, 1747988821, 1, 1)
     end
     return {
       base = function (out)
@@ -25644,178 +25564,178 @@ System.namespace("Source.Models.Teams", function (namespace)
   namespace.class("UndeadsTeam", function (namespace)
     local CreateBuildings, GetUnitUpgradeByResearch, GetUnitUpgradeBySold, AddInitialSpawnTriggers, AddInitialUnitUpgradesToStock, __ctor__
     __ctor__ = function (this)
-      System.base(this).__ctor__(this, Player(12), Areas.UndeadBase)
-      this.ColorizedName = "|c" .. System.toString("ff800000" --[[ConstantsEx.ColorHexCode_Maroon]]) .. System.toString(GetPlayerName(Player(12))) .. "|r"
+      System.base(this).__ctor__(this, Player(12), Areas.UndeadBase, "Abilities\\Spells\\Undead\\RaiseSkeletonWarrior\\RaiseSkeleton.mdl")
+      this.ColorizedName = "|c" .. System.toString("ff800000") .. System.toString(GetPlayerName(Player(12))) .. "|r"
     end
-    -- <inheritdoc/>
+
     CreateBuildings = function (this)
-      -- Hauptgebäude
-      local mainBuilding = this.Computer:CreateMainBuilding(1747988801 --[[Constants.UNIT_BLACK_CITADEL_UNDEAD]], Areas.UndeadBase, "")
+
+      local mainBuilding = this.Computer:CreateMainBuilding(1747988801, Areas.UndeadBase)
 
       mainBuilding:RegisterOnDies(SourceEventsBuildings.TeamMainBuilding.OnDies)
       mainBuilding:AddSpawnAttackRoute(Areas.UndeadBaseToCenterSpawn, Areas.HumanBase)
       mainBuilding:AddSpawnAttackRoute(Areas.UndeadBaseToElfSpawn, Areas.ElfBase)
       mainBuilding:AddSpawnAttackRoute(Areas.UndeadBaseToOrcsSpawn, Areas.OrcBase)
 
-      AddUnitToStock(mainBuilding.Wc3Unit, 1848652366 --[[Constants.UNIT_FLESH_GOLEM_UNDEAD]], 1, 1)
+      AddUnitToStock(mainBuilding.Wc3Unit, 1848652366, 1, 1)
 
-      -- Kasernen
-      local building = this.Computer:CreateBarrackBuilding(1747988805 --[[Constants.UNIT_CRYPT_UNDEAD]], Areas.UndeadBarracksToCenter, Areas.UndeadBarracksToCenterSpawn, Areas.HumanBase)
+
+      local building = this.Computer:CreateBarrackBuilding(1747988805, Areas.UndeadBarracksToCenter, Areas.UndeadBarracksToCenterSpawn, Areas.HumanBase)
       building:RegisterOnDies(SourceEventsBuildings.TeamBarracksBuilding.OnDies)
 
       AddInitialSpawnTriggers(this, building)
       AddInitialUnitUpgradesToStock(this, building)
 
-      building = this.Computer:CreateBarrackBuilding(1747988805 --[[Constants.UNIT_CRYPT_UNDEAD]], Areas.UndeadBarracksToElf, Areas.UndeadBarracksToElfSpawn, Areas.ElfBase)
+      building = this.Computer:CreateBarrackBuilding(1747988805, Areas.UndeadBarracksToElf, Areas.UndeadBarracksToElfSpawn, Areas.ElfBase)
       building:RegisterOnDies(SourceEventsBuildings.TeamBarracksBuilding.OnDies)
 
       AddInitialSpawnTriggers(this, building)
       AddInitialUnitUpgradesToStock(this, building)
 
-      building = this.Computer:CreateBarrackBuilding(1747988805 --[[Constants.UNIT_CRYPT_UNDEAD]], Areas.UndeadBarracksToOrcs, Areas.UndeadBarracksToOrcsSpawn, Areas.OrcBase)
+      building = this.Computer:CreateBarrackBuilding(1747988805, Areas.UndeadBarracksToOrcs, Areas.UndeadBarracksToOrcsSpawn, Areas.OrcBase)
       building:RegisterOnDies(SourceEventsBuildings.TeamBarracksBuilding.OnDies)
 
       AddInitialSpawnTriggers(this, building)
       AddInitialUnitUpgradesToStock(this, building)
     end
-    -- <inheritdoc/>
+
     GetUnitUpgradeByResearch = function (this, techId, techLevel, command)
       repeat
         local default = techId
-        if default == 1378889781 --[[Constants.UPGRADE_MELEE_UNIT_TEAM]] then
+        if default == 1378889781 then
           local extern = SourceModels.UnitUpgradeByResearchCommand()
-          extern.UnitSpawnType = 0 --[[SpawnInterval.Short]]
-          extern.UnitIdOfBuilding = 1747988805 --[[Constants.UNIT_CRYPT_UNDEAD]]
+          extern.UnitSpawnType = 0
+          extern.UnitIdOfBuilding = 1747988805
           command = extern
 
           repeat
             local extern = techLevel
             if extern == 1 then
-              command.UnitId = 1747989040 --[[Constants.UNIT_SKELETON_WARRIOR_UNDEAD_MELEE_2]]
-              command.UnitIdToUpgrade = 1747988825 --[[Constants.UNIT_GHOUL_UNDEAD_MELEE_1]]
-              return 3 --[[ResearchType.UpgradeUnit]], command
+              command.UnitId = 1747989040
+              command.UnitIdToUpgrade = 1747988825
+              return 3, command
             else
-              command.UnitId = 1747989042 --[[Constants.UNIT_ABOMINATION_UNDEAD_MELEE_3]]
-              command.UnitIdToUpgrade = 1747989040 --[[Constants.UNIT_SKELETON_WARRIOR_UNDEAD_MELEE_2]]
-              return 3 --[[ResearchType.UpgradeUnit]], command
+              command.UnitId = 1747989042
+              command.UnitIdToUpgrade = 1747989040
+              return 3, command
             end
           until 1
-        elseif default == 1378889785 --[[Constants.UPGRADE_DISTANCE_UNIT_TEAM]] then
+        elseif default == 1378889785 then
           local extern = SourceModels.UnitUpgradeByResearchCommand()
-          extern.UnitSpawnType = 1 --[[SpawnInterval.Middle]]
-          extern.UnitIdOfBuilding = 1747988805 --[[Constants.UNIT_CRYPT_UNDEAD]]
+          extern.UnitSpawnType = 1
+          extern.UnitIdOfBuilding = 1747988805
           command = extern
 
           repeat
             local extern = techLevel
             if extern == 1 then
-              command.UnitId = 1747989046 --[[Constants.UNIT_CRYPT_FIEND_BESERK_UNDEAD_DISTANCE_2]]
-              command.UnitIdToUpgrade = 1747989044 --[[Constants.UNIT_CRYPT_FIEND_UNDEAD_DISTANCE_1]]
-              return 3 --[[ResearchType.UpgradeUnit]], command
+              command.UnitId = 1747989046
+              command.UnitIdToUpgrade = 1747989044
+              return 3, command
             else
-              command.UnitId = 1747989048 --[[Constants.UNIT_CRYPT_FIEND_ELITE_UNDEAD_DISTANCE_3]]
-              command.UnitIdToUpgrade = 1747989046 --[[Constants.UNIT_CRYPT_FIEND_BESERK_UNDEAD_DISTANCE_2]]
-              return 3 --[[ResearchType.UpgradeUnit]], command
+              command.UnitId = 1747989048
+              command.UnitIdToUpgrade = 1747989046
+              return 3, command
             end
           until 1
-        elseif default == 1378889795 --[[Constants.UPGRADE_FLIGHT_UNIT_TEAM]] then
+        elseif default == 1378889795 then
           local extern = SourceModels.UnitUpgradeByResearchCommand()
-          extern.UnitSpawnType = 1 --[[SpawnInterval.Middle]]
-          extern.UnitIdOfBuilding = 1747988801 --[[Constants.UNIT_BLACK_CITADEL_UNDEAD]]
+          extern.UnitSpawnType = 1
+          extern.UnitIdOfBuilding = 1747988801
           command = extern
 
           repeat
             local extern = techLevel
             if extern == 1 then
-              command.UnitId = 1747989059 --[[Constants.UNIT_DESTROYER_UNDEAD_FLY_2]]
-              command.UnitIdToUpgrade = 1747989061 --[[Constants.UNIT_GARGOYLE_UNDEAD_FLY_1]]
-              return 3 --[[ResearchType.UpgradeUnit]], command
+              command.UnitId = 1747989059
+              command.UnitIdToUpgrade = 1747989061
+              return 3, command
             else
-              command.UnitId = 1747989057 --[[Constants.UNIT_FROST_WYRM_UNDEAD_FLY_3]]
-              command.UnitIdToUpgrade = 1747989059 --[[Constants.UNIT_DESTROYER_UNDEAD_FLY_2]]
-              return 3 --[[ResearchType.UpgradeUnit]], command
+              command.UnitId = 1747989057
+              command.UnitIdToUpgrade = 1747989059
+              return 3, command
             end
           until 1
-        elseif default == 1378889797 --[[Constants.UPGRADE_MAGE_UNIT_TEAM]] then
+        elseif default == 1378889797 then
           local extern = SourceModels.UnitUpgradeByResearchCommand()
-          extern.UnitSpawnType = 1 --[[SpawnInterval.Middle]]
-          extern.UnitIdOfBuilding = 1747988801 --[[Constants.UNIT_BLACK_CITADEL_UNDEAD]]
+          extern.UnitSpawnType = 1
+          extern.UnitIdOfBuilding = 1747988801
           command = extern
 
           repeat
             local extern = techLevel
             if extern == 1 then
-              command.UnitId = 1747989065 --[[Constants.UNIT_NECROMANCER_UNDEAD_MAGE_2]]
-              command.UnitIdToUpgrade = 1747989067 --[[Constants.UNIT_SKELETAL_MAGE_UNDEAD_MAGE_1]]
-              return 3 --[[ResearchType.UpgradeUnit]], command
+              command.UnitId = 1747989065
+              command.UnitIdToUpgrade = 1747989067
+              return 3, command
             else
-              command.UnitId = 1747989063 --[[Constants.UNIT_BANSHEE_UNDEAD_MAGE_3]]
-              command.UnitIdToUpgrade = 1747989065 --[[Constants.UNIT_NECROMANCER_UNDEAD_MAGE_2]]
-              return 3 --[[ResearchType.UpgradeUnit]], command
+              command.UnitId = 1747989063
+              command.UnitIdToUpgrade = 1747989065
+              return 3, command
             end
           until 1
-        elseif default == 1378889784 --[[Constants.UPGRADE_SIEGE_UNIT_TEAM]] then
+        elseif default == 1378889784 then
           local extern = SourceModels.UnitUpgradeByResearchCommand()
-          extern.UnitSpawnType = 2 --[[SpawnInterval.Long]]
-          extern.UnitIdOfBuilding = 1747988801 --[[Constants.UNIT_BLACK_CITADEL_UNDEAD]]
+          extern.UnitSpawnType = 2
+          extern.UnitIdOfBuilding = 1747988801
           command = extern
 
           repeat
             local extern = techLevel
             if extern == 1 then
-              command.UnitId = 1747989071 --[[Constants.UNIT_OBSIDIAN_STATUE_UNDEAD_SIEGE_1]]
-              return 2 --[[ResearchType.AddUnit]], command
+              command.UnitId = 1747989071
+              return 2, command
             else
-              command.UnitId = 1747989069 --[[Constants.UNIT_MEAT_WAGON_UNDEAD_SIEGE_2]]
-              command.UnitIdToUpgrade = 1747989071 --[[Constants.UNIT_OBSIDIAN_STATUE_UNDEAD_SIEGE_1]]
-              return 3 --[[ResearchType.UpgradeUnit]], command
+              command.UnitId = 1747989069
+              command.UnitIdToUpgrade = 1747989071
+              return 3, command
             end
           until 1
         else
           command = nil
-          return 1 --[[ResearchType.CommonUpgrade]], command
+          return 1, command
         end
       until 1
     end
-    -- <inheritdoc/>
+
     GetUnitUpgradeBySold = function (this, baseUnitTypeId, command)
       repeat
         local default = baseUnitTypeId
-        if default == 1747989040 --[[Constants.UNIT_SKELETON_WARRIOR_UNDEAD_MELEE_2]] then
-          command = System.new(SourceModels.UnitUpgradeBySoldCommand, 2, 0 --[[SpawnInterval.Short]], 1747988825 --[[Constants.UNIT_GHOUL_UNDEAD_MELEE_1]], baseUnitTypeId, 1747989042 --[[Constants.UNIT_ABOMINATION_UNDEAD_MELEE_3]])
-          return 2 --[[UnitUpgradeType.UpgradeUnitInSpawn]], command
-        elseif default == 1747989042 --[[Constants.UNIT_ABOMINATION_UNDEAD_MELEE_3]] then
-          command = System.new(SourceModels.UnitUpgradeBySoldCommand, 2, 0 --[[SpawnInterval.Short]], 1747989040 --[[Constants.UNIT_SKELETON_WARRIOR_UNDEAD_MELEE_2]], baseUnitTypeId, 0)
-          return 2 --[[UnitUpgradeType.UpgradeUnitInSpawn]], command
-        elseif default == 1747989046 --[[Constants.UNIT_CRYPT_FIEND_BESERK_UNDEAD_DISTANCE_2]] then
-          command = System.new(SourceModels.UnitUpgradeBySoldCommand, 2, 0 --[[SpawnInterval.Short]], 1747989044 --[[Constants.UNIT_CRYPT_FIEND_UNDEAD_DISTANCE_1]], baseUnitTypeId, 1747989048 --[[Constants.UNIT_CRYPT_FIEND_ELITE_UNDEAD_DISTANCE_3]])
-          return 2 --[[UnitUpgradeType.UpgradeUnitInSpawn]], command
-        elseif default == 1747989048 --[[Constants.UNIT_CRYPT_FIEND_ELITE_UNDEAD_DISTANCE_3]] then
-          command = System.new(SourceModels.UnitUpgradeBySoldCommand, 2, 0 --[[SpawnInterval.Short]], 1747989046 --[[Constants.UNIT_CRYPT_FIEND_BESERK_UNDEAD_DISTANCE_2]], baseUnitTypeId, 0)
-          return 2 --[[UnitUpgradeType.UpgradeUnitInSpawn]], command
-        elseif default == 1747989065 --[[Constants.UNIT_NECROMANCER_UNDEAD_MAGE_2]] then
-          command = System.new(SourceModels.UnitUpgradeBySoldCommand, 2, 1 --[[SpawnInterval.Middle]], 1747989067 --[[Constants.UNIT_SKELETAL_MAGE_UNDEAD_MAGE_1]], baseUnitTypeId, 1747989063 --[[Constants.UNIT_BANSHEE_UNDEAD_MAGE_3]])
-          return 2 --[[UnitUpgradeType.UpgradeUnitInSpawn]], command
-        elseif default == 1747989063 --[[Constants.UNIT_BANSHEE_UNDEAD_MAGE_3]] then
-          command = System.new(SourceModels.UnitUpgradeBySoldCommand, 2, 1 --[[SpawnInterval.Middle]], 1747989065 --[[Constants.UNIT_NECROMANCER_UNDEAD_MAGE_2]], baseUnitTypeId, 0)
-          return 2 --[[UnitUpgradeType.UpgradeUnitInSpawn]], command
-        elseif default == 1747989061 --[[Constants.UNIT_GARGOYLE_UNDEAD_FLY_1]] then
-          command = SourceModels.UnitUpgradeBySoldCommand(1 --[[SpawnInterval.Middle]], baseUnitTypeId, 1747989059 --[[Constants.UNIT_DESTROYER_UNDEAD_FLY_2]])
-          return 1 --[[UnitUpgradeType.AddNewUnitToSpawn]], command
-        elseif default == 1747989059 --[[Constants.UNIT_DESTROYER_UNDEAD_FLY_2]] then
-          command = System.new(SourceModels.UnitUpgradeBySoldCommand, 2, 1 --[[SpawnInterval.Middle]], 1747989061 --[[Constants.UNIT_GARGOYLE_UNDEAD_FLY_1]], baseUnitTypeId, 1747989057 --[[Constants.UNIT_FROST_WYRM_UNDEAD_FLY_3]])
-          return 2 --[[UnitUpgradeType.UpgradeUnitInSpawn]], command
-        elseif default == 1747989057 --[[Constants.UNIT_FROST_WYRM_UNDEAD_FLY_3]] then
-          command = System.new(SourceModels.UnitUpgradeBySoldCommand, 2, 1 --[[SpawnInterval.Middle]], 1747989059 --[[Constants.UNIT_DESTROYER_UNDEAD_FLY_2]], baseUnitTypeId, 0)
-          return 2 --[[UnitUpgradeType.UpgradeUnitInSpawn]], command
-        elseif default == 1747989071 --[[Constants.UNIT_OBSIDIAN_STATUE_UNDEAD_SIEGE_1]] then
-          command = SourceModels.UnitUpgradeBySoldCommand(2 --[[SpawnInterval.Long]], baseUnitTypeId, 1747989069 --[[Constants.UNIT_MEAT_WAGON_UNDEAD_SIEGE_2]])
-          return 1 --[[UnitUpgradeType.AddNewUnitToSpawn]], command
-        elseif default == 1747989069 --[[Constants.UNIT_MEAT_WAGON_UNDEAD_SIEGE_2]] then
-          command = System.new(SourceModels.UnitUpgradeBySoldCommand, 2, 2 --[[SpawnInterval.Long]], 1747989071 --[[Constants.UNIT_OBSIDIAN_STATUE_UNDEAD_SIEGE_1]], baseUnitTypeId, 0)
-          return 2 --[[UnitUpgradeType.UpgradeUnitInSpawn]], command
+        if default == 1747989040 then
+          command = System.new(SourceModels.UnitUpgradeBySoldCommand, 2, 0, 1747988825, baseUnitTypeId, 1747989042)
+          return 2, command
+        elseif default == 1747989042 then
+          command = System.new(SourceModels.UnitUpgradeBySoldCommand, 2, 0, 1747989040, baseUnitTypeId, 0)
+          return 2, command
+        elseif default == 1747989046 then
+          command = System.new(SourceModels.UnitUpgradeBySoldCommand, 2, 0, 1747989044, baseUnitTypeId, 1747989048)
+          return 2, command
+        elseif default == 1747989048 then
+          command = System.new(SourceModels.UnitUpgradeBySoldCommand, 2, 0, 1747989046, baseUnitTypeId, 0)
+          return 2, command
+        elseif default == 1747989065 then
+          command = System.new(SourceModels.UnitUpgradeBySoldCommand, 2, 1, 1747989067, baseUnitTypeId, 1747989063)
+          return 2, command
+        elseif default == 1747989063 then
+          command = System.new(SourceModels.UnitUpgradeBySoldCommand, 2, 1, 1747989065, baseUnitTypeId, 0)
+          return 2, command
+        elseif default == 1747989061 then
+          command = SourceModels.UnitUpgradeBySoldCommand(1, baseUnitTypeId, 1747989059)
+          return 1, command
+        elseif default == 1747989059 then
+          command = System.new(SourceModels.UnitUpgradeBySoldCommand, 2, 1, 1747989061, baseUnitTypeId, 1747989057)
+          return 2, command
+        elseif default == 1747989057 then
+          command = System.new(SourceModels.UnitUpgradeBySoldCommand, 2, 1, 1747989059, baseUnitTypeId, 0)
+          return 2, command
+        elseif default == 1747989071 then
+          command = SourceModels.UnitUpgradeBySoldCommand(2, baseUnitTypeId, 1747989069)
+          return 1, command
+        elseif default == 1747989069 then
+          command = System.new(SourceModels.UnitUpgradeBySoldCommand, 2, 2, 1747989071, baseUnitTypeId, 0)
+          return 2, command
         else
-          -- Einheiten-Typ ist nicht bekannt
+
           local extern
           extern, command = System.base(this).GetUnitUpgradeBySold(this, baseUnitTypeId)
           return extern, command
@@ -25823,16 +25743,16 @@ System.namespace("Source.Models.Teams", function (namespace)
       until 1
     end
     AddInitialSpawnTriggers = function (this, building)
-      building:AddSpawnTrigger(0 --[[SpawnInterval.Short]], System.Array(System.Int32) { 1747988825 --[[Constants.UNIT_GHOUL_UNDEAD_MELEE_1]], 1747988825 --[[Constants.UNIT_GHOUL_UNDEAD_MELEE_1]], 1747989044 --[[Constants.UNIT_CRYPT_FIEND_UNDEAD_DISTANCE_1]] }):Run(0)
-      building:AddSpawnTrigger(1 --[[SpawnInterval.Middle]], System.Array(System.Int32) { 1747989067 --[[Constants.UNIT_SKELETAL_MAGE_UNDEAD_MAGE_1]] }):Run(1)
-      building:AddSpawnTrigger(2 --[[SpawnInterval.Long]], System.Array.Empty(System.Int32)):Run(2)
+      building:AddSpawnTrigger(0, System.Array(System.Int32) { 1747988825, 1747988825, 1747989044 }):Run(0)
+      building:AddSpawnTrigger(1, System.Array(System.Int32) { 1747989067 }):Run(1)
+      building:AddSpawnTrigger(2, System.Array.Empty(System.Int32)):Run(2)
     end
     AddInitialUnitUpgradesToStock = function (this, building)
-      AddUnitToStock(building.Wc3Unit, 1747989040 --[[Constants.UNIT_SKELETON_WARRIOR_UNDEAD_MELEE_2]], 1, 1)
-      AddUnitToStock(building.Wc3Unit, 1747989046 --[[Constants.UNIT_CRYPT_FIEND_BESERK_UNDEAD_DISTANCE_2]], 1, 1)
-      AddUnitToStock(building.Wc3Unit, 1747989065 --[[Constants.UNIT_NECROMANCER_UNDEAD_MAGE_2]], 1, 1)
-      AddUnitToStock(building.Wc3Unit, 1747989061 --[[Constants.UNIT_GARGOYLE_UNDEAD_FLY_1]], 1, 1)
-      AddUnitToStock(building.Wc3Unit, 1747989071 --[[Constants.UNIT_OBSIDIAN_STATUE_UNDEAD_SIEGE_1]], 1, 1)
+      AddUnitToStock(building.Wc3Unit, 1747989040, 1, 1)
+      AddUnitToStock(building.Wc3Unit, 1747989046, 1, 1)
+      AddUnitToStock(building.Wc3Unit, 1747989065, 1, 1)
+      AddUnitToStock(building.Wc3Unit, 1747989061, 1, 1)
+      AddUnitToStock(building.Wc3Unit, 1747989071, 1, 1)
     end
     return {
       base = function (out)
@@ -25872,11 +25792,14 @@ System.import(function (out)
 end)
 System.namespace("Source.Statics", function (namespace)
   namespace.class("SpecialEffects", function (namespace)
-    local CreateSpecialEffect, CreateSpecialEffect1, CreateSpecialEffectTimed, CreateLightning
-    CreateSpecialEffect = function (modelPath, point, scale, duration)
-      CreateSpecialEffect1(modelPath, point.X, point.Y, scale, duration)
+    local CreateSpecialEffect, CreateSpecialEffect1, CreateSpecialEffect2, CreateSpecialEffectTimed, CreateLightning
+    CreateSpecialEffect = function (modelPath, location, scale, duration)
+      CreateSpecialEffect2(modelPath, GetLocationX(location), GetLocationY(location), scale, duration)
     end
-    CreateSpecialEffect1 = function (modelPath, x, y, scale, duration)
+    CreateSpecialEffect1 = function (modelPath, point, scale, duration)
+      CreateSpecialEffect2(modelPath, point.X, point.Y, scale, duration)
+    end
+    CreateSpecialEffect2 = function (modelPath, x, y, scale, duration)
       local e = AddSpecialEffect(modelPath, x, y)
       BlzSetSpecialEffectScale(e, scale)
       WCSharpEffects.EffectSystem.Add(e, duration)
@@ -25888,11 +25811,11 @@ System.namespace("Source.Statics", function (namespace)
         DestroyTimer(timer)
         timer = nil
 
-        CreateSpecialEffect(modelPath, point, scale, duration)
+        CreateSpecialEffect1(modelPath, point, scale, duration)
       end)
     end
     CreateLightning = function (caster, target)
-      -- https://www.hiveworkshop.com/threads/beginners-guide-to-lightning-effects.220370/#herp
+
       local lightning = AddLightningEx("AFOD", true, caster.X, caster.Y, 50, target.X, target.Y, 50)
 
       local timer = CreateTimer()
@@ -25914,14 +25837,16 @@ System.namespace("Source.Statics", function (namespace)
     return {
       CreateSpecialEffect = CreateSpecialEffect,
       CreateSpecialEffect1 = CreateSpecialEffect1,
+      CreateSpecialEffect2 = CreateSpecialEffect2,
       CreateSpecialEffectTimed = CreateSpecialEffectTimed,
       CreateLightning = CreateLightning,
       __metadata__ = function (out)
         return {
           methods = {
             { "CreateLightning", 0x20C, CreateLightning, out.WCSharp.Shared.Data.Point, out.WCSharp.Shared.Data.Point },
-            { "CreateSpecialEffect", 0x40C, CreateSpecialEffect, System.String, out.WCSharp.Shared.Data.Point, System.Single, System.Single },
-            { "CreateSpecialEffect", 0x50C, CreateSpecialEffect1, System.String, System.Single, System.Single, System.Single, System.Single },
+            { "CreateSpecialEffect", 0x40C, CreateSpecialEffect, System.String, out.WCSharp.Api.location, System.Single, System.Single },
+            { "CreateSpecialEffect", 0x40C, CreateSpecialEffect1, System.String, out.WCSharp.Shared.Data.Point, System.Single, System.Single },
+            { "CreateSpecialEffect", 0x50C, CreateSpecialEffect2, System.String, System.Single, System.Single, System.Single, System.Single },
             { "CreateSpecialEffectTimed", 0x50C, CreateSpecialEffectTimed, System.String, out.WCSharp.Shared.Data.Point, System.Single, System.Single, System.Single }
           },
           class = { "SpecialEffects", 0x3C }
@@ -25946,9 +25871,9 @@ local Arraytimerdialog = System.Array(WCSharpApi.timerdialog)
 System.namespace("WCSharp.Api", function (namespace)
 end)
 System.namespace("WCSharp.Api.Enums", function (namespace)
-  -- <summary>
-  -- Specifies the modifier keys that must be active.
-  -- </summary>
+
+
+
   namespace.enum("MetaKey", function ()
     return {
       None = 0,
@@ -26068,10 +25993,10 @@ System.import(function (out)
   PeriodicDisposableTrigger_1IAura = WCSharpEvents.PeriodicDisposableTrigger_1(WCSharpBuffs.IAura)
 end)
 System.namespace("WCSharp.Buffs", function (namespace)
-  -- <summary>
-  -- Auras constantly apply/refresh a linked <see cref="T:WCSharp.Buffs.Buff" /> on valid targets in range.
-  -- </summary>
-  -- <typeparam name="T">The buff that will be applied by this aura.</typeparam>
+
+
+
+
   namespace.class("Aura_1", function (namespace)
     return function (T)
       local group, getActive, setActive, getCaster, setCaster, getCastingPlayer, setCastingPlayer, getRadius, 
@@ -26083,9 +26008,9 @@ System.namespace("WCSharp.Buffs", function (namespace)
       static = function (this)
         group = CreateGroup()
       end
-      -- <summary>
-      -- Creates a new aura centered around the given caster.
-      -- </summary>
+
+
+
       __ctor__ = function (this, caster)
         this.Caster = caster
         this.CastingPlayer = GetOwningPlayer(caster)
@@ -26150,20 +26075,20 @@ System.namespace("WCSharp.Buffs", function (namespace)
         this.effectScale = value
       end
       getEffect, setEffect = System.property("Effect")
-      -- <inheritdoc />
+
       Apply = function (this)
         if this.effectString ~= nil then
           this.Effect = AddSpecialEffectTarget(this.effectString, this.Caster, this.effectAttachmentPoint)
           BlzSetSpecialEffectScale(this.Effect, this.effectScale)
         end
       end
-      -- <inheritdoc />
+
       Action = function (this)
         if not UnitAlive(this.Caster) then
           this.Active = false
           return
         end
-        if this.SearchIntervalLeft <= 0.03125 --[[1f / 32f]] then
+        if this.SearchIntervalLeft <= 0.03125 then
           this.SearchIntervalLeft = this.SearchInterval
           GroupEnumUnitsInRange(group, GetUnitX(this.Caster), GetUnitY(this.Caster), this.Radius, nil)
           local list = WCSharpSharedExtensions.GroupExtensions.ToList(group)
@@ -26182,7 +26107,7 @@ System.namespace("WCSharp.Buffs", function (namespace)
             end
           end
         else
-          this.SearchIntervalLeft = this.SearchIntervalLeft - (0.03125 --[[1f / 32f]])
+          this.SearchIntervalLeft = this.SearchIntervalLeft - (0.03125)
         end
         for num = #this.activeBuffs - 1, 0, -1 do
           local auraBuffDuration2 = this.activeBuffs:get(num)
@@ -26192,17 +26117,17 @@ System.namespace("WCSharp.Buffs", function (namespace)
             default.Stacks = default.Stacks - 1
             this.activeBuffs:RemoveAt(num)
           else
-            auraBuffDuration2.Duration = auraBuffDuration2.Duration - (0.03125 --[[1f / 32f]])
+            auraBuffDuration2.Duration = auraBuffDuration2.Duration - (0.03125)
           end
         end
       end
-      -- <inheritdoc />
+
       GetActiveBuffs = function (this)
         return Linq.Select(this.activeBuffs, function (x)
           return x.Buff
         end, T)
       end
-      -- <inheritdoc />
+
       Dispose = function (this)
         if this.Effect ~= nil then
           DestroyEffect(this.Effect)
@@ -26289,24 +26214,24 @@ System.namespace("WCSharp.Buffs", function (namespace)
       }
     end
   end)
-  -- <summary>
-  -- This class is identical to <see cref="T:WCSharp.Buffs.BoundBuff" />, except that it implements a default <see cref="M:WCSharp.Buffs.AuraBoundBuff.OnStack(WCSharp.Buffs.Buff)" /> behaviour that better
-  -- matches standard aura behaviour.
-  -- <para>The <see cref="P:WCSharp.Buffs.Buff.Stacks" /> property will be set to the number of aura bearers applying the aura.</para>
-  -- </summary>
+
+
+
+
+
   namespace.class("AuraBoundBuff", function (namespace)
     local OnStack, __ctor__
-    -- <inheritdoc />
+
     __ctor__ = function (this, caster, target)
       System.base(this).__ctor__(this, caster, target)
     end
-    -- <summary>
-    -- Executes whenever this buff receives a new stack via <see cref="M:WCSharp.Buffs.BuffSystem.Add(WCSharp.Buffs.Buff,WCSharp.Buffs.StackBehaviour)" />.
-    -- <para>AuraBoundBuffs will always have their <see cref="P:WCSharp.Buffs.Buff.Stacks" /> property set to the number of aura bearers applying the aura.</para>
-    -- </summary>
+
+
+
+
     OnStack = function (this, newStack)
       this.Stacks = this.Stacks + 1
-      return 1 --[[StackResult.Stack]]
+      return 1
     end
     return {
       base = function (out)
@@ -26327,10 +26252,10 @@ System.namespace("WCSharp.Buffs", function (namespace)
       end
     }
   end)
-  -- <summary>
-  -- Helper class to track the duration of a buff specific to an aura applying it. Used to handle the case of multiple auras applying the same buff to a single unit.
-  -- </summary>
-  -- <typeparam name="T">The specific type of the buff being tracked.</typeparam>
+
+
+
+
   namespace.class("AuraBuffDuration_1", function (namespace)
     return function (T)
       local __ctor__
@@ -26358,31 +26283,31 @@ System.namespace("WCSharp.Buffs", function (namespace)
       }
     end
   end)
-  -- <summary>
-  -- Tracks and runs all active <see cref="T:WCSharp.Buffs.IAura" /> instances.
-  -- </summary>
+
+
+
   namespace.class("AuraSystem", function (namespace)
     local periodicTrigger, getAuras, Add, RegisterForOwnershipChanges, OnUnitTypeChangesOwner, static
     static = function (this)
-      periodicTrigger = PeriodicDisposableTrigger_1IAura(0.03125 --[[1f / 32f]])
+      periodicTrigger = PeriodicDisposableTrigger_1IAura(0.03125)
     end
     getAuras = function ()
       return periodicTrigger:getActions()
     end
-    -- <summary>
-    -- Adds the given <paramref name="aura" /> to the system.
-    -- </summary>
+
+
+
     Add = function (aura)
       aura:Apply()
       periodicTrigger:Add(aura)
     end
-    -- <summary>
-    -- By default, <see cref="P:WCSharp.Buffs.IAura.CastingPlayer" /> is not updated when a unit changes owner.
-    -- <para>This adds an event to pass over all auras and update <see cref="P:WCSharp.Buffs.IAura.CastingPlayer" /> on ownership changes.</para>
-    -- <para>This will ignore ownership changes of unit type 'xxxx' (<see cref="F:WCSharp.Dummies.DummySystem.UNIT_TYPE_DUMMY" />).</para>
-    -- </summary>
+
+
+
+
+
     RegisterForOwnershipChanges = function ()
-      WCSharpEvents.PlayerUnitEvents.Register14(809 --[[UnitTypeEvent.ChangesOwner]], OnUnitTypeChangesOwner)
+      WCSharpEvents.PlayerUnitEvents.Register14(809, OnUnitTypeChangesOwner)
     end
     OnUnitTypeChangesOwner = function ()
       local triggerUnit = GetTriggerUnit()
@@ -26418,17 +26343,17 @@ System.namespace("WCSharp.Buffs", function (namespace)
       end
     }
   end)
-  -- <summary>
-  -- AutoBuffs are buffs which automatically tick for a specified damage/healing amount.
-  -- <para>If automatic damage/healing is not required, it is recommended to use <see cref="T:WCSharp.Buffs.TickingBuff" /> instead.</para>
-  -- </summary>
+
+
+
+
   namespace.class("AutoBuff", function (namespace)
     local Apply, Action, OnTick, Dispose, __ctor__
-    -- <inheritdoc />
+
     __ctor__ = function (this, caster, target)
       System.base(this).__ctor__(this, caster, target)
     end
-    -- <inheritdoc />
+
     Apply = function (this)
       if this.effectString ~= nil then
         this.Effect = AddSpecialEffectTarget(this.effectString, this.Target, this.effectAttachmentPoint)
@@ -26440,10 +26365,10 @@ System.namespace("WCSharp.Buffs", function (namespace)
       this.IntervalLeft = this.Interval
       this:OnApply()
     end
-    -- <inheritdoc />
+
     Action = function (this)
       if this.Interval > 0 then
-        while this.IntervalLeft <= 0.03125 --[[1f / 32f]] do
+        while this.IntervalLeft <= 0.03125 do
           this.IntervalLeft = this.IntervalLeft + this.Interval
           OnTick(this)
           if this.Active then
@@ -26461,22 +26386,22 @@ System.namespace("WCSharp.Buffs", function (namespace)
             end
           end
         end
-        this.IntervalLeft = this.IntervalLeft - (0.03125 --[[1f / 32f]])
+        this.IntervalLeft = this.IntervalLeft - (0.03125)
       end
-      if this.Duration <= 0.03125 --[[1f / 32f]] then
+      if this.Duration <= 0.03125 then
         this.Active = false
         this:OnExpire()
       else
-        this.Duration = this.Duration - (0.03125 --[[1f / 32f]])
+        this.Duration = this.Duration - (0.03125)
       end
     end
-    -- <summary>
-    -- Executes every <see cref="P:WCSharp.Buffs.AutoBuff.Interval" />.
-    -- <para>This is called BEFORE the automatic damage/healing occurs.</para>
-    -- </summary>
+
+
+
+
     OnTick = function (this)
     end
-    -- <inheritdoc />
+
     Dispose = function (this)
       this:OnDispose()
       if this.Effect ~= nil then
@@ -26519,25 +26444,25 @@ System.namespace("WCSharp.Buffs", function (namespace)
       end
     }
   end)
-  -- <summary>
-  -- BoundBuffs have additional logic for binding the buff to an in-game buff with support of the <see cref="T:WCSharp.Dummies.DummySystem" />.
-  -- <para>As a result, this buff works a little differently, and you should read the wiki in order to see how you should handle these buffs.</para>
-  -- </summary>
+
+
+
+
   namespace.class("BoundBuff", function (namespace)
     local Bind, Bind1, Apply, Action, OnTick, OnStack, Dispose, class, 
     __ctor__
-    -- <inheritdoc />
+
     __ctor__ = function (this, caster, target)
       WCSharpBuffs.Buff.__ctor__(this, caster, target)
     end
-    -- <summary>
-    -- Will use the <see cref="T:WCSharp.Dummies.DummySystem" /> to cast the given buffing ability on the target and then track it to synchronise removal.
-    -- </summary>
-    -- <param name="abilityId">The ability ID which applies the buff that should be tracked</param>
-    -- <param name="buffId">The buff ID to track</param>
-    -- <param name="orderId">The order ID of the ability to cast</param>
-    -- <param name="level">The level of the ability to cast</param>
-    -- <param name="dummyPlayer">Who the owner of the dummy should be set to, defaults to Neutral Passive</param>
+
+
+
+
+
+
+
+
     Bind = function (this, abilityId, buffId, orderId, level, dummyPlayer)
       if dummyPlayer == nil then
         dummyPlayer = Player(PLAYER_NEUTRAL_PASSIVE)
@@ -26552,13 +26477,13 @@ System.namespace("WCSharp.Buffs", function (namespace)
       WCSharpDummies.DummySystem.RecycleDummy(dummy, 2)
       this.buffId = buffId
     end
-    -- <summary>
-    -- Will add the given aura to the unit if necessary and set its level accordingly. The aura will automatically be hidden from the command UI
-    -- and removed when the buff is removed.
-    -- </summary>
-    -- <param name="auraId"></param>
-    -- <param name="buffId"></param>
-    -- <param name="level"></param>
+
+
+
+
+
+
+
     Bind1 = function (this, auraId, buffId, level)
       if GetUnitAbilityLevel(this.Target, auraId) == 0 then
         UnitAddAbility(this.Target, auraId)
@@ -26568,7 +26493,7 @@ System.namespace("WCSharp.Buffs", function (namespace)
       this.auraId = auraId
       this.buffId = buffId
     end
-    -- <inheritdoc />
+
     Apply = function (this)
       if this.effectString ~= nil then
         this.Effect = AddSpecialEffectTarget(this.effectString, this.Target, this.effectAttachmentPoint)
@@ -26580,7 +26505,7 @@ System.namespace("WCSharp.Buffs", function (namespace)
       this.IntervalLeft = this.Interval
       this:OnApply()
     end
-    -- <inheritdoc />
+
     Action = function (this)
       if this.BindLeeway <= 0 then
         if GetUnitAbilityLevel(this.Target, this.buffId) == 0 then
@@ -26591,32 +26516,32 @@ System.namespace("WCSharp.Buffs", function (namespace)
         this.BindLeeway = this.BindLeeway - 1
       end
       if this.Interval > 0 then
-        while this.IntervalLeft <= 0.03125 --[[1f / 32f]] do
+        while this.IntervalLeft <= 0.03125 do
           this.IntervalLeft = this.IntervalLeft + this.Interval
           this:OnTick()
         end
-        this.IntervalLeft = this.IntervalLeft - (0.03125 --[[1f / 32f]])
+        this.IntervalLeft = this.IntervalLeft - (0.03125)
       end
-      if this.Duration <= 0.03125 --[[1f / 32f]] then
+      if this.Duration <= 0.03125 then
         this.Active = false
         this:OnExpire()
       else
-        this.Duration = this.Duration - (0.03125 --[[1f / 32f]])
+        this.Duration = this.Duration - (0.03125)
       end
     end
-    -- <summary>
-    -- Executes every <see cref="P:WCSharp.Buffs.BoundBuff.Interval" />.
-    -- </summary>
+
+
+
     OnTick = function (this)
     end
-    -- <summary>
-    -- Executes whenever this buff receives a new stack via <see cref="M:WCSharp.Buffs.BuffSystem.Add(WCSharp.Buffs.Buff,WCSharp.Buffs.StackBehaviour)" />.
-    -- <para>By default, BoundBuff will return <see cref="F:WCSharp.Buffs.StackResult.Consume" />.</para>
-    -- </summary>
+
+
+
+
     OnStack = function (this, newStack)
-      return 2 --[[StackResult.Consume]]
+      return 2
     end
-    -- <inheritdoc />
+
     Dispose = function (this)
       this:OnDispose()
       if this.Effect ~= nil then
@@ -26682,16 +26607,16 @@ System.namespace("WCSharp.Buffs", function (namespace)
     }
     return class
   end)
-  -- <summary>
-  -- The most basic buff implementation, with almost all logic undefined.
-  -- <para>It is recommended to use one of the more concrete types instead, such as <see cref="T:WCSharp.Buffs.PassiveBuff" />.</para>
-  -- </summary>
+
+
+
+
   namespace.class("Buff", function (namespace)
     local getEffectString, setEffectString, getEffectAttachmentPoint, setEffectAttachmentPoint, getEffectScale, setEffectScale, OnApply, OnStack, 
     OnDeath, OnDispel, OnDispose, OnExpire, RemoveInstantly, class, __ctor__
-    -- <summary>
-    -- Will set Caster, CastingPlayer, Target and TargetPlayer accordingly.
-    -- </summary>
+
+
+
     __ctor__ = function (this, caster, target)
       this.BuffTypes = ListString()
       this.Caster = caster
@@ -26753,52 +26678,52 @@ System.namespace("WCSharp.Buffs", function (namespace)
       end
       this.effectScale = value
     end
-    -- <summary>
-    -- Executes immediately upon application of the buff.
-    -- </summary>
+
+
+
     OnApply = function (this)
     end
-    -- <summary>
-    -- Executes whenever this buff receives a new stack via <see cref="M:WCSharp.Buffs.BuffSystem.Add(WCSharp.Buffs.Buff,WCSharp.Buffs.StackBehaviour)" />.
-    -- <para>By default, the stacks of <paramref name="newStack" /> are added to this buff and <see cref="F:WCSharp.Buffs.StackResult.Stack" /> is returned.</para>
-    -- </summary>
+
+
+
+
     OnStack = function (this, newStack)
       this.Stacks = this.Stacks + newStack.Stacks
       this.Duration = math.Max(this.Duration, newStack.Duration)
-      return 1 --[[StackResult.Stack]]
+      return 1
     end
-    -- <summary>
-    -- Executes immediately after <see cref="P:WCSharp.Buffs.Buff.Target" /> dies.
-    -- <para>Note: <paramref name="killingBlow" /> will be true if the unit dies while the buffs actions are being evaluated.
-    -- It may not be directly responsible for the death due to asynchronous events.</para>
-    -- </summary>
-    -- <param name="killingBlow"></param>
-    -- <returns></returns>
+
+
+
+
+
+
+
     OnDeath = function (this, killingBlow)
     end
-    -- <summary>
-    -- Executes when an attempt is made to dispel the target. Return the number of dispel charges consmed.
-    -- <para>If after this method is called the Stacks is at 0, the buff is automatically disposed.</para>
-    -- </summary>
+
+
+
+
     OnDispel = function (this, dispeller, dispelCharges)
       local num = math.Min(this.Stacks, dispelCharges)
       this.Stacks = this.Stacks - num
       return num
     end
-    -- <summary>
-    -- Executes when the buff is removed for any reason whatsoever.
-    -- </summary>
+
+
+
     OnDispose = function (this)
     end
-    -- <summary>
-    -- Executes when the buff expires by reaching the end of its duration. Does not trigger when the buff is removed via a dispel or target dies.
-    -- </summary>
+
+
+
     OnExpire = function (this)
     end
-    -- <summary>
-    -- Will instantly remove this buff from the unit, including calling <see cref="M:WCSharp.Buffs.Buff.OnDispose" /> and any other relevant steps.
-    -- <para>It's recommended to just set <see cref="P:WCSharp.Buffs.Buff.Active" /> to false unless the removal should not be delayed for some reason.</para>
-    -- </summary>
+
+
+
+
     RemoveInstantly = function (this)
       if this.Active then
         this.Active = false
@@ -26867,9 +26792,9 @@ System.namespace("WCSharp.Buffs", function (namespace)
     }
     return class
   end)
-  -- <summary>
-  -- Tracks and runs all active <see cref="T:WCSharp.Buffs.Buff" /> instances.
-  -- </summary>
+
+
+
   namespace.class("BuffSystem", function (namespace)
     local buffs, buffsByUnit, index, size, getBuffs, Action, OnDeath, Add, 
     Remove, RegisterForOwnershipChanges, OnUnitTypeChangesOwner, GetBuffsOnUnit, Dispel, Dispel1, Dispel2, Dispel3, 
@@ -26877,7 +26802,7 @@ System.namespace("WCSharp.Buffs", function (namespace)
     static = function (this)
       buffs = ListBuff()
       buffsByUnit = DictunitListBuff()
-      WCSharpEvents.PlayerUnitEvents.Register14(813 --[[UnitTypeEvent.Dies]], OnDeath)
+      WCSharpEvents.PlayerUnitEvents.Register14(813, OnDeath)
       WCSharpEvents.PeriodicEvents.AddPeriodicEvent(Action, 0.03125)
     end
     index = 0
@@ -26934,10 +26859,10 @@ System.namespace("WCSharp.Buffs", function (namespace)
         end
       end
     end
-    -- <summary>
-    -- Adds the given <paramref name="buff" /> to the system. If addition is successful, will invoke <see cref="M:WCSharp.Buffs.Buff.OnApply" />.
-    -- </summary>
-    -- <returns>The buff that was applied, or the buff whose stacks were added to.</returns>
+
+
+
+
     Add = function (buff, stackBehaviour)
       local default, value = buffsByUnit:TryGetValue(buff.Target, nil)
       if default then
@@ -26945,12 +26870,12 @@ System.namespace("WCSharp.Buffs", function (namespace)
           local type = System.ObjectGetType(buff)
           for i = 0, #value - 1 do
             local buff2 = value:get(i)
-            if buff2.Active and System.ObjectGetType(buff2) == type and (stackBehaviour == 1 --[[StackBehaviour.Stack]] or (stackBehaviour == 2 --[[StackBehaviour.StackCaster]] and buff.Caster == buff2.Caster) or buff.CastingPlayer == buff2.CastingPlayer) then
+            if buff2.Active and System.ObjectGetType(buff2) == type and (stackBehaviour == 1 or (stackBehaviour == 2 and buff.Caster == buff2.Caster) or buff.CastingPlayer == buff2.CastingPlayer) then
               repeat
                 local extern = buff2:OnStack(buff)
-                if extern == 1 --[[StackResult.Stack]] then
+                if extern == 1 then
                   return buff2
-                elseif extern == 2 --[[StackResult.Consume]] then
+                elseif extern == 2 then
                   buff2.Active = false
                   break
                 end
@@ -26979,13 +26904,13 @@ System.namespace("WCSharp.Buffs", function (namespace)
         end
       end
     end
-    -- <summary>
-    -- By default, <see cref="P:WCSharp.Buffs.Buff.CastingPlayer" /> and <see cref="P:WCSharp.Buffs.Buff.TargetPlayer" /> are not updated when a unit changes owner.
-    -- <para>This adds an event to pass over all auras and update <see cref="P:WCSharp.Buffs.Buff.CastingPlayer" /> and <see cref="P:WCSharp.Buffs.Buff.TargetPlayer" /> on ownership changes.</para>
-    -- <para>This will ignore ownership changes of unit type 'xxxx' (<see cref="F:WCSharp.Dummies.DummySystem.UNIT_TYPE_DUMMY" />).</para>
-    -- </summary>
+
+
+
+
+
     RegisterForOwnershipChanges = function ()
-      WCSharpEvents.PlayerUnitEvents.Register14(809 --[[UnitTypeEvent.ChangesOwner]], OnUnitTypeChangesOwner)
+      WCSharpEvents.PlayerUnitEvents.Register14(809, OnUnitTypeChangesOwner)
     end
     OnUnitTypeChangesOwner = function ()
       local triggerUnit = GetTriggerUnit()
@@ -27003,9 +26928,9 @@ System.namespace("WCSharp.Buffs", function (namespace)
         buffsOnUnit:get(j).TargetPlayer = owningPlayer
       end
     end
-    -- <summary>
-    -- Uses a dictionary to quickly find all buffs attached to the given unit.
-    -- </summary>
+
+
+
     GetBuffsOnUnit = function (unit)
       local default, value = buffsByUnit:TryGetValue(unit, nil)
       if not default then
@@ -27015,14 +26940,14 @@ System.namespace("WCSharp.Buffs", function (namespace)
         return x.Active
       end))
     end
-    -- <summary>
-    -- Attempts to dispel buffs from the target. Buff types are ignored.
-    -- </summary>
-    -- <param name="target">The target to dispel from.</param>
-    -- <param name="dispeller">The caster of the dispel effect.</param>
-    -- <param name="isBeneficial">Whether to dispel beneficial or detrimental buffs.</param>
-    -- <param name="dispelAmount">The maximum number of buffs to dispel.</param>
-    -- <returns>All dispels.</returns>
+
+
+
+
+
+
+
+
     Dispel = function (target, dispeller, isBeneficial, dispelAmount)
       local list = ListDispel()
       local buffsOnUnit = GetBuffsOnUnit(target)
@@ -27043,15 +26968,15 @@ System.namespace("WCSharp.Buffs", function (namespace)
       end
       return list
     end
-    -- <summary>
-    -- Attempts to dispel buffs from the target with the given dispel type.
-    -- </summary>
-    -- <param name="target">The target to dispel from.</param>
-    -- <param name="dispeller">The caster of the dispel effect.</param>
-    -- <param name="isBeneficial">Whether to dispel beneficial or detrimental buffs.</param>
-    -- <param name="dispelAmount">The maximum number of buffs to dispel.</param>
-    -- <param name="dispelType">The type of buffs that can be dispelled.</param>
-    -- <returns>All dispels.</returns>
+
+
+
+
+
+
+
+
+
     Dispel1 = function (target, dispeller, isBeneficial, dispelAmount, dispelType)
       local list = ListDispel()
       local buffsOnUnit = GetBuffsOnUnit(target)
@@ -27072,15 +26997,15 @@ System.namespace("WCSharp.Buffs", function (namespace)
       end
       return list
     end
-    -- <summary>
-    -- Attempts to dispel buffs with any of the given dispel types.
-    -- </summary>
-    -- <param name="target">The target to dispel from.</param>
-    -- <param name="dispeller">The caster of the dispel effect.</param>
-    -- <param name="isBeneficial">Whether to dispel beneficial or detrimental buffs.</param>
-    -- <param name="dispelAmount">The maximum number of buffs to dispel.</param>
-    -- <param name="dispelTypes">The buff types that can be dispelled.</param>
-    -- <returns>All dispels.</returns>
+
+
+
+
+
+
+
+
+
     Dispel2 = function (target, dispeller, isBeneficial, dispelAmount, dispelTypes)
       local list = ListDispel()
       local buffsOnUnit = GetBuffsOnUnit(target)
@@ -27103,16 +27028,16 @@ System.namespace("WCSharp.Buffs", function (namespace)
       end
       return list
     end
-    -- <summary>
-    -- For more complex buff hierarchies. Attempts to dispel buffs with any of the given dispel types, unless it has an excluded type.
-    -- </summary>
-    -- <param name="target">The target to dispel from.</param>
-    -- <param name="dispeller">The caster of the dispel effect.</param>
-    -- <param name="isBeneficial">Whether to dispel beneficial or detrimental buffs.</param>
-    -- <param name="dispelAmount">The maximum number of buffs to dispel.</param>
-    -- <param name="dispelTypes">The buff types that can be dispelled.</param>
-    -- <param name="exclusions">Will not dispel buffs with any of the given exclusion types.</param>
-    -- <returns>All dispels.</returns>
+
+
+
+
+
+
+
+
+
+
     Dispel3 = function (target, dispeller, isBeneficial, dispelAmount, dispelTypes, exclusions)
       local list = ListDispel()
       local buffsOnUnit = GetBuffsOnUnit(target)
@@ -27177,9 +27102,9 @@ System.namespace("WCSharp.Buffs", function (namespace)
       end
     }
   end)
-  -- <summary>
-  -- Represents a dispel attempt on a buff. Will be returned even if the dispel was resisted (i.e. no stacks were dispelled).
-  -- </summary>
+
+
+
   namespace.class("Dispel", function (namespace)
     local __ctor__
     __ctor__ = function (this, buff, dispelChargesConsumed, buffStacksDispelled)
@@ -27209,9 +27134,9 @@ System.namespace("WCSharp.Buffs", function (namespace)
       end
     }
   end)
-  -- <summary>
-  -- Backing interface for auras, since different auras can otherwise not be stored in a generic way.
-  -- </summary>
+
+
+
   namespace.interface("IAura", function ()
     return {
       base = function (out)
@@ -27226,16 +27151,16 @@ System.namespace("WCSharp.Buffs", function (namespace)
       end
     }
   end)
-  -- <summary>
-  -- A very basic buff implementation that simply applies and removes itself according to its duration.
-  -- </summary>
+
+
+
   namespace.class("PassiveBuff", function (namespace)
     local Apply, Action, Dispose, __ctor__
-    -- <inheritdoc />
+
     __ctor__ = function (this, caster, target)
       System.base(this).__ctor__(this, caster, target)
     end
-    -- <inheritdoc />
+
     Apply = function (this)
       if this.effectString ~= nil then
         this.Effect = AddSpecialEffectTarget(this.effectString, this.Target, this.effectAttachmentPoint)
@@ -27246,16 +27171,16 @@ System.namespace("WCSharp.Buffs", function (namespace)
       this.Disposed = false
       this:OnApply()
     end
-    -- <inheritdoc />
+
     Action = function (this)
-      if this.Duration <= 0.03125 --[[1f / 32f]] then
+      if this.Duration <= 0.03125 then
         this.Active = false
         this:OnExpire()
       else
-        this.Duration = this.Duration - (0.03125 --[[1f / 32f]])
+        this.Duration = this.Duration - (0.03125)
       end
     end
-    -- <inheritdoc />
+
     Dispose = function (this)
       this:OnDispose()
       if this.Effect ~= nil then
@@ -27286,15 +27211,15 @@ System.namespace("WCSharp.Buffs", function (namespace)
       end
     }
   end)
-  -- <summary>
-  -- A specialized buff for handling multiple underlying buffs, each with their own duration. The buff will tick only once, but the durations of all underlying buffs are managed individually.
-  -- </summary>
-  -- <typeparam name="T">This should be the type implementing this abstract.</typeparam>
+
+
+
+
   namespace.class("RollingBuff_1", function (namespace)
     return function (T)
       local getBuffs, OnStack, Apply, Action, OnExpireStack, OnTick, Dispose, __ctor__
       local ListT = System.List(T)
-      -- <inheritdoc />
+
       __ctor__ = function (this, caster, target)
         System.base(this).__ctor__(this, caster, target)
         this.buffs = ListT()
@@ -27302,17 +27227,17 @@ System.namespace("WCSharp.Buffs", function (namespace)
       getBuffs = function (this)
         return this.buffs
       end
-      -- <summary>
-      -- Executes whenever this buff receives a new stack via <see cref="M:WCSharp.Buffs.BuffSystem.Add(WCSharp.Buffs.Buff,WCSharp.Buffs.StackBehaviour)" />.
-      -- When overriding this method, you should always invoke base.OnStack(newStack).
-      -- </summary>
+
+
+
+
       OnStack = function (this, newStack)
         local val = System.cast(T, newStack)
         this.buffs:Add(val)
         this.Stacks = this.Stacks + val.Stacks
-        return 1 --[[StackResult.Stack]]
+        return 1
       end
-      -- <inheritdoc />
+
       Apply = function (this)
         if this.effectString ~= nil then
           this.Effect = AddSpecialEffectTarget(this.effectString, this.Target, this.effectAttachmentPoint)
@@ -27325,17 +27250,17 @@ System.namespace("WCSharp.Buffs", function (namespace)
         this.buffs:Add(System.cast(T, this))
         this:OnApply()
       end
-      -- <inheritdoc />
+
       Action = function (this)
         if this.Interval > 0 then
-          while this.IntervalLeft <= 0.03125 --[[1f / 32f]] do
+          while this.IntervalLeft <= 0.03125 do
             this.IntervalLeft = this.Interval
             OnTick(this)
           end
         end
-        this.IntervalLeft = this.IntervalLeft - (0.03125 --[[1f / 32f]])
+        this.IntervalLeft = this.IntervalLeft - (0.03125)
         WCSharpSharedExtensions.IListExtensions.IterateWithRemoval(this.buffs, function (x)
-          if x.Duration <= 0.03125 --[[1f / 32f]] then
+          if x.Duration <= 0.03125 then
             this.Stacks = this.Stacks - x.Stacks
             OnExpireStack(this, x)
             x:OnExpire()
@@ -27343,7 +27268,7 @@ System.namespace("WCSharp.Buffs", function (namespace)
             return false
           end
           local val = x
-          val.Duration = x.Duration - 0.03125 --[[1f / 32f]]
+          val.Duration = x.Duration - 0.03125
           return true
         end, T)
         if #this.buffs == 0 then
@@ -27355,18 +27280,18 @@ System.namespace("WCSharp.Buffs", function (namespace)
           end, System.Single)
         end
       end
-      -- <summary>
-      -- Executes whenever a stack expires (executed from the main stack).
-      -- </summary>
-      -- <param name="expiredStack">The stack that expired.</param>
+
+
+
+
       OnExpireStack = function (this, expiredStack)
       end
-      -- <summary>
-      -- Executes every <see cref="P:WCSharp.Buffs.RollingBuff`1.Interval" />.
-      -- </summary>
+
+
+
       OnTick = function (this)
       end
-      -- <inheritdoc />
+
       Dispose = function (this)
         this:OnDispose()
         if this.Effect ~= nil then
@@ -27417,9 +27342,9 @@ System.namespace("WCSharp.Buffs", function (namespace)
       }
     end
   end)
-  -- <summary>
-  -- An enum to indicate how buffs should be stacked.
-  -- </summary>
+
+
+
   namespace.enum("StackBehaviour", function ()
     return {
       None = 0,
@@ -27439,9 +27364,9 @@ System.namespace("WCSharp.Buffs", function (namespace)
       end
     }
   end)
-  -- <summary>
-  -- An enum to indicate how the buffs were stacked.
-  -- </summary>
+
+
+
   namespace.enum("StackResult", function ()
     return {
       Reject = 0,
@@ -27459,17 +27384,17 @@ System.namespace("WCSharp.Buffs", function (namespace)
       end
     }
   end)
-  -- <summary>
-  -- A simple buff that only adds a ticking behaviour, allowing an action to be performed every interval.
-  -- If you simply want to damage/heal every tick, you can use <see cref="T:WCSharp.Buffs.AutoBuff" /> instead to simplify the process.
-  -- </summary>
+
+
+
+
   namespace.class("TickingBuff", function (namespace)
     local Apply, Action, Dispose, __ctor__
-    -- <inheritdoc />
+
     __ctor__ = function (this, caster, target)
       System.base(this).__ctor__(this, caster, target)
     end
-    -- <inheritdoc />
+
     Apply = function (this)
       if this.effectString ~= nil then
         this.Effect = AddSpecialEffectTarget(this.effectString, this.Target, this.effectAttachmentPoint)
@@ -27481,23 +27406,23 @@ System.namespace("WCSharp.Buffs", function (namespace)
       this.IntervalLeft = this.Interval
       this:OnApply()
     end
-    -- <inheritdoc />
+
     Action = function (this)
       if this.Interval > 0 then
-        while this.IntervalLeft <= 0.03125 --[[1f / 32f]] do
+        while this.IntervalLeft <= 0.03125 do
           this.IntervalLeft = this.IntervalLeft + this.Interval
           OnTick(this)
         end
       end
-      this.IntervalLeft = this.IntervalLeft - (0.03125 --[[1f / 32f]])
-      if this.Duration <= 0.03125 --[[1f / 32f]] then
+      this.IntervalLeft = this.IntervalLeft - (0.03125)
+      if this.Duration <= 0.03125 then
         this.Active = false
         this:OnExpire()
       else
-        this.Duration = this.Duration - (0.03125 --[[1f / 32f]])
+        this.Duration = this.Duration - (0.03125)
       end
     end
-    -- <inheritdoc />
+
     Dispose = function (this)
       this:OnDispose()
       if this.Effect ~= nil then
@@ -27571,9 +27496,9 @@ System.namespace("WCSharp.DateTime", function (namespace)
       end
     }
   end)
-  -- <summary>
-  -- Defines a number of different methods by which a synchronised <see cref="T:WCSharp.DateTime.WcDateTime" /> can be calculated.
-  -- </summary>
+
+
+
   namespace.enum("DateTimeSyncMethod", function ()
     return {
       Earliest = 0,
@@ -27615,11 +27540,11 @@ System.namespace("WCSharp.DateTime", function (namespace)
       end) then
         local default
         local extern = this.method
-        if extern == 0 --[[DateTimeSyncMethod.Earliest]] then
+        if extern == 0 then
           default = ResolveEarliest(this)
-        elseif extern == 1 --[[DateTimeSyncMethod.Latest]] then
+        elseif extern == 1 then
           default = ResolveLatest(this)
-        elseif extern == 2 --[[DateTimeSyncMethod.Average]] then
+        elseif extern == 2 then
           default = ResolveAverage(this)
         else
           default = ResolveBestFit(this)
@@ -27701,9 +27626,9 @@ System.namespace("WCSharp.DateTime", function (namespace)
       end
     }
   end)
-  -- <summary>
-  -- Represents an instant in time, with a precision in seconds.
-  -- </summary>
+
+
+
   namespace.class("WcDateTime", function (namespace)
     local daysToMonth365, daysToMonth366, baseTime, offsetByMethod, getSecond, getMinute, getHour, getDay, 
     getMonth, getYear, getDayOfWeek, getDayOfYear, getDate, getTimeOfDay, getZero, getMinValue, 
@@ -27737,35 +27662,35 @@ System.namespace("WCSharp.DateTime", function (namespace)
       daysToMonth366 = ArrayInt32 { 0, 31, 60, 91, 121, 152, 182, 213, 244, 274, 305, 335, 366 }
       offsetByMethod = DictInt32Int32()
     end
-    -- <summary>
-    -- Creates a new <see cref="T:WCSharp.DateTime.WcDateTime" /> with the given number of seconds since January 1st, 1970, 00:00:00.
-    -- </summary>
-    -- <param name="seconds"></param>
+
+
+
+
     __ctor1__ = function (this, seconds)
       this.TotalSeconds = seconds
     end
-    -- <summary>
-    -- Creates a new <see cref="T:WCSharp.DateTime.WcDateTime" /> with the given year, month and day.
-    -- <para>The given date must be between January 1st, 1970, 00:00:00 and January 19, 2038, 03:14:07.</para>
-    -- </summary>
-    -- <param name="year">The year. Must be between 1970 and 2038.</param>
-    -- <param name="month">The month of the year. Must be between 1 and 12.</param>
-    -- <param name="day">The day of the month.</param>
+
+
+
+
+
+
+
     __ctor2__ = function (this, year, month, day)
       this.TotalSeconds = GetSeconds(year, month, day, 0, 0, 0)
     end
     __ctor3__ = function (this, table)
       this.TotalSeconds = GetSeconds(System.cast(System.Int32, table:get("year")), System.cast(System.Int32, table:get("month")), System.cast(System.Int32, table:get("day")), System.cast(System.Int32, table:get("hour")), System.cast(System.Int32, table:get("min")), System.cast(System.Int32, table:get("sec")))
     end
-    -- <summary>
-    -- 
-    -- </summary>
-    -- <param name="year">The year. Must be between 1970 and 2038.</param>
-    -- <param name="month">The month of the year. Must be between 1 and 12.</param>
-    -- <param name="day">The day of the month.</param>
-    -- <param name="hour">The hour of the day. Must be between 0 and 23.</param>
-    -- <param name="minute">The minute of the hour. Must be between 0 and 59.</param>
-    -- <param name="second">The second of the minute. Must be between 0 and 59.</param>
+
+
+
+
+
+
+
+
+
     __ctor4__ = function (this, year, month, day, hour, minute, second)
       this.TotalSeconds = GetSeconds(year, month, day, hour, minute, second)
     end
@@ -27780,13 +27705,13 @@ System.namespace("WCSharp.DateTime", function (namespace)
       return System.div(System.mod(this.TotalSeconds, 86400), 3600)
     end
     getDay = function (this)
-      return GetDatePart(this, 3 --[[DatePart.Day]])
+      return GetDatePart(this, 3)
     end
     getMonth = function (this)
-      return GetDatePart(this, 2 --[[DatePart.Month]])
+      return GetDatePart(this, 2)
     end
     getYear = function (this)
-      return GetDatePart(this, 0 --[[DatePart.Year]])
+      return GetDatePart(this, 0)
     end
     getDayOfWeek = function (this)
       local num = System.mod(System.div(this.TotalSeconds, 86400), 7)
@@ -27796,7 +27721,7 @@ System.namespace("WCSharp.DateTime", function (namespace)
       return (System.mod((num + 4), 7))
     end
     getDayOfYear = function (this)
-      return GetDatePart(this, 1 --[[DatePart.DayOfYear]]) + 1
+      return GetDatePart(this, 1) + 1
     end
     getDate = function (this)
       local year, month, day = GetDatePart1(this)
@@ -27809,10 +27734,10 @@ System.namespace("WCSharp.DateTime", function (namespace)
       return class(0)
     end
     getMinValue = function ()
-      return class(-2147483648 --[[Int32.MinValue]])
+      return class(-2147483648)
     end
     getMaxValue = function ()
-      return class(2147483647 --[[Int32.MaxValue]])
+      return class(2147483647)
     end
     getLocalTime = function ()
       return System.new(class, 3, WCSharpShared.LuaTable(os.date("*t")))
@@ -27852,69 +27777,69 @@ System.namespace("WCSharp.DateTime", function (namespace)
       end
       return num + array:get(month - 1) * 86400 + (day - 1) * 86400 + hour * 3600 + minute * 60 + second
     end
-    -- <summary>
-    -- Returns a new <see cref="T:WCSharp.DateTime.WcDateTime" /> that is equal to <paramref name="a" /> plus the number of seconds in <paramref name="b" />.
-    -- </summary>
+
+
+
     op_Addition = function (a, b)
       return class(a.TotalSeconds + b.seconds)
     end
-    -- <summary>
-    -- Returns a new <see cref="T:WCSharp.DateTime.WcDateTime" /> that is equal to <paramref name="a" /> minus the number of seconds in <paramref name="b" />.
-    -- </summary>
+
+
+
     op_Subtraction = function (a, b)
       return class(a.TotalSeconds - b.seconds)
     end
-    -- <summary>
-    -- Returns a <see cref="T:WCSharp.DateTime.WcTimeSpan" /> representing the time from <paramref name="a" /> to <paramref name="b" />.
-    -- </summary>
+
+
+
     op_Subtraction1 = function (a, b)
       return WCSharpDateTime.WcTimeSpan(a.TotalSeconds - b.TotalSeconds)
     end
-    -- <summary>
-    -- Returns true if <paramref name="a" /> is the same time as <paramref name="b" />.
-    -- </summary>
+
+
+
     op_Equality = function (a, b)
       if a ~= nil then
         return a.TotalSeconds == b.TotalSeconds
       end
       return b == nil
     end
-    -- <summary>
-    -- Returns true if <paramref name="a" /> is not the same time as <paramref name="b" />.
-    -- </summary>
+
+
+
     op_Inequality = function (a, b)
       return not (op_Equality(a, b))
     end
-    -- <summary>
-    -- Returns true if <paramref name="a" /> is earlier than <paramref name="b" />.
-    -- </summary>
+
+
+
     op_LessThan = function (a, b)
       if a ~= nil and b ~= nil then
         return a.TotalSeconds < b.TotalSeconds
       end
       return false
     end
-    -- <summary>
-    -- Returns true if <paramref name="a" /> is earlier than or equal to <paramref name="b" />.
-    -- </summary>
+
+
+
     op_LessThanOrEqual = function (a, b)
       if a ~= nil and b ~= nil then
         return a.TotalSeconds <= b.TotalSeconds
       end
       return false
     end
-    -- <summary>
-    -- Returns true if <paramref name="a" /> is later than <paramref name="b" />.
-    -- </summary>
+
+
+
     op_GreaterThan = function (a, b)
       if a ~= nil and b ~= nil then
         return a.TotalSeconds > b.TotalSeconds
       end
       return false
     end
-    -- <summary>
-    -- Returns true if <paramref name="a" /> is later than or equal to <paramref name="b" />.
-    -- </summary>
+
+
+
     op_GreaterThanOrEqual = function (a, b)
       if a ~= nil and b ~= nil then
         return a.TotalSeconds >= b.TotalSeconds
@@ -27930,11 +27855,11 @@ System.namespace("WCSharp.DateTime", function (namespace)
         num3 = 3
       end
       local result = 1970 + num2 * 4 + num3
-      if part == 0 --[[DatePart.Year]] then
+      if part == 0 then
         return result
       end
       num = num - ((num >= 1096) and (num3 * 365 + 1) or (num3 * 365))
-      if part == 1 --[[DatePart.DayOfYear]] then
+      if part == 1 then
         return num
       end
       local default
@@ -27951,7 +27876,7 @@ System.namespace("WCSharp.DateTime", function (namespace)
           i = i + 1
         end
       end
-      if part ~= 2 --[[DatePart.Month]] then
+      if part ~= 2 then
         return num - array:get(i - 1) + 1
       end
       return i
@@ -27980,52 +27905,52 @@ System.namespace("WCSharp.DateTime", function (namespace)
       day = num - array:get(month - 1) + 1
       return year, month, day
     end
-    -- <summary>
-    -- Returns a new <see cref="T:WCSharp.DateTime.WcDateTime" /> that is an amount of time indicated by <paramref name="value" /> into the future.
-    -- </summary>
-    -- <param name="value">The amount of time to move this instance into the future.</param>
+
+
+
+
     Add = function (this, value)
       return class(this.TotalSeconds + value.seconds)
     end
-    -- <summary>
-    -- Returns a new <see cref="T:WCSharp.DateTime.WcDateTime" /> that is an amount of time indicated by <paramref name="value" /> into the past.
-    -- </summary>
-    -- <param name="value">The amount of time to move this instance into the past.</param>
+
+
+
+
     Subtract = function (this, value)
       return op_Subtraction1(this, value)
     end
-    -- <summary>
-    -- Returns a new <see cref="T:WCSharp.DateTime.WcDateTime" /> that is a given number of seconds into the future.
-    -- </summary>
-    -- <param name="seconds">The amount of seconds to move this instance into the future.</param>
+
+
+
+
     AddSeconds = function (this, seconds)
       return class(this.TotalSeconds + seconds)
     end
-    -- <summary>
-    -- Returns a new <see cref="T:WCSharp.DateTime.WcDateTime" /> that is a given number of minutes into the future.
-    -- </summary>
-    -- <param name="minutes">The amount of minutes to move this instance into the future.</param>
+
+
+
+
     AddMinutes = function (this, minutes)
       return class(this.TotalSeconds + minutes * 60)
     end
-    -- <summary>
-    -- Returns a new <see cref="T:WCSharp.DateTime.WcDateTime" /> that is a given number of hours into the future.
-    -- </summary>
-    -- <param name="hours">The amount of hours to move this instance into the future.</param>
+
+
+
+
     AddHours = function (this, hours)
       return class(this.TotalSeconds + hours * 3600)
     end
-    -- <summary>
-    -- Returns a new <see cref="T:WCSharp.DateTime.WcDateTime" /> that is a given number of days into the future.
-    -- </summary>
-    -- <param name="days">The amount of days to move this instance into the future.</param>
+
+
+
+
     AddDays = function (this, days)
       return class(this.TotalSeconds + days * 86400)
     end
-    -- <summary>
-    -- Returns a new <see cref="T:WCSharp.DateTime.WcDateTime" /> that is a given number of months into the future.
-    -- </summary>
-    -- <param name="months">The amount of months to move this instance into the future.</param>
+
+
+
+
     AddMonths = function (this, months)
       local year, month, day = GetDatePart1(this)
       year = year + (System.div((month + months), 12))
@@ -28039,14 +27964,14 @@ System.namespace("WCSharp.DateTime", function (namespace)
       day = math.Min(default:get(month), day)
       return System.new(class, 4, year, month, day, getHour(this), getMinute(this), getSecond(this))
     end
-    -- <summary>
-    -- Returns a new <see cref="T:WCSharp.DateTime.WcDateTime" /> that is a given number of years into the future.
-    -- </summary>
-    -- <param name="years">The amount of years to move this instance into the future.</param>
+
+
+
+
     AddYears = function (this, years)
       return AddMonths(this, years * 12)
     end
-    -- <inheritdoc />
+
     CompareToObj = function (this, obj)
       local other = obj
       if not (System.is(other, class)) then
@@ -28054,21 +27979,21 @@ System.namespace("WCSharp.DateTime", function (namespace)
       end
       return CompareTo(this, other)
     end
-    -- <inheritdoc />
+
     CompareTo = function (this, other)
       if other ~= nil then
         return System.Int32.CompareTo(this.TotalSeconds, other.TotalSeconds)
       end
       return 1
     end
-    -- <inheritdoc />
+
     Equals = function (this, other)
       if other ~= nil then
         return this.TotalSeconds == other.TotalSeconds
       end
       return false
     end
-    -- <inheritdoc />
+
     EqualsObj = function (this, obj)
       local wcDateTime = obj
       if System.is(wcDateTime, class) then
@@ -28076,23 +28001,23 @@ System.namespace("WCSharp.DateTime", function (namespace)
       end
       return false
     end
-    -- <inheritdoc />
+
     GetHashCode = function (this)
       return this.TotalSeconds
     end
-    -- <summary>
-    -- Outputs this <see cref="T:WCSharp.DateTime.WcDateTime" /> in the default format of "yyyy-MM-dd HH:mm:ss".
-    -- </summary>
+
+
+
     ToString = function (this)
       return ToString1(this, "yyyy-MM-dd HH:mm:ss")
     end
-    -- <summary>
-    -- Returns a string representation using the given format.
-    -- <para>Supports standard C# format specifiers for year, month, day, hour, minute and second.</para>
-    -- <para>See the wiki for more information on the format specification.</para>
-    -- <para>Alternatively, use <see cref="M:WCSharp.DateTime.WcDateTime.Format(System.String)" /> for a C/Lua style format.</para>
-    -- </summary>
-    -- <param name="format">The format to print the date in.</param>
+
+
+
+
+
+
+
     ToString1 = function (this, format)
       local year, _, day = GetDatePart1(this)
       if format:Contains("yyyyy") then
@@ -28103,39 +28028,39 @@ System.namespace("WCSharp.DateTime", function (namespace)
         format = format:Replace("yyy", ZeroPad(System.mod(year, 1000), 3))
       elseif format:Contains("yy") then
         format = format:Replace("yy", ZeroPad(System.mod(year, 100), 2))
-      elseif format:Contains(121 --[['y']]) then
+      elseif format:Contains(121) then
         format = format:Replace("y", System.Int32.ToString((System.mod(year, 100))))
       end
       if format:Contains("MM") then
         format = format:Replace("MM", ZeroPad(getMonth(this), 2))
-      elseif format:Contains(77 --[['M']]) then
+      elseif format:Contains(77) then
         format = format:Replace("M", System.Int32.ToString(getMonth(this)))
       end
       if format:Contains("dd") then
         format = format:Replace("dd", ZeroPad(day, 2))
-      elseif format:Contains(100 --[['d']]) then
+      elseif format:Contains(100) then
         format = format:Replace("d", System.Int32.ToString(day))
       end
       if format:Contains("hh") then
         format = format:Replace("hh", ZeroPad(System.mod((getHour(this) + 1), 12), 2))
-      elseif format:Contains(104 --[['h']]) then
+      elseif format:Contains(104) then
         format = format:Replace("h", System.Int32.ToString((System.mod((getHour(this) + 1), 12))))
       elseif format:Contains("HH") then
         format = format:Replace("HH", ZeroPad(getHour(this), 2))
-      elseif format:Contains(72 --[['H']]) then
+      elseif format:Contains(72) then
         format = format:Replace("H", System.Int32.ToString(getHour(this)))
       end
       if format:Contains("mm") then
         format = format:Replace("mm", ZeroPad(getMinute(this), 2))
-      elseif format:Contains(109 --[['m']]) then
+      elseif format:Contains(109) then
         format = format:Replace("m", System.Int32.ToString(getMinute(this)))
       end
       if format:Contains("ss") then
         format = format:Replace("ss", ZeroPad(getSecond(this), 2))
-      elseif format:Contains(115 --[['s']]) then
+      elseif format:Contains(115) then
         format = format:Replace("s", System.Int32.ToString(getSecond(this)))
       end
-      if format:Contains(116 --[['t']]) then
+      if format:Contains(116) then
         format = format:Replace("t", (getHour(this) >= 12) and "P" or "A")
       elseif format:Contains("tt") then
         format = format:Replace("tt", (getHour(this) >= 12) and "PM" or "AM")
@@ -28149,23 +28074,23 @@ System.namespace("WCSharp.DateTime", function (namespace)
       end
       return text
     end
-    -- <summary>
-    -- Formats the given time in seconds according to the given format.
-    -- <para>For more information regarding the format, see <see href="http://www.cplusplus.com/reference/ctime/strftime/" />.</para>
-    -- <para>Alternatively, use <see cref="M:WCSharp.DateTime.WcDateTime.ToString(System.String)" /> for a C# style format.</para>
-    -- </summary>
-    -- <param name="format">The format to print the date in.</param>
-    -- <returns></returns>
+
+
+
+
+
+
+
     Format = function (this, format)
       if not (format == "*t") and not (format == "!*t") then
         return os.date(format, this.TotalSeconds)
       end
       return format
     end
-    -- <summary>
-    -- Attempts to parse the given string as the number of seconds since January 1st, 1970.
-    -- </summary>
-    -- <returns>Null if <paramref name="string" /> is not a valid integer.</returns>
+
+
+
+
     Deserialize = function (string)
       local default, result = System.Int32.TryParse(string, nil)
       if not default then
@@ -28173,18 +28098,18 @@ System.namespace("WCSharp.DateTime", function (namespace)
       end
       return class(result)
     end
-    -- <summary>
-    -- Returns a string representing the number of seconds since January 1st, 1970 contained in <paramref name="wcDateTime" />.
-    -- </summary>
+
+
+
     Serialize = function (wcDateTime)
       return System.Int32.ToString(wcDateTime.TotalSeconds)
     end
-    -- <summary>
-    -- This will produce a synchronised time for all players. The given action will be called once a synchronised time has been determined.
-    -- <para>This is done by individually querying the time, synchronizing this data across all players, and then deciding an overall time.</para>
-    -- </summary>
-    -- <param name="action">This action will be called when the synchronised time is determined.</param>
-    -- <param name="method">The method it should use for determining the synchronised time.</param>
+
+
+
+
+
+
     GetCurrentTime = function (action, method)
       local default, value = offsetByMethod:TryGetValue(method, nil)
       if default then
@@ -28196,14 +28121,14 @@ System.namespace("WCSharp.DateTime", function (namespace)
         WCSharpDateTime.DateTimeSystem(method, action):Run()
       end
     end
-    -- <summary>
-    -- This will attempt to immediately return a synchronised time for all players, if it has already been calculated.
-    -- If it has not been calculated, this will return false.
-    -- <para>If it has not been calculated, will start a calculation procedure behind the scenes, but this will take some time.</para>
-    -- </summary>
-    -- <param name="wcDateTime">The synchronised time, if available.</param>
-    -- <param name="method">The method it should use for determining the synchronised time.</param>
-    -- <returns>Whether the retrieval was successful.</returns>
+
+
+
+
+
+
+
+
     TryGetCurrentTime = function (wcDateTime, method)
       local default, value = offsetByMethod:TryGetValue(method, nil)
       if default then
@@ -28352,9 +28277,9 @@ System.namespace("WCSharp.DateTime", function (namespace)
     }
     return class
   end)
-  -- <summary>
-  -- Represents a duration of time, with a precision in seconds.
-  -- </summary>
+
+
+
   namespace.class("WcTimeSpan", function (namespace)
     local getSeconds, getMinutes, getHours, getDays, getTotalSeconds, getTotalMinutes, getTotalHours, getTotalDays, 
     getZero, getMinValue, getMaxValue, getLocalPlaytime, op_UnaryNegation, op_Subtraction, op_UnaryPlus, op_Addition, 
@@ -28362,21 +28287,21 @@ System.namespace("WCSharp.DateTime", function (namespace)
     Duration, Negate, CompareToObj, CompareTo, Equals, EqualsObj, GetHashCode, FromSeconds, 
     FromMinutes, FromHours, FromDays, ToString, ToString1, Deserialize, Serialize, class, 
     __ctor1__, __ctor2__, __ctor3__
-    -- <summary>
-    -- Creates a new <see cref="T:WCSharp.DateTime.WcTimeSpan" /> instance with a duration of the given number of seconds.
-    -- </summary>
+
+
+
     __ctor1__ = function (this, seconds)
       this.seconds = seconds
     end
-    -- <summary>
-    -- Creates a new <see cref="T:WCSharp.DateTime.WcTimeSpan" /> instance with a duration of the given number of hours, minutes and seconds.
-    -- </summary>
+
+
+
     __ctor2__ = function (this, hours, minutes, seconds)
       this.seconds = hours * 3600 + minutes * 60 + seconds
     end
-    -- <summary>
-    -- Creates a new <see cref="T:WCSharp.DateTime.WcTimeSpan" /> instance with a duration of the given number of days, hours, minutes and seconds.
-    -- </summary>
+
+
+
     __ctor3__ = function (this, days, hours, minutes, seconds)
       this.seconds = days * 86400 + hours * 3600 + minutes * 60 + seconds
     end
@@ -28408,104 +28333,104 @@ System.namespace("WCSharp.DateTime", function (namespace)
       return class(0)
     end
     getMinValue = function ()
-      return class(-2147483648 --[[Int32.MinValue]])
+      return class(-2147483648)
     end
     getMaxValue = function ()
-      return class(2147483647 --[[Int32.MaxValue]])
+      return class(2147483647)
     end
     getLocalPlaytime = function ()
       return class(System.ToInt32(os.clock()))
     end
-    -- <summary>
-    -- Returns a new <see cref="T:WCSharp.DateTime.WcTimeSpan" /> that is the negation of the time represented by <paramref name="a" />.
-    -- </summary>
+
+
+
     op_UnaryNegation = function (a)
       return class(-a.seconds)
     end
-    -- <summary>
-    -- Returns a new <see cref="T:WCSharp.DateTime.WcTimeSpan" /> that is equal to <paramref name="a" /> minus <paramref name="b" />.
-    -- </summary>
+
+
+
     op_Subtraction = function (a, b)
       return class(a.seconds - b.seconds)
     end
-    -- <summary>
-    -- Since no changes are required, simply returns the given <see cref="T:WCSharp.DateTime.WcTimeSpan" />.
-    -- </summary>
+
+
+
     op_UnaryPlus = function (a)
       return a
     end
-    -- <summary>
-    -- Returns a new <see cref="T:WCSharp.DateTime.WcTimeSpan" /> that is equal to <paramref name="a" /> plus <paramref name="b" />.
-    -- </summary>
+
+
+
     op_Addition = function (a, b)
       return class(a.seconds + b.seconds)
     end
-    -- <summary>
-    -- Returns true if <paramref name="a" /> represents an equally long time as <paramref name="b" />.
-    -- </summary>
+
+
+
     op_Equality = function (a, b)
       if a ~= nil then
         return a.seconds == b.seconds
       end
       return b == nil
     end
-    -- Returns true if <paramref name="a" /> does not represent an equally long time as <paramref name="b" />.
+
     op_Inequality = function (a, b)
       return not (op_Equality(a, b))
     end
-    -- Returns true if <paramref name="a" /> represents a shorter time than <paramref name="b" />.
+
     op_LessThan = function (a, b)
       if a ~= nil and b ~= nil then
         return a.seconds < b.seconds
       end
       return false
     end
-    -- Returns true if <paramref name="a" /> represents a shorter or equivalent time as <paramref name="b" />.
+
     op_LessThanOrEqual = function (a, b)
       if a ~= nil and b ~= nil then
         return a.seconds <= b.seconds
       end
       return false
     end
-    -- Returns true if <paramref name="a" /> represents a longer time than <paramref name="b" />.
+
     op_GreaterThan = function (a, b)
       if a ~= nil and b ~= nil then
         return a.seconds > b.seconds
       end
       return false
     end
-    -- Returns true if <paramref name="a" /> represents a longer or equivalent time as <paramref name="b" />.
+
     op_GreaterThanOrEqual = function (a, b)
       if a ~= nil and b ~= nil then
         return a.seconds >= b.seconds
       end
       return false
     end
-    -- <summary>
-    -- Returns a new <see cref="T:WCSharp.DateTime.WcTimeSpan" /> whose value is the sum of this instance and the given object.
-    -- </summary>
+
+
+
     Add = function (this, value)
       return class(this.seconds + value.seconds)
     end
-    -- <summary>
-    -- Returns a new <see cref="T:WCSharp.DateTime.WcTimeSpan" /> whose value is the difference of this instance and the given object.
-    -- </summary>
+
+
+
     Subtract = function (this, value)
       return class(this.seconds - value.seconds)
     end
-    -- <summary>
-    -- Returns a new <see cref="T:WCSharp.DateTime.WcTimeSpan" /> whose value is the absolute value of this instance.
-    -- </summary>
+
+
+
     Duration = function (this)
       return class(math.Abs(this.seconds))
     end
-    -- <summary>
-    -- Returns a new <see cref="T:WCSharp.DateTime.WcTimeSpan" /> whose value is the negated value of this instance.
-    -- </summary>
+
+
+
     Negate = function (this)
       return class(-this.seconds)
     end
-    -- <inheritdoc />
+
     CompareToObj = function (this, obj)
       local obj2 = obj
       if not (System.is(obj2, WCSharpDateTime.WcDateTime)) then
@@ -28513,21 +28438,21 @@ System.namespace("WCSharp.DateTime", function (namespace)
       end
       return CompareToObj(this, obj2)
     end
-    -- <inheritdoc />
+
     CompareTo = function (this, other)
       if other ~= nil then
         return System.Int32.CompareTo(this.seconds, other.seconds)
       end
       return 1
     end
-    -- <inheritdoc />
+
     Equals = function (this, other)
       if other ~= nil then
         return this.seconds == other.seconds
       end
       return false
     end
-    -- <inheritdoc />S
+
     EqualsObj = function (this, obj)
       local wcTimeSpan = obj
       if System.is(wcTimeSpan, class) then
@@ -28535,77 +28460,77 @@ System.namespace("WCSharp.DateTime", function (namespace)
       end
       return false
     end
-    -- <inheritdoc />
+
     GetHashCode = function (this)
       return this.seconds
     end
-    -- <summary>
-    -- Creates a new <see cref="T:WCSharp.DateTime.WcTimeSpan" /> with the exact number of seconds.
-    -- </summary>
+
+
+
     FromSeconds = function (seconds)
       return class(seconds)
     end
-    -- <summary>
-    -- Creates a new <see cref="T:WCSharp.DateTime.WcTimeSpan" /> with the number of minutes.
-    -- <para>The number of seconds is floored.</para>
-    -- </summary>
+
+
+
+
     FromMinutes = function (minutes)
       return class(System.ToInt32(minutes * 60))
     end
-    -- <summary>
-    -- Creates a new <see cref="T:WCSharp.DateTime.WcTimeSpan" /> with the number of hours.
-    -- <para>The number of seconds is floored.</para>
-    -- </summary>
+
+
+
+
     FromHours = function (hours)
       return class(System.ToInt32(hours * 3600))
     end
-    -- <summary>
-    -- Creates a new <see cref="T:WCSharp.DateTime.WcTimeSpan" /> with the number of days.
-    -- <para>The number of seconds is floored.</para>
-    -- </summary>
+
+
+
+
     FromDays = function (days)
       return class(System.ToInt32(days * 86400))
     end
-    -- <summary>
-    -- Outputs this <see cref="T:WCSharp.DateTime.WcTimeSpan" /> in the standard format of "d:hh:mm:ss" or "hh:mm:ss" if less than 1 day.
-    -- </summary>
-    -- <returns></returns>
+
+
+
+
     ToString = function (this)
       if getDays(this) <= 0 then
         return ToString1(this, "hh:mm:ss")
       end
       return ToString1(this, "d:hh:mm:ss")
     end
-    -- <summary>
-    -- Returns a string representation using the given format.
-    -- <para>See the wiki for more information on the format specification.</para>
-    -- </summary>
-    -- <param name="format">The format to print the string in.</param>
+
+
+
+
+
     ToString1 = function (this, format)
-      if format:Contains(100 --[['d']]) then
+      if format:Contains(100) then
         format = format:Replace("d", System.Int32.ToString(getDays(this)))
       end
       if format:Contains("hh") then
         format = format:Replace("hh", WCSharpDateTime.WcDateTime.ZeroPad(getHours(this), 2))
-      elseif format:Contains(104 --[['h']]) then
+      elseif format:Contains(104) then
         format = format:Replace("h", System.Int32.ToString(getHours(this)))
       end
       if format:Contains("mm") then
         format = format:Replace("mm", WCSharpDateTime.WcDateTime.ZeroPad(getMinutes(this), 2))
-      elseif format:Contains(109 --[['m']]) then
+      elseif format:Contains(109) then
         format = format:Replace("m", System.Int32.ToString(getMinutes(this)))
       end
       if format:Contains("ss") then
         format = format:Replace("ss", WCSharpDateTime.WcDateTime.ZeroPad(getSeconds(this), 2))
-      elseif format:Contains(115 --[['s']]) then
+      elseif format:Contains(115) then
         format = format:Replace("s", System.Int32.ToString(getSeconds(this)))
       end
       return format
     end
-    -- <summary>
-    -- Attempts to parse the given string as the number of seconds.
-    -- </summary>
-    -- <returns>Null if <paramref name="string" /> is not a valid integer.</returns>
+
+
+
+
     Deserialize = function (string)
       local default, result = System.Int32.TryParse(string, nil)
       if not default then
@@ -28613,9 +28538,9 @@ System.namespace("WCSharp.DateTime", function (namespace)
       end
       return class(result)
     end
-    -- <summary>
-    -- Returns a string representing the number of seconds contained in <paramref name="wcTimeSpan" />.
-    -- </summary>
+
+
+
     Serialize = function (wcTimeSpan)
       return System.Int32.ToString(wcTimeSpan.seconds)
     end
@@ -28758,9 +28683,9 @@ System.namespace("WCSharp.Dummies", function (namespace)
       end
     }
   end)
-  -- <summary>
-  -- Tracks and recycles all dummy units on the map. Will automatically create more if necessary.
-  -- </summary>
+
+
+
   namespace.class("DummySystem", function (namespace)
     local periodicEvent, dummiesReady, dummiesBeingRecycled, OnDummyCast, Countdown, RecycleDummy, GetDummy, GetDummy1, 
     static
@@ -28768,7 +28693,7 @@ System.namespace("WCSharp.Dummies", function (namespace)
       periodicEvent = WCSharpEvents.PeriodicEvent(Countdown, 1.0)
       dummiesReady = Listunit()
       dummiesBeingRecycled = ListDummyBeingRecycled()
-      WCSharpEvents.PlayerUnitEvents.Register14(850 --[[UnitTypeEvent.SpellEndCast]], OnDummyCast)
+      WCSharpEvents.PlayerUnitEvents.Register14(850, OnDummyCast)
     end
     OnDummyCast = function ()
       local triggerUnit = GetTriggerUnit()
@@ -28794,18 +28719,18 @@ System.namespace("WCSharp.Dummies", function (namespace)
       end
       return num > 0
     end
-    -- <summary>
-    -- Call this when you are done with a dummy. The dummy will become available for use again after the <paramref name="recycleTime" />.
-    -- </summary>
+
+
+
     RecycleDummy = function (dummy, recycleTime)
       if #dummiesBeingRecycled == 0 then
         WCSharpEvents.PeriodicEvents.AddPeriodicEvent1(periodicEvent)
       end
-      dummiesBeingRecycled:Add(WCSharpDummies.DummyBeingRecycled(dummy, System.ToInt32(recycleTime / (0.03125 --[[1f / 32f]]))))
+      dummiesBeingRecycled:Add(WCSharpDummies.DummyBeingRecycled(dummy, System.ToInt32(recycleTime / (0.03125))))
     end
-    -- <summary>
-    -- Requests an available dummy.
-    -- </summary>
+
+
+
     GetDummy = function ()
       local count = #dummiesReady
       if count == 0 then
@@ -28815,9 +28740,9 @@ System.namespace("WCSharp.Dummies", function (namespace)
       dummiesReady[count] = nil
       return result
     end
-    -- <summary>
-    -- Requests an available dummy at the given coordinates and under control of the given player.
-    -- </summary>
+
+
+
     GetDummy1 = function (x, y, z, player)
       local count = #dummiesReady
       local unit
@@ -28870,20 +28795,20 @@ System.import(function (out)
   PeriodicTrigger_1TimedEffect = WCSharpEvents.PeriodicTrigger_1(WCSharpEffects.TimedEffect)
 end)
 System.namespace("WCSharp.Effects", function (namespace)
-  -- <summary>
-  -- Simple system for destroying effects after a given duration.
-  -- <para>This circumvents issues with certain special effects not showing up if deleted immediately in Reforged.</para>
-  -- </summary>
+
+
+
+
   namespace.class("EffectSystem", function (namespace)
     local periodicTrigger, Add, static
     static = function (this)
-      periodicTrigger = PeriodicTrigger_1TimedEffect(0.03125 --[[1f / 32f]])
+      periodicTrigger = PeriodicTrigger_1TimedEffect(0.03125)
     end
-    -- <summary>
-    -- Adds an effect for removal after the given duration.
-    -- </summary>
-    -- <param name="effect"></param>
-    -- <param name="duration">In seconds.</param>
+
+
+
+
+
     Add = function (effect, duration)
       periodicTrigger:Add(WCSharpEffects.TimedEffect(effect, duration))
     end
@@ -28911,7 +28836,7 @@ System.namespace("WCSharp.Effects", function (namespace)
     end
     getActive, setActive = System.property("Active")
     Action = function (this)
-      this.Duration = this.Duration - (0.03125 --[[1f / 32f]])
+      this.Duration = this.Duration - (0.03125)
       if this.Duration <= 0 then
         DestroyEffect(this.Effect)
         this.Active = false
@@ -28986,11 +28911,11 @@ System.import(function (out)
   DictplayeruniteventIPlayerUnitEventHandler = System.Dictionary(WCSharpApi.playerunitevent, PlayerUnitEventHandlers.IPlayerUnitEventHandler)
 end)
 System.namespace("WCSharp.Events", function (namespace)
-  -- <summary>
-  -- Defines all built-in HeroEvents supported by <see cref="T:WCSharp.Events.PlayerUnitEvents" />.
-  -- <para>All of these events fire based on a unit handle filter.</para>
-  -- <para>Custom events can also be specified via <see cref="M:WCSharp.Events.PlayerUnitEvents.AddCustomEvent(System.String,System.Func{System.Int32},WCSharp.Api.playerunitevent)" />.</para>
-  -- </summary>
+
+
+
+
+
   namespace.enum("HeroEvent", function ()
     return {
       BecomesRevivable = 1,
@@ -29014,11 +28939,11 @@ System.namespace("WCSharp.Events", function (namespace)
       end
     }
   end)
-  -- <summary>
-  -- Defines all built-in HeroTypeEvents supported by <see cref="T:WCSharp.Events.PlayerUnitEvents" />.
-  -- <para>All of these events fire based on a unit type id filter.</para>
-  -- <para>Custom events can also be specified via <see cref="M:WCSharp.Events.PlayerUnitEvents.AddCustomEvent(System.String,System.Func{System.Int32},WCSharp.Api.playerunitevent)" />.</para>
-  -- </summary>
+
+
+
+
+
   namespace.enum("HeroTypeEvent", function ()
     return {
       BecomesRevivable = 101,
@@ -29042,9 +28967,9 @@ System.namespace("WCSharp.Events", function (namespace)
       end
     }
   end)
-  -- <summary>
-  -- Interface for defining periodic actions. If your periodic action has actions that it should perform when ended, use <see cref="T:WCSharp.Events.IPeriodicDisposableAction" /> instead.
-  -- </summary>
+
+
+
   namespace.interface("IPeriodicAction", function ()
     return {
       __metadata__ = function (out)
@@ -29054,9 +28979,9 @@ System.namespace("WCSharp.Events", function (namespace)
       end
     }
   end)
-  -- <summary>
-  -- Interface for defining periodic actions. If your periodic action does not have actions that it should perform when ended, use <see cref="T:WCSharp.Events.IPeriodicAction" /> instead.
-  -- </summary>
+
+
+
   namespace.interface("IPeriodicDisposableAction", function ()
     return {
       __metadata__ = function (out)
@@ -29066,9 +28991,9 @@ System.namespace("WCSharp.Events", function (namespace)
       end
     }
   end)
-  -- <summary>
-  -- Interface for defining smooth actions. If your smooth action has actions that it should perform when ended, use <see cref="T:WCSharp.Events.ISmoothDisposableAction" /> instead.
-  -- </summary>
+
+
+
   namespace.interface("ISmoothAction", function ()
     return {
       __metadata__ = function (out)
@@ -29078,9 +29003,9 @@ System.namespace("WCSharp.Events", function (namespace)
       end
     }
   end)
-  -- <summary>
-  -- Interface for defining smooth actions. If your smooth action does not have actions that it should perform when ended, use <see cref="T:WCSharp.Events.ISmoothAction" /> instead.
-  -- </summary>
+
+
+
   namespace.interface("ISmoothDisposableAction", function ()
     return {
       __metadata__ = function (out)
@@ -29090,11 +29015,11 @@ System.namespace("WCSharp.Events", function (namespace)
       end
     }
   end)
-  -- <summary>
-  -- Defines all built-in ItemEvents supported by <see cref="T:WCSharp.Events.PlayerUnitEvents" />.
-  -- <para>All of these events fire based on an item filter.</para>
-  -- <para>Custom events can also be specified via <see cref="M:WCSharp.Events.PlayerUnitEvents.AddCustomEvent(System.String,System.Func{System.Int32},WCSharp.Api.playerunitevent)" />.</para>
-  -- </summary>
+
+
+
+
+
   namespace.enum("ItemEvent", function ()
     return {
       IsAbsorbed = 201,
@@ -29120,11 +29045,11 @@ System.namespace("WCSharp.Events", function (namespace)
       end
     }
   end)
-  -- <summary>
-  -- Defines all built-in ItemTypeEvents supported by <see cref="T:WCSharp.Events.PlayerUnitEvents" />.
-  -- <para>All of these events fire based on an item type id filter.</para>
-  -- <para>Custom events can also be specified via <see cref="M:WCSharp.Events.PlayerUnitEvents.AddCustomEvent(System.String,System.Func{System.Int32},WCSharp.Api.playerunitevent)" />.</para>
-  -- </summary>
+
+
+
+
+
   namespace.enum("ItemTypeEvent", function ()
     return {
       IsAbsorbed = 301,
@@ -29150,19 +29075,19 @@ System.namespace("WCSharp.Events", function (namespace)
       end
     }
   end)
-  -- <summary>
-  -- Helpful class that can be used to batch together multiple periodic events of the same type. Will automatically remove inactive triggers, and
-  -- subscribe/unsubscribe from <see cref="T:WCSharp.Events.PeriodicEvents" /> based on whether any triggers are active.
-  -- <para>Has additional functionality for disposing of actions when they end.</para>
-  -- </summary>
+
+
+
+
+
   namespace.class("PeriodicDisposableTrigger_1", function (namespace)
     return function (T)
       local getActions, Add, Periodic, __ctor__
       local ListT = System.List(T)
-      -- <summary>
-      -- Creates a new periodic trigger which will trigger all supplied actions every given <paramref name="period" />.
-      -- </summary>
-      -- <param name="period">How frequently this trigger should fire.</param>
+
+
+
+
       __ctor__ = function (this, period)
         this.actions = ListT()
         this.timerEvent = WCSharpEvents.PeriodicEvent(System.fn(this, Periodic), period)
@@ -29172,9 +29097,9 @@ System.namespace("WCSharp.Events", function (namespace)
           return x:getActive()
         end)
       end
-      -- <summary>
-      -- Adds the given <paramref name="periodicDisposableTrigger" /> to automatic management.
-      -- </summary>
+
+
+
       Add = function (this, periodicDisposableTrigger)
         if not this.active then
           WCSharpEvents.PeriodicEvents.AddPeriodicEvent1(this.timerEvent)
@@ -29239,15 +29164,15 @@ System.namespace("WCSharp.Events", function (namespace)
       }
     end
   end)
-  -- <summary>
-  -- Represents a single periodic event that will invoke <see cref="P:WCSharp.Events.PeriodicEvent.Method" /> every <see cref="P:WCSharp.Events.PeriodicEvent.Interval" />.
-  -- </summary>
+
+
+
   namespace.class("PeriodicEvent", function (namespace)
     local __ctor__
-    -- <summary>
-    -- Creates a new periodic event that will call the given method every interval.
-    -- Must be added to <see cref="T:WCSharp.Events.PeriodicEvents" /> in order to be active.
-    -- </summary>
+
+
+
+
     __ctor__ = function (this, method, interval)
       this.Method = method
       this.Interval = interval
@@ -29272,9 +29197,9 @@ System.namespace("WCSharp.Events", function (namespace)
       end
     }
   end)
-  -- <summary>
-  -- Keeps track of all periodic events. The system runs at an interval defined by <see cref="F:WCSharp.Events.PeriodicEvents.SYSTEM_INTERVAL" /> (0.03125).
-  -- </summary>
+
+
+
   namespace.class("PeriodicEvents", function (namespace)
     local timerEvents, timer, Start, EnableDebug, AddPeriodicEvent, AddPeriodicEvent1, Tick, static
     static = function (this)
@@ -29283,14 +29208,14 @@ System.namespace("WCSharp.Events", function (namespace)
     end
     Start = function (action)
       local obj = CreateTimer()
-      TimerStart(obj, 0.03125 --[[1f / 32f]], true, action)
+      TimerStart(obj, 0.03125, true, action)
       return obj
     end
-    -- <summary>
-    -- Call this method to automatically wrap your actions in a try/catch, so that exceptions that lead back to <see cref="T:WCSharp.Events.PeriodicEvents" /> will automatically output
-    -- information.
-    -- <para>It is recommended to use compilation time conditions to not call this on release mode.</para>
-    -- </summary>
+
+
+
+
+
     EnableDebug = function ()
       DestroyTimer(timer)
       timer = Start(function ()
@@ -29303,22 +29228,22 @@ System.namespace("WCSharp.Events", function (namespace)
         end)
       end)
     end
-    -- <summary>
-    -- Adds the given method to the periodic system. In most cases, you can ignore the return value.
-    -- </summary>
-    -- <param name="method">The method to execute. Must return a boolean to indicate whether to continue looping or abort the periodic event.</param>
-    -- <param name="period">
-    -- The speed at which this event should fire.
-    -- <para>Periods below <see cref="F:WCSharp.Events.PeriodicEvents.SYSTEM_INTERVAL" /> (0.03125) will run multiple times on certain ticks.</para>
-    -- </param>
+
+
+
+
+
+
+
+
     AddPeriodicEvent = function (method, period)
       local periodicEvent = WCSharpEvents.PeriodicEvent(method, period)
       timerEvents:Add(periodicEvent)
       return periodicEvent
     end
-    -- <summary>
-    -- Shorthand in case you already have an existing PeriodicEvent to resume.
-    -- </summary>
+
+
+
     AddPeriodicEvent1 = function (timerEvent)
       timerEvents:Add(timerEvent)
     end
@@ -29328,7 +29253,7 @@ System.namespace("WCSharp.Events", function (namespace)
       while num2 < num do
         local periodicEvent = timerEvents:get(num2)
         num2 = num2 + 1
-        periodicEvent.IntervalLeft = periodicEvent.IntervalLeft - (0.03125 --[[1.0 / 32.0]])
+        periodicEvent.IntervalLeft = periodicEvent.IntervalLeft - (0.03125)
         while periodicEvent.IntervalLeft <= 0.0 do
           periodicEvent.IntervalLeft = periodicEvent.IntervalLeft + periodicEvent.Interval
           if not periodicEvent.Method() then
@@ -29364,18 +29289,18 @@ System.namespace("WCSharp.Events", function (namespace)
       end
     }
   end)
-  -- <summary>
-  -- Helpful class that can be used to batch together multiple periodic events of the same type. Will automatically remove inactive triggers, and
-  -- subscribe/unsubscribe from <see cref="T:WCSharp.Events.PeriodicEvents" /> based on whether any triggers are active.
-  -- </summary>
+
+
+
+
   namespace.class("PeriodicTrigger_1", function (namespace)
     return function (T)
       local getActions, Add, Periodic, __ctor__
       local ListT = System.List(T)
-      -- <summary>
-      -- Creates a new periodic trigger which will trigger all supplied actions every given <paramref name="period" />.
-      -- </summary>
-      -- <param name="period">How frequently this trigger should fire.</param>
+
+
+
+
       __ctor__ = function (this, period)
         this.actions = ListT()
         this.timerEvent = WCSharpEvents.PeriodicEvent(System.fn(this, Periodic), period)
@@ -29385,9 +29310,9 @@ System.namespace("WCSharp.Events", function (namespace)
           return x:getActive()
         end)
       end
-      -- <summary>
-      -- Adds the given <paramref name="periodicTrigger" /> to automatic management.
-      -- </summary>
+
+
+
       Add = function (this, periodicTrigger)
         if not this.active then
           WCSharpEvents.PeriodicEvents.AddPeriodicEvent1(this.timerEvent)
@@ -29451,11 +29376,11 @@ System.namespace("WCSharp.Events", function (namespace)
       }
     end
   end)
-  -- <summary>
-  -- Defines all built-in PlayerEvents supported by <see cref="T:WCSharp.Events.PlayerUnitEvents" />.
-  -- <para>All of these events fire based on a player id.</para>
-  -- <para>Custom events can also be specified via <see cref="M:WCSharp.Events.PlayerUnitEvents.AddCustomEvent(System.String,System.Func{System.Int32},WCSharp.Api.playerunitevent)" />.</para>
-  -- </summary>
+
+
+
+
+
   namespace.enum("PlayerEvent", function ()
     return {
       DeselectsUnit = 401,
@@ -29475,9 +29400,9 @@ System.namespace("WCSharp.Events", function (namespace)
       end
     }
   end)
-  -- <summary>
-  -- Manager for all Warcraft III <see cref="T:WCSharp.Api.playerunitevent" />s. Will bundle together and is able to efficiently filter on specific data.
-  -- </summary>
+
+
+
   namespace.class("PlayerUnitEvents", function (namespace)
     local pendingUpdates, customEventIdsByIdentifier, eventHandlers, playerUnitEventHandlers, customPlayerUnitEventHandlers, playerUnitEventNativesById, filterFuncIdsByEvent, filterFuncHandlesByEvent, 
     Register, Register1, Register2, Register3, Register4, Register5, Register6, Register7, 
@@ -30120,106 +30045,106 @@ System.namespace("WCSharp.Events", function (namespace)
       end)
       filterFuncHandlesByEvent = default
     end
-    -- <summary>
-    -- Registers <paramref name="action" /> to fire when <paramref name="event" /> is triggered for <paramref name="unit" />.
-    -- </summary>
+
+
+
     Register = function (event, action, unit)
       Register19(event, action, unit)
     end
-    -- <summary>
-    -- Registers <paramref name="action" /> to fire when <paramref name="event" /> is triggered for any hero.
-    -- </summary>
+
+
+
     Register1 = function (event, action)
       Register17(event, action)
     end
-    -- <summary>
-    -- Registers <paramref name="action" /> to fire when <paramref name="event" /> is triggered for any hero of <paramref name="unitTypeId" />.
-    -- </summary>
+
+
+
     Register2 = function (event, action, unitTypeId)
       Register18(event, action, unitTypeId)
     end
-    -- <summary>
-    -- Registers <paramref name="action" /> to fire when <paramref name="event" /> is triggered for <paramref name="item" />.
-    -- </summary>
+
+
+
     Register3 = function (event, action, item)
       Register19(event, action, item)
     end
-    -- <summary>
-    -- Registers <paramref name="action" /> to fire when <paramref name="event" /> is triggered for any item.
-    -- </summary>
+
+
+
     Register4 = function (event, action)
       Register17(event, action)
     end
-    -- <summary>
-    -- Registers <paramref name="action" /> to fire when <paramref name="event" /> is triggered for any item of <paramref name="itemTypeId" />.
-    -- </summary>
+
+
+
     Register5 = function (event, action, itemTypeId)
       Register18(event, action, itemTypeId)
     end
-    -- <summary>
-    -- Registers <paramref name="action" /> to fire when <paramref name="event" /> is triggered for any player.
-    -- </summary>
+
+
+
     Register6 = function (event, action)
       Register17(event, action)
     end
-    -- <summary>
-    -- Registers <paramref name="action" /> to fire when <paramref name="event" /> is triggered for <paramref name="player" />.
-    -- </summary>
+
+
+
     Register7 = function (event, action, player)
       Register18(event, action, GetPlayerId(player))
     end
-    -- <summary>
-    -- Registers <paramref name="action" /> to fire when <paramref name="event" /> is triggered for <paramref name="playerId" />.
-    -- <para>Note: <paramref name="playerId" /> start at 0. So player 1 (red) is 0.</para>
-    -- </summary>
+
+
+
+
     Register8 = function (event, action, playerId)
       Register18(event, action, playerId)
     end
-    -- <summary>
-    -- Registers <paramref name="action" /> to fire when <paramref name="event" /> is triggered for any research.
-    -- </summary>
+
+
+
     Register9 = function (event, action)
       Register17(event, action)
     end
-    -- <summary>
-    -- Registers <paramref name="action" /> to fire when <paramref name="event" /> is triggered for any research of <paramref name="researchId" />.
-    -- </summary>
+
+
+
     Register10 = function (event, action, researchId)
       Register18(event, action, researchId)
     end
-    -- <summary>
-    -- Registers <paramref name="action" /> to fire when <paramref name="event" /> is triggered for any spell.
-    -- </summary>
+
+
+
     Register11 = function (event, action)
       Register17(event, action)
     end
-    -- <summary>
-    -- Registers <paramref name="action" /> to fire when <paramref name="event" /> is triggered for any spell of <paramref name="abilityId" />.
-    -- </summary>
+
+
+
     Register12 = function (event, action, abilityId)
       Register18(event, action, abilityId)
     end
-    -- <summary>
-    -- Registers <paramref name="action" /> to fire when <paramref name="event" /> is triggered for <paramref name="unit" />.
-    -- </summary>
+
+
+
     Register13 = function (event, action, unit)
       Register19(event, action, unit)
     end
-    -- <summary>
-    -- Registers <paramref name="action" /> to fire when <paramref name="event" /> is triggered for any unit.
-    -- </summary>
+
+
+
     Register14 = function (event, action)
       Register17(event, action)
     end
-    -- <summary>
-    -- Registers <paramref name="action" /> to fire when <paramref name="event" /> is triggered for any unit.
-    -- </summary>
+
+
+
     Register15 = function (event, action, unitTypeId)
       Register18(event, action, unitTypeId)
     end
-    -- <summary>
-    -- Registers <paramref name="action" /> to fire when the custom event with <paramref name="identifier" /> is triggered for <paramref name="filterId" />.
-    -- </summary>
+
+
+
     Register16 = function (identifier, action, filterId)
       local default, value = customEventIdsByIdentifier:TryGetValue(identifier, nil)
       if default then
@@ -30267,99 +30192,99 @@ System.namespace("WCSharp.Events", function (namespace)
         Register19(event, action, handle)
       end)
     end
-    -- <summary>
-    -- Unregisters <paramref name="action" /> from <paramref name="event" /> for <paramref name="unit" />.
-    -- </summary>
+
+
+
     Unregister = function (event, action, unit)
       Unregister18(event, action, unit)
     end
-    -- <summary>
-    -- Unregisters <paramref name="action" /> from <paramref name="event" /> for any hero.
-    -- </summary>
+
+
+
     Unregister1 = function (event, action)
       Unregister16(event, action)
     end
-    -- <summary>
-    -- Unregisters <paramref name="action" /> from <paramref name="event" /> for any hero of <paramref name="unitTypeId" />.
-    -- </summary>
+
+
+
     Unregister2 = function (event, action, unitTypeId)
       Unregister17(event, action, unitTypeId)
     end
-    -- <summary>
-    -- Unregisters <paramref name="action" /> from <paramref name="event" /> for <paramref name="item" />.
-    -- </summary>
+
+
+
     Unregister3 = function (event, action, item)
       Unregister18(event, action, item)
     end
-    -- <summary>
-    -- Unregisters <paramref name="action" /> from <paramref name="event" /> for any item.
-    -- </summary>
+
+
+
     Unregister4 = function (event, action)
       Unregister16(event, action)
     end
-    -- <summary>
-    -- Unregisters <paramref name="action" /> from <paramref name="event" /> for any item of <paramref name="itemTypeId" />.
-    -- </summary>
+
+
+
     Unregister5 = function (event, action, itemTypeId)
       Unregister17(event, action, itemTypeId)
     end
-    -- <summary>
-    -- Unregisters <paramref name="action" /> from <paramref name="event" /> for any player.
-    -- </summary>
+
+
+
     Unregister6 = function (event, action)
       Unregister16(event, action)
     end
-    -- <summary>
-    -- Unregisters <paramref name="action" /> from <paramref name="event" /> for <paramref name="playerId" />.
-    -- </summary>
+
+
+
     Unregister7 = function (event, action, playerId)
       Unregister17(event, action, playerId)
     end
-    -- <summary>
-    -- Unregisters <paramref name="action" /> from <paramref name="event" /> for any research.
-    -- </summary>
+
+
+
     Unregister8 = function (event, action)
       Unregister16(event, action)
     end
-    -- <summary>
-    -- Unregisters <paramref name="action" /> from <paramref name="event" /> for any research of <paramref name="researchId" />.
-    -- </summary>
+
+
+
     Unregister9 = function (event, action, researchId)
       Unregister17(event, action, researchId)
     end
-    -- <summary>
-    -- Unregisters <paramref name="action" /> from <paramref name="event" /> for any spell.
-    -- </summary>
+
+
+
     Unregister10 = function (event, action)
       Unregister16(event, action)
     end
-    -- <summary>
-    -- Unregisters <paramref name="action" /> from <paramref name="event" /> for any spell of <paramref name="abilityId" />.
-    -- </summary>
+
+
+
     Unregister11 = function (event, action, abilityId)
       Unregister17(event, action, abilityId)
     end
-    -- <summary>
-    -- Unregisters <paramref name="action" /> from <paramref name="event" /> for <paramref name="unit" />.
-    -- </summary>
+
+
+
     Unregister12 = function (event, action, unit)
       Unregister18(event, action, unit)
     end
-    -- <summary>
-    -- Unregisters <paramref name="action" /> from <paramref name="event" /> for any unit.
-    -- </summary>
+
+
+
     Unregister13 = function (event, action)
       Unregister16(event, action)
     end
-    -- <summary>
-    -- Unregisters <paramref name="action" /> from <paramref name="event" /> for any unit of <paramref name="unitTypeId" />.
-    -- </summary>
+
+
+
     Unregister14 = function (event, action, unitTypeId)
       Unregister17(event, action, unitTypeId)
     end
-    -- <summary>
-    -- Registers <paramref name="action" /> to fire when the custom event with <paramref name="identifier" /> is triggered for <paramref name="filterId" />.
-    -- </summary>
+
+
+
     Unregister15 = function (identifier, action, filterId)
       local default, value = customEventIdsByIdentifier:TryGetValue(identifier, nil)
       if default then
@@ -30424,10 +30349,10 @@ System.namespace("WCSharp.Events", function (namespace)
       end
       return nil
     end
-    -- <summary>
-    -- Defines a custom event with the given <paramref name="identifier" /> and <paramref name="filter" /> that responds to events of
-    -- the given <paramref name="nativeEvent" />.
-    -- </summary>
+
+
+
+
     AddCustomEvent = function (identifier, filter, nativeEvent)
       local num = customEventIdsByIdentifier:getCount() + 1001
       customEventIdsByIdentifier:AddKeyValue(identifier, num)
@@ -30444,11 +30369,11 @@ System.namespace("WCSharp.Events", function (namespace)
       end
       System.throw(System.NotImplementedException("Unexpected custom handler: " .. event))
     end
-    -- <summary>
-    -- Call this method to automatically wrap your actions in a try/catch, so that exceptions that lead back to <see cref="T:WCSharp.Events.PeriodicEvents" /> will automatically output
-    -- information.
-    -- <para>It is recommended to use compilation time conditions to not call this on release mode.</para>
-    -- </summary>
+
+
+
+
+
     EnableDebug = function ()
       class.Debug = true
     end
@@ -30564,11 +30489,11 @@ System.namespace("WCSharp.Events", function (namespace)
     }
     return class
   end)
-  -- <summary>
-  -- Defines all built-in ResearchEvents supported by <see cref="T:WCSharp.Events.PlayerUnitEvents" />.
-  -- <para>All of these events fire based on a research id filter.</para>
-  -- <para>Custom events can also be specified via <see cref="M:WCSharp.Events.PlayerUnitEvents.AddCustomEvent(System.String,System.Func{System.Int32},WCSharp.Api.playerunitevent)" />.</para>
-  -- </summary>
+
+
+
+
+
   namespace.enum("ResearchEvent", function ()
     return {
       IsCancelled = 501,
@@ -30586,37 +30511,37 @@ System.namespace("WCSharp.Events", function (namespace)
       end
     }
   end)
-  -- <summary>
-  -- Helpful class that can be used to batch together multiple smooth events of the same type. Will automatically remove inactive triggers, and
-  -- subscribe/unsubscribe from <see cref="T:WCSharp.Events.PeriodicEvents" /> based on whether any triggers are active.
-  -- </summary>
-  -- <summary>
-  -- Helpful class that can be used to batch together multiple smooth events of the same type. Will automatically remove inactive triggers, and
-  -- subscribe/unsubscribe from <see cref="T:WCSharp.Events.PeriodicEvents" /> based on whether any triggers are active.
-  -- <para>Has additional functionality for disposing of actions when they end.</para>
-  -- <para>Unlike <see cref="T:WCSharp.Events.PeriodicDisposableTrigger`1" />, all actions will not trigger simultaneously, since each action is counted down separately.</para>
-  -- </summary>
+
+
+
+
+
+
+
+
+
+
   namespace.class("SmoothDisposableTrigger_1", function (namespace)
     return function (T)
       local getActions, Add, Periodic, __ctor1__, __ctor2__
       local ListT = System.List(T)
-      -- <summary>
-      -- Creates a new smooth trigger which will individually trigger supplied actions every given interval.
-      -- <para><paramref name="tickInterval" /> will be rounded to the nearest multiple of <paramref name="tickRate" /></para>
-      -- </summary>
-      -- <param name="tickInterval">The amount of time between each <see cref="M:WCSharp.Events.ISmoothDisposableAction.Action" /> call.</param>
-      -- <param name="tickRate">Expresses the smoothness of the trigger. Ideally use multiples of <see cref="F:WCSharp.Events.PeriodicEvents.SYSTEM_INTERVAL" />.</param>
+
+
+
+
+
+
       __ctor1__ = function (this, tickInterval, tickRate)
         this.ticksPerAction = MathRound(tickInterval / tickRate)
         this.actions = ListT()
         this.timerEvent = WCSharpEvents.PeriodicEvent(System.fn(this, Periodic), tickRate)
       end
-      -- <summary>
-      -- Creates a new smooth trigger which will individually trigger supplied actions every given interval.
-      -- <para>Interval is equal to <paramref name="ticksPerAction" />*<paramref name="tickRate" />.</para>
-      -- </summary>
-      -- <param name="ticksPerAction">The number of times that <paramref name="tickRate" /> should pass between each <see cref="M:WCSharp.Events.ISmoothDisposableAction.Action" /> call.</param>
-      -- <param name="tickRate">Expresses the smoothness of the trigger. Ideally use multiples of <see cref="F:WCSharp.Events.PeriodicEvents.SYSTEM_INTERVAL" />.</param>
+
+
+
+
+
+
       __ctor2__ = function (this, ticksPerAction, tickRate)
         this.ticksPerAction = ticksPerAction
         this.actions = ListT()
@@ -30627,10 +30552,10 @@ System.namespace("WCSharp.Events", function (namespace)
           return x:getActive()
         end)
       end
-      -- <summary>
-      -- Adds the given <paramref name="smoothDisposableTrigger" /> to automatic management.
-      -- <para>The first action call will occur after the tick interval. If this isn't desired, adjust <see cref="P:WCSharp.Events.ISmoothDisposableAction.TicksLeft" /> after calling this.</para>
-      -- </summary>
+
+
+
+
       Add = function (this, smoothDisposableTrigger)
         if not this.active then
           WCSharpEvents.PeriodicEvents.AddPeriodicEvent1(this.timerEvent)
@@ -30699,32 +30624,32 @@ System.namespace("WCSharp.Events", function (namespace)
       }
     end
   end)
-  -- <summary>
-  -- Helpful class that can be used to batch together multiple smooth events of the same type. Will automatically remove inactive triggers, and
-  -- subscribe/unsubscribe from <see cref="T:WCSharp.Events.PeriodicEvents" /> based on whether any triggers are active.
-  -- <para>Unlike <see cref="T:WCSharp.Events.PeriodicTrigger`1" />, all actions will not trigger simultaneously, since each action is counted down separately.</para>
-  -- </summary>
+
+
+
+
+
   namespace.class("SmoothTrigger_1", function (namespace)
     return function (T)
       local getActions, Add, Periodic, __ctor1__, __ctor2__
       local ListT = System.List(T)
-      -- <summary>
-      -- Creates a new smooth trigger which will individually trigger supplied actions every given interval.
-      -- <para><paramref name="tickInterval" /> will be rounded to the nearest multiple of <paramref name="tickRate" /></para>
-      -- </summary>
-      -- <param name="tickInterval">The amount of time between each <see cref="M:WCSharp.Events.ISmoothAction.Action" /> call.</param>
-      -- <param name="tickRate">Expresses the smoothness of the trigger. Ideally use multiples of <see cref="F:WCSharp.Events.PeriodicEvents.SYSTEM_INTERVAL" />.</param>
+
+
+
+
+
+
       __ctor1__ = function (this, tickInterval, tickRate)
         this.ticksPerAction = MathRound(tickInterval / tickRate)
         this.actions = ListT()
         this.timerEvent = WCSharpEvents.PeriodicEvent(System.fn(this, Periodic), tickRate)
       end
-      -- <summary>
-      -- Creates a new smooth trigger which will individually trigger supplied actions every given interval.
-      -- <para>Interval is equal to <paramref name="ticksPerAction" />*<paramref name="tickRate" />.</para>
-      -- </summary>
-      -- <param name="ticksPerAction">The number of times that <paramref name="tickRate" /> should pass between each <see cref="M:WCSharp.Events.ISmoothAction.Action" /> call.</param>
-      -- <param name="tickRate">Expresses the smoothness of the trigger. Ideally use multiples of <see cref="F:WCSharp.Events.PeriodicEvents.SYSTEM_INTERVAL" />.</param>
+
+
+
+
+
+
       __ctor2__ = function (this, ticksPerAction, tickRate)
         this.ticksPerAction = ticksPerAction
         this.actions = ListT()
@@ -30735,10 +30660,10 @@ System.namespace("WCSharp.Events", function (namespace)
           return x:getActive()
         end)
       end
-      -- <summary>
-      -- Adds the given <paramref name="smoothTrigger" /> to automatic management.
-      -- <para>The first action call will occur after the tick interval. If this isn't desired, adjust <see cref="P:WCSharp.Events.ISmoothAction.TicksLeft" /> after calling this.</para>
-      -- </summary>
+
+
+
+
       Add = function (this, smoothTrigger)
         if not this.active then
           WCSharpEvents.PeriodicEvents.AddPeriodicEvent1(this.timerEvent)
@@ -30806,11 +30731,11 @@ System.namespace("WCSharp.Events", function (namespace)
       }
     end
   end)
-  -- <summary>
-  -- Defines all built-in SpellEvents supported by <see cref="T:WCSharp.Events.PlayerUnitEvents" />.
-  -- <para>All of these events fire based on a ability id filter.</para>
-  -- <para>Custom events can also be specified via <see cref="M:WCSharp.Events.PlayerUnitEvents.AddCustomEvent(System.String,System.Func{System.Int32},WCSharp.Api.playerunitevent)" />.</para>
-  -- </summary>
+
+
+
+
+
   namespace.enum("SpellEvent", function ()
     return {
       Cast = 601,
@@ -30834,11 +30759,11 @@ System.namespace("WCSharp.Events", function (namespace)
       end
     }
   end)
-  -- <summary>
-  -- Defines all built-in UnitEvents supported by <see cref="T:WCSharp.Events.PlayerUnitEvents" />.
-  -- <para>All of these events fire based on a unit handle filter.</para>
-  -- <para>Custom events can also be specified via <see cref="M:WCSharp.Events.PlayerUnitEvents.AddCustomEvent(System.String,System.Func{System.Int32},WCSharp.Api.playerunitevent)" />.</para>
-  -- </summary>
+
+
+
+
+
   namespace.enum("UnitEvent", function ()
     return {
       Attacks = 701,
@@ -30962,11 +30887,11 @@ System.namespace("WCSharp.Events", function (namespace)
       end
     }
   end)
-  -- <summary>
-  -- Defines all built-in UnitTypeEvents supported by <see cref="T:WCSharp.Events.PlayerUnitEvents" />.
-  -- <para>All of these events fire based on an unit type id filter.</para>
-  -- <para>Custom events can also be specified via <see cref="M:WCSharp.Events.PlayerUnitEvents.AddCustomEvent(System.String,System.Func{System.Int32},WCSharp.Api.playerunitevent)" />.</para>
-  -- </summary>
+
+
+
+
+
   namespace.enum("UnitTypeEvent", function ()
     return {
       Attacks = 801,
@@ -31110,7 +31035,7 @@ System.namespace("WCSharp.Events.EventHandlers", function (namespace)
       this.actions = ListDelegate()
     end
     getFilterId = function (this)
-      return -2147483648 --[[Int32.MinValue]]
+      return -2147483648
     end
     getCount = function (this)
       return #this.actions
@@ -31405,7 +31330,7 @@ System.namespace("WCSharp.Events.EventHandlers.PlayerUnitEventHandlers", functio
       return false
     end
     Register = function (this, action)
-      local default, eventSet = TryGetEventSet(this, -2147483648 --[[Int32.MinValue]])
+      local default, eventSet = TryGetEventSet(this, -2147483648)
       if not default then
         eventSet = AddEventSet(this, WCSharpEventHandlers.EventSet())
       end
@@ -31426,7 +31351,7 @@ System.namespace("WCSharp.Events.EventHandlers.PlayerUnitEventHandlers", functio
       eventSet:Add(action, TypeWrapper_1handle(filterValue))
     end
     Unregister = function (this, action)
-      local ref, eventSet = TryGetEventSet(this, -2147483648 --[[Int32.MinValue]])
+      local ref, eventSet = TryGetEventSet(this, -2147483648)
       if ref and eventSet:Remove(action) and eventSet:getCount() == 0 then
         RemoveEvent(this, eventSet)
       end
@@ -31776,18 +31701,18 @@ System.namespace("WCSharp.Json", function (namespace)
       end
     }
   end)
-  -- <summary>
-  -- Entry point for converting classes to and from JSON files.
-  -- </summary>
+
+
+
   namespace.class("JsonConvert", function (namespace)
     local parser, TryDeserialize, TryDeserialize1, Deserialize, Deserialize1, Serialize, static
     static = function (this)
       parser = load("\r\n--\r\n-- json.lua\r\n--\r\n-- Copyright (c) 2020 rxi\r\n--\r\n-- Permission is hereby granted, free of charge, to any person obtaining a copy of\r\n-- this software and associated documentation files (the \"Software\"), to deal in\r\n-- the Software without restriction, including without limitation the rights to\r\n-- use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies\r\n-- of the Software, and to permit persons to whom the Software is furnished to do\r\n-- so, subject to the following conditions:\r\n--\r\n-- The above copyright notice and this permission notice shall be included in all\r\n-- copies or substantial portions of the Software.\r\n--\r\n-- THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\r\n-- IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\r\n-- FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\r\n-- AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\r\n-- LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\r\n-- OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\r\n-- SOFTWARE.\r\n--\r\n\r\nlocal json = { _version = \"0.1.2\" }\r\n\r\n-------------------------------------------------------------------------------\r\n-- Encode\r\n-------------------------------------------------------------------------------\r\n\r\nlocal encode\r\n\r\nlocal escape_char_map = {\r\n  [ \"\\\\\" ] = \"\\\\\",\r\n  [ \"\\\"\" ] = \"\\\"\",\r\n  [ \"\\b\" ] = \"b\",\r\n  [ \"\\f\" ] = \"f\",\r\n  [ \"\\n\" ] = \"n\",\r\n  [ \"\\r\" ] = \"r\",\r\n  [ \"\\t\" ] = \"t\",\r\n}\r\n\r\nlocal escape_char_map_inv = { [ \"/\" ] = \"/\" }\r\nfor k, v in pairs(escape_char_map) do\r\n  escape_char_map_inv[v] = k\r\nend\r\n\r\n\r\nlocal function escape_char(c)\r\n  return \"\\\\\" .. (escape_char_map[c] or string.format(\"u%04x\", c:byte()))\r\nend\r\n\r\n\r\nlocal function encode_nil(val)\r\n  return \"null\"\r\nend\r\n\r\n\r\nlocal function encode_table(val, stack)\r\n  local res = {}\r\n  stack = stack or {}\r\n\r\n  -- Circular reference?\r\n  if stack[val] then error(\"circular reference\") end\r\n\r\n  stack[val] = true\r\n\r\n  if rawget(val, 1) ~= nil or next(val) == nil then\r\n    -- Treat as array -- check keys are valid and it is not sparse\r\n    local n = 0\r\n    for k in pairs(val) do\r\n      if type(k) ~= \"number\" then\r\n        error(\"invalid table: mixed or invalid key types\")\r\n      end\r\n      n = n + 1\r\n    end\r\n    if n ~= #val then\r\n      error(\"invalid table: sparse array\")\r\n    end\r\n    -- Encode\r\n    for i, v in ipairs(val) do\r\n      table.insert(res, encode(v, stack))\r\n    end\r\n    stack[val] = nil\r\n    return \"[\" .. table.concat(res, \",\") .. \"]\"\r\n\r\n  else\r\n    -- Treat as an object\r\n    for k, v in pairs(val) do\r\n      if type(k) ~= \"string\" then\r\n        error(\"invalid table: mixed or invalid key types\")\r\n      end\r\n      table.insert(res, encode(k, stack) .. \":\" .. encode(v, stack))\r\n    end\r\n    stack[val] = nil\r\n    return \"{\" .. table.concat(res, \",\") .. \"}\"\r\n  end\r\nend\r\n\r\n\r\nlocal function encode_string(val)\r\n  return '\"' .. val:gsub('[%z\\1-\\31\\\\\"]', escape_char) .. '\"'\r\nend\r\n\r\n\r\nlocal function encode_number(val)\r\n  -- Check for NaN, -inf and inf\r\n  if val ~= val or val <= -math.huge or val >= math.huge then\r\n    error(\"unexpected number value '\" .. tostring(val) .. \"'\")\r\n  end\r\n  return tostring(val)\r\nend\r\n\r\n\r\nlocal type_func_map = {\r\n  [ \"nil\"     ] = encode_nil,\r\n  [ \"table\"   ] = encode_table,\r\n  [ \"string\"  ] = encode_string,\r\n  [ \"number\"  ] = encode_number,\r\n  [ \"boolean\" ] = tostring,\r\n}\r\n\r\n\r\nencode = function(val, stack)\r\n  local t = type(val)\r\n  local f = type_func_map[t]\r\n  if f then\r\n    return f(val, stack)\r\n  end\r\n  error(\"unexpected type '\" .. t .. \"'\")\r\nend\r\n\r\n\r\nfunction json.encode(val)\r\n  return ( encode(val) )\r\nend\r\n\r\n\r\n-------------------------------------------------------------------------------\r\n-- Decode\r\n-------------------------------------------------------------------------------\r\n\r\nlocal parse\r\n\r\nlocal function create_set(...)\r\n  local res = {}\r\n  for i = 1, select(\"#\", ...) do\r\n    res[ select(i, ...) ] = true\r\n  end\r\n  return res\r\nend\r\n\r\nlocal space_chars   = create_set(\" \", \"\\t\", \"\\r\", \"\\n\")\r\nlocal delim_chars   = create_set(\" \", \"\\t\", \"\\r\", \"\\n\", \"]\", \"}\", \",\")\r\nlocal escape_chars  = create_set(\"\\\\\", \"/\", '\"', \"b\", \"f\", \"n\", \"r\", \"t\", \"u\")\r\nlocal literals      = create_set(\"true\", \"false\", \"null\")\r\n\r\nlocal literal_map = {\r\n  [ \"true\"  ] = true,\r\n  [ \"false\" ] = false,\r\n  [ \"null\"  ] = nil,\r\n}\r\n\r\n\r\nlocal function next_char(str, idx, set, negate)\r\n  for i = idx, #str do\r\n    if set[str:sub(i, i)] ~= negate then\r\n      return i\r\n    end\r\n  end\r\n  return #str + 1\r\nend\r\n\r\n\r\nlocal function decode_error(str, idx, msg)\r\n  local line_count = 1\r\n  local col_count = 1\r\n  for i = 1, idx - 1 do\r\n    col_count = col_count + 1\r\n    if str:sub(i, i) == \"\\n\" then\r\n      line_count = line_count + 1\r\n      col_count = 1\r\n    end\r\n  end\r\n  error( string.format(\"%s at line %d col %d\", msg, line_count, col_count) )\r\nend\r\n\r\n\r\nlocal function codepoint_to_utf8(n)\r\n  -- http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=iws-appendixa\r\n  local f = math.floor\r\n  if n <= 0x7f then\r\n    return string.char(n)\r\n  elseif n <= 0x7ff then\r\n    return string.char(f(n / 64) + 192, n % 64 + 128)\r\n  elseif n <= 0xffff then\r\n    return string.char(f(n / 4096) + 224, f(n % 4096 / 64) + 128, n % 64 + 128)\r\n  elseif n <= 0x10ffff then\r\n    return string.char(f(n / 262144) + 240, f(n % 262144 / 4096) + 128,\r\n                       f(n % 4096 / 64) + 128, n % 64 + 128)\r\n  end\r\n  error( string.format(\"invalid unicode codepoint '%x'\", n) )\r\nend\r\n\r\n\r\nlocal function parse_unicode_escape(s)\r\n  local n1 = tonumber( s:sub(1, 4),  16 )\r\n  local n2 = tonumber( s:sub(7, 10), 16 )\r\n   -- Surrogate pair?\r\n  if n2 then\r\n    return codepoint_to_utf8((n1 - 0xd800) * 0x400 + (n2 - 0xdc00) + 0x10000)\r\n  else\r\n    return codepoint_to_utf8(n1)\r\n  end\r\nend\r\n\r\n\r\nlocal function parse_string(str, i)\r\n  local res = \"\"\r\n  local j = i + 1\r\n  local k = j\r\n\r\n  while j <= #str do\r\n    local x = str:byte(j)\r\n\r\n    if x < 32 then\r\n      decode_error(str, j, \"control character in string\")\r\n\r\n    elseif x == 92 then -- `\\`: Escape\r\n      res = res .. str:sub(k, j - 1)\r\n      j = j + 1\r\n      local c = str:sub(j, j)\r\n      if c == \"u\" then\r\n        local hex = str:match(\"^[dD][89aAbB]%x%x\\\\u%x%x%x%x\", j + 1)\r\n                 or str:match(\"^%x%x%x%x\", j + 1)\r\n                 or decode_error(str, j - 1, \"invalid unicode escape in string\")\r\n        res = res .. parse_unicode_escape(hex)\r\n        j = j + #hex\r\n      else\r\n        if not escape_chars[c] then\r\n          decode_error(str, j - 1, \"invalid escape char '\" .. c .. \"' in string\")\r\n        end\r\n        res = res .. escape_char_map_inv[c]\r\n      end\r\n      k = j + 1\r\n\r\n    elseif x == 34 then -- `\"`: End of string\r\n      res = res .. str:sub(k, j - 1)\r\n      return res, j + 1\r\n    end\r\n\r\n    j = j + 1\r\n  end\r\n\r\n  decode_error(str, i, \"expected closing quote for string\")\r\nend\r\n\r\n\r\nlocal function parse_number(str, i)\r\n  local x = next_char(str, i, delim_chars)\r\n  local s = str:sub(i, x - 1)\r\n  local n = tonumber(s)\r\n  if not n then\r\n    decode_error(str, i, \"invalid number '\" .. s .. \"'\")\r\n  end\r\n  return n, x\r\nend\r\n\r\n\r\nlocal function parse_literal(str, i)\r\n  local x = next_char(str, i, delim_chars)\r\n  local word = str:sub(i, x - 1)\r\n  if not literals[word] then\r\n    decode_error(str, i, \"invalid literal '\" .. word .. \"'\")\r\n  end\r\n  return literal_map[word], x\r\nend\r\n\r\n\r\nlocal function parse_array(str, i)\r\n  local res = {}\r\n  local n = 1\r\n  i = i + 1\r\n  while 1 do\r\n    local x\r\n    i = next_char(str, i, space_chars, true)\r\n    -- Empty / end of array?\r\n    if str:sub(i, i) == \"]\" then\r\n      i = i + 1\r\n      break\r\n    end\r\n    -- Read token\r\n    x, i = parse(str, i)\r\n    res[n] = x\r\n    n = n + 1\r\n    -- Next token\r\n    i = next_char(str, i, space_chars, true)\r\n    local chr = str:sub(i, i)\r\n    i = i + 1\r\n    if chr == \"]\" then break end\r\n    if chr ~= \",\" then decode_error(str, i, \"expected ']' or ','\") end\r\n  end\r\n  return res, i\r\nend\r\n\r\n\r\nlocal function parse_object(str, i)\r\n  local res = {}\r\n  i = i + 1\r\n  while 1 do\r\n    local key, val\r\n    i = next_char(str, i, space_chars, true)\r\n    -- Empty / end of object?\r\n    if str:sub(i, i) == \"}\" then\r\n      i = i + 1\r\n      break\r\n    end\r\n    -- Read key\r\n    if str:sub(i, i) ~= '\"' then\r\n      decode_error(str, i, \"expected string for key\")\r\n    end\r\n    key, i = parse(str, i)\r\n    -- Read ':' delimiter\r\n    i = next_char(str, i, space_chars, true)\r\n    if str:sub(i, i) ~= \":\" then\r\n      decode_error(str, i, \"expected ':' after key\")\r\n    end\r\n    i = next_char(str, i + 1, space_chars, true)\r\n    -- Read value\r\n    val, i = parse(str, i)\r\n    -- Set\r\n    res[key] = val\r\n    -- Next token\r\n    i = next_char(str, i, space_chars, true)\r\n    local chr = str:sub(i, i)\r\n    i = i + 1\r\n    if chr == \"}\" then break end\r\n    if chr ~= \",\" then decode_error(str, i, \"expected '}' or ','\") end\r\n  end\r\n  return res, i\r\nend\r\n\r\n\r\nlocal char_func_map = {\r\n  [ '\"' ] = parse_string,\r\n  [ \"0\" ] = parse_number,\r\n  [ \"1\" ] = parse_number,\r\n  [ \"2\" ] = parse_number,\r\n  [ \"3\" ] = parse_number,\r\n  [ \"4\" ] = parse_number,\r\n  [ \"5\" ] = parse_number,\r\n  [ \"6\" ] = parse_number,\r\n  [ \"7\" ] = parse_number,\r\n  [ \"8\" ] = parse_number,\r\n  [ \"9\" ] = parse_number,\r\n  [ \"-\" ] = parse_number,\r\n  [ \"t\" ] = parse_literal,\r\n  [ \"f\" ] = parse_literal,\r\n  [ \"n\" ] = parse_literal,\r\n  [ \"[\" ] = parse_array,\r\n  [ \"{\" ] = parse_object,\r\n}\r\n\r\n\r\nparse = function(str, idx)\r\n  local chr = str:sub(idx, idx)\r\n  local f = char_func_map[chr]\r\n  if f then\r\n    return f(str, idx)\r\n  end\r\n  decode_error(str, idx, \"unexpected character '\" .. chr .. \"'\")\r\nend\r\n\r\n\r\nfunction json.decode(str)\r\n  if type(str) ~= \"string\" then\r\n    error(\"expected argument of type string, got \" .. type(str))\r\n  end\r\n  local res, idx = parse(str, next_char(str, 1, space_chars, true))\r\n  idx = next_char(str, idx, space_chars, true)\r\n  if idx <= #str then\r\n    decode_error(str, idx, \"trailing garbage\")\r\n  end\r\n  return res\r\nend\r\n\r\n\r\nreturn json\r\n")()
     end
-    -- <summary>
-    -- Attempts to convert the given JSON string into the specified generic class.
-    -- <para>Please read the documentation for details on what can and cannot be (de)serialized.</para>
-    -- </summary>
+
+
+
+
     TryDeserialize = function (input, data, T)
       local default, data2 = TryDeserialize1(input, System.typeof(T))
       if default then
@@ -31797,10 +31722,10 @@ System.namespace("WCSharp.Json", function (namespace)
       data = System.default(T)
       return false, data
     end
-    -- <summary>
-    -- Attempts to convert the given JSON string into the specified generic class.
-    -- <para>Please read the documentation for details on what can and cannot be (de)serialized.</para>
-    -- </summary>
+
+
+
+
     TryDeserialize1 = function (input, deserializeType, data)
       local default, extern = System.try(function ()
         data = Deserialize1(input, deserializeType)
@@ -31813,24 +31738,24 @@ System.namespace("WCSharp.Json", function (namespace)
         return extern, data
       end
     end
-    -- <summary>
-    -- Converts the given JSON string into the specified generic class.
-    -- <para>Please read the documentation for details on what can and cannot be (de)serialized.</para>
-    -- </summary>
+
+
+
+
     Deserialize = function (input, T)
       return System.cast(T, Deserialize1(input, System.typeof(T)))
     end
-    -- <summary>
-    -- Converts the given JSON string into the specified generic class.
-    -- <para>Please read the documentation for details on what can and cannot be (de)serialized.</para>
-    -- </summary>
+
+
+
+
     Deserialize1 = function (input, deserializeType)
       return WCSharpJson.Deserialization.DeserializeLuaTable(WCSharpShared.LuaTable(parser.decode(input)), deserializeType)
     end
-    -- <summary>
-    -- Converts the given generic class into a JSON string.
-    -- <para>Please read the documentation for details on what can and cannot be (de)serialized.</para>
-    -- </summary>
+
+
+
+
     Serialize = function (input, T)
       return parser.encode(WCSharpJson.Serialization.SerializeClass(input, System.typeof(T)))
     end
@@ -31984,30 +31909,30 @@ System.import(function (out)
   PeriodicTrigger_1Knockback = WCSharpEvents.PeriodicTrigger_1(WCSharpKnockbacks.Knockback)
 end)
 System.namespace("WCSharp.Knockbacks", function (namespace)
-  -- <summary>
-  -- Represents a single knockback instance. Add to <see cref="T:WCSharp.Knockbacks.KnockbackSystem" /> to activate.
-  -- </summary>
+
+
+
   namespace.class("Knockback", function (namespace)
     local getActive, setActive, Action, Merge, class, __ctor1__, __ctor2__, __ctor3__
     __ctor1__ = function (this, target, distance, duration)
       this.Target = target
-      this.Speed = distance / duration * (0.03125 --[[1f / 32f]])
-      this.SpeedDropoff = this.Speed / duration * (0.03125 --[[1f / 32f]])
+      this.Speed = distance / duration * (0.03125)
+      this.SpeedDropoff = this.Speed / duration * (0.03125)
     end
-    -- <summary>
-    -- Knocks the target the given distance towards the given angle (in degrees) over the given duration.
-    -- </summary>
-    -- <param name="target">The target to perform the knockback on</param>
-    -- <param name="distance">The distance in units to knock the target back</param>
-    -- <param name="duration">The duration in seconds over which the target should be knocked back</param>
-    -- <param name="angle">In degrees.</param>
+
+
+
+
+
+
+
     __ctor2__ = function (this, target, distance, duration, angle)
       __ctor1__(this, target, distance, duration)
-      this.Angle = angle * (0.0174532924 --[[(float)Math.PI / 180f]])
+      this.Angle = angle * (0.0174532924)
     end
-    -- <summary>
-    -- Knocks the target the given distance towards the given location over the given duration.
-    -- </summary>
+
+
+
     __ctor3__ = function (this, target, distance, duration, targetX, targetY)
       __ctor1__(this, target, distance, duration)
       local unitX = GetUnitX(this.Target)
@@ -32015,9 +31940,9 @@ System.namespace("WCSharp.Knockbacks", function (namespace)
       this.Angle = (180 + (57.2957764 * Atan2(unitY - targetY, unitX - targetX)))
     end
     getActive, setActive = System.property("Active")
-    -- <summary>
-    -- Called by the system. Do not call yourself.
-    -- </summary>
+
+
+
     Action = function (this)
       local newX = GetUnitX(this.Target) + this.Speed * Cos(this.Angle)
       local newY = GetUnitY(this.Target) + this.Speed * Sin(this.Angle)
@@ -32028,23 +31953,23 @@ System.namespace("WCSharp.Knockbacks", function (namespace)
         return
       end
       if this.Effect1 ~= nil then
-        this.effect1Interval = this.effect1Interval - (0.03125 --[[1f / 32f]])
+        this.effect1Interval = this.effect1Interval - (0.03125)
         if this.effect1Interval <= 0 then
           this.effect1Interval = 1
           DestroyEffect(AddSpecialEffectTarget(this.Effect1, this.Target, this.Effect1AttachmentPoint))
         end
       end
       if this.Effect2 ~= nil then
-        this.effect2Interval = this.effect2Interval - (0.03125 --[[1f / 32f]])
+        this.effect2Interval = this.effect2Interval - (0.03125)
         if this.effect2Interval <= 0 then
           this.effect2Interval = 0.125
           DestroyEffect(AddSpecialEffectTarget(this.Effect1, this.Target, this.Effect1AttachmentPoint))
         end
       end
     end
-    -- <summary>
-    -- Merges the force of the given knockback into this knockback. Typically though, you can also just have both knockbacks active simultaneously and achieve the same effect.
-    -- </summary>
+
+
+
     Merge = function (this, knockback)
       local num = this.Speed * Cos(this.Angle) + knockback.Speed * Cos(knockback.Angle)
       local num2 = this.Speed * Sin(this.Angle) + knockback.Speed * Sin(knockback.Angle)
@@ -32102,20 +32027,20 @@ System.namespace("WCSharp.Knockbacks", function (namespace)
     }
     return class
   end)
-  -- <summary>
-  -- Keeps track of all active knockbacks.
-  -- </summary>
+
+
+
   namespace.class("KnockbackSystem", function (namespace)
     local periodicTrigger, getKnockbacks, Add, static
     static = function (this)
-      periodicTrigger = PeriodicTrigger_1Knockback(0.03125 --[[1f / 32f]])
+      periodicTrigger = PeriodicTrigger_1Knockback(0.03125)
     end
     getKnockbacks = function ()
       return periodicTrigger:getActions()
     end
-    -- <summary>
-    -- Adds the given knockback to the system. This will also initialise or alter some values according to the knockbacks' properties.
-    -- </summary>
+
+
+
     Add = function (knockback)
       periodicTrigger:Add(knockback)
     end
@@ -32155,19 +32080,19 @@ System.import(function (out)
   PeriodicDisposableTrigger_1Lightning = WCSharpEvents.PeriodicDisposableTrigger_1(WCSharpLightnings.Lightning)
 end)
 System.namespace("WCSharp.Lightnings", function (namespace)
-  -- <summary>
-  -- Represents a single lightning instance. Add to <see cref="T:WCSharp.Lightnings.LightningSystem" /> to activate.
-  -- </summary>
+
+
+
   namespace.class("Lightning", function (namespace)
     local getActive, setActive, Start, Action, StartFade, Dispose, __ctor1__, __ctor2__, 
     __ctor3__, __ctor4__
-    -- <summary>
-    -- Creates a new <see cref="T:WCSharp.Lightnings.Lightning" /> instance with the given parameters.
-    -- <para>Will automatically set <see cref="P:WCSharp.Lightnings.Lightning.CasterX" />, <see cref="P:WCSharp.Lightnings.Lightning.CasterY" />, <see cref="P:WCSharp.Lightnings.Lightning.TargetX" /> and <see cref="P:WCSharp.Lightnings.Lightning.TargetY" />.</para>
-    -- </summary>
-    -- <param name="name">The name of the lightning effect. See <see href="https://www.hiveworkshop.com/threads/beginners-guide-to-lightning-effects.220370/" />.</param>
-    -- <param name="caster">The source of the lightning. Will automatically update the position when <paramref name="caster" /> moves.</param>
-    -- <param name="target">The target of the lightning. Will automatically update the position when <paramref name="target" /> moves.</param>
+
+
+
+
+
+
+
     __ctor1__ = function (this, name, caster, target)
       this.name = name
       this.casterZ = BlzGetUnitZ(caster) + GetUnitFlyHeight(caster)
@@ -32179,14 +32104,14 @@ System.namespace("WCSharp.Lightnings", function (namespace)
       this.TargetX = GetUnitX(target)
       this.TargetY = GetUnitY(target)
     end
-    -- <summary>
-    -- Creates a new <see cref="T:WCSharp.Lightnings.Lightning" /> instance with the given parameters.
-    -- <para>Will automatically set <see cref="P:WCSharp.Lightnings.Lightning.CasterX" /> and <see cref="P:WCSharp.Lightnings.Lightning.CasterY" />.</para>
-    -- </summary>
-    -- <param name="name">The name of the lightning effect. See <see href="https://www.hiveworkshop.com/threads/beginners-guide-to-lightning-effects.220370/" />.</param>
-    -- <param name="caster">The source of the lightning. Will automatically update the position when <paramref name="caster" /> moves.</param>
-    -- <param name="targetX"></param>
-    -- <param name="targetY"></param>
+
+
+
+
+
+
+
+
     __ctor2__ = function (this, name, caster, targetX, targetY)
       this.name = name
       this.casterZ = BlzGetUnitZ(caster) + GetUnitFlyHeight(caster)
@@ -32197,14 +32122,14 @@ System.namespace("WCSharp.Lightnings", function (namespace)
       this.TargetX = targetX
       this.TargetY = targetY
     end
-    -- <summary>
-    -- Creates a new <see cref="T:WCSharp.Lightnings.Lightning" /> instance with the given parameters.
-    -- <para>Will automatically set <see cref="P:WCSharp.Lightnings.Lightning.TargetX" /> and <see cref="P:WCSharp.Lightnings.Lightning.TargetY" />.</para>
-    -- </summary>
-    -- <param name="name">The name of the lightning effect. See <see href="https://www.hiveworkshop.com/threads/beginners-guide-to-lightning-effects.220370/" />.</param>
-    -- <param name="casterX"></param>
-    -- <param name="casterY"></param>
-    -- <param name="target">The target of the lightning. Will automatically update the position when <paramref name="target" /> moves.</param>
+
+
+
+
+
+
+
+
     __ctor3__ = function (this, name, casterX, casterY, target)
       this.name = name
       this.casterZ = WCSharpShared.Util.GetZ(casterX, casterY)
@@ -32215,14 +32140,14 @@ System.namespace("WCSharp.Lightnings", function (namespace)
       this.TargetX = GetUnitX(target)
       this.TargetY = GetUnitY(target)
     end
-    -- <summary>
-    -- Creates a new <see cref="T:WCSharp.Lightnings.Lightning" /> instance with the given parameters.
-    -- </summary>
-    -- <param name="name">The name of the lightning effect. See <see href="https://www.hiveworkshop.com/threads/beginners-guide-to-lightning-effects.220370/" />.</param>
-    -- <param name="casterX"></param>
-    -- <param name="casterY"></param>
-    -- <param name="targetX"></param>
-    -- <param name="targetY"></param>
+
+
+
+
+
+
+
+
     __ctor4__ = function (this, name, casterX, casterY, targetX, targetY)
       this.name = name
       this.casterZ = WCSharpShared.Util.GetZ(casterX, casterY)
@@ -32237,12 +32162,12 @@ System.namespace("WCSharp.Lightnings", function (namespace)
       this.lightning = AddLightning(this.name, true, this.CasterX, this.CasterY, this.TargetX, this.TargetY)
       MoveLightningEx(this.lightning, true, this.CasterX, this.CasterY, this.casterZ + this.CasterHeightOffset, this.TargetX, this.TargetY, this.casterZ + this.TargetHeightOffset)
       SetLightningColor(this.lightning, this.Red, this.Green, this.Blue, this.Alpha)
-      this.transparencyRate = ((this.FadeDuration > 0) and (this.Alpha / this.FadeDuration * (0.03125 --[[1f / 32f]])) or this.Alpha)
+      this.transparencyRate = ((this.FadeDuration > 0) and (this.Alpha / this.FadeDuration * (0.03125)) or this.Alpha)
       this.age = 0
     end
-    -- <summary>
-    -- Called by the system. Do not call yourself.
-    -- </summary>
+
+
+
     Action = function (this)
       if this.Caster ~= nil then
         if UnitAlive(this.Caster) then
@@ -32263,7 +32188,7 @@ System.namespace("WCSharp.Lightnings", function (namespace)
         end
       end
       MoveLightningEx(this.lightning, true, this.CasterX, this.CasterY, this.casterZ + this.CasterHeightOffset, this.TargetX, this.TargetY, this.targetZ + this.TargetHeightOffset)
-      this.age = this.age + (0.03125 --[[1f / 32f]])
+      this.age = this.age + (0.03125)
       if this.age > this.Duration - this.FadeDuration then
         this.Alpha = this.Alpha - this.transparencyRate
         SetLightningColor(this.lightning, this.Red, this.Green, this.Blue, this.Alpha)
@@ -32272,13 +32197,13 @@ System.namespace("WCSharp.Lightnings", function (namespace)
         this.Active = false
       end
     end
-    -- <summary>
-    -- For lightnings that last until cancelled (meaning duration is excessively high), this method can be used to start the fade out process when desired.
-    -- </summary>
+
+
+
     StartFade = function (this)
       this.age = this.Duration - this.FadeDuration
     end
-    -- <inheritdoc />
+
     Dispose = function (this)
       DestroyLightning(this.lightning)
     end
@@ -32359,20 +32284,20 @@ System.namespace("WCSharp.Lightnings", function (namespace)
       end
     }
   end)
-  -- <summary>
-  -- Tracks and runs all active <see cref="T:WCSharp.Lightnings.Lightning" /> instances.
-  -- </summary>
+
+
+
   namespace.class("LightningSystem", function (namespace)
     local periodicTrigger, getMissiles, Add, static
     static = function (this)
-      periodicTrigger = PeriodicDisposableTrigger_1Lightning(0.03125 --[[1f / 32f]])
+      periodicTrigger = PeriodicDisposableTrigger_1Lightning(0.03125)
     end
     getMissiles = function ()
       return periodicTrigger:getActions()
     end
-    -- <summary>
-    -- Adds the given <paramref name="lightning" /> to the system. This will also initialise or alter some values according to the lightnings' properties.
-    -- </summary>
+
+
+
     Add = function (lightning)
       lightning:Start()
       periodicTrigger:Add(lightning)
@@ -32419,17 +32344,17 @@ System.import(function (out)
   PeriodicDisposableTrigger_1Missile = WCSharpEvents.PeriodicDisposableTrigger_1(WCSharpMissiles.Missile)
 end)
 System.namespace("WCSharp.Missiles", function (namespace)
-  -- <summary>
-  -- Basic missile that will go from unit/location A to unit/location B.
-  -- <para>The main feature for this missile is that missiles can arc.</para>
-  -- </summary>
+
+
+
+
   namespace.class("BasicMissile", function (namespace)
     local getCasterZ, setCasterZ, getTargetZ, setTargetZ, getMissileZ, setMissileZ, getSpeedPerTick, setSpeedPerTick, 
     getSpeed, setSpeed, getMode, setMode, getIsArcing, setIsArcing, SetFlightMode, Launch, 
     Action, __ctor1__, __ctor2__, __ctor3__, __ctor4__
-    -- <summary>
-    -- The flight modes of this missile type.
-    -- </summary>
+
+
+
     namespace.enum("FlightMode", function ()
       return {
         Default = 0,
@@ -32447,48 +32372,48 @@ System.namespace("WCSharp.Missiles", function (namespace)
         end
       }
     end)
-    -- <inheritdoc />
+
     __ctor1__ = function (this, caster, target)
       System.base(this).__ctor__[3](this, caster, target)
     end
-    -- <inheritdoc />
+
     __ctor2__ = function (this, caster, targetX, targetY)
       System.base(this).__ctor__[4](this, caster, targetX, targetY)
     end
-    -- <inheritdoc />
+
     __ctor3__ = function (this, castingPlayer, casterX, casterY, target)
       System.base(this).__ctor__[5](this, castingPlayer, casterX, casterY, target)
     end
-    -- <inheritdoc />
+
     __ctor4__ = function (this, castingPlayer, casterX, casterY, targetX, targetY)
       System.base(this).__ctor__[6](this, castingPlayer, casterX, casterY, targetX, targetY)
     end
     getCasterZ = function (this)
-      if this.mode ~= 1 --[[FlightMode.FollowTerrain]] then
+      if this.mode ~= 1 then
         return this.InternalCasterZ
       end
       return this.InternalCasterZ + WCSharpShared.Util.GetZ(this.CasterX, this.CasterY)
     end
     setCasterZ = function (this, value)
-      this.InternalCasterZ = ((this.mode == 1 --[[FlightMode.FollowTerrain]]) and (value - WCSharpShared.Util.GetZ(this.CasterX, this.CasterY)) or value)
+      this.InternalCasterZ = ((this.mode == 1) and (value - WCSharpShared.Util.GetZ(this.CasterX, this.CasterY)) or value)
     end
     getTargetZ = function (this)
-      if this.mode ~= 1 --[[FlightMode.FollowTerrain]] then
+      if this.mode ~= 1 then
         return this.InternalTargetZ
       end
       return this.InternalTargetZ + WCSharpShared.Util.GetZ(this.TargetX, this.TargetY)
     end
     setTargetZ = function (this, value)
-      this.InternalTargetZ = ((this.mode == 1 --[[FlightMode.FollowTerrain]]) and (value - WCSharpShared.Util.GetZ(this.TargetX, this.TargetY)) or value)
+      this.InternalTargetZ = ((this.mode == 1) and (value - WCSharpShared.Util.GetZ(this.TargetX, this.TargetY)) or value)
     end
     getMissileZ = function (this)
-      if this.mode ~= 1 --[[FlightMode.FollowTerrain]] then
+      if this.mode ~= 1 then
         return this.InternalMissileZ
       end
       return this.InternalMissileZ + WCSharpShared.Util.GetZ(this.MissileX, this.MissileY)
     end
     setMissileZ = function (this, value)
-      this.InternalMissileZ = ((this.mode == 1 --[[FlightMode.FollowTerrain]]) and (value - WCSharpShared.Util.GetZ(this.MissileX, this.MissileY)) or value)
+      this.InternalMissileZ = ((this.mode == 1) and (value - WCSharpShared.Util.GetZ(this.MissileX, this.MissileY)) or value)
     end
     getSpeedPerTick = function (this)
       return this.speed
@@ -32497,10 +32422,10 @@ System.namespace("WCSharp.Missiles", function (namespace)
       this.speed = value
     end
     getSpeed = function (this)
-      return this.speed / (0.03125 --[[1f / 32f]])
+      return this.speed / (0.03125)
     end
     setSpeed = function (this, value)
-      this.speed = value * (0.03125 --[[1f / 32f]])
+      this.speed = value * (0.03125)
     end
     getMode = function (this)
       return this.mode
@@ -32526,23 +32451,23 @@ System.namespace("WCSharp.Missiles", function (namespace)
       this.isArcing = value
     end
     SetFlightMode = function (this, value)
-      if value == 0 --[[FlightMode.Default]] then
-        value = ((this.Arc == 0 and not (GetUnitFlyHeight(this.Caster) + this.CasterLaunchZ >= 300)) and 1 --[[FlightMode.FollowTerrain]] or 2 --[[FlightMode.Direct]])
+      if value == 0 then
+        value = ((this.Arc == 0 and not (GetUnitFlyHeight(this.Caster) + this.CasterLaunchZ >= 300)) and 1 or 2)
       end
-      if this.mode == 2 --[[FlightMode.Direct]] then
-        if value == 1 --[[FlightMode.FollowTerrain]] then
+      if this.mode == 2 then
+        if value == 1 then
           this.InternalCasterZ = this.InternalCasterZ - WCSharpShared.Util.GetZ(this.CasterX, this.CasterY)
           this.InternalMissileZ = this.InternalMissileZ - WCSharpShared.Util.GetZ(this.MissileX, this.MissileY)
           this.InternalTargetZ = this.InternalTargetZ - WCSharpShared.Util.GetZ(this.TargetX, this.TargetY)
         end
-      elseif value == 2 --[[FlightMode.Direct]] then
+      elseif value == 2 then
         this.InternalCasterZ = this.InternalCasterZ + WCSharpShared.Util.GetZ(this.CasterX, this.CasterY)
         this.InternalMissileZ = this.InternalMissileZ + WCSharpShared.Util.GetZ(this.MissileX, this.MissileY)
         this.InternalTargetZ = this.InternalTargetZ + WCSharpShared.Util.GetZ(this.TargetX, this.TargetY)
       end
       this.mode = value
     end
-    -- <inheritdoc />
+
     Launch = function (this)
       this.InternalCasterZ = this.InternalCasterZ + this.CasterLaunchZ
       this.InternalTargetZ = this.InternalTargetZ + this.TargetImpactZ
@@ -32552,11 +32477,11 @@ System.namespace("WCSharp.Missiles", function (namespace)
       this.MissileY = this.CasterY
       this.isArcing = this.Arc ~= 0
       this.totalDistanceToTarget = SquareRoot(((this.CasterX - this.TargetX) * (this.CasterX - this.TargetX)) + ((this.CasterY - this.TargetY) * (this.CasterY - this.TargetY)))
-      if this.mode == 0 --[[FlightMode.Default]] then
+      if this.mode == 0 then
         SetFlightMode(this, 0)
       else
         local flightMode = this.mode
-        this.mode = 0 --[[FlightMode.Default]]
+        this.mode = 0
         SetFlightMode(this, 0)
         SetFlightMode(this, flightMode)
       end
@@ -32568,14 +32493,14 @@ System.namespace("WCSharp.Missiles", function (namespace)
         end
       end
     end
-    -- <inheritdoc />
+
     Action = function (this)
       if this.Target ~= nil then
         if UnitAlive(this.Target) then
           this.TargetX = GetUnitX(this.Target)
           this.TargetY = GetUnitY(this.Target)
           this.InternalTargetZ = GetUnitFlyHeight(this.Target) + this.TargetImpactZ
-          if this.mode ~= 1 --[[FlightMode.FollowTerrain]] then
+          if this.mode ~= 1 then
             this.InternalTargetZ = this.InternalTargetZ + WCSharpShared.Util.GetZ(this.TargetX, this.TargetY)
           end
         else
@@ -32595,7 +32520,7 @@ System.namespace("WCSharp.Missiles", function (namespace)
         else
           this.totalDistanceToTarget = num2
           local num3 = SquareRoot(((this.CasterX - this.MissileX) * (this.CasterX - this.MissileX)) + ((this.CasterY - this.MissileY) * (this.CasterY - this.MissileY))) / num2
-          this.InternalMissileZ = this.InternalCasterZ + num3 * (this.InternalTargetZ - this.InternalCasterZ) + num2 * this.Arc * Sin(num3 * 3.14159274 --[[(float)Math.PI]])
+          this.InternalMissileZ = this.InternalCasterZ + num3 * (this.InternalTargetZ - this.InternalCasterZ) + num2 * this.Arc * Sin(num3 * 3.14159274)
         end
       else
         this.InternalMissileZ = this.InternalMissileZ + ((this.InternalTargetZ - this.InternalMissileZ) * (this.speed / num))
@@ -32688,19 +32613,19 @@ System.namespace("WCSharp.Missiles", function (namespace)
       end
     }
   end)
-  -- <summary>
-  -- Advanced missile that allows for arcing/curving motions, i.e. a boomerang motion.
-  -- <para>If you do not use the <see cref="P:WCSharp.Missiles.CurveMissile.Curve" /> property, you should use <see cref="T:WCSharp.Missiles.BasicMissile" /> instead for greater performance and
-  -- identical features.</para>
-  -- </summary>
+
+
+
+
+
   namespace.class("CurveMissile", function (namespace)
     local getCasterZ, setCasterZ, getTargetZ, setTargetZ, getMissileZ, setMissileZ, getSpeedPerTick, setSpeedPerTick, 
     getSpeed, setSpeed, getCurve, setCurve, getMode, setMode, getIsArcingOrCurving, setIsArcingOrCurving, 
     SetFlightMode, Launch, Action, DirectAction, ArcAction, __ctor1__, __ctor2__, __ctor3__, 
     __ctor4__
-    -- <summary>
-    -- The flight modes of this missile type.
-    -- </summary>
+
+
+
     namespace.enum("FlightMode", function ()
       return {
         Default = 0,
@@ -32718,48 +32643,48 @@ System.namespace("WCSharp.Missiles", function (namespace)
         end
       }
     end)
-    -- <inheritdoc />
+
     __ctor1__ = function (this, caster, target)
       System.base(this).__ctor__[3](this, caster, target)
     end
-    -- <inheritdoc />
+
     __ctor2__ = function (this, caster, targetX, targetY)
       System.base(this).__ctor__[4](this, caster, targetX, targetY)
     end
-    -- <inheritdoc />
+
     __ctor3__ = function (this, castingPlayer, casterX, casterY, target)
       System.base(this).__ctor__[5](this, castingPlayer, casterX, casterY, target)
     end
-    -- <inheritdoc />
+
     __ctor4__ = function (this, castingPlayer, casterX, casterY, targetX, targetY)
       System.base(this).__ctor__[6](this, castingPlayer, casterX, casterY, targetX, targetY)
     end
     getCasterZ = function (this)
-      if this.mode ~= 1 --[[FlightMode.FollowTerrain]] then
+      if this.mode ~= 1 then
         return this.InternalCasterZ
       end
       return this.InternalCasterZ + WCSharpShared.Util.GetZ(this.CasterX, this.CasterY)
     end
     setCasterZ = function (this, value)
-      this.InternalCasterZ = ((this.mode == 1 --[[FlightMode.FollowTerrain]]) and (value - WCSharpShared.Util.GetZ(this.CasterX, this.CasterY)) or value)
+      this.InternalCasterZ = ((this.mode == 1) and (value - WCSharpShared.Util.GetZ(this.CasterX, this.CasterY)) or value)
     end
     getTargetZ = function (this)
-      if this.mode ~= 1 --[[FlightMode.FollowTerrain]] then
+      if this.mode ~= 1 then
         return this.InternalTargetZ
       end
       return this.InternalTargetZ + WCSharpShared.Util.GetZ(this.TargetX, this.TargetY)
     end
     setTargetZ = function (this, value)
-      this.InternalTargetZ = ((this.mode == 1 --[[FlightMode.FollowTerrain]]) and (value - WCSharpShared.Util.GetZ(this.TargetX, this.TargetY)) or value)
+      this.InternalTargetZ = ((this.mode == 1) and (value - WCSharpShared.Util.GetZ(this.TargetX, this.TargetY)) or value)
     end
     getMissileZ = function (this)
-      if this.mode ~= 1 --[[FlightMode.FollowTerrain]] then
+      if this.mode ~= 1 then
         return this.InternalMissileZ
       end
       return this.InternalMissileZ + WCSharpShared.Util.GetZ(this.MissileX, this.MissileY)
     end
     setMissileZ = function (this, value)
-      this.InternalMissileZ = ((this.mode == 1 --[[FlightMode.FollowTerrain]]) and (value - WCSharpShared.Util.GetZ(this.MissileX, this.MissileY)) or value)
+      this.InternalMissileZ = ((this.mode == 1) and (value - WCSharpShared.Util.GetZ(this.MissileX, this.MissileY)) or value)
     end
     getSpeedPerTick = function (this)
       return this.speed
@@ -32768,16 +32693,16 @@ System.namespace("WCSharp.Missiles", function (namespace)
       this.speed = value
     end
     getSpeed = function (this)
-      return this.speed / (0.03125 --[[1f / 32f]])
+      return this.speed / (0.03125)
     end
     setSpeed = function (this, value)
-      this.speed = value * (0.03125 --[[1f / 32f]])
+      this.speed = value * (0.03125)
     end
     getCurve = function (this)
-      return this.CurveRad * (57.2957764 --[[180f / (float)Math.PI]])
+      return this.CurveRad * (57.2957764)
     end
     setCurve = function (this, value)
-      this.CurveRad = value * (0.0174532924 --[[(float)Math.PI / 180f]])
+      this.CurveRad = value * (0.0174532924)
     end
     getMode = function (this)
       return this.mode
@@ -32806,23 +32731,23 @@ System.namespace("WCSharp.Missiles", function (namespace)
       this.isArcingOrCurving = value
     end
     SetFlightMode = function (this, value)
-      if value == 0 --[[FlightMode.Default]] then
-        value = ((this.Arc == 0 and not (GetUnitFlyHeight(this.Caster) + this.CasterLaunchZ >= 300)) and 1 --[[FlightMode.FollowTerrain]] or 2 --[[FlightMode.Direct]])
+      if value == 0 then
+        value = ((this.Arc == 0 and not (GetUnitFlyHeight(this.Caster) + this.CasterLaunchZ >= 300)) and 1 or 2)
       end
-      if this.mode == 2 --[[FlightMode.Direct]] then
-        if value == 1 --[[FlightMode.FollowTerrain]] then
+      if this.mode == 2 then
+        if value == 1 then
           this.InternalCasterZ = this.InternalCasterZ - WCSharpShared.Util.GetZ(this.CasterX, this.CasterY)
           this.InternalMissileZ = this.InternalMissileZ - WCSharpShared.Util.GetZ(this.MissileX, this.MissileY)
           this.InternalTargetZ = this.InternalTargetZ - WCSharpShared.Util.GetZ(this.TargetX, this.TargetY)
         end
-      elseif value == 2 --[[FlightMode.Direct]] then
+      elseif value == 2 then
         this.InternalCasterZ = this.InternalCasterZ + WCSharpShared.Util.GetZ(this.CasterX, this.CasterY)
         this.InternalMissileZ = this.InternalMissileZ + WCSharpShared.Util.GetZ(this.MissileX, this.MissileY)
         this.InternalTargetZ = this.InternalTargetZ + WCSharpShared.Util.GetZ(this.TargetX, this.TargetY)
       end
       this.mode = value
     end
-    -- <inheritdoc />
+
     Launch = function (this)
       this.InternalCasterZ = this.InternalCasterZ + this.CasterLaunchZ
       this.InternalTargetZ = this.InternalTargetZ + this.TargetImpactZ
@@ -32836,11 +32761,11 @@ System.namespace("WCSharp.Missiles", function (namespace)
       this.RollRad = this.CurveRad
       this.isArcingOrCurving = this.Arc ~= 0 or getCurve(this) ~= 0
       this.totalDistanceToTarget = SquareRoot(((this.CasterX - this.TargetX) * (this.CasterX - this.TargetX)) + ((this.CasterY - this.TargetY) * (this.CasterY - this.TargetY)))
-      if this.mode == 0 --[[FlightMode.Default]] then
+      if this.mode == 0 then
         SetFlightMode(this, 0)
       else
         local flightMode = this.mode
-        this.mode = 0 --[[FlightMode.Default]]
+        this.mode = 0
         SetFlightMode(this, 0)
         SetFlightMode(this, flightMode)
       end
@@ -32852,7 +32777,7 @@ System.namespace("WCSharp.Missiles", function (namespace)
         end
       end
     end
-    -- <inheritdoc />
+
     Action = function (this)
       if this.Target ~= nil then
         if UnitAlive(this.Target) then
@@ -32928,7 +32853,7 @@ System.namespace("WCSharp.Missiles", function (namespace)
       local missileX = this.MissileX
       local missileY = this.MissileY
       local missileZ = getMissileZ(this)
-      local num5 = num * this.Arc * Sin(num2 / num * 3.14159274 --[[(float)Math.PI]])
+      local num5 = num * this.Arc * Sin(num2 / num * 3.14159274)
       local num6 = Cos(radians)
       local num7 = Sin(radians)
       local num8 = Cos(this.CurveRad)
@@ -33031,18 +32956,18 @@ System.namespace("WCSharp.Missiles", function (namespace)
       end
     }
   end)
-  -- <summary>
-  -- Homing missile with a fixed speed that will attempt to aim itself at the target, restricted by turn speed.
-  -- <para>Note: Does not have any behaviour to avoid endlessly circling the enemy.
-  -- I recommend using it with a collision radius or such so that exact collisions aren't required.</para>
-  -- </summary>
+
+
+
+
+
   namespace.class("HomingMissile", function (namespace)
     local getCasterZ, setCasterZ, getTargetZ, setTargetZ, getMissileZ, setMissileZ, getSpeedPerTick, setSpeedPerTick, 
     getSpeed, setSpeed, getTurnRate, setTurnRate, getTurnPeriod, setTurnPeriod, getMode, setMode, 
     SetFlightMode, Launch, Action, __ctor1__, __ctor2__, __ctor3__, __ctor4__
-    -- <summary>
-    -- The flight modes of this missile type.
-    -- </summary>
+
+
+
     namespace.enum("FlightMode", function ()
       return {
         Default = 0,
@@ -33060,48 +32985,48 @@ System.namespace("WCSharp.Missiles", function (namespace)
         end
       }
     end)
-    -- <inheritdoc />
+
     __ctor1__ = function (this, caster, target)
       System.base(this).__ctor__[3](this, caster, target)
     end
-    -- <inheritdoc />
+
     __ctor2__ = function (this, caster, targetX, targetY)
       System.base(this).__ctor__[4](this, caster, targetX, targetY)
     end
-    -- <inheritdoc />
+
     __ctor3__ = function (this, castingPlayer, casterX, casterY, target)
       System.base(this).__ctor__[5](this, castingPlayer, casterX, casterY, target)
     end
-    -- <inheritdoc />
+
     __ctor4__ = function (this, castingPlayer, casterX, casterY, targetX, targetY)
       System.base(this).__ctor__[6](this, castingPlayer, casterX, casterY, targetX, targetY)
     end
     getCasterZ = function (this)
-      if this.mode ~= 1 --[[FlightMode.FollowTerrain]] then
+      if this.mode ~= 1 then
         return this.InternalCasterZ
       end
       return this.InternalCasterZ + WCSharpShared.Util.GetZ(this.CasterX, this.CasterY)
     end
     setCasterZ = function (this, value)
-      this.InternalCasterZ = ((this.mode == 1 --[[FlightMode.FollowTerrain]]) and (value - WCSharpShared.Util.GetZ(this.CasterX, this.CasterY)) or value)
+      this.InternalCasterZ = ((this.mode == 1) and (value - WCSharpShared.Util.GetZ(this.CasterX, this.CasterY)) or value)
     end
     getTargetZ = function (this)
-      if this.mode ~= 1 --[[FlightMode.FollowTerrain]] then
+      if this.mode ~= 1 then
         return this.InternalTargetZ
       end
       return this.InternalTargetZ + WCSharpShared.Util.GetZ(this.TargetX, this.TargetY)
     end
     setTargetZ = function (this, value)
-      this.InternalTargetZ = ((this.mode == 1 --[[FlightMode.FollowTerrain]]) and (value - WCSharpShared.Util.GetZ(this.TargetX, this.TargetY)) or value)
+      this.InternalTargetZ = ((this.mode == 1) and (value - WCSharpShared.Util.GetZ(this.TargetX, this.TargetY)) or value)
     end
     getMissileZ = function (this)
-      if this.mode ~= 1 --[[FlightMode.FollowTerrain]] then
+      if this.mode ~= 1 then
         return this.InternalMissileZ
       end
       return this.InternalMissileZ + WCSharpShared.Util.GetZ(this.MissileX, this.MissileY)
     end
     setMissileZ = function (this, value)
-      this.InternalMissileZ = ((this.mode == 1 --[[FlightMode.FollowTerrain]]) and (value - WCSharpShared.Util.GetZ(this.MissileX, this.MissileY)) or value)
+      this.InternalMissileZ = ((this.mode == 1) and (value - WCSharpShared.Util.GetZ(this.MissileX, this.MissileY)) or value)
     end
     getSpeedPerTick = function (this)
       return this.speed
@@ -33110,25 +33035,25 @@ System.namespace("WCSharp.Missiles", function (namespace)
       this.speed = value
     end
     getSpeed = function (this)
-      return this.speed / (0.03125 --[[1f / 32f]])
+      return this.speed / (0.03125)
     end
     setSpeed = function (this, value)
-      this.speed = value * (0.03125 --[[1f / 32f]])
+      this.speed = value * (0.03125)
     end
     getTurnRate = function (this)
-      return this.TurnVelocityRad * (57.2957764 --[[180f / (float)Math.PI]]) / (0.03125 --[[1f / 32f]])
+      return this.TurnVelocityRad * (57.2957764) / (0.03125)
     end
     setTurnRate = function (this, value)
-      this.TurnVelocityRad = value * (0.0174532924 --[[(float)Math.PI / 180f]]) * (0.03125 --[[1f / 32f]])
+      this.TurnVelocityRad = value * (0.0174532924) * (0.03125)
     end
     getTurnPeriod = function (this)
       if this.TurnVelocityRad ~= 0 then
-        return 0.196349546 --[[(float)Math.PI / 16f]] / this.TurnVelocityRad
+        return 0.196349546 / this.TurnVelocityRad
       end
       return 0
     end
     setTurnPeriod = function (this, value)
-      this.TurnVelocityRad = ((value == 0) and 0 or (0.196349546 --[[(float)Math.PI / 16f]] / value))
+      this.TurnVelocityRad = ((value == 0) and 0 or (0.196349546 / value))
     end
     getMode = function (this)
       return this.mode
@@ -33141,23 +33066,23 @@ System.namespace("WCSharp.Missiles", function (namespace)
       end
     end
     SetFlightMode = function (this, value)
-      if value == 0 --[[FlightMode.Default]] then
-        value = 1 --[[FlightMode.FollowTerrain]]
+      if value == 0 then
+        value = 1
       end
-      if this.mode == 2 --[[FlightMode.Direct]] then
-        if value == 1 --[[FlightMode.FollowTerrain]] then
+      if this.mode == 2 then
+        if value == 1 then
           this.InternalCasterZ = this.InternalCasterZ - WCSharpShared.Util.GetZ(this.CasterX, this.CasterY)
           this.InternalMissileZ = this.InternalMissileZ - WCSharpShared.Util.GetZ(this.MissileX, this.MissileY)
           this.InternalTargetZ = this.InternalTargetZ - WCSharpShared.Util.GetZ(this.TargetX, this.TargetY)
         end
-      elseif value == 2 --[[FlightMode.Direct]] then
+      elseif value == 2 then
         this.InternalCasterZ = this.InternalCasterZ + WCSharpShared.Util.GetZ(this.CasterX, this.CasterY)
         this.InternalMissileZ = this.InternalMissileZ + WCSharpShared.Util.GetZ(this.MissileX, this.MissileY)
         this.InternalTargetZ = this.InternalTargetZ + WCSharpShared.Util.GetZ(this.TargetX, this.TargetY)
       end
       this.mode = value
     end
-    -- <inheritdoc />
+
     Launch = function (this)
       this.InternalCasterZ = this.InternalCasterZ + this.CasterLaunchZ
       this.InternalTargetZ = this.InternalTargetZ + this.TargetImpactZ
@@ -33165,20 +33090,20 @@ System.namespace("WCSharp.Missiles", function (namespace)
       this.IntervalLeft = this.Interval
       this.MissileX = this.CasterX
       this.MissileY = this.CasterY
-      if this.mode == 0 --[[FlightMode.Default]] then
+      if this.mode == 0 then
         SetFlightMode(this, 0)
       else
         local flightMode = this.mode
-        this.mode = 0 --[[FlightMode.Default]]
+        this.mode = 0
         SetFlightMode(this, 0)
         SetFlightMode(this, flightMode)
       end
       if (this.InitialAngle ~= nil) then
-        this.YawRad = System.Nullable.Value(this.InitialAngle) * (0.0174532924 --[[(float)Math.PI / 180f]])
+        this.YawRad = System.Nullable.Value(this.InitialAngle) * (0.0174532924)
         if this.YawRad < 0 then
-          this.YawRad = this.YawRad + (6.28318548 --[[(float)Math.PI * 2f]])
-        elseif this.YawRad > 6.28318548 --[[(float)Math.PI * 2f]] then
-          this.YawRad = this.YawRad - (6.28318548 --[[(float)Math.PI * 2f]])
+          this.YawRad = this.YawRad + (6.28318548)
+        elseif this.YawRad > 6.28318548 then
+          this.YawRad = this.YawRad - (6.28318548)
         end
       else
         this.YawRad = (3.14159274 + Atan2(this.CasterY - this.TargetY, this.CasterX - this.TargetX))
@@ -33191,7 +33116,7 @@ System.namespace("WCSharp.Missiles", function (namespace)
         end
       end
     end
-    -- <inheritdoc />
+
     Action = function (this)
       if this.Target ~= nil then
         if UnitAlive(this.Target) then
@@ -33210,15 +33135,15 @@ System.namespace("WCSharp.Missiles", function (namespace)
       local num = (3.14159274 + Atan2(this.MissileY - this.TargetY, this.MissileX - this.TargetX))
       if math.Abs(num - this.YawRad) < this.TurnVelocityRad then
         this.YawRad = num
-      elseif (this.YawRad < num and num < this.YawRad + 3.14159274 --[[(float)Math.PI]]) or num < this.YawRad - 3.14159274 --[[(float)Math.PI]] then
+      elseif (this.YawRad < num and num < this.YawRad + 3.14159274) or num < this.YawRad - 3.14159274 then
         this.YawRad = this.YawRad + this.TurnVelocityRad
       else
         this.YawRad = this.YawRad - this.TurnVelocityRad
       end
       if this.YawRad < 0 then
-        this.YawRad = this.YawRad + (6.28318548 --[[(float)Math.PI * 2f]])
-      elseif this.YawRad > 6.28318548 --[[(float)Math.PI * 2f]] then
-        this.YawRad = this.YawRad - (6.28318548 --[[(float)Math.PI * 2f]])
+        this.YawRad = this.YawRad + (6.28318548)
+      elseif this.YawRad > 6.28318548 then
+        this.YawRad = this.YawRad - (6.28318548)
       end
       local num2 = this.speed * Cos(this.YawRad)
       this.MissileX = this.MissileX + num2
@@ -33308,10 +33233,10 @@ System.namespace("WCSharp.Missiles", function (namespace)
       end
     }
   end)
-  -- <summary>
-  -- Fundamental missile class that provides the properties and methods that are shared by (virtually) all missiles.
-  -- <para>Unless you wish to define a new movement pattern for missiles, you should use one of the derived classes instead.</para>
-  -- </summary>
+
+
+
+
   namespace.class("Missile", function (namespace)
     local group, getActive, setActive, getCasterZ, setCasterZ, getTargetZ, setTargetZ, getMissileZ, 
     setMissileZ, getCollisionRadius, setCollisionRadius, getSpinPeriod, setSpinPeriod, getYaw, setYaw, getPitch, 
@@ -33334,11 +33259,11 @@ System.namespace("WCSharp.Missiles", function (namespace)
       this.CasterX = casterX
       this.CasterY = casterY
     end
-    -- <summary>
-    -- Creates a new missile instance with the given parameters.
-    -- <para>Will automatically set <see cref="P:WCSharp.Missiles.Missile.CastingPlayer" />, <see cref="P:WCSharp.Missiles.Missile.CasterX" />, <see cref="P:WCSharp.Missiles.Missile.CasterY" />,
-    -- <see cref="P:WCSharp.Missiles.Missile.TargetPlayer" />, <see cref="P:WCSharp.Missiles.Missile.TargetX" /> and <see cref="P:WCSharp.Missiles.Missile.TargetY" />.</para>
-    -- </summary>
+
+
+
+
+
     __ctor3__ = function (this, caster, target)
       __ctor1__(this, caster)
       this.Target = target
@@ -33347,19 +33272,19 @@ System.namespace("WCSharp.Missiles", function (namespace)
       this.TargetY = GetUnitY(target)
       this.InternalTargetZ = GetUnitFlyHeight(target)
     end
-    -- <summary>
-    -- Creates a new missile instance with the given parameters.
-    -- <para>Will automatically set <see cref="P:WCSharp.Missiles.Missile.CastingPlayer" />, <see cref="P:WCSharp.Missiles.Missile.CasterX" /> and <see cref="P:WCSharp.Missiles.Missile.CasterY" />.</para>
-    -- </summary>
+
+
+
+
     __ctor4__ = function (this, caster, targetX, targetY)
       __ctor1__(this, caster)
       this.TargetX = targetX
       this.TargetY = targetY
     end
-    -- <summary>
-    -- Creates a new missile instance with the given parameters.
-    -- <para>Will automatically set <see cref="P:WCSharp.Missiles.Missile.TargetPlayer" />, <see cref="P:WCSharp.Missiles.Missile.TargetX" /> and <see cref="P:WCSharp.Missiles.Missile.TargetY" />.</para>
-    -- </summary>
+
+
+
+
     __ctor5__ = function (this, castingPlayer, casterX, casterY, target)
       __ctor2__(this, castingPlayer, casterX, casterY)
       this.Target = target
@@ -33368,9 +33293,9 @@ System.namespace("WCSharp.Missiles", function (namespace)
       this.TargetY = GetUnitY(target)
       this.InternalTargetZ = GetUnitFlyHeight(target)
     end
-    -- <summary>
-    -- Creates a new missile instance with the given parameters.
-    -- </summary>
+
+
+
     __ctor6__ = function (this, castingPlayer, casterX, casterY, targetX, targetY)
       __ctor2__(this, castingPlayer, casterX, casterY)
       this.TargetX = targetX
@@ -33406,36 +33331,36 @@ System.namespace("WCSharp.Missiles", function (namespace)
     end
     getSpinPeriod = function (this)
       if this.SpinVelocityRad ~= 0 then
-        return 0.196349546 --[[(float)Math.PI / 16f]] / this.SpinVelocityRad
+        return 0.196349546 / this.SpinVelocityRad
       end
       return 0
     end
     setSpinPeriod = function (this, value)
-      this.SpinVelocityRad = ((value == 0) and 0 or (0.196349546 --[[(float)Math.PI / 16f]] / value))
+      this.SpinVelocityRad = ((value == 0) and 0 or (0.196349546 / value))
     end
     getYaw = function (this)
-      return this.YawRad * (57.2957764 --[[180f / (float)Math.PI]])
+      return this.YawRad * (57.2957764)
     end
     setYaw = function (this, value)
-      this.YawRad = value * (0.0174532924 --[[(float)Math.PI / 180f]])
+      this.YawRad = value * (0.0174532924)
     end
     getPitch = function (this)
-      return this.PitchRad * (57.2957764 --[[180f / (float)Math.PI]])
+      return this.PitchRad * (57.2957764)
     end
     setPitch = function (this, value)
-      this.PitchRad = value * (0.0174532924 --[[(float)Math.PI / 180f]])
+      this.PitchRad = value * (0.0174532924)
     end
     getRoll = function (this)
-      return this.RollRad * (57.2957764 --[[180f / (float)Math.PI]])
+      return this.RollRad * (57.2957764)
     end
     setRoll = function (this, value)
-      this.RollRad = value * (0.0174532924 --[[(float)Math.PI / 180f]])
+      this.RollRad = value * (0.0174532924)
     end
     getCurrentAngle = function (this)
-      return this.YawRad * (57.2957764 --[[180f / (float)Math.PI]])
+      return this.YawRad * (57.2957764)
     end
     setCurrentAngle = function (this, value)
-      this.YawRad = value * (0.0174532924 --[[(float)Math.PI / 180f]])
+      this.YawRad = value * (0.0174532924)
     end
     getEffectString = function (this)
       return this.effectString
@@ -33471,9 +33396,9 @@ System.namespace("WCSharp.Missiles", function (namespace)
       end
       this.effectScale = value
     end
-    -- <summary>
-    -- Should be called when the missile would exit world bounds.
-    -- </summary>
+
+
+
     ExitWorldBounds = function (this)
       if this.Effect ~= nil then
         this.MissileX = BlzGetLocalSpecialEffectX(this.Effect)
@@ -33489,20 +33414,20 @@ System.namespace("WCSharp.Missiles", function (namespace)
       this.Active = false
       this:OnImpact()
     end
-    -- <summary>
-    -- Runs the Interval related code. Do not call if <see cref="P:WCSharp.Missiles.Missile.Interval" /> is 0 (will cause an infinite loop!).
-    -- </summary>
+
+
+
     RunInterval = function (this)
-      this.IntervalLeft = this.IntervalLeft - (0.03125 --[[1f / 32f]])
+      this.IntervalLeft = this.IntervalLeft - (0.03125)
       while this.IntervalLeft <= 0 do
         this.IntervalLeft = this.IntervalLeft + this.Interval
         this:OnPeriodic()
       end
     end
-    -- <summary>
-    -- Runs the Collision related code. Do not call if <see cref="P:WCSharp.Missiles.Missile.CollisionRadius" /> is 0.
-    -- <para>Can be overridden in case you want to provide your own unit search code (e.g. using spatial hashing).</para>
-    -- </summary>
+
+
+
+
     RunCollisions = function (this)
       GroupEnumUnitsInRange(group, this.MissileX, this.MissileY, this.collisionRadius, nil)
       local list = WCSharpSharedExtensions.GroupExtensions.ToList(group)
@@ -33513,9 +33438,9 @@ System.namespace("WCSharp.Missiles", function (namespace)
         end
       end
     end
-    -- <summary>
-    -- Sets the missile position to that of the target and runs the interval, collision and impact code.
-    -- </summary>
+
+
+
     Impact = function (this)
       this.MissileX = this.TargetX
       this.MissileY = this.TargetY
@@ -33531,32 +33456,32 @@ System.namespace("WCSharp.Missiles", function (namespace)
       this.Active = false
       this:OnImpact()
     end
-    -- <summary>
-    -- <para>Override this method if your missile has an effect that should trigger when colliding with another unit.</para>
-    -- <para>For this to be active, <see cref="P:WCSharp.Missiles.Missile.CollisionRadius" /> must be greater than 0.</para>
-    -- <para>Note that there is no filter on this collision. This is called whenever it collides with anything not in <see cref="P:WCSharp.Missiles.Missile.TargetsHit" />.</para>
-    -- <para>Before this method is called, the <paramref name="unit" /> is added to <see cref="P:WCSharp.Missiles.Missile.TargetsHit" />.</para>
-    -- </summary>
+
+
+
+
+
+
     OnCollision = function (this, unit)
     end
-    -- <summary>
-    -- Override this method if your missile has an effect that should trigger when it is destroyed for any reason.
-    -- </summary>
+
+
+
     OnDispose = function (this)
     end
-    -- <summary>
-    -- Override this method if your missile has an impact effect.
-    -- <para><see cref="P:WCSharp.Missiles.Missile.Active" /> is automatically set to false prior to calling this method. If you do not want the missile to end, you need to set <see cref="P:WCSharp.Missiles.Missile.Active" /> back to true.</para>
-    -- </summary>
+
+
+
+
     OnImpact = function (this)
     end
-    -- <summary>
-    -- <para>Override this method if your missile has a periodic effect.</para>
-    -- <para>For this to be active, <see cref="P:WCSharp.Missiles.Missile.Interval" /> must be greater than 0.</para>
-    -- </summary>
+
+
+
+
     OnPeriodic = function (this)
     end
-    -- <inheritdoc />
+
     Dispose = function (this)
       this:OnDispose()
       if this.Effect ~= nil then
@@ -33700,32 +33625,32 @@ System.namespace("WCSharp.Missiles", function (namespace)
       end
     }
   end)
-  -- <summary>
-  -- Tracks and runs all active <see cref="T:WCSharp.Missiles.Missile" /> instances.
-  -- </summary>
+
+
+
   namespace.class("MissileSystem", function (namespace)
     local periodicTrigger, getMissiles, Add, RegisterForOwnershipChanges, OnUnitTypeChangesOwner, static
     static = function (this)
-      periodicTrigger = PeriodicDisposableTrigger_1Missile(0.03125 --[[1f / 32f]])
+      periodicTrigger = PeriodicDisposableTrigger_1Missile(0.03125)
     end
     getMissiles = function ()
       return periodicTrigger:getActions()
     end
-    -- <summary>
-    -- Adds the given <paramref name="missile" /> to the system.
-    -- </summary>
+
+
+
     Add = function (missile)
       missile:Launch()
       periodicTrigger:Add(missile)
       missile:Action()
     end
-    -- <summary>
-    -- By default, <see cref="P:WCSharp.Missiles.Missile.CastingPlayer" /> and <see cref="P:WCSharp.Missiles.Missile.TargetPlayer" /> are not updated when a unit changes owner.
-    -- <para>This adds an event to pass over all missiles and update <see cref="P:WCSharp.Missiles.Missile.CastingPlayer" /> and <see cref="P:WCSharp.Missiles.Missile.TargetPlayer" /> on ownership changes.</para>
-    -- <para>This will ignore ownership changes of unit type 'xxxx' (WCSharp's dummy unit type).</para>
-    -- </summary>
+
+
+
+
+
     RegisterForOwnershipChanges = function ()
-      WCSharpEvents.PlayerUnitEvents.Register14(809 --[[UnitTypeEvent.ChangesOwner]], OnUnitTypeChangesOwner)
+      WCSharpEvents.PlayerUnitEvents.Register14(809, OnUnitTypeChangesOwner)
     end
     OnUnitTypeChangesOwner = function ()
       local triggerUnit = GetTriggerUnit()
@@ -33764,18 +33689,18 @@ System.namespace("WCSharp.Missiles", function (namespace)
       end
     }
   end)
-  -- <summary>
-  -- Homing-type missile that is based on momentum. Every tick, it will accelerate itself towards the target, up to a maximum speed.
-  -- <para>Note that the actual acceleration when adjusting its angle towards the target can be significantly less than specified.</para>
-  -- <para>It is recommended to use at least a little bit of <see cref="P:WCSharp.Missiles.Missile.ImpactLeeway" /> when using this missile.</para>
-  -- </summary>
+
+
+
+
+
   namespace.class("MomentumMissile", function (namespace)
     local getCasterZ, setCasterZ, getTargetZ, setTargetZ, getMissileZ, setMissileZ, getSpeedPerTick, setSpeedPerTick, 
     getSpeed, setSpeed, getAcceleration, setAcceleration, getMaximumSpeed, setMaximumSpeed, getMode, setMode, 
     SetFlightMode, Launch, Action, __ctor1__, __ctor2__, __ctor3__, __ctor4__
-    -- <summary>
-    -- The flight modes of this missile type.
-    -- </summary>
+
+
+
     namespace.enum("FlightMode", function ()
       return {
         Default = 0,
@@ -33793,48 +33718,48 @@ System.namespace("WCSharp.Missiles", function (namespace)
         end
       }
     end)
-    -- <inheritdoc />
+
     __ctor1__ = function (this, caster, target)
       System.base(this).__ctor__[3](this, caster, target)
     end
-    -- <inheritdoc />
+
     __ctor2__ = function (this, caster, targetX, targetY)
       System.base(this).__ctor__[4](this, caster, targetX, targetY)
     end
-    -- <inheritdoc />
+
     __ctor3__ = function (this, castingPlayer, casterX, casterY, target)
       System.base(this).__ctor__[5](this, castingPlayer, casterX, casterY, target)
     end
-    -- <inheritdoc />
+
     __ctor4__ = function (this, castingPlayer, casterX, casterY, targetX, targetY)
       System.base(this).__ctor__[6](this, castingPlayer, casterX, casterY, targetX, targetY)
     end
     getCasterZ = function (this)
-      if this.mode ~= 1 --[[FlightMode.FollowTerrain]] then
+      if this.mode ~= 1 then
         return this.InternalCasterZ
       end
       return this.InternalCasterZ + WCSharpShared.Util.GetZ(this.CasterX, this.CasterY)
     end
     setCasterZ = function (this, value)
-      this.InternalCasterZ = ((this.mode == 1 --[[FlightMode.FollowTerrain]]) and (value - WCSharpShared.Util.GetZ(this.CasterX, this.CasterY)) or value)
+      this.InternalCasterZ = ((this.mode == 1) and (value - WCSharpShared.Util.GetZ(this.CasterX, this.CasterY)) or value)
     end
     getTargetZ = function (this)
-      if this.mode ~= 1 --[[FlightMode.FollowTerrain]] then
+      if this.mode ~= 1 then
         return this.InternalTargetZ
       end
       return this.InternalTargetZ + WCSharpShared.Util.GetZ(this.TargetX, this.TargetY)
     end
     setTargetZ = function (this, value)
-      this.InternalTargetZ = ((this.mode == 1 --[[FlightMode.FollowTerrain]]) and (value - WCSharpShared.Util.GetZ(this.TargetX, this.TargetY)) or value)
+      this.InternalTargetZ = ((this.mode == 1) and (value - WCSharpShared.Util.GetZ(this.TargetX, this.TargetY)) or value)
     end
     getMissileZ = function (this)
-      if this.mode ~= 1 --[[FlightMode.FollowTerrain]] then
+      if this.mode ~= 1 then
         return this.InternalMissileZ
       end
       return this.InternalMissileZ + WCSharpShared.Util.GetZ(this.MissileX, this.MissileY)
     end
     setMissileZ = function (this, value)
-      this.InternalMissileZ = ((this.mode == 1 --[[FlightMode.FollowTerrain]]) and (value - WCSharpShared.Util.GetZ(this.MissileX, this.MissileY)) or value)
+      this.InternalMissileZ = ((this.mode == 1) and (value - WCSharpShared.Util.GetZ(this.MissileX, this.MissileY)) or value)
     end
     getSpeedPerTick = function (this)
       return this.speed
@@ -33843,22 +33768,22 @@ System.namespace("WCSharp.Missiles", function (namespace)
       this.speed = value
     end
     getSpeed = function (this)
-      return this.speed / (0.03125 --[[1f / 32f]])
+      return this.speed / (0.03125)
     end
     setSpeed = function (this, value)
-      this.speed = value * (0.03125 --[[1f / 32f]])
+      this.speed = value * (0.03125)
     end
     getAcceleration = function (this)
-      return this.AccelerationPerTick / (0.03125 --[[1f / 32f]])
+      return this.AccelerationPerTick / (0.03125)
     end
     setAcceleration = function (this, value)
-      this.AccelerationPerTick = value * (0.03125 --[[1f / 32f]])
+      this.AccelerationPerTick = value * (0.03125)
     end
     getMaximumSpeed = function (this)
-      return this.MaximumSpeedPerTick / (0.03125 --[[1f / 32f]])
+      return this.MaximumSpeedPerTick / (0.03125)
     end
     setMaximumSpeed = function (this, value)
-      this.MaximumSpeedPerTick = value * (0.03125 --[[1f / 32f]])
+      this.MaximumSpeedPerTick = value * (0.03125)
     end
     getMode = function (this)
       return this.mode
@@ -33871,23 +33796,23 @@ System.namespace("WCSharp.Missiles", function (namespace)
       end
     end
     SetFlightMode = function (this, value)
-      if value == 0 --[[FlightMode.Default]] then
-        value = 1 --[[FlightMode.FollowTerrain]]
+      if value == 0 then
+        value = 1
       end
-      if this.mode == 2 --[[FlightMode.Direct]] then
-        if value == 1 --[[FlightMode.FollowTerrain]] then
+      if this.mode == 2 then
+        if value == 1 then
           this.InternalCasterZ = this.InternalCasterZ - WCSharpShared.Util.GetZ(this.CasterX, this.CasterY)
           this.InternalMissileZ = this.InternalMissileZ - WCSharpShared.Util.GetZ(this.MissileX, this.MissileY)
           this.InternalTargetZ = this.InternalTargetZ - WCSharpShared.Util.GetZ(this.TargetX, this.TargetY)
         end
-      elseif value == 2 --[[FlightMode.Direct]] then
+      elseif value == 2 then
         this.InternalCasterZ = this.InternalCasterZ + WCSharpShared.Util.GetZ(this.CasterX, this.CasterY)
         this.InternalMissileZ = this.InternalMissileZ + WCSharpShared.Util.GetZ(this.MissileX, this.MissileY)
         this.InternalTargetZ = this.InternalTargetZ + WCSharpShared.Util.GetZ(this.TargetX, this.TargetY)
       end
       this.mode = value
     end
-    -- <inheritdoc />
+
     Launch = function (this)
       this.InternalCasterZ = this.InternalCasterZ + this.CasterLaunchZ
       this.InternalTargetZ = this.InternalTargetZ + this.TargetImpactZ
@@ -33895,16 +33820,16 @@ System.namespace("WCSharp.Missiles", function (namespace)
       this.IntervalLeft = this.Interval
       this.MissileX = this.CasterX
       this.MissileY = this.CasterY
-      if this.mode == 0 --[[FlightMode.Default]] then
+      if this.mode == 0 then
         SetFlightMode(this, 0)
       else
         local flightMode = this.mode
-        this.mode = 0 --[[FlightMode.Default]]
+        this.mode = 0
         SetFlightMode(this, 0)
         SetFlightMode(this, flightMode)
       end
       if (this.InitialAngle ~= nil) then
-        this.YawRad = System.Nullable.Value(this.InitialAngle) * (0.0174532924 --[[(float)Math.PI / 180f]])
+        this.YawRad = System.Nullable.Value(this.InitialAngle) * (0.0174532924)
       else
         this.YawRad = (3.14159274 + Atan2(this.CasterY - this.TargetY, this.CasterX - this.TargetX))
       end
@@ -33916,7 +33841,7 @@ System.namespace("WCSharp.Missiles", function (namespace)
         end
       end
     end
-    -- <inheritdoc />
+
     Action = function (this)
       if this.Target ~= nil then
         if UnitAlive(this.Target) then
@@ -33933,12 +33858,12 @@ System.namespace("WCSharp.Missiles", function (namespace)
       end
       local missileZ = getMissileZ(this)
       local num = (3.14159274 + Atan2(this.MissileY - this.TargetY, this.MissileX - this.TargetX))
-      local radians = (((this.YawRad < num and num < this.YawRad + 3.14159274 --[[(float)Math.PI]]) or num < this.YawRad - 3.14159274 --[[(float)Math.PI]]) and math.Min(this.YawRad + 3.14159274 --[[(float)Math.PI]], num + 0.785398185 --[[(float)Math.PI / 4f]]) or math.Max(this.YawRad - 3.14159274 --[[(float)Math.PI]], num - 0.785398185 --[[(float)Math.PI / 4f]]))
+      local radians = (((this.YawRad < num and num < this.YawRad + 3.14159274) or num < this.YawRad - 3.14159274) and math.Min(this.YawRad + 3.14159274, num + 0.785398185) or math.Max(this.YawRad - 3.14159274, num - 0.785398185))
       local num2 = this.speed * Cos(this.YawRad) + this.AccelerationPerTick * Cos(radians)
       this.MissileX = this.MissileX + num2
       local num3 = this.speed * Sin(this.YawRad) + this.AccelerationPerTick * Sin(radians)
       this.MissileY = this.MissileY + num3
-      local num4 = 3.14159274 --[[(float)Math.PI]] + Atan2(0 - num3, 0 - num2)
+      local num4 = 3.14159274 + Atan2(0 - num3, 0 - num2)
       if (num4 < num and num < this.YawRad) or (this.YawRad < num and num < num4) then
         this.YawRad = num
         this.speed = math.Min(this.MaximumSpeedPerTick, this.speed + this.AccelerationPerTick)
@@ -34032,18 +33957,18 @@ System.namespace("WCSharp.Missiles", function (namespace)
       end
     }
   end)
-  -- <summary>
-  -- Missile that will orbit the specified target.
-  -- <para>Note: this missile calls <see cref="M:WCSharp.Missiles.Missile.OnImpact" /> when the target dies.</para>
-  -- </summary>
+
+
+
+
   namespace.class("OrbitalMissile", function (namespace)
     local getCasterZ, setCasterZ, getTargetZ, setTargetZ, getMissileZ, setMissileZ, getSpeedPerTick, setSpeedPerTick, 
     getSpeed, setSpeed, getRange, setRange, getOrbitalVelocityRad, setOrbitalVelocityRad, getOrbitalPeriod, setOrbitalPeriod, 
     getOrbitalAngle, setOrbitalAngle, getMode, setMode, SetFlightMode, Launch, Action, AdjustMissileZ, 
     internal, __ctor1__, __ctor2__, __ctor3__, __ctor4__
-    -- <summary>
-    -- The flight modes of this missile type.
-    -- </summary>
+
+
+
     namespace.enum("FlightMode", function ()
       return {
         Default = 0,
@@ -34066,24 +33991,24 @@ System.namespace("WCSharp.Missiles", function (namespace)
       }
     end)
     internal = function (this)
-      this.OrbitalAngleRad = GetRandomReal(0, 6.28318548 --[[(float)Math.PI * 2f]])
+      this.OrbitalAngleRad = GetRandomReal(0, 6.28318548)
     end
-    -- <inheritdoc />
+
     __ctor1__ = function (this, caster, target)
       internal(this)
       System.base(this).__ctor__[3](this, caster, target)
     end
-    -- <inheritdoc />
+
     __ctor2__ = function (this, caster, targetX, targetY)
       internal(this)
       System.base(this).__ctor__[4](this, caster, targetX, targetY)
     end
-    -- <inheritdoc />
+
     __ctor3__ = function (this, castingPlayer, casterX, casterY, target)
       internal(this)
       System.base(this).__ctor__[5](this, castingPlayer, casterX, casterY, target)
     end
-    -- <inheritdoc />
+
     __ctor4__ = function (this, castingPlayer, casterX, casterY, targetX, targetY)
       internal(this)
       System.base(this).__ctor__[6](this, castingPlayer, casterX, casterY, targetX, targetY)
@@ -34119,7 +34044,7 @@ System.namespace("WCSharp.Missiles", function (namespace)
       return 64 * this.orbitalVelocity * this.range
     end
     setSpeed = function (this, value)
-      this.speed = value * (0.03125 --[[1f / 32f]])
+      this.speed = value * (0.03125)
       if this.range ~= 0 then
         this.orbitalVelocity = 0.0625 * value / this.range
       end
@@ -34142,19 +34067,19 @@ System.namespace("WCSharp.Missiles", function (namespace)
     end
     getOrbitalPeriod = function (this)
       if this.orbitalVelocity ~= 0 then
-        return 0.196349546 --[[(float)Math.PI / 16f]] / this.orbitalVelocity
+        return 0.196349546 / this.orbitalVelocity
       end
       return 0
     end
     setOrbitalPeriod = function (this, value)
       this.speed = 0
-      this.orbitalVelocity = ((value == 0) and 0 or (0.196349546 --[[(float)Math.PI / 16f]] / value))
+      this.orbitalVelocity = ((value == 0) and 0 or (0.196349546 / value))
     end
     getOrbitalAngle = function (this)
-      return this.OrbitalAngleRad * (57.2957764 --[[180f / (float)Math.PI]])
+      return this.OrbitalAngleRad * (57.2957764)
     end
     setOrbitalAngle = function (this, value)
-      this.OrbitalAngleRad = value * (0.0174532924 --[[(float)Math.PI / 180f]])
+      this.OrbitalAngleRad = value * (0.0174532924)
     end
     getMode = function (this)
       return this.mode
@@ -34167,15 +34092,15 @@ System.namespace("WCSharp.Missiles", function (namespace)
       end
     end
     SetFlightMode = function (this, value)
-      if value == 0 --[[FlightMode.Default]] then
-        value = 3 --[[FlightMode.BestFit]]
+      if value == 0 then
+        value = 3
       end
       if this:getActive() then
         AdjustMissileZ(this)
       end
       this.mode = value
     end
-    -- <inheritdoc />
+
     Launch = function (this)
       this.InternalCasterZ = this.InternalCasterZ + this.CasterLaunchZ
       this.InternalTargetZ = this.InternalTargetZ + this.TargetImpactZ
@@ -34192,7 +34117,7 @@ System.namespace("WCSharp.Missiles", function (namespace)
         end
       end
     end
-    -- <inheritdoc />
+
     Action = function (this)
       if this.Target ~= nil then
         if UnitAlive(this.Target) then
@@ -34211,10 +34136,10 @@ System.namespace("WCSharp.Missiles", function (namespace)
         end
       end
       this.OrbitalAngleRad = this.OrbitalAngleRad + this.orbitalVelocity
-      if this.OrbitalAngleRad >= 6.28318548 --[[(float)Math.PI * 2f]] then
-        this.OrbitalAngleRad = this.OrbitalAngleRad - (6.28318548 --[[(float)Math.PI * 2f]])
+      if this.OrbitalAngleRad >= 6.28318548 then
+        this.OrbitalAngleRad = this.OrbitalAngleRad - (6.28318548)
       elseif this.OrbitalAngleRad < 0 then
-        this.OrbitalAngleRad = this.OrbitalAngleRad + (6.28318548 --[[(float)Math.PI * 2f]])
+        this.OrbitalAngleRad = this.OrbitalAngleRad + (6.28318548)
       end
       local missileX = this.MissileX
       local missileY = this.MissileY
@@ -34227,7 +34152,7 @@ System.namespace("WCSharp.Missiles", function (namespace)
       if this.Effect ~= nil then
         local internalMissileZ = this.InternalMissileZ
         AdjustMissileZ(this)
-        this.YawRad = ((this.orbitalVelocity > 0) and (this.OrbitalAngleRad + 1.57079637 --[[(float)Math.PI / 2f]]) or (this.OrbitalAngleRad - 1.57079637 --[[(float)Math.PI / 2f]]))
+        this.YawRad = ((this.orbitalVelocity > 0) and (this.OrbitalAngleRad + 1.57079637) or (this.OrbitalAngleRad - 1.57079637))
         this.RollRad = this.RollRad + this.SpinVelocityRad
         local num = missileX - this.MissileX
         local num2 = missileY - this.MissileY
@@ -34244,11 +34169,11 @@ System.namespace("WCSharp.Missiles", function (namespace)
       end
     end
     AdjustMissileZ = function (this)
-      if this.mode == 1 --[[FlightMode.MissileBased]] then
+      if this.mode == 1 then
         this.InternalMissileZ = this.InternalTargetZ + WCSharpShared.Util.GetZ(this.MissileX, this.MissileY)
-      elseif this.mode == 2 --[[FlightMode.TargetBased]] then
+      elseif this.mode == 2 then
         this.InternalMissileZ = this.InternalTargetZ + WCSharpShared.Util.GetZ(this.TargetX, this.TargetY)
-      elseif this.mode == 3 --[[FlightMode.BestFit]] then
+      elseif this.mode == 3 then
         this.InternalMissileZ = this.InternalTargetZ + math.Max(WCSharpShared.Util.GetZ(this.MissileX, this.MissileY), WCSharpShared.Util.GetZ(this.TargetX, this.TargetY))
       end
     end
@@ -34345,9 +34270,9 @@ System.import(function (out)
   WCSharpSync = WCSharp.Sync
 end)
 System.namespace("WCSharp.SaveLoad", function (namespace)
-  -- <summary>
-  -- Indicates the state of the loaded save file.
-  -- </summary>
+
+
+
   namespace.enum("LoadResult", function ()
     return {
       NewSave = 0,
@@ -34369,17 +34294,17 @@ System.namespace("WCSharp.SaveLoad", function (namespace)
       end
     }
   end)
-  -- <summary>
-  -- Extension class for <see cref="T:WCSharp.SaveLoad.LoadResult" />s.
-  -- </summary>
+
+
+
   namespace.class("LoadResultExtensions", function (namespace)
     local Failed
-    -- <summary>
-    -- Extension method for determining whether the load result is any of the failed states.
-    -- </summary>
+
+
+
     Failed = function (r)
       if r ~= 0 then
-        return r ~= 4 --[[LoadResult.Success]]
+        return r ~= 4
       end
       return false
     end
@@ -34414,34 +34339,34 @@ System.namespace("WCSharp.SaveLoad", function (namespace)
       }
     end
   end)
-  -- <summary>
-  -- Abstract class containing the definitions that the SaveSystem needs in order to save and load your custom save data.
-  -- </summary>
+
+
+
   namespace.class("Saveable", function (namespace)
     local GetPlayer, GetSaveSlot, SetPlayer, SetSaveSlot
-    -- <summary>
-    -- Returns the player object that this save is bound to.
-    -- </summary>
+
+
+
     GetPlayer = function (this)
       return this.player
     end
-    -- <summary>
-    -- Returns the save slot that this save is bound to.
-    -- </summary>
+
+
+
     GetSaveSlot = function (this)
       return this.saveSlot
     end
-    -- <summary>
-    -- Sets the player that this save is bound to.
-    -- </summary>
-    -- <param name="player"></param>
+
+
+
+
     SetPlayer = function (this, player)
       this.player = player
     end
-    -- <summary>
-    -- Sets the save slot that this save is bound to.
-    -- </summary>
-    -- <param name="saveSlot"></param>
+
+
+
+
     SetSaveSlot = function (this, saveSlot)
       this.saveSlot = saveSlot
     end
@@ -34468,15 +34393,15 @@ System.namespace("WCSharp.SaveLoad", function (namespace)
       end
     }
   end)
-  -- <summary>
-  -- Provides some type-explicit extension methods for <see cref="T:WCSharp.SaveLoad.Saveable" />s.
-  -- </summary>
+
+
+
   namespace.class("SaveableExtensions", function (namespace)
     local Clone
-    -- <summary>
-    -- Creates a clone of the given save by converting it to JSON and back, and re-sets the player and save slot.
-    -- <para>Useful for if you want to create a clone to compare save data before and after a game.</para>
-    -- </summary>
+
+
+
+
     Clone = function (saveable, T)
       local val = WCSharpJson.JsonConvert.Deserialize(WCSharpJson.JsonConvert.Serialize(saveable, T), T)
       val:SetPlayer(saveable:GetPlayer())
@@ -34547,9 +34472,9 @@ System.namespace("WCSharp.SaveLoad", function (namespace)
       }
     end
   end)
-  -- <summary>
-  -- Contains logic shared between all different generic <see cref="T:WCSharp.SaveLoad.SaveSystem`1" /> instances.
-  -- </summary>
+
+
+
   namespace.class("SaveSystem", function (namespace)
     local NextId, OriginalTooltips, AbilityIds, AddAbilityId, Init, GetNextId, static
     static = function (this)
@@ -34590,15 +34515,15 @@ System.namespace("WCSharp.SaveLoad", function (namespace)
       this.AbilityIds = AbilityIds
     end
     NextId = 0
-    -- <summary>
-    -- Adds an additional ability id for use as temporary data storage.
-    -- <para>By default, you have 6000 characters to use as storage. If you approach that limit, expand the ability ids used at the start of the game using this method.</para>
-    -- <para>This should be done upon map start, before anything attempts to use the SaveSystem.</para>
-    -- <para>The default includes most of the Human abilities:</para>
-    -- <para>Amls, Ahan, Aroc, Amic, Amil, Aclf, Acmg, Adef, Adis, Afbt, Afbk, Aflk, Afla, Agyb, Afsh,
-    -- Ahea, Ahlh, Ainf, Aivs, Ahri, Amdf, Adts, Apxf, Aply, Ahrp, AHta, Aslo, Asps, Asth, Ahsb</para>
-    -- </summary>
-    -- <param name="abilityId"></param>
+
+
+
+
+
+
+
+
+
     AddAbilityId = function (abilityId)
       if OriginalTooltips == nil then
         if AbilityIds:Contains(abilityId) then
@@ -34652,19 +34577,19 @@ System.namespace("WCSharp.SaveLoad", function (namespace)
       end
     }
   end)
-  -- <summary>
-  -- System capable of saving C# data structures on a players local files to create save files that can be loaded at a later date/map.
-  -- </summary>
-  -- <typeparam name="T">The <see cref="T:WCSharp.SaveLoad.Saveable" /> type that this instance will be saving/loading</typeparam>
+
+
+
+
   namespace.class("SaveSystem_1", function (namespace)
     return function (T)
       local HandleSaveLoadedMessage, Save, Load, TryDecode, TryDeserialize, GetFileName, GetSaveHash, HashString, 
       Dispose, __ctor__
       local Save_1T = WCSharp.SaveLoad.Save_1(T)
       local SaveLoadedMessage_1T = WCSharp.SaveLoad.SaveLoadedMessage_1(T)
-      -- <summary>
-      -- Creates a new <see cref="T:WCSharp.SaveLoad.SaveSystem`1" /> instance with the given <paramref name="options" />.
-      -- </summary>
+
+
+
       __ctor__ = function (this, options)
         if #WCSharpSaveLoad.SaveSystem.OriginalTooltips == 0 then
           WCSharpSaveLoad.SaveSystem.Init()
@@ -34690,7 +34615,7 @@ System.namespace("WCSharp.SaveLoad", function (namespace)
         if this.hash2 <= 0 then
           System.throw(System.ArgumentException("ERROR: Must define a positive non-zero hash2 for the SaveSystem."))
         end
-        local array = ArrayChar { 60 --[['<']], 62 --[['>']], 58 --[[':']], 34 --[['"']], 47 --[['/']], 92 --[['\\']], 124 --[['|']], 63 --[['?']], 42 --[['*']] }
+        local array = ArrayChar { 60, 62, 58, 34, 47, 92, 124, 63, 42 }
         for _, value in System.each(array) do
           if this.saveFolder:Contains(value) then
             System.throw(System.ArgumentException("ERROR: SaveFolder cannot contain " .. string.char(value) .. " as this is an illegal filename character."))
@@ -34715,10 +34640,10 @@ System.namespace("WCSharp.SaveLoad", function (namespace)
           end
         end
       end
-      -- <summary>
-      -- Writes the given saveable to file for the player who owns the save.
-      -- </summary>
-      -- <param name="saveable">The saveable to save.</param>
+
+
+
+
       Save = function (this, saveable)
         if GetLocalPlayer() == saveable.player then
           local text = WCSharpJson.JsonConvert.Serialize(saveable, T)
@@ -34744,13 +34669,13 @@ System.namespace("WCSharp.SaveLoad", function (namespace)
           PreloadGenEnd(fileName)
         end
       end
-      -- <summary>
-      -- Loads a save for the given player on the given save slot.
-      -- <para>If no save exists on the given slot, or if loading failed for any reason, a new, empty save will be returned.</para>
-      -- <para>Use <see cref="E:WCSharp.SaveLoad.SaveSystem`1.OnSaveLoaded" /> to receive the save.</para>
-      -- </summary>
-      -- <param name="player">The player to create the save for.</param>
-      -- <param name="saveSlot">The slot to save to.</param>
+
+
+
+
+
+
+
       Load = function (this, player, saveSlot)
         if GetLocalPlayer() ~= player then
           return
@@ -34783,7 +34708,7 @@ System.namespace("WCSharp.SaveLoad", function (namespace)
               if save.HashCode == GetSaveHash(this, WCSharpJson.JsonConvert.Serialize(save.SaveData, T), player) then
                 saveLoadedMessage.SaveData = save.SaveData
               else
-                saveLoadedMessage.LoadResult = 3 --[[LoadResult.FailedHash]]
+                saveLoadedMessage.LoadResult = 3
               end
             end
           elseif save.Version == 2 or this.attemptToLoadNewerVersions then
@@ -34795,7 +34720,7 @@ System.namespace("WCSharp.SaveLoad", function (namespace)
               if extern then
                 saveLoadedMessage.SaveData = saveDataObject
               else
-                saveLoadedMessage.LoadResult = 2 --[[LoadResult.FailedDeserialize]]
+                saveLoadedMessage.LoadResult = 2
               end
             end
           else
@@ -34808,14 +34733,14 @@ System.namespace("WCSharp.SaveLoad", function (namespace)
         local text = sb:ToString()
         if System.String.IsNullOrEmpty(text) then
           save = nil
-          return 0 --[[LoadResult.NewSave]], save
+          return 0, save
         end
-        local result = 1 --[[LoadResult.FailedDecode]]
+        local result = 1
         local default, extern = System.try(function ()
           local input = this.base64:Decode(text)
-          result = 2 --[[LoadResult.FailedDeserialize]]
+          result = 2
           save = WCSharpJson.JsonConvert.Deserialize(input, Save_1T)
-          return true, 4 --[[LoadResult.Success]]
+          return true, 4
         end, function (default)
           save = nil
           return true, result
@@ -34855,7 +34780,7 @@ System.namespace("WCSharp.SaveLoad", function (namespace)
         end
         return hash
       end
-      -- <inheritdoc />
+
       Dispose = function (this)
         WCSharpSync.SyncSystem.Unsubscribe(System.fn(this, HandleSaveLoadedMessage), SaveLoadedMessage_1T)
       end
@@ -34908,10 +34833,10 @@ System.namespace("WCSharp.SaveLoad", function (namespace)
       }
     end
   end)
-  -- <summary>
-  -- Defines a set of options for a <see cref="T:WCSharp.SaveLoad.SaveSystem`1" />.
-  -- <para>The <see cref="P:WCSharp.SaveLoad.SaveSystemOptions.SaveFolder" />, <see cref="P:WCSharp.SaveLoad.SaveSystemOptions.Salt" />, <see cref="P:WCSharp.SaveLoad.SaveSystemOptions.Hash1" /> and <see cref="P:WCSharp.SaveLoad.SaveSystemOptions.Hash2" /> properties are required.</para>
-  -- </summary>
+
+
+
+
   namespace.class("SaveSystemOptions", function (namespace)
     return {
       Hash1 = 0,
@@ -34952,9 +34877,9 @@ System.import(function (out)
   WCSharpSharedData = WCSharp.Shared.Data
 end)
 System.namespace("WCSharp.Shared", function (namespace)
-  -- <summary>
-  -- Conversion courtesy of http://lua-users.org/wiki/BaseSixtyFour
-  -- </summary>
+
+
+
   namespace.class("Base64", function (namespace)
     local BASE64_CHARSET, default, encode, decode, ToBase64, FromBase64, Encode, Decode, 
     class, static, __ctor__
@@ -34963,12 +34888,12 @@ System.namespace("WCSharp.Shared", function (namespace)
       encode = load("\r\nreturn function(data, b)\r\n    return ((data:gsub('.', function(x) \r\n        local r,b='',x:byte()\r\n        for i=8,1,-1 do r=r..(b%2^i-b%2^(i-1)>0 and '1' or '0') end\r\n        return r;\r\n    end)..'0000'):gsub('%d%d%d?%d?%d?%d?', function(x)\r\n        if (#x < 6) then return '' end\r\n        local c=0\r\n        for i=1,6 do c=c+(x:sub(i,i)=='1' and 2^(6-i) or 0) end\r\n        return b:sub(c+1,c+1)\r\n    end)..({ '', '==', '=' })[#data%3+1])\r\nend\r\n")()
       decode = load("\r\nreturn function(data, b)\r\n    data = string.gsub(data, '[^'..b..'=]', '')\r\n    return (data:gsub('.', function(x)\r\n        if (x == '=') then return '' end\r\n        local r,f='',(b:find(x)-1)\r\n        for i=6,1,-1 do r=r..(f%2^i-f%2^(i-1)>0 and '1' or '0') end\r\n        return r;\r\n    end):gsub('%d%d%d?%d?%d?%d?%d?%d?', function(x)\r\n        if (#x ~= 8) then return '' end\r\n        local c=0\r\n        for i=1,8 do c=c+(x:sub(i,i)=='1' and 2^(8-i) or 0) end\r\n        return string.char(c)\r\n    end))\r\nend\r\n")()
     end
-    -- <summary>
-    -- Creates a new Base64 generator with the given character set.
-    -- <para>A custom character set must be exactly 64 characters long and use the same set of characters as regular Base64. You can only change the order.</para>
-    -- <para>Default: ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/</para>
-    -- </summary>
-    -- <param name="charset"></param>
+
+
+
+
+
+
     __ctor__ = function (this, charset)
       if charset == nil or #charset ~= #("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/") or Linq.Any("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/", function (x)
         return not charset:Contains(x)
@@ -34979,27 +34904,27 @@ System.namespace("WCSharp.Shared", function (namespace)
       end
     end
     BASE64_CHARSET = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/"
-    -- <summary>
-    -- Converts the given text to Base64 with the default character set.
-    -- </summary>
+
+
+
     ToBase64 = function (data)
       return Encode(default, data)
     end
-    -- <summary>
-    -- Converts the given Base64 to text with the default character set.
-    -- </summary>
+
+
+
     FromBase64 = function (data)
       return Decode(default, data)
     end
-    -- <summary>
-    -- Converts the given string into a Base64 string.
-    -- </summary>
+
+
+
     Encode = function (this, data)
       return System.cast(System.String, encode(data, this.charset))
     end
-    -- <summary>
-    -- Converts the given Base64 string into a regular string.
-    -- </summary>
+
+
+
     Decode = function (this, data)
       return System.cast(System.String, decode(data, this.charset))
     end
@@ -35031,10 +34956,10 @@ System.namespace("WCSharp.Shared", function (namespace)
     }
     return class
   end)
-  -- <summary>
-  -- Basic helper class to create 0 second delays on executing actions.
-  -- <para>This can be used to circumvent various issues, such as unit AI locking up if you give them a new order at the same time as they start an attack.</para>
-  -- </summary>
+
+
+
+
   namespace.class("Delay", function (namespace)
     local timer, funcs, execute, EnableDebug, Add, ExecuteAll, ExecuteAllDebug, static
     static = function (this)
@@ -35042,17 +34967,17 @@ System.namespace("WCSharp.Shared", function (namespace)
       funcs = ListDelegate()
       execute = ExecuteAll
     end
-    -- <summary>
-    -- Call this method to automatically wrap your actions in a try/catch, so that exceptions that lead back to <see cref="T:WCSharp.Shared.Delay" /> will automatically output information.
-    -- <para>It is recommended to use compilation time conditions to not call this on release mode.</para>
-    -- </summary>
+
+
+
+
     EnableDebug = function ()
       execute = ExecuteAllDebug
     end
-    -- <summary>
-    -- <para>Will execute the given action after a 0 second delay, which translates to a single frame.</para>
-    -- <para>This can be used to circumvent various issues, such as unit AI locking up if you give them a new order at the same time as they start an attack.</para>
-    -- </summary>
+
+
+
+
     Add = function (func)
       if #funcs == 0 then
         TimerStart(timer, 0, false, execute)
@@ -35099,18 +35024,18 @@ System.namespace("WCSharp.Shared", function (namespace)
       end
     }
   end)
-  -- <summary>
-  -- Represents a table in Lua in a way that is easier to work with from C#.
-  -- </summary>
-  -- Unfortunately this can't just extend <see cref="T:System.Collections.Generic.Dictionary`2" /> because
-  -- adding properties/fields messes with the enumeration after transpilation to Lua.
+
+
+
+
+
   namespace.class("LuaTable", function (namespace)
     local getKeys, getValues, getCount, getIsReadOnly, get, set, AddKeyValue, ContainsKey, 
     RemoveKey, TryGetValue, Clear, GetEnumerator, GetEnumerator1, Add, Contains, CopyTo, 
     Remove, __ctor__
-    -- <summary>
-    -- Initialises a new <see cref="T:WCSharp.Shared.LuaTable" /> and adds all pairs located on the table into the dictionary.
-    -- </summary>
+
+
+
     __ctor__ = function (this, table)
       this.dict = DictObjectObject()
       this.Table = table
@@ -35138,29 +35063,29 @@ System.namespace("WCSharp.Shared", function (namespace)
     set = function (this, key, value)
       this.dict:set(key, value)
     end
-    -- <inheritdoc />
+
     AddKeyValue = function (this, key, value)
       this.dict:AddKeyValue(key, value)
     end
-    -- <inheritdoc />
+
     ContainsKey = function (this, key)
       return this.dict:ContainsKey(key)
     end
-    -- <inheritdoc />
+
     RemoveKey = function (this, key)
       return this.dict:RemoveKey(key)
     end
-    -- <inheritdoc />
+
     TryGetValue = function (this, key, value)
       local default
       default, value = this.dict:TryGetValue(key, nil)
       return default, value
     end
-    -- <inheritdoc />
+
     Clear = function (this)
       this.dict:Clear()
     end
-    -- <inheritdoc />
+
     GetEnumerator = function (this)
       return this.dict:GetEnumerator()
     end
@@ -35238,17 +35163,17 @@ System.namespace("WCSharp.Shared", function (namespace)
       end
     }
   end)
-  -- <summary>
-  -- Wrapper for WC3 handles to pass type inspection.
-  -- <para>Sometimes some type casts or pattern matching is required for handles, however this doesn't work as they are not proper objects.</para>
-  -- <para>By wrapping them in a C# object like this, we can properly cast and match handles.</para>
-  -- </summary>
+
+
+
+
+
   namespace.class("TypeWrapper_1", function (namespace)
     return function (T)
       local __ctor__
-      -- <summary>
-      -- Wraps the given value in a C# type.
-      -- </summary>
+
+
+
       __ctor__ = function (this, value)
         this.Value = System.default(T)
         this.Value = value
@@ -35269,9 +35194,9 @@ System.namespace("WCSharp.Shared", function (namespace)
       }
     end
   end)
-  -- <summary>
-  -- Defines a number of miscellaneous useful methods and constants.
-  -- </summary>
+
+
+
   namespace.class("Util", function (namespace)
     local location, Debug, DistanceBetweenPoints, DistanceBetweenPoints1, DistanceBetweenPoints2, DistanceBetweenPoints3, IsInRange, IsInRange1, 
     IsInRange2, IsInRange3, AngleBetweenPoints1, AngleBetweenPoints2, AngleBetweenPoints3, AngleBetweenPointsRad1, AngleBetweenPointsRad2, AngleBetweenPointsRad3, 
@@ -35280,156 +35205,156 @@ System.namespace("WCSharp.Shared", function (namespace)
     static = function (this)
       location = Location(0, 0)
     end
-    -- <summary>
-    -- Outputs the given data as text to the local player at the default position.
-    -- </summary>
+
+
+
     Debug = function (obj)
       DisplayTextToPlayer(GetLocalPlayer(), 0, 0, System.ObjectToString(obj))
     end
-    -- <summary>
-    -- Calculates the distance from (<paramref name="x1" />, <paramref name="y1" />) to (<paramref name="x2" />, <paramref name="y2" />).
-    -- </summary>
+
+
+
     DistanceBetweenPoints = function (x1, y1, x2, y2)
       local num = x1 - x2
       local num2 = y1 - y2
       return SquareRoot(num * num + num2 * num2)
     end
-    -- <summary>
-    -- Calculates the distance from <paramref name="source" /> unit to (<paramref name="x2" />, <paramref name="y2" />).
-    -- </summary>
+
+
+
     DistanceBetweenPoints1 = function (source, x2, y2)
       local num = GetUnitX(source) - x2
       local num2 = GetUnitY(source) - y2
       return SquareRoot(num * num + num2 * num2)
     end
-    -- <summary>
-    -- Calculates the distance from (<paramref name="x1" />, <paramref name="y1" />) to <paramref name="target" /> unit.
-    -- </summary>
+
+
+
     DistanceBetweenPoints2 = function (x1, y1, target)
       local num = x1 - GetUnitX(target)
       local num2 = y1 - GetUnitY(target)
       return SquareRoot(num * num + num2 * num2)
     end
-    -- <summary>
-    -- Calculates the distance from <paramref name="source" /> unit to <paramref name="target" /> unit.
-    -- </summary>
+
+
+
     DistanceBetweenPoints3 = function (source, target)
       local num = GetUnitX(source) - GetUnitX(target)
       local num2 = GetUnitY(source) - GetUnitY(target)
       return SquareRoot(num * num + num2 * num2)
     end
-    -- <summary>
-    -- Determines whether the distance from (<paramref name="x1" />, <paramref name="y1" />) to (<paramref name="x2" />, <paramref name="y2" />) is less than <paramref name="range" />.
-    -- <para>Performance is a little better than DistanceBetweenPoints if you don't care about the exact distance.</para>
-    -- </summary>
+
+
+
+
     IsInRange = function (x1, y1, x2, y2, range)
       local num = x1 - x2
       local num2 = y1 - y2
       return num * num + num2 * num2 <= range * range
     end
-    -- <summary>
-    -- Determines whether the distance from <paramref name="source" /> unit to (<paramref name="x2" />, <paramref name="y2" />) is less than <paramref name="range" />.
-    -- <para>Performance is a little better than DistanceBetweenPoints if you don't care about the exact distance.</para>
-    -- </summary>
+
+
+
+
     IsInRange1 = function (source, x2, y2, range)
       local num = GetUnitX(source) - x2
       local num2 = GetUnitY(source) - y2
       return num * num + num2 * num2 <= range * range
     end
-    -- <summary>
-    -- Determines whether the distance from (<paramref name="x1" />, <paramref name="y1" />) to <paramref name="target" /> unit is less than <paramref name="range" />.
-    -- <para>Performance is a little better than DistanceBetweenPoints if you don't care about the exact distance.</para>
-    -- </summary>
+
+
+
+
     IsInRange2 = function (x1, y1, target, range)
       local num = x1 - GetUnitX(target)
       local num2 = y1 - GetUnitY(target)
       return num * num + num2 * num2 <= range * range
     end
-    -- <summary>
-    -- Determines whether the distance from <paramref name="source" /> unit to <paramref name="target" /> unit is less than <paramref name="range" />.
-    -- <para>Performance is a little better than DistanceBetweenPoints if you don't care about the exact distance.</para>
-    -- </summary>
+
+
+
+
     IsInRange3 = function (source, target, range)
       local num = GetUnitX(source) - GetUnitX(target)
       local num2 = GetUnitY(source) - GetUnitY(target)
       return num * num + num2 * num2 <= range * range
     end
-    -- <summary>
-    -- Calculates the angle in degrees from <paramref name="source" /> unit to (<paramref name="x2" />, <paramref name="y2" />).
-    -- </summary>
+
+
+
     AngleBetweenPoints1 = function (source, x2, y2)
-      return 180 + 57.2957764 --[[180f / (float)Math.PI]] * Atan2(GetUnitY(source) - y2, GetUnitX(source) - x2)
+      return 180 + 57.2957764 * Atan2(GetUnitY(source) - y2, GetUnitX(source) - x2)
     end
-    -- <summary>
-    -- Calculates the angle in degrees from (<paramref name="x1" />, <paramref name="y1" />) to <paramref name="target" /> unit.
-    -- </summary>
+
+
+
     AngleBetweenPoints2 = function (x1, y1, target)
-      return 180 + 57.2957764 --[[180f / (float)Math.PI]] * Atan2(y1 - GetUnitY(target), x1 - GetUnitX(target))
+      return 180 + 57.2957764 * Atan2(y1 - GetUnitY(target), x1 - GetUnitX(target))
     end
-    -- <summary>
-    -- Calculates the angle in degrees from <paramref name="source" /> unit to <paramref name="target" /> unit.
-    -- </summary>
+
+
+
     AngleBetweenPoints3 = function (source, target)
-      return 180 + 57.2957764 --[[180f / (float)Math.PI]] * Atan2(GetUnitY(source) - GetUnitY(target), GetUnitX(source) - GetUnitX(target))
+      return 180 + 57.2957764 * Atan2(GetUnitY(source) - GetUnitY(target), GetUnitX(source) - GetUnitX(target))
     end
-    -- <summary>
-    -- Calculates the angle in radians from <paramref name="source" /> unit to (<paramref name="x2" />, <paramref name="y2" />).
-    -- </summary>
+
+
+
     AngleBetweenPointsRad1 = function (source, x2, y2)
-      return 3.14159274 --[[(float)Math.PI]] + Atan2(GetUnitY(source) - y2, GetUnitX(source) - x2)
+      return 3.14159274 + Atan2(GetUnitY(source) - y2, GetUnitX(source) - x2)
     end
-    -- <summary>
-    -- Calculates the angle in radians from (<paramref name="x1" />, <paramref name="y1" />) to <paramref name="target" /> unit.
-    -- </summary>
+
+
+
     AngleBetweenPointsRad2 = function (x1, y1, target)
-      return 3.14159274 --[[(float)Math.PI]] + Atan2(y1 - GetUnitY(target), x1 - GetUnitX(target))
+      return 3.14159274 + Atan2(y1 - GetUnitY(target), x1 - GetUnitX(target))
     end
-    -- <summary>
-    -- Calculates the angle in radians from <paramref name="source" /> unit to <paramref name="target" /> unit.
-    -- </summary>
+
+
+
     AngleBetweenPointsRad3 = function (source, target)
-      return 3.14159274 --[[(float)Math.PI]] + Atan2(GetUnitY(source) - GetUnitY(target), GetUnitX(source) - GetUnitX(target))
+      return 3.14159274 + Atan2(GetUnitY(source) - GetUnitY(target), GetUnitX(source) - GetUnitX(target))
     end
-    -- <summary>
-    -- Calculates a point that is the given <paramref name="offset" /> away from (<paramref name="x" />, <paramref name="y" />) at the target <paramref name="degrees" />.
-    -- </summary>
+
+
+
     PositionWithPolarOffset = function (x, y, offset, degrees)
-      return System.ValueTuple(x + offset * Cos(0.0174532924 --[[(float)Math.PI / 180f]] * degrees), y + offset * Sin(0.0174532924 --[[(float)Math.PI / 180f]] * degrees))
+      return System.ValueTuple(x + offset * Cos(0.0174532924 * degrees), y + offset * Sin(0.0174532924 * degrees))
     end
-    -- <summary>
-    -- Calculates a point that is the given <paramref name="offset" /> away from (<paramref name="x" />, <paramref name="y" />) at the target <paramref name="radians" />.
-    -- </summary>
+
+
+
     PositionWithPolarOffsetRad = function (x, y, offset, radians)
       return System.ValueTuple(x + offset * Cos(radians), y + offset * Sin(radians))
     end
-    -- <summary>
-    -- <para>Determines whether the attacker is behind the attacked with the given tolerance in degrees.</para>
-    -- <para>A tolerance of 360 would mean the target can be attacked from anywhere while being considered "behind".</para>
-    -- </summary>
-    -- <param name="attacker">The unit performing the attack.</param>
-    -- <param name="attacked">The unit being attacked.</param>
-    -- <param name="tolerance">In degrees.</param>
+
+
+
+
+
+
+
     IsAttackerBehindUnit = function (attacker, attacked, tolerance)
       return IsAttackerBehindUnit1(GetUnitX(attacker), GetUnitY(attacker), attacked, tolerance)
     end
-    -- <summary>
-    -- <para>Determines whether the attacker is behind the attacked with the given tolerance in degrees.</para>
-    -- <para>A tolerance of 360 would mean the target can be attacked from anywhere while being considered "behind".</para>
-    -- </summary>
-    -- <param name="attackerX">The X position of the attacker.</param>
-    -- <param name="attackerY">The Y position of the attacker.</param>
-    -- <param name="attacked">The unit being attacked.</param>
-    -- <param name="tolerance">In degrees.</param>
+
+
+
+
+
+
+
+
     IsAttackerBehindUnit1 = function (attackerX, attackerY, attacked, tolerance)
       return IsAttackerBehindUnit2((180 + (57.2957764 * Atan2(attackerY - GetUnitY(attacked), attackerX - GetUnitX(attacked)))), attacked, tolerance)
     end
-    -- <summary>
-    -- <para>Determines whether the attacker is behind the attacked with the given tolerance in degrees.</para>
-    -- <para>A tolerance of 360 would mean the target can be attacked from anywhere while being considered "behind".</para>
-    -- </summary>
-    -- <param name="attackerAngle">The angle of the attacker.</param>
-    -- <param name="attacked">The unit being attacked.</param>
-    -- <param name="tolerance">In degrees.</param>
+
+
+
+
+
+
+
     IsAttackerBehindUnit2 = function (attackerAngle, attacked, tolerance)
       local unitFacing = GetUnitFacing(attacked)
       local num = 360 - 0.5 * tolerance
@@ -35440,13 +35365,13 @@ System.namespace("WCSharp.Shared", function (namespace)
       end
       return true
     end
-    -- <summary>
-    -- <para>Determines whether the attacker is in front of the attacked with the given tolerance in degrees.</para>
-    -- <para>A tolerance of 360 means the target can be attacked from anywhere while being considered "infront".</para>
-    -- </summary>
-    -- <param name="attacker">The unit performing the attack.</param>
-    -- <param name="attacked">The unit being attacked.</param>
-    -- <param name="tolerance">In degrees.</param>
+
+
+
+
+
+
+
     IsAttackerInfrontUnit = function (attacker, attacked, tolerance)
       local num = (180 + (57.2957764 * Atan2(GetUnitY(attacked) - GetUnitY(attacker), GetUnitX(attacked) - GetUnitX(attacker))))
       local unitFacing = GetUnitFacing(attacked)
@@ -35458,12 +35383,12 @@ System.namespace("WCSharp.Shared", function (namespace)
       end
       return true
     end
-    -- <summary>
-    -- Returns all players matching the given <paramref name="playerslotstate" /> and <paramref name="mapcontrol" />.
-    -- </summary>
-    -- <param name="playerslotstate">The <see cref="T:WCSharp.Api.playerslotstate" /> that players should have. Defaults to <see cref="F:WCSharp.Api.Common.PLAYER_SLOT_STATE_PLAYING" />.</param>
-    -- <param name="mapcontrol">The <see cref="T:WCSharp.Api.mapcontrol" /> that players should have. Defaults to <see cref="F:WCSharp.Api.Common.MAP_CONTROL_USER" />.</param>
-    -- <returns></returns>
+
+
+
+
+
+
     EnumeratePlayers = function (playerslotstate, mapcontrol)
       return System.yieldIEnumerable(function (playerslotstate, mapcontrol)
         if playerslotstate == nil then
@@ -35481,9 +35406,9 @@ System.namespace("WCSharp.Shared", function (namespace)
         end
       end, WCSharpApi.player, playerslotstate, mapcontrol)
     end
-    -- <summary>
-    -- Returns all players.
-    -- </summary>
+
+
+
     EnumeratePlayers1 = function ()
       return System.yieldIEnumerable(function ()
         local maxPlayers = GetBJMaxPlayers()
@@ -35492,18 +35417,18 @@ System.namespace("WCSharp.Shared", function (namespace)
         end
       end, WCSharpApi.player)
     end
-    -- <summary>
-    -- Creates a "damage text" style of floating text at the target location.
-    -- <para>Size is expected to be GUI-like values (it gets multiplied by <see cref="F:WCSharp.Shared.Util.TEXT_SIZE_MULTIPLIER" />).</para>
-    -- <para>By default, the text will start to fade after 2 seconds, and be fully removed after 4 seconds.</para>
-    -- </summary>
-    -- <param name="damage">The damage number to display (will round to whole numbers).</param>
-    -- <param name="isHeal">If true, will color green.</param>
-    -- <param name="isCritical">If true, will add an exclamation mark.</param>
-    -- <param name="size">The size of the text. See GUI.</param>
-    -- <param name="x">The x position that the text should be created at.</param>
-    -- <param name="y">The y position that the text should be created at.</param>
-    -- <param name="height">The height that the text should be created at, relative to the target (x, y) position.</param>
+
+
+
+
+
+
+
+
+
+
+
+
     CreateDamageText = function (damage, isHeal, isCritical, size, x, y, height)
       local texttag = CreateTextTag()
       local text = MathRound(damage) .. ""
@@ -35526,19 +35451,19 @@ System.namespace("WCSharp.Shared", function (namespace)
       SetTextTagVisibility(texttag, true)
       return texttag
     end
-    -- <summary>
-    -- Creates a floating text at the target location.
-    -- <para>Size is expected to be GUI-like values (it gets multiplied by <see cref="F:WCSharp.Shared.Util.TEXT_SIZE_MULTIPLIER" />).</para>
-    -- <para>By default, the text will start to fade after 2 seconds, and be fully removed after 4 seconds.</para>
-    -- </summary>
-    -- <param name="text">The text to display.</param>
-    -- <param name="size">The size of the text. See GUI.</param>
-    -- <param name="x">The x position that the text should be created at.</param>
-    -- <param name="y">The y position that the text should be created at.</param>
-    -- <param name="height">The height that the text should be created at, relative to the target (x, y) position.</param>
-    -- <param name="red">The red value of the text. Should be in the range of 0 (none) to 255 (pure red).</param>
-    -- <param name="green">The green value of the text. Should be in the range of 0 (none) to 255 (pure green).</param>
-    -- <param name="blue">The blue value of the text. Should be in the range of 0 (none) to 255 (pure blue).</param>
+
+
+
+
+
+
+
+
+
+
+
+
+
     CreateFloatText = function (text, size, x, y, height, red, green, blue)
       local texttag = CreateTextTag()
       SetTextTagText(texttag, text, size * 0.0023)
@@ -35552,10 +35477,10 @@ System.namespace("WCSharp.Shared", function (namespace)
       SetTextTagVisibility(texttag, true)
       return texttag
     end
-    -- <summary>
-    -- Retrieves the LocationZ at the given (X, Y) coordinates.
-    -- <para>Re-uses an internal location to provide a faster and easier solution to <see cref="M:WCSharp.Api.Common.GetLocationZ(WCSharp.Api.location)" />.</para>
-    -- </summary>
+
+
+
+
     GetZ = function (x, y)
       MoveLocation(location, x, y)
       return GetLocationZ(location)
@@ -35628,14 +35553,14 @@ System.namespace("WCSharp.Shared", function (namespace)
   end)
 end)
 System.namespace("WCSharp.Shared.Extensions", function (namespace)
-  -- <summary>
-  -- Extension class that defines a number of methods to simplify working with Warcraft III groups.
-  -- </summary>
+
+
+
   namespace.class("GroupExtensions", function (namespace)
     local Enumerate, Enumerate1, FirstOrDefault, ToList, ToList1, ToHashSet, ToHashSet1
-    -- <summary>
-    -- Enumerates all units within the <paramref name="group" />. This will empty the group in the process.
-    -- </summary>
+
+
+
     Enumerate = function (group)
       return System.yieldIEnumerable(function (group)
         while true do
@@ -35648,9 +35573,9 @@ System.namespace("WCSharp.Shared.Extensions", function (namespace)
         end
       end, WCSharpApi.unit, group)
     end
-    -- <summary>
-    -- Enumerates all units within the group that match the given filter. This will empty the group in the process.
-    -- </summary>
+
+
+
     Enumerate1 = function (group, filter)
       return System.yieldIEnumerable(function (group, filter)
         while true do
@@ -35665,10 +35590,10 @@ System.namespace("WCSharp.Shared.Extensions", function (namespace)
         end
       end, WCSharpApi.unit, group, filter)
     end
-    -- <summary>
-    -- Finds the first unit in the <paramref name="group" /> that matches the given <paramref name="predicate" />.
-    -- <para>If you need to call this more than once, use ToList and Linq methods instead.</para>
-    -- </summary>
+
+
+
+
     FirstOrDefault = function (group, predicate)
       local num = 0
       local unit
@@ -35684,9 +35609,9 @@ System.namespace("WCSharp.Shared.Extensions", function (namespace)
       end
       return unit
     end
-    -- <summary>
-    -- Returns a <see cref="T:System.Collections.Generic.List`1" /> containing all units within the given <paramref name="group" />.
-    -- </summary>
+
+
+
     ToList = function (group)
       local num = BlzGroupGetSize(group)
       local list = Listunit()
@@ -35695,9 +35620,9 @@ System.namespace("WCSharp.Shared.Extensions", function (namespace)
       end
       return list
     end
-    -- <summary>
-    -- Returns a <see cref="T:System.Collections.Generic.List`1" /> containing all units within the given <paramref name="group" /> that match the <paramref name="predicate" />.
-    -- </summary>
+
+
+
     ToList1 = function (group, predicate)
       local num = BlzGroupGetSize(group)
       local list = Listunit()
@@ -35709,9 +35634,9 @@ System.namespace("WCSharp.Shared.Extensions", function (namespace)
       end
       return list
     end
-    -- <summary>
-    -- Returns a <see cref="T:System.Collections.Generic.HashSet`1" /> containing all units within the given <paramref name="group" />.
-    -- </summary>
+
+
+
     ToHashSet = function (group)
       local num = BlzGroupGetSize(group)
       local hashSet = HashSetunit()
@@ -35720,9 +35645,9 @@ System.namespace("WCSharp.Shared.Extensions", function (namespace)
       end
       return hashSet
     end
-    -- <summary>
-    -- Returns a <see cref="T:System.Collections.Generic.HashSet`1" /> containing all units within the given <paramref name="group" /> that match the <paramref name="predicate" />.
-    -- </summary>
+
+
+
     ToHashSet1 = function (group, predicate)
       local num = BlzGroupGetSize(group)
       local hashSet = HashSetunit()
@@ -35758,16 +35683,16 @@ System.namespace("WCSharp.Shared.Extensions", function (namespace)
       end
     }
   end)
-  -- <summary>
-  -- Extension class that defines a number of methods to simplify working with lists, in particular within context of Warcraft III.
-  -- </summary>
+
+
+
   namespace.class("IListExtensions", function (namespace)
     local IterateWithRemoval, ClearLast, ClearLast1
-    -- <summary>
-    -- Due to C# to Lua conversion difficulties, standard ways of enumerating a list while removing items from it may not work.
-    -- This extension method will safely iterate the list, and remove any which return false.
-    -- <para>Alternatively, you can use a standard reverse order iteration, as this will still work correctly.</para>
-    -- </summary>
+
+
+
+
+
     IterateWithRemoval = function (list, func, T)
       local num = list:getCount()
       local num2 = 0
@@ -35789,12 +35714,12 @@ System.namespace("WCSharp.Shared.Extensions", function (namespace)
         end
       end
     end
-    -- <summary>
-    -- Abuses how lists work in lua in order to cheaply remove the final elements.
-    -- </summary>
-    -- <typeparam name="T"></typeparam>
-    -- <param name="list">The list to modify.</param>
-    -- <param name="amount">The number of elements to remove.</param>
+
+
+
+
+
+
     ClearLast = function (list, amount, T)
       local num = #list
       local num2 = num - amount
@@ -35803,14 +35728,14 @@ System.namespace("WCSharp.Shared.Extensions", function (namespace)
         num = num - 1
       end
     end
-    -- <summary>
-    -- Abuses how lists work in lua in order to cheaply remove the final elements.
-    -- <para>WARNING! If <paramref name="count" /> is NOT equal to <see cref="P:System.Collections.Generic.List`1.Count" />, you WILL cause major bugs!</para>
-    -- </summary>
-    -- <typeparam name="T"></typeparam>
-    -- <param name="list">The list to modify.</param>
-    -- <param name="amount">The number of elements to remove.</param>
-    -- <param name="count">This MUST be equal to <see cref="P:System.Collections.Generic.List`1.Count" />, else you WILL cause major bugs!</param>
+
+
+
+
+
+
+
+
     ClearLast1 = function (list, amount, count, T)
       local num = count - amount
       while num < count do
@@ -35836,21 +35761,21 @@ System.namespace("WCSharp.Shared.Extensions", function (namespace)
   end)
 end)
 System.namespace("WCSharp.Shared.Data", function (namespace)
-  -- <summary>
-  -- Data class for a simple point coordinate.
-  -- </summary>
+
+
+
   namespace.class("Point", function (namespace)
     local op_Equality, op_Inequality, Equals, EqualsObj, GetHashCode, class, __ctor__
-    -- <summary>
-    -- Creates a new point at the given X and Y cooridnates.
-    -- </summary>
+
+
+
     __ctor__ = function (this, x, y)
       this.X = x
       this.Y = y
     end
-    -- <summary>
-    -- True if the X and Y coordinates of the two points match.
-    -- </summary>
+
+
+
     op_Equality = function (point1, point2)
       local default = point1
       if default ~= nil then
@@ -35862,20 +35787,20 @@ System.namespace("WCSharp.Shared.Data", function (namespace)
       end
       return extern
     end
-    -- <summary>
-    -- True if the X and Y coordinates of the two points do not match.
-    -- </summary>
+
+
+
     op_Inequality = function (point1, point2)
       return not (op_Equality(point1, point2))
     end
-    -- <inheritdoc />
+
     Equals = function (this, other)
       if other ~= nil and this.X == other.X then
         return this.Y == other.Y
       end
       return false
     end
-    -- <inheritdoc />
+
     EqualsObj = function (this, obj)
       local other = obj
       if System.is(other, class) then
@@ -35883,7 +35808,7 @@ System.namespace("WCSharp.Shared.Data", function (namespace)
       end
       return false
     end
-    -- <inheritdoc />
+
     GetHashCode = function (this)
       return System.HashCode.Combine(this.X, this.Y, System.Single, System.Single)
     end
@@ -35919,9 +35844,9 @@ System.namespace("WCSharp.Shared.Data", function (namespace)
     }
     return class
   end)
-  -- <summary>
-  -- Data class that mimics the functions of the standard Rect.cs while providing access to WC3 rect and region representations.
-  -- </summary>
+
+
+
   namespace.class("Rectangle", function (namespace)
     local WorldBounds, getRect, getRegion, getWidth, getHeight, getTopLeft, getTopRight, getBottomLeft, 
     getBottomRight, getCenter, getIsEmpty, op_Equality, op_Inequality, GetRandomPoint, Contains, Contains1, 
@@ -35931,9 +35856,9 @@ System.namespace("WCSharp.Shared.Data", function (namespace)
       WorldBounds = class(GetWorldBounds())
       this.WorldBounds = WorldBounds
     end
-    -- <summary>
-    -- Creates a new rectangle using the given Warcraft III rect as a base.
-    -- </summary>
+
+
+
     __ctor1__ = function (this, rect)
       this.Left = GetRectMinX(rect)
       this.Bottom = GetRectMinY(rect)
@@ -35941,18 +35866,18 @@ System.namespace("WCSharp.Shared.Data", function (namespace)
       this.Top = GetRectMaxY(rect)
       this.rect = rect
     end
-    -- <summary>
-    -- Creates a new rectangle with the given set of coordinates.
-    -- </summary>
+
+
+
     __ctor2__ = function (this, left, bottom, right, top)
       this.Left = math.Min(left, right)
       this.Bottom = math.Min(bottom, top)
       this.Right = right
       this.Top = top
     end
-    -- <summary>
-    -- Creates a Rectangle that encompasses all of the given points within its surface area.
-    -- </summary>
+
+
+
     __ctor3__ = function (this, points)
       local list = Linq.ToList(points)
       if #list ~= 0 then
@@ -36009,9 +35934,9 @@ System.namespace("WCSharp.Shared.Data", function (namespace)
       end
       return true
     end
-    -- <summary>
-    -- True if all coordinates of <paramref name="rect1" /> match those of <paramref name="rect2" />.
-    -- </summary>
+
+
+
     op_Equality = function (rect1, rect2)
       local default = rect1
       if default ~= nil then
@@ -36023,90 +35948,90 @@ System.namespace("WCSharp.Shared.Data", function (namespace)
       end
       return extern
     end
-    -- <summary>
-    -- True if any coordinates of <paramref name="rect1" /> do not match those of <paramref name="rect2" />.
-    -- </summary>
+
+
+
     op_Inequality = function (rect1, rect2)
       return not (op_Equality(rect1, rect2))
     end
-    -- <summary>
-    -- Retrieves a random (inclusive) point in this rectangle.
-    -- </summary>
+
+
+
     GetRandomPoint = function (this)
       return WCSharpSharedData.Point(GetRandomReal(this.Left, this.Right), GetRandomReal(this.Bottom, this.Top))
     end
-    -- <summary>
-    -- Returns whether the given coordinates are located within this Rectangle.
-    -- </summary>
-    -- <param name="x"></param>
-    -- <param name="y"></param>
-    -- <returns></returns>
+
+
+
+
+
+
     Contains = function (this, x, y)
       if this.Left <= x and this.Bottom <= y and this.Right >= x then
         return this.Top >= y
       end
       return false
     end
-    -- <summary>
-    -- Returns whether the given Point is located within this Rectangle.
-    -- </summary>
-    -- <param name="point"></param>
-    -- <returns></returns>
+
+
+
+
+
     Contains1 = function (this, point)
       return Contains(this, point.X, point.Y)
     end
-    -- <summary>
-    -- Returns whether the given Rectangle is located fully within this Rectangle.
-    -- </summary>
+
+
+
     Contains2 = function (this, rect)
       if this.Left <= rect.Left and this.Bottom <= rect.Bottom and this.Right >= rect.Right then
         return this.Top >= rect.Top
       end
       return false
     end
-    -- <summary>
-    -- Returns whether this Rectangle has any point where it touches or overlaps with the given Rectangle.
-    -- </summary>
+
+
+
     IntersectsWith = function (this, rect)
       if rect.Left <= this.Right and rect.Right >= this.Left and rect.Top <= this.Bottom then
         return rect.Bottom >= this.Top
       end
       return false
     end
-    -- <summary>
-    -- Returns a new Rectangle that represents the union of the two given Rectangles. Meaning, a new square that can encompass both.
-    -- </summary>
+
+
+
     Union = function (rect1, rect2)
       return System.new(class, 2, math.Min(rect1.Left, rect2.Left), math.Min(rect1.Bottom, rect2.Bottom), math.Max(rect1.Right, rect2.Right), math.Max(rect1.Top, rect2.Top))
     end
-    -- <summary>
-    -- Returns a new Rectangle that represents the intersection of the two given Rectangles. Meaning, the area in which they overlap.
-    -- </summary>
+
+
+
     Intersect = function (rect1, rect2)
       return System.new(class, 2, math.Max(rect1.Left, rect2.Left), math.Max(rect1.Bottom, rect2.Bottom), math.Min(rect1.Right, rect2.Right), math.Min(rect1.Top, rect2.Top))
     end
-    -- <summary>
-    -- Returns a new Rectangle that is offset by the given coordinates, using <see cref="P:WCSharp.Shared.Data.Rectangle.TopLeft" /> as the origin for movement.
-    -- </summary>
+
+
+
     Offset = function (rect, x, y)
       return System.new(class, 2, rect.Left + x, rect.Bottom + y, rect.Right + x, rect.Top + y)
     end
-    -- <summary>
-    -- Returns a new Rectangle that is inflated by the given width and height in all directions.
-    -- <para>The increase on each side is half the width/height.</para>
-    -- </summary>
+
+
+
+
     Inflate = function (rect, width, height)
       return System.new(class, 2, rect.Left - width / 2, rect.Bottom - height / 2, rect.Right + width / 2, rect.Top + height / 2)
     end
-    -- <summary>
-    -- Returns a new Rectangle that is scaled up by the given scaling factors.
-    -- </summary>
+
+
+
     Scale = function (rect, scaleWidth, scaleHeight)
       return Inflate(rect, getWidth(rect) * scaleWidth / 2, getWidth(rect) * scaleHeight / 2)
     end
-    -- <summary>
-    -- Must be called in order to safely garbage collect <see cref="P:WCSharp.Shared.Data.Rectangle.Rect" /> and <see cref="P:WCSharp.Shared.Data.Rectangle.Region" />.
-    -- </summary>
+
+
+
     Dispose = function (this)
       if this.rect ~= nil then
         RemoveRect(this.rect)
@@ -36117,14 +36042,14 @@ System.namespace("WCSharp.Shared.Data", function (namespace)
         this.region = nil
       end
     end
-    -- <inheritdoc />
+
     Equals = function (this, other)
       if other ~= nil and this.Left == other.Left and this.Bottom == other.Bottom and this.Right == other.Right then
         return this.Top == other.Top
       end
       return false
     end
-    -- <inheritdoc />
+
     EqualsObj = function (this, obj)
       local other = obj
       if System.is(other, class) then
@@ -36132,7 +36057,7 @@ System.namespace("WCSharp.Shared.Data", function (namespace)
       end
       return false
     end
-    -- <inheritdoc />
+
     GetHashCode = function (this)
       return System.HashCode.Combine(this.Left, this.Bottom, this.Right, this.Top, System.Single, System.Single, System.Single, System.Single)
     end
@@ -36332,9 +36257,9 @@ System.namespace("WCSharp.Sync", function (namespace)
       end
     }
   end)
-  -- <summary>
-  -- Represents a single packet of 255 characters being sent via sync. To send as much as possible per packet, the property names are shortened.
-  -- </summary>
+
+
+
   namespace.class("SyncPacket", function (namespace)
     return {
       P = 0,
@@ -36349,19 +36274,19 @@ System.namespace("WCSharp.Sync", function (namespace)
       end
     }
   end)
-  -- <summary>
-  -- The <see cref="T:WCSharp.Sync.SyncSystem" /> sets up a communication channel via the BlzSync functions and allows for the transfer of generically typed data
-  -- across it. Data is automatically split into packets to allow for any amount of data to be transferred across.
-  -- </summary>
-  -- <remarks>
-  -- This system reserves the sync prefixes __WCSharpSyncHeaders and __WCSharpSyncPackets. Nothing else should use these prefixes to send data.
-  -- </remarks>
-  -- This system is set up so that it can process a single message type per player simultaneously. This is based on the assumption that messages
-  -- will never be interrupted midway during sending, and always arrive in the same order as they were sent (tests seem to confirm this).
-  -- Tests also seem to confirm that messages from different players do not get mixed, but since it's hard to be certain without large scale tests
-  -- the system is set up to process one message for each player at any time. If it is true that the player sequence is always the same, this
-  -- could be skipped. But realistically, this only saves a few table lookups anyway, and the table is kept empty when not receiving, meaning the
-  -- memory footprint is basically the same as well.
+
+
+
+
+
+
+
+
+
+
+
+
+
   namespace.class("SyncSystem", function (namespace)
     local syncHandlers, messages, escapeChars, syncTriggers, size, index, RegisterForPrefix, HandleSyncHeader, 
     HandleSyncPacket, FinalizeMessage, Send, BuildPackets, Subscribe, Unsubscribe, headerAction, packetAction, 
@@ -36370,13 +36295,13 @@ System.namespace("WCSharp.Sync", function (namespace)
       syncHandlers = ListSyncHandler()
       messages = DictInt32SyncMessage()
       local default = HashSetChar()
-      default:Add(34 --[['"']])
-      default:Add(92 --[['\\']])
-      default:Add(8 --[['\b']])
-      default:Add(12 --[['\f']])
-      default:Add(10 --[['\n']])
-      default:Add(13 --[['\r']])
-      default:Add(9 --[['\t']])
+      default:Add(34)
+      default:Add(92)
+      default:Add(8)
+      default:Add(12)
+      default:Add(10)
+      default:Add(13)
+      default:Add(9)
       escapeChars = default
       local default = ListSyncTrigger()
       default:Add(RegisterForPrefix(HandleSyncHeader, "__WCSharpSyncHeaders"))
@@ -36436,9 +36361,9 @@ System.namespace("WCSharp.Sync", function (namespace)
       end
       index = 0
     end
-    -- <summary>
-    -- Syncs the given data across all clients. Use <see cref="M:WCSharp.Sync.SyncSystem.Subscribe``1(System.Action{``0})" /> in order to set up receiving of certain types of messages.
-    -- </summary>
+
+
+
     Send = function (message, T)
       if message ~= nil then
         local content = WCSharpJson.JsonConvert.Serialize(message, T)
@@ -36456,9 +36381,9 @@ System.namespace("WCSharp.Sync", function (namespace)
         end
       end
     end
-    -- <summary>
-    -- Splits packets, taking into account added length from escaping the message data.
-    -- </summary>
+
+
+
     BuildPackets = function (content, playerId)
       return System.yieldIEnumerable(function (content, playerId)
         local num = 0
@@ -36494,17 +36419,17 @@ System.namespace("WCSharp.Sync", function (namespace)
         end
       end, WCSharpSync.SyncPacket, content, playerId)
     end
-    -- <summary>
-    -- Subscribes the given <paramref name="handler" /> to be called when messages of type <typeparamref name="T" /> are sent across the <see cref="T:WCSharp.Sync.SyncSystem" />.
-    -- </summary>
+
+
+
     Subscribe = function (handler, T)
       if handler ~= nil then
         syncHandlers:Add(WCSharpSync.SyncHandler.Create(handler, T))
       end
     end
-    -- <summary>
-    -- Unsubscribes the given <paramref name="handler" /> from the <see cref="T:WCSharp.Sync.SyncSystem" />.
-    -- </summary>
+
+
+
     Unsubscribe = function (handler, T)
       for i = 0, #syncHandlers - 1 do
         local continue
@@ -36547,10 +36472,10 @@ System.namespace("WCSharp.Sync", function (namespace)
       end)
       return false
     end
-    -- <summary>
-    -- Call this method to automatically wrap your actions in a try/catch, so that exceptions that lead back to the SyncSystem will automatically output information.
-    -- <para>It is recommended to use compilation time conditions to not call this on release mode.</para>
-    -- </summary>
+
+
+
+
     EnableDebug = function ()
       for i = 0, #syncTriggers - 1 do
         local syncTrigger = syncTriggers:get(i)
@@ -36619,9 +36544,9 @@ System.import(function (out)
   WCSharpW3MMD = WCSharp.W3MMD
 end)
 System.namespace("WCSharp.W3MMD", function (namespace)
-  -- <summary>
-  -- An arbitrary W3MMD variable of any type.
-  -- </summary>
+
+
+
   namespace.interface("IW3MmdVar", function ()
     return {
       __metadata__ = function (out)
@@ -36631,10 +36556,10 @@ System.namespace("WCSharp.W3MMD", function (namespace)
       end
     }
   end)
-  -- <summary>
-  -- The main class responsible for creating and managing W3MMD variable and data emissions.
-  -- <para>Note: You should define your variables and events a few seconds before interacting with them.</para>
-  -- </summary>
+
+
+
+
   namespace.class("W3Mmd", function (namespace)
     local cache, messageId, Init, ForceInit, GetEmitter, DefineVar, Emit, SetPlayerFlag, 
     SetPlayerFlag1, EmitCustom, DefineEvent, DefineFloat, DefineInt, DefineString, static
@@ -36658,15 +36583,15 @@ System.namespace("WCSharp.W3MMD", function (namespace)
       end
       return gamecache
     end
-    -- <summary>
-    -- <para>W3MMD is automatically initialised when defining any event or variable.</para>
-    -- As such, this method is only necessary to call if you exclusively use SetPlayerFlag and/or EmitCustom.
-    -- </summary>
+
+
+
+
     ForceInit = function ()
     end
-    -- <summary>
-    -- Select a player to emit the message.
-    -- </summary>
+
+
+
     GetEmitter = function ()
       local bJMaxPlayers = GetBJMaxPlayers()
       for i = 0, 999 do
@@ -36680,9 +36605,9 @@ System.namespace("WCSharp.W3MMD", function (namespace)
     DefineVar = function (packedName, variableType, goalType, suggestionType)
       Emit("DefVarP " .. System.toString(packedName) .. " " .. System.toString(WCSharpW3MMD.W3MmdExtensions.Pack4(variableType)) .. " " .. System.toString(WCSharpW3MMD.W3MmdExtensions.Pack2(goalType)) .. " " .. System.toString(WCSharpW3MMD.W3MmdExtensions.Pack3(suggestionType)))
     end
-    -- <summary>
-    -- Emits a message to be consumed by a parser.
-    -- </summary>
+
+
+
     Emit = function (message, mmdCache)
       local default = messageId
       messageId = default + 1
@@ -36695,75 +36620,75 @@ System.namespace("WCSharp.W3MMD", function (namespace)
         SyncStoredInteger(mmdCache, "val:" .. num, message)
       end
     end
-    -- <summary>
-    -- Sets a player's flag to be consumed by a parser.
-    -- </summary>
-    -- <param name="player">Player for who the flag is set.</param>
-    -- <param name="flag">The flag value to set.</param>
+
+
+
+
+
     SetPlayerFlag = function (player, flag)
       SetPlayerFlag1(GetPlayerId(player), flag)
     end
-    -- <summary>
-    -- Sets a player's flag to be consumed by a parser.
-    -- </summary>
-    -- <param name="playerId">PlayerId for who the flag is set.</param>
-    -- <param name="flag">The flag value to set.</param>
+
+
+
+
+
     SetPlayerFlag1 = function (playerId, flag)
       Emit("FlagP " .. playerId .. " " .. System.toString(WCSharpW3MMD.W3MmdExtensions.Pack1(flag)))
     end
-    -- <summary>
-    -- Emits custom data that may be used by parsers/viewers.
-    -- <para>See the W3MMD.spec at https://github.com/PBug90/w3gPlus for more information.</para>
-    -- </summary>
-    -- <param name="key">A key to identify the data.</param>
-    -- <param name="data">The data emitted.</param>
+
+
+
+
+
+
     EmitCustom = function (key, data)
       Emit("custom " .. System.toString(WCSharpW3MMD.W3MmdExtensions.Pack(key)) .. " " .. System.toString(WCSharpW3MMD.W3MmdExtensions.Pack(data)))
     end
-    -- <summary>
-    -- Defines an event that can occur multiple times.
-    -- <para>Equivalent to creating a new <see cref="T:WCSharp.W3MMD.W3MmdEvent" />.</para>
-    -- </summary>
-    -- <param name="name">Name of the event.</param>
-    -- <param name="format">
-    -- String to format an event into a user-consumable string.
-    -- <para>e.g., for a player kills player event, we'd do "{0} killed {1}" where {0} is the first argument (the killer) and {1} is the second argument (the victim).</para>
-    -- </param>
-    -- <param name="arguments">Name of the arguments. e.g., ["killer", "victim"].</param>
-    -- <exception cref="T:System.Exception">If the name is not between 1 and 32 characters long.</exception>
+
+
+
+
+
+
+
+
+
+
+
     DefineEvent = function (name, format, arguments)
       return WCSharpW3MMD.W3MmdEvent(name, format, arguments)
     end
-    -- <summary>
-    -- Defines a player float variable that can be mutated throughout the game.
-    -- <para>Equivalent to creating a new <see cref="T:WCSharp.W3MMD.W3MmdFloatVar" />.</para>
-    -- </summary>
-    -- <param name="name">Name of the variable.</param>
-    -- <param name="goalType">Whether the player is trying to get a high or low value (or none).</param>
-    -- <param name="suggestionType">A suggestion for how a parser/viewer should treat the output values.</param>
-    -- <exception cref="T:System.Exception">If the name is not between 1 and 32 characters long.</exception>
+
+
+
+
+
+
+
+
     DefineFloat = function (name, goalType, suggestionType)
       return WCSharpW3MMD.W3MmdFloatVar(name, goalType, suggestionType)
     end
-    -- <summary>
-    -- Defines a player int variable that can be mutated throughout the game.
-    -- <para>Equivalent to creating a new <see cref="T:WCSharp.W3MMD.W3MmdIntVar" />.</para>
-    -- </summary>
-    -- <param name="name">Name of the variable.</param>
-    -- <param name="goalType">Whether the player is trying to get a high or low value (or none).</param>
-    -- <param name="suggestionType">A suggestion for how a parser/viewer should treat the output values.</param>
-    -- <exception cref="T:System.Exception">If the name is not between 1 and 32 characters long.</exception>
+
+
+
+
+
+
+
+
     DefineInt = function (name, goalType, suggestionType)
       return WCSharpW3MMD.W3MmdIntVar(name, goalType, suggestionType)
     end
-    -- <summary>
-    -- Defines a player string variable that can be mutated throughout the game.
-    -- <para>Useful for classifications.</para>
-    -- <para>Equivalent to creating a new <see cref="T:WCSharp.W3MMD.W3MmdStringVar" />.</para>
-    -- </summary>
-    -- <param name="name">Name of the variable.</param>
-    -- <param name="suggestionType">A suggestion for how a parser/viewer should treat the value.</param>
-    -- <exception cref="T:System.Exception">If the name is not between 1 and 32 characters long.</exception>
+
+
+
+
+
+
+
+
     DefineString = function (name, suggestionType)
       return WCSharpW3MMD.W3MmdStringVar(name, suggestionType)
     end
@@ -36804,21 +36729,21 @@ System.namespace("WCSharp.W3MMD", function (namespace)
       end
     }
   end)
-  -- <summary>
-  -- Represents a W3MMD event. For example, "X killed Y".
-  -- </summary>
+
+
+
   namespace.class("W3MmdEvent", function (namespace)
     local getArguments, getArgumentCount, Emit, __ctor__
-    -- <summary>
-    -- Defines an event that can occur multiple times.
-    -- </summary>
-    -- <param name="name">Name of the event.</param>
-    -- <param name="format">
-    -- String to format an event into a user-consumable string.
-    -- <para>e.g., for a player kills player event, we'd do "{0} killed {1}" where {0} is the first argument (the killer) and {1} is the second argument (the victim).</para>
-    -- </param>
-    -- <param name="arguments">Name of the arguments. e.g., ["killer", "victim"].</param>
-    -- <exception cref="T:System.Exception">If the name is not between 1 and 32 characters long.</exception>
+
+
+
+
+
+
+
+
+
+
     __ctor__ = function (this, name, format, arguments)
       if #name < 1 or #name > 32 then
         System.throw(System.Exception("w3mmd: invalid name (" .. System.toString(name) .. "), must be between 1 and 32 characters long"))
@@ -36827,7 +36752,7 @@ System.namespace("WCSharp.W3MMD", function (namespace)
       this.Format = format
       this.arguments = Linq.ToList(arguments)
       this.packedName = WCSharpW3MMD.W3MmdExtensions.Pack(name)
-      this.packedArguments = System.String.JoinEnumerable(32 --[[' ']], Linq.Select(this.arguments, function (x)
+      this.packedArguments = System.String.JoinEnumerable(32, Linq.Select(this.arguments, function (x)
         return WCSharpW3MMD.W3MmdExtensions.Pack(x)
       end, System.String))
       local default
@@ -36845,16 +36770,16 @@ System.namespace("WCSharp.W3MMD", function (namespace)
     getArgumentCount = function (this)
       return #this.arguments
     end
-    -- <summary>
-    -- Emits a new event with the given parameters.
-    -- </summary>
-    -- <param name="args">A number of arguments equal to <see cref="P:WCSharp.W3MMD.W3MmdEvent.ArgumentCount" />.</param>
-    -- <exception cref="T:System.Exception">If the number of arguments provided does not match <see cref="P:WCSharp.W3MMD.W3MmdEvent.ArgumentCount" />.</exception>
+
+
+
+
+
     Emit = function (this, args)
       if #args ~= getArgumentCount(this) then
         System.throw(System.Exception("w3mmd: event " .. System.toString(this.Name) .. " with " .. getArgumentCount(this) .. " arguments tried to emit with " .. #args .. " arguments."))
       end
-      local text = System.String.JoinParams(32 --[[' ']], args)
+      local text = System.String.JoinParams(32, args)
       if #text > 0 then
         text = " " .. System.toString(text)
       end
@@ -36890,11 +36815,11 @@ System.namespace("WCSharp.W3MMD", function (namespace)
   namespace.class("W3MmdExtensions", function (namespace)
     local escapedChars, Pack, Pack1, Pack2, Pack3, Pack4, static
     static = function (this)
-      escapedChars = ArrayChar { 32 --[[' ']], 92 --[['\\']] }
+      escapedChars = ArrayChar { 32, 92 }
     end
-    -- <summary>
-    -- Escapes the W3MMD control characters.
-    -- </summary>
+
+
+
     Pack = function (value)
       local text = ""
       for i = 0, #value - 1 do
@@ -36911,15 +36836,15 @@ System.namespace("WCSharp.W3MMD", function (namespace)
     Pack1 = function (f)
       local default
       local extern = f
-      if extern == 0 --[[W3MmdFlag.Drawer]] then
+      if extern == 0 then
         default = "drawer"
-      elseif extern == 1 --[[W3MmdFlag.Loser]] then
+      elseif extern == 1 then
         default = "loser"
-      elseif extern == 2 --[[W3MmdFlag.Winner]] then
+      elseif extern == 2 then
         default = "winner"
-      elseif extern == 3 --[[W3MmdFlag.Leaver]] then
+      elseif extern == 3 then
         default = "leaver"
-      elseif extern == 4 --[[W3MmdFlag.Practicing]] then
+      elseif extern == 4 then
         default = "practicing"
       else
         default = System.throw(System.NotImplementedException("w3mmd: unknown flag " .. System.EnumToString(f, WCSharpW3MMD.W3MmdFlag)))
@@ -36929,11 +36854,11 @@ System.namespace("WCSharp.W3MMD", function (namespace)
     Pack2 = function (gt)
       local default
       local extern = gt
-      if extern == 0 --[[W3MmdGoalType.None]] then
+      if extern == 0 then
         default = "none"
-      elseif extern == 1 --[[W3MmdGoalType.High]] then
+      elseif extern == 1 then
         default = "high"
-      elseif extern == 2 --[[W3MmdGoalType.Low]] then
+      elseif extern == 2 then
         default = "low"
       else
         default = System.throw(System.NotImplementedException("w3mmd: unknown goal type " .. System.EnumToString(gt, WCSharpW3MMD.W3MmdGoalType)))
@@ -36943,11 +36868,11 @@ System.namespace("WCSharp.W3MMD", function (namespace)
     Pack3 = function (st)
       local default
       local extern = st
-      if extern == 0 --[[W3MmdSuggestionType.None]] then
+      if extern == 0 then
         default = "none"
-      elseif extern == 1 --[[W3MmdSuggestionType.Track]] then
+      elseif extern == 1 then
         default = "track"
-      elseif extern == 2 --[[W3MmdSuggestionType.Leaderboard]] then
+      elseif extern == 2 then
         default = "leaderboard"
       else
         default = System.throw(System.NotImplementedException("w3mmd: unknown suggestion type " .. System.EnumToString(st, WCSharpW3MMD.W3MmdSuggestionType)))
@@ -36957,11 +36882,11 @@ System.namespace("WCSharp.W3MMD", function (namespace)
     Pack4 = function (vt)
       local default
       local extern = vt
-      if extern == 0 --[[W3MmdVariableType.String]] then
+      if extern == 0 then
         default = "string"
-      elseif extern == 1 --[[W3MmdVariableType.Integer]] then
+      elseif extern == 1 then
         default = "int"
-      elseif extern == 2 --[[W3MmdVariableType.Float]] then
+      elseif extern == 2 then
         default = "real"
       else
         default = System.throw(System.NotImplementedException("w3mmd: unknown variable type " .. System.EnumToString(vt, WCSharpW3MMD.W3MmdVariableType)))
@@ -36992,10 +36917,10 @@ System.namespace("WCSharp.W3MMD", function (namespace)
       end
     }
   end)
-  -- <summary>
-  -- Represents the state of the player.
-  -- <para>For any particular player, only the last value set over the course of a game matters.</para>
-  -- </summary>
+
+
+
+
   namespace.enum("W3MmdFlag", function ()
     return {
       Drawer = 0,
@@ -37017,19 +36942,19 @@ System.namespace("WCSharp.W3MMD", function (namespace)
       end
     }
   end)
-  -- <summary>
-  -- Controls a W3MMD variable of type <see cref="F:WCSharp.W3MMD.W3MmdVariableType.Float" />.
-  -- </summary>
+
+
+
   namespace.class("W3MmdFloatVar", function (namespace)
     local getName, getVariableType, getGoalType, getSuggestionType, Set, Set1, Add, Add1, 
     Subtract, Subtract1, __ctor__
-    -- <summary>
-    -- Defines a player float variable that can be mutated throughout the game.
-    -- </summary>
-    -- <param name="name">Name of the variable.</param>
-    -- <param name="goalType">Whether the player is trying to get a high or low value (or none).</param>
-    -- <param name="suggestionType">A suggestion for how a parser/viewer should treat the output values.</param>
-    -- <exception cref="T:System.Exception">If the name is not between 1 and 32 characters long.</exception>
+
+
+
+
+
+
+
     __ctor__ = function (this, name, goalType, suggestionType)
       if #name < 1 or #name > 32 then
         System.throw(System.Exception("w3mmd: invalid name (" .. System.toString(name) .. "), must be between 1 and 32 characters long"))
@@ -37042,43 +36967,43 @@ System.namespace("WCSharp.W3MMD", function (namespace)
     end
     getName = System.property("Name", true)
     getVariableType = function (this)
-      return 2 --[[W3MmdVariableType.Float]]
+      return 2
     end
     getGoalType = System.property("GoalType", true)
     getSuggestionType = System.property("SuggestionType", true)
-    -- <summary>
-    -- Sets this variable to the given <paramref name="value" /> for the given <paramref name="player" />.
-    -- </summary>
+
+
+
     Set = function (this, player, value)
       Set1(this, GetPlayerId(player), value)
     end
-    -- <summary>
-    -- Sets this variable to the given <paramref name="value" /> for the given <paramref name="playerId" />.
-    -- </summary>
+
+
+
     Set1 = function (this, playerId, value)
       WCSharpW3MMD.W3Mmd.Emit("VarP " .. playerId .. " " .. System.toString(this.packedName) .. " = " .. value)
     end
-    -- <summary>
-    -- Adds the given <paramref name="value" /> to this variable for the given <paramref name="player" />.
-    -- </summary>
+
+
+
     Add = function (this, player, value)
       Add1(this, GetPlayerId(player), value)
     end
-    -- <summary>
-    -- Adds the given <paramref name="value" /> to this variable for the given <paramref name="playerId" />.
-    -- </summary>
+
+
+
     Add1 = function (this, playerId, value)
       WCSharpW3MMD.W3Mmd.Emit("VarP " .. playerId .. " " .. System.toString(this.packedName) .. " += " .. value)
     end
-    -- <summary>
-    -- Subtracts the given <paramref name="value" /> to this variable for the given <paramref name="player" />.
-    -- </summary>
+
+
+
     Subtract = function (this, player, value)
       Subtract1(this, GetPlayerId(player), value)
     end
-    -- <summary>
-    -- Subtracts the given <paramref name="value" /> to this variable for the given <paramref name="playerId" />.
-    -- </summary>
+
+
+
     Subtract1 = function (this, playerId, value)
       WCSharpW3MMD.W3Mmd.Emit("VarP " .. playerId .. " " .. System.toString(this.packedName) .. " -= " .. value)
     end
@@ -37126,9 +37051,9 @@ System.namespace("WCSharp.W3MMD", function (namespace)
       end
     }
   end)
-  -- <summary>
-  -- Defines the sort order on the variable, i.e. whether it's better to have high or low values.
-  -- </summary>
+
+
+
   namespace.enum("W3MmdGoalType", function ()
     return {
       None = 0,
@@ -37146,19 +37071,19 @@ System.namespace("WCSharp.W3MMD", function (namespace)
       end
     }
   end)
-  -- <summary>
-  -- Controls a W3MMD variable of type <see cref="F:WCSharp.W3MMD.W3MmdVariableType.Integer" />.
-  -- </summary>
+
+
+
   namespace.class("W3MmdIntVar", function (namespace)
     local getName, getVariableType, getGoalType, getSuggestionType, Set, Set1, Add, Add1, 
     Subtract, Subtract1, __ctor__
-    -- <summary>
-    -- Defines a player int variable that can be mutated throughout the game.
-    -- </summary>
-    -- <param name="name">Name of the variable.</param>
-    -- <param name="goalType">Whether the player is trying to get a high or low value (or none).</param>
-    -- <param name="suggestionType">A suggestion for how a parser/viewer should treat the output values.</param>
-    -- <exception cref="T:System.Exception">If the name is not between 1 and 32 characters long.</exception>
+
+
+
+
+
+
+
     __ctor__ = function (this, name, goalType, suggestionType)
       if #name < 1 or #name > 32 then
         System.throw(System.Exception("w3mmd: invalid name (" .. System.toString(name) .. "), must be between 1 and 32 characters long"))
@@ -37171,43 +37096,43 @@ System.namespace("WCSharp.W3MMD", function (namespace)
     end
     getName = System.property("Name", true)
     getVariableType = function (this)
-      return 1 --[[W3MmdVariableType.Integer]]
+      return 1
     end
     getGoalType = System.property("GoalType", true)
     getSuggestionType = System.property("SuggestionType", true)
-    -- <summary>
-    -- Sets this variable to the given <paramref name="value" /> for the given <paramref name="player" />.
-    -- </summary>
+
+
+
     Set = function (this, player, value)
       Set1(this, GetPlayerId(player), value)
     end
-    -- <summary>
-    -- Sets this variable to the given <paramref name="value" /> for the given <paramref name="playerId" />.
-    -- </summary>
+
+
+
     Set1 = function (this, playerId, value)
       WCSharpW3MMD.W3Mmd.Emit("VarP " .. playerId .. " " .. System.toString(this.packedName) .. " = " .. value)
     end
-    -- <summary>
-    -- Adds the given <paramref name="value" /> to this variable for the given <paramref name="player" />.
-    -- </summary>
+
+
+
     Add = function (this, player, value)
       Add1(this, GetPlayerId(player), value)
     end
-    -- <summary>
-    -- Adds the given <paramref name="value" /> to this variable for the given <paramref name="playerId" />.
-    -- </summary>
+
+
+
     Add1 = function (this, playerId, value)
       WCSharpW3MMD.W3Mmd.Emit("VarP " .. playerId .. " " .. System.toString(this.packedName) .. " += " .. value)
     end
-    -- <summary>
-    -- Subtracts the given <paramref name="value" /> to this variable for the given <paramref name="player" />.
-    -- </summary>
+
+
+
     Subtract = function (this, player, value)
       Subtract1(this, GetPlayerId(player), value)
     end
-    -- <summary>
-    -- Subtracts the given <paramref name="value" /> to this variable for the given <paramref name="playerId" />.
-    -- </summary>
+
+
+
     Subtract1 = function (this, playerId, value)
       WCSharpW3MMD.W3Mmd.Emit("VarP " .. playerId .. " " .. System.toString(this.packedName) .. " -= " .. value)
     end
@@ -37255,18 +37180,18 @@ System.namespace("WCSharp.W3MMD", function (namespace)
       end
     }
   end)
-  -- <summary>
-  -- Controls a W3MMD variable of type <see cref="F:WCSharp.W3MMD.W3MmdVariableType.String" />.
-  -- </summary>
+
+
+
   namespace.class("W3MmdStringVar", function (namespace)
     local getName, getVariableType, getGoalType, getSuggestionType, Set, Set1, __ctor__
-    -- <summary>
-    -- Defines a player string variable that can be mutated throughout the game.
-    -- <para>Useful to classifications.</para>
-    -- </summary>
-    -- <param name="name">Name of the variable.</param>
-    -- <param name="suggestionType">A suggestion for how a parser/viewer should treat the output values.</param>
-    -- <exception cref="T:System.Exception">If the name is not between 1 and 32 characters long.</exception>
+
+
+
+
+
+
+
     __ctor__ = function (this, name, suggestionType)
       if #name < 1 or #name > 32 then
         System.throw(System.Exception("w3mmd: invalid name (" .. System.toString(name) .. "), must be between 1 and 32 characters long"))
@@ -37278,21 +37203,21 @@ System.namespace("WCSharp.W3MMD", function (namespace)
     end
     getName = System.property("Name", true)
     getVariableType = function (this)
-      return 0 --[[W3MmdVariableType.String]]
+      return 0
     end
     getGoalType = function (this)
-      return 0 --[[W3MmdGoalType.None]]
+      return 0
     end
     getSuggestionType = System.property("SuggestionType", true)
-    -- <summary>
-    -- Sets this variable to the given <paramref name="value" /> for the given <paramref name="player" />.
-    -- </summary>
+
+
+
     Set = function (this, player, value)
       Set1(this, GetPlayerId(player), value)
     end
-    -- <summary>
-    -- Sets this variable to the given <paramref name="value" /> for the given <paramref name="playerId" />.
-    -- </summary>
+
+
+
     Set1 = function (this, playerId, value)
       WCSharpW3MMD.W3Mmd.Emit("VarP " .. playerId .. " " .. System.toString(this.packedName) .. " = " .. System.toString(WCSharpW3MMD.W3MmdExtensions.Pack(value)))
     end
@@ -37331,9 +37256,9 @@ System.namespace("WCSharp.W3MMD", function (namespace)
       end
     }
   end)
-  -- <summary>
-  -- A suggestion for what the parser should do for tracking the variable.
-  -- </summary>
+
+
+
   namespace.enum("W3MmdSuggestionType", function ()
     return {
       None = 0,
@@ -37351,9 +37276,9 @@ System.namespace("WCSharp.W3MMD", function (namespace)
       end
     }
   end)
-  -- <summary>
-  -- The type of the W3MMD variable.
-  -- </summary>
+
+
+
   namespace.enum("W3MmdVariableType", function ()
     return {
       String = 0,

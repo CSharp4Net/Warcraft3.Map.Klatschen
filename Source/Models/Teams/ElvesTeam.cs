@@ -6,7 +6,7 @@ namespace Source.Models.Teams
 {
   public sealed class ElvesTeam : TeamBase
   {
-    public ElvesTeam() : base(Common.Player(8), Areas.ElfBase)
+    public ElvesTeam() : base(Common.Player(8), Areas.ElfBase, "Abilities\\Spells\\Undead\\DeathPact\\DeathPactTarget.mdl")
     {
       ColorizedName = $"|c{ConstantsEx.ColorHexCode_Gray}{Common.Player(8).Name}|r";
     }
@@ -15,7 +15,7 @@ namespace Source.Models.Teams
     public override void CreateBuildings()
     {
       // Hauptgebäude
-      MainBuilding mainBuilding = Computer.CreateMainBuilding(Constants.UNIT_TREE_OF_ETERNITY_ELF, Areas.ElfBase, "Abilities\\Spells\\Undead\\DeathPact\\DeathPactTarget.mdl");
+      MainBuilding mainBuilding = Computer.CreateMainBuilding(Constants.UNIT_TREE_OF_ETERNITY_ELF, Areas.ElfBase);
 
       mainBuilding.RegisterOnDies(TeamMainBuilding.OnDies);
       mainBuilding.AddSpawnAttackRoute(Areas.ElfBaseToCenterSpawn, Areas.OrcBase);

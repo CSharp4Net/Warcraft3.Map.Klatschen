@@ -6,7 +6,7 @@ namespace Source.Models.Teams
 {
   public sealed class HumansTeam : TeamBase
   {
-    public HumansTeam() : base(Common.Player(0), Areas.HumanBase)
+    public HumansTeam() : base(Common.Player(0), Areas.HumanBase, "Abilities\\Spells\\Human\\HolyBolt\\HolyBoltSpecialArt.mdl")
     {
       ColorizedName = $"|c{ConstantsEx.ColorHexCode_Red}{Common.Player(0).Name}|r";
     }
@@ -15,7 +15,7 @@ namespace Source.Models.Teams
     public override void CreateBuildings()
     {
       // Hauptgebäude
-      MainBuilding mainBuilding = Computer.CreateMainBuilding(Constants.UNIT_CASTLE_HUMAN, Areas.HumanBase, "Abilities\\Spells\\Human\\HolyBolt\\HolyBoltSpecialArt.mdl");
+      MainBuilding mainBuilding = Computer.CreateMainBuilding(Constants.UNIT_CASTLE_HUMAN, Areas.HumanBase);
 
       mainBuilding.RegisterOnDies(TeamMainBuilding.OnDies);
       mainBuilding.AddSpawnAttackRoute(Areas.HumanBaseToCenterSpawn, Areas.UndeadBase);

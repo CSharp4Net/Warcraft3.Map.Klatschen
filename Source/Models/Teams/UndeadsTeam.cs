@@ -6,7 +6,7 @@ namespace Source.Models.Teams
 {
   public sealed class UndeadsTeam : TeamBase
   {
-    public UndeadsTeam() : base(Common.Player(12), Areas.UndeadBase)
+    public UndeadsTeam() : base(Common.Player(12), Areas.UndeadBase, "Abilities\\Spells\\Undead\\RaiseSkeletonWarrior\\RaiseSkeleton.mdl")
     {
       ColorizedName = $"|c{ConstantsEx.ColorHexCode_Maroon}{Common.Player(12).Name}|r";
     }
@@ -15,7 +15,7 @@ namespace Source.Models.Teams
     public override void CreateBuildings()
     {
       // Hauptgebäude
-      MainBuilding mainBuilding = Computer.CreateMainBuilding(Constants.UNIT_BLACK_CITADEL_UNDEAD, Areas.UndeadBase, "Abilities\\Spells\\Undead\\RaiseSkeletonWarrior\\RaiseSkeleton.mdl");
+      MainBuilding mainBuilding = Computer.CreateMainBuilding(Constants.UNIT_BLACK_CITADEL_UNDEAD, Areas.UndeadBase);
 
       mainBuilding.RegisterOnDies(TeamMainBuilding.OnDies);
       mainBuilding.AddSpawnAttackRoute(Areas.UndeadBaseToCenterSpawn, Areas.HumanBase);

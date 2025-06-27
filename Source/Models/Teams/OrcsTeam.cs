@@ -6,7 +6,7 @@ namespace Source.Models.Teams
 {
   public sealed class OrcsTeam : TeamBase
   {
-    public OrcsTeam() : base(Common.Player(4), Areas.OrcBase)
+    public OrcsTeam() : base(Common.Player(4), Areas.OrcBase, "Abilities\\Spells\\Items\\AIam\\AIamTarget.mdl")
     {
       ColorizedName = $"|c{ConstantsEx.ColorHexCode_Yellow}{Common.Player(4).Name}|r";
     }
@@ -15,7 +15,7 @@ namespace Source.Models.Teams
     public override void CreateBuildings()
     {
       // Hauptgebäude
-      MainBuilding mainBuilding = Computer.CreateMainBuilding(Constants.UNIT_FORTRESS_ORC, Areas.OrcBase, "Abilities\\Spells\\Items\\AIam\\AIamTarget.mdl");
+      MainBuilding mainBuilding = Computer.CreateMainBuilding(Constants.UNIT_FORTRESS_ORC, Areas.OrcBase);
 
       mainBuilding.RegisterOnDies(TeamMainBuilding.OnDies);
       mainBuilding.AddSpawnAttackRoute(Areas.OrcBaseToCenterSpawn, Areas.ElfBase);

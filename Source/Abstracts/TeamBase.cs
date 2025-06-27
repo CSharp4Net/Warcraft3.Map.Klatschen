@@ -7,11 +7,11 @@ namespace Source.Abstracts
 {
   public abstract class TeamBase
   {
-    public TeamBase(player wc3ComputerPlayer, Area teamBaseArea)
+    public TeamBase(player wc3ComputerPlayer, Area teamBaseArea, string specialEffectPath)
     {
       Name = wc3ComputerPlayer.Name;
 
-      Computer = new ComputerPlayer(wc3ComputerPlayer, this);
+      Computer = new ComputerPlayer(wc3ComputerPlayer, this, specialEffectPath);
       Computer.Wc3Player.SetState(playerstate.GivesBounty, 1);
 
       TeamBaseArea = teamBaseArea;

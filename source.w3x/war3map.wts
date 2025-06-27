@@ -10461,12 +10461,6 @@ STRING 5303
 Summons <A0FR,DataA10> waves of fire that deal area damage.Each wave deals <A0FR,DataB10> direct damage and <A0FR,Dur10> damage per second for <A0FR,DataE10> seconds.
 }
 
-STRING 5304
-// Abilities: ASPB (Mirror Image), Researchubertip (Tooltip - Learn - Extended)
-{
-Confuses the enemy with illusions of the Blademaster and banishes all magic from the Blademaster. The damage caused by the illusions increases by 10% with each level.
-}
-
 STRING 5305
 // Abilities: ASPB (Mirror Image), Tip (Tooltip - Normal)
 {
@@ -16521,142 +16515,10 @@ STRING 6408
 Rejuvenation - [|cffffcc00Level 1|r]
 }
 
-STRING 6409
-// Abilities: AAND (Animate Dead), Researchubertip (Tooltip - Learn - Extended)
-{
-Raises dead units in an area to fight for the Death Knight.
-}
-
-STRING 6410
-// Abilities: AAND (Animate Dead), Tip (Tooltip - Normal)
-{
-Animate Dead - [|cffffcc00Level 2|r]
-}
-
-STRING 6411
-// Abilities: AAND (Animate Dead), Tip (Tooltip - Normal)
-{
-Animate Dead - [|cffffcc00Level 3|r]
-}
-
-STRING 6412
-// Abilities: AAND (Animate Dead), Tip (Tooltip - Normal)
-{
-Animate Dead - [|cffffcc00Level 4|r]
-}
-
-STRING 6413
-// Abilities: AAND (Animate Dead), Tip (Tooltip - Normal)
-{
-Animate Dead - [|cffffcc00Level 5|r]
-}
-
-STRING 6414
-// Abilities: AAND (Animate Dead), Tip (Tooltip - Normal)
-{
-Animate Dead - [|cffffcc00Level 6|r]
-}
-
-STRING 6415
-// Abilities: AAND (Animate Dead), Tip (Tooltip - Normal)
-{
-Animate Dead - [|cffffcc00Level 7|r]
-}
-
-STRING 6416
-// Abilities: AAND (Animate Dead), Tip (Tooltip - Normal)
-{
-Animate Dead - [|cffffcc00Level 8|r]
-}
-
-STRING 6417
-// Abilities: AAND (Animate Dead), Tip (Tooltip - Normal)
-{
-Animate Dead - [|cffffcc00Level 9|r]
-}
-
-STRING 6418
-// Abilities: AAND (Animate Dead), Tip (Tooltip - Normal)
-{
-Animate Dead - [|cffffcc00Level 10|r]
-}
-
-STRING 6419
-// Abilities: AAND (Animate Dead), Ubertip (Tooltip - Normal - Extended)
-{
-Raises <AAND,DataA1> dead units in an area to fight for the Death Knight for <AAND,Dur1> seconds.
-}
-
-STRING 6420
-// Abilities: AAND (Animate Dead), Ubertip (Tooltip - Normal - Extended)
-{
-Raises <AAND,DataA2> dead units in an area to fight for the Death Knight for <AAND,Dur2> seconds.
-}
-
-STRING 6421
-// Abilities: AAND (Animate Dead), Ubertip (Tooltip - Normal - Extended)
-{
-Raises <AAND,DataA3> dead units in an area to fight for the Death Knight for <AAND,Dur3> seconds.
-}
-
-STRING 6422
-// Abilities: AAND (Animate Dead), Ubertip (Tooltip - Normal - Extended)
-{
-Raises <AAND,DataA4> dead units in an area to fight for the Death Knight for <AAND,Dur4> seconds.
-}
-
-STRING 6423
-// Abilities: AAND (Animate Dead), Ubertip (Tooltip - Normal - Extended)
-{
-Raises <AAND,DataA5> dead units in an area to fight for the Death Knight for <AAND,Dur5> seconds.
-}
-
-STRING 6424
-// Abilities: AAND (Animate Dead), Ubertip (Tooltip - Normal - Extended)
-{
-Raises <AAND,DataA6> dead units in an area to fight for the Death Knight for <AAND,Dur6> seconds.
-}
-
-STRING 6425
-// Abilities: AAND (Animate Dead), Ubertip (Tooltip - Normal - Extended)
-{
-Raises <AAND,DataA7> dead units in an area to fight for the Death Knight for <AAND,Dur7> seconds.
-}
-
-STRING 6426
-// Abilities: AAND (Animate Dead), Ubertip (Tooltip - Normal - Extended)
-{
-Raises <AAND,DataA8> dead units in an area to fight for the Death Knight for <AAND,Dur8> seconds.
-}
-
-STRING 6427
-// Abilities: AAND (Animate Dead), Ubertip (Tooltip - Normal - Extended)
-{
-Raises <AAND,DataA9> dead units in an area to fight for the Death Knight for <AAND,Dur9> seconds.
-}
-
-STRING 6428
-// Abilities: AAND (Animate Dead), Ubertip (Tooltip - Normal - Extended)
-{
-Raises <AAND,DataA10> dead units in an area to fight for the Death Knight for <AAND,Dur10> seconds.
-}
-
 STRING 6429
-// Abilities: AAND (Animate Dead), EditorSuffix (Editor Suffix)
+// Abilities: ACLI (Chain Lightning), EditorSuffix (Editor Suffix)
 {
 (Hero 10)
-}
-
-STRING 6430
-// Abilities: AAND (Animate Dead), Researchtip (Tooltip - Learn)
-{
-Learn Animate Dead - [|cffffcc00Level %d|r]
-}
-
-STRING 6431
-// Abilities: AAND (Animate Dead), Tip (Tooltip - Normal)
-{
-Animate Dead - [|cffffcc00Level 1|r]
 }
 
 STRING 6432
@@ -16846,7 +16708,7 @@ Calls forth a bolt of lightning that bounces up to <ACLI,DataB10> times, dealing
 }
 
 STRING 6463
-// Abilities: ACLI (Chain Lightning), EditorSuffix (Editor Suffix)
+// Abilities: ASLI (Spirit Link), EditorSuffix (Editor Suffix)
 {
 (Hero 10)
 }
@@ -16966,7 +16828,7 @@ Links <ASLI,DataB10> units together in a chain. All units with Spirit Link on th
 }
 
 STRING 6483
-// Abilities: ASLI (Spirit Link), EditorSuffix (Editor Suffix)
+// Abilities: AEAR (Earthquake), EditorSuffix (Editor Suffix)
 {
 (Hero 10)
 }
@@ -17092,7 +16954,7 @@ Makes the ground tremble and break, makes damage per second to buildings and slo
 }
 
 STRING 6504
-// Abilities: AEAR (Earthquake), EditorSuffix (Editor Suffix)
+// Abilities: ADCD (Disease Cloud), EditorSuffix (Editor Suffix)
 {
 (Hero 10)
 }
@@ -18409,5 +18271,143 @@ STRING 6846
 // Units: n02O (Mud Golem), Ubertip (Tooltip - Extended)
 {
 Summons a golem that is immune to spells. The golem rushes at the enemy base and smashes everything to pieces.|n|n|cffffcc00Can only attack ground units.|r
+}
+
+STRING 6847
+// Abilities: ASPB (Mirror Image), Researchubertip (Tooltip - Learn - Extended)
+{
+Confuses the enemy with illusions of the Blademaster and banishes all magic from the Hero. The damage caused by the illusions increases with each level.
+}
+
+STRING 6900
+// Abilities: ADCD (Disease Cloud), Researchhotkey (Hotkey - Learn)
+{
+W
+}
+
+STRING 6901
+// Abilities: ADCD (Disease Cloud), Tip (Tooltip - Normal)
+{
+Disease Cloud
+}
+
+STRING 6902
+// Abilities: ADCD (Disease Cloud), Tip (Tooltip - Normal)
+{
+Disease Cloud
+}
+
+STRING 6903
+// Abilities: ADCD (Disease Cloud), Tip (Tooltip - Normal)
+{
+Disease Cloud
+}
+
+STRING 6904
+// Abilities: ADCD (Disease Cloud), Tip (Tooltip - Normal)
+{
+Disease Cloud
+}
+
+STRING 6905
+// Abilities: ADCD (Disease Cloud), Tip (Tooltip - Normal)
+{
+Disease Cloud
+}
+
+STRING 6906
+// Abilities: ADCD (Disease Cloud), Tip (Tooltip - Normal)
+{
+Disease Cloud
+}
+
+STRING 6907
+// Abilities: ADCD (Disease Cloud), Tip (Tooltip - Normal)
+{
+Disease Cloud
+}
+
+STRING 6908
+// Abilities: ADCD (Disease Cloud), Tip (Tooltip - Normal)
+{
+Disease Cloud
+}
+
+STRING 6909
+// Abilities: ADCD (Disease Cloud), Tip (Tooltip - Normal)
+{
+Disease Cloud
+}
+
+STRING 6910
+// Abilities: ADCD (Disease Cloud), Ubertip (Tooltip - Normal - Extended)
+{
+Infects nearby enemy living units with Disease Cloud. Disease Cloud deals <ADCD,DataB1> damage per second. |nLasts <ADCD,DataA1> seconds.
+}
+
+STRING 6911
+// Abilities: ADCD (Disease Cloud), Ubertip (Tooltip - Normal - Extended)
+{
+Infects nearby enemy living units with Disease Cloud. Disease Cloud deals <ADCD,DataB2> damage per second. |nLasts <ADCD,DataA2> seconds.
+}
+
+STRING 6912
+// Abilities: ADCD (Disease Cloud), Ubertip (Tooltip - Normal - Extended)
+{
+Infects nearby enemy living units with Disease Cloud. Disease Cloud deals <ADCD,DataB3> damage per second. |nLasts <ADCD,DataA3> seconds.
+}
+
+STRING 6913
+// Abilities: ADCD (Disease Cloud), Ubertip (Tooltip - Normal - Extended)
+{
+Infects nearby enemy living units with Disease Cloud. Disease Cloud deals <ADCD,DataB4> damage per second. |nLasts <ADCD,DataA4> seconds.
+}
+
+STRING 6914
+// Abilities: ADCD (Disease Cloud), Ubertip (Tooltip - Normal - Extended)
+{
+Infects nearby enemy living units with Disease Cloud. Disease Cloud deals <ADCD,DataB5> damage per second. |nLasts <ADCD,DataA5> seconds.
+}
+
+STRING 6915
+// Abilities: ADCD (Disease Cloud), Ubertip (Tooltip - Normal - Extended)
+{
+Infects nearby enemy living units with Disease Cloud. Disease Cloud deals <ADCD,DataB6> damage per second. |nLasts <ADCD,DataA6> seconds.
+}
+
+STRING 6916
+// Abilities: ADCD (Disease Cloud), Ubertip (Tooltip - Normal - Extended)
+{
+Infects nearby enemy living units with Disease Cloud. Disease Cloud deals <ADCD,DataB7> damage per second. |nLasts <ADCD,DataA7> seconds.
+}
+
+STRING 6917
+// Abilities: ADCD (Disease Cloud), Ubertip (Tooltip - Normal - Extended)
+{
+Infects nearby enemy living units with Disease Cloud. Disease Cloud deals <ADCD,DataB8> damage per second. |nLasts <ADCD,DataA8> seconds.
+}
+
+STRING 6918
+// Abilities: ADCD (Disease Cloud), Ubertip (Tooltip - Normal - Extended)
+{
+Infects nearby enemy living units with Disease Cloud. Disease Cloud deals <ADCD,DataB9> damage per second. |nLasts <ADCD,DataA9> seconds.
+}
+
+STRING 6919
+// Abilities: ADCD (Disease Cloud), Ubertip (Tooltip - Normal - Extended)
+{
+Infects nearby enemy living units with Disease Cloud. Disease Cloud deals <ADCD,DataB10> damage per second. |nLasts <ADCD,DataA10> seconds.
+}
+
+STRING 6920
+// Abilities: ADCD (Disease Cloud), Researchtip (Tooltip - Learn)
+{
+Learn Disease Cloud - [|cffffcc00Level %d|r]
+}
+
+STRING 6921
+// Abilities: ADCD (Disease Cloud), Researchubertip (Tooltip - Learn - Extended)
+{
+Infects nearby enemy living units with Disease Cloud. Disease Cloud deals <ADCD,DataB1> - <ADCD,DataB10> damage per second.
 }
 

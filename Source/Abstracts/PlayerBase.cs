@@ -34,13 +34,13 @@ namespace Source.Abstracts
     public bool Defeated { get; private set; }
 
     /// <summary>
-    /// Erstellt eine Einheit in einem Bereich und fügt sie der Auflist <see cref="Units"/> hinzu.
+    /// Erstellt eine Einheit im Zentrum des Gebiets und fügt sie der Auflist <see cref="Units"/> hinzu.
     /// </summary>
     /// <param name="unitTypeId"></param>
     /// <param name="area"></param>
     /// <param name="face"></param>
     /// <returns></returns>
-    public SpawnedUnit CreateUnit(int unitTypeId, Area area, float face = 0f)
+    public virtual SpawnedUnit CreateUnit(int unitTypeId, Area area, float face = 0f)
     {
       SpawnedUnit unit = new SpawnedUnit(Wc3Player, unitTypeId, area, face);
       Units.Add(unit);

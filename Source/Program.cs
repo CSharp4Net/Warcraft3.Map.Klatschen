@@ -163,8 +163,8 @@ namespace Source
         }
 
 #if DEBUG
-        //Common.FogEnable(false);
-        //Common.FogMaskEnable(false);
+        Common.FogEnable(false);
+        Common.FogMaskEnable(false);
 #endif
 
         var timer = Common.CreateTimer();
