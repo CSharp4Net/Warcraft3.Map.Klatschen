@@ -23401,6 +23401,7 @@ end)
 end
 do
 local System = System
+local WCSharpApi = WCSharp.Api
 local SourceEventsBuildings
 local SourceEventsPeriodic
 local SourceModels
@@ -23425,6 +23426,7 @@ System.namespace("Source.Models", function (namespace)
       this.Name = name
       this.ColorizedName = "|cffff0000" .. System.toString(name) .. "|r"
       this.Wc3Player = Player(20)
+      SetPlayerState(this.Wc3Player, PLAYER_STATE_GIVES_BOUNTY, 1)
     end
     CreateOrReviveHero = function (this, unitTypeId, spawnArea, heroLevel, face, targetArea)
       local unit = nil
@@ -24887,6 +24889,7 @@ System.namespace("Source.Models.Teams", function (namespace)
       mainBuilding:AddSpawnAttackRoute(Areas.ElfBaseToUndeadSpawn, Areas.UndeadBase)
 
       AddUnitToStock(mainBuilding.Wc3Unit, 1848652365, 1, 1)
+      AddUnitToStock(mainBuilding.Wc3Unit, 1848652370, 1, 1)
 
 
       local building = this.Computer:CreateBarrackBuilding(1747988788, Areas.ElfBarracksToCenter, Areas.ElfBarracksToCenterSpawn, Areas.OrcBase)
@@ -25117,6 +25120,7 @@ System.namespace("Source.Models.Teams", function (namespace)
       mainBuilding:AddSpawnAttackRoute(Areas.HumanBaseToOrcsSpawn, Areas.OrcBase)
 
       AddUnitToStock(mainBuilding.Wc3Unit, 1848652364, 1, 1)
+      AddUnitToStock(mainBuilding.Wc3Unit, 1848652371, 1, 1)
 
 
       local building = this.Computer:CreateBarrackBuilding(1747988535, Areas.HumanBarracksToCenter, Areas.HumanBarracksToCenterSpawn, Areas.UndeadBase)
@@ -25348,6 +25352,7 @@ System.namespace("Source.Models.Teams", function (namespace)
       mainBuilding:AddSpawnAttackRoute(Areas.OrcBaseToUndeadSpawn, Areas.UndeadBase)
 
       AddUnitToStock(mainBuilding.Wc3Unit, 1848652367, 1, 1)
+      AddUnitToStock(mainBuilding.Wc3Unit, 1848652372, 1, 1)
 
 
       local building = this.Computer:CreateBarrackBuilding(1747988569, Areas.OrcBarracksToCenter, Areas.OrcBarracksToCenterSpawn, Areas.ElfBase)
@@ -25578,6 +25583,7 @@ System.namespace("Source.Models.Teams", function (namespace)
       mainBuilding:AddSpawnAttackRoute(Areas.UndeadBaseToOrcsSpawn, Areas.OrcBase)
 
       AddUnitToStock(mainBuilding.Wc3Unit, 1848652366, 1, 1)
+      AddUnitToStock(mainBuilding.Wc3Unit, 1848652373, 1, 1)
 
 
       local building = this.Computer:CreateBarrackBuilding(1747988805, Areas.UndeadBarracksToCenter, Areas.UndeadBarracksToCenterSpawn, Areas.HumanBase)
@@ -37322,8 +37328,8 @@ local InitCSharp = function ()
       "WCSharp.Missiles.HomingMissile",
       "WCSharp.Missiles.MomentumMissile",
       "WCSharp.Missiles.OrbitalMissile",
-      "WCSharp.SaveLoad.SaveLoadedMessage_1",
       "WCSharp.SaveLoad.Save_1",
+      "WCSharp.SaveLoad.SaveLoadedMessage_1",
       "WCSharp.W3MMD.IW3MmdVar",
       "Areas",
       "Constants",

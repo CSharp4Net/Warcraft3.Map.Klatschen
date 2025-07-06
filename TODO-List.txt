@@ -1,12 +1,7 @@
 Letzte Änderungen:
 ==================
-C: Alle zyklischen Unit-Spawns finden nun ausschließlich in der Kaserne statt.
-C: Teams ohne menschliche Spieler erforschen Einheiten-Upgrades automatisch.
-C: Menschliche Spieler können keine Einheiten-Upgrades mehr erforschen.
-F: Kaserne bieten ein Unit-Upgrades zum Kauf an, welche die automatischen Unit-Spawns verstärken.
-F: Im Hauptgebäude können einmalige Unit-Spawns, welche mächtigen Einheiten auf die Gegner loslassen.
-F: Neue Helden: Lich, Death Knight, Warden, Priestess of the Moon, Far Seer
-B: Söldner die zaubern kehren nun nicht mehr zu ihrem Lager zurück, sondern kämpfen weiter.
+F: Im Hauptgebäude können gegen Gold nun Drachen beschwört werden.
+B: Legion-Einheiten geben nur wieder Kopfgeld.
 
 
 Noch offen:

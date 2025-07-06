@@ -23,6 +23,7 @@ namespace Source.Models.Teams
       mainBuilding.AddSpawnAttackRoute(Areas.OrcBaseToUndeadSpawn, Areas.UndeadBase);
 
       mainBuilding.Wc3Unit.AddUnitToStock(Constants.UNIT_MUD_GOLEM_ORC, 1, 1);
+      mainBuilding.Wc3Unit.AddUnitToStock(Constants.UNIT_RED_DRAGON_ORC, 1, 1);
 
       // Kasernen
       UnitSpawnBuilding building = Computer.CreateBarrackBuilding(Constants.UNIT_BARRACKS_ORC, Areas.OrcBarracksToCenter, Areas.OrcBarracksToCenterSpawn, Areas.ElfBase);

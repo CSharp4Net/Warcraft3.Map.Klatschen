@@ -2,6 +2,7 @@
 using Source.Events.Periodic;
 using Source.Statics;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using WCSharp.Api;
 using WCSharp.Shared.Data;
@@ -15,6 +16,7 @@ namespace Source.Models
       Name = name;
       ColorizedName = $"|cffff0000{name}|r";
       Wc3Player = Common.Player(ConstantsEx.PlayerId_Legion);
+      Wc3Player.SetState(playerstate.GivesBounty, 1);
     }
 
     private List<LegionSpawnBuilding> SpawnBuildings { get; set; } = new List<LegionSpawnBuilding>();

@@ -12,7 +12,7 @@ STRING 3
 {
 Choose your hero and fight for your team. Invest your gold wisely in items, research, upgrades or mercenaries - many paths lead to victory or defeat.
 
-Version 2.0.0
+Version 2.1.0
 }
 
 STRING 4
@@ -77,7 +77,7 @@ STRING 65
 {
 Choose your hero and fight for your team. Invest your gold wisely in items, research, upgrades or mercenaries - many paths lead to victory or defeat.
 
-Version 2.0.0
+Version 2.1.0
 }
 
 STRING 73
@@ -18409,5 +18409,71 @@ STRING 6921
 // Abilities: ADCD (Disease Cloud), Researchubertip (Tooltip - Learn - Extended)
 {
 Infects nearby enemy living units with Disease Cloud. Disease Cloud deals <ADCD,DataB1> - <ADCD,DataB10> damage per second.
+}
+
+STRING 6922
+// Units: n02R (Green Dragon), EditorSuffix (Name - Editor Suffix)
+{
+(Elf)
+}
+
+STRING 6923
+// Units: n02R (Green Dragon), Tip (Tooltip - Basic)
+{
+Summon Dragon
+}
+
+STRING 6924
+// Units: n02S (Blue Dragon), EditorSuffix (Name - Editor Suffix)
+{
+(Human)
+}
+
+STRING 6925
+// Units: n02S (Blue Dragon), Name (Name)
+{
+Blue Dragon
+}
+
+STRING 6926
+// Units: n02S (Blue Dragon), Tip (Tooltip - Basic)
+{
+Summon Dragon
+}
+
+STRING 6927
+// Units: n02T (Red Dragon), EditorSuffix (Name - Editor Suffix)
+{
+(Orc)
+}
+
+STRING 6928
+// Units: n02T (Red Dragon), Name (Name)
+{
+Red Dragon
+}
+
+STRING 6929
+// Units: n02T (Red Dragon), Tip (Tooltip - Basic)
+{
+Summon Dragon
+}
+
+STRING 6930
+// Units: n02U (Nether Dragon), EditorSuffix (Name - Editor Suffix)
+{
+(Undead)
+}
+
+STRING 6931
+// Units: n02U (Nether Dragon), Name (Name)
+{
+Nether Dragon
+}
+
+STRING 6932
+// Units: n02U (Nether Dragon), Tip (Tooltip - Basic)
+{
+Summon Dragon
 }
 
