@@ -22,7 +22,9 @@ namespace Source.Models.Teams
       mainBuilding.AddSpawnAttackRoute(Areas.OrcBaseToHumanSpawn, Areas.HumanBase);
       mainBuilding.AddSpawnAttackRoute(Areas.OrcBaseToUndeadSpawn, Areas.UndeadBase);
 
-      mainBuilding.Wc3Unit.AddUnitToStock(Constants.UNIT_MUD_GOLEM_ORC, 1, 1);
+      mainBuilding.Wc3Unit.AddUnitToStock(Constants.UNIT_MUD_GOLEM_LEVEL_1_ORC_GOLEM_1, 3, 3);
+      mainBuilding.Wc3Unit.AddUnitToStock(Constants.UNIT_MUD_GOLEM_LEVEL_2_ORC_GOLEM_2, 2, 2);
+      mainBuilding.Wc3Unit.AddUnitToStock(Constants.UNIT_MUD_GOLEM_LEVEL_3_ORC_GOLEM_3, 1, 1);
       mainBuilding.Wc3Unit.AddUnitToStock(Constants.UNIT_RED_WHELP_ORC_DRAGON_1, 4, 4);
       mainBuilding.Wc3Unit.AddUnitToStock(Constants.UNIT_RED_JUVENILE_ORC_DRAGON_2, 3, 3);
       mainBuilding.Wc3Unit.AddUnitToStock(Constants.UNIT_RED_DRAGON_ORC_DRAGON_3, 2, 2);

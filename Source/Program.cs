@@ -268,43 +268,43 @@ namespace Source
     {
       // Menschen-Creeps
       ConstructCreepCamp("Bandits", Areas.HumanCreepToElfSpawnBuilding, Areas.HumanCreepToElfSpawn,
-        Humans, Elves, Constants.UNIT_BANDIT_CAMP_CREEP, Constants.UNIT_BANDIT_LORD_CREEP,
-        Constants.UNIT_BANDIT_CREEP, Constants.UNIT_BANDIT_CREEP, Constants.UNIT_BANDIT_CREEP,
-        Constants.UNIT_BANDIT_ASSASSIN_CREEP, Constants.UNIT_BANDIT_ASSASSIN_CREEP, Constants.UNIT_BANDIT_WIZARD_CREEP);
+        Humans, Elves, Constants.UNIT_BANDIT_CAMP_CREEP, Constants.UNIT_BANDIT_LORD_CREEP_MELEE_3,
+        Constants.UNIT_BANDIT_CREEP_MELEE_1, Constants.UNIT_BANDIT_CREEP_MELEE_1, Constants.UNIT_BANDIT_CREEP_MELEE_1,
+        Constants.UNIT_BANDIT_ASSASSIN_CREEP_DISTANCE_1, Constants.UNIT_BANDIT_ASSASSIN_CREEP_DISTANCE_1, Constants.UNIT_BANDIT_WIZARD_CREEP_MAGE_1);
       ConstructCreepCamp("Tuskarr", Areas.HumanCreepToOrcSpawnBuilding, Areas.HumanCreepToOrcSpawn,
-        Humans, Orcs, Constants.UNIT_TUSKARR_CAMP_CREEP, Constants.UNIT_TUSKARR_CHIEFTAIN_CREEP,
-        Constants.UNIT_TUSKARR_WARRIOR_CREEP, Constants.UNIT_TUSKARR_WARRIOR_CREEP, Constants.UNIT_TUSKARR_WARRIOR_CREEP,
-        Constants.UNIT_TUSKARR_HUNTER_CREEP, Constants.UNIT_TUSKARR_HUNTER_CREEP, Constants.UNIT_TUSKARR_HEALER_CREEP);
+        Humans, Orcs, Constants.UNIT_TUSKARR_CAMP_CREEP, Constants.UNIT_TUSKARR_CHIEFTAIN_CREEP_MELEE_3,
+        Constants.UNIT_TUSKARR_WARRIOR_CREEP_MELEE_1, Constants.UNIT_TUSKARR_WARRIOR_CREEP_MELEE_1, Constants.UNIT_TUSKARR_WARRIOR_CREEP_MELEE_1,
+        Constants.UNIT_TUSKARR_HUNTER_CREEP_DISTANCE_1, Constants.UNIT_TUSKARR_HUNTER_CREEP_DISTANCE_1, Constants.UNIT_TUSKARR_HEALER_CREEP_MAGE_1);
 
       // Elfen-Creeps
       ConstructCreepCamp("Furbolgs", Areas.ElfCreepToHumanSpawnBuilding, Areas.ElfCreepToHumanSpawn,
-        Elves, Humans, Constants.UNIT_FURBOLG_CAMP_CREEP, Constants.UNIT_FURBOLG_CHAMPION_CREEP,
-        Constants.UNIT_FURBOLG_WARRIOR_CREEP, Constants.UNIT_FURBOLG_WARRIOR_CREEP,
-        Constants.UNIT_FURBOLG_HUNTER_CREEP, Constants.UNIT_FURBOLG_HUNTER_CREEP, Constants.UNIT_FURBOLG_WIZARD_CREEP);
+        Elves, Humans, Constants.UNIT_FURBOLG_CAMP_CREEP, Constants.UNIT_FURBOLG_CHAMPION_CREEP_MELEE_3,
+        Constants.UNIT_FURBOLG_WARRIOR_CREEP_MELEE_1, Constants.UNIT_FURBOLG_WARRIOR_CREEP_MELEE_1,
+        Constants.UNIT_FURBOLG_HUNTER_CREEP_DISTANCE_1, Constants.UNIT_FURBOLG_HUNTER_CREEP_DISTANCE_1, Constants.UNIT_FURBOLG_WIZARD_CREEP_MAGE_1);
       ConstructCreepCamp("Wildekins", Areas.ElfCreepToUndeadSpawnBuilding, Areas.ElfCreepToUndeadSpawn,
-        Elves, Undeads, Constants.UNIT_WILDEKIN_CAMP_CREEP, Constants.UNIT_WILDEKIN_ALPHA_CREEP,
-        Constants.UNIT_WILDEKIN_CREEP, Constants.UNIT_WILDEKIN_CREEP, Constants.UNIT_WILDEKIN_CREEP,
-        Constants.UNIT_WILDEKIN_TRAPPER_CREEP, Constants.UNIT_WILDEKIN_TRAPPER_CREEP, Constants.UNIT_WILDEKIN_ANCESTOR_CREEP);
+        Elves, Undeads, Constants.UNIT_WILDEKIN_CAMP_CREEP, Constants.UNIT_WILDEKIN_ALPHA_CREEP_MELEE_3,
+        Constants.UNIT_WILDEKIN_CREEP_MELEE_1, Constants.UNIT_WILDEKIN_CREEP_MELEE_1, Constants.UNIT_WILDEKIN_CREEP_MELEE_1,
+        Constants.UNIT_WILDEKIN_TRAPPER_CREEP_DISTANCE_1, Constants.UNIT_WILDEKIN_TRAPPER_CREEP_DISTANCE_1, Constants.UNIT_WILDEKIN_ANCESTOR_CREEP_MAGE_1);
 
       // Orcs-Creeps
       ConstructCreepCamp("Centaurs", Areas.OrcCreepToHumanSpawnBuilding, Areas.OrcCreepToHumanSpawn,
-        Orcs, Humans, Constants.UNIT_CENTAUR_CAMP_CREEP, Constants.UNIT_CENTAUR_KHAN_CREEP,
-        Constants.UNIT_CENTAUR_RUNNER_CREEP, Constants.UNIT_CENTAUR_RUNNER_CREEP, Constants.UNIT_CENTAUR_RUNNER_CREEP,
-        Constants.UNIT_CENTAUR_ARCHER_CREEP, Constants.UNIT_CENTAUR_ARCHER_CREEP, Constants.UNIT_CENTAUR_SORCERESS_CREEP);
+        Orcs, Humans, Constants.UNIT_CENTAUR_CAMP_CREEP, Constants.UNIT_CENTAUR_KHAN_CREEP_MELEE_3,
+        Constants.UNIT_CENTAUR_RUNNER_CREEP_MELEE_1, Constants.UNIT_CENTAUR_RUNNER_CREEP_MELEE_1, Constants.UNIT_CENTAUR_RUNNER_CREEP_MELEE_1,
+        Constants.UNIT_CENTAUR_ARCHER_CREEP_DISTANCE_1, Constants.UNIT_CENTAUR_ARCHER_CREEP_DISTANCE_1, Constants.UNIT_CENTAUR_SORCERESS_CREEP_MAGE_1);
       ConstructCreepCamp("Ogres", Areas.OrcCreepToUndeadSpawnBuilding, Areas.OrcCreepToUndeadSpawn,
-        Orcs, Undeads, Constants.UNIT_OGRE_CAMP_CREEP, Constants.UNIT_OGRE_LORD_CREEP,
-        Constants.UNIT_OGRE_WARRIOR_CREEP, Constants.UNIT_OGRE_WARRIOR_CREEP, Constants.UNIT_OGRE_WARRIOR_CREEP,
-        Constants.UNIT_OGRE_THIEF_CREEP, Constants.UNIT_OGRE_THIEF_CREEP, Constants.UNIT_OGRE_MAGE_CREEP);
+        Orcs, Undeads, Constants.UNIT_OGRE_CAMP_CREEP, Constants.UNIT_OGRE_LORD_CREEP_MELEE_3,
+        Constants.UNIT_OGRE_WARRIOR_CREEP_MELEE_1, Constants.UNIT_OGRE_WARRIOR_CREEP_MELEE_1, Constants.UNIT_OGRE_WARRIOR_CREEP_MELEE_1,
+        Constants.UNIT_OGRE_THIEF_CREEP_DISTANCE_1, Constants.UNIT_OGRE_THIEF_CREEP_DISTANCE_1, Constants.UNIT_OGRE_MAGE_CREEP_MAGE_1);
 
       // Untoten-Creeps
       ConstructCreepCamp("Mur'guls", Areas.UndeadCreepToOrcSpawnBuilding, Areas.UndeadCreepToOrcSpawn,
-        Undeads, Orcs, Constants.UNIT_MUR_GUL_CAMP_CREEP, Constants.UNIT_MUR_GUL_SHADOWCASTER_CREEP,
-        Constants.UNIT_MUR_GUL_WARRIOR_CREEP, Constants.UNIT_MUR_GUL_WARRIOR_CREEP, Constants.UNIT_MUR_GUL_WARRIOR_CREEP,
-        Constants.UNIT_MUR_GUL_TRAPPER_CREEP, Constants.UNIT_MUR_GUL_TRAPPER_CREEP, Constants.UNIT_MUR_GUL_WIZARD_CREEP);
+        Undeads, Orcs, Constants.UNIT_MUR_GUL_CAMP_CREEP, Constants.UNIT_MUR_GUL_SHADOWCASTER_CREEP_MELEE_3,
+        Constants.UNIT_MUR_GUL_WARRIOR_CREEP_MELEE_1, Constants.UNIT_MUR_GUL_WARRIOR_CREEP_MELEE_1, Constants.UNIT_MUR_GUL_WARRIOR_CREEP_MELEE_1,
+        Constants.UNIT_MUR_GUL_TRAPPER_CREEP_DISTANCE_1, Constants.UNIT_MUR_GUL_TRAPPER_CREEP_DISTANCE_1, Constants.UNIT_MUR_GUL_WIZARD_CREEP_MAGE_1);
       ConstructCreepCamp("Nerubians", Areas.UndeadCreepToElfSpawnBuilding, Areas.UndeadCreepToElfSpawn,
-        Undeads, Elves, Constants.UNIT_NERUBIAN_CAMP_CREEP, Constants.UNIT_NERUBIAN_QUEEN_CREEP,
-        Constants.UNIT_NERUBIAN_WARRIOR_CREEP, Constants.UNIT_NERUBIAN_WARRIOR_CREEP, Constants.UNIT_NERUBIAN_WARRIOR_CREEP,
-        Constants.UNIT_NERUBIAN_SPINNER_CREEP, Constants.UNIT_NERUBIAN_SPINNER_CREEP, Constants.UNIT_NERUBIAN_WIZARD_CREEP);
+        Undeads, Elves, Constants.UNIT_NERUBIAN_CAMP_CREEP, Constants.UNIT_NERUBIAN_QUEEN_CREEP_MELEE_3,
+        Constants.UNIT_NERUBIAN_WARRIOR_CREEP_MELEE_1, Constants.UNIT_NERUBIAN_WARRIOR_CREEP_MELEE_1, Constants.UNIT_NERUBIAN_WARRIOR_CREEP_MELEE_1,
+        Constants.UNIT_NERUBIAN_SPINNER_CREEP_DISTANCE_1, Constants.UNIT_NERUBIAN_SPINNER_CREEP_DISTANCE_1, Constants.UNIT_NERUBIAN_WIZARD_CREEP_MAGE_1);
     }
 
     private static void ConstructCreepCamp(string name,

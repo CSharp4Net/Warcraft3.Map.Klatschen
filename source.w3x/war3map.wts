@@ -57,7 +57,7 @@ STRING 39
 }
 
 STRING 45
-// Units: h00D (Altar of the Kings), EditorSuffix (Name - Editor Suffix)
+// Units: h00A (Forge), EditorSuffix (Name - Editor Suffix)
 {
 (Human)
 }
@@ -135,31 +135,19 @@ STRING 82
 }
 
 STRING 83
-// Units: h00A (Forge), EditorSuffix (Name - Editor Suffix)
-{
-(Human)
-}
-
-STRING 97
 // Units: H00M (Guardian), EditorSuffix (Name - Editor Suffix)
 {
 (Human)
 }
 
-STRING 115
+STRING 97
 // Units: h00T (Weapons and artifacts), EditorSuffix (Name - Editor Suffix)
 {
 (Human)
 }
 
-STRING 116
+STRING 115
 // Units: h02R (Holy tower), EditorSuffix (Name - Editor Suffix)
-{
-(Human)
-}
-
-STRING 117
-// Units: n02L (War Golem), EditorSuffix (Name - Editor Suffix)
 {
 (Human)
 }
@@ -2337,25 +2325,25 @@ STRING 2948
 }
 
 STRING 2949
-// Units: h01B (Altar of Darkness), EditorSuffix (Name - Editor Suffix)
-{
-(Undead)
-}
-
-STRING 2950
 // Units: h01C (Potions and sundries), EditorSuffix (Name - Editor Suffix)
 {
 (Undead)
 }
 
-STRING 2951
+STRING 2950
 // Units: h01D (Weapons and artifacts), EditorSuffix (Name - Editor Suffix)
 {
 (Undead)
 }
 
-STRING 2952
+STRING 2951
 // Units: h01E (Crypt), EditorSuffix (Name - Editor Suffix)
+{
+(Undead)
+}
+
+STRING 2952
+// Units: h01F (Graveyard), EditorSuffix (Name - Editor Suffix)
 {
 (Undead)
 }
@@ -2541,73 +2529,37 @@ STRING 3226
 }
 
 STRING 3228
-// Units: h01F (Graveyard), EditorSuffix (Name - Editor Suffix)
-{
-(Undead)
-}
-
-STRING 3233
-// Units: h01G (Altar of storms), EditorSuffix (Name - Editor Suffix)
-{
-(Orc)
-}
-
-STRING 3235
-// Units: h01H (Altar of Elders), EditorSuffix (Name - Editor Suffix)
-{
-(Elf)
-}
-
-STRING 3238
-// Units: H01W (Guardian), EditorSuffix (Name - Editor Suffix)
-{
-(Orc)
-}
-
-STRING 3240
-// Units: h02S (Rage tower), EditorSuffix (Name - Editor Suffix)
-{
-(Orc)
-}
-
-STRING 3242
-// Units: n02O (Mud Golem), EditorSuffix (Name - Editor Suffix)
-{
-(Orc)
-}
-
-STRING 3327
-// Units: H02P (Guardian), EditorSuffix (Name - Editor Suffix)
-{
-(Elf)
-}
-
-STRING 3328
 // Units: H02Q (Guardian), EditorSuffix (Name - Editor Suffix)
 {
 (Undead)
 }
 
-STRING 3329
+STRING 3233
+// Units: H01W (Guardian), EditorSuffix (Name - Editor Suffix)
+{
+(Orc)
+}
+
+STRING 3235
+// Units: H02P (Guardian), EditorSuffix (Name - Editor Suffix)
+{
+(Elf)
+}
+
+STRING 3238
+// Units: h02S (Rage tower), EditorSuffix (Name - Editor Suffix)
+{
+(Orc)
+}
+
+STRING 3327
 // Units: h02U (Nature tower), EditorSuffix (Name - Editor Suffix)
 {
 (Elf)
 }
 
-STRING 3330
+STRING 3328
 // Units: h02T (Death Tower), EditorSuffix (Name - Editor Suffix)
-{
-(Undead)
-}
-
-STRING 3331
-// Units: n02M (Guardian Golem), EditorSuffix (Name - Editor Suffix)
-{
-(Elf)
-}
-
-STRING 3332
-// Units: n02N (Flesh Golem), EditorSuffix (Name - Editor Suffix)
 {
 (Undead)
 }
@@ -2978,25 +2930,25 @@ Fight to the death!
 }
 
 STRING 3605
-// Units: n00X (Bandit), EditorSuffix (Name - Editor Suffix)
-{
-(Creep)
-}
-
-STRING 3608
 // Units: n00V (Bandit Camp), EditorSuffix (Name - Editor Suffix)
 {
 (Creep)
 }
 
+STRING 3608
+// Units: n00K (Furbolg Hut), EditorSuffix (Name - Editor Suffix)
+{
+(Creep)
+}
+
 STRING 3609
-// Units: n013 (Bandit Assassin), EditorSuffix (Name - Editor Suffix)
+// Units: n00P (Furbolg Camp), EditorSuffix (Name - Editor Suffix)
 {
 (Creep)
 }
 
 STRING 3611
-// Units: n014 (Furbolg Wizard), EditorSuffix (Name - Editor Suffix)
+// Units: n01G (Bandit Tent), EditorSuffix (Name - Editor Suffix)
 {
 (Creep)
 }
@@ -3014,49 +2966,49 @@ Fernkampfeinheit
 }
 
 STRING 3624
-// Units: n00K (Furbolg Hut), EditorSuffix (Name - Editor Suffix)
-{
-(Creep)
-}
-
-STRING 3632
-// Units: n00P (Furbolg Camp), EditorSuffix (Name - Editor Suffix)
-{
-(Creep)
-}
-
-STRING 3649
-// Units: n01G (Bandit Tent), EditorSuffix (Name - Editor Suffix)
-{
-(Creep)
-}
-
-STRING 3650
 // Units: n01H (Centaur Camp), EditorSuffix (Name - Editor Suffix)
 {
 (Creep)
 }
 
-STRING 3651
+STRING 3632
 // Units: n01I (Centaur Tent), EditorSuffix (Name - Editor Suffix)
 {
 (Creep)
 }
 
-STRING 3652
+STRING 3649
 // Units: n01J (Nerubian Camp), EditorSuffix (Name - Editor Suffix)
 {
 (Creep)
 }
 
-STRING 3653
+STRING 3650
 // Units: n024 (Mur'gul Camp), EditorSuffix (Name - Editor Suffix)
 {
 (Creep)
 }
 
-STRING 3656
+STRING 3651
 // Units: n025 (Mur'gul Hut), EditorSuffix (Name - Editor Suffix)
+{
+(Creep)
+}
+
+STRING 3652
+// Units: n026 (Ogre Camp), EditorSuffix (Name - Editor Suffix)
+{
+(Creep)
+}
+
+STRING 3653
+// Units: n02A (Ogre Hut), EditorSuffix (Name - Editor Suffix)
+{
+(Creep)
+}
+
+STRING 3656
+// Units: n02B (Wildekin Nest), EditorSuffix (Name - Editor Suffix)
 {
 (Creep)
 }
@@ -3068,7 +3020,7 @@ Nahkampfeinheit
 }
 
 STRING 3670
-// Units: n026 (Ogre Camp), EditorSuffix (Name - Editor Suffix)
+// Units: n02D (Wildekin Camp), EditorSuffix (Name - Editor Suffix)
 {
 (Creep)
 }
@@ -3080,7 +3032,7 @@ Nahkampfeinheit
 }
 
 STRING 3675
-// Units: n02A (Ogre Hut), EditorSuffix (Name - Editor Suffix)
+// Units: n02E (Nerubian Ziggurat), EditorSuffix (Name - Editor Suffix)
 {
 (Creep)
 }
@@ -3098,7 +3050,7 @@ Magieeinheit
 }
 
 STRING 3681
-// Units: n02B (Wildekin Nest), EditorSuffix (Name - Editor Suffix)
+// Units: n02F (Tuskarr Camp), EditorSuffix (Name - Editor Suffix)
 {
 (Creep)
 }
@@ -3110,7 +3062,7 @@ Nahkampfeinheit
 }
 
 STRING 3686
-// Units: n02D (Wildekin Camp), EditorSuffix (Name - Editor Suffix)
+// Units: n02G (Tuskarr Hut), EditorSuffix (Name - Editor Suffix)
 {
 (Creep)
 }
@@ -3119,12 +3071,6 @@ STRING 3687
 // Units: n01P (Tuskarr Warrior), Description (Description)
 {
 Nahkampfeinheit
-}
-
-STRING 3691
-// Units: n02E (Nerubian Ziggurat), EditorSuffix (Name - Editor Suffix)
-{
-(Creep)
 }
 
 STRING 3692
@@ -3137,12 +3083,6 @@ STRING 3694
 // Units: n01E (Wildekin), Name (Name)
 {
 Wildekin
-}
-
-STRING 3696
-// Units: n02F (Tuskarr Camp), EditorSuffix (Name - Editor Suffix)
-{
-(Creep)
 }
 
 STRING 3699
@@ -3163,22 +3103,10 @@ STRING 3706
 Ogerhütte errichten
 }
 
-STRING 3707
-// Units: n02G (Tuskarr Hut), EditorSuffix (Name - Editor Suffix)
-{
-(Creep)
-}
-
 STRING 3708
 // Units: h01M (Headhunter - Beserk), Description (Description)
 {
 Fernkampfeinheit
-}
-
-STRING 3712
-// Units: n01D (Furbolg Warrior), EditorSuffix (Name - Editor Suffix)
-{
-(Creep)
 }
 
 STRING 3713
@@ -3187,22 +3115,10 @@ STRING 3713
 Fernkampfeinheit
 }
 
-STRING 3717
-// Units: n01F (Mur'gul Warrior), EditorSuffix (Name - Editor Suffix)
-{
-(Creep)
-}
-
 STRING 3718
 // Units: n013 (Bandit Assassin), Description (Description)
 {
 Fernkampfeinheit
-}
-
-STRING 3722
-// Units: n01L (Nerubian Warrior), EditorSuffix (Name - Editor Suffix)
-{
-(Creep)
 }
 
 STRING 3723
@@ -3211,22 +3127,10 @@ STRING 3723
 Fernkampfeinheit
 }
 
-STRING 3727
-// Units: n01N (Ogre Warrior), EditorSuffix (Name - Editor Suffix)
-{
-(Creep)
-}
-
 STRING 3728
 // Units: n01U (Mur'gul Trapper), Description (Description)
 {
 Fernkampfeinheit
-}
-
-STRING 3732
-// Units: n01P (Tuskarr Warrior), EditorSuffix (Name - Editor Suffix)
-{
-(Creep)
 }
 
 STRING 3733
@@ -3235,22 +3139,10 @@ STRING 3733
 Fernkampfeinheit
 }
 
-STRING 3736
-// Units: n01E (Wildekin), EditorSuffix (Name - Editor Suffix)
-{
-(Creep)
-}
-
 STRING 3737
 // Units: n01W (Tuskarr Hunter), Description (Description)
 {
 Fernkampfeinheit
-}
-
-STRING 3743
-// Units: n01S (Centaur Runner), EditorSuffix (Name - Editor Suffix)
-{
-(Creep)
 }
 
 STRING 3745
@@ -3259,22 +3151,10 @@ STRING 3745
 Magieeinheit
 }
 
-STRING 3746
-// Units: n01Q (Furbolg Hunter), EditorSuffix (Name - Editor Suffix)
-{
-(Creep)
-}
-
 STRING 3749
 // Units: n01Z (Mur'gul Wizard), Description (Description)
 {
 Magieeinheit
-}
-
-STRING 3751
-// Units: n01U (Mur'gul Trapper), EditorSuffix (Name - Editor Suffix)
-{
-(Creep)
 }
 
 STRING 3754
@@ -3283,22 +3163,10 @@ STRING 3754
 Magieeinheit
 }
 
-STRING 3756
-// Units: n01K (Nerubian Spinner), EditorSuffix (Name - Editor Suffix)
-{
-(Creep)
-}
-
 STRING 3759
 // Units: n01Y (Ogre Mage), Description (Description)
 {
 Magieeinheit
-}
-
-STRING 3761
-// Units: n01W (Tuskarr Hunter), EditorSuffix (Name - Editor Suffix)
-{
-(Creep)
 }
 
 STRING 3764
@@ -3307,34 +3175,16 @@ STRING 3764
 Magieeinheit
 }
 
-STRING 3766
-// Units: n01C (Ogre Thief), EditorSuffix (Name - Editor Suffix)
-{
-(Creep)
-}
-
 STRING 3768
 // Units: n01B (Wildekin Ancestor), Description (Description)
 {
 Magieeinheit
 }
 
-STRING 3770
-// Units: n01V (Wildekin Trapper), EditorSuffix (Name - Editor Suffix)
-{
-(Creep)
-}
-
 STRING 3773
 // Units: n020 (Centaur Sorceress), Description (Description)
 {
 Magieeinheit
-}
-
-STRING 3777
-// Units: n01X (Centaur Archer), EditorSuffix (Name - Editor Suffix)
-{
-(Creep)
 }
 
 STRING 3778
@@ -3347,12 +3197,6 @@ STRING 3779
 // Units: n021 (Furbolg Champion), Description (Description)
 {
 Nahkampfeinheit
-}
-
-STRING 3780
-// Units: n01O (Bandit Wizard), EditorSuffix (Name - Editor Suffix)
-{
-(Creep)
 }
 
 STRING 3782
@@ -3407,42 +3251,6 @@ STRING 3793
 // Abilities: ASSG (Shadow Strike), EditorSuffix (Editor Suffix)
 {
 (Unit)
-}
-
-STRING 3794
-// Units: n01Z (Mur'gul Wizard), EditorSuffix (Name - Editor Suffix)
-{
-(Creep)
-}
-
-STRING 3795
-// Units: n01M (Nerubian Wizard), EditorSuffix (Name - Editor Suffix)
-{
-(Creep)
-}
-
-STRING 3798
-// Units: n01Y (Ogre Mage), EditorSuffix (Name - Editor Suffix)
-{
-(Creep)
-}
-
-STRING 3800
-// Units: n01T (Tuskarr Healer), EditorSuffix (Name - Editor Suffix)
-{
-(Creep)
-}
-
-STRING 3801
-// Units: n01B (Wildekin Ancestor), EditorSuffix (Name - Editor Suffix)
-{
-(Creep)
-}
-
-STRING 3803
-// Units: n020 (Centaur Sorceress), EditorSuffix (Name - Editor Suffix)
-{
-(Creep)
 }
 
 STRING 3808
@@ -4153,54 +3961,6 @@ STRING 4127
 armor
 }
 
-STRING 4128
-// Units: n01R (Bandit Lord), EditorSuffix (Name - Editor Suffix)
-{
-(Creep)
-}
-
-STRING 4129
-// Units: n021 (Furbolg Champion), EditorSuffix (Name - Editor Suffix)
-{
-(Creep)
-}
-
-STRING 4130
-// Units: n022 (Mur'gul Shadowcaster), EditorSuffix (Name - Editor Suffix)
-{
-(Creep)
-}
-
-STRING 4131
-// Units: n023 (Nerubian Queen), EditorSuffix (Name - Editor Suffix)
-{
-(Creep)
-}
-
-STRING 4132
-// Units: n027 (Ogre Lord), EditorSuffix (Name - Editor Suffix)
-{
-(Creep)
-}
-
-STRING 4133
-// Units: n028 (Tuskarr Chieftain), EditorSuffix (Name - Editor Suffix)
-{
-(Creep)
-}
-
-STRING 4134
-// Units: n029 (Centaur Khan), EditorSuffix (Name - Editor Suffix)
-{
-(Creep)
-}
-
-STRING 4135
-// Units: n02C (Wildekin Alpha), EditorSuffix (Name - Editor Suffix)
-{
-(Creep)
-}
-
 STRING 4137
 {
 Iron Alliance
@@ -4447,12 +4207,6 @@ STRING 4196
 // Units: h009 (Potions and sundries), Name (Name)
 {
 Potions and sundries
-}
-
-STRING 4197
-// Units: h00D (Altar of the Kings), Name (Name)
-{
-Altar of the Kings
 }
 
 STRING 4198
@@ -6367,12 +6121,6 @@ STRING 4572
 // Units: h017 (War Mill), Name (Name)
 {
 War Mill
-}
-
-STRING 4573
-// Units: h01G (Altar of storms), Name (Name)
-{
-Altar of storms
 }
 
 STRING 4574
@@ -11979,12 +11727,6 @@ STRING 5568
 Black Citadel
 }
 
-STRING 5569
-// Units: h01B (Altar of Darkness), Name (Name)
-{
-Altar of Darkness
-}
-
 STRING 5570
 // Units: h012 (Potions and sundries), Name (Name)
 {
@@ -12133,12 +11875,6 @@ STRING 5596
 // Units: h01D (Weapons and artifacts), Name (Name)
 {
 Weapons and artifacts
-}
-
-STRING 5597
-// Units: h01H (Altar of Elders), Name (Name)
-{
-Altar of Elders
 }
 
 STRING 5598
@@ -12663,46 +12399,16 @@ STRING 5689
 Tuskarr Hut
 }
 
-STRING 5690
-// Units: n00X (Bandit), Ubertip (Tooltip - Extended)
-{
-Recruits a melee unit that benefits from your research.|n|n|cffffcc00Can only attack ground units.|r|n|n|cffd45e19When purchased, this camp sends this unit out at a fixed interval to support your team in battle.|r
-}
-
-STRING 5691
-// Units: n013 (Bandit Assassin), Ubertip (Tooltip - Extended)
-{
-Recruits a ranged unit that shoots poison darts and benefits from your research.|n|n|cffffcc00Can attack ground and air units.|r|n|n|cffd45e19When purchased, this camp will send this unit out at a fixed interval to support your team in battle.|r
-}
-
-STRING 5692
-// Units: n014 (Furbolg Wizard), Ubertip (Tooltip - Extended)
-{
-Recruits a magic unit that shoots firebolts and distributes frost armor and benefits from your research.|n|n|cffffcc00Can attack ground and air units.|r|n|n|cffd45e19When purchased, this camp sends this unit out at a fixed interval to support your team in battle.|r
-}
-
 STRING 5693
 // Units: n014 (Furbolg Wizard), Tip (Tooltip - Basic)
 {
 Hire Furbolg Wizard
 }
 
-STRING 5694
-// Units: n01D (Furbolg Warrior), Ubertip (Tooltip - Extended)
-{
-Recruits a melee unit that benefits from your research.|n|n|cffffcc00Can only attack ground units.|r|n|n|cffd45e19When purchased, this camp sends this unit out at a fixed interval to support your team in battle.|r
-}
-
 STRING 5695
 // Units: n01D (Furbolg Warrior), Tip (Tooltip - Basic)
 {
 Hire Furbolg Warrior
-}
-
-STRING 5696
-// Units: n01F (Mur'gul Warrior), Ubertip (Tooltip - Extended)
-{
-Recruits a melee unit that benefits from your research.|n|n|cffffcc00Can only attack ground units.|r|n|n|cffd45e19When purchased, this camp sends this unit out at a fixed interval to support your team in battle.|r
 }
 
 STRING 5697
@@ -12717,22 +12423,10 @@ STRING 5698
 Hire Mur'gul Warrior
 }
 
-STRING 5699
-// Units: n01L (Nerubian Warrior), Ubertip (Tooltip - Extended)
-{
-Recruits a melee unit that benefits from your research.|n|n|cffffcc00Can only attack ground units.|r|n|n|cffd45e19When purchased, this camp sends this unit out at a fixed interval to support your team in battle.|r
-}
-
 STRING 5700
 // Units: n01L (Nerubian Warrior), Tip (Tooltip - Basic)
 {
 Summon Nerubian warrior
-}
-
-STRING 5701
-// Units: n01N (Ogre Warrior), Ubertip (Tooltip - Extended)
-{
-Recruits a melee unit that benefits from your research.|n|n|cffffcc00Can only attack ground units.|r|n|n|cffd45e19When purchased, this camp sends this unit out at a fixed interval to support your team in battle.|r
 }
 
 STRING 5702
@@ -12741,22 +12435,10 @@ STRING 5702
 Hire ogre warriors
 }
 
-STRING 5703
-// Units: n01P (Tuskarr Warrior), Ubertip (Tooltip - Extended)
-{
-Recruits a melee unit that benefits from your research.|n|n|cffffcc00Can only attack ground units.|r|n|n|cffd45e19When purchased, this camp sends this unit out at a fixed interval to support your team in battle.|r
-}
-
 STRING 5704
 // Units: n01P (Tuskarr Warrior), Tip (Tooltip - Basic)
 {
 Hire Tuscar warriors
-}
-
-STRING 5705
-// Units: n01E (Wildekin), Ubertip (Tooltip - Extended)
-{
-Recruits a melee unit that benefits from your research.|n|n|cffffcc00Can only attack ground units.|r|n|n|cffd45e19When purchased, this camp sends this unit out at a fixed interval to support your team in battle.|r
 }
 
 STRING 5706
@@ -12765,34 +12447,16 @@ STRING 5706
 Summon Wildekin
 }
 
-STRING 5707
-// Units: n01S (Centaur Runner), Ubertip (Tooltip - Extended)
-{
-Recruits a melee unit that benefits from your research.|n|n|cffffcc00Can only attack ground units.|r|n|n|cffd45e19When purchased, this camp sends this unit out at a fixed interval to support your team in battle.|r
-}
-
 STRING 5708
 // Units: n01S (Centaur Runner), Tip (Tooltip - Basic)
 {
 Hire centaur runners
 }
 
-STRING 5709
-// Units: n01Q (Furbolg Hunter), Ubertip (Tooltip - Extended)
-{
-Recruits a ranged unit that shoots poison darts and benefits from your research.|n|n|cffffcc00Can attack ground and air units.|r|n|n|cffd45e19When purchased, this camp will send this unit out at a fixed interval to support your team in battle.|r
-}
-
 STRING 5710
 // Units: n01Q (Furbolg Hunter), Tip (Tooltip - Basic)
 {
 Hire Furbolg Hunter
-}
-
-STRING 5711
-// Units: n01U (Mur'gul Trapper), Ubertip (Tooltip - Extended)
-{
-Recruits a ranged unit that shoots poison darts and benefits from your research.|n|n|cffffcc00Can attack ground and air units.|r|n|n|cffd45e19When purchased, this camp will send this unit out at a fixed interval to support your team in battle.|r
 }
 
 STRING 5712
@@ -12807,22 +12471,10 @@ STRING 5713
 Hire Mur'gul Trapper
 }
 
-STRING 5714
-// Units: n01K (Nerubian Spinner), Ubertip (Tooltip - Extended)
-{
-Recruits a ranged unit that shoots poison darts and benefits from your research.|n|n|cffffcc00Can attack ground and air units.|r|n|n|cffd45e19When purchased, this camp will send this unit out at a fixed interval to support your team in battle.|r
-}
-
 STRING 5715
 // Units: n01K (Nerubian Spinner), Tip (Tooltip - Basic)
 {
 Summon Nerub spinner
-}
-
-STRING 5716
-// Units: n01W (Tuskarr Hunter), Ubertip (Tooltip - Extended)
-{
-Recruits a ranged unit that shoots poison darts and benefits from your research.|n|n|cffffcc00Can attack ground and air units.|r|n|n|cffd45e19When purchased, this camp will send this unit out at a fixed interval to support your team in battle.|r
 }
 
 STRING 5717
@@ -12831,22 +12483,10 @@ STRING 5717
 Hire a tusk trap operator
 }
 
-STRING 5718
-// Units: n01C (Ogre Thief), Ubertip (Tooltip - Extended)
-{
-Recruits a ranged unit that shoots poison darts and benefits from your research.|n|n|cffffcc00Can attack ground and air units.|r|n|n|cffd45e19When purchased, this camp will send this unit out at a fixed interval to support your team in battle.|r
-}
-
 STRING 5719
 // Units: n01C (Ogre Thief), Tip (Tooltip - Basic)
 {
 Hire ogre thief
-}
-
-STRING 5720
-// Units: n01V (Wildekin Trapper), Ubertip (Tooltip - Extended)
-{
-Recruits a ranged unit that shoots poison darts and benefits from your research.|n|n|cffffcc00Can attack ground and air units.|r|n|n|cffd45e19When purchased, this camp will send this unit out at a fixed interval to support your team in battle.|r
 }
 
 STRING 5721
@@ -12855,28 +12495,10 @@ STRING 5721
 Summon Wildekin trapper
 }
 
-STRING 5722
-// Units: n01X (Centaur Archer), Ubertip (Tooltip - Extended)
-{
-Recruits a ranged unit that shoots poison darts and benefits from your research.|n|n|cffffcc00Can attack ground and air units.|r|n|n|cffd45e19When purchased, this camp will send this unit out at a fixed interval to support your team in battle.|r
-}
-
 STRING 5723
 // Units: n01X (Centaur Archer), Tip (Tooltip - Basic)
 {
 Hire a centaur archer
-}
-
-STRING 5724
-// Units: n01O (Bandit Wizard), Ubertip (Tooltip - Extended)
-{
-Recruits a magic unit that shoots firebolts and distributes frost armor and benefits from your research.|n|n|cffffcc00Can attack ground and air units.|r|n|n|cffd45e19When purchased, this camp sends this unit out at a fixed interval to support your team in battle.|r
-}
-
-STRING 5725
-// Units: n01Z (Mur'gul Wizard), Ubertip (Tooltip - Extended)
-{
-Recruits a magic unit that shoots firebolts and distributes frost armor and benefits from your research.|n|n|cffffcc00Can attack ground and air units.|r|n|n|cffd45e19When purchased, this camp sends this unit out at a fixed interval to support your team in battle.|r
 }
 
 STRING 5726
@@ -12891,22 +12513,10 @@ STRING 5727
 Mur'gul Wizard
 }
 
-STRING 5728
-// Units: n01M (Nerubian Wizard), Ubertip (Tooltip - Extended)
-{
-Recruits a magic unit that shoots firebolts and distributes frost armor and benefits from your research.|n|n|cffffcc00Can attack ground and air units.|r|n|n|cffd45e19When purchased, this camp sends this unit out at a fixed interval to support your team in battle.|r
-}
-
 STRING 5729
 // Units: n01M (Nerubian Wizard), Tip (Tooltip - Basic)
 {
 Summon neruber wizard
-}
-
-STRING 5730
-// Units: n01Y (Ogre Mage), Ubertip (Tooltip - Extended)
-{
-Recruits a magic unit that shoots firebolts and distributes frost armor and benefits from your research.|n|n|cffffcc00Can attack ground and air units.|r|n|n|cffd45e19When purchased, this camp sends this unit out at a fixed interval to support your team in battle.|r
 }
 
 STRING 5731
@@ -12915,22 +12525,10 @@ STRING 5731
 Hire an ogre mage
 }
 
-STRING 5732
-// Units: n01T (Tuskarr Healer), Ubertip (Tooltip - Extended)
-{
-Recruits a magic unit that shoots firebolts and distributes frost armor and benefits from your research.|n|n|cffffcc00Can attack ground and air units.|r|n|n|cffd45e19When purchased, this camp sends this unit out at a fixed interval to support your team in battle.|r
-}
-
 STRING 5733
 // Units: n01T (Tuskarr Healer), Tip (Tooltip - Basic)
 {
 Hire a Tuscar healer
-}
-
-STRING 5734
-// Units: n01B (Wildekin Ancestor), Ubertip (Tooltip - Extended)
-{
-Recruits a magic unit that shoots firebolts and distributes frost armor and benefits from your research.|n|n|cffffcc00Can attack ground and air units.|r|n|n|cffd45e19When purchased, this camp sends this unit out at a fixed interval to support your team in battle.|r
 }
 
 STRING 5735
@@ -12939,58 +12537,10 @@ STRING 5735
 Summon Wildekin Ancestor
 }
 
-STRING 5736
-// Units: n020 (Centaur Sorceress), Ubertip (Tooltip - Extended)
-{
-Recruits a magic unit that shoots firebolts and distributes frost armor and benefits from your research.|n|n|cffffcc00Can attack ground and air units.|r|n|n|cffd45e19When purchased, this camp sends this unit out at a fixed interval to support your team in battle.|r
-}
-
 STRING 5737
 // Units: n020 (Centaur Sorceress), Tip (Tooltip - Basic)
 {
 Hire a centaur sorceress
-}
-
-STRING 5738
-// Units: n01R (Bandit Lord), Ubertip (Tooltip - Extended)
-{
-A heavy melee unit. Possesses Aura of Devotion and Shockwave.|n|n|cffffcc00Can attack ground units.|r
-}
-
-STRING 5739
-// Units: n021 (Furbolg Champion), Ubertip (Tooltip - Extended)
-{
-A heavy melee unit. Possesses command aura and reincarnation.|n|n|cffffcc00Can attack ground units.|r
-}
-
-STRING 5740
-// Units: n023 (Nerubian Queen), Ubertip (Tooltip - Extended)
-{
-A heavy melee unit. Controls the Unholy Aura and Carrion Swarm.|n|n|cffffcc00Can attack ground units.|r
-}
-
-STRING 5741
-// Units: n027 (Ogre Lord), Ubertip (Tooltip - Extended)
-{
-Lord of the Ogre Legion. Possesses stamina aura and war thunder.|n|n|cffffcc00Can attack ground units.|r
-}
-
-STRING 5742
-// Units: n028 (Tuskarr Chieftain), Ubertip (Tooltip - Extended)
-{
-A heavy melee unit. Has command aura and frost armor.|n|n|cffffcc00Can attack ground units.|r
-}
-
-STRING 5743
-// Units: n029 (Centaur Khan), Ubertip (Tooltip - Extended)
-{
-A heavy melee unit. Controls the unholy aura and fire breath.|n|n|cffffcc00Can attack ground and air units.|r
-}
-
-STRING 5744
-// Units: n02C (Wildekin Alpha), Ubertip (Tooltip - Extended)
-{
-Alpha in the nest. Has full hit aura and root growth.|n|n|cffffcc00Can attack ground units.|r
 }
 
 STRING 5745
@@ -14365,36 +13915,6 @@ STRING 6016
 // Abilities: ACAB (Carrion Beetles), Ubertip (Tooltip - Normal - Extended)
 {
 |cffff0000Ultimate ability|r|n|nProgenerates <ACAB,DataA3> Beetle [|cffffcc00Level 3|r] from a target corpse. Beetles are permanent until killed.|n|nMaximum of <ACAB,DataE3> Beetles.
-}
-
-STRING 6022
-// Units: n02M (Guardian Golem), Name (Name)
-{
-Guardian Golem
-}
-
-STRING 6023
-// Units: n02M (Guardian Golem), Tip (Tooltip - Basic)
-{
-Summon Guardian Golem
-}
-
-STRING 6026
-// Units: n02N (Flesh Golem), Name (Name)
-{
-Flesh Golem
-}
-
-STRING 6027
-// Units: n02N (Flesh Golem), Tip (Tooltip - Basic)
-{
-Summon Flesh Golem
-}
-
-STRING 6030
-// Units: n02O (Mud Golem), Name (Name)
-{
-Mud Golem
 }
 
 STRING 6031
@@ -17404,7 +16924,7 @@ Siege Units - [|cffffcc00Level 1|r]
 }
 
 STRING 6701
-// Units: n02L (War Golem), Ubertip (Tooltip - Extended)
+// Units: n02L (War Golem - [|cffffcc00Level 3|r]), Ubertip (Tooltip - Extended)
 {
 Summons a golem that is immune to spells. The golem rushes at the enemy base and smashes everything to pieces.|n|n|cffffcc00Can only attack ground units.|r
 }
@@ -18256,19 +17776,19 @@ Adds [|cffffcc00Siege Units|r] to this building, which deal a lot of damage to b
 }
 
 STRING 6844
-// Units: n02M (Guardian Golem), Ubertip (Tooltip - Extended)
+// Units: n02M (Guardian Golem - [|cffffcc00Level 3|r]), Ubertip (Tooltip - Extended)
 {
 Summons a golem that is immune to spells. The golem rushes at the enemy base and smashes everything to pieces.|n|n|cffffcc00Can only attack ground units.|r
 }
 
 STRING 6845
-// Units: n02N (Flesh Golem), Ubertip (Tooltip - Extended)
+// Units: n02N (Flesh Golem - [|cffffcc00Level 3|r]), Ubertip (Tooltip - Extended)
 {
 Summons a golem that is immune to spells. The golem rushes at the enemy base and smashes everything to pieces.|n|n|cffffcc00Can only attack ground units.|r
 }
 
 STRING 6846
-// Units: n02O (Mud Golem), Ubertip (Tooltip - Extended)
+// Units: n02O (Mud Golem - [|cffffcc00Level 3|r]), Ubertip (Tooltip - Extended)
 {
 Summons a golem that is immune to spells. The golem rushes at the enemy base and smashes everything to pieces.|n|n|cffffcc00Can only attack ground units.|r
 }
@@ -18859,5 +18379,725 @@ STRING 7021
 // Units: n036 (Green Whelp), Description (Description)
 {
 Flight unit
+}
+
+STRING 7022
+// Units: n02L (War Golem - [|cffffcc00Level 3|r]), EditorSuffix (Name - Editor Suffix)
+{
+(Human, Golem, 3)
+}
+
+STRING 7024
+// Units: n037 (War Golem - [|cffffcc00Level 2|r]), EditorSuffix (Name - Editor Suffix)
+{
+(Human, Golem, 2)
+}
+
+STRING 7025
+// Units: n037 (War Golem - [|cffffcc00Level 2|r]), Ubertip (Tooltip - Extended)
+{
+Summons a golem that is immune to spells. The golem rushes at the enemy base and smashes everything to pieces.|n|n|cffffcc00Can only attack ground units.|r
+}
+
+STRING 7027
+// Units: n038 (War Golem - [|cffffcc00Level 1|r]), EditorSuffix (Name - Editor Suffix)
+{
+(Human, Golem, 1)
+}
+
+STRING 7028
+// Units: n038 (War Golem - [|cffffcc00Level 1|r]), Ubertip (Tooltip - Extended)
+{
+Summons a golem that is immune to spells. The golem rushes at the enemy base and smashes everything to pieces.|n|n|cffffcc00Can only attack ground units.|r
+}
+
+STRING 7030
+// Units: n02M (Guardian Golem - [|cffffcc00Level 3|r]), EditorSuffix (Name - Editor Suffix)
+{
+(Elf, Golem, 3)
+}
+
+STRING 7031
+// Units: n02N (Flesh Golem - [|cffffcc00Level 3|r]), EditorSuffix (Name - Editor Suffix)
+{
+(Undead, Golem, 3)
+}
+
+STRING 7032
+// Units: n02O (Mud Golem - [|cffffcc00Level 3|r]), EditorSuffix (Name - Editor Suffix)
+{
+(Orc, Golem, 3)
+}
+
+STRING 7033
+// Units: n02L (War Golem - [|cffffcc00Level 3|r]), Name (Name)
+{
+War Golem - [|cffffcc00Level 3|r]
+}
+
+STRING 7035
+// Units: n037 (War Golem - [|cffffcc00Level 2|r]), Name (Name)
+{
+War Golem - [|cffffcc00Level 2|r]
+}
+
+STRING 7037
+// Units: n038 (War Golem - [|cffffcc00Level 1|r]), Name (Name)
+{
+War Golem - [|cffffcc00Level 1|r]
+}
+
+STRING 7039
+// Units: n02L (War Golem - [|cffffcc00Level 3|r]), Tip (Tooltip - Basic)
+{
+Summon Golem - [|cffffcc00Level 3|r]
+}
+
+STRING 7040
+// Units: n02O (Mud Golem - [|cffffcc00Level 3|r]), Name (Name)
+{
+Mud Golem - [|cffffcc00Level 3|r]
+}
+
+STRING 7042
+// Units: n037 (War Golem - [|cffffcc00Level 2|r]), Tip (Tooltip - Basic)
+{
+Summon Golem - [|cffffcc00Level 2|r]
+}
+
+STRING 7043
+// Units: n038 (War Golem - [|cffffcc00Level 1|r]), Tip (Tooltip - Basic)
+{
+Summon Golem - [|cffffcc00Level 1|r]
+}
+
+STRING 7045
+// Units: n039 (Mud Golem - [|cffffcc00Level 2|r]), Ubertip (Tooltip - Extended)
+{
+Summons a golem that is immune to spells. The golem rushes at the enemy base and smashes everything to pieces.|n|n|cffffcc00Can only attack ground units.|r
+}
+
+STRING 7046
+// Units: n039 (Mud Golem - [|cffffcc00Level 2|r]), Name (Name)
+{
+Mud Golem - [|cffffcc00Level 2|r]
+}
+
+STRING 7047
+// Units: n039 (Mud Golem - [|cffffcc00Level 2|r]), Tip (Tooltip - Basic)
+{
+Summon Golem - [|cffffcc00Level 2|r]
+}
+
+STRING 7048
+// Units: n03A (Mud Golem - [|cffffcc00Level 1|r]), EditorSuffix (Name - Editor Suffix)
+{
+(Orc, Golem, 1)
+}
+
+STRING 7049
+// Units: n03A (Mud Golem - [|cffffcc00Level 1|r]), Ubertip (Tooltip - Extended)
+{
+Summons a golem that is immune to spells. The golem rushes at the enemy base and smashes everything to pieces.|n|n|cffffcc00Can only attack ground units.|r
+}
+
+STRING 7050
+// Units: n03A (Mud Golem - [|cffffcc00Level 1|r]), Name (Name)
+{
+Mud Golem - [|cffffcc00Level 1|r]
+}
+
+STRING 7051
+// Units: n03A (Mud Golem - [|cffffcc00Level 1|r]), Tip (Tooltip - Basic)
+{
+Summon Golem - [|cffffcc00Level 1|r]
+}
+
+STRING 7052
+// Units: n039 (Mud Golem - [|cffffcc00Level 2|r]), EditorSuffix (Name - Editor Suffix)
+{
+(Orc, Golem, 2)
+}
+
+STRING 7053
+// Units: n02N (Flesh Golem - [|cffffcc00Level 3|r]), Name (Name)
+{
+Flesh Golem - [|cffffcc00Level 3|r]
+}
+
+STRING 7055
+// Units: n03B (Flesh Golem - [|cffffcc00Level 2|r]), EditorSuffix (Name - Editor Suffix)
+{
+(Undead, Golem, 2)
+}
+
+STRING 7056
+// Units: n03B (Flesh Golem - [|cffffcc00Level 2|r]), Ubertip (Tooltip - Extended)
+{
+Summons a golem that is immune to spells. The golem rushes at the enemy base and smashes everything to pieces.|n|n|cffffcc00Can only attack ground units.|r
+}
+
+STRING 7057
+// Units: n03B (Flesh Golem - [|cffffcc00Level 2|r]), Name (Name)
+{
+Flesh Golem - [|cffffcc00Level 2|r]
+}
+
+STRING 7058
+// Units: n03B (Flesh Golem - [|cffffcc00Level 2|r]), Tip (Tooltip - Basic)
+{
+Summon Golem - [|cffffcc00Level 2|r]
+}
+
+STRING 7059
+// Units: n03C (Flesh Golem - [|cffffcc00Level 1|r]), EditorSuffix (Name - Editor Suffix)
+{
+(Undead, Golem, 1)
+}
+
+STRING 7060
+// Units: n03C (Flesh Golem - [|cffffcc00Level 1|r]), Ubertip (Tooltip - Extended)
+{
+Summons a golem that is immune to spells. The golem rushes at the enemy base and smashes everything to pieces.|n|n|cffffcc00Can only attack ground units.|r
+}
+
+STRING 7061
+// Units: n03C (Flesh Golem - [|cffffcc00Level 1|r]), Name (Name)
+{
+Flesh Golem - [|cffffcc00Level 1|r]
+}
+
+STRING 7062
+// Units: n03C (Flesh Golem - [|cffffcc00Level 1|r]), Tip (Tooltip - Basic)
+{
+Summon Golem - [|cffffcc00Level 1|r]
+}
+
+STRING 7063
+// Units: n02L (War Golem - [|cffffcc00Level 3|r]), Description (Description)
+{
+Melee unit
+}
+
+STRING 7064
+// Units: n02M (Guardian Golem - [|cffffcc00Level 3|r]), Name (Name)
+{
+Guardian Golem - [|cffffcc00Level 3|r]
+}
+
+STRING 7065
+// Units: n02M (Guardian Golem - [|cffffcc00Level 3|r]), Tip (Tooltip - Basic)
+{
+Summon Golem - [|cffffcc00Level 3|r]
+}
+
+STRING 7066
+// Units: n02M (Guardian Golem - [|cffffcc00Level 3|r]), Description (Description)
+{
+Melee unit
+}
+
+STRING 7067
+// Units: n02N (Flesh Golem - [|cffffcc00Level 3|r]), Tip (Tooltip - Basic)
+{
+Summon Golem - [|cffffcc00Level 3|r]
+}
+
+STRING 7068
+// Units: n02N (Flesh Golem - [|cffffcc00Level 3|r]), Description (Description)
+{
+Melee unit
+}
+
+STRING 7069
+// Units: n02O (Mud Golem - [|cffffcc00Level 3|r]), Tip (Tooltip - Basic)
+{
+Summon Golem - [|cffffcc00Level 3|r]
+}
+
+STRING 7070
+// Units: n02O (Mud Golem - [|cffffcc00Level 3|r]), Description (Description)
+{
+Melee unit
+}
+
+STRING 7071
+// Units: n037 (War Golem - [|cffffcc00Level 2|r]), Description (Description)
+{
+Melee unit
+}
+
+STRING 7072
+// Units: n038 (War Golem - [|cffffcc00Level 1|r]), Description (Description)
+{
+Melee unit
+}
+
+STRING 7073
+// Units: n039 (Mud Golem - [|cffffcc00Level 2|r]), Description (Description)
+{
+Melee unit
+}
+
+STRING 7074
+// Units: n03A (Mud Golem - [|cffffcc00Level 1|r]), Description (Description)
+{
+Melee unit
+}
+
+STRING 7075
+// Units: n03B (Flesh Golem - [|cffffcc00Level 2|r]), Description (Description)
+{
+Melee unit
+}
+
+STRING 7076
+// Units: n03C (Flesh Golem - [|cffffcc00Level 1|r]), Description (Description)
+{
+Melee unit
+}
+
+STRING 7077
+// Units: n03D (Guardian Golem - [|cffffcc00Level 2|r]), EditorSuffix (Name - Editor Suffix)
+{
+(Elf, Golem, 2)
+}
+
+STRING 7078
+// Units: n03D (Guardian Golem - [|cffffcc00Level 2|r]), Ubertip (Tooltip - Extended)
+{
+Summons a golem that is immune to spells. The golem rushes at the enemy base and smashes everything to pieces.|n|n|cffffcc00Can only attack ground units.|r
+}
+
+STRING 7079
+// Units: n03D (Guardian Golem - [|cffffcc00Level 2|r]), Name (Name)
+{
+Guardian Golem - [|cffffcc00Level 2|r]
+}
+
+STRING 7080
+// Units: n03D (Guardian Golem - [|cffffcc00Level 2|r]), Tip (Tooltip - Basic)
+{
+Summon Golem - [|cffffcc00Level 2|r]
+}
+
+STRING 7081
+// Units: n03D (Guardian Golem - [|cffffcc00Level 2|r]), Description (Description)
+{
+Melee unit
+}
+
+STRING 7082
+// Units: n03E (Guardian Golem - [|cffffcc00Level 1|r]), EditorSuffix (Name - Editor Suffix)
+{
+(Elf, Golem, 1)
+}
+
+STRING 7083
+// Units: n03E (Guardian Golem - [|cffffcc00Level 1|r]), Ubertip (Tooltip - Extended)
+{
+Summons a golem that is immune to spells. The golem rushes at the enemy base and smashes everything to pieces.|n|n|cffffcc00Can only attack ground units.|r
+}
+
+STRING 7084
+// Units: n03E (Guardian Golem - [|cffffcc00Level 1|r]), Name (Name)
+{
+Guardian Golem - [|cffffcc00Level 1|r]
+}
+
+STRING 7085
+// Units: n03E (Guardian Golem - [|cffffcc00Level 1|r]), Tip (Tooltip - Basic)
+{
+Summon Golem - [|cffffcc00Level 1|r]
+}
+
+STRING 7086
+// Units: n03E (Guardian Golem - [|cffffcc00Level 1|r]), Description (Description)
+{
+Melee unit
+}
+
+STRING 7087
+// Units: n00X (Bandit), EditorSuffix (Name - Editor Suffix)
+{
+(Creep, Melee, 1)
+}
+
+STRING 7089
+// Units: n013 (Bandit Assassin), EditorSuffix (Name - Editor Suffix)
+{
+(Creep, Distance, 1)
+}
+
+STRING 7091
+// Units: n014 (Furbolg Wizard), EditorSuffix (Name - Editor Suffix)
+{
+(Creep, Mage, 1)
+}
+
+STRING 7092
+// Units: n01D (Furbolg Warrior), EditorSuffix (Name - Editor Suffix)
+{
+(Creep, Melee, 1)
+}
+
+STRING 7093
+// Units: n01F (Mur'gul Warrior), EditorSuffix (Name - Editor Suffix)
+{
+(Creep, Melee, 1)
+}
+
+STRING 7094
+// Units: n01L (Nerubian Warrior), EditorSuffix (Name - Editor Suffix)
+{
+(Creep, Melee, 1)
+}
+
+STRING 7095
+// Units: n01N (Ogre Warrior), EditorSuffix (Name - Editor Suffix)
+{
+(Creep, Melee, 1)
+}
+
+STRING 7096
+// Units: n01P (Tuskarr Warrior), EditorSuffix (Name - Editor Suffix)
+{
+(Creep, Melee, 1)
+}
+
+STRING 7097
+// Units: n01E (Wildekin), EditorSuffix (Name - Editor Suffix)
+{
+(Creep, Melee, 1)
+}
+
+STRING 7098
+// Units: n01S (Centaur Runner), EditorSuffix (Name - Editor Suffix)
+{
+(Creep, Melee, 1)
+}
+
+STRING 7100
+// Units: n01Q (Furbolg Hunter), EditorSuffix (Name - Editor Suffix)
+{
+(Creep, Distance, 1)
+}
+
+STRING 7101
+// Units: n01U (Mur'gul Trapper), EditorSuffix (Name - Editor Suffix)
+{
+(Creep, Distance, 1)
+}
+
+STRING 7102
+// Units: n01K (Nerubian Spinner), EditorSuffix (Name - Editor Suffix)
+{
+(Creep, Distance, 1)
+}
+
+STRING 7103
+// Units: n01W (Tuskarr Hunter), EditorSuffix (Name - Editor Suffix)
+{
+(Creep, Distance, 1)
+}
+
+STRING 7104
+// Units: n01C (Ogre Thief), EditorSuffix (Name - Editor Suffix)
+{
+(Creep, Distance, 1)
+}
+
+STRING 7105
+// Units: n01V (Wildekin Trapper), EditorSuffix (Name - Editor Suffix)
+{
+(Creep, Distance, 1)
+}
+
+STRING 7106
+// Units: n01X (Centaur Archer), EditorSuffix (Name - Editor Suffix)
+{
+(Creep, Distance, 1)
+}
+
+STRING 7108
+// Units: n01O (Bandit Wizard), EditorSuffix (Name - Editor Suffix)
+{
+(Creep, Mage, 1)
+}
+
+STRING 7110
+// Units: n01Z (Mur'gul Wizard), EditorSuffix (Name - Editor Suffix)
+{
+(Creep, Mage, 1)
+}
+
+STRING 7111
+// Units: n01M (Nerubian Wizard), EditorSuffix (Name - Editor Suffix)
+{
+(Creep, Mage, 1)
+}
+
+STRING 7112
+// Units: n01Y (Ogre Mage), EditorSuffix (Name - Editor Suffix)
+{
+(Creep, Mage, 1)
+}
+
+STRING 7113
+// Units: n01T (Tuskarr Healer), EditorSuffix (Name - Editor Suffix)
+{
+(Creep, Mage, 1)
+}
+
+STRING 7114
+// Units: n01B (Wildekin Ancestor), EditorSuffix (Name - Editor Suffix)
+{
+(Creep, Mage, 1)
+}
+
+STRING 7115
+// Units: n020 (Centaur Sorceress), EditorSuffix (Name - Editor Suffix)
+{
+(Creep, Mage, 1)
+}
+
+STRING 7117
+// Units: n01R (Bandit Lord), EditorSuffix (Name - Editor Suffix)
+{
+(Creep, Melee, 3)
+}
+
+STRING 7118
+// Units: n021 (Furbolg Champion), EditorSuffix (Name - Editor Suffix)
+{
+(Creep, Melee, 3)
+}
+
+STRING 7119
+// Units: n022 (Mur'gul Shadowcaster), EditorSuffix (Name - Editor Suffix)
+{
+(Creep, Melee, 3)
+}
+
+STRING 7120
+// Units: n023 (Nerubian Queen), EditorSuffix (Name - Editor Suffix)
+{
+(Creep, Melee, 3)
+}
+
+STRING 7121
+// Units: n027 (Ogre Lord), EditorSuffix (Name - Editor Suffix)
+{
+(Creep, Melee, 3)
+}
+
+STRING 7122
+// Units: n028 (Tuskarr Chieftain), EditorSuffix (Name - Editor Suffix)
+{
+(Creep, Melee, 3)
+}
+
+STRING 7123
+// Units: n029 (Centaur Khan), EditorSuffix (Name - Editor Suffix)
+{
+(Creep, Melee, 3)
+}
+
+STRING 7124
+// Units: n02C (Wildekin Alpha), EditorSuffix (Name - Editor Suffix)
+{
+(Creep, Melee, 3)
+}
+
+STRING 7125
+// Units: n00X (Bandit), Ubertip (Tooltip - Extended)
+{
+Recruits a melee unit that benefits from your research.|n|n|cffffcc00Can only attack ground units.|r|n|n|cffd45e19Hired units appear regularly until their camp is destroyed.|r
+}
+
+STRING 7126
+// Units: n013 (Bandit Assassin), Ubertip (Tooltip - Extended)
+{
+Recruits a ranged unit that shoots poison darts and benefits from your research.|n|n|cffffcc00Can attack ground and air units.|r|n|n|cffd45e19Hired units appear regularly until their camp is destroyed.|r
+}
+
+STRING 7127
+// Units: n014 (Furbolg Wizard), Ubertip (Tooltip - Extended)
+{
+Recruits a magic unit that shoots firebolts and distributes frost armor and benefits from your research.|n|n|cffffcc00Can attack ground and air units.|r|n|n|cffd45e19Hired units appear regularly until their camp is destroyed.|r
+}
+
+STRING 7128
+// Units: n01D (Furbolg Warrior), Ubertip (Tooltip - Extended)
+{
+Recruits a melee unit that benefits from your research.|n|n|cffffcc00Can only attack ground units.|r|n|n|cffd45e19Hired units appear regularly until their camp is destroyed.|r
+}
+
+STRING 7129
+// Units: n01F (Mur'gul Warrior), Ubertip (Tooltip - Extended)
+{
+Recruits a melee unit that benefits from your research.|n|n|cffffcc00Can only attack ground units.|r|n|n|cffd45e19Hired units appear regularly until their camp is destroyed.|r
+}
+
+STRING 7130
+// Units: n01L (Nerubian Warrior), Ubertip (Tooltip - Extended)
+{
+Recruits a melee unit that benefits from your research.|n|n|cffffcc00Can only attack ground units.|r|n|n|cffd45e19Hired units appear regularly until their camp is destroyed.|r
+}
+
+STRING 7131
+// Units: n01N (Ogre Warrior), Ubertip (Tooltip - Extended)
+{
+Recruits a melee unit that benefits from your research.|n|n|cffffcc00Can only attack ground units.|r|n|n|cffd45e19Hired units appear regularly until their camp is destroyed.|r
+}
+
+STRING 7132
+// Units: n01P (Tuskarr Warrior), Ubertip (Tooltip - Extended)
+{
+Recruits a melee unit that benefits from your research.|n|n|cffffcc00Can only attack ground units.|r|n|n|cffd45e19Hired units appear regularly until their camp is destroyed.|r
+}
+
+STRING 7133
+// Units: n01E (Wildekin), Ubertip (Tooltip - Extended)
+{
+Recruits a melee unit that benefits from your research.|n|n|cffffcc00Can only attack ground units.|r|n|n|cffd45e19Hired units appear regularly until their camp is destroyed.|r
+}
+
+STRING 7134
+// Units: n01S (Centaur Runner), Ubertip (Tooltip - Extended)
+{
+Recruits a melee unit that benefits from your research.|n|n|cffffcc00Can only attack ground units.|r|n|n|cffd45e19Hired units appear regularly until their camp is destroyed.|r
+}
+
+STRING 7135
+// Units: n01Q (Furbolg Hunter), Ubertip (Tooltip - Extended)
+{
+Recruits a ranged unit that shoots poison darts and benefits from your research.|n|n|cffffcc00Can attack ground and air units.|r|n|n|cffd45e19Hired units appear regularly until their camp is destroyed.|r
+}
+
+STRING 7136
+// Units: n01U (Mur'gul Trapper), Ubertip (Tooltip - Extended)
+{
+Recruits a ranged unit that shoots poison darts and benefits from your research.|n|n|cffffcc00Can attack ground and air units.|r|n|n|cffd45e19Hired units appear regularly until their camp is destroyed.|r
+}
+
+STRING 7137
+// Units: n01K (Nerubian Spinner), Ubertip (Tooltip - Extended)
+{
+Recruits a ranged unit that shoots poison darts and benefits from your research.|n|n|cffffcc00Can attack ground and air units.|r|n|n|cffd45e19Hired units appear regularly until their camp is destroyed.|r
+}
+
+STRING 7138
+// Units: n01W (Tuskarr Hunter), Ubertip (Tooltip - Extended)
+{
+Recruits a ranged unit that shoots poison darts and benefits from your research.|n|n|cffffcc00Can attack ground and air units.|r|n|n|cffd45e19Hired units appear regularly until their camp is destroyed.|r
+}
+
+STRING 7139
+// Units: n01C (Ogre Thief), Ubertip (Tooltip - Extended)
+{
+Recruits a ranged unit that shoots poison darts and benefits from your research.|n|n|cffffcc00Can attack ground and air units.|r|n|n|cffd45e19Hired units appear regularly until their camp is destroyed.|r
+}
+
+STRING 7140
+// Units: n01V (Wildekin Trapper), Ubertip (Tooltip - Extended)
+{
+Recruits a ranged unit that shoots poison darts and benefits from your research.|n|n|cffffcc00Can attack ground and air units.|r|n|n|cffd45e19Hired units appear regularly until their camp is destroyed.|r
+}
+
+STRING 7141
+// Units: n01X (Centaur Archer), Ubertip (Tooltip - Extended)
+{
+Recruits a ranged unit that shoots poison darts and benefits from your research.|n|n|cffffcc00Can attack ground and air units.|r|n|n|cffd45e19Hired units appear regularly until their camp is destroyed.|r
+}
+
+STRING 7142
+// Units: n01O (Bandit Wizard), Ubertip (Tooltip - Extended)
+{
+Recruits a magic unit that shoots firebolts and distributes frost armor and benefits from your research.|n|n|cffffcc00Can attack ground and air units.|r|n|n|cffd45e19Hired units appear regularly until their camp is destroyed.|r
+}
+
+STRING 7143
+// Units: n01Z (Mur'gul Wizard), Ubertip (Tooltip - Extended)
+{
+Recruits a magic unit that shoots firebolts and distributes frost armor and benefits from your research.|n|n|cffffcc00Can attack ground and air units.|r|n|n|cffd45e19Hired units appear regularly until their camp is destroyed.|r
+}
+
+STRING 7144
+// Units: n01M (Nerubian Wizard), Ubertip (Tooltip - Extended)
+{
+Recruits a magic unit that shoots firebolts and distributes frost armor and benefits from your research.|n|n|cffffcc00Can attack ground and air units.|r|n|n|cffd45e19Hired units appear regularly until their camp is destroyed.|r
+}
+
+STRING 7145
+// Units: n01Y (Ogre Mage), Ubertip (Tooltip - Extended)
+{
+Recruits a magic unit that shoots firebolts and distributes frost armor and benefits from your research.|n|n|cffffcc00Can attack ground and air units.|r|n|n|cffd45e19Hired units appear regularly until their camp is destroyed.|r
+}
+
+STRING 7146
+// Units: n01T (Tuskarr Healer), Ubertip (Tooltip - Extended)
+{
+Recruits a magic unit that shoots firebolts and distributes frost armor and benefits from your research.|n|n|cffffcc00Can attack ground and air units.|r|n|n|cffd45e19Hired units appear regularly until their camp is destroyed.|r
+}
+
+STRING 7147
+// Units: n01B (Wildekin Ancestor), Ubertip (Tooltip - Extended)
+{
+Recruits a magic unit that shoots firebolts and distributes frost armor and benefits from your research.|n|n|cffffcc00Can attack ground and air units.|r|n|n|cffd45e19Hired units appear regularly until their camp is destroyed.|r
+}
+
+STRING 7148
+// Units: n020 (Centaur Sorceress), Ubertip (Tooltip - Extended)
+{
+Recruits a magic unit that shoots firebolts and distributes frost armor and benefits from your research.|n|n|cffffcc00Can attack ground and air units.|r|n|n|cffd45e19Hired units appear regularly until their camp is destroyed.|r
+}
+
+STRING 7149
+// Units: n01R (Bandit Lord), Ubertip (Tooltip - Extended)
+{
+A heavy melee unit. Possesses Aura of Devotion and Shockwave.|n|n|cffffcc00Can attack ground units.|r|n|n|cffd45e19Hired units appear regularly until their camp is destroyed.|r
+}
+
+STRING 7150
+// Units: n021 (Furbolg Champion), Ubertip (Tooltip - Extended)
+{
+A heavy melee unit. Possesses command aura and reincarnation.|n|n|cffffcc00Can attack ground units.|r|n|n|cffd45e19Hired units appear regularly until their camp is destroyed.|r
+}
+
+STRING 7151
+// Units: n022 (Mur'gul Shadowcaster), Ubertip (Tooltip - Extended)
+{
+Heavy ranged amphibious unit with Curse and Hex. |n|n|cffffcc00Attacks land and air units.|r|n|n|cffd45e19Hired units appear regularly until their camp is destroyed.|r
+}
+
+STRING 7152
+// Units: n023 (Nerubian Queen), Ubertip (Tooltip - Extended)
+{
+A heavy melee unit. Controls the Unholy Aura and Carrion Swarm.|n|n|cffffcc00Can attack ground units.|r|n|n|cffd45e19Hired units appear regularly until their camp is destroyed.|r
+}
+
+STRING 7153
+// Units: n027 (Ogre Lord), Ubertip (Tooltip - Extended)
+{
+Lord of the Ogre Legion. Possesses stamina aura and war thunder.|n|n|cffffcc00Can attack ground units.|r|n|n|cffd45e19Hired units appear regularly until their camp is destroyed.|r
+}
+
+STRING 7154
+// Units: n028 (Tuskarr Chieftain), Ubertip (Tooltip - Extended)
+{
+A heavy melee unit. Has command aura and frost armor.|n|n|cffffcc00Can attack ground units.|r|n|n|cffd45e19Hired units appear regularly until their camp is destroyed.|r
+}
+
+STRING 7155
+// Units: n029 (Centaur Khan), Ubertip (Tooltip - Extended)
+{
+A heavy melee unit. Controls the unholy aura and fire breath.|n|n|cffffcc00Can attack ground and air units.|r|n|n|cffd45e19Hired units appear regularly until their camp is destroyed.|r
+}
+
+STRING 7156
+// Units: n02C (Wildekin Alpha), Ubertip (Tooltip - Extended)
+{
+Alpha in the nest. Has full hit aura and root growth.|n|n|cffffcc00Can attack ground units.|r|n|n|cffd45e19Hired units appear regularly until their camp is destroyed.|r
 }
 

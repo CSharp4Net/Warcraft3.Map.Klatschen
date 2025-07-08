@@ -1,8 +1,10 @@
 Letzte Änderungen:
 ==================
-C: Großdrachen-Werte angepasst.
-F: Single-Spawn-Einheiten hinzugefügt: Drachen
-B: Model vom Held Erzmagier korrigiert
+Change: Diverse kleinere Fixes und Optimierungen
+Feature: Single-Spawn-Einheiten hinzugefügt: Großdrache, Drache, Jungtier, Welpe, Golem 3, Golem 2, Golem 1
+Feature: Söldner-Spawn-Einheiten hinzugefügt: Nahkampf-Einheit 3
+Bugfix: Model vom Held Erzmagier korrigiert
+Bugfix: Untoten-Friedhof ermöglicht nun Forschungen, anstatt Einheiten-Upgrades!
 
 
 Noch offen:

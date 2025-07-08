@@ -22,7 +22,9 @@ namespace Source.Models.Teams
       mainBuilding.AddSpawnAttackRoute(Areas.ElfBaseToHumanSpawn, Areas.HumanBase);
       mainBuilding.AddSpawnAttackRoute(Areas.ElfBaseToUndeadSpawn, Areas.UndeadBase);
 
-      mainBuilding.Wc3Unit.AddUnitToStock(Constants.UNIT_GUARDIAN_GOLEM_ELF, 1, 1);
+      mainBuilding.Wc3Unit.AddUnitToStock(Constants.UNIT_GUARDIAN_GOLEM_LEVEL_1_ELF_GOLEM_1, 3, 3);
+      mainBuilding.Wc3Unit.AddUnitToStock(Constants.UNIT_GUARDIAN_GOLEM_LEVEL_2_ELF_GOLEM_2, 2, 2);
+      mainBuilding.Wc3Unit.AddUnitToStock(Constants.UNIT_GUARDIAN_GOLEM_LEVEL_3_ELF_GOLEM_3, 1, 1);
       mainBuilding.Wc3Unit.AddUnitToStock(Constants.UNIT_GREEN_WHELP_ELF_DRAGON_1, 4, 4);
       mainBuilding.Wc3Unit.AddUnitToStock(Constants.UNIT_GREEN_JUVENILE_ELF_DRAGON_2, 3, 3);
       mainBuilding.Wc3Unit.AddUnitToStock(Constants.UNIT_GREEN_DRAGON_ELF_DRAGON_3, 2, 2);
