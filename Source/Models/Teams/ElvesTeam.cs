@@ -23,7 +23,10 @@ namespace Source.Models.Teams
       mainBuilding.AddSpawnAttackRoute(Areas.ElfBaseToUndeadSpawn, Areas.UndeadBase);
 
       mainBuilding.Wc3Unit.AddUnitToStock(Constants.UNIT_GUARDIAN_GOLEM_ELF, 1, 1);
-      mainBuilding.Wc3Unit.AddUnitToStock(Constants.UNIT_GREEN_DRAGON_ELF, 1, 1);
+      mainBuilding.Wc3Unit.AddUnitToStock(Constants.UNIT_GREEN_WHELP_ELF_DRAGON_1, 4, 4);
+      mainBuilding.Wc3Unit.AddUnitToStock(Constants.UNIT_GREEN_JUVENILE_ELF_DRAGON_2, 3, 3);
+      mainBuilding.Wc3Unit.AddUnitToStock(Constants.UNIT_GREEN_DRAGON_ELF_DRAGON_3, 2, 2);
+      mainBuilding.Wc3Unit.AddUnitToStock(Constants.UNIT_GREEN_DRAKE_ELF_DRAGON_4, 1, 1);
 
       // Kasernen
       UnitSpawnBuilding building = Computer.CreateBarrackBuilding(Constants.UNIT_ANCIENT_OF_WAR_ELF, Areas.ElfBarracksToCenter, Areas.ElfBarracksToCenterSpawn, Areas.OrcBase);

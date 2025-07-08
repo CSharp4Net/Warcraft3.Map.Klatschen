@@ -1,7 +1,8 @@
 Letzte Änderungen:
 ==================
-F: Im Hauptgebäude können gegen Gold nun Drachen beschwört werden.
-B: Legion-Einheiten geben nur wieder Kopfgeld.
+C: Großdrachen-Werte angepasst.
+F: Single-Spawn-Einheiten hinzugefügt: Drachen
+B: Model vom Held Erzmagier korrigiert
 
 
 Noch offen:

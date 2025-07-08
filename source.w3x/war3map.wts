@@ -12,7 +12,7 @@ STRING 3
 {
 Choose your hero and fight for your team. Invest your gold wisely in items, research, upgrades or mercenaries - many paths lead to victory or defeat.
 
-Version 2.1.0
+Version 2.2.0
 }
 
 STRING 4
@@ -77,7 +77,7 @@ STRING 65
 {
 Choose your hero and fight for your team. Invest your gold wisely in items, research, upgrades or mercenaries - many paths lead to victory or defeat.
 
-Version 2.1.0
+Version 2.2.0
 }
 
 STRING 73
@@ -18411,69 +18411,453 @@ STRING 6921
 Infects nearby enemy living units with Disease Cloud. Disease Cloud deals <ADCD,DataB1> - <ADCD,DataB10> damage per second.
 }
 
-STRING 6922
-// Units: n02R (Green Dragon), EditorSuffix (Name - Editor Suffix)
-{
-(Elf)
-}
-
 STRING 6923
-// Units: n02R (Green Dragon), Tip (Tooltip - Basic)
+// Units: n02V (Blue Dragon), Tip (Tooltip - Basic)
 {
 Summon Dragon
 }
 
-STRING 6924
-// Units: n02S (Blue Dragon), EditorSuffix (Name - Editor Suffix)
-{
-(Human)
-}
-
 STRING 6925
-// Units: n02S (Blue Dragon), Name (Name)
+// Units: n02V (Blue Dragon), Name (Name)
 {
 Blue Dragon
 }
 
-STRING 6926
-// Units: n02S (Blue Dragon), Tip (Tooltip - Basic)
+STRING 6933
+// Units: n02S (Blue Drake), EditorSuffix (Name - Editor Suffix)
 {
-Summon Dragon
+(Human, Dragon, 4)
 }
 
-STRING 6927
-// Units: n02T (Red Dragon), EditorSuffix (Name - Editor Suffix)
+STRING 6934
+// Units: n02V (Blue Dragon), EditorSuffix (Name - Editor Suffix)
 {
-(Orc)
+(Human, Dragon, 3)
 }
 
-STRING 6928
-// Units: n02T (Red Dragon), Name (Name)
+STRING 6937
+// Units: n02R (Green Drake), Tip (Tooltip - Basic)
+{
+Summon Drake
+}
+
+STRING 6938
+// Units: n02R (Green Drake), Name (Name)
+{
+Green Drake
+}
+
+STRING 6939
+// Units: n02S (Blue Drake), Name (Name)
+{
+Blue Drake
+}
+
+STRING 6940
+// Units: n02S (Blue Drake), Tip (Tooltip - Basic)
+{
+Summon Drake
+}
+
+STRING 6941
+// Units: n02T (Red Drake), Name (Name)
+{
+Red Drake
+}
+
+STRING 6942
+// Units: n02T (Red Drake), Tip (Tooltip - Basic)
+{
+Summon Drake
+}
+
+STRING 6943
+// Units: n02U (Nether Drake), Name (Name)
+{
+Nether Drake
+}
+
+STRING 6944
+// Units: n02U (Nether Drake), Tip (Tooltip - Basic)
+{
+Summon Drake
+}
+
+STRING 6946
+// Units: n02R (Green Drake), EditorSuffix (Name - Editor Suffix)
+{
+(Elf, Dragon, 4)
+}
+
+STRING 6947
+// Units: n02T (Red Drake), EditorSuffix (Name - Editor Suffix)
+{
+(Orc, Dragon, 4)
+}
+
+STRING 6948
+// Units: n02U (Nether Drake), EditorSuffix (Name - Editor Suffix)
+{
+(Undead, Dragon, 4)
+}
+
+STRING 6949
+// Units: n02R (Green Drake), Ubertip (Tooltip - Extended)
+{
+Heavy ranged flying unit that can Devour opponents, is immune to magic and casts spells. |n|n|cffffcc00Attacks land and air units.|r
+}
+
+STRING 6950
+// Units: n02W (Red Dragon), EditorSuffix (Name - Editor Suffix)
+{
+(Orc, Dragon, 3)
+}
+
+STRING 6951
+// Units: n02W (Red Dragon), Name (Name)
 {
 Red Dragon
 }
 
-STRING 6929
-// Units: n02T (Red Dragon), Tip (Tooltip - Basic)
+STRING 6952
+// Units: n02W (Red Dragon), Tip (Tooltip - Basic)
 {
 Summon Dragon
 }
 
-STRING 6930
-// Units: n02U (Nether Dragon), EditorSuffix (Name - Editor Suffix)
+STRING 6953
+// Units: n02X (Nether Dragon), EditorSuffix (Name - Editor Suffix)
 {
-(Undead)
+(Undead, Dragon, 3)
 }
 
-STRING 6931
-// Units: n02U (Nether Dragon), Name (Name)
+STRING 6954
+// Units: n02X (Nether Dragon), Name (Name)
 {
 Nether Dragon
 }
 
-STRING 6932
-// Units: n02U (Nether Dragon), Tip (Tooltip - Basic)
+STRING 6955
+// Units: n02X (Nether Dragon), Tip (Tooltip - Basic)
 {
 Summon Dragon
+}
+
+STRING 6956
+// Units: n02Y (Green Dragon), EditorSuffix (Name - Editor Suffix)
+{
+(Elf, Dragon, 3)
+}
+
+STRING 6957
+// Units: n02Y (Green Dragon), Tip (Tooltip - Basic)
+{
+Summon Dragon
+}
+
+STRING 6958
+// Units: n02S (Blue Drake), Ubertip (Tooltip - Extended)
+{
+Heavy ranged flying unit that can Devour opponents, is immune to magic and casts spells. |n|n|cffffcc00Attacks land and air units.|r
+}
+
+STRING 6959
+// Units: n02T (Red Drake), Ubertip (Tooltip - Extended)
+{
+Heavy ranged flying unit that can Devour opponents, is immune to magic and casts spells. |n|n|cffffcc00Attacks land and air units.|r
+}
+
+STRING 6960
+// Units: n02U (Nether Drake), Ubertip (Tooltip - Extended)
+{
+Heavy ranged flying unit that can Devour opponents, is immune to magic and casts spells. |n|n|cffffcc00Attacks land and air units.|r
+}
+
+STRING 6961
+// Units: n02Z (Blue Juvenile), EditorSuffix (Name - Editor Suffix)
+{
+(Human, Dragon, 2)
+}
+
+STRING 6962
+// Units: n033 (Blue Whelp), Name (Name)
+{
+Blue Whelp
+}
+
+STRING 6963
+// Units: n033 (Blue Whelp), Tip (Tooltip - Basic)
+{
+Summon Whelp
+}
+
+STRING 6964
+// Units: n033 (Blue Whelp), Ubertip (Tooltip - Extended)
+{
+Tiny ranged flying unit. |n|n|cffffcc00Attacks land and air units.|r
+}
+
+STRING 6965
+// Units: n030 (Red Juvenile), EditorSuffix (Name - Editor Suffix)
+{
+(Orc, Dragon, 2)
+}
+
+STRING 6966
+// Units: n034 (Red Whelp), Name (Name)
+{
+Red Whelp
+}
+
+STRING 6967
+// Units: n034 (Red Whelp), Tip (Tooltip - Basic)
+{
+Summon Whelp
+}
+
+STRING 6968
+// Units: n034 (Red Whelp), Ubertip (Tooltip - Extended)
+{
+Tiny ranged flying unit. |n|n|cffffcc00Attacks land and air units.|r
+}
+
+STRING 6969
+// Units: n031 (Nether Juvenile), EditorSuffix (Name - Editor Suffix)
+{
+(Undead, Dragon, 2)
+}
+
+STRING 6970
+// Units: n035 (Nether Whelp), Name (Name)
+{
+Nether Whelp
+}
+
+STRING 6971
+// Units: n035 (Nether Whelp), Tip (Tooltip - Basic)
+{
+Summon Whelp
+}
+
+STRING 6972
+// Units: n035 (Nether Whelp), Ubertip (Tooltip - Extended)
+{
+Tiny ranged flying unit. |n|n|cffffcc00Attacks land and air units.|r
+}
+
+STRING 6973
+// Units: n032 (Green Juvenile), EditorSuffix (Name - Editor Suffix)
+{
+(Elf, Dragon, 2)
+}
+
+STRING 6974
+// Units: n036 (Green Whelp), Name (Name)
+{
+Green Whelp
+}
+
+STRING 6975
+// Units: n036 (Green Whelp), Tip (Tooltip - Basic)
+{
+Summon Whelp
+}
+
+STRING 6976
+// Units: n036 (Green Whelp), Ubertip (Tooltip - Extended)
+{
+Tiny ranged flying unit. |n|n|cffffcc00Attacks land and air units.|r
+}
+
+STRING 6977
+// Units: n033 (Blue Whelp), EditorSuffix (Name - Editor Suffix)
+{
+(Human, Dragon, 1)
+}
+
+STRING 6986
+// Units: n02R (Green Drake), Description (Description)
+{
+Flight unit
+}
+
+STRING 6987
+// Units: n02S (Blue Drake), Description (Description)
+{
+Flight unit
+}
+
+STRING 6988
+// Units: n02T (Red Drake), Description (Description)
+{
+Flight unit
+}
+
+STRING 6989
+// Units: n02U (Nether Drake), Description (Description)
+{
+Flight unit
+}
+
+STRING 6990
+// Units: n02V (Blue Dragon), Description (Description)
+{
+Flight unit
+}
+
+STRING 6991
+// Units: n02W (Red Dragon), Description (Description)
+{
+Flight unit
+}
+
+STRING 6992
+// Units: n02X (Nether Dragon), Description (Description)
+{
+Flight unit
+}
+
+STRING 6993
+// Units: n02Y (Green Dragon), Description (Description)
+{
+Flight unit
+}
+
+STRING 6994
+// Units: n02Z (Blue Juvenile), Description (Description)
+{
+Flight unit
+}
+
+STRING 6995
+// Units: n030 (Red Juvenile), Description (Description)
+{
+Flight unit
+}
+
+STRING 6996
+// Units: n031 (Nether Juvenile), Description (Description)
+{
+Flight unit
+}
+
+STRING 6997
+// Units: n032 (Green Juvenile), Description (Description)
+{
+Flight unit
+}
+
+STRING 6999
+// Units: n034 (Red Whelp), EditorSuffix (Name - Editor Suffix)
+{
+(Orc, Dragon, 1)
+}
+
+STRING 7004
+// Units: n02Z (Blue Juvenile), Name (Name)
+{
+Blue Juvenile
+}
+
+STRING 7005
+// Units: n02Z (Blue Juvenile), Tip (Tooltip - Basic)
+{
+Summon Juvenile
+}
+
+STRING 7006
+// Units: n02Z (Blue Juvenile), Ubertip (Tooltip - Extended)
+{
+Middle ranged flying unit that can Devour opponents. |n|n|cffffcc00Attacks land and air units.|r
+}
+
+STRING 7007
+// Units: n030 (Red Juvenile), Name (Name)
+{
+Red Juvenile
+}
+
+STRING 7008
+// Units: n030 (Red Juvenile), Tip (Tooltip - Basic)
+{
+Summon Juvenile
+}
+
+STRING 7009
+// Units: n030 (Red Juvenile), Ubertip (Tooltip - Extended)
+{
+Middle ranged flying unit that can Devour opponents. |n|n|cffffcc00Attacks land and air units.|r
+}
+
+STRING 7010
+// Units: n031 (Nether Juvenile), Name (Name)
+{
+Nether Juvenile
+}
+
+STRING 7011
+// Units: n031 (Nether Juvenile), Tip (Tooltip - Basic)
+{
+Summon Juvenile
+}
+
+STRING 7012
+// Units: n031 (Nether Juvenile), Ubertip (Tooltip - Extended)
+{
+Middle ranged flying unit that can Devour opponents. |n|n|cffffcc00Attacks land and air units.|r
+}
+
+STRING 7013
+// Units: n032 (Green Juvenile), Name (Name)
+{
+Green Juvenile
+}
+
+STRING 7014
+// Units: n032 (Green Juvenile), Tip (Tooltip - Basic)
+{
+Summon Juvenile
+}
+
+STRING 7015
+// Units: n032 (Green Juvenile), Ubertip (Tooltip - Extended)
+{
+Middle ranged flying unit that can Devour opponents. |n|n|cffffcc00Attacks land and air units.|r
+}
+
+STRING 7016
+// Units: n033 (Blue Whelp), Description (Description)
+{
+Flight unit
+}
+
+STRING 7017
+// Units: n034 (Red Whelp), Description (Description)
+{
+Flight unit
+}
+
+STRING 7018
+// Units: n035 (Nether Whelp), EditorSuffix (Name - Editor Suffix)
+{
+(Undead, Dragon, 1)
+}
+
+STRING 7019
+// Units: n035 (Nether Whelp), Description (Description)
+{
+Flight unit
+}
+
+STRING 7020
+// Units: n036 (Green Whelp), EditorSuffix (Name - Editor Suffix)
+{
+(Elf, Dragon, 1)
+}
+
+STRING 7021
+// Units: n036 (Green Whelp), Description (Description)
+{
+Flight unit
 }
 
